@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#outputs3keyprefix" title="OutputS3KeyPrefix">OutputS3KeyPrefix</a>" : <i>String</i>,
     "<a href="#servicerolearn" title="ServiceRoleArn">ServiceRoleArn</a>" : <i>String</i>,
     "<a href="#timeoutseconds" title="TimeoutSeconds">TimeoutSeconds</a>" : <i>Double</i>,
-    "<a href="#notificationconfig" title="NotificationConfig">NotificationConfig</a>" : <i>[ &lt;a href=&#34;taskinvocationparameters-runcommandparameters-notificationconfig.md&#34;&gt;NotificationConfig&lt;/a&gt;, ... ]</i>,
-    "<a href="#parameter" title="Parameter">Parameter</a>" : <i>[ &lt;a href=&#34;taskinvocationparameters-runcommandparameters-parameter.md&#34;&gt;Parameter&lt;/a&gt;, ... ]</i>
+    "<a href="#notificationconfig" title="NotificationConfig">NotificationConfig</a>" : <i>[ <a href="taskinvocationparameters-runcommandparameters-notificationconfig.md">NotificationConfig</a>, ... ]</i>,
+    "<a href="#parameter" title="Parameter">Parameter</a>" : <i>[ <a href="taskinvocationparameters-runcommandparameters-parameter.md">Parameter</a>, ... ]</i>
 }
 </pre>
 
@@ -31,9 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#servicerolearn" title="ServiceRoleArn">ServiceRoleArn</a>: <i>String</i>
 <a href="#timeoutseconds" title="TimeoutSeconds">TimeoutSeconds</a>: <i>Double</i>
 <a href="#notificationconfig" title="NotificationConfig">NotificationConfig</a>: <i>
-      - &lt;a href=&#34;taskinvocationparameters-runcommandparameters-notificationconfig.md&#34;&gt;NotificationConfig&lt;/a&gt;</i>
+      - <a href="taskinvocationparameters-runcommandparameters-notificationconfig.md">NotificationConfig</a></i>
 <a href="#parameter" title="Parameter">Parameter</a>: <i>
-      - &lt;a href=&#34;taskinvocationparameters-runcommandparameters-parameter.md&#34;&gt;Parameter&lt;/a&gt;</i>
+      - <a href="taskinvocationparameters-runcommandparameters-parameter.md">Parameter</a></i>
 </pre>
 
 ## Properties
@@ -90,14 +90,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NotificationConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskinvocationparameters-runcommandparameters-notificationconfig.md&#34;&gt;NotificationConfig&lt;/a&gt;
+_Type_: List of <a href="taskinvocationparameters-runcommandparameters-notificationconfig.md">NotificationConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Parameter
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskinvocationparameters-runcommandparameters-parameter.md&#34;&gt;Parameter&lt;/a&gt;
+_Type_: List of <a href="taskinvocationparameters-runcommandparameters-parameter.md">Parameter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#token" title="Token">Token</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#jsonkeys" title="JsonKeys">JsonKeys</a>" : <i>[ &lt;a href=&#34;fieldsearch-jsonkeys.md&#34;&gt;JsonKeys&lt;/a&gt;, ... ]</i>
+    "<a href="#jsonkeys" title="JsonKeys">JsonKeys</a>" : <i>[ <a href="fieldsearch-jsonkeys.md">JsonKeys</a>, ... ]</i>
 }
 </pre>
 
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#token" title="Token">Token</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#jsonkeys" title="JsonKeys">JsonKeys</a>: <i>
-      - &lt;a href=&#34;fieldsearch-jsonkeys.md&#34;&gt;JsonKeys&lt;/a&gt;</i>
+      - <a href="fieldsearch-jsonkeys.md">JsonKeys</a></i>
 </pre>
 
 ## Properties
@@ -87,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### JsonKeys
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;fieldsearch-jsonkeys.md&#34;&gt;JsonKeys&lt;/a&gt;
+_Type_: List of <a href="fieldsearch-jsonkeys.md">JsonKeys</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

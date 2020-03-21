@@ -83,29 +83,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessor
 
-Returns the &lt;code&gt;Accessor&lt;/code&gt; value.
+Returns the <code>Accessor</code> value.
 
 #### ClientToken
 
-Returns the &lt;code&gt;ClientToken&lt;/code&gt; value.
+Returns the <code>ClientToken</code> value.
 
 #### LeaseDuration
 
-Returns the &lt;code&gt;LeaseDuration&lt;/code&gt; value.
+Returns the <code>LeaseDuration</code> value.
 
 #### LeaseStarted
 
-Returns the &lt;code&gt;LeaseStarted&lt;/code&gt; value.
+Returns the <code>LeaseStarted</code> value.
 
 #### Metadata
 
-Returns the &lt;code&gt;Metadata&lt;/code&gt; value.
+Returns the <code>Metadata</code> value.
 
 #### Policies
 
-Returns the &lt;code&gt;Policies&lt;/code&gt; value.
+Returns the <code>Policies</code> value.
 
 #### Renewable
 
-Returns the &lt;code&gt;Renewable&lt;/code&gt; value.
+Returns the <code>Renewable</code> value.
 

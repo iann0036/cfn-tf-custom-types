@@ -18,16 +18,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#policydescription" title="PolicyDescription">PolicyDescription</a>" : <i>String</i>,
         "<a href="#suppress" title="Suppress">Suppress</a>" : <i>Boolean</i>,
         "<a href="#teamid" title="TeamId">TeamId</a>" : <i>String</i>,
-        "<a href="#autocloseaction" title="AutoCloseAction">AutoCloseAction</a>" : <i>[ &lt;a href=&#34;autocloseaction.md&#34;&gt;AutoCloseAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#autorestartaction" title="AutoRestartAction">AutoRestartAction</a>" : <i>[ &lt;a href=&#34;autorestartaction.md&#34;&gt;AutoRestartAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#deduplicationaction" title="DeDuplicationAction">DeDuplicationAction</a>" : <i>[ &lt;a href=&#34;deduplicationaction.md&#34;&gt;DeDuplicationAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#delayaction" title="DelayAction">DelayAction</a>" : <i>[ &lt;a href=&#34;delayaction.md&#34;&gt;DelayAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#filter" title="Filter">Filter</a>" : <i>[ &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;, ... ]</i>,
-        "<a href="#timerestriction" title="TimeRestriction">TimeRestriction</a>" : <i>[ &lt;a href=&#34;timerestriction.md&#34;&gt;TimeRestriction&lt;/a&gt;, ... ]</i>,
-        "<a href="#duration" title="Duration">Duration</a>" : <i>[ &lt;a href=&#34;duration.md&#34;&gt;Duration&lt;/a&gt;, ... ]</i>,
-        "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ &lt;a href=&#34;conditions.md&#34;&gt;Conditions&lt;/a&gt;, ... ]</i>,
-        "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ &lt;a href=&#34;restriction.md&#34;&gt;Restriction&lt;/a&gt;, ... ]</i>,
-        "<a href="#restrictions" title="Restrictions">Restrictions</a>" : <i>[ &lt;a href=&#34;restrictions.md&#34;&gt;Restrictions&lt;/a&gt;, ... ]</i>
+        "<a href="#autocloseaction" title="AutoCloseAction">AutoCloseAction</a>" : <i>[ <a href="autocloseaction.md">AutoCloseAction</a>, ... ]</i>,
+        "<a href="#autorestartaction" title="AutoRestartAction">AutoRestartAction</a>" : <i>[ <a href="autorestartaction.md">AutoRestartAction</a>, ... ]</i>,
+        "<a href="#deduplicationaction" title="DeDuplicationAction">DeDuplicationAction</a>" : <i>[ <a href="deduplicationaction.md">DeDuplicationAction</a>, ... ]</i>,
+        "<a href="#delayaction" title="DelayAction">DelayAction</a>" : <i>[ <a href="delayaction.md">DelayAction</a>, ... ]</i>,
+        "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="filter.md">Filter</a>, ... ]</i>,
+        "<a href="#timerestriction" title="TimeRestriction">TimeRestriction</a>" : <i>[ <a href="timerestriction.md">TimeRestriction</a>, ... ]</i>,
+        "<a href="#duration" title="Duration">Duration</a>" : <i>[ <a href="duration.md">Duration</a>, ... ]</i>,
+        "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ <a href="conditions.md">Conditions</a>, ... ]</i>,
+        "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ <a href="restriction.md">Restriction</a>, ... ]</i>,
+        "<a href="#restrictions" title="Restrictions">Restrictions</a>" : <i>[ <a href="restrictions.md">Restrictions</a>, ... ]</i>
     }
 }
 </pre>
@@ -44,25 +44,25 @@ Properties:
     <a href="#suppress" title="Suppress">Suppress</a>: <i>Boolean</i>
     <a href="#teamid" title="TeamId">TeamId</a>: <i>String</i>
     <a href="#autocloseaction" title="AutoCloseAction">AutoCloseAction</a>: <i>
-      - &lt;a href=&#34;autocloseaction.md&#34;&gt;AutoCloseAction&lt;/a&gt;</i>
+      - <a href="autocloseaction.md">AutoCloseAction</a></i>
     <a href="#autorestartaction" title="AutoRestartAction">AutoRestartAction</a>: <i>
-      - &lt;a href=&#34;autorestartaction.md&#34;&gt;AutoRestartAction&lt;/a&gt;</i>
+      - <a href="autorestartaction.md">AutoRestartAction</a></i>
     <a href="#deduplicationaction" title="DeDuplicationAction">DeDuplicationAction</a>: <i>
-      - &lt;a href=&#34;deduplicationaction.md&#34;&gt;DeDuplicationAction&lt;/a&gt;</i>
+      - <a href="deduplicationaction.md">DeDuplicationAction</a></i>
     <a href="#delayaction" title="DelayAction">DelayAction</a>: <i>
-      - &lt;a href=&#34;delayaction.md&#34;&gt;DelayAction&lt;/a&gt;</i>
+      - <a href="delayaction.md">DelayAction</a></i>
     <a href="#filter" title="Filter">Filter</a>: <i>
-      - &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;</i>
+      - <a href="filter.md">Filter</a></i>
     <a href="#timerestriction" title="TimeRestriction">TimeRestriction</a>: <i>
-      - &lt;a href=&#34;timerestriction.md&#34;&gt;TimeRestriction&lt;/a&gt;</i>
+      - <a href="timerestriction.md">TimeRestriction</a></i>
     <a href="#duration" title="Duration">Duration</a>: <i>
-      - &lt;a href=&#34;duration.md&#34;&gt;Duration&lt;/a&gt;</i>
+      - <a href="duration.md">Duration</a></i>
     <a href="#conditions" title="Conditions">Conditions</a>: <i>
-      - &lt;a href=&#34;conditions.md&#34;&gt;Conditions&lt;/a&gt;</i>
+      - <a href="conditions.md">Conditions</a></i>
     <a href="#restriction" title="Restriction">Restriction</a>: <i>
-      - &lt;a href=&#34;restriction.md&#34;&gt;Restriction&lt;/a&gt;</i>
+      - <a href="restriction.md">Restriction</a></i>
     <a href="#restrictions" title="Restrictions">Restrictions</a>: <i>
-      - &lt;a href=&#34;restrictions.md&#34;&gt;Restrictions&lt;/a&gt;</i>
+      - <a href="restrictions.md">Restrictions</a></i>
 </pre>
 
 ## Properties
@@ -119,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autocloseaction.md&#34;&gt;AutoCloseAction&lt;/a&gt;
+_Type_: List of <a href="autocloseaction.md">AutoCloseAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autorestartaction.md&#34;&gt;AutoRestartAction&lt;/a&gt;
+_Type_: List of <a href="autorestartaction.md">AutoRestartAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deduplicationaction.md&#34;&gt;DeDuplicationAction&lt;/a&gt;
+_Type_: List of <a href="deduplicationaction.md">DeDuplicationAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;delayaction.md&#34;&gt;DelayAction&lt;/a&gt;
+_Type_: List of <a href="delayaction.md">DelayAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -151,7 +151,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;
+_Type_: List of <a href="filter.md">Filter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -159,7 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;timerestriction.md&#34;&gt;TimeRestriction&lt;/a&gt;
+_Type_: List of <a href="timerestriction.md">TimeRestriction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;duration.md&#34;&gt;Duration&lt;/a&gt;
+_Type_: List of <a href="duration.md">Duration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,7 +175,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;conditions.md&#34;&gt;Conditions&lt;/a&gt;
+_Type_: List of <a href="conditions.md">Conditions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +183,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;restriction.md&#34;&gt;Restriction&lt;/a&gt;
+_Type_: List of <a href="restriction.md">Restriction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;restrictions.md&#34;&gt;Restrictions&lt;/a&gt;
+_Type_: List of <a href="restrictions.md">Restrictions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -35,7 +35,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#visibilitylevel" title="VisibilityLevel">VisibilityLevel</a>" : <i>String</i>,
         "<a href="#wikienabled" title="WikiEnabled">WikiEnabled</a>" : <i>Boolean</i>,
-        "<a href="#sharedwithgroups" title="SharedWithGroups">SharedWithGroups</a>" : <i>[ &lt;a href=&#34;sharedwithgroups.md&#34;&gt;SharedWithGroups&lt;/a&gt;, ... ]</i>
+        "<a href="#sharedwithgroups" title="SharedWithGroups">SharedWithGroups</a>" : <i>[ <a href="sharedwithgroups.md">SharedWithGroups</a>, ... ]</i>
     }
 }
 </pre>
@@ -70,7 +70,7 @@ Properties:
     <a href="#visibilitylevel" title="VisibilityLevel">VisibilityLevel</a>: <i>String</i>
     <a href="#wikienabled" title="WikiEnabled">WikiEnabled</a>: <i>Boolean</i>
     <a href="#sharedwithgroups" title="SharedWithGroups">SharedWithGroups</a>: <i>
-      - &lt;a href=&#34;sharedwithgroups.md&#34;&gt;SharedWithGroups&lt;/a&gt;</i>
+      - <a href="sharedwithgroups.md">SharedWithGroups</a></i>
 </pre>
 
 ## Properties
@@ -263,7 +263,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sharedwithgroups.md&#34;&gt;SharedWithGroups&lt;/a&gt;
+_Type_: List of <a href="sharedwithgroups.md">SharedWithGroups</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -285,17 +285,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HttpUrlToRepo
 
-Returns the &lt;code&gt;HttpUrlToRepo&lt;/code&gt; value.
+Returns the <code>HttpUrlToRepo</code> value.
 
 #### RunnersToken
 
-Returns the &lt;code&gt;RunnersToken&lt;/code&gt; value.
+Returns the <code>RunnersToken</code> value.
 
 #### SshUrlToRepo
 
-Returns the &lt;code&gt;SshUrlToRepo&lt;/code&gt; value.
+Returns the <code>SshUrlToRepo</code> value.
 
 #### WebUrl
 
-Returns the &lt;code&gt;WebUrl&lt;/code&gt; value.
+Returns the <code>WebUrl</code> value.
 

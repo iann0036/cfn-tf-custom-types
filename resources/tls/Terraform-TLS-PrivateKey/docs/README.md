@@ -83,17 +83,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PrivateKeyPem
 
-Returns the &lt;code&gt;PrivateKeyPem&lt;/code&gt; value.
+Returns the <code>PrivateKeyPem</code> value.
 
 #### PublicKeyFingerprintMd5
 
-Returns the &lt;code&gt;PublicKeyFingerprintMd5&lt;/code&gt; value.
+Returns the <code>PublicKeyFingerprintMd5</code> value.
 
 #### PublicKeyOpenssh
 
-Returns the &lt;code&gt;PublicKeyOpenssh&lt;/code&gt; value.
+Returns the <code>PublicKeyOpenssh</code> value.
 
 #### PublicKeyPem
 
-Returns the &lt;code&gt;PublicKeyPem&lt;/code&gt; value.
+Returns the <code>PublicKeyPem</code> value.
 

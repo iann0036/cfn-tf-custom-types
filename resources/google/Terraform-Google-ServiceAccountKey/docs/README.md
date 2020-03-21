@@ -103,29 +103,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### PrivateKey
 
-Returns the &lt;code&gt;PrivateKey&lt;/code&gt; value.
+Returns the <code>PrivateKey</code> value.
 
 #### PrivateKeyEncrypted
 
-Returns the &lt;code&gt;PrivateKeyEncrypted&lt;/code&gt; value.
+Returns the <code>PrivateKeyEncrypted</code> value.
 
 #### PrivateKeyFingerprint
 
-Returns the &lt;code&gt;PrivateKeyFingerprint&lt;/code&gt; value.
+Returns the <code>PrivateKeyFingerprint</code> value.
 
 #### PublicKey
 
-Returns the &lt;code&gt;PublicKey&lt;/code&gt; value.
+Returns the <code>PublicKey</code> value.
 
 #### ValidAfter
 
-Returns the &lt;code&gt;ValidAfter&lt;/code&gt; value.
+Returns the <code>ValidAfter</code> value.
 
 #### ValidBefore
 
-Returns the &lt;code&gt;ValidBefore&lt;/code&gt; value.
+Returns the <code>ValidBefore</code> value.
 

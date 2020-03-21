@@ -27,12 +27,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#sourceuri" title="SourceUri">SourceUri</a>" : <i>String</i>,
         "<a href="#storageaccountid" title="StorageAccountId">StorageAccountId</a>" : <i>String</i>,
         "<a href="#storageaccounttype" title="StorageAccountType">StorageAccountType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#zones" title="Zones">Zones</a>" : <i>[ String, ... ]</i>,
-        "<a href="#encryptionsettings" title="EncryptionSettings">EncryptionSettings</a>" : <i>[ &lt;a href=&#34;encryptionsettings.md&#34;&gt;EncryptionSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ &lt;a href=&#34;diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;, ... ]</i>,
-        "<a href="#keyencryptionkey" title="KeyEncryptionKey">KeyEncryptionKey</a>" : <i>[ &lt;a href=&#34;keyencryptionkey.md&#34;&gt;KeyEncryptionKey&lt;/a&gt;, ... ]</i>
+        "<a href="#encryptionsettings" title="EncryptionSettings">EncryptionSettings</a>" : <i>[ <a href="encryptionsettings.md">EncryptionSettings</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ <a href="diskencryptionkey.md">DiskEncryptionKey</a>, ... ]</i>,
+        "<a href="#keyencryptionkey" title="KeyEncryptionKey">KeyEncryptionKey</a>" : <i>[ <a href="keyencryptionkey.md">KeyEncryptionKey</a>, ... ]</i>
     }
 }
 </pre>
@@ -58,16 +58,16 @@ Properties:
     <a href="#storageaccountid" title="StorageAccountId">StorageAccountId</a>: <i>String</i>
     <a href="#storageaccounttype" title="StorageAccountType">StorageAccountType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#zones" title="Zones">Zones</a>: <i>
       - String</i>
     <a href="#encryptionsettings" title="EncryptionSettings">EncryptionSettings</a>: <i>
-      - &lt;a href=&#34;encryptionsettings.md&#34;&gt;EncryptionSettings&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="encryptionsettings.md">EncryptionSettings</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>: <i>
-      - &lt;a href=&#34;diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;</i>
+      - <a href="diskencryptionkey.md">DiskEncryptionKey</a></i>
     <a href="#keyencryptionkey" title="KeyEncryptionKey">KeyEncryptionKey</a>: <i>
-      - &lt;a href=&#34;keyencryptionkey.md&#34;&gt;KeyEncryptionKey&lt;/a&gt;</i>
+      - <a href="keyencryptionkey.md">KeyEncryptionKey</a></i>
 </pre>
 
 ## Properties
@@ -196,7 +196,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -212,7 +212,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;encryptionsettings.md&#34;&gt;EncryptionSettings&lt;/a&gt;
+_Type_: List of <a href="encryptionsettings.md">EncryptionSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -220,7 +220,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -228,7 +228,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;
+_Type_: List of <a href="diskencryptionkey.md">DiskEncryptionKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -236,7 +236,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;keyencryptionkey.md&#34;&gt;KeyEncryptionKey&lt;/a&gt;
+_Type_: List of <a href="keyencryptionkey.md">KeyEncryptionKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

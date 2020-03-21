@@ -1,0 +1,101 @@
+{
+    "typeName": "Terraform::Heroku::SpaceVpnConnection",
+    "description": "CloudFormation equivalent of heroku_space_vpn_connection",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Tunnels": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "PreSharedKey": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IkeVersion": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "RoutableCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Space": {
+            "type": "string"
+        },
+        "SpaceCidrBlock": {
+            "type": "string"
+        },
+        "Tunnels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Tunnels"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "PublicIp",
+        "RoutableCidrs",
+        "Space"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/IkeVersion",
+        "/properties/SpaceCidrBlock"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

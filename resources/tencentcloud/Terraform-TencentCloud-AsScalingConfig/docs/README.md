@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#enhancedsecurityservice" title="EnhancedSecurityService">EnhancedSecurityService</a>" : <i>Boolean</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#imageid" title="ImageId">ImageId</a>" : <i>String</i>,
-        "<a href="#instancetags" title="InstanceTags">InstanceTags</a>" : <i>[ &lt;a href=&#34;instancetags.md&#34;&gt;InstanceTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#instancetags" title="InstanceTags">InstanceTags</a>" : <i>[ <a href="instancetags.md">InstanceTags</a>, ... ]</i>,
         "<a href="#instancetypes" title="InstanceTypes">InstanceTypes</a>" : <i>[ String, ... ]</i>,
         "<a href="#internetchargetype" title="InternetChargeType">InternetChargeType</a>" : <i>String</i>,
         "<a href="#internetmaxbandwidthout" title="InternetMaxBandwidthOut">InternetMaxBandwidthOut</a>" : <i>Double</i>,
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>" : <i>Double</i>,
         "<a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>" : <i>String</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
-        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;, ... ]</i>
+        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ <a href="datadisk.md">DataDisk</a>, ... ]</i>
     }
 }
 </pre>
@@ -46,7 +46,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#imageid" title="ImageId">ImageId</a>: <i>String</i>
     <a href="#instancetags" title="InstanceTags">InstanceTags</a>: <i>
-      - &lt;a href=&#34;instancetags.md&#34;&gt;InstanceTags&lt;/a&gt;</i>
+      - <a href="instancetags.md">InstanceTags</a></i>
     <a href="#instancetypes" title="InstanceTypes">InstanceTypes</a>: <i>
       - String</i>
     <a href="#internetchargetype" title="InternetChargeType">InternetChargeType</a>: <i>String</i>
@@ -63,7 +63,7 @@ Properties:
     <a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>: <i>String</i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#datadisk" title="DataDisk">DataDisk</a>: <i>
-      - &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;</i>
+      - <a href="datadisk.md">DataDisk</a></i>
 </pre>
 
 ## Properties
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instancetags.md&#34;&gt;InstanceTags&lt;/a&gt;
+_Type_: List of <a href="instancetags.md">InstanceTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,7 +216,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;
+_Type_: List of <a href="datadisk.md">DataDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -238,9 +238,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

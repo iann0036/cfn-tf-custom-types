@@ -17,8 +17,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#shutdowntime" title="ShutdownTime">ShutdownTime</a>" : <i>Double</i>,
     "<a href="#startuptime" title="StartupTime">StartupTime</a>" : <i>Double</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#release" title="Release">Release</a>" : <i>[ &lt;a href=&#34;manifest-release.md&#34;&gt;Release&lt;/a&gt;, ... ]</i>,
-    "<a href="#runtime" title="Runtime">Runtime</a>" : <i>[ &lt;a href=&#34;manifest-runtime.md&#34;&gt;Runtime&lt;/a&gt;, ... ]</i>
+    "<a href="#release" title="Release">Release</a>" : <i>[ <a href="manifest-release.md">Release</a>, ... ]</i>,
+    "<a href="#runtime" title="Runtime">Runtime</a>" : <i>[ <a href="manifest-runtime.md">Runtime</a>, ... ]</i>
 }
 </pre>
 
@@ -35,9 +35,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#startuptime" title="StartupTime">StartupTime</a>: <i>Double</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#release" title="Release">Release</a>: <i>
-      - &lt;a href=&#34;manifest-release.md&#34;&gt;Release&lt;/a&gt;</i>
+      - <a href="manifest-release.md">Release</a></i>
 <a href="#runtime" title="Runtime">Runtime</a>: <i>
-      - &lt;a href=&#34;manifest-runtime.md&#34;&gt;Runtime&lt;/a&gt;</i>
+      - <a href="manifest-runtime.md">Runtime</a></i>
 </pre>
 
 ## Properties
@@ -108,14 +108,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Release
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;manifest-release.md&#34;&gt;Release&lt;/a&gt;
+_Type_: List of <a href="manifest-release.md">Release</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Runtime
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;manifest-runtime.md&#34;&gt;Runtime&lt;/a&gt;
+_Type_: List of <a href="manifest-runtime.md">Runtime</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

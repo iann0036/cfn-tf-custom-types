@@ -32,7 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#tag" title="Tag">Tag</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -62,7 +62,7 @@ Properties:
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tag" title="Tag">Tag</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -231,7 +231,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -253,33 +253,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AutoRenew
 
-Returns the &lt;code&gt;AutoRenew&lt;/code&gt; value.
+Returns the <code>AutoRenew</code> value.
 
 #### Cpu
 
-Returns the &lt;code&gt;Cpu&lt;/code&gt; value.
+Returns the <code>Cpu</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### DiskSet
 
-Returns the &lt;code&gt;DiskSet&lt;/code&gt; value.
+Returns the <code>DiskSet</code> value.
 
 #### ExpireTime
 
-Returns the &lt;code&gt;ExpireTime&lt;/code&gt; value.
+Returns the <code>ExpireTime</code> value.
 
 #### IpSet
 
-Returns the &lt;code&gt;IpSet&lt;/code&gt; value.
+Returns the <code>IpSet</code> value.
 
 #### Memory
 
-Returns the &lt;code&gt;Memory&lt;/code&gt; value.
+Returns the <code>Memory</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

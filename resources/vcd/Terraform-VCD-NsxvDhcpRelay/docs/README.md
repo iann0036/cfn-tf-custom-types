@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ipsets" title="IpSets">IpSets</a>" : <i>[ String, ... ]</i>,
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#relayagent" title="RelayAgent">RelayAgent</a>" : <i>[ &lt;a href=&#34;relayagent.md&#34;&gt;RelayAgent&lt;/a&gt;, ... ]</i>
+        "<a href="#relayagent" title="RelayAgent">RelayAgent</a>" : <i>[ <a href="relayagent.md">RelayAgent</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,7 +40,7 @@ Properties:
     <a href="#org" title="Org">Org</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#relayagent" title="RelayAgent">RelayAgent</a>: <i>
-      - &lt;a href=&#34;relayagent.md&#34;&gt;RelayAgent&lt;/a&gt;</i>
+      - <a href="relayagent.md">RelayAgent</a></i>
 </pre>
 
 ## Properties
@@ -105,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;relayagent.md&#34;&gt;RelayAgent&lt;/a&gt;
+_Type_: List of <a href="relayagent.md">RelayAgent</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

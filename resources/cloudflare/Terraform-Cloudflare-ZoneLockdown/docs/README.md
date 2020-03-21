@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
         "<a href="#urls" title="Urls">Urls</a>" : <i>[ String, ... ]</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#configurations" title="Configurations">Configurations</a>" : <i>[ &lt;a href=&#34;configurations.md&#34;&gt;Configurations&lt;/a&gt;, ... ]</i>
+        "<a href="#configurations" title="Configurations">Configurations</a>" : <i>[ <a href="configurations.md">Configurations</a>, ... ]</i>
     }
 }
 </pre>
@@ -36,7 +36,7 @@ Properties:
       - String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#configurations" title="Configurations">Configurations</a>: <i>
-      - &lt;a href=&#34;configurations.md&#34;&gt;Configurations&lt;/a&gt;</i>
+      - <a href="configurations.md">Configurations</a></i>
 </pre>
 
 ## Properties
@@ -93,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configurations.md&#34;&gt;Configurations&lt;/a&gt;
+_Type_: List of <a href="configurations.md">Configurations</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

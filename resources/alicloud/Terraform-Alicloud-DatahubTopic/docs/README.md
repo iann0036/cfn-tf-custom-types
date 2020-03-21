@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#lifecycle" title="LifeCycle">LifeCycle</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#projectname" title="ProjectName">ProjectName</a>" : <i>String</i>,
-        "<a href="#recordschema" title="RecordSchema">RecordSchema</a>" : <i>[ &lt;a href=&#34;recordschema.md&#34;&gt;RecordSchema&lt;/a&gt;, ... ]</i>,
+        "<a href="#recordschema" title="RecordSchema">RecordSchema</a>" : <i>[ <a href="recordschema.md">RecordSchema</a>, ... ]</i>,
         "<a href="#recordtype" title="RecordType">RecordType</a>" : <i>String</i>,
         "<a href="#shardcount" title="ShardCount">ShardCount</a>" : <i>Double</i>
     }
@@ -35,7 +35,7 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#projectname" title="ProjectName">ProjectName</a>: <i>String</i>
     <a href="#recordschema" title="RecordSchema">RecordSchema</a>: <i>
-      - &lt;a href=&#34;recordschema.md&#34;&gt;RecordSchema&lt;/a&gt;</i>
+      - <a href="recordschema.md">RecordSchema</a></i>
     <a href="#recordtype" title="RecordType">RecordType</a>: <i>String</i>
     <a href="#shardcount" title="ShardCount">ShardCount</a>: <i>Double</i>
 </pre>
@@ -86,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;recordschema.md&#34;&gt;RecordSchema&lt;/a&gt;
+_Type_: List of <a href="recordschema.md">RecordSchema</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,9 +124,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### LastModifyTime
 
-Returns the &lt;code&gt;LastModifyTime&lt;/code&gt; value.
+Returns the <code>LastModifyTime</code> value.
 

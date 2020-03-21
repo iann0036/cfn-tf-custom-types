@@ -17,30 +17,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#destinationid" title="DestinationId">DestinationId</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#versionid" title="VersionId">VersionId</a>" : <i>String</i>,
-        "<a href="#elasticsearchconfiguration" title="ElasticsearchConfiguration">ElasticsearchConfiguration</a>" : <i>[ &lt;a href=&#34;elasticsearchconfiguration.md&#34;&gt;ElasticsearchConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#extendeds3configuration" title="ExtendedS3Configuration">ExtendedS3Configuration</a>" : <i>[ &lt;a href=&#34;extendeds3configuration.md&#34;&gt;ExtendedS3Configuration&lt;/a&gt;, ... ]</i>,
-        "<a href="#kinesissourceconfiguration" title="KinesisSourceConfiguration">KinesisSourceConfiguration</a>" : <i>[ &lt;a href=&#34;kinesissourceconfiguration.md&#34;&gt;KinesisSourceConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#redshiftconfiguration" title="RedshiftConfiguration">RedshiftConfiguration</a>" : <i>[ &lt;a href=&#34;redshiftconfiguration.md&#34;&gt;RedshiftConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#s3configuration" title="S3Configuration">S3Configuration</a>" : <i>[ &lt;a href=&#34;s3configuration.md&#34;&gt;S3Configuration&lt;/a&gt;, ... ]</i>,
-        "<a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>" : <i>[ &lt;a href=&#34;serversideencryption.md&#34;&gt;ServerSideEncryption&lt;/a&gt;, ... ]</i>,
-        "<a href="#splunkconfiguration" title="SplunkConfiguration">SplunkConfiguration</a>" : <i>[ &lt;a href=&#34;splunkconfiguration.md&#34;&gt;SplunkConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ &lt;a href=&#34;cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ &lt;a href=&#34;processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#dataformatconversionconfiguration" title="DataFormatConversionConfiguration">DataFormatConversionConfiguration</a>" : <i>[ &lt;a href=&#34;dataformatconversionconfiguration.md&#34;&gt;DataFormatConversionConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#s3backupconfiguration" title="S3BackupConfiguration">S3BackupConfiguration</a>" : <i>[ &lt;a href=&#34;s3backupconfiguration.md&#34;&gt;S3BackupConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#processors" title="Processors">Processors</a>" : <i>[ &lt;a href=&#34;processors.md&#34;&gt;Processors&lt;/a&gt;, ... ]</i>,
-        "<a href="#inputformatconfiguration" title="InputFormatConfiguration">InputFormatConfiguration</a>" : <i>[ &lt;a href=&#34;inputformatconfiguration.md&#34;&gt;InputFormatConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#outputformatconfiguration" title="OutputFormatConfiguration">OutputFormatConfiguration</a>" : <i>[ &lt;a href=&#34;outputformatconfiguration.md&#34;&gt;OutputFormatConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#schemaconfiguration" title="SchemaConfiguration">SchemaConfiguration</a>" : <i>[ &lt;a href=&#34;schemaconfiguration.md&#34;&gt;SchemaConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;, ... ]</i>,
-        "<a href="#deserializer" title="Deserializer">Deserializer</a>" : <i>[ &lt;a href=&#34;deserializer.md&#34;&gt;Deserializer&lt;/a&gt;, ... ]</i>,
-        "<a href="#serializer" title="Serializer">Serializer</a>" : <i>[ &lt;a href=&#34;serializer.md&#34;&gt;Serializer&lt;/a&gt;, ... ]</i>,
-        "<a href="#hivejsonserde" title="HiveJsonSerDe">HiveJsonSerDe</a>" : <i>[ &lt;a href=&#34;hivejsonserde.md&#34;&gt;HiveJsonSerDe&lt;/a&gt;, ... ]</i>,
-        "<a href="#openxjsonserde" title="OpenXJsonSerDe">OpenXJsonSerDe</a>" : <i>[ &lt;a href=&#34;openxjsonserde.md&#34;&gt;OpenXJsonSerDe&lt;/a&gt;, ... ]</i>,
-        "<a href="#orcserde" title="OrcSerDe">OrcSerDe</a>" : <i>[ &lt;a href=&#34;orcserde.md&#34;&gt;OrcSerDe&lt;/a&gt;, ... ]</i>,
-        "<a href="#parquetserde" title="ParquetSerDe">ParquetSerDe</a>" : <i>[ &lt;a href=&#34;parquetserde.md&#34;&gt;ParquetSerDe&lt;/a&gt;, ... ]</i>
+        "<a href="#elasticsearchconfiguration" title="ElasticsearchConfiguration">ElasticsearchConfiguration</a>" : <i>[ <a href="elasticsearchconfiguration.md">ElasticsearchConfiguration</a>, ... ]</i>,
+        "<a href="#extendeds3configuration" title="ExtendedS3Configuration">ExtendedS3Configuration</a>" : <i>[ <a href="extendeds3configuration.md">ExtendedS3Configuration</a>, ... ]</i>,
+        "<a href="#kinesissourceconfiguration" title="KinesisSourceConfiguration">KinesisSourceConfiguration</a>" : <i>[ <a href="kinesissourceconfiguration.md">KinesisSourceConfiguration</a>, ... ]</i>,
+        "<a href="#redshiftconfiguration" title="RedshiftConfiguration">RedshiftConfiguration</a>" : <i>[ <a href="redshiftconfiguration.md">RedshiftConfiguration</a>, ... ]</i>,
+        "<a href="#s3configuration" title="S3Configuration">S3Configuration</a>" : <i>[ <a href="s3configuration.md">S3Configuration</a>, ... ]</i>,
+        "<a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>" : <i>[ <a href="serversideencryption.md">ServerSideEncryption</a>, ... ]</i>,
+        "<a href="#splunkconfiguration" title="SplunkConfiguration">SplunkConfiguration</a>" : <i>[ <a href="splunkconfiguration.md">SplunkConfiguration</a>, ... ]</i>,
+        "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ <a href="cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>, ... ]</i>,
+        "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ <a href="processingconfiguration.md">ProcessingConfiguration</a>, ... ]</i>,
+        "<a href="#dataformatconversionconfiguration" title="DataFormatConversionConfiguration">DataFormatConversionConfiguration</a>" : <i>[ <a href="dataformatconversionconfiguration.md">DataFormatConversionConfiguration</a>, ... ]</i>,
+        "<a href="#s3backupconfiguration" title="S3BackupConfiguration">S3BackupConfiguration</a>" : <i>[ <a href="s3backupconfiguration.md">S3BackupConfiguration</a>, ... ]</i>,
+        "<a href="#processors" title="Processors">Processors</a>" : <i>[ <a href="processors.md">Processors</a>, ... ]</i>,
+        "<a href="#inputformatconfiguration" title="InputFormatConfiguration">InputFormatConfiguration</a>" : <i>[ <a href="inputformatconfiguration.md">InputFormatConfiguration</a>, ... ]</i>,
+        "<a href="#outputformatconfiguration" title="OutputFormatConfiguration">OutputFormatConfiguration</a>" : <i>[ <a href="outputformatconfiguration.md">OutputFormatConfiguration</a>, ... ]</i>,
+        "<a href="#schemaconfiguration" title="SchemaConfiguration">SchemaConfiguration</a>" : <i>[ <a href="schemaconfiguration.md">SchemaConfiguration</a>, ... ]</i>,
+        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ <a href="parameters.md">Parameters</a>, ... ]</i>,
+        "<a href="#deserializer" title="Deserializer">Deserializer</a>" : <i>[ <a href="deserializer.md">Deserializer</a>, ... ]</i>,
+        "<a href="#serializer" title="Serializer">Serializer</a>" : <i>[ <a href="serializer.md">Serializer</a>, ... ]</i>,
+        "<a href="#hivejsonserde" title="HiveJsonSerDe">HiveJsonSerDe</a>" : <i>[ <a href="hivejsonserde.md">HiveJsonSerDe</a>, ... ]</i>,
+        "<a href="#openxjsonserde" title="OpenXJsonSerDe">OpenXJsonSerDe</a>" : <i>[ <a href="openxjsonserde.md">OpenXJsonSerDe</a>, ... ]</i>,
+        "<a href="#orcserde" title="OrcSerDe">OrcSerDe</a>" : <i>[ <a href="orcserde.md">OrcSerDe</a>, ... ]</i>,
+        "<a href="#parquetserde" title="ParquetSerDe">ParquetSerDe</a>" : <i>[ <a href="parquetserde.md">ParquetSerDe</a>, ... ]</i>
     }
 }
 </pre>
@@ -56,52 +56,52 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#versionid" title="VersionId">VersionId</a>: <i>String</i>
     <a href="#elasticsearchconfiguration" title="ElasticsearchConfiguration">ElasticsearchConfiguration</a>: <i>
-      - &lt;a href=&#34;elasticsearchconfiguration.md&#34;&gt;ElasticsearchConfiguration&lt;/a&gt;</i>
+      - <a href="elasticsearchconfiguration.md">ElasticsearchConfiguration</a></i>
     <a href="#extendeds3configuration" title="ExtendedS3Configuration">ExtendedS3Configuration</a>: <i>
-      - &lt;a href=&#34;extendeds3configuration.md&#34;&gt;ExtendedS3Configuration&lt;/a&gt;</i>
+      - <a href="extendeds3configuration.md">ExtendedS3Configuration</a></i>
     <a href="#kinesissourceconfiguration" title="KinesisSourceConfiguration">KinesisSourceConfiguration</a>: <i>
-      - &lt;a href=&#34;kinesissourceconfiguration.md&#34;&gt;KinesisSourceConfiguration&lt;/a&gt;</i>
+      - <a href="kinesissourceconfiguration.md">KinesisSourceConfiguration</a></i>
     <a href="#redshiftconfiguration" title="RedshiftConfiguration">RedshiftConfiguration</a>: <i>
-      - &lt;a href=&#34;redshiftconfiguration.md&#34;&gt;RedshiftConfiguration&lt;/a&gt;</i>
+      - <a href="redshiftconfiguration.md">RedshiftConfiguration</a></i>
     <a href="#s3configuration" title="S3Configuration">S3Configuration</a>: <i>
-      - &lt;a href=&#34;s3configuration.md&#34;&gt;S3Configuration&lt;/a&gt;</i>
+      - <a href="s3configuration.md">S3Configuration</a></i>
     <a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>: <i>
-      - &lt;a href=&#34;serversideencryption.md&#34;&gt;ServerSideEncryption&lt;/a&gt;</i>
+      - <a href="serversideencryption.md">ServerSideEncryption</a></i>
     <a href="#splunkconfiguration" title="SplunkConfiguration">SplunkConfiguration</a>: <i>
-      - &lt;a href=&#34;splunkconfiguration.md&#34;&gt;SplunkConfiguration&lt;/a&gt;</i>
+      - <a href="splunkconfiguration.md">SplunkConfiguration</a></i>
     <a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>: <i>
-      - &lt;a href=&#34;cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;</i>
+      - <a href="cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a></i>
     <a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>: <i>
-      - &lt;a href=&#34;processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;</i>
+      - <a href="processingconfiguration.md">ProcessingConfiguration</a></i>
     <a href="#dataformatconversionconfiguration" title="DataFormatConversionConfiguration">DataFormatConversionConfiguration</a>: <i>
-      - &lt;a href=&#34;dataformatconversionconfiguration.md&#34;&gt;DataFormatConversionConfiguration&lt;/a&gt;</i>
+      - <a href="dataformatconversionconfiguration.md">DataFormatConversionConfiguration</a></i>
     <a href="#s3backupconfiguration" title="S3BackupConfiguration">S3BackupConfiguration</a>: <i>
-      - &lt;a href=&#34;s3backupconfiguration.md&#34;&gt;S3BackupConfiguration&lt;/a&gt;</i>
+      - <a href="s3backupconfiguration.md">S3BackupConfiguration</a></i>
     <a href="#processors" title="Processors">Processors</a>: <i>
-      - &lt;a href=&#34;processors.md&#34;&gt;Processors&lt;/a&gt;</i>
+      - <a href="processors.md">Processors</a></i>
     <a href="#inputformatconfiguration" title="InputFormatConfiguration">InputFormatConfiguration</a>: <i>
-      - &lt;a href=&#34;inputformatconfiguration.md&#34;&gt;InputFormatConfiguration&lt;/a&gt;</i>
+      - <a href="inputformatconfiguration.md">InputFormatConfiguration</a></i>
     <a href="#outputformatconfiguration" title="OutputFormatConfiguration">OutputFormatConfiguration</a>: <i>
-      - &lt;a href=&#34;outputformatconfiguration.md&#34;&gt;OutputFormatConfiguration&lt;/a&gt;</i>
+      - <a href="outputformatconfiguration.md">OutputFormatConfiguration</a></i>
     <a href="#schemaconfiguration" title="SchemaConfiguration">SchemaConfiguration</a>: <i>
-      - &lt;a href=&#34;schemaconfiguration.md&#34;&gt;SchemaConfiguration&lt;/a&gt;</i>
+      - <a href="schemaconfiguration.md">SchemaConfiguration</a></i>
     <a href="#parameters" title="Parameters">Parameters</a>: <i>
-      - &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;</i>
+      - <a href="parameters.md">Parameters</a></i>
     <a href="#deserializer" title="Deserializer">Deserializer</a>: <i>
-      - &lt;a href=&#34;deserializer.md&#34;&gt;Deserializer&lt;/a&gt;</i>
+      - <a href="deserializer.md">Deserializer</a></i>
     <a href="#serializer" title="Serializer">Serializer</a>: <i>
-      - &lt;a href=&#34;serializer.md&#34;&gt;Serializer&lt;/a&gt;</i>
+      - <a href="serializer.md">Serializer</a></i>
     <a href="#hivejsonserde" title="HiveJsonSerDe">HiveJsonSerDe</a>: <i>
-      - &lt;a href=&#34;hivejsonserde.md&#34;&gt;HiveJsonSerDe&lt;/a&gt;</i>
+      - <a href="hivejsonserde.md">HiveJsonSerDe</a></i>
     <a href="#openxjsonserde" title="OpenXJsonSerDe">OpenXJsonSerDe</a>: <i>
-      - &lt;a href=&#34;openxjsonserde.md&#34;&gt;OpenXJsonSerDe&lt;/a&gt;</i>
+      - <a href="openxjsonserde.md">OpenXJsonSerDe</a></i>
     <a href="#orcserde" title="OrcSerDe">OrcSerDe</a>: <i>
-      - &lt;a href=&#34;orcserde.md&#34;&gt;OrcSerDe&lt;/a&gt;</i>
+      - <a href="orcserde.md">OrcSerDe</a></i>
     <a href="#parquetserde" title="ParquetSerDe">ParquetSerDe</a>: <i>
-      - &lt;a href=&#34;parquetserde.md&#34;&gt;ParquetSerDe&lt;/a&gt;</i>
+      - <a href="parquetserde.md">ParquetSerDe</a></i>
 </pre>
 
 ## Properties
@@ -150,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;elasticsearchconfiguration.md&#34;&gt;ElasticsearchConfiguration&lt;/a&gt;
+_Type_: List of <a href="elasticsearchconfiguration.md">ElasticsearchConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;extendeds3configuration.md&#34;&gt;ExtendedS3Configuration&lt;/a&gt;
+_Type_: List of <a href="extendeds3configuration.md">ExtendedS3Configuration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kinesissourceconfiguration.md&#34;&gt;KinesisSourceConfiguration&lt;/a&gt;
+_Type_: List of <a href="kinesissourceconfiguration.md">KinesisSourceConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;redshiftconfiguration.md&#34;&gt;RedshiftConfiguration&lt;/a&gt;
+_Type_: List of <a href="redshiftconfiguration.md">RedshiftConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;s3configuration.md&#34;&gt;S3Configuration&lt;/a&gt;
+_Type_: List of <a href="s3configuration.md">S3Configuration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -206,7 +206,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serversideencryption.md&#34;&gt;ServerSideEncryption&lt;/a&gt;
+_Type_: List of <a href="serversideencryption.md">ServerSideEncryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,7 +214,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;splunkconfiguration.md&#34;&gt;SplunkConfiguration&lt;/a&gt;
+_Type_: List of <a href="splunkconfiguration.md">SplunkConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -222,7 +222,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;
+_Type_: List of <a href="cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -230,7 +230,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;
+_Type_: List of <a href="processingconfiguration.md">ProcessingConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -238,7 +238,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dataformatconversionconfiguration.md&#34;&gt;DataFormatConversionConfiguration&lt;/a&gt;
+_Type_: List of <a href="dataformatconversionconfiguration.md">DataFormatConversionConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -246,7 +246,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;s3backupconfiguration.md&#34;&gt;S3BackupConfiguration&lt;/a&gt;
+_Type_: List of <a href="s3backupconfiguration.md">S3BackupConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -254,7 +254,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;processors.md&#34;&gt;Processors&lt;/a&gt;
+_Type_: List of <a href="processors.md">Processors</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -262,7 +262,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;inputformatconfiguration.md&#34;&gt;InputFormatConfiguration&lt;/a&gt;
+_Type_: List of <a href="inputformatconfiguration.md">InputFormatConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -270,7 +270,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;outputformatconfiguration.md&#34;&gt;OutputFormatConfiguration&lt;/a&gt;
+_Type_: List of <a href="outputformatconfiguration.md">OutputFormatConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -278,7 +278,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;schemaconfiguration.md&#34;&gt;SchemaConfiguration&lt;/a&gt;
+_Type_: List of <a href="schemaconfiguration.md">SchemaConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -286,7 +286,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;
+_Type_: List of <a href="parameters.md">Parameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -294,7 +294,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deserializer.md&#34;&gt;Deserializer&lt;/a&gt;
+_Type_: List of <a href="deserializer.md">Deserializer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -302,7 +302,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serializer.md&#34;&gt;Serializer&lt;/a&gt;
+_Type_: List of <a href="serializer.md">Serializer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -310,7 +310,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hivejsonserde.md&#34;&gt;HiveJsonSerDe&lt;/a&gt;
+_Type_: List of <a href="hivejsonserde.md">HiveJsonSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -318,7 +318,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;openxjsonserde.md&#34;&gt;OpenXJsonSerDe&lt;/a&gt;
+_Type_: List of <a href="openxjsonserde.md">OpenXJsonSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -326,7 +326,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;orcserde.md&#34;&gt;OrcSerDe&lt;/a&gt;
+_Type_: List of <a href="orcserde.md">OrcSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -334,7 +334,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parquetserde.md&#34;&gt;ParquetSerDe&lt;/a&gt;
+_Type_: List of <a href="parquetserde.md">ParquetSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

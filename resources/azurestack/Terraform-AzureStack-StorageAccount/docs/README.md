@@ -22,8 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#customdomain" title="CustomDomain">CustomDomain</a>" : <i>[ &lt;a href=&#34;customdomain.md&#34;&gt;CustomDomain&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#customdomain" title="CustomDomain">CustomDomain</a>" : <i>[ <a href="customdomain.md">CustomDomain</a>, ... ]</i>
     }
 }
 </pre>
@@ -44,9 +44,9 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#customdomain" title="CustomDomain">CustomDomain</a>: <i>
-      - &lt;a href=&#34;customdomain.md&#34;&gt;CustomDomain&lt;/a&gt;</i>
+      - <a href="customdomain.md">CustomDomain</a></i>
 </pre>
 
 ## Properties
@@ -135,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customdomain.md&#34;&gt;CustomDomain&lt;/a&gt;
+_Type_: List of <a href="customdomain.md">CustomDomain</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,61 +165,61 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PrimaryAccessKey
 
-Returns the &lt;code&gt;PrimaryAccessKey&lt;/code&gt; value.
+Returns the <code>PrimaryAccessKey</code> value.
 
 #### PrimaryBlobConnectionString
 
-Returns the &lt;code&gt;PrimaryBlobConnectionString&lt;/code&gt; value.
+Returns the <code>PrimaryBlobConnectionString</code> value.
 
 #### PrimaryBlobEndpoint
 
-Returns the &lt;code&gt;PrimaryBlobEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryBlobEndpoint</code> value.
 
 #### PrimaryConnectionString
 
-Returns the &lt;code&gt;PrimaryConnectionString&lt;/code&gt; value.
+Returns the <code>PrimaryConnectionString</code> value.
 
 #### PrimaryFileEndpoint
 
-Returns the &lt;code&gt;PrimaryFileEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryFileEndpoint</code> value.
 
 #### PrimaryLocation
 
-Returns the &lt;code&gt;PrimaryLocation&lt;/code&gt; value.
+Returns the <code>PrimaryLocation</code> value.
 
 #### PrimaryQueueEndpoint
 
-Returns the &lt;code&gt;PrimaryQueueEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryQueueEndpoint</code> value.
 
 #### PrimaryTableEndpoint
 
-Returns the &lt;code&gt;PrimaryTableEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryTableEndpoint</code> value.
 
 #### SecondaryAccessKey
 
-Returns the &lt;code&gt;SecondaryAccessKey&lt;/code&gt; value.
+Returns the <code>SecondaryAccessKey</code> value.
 
 #### SecondaryBlobConnectionString
 
-Returns the &lt;code&gt;SecondaryBlobConnectionString&lt;/code&gt; value.
+Returns the <code>SecondaryBlobConnectionString</code> value.
 
 #### SecondaryBlobEndpoint
 
-Returns the &lt;code&gt;SecondaryBlobEndpoint&lt;/code&gt; value.
+Returns the <code>SecondaryBlobEndpoint</code> value.
 
 #### SecondaryConnectionString
 
-Returns the &lt;code&gt;SecondaryConnectionString&lt;/code&gt; value.
+Returns the <code>SecondaryConnectionString</code> value.
 
 #### SecondaryLocation
 
-Returns the &lt;code&gt;SecondaryLocation&lt;/code&gt; value.
+Returns the <code>SecondaryLocation</code> value.
 
 #### SecondaryQueueEndpoint
 
-Returns the &lt;code&gt;SecondaryQueueEndpoint&lt;/code&gt; value.
+Returns the <code>SecondaryQueueEndpoint</code> value.
 
 #### SecondaryTableEndpoint
 
-Returns the &lt;code&gt;SecondaryTableEndpoint&lt;/code&gt; value.
+Returns the <code>SecondaryTableEndpoint</code> value.
 

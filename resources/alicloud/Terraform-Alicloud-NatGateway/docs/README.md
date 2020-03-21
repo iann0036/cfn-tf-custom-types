@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#spec" title="Spec">Spec</a>" : <i>String</i>,
         "<a href="#specification" title="Specification">Specification</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#bandwidthpackages" title="BandwidthPackages">BandwidthPackages</a>" : <i>[ &lt;a href=&#34;bandwidthpackages.md&#34;&gt;BandwidthPackages&lt;/a&gt;, ... ]</i>
+        "<a href="#bandwidthpackages" title="BandwidthPackages">BandwidthPackages</a>" : <i>[ <a href="bandwidthpackages.md">BandwidthPackages</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Properties:
     <a href="#specification" title="Specification">Specification</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#bandwidthpackages" title="BandwidthPackages">BandwidthPackages</a>: <i>
-      - &lt;a href=&#34;bandwidthpackages.md&#34;&gt;BandwidthPackages&lt;/a&gt;</i>
+      - <a href="bandwidthpackages.md">BandwidthPackages</a></i>
 </pre>
 
 ## Properties
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bandwidthpackages.md&#34;&gt;BandwidthPackages&lt;/a&gt;
+_Type_: List of <a href="bandwidthpackages.md">BandwidthPackages</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,13 +134,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BandwidthPackageIds
 
-Returns the &lt;code&gt;BandwidthPackageIds&lt;/code&gt; value.
+Returns the <code>BandwidthPackageIds</code> value.
 
 #### ForwardTableIds
 
-Returns the &lt;code&gt;ForwardTableIds&lt;/code&gt; value.
+Returns the <code>ForwardTableIds</code> value.
 
 #### SnatTableIds
 
-Returns the &lt;code&gt;SnatTableIds&lt;/code&gt; value.
+Returns the <code>SnatTableIds</code> value.
 

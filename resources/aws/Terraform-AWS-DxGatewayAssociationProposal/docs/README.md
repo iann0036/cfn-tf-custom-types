@@ -104,9 +104,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AssociatedGatewayOwnerAccountId
 
-Returns the &lt;code&gt;AssociatedGatewayOwnerAccountId&lt;/code&gt; value.
+Returns the <code>AssociatedGatewayOwnerAccountId</code> value.
 
 #### AssociatedGatewayType
 
-Returns the &lt;code&gt;AssociatedGatewayType&lt;/code&gt; value.
+Returns the <code>AssociatedGatewayType</code> value.
 

@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#provisionendip" title="ProvisionEndIp">ProvisionEndIp</a>" : <i>String</i>,
         "<a href="#provisionstartip" title="ProvisionStartIp">ProvisionStartIp</a>" : <i>String</i>,
         "<a href="#resolvers" title="Resolvers">Resolvers</a>" : <i>[ String, ... ]</i>,
-        "<a href="#routes" title="Routes">Routes</a>" : <i>[ &lt;a href=&#34;routes.md&#34;&gt;Routes&lt;/a&gt;, ... ]</i>,
+        "<a href="#routes" title="Routes">Routes</a>" : <i>[ <a href="routes.md">Routes</a>, ... ]</i>,
         "<a href="#subnet" title="Subnet">Subnet</a>" : <i>String</i>,
         "<a href="#vlanid" title="VlanId">VlanId</a>" : <i>Double</i>
     }
@@ -42,7 +42,7 @@ Properties:
     <a href="#resolvers" title="Resolvers">Resolvers</a>: <i>
       - String</i>
     <a href="#routes" title="Routes">Routes</a>: <i>
-      - &lt;a href=&#34;routes.md&#34;&gt;Routes&lt;/a&gt;</i>
+      - <a href="routes.md">Routes</a></i>
     <a href="#subnet" title="Subnet">Subnet</a>: <i>String</i>
     <a href="#vlanid" title="VlanId">VlanId</a>: <i>Double</i>
 </pre>
@@ -117,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;routes.md&#34;&gt;Routes&lt;/a&gt;
+_Type_: List of <a href="routes.md">Routes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,9 +155,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fabric
 
-Returns the &lt;code&gt;Fabric&lt;/code&gt; value.
+Returns the <code>Fabric</code> value.
 
 #### Public
 
-Returns the &lt;code&gt;Public&lt;/code&gt; value.
+Returns the <code>Public</code> value.
 

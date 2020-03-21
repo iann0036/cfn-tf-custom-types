@@ -133,17 +133,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DatastoreName
 
-Returns the &lt;code&gt;DatastoreName&lt;/code&gt; value.
+Returns the <code>DatastoreName</code> value.
 
 #### Iops
 
-Returns the &lt;code&gt;Iops&lt;/code&gt; value.
+Returns the <code>Iops</code> value.
 
 #### IsAttached
 
-Returns the &lt;code&gt;IsAttached&lt;/code&gt; value.
+Returns the <code>IsAttached</code> value.
 
 #### OwnerName
 
-Returns the &lt;code&gt;OwnerName&lt;/code&gt; value.
+Returns the <code>OwnerName</code> value.
 

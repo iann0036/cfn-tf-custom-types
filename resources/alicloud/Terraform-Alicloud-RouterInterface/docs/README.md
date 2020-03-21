@@ -173,21 +173,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessPointId
 
-Returns the &lt;code&gt;AccessPointId&lt;/code&gt; value.
+Returns the <code>AccessPointId</code> value.
 
 #### OppositeInterfaceId
 
-Returns the &lt;code&gt;OppositeInterfaceId&lt;/code&gt; value.
+Returns the <code>OppositeInterfaceId</code> value.
 
 #### OppositeInterfaceOwnerId
 
-Returns the &lt;code&gt;OppositeInterfaceOwnerId&lt;/code&gt; value.
+Returns the <code>OppositeInterfaceOwnerId</code> value.
 
 #### OppositeRouterId
 
-Returns the &lt;code&gt;OppositeRouterId&lt;/code&gt; value.
+Returns the <code>OppositeRouterId</code> value.
 
 #### OppositeRouterType
 
-Returns the &lt;code&gt;OppositeRouterType&lt;/code&gt; value.
+Returns the <code>OppositeRouterType</code> value.
 

@@ -263,5 +263,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ProxyPasswordEnc
 
-Returns the &lt;code&gt;ProxyPasswordEnc&lt;/code&gt; value.
+Returns the <code>ProxyPasswordEnc</code> value.
 

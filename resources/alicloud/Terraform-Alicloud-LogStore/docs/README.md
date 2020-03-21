@@ -133,5 +133,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Shards
 
-Returns the &lt;code&gt;Shards&lt;/code&gt; value.
+Returns the <code>Shards</code> value.
 

@@ -32,7 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tcpdrainingtimeout" title="TcpDrainingTimeout">TcpDrainingTimeout</a>" : <i>Double</i>,
         "<a href="#tcptimeout" title="TcpTimeout">TcpTimeout</a>" : <i>Double</i>,
         "<a href="#udptimeout" title="UdpTimeout">UdpTimeout</a>" : <i>Double</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -63,7 +63,7 @@ Properties:
     <a href="#tcpdrainingtimeout" title="TcpDrainingTimeout">TcpDrainingTimeout</a>: <i>Double</i>
     <a href="#tcptimeout" title="TcpTimeout">TcpTimeout</a>: <i>Double</i>
     <a href="#udptimeout" title="UdpTimeout">UdpTimeout</a>: <i>Double</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -232,7 +232,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -254,25 +254,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AdminStateUp
 
-Returns the &lt;code&gt;AdminStateUp&lt;/code&gt; value.
+Returns the <code>AdminStateUp</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### HealthcheckId
 
-Returns the &lt;code&gt;HealthcheckId&lt;/code&gt; value.
+Returns the <code>HealthcheckId</code> value.
 
 #### MemberNumber
 
-Returns the &lt;code&gt;MemberNumber&lt;/code&gt; value.
+Returns the <code>MemberNumber</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdateTime
 
-Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
+Returns the <code>UpdateTime</code> value.
 

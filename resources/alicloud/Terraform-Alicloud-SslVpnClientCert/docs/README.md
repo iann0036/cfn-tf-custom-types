@@ -73,21 +73,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CaCert
 
-Returns the &lt;code&gt;CaCert&lt;/code&gt; value.
+Returns the <code>CaCert</code> value.
 
 #### ClientCert
 
-Returns the &lt;code&gt;ClientCert&lt;/code&gt; value.
+Returns the <code>ClientCert</code> value.
 
 #### ClientConfig
 
-Returns the &lt;code&gt;ClientConfig&lt;/code&gt; value.
+Returns the <code>ClientConfig</code> value.
 
 #### ClientKey
 
-Returns the &lt;code&gt;ClientKey&lt;/code&gt; value.
+Returns the <code>ClientKey</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

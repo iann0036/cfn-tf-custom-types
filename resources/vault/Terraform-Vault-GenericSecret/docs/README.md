@@ -93,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Data
 
-Returns the &lt;code&gt;Data&lt;/code&gt; value.
+Returns the <code>Data</code> value.
 

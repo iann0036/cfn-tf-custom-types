@@ -14,9 +14,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#negatetarget" title="NegateTarget">NegateTarget</a>" : <i>Boolean</i>,
     "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#originalpacket" title="OriginalPacket">OriginalPacket</a>" : <i>[ &lt;a href=&#34;rule-originalpacket.md&#34;&gt;OriginalPacket&lt;/a&gt;, ... ]</i>,
-    "<a href="#target" title="Target">Target</a>" : <i>[ &lt;a href=&#34;rule-target.md&#34;&gt;Target&lt;/a&gt;, ... ]</i>,
-    "<a href="#translatedpacket" title="TranslatedPacket">TranslatedPacket</a>" : <i>[ &lt;a href=&#34;rule-translatedpacket.md&#34;&gt;TranslatedPacket&lt;/a&gt;, ... ]</i>
+    "<a href="#originalpacket" title="OriginalPacket">OriginalPacket</a>" : <i>[ <a href="rule-originalpacket.md">OriginalPacket</a>, ... ]</i>,
+    "<a href="#target" title="Target">Target</a>" : <i>[ <a href="rule-target.md">Target</a>, ... ]</i>,
+    "<a href="#translatedpacket" title="TranslatedPacket">TranslatedPacket</a>" : <i>[ <a href="rule-translatedpacket.md">TranslatedPacket</a>, ... ]</i>
 }
 </pre>
 
@@ -31,11 +31,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#originalpacket" title="OriginalPacket">OriginalPacket</a>: <i>
-      - &lt;a href=&#34;rule-originalpacket.md&#34;&gt;OriginalPacket&lt;/a&gt;</i>
+      - <a href="rule-originalpacket.md">OriginalPacket</a></i>
 <a href="#target" title="Target">Target</a>: <i>
-      - &lt;a href=&#34;rule-target.md&#34;&gt;Target&lt;/a&gt;</i>
+      - <a href="rule-target.md">Target</a></i>
 <a href="#translatedpacket" title="TranslatedPacket">TranslatedPacket</a>: <i>
-      - &lt;a href=&#34;rule-translatedpacket.md&#34;&gt;TranslatedPacket&lt;/a&gt;</i>
+      - <a href="rule-translatedpacket.md">TranslatedPacket</a></i>
 </pre>
 
 ## Properties
@@ -85,21 +85,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OriginalPacket
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-originalpacket.md&#34;&gt;OriginalPacket&lt;/a&gt;
+_Type_: List of <a href="rule-originalpacket.md">OriginalPacket</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Target
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-target.md&#34;&gt;Target&lt;/a&gt;
+_Type_: List of <a href="rule-target.md">Target</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TranslatedPacket
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-translatedpacket.md&#34;&gt;TranslatedPacket&lt;/a&gt;
+_Type_: List of <a href="rule-translatedpacket.md">TranslatedPacket</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

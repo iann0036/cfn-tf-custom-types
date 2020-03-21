@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#force" title="Force">Force</a>" : <i>Boolean</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#scalinggroupid" title="ScalingGroupId">ScalingGroupId</a>" : <i>String</i>,
-        "<a href="#vservergroups" title="VserverGroups">VserverGroups</a>" : <i>[ &lt;a href=&#34;vservergroups.md&#34;&gt;VserverGroups&lt;/a&gt;, ... ]</i>,
-        "<a href="#vserverattributes" title="VserverAttributes">VserverAttributes</a>" : <i>[ &lt;a href=&#34;vserverattributes.md&#34;&gt;VserverAttributes&lt;/a&gt;, ... ]</i>
+        "<a href="#vservergroups" title="VserverGroups">VserverGroups</a>" : <i>[ <a href="vservergroups.md">VserverGroups</a>, ... ]</i>,
+        "<a href="#vserverattributes" title="VserverAttributes">VserverAttributes</a>" : <i>[ <a href="vserverattributes.md">VserverAttributes</a>, ... ]</i>
     }
 }
 </pre>
@@ -30,9 +30,9 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#scalinggroupid" title="ScalingGroupId">ScalingGroupId</a>: <i>String</i>
     <a href="#vservergroups" title="VserverGroups">VserverGroups</a>: <i>
-      - &lt;a href=&#34;vservergroups.md&#34;&gt;VserverGroups&lt;/a&gt;</i>
+      - <a href="vservergroups.md">VserverGroups</a></i>
     <a href="#vserverattributes" title="VserverAttributes">VserverAttributes</a>: <i>
-      - &lt;a href=&#34;vserverattributes.md&#34;&gt;VserverAttributes&lt;/a&gt;</i>
+      - <a href="vserverattributes.md">VserverAttributes</a></i>
 </pre>
 
 ## Properties
@@ -65,7 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vservergroups.md&#34;&gt;VserverGroups&lt;/a&gt;
+_Type_: List of <a href="vservergroups.md">VserverGroups</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,7 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vserverattributes.md&#34;&gt;VserverAttributes&lt;/a&gt;
+_Type_: List of <a href="vserverattributes.md">VserverAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

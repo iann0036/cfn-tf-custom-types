@@ -53,5 +53,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PublicKey
 
-Returns the &lt;code&gt;PublicKey&lt;/code&gt; value.
+Returns the <code>PublicKey</code> value.
 

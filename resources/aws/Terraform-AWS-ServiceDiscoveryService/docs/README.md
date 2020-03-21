@@ -16,10 +16,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#namespaceid" title="NamespaceId">NamespaceId</a>" : <i>String</i>,
-        "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ &lt;a href=&#34;dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#healthcheckconfig" title="HealthCheckConfig">HealthCheckConfig</a>" : <i>[ &lt;a href=&#34;healthcheckconfig.md&#34;&gt;HealthCheckConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#healthcheckcustomconfig" title="HealthCheckCustomConfig">HealthCheckCustomConfig</a>" : <i>[ &lt;a href=&#34;healthcheckcustomconfig.md&#34;&gt;HealthCheckCustomConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#dnsrecords" title="DnsRecords">DnsRecords</a>" : <i>[ &lt;a href=&#34;dnsrecords.md&#34;&gt;DnsRecords&lt;/a&gt;, ... ]</i>
+        "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ <a href="dnsconfig.md">DnsConfig</a>, ... ]</i>,
+        "<a href="#healthcheckconfig" title="HealthCheckConfig">HealthCheckConfig</a>" : <i>[ <a href="healthcheckconfig.md">HealthCheckConfig</a>, ... ]</i>,
+        "<a href="#healthcheckcustomconfig" title="HealthCheckCustomConfig">HealthCheckCustomConfig</a>" : <i>[ <a href="healthcheckcustomconfig.md">HealthCheckCustomConfig</a>, ... ]</i>,
+        "<a href="#dnsrecords" title="DnsRecords">DnsRecords</a>" : <i>[ <a href="dnsrecords.md">DnsRecords</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,13 +34,13 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#namespaceid" title="NamespaceId">NamespaceId</a>: <i>String</i>
     <a href="#dnsconfig" title="DnsConfig">DnsConfig</a>: <i>
-      - &lt;a href=&#34;dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;</i>
+      - <a href="dnsconfig.md">DnsConfig</a></i>
     <a href="#healthcheckconfig" title="HealthCheckConfig">HealthCheckConfig</a>: <i>
-      - &lt;a href=&#34;healthcheckconfig.md&#34;&gt;HealthCheckConfig&lt;/a&gt;</i>
+      - <a href="healthcheckconfig.md">HealthCheckConfig</a></i>
     <a href="#healthcheckcustomconfig" title="HealthCheckCustomConfig">HealthCheckCustomConfig</a>: <i>
-      - &lt;a href=&#34;healthcheckcustomconfig.md&#34;&gt;HealthCheckCustomConfig&lt;/a&gt;</i>
+      - <a href="healthcheckcustomconfig.md">HealthCheckCustomConfig</a></i>
     <a href="#dnsrecords" title="DnsRecords">DnsRecords</a>: <i>
-      - &lt;a href=&#34;dnsrecords.md&#34;&gt;DnsRecords&lt;/a&gt;</i>
+      - <a href="dnsrecords.md">DnsRecords</a></i>
 </pre>
 
 ## Properties
@@ -81,7 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;
+_Type_: List of <a href="dnsconfig.md">DnsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -89,7 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheckconfig.md&#34;&gt;HealthCheckConfig&lt;/a&gt;
+_Type_: List of <a href="healthcheckconfig.md">HealthCheckConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -97,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheckcustomconfig.md&#34;&gt;HealthCheckCustomConfig&lt;/a&gt;
+_Type_: List of <a href="healthcheckcustomconfig.md">HealthCheckCustomConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dnsrecords.md&#34;&gt;DnsRecords&lt;/a&gt;
+_Type_: List of <a href="dnsrecords.md">DnsRecords</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,5 +127,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

@@ -103,29 +103,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ErrorReason
 
-Returns the &lt;code&gt;ErrorReason&lt;/code&gt; value.
+Returns the <code>ErrorReason</code> value.
 
 #### Hypervisor
 
-Returns the &lt;code&gt;Hypervisor&lt;/code&gt; value.
+Returns the <code>Hypervisor</code> value.
 
 #### ImageFormat
 
-Returns the &lt;code&gt;ImageFormat&lt;/code&gt; value.
+Returns the <code>ImageFormat</code> value.
 
 #### NoUpload
 
-Returns the &lt;code&gt;NoUpload&lt;/code&gt; value.
+Returns the <code>NoUpload</code> value.
 
 #### Platform
 
-Returns the &lt;code&gt;Platform&lt;/code&gt; value.
+Returns the <code>Platform</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

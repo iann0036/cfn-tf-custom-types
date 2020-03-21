@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#label" title="Label">Label</a>" : <i>String</i>,
         "<a href="#revnote" title="RevNote">RevNote</a>" : <i>String</i>,
         "<a href="#script" title="Script">Script</a>" : <i>String</i>,
-        "<a href="#userdefinedfields" title="UserDefinedFields">UserDefinedFields</a>" : <i>[ &lt;a href=&#34;userdefinedfields.md&#34;&gt;UserDefinedFields&lt;/a&gt;, ... ]</i>,
+        "<a href="#userdefinedfields" title="UserDefinedFields">UserDefinedFields</a>" : <i>[ <a href="userdefinedfields.md">UserDefinedFields</a>, ... ]</i>,
     }
 }
 </pre>
@@ -38,7 +38,7 @@ Properties:
     <a href="#revnote" title="RevNote">RevNote</a>: <i>String</i>
     <a href="#script" title="Script">Script</a>: <i>String</i>
     <a href="#userdefinedfields" title="UserDefinedFields">UserDefinedFields</a>: <i>
-      - &lt;a href=&#34;userdefinedfields.md&#34;&gt;UserDefinedFields&lt;/a&gt;</i>
+      - <a href="userdefinedfields.md">UserDefinedFields</a></i>
 </pre>
 
 ## Properties
@@ -103,7 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;userdefinedfields.md&#34;&gt;UserDefinedFields&lt;/a&gt;
+_Type_: List of <a href="userdefinedfields.md">UserDefinedFields</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,25 +125,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### DeploymentsActive
 
-Returns the &lt;code&gt;DeploymentsActive&lt;/code&gt; value.
+Returns the <code>DeploymentsActive</code> value.
 
 #### DeploymentsTotal
 
-Returns the &lt;code&gt;DeploymentsTotal&lt;/code&gt; value.
+Returns the <code>DeploymentsTotal</code> value.
 
 #### Updated
 
-Returns the &lt;code&gt;Updated&lt;/code&gt; value.
+Returns the <code>Updated</code> value.
 
 #### UserGravatarId
 
-Returns the &lt;code&gt;UserGravatarId&lt;/code&gt; value.
+Returns the <code>UserGravatarId</code> value.
 
 #### Username
 
-Returns the &lt;code&gt;Username&lt;/code&gt; value.
+Returns the <code>Username</code> value.
 

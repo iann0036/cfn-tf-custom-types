@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#cpureservation" title="CpuReservation">CpuReservation</a>" : <i>Double</i>,
         "<a href="#cpusharelevel" title="CpuShareLevel">CpuShareLevel</a>" : <i>String</i>,
         "<a href="#cpushares" title="CpuShares">CpuShares</a>" : <i>Double</i>,
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#memoryexpandable" title="MemoryExpandable">MemoryExpandable</a>" : <i>Boolean</i>,
         "<a href="#memorylimit" title="MemoryLimit">MemoryLimit</a>" : <i>Double</i>,
@@ -42,7 +42,7 @@ Properties:
     <a href="#cpusharelevel" title="CpuShareLevel">CpuShareLevel</a>: <i>String</i>
     <a href="#cpushares" title="CpuShares">CpuShares</a>: <i>Double</i>
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+      - <a href="customattributes.md">CustomAttributes</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#memoryexpandable" title="MemoryExpandable">MemoryExpandable</a>: <i>Boolean</i>
     <a href="#memorylimit" title="MemoryLimit">MemoryLimit</a>: <i>Double</i>
@@ -101,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+_Type_: List of <a href="customattributes.md">CustomAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

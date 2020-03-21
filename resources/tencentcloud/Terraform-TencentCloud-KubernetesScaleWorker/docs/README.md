@@ -14,8 +14,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#clusterid" title="ClusterId">ClusterId</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>" : <i>[ &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;, ... ]</i>
+        "<a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>" : <i>[ <a href="workerconfig.md">WorkerConfig</a>, ... ]</i>,
+        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ <a href="datadisk.md">DataDisk</a>, ... ]</i>
     }
 }
 </pre>
@@ -28,9 +28,9 @@ Properties:
     <a href="#clusterid" title="ClusterId">ClusterId</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>: <i>
-      - &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;</i>
+      - <a href="workerconfig.md">WorkerConfig</a></i>
     <a href="#datadisk" title="DataDisk">DataDisk</a>: <i>
-      - &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;</i>
+      - <a href="datadisk.md">DataDisk</a></i>
 </pre>
 
 ## Properties
@@ -55,7 +55,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;
+_Type_: List of <a href="workerconfig.md">WorkerConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -63,7 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;
+_Type_: List of <a href="datadisk.md">DataDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -85,5 +85,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### WorkerInstancesList
 
-Returns the &lt;code&gt;WorkerInstancesList&lt;/code&gt; value.
+Returns the <code>WorkerInstancesList</code> value.
 

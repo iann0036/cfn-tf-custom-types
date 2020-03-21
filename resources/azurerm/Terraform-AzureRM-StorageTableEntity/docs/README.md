@@ -12,13 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::StorageTableEntity",
     "Properties" : {
-        "<a href="#entity" title="Entity">Entity</a>" : <i>[ &lt;a href=&#34;entity.md&#34;&gt;Entity&lt;/a&gt;, ... ]</i>,
+        "<a href="#entity" title="Entity">Entity</a>" : <i>[ <a href="entity.md">Entity</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#partitionkey" title="PartitionKey">PartitionKey</a>" : <i>String</i>,
         "<a href="#rowkey" title="RowKey">RowKey</a>" : <i>String</i>,
         "<a href="#storageaccountname" title="StorageAccountName">StorageAccountName</a>" : <i>String</i>,
         "<a href="#tablename" title="TableName">TableName</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -29,13 +29,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::AzureRM::StorageTableEntity
 Properties:
     <a href="#entity" title="Entity">Entity</a>: <i>
-      - &lt;a href=&#34;entity.md&#34;&gt;Entity&lt;/a&gt;</i>
+      - <a href="entity.md">Entity</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#partitionkey" title="PartitionKey">PartitionKey</a>: <i>String</i>
     <a href="#rowkey" title="RowKey">RowKey</a>: <i>String</i>
     <a href="#storageaccountname" title="StorageAccountName">StorageAccountName</a>: <i>String</i>
     <a href="#tablename" title="TableName">TableName</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -44,7 +44,7 @@ Properties:
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;entity.md&#34;&gt;Entity&lt;/a&gt;
+_Type_: List of <a href="entity.md">Entity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -92,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

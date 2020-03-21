@@ -15,10 +15,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#computeplatform" title="ComputePlatform">ComputePlatform</a>" : <i>String</i>,
         "<a href="#deploymentconfigname" title="DeploymentConfigName">DeploymentConfigName</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#minimumhealthyhosts" title="MinimumHealthyHosts">MinimumHealthyHosts</a>" : <i>[ &lt;a href=&#34;minimumhealthyhosts.md&#34;&gt;MinimumHealthyHosts&lt;/a&gt;, ... ]</i>,
-        "<a href="#trafficroutingconfig" title="TrafficRoutingConfig">TrafficRoutingConfig</a>" : <i>[ &lt;a href=&#34;trafficroutingconfig.md&#34;&gt;TrafficRoutingConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timebasedcanary" title="TimeBasedCanary">TimeBasedCanary</a>" : <i>[ &lt;a href=&#34;timebasedcanary.md&#34;&gt;TimeBasedCanary&lt;/a&gt;, ... ]</i>,
-        "<a href="#timebasedlinear" title="TimeBasedLinear">TimeBasedLinear</a>" : <i>[ &lt;a href=&#34;timebasedlinear.md&#34;&gt;TimeBasedLinear&lt;/a&gt;, ... ]</i>
+        "<a href="#minimumhealthyhosts" title="MinimumHealthyHosts">MinimumHealthyHosts</a>" : <i>[ <a href="minimumhealthyhosts.md">MinimumHealthyHosts</a>, ... ]</i>,
+        "<a href="#trafficroutingconfig" title="TrafficRoutingConfig">TrafficRoutingConfig</a>" : <i>[ <a href="trafficroutingconfig.md">TrafficRoutingConfig</a>, ... ]</i>,
+        "<a href="#timebasedcanary" title="TimeBasedCanary">TimeBasedCanary</a>" : <i>[ <a href="timebasedcanary.md">TimeBasedCanary</a>, ... ]</i>,
+        "<a href="#timebasedlinear" title="TimeBasedLinear">TimeBasedLinear</a>" : <i>[ <a href="timebasedlinear.md">TimeBasedLinear</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,13 +32,13 @@ Properties:
     <a href="#deploymentconfigname" title="DeploymentConfigName">DeploymentConfigName</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#minimumhealthyhosts" title="MinimumHealthyHosts">MinimumHealthyHosts</a>: <i>
-      - &lt;a href=&#34;minimumhealthyhosts.md&#34;&gt;MinimumHealthyHosts&lt;/a&gt;</i>
+      - <a href="minimumhealthyhosts.md">MinimumHealthyHosts</a></i>
     <a href="#trafficroutingconfig" title="TrafficRoutingConfig">TrafficRoutingConfig</a>: <i>
-      - &lt;a href=&#34;trafficroutingconfig.md&#34;&gt;TrafficRoutingConfig&lt;/a&gt;</i>
+      - <a href="trafficroutingconfig.md">TrafficRoutingConfig</a></i>
     <a href="#timebasedcanary" title="TimeBasedCanary">TimeBasedCanary</a>: <i>
-      - &lt;a href=&#34;timebasedcanary.md&#34;&gt;TimeBasedCanary&lt;/a&gt;</i>
+      - <a href="timebasedcanary.md">TimeBasedCanary</a></i>
     <a href="#timebasedlinear" title="TimeBasedLinear">TimeBasedLinear</a>: <i>
-      - &lt;a href=&#34;timebasedlinear.md&#34;&gt;TimeBasedLinear&lt;/a&gt;</i>
+      - <a href="timebasedlinear.md">TimeBasedLinear</a></i>
 </pre>
 
 ## Properties
@@ -71,7 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;minimumhealthyhosts.md&#34;&gt;MinimumHealthyHosts&lt;/a&gt;
+_Type_: List of <a href="minimumhealthyhosts.md">MinimumHealthyHosts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -79,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;trafficroutingconfig.md&#34;&gt;TrafficRoutingConfig&lt;/a&gt;
+_Type_: List of <a href="trafficroutingconfig.md">TrafficRoutingConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -87,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;timebasedcanary.md&#34;&gt;TimeBasedCanary&lt;/a&gt;
+_Type_: List of <a href="timebasedcanary.md">TimeBasedCanary</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;timebasedlinear.md&#34;&gt;TimeBasedLinear&lt;/a&gt;
+_Type_: List of <a href="timebasedlinear.md">TimeBasedLinear</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,5 +117,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DeploymentConfigId
 
-Returns the &lt;code&gt;DeploymentConfigId&lt;/code&gt; value.
+Returns the <code>DeploymentConfigId</code> value.
 

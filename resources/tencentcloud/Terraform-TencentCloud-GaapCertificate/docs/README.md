@@ -93,21 +93,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BeginTime
 
-Returns the &lt;code&gt;BeginTime&lt;/code&gt; value.
+Returns the <code>BeginTime</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### EndTime
 
-Returns the &lt;code&gt;EndTime&lt;/code&gt; value.
+Returns the <code>EndTime</code> value.
 
 #### IssuerCn
 
-Returns the &lt;code&gt;IssuerCn&lt;/code&gt; value.
+Returns the <code>IssuerCn</code> value.
 
 #### SubjectCn
 
-Returns the &lt;code&gt;SubjectCn&lt;/code&gt; value.
+Returns the <code>SubjectCn</code> value.
 

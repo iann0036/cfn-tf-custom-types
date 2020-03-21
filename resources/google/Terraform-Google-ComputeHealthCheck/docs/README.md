@@ -20,12 +20,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#timeoutsec" title="TimeoutSec">TimeoutSec</a>" : <i>Double</i>,
         "<a href="#unhealthythreshold" title="UnhealthyThreshold">UnhealthyThreshold</a>" : <i>Double</i>,
-        "<a href="#http2healthcheck" title="Http2HealthCheck">Http2HealthCheck</a>" : <i>[ &lt;a href=&#34;http2healthcheck.md&#34;&gt;Http2HealthCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#httphealthcheck" title="HttpHealthCheck">HttpHealthCheck</a>" : <i>[ &lt;a href=&#34;httphealthcheck.md&#34;&gt;HttpHealthCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpshealthcheck" title="HttpsHealthCheck">HttpsHealthCheck</a>" : <i>[ &lt;a href=&#34;httpshealthcheck.md&#34;&gt;HttpsHealthCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#sslhealthcheck" title="SslHealthCheck">SslHealthCheck</a>" : <i>[ &lt;a href=&#34;sslhealthcheck.md&#34;&gt;SslHealthCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#tcphealthcheck" title="TcpHealthCheck">TcpHealthCheck</a>" : <i>[ &lt;a href=&#34;tcphealthcheck.md&#34;&gt;TcpHealthCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#http2healthcheck" title="Http2HealthCheck">Http2HealthCheck</a>" : <i>[ <a href="http2healthcheck.md">Http2HealthCheck</a>, ... ]</i>,
+        "<a href="#httphealthcheck" title="HttpHealthCheck">HttpHealthCheck</a>" : <i>[ <a href="httphealthcheck.md">HttpHealthCheck</a>, ... ]</i>,
+        "<a href="#httpshealthcheck" title="HttpsHealthCheck">HttpsHealthCheck</a>" : <i>[ <a href="httpshealthcheck.md">HttpsHealthCheck</a>, ... ]</i>,
+        "<a href="#sslhealthcheck" title="SslHealthCheck">SslHealthCheck</a>" : <i>[ <a href="sslhealthcheck.md">SslHealthCheck</a>, ... ]</i>,
+        "<a href="#tcphealthcheck" title="TcpHealthCheck">TcpHealthCheck</a>" : <i>[ <a href="tcphealthcheck.md">TcpHealthCheck</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -44,16 +44,16 @@ Properties:
     <a href="#timeoutsec" title="TimeoutSec">TimeoutSec</a>: <i>Double</i>
     <a href="#unhealthythreshold" title="UnhealthyThreshold">UnhealthyThreshold</a>: <i>Double</i>
     <a href="#http2healthcheck" title="Http2HealthCheck">Http2HealthCheck</a>: <i>
-      - &lt;a href=&#34;http2healthcheck.md&#34;&gt;Http2HealthCheck&lt;/a&gt;</i>
+      - <a href="http2healthcheck.md">Http2HealthCheck</a></i>
     <a href="#httphealthcheck" title="HttpHealthCheck">HttpHealthCheck</a>: <i>
-      - &lt;a href=&#34;httphealthcheck.md&#34;&gt;HttpHealthCheck&lt;/a&gt;</i>
+      - <a href="httphealthcheck.md">HttpHealthCheck</a></i>
     <a href="#httpshealthcheck" title="HttpsHealthCheck">HttpsHealthCheck</a>: <i>
-      - &lt;a href=&#34;httpshealthcheck.md&#34;&gt;HttpsHealthCheck&lt;/a&gt;</i>
+      - <a href="httpshealthcheck.md">HttpsHealthCheck</a></i>
     <a href="#sslhealthcheck" title="SslHealthCheck">SslHealthCheck</a>: <i>
-      - &lt;a href=&#34;sslhealthcheck.md&#34;&gt;SslHealthCheck&lt;/a&gt;</i>
+      - <a href="sslhealthcheck.md">SslHealthCheck</a></i>
     <a href="#tcphealthcheck" title="TcpHealthCheck">TcpHealthCheck</a>: <i>
-      - &lt;a href=&#34;tcphealthcheck.md&#34;&gt;TcpHealthCheck&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="tcphealthcheck.md">TcpHealthCheck</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;http2healthcheck.md&#34;&gt;Http2HealthCheck&lt;/a&gt;
+_Type_: List of <a href="http2healthcheck.md">Http2HealthCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httphealthcheck.md&#34;&gt;HttpHealthCheck&lt;/a&gt;
+_Type_: List of <a href="httphealthcheck.md">HttpHealthCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -142,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpshealthcheck.md&#34;&gt;HttpsHealthCheck&lt;/a&gt;
+_Type_: List of <a href="httpshealthcheck.md">HttpsHealthCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -150,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sslhealthcheck.md&#34;&gt;SslHealthCheck&lt;/a&gt;
+_Type_: List of <a href="sslhealthcheck.md">SslHealthCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tcphealthcheck.md&#34;&gt;TcpHealthCheck&lt;/a&gt;
+_Type_: List of <a href="tcphealthcheck.md">TcpHealthCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,13 +188,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTimestamp
 
-Returns the &lt;code&gt;CreationTimestamp&lt;/code&gt; value.
+Returns the <code>CreationTimestamp</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 

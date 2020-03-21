@@ -30,11 +30,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ignoreclustercidrconflict" title="IgnoreClusterCidrConflict">IgnoreClusterCidrConflict</a>" : <i>Boolean</i>,
         "<a href="#managedclusterinternetsecuritypolicies" title="ManagedClusterInternetSecurityPolicies">ManagedClusterInternetSecurityPolicies</a>" : <i>[ String, ... ]</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#masterconfig" title="MasterConfig">MasterConfig</a>" : <i>[ &lt;a href=&#34;masterconfig.md&#34;&gt;MasterConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>" : <i>[ &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;, ... ]</i>
+        "<a href="#masterconfig" title="MasterConfig">MasterConfig</a>" : <i>[ <a href="masterconfig.md">MasterConfig</a>, ... ]</i>,
+        "<a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>" : <i>[ <a href="workerconfig.md">WorkerConfig</a>, ... ]</i>,
+        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ <a href="datadisk.md">DataDisk</a>, ... ]</i>
     }
 }
 </pre>
@@ -64,14 +64,14 @@ Properties:
       - String</i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#masterconfig" title="MasterConfig">MasterConfig</a>: <i>
-      - &lt;a href=&#34;masterconfig.md&#34;&gt;MasterConfig&lt;/a&gt;</i>
+      - <a href="masterconfig.md">MasterConfig</a></i>
     <a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>: <i>
-      - &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;</i>
+      - <a href="workerconfig.md">WorkerConfig</a></i>
     <a href="#datadisk" title="DataDisk">DataDisk</a>: <i>
-      - &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;</i>
+      - <a href="datadisk.md">DataDisk</a></i>
 </pre>
 
 ## Properties
@@ -224,7 +224,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -240,7 +240,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;masterconfig.md&#34;&gt;MasterConfig&lt;/a&gt;
+_Type_: List of <a href="masterconfig.md">MasterConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -248,7 +248,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;
+_Type_: List of <a href="workerconfig.md">WorkerConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -256,7 +256,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;
+_Type_: List of <a href="datadisk.md">DataDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -278,37 +278,37 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CertificationAuthority
 
-Returns the &lt;code&gt;CertificationAuthority&lt;/code&gt; value.
+Returns the <code>CertificationAuthority</code> value.
 
 #### ClusterExternalEndpoint
 
-Returns the &lt;code&gt;ClusterExternalEndpoint&lt;/code&gt; value.
+Returns the <code>ClusterExternalEndpoint</code> value.
 
 #### ClusterNodeNum
 
-Returns the &lt;code&gt;ClusterNodeNum&lt;/code&gt; value.
+Returns the <code>ClusterNodeNum</code> value.
 
 #### Domain
 
-Returns the &lt;code&gt;Domain&lt;/code&gt; value.
+Returns the <code>Domain</code> value.
 
 #### Password
 
-Returns the &lt;code&gt;Password&lt;/code&gt; value.
+Returns the <code>Password</code> value.
 
 #### PgwEndpoint
 
-Returns the &lt;code&gt;PgwEndpoint&lt;/code&gt; value.
+Returns the <code>PgwEndpoint</code> value.
 
 #### SecurityPolicy
 
-Returns the &lt;code&gt;SecurityPolicy&lt;/code&gt; value.
+Returns the <code>SecurityPolicy</code> value.
 
 #### UserName
 
-Returns the &lt;code&gt;UserName&lt;/code&gt; value.
+Returns the <code>UserName</code> value.
 
 #### WorkerInstancesList
 
-Returns the &lt;code&gt;WorkerInstancesList&lt;/code&gt; value.
+Returns the <code>WorkerInstancesList</code> value.
 

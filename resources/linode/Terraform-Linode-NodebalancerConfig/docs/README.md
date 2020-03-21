@@ -203,13 +203,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NodeStatus
 
-Returns the &lt;code&gt;NodeStatus&lt;/code&gt; value.
+Returns the <code>NodeStatus</code> value.
 
 #### SslCommonname
 
-Returns the &lt;code&gt;SslCommonname&lt;/code&gt; value.
+Returns the <code>SslCommonname</code> value.
 
 #### SslFingerprint
 
-Returns the &lt;code&gt;SslFingerprint&lt;/code&gt; value.
+Returns the <code>SslFingerprint</code> value.
 

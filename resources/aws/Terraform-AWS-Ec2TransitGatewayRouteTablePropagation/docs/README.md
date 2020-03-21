@@ -73,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ResourceId
 
-Returns the &lt;code&gt;ResourceId&lt;/code&gt; value.
+Returns the <code>ResourceId</code> value.
 
 #### ResourceType
 
-Returns the &lt;code&gt;ResourceType&lt;/code&gt; value.
+Returns the <code>ResourceType</code> value.
 

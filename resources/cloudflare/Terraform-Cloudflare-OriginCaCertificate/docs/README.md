@@ -94,9 +94,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Certificate
 
-Returns the &lt;code&gt;Certificate&lt;/code&gt; value.
+Returns the <code>Certificate</code> value.
 
 #### ExpiresOn
 
-Returns the &lt;code&gt;ExpiresOn&lt;/code&gt; value.
+Returns the <code>ExpiresOn</code> value.
 

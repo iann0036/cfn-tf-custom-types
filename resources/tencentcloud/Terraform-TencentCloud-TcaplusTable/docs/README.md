@@ -153,17 +153,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### Error
 
-Returns the &lt;code&gt;Error&lt;/code&gt; value.
+Returns the <code>Error</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### TableSize
 
-Returns the &lt;code&gt;TableSize&lt;/code&gt; value.
+Returns the <code>TableSize</code> value.
 

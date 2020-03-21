@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#netmask" title="Netmask">Netmask</a>" : <i>String</i>,
     "<a href="#networktype" title="NetworkType">NetworkType</a>" : <i>String</i>,
     "<a href="#vlanid" title="VlanId">VlanId</a>" : <i>String</i>,
-    "<a href="#nodes" title="Nodes">Nodes</a>" : <i>[ &lt;a href=&#34;vmnetworks-nodes.md&#34;&gt;Nodes&lt;/a&gt;, ... ]</i>
+    "<a href="#nodes" title="Nodes">Nodes</a>" : <i>[ <a href="vmnetworks-nodes.md">Nodes</a>, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#networktype" title="NetworkType">NetworkType</a>: <i>String</i>
 <a href="#vlanid" title="VlanId">VlanId</a>: <i>String</i>
 <a href="#nodes" title="Nodes">Nodes</a>: <i>
-      - &lt;a href=&#34;vmnetworks-nodes.md&#34;&gt;Nodes&lt;/a&gt;</i>
+      - <a href="vmnetworks-nodes.md">Nodes</a></i>
 </pre>
 
 ## Properties
@@ -69,7 +69,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Nodes
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;vmnetworks-nodes.md&#34;&gt;Nodes&lt;/a&gt;
+_Type_: List of <a href="vmnetworks-nodes.md">Nodes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

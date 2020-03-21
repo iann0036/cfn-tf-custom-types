@@ -73,21 +73,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### DiskType
 
-Returns the &lt;code&gt;DiskType&lt;/code&gt; value.
+Returns the <code>DiskType</code> value.
 
 #### Percent
 
-Returns the &lt;code&gt;Percent&lt;/code&gt; value.
+Returns the <code>Percent</code> value.
 
 #### SnapshotStatus
 
-Returns the &lt;code&gt;SnapshotStatus&lt;/code&gt; value.
+Returns the <code>SnapshotStatus</code> value.
 
 #### StorageSize
 
-Returns the &lt;code&gt;StorageSize&lt;/code&gt; value.
+Returns the <code>StorageSize</code> value.
 

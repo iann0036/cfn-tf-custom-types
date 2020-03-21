@@ -123,5 +123,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ForwardEntryId
 
-Returns the &lt;code&gt;ForwardEntryId&lt;/code&gt; value.
+Returns the <code>ForwardEntryId</code> value.
 

@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>" : <i>String</i>,
         "<a href="#snapshotid" title="SnapshotId">SnapshotId</a>" : <i>String</i>,
         "<a href="#sourcevolumearn" title="SourceVolumeArn">SourceVolumeArn</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#targetname" title="TargetName">TargetName</a>" : <i>String</i>,
         "<a href="#volumesizeinbytes" title="VolumeSizeInBytes">VolumeSizeInBytes</a>" : <i>Double</i>
     }
@@ -35,7 +35,7 @@ Properties:
     <a href="#snapshotid" title="SnapshotId">SnapshotId</a>: <i>String</i>
     <a href="#sourcevolumearn" title="SourceVolumeArn">SourceVolumeArn</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#targetname" title="TargetName">TargetName</a>: <i>String</i>
     <a href="#volumesizeinbytes" title="VolumeSizeInBytes">VolumeSizeInBytes</a>: <i>Double</i>
 </pre>
@@ -86,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,29 +124,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### ChapEnabled
 
-Returns the &lt;code&gt;ChapEnabled&lt;/code&gt; value.
+Returns the <code>ChapEnabled</code> value.
 
 #### LunNumber
 
-Returns the &lt;code&gt;LunNumber&lt;/code&gt; value.
+Returns the <code>LunNumber</code> value.
 
 #### NetworkInterfacePort
 
-Returns the &lt;code&gt;NetworkInterfacePort&lt;/code&gt; value.
+Returns the <code>NetworkInterfacePort</code> value.
 
 #### TargetArn
 
-Returns the &lt;code&gt;TargetArn&lt;/code&gt; value.
+Returns the <code>TargetArn</code> value.
 
 #### VolumeArn
 
-Returns the &lt;code&gt;VolumeArn&lt;/code&gt; value.
+Returns the <code>VolumeArn</code> value.
 
 #### VolumeId
 
-Returns the &lt;code&gt;VolumeId&lt;/code&gt; value.
+Returns the <code>VolumeId</code> value.
 

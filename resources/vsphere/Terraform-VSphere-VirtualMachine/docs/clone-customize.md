@@ -14,9 +14,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#ipv6gateway" title="Ipv6Gateway">Ipv6Gateway</a>" : <i>String</i>,
     "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
     "<a href="#windowssyspreptext" title="WindowsSysprepText">WindowsSysprepText</a>" : <i>String</i>,
-    "<a href="#linuxoptions" title="LinuxOptions">LinuxOptions</a>" : <i>[ &lt;a href=&#34;clone-customize-linuxoptions.md&#34;&gt;LinuxOptions&lt;/a&gt;, ... ]</i>,
-    "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;clone-customize-networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
-    "<a href="#windowsoptions" title="WindowsOptions">WindowsOptions</a>" : <i>[ &lt;a href=&#34;clone-customize-windowsoptions.md&#34;&gt;WindowsOptions&lt;/a&gt;, ... ]</i>
+    "<a href="#linuxoptions" title="LinuxOptions">LinuxOptions</a>" : <i>[ <a href="clone-customize-linuxoptions.md">LinuxOptions</a>, ... ]</i>,
+    "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="clone-customize-networkinterface.md">NetworkInterface</a>, ... ]</i>,
+    "<a href="#windowsoptions" title="WindowsOptions">WindowsOptions</a>" : <i>[ <a href="clone-customize-windowsoptions.md">WindowsOptions</a>, ... ]</i>
 }
 </pre>
 
@@ -32,11 +32,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
 <a href="#windowssyspreptext" title="WindowsSysprepText">WindowsSysprepText</a>: <i>String</i>
 <a href="#linuxoptions" title="LinuxOptions">LinuxOptions</a>: <i>
-      - &lt;a href=&#34;clone-customize-linuxoptions.md&#34;&gt;LinuxOptions&lt;/a&gt;</i>
+      - <a href="clone-customize-linuxoptions.md">LinuxOptions</a></i>
 <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - &lt;a href=&#34;clone-customize-networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
+      - <a href="clone-customize-networkinterface.md">NetworkInterface</a></i>
 <a href="#windowsoptions" title="WindowsOptions">WindowsOptions</a>: <i>
-      - &lt;a href=&#34;clone-customize-windowsoptions.md&#34;&gt;WindowsOptions&lt;/a&gt;</i>
+      - <a href="clone-customize-windowsoptions.md">WindowsOptions</a></i>
 </pre>
 
 ## Properties
@@ -86,21 +86,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LinuxOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;clone-customize-linuxoptions.md&#34;&gt;LinuxOptions&lt;/a&gt;
+_Type_: List of <a href="clone-customize-linuxoptions.md">LinuxOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkInterface
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;clone-customize-networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
+_Type_: List of <a href="clone-customize-networkinterface.md">NetworkInterface</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WindowsOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;clone-customize-windowsoptions.md&#34;&gt;WindowsOptions&lt;/a&gt;
+_Type_: List of <a href="clone-customize-windowsoptions.md">WindowsOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -15,9 +15,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#logstore" title="Logstore">Logstore</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#fieldsearch" title="FieldSearch">FieldSearch</a>" : <i>[ &lt;a href=&#34;fieldsearch.md&#34;&gt;FieldSearch&lt;/a&gt;, ... ]</i>,
-        "<a href="#fulltext" title="FullText">FullText</a>" : <i>[ &lt;a href=&#34;fulltext.md&#34;&gt;FullText&lt;/a&gt;, ... ]</i>,
-        "<a href="#jsonkeys" title="JsonKeys">JsonKeys</a>" : <i>[ &lt;a href=&#34;jsonkeys.md&#34;&gt;JsonKeys&lt;/a&gt;, ... ]</i>
+        "<a href="#fieldsearch" title="FieldSearch">FieldSearch</a>" : <i>[ <a href="fieldsearch.md">FieldSearch</a>, ... ]</i>,
+        "<a href="#fulltext" title="FullText">FullText</a>" : <i>[ <a href="fulltext.md">FullText</a>, ... ]</i>,
+        "<a href="#jsonkeys" title="JsonKeys">JsonKeys</a>" : <i>[ <a href="jsonkeys.md">JsonKeys</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,11 +31,11 @@ Properties:
     <a href="#logstore" title="Logstore">Logstore</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#fieldsearch" title="FieldSearch">FieldSearch</a>: <i>
-      - &lt;a href=&#34;fieldsearch.md&#34;&gt;FieldSearch&lt;/a&gt;</i>
+      - <a href="fieldsearch.md">FieldSearch</a></i>
     <a href="#fulltext" title="FullText">FullText</a>: <i>
-      - &lt;a href=&#34;fulltext.md&#34;&gt;FullText&lt;/a&gt;</i>
+      - <a href="fulltext.md">FullText</a></i>
     <a href="#jsonkeys" title="JsonKeys">JsonKeys</a>: <i>
-      - &lt;a href=&#34;jsonkeys.md&#34;&gt;JsonKeys&lt;/a&gt;</i>
+      - <a href="jsonkeys.md">JsonKeys</a></i>
 </pre>
 
 ## Properties
@@ -68,7 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fieldsearch.md&#34;&gt;FieldSearch&lt;/a&gt;
+_Type_: List of <a href="fieldsearch.md">FieldSearch</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -76,7 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fulltext.md&#34;&gt;FullText&lt;/a&gt;
+_Type_: List of <a href="fulltext.md">FullText</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,7 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;jsonkeys.md&#34;&gt;JsonKeys&lt;/a&gt;
+_Type_: List of <a href="jsonkeys.md">JsonKeys</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

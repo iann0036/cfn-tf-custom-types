@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#primary" title="Primary">Primary</a>" : <i>Boolean</i>,
     "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
     "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-    "<a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>" : <i>[ &lt;a href=&#34;ipconfiguration-publicipaddress.md&#34;&gt;PublicIpAddress&lt;/a&gt;, ... ]</i>
+    "<a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>" : <i>[ <a href="ipconfiguration-publicipaddress.md">PublicIpAddress</a>, ... ]</i>
 }
 </pre>
 
@@ -36,7 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
 <a href="#version" title="Version">Version</a>: <i>String</i>
 <a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>: <i>
-      - &lt;a href=&#34;ipconfiguration-publicipaddress.md&#34;&gt;PublicIpAddress&lt;/a&gt;</i>
+      - <a href="ipconfiguration-publicipaddress.md">PublicIpAddress</a></i>
 </pre>
 
 ## Properties
@@ -100,7 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PublicIpAddress
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;ipconfiguration-publicipaddress.md&#34;&gt;PublicIpAddress&lt;/a&gt;
+_Type_: List of <a href="ipconfiguration-publicipaddress.md">PublicIpAddress</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

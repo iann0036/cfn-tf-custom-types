@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Token
 
-Returns the &lt;code&gt;Token&lt;/code&gt; value.
+Returns the <code>Token</code> value.
 

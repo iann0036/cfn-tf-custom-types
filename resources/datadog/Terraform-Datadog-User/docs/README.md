@@ -123,5 +123,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Verified
 
-Returns the &lt;code&gt;Verified&lt;/code&gt; value.
+Returns the <code>Verified</code> value.
 

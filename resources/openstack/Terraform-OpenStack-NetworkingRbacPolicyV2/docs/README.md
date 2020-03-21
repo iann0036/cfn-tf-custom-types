@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ProjectId
 
-Returns the &lt;code&gt;ProjectId&lt;/code&gt; value.
+Returns the <code>ProjectId</code> value.
 

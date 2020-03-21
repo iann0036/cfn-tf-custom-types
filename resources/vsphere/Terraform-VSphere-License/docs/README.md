@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::VSphere::License",
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#licensekey" title="LicenseKey">LicenseKey</a>" : <i>String</i>,
     }
 }
@@ -26,7 +26,7 @@ Type: Terraform::VSphere::License
 Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#licensekey" title="LicenseKey">LicenseKey</a>: <i>String</i>
 </pre>
 
@@ -44,7 +44,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -74,17 +74,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EditionKey
 
-Returns the &lt;code&gt;EditionKey&lt;/code&gt; value.
+Returns the <code>EditionKey</code> value.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### Total
 
-Returns the &lt;code&gt;Total&lt;/code&gt; value.
+Returns the <code>Total</code> value.
 
 #### Used
 
-Returns the &lt;code&gt;Used&lt;/code&gt; value.
+Returns the <code>Used</code> value.
 

@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#environmentid" title="EnvironmentId">EnvironmentId</a>" : <i>String</i>,
-    "<a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>" : <i>[ &lt;a href=&#34;integrationbeanstalk-deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;, ... ]</i>,
-    "<a href="#managedactions" title="ManagedActions">ManagedActions</a>" : <i>[ &lt;a href=&#34;integrationbeanstalk-managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;, ... ]</i>
+    "<a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>" : <i>[ <a href="integrationbeanstalk-deploymentpreferences.md">DeploymentPreferences</a>, ... ]</i>,
+    "<a href="#managedactions" title="ManagedActions">ManagedActions</a>" : <i>[ <a href="integrationbeanstalk-managedactions.md">ManagedActions</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#environmentid" title="EnvironmentId">EnvironmentId</a>: <i>String</i>
 <a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>: <i>
-      - &lt;a href=&#34;integrationbeanstalk-deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;</i>
+      - <a href="integrationbeanstalk-deploymentpreferences.md">DeploymentPreferences</a></i>
 <a href="#managedactions" title="ManagedActions">ManagedActions</a>: <i>
-      - &lt;a href=&#34;integrationbeanstalk-managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;</i>
+      - <a href="integrationbeanstalk-managedactions.md">ManagedActions</a></i>
 </pre>
 
 ## Properties
@@ -36,14 +36,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DeploymentPreferences
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;integrationbeanstalk-deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;
+_Type_: List of <a href="integrationbeanstalk-deploymentpreferences.md">DeploymentPreferences</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ManagedActions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;integrationbeanstalk-managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;
+_Type_: List of <a href="integrationbeanstalk-managedactions.md">ManagedActions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#kind" title="Kind">Kind</a>" : <i>String</i>,
     "<a href="#nonexistence" title="NonExistence">NonExistence</a>" : <i>String</i>,
     "<a href="#state" title="State">State</a>" : <i>String</i>,
-    "<a href="#defaultkeyspecs" title="DefaultKeySpecs">DefaultKeySpecs</a>" : <i>[ &lt;a href=&#34;dnssecconfig-defaultkeyspecs.md&#34;&gt;DefaultKeySpecs&lt;/a&gt;, ... ]</i>
+    "<a href="#defaultkeyspecs" title="DefaultKeySpecs">DefaultKeySpecs</a>" : <i>[ <a href="dnssecconfig-defaultkeyspecs.md">DefaultKeySpecs</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#nonexistence" title="NonExistence">NonExistence</a>: <i>String</i>
 <a href="#state" title="State">State</a>: <i>String</i>
 <a href="#defaultkeyspecs" title="DefaultKeySpecs">DefaultKeySpecs</a>: <i>
-      - &lt;a href=&#34;dnssecconfig-defaultkeyspecs.md&#34;&gt;DefaultKeySpecs&lt;/a&gt;</i>
+      - <a href="dnssecconfig-defaultkeyspecs.md">DefaultKeySpecs</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DefaultKeySpecs
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;dnssecconfig-defaultkeyspecs.md&#34;&gt;DefaultKeySpecs&lt;/a&gt;
+_Type_: List of <a href="dnssecconfig-defaultkeyspecs.md">DefaultKeySpecs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

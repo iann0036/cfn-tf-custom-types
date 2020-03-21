@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#inputpaths" title="InputPaths">InputPaths</a>" : <i>[ &lt;a href=&#34;inputtransformer-inputpaths.md&#34;&gt;InputPaths&lt;/a&gt;, ... ]</i>,
+    "<a href="#inputpaths" title="InputPaths">InputPaths</a>" : <i>[ <a href="inputtransformer-inputpaths.md">InputPaths</a>, ... ]</i>,
     "<a href="#inputtemplate" title="InputTemplate">InputTemplate</a>" : <i>String</i>
 }
 </pre>
@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#inputpaths" title="InputPaths">InputPaths</a>: <i>
-      - &lt;a href=&#34;inputtransformer-inputpaths.md&#34;&gt;InputPaths&lt;/a&gt;</i>
+      - <a href="inputtransformer-inputpaths.md">InputPaths</a></i>
 <a href="#inputtemplate" title="InputTemplate">InputTemplate</a>: <i>String</i>
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### InputPaths
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;inputtransformer-inputpaths.md&#34;&gt;InputPaths&lt;/a&gt;
+_Type_: List of <a href="inputtransformer-inputpaths.md">InputPaths</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

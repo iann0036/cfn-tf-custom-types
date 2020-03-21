@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#networks" title="Networks">Networks</a>" : <i>[ &lt;a href=&#34;privatevisibilityconfig-networks.md&#34;&gt;Networks&lt;/a&gt;, ... ]</i>
+    "<a href="#networks" title="Networks">Networks</a>" : <i>[ <a href="privatevisibilityconfig-networks.md">Networks</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#networks" title="Networks">Networks</a>: <i>
-      - &lt;a href=&#34;privatevisibilityconfig-networks.md&#34;&gt;Networks&lt;/a&gt;</i>
+      - <a href="privatevisibilityconfig-networks.md">Networks</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Networks
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;privatevisibilityconfig-networks.md&#34;&gt;Networks&lt;/a&gt;
+_Type_: List of <a href="privatevisibilityconfig-networks.md">Networks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

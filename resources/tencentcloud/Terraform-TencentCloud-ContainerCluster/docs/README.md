@@ -353,21 +353,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### KubernetesVersion
 
-Returns the &lt;code&gt;KubernetesVersion&lt;/code&gt; value.
+Returns the <code>KubernetesVersion</code> value.
 
 #### NodesNum
 
-Returns the &lt;code&gt;NodesNum&lt;/code&gt; value.
+Returns the <code>NodesNum</code> value.
 
 #### NodesStatus
 
-Returns the &lt;code&gt;NodesStatus&lt;/code&gt; value.
+Returns the <code>NodesStatus</code> value.
 
 #### TotalCpu
 
-Returns the &lt;code&gt;TotalCpu&lt;/code&gt; value.
+Returns the <code>TotalCpu</code> value.
 
 #### TotalMem
 
-Returns the &lt;code&gt;TotalMem&lt;/code&gt; value.
+Returns the <code>TotalMem</code> value.
 

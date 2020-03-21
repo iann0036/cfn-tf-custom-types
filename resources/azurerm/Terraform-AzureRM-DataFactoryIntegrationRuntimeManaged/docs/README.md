@@ -23,10 +23,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#nodesize" title="NodeSize">NodeSize</a>" : <i>String</i>,
         "<a href="#numberofnodes" title="NumberOfNodes">NumberOfNodes</a>" : <i>Double</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#cataloginfo" title="CatalogInfo">CatalogInfo</a>" : <i>[ &lt;a href=&#34;cataloginfo.md&#34;&gt;CatalogInfo&lt;/a&gt;, ... ]</i>,
-        "<a href="#customsetupscript" title="CustomSetupScript">CustomSetupScript</a>" : <i>[ &lt;a href=&#34;customsetupscript.md&#34;&gt;CustomSetupScript&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#vnetintegration" title="VnetIntegration">VnetIntegration</a>" : <i>[ &lt;a href=&#34;vnetintegration.md&#34;&gt;VnetIntegration&lt;/a&gt;, ... ]</i>
+        "<a href="#cataloginfo" title="CatalogInfo">CatalogInfo</a>" : <i>[ <a href="cataloginfo.md">CatalogInfo</a>, ... ]</i>,
+        "<a href="#customsetupscript" title="CustomSetupScript">CustomSetupScript</a>" : <i>[ <a href="customsetupscript.md">CustomSetupScript</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#vnetintegration" title="VnetIntegration">VnetIntegration</a>" : <i>[ <a href="vnetintegration.md">VnetIntegration</a>, ... ]</i>
     }
 }
 </pre>
@@ -48,12 +48,12 @@ Properties:
     <a href="#numberofnodes" title="NumberOfNodes">NumberOfNodes</a>: <i>Double</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#cataloginfo" title="CatalogInfo">CatalogInfo</a>: <i>
-      - &lt;a href=&#34;cataloginfo.md&#34;&gt;CatalogInfo&lt;/a&gt;</i>
+      - <a href="cataloginfo.md">CatalogInfo</a></i>
     <a href="#customsetupscript" title="CustomSetupScript">CustomSetupScript</a>: <i>
-      - &lt;a href=&#34;customsetupscript.md&#34;&gt;CustomSetupScript&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="customsetupscript.md">CustomSetupScript</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#vnetintegration" title="VnetIntegration">VnetIntegration</a>: <i>
-      - &lt;a href=&#34;vnetintegration.md&#34;&gt;VnetIntegration&lt;/a&gt;</i>
+      - <a href="vnetintegration.md">VnetIntegration</a></i>
 </pre>
 
 ## Properties
@@ -150,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cataloginfo.md&#34;&gt;CatalogInfo&lt;/a&gt;
+_Type_: List of <a href="cataloginfo.md">CatalogInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customsetupscript.md&#34;&gt;CustomSetupScript&lt;/a&gt;
+_Type_: List of <a href="customsetupscript.md">CustomSetupScript</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vnetintegration.md&#34;&gt;VnetIntegration&lt;/a&gt;
+_Type_: List of <a href="vnetintegration.md">VnetIntegration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

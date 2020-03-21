@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#actions" title="Actions">Actions</a>" : <i>[ &lt;a href=&#34;rule-actions.md&#34;&gt;Actions&lt;/a&gt;, ... ]</i>,
-    "<a href="#filters" title="Filters">Filters</a>" : <i>[ &lt;a href=&#34;rule-filters.md&#34;&gt;Filters&lt;/a&gt;, ... ]</i>
+    "<a href="#actions" title="Actions">Actions</a>" : <i>[ <a href="rule-actions.md">Actions</a>, ... ]</i>,
+    "<a href="#filters" title="Filters">Filters</a>" : <i>[ <a href="rule-filters.md">Filters</a>, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#actions" title="Actions">Actions</a>: <i>
-      - &lt;a href=&#34;rule-actions.md&#34;&gt;Actions&lt;/a&gt;</i>
+      - <a href="rule-actions.md">Actions</a></i>
 <a href="#filters" title="Filters">Filters</a>: <i>
-      - &lt;a href=&#34;rule-filters.md&#34;&gt;Filters&lt;/a&gt;</i>
+      - <a href="rule-filters.md">Filters</a></i>
 </pre>
 
 ## Properties
@@ -45,14 +45,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Actions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-actions.md&#34;&gt;Actions&lt;/a&gt;
+_Type_: List of <a href="rule-actions.md">Actions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Filters
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-filters.md&#34;&gt;Filters&lt;/a&gt;
+_Type_: List of <a href="rule-filters.md">Filters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

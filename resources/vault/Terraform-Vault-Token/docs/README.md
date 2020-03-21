@@ -184,21 +184,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClientToken
 
-Returns the &lt;code&gt;ClientToken&lt;/code&gt; value.
+Returns the <code>ClientToken</code> value.
 
 #### LeaseDuration
 
-Returns the &lt;code&gt;LeaseDuration&lt;/code&gt; value.
+Returns the <code>LeaseDuration</code> value.
 
 #### LeaseStarted
 
-Returns the &lt;code&gt;LeaseStarted&lt;/code&gt; value.
+Returns the <code>LeaseStarted</code> value.
 
 #### WrappedToken
 
-Returns the &lt;code&gt;WrappedToken&lt;/code&gt; value.
+Returns the <code>WrappedToken</code> value.
 
 #### WrappingAccessor
 
-Returns the &lt;code&gt;WrappingAccessor&lt;/code&gt; value.
+Returns the <code>WrappingAccessor</code> value.
 

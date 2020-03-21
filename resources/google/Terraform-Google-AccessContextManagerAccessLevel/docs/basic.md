@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#combiningfunction" title="CombiningFunction">CombiningFunction</a>" : <i>String</i>,
-    "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ &lt;a href=&#34;basic-conditions.md&#34;&gt;Conditions&lt;/a&gt;, ... ]</i>
+    "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ <a href="basic-conditions.md">Conditions</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#combiningfunction" title="CombiningFunction">CombiningFunction</a>: <i>String</i>
 <a href="#conditions" title="Conditions">Conditions</a>: <i>
-      - &lt;a href=&#34;basic-conditions.md&#34;&gt;Conditions&lt;/a&gt;</i>
+      - <a href="basic-conditions.md">Conditions</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Conditions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;basic-conditions.md&#34;&gt;Conditions&lt;/a&gt;
+_Type_: List of <a href="basic-conditions.md">Conditions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#baseblob" title="BaseBlob">BaseBlob</a>" : <i>[ &lt;a href=&#34;actions-baseblob.md&#34;&gt;BaseBlob&lt;/a&gt;, ... ]</i>,
-    "<a href="#snapshot" title="Snapshot">Snapshot</a>" : <i>[ &lt;a href=&#34;actions-snapshot.md&#34;&gt;Snapshot&lt;/a&gt;, ... ]</i>
+    "<a href="#baseblob" title="BaseBlob">BaseBlob</a>" : <i>[ <a href="actions-baseblob.md">BaseBlob</a>, ... ]</i>,
+    "<a href="#snapshot" title="Snapshot">Snapshot</a>" : <i>[ <a href="actions-snapshot.md">Snapshot</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#baseblob" title="BaseBlob">BaseBlob</a>: <i>
-      - &lt;a href=&#34;actions-baseblob.md&#34;&gt;BaseBlob&lt;/a&gt;</i>
+      - <a href="actions-baseblob.md">BaseBlob</a></i>
 <a href="#snapshot" title="Snapshot">Snapshot</a>: <i>
-      - &lt;a href=&#34;actions-snapshot.md&#34;&gt;Snapshot&lt;/a&gt;</i>
+      - <a href="actions-snapshot.md">Snapshot</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### BaseBlob
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;actions-baseblob.md&#34;&gt;BaseBlob&lt;/a&gt;
+_Type_: List of <a href="actions-baseblob.md">BaseBlob</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Snapshot
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;actions-snapshot.md&#34;&gt;Snapshot&lt;/a&gt;
+_Type_: List of <a href="actions-snapshot.md">Snapshot</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

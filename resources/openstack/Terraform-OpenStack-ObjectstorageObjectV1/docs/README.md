@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#detectcontenttype" title="DetectContentType">DetectContentType</a>" : <i>Boolean</i>,
         "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#objectmanifest" title="ObjectManifest">ObjectManifest</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
@@ -49,7 +49,7 @@ Properties:
     <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#objectmanifest" title="ObjectManifest">ObjectManifest</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
@@ -150,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -204,17 +204,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ContentLength
 
-Returns the &lt;code&gt;ContentLength&lt;/code&gt; value.
+Returns the <code>ContentLength</code> value.
 
 #### Date
 
-Returns the &lt;code&gt;Date&lt;/code&gt; value.
+Returns the <code>Date</code> value.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 
 #### TransId
 
-Returns the &lt;code&gt;TransId&lt;/code&gt; value.
+Returns the <code>TransId</code> value.
 

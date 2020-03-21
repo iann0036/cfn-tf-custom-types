@@ -113,5 +113,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RecordId
 
-Returns the &lt;code&gt;RecordId&lt;/code&gt; value.
+Returns the <code>RecordId</code> value.
 

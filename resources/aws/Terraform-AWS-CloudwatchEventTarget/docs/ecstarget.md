@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#platformversion" title="PlatformVersion">PlatformVersion</a>" : <i>String</i>,
     "<a href="#taskcount" title="TaskCount">TaskCount</a>" : <i>Double</i>,
     "<a href="#taskdefinitionarn" title="TaskDefinitionArn">TaskDefinitionArn</a>" : <i>String</i>,
-    "<a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>" : <i>[ &lt;a href=&#34;ecstarget-networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;, ... ]</i>
+    "<a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>" : <i>[ <a href="ecstarget-networkconfiguration.md">NetworkConfiguration</a>, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#taskcount" title="TaskCount">TaskCount</a>: <i>Double</i>
 <a href="#taskdefinitionarn" title="TaskDefinitionArn">TaskDefinitionArn</a>: <i>String</i>
 <a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>: <i>
-      - &lt;a href=&#34;ecstarget-networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;</i>
+      - <a href="ecstarget-networkconfiguration.md">NetworkConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -69,7 +69,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NetworkConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;ecstarget-networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;
+_Type_: List of <a href="ecstarget-networkconfiguration.md">NetworkConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

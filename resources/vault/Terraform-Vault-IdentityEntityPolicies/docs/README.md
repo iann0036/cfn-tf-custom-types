@@ -84,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EntityName
 
-Returns the &lt;code&gt;EntityName&lt;/code&gt; value.
+Returns the <code>EntityName</code> value.
 

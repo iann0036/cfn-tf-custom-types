@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#linkedclone" title="LinkedClone">LinkedClone</a>" : <i>Boolean</i>,
     "<a href="#templateuuid" title="TemplateUuid">TemplateUuid</a>" : <i>String</i>,
     "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
-    "<a href="#customize" title="Customize">Customize</a>" : <i>[ &lt;a href=&#34;clone-customize.md&#34;&gt;Customize&lt;/a&gt;, ... ]</i>
+    "<a href="#customize" title="Customize">Customize</a>" : <i>[ <a href="clone-customize.md">Customize</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#templateuuid" title="TemplateUuid">TemplateUuid</a>: <i>String</i>
 <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
 <a href="#customize" title="Customize">Customize</a>: <i>
-      - &lt;a href=&#34;clone-customize.md&#34;&gt;Customize&lt;/a&gt;</i>
+      - <a href="clone-customize.md">Customize</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Customize
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;clone-customize.md&#34;&gt;Customize&lt;/a&gt;
+_Type_: List of <a href="clone-customize.md">Customize</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

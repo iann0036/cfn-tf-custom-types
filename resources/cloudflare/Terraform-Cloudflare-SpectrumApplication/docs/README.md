@@ -21,8 +21,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tls" title="Tls">Tls</a>" : <i>String</i>,
         "<a href="#traffictype" title="TrafficType">TrafficType</a>" : <i>String</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#dns" title="Dns">Dns</a>" : <i>[ &lt;a href=&#34;dns.md&#34;&gt;Dns&lt;/a&gt;, ... ]</i>,
-        "<a href="#origindns" title="OriginDns">OriginDns</a>" : <i>[ &lt;a href=&#34;origindns.md&#34;&gt;OriginDns&lt;/a&gt;, ... ]</i>
+        "<a href="#dns" title="Dns">Dns</a>" : <i>[ <a href="dns.md">Dns</a>, ... ]</i>,
+        "<a href="#origindns" title="OriginDns">OriginDns</a>" : <i>[ <a href="origindns.md">OriginDns</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,9 +43,9 @@ Properties:
     <a href="#traffictype" title="TrafficType">TrafficType</a>: <i>String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#dns" title="Dns">Dns</a>: <i>
-      - &lt;a href=&#34;dns.md&#34;&gt;Dns&lt;/a&gt;</i>
+      - <a href="dns.md">Dns</a></i>
     <a href="#origindns" title="OriginDns">OriginDns</a>: <i>
-      - &lt;a href=&#34;origindns.md&#34;&gt;OriginDns&lt;/a&gt;</i>
+      - <a href="origindns.md">OriginDns</a></i>
 </pre>
 
 ## Properties
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dns.md&#34;&gt;Dns&lt;/a&gt;
+_Type_: List of <a href="dns.md">Dns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;origindns.md&#34;&gt;OriginDns&lt;/a&gt;
+_Type_: List of <a href="origindns.md">OriginDns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

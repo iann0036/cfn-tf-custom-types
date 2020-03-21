@@ -123,9 +123,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Locked
 
-Returns the &lt;code&gt;Locked&lt;/code&gt; value.
+Returns the <code>Locked</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

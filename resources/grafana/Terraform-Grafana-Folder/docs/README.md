@@ -63,5 +63,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uid
 
-Returns the &lt;code&gt;Uid&lt;/code&gt; value.
+Returns the <code>Uid</code> value.
 

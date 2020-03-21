@@ -20,12 +20,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#paramgroupid" title="ParamGroupId">ParamGroupId</a>" : <i>String</i>,
         "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#backupstrategy" title="BackupStrategy">BackupStrategy</a>" : <i>[ &lt;a href=&#34;backupstrategy.md&#34;&gt;BackupStrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#db" title="Db">Db</a>" : <i>[ &lt;a href=&#34;db.md&#34;&gt;Db&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>
+        "<a href="#backupstrategy" title="BackupStrategy">BackupStrategy</a>" : <i>[ <a href="backupstrategy.md">BackupStrategy</a>, ... ]</i>,
+        "<a href="#db" title="Db">Db</a>" : <i>[ <a href="db.md">Db</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="volume.md">Volume</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,15 +45,15 @@ Properties:
     <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+      - <a href="tag.md">Tag</a></i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#backupstrategy" title="BackupStrategy">BackupStrategy</a>: <i>
-      - &lt;a href=&#34;backupstrategy.md&#34;&gt;BackupStrategy&lt;/a&gt;</i>
+      - <a href="backupstrategy.md">BackupStrategy</a></i>
     <a href="#db" title="Db">Db</a>: <i>
-      - &lt;a href=&#34;db.md&#34;&gt;Db&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="db.md">Db</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#volume" title="Volume">Volume</a>: <i>
-      - &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;</i>
+      - <a href="volume.md">Volume</a></i>
 </pre>
 
 ## Properties
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
+_Type_: List of <a href="tag.md">Tag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -142,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backupstrategy.md&#34;&gt;BackupStrategy&lt;/a&gt;
+_Type_: List of <a href="backupstrategy.md">BackupStrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -150,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;db.md&#34;&gt;Db&lt;/a&gt;
+_Type_: List of <a href="db.md">Db</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;
+_Type_: List of <a href="volume.md">Volume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,17 +188,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Nodes
 
-Returns the &lt;code&gt;Nodes&lt;/code&gt; value.
+Returns the <code>Nodes</code> value.
 
 #### PrivateIps
 
-Returns the &lt;code&gt;PrivateIps&lt;/code&gt; value.
+Returns the <code>PrivateIps</code> value.
 
 #### PublicIps
 
-Returns the &lt;code&gt;PublicIps&lt;/code&gt; value.
+Returns the <code>PublicIps</code> value.
 

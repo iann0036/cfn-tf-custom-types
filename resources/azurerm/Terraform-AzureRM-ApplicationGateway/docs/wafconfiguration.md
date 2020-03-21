@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#requestbodycheck" title="RequestBodyCheck">RequestBodyCheck</a>" : <i>Boolean</i>,
     "<a href="#rulesettype" title="RuleSetType">RuleSetType</a>" : <i>String</i>,
     "<a href="#rulesetversion" title="RuleSetVersion">RuleSetVersion</a>" : <i>String</i>,
-    "<a href="#disabledrulegroup" title="DisabledRuleGroup">DisabledRuleGroup</a>" : <i>[ &lt;a href=&#34;wafconfiguration-disabledrulegroup.md&#34;&gt;DisabledRuleGroup&lt;/a&gt;, ... ]</i>,
-    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ &lt;a href=&#34;wafconfiguration-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;, ... ]</i>
+    "<a href="#disabledrulegroup" title="DisabledRuleGroup">DisabledRuleGroup</a>" : <i>[ <a href="wafconfiguration-disabledrulegroup.md">DisabledRuleGroup</a>, ... ]</i>,
+    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ <a href="wafconfiguration-exclusion.md">Exclusion</a>, ... ]</i>
 }
 </pre>
 
@@ -31,9 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#rulesettype" title="RuleSetType">RuleSetType</a>: <i>String</i>
 <a href="#rulesetversion" title="RuleSetVersion">RuleSetVersion</a>: <i>String</i>
 <a href="#disabledrulegroup" title="DisabledRuleGroup">DisabledRuleGroup</a>: <i>
-      - &lt;a href=&#34;wafconfiguration-disabledrulegroup.md&#34;&gt;DisabledRuleGroup&lt;/a&gt;</i>
+      - <a href="wafconfiguration-disabledrulegroup.md">DisabledRuleGroup</a></i>
 <a href="#exclusion" title="Exclusion">Exclusion</a>: <i>
-      - &lt;a href=&#34;wafconfiguration-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;</i>
+      - <a href="wafconfiguration-exclusion.md">Exclusion</a></i>
 </pre>
 
 ## Properties
@@ -90,14 +90,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DisabledRuleGroup
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;wafconfiguration-disabledrulegroup.md&#34;&gt;DisabledRuleGroup&lt;/a&gt;
+_Type_: List of <a href="wafconfiguration-disabledrulegroup.md">DisabledRuleGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Exclusion
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;wafconfiguration-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;
+_Type_: List of <a href="wafconfiguration-exclusion.md">Exclusion</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

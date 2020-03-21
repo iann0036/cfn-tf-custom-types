@@ -73,13 +73,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EndTime
 
-Returns the &lt;code&gt;EndTime&lt;/code&gt; value.
+Returns the <code>EndTime</code> value.
 
 #### StartTime
 
-Returns the &lt;code&gt;StartTime&lt;/code&gt; value.
+Returns the <code>StartTime</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

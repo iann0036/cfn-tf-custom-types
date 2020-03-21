@@ -84,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Peering
 
-Returns the &lt;code&gt;Peering&lt;/code&gt; value.
+Returns the <code>Peering</code> value.
 

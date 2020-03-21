@@ -14,31 +14,31 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#additionaldomains" title="AdditionalDomains">AdditionalDomains</a>" : <i>[ String, ... ]</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#origingroups" title="OriginGroups">OriginGroups</a>" : <i>[ &lt;a href=&#34;origingroups.md&#34;&gt;OriginGroups&lt;/a&gt;, ... ]</i>,
-        "<a href="#origins" title="Origins">Origins</a>" : <i>[ &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;, ... ]</i>,
-        "<a href="#policyconfig" title="PolicyConfig">PolicyConfig</a>" : <i>[ &lt;a href=&#34;policyconfig.md&#34;&gt;PolicyConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#wafconfig" title="WafConfig">WafConfig</a>" : <i>[ &lt;a href=&#34;wafconfig.md&#34;&gt;WafConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#origingroup" title="OriginGroup">OriginGroup</a>" : <i>[ &lt;a href=&#34;origingroup.md&#34;&gt;OriginGroup&lt;/a&gt;, ... ]</i>,
-        "<a href="#customheaders" title="CustomHeaders">CustomHeaders</a>" : <i>[ &lt;a href=&#34;customheaders.md&#34;&gt;CustomHeaders&lt;/a&gt;, ... ]</i>,
-        "<a href="#accessrules" title="AccessRules">AccessRules</a>" : <i>[ &lt;a href=&#34;accessrules.md&#34;&gt;AccessRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#addressratelimiting" title="AddressRateLimiting">AddressRateLimiting</a>" : <i>[ &lt;a href=&#34;addressratelimiting.md&#34;&gt;AddressRateLimiting&lt;/a&gt;, ... ]</i>,
-        "<a href="#cachingrules" title="CachingRules">CachingRules</a>" : <i>[ &lt;a href=&#34;cachingrules.md&#34;&gt;CachingRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#captchas" title="Captchas">Captchas</a>" : <i>[ &lt;a href=&#34;captchas.md&#34;&gt;Captchas&lt;/a&gt;, ... ]</i>,
-        "<a href="#customprotectionrules" title="CustomProtectionRules">CustomProtectionRules</a>" : <i>[ &lt;a href=&#34;customprotectionrules.md&#34;&gt;CustomProtectionRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#devicefingerprintchallenge" title="DeviceFingerprintChallenge">DeviceFingerprintChallenge</a>" : <i>[ &lt;a href=&#34;devicefingerprintchallenge.md&#34;&gt;DeviceFingerprintChallenge&lt;/a&gt;, ... ]</i>,
-        "<a href="#humaninteractionchallenge" title="HumanInteractionChallenge">HumanInteractionChallenge</a>" : <i>[ &lt;a href=&#34;humaninteractionchallenge.md&#34;&gt;HumanInteractionChallenge&lt;/a&gt;, ... ]</i>,
-        "<a href="#jschallenge" title="JsChallenge">JsChallenge</a>" : <i>[ &lt;a href=&#34;jschallenge.md&#34;&gt;JsChallenge&lt;/a&gt;, ... ]</i>,
-        "<a href="#protectionsettings" title="ProtectionSettings">ProtectionSettings</a>" : <i>[ &lt;a href=&#34;protectionsettings.md&#34;&gt;ProtectionSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#whitelists" title="Whitelists">Whitelists</a>" : <i>[ &lt;a href=&#34;whitelists.md&#34;&gt;Whitelists&lt;/a&gt;, ... ]</i>,
-        "<a href="#criteria" title="Criteria">Criteria</a>" : <i>[ &lt;a href=&#34;criteria.md&#34;&gt;Criteria&lt;/a&gt;, ... ]</i>,
-        "<a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>" : <i>[ &lt;a href=&#34;challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#sethttpheader" title="SetHttpHeader">SetHttpHeader</a>" : <i>[ &lt;a href=&#34;sethttpheader.md&#34;&gt;SetHttpHeader&lt;/a&gt;, ... ]</i>
+        "<a href="#origingroups" title="OriginGroups">OriginGroups</a>" : <i>[ <a href="origingroups.md">OriginGroups</a>, ... ]</i>,
+        "<a href="#origins" title="Origins">Origins</a>" : <i>[ <a href="origins.md">Origins</a>, ... ]</i>,
+        "<a href="#policyconfig" title="PolicyConfig">PolicyConfig</a>" : <i>[ <a href="policyconfig.md">PolicyConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#wafconfig" title="WafConfig">WafConfig</a>" : <i>[ <a href="wafconfig.md">WafConfig</a>, ... ]</i>,
+        "<a href="#origingroup" title="OriginGroup">OriginGroup</a>" : <i>[ <a href="origingroup.md">OriginGroup</a>, ... ]</i>,
+        "<a href="#customheaders" title="CustomHeaders">CustomHeaders</a>" : <i>[ <a href="customheaders.md">CustomHeaders</a>, ... ]</i>,
+        "<a href="#accessrules" title="AccessRules">AccessRules</a>" : <i>[ <a href="accessrules.md">AccessRules</a>, ... ]</i>,
+        "<a href="#addressratelimiting" title="AddressRateLimiting">AddressRateLimiting</a>" : <i>[ <a href="addressratelimiting.md">AddressRateLimiting</a>, ... ]</i>,
+        "<a href="#cachingrules" title="CachingRules">CachingRules</a>" : <i>[ <a href="cachingrules.md">CachingRules</a>, ... ]</i>,
+        "<a href="#captchas" title="Captchas">Captchas</a>" : <i>[ <a href="captchas.md">Captchas</a>, ... ]</i>,
+        "<a href="#customprotectionrules" title="CustomProtectionRules">CustomProtectionRules</a>" : <i>[ <a href="customprotectionrules.md">CustomProtectionRules</a>, ... ]</i>,
+        "<a href="#devicefingerprintchallenge" title="DeviceFingerprintChallenge">DeviceFingerprintChallenge</a>" : <i>[ <a href="devicefingerprintchallenge.md">DeviceFingerprintChallenge</a>, ... ]</i>,
+        "<a href="#humaninteractionchallenge" title="HumanInteractionChallenge">HumanInteractionChallenge</a>" : <i>[ <a href="humaninteractionchallenge.md">HumanInteractionChallenge</a>, ... ]</i>,
+        "<a href="#jschallenge" title="JsChallenge">JsChallenge</a>" : <i>[ <a href="jschallenge.md">JsChallenge</a>, ... ]</i>,
+        "<a href="#protectionsettings" title="ProtectionSettings">ProtectionSettings</a>" : <i>[ <a href="protectionsettings.md">ProtectionSettings</a>, ... ]</i>,
+        "<a href="#whitelists" title="Whitelists">Whitelists</a>" : <i>[ <a href="whitelists.md">Whitelists</a>, ... ]</i>,
+        "<a href="#criteria" title="Criteria">Criteria</a>" : <i>[ <a href="criteria.md">Criteria</a>, ... ]</i>,
+        "<a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>" : <i>[ <a href="challengesettings.md">ChallengeSettings</a>, ... ]</i>,
+        "<a href="#sethttpheader" title="SetHttpHeader">SetHttpHeader</a>" : <i>[ <a href="sethttpheader.md">SetHttpHeader</a>, ... ]</i>
     }
 }
 </pre>
@@ -52,51 +52,51 @@ Properties:
       - String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#origingroups" title="OriginGroups">OriginGroups</a>: <i>
-      - &lt;a href=&#34;origingroups.md&#34;&gt;OriginGroups&lt;/a&gt;</i>
+      - <a href="origingroups.md">OriginGroups</a></i>
     <a href="#origins" title="Origins">Origins</a>: <i>
-      - &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;</i>
+      - <a href="origins.md">Origins</a></i>
     <a href="#policyconfig" title="PolicyConfig">PolicyConfig</a>: <i>
-      - &lt;a href=&#34;policyconfig.md&#34;&gt;PolicyConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="policyconfig.md">PolicyConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#wafconfig" title="WafConfig">WafConfig</a>: <i>
-      - &lt;a href=&#34;wafconfig.md&#34;&gt;WafConfig&lt;/a&gt;</i>
+      - <a href="wafconfig.md">WafConfig</a></i>
     <a href="#origingroup" title="OriginGroup">OriginGroup</a>: <i>
-      - &lt;a href=&#34;origingroup.md&#34;&gt;OriginGroup&lt;/a&gt;</i>
+      - <a href="origingroup.md">OriginGroup</a></i>
     <a href="#customheaders" title="CustomHeaders">CustomHeaders</a>: <i>
-      - &lt;a href=&#34;customheaders.md&#34;&gt;CustomHeaders&lt;/a&gt;</i>
+      - <a href="customheaders.md">CustomHeaders</a></i>
     <a href="#accessrules" title="AccessRules">AccessRules</a>: <i>
-      - &lt;a href=&#34;accessrules.md&#34;&gt;AccessRules&lt;/a&gt;</i>
+      - <a href="accessrules.md">AccessRules</a></i>
     <a href="#addressratelimiting" title="AddressRateLimiting">AddressRateLimiting</a>: <i>
-      - &lt;a href=&#34;addressratelimiting.md&#34;&gt;AddressRateLimiting&lt;/a&gt;</i>
+      - <a href="addressratelimiting.md">AddressRateLimiting</a></i>
     <a href="#cachingrules" title="CachingRules">CachingRules</a>: <i>
-      - &lt;a href=&#34;cachingrules.md&#34;&gt;CachingRules&lt;/a&gt;</i>
+      - <a href="cachingrules.md">CachingRules</a></i>
     <a href="#captchas" title="Captchas">Captchas</a>: <i>
-      - &lt;a href=&#34;captchas.md&#34;&gt;Captchas&lt;/a&gt;</i>
+      - <a href="captchas.md">Captchas</a></i>
     <a href="#customprotectionrules" title="CustomProtectionRules">CustomProtectionRules</a>: <i>
-      - &lt;a href=&#34;customprotectionrules.md&#34;&gt;CustomProtectionRules&lt;/a&gt;</i>
+      - <a href="customprotectionrules.md">CustomProtectionRules</a></i>
     <a href="#devicefingerprintchallenge" title="DeviceFingerprintChallenge">DeviceFingerprintChallenge</a>: <i>
-      - &lt;a href=&#34;devicefingerprintchallenge.md&#34;&gt;DeviceFingerprintChallenge&lt;/a&gt;</i>
+      - <a href="devicefingerprintchallenge.md">DeviceFingerprintChallenge</a></i>
     <a href="#humaninteractionchallenge" title="HumanInteractionChallenge">HumanInteractionChallenge</a>: <i>
-      - &lt;a href=&#34;humaninteractionchallenge.md&#34;&gt;HumanInteractionChallenge&lt;/a&gt;</i>
+      - <a href="humaninteractionchallenge.md">HumanInteractionChallenge</a></i>
     <a href="#jschallenge" title="JsChallenge">JsChallenge</a>: <i>
-      - &lt;a href=&#34;jschallenge.md&#34;&gt;JsChallenge&lt;/a&gt;</i>
+      - <a href="jschallenge.md">JsChallenge</a></i>
     <a href="#protectionsettings" title="ProtectionSettings">ProtectionSettings</a>: <i>
-      - &lt;a href=&#34;protectionsettings.md&#34;&gt;ProtectionSettings&lt;/a&gt;</i>
+      - <a href="protectionsettings.md">ProtectionSettings</a></i>
     <a href="#whitelists" title="Whitelists">Whitelists</a>: <i>
-      - &lt;a href=&#34;whitelists.md&#34;&gt;Whitelists&lt;/a&gt;</i>
+      - <a href="whitelists.md">Whitelists</a></i>
     <a href="#criteria" title="Criteria">Criteria</a>: <i>
-      - &lt;a href=&#34;criteria.md&#34;&gt;Criteria&lt;/a&gt;</i>
+      - <a href="criteria.md">Criteria</a></i>
     <a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>: <i>
-      - &lt;a href=&#34;challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;</i>
+      - <a href="challengesettings.md">ChallengeSettings</a></i>
     <a href="#sethttpheader" title="SetHttpHeader">SetHttpHeader</a>: <i>
-      - &lt;a href=&#34;sethttpheader.md&#34;&gt;SetHttpHeader&lt;/a&gt;</i>
+      - <a href="sethttpheader.md">SetHttpHeader</a></i>
 </pre>
 
 ## Properties
@@ -121,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;origingroups.md&#34;&gt;OriginGroups&lt;/a&gt;
+_Type_: List of <a href="origingroups.md">OriginGroups</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;
+_Type_: List of <a href="origins.md">Origins</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;policyconfig.md&#34;&gt;PolicyConfig&lt;/a&gt;
+_Type_: List of <a href="policyconfig.md">PolicyConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,7 +185,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,7 +193,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;wafconfig.md&#34;&gt;WafConfig&lt;/a&gt;
+_Type_: List of <a href="wafconfig.md">WafConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -201,7 +201,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;origingroup.md&#34;&gt;OriginGroup&lt;/a&gt;
+_Type_: List of <a href="origingroup.md">OriginGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -209,7 +209,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customheaders.md&#34;&gt;CustomHeaders&lt;/a&gt;
+_Type_: List of <a href="customheaders.md">CustomHeaders</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,7 +217,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accessrules.md&#34;&gt;AccessRules&lt;/a&gt;
+_Type_: List of <a href="accessrules.md">AccessRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +225,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;addressratelimiting.md&#34;&gt;AddressRateLimiting&lt;/a&gt;
+_Type_: List of <a href="addressratelimiting.md">AddressRateLimiting</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +233,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cachingrules.md&#34;&gt;CachingRules&lt;/a&gt;
+_Type_: List of <a href="cachingrules.md">CachingRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,7 +241,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;captchas.md&#34;&gt;Captchas&lt;/a&gt;
+_Type_: List of <a href="captchas.md">Captchas</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -249,7 +249,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customprotectionrules.md&#34;&gt;CustomProtectionRules&lt;/a&gt;
+_Type_: List of <a href="customprotectionrules.md">CustomProtectionRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -257,7 +257,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;devicefingerprintchallenge.md&#34;&gt;DeviceFingerprintChallenge&lt;/a&gt;
+_Type_: List of <a href="devicefingerprintchallenge.md">DeviceFingerprintChallenge</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -265,7 +265,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;humaninteractionchallenge.md&#34;&gt;HumanInteractionChallenge&lt;/a&gt;
+_Type_: List of <a href="humaninteractionchallenge.md">HumanInteractionChallenge</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -273,7 +273,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;jschallenge.md&#34;&gt;JsChallenge&lt;/a&gt;
+_Type_: List of <a href="jschallenge.md">JsChallenge</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -281,7 +281,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;protectionsettings.md&#34;&gt;ProtectionSettings&lt;/a&gt;
+_Type_: List of <a href="protectionsettings.md">ProtectionSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -289,7 +289,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;whitelists.md&#34;&gt;Whitelists&lt;/a&gt;
+_Type_: List of <a href="whitelists.md">Whitelists</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -297,7 +297,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;criteria.md&#34;&gt;Criteria&lt;/a&gt;
+_Type_: List of <a href="criteria.md">Criteria</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -305,7 +305,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;
+_Type_: List of <a href="challengesettings.md">ChallengeSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -313,7 +313,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sethttpheader.md&#34;&gt;SetHttpHeader&lt;/a&gt;
+_Type_: List of <a href="sethttpheader.md">SetHttpHeader</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -335,13 +335,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Cname
 
-Returns the &lt;code&gt;Cname&lt;/code&gt; value.
+Returns the <code>Cname</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

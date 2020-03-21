@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#internaliponly" title="InternalIpOnly">InternalIpOnly</a>" : <i>Boolean</i>,
-    "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;clusterconfig-gceclusterconfig-metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+    "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="clusterconfig-gceclusterconfig-metadata.md">Metadata</a>, ... ]</i>,
     "<a href="#network" title="Network">Network</a>" : <i>String</i>,
     "<a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>" : <i>String</i>,
     "<a href="#serviceaccountscopes" title="ServiceAccountScopes">ServiceAccountScopes</a>" : <i>[ String, ... ]</i>,
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#internaliponly" title="InternalIpOnly">InternalIpOnly</a>: <i>Boolean</i>
 <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;clusterconfig-gceclusterconfig-metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="clusterconfig-gceclusterconfig-metadata.md">Metadata</a></i>
 <a href="#network" title="Network">Network</a>: <i>String</i>
 <a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>: <i>String</i>
 <a href="#serviceaccountscopes" title="ServiceAccountScopes">ServiceAccountScopes</a>: <i>
@@ -47,7 +47,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Metadata
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;clusterconfig-gceclusterconfig-metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="clusterconfig-gceclusterconfig-metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

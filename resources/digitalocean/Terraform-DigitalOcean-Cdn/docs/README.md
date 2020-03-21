@@ -93,9 +93,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### Endpoint
 
-Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
+Returns the <code>Endpoint</code> value.
 

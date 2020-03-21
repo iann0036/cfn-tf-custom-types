@@ -12,8 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#radiusserveraddress" title="RadiusServerAddress">RadiusServerAddress</a>" : <i>String</i>,
     "<a href="#radiusserversecret" title="RadiusServerSecret">RadiusServerSecret</a>" : <i>String</i>,
     "<a href="#vpnclientprotocols" title="VpnClientProtocols">VpnClientProtocols</a>" : <i>[ String, ... ]</i>,
-    "<a href="#revokedcertificate" title="RevokedCertificate">RevokedCertificate</a>" : <i>[ &lt;a href=&#34;vpnclientconfiguration-revokedcertificate.md&#34;&gt;RevokedCertificate&lt;/a&gt;, ... ]</i>,
-    "<a href="#rootcertificate" title="RootCertificate">RootCertificate</a>" : <i>[ &lt;a href=&#34;vpnclientconfiguration-rootcertificate.md&#34;&gt;RootCertificate&lt;/a&gt;, ... ]</i>
+    "<a href="#revokedcertificate" title="RevokedCertificate">RevokedCertificate</a>" : <i>[ <a href="vpnclientconfiguration-revokedcertificate.md">RevokedCertificate</a>, ... ]</i>,
+    "<a href="#rootcertificate" title="RootCertificate">RootCertificate</a>" : <i>[ <a href="vpnclientconfiguration-rootcertificate.md">RootCertificate</a>, ... ]</i>
 }
 </pre>
 
@@ -27,9 +27,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#vpnclientprotocols" title="VpnClientProtocols">VpnClientProtocols</a>: <i>
       - String</i>
 <a href="#revokedcertificate" title="RevokedCertificate">RevokedCertificate</a>: <i>
-      - &lt;a href=&#34;vpnclientconfiguration-revokedcertificate.md&#34;&gt;RevokedCertificate&lt;/a&gt;</i>
+      - <a href="vpnclientconfiguration-revokedcertificate.md">RevokedCertificate</a></i>
 <a href="#rootcertificate" title="RootCertificate">RootCertificate</a>: <i>
-      - &lt;a href=&#34;vpnclientconfiguration-rootcertificate.md&#34;&gt;RootCertificate&lt;/a&gt;</i>
+      - <a href="vpnclientconfiguration-rootcertificate.md">RootCertificate</a></i>
 </pre>
 
 ## Properties
@@ -65,14 +65,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RevokedCertificate
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;vpnclientconfiguration-revokedcertificate.md&#34;&gt;RevokedCertificate&lt;/a&gt;
+_Type_: List of <a href="vpnclientconfiguration-revokedcertificate.md">RevokedCertificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RootCertificate
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;vpnclientconfiguration-rootcertificate.md&#34;&gt;RootCertificate&lt;/a&gt;
+_Type_: List of <a href="vpnclientconfiguration-rootcertificate.md">RootCertificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -8,19 +8,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#arithmeticprocessor" title="ArithmeticProcessor">ArithmeticProcessor</a>" : <i>[ &lt;a href=&#34;pipeline-processor-arithmeticprocessor.md&#34;&gt;ArithmeticProcessor&lt;/a&gt;, ... ]</i>,
-    "<a href="#attributeremapper" title="AttributeRemapper">AttributeRemapper</a>" : <i>[ &lt;a href=&#34;pipeline-processor-attributeremapper.md&#34;&gt;AttributeRemapper&lt;/a&gt;, ... ]</i>,
-    "<a href="#categoryprocessor" title="CategoryProcessor">CategoryProcessor</a>" : <i>[ &lt;a href=&#34;pipeline-processor-categoryprocessor.md&#34;&gt;CategoryProcessor&lt;/a&gt;, ... ]</i>,
-    "<a href="#dateremapper" title="DateRemapper">DateRemapper</a>" : <i>[ &lt;a href=&#34;pipeline-processor-dateremapper.md&#34;&gt;DateRemapper&lt;/a&gt;, ... ]</i>,
-    "<a href="#geoipparser" title="GeoIpParser">GeoIpParser</a>" : <i>[ &lt;a href=&#34;pipeline-processor-geoipparser.md&#34;&gt;GeoIpParser&lt;/a&gt;, ... ]</i>,
-    "<a href="#grokparser" title="GrokParser">GrokParser</a>" : <i>[ &lt;a href=&#34;pipeline-processor-grokparser.md&#34;&gt;GrokParser&lt;/a&gt;, ... ]</i>,
-    "<a href="#messageremapper" title="MessageRemapper">MessageRemapper</a>" : <i>[ &lt;a href=&#34;pipeline-processor-messageremapper.md&#34;&gt;MessageRemapper&lt;/a&gt;, ... ]</i>,
-    "<a href="#serviceremapper" title="ServiceRemapper">ServiceRemapper</a>" : <i>[ &lt;a href=&#34;pipeline-processor-serviceremapper.md&#34;&gt;ServiceRemapper&lt;/a&gt;, ... ]</i>,
-    "<a href="#statusremapper" title="StatusRemapper">StatusRemapper</a>" : <i>[ &lt;a href=&#34;pipeline-processor-statusremapper.md&#34;&gt;StatusRemapper&lt;/a&gt;, ... ]</i>,
-    "<a href="#stringbuilderprocessor" title="StringBuilderProcessor">StringBuilderProcessor</a>" : <i>[ &lt;a href=&#34;pipeline-processor-stringbuilderprocessor.md&#34;&gt;StringBuilderProcessor&lt;/a&gt;, ... ]</i>,
-    "<a href="#traceidremapper" title="TraceIdRemapper">TraceIdRemapper</a>" : <i>[ &lt;a href=&#34;pipeline-processor-traceidremapper.md&#34;&gt;TraceIdRemapper&lt;/a&gt;, ... ]</i>,
-    "<a href="#urlparser" title="UrlParser">UrlParser</a>" : <i>[ &lt;a href=&#34;pipeline-processor-urlparser.md&#34;&gt;UrlParser&lt;/a&gt;, ... ]</i>,
-    "<a href="#useragentparser" title="UserAgentParser">UserAgentParser</a>" : <i>[ &lt;a href=&#34;pipeline-processor-useragentparser.md&#34;&gt;UserAgentParser&lt;/a&gt;, ... ]</i>
+    "<a href="#arithmeticprocessor" title="ArithmeticProcessor">ArithmeticProcessor</a>" : <i>[ <a href="pipeline-processor-arithmeticprocessor.md">ArithmeticProcessor</a>, ... ]</i>,
+    "<a href="#attributeremapper" title="AttributeRemapper">AttributeRemapper</a>" : <i>[ <a href="pipeline-processor-attributeremapper.md">AttributeRemapper</a>, ... ]</i>,
+    "<a href="#categoryprocessor" title="CategoryProcessor">CategoryProcessor</a>" : <i>[ <a href="pipeline-processor-categoryprocessor.md">CategoryProcessor</a>, ... ]</i>,
+    "<a href="#dateremapper" title="DateRemapper">DateRemapper</a>" : <i>[ <a href="pipeline-processor-dateremapper.md">DateRemapper</a>, ... ]</i>,
+    "<a href="#geoipparser" title="GeoIpParser">GeoIpParser</a>" : <i>[ <a href="pipeline-processor-geoipparser.md">GeoIpParser</a>, ... ]</i>,
+    "<a href="#grokparser" title="GrokParser">GrokParser</a>" : <i>[ <a href="pipeline-processor-grokparser.md">GrokParser</a>, ... ]</i>,
+    "<a href="#messageremapper" title="MessageRemapper">MessageRemapper</a>" : <i>[ <a href="pipeline-processor-messageremapper.md">MessageRemapper</a>, ... ]</i>,
+    "<a href="#serviceremapper" title="ServiceRemapper">ServiceRemapper</a>" : <i>[ <a href="pipeline-processor-serviceremapper.md">ServiceRemapper</a>, ... ]</i>,
+    "<a href="#statusremapper" title="StatusRemapper">StatusRemapper</a>" : <i>[ <a href="pipeline-processor-statusremapper.md">StatusRemapper</a>, ... ]</i>,
+    "<a href="#stringbuilderprocessor" title="StringBuilderProcessor">StringBuilderProcessor</a>" : <i>[ <a href="pipeline-processor-stringbuilderprocessor.md">StringBuilderProcessor</a>, ... ]</i>,
+    "<a href="#traceidremapper" title="TraceIdRemapper">TraceIdRemapper</a>" : <i>[ <a href="pipeline-processor-traceidremapper.md">TraceIdRemapper</a>, ... ]</i>,
+    "<a href="#urlparser" title="UrlParser">UrlParser</a>" : <i>[ <a href="pipeline-processor-urlparser.md">UrlParser</a>, ... ]</i>,
+    "<a href="#useragentparser" title="UserAgentParser">UserAgentParser</a>" : <i>[ <a href="pipeline-processor-useragentparser.md">UserAgentParser</a>, ... ]</i>
 }
 </pre>
 
@@ -28,31 +28,31 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#arithmeticprocessor" title="ArithmeticProcessor">ArithmeticProcessor</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-arithmeticprocessor.md&#34;&gt;ArithmeticProcessor&lt;/a&gt;</i>
+      - <a href="pipeline-processor-arithmeticprocessor.md">ArithmeticProcessor</a></i>
 <a href="#attributeremapper" title="AttributeRemapper">AttributeRemapper</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-attributeremapper.md&#34;&gt;AttributeRemapper&lt;/a&gt;</i>
+      - <a href="pipeline-processor-attributeremapper.md">AttributeRemapper</a></i>
 <a href="#categoryprocessor" title="CategoryProcessor">CategoryProcessor</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-categoryprocessor.md&#34;&gt;CategoryProcessor&lt;/a&gt;</i>
+      - <a href="pipeline-processor-categoryprocessor.md">CategoryProcessor</a></i>
 <a href="#dateremapper" title="DateRemapper">DateRemapper</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-dateremapper.md&#34;&gt;DateRemapper&lt;/a&gt;</i>
+      - <a href="pipeline-processor-dateremapper.md">DateRemapper</a></i>
 <a href="#geoipparser" title="GeoIpParser">GeoIpParser</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-geoipparser.md&#34;&gt;GeoIpParser&lt;/a&gt;</i>
+      - <a href="pipeline-processor-geoipparser.md">GeoIpParser</a></i>
 <a href="#grokparser" title="GrokParser">GrokParser</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-grokparser.md&#34;&gt;GrokParser&lt;/a&gt;</i>
+      - <a href="pipeline-processor-grokparser.md">GrokParser</a></i>
 <a href="#messageremapper" title="MessageRemapper">MessageRemapper</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-messageremapper.md&#34;&gt;MessageRemapper&lt;/a&gt;</i>
+      - <a href="pipeline-processor-messageremapper.md">MessageRemapper</a></i>
 <a href="#serviceremapper" title="ServiceRemapper">ServiceRemapper</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-serviceremapper.md&#34;&gt;ServiceRemapper&lt;/a&gt;</i>
+      - <a href="pipeline-processor-serviceremapper.md">ServiceRemapper</a></i>
 <a href="#statusremapper" title="StatusRemapper">StatusRemapper</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-statusremapper.md&#34;&gt;StatusRemapper&lt;/a&gt;</i>
+      - <a href="pipeline-processor-statusremapper.md">StatusRemapper</a></i>
 <a href="#stringbuilderprocessor" title="StringBuilderProcessor">StringBuilderProcessor</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-stringbuilderprocessor.md&#34;&gt;StringBuilderProcessor&lt;/a&gt;</i>
+      - <a href="pipeline-processor-stringbuilderprocessor.md">StringBuilderProcessor</a></i>
 <a href="#traceidremapper" title="TraceIdRemapper">TraceIdRemapper</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-traceidremapper.md&#34;&gt;TraceIdRemapper&lt;/a&gt;</i>
+      - <a href="pipeline-processor-traceidremapper.md">TraceIdRemapper</a></i>
 <a href="#urlparser" title="UrlParser">UrlParser</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-urlparser.md&#34;&gt;UrlParser&lt;/a&gt;</i>
+      - <a href="pipeline-processor-urlparser.md">UrlParser</a></i>
 <a href="#useragentparser" title="UserAgentParser">UserAgentParser</a>: <i>
-      - &lt;a href=&#34;pipeline-processor-useragentparser.md&#34;&gt;UserAgentParser&lt;/a&gt;</i>
+      - <a href="pipeline-processor-useragentparser.md">UserAgentParser</a></i>
 </pre>
 
 ## Properties
@@ -60,91 +60,91 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ArithmeticProcessor
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-arithmeticprocessor.md&#34;&gt;ArithmeticProcessor&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-arithmeticprocessor.md">ArithmeticProcessor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AttributeRemapper
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-attributeremapper.md&#34;&gt;AttributeRemapper&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-attributeremapper.md">AttributeRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CategoryProcessor
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-categoryprocessor.md&#34;&gt;CategoryProcessor&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-categoryprocessor.md">CategoryProcessor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DateRemapper
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-dateremapper.md&#34;&gt;DateRemapper&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-dateremapper.md">DateRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GeoIpParser
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-geoipparser.md&#34;&gt;GeoIpParser&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-geoipparser.md">GeoIpParser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GrokParser
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-grokparser.md&#34;&gt;GrokParser&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-grokparser.md">GrokParser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MessageRemapper
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-messageremapper.md&#34;&gt;MessageRemapper&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-messageremapper.md">MessageRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceRemapper
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-serviceremapper.md&#34;&gt;ServiceRemapper&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-serviceremapper.md">ServiceRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StatusRemapper
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-statusremapper.md&#34;&gt;StatusRemapper&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-statusremapper.md">StatusRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StringBuilderProcessor
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-stringbuilderprocessor.md&#34;&gt;StringBuilderProcessor&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-stringbuilderprocessor.md">StringBuilderProcessor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TraceIdRemapper
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-traceidremapper.md&#34;&gt;TraceIdRemapper&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-traceidremapper.md">TraceIdRemapper</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UrlParser
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-urlparser.md&#34;&gt;UrlParser&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-urlparser.md">UrlParser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserAgentParser
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pipeline-processor-useragentparser.md&#34;&gt;UserAgentParser&lt;/a&gt;
+_Type_: List of <a href="pipeline-processor-useragentparser.md">UserAgentParser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

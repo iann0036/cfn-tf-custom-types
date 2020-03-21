@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DashboardArn
 
-Returns the &lt;code&gt;DashboardArn&lt;/code&gt; value.
+Returns the <code>DashboardArn</code> value.
 

@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#lbport" title="LbPort">LbPort</a>" : <i>Double</i>,
         "<a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#attribute" title="Attribute">Attribute</a>" : <i>[ &lt;a href=&#34;attribute.md&#34;&gt;Attribute&lt;/a&gt;, ... ]</i>
+        "<a href="#attribute" title="Attribute">Attribute</a>" : <i>[ <a href="attribute.md">Attribute</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +31,7 @@ Properties:
     <a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#attribute" title="Attribute">Attribute</a>: <i>
-      - &lt;a href=&#34;attribute.md&#34;&gt;Attribute&lt;/a&gt;</i>
+      - <a href="attribute.md">Attribute</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;attribute.md&#34;&gt;Attribute&lt;/a&gt;
+_Type_: List of <a href="attribute.md">Attribute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

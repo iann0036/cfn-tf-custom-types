@@ -16,26 +16,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#notificationsenderemail" title="NotificationSenderEmail">NotificationSenderEmail</a>" : <i>String</i>,
-        "<a href="#policy" title="Policy">Policy</a>" : <i>[ &lt;a href=&#34;policy.md&#34;&gt;Policy&lt;/a&gt;, ... ]</i>,
+        "<a href="#policy" title="Policy">Policy</a>" : <i>[ <a href="policy.md">Policy</a>, ... ]</i>,
         "<a href="#publisheremail" title="PublisherEmail">PublisherEmail</a>" : <i>String</i>,
         "<a href="#publishername" title="PublisherName">PublisherName</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#skuname" title="SkuName">SkuName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#additionallocation" title="AdditionalLocation">AdditionalLocation</a>" : <i>[ &lt;a href=&#34;additionallocation.md&#34;&gt;AdditionalLocation&lt;/a&gt;, ... ]</i>,
-        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;, ... ]</i>,
-        "<a href="#hostnameconfiguration" title="HostnameConfiguration">HostnameConfiguration</a>" : <i>[ &lt;a href=&#34;hostnameconfiguration.md&#34;&gt;HostnameConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#identity" title="Identity">Identity</a>" : <i>[ &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;, ... ]</i>,
-        "<a href="#protocols" title="Protocols">Protocols</a>" : <i>[ &lt;a href=&#34;protocols.md&#34;&gt;Protocols&lt;/a&gt;, ... ]</i>,
-        "<a href="#security" title="Security">Security</a>" : <i>[ &lt;a href=&#34;security.md&#34;&gt;Security&lt;/a&gt;, ... ]</i>,
-        "<a href="#signin" title="SignIn">SignIn</a>" : <i>[ &lt;a href=&#34;signin.md&#34;&gt;SignIn&lt;/a&gt;, ... ]</i>,
-        "<a href="#signup" title="SignUp">SignUp</a>" : <i>[ &lt;a href=&#34;signup.md&#34;&gt;SignUp&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#management" title="Management">Management</a>" : <i>[ &lt;a href=&#34;management.md&#34;&gt;Management&lt;/a&gt;, ... ]</i>,
-        "<a href="#portal" title="Portal">Portal</a>" : <i>[ &lt;a href=&#34;portal.md&#34;&gt;Portal&lt;/a&gt;, ... ]</i>,
-        "<a href="#proxy" title="Proxy">Proxy</a>" : <i>[ &lt;a href=&#34;proxy.md&#34;&gt;Proxy&lt;/a&gt;, ... ]</i>,
-        "<a href="#scm" title="Scm">Scm</a>" : <i>[ &lt;a href=&#34;scm.md&#34;&gt;Scm&lt;/a&gt;, ... ]</i>,
-        "<a href="#termsofservice" title="TermsOfService">TermsOfService</a>" : <i>[ &lt;a href=&#34;termsofservice.md&#34;&gt;TermsOfService&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#additionallocation" title="AdditionalLocation">AdditionalLocation</a>" : <i>[ <a href="additionallocation.md">AdditionalLocation</a>, ... ]</i>,
+        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ <a href="certificate.md">Certificate</a>, ... ]</i>,
+        "<a href="#hostnameconfiguration" title="HostnameConfiguration">HostnameConfiguration</a>" : <i>[ <a href="hostnameconfiguration.md">HostnameConfiguration</a>, ... ]</i>,
+        "<a href="#identity" title="Identity">Identity</a>" : <i>[ <a href="identity.md">Identity</a>, ... ]</i>,
+        "<a href="#protocols" title="Protocols">Protocols</a>" : <i>[ <a href="protocols.md">Protocols</a>, ... ]</i>,
+        "<a href="#security" title="Security">Security</a>" : <i>[ <a href="security.md">Security</a>, ... ]</i>,
+        "<a href="#signin" title="SignIn">SignIn</a>" : <i>[ <a href="signin.md">SignIn</a>, ... ]</i>,
+        "<a href="#signup" title="SignUp">SignUp</a>" : <i>[ <a href="signup.md">SignUp</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#management" title="Management">Management</a>" : <i>[ <a href="management.md">Management</a>, ... ]</i>,
+        "<a href="#portal" title="Portal">Portal</a>" : <i>[ <a href="portal.md">Portal</a>, ... ]</i>,
+        "<a href="#proxy" title="Proxy">Proxy</a>" : <i>[ <a href="proxy.md">Proxy</a>, ... ]</i>,
+        "<a href="#scm" title="Scm">Scm</a>" : <i>[ <a href="scm.md">Scm</a>, ... ]</i>,
+        "<a href="#termsofservice" title="TermsOfService">TermsOfService</a>" : <i>[ <a href="termsofservice.md">TermsOfService</a>, ... ]</i>
     }
 }
 </pre>
@@ -50,40 +50,40 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#notificationsenderemail" title="NotificationSenderEmail">NotificationSenderEmail</a>: <i>String</i>
     <a href="#policy" title="Policy">Policy</a>: <i>
-      - &lt;a href=&#34;policy.md&#34;&gt;Policy&lt;/a&gt;</i>
+      - <a href="policy.md">Policy</a></i>
     <a href="#publisheremail" title="PublisherEmail">PublisherEmail</a>: <i>String</i>
     <a href="#publishername" title="PublisherName">PublisherName</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#skuname" title="SkuName">SkuName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#additionallocation" title="AdditionalLocation">AdditionalLocation</a>: <i>
-      - &lt;a href=&#34;additionallocation.md&#34;&gt;AdditionalLocation&lt;/a&gt;</i>
+      - <a href="additionallocation.md">AdditionalLocation</a></i>
     <a href="#certificate" title="Certificate">Certificate</a>: <i>
-      - &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;</i>
+      - <a href="certificate.md">Certificate</a></i>
     <a href="#hostnameconfiguration" title="HostnameConfiguration">HostnameConfiguration</a>: <i>
-      - &lt;a href=&#34;hostnameconfiguration.md&#34;&gt;HostnameConfiguration&lt;/a&gt;</i>
+      - <a href="hostnameconfiguration.md">HostnameConfiguration</a></i>
     <a href="#identity" title="Identity">Identity</a>: <i>
-      - &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;</i>
+      - <a href="identity.md">Identity</a></i>
     <a href="#protocols" title="Protocols">Protocols</a>: <i>
-      - &lt;a href=&#34;protocols.md&#34;&gt;Protocols&lt;/a&gt;</i>
+      - <a href="protocols.md">Protocols</a></i>
     <a href="#security" title="Security">Security</a>: <i>
-      - &lt;a href=&#34;security.md&#34;&gt;Security&lt;/a&gt;</i>
+      - <a href="security.md">Security</a></i>
     <a href="#signin" title="SignIn">SignIn</a>: <i>
-      - &lt;a href=&#34;signin.md&#34;&gt;SignIn&lt;/a&gt;</i>
+      - <a href="signin.md">SignIn</a></i>
     <a href="#signup" title="SignUp">SignUp</a>: <i>
-      - &lt;a href=&#34;signup.md&#34;&gt;SignUp&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="signup.md">SignUp</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#management" title="Management">Management</a>: <i>
-      - &lt;a href=&#34;management.md&#34;&gt;Management&lt;/a&gt;</i>
+      - <a href="management.md">Management</a></i>
     <a href="#portal" title="Portal">Portal</a>: <i>
-      - &lt;a href=&#34;portal.md&#34;&gt;Portal&lt;/a&gt;</i>
+      - <a href="portal.md">Portal</a></i>
     <a href="#proxy" title="Proxy">Proxy</a>: <i>
-      - &lt;a href=&#34;proxy.md&#34;&gt;Proxy&lt;/a&gt;</i>
+      - <a href="proxy.md">Proxy</a></i>
     <a href="#scm" title="Scm">Scm</a>: <i>
-      - &lt;a href=&#34;scm.md&#34;&gt;Scm&lt;/a&gt;</i>
+      - <a href="scm.md">Scm</a></i>
     <a href="#termsofservice" title="TermsOfService">TermsOfService</a>: <i>
-      - &lt;a href=&#34;termsofservice.md&#34;&gt;TermsOfService&lt;/a&gt;</i>
+      - <a href="termsofservice.md">TermsOfService</a></i>
 </pre>
 
 ## Properties
@@ -124,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;policy.md&#34;&gt;Policy&lt;/a&gt;
+_Type_: List of <a href="policy.md">Policy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -172,7 +172,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;additionallocation.md&#34;&gt;AdditionalLocation&lt;/a&gt;
+_Type_: List of <a href="additionallocation.md">AdditionalLocation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -180,7 +180,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;
+_Type_: List of <a href="certificate.md">Certificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,7 +188,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hostnameconfiguration.md&#34;&gt;HostnameConfiguration&lt;/a&gt;
+_Type_: List of <a href="hostnameconfiguration.md">HostnameConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,7 +196,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;
+_Type_: List of <a href="identity.md">Identity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -204,7 +204,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;protocols.md&#34;&gt;Protocols&lt;/a&gt;
+_Type_: List of <a href="protocols.md">Protocols</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -212,7 +212,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;security.md&#34;&gt;Security&lt;/a&gt;
+_Type_: List of <a href="security.md">Security</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -220,7 +220,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;signin.md&#34;&gt;SignIn&lt;/a&gt;
+_Type_: List of <a href="signin.md">SignIn</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -228,7 +228,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;signup.md&#34;&gt;SignUp&lt;/a&gt;
+_Type_: List of <a href="signup.md">SignUp</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -236,7 +236,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -244,7 +244,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;management.md&#34;&gt;Management&lt;/a&gt;
+_Type_: List of <a href="management.md">Management</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -252,7 +252,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;portal.md&#34;&gt;Portal&lt;/a&gt;
+_Type_: List of <a href="portal.md">Portal</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -260,7 +260,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;proxy.md&#34;&gt;Proxy&lt;/a&gt;
+_Type_: List of <a href="proxy.md">Proxy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -268,7 +268,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scm.md&#34;&gt;Scm&lt;/a&gt;
+_Type_: List of <a href="scm.md">Scm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -276,7 +276,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;termsofservice.md&#34;&gt;TermsOfService&lt;/a&gt;
+_Type_: List of <a href="termsofservice.md">TermsOfService</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -298,25 +298,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### GatewayRegionalUrl
 
-Returns the &lt;code&gt;GatewayRegionalUrl&lt;/code&gt; value.
+Returns the <code>GatewayRegionalUrl</code> value.
 
 #### GatewayUrl
 
-Returns the &lt;code&gt;GatewayUrl&lt;/code&gt; value.
+Returns the <code>GatewayUrl</code> value.
 
 #### ManagementApiUrl
 
-Returns the &lt;code&gt;ManagementApiUrl&lt;/code&gt; value.
+Returns the <code>ManagementApiUrl</code> value.
 
 #### PortalUrl
 
-Returns the &lt;code&gt;PortalUrl&lt;/code&gt; value.
+Returns the <code>PortalUrl</code> value.
 
 #### PublicIpAddresses
 
-Returns the &lt;code&gt;PublicIpAddresses&lt;/code&gt; value.
+Returns the <code>PublicIpAddresses</code> value.
 
 #### ScmUrl
 
-Returns the &lt;code&gt;ScmUrl&lt;/code&gt; value.
+Returns the <code>ScmUrl</code> value.
 

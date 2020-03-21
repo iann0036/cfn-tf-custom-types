@@ -93,13 +93,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DeviceOwner
 
-Returns the &lt;code&gt;DeviceOwner&lt;/code&gt; value.
+Returns the <code>DeviceOwner</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### TenantId
 
-Returns the &lt;code&gt;TenantId&lt;/code&gt; value.
+Returns the <code>TenantId</code> value.
 

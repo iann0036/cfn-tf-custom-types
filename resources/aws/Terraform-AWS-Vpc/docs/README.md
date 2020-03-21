@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#enablednssupport" title="EnableDnsSupport">EnableDnsSupport</a>" : <i>Boolean</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instancetenancy" title="InstanceTenancy">InstanceTenancy</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instancetenancy" title="InstanceTenancy">InstanceTenancy</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,37 +134,37 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### DefaultNetworkAclId
 
-Returns the &lt;code&gt;DefaultNetworkAclId&lt;/code&gt; value.
+Returns the <code>DefaultNetworkAclId</code> value.
 
 #### DefaultRouteTableId
 
-Returns the &lt;code&gt;DefaultRouteTableId&lt;/code&gt; value.
+Returns the <code>DefaultRouteTableId</code> value.
 
 #### DefaultSecurityGroupId
 
-Returns the &lt;code&gt;DefaultSecurityGroupId&lt;/code&gt; value.
+Returns the <code>DefaultSecurityGroupId</code> value.
 
 #### DhcpOptionsId
 
-Returns the &lt;code&gt;DhcpOptionsId&lt;/code&gt; value.
+Returns the <code>DhcpOptionsId</code> value.
 
 #### Ipv6AssociationId
 
-Returns the &lt;code&gt;Ipv6AssociationId&lt;/code&gt; value.
+Returns the <code>Ipv6AssociationId</code> value.
 
 #### Ipv6CidrBlock
 
-Returns the &lt;code&gt;Ipv6CidrBlock&lt;/code&gt; value.
+Returns the <code>Ipv6CidrBlock</code> value.
 
 #### MainRouteTableId
 
-Returns the &lt;code&gt;MainRouteTableId&lt;/code&gt; value.
+Returns the <code>MainRouteTableId</code> value.
 
 #### OwnerId
 
-Returns the &lt;code&gt;OwnerId&lt;/code&gt; value.
+Returns the <code>OwnerId</code> value.
 

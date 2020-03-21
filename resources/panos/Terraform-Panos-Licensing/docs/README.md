@@ -84,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Licenses
 
-Returns the &lt;code&gt;Licenses&lt;/code&gt; value.
+Returns the <code>Licenses</code> value.
 

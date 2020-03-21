@@ -22,10 +22,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#backupstrategy" title="BackupStrategy">BackupStrategy</a>" : <i>[ &lt;a href=&#34;backupstrategy.md&#34;&gt;BackupStrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#datastore" title="Datastore">Datastore</a>" : <i>[ &lt;a href=&#34;datastore.md&#34;&gt;Datastore&lt;/a&gt;, ... ]</i>,
-        "<a href="#flavor" title="Flavor">Flavor</a>" : <i>[ &lt;a href=&#34;flavor.md&#34;&gt;Flavor&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#backupstrategy" title="BackupStrategy">BackupStrategy</a>" : <i>[ <a href="backupstrategy.md">BackupStrategy</a>, ... ]</i>,
+        "<a href="#datastore" title="Datastore">Datastore</a>" : <i>[ <a href="datastore.md">Datastore</a>, ... ]</i>,
+        "<a href="#flavor" title="Flavor">Flavor</a>" : <i>[ <a href="flavor.md">Flavor</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -46,12 +46,12 @@ Properties:
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#backupstrategy" title="BackupStrategy">BackupStrategy</a>: <i>
-      - &lt;a href=&#34;backupstrategy.md&#34;&gt;BackupStrategy&lt;/a&gt;</i>
+      - <a href="backupstrategy.md">BackupStrategy</a></i>
     <a href="#datastore" title="Datastore">Datastore</a>: <i>
-      - &lt;a href=&#34;datastore.md&#34;&gt;Datastore&lt;/a&gt;</i>
+      - <a href="datastore.md">Datastore</a></i>
     <a href="#flavor" title="Flavor">Flavor</a>: <i>
-      - &lt;a href=&#34;flavor.md&#34;&gt;Flavor&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="flavor.md">Flavor</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -140,7 +140,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backupstrategy.md&#34;&gt;BackupStrategy&lt;/a&gt;
+_Type_: List of <a href="backupstrategy.md">BackupStrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datastore.md&#34;&gt;Datastore&lt;/a&gt;
+_Type_: List of <a href="datastore.md">Datastore</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;flavor.md&#34;&gt;Flavor&lt;/a&gt;
+_Type_: List of <a href="flavor.md">Flavor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,5 +186,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DbUsername
 
-Returns the &lt;code&gt;DbUsername&lt;/code&gt; value.
+Returns the <code>DbUsername</code> value.
 

@@ -84,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BackupRetentionPeriod
 
-Returns the &lt;code&gt;BackupRetentionPeriod&lt;/code&gt; value.
+Returns the <code>BackupRetentionPeriod</code> value.
 

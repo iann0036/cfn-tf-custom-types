@@ -63,13 +63,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### IpAddress
 
-Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
+Returns the <code>IpAddress</code> value.
 
 #### SupportCode
 
-Returns the &lt;code&gt;SupportCode&lt;/code&gt; value.
+Returns the <code>SupportCode</code> value.
 

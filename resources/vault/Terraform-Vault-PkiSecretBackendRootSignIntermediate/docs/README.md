@@ -258,17 +258,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CaChain
 
-Returns the &lt;code&gt;CaChain&lt;/code&gt; value.
+Returns the <code>CaChain</code> value.
 
 #### Certificate
 
-Returns the &lt;code&gt;Certificate&lt;/code&gt; value.
+Returns the <code>Certificate</code> value.
 
 #### IssuingCa
 
-Returns the &lt;code&gt;IssuingCa&lt;/code&gt; value.
+Returns the <code>IssuingCa</code> value.
 
 #### Serial
 
-Returns the &lt;code&gt;Serial&lt;/code&gt; value.
+Returns the <code>Serial</code> value.
 

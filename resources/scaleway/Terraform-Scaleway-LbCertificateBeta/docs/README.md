@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#lbid" title="LbId">LbId</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#customcertificate" title="CustomCertificate">CustomCertificate</a>" : <i>[ &lt;a href=&#34;customcertificate.md&#34;&gt;CustomCertificate&lt;/a&gt;, ... ]</i>,
-        "<a href="#letsencrypt" title="Letsencrypt">Letsencrypt</a>" : <i>[ &lt;a href=&#34;letsencrypt.md&#34;&gt;Letsencrypt&lt;/a&gt;, ... ]</i>
+        "<a href="#customcertificate" title="CustomCertificate">CustomCertificate</a>" : <i>[ <a href="customcertificate.md">CustomCertificate</a>, ... ]</i>,
+        "<a href="#letsencrypt" title="Letsencrypt">Letsencrypt</a>" : <i>[ <a href="letsencrypt.md">Letsencrypt</a>, ... ]</i>
     }
 }
 </pre>
@@ -30,9 +30,9 @@ Properties:
     <a href="#lbid" title="LbId">LbId</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#customcertificate" title="CustomCertificate">CustomCertificate</a>: <i>
-      - &lt;a href=&#34;customcertificate.md&#34;&gt;CustomCertificate&lt;/a&gt;</i>
+      - <a href="customcertificate.md">CustomCertificate</a></i>
     <a href="#letsencrypt" title="Letsencrypt">Letsencrypt</a>: <i>
-      - &lt;a href=&#34;letsencrypt.md&#34;&gt;Letsencrypt&lt;/a&gt;</i>
+      - <a href="letsencrypt.md">Letsencrypt</a></i>
 </pre>
 
 ## Properties
@@ -65,7 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customcertificate.md&#34;&gt;CustomCertificate&lt;/a&gt;
+_Type_: List of <a href="customcertificate.md">CustomCertificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,7 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;letsencrypt.md&#34;&gt;Letsencrypt&lt;/a&gt;
+_Type_: List of <a href="letsencrypt.md">Letsencrypt</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,25 +95,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CommonName
 
-Returns the &lt;code&gt;CommonName&lt;/code&gt; value.
+Returns the <code>CommonName</code> value.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 
 #### NotValidAfter
 
-Returns the &lt;code&gt;NotValidAfter&lt;/code&gt; value.
+Returns the <code>NotValidAfter</code> value.
 
 #### NotValidBefore
 
-Returns the &lt;code&gt;NotValidBefore&lt;/code&gt; value.
+Returns the <code>NotValidBefore</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### SubjectAlternativeName
 
-Returns the &lt;code&gt;SubjectAlternativeName&lt;/code&gt; value.
+Returns the <code>SubjectAlternativeName</code> value.
 

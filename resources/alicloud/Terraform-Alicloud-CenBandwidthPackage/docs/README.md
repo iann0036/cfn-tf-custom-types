@@ -114,9 +114,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ExpiredTime
 
-Returns the &lt;code&gt;ExpiredTime&lt;/code&gt; value.
+Returns the <code>ExpiredTime</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

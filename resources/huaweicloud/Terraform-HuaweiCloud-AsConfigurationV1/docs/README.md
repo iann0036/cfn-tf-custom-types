@@ -15,12 +15,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#scalingconfigurationname" title="ScalingConfigurationName">ScalingConfigurationName</a>" : <i>String</i>,
-        "<a href="#instanceconfig" title="InstanceConfig">InstanceConfig</a>" : <i>[ &lt;a href=&#34;instanceconfig.md&#34;&gt;InstanceConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#disk" title="Disk">Disk</a>" : <i>[ &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;, ... ]</i>,
-        "<a href="#personality" title="Personality">Personality</a>" : <i>[ &lt;a href=&#34;personality.md&#34;&gt;Personality&lt;/a&gt;, ... ]</i>,
-        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>[ &lt;a href=&#34;publicip.md&#34;&gt;PublicIp&lt;/a&gt;, ... ]</i>,
-        "<a href="#eip" title="Eip">Eip</a>" : <i>[ &lt;a href=&#34;eip.md&#34;&gt;Eip&lt;/a&gt;, ... ]</i>,
-        "<a href="#bandwidth" title="Bandwidth">Bandwidth</a>" : <i>[ &lt;a href=&#34;bandwidth.md&#34;&gt;Bandwidth&lt;/a&gt;, ... ]</i>
+        "<a href="#instanceconfig" title="InstanceConfig">InstanceConfig</a>" : <i>[ <a href="instanceconfig.md">InstanceConfig</a>, ... ]</i>,
+        "<a href="#disk" title="Disk">Disk</a>" : <i>[ <a href="disk.md">Disk</a>, ... ]</i>,
+        "<a href="#personality" title="Personality">Personality</a>" : <i>[ <a href="personality.md">Personality</a>, ... ]</i>,
+        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>[ <a href="publicip.md">PublicIp</a>, ... ]</i>,
+        "<a href="#eip" title="Eip">Eip</a>" : <i>[ <a href="eip.md">Eip</a>, ... ]</i>,
+        "<a href="#bandwidth" title="Bandwidth">Bandwidth</a>" : <i>[ <a href="bandwidth.md">Bandwidth</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,17 +34,17 @@ Properties:
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#scalingconfigurationname" title="ScalingConfigurationName">ScalingConfigurationName</a>: <i>String</i>
     <a href="#instanceconfig" title="InstanceConfig">InstanceConfig</a>: <i>
-      - &lt;a href=&#34;instanceconfig.md&#34;&gt;InstanceConfig&lt;/a&gt;</i>
+      - <a href="instanceconfig.md">InstanceConfig</a></i>
     <a href="#disk" title="Disk">Disk</a>: <i>
-      - &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;</i>
+      - <a href="disk.md">Disk</a></i>
     <a href="#personality" title="Personality">Personality</a>: <i>
-      - &lt;a href=&#34;personality.md&#34;&gt;Personality&lt;/a&gt;</i>
+      - <a href="personality.md">Personality</a></i>
     <a href="#publicip" title="PublicIp">PublicIp</a>: <i>
-      - &lt;a href=&#34;publicip.md&#34;&gt;PublicIp&lt;/a&gt;</i>
+      - <a href="publicip.md">PublicIp</a></i>
     <a href="#eip" title="Eip">Eip</a>: <i>
-      - &lt;a href=&#34;eip.md&#34;&gt;Eip&lt;/a&gt;</i>
+      - <a href="eip.md">Eip</a></i>
     <a href="#bandwidth" title="Bandwidth">Bandwidth</a>: <i>
-      - &lt;a href=&#34;bandwidth.md&#34;&gt;Bandwidth&lt;/a&gt;</i>
+      - <a href="bandwidth.md">Bandwidth</a></i>
 </pre>
 
 ## Properties
@@ -77,7 +77,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instanceconfig.md&#34;&gt;InstanceConfig&lt;/a&gt;
+_Type_: List of <a href="instanceconfig.md">InstanceConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -85,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;
+_Type_: List of <a href="disk.md">Disk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -93,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;personality.md&#34;&gt;Personality&lt;/a&gt;
+_Type_: List of <a href="personality.md">Personality</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -101,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;publicip.md&#34;&gt;PublicIp&lt;/a&gt;
+_Type_: List of <a href="publicip.md">PublicIp</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -109,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;eip.md&#34;&gt;Eip&lt;/a&gt;
+_Type_: List of <a href="eip.md">Eip</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bandwidth.md&#34;&gt;Bandwidth&lt;/a&gt;
+_Type_: List of <a href="bandwidth.md">Bandwidth</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

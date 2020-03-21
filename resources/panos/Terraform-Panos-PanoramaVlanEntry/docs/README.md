@@ -94,5 +94,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LiveMacAddresses
 
-Returns the &lt;code&gt;LiveMacAddresses&lt;/code&gt; value.
+Returns the <code>LiveMacAddresses</code> value.
 

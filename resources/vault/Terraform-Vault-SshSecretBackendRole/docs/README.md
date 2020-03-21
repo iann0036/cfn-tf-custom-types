@@ -20,12 +20,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#allowedcriticaloptions" title="AllowedCriticalOptions">AllowedCriticalOptions</a>" : <i>String</i>,
         "<a href="#alloweddomains" title="AllowedDomains">AllowedDomains</a>" : <i>String</i>,
         "<a href="#allowedextensions" title="AllowedExtensions">AllowedExtensions</a>" : <i>String</i>,
-        "<a href="#alloweduserkeylengths" title="AllowedUserKeyLengths">AllowedUserKeyLengths</a>" : <i>[ &lt;a href=&#34;alloweduserkeylengths.md&#34;&gt;AllowedUserKeyLengths&lt;/a&gt;, ... ]</i>,
+        "<a href="#alloweduserkeylengths" title="AllowedUserKeyLengths">AllowedUserKeyLengths</a>" : <i>[ <a href="alloweduserkeylengths.md">AllowedUserKeyLengths</a>, ... ]</i>,
         "<a href="#allowedusers" title="AllowedUsers">AllowedUsers</a>" : <i>String</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
         "<a href="#cidrlist" title="CidrList">CidrList</a>" : <i>String</i>,
-        "<a href="#defaultcriticaloptions" title="DefaultCriticalOptions">DefaultCriticalOptions</a>" : <i>[ &lt;a href=&#34;defaultcriticaloptions.md&#34;&gt;DefaultCriticalOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#defaultextensions" title="DefaultExtensions">DefaultExtensions</a>" : <i>[ &lt;a href=&#34;defaultextensions.md&#34;&gt;DefaultExtensions&lt;/a&gt;, ... ]</i>,
+        "<a href="#defaultcriticaloptions" title="DefaultCriticalOptions">DefaultCriticalOptions</a>" : <i>[ <a href="defaultcriticaloptions.md">DefaultCriticalOptions</a>, ... ]</i>,
+        "<a href="#defaultextensions" title="DefaultExtensions">DefaultExtensions</a>" : <i>[ <a href="defaultextensions.md">DefaultExtensions</a>, ... ]</i>,
         "<a href="#defaultuser" title="DefaultUser">DefaultUser</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#keyidformat" title="KeyIdFormat">KeyIdFormat</a>" : <i>String</i>,
@@ -51,14 +51,14 @@ Properties:
     <a href="#alloweddomains" title="AllowedDomains">AllowedDomains</a>: <i>String</i>
     <a href="#allowedextensions" title="AllowedExtensions">AllowedExtensions</a>: <i>String</i>
     <a href="#alloweduserkeylengths" title="AllowedUserKeyLengths">AllowedUserKeyLengths</a>: <i>
-      - &lt;a href=&#34;alloweduserkeylengths.md&#34;&gt;AllowedUserKeyLengths&lt;/a&gt;</i>
+      - <a href="alloweduserkeylengths.md">AllowedUserKeyLengths</a></i>
     <a href="#allowedusers" title="AllowedUsers">AllowedUsers</a>: <i>String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
     <a href="#cidrlist" title="CidrList">CidrList</a>: <i>String</i>
     <a href="#defaultcriticaloptions" title="DefaultCriticalOptions">DefaultCriticalOptions</a>: <i>
-      - &lt;a href=&#34;defaultcriticaloptions.md&#34;&gt;DefaultCriticalOptions&lt;/a&gt;</i>
+      - <a href="defaultcriticaloptions.md">DefaultCriticalOptions</a></i>
     <a href="#defaultextensions" title="DefaultExtensions">DefaultExtensions</a>: <i>
-      - &lt;a href=&#34;defaultextensions.md&#34;&gt;DefaultExtensions&lt;/a&gt;</i>
+      - <a href="defaultextensions.md">DefaultExtensions</a></i>
     <a href="#defaultuser" title="DefaultUser">DefaultUser</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#keyidformat" title="KeyIdFormat">KeyIdFormat</a>: <i>String</i>
@@ -138,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;alloweduserkeylengths.md&#34;&gt;AllowedUserKeyLengths&lt;/a&gt;
+_Type_: List of <a href="alloweduserkeylengths.md">AllowedUserKeyLengths</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;defaultcriticaloptions.md&#34;&gt;DefaultCriticalOptions&lt;/a&gt;
+_Type_: List of <a href="defaultcriticaloptions.md">DefaultCriticalOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,7 +178,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;defaultextensions.md&#34;&gt;DefaultExtensions&lt;/a&gt;
+_Type_: List of <a href="defaultextensions.md">DefaultExtensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -193,5 +193,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IsReady
 
-Returns the &lt;code&gt;IsReady&lt;/code&gt; value.
+Returns the <code>IsReady</code> value.
 

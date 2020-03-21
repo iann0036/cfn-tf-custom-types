@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#containerwrite" title="ContainerWrite">ContainerWrite</a>" : <i>[ String, ... ]</i>,
         "<a href="#historylocation" title="HistoryLocation">HistoryLocation</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#versionslocation" title="VersionsLocation">VersionsLocation</a>" : <i>String</i>
     }
@@ -39,7 +39,7 @@ Properties:
     <a href="#historylocation" title="HistoryLocation">HistoryLocation</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#versionslocation" title="VersionsLocation">VersionsLocation</a>: <i>String</i>
 </pre>
@@ -98,7 +98,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,17 +136,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BytesUsed
 
-Returns the &lt;code&gt;BytesUsed&lt;/code&gt; value.
+Returns the <code>BytesUsed</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### ObjectCount
 
-Returns the &lt;code&gt;ObjectCount&lt;/code&gt; value.
+Returns the <code>ObjectCount</code> value.
 
 #### StoragePolicy
 
-Returns the &lt;code&gt;StoragePolicy&lt;/code&gt; value.
+Returns the <code>StoragePolicy</code> value.
 

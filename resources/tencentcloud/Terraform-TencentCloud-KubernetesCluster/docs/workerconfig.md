@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>" : <i>Double</i>,
     "<a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>" : <i>String</i>,
     "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
-    "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ &lt;a href=&#34;workerconfig-datadisk.md&#34;&gt;DataDisk&lt;/a&gt;, ... ]</i>
+    "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ <a href="workerconfig-datadisk.md">DataDisk</a>, ... ]</i>
 }
 </pre>
 
@@ -56,7 +56,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>: <i>String</i>
 <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
 <a href="#datadisk" title="DataDisk">DataDisk</a>: <i>
-      - &lt;a href=&#34;workerconfig-datadisk.md&#34;&gt;DataDisk&lt;/a&gt;</i>
+      - <a href="workerconfig-datadisk.md">DataDisk</a></i>
 </pre>
 
 ## Properties
@@ -197,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DataDisk
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;workerconfig-datadisk.md&#34;&gt;DataDisk&lt;/a&gt;
+_Type_: List of <a href="workerconfig-datadisk.md">DataDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

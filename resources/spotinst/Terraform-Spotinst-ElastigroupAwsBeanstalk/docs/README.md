@@ -23,11 +23,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#product" title="Product">Product</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>" : <i>[ &lt;a href=&#34;deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;, ... ]</i>,
-        "<a href="#managedactions" title="ManagedActions">ManagedActions</a>" : <i>[ &lt;a href=&#34;managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;, ... ]</i>,
-        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;, ... ]</i>,
-        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>" : <i>[ &lt;a href=&#34;platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;, ... ]</i>
+        "<a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>" : <i>[ <a href="deploymentpreferences.md">DeploymentPreferences</a>, ... ]</i>,
+        "<a href="#managedactions" title="ManagedActions">ManagedActions</a>" : <i>[ <a href="managedactions.md">ManagedActions</a>, ... ]</i>,
+        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ <a href="scheduledtask.md">ScheduledTask</a>, ... ]</i>,
+        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ <a href="strategy.md">Strategy</a>, ... ]</i>,
+        "<a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>" : <i>[ <a href="platformupdate.md">PlatformUpdate</a>, ... ]</i>
     }
 }
 </pre>
@@ -50,15 +50,15 @@ Properties:
     <a href="#product" title="Product">Product</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>: <i>
-      - &lt;a href=&#34;deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;</i>
+      - <a href="deploymentpreferences.md">DeploymentPreferences</a></i>
     <a href="#managedactions" title="ManagedActions">ManagedActions</a>: <i>
-      - &lt;a href=&#34;managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;</i>
+      - <a href="managedactions.md">ManagedActions</a></i>
     <a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>: <i>
-      - &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;</i>
+      - <a href="scheduledtask.md">ScheduledTask</a></i>
     <a href="#strategy" title="Strategy">Strategy</a>: <i>
-      - &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;</i>
+      - <a href="strategy.md">Strategy</a></i>
     <a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>: <i>
-      - &lt;a href=&#34;platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;</i>
+      - <a href="platformupdate.md">PlatformUpdate</a></i>
 </pre>
 
 ## Properties
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;
+_Type_: List of <a href="deploymentpreferences.md">DeploymentPreferences</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;
+_Type_: List of <a href="managedactions.md">ManagedActions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;
+_Type_: List of <a href="scheduledtask.md">ScheduledTask</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;
+_Type_: List of <a href="strategy.md">Strategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;
+_Type_: List of <a href="platformupdate.md">PlatformUpdate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

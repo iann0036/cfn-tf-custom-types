@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#isenabled" title="IsEnabled">IsEnabled</a>" : <i>Boolean</i>,
         "<a href="#maintenancerunid" title="MaintenanceRunId">MaintenanceRunId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -28,7 +28,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#isenabled" title="IsEnabled">IsEnabled</a>: <i>Boolean</i>
     <a href="#maintenancerunid" title="MaintenanceRunId">MaintenanceRunId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -61,7 +61,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -83,49 +83,49 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CompartmentId
 
-Returns the &lt;code&gt;CompartmentId&lt;/code&gt; value.
+Returns the <code>CompartmentId</code> value.
 
 #### Description
 
-Returns the &lt;code&gt;Description&lt;/code&gt; value.
+Returns the <code>Description</code> value.
 
 #### DisplayName
 
-Returns the &lt;code&gt;DisplayName&lt;/code&gt; value.
+Returns the <code>DisplayName</code> value.
 
 #### LifecycleDetails
 
-Returns the &lt;code&gt;LifecycleDetails&lt;/code&gt; value.
+Returns the <code>LifecycleDetails</code> value.
 
 #### MaintenanceSubtype
 
-Returns the &lt;code&gt;MaintenanceSubtype&lt;/code&gt; value.
+Returns the <code>MaintenanceSubtype</code> value.
 
 #### MaintenanceType
 
-Returns the &lt;code&gt;MaintenanceType&lt;/code&gt; value.
+Returns the <code>MaintenanceType</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TargetResourceId
 
-Returns the &lt;code&gt;TargetResourceId&lt;/code&gt; value.
+Returns the <code>TargetResourceId</code> value.
 
 #### TargetResourceType
 
-Returns the &lt;code&gt;TargetResourceType&lt;/code&gt; value.
+Returns the <code>TargetResourceType</code> value.
 
 #### TimeEnded
 
-Returns the &lt;code&gt;TimeEnded&lt;/code&gt; value.
+Returns the <code>TimeEnded</code> value.
 
 #### TimeScheduled
 
-Returns the &lt;code&gt;TimeScheduled&lt;/code&gt; value.
+Returns the <code>TimeScheduled</code> value.
 
 #### TimeStarted
 
-Returns the &lt;code&gt;TimeStarted&lt;/code&gt; value.
+Returns the <code>TimeStarted</code> value.
 

@@ -25,9 +25,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#s3bucketname" title="S3BucketName">S3BucketName</a>" : <i>String</i>,
         "<a href="#s3keyprefix" title="S3KeyPrefix">S3KeyPrefix</a>" : <i>String</i>,
         "<a href="#snstopicname" title="SnsTopicName">SnsTopicName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#eventselector" title="EventSelector">EventSelector</a>" : <i>[ &lt;a href=&#34;eventselector.md&#34;&gt;EventSelector&lt;/a&gt;, ... ]</i>,
-        "<a href="#dataresource" title="DataResource">DataResource</a>" : <i>[ &lt;a href=&#34;dataresource.md&#34;&gt;DataResource&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#eventselector" title="EventSelector">EventSelector</a>" : <i>[ <a href="eventselector.md">EventSelector</a>, ... ]</i>,
+        "<a href="#dataresource" title="DataResource">DataResource</a>" : <i>[ <a href="dataresource.md">DataResource</a>, ... ]</i>
     }
 }
 </pre>
@@ -51,11 +51,11 @@ Properties:
     <a href="#s3keyprefix" title="S3KeyPrefix">S3KeyPrefix</a>: <i>String</i>
     <a href="#snstopicname" title="SnsTopicName">SnsTopicName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#eventselector" title="EventSelector">EventSelector</a>: <i>
-      - &lt;a href=&#34;eventselector.md&#34;&gt;EventSelector&lt;/a&gt;</i>
+      - <a href="eventselector.md">EventSelector</a></i>
     <a href="#dataresource" title="DataResource">DataResource</a>: <i>
-      - &lt;a href=&#34;dataresource.md&#34;&gt;DataResource&lt;/a&gt;</i>
+      - <a href="dataresource.md">DataResource</a></i>
 </pre>
 
 ## Properties
@@ -168,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;eventselector.md&#34;&gt;EventSelector&lt;/a&gt;
+_Type_: List of <a href="eventselector.md">EventSelector</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dataresource.md&#34;&gt;DataResource&lt;/a&gt;
+_Type_: List of <a href="dataresource.md">DataResource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -206,9 +206,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### HomeRegion
 
-Returns the &lt;code&gt;HomeRegion&lt;/code&gt; value.
+Returns the <code>HomeRegion</code> value.
 

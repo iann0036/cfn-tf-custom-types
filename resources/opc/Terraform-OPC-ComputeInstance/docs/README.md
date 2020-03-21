@@ -24,9 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#shape" title="Shape">Shape</a>" : <i>String</i>,
         "<a href="#sshkeys" title="SshKeys">SshKeys</a>" : <i>[ String, ... ]</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>" : <i>[ &lt;a href=&#34;networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;, ... ]</i>,
-        "<a href="#storage" title="Storage">Storage</a>" : <i>[ &lt;a href=&#34;storage.md&#34;&gt;Storage&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>" : <i>[ <a href="networkinginfo.md">NetworkingInfo</a>, ... ]</i>,
+        "<a href="#storage" title="Storage">Storage</a>" : <i>[ <a href="storage.md">Storage</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -52,10 +52,10 @@ Properties:
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>: <i>
-      - &lt;a href=&#34;networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;</i>
+      - <a href="networkinginfo.md">NetworkingInfo</a></i>
     <a href="#storage" title="Storage">Storage</a>: <i>
-      - &lt;a href=&#34;storage.md&#34;&gt;Storage&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="storage.md">Storage</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -160,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;
+_Type_: List of <a href="networkinginfo.md">NetworkingInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storage.md&#34;&gt;Storage&lt;/a&gt;
+_Type_: List of <a href="storage.md">Storage</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,81 +198,81 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Attributes
 
-Returns the &lt;code&gt;Attributes&lt;/code&gt; value.
+Returns the <code>Attributes</code> value.
 
 #### AvailabilityDomain
 
-Returns the &lt;code&gt;AvailabilityDomain&lt;/code&gt; value.
+Returns the <code>AvailabilityDomain</code> value.
 
 #### Domain
 
-Returns the &lt;code&gt;Domain&lt;/code&gt; value.
+Returns the <code>Domain</code> value.
 
 #### Entry
 
-Returns the &lt;code&gt;Entry&lt;/code&gt; value.
+Returns the <code>Entry</code> value.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 
 #### Fqdn
 
-Returns the &lt;code&gt;Fqdn&lt;/code&gt; value.
+Returns the <code>Fqdn</code> value.
 
 #### ImageFormat
 
-Returns the &lt;code&gt;ImageFormat&lt;/code&gt; value.
+Returns the <code>ImageFormat</code> value.
 
 #### IpAddress
 
-Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
+Returns the <code>IpAddress</code> value.
 
 #### PlacementRequirements
 
-Returns the &lt;code&gt;PlacementRequirements&lt;/code&gt; value.
+Returns the <code>PlacementRequirements</code> value.
 
 #### Platform
 
-Returns the &lt;code&gt;Platform&lt;/code&gt; value.
+Returns the <code>Platform</code> value.
 
 #### Priority
 
-Returns the &lt;code&gt;Priority&lt;/code&gt; value.
+Returns the <code>Priority</code> value.
 
 #### QuotaReservation
 
-Returns the &lt;code&gt;QuotaReservation&lt;/code&gt; value.
+Returns the <code>QuotaReservation</code> value.
 
 #### Relationships
 
-Returns the &lt;code&gt;Relationships&lt;/code&gt; value.
+Returns the <code>Relationships</code> value.
 
 #### Resolvers
 
-Returns the &lt;code&gt;Resolvers&lt;/code&gt; value.
+Returns the <code>Resolvers</code> value.
 
 #### Site
 
-Returns the &lt;code&gt;Site&lt;/code&gt; value.
+Returns the <code>Site</code> value.
 
 #### StartTime
 
-Returns the &lt;code&gt;StartTime&lt;/code&gt; value.
+Returns the <code>StartTime</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Vcable
 
-Returns the &lt;code&gt;Vcable&lt;/code&gt; value.
+Returns the <code>Vcable</code> value.
 
 #### Virtio
 
-Returns the &lt;code&gt;Virtio&lt;/code&gt; value.
+Returns the <code>Virtio</code> value.
 
 #### VncAddress
 
-Returns the &lt;code&gt;VncAddress&lt;/code&gt; value.
+Returns the <code>VncAddress</code> value.
 

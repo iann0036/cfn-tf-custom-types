@@ -19,14 +19,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#scope" title="Scope">Scope</a>" : <i>String</i>,
         "<a href="#topicname" title="TopicName">TopicName</a>" : <i>String</i>,
-        "<a href="#eventhubendpoint" title="EventhubEndpoint">EventhubEndpoint</a>" : <i>[ &lt;a href=&#34;eventhubendpoint.md&#34;&gt;EventhubEndpoint&lt;/a&gt;, ... ]</i>,
-        "<a href="#hybridconnectionendpoint" title="HybridConnectionEndpoint">HybridConnectionEndpoint</a>" : <i>[ &lt;a href=&#34;hybridconnectionendpoint.md&#34;&gt;HybridConnectionEndpoint&lt;/a&gt;, ... ]</i>,
-        "<a href="#retrypolicy" title="RetryPolicy">RetryPolicy</a>" : <i>[ &lt;a href=&#34;retrypolicy.md&#34;&gt;RetryPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#storageblobdeadletterdestination" title="StorageBlobDeadLetterDestination">StorageBlobDeadLetterDestination</a>" : <i>[ &lt;a href=&#34;storageblobdeadletterdestination.md&#34;&gt;StorageBlobDeadLetterDestination&lt;/a&gt;, ... ]</i>,
-        "<a href="#storagequeueendpoint" title="StorageQueueEndpoint">StorageQueueEndpoint</a>" : <i>[ &lt;a href=&#34;storagequeueendpoint.md&#34;&gt;StorageQueueEndpoint&lt;/a&gt;, ... ]</i>,
-        "<a href="#subjectfilter" title="SubjectFilter">SubjectFilter</a>" : <i>[ &lt;a href=&#34;subjectfilter.md&#34;&gt;SubjectFilter&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#webhookendpoint" title="WebhookEndpoint">WebhookEndpoint</a>" : <i>[ &lt;a href=&#34;webhookendpoint.md&#34;&gt;WebhookEndpoint&lt;/a&gt;, ... ]</i>
+        "<a href="#eventhubendpoint" title="EventhubEndpoint">EventhubEndpoint</a>" : <i>[ <a href="eventhubendpoint.md">EventhubEndpoint</a>, ... ]</i>,
+        "<a href="#hybridconnectionendpoint" title="HybridConnectionEndpoint">HybridConnectionEndpoint</a>" : <i>[ <a href="hybridconnectionendpoint.md">HybridConnectionEndpoint</a>, ... ]</i>,
+        "<a href="#retrypolicy" title="RetryPolicy">RetryPolicy</a>" : <i>[ <a href="retrypolicy.md">RetryPolicy</a>, ... ]</i>,
+        "<a href="#storageblobdeadletterdestination" title="StorageBlobDeadLetterDestination">StorageBlobDeadLetterDestination</a>" : <i>[ <a href="storageblobdeadletterdestination.md">StorageBlobDeadLetterDestination</a>, ... ]</i>,
+        "<a href="#storagequeueendpoint" title="StorageQueueEndpoint">StorageQueueEndpoint</a>" : <i>[ <a href="storagequeueendpoint.md">StorageQueueEndpoint</a>, ... ]</i>,
+        "<a href="#subjectfilter" title="SubjectFilter">SubjectFilter</a>" : <i>[ <a href="subjectfilter.md">SubjectFilter</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#webhookendpoint" title="WebhookEndpoint">WebhookEndpoint</a>" : <i>[ <a href="webhookendpoint.md">WebhookEndpoint</a>, ... ]</i>
     }
 }
 </pre>
@@ -46,20 +46,20 @@ Properties:
     <a href="#scope" title="Scope">Scope</a>: <i>String</i>
     <a href="#topicname" title="TopicName">TopicName</a>: <i>String</i>
     <a href="#eventhubendpoint" title="EventhubEndpoint">EventhubEndpoint</a>: <i>
-      - &lt;a href=&#34;eventhubendpoint.md&#34;&gt;EventhubEndpoint&lt;/a&gt;</i>
+      - <a href="eventhubendpoint.md">EventhubEndpoint</a></i>
     <a href="#hybridconnectionendpoint" title="HybridConnectionEndpoint">HybridConnectionEndpoint</a>: <i>
-      - &lt;a href=&#34;hybridconnectionendpoint.md&#34;&gt;HybridConnectionEndpoint&lt;/a&gt;</i>
+      - <a href="hybridconnectionendpoint.md">HybridConnectionEndpoint</a></i>
     <a href="#retrypolicy" title="RetryPolicy">RetryPolicy</a>: <i>
-      - &lt;a href=&#34;retrypolicy.md&#34;&gt;RetryPolicy&lt;/a&gt;</i>
+      - <a href="retrypolicy.md">RetryPolicy</a></i>
     <a href="#storageblobdeadletterdestination" title="StorageBlobDeadLetterDestination">StorageBlobDeadLetterDestination</a>: <i>
-      - &lt;a href=&#34;storageblobdeadletterdestination.md&#34;&gt;StorageBlobDeadLetterDestination&lt;/a&gt;</i>
+      - <a href="storageblobdeadletterdestination.md">StorageBlobDeadLetterDestination</a></i>
     <a href="#storagequeueendpoint" title="StorageQueueEndpoint">StorageQueueEndpoint</a>: <i>
-      - &lt;a href=&#34;storagequeueendpoint.md&#34;&gt;StorageQueueEndpoint&lt;/a&gt;</i>
+      - <a href="storagequeueendpoint.md">StorageQueueEndpoint</a></i>
     <a href="#subjectfilter" title="SubjectFilter">SubjectFilter</a>: <i>
-      - &lt;a href=&#34;subjectfilter.md&#34;&gt;SubjectFilter&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="subjectfilter.md">SubjectFilter</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#webhookendpoint" title="WebhookEndpoint">WebhookEndpoint</a>: <i>
-      - &lt;a href=&#34;webhookendpoint.md&#34;&gt;WebhookEndpoint&lt;/a&gt;</i>
+      - <a href="webhookendpoint.md">WebhookEndpoint</a></i>
 </pre>
 
 ## Properties
@@ -124,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;eventhubendpoint.md&#34;&gt;EventhubEndpoint&lt;/a&gt;
+_Type_: List of <a href="eventhubendpoint.md">EventhubEndpoint</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -132,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hybridconnectionendpoint.md&#34;&gt;HybridConnectionEndpoint&lt;/a&gt;
+_Type_: List of <a href="hybridconnectionendpoint.md">HybridConnectionEndpoint</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -140,7 +140,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retrypolicy.md&#34;&gt;RetryPolicy&lt;/a&gt;
+_Type_: List of <a href="retrypolicy.md">RetryPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storageblobdeadletterdestination.md&#34;&gt;StorageBlobDeadLetterDestination&lt;/a&gt;
+_Type_: List of <a href="storageblobdeadletterdestination.md">StorageBlobDeadLetterDestination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storagequeueendpoint.md&#34;&gt;StorageQueueEndpoint&lt;/a&gt;
+_Type_: List of <a href="storagequeueendpoint.md">StorageQueueEndpoint</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subjectfilter.md&#34;&gt;SubjectFilter&lt;/a&gt;
+_Type_: List of <a href="subjectfilter.md">SubjectFilter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -172,7 +172,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -180,7 +180,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;webhookendpoint.md&#34;&gt;WebhookEndpoint&lt;/a&gt;
+_Type_: List of <a href="webhookendpoint.md">WebhookEndpoint</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -104,5 +104,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedTime
 
-Returns the &lt;code&gt;CreatedTime&lt;/code&gt; value.
+Returns the <code>CreatedTime</code> value.
 

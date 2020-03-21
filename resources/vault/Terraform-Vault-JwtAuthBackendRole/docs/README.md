@@ -16,9 +16,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
         "<a href="#boundaudiences" title="BoundAudiences">BoundAudiences</a>" : <i>[ String, ... ]</i>,
         "<a href="#boundcidrs" title="BoundCidrs">BoundCidrs</a>" : <i>[ String, ... ]</i>,
-        "<a href="#boundclaims" title="BoundClaims">BoundClaims</a>" : <i>[ &lt;a href=&#34;boundclaims.md&#34;&gt;BoundClaims&lt;/a&gt;, ... ]</i>,
+        "<a href="#boundclaims" title="BoundClaims">BoundClaims</a>" : <i>[ <a href="boundclaims.md">BoundClaims</a>, ... ]</i>,
         "<a href="#boundsubject" title="BoundSubject">BoundSubject</a>" : <i>String</i>,
-        "<a href="#claimmappings" title="ClaimMappings">ClaimMappings</a>" : <i>[ &lt;a href=&#34;claimmappings.md&#34;&gt;ClaimMappings&lt;/a&gt;, ... ]</i>,
+        "<a href="#claimmappings" title="ClaimMappings">ClaimMappings</a>" : <i>[ <a href="claimmappings.md">ClaimMappings</a>, ... ]</i>,
         "<a href="#clockskewleeway" title="ClockSkewLeeway">ClockSkewLeeway</a>" : <i>Double</i>,
         "<a href="#expirationleeway" title="ExpirationLeeway">ExpirationLeeway</a>" : <i>Double</i>,
         "<a href="#groupsclaim" title="GroupsClaim">GroupsClaim</a>" : <i>String</i>,
@@ -61,10 +61,10 @@ Properties:
     <a href="#boundcidrs" title="BoundCidrs">BoundCidrs</a>: <i>
       - String</i>
     <a href="#boundclaims" title="BoundClaims">BoundClaims</a>: <i>
-      - &lt;a href=&#34;boundclaims.md&#34;&gt;BoundClaims&lt;/a&gt;</i>
+      - <a href="boundclaims.md">BoundClaims</a></i>
     <a href="#boundsubject" title="BoundSubject">BoundSubject</a>: <i>String</i>
     <a href="#claimmappings" title="ClaimMappings">ClaimMappings</a>: <i>
-      - &lt;a href=&#34;claimmappings.md&#34;&gt;ClaimMappings&lt;/a&gt;</i>
+      - <a href="claimmappings.md">ClaimMappings</a></i>
     <a href="#clockskewleeway" title="ClockSkewLeeway">ClockSkewLeeway</a>: <i>Double</i>
     <a href="#expirationleeway" title="ExpirationLeeway">ExpirationLeeway</a>: <i>Double</i>
     <a href="#groupsclaim" title="GroupsClaim">GroupsClaim</a>: <i>String</i>
@@ -134,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;boundclaims.md&#34;&gt;BoundClaims&lt;/a&gt;
+_Type_: List of <a href="boundclaims.md">BoundClaims</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -150,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;claimmappings.md&#34;&gt;ClaimMappings&lt;/a&gt;
+_Type_: List of <a href="claimmappings.md">ClaimMappings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::MarketOrder",
     "Properties" : {
-        "<a href="#components" title="Components">Components</a>" : <i>[ &lt;a href=&#34;components.md&#34;&gt;Components&lt;/a&gt;, ... ]</i>,
+        "<a href="#components" title="Components">Components</a>" : <i>[ <a href="components.md">Components</a>, ... ]</i>,
         "<a href="#couponid" title="CouponId">CouponId</a>" : <i>String</i>,
         "<a href="#duration" title="Duration">Duration</a>" : <i>Double</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
@@ -31,7 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::Alicloud::MarketOrder
 Properties:
     <a href="#components" title="Components">Components</a>: <i>
-      - &lt;a href=&#34;components.md&#34;&gt;Components&lt;/a&gt;</i>
+      - <a href="components.md">Components</a></i>
     <a href="#couponid" title="CouponId">CouponId</a>: <i>String</i>
     <a href="#duration" title="Duration">Duration</a>: <i>Double</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
@@ -48,7 +48,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;components.md&#34;&gt;Components&lt;/a&gt;
+_Type_: List of <a href="components.md">Components</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

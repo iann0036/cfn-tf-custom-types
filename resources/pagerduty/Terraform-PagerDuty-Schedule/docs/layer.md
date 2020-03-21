@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#rotationvirtualstart" title="RotationVirtualStart">RotationVirtualStart</a>" : <i>String</i>,
     "<a href="#start" title="Start">Start</a>" : <i>String</i>,
     "<a href="#users" title="Users">Users</a>" : <i>[ String, ... ]</i>,
-    "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ &lt;a href=&#34;layer-restriction.md&#34;&gt;Restriction&lt;/a&gt;, ... ]</i>
+    "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ <a href="layer-restriction.md">Restriction</a>, ... ]</i>
 }
 </pre>
 
@@ -29,7 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#users" title="Users">Users</a>: <i>
       - String</i>
 <a href="#restriction" title="Restriction">Restriction</a>: <i>
-      - &lt;a href=&#34;layer-restriction.md&#34;&gt;Restriction&lt;/a&gt;</i>
+      - <a href="layer-restriction.md">Restriction</a></i>
 </pre>
 
 ## Properties
@@ -79,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Restriction
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;layer-restriction.md&#34;&gt;Restriction&lt;/a&gt;
+_Type_: List of <a href="layer-restriction.md">Restriction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

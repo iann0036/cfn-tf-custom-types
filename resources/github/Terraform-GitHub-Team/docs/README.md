@@ -103,9 +103,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 
 #### Slug
 
-Returns the &lt;code&gt;Slug&lt;/code&gt; value.
+Returns the <code>Slug</code> value.
 

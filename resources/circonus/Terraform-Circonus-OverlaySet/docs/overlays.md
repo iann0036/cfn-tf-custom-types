@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-    "<a href="#dataopts" title="DataOpts">DataOpts</a>" : <i>[ &lt;a href=&#34;overlays-dataopts.md&#34;&gt;DataOpts&lt;/a&gt;, ... ]</i>,
-    "<a href="#uispecs" title="UiSpecs">UiSpecs</a>" : <i>[ &lt;a href=&#34;overlays-uispecs.md&#34;&gt;UiSpecs&lt;/a&gt;, ... ]</i>
+    "<a href="#dataopts" title="DataOpts">DataOpts</a>" : <i>[ <a href="overlays-dataopts.md">DataOpts</a>, ... ]</i>,
+    "<a href="#uispecs" title="UiSpecs">UiSpecs</a>" : <i>[ <a href="overlays-uispecs.md">UiSpecs</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#id" title="Id">Id</a>: <i>String</i>
 <a href="#dataopts" title="DataOpts">DataOpts</a>: <i>
-      - &lt;a href=&#34;overlays-dataopts.md&#34;&gt;DataOpts&lt;/a&gt;</i>
+      - <a href="overlays-dataopts.md">DataOpts</a></i>
 <a href="#uispecs" title="UiSpecs">UiSpecs</a>: <i>
-      - &lt;a href=&#34;overlays-uispecs.md&#34;&gt;UiSpecs&lt;/a&gt;</i>
+      - <a href="overlays-uispecs.md">UiSpecs</a></i>
 </pre>
 
 ## Properties
@@ -36,14 +36,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DataOpts
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;overlays-dataopts.md&#34;&gt;DataOpts&lt;/a&gt;
+_Type_: List of <a href="overlays-dataopts.md">DataOpts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UiSpecs
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;overlays-uispecs.md&#34;&gt;UiSpecs&lt;/a&gt;
+_Type_: List of <a href="overlays-uispecs.md">UiSpecs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

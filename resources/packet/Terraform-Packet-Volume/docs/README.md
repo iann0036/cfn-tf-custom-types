@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#plan" title="Plan">Plan</a>" : <i>String</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
         "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
-        "<a href="#snapshotpolicies" title="SnapshotPolicies">SnapshotPolicies</a>" : <i>[ &lt;a href=&#34;snapshotpolicies.md&#34;&gt;SnapshotPolicies&lt;/a&gt;, ... ]</i>
+        "<a href="#snapshotpolicies" title="SnapshotPolicies">SnapshotPolicies</a>" : <i>[ <a href="snapshotpolicies.md">SnapshotPolicies</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Properties:
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
     <a href="#size" title="Size">Size</a>: <i>Double</i>
     <a href="#snapshotpolicies" title="SnapshotPolicies">SnapshotPolicies</a>: <i>
-      - &lt;a href=&#34;snapshotpolicies.md&#34;&gt;SnapshotPolicies&lt;/a&gt;</i>
+      - <a href="snapshotpolicies.md">SnapshotPolicies</a></i>
 </pre>
 
 ## Properties
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;snapshotpolicies.md&#34;&gt;SnapshotPolicies&lt;/a&gt;
+_Type_: List of <a href="snapshotpolicies.md">SnapshotPolicies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,21 +134,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Attachments
 
-Returns the &lt;code&gt;Attachments&lt;/code&gt; value.
+Returns the <code>Attachments</code> value.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Updated
 
-Returns the &lt;code&gt;Updated&lt;/code&gt; value.
+Returns the <code>Updated</code> value.
 

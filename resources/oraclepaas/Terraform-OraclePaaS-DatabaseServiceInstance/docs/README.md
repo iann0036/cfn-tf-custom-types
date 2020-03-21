@@ -30,13 +30,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#subnet" title="Subnet">Subnet</a>" : <i>String</i>,
         "<a href="#subscriptiontype" title="SubscriptionType">SubscriptionType</a>" : <i>String</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#backups" title="Backups">Backups</a>" : <i>[ &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;, ... ]</i>,
-        "<a href="#databaseconfiguration" title="DatabaseConfiguration">DatabaseConfiguration</a>" : <i>[ &lt;a href=&#34;databaseconfiguration.md&#34;&gt;DatabaseConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#defaultaccessrules" title="DefaultAccessRules">DefaultAccessRules</a>" : <i>[ &lt;a href=&#34;defaultaccessrules.md&#34;&gt;DefaultAccessRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#hybriddisasterrecovery" title="HybridDisasterRecovery">HybridDisasterRecovery</a>" : <i>[ &lt;a href=&#34;hybriddisasterrecovery.md&#34;&gt;HybridDisasterRecovery&lt;/a&gt;, ... ]</i>,
-        "<a href="#instantiatefrombackup" title="InstantiateFromBackup">InstantiateFromBackup</a>" : <i>[ &lt;a href=&#34;instantiatefrombackup.md&#34;&gt;InstantiateFromBackup&lt;/a&gt;, ... ]</i>,
-        "<a href="#standby" title="Standby">Standby</a>" : <i>[ &lt;a href=&#34;standby.md&#34;&gt;Standby&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#backups" title="Backups">Backups</a>" : <i>[ <a href="backups.md">Backups</a>, ... ]</i>,
+        "<a href="#databaseconfiguration" title="DatabaseConfiguration">DatabaseConfiguration</a>" : <i>[ <a href="databaseconfiguration.md">DatabaseConfiguration</a>, ... ]</i>,
+        "<a href="#defaultaccessrules" title="DefaultAccessRules">DefaultAccessRules</a>" : <i>[ <a href="defaultaccessrules.md">DefaultAccessRules</a>, ... ]</i>,
+        "<a href="#hybriddisasterrecovery" title="HybridDisasterRecovery">HybridDisasterRecovery</a>" : <i>[ <a href="hybriddisasterrecovery.md">HybridDisasterRecovery</a>, ... ]</i>,
+        "<a href="#instantiatefrombackup" title="InstantiateFromBackup">InstantiateFromBackup</a>" : <i>[ <a href="instantiatefrombackup.md">InstantiateFromBackup</a>, ... ]</i>,
+        "<a href="#standby" title="Standby">Standby</a>" : <i>[ <a href="standby.md">Standby</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -66,18 +66,18 @@ Properties:
     <a href="#subscriptiontype" title="SubscriptionType">SubscriptionType</a>: <i>String</i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#backups" title="Backups">Backups</a>: <i>
-      - &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;</i>
+      - <a href="backups.md">Backups</a></i>
     <a href="#databaseconfiguration" title="DatabaseConfiguration">DatabaseConfiguration</a>: <i>
-      - &lt;a href=&#34;databaseconfiguration.md&#34;&gt;DatabaseConfiguration&lt;/a&gt;</i>
+      - <a href="databaseconfiguration.md">DatabaseConfiguration</a></i>
     <a href="#defaultaccessrules" title="DefaultAccessRules">DefaultAccessRules</a>: <i>
-      - &lt;a href=&#34;defaultaccessrules.md&#34;&gt;DefaultAccessRules&lt;/a&gt;</i>
+      - <a href="defaultaccessrules.md">DefaultAccessRules</a></i>
     <a href="#hybriddisasterrecovery" title="HybridDisasterRecovery">HybridDisasterRecovery</a>: <i>
-      - &lt;a href=&#34;hybriddisasterrecovery.md&#34;&gt;HybridDisasterRecovery&lt;/a&gt;</i>
+      - <a href="hybriddisasterrecovery.md">HybridDisasterRecovery</a></i>
     <a href="#instantiatefrombackup" title="InstantiateFromBackup">InstantiateFromBackup</a>: <i>
-      - &lt;a href=&#34;instantiatefrombackup.md&#34;&gt;InstantiateFromBackup&lt;/a&gt;</i>
+      - <a href="instantiatefrombackup.md">InstantiateFromBackup</a></i>
     <a href="#standby" title="Standby">Standby</a>: <i>
-      - &lt;a href=&#34;standby.md&#34;&gt;Standby&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="standby.md">Standby</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -230,7 +230,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;
+_Type_: List of <a href="backups.md">Backups</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -238,7 +238,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;databaseconfiguration.md&#34;&gt;DatabaseConfiguration&lt;/a&gt;
+_Type_: List of <a href="databaseconfiguration.md">DatabaseConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -246,7 +246,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;defaultaccessrules.md&#34;&gt;DefaultAccessRules&lt;/a&gt;
+_Type_: List of <a href="defaultaccessrules.md">DefaultAccessRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -254,7 +254,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hybriddisasterrecovery.md&#34;&gt;HybridDisasterRecovery&lt;/a&gt;
+_Type_: List of <a href="hybriddisasterrecovery.md">HybridDisasterRecovery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -262,7 +262,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instantiatefrombackup.md&#34;&gt;InstantiateFromBackup&lt;/a&gt;
+_Type_: List of <a href="instantiatefrombackup.md">InstantiateFromBackup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -270,7 +270,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;standby.md&#34;&gt;Standby&lt;/a&gt;
+_Type_: List of <a href="standby.md">Standby</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -278,7 +278,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -300,33 +300,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CloudStorageContainer
 
-Returns the &lt;code&gt;CloudStorageContainer&lt;/code&gt; value.
+Returns the <code>CloudStorageContainer</code> value.
 
 #### ComputeSiteName
 
-Returns the &lt;code&gt;ComputeSiteName&lt;/code&gt; value.
+Returns the <code>ComputeSiteName</code> value.
 
 #### DbaasMonitorUrl
 
-Returns the &lt;code&gt;DbaasMonitorUrl&lt;/code&gt; value.
+Returns the <code>DbaasMonitorUrl</code> value.
 
 #### EmUrl
 
-Returns the &lt;code&gt;EmUrl&lt;/code&gt; value.
+Returns the <code>EmUrl</code> value.
 
 #### GlassfishUrl
 
-Returns the &lt;code&gt;GlassfishUrl&lt;/code&gt; value.
+Returns the <code>GlassfishUrl</code> value.
 
 #### IdentityDomain
 
-Returns the &lt;code&gt;IdentityDomain&lt;/code&gt; value.
+Returns the <code>IdentityDomain</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#nodeselectorterm" title="NodeSelectorTerm">NodeSelectorTerm</a>" : <i>[ &lt;a href=&#34;required-nodeselectorterm.md&#34;&gt;NodeSelectorTerm&lt;/a&gt;, ... ]</i>
+    "<a href="#nodeselectorterm" title="NodeSelectorTerm">NodeSelectorTerm</a>" : <i>[ <a href="required-nodeselectorterm.md">NodeSelectorTerm</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#nodeselectorterm" title="NodeSelectorTerm">NodeSelectorTerm</a>: <i>
-      - &lt;a href=&#34;required-nodeselectorterm.md&#34;&gt;NodeSelectorTerm&lt;/a&gt;</i>
+      - <a href="required-nodeselectorterm.md">NodeSelectorTerm</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### NodeSelectorTerm
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;required-nodeselectorterm.md&#34;&gt;NodeSelectorTerm&lt;/a&gt;
+_Type_: List of <a href="required-nodeselectorterm.md">NodeSelectorTerm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

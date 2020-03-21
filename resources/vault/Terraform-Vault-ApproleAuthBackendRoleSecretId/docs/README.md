@@ -114,13 +114,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessor
 
-Returns the &lt;code&gt;Accessor&lt;/code&gt; value.
+Returns the <code>Accessor</code> value.
 
 #### WrappingAccessor
 
-Returns the &lt;code&gt;WrappingAccessor&lt;/code&gt; value.
+Returns the <code>WrappingAccessor</code> value.
 
 #### WrappingToken
 
-Returns the &lt;code&gt;WrappingToken&lt;/code&gt; value.
+Returns the <code>WrappingToken</code> value.
 

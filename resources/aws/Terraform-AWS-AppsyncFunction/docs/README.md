@@ -123,9 +123,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### FunctionId
 
-Returns the &lt;code&gt;FunctionId&lt;/code&gt; value.
+Returns the <code>FunctionId</code> value.
 

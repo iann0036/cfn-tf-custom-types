@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MasterId
 
-Returns the &lt;code&gt;MasterId&lt;/code&gt; value.
+Returns the <code>MasterId</code> value.
 
 #### MemberStatus
 
-Returns the &lt;code&gt;MemberStatus&lt;/code&gt; value.
+Returns the <code>MemberStatus</code> value.
 

@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#dictionaryid" title="DictionaryId">DictionaryId</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#items" title="Items">Items</a>" : <i>[ &lt;a href=&#34;items.md&#34;&gt;Items&lt;/a&gt;, ... ]</i>,
+        "<a href="#items" title="Items">Items</a>" : <i>[ <a href="items.md">Items</a>, ... ]</i>,
         "<a href="#serviceid" title="ServiceId">ServiceId</a>" : <i>String</i>
     }
 }
@@ -28,7 +28,7 @@ Properties:
     <a href="#dictionaryid" title="DictionaryId">DictionaryId</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#items" title="Items">Items</a>: <i>
-      - &lt;a href=&#34;items.md&#34;&gt;Items&lt;/a&gt;</i>
+      - <a href="items.md">Items</a></i>
     <a href="#serviceid" title="ServiceId">ServiceId</a>: <i>String</i>
 </pre>
 
@@ -54,7 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;items.md&#34;&gt;Items&lt;/a&gt;
+_Type_: List of <a href="items.md">Items</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

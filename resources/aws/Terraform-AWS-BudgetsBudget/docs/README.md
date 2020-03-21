@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#accountid" title="AccountId">AccountId</a>" : <i>String</i>,
         "<a href="#budgettype" title="BudgetType">BudgetType</a>" : <i>String</i>,
-        "<a href="#costfilters" title="CostFilters">CostFilters</a>" : <i>[ &lt;a href=&#34;costfilters.md&#34;&gt;CostFilters&lt;/a&gt;, ... ]</i>,
+        "<a href="#costfilters" title="CostFilters">CostFilters</a>" : <i>[ <a href="costfilters.md">CostFilters</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#limitamount" title="LimitAmount">LimitAmount</a>" : <i>String</i>,
         "<a href="#limitunit" title="LimitUnit">LimitUnit</a>" : <i>String</i>,
@@ -23,8 +23,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#timeperiodend" title="TimePeriodEnd">TimePeriodEnd</a>" : <i>String</i>,
         "<a href="#timeperiodstart" title="TimePeriodStart">TimePeriodStart</a>" : <i>String</i>,
         "<a href="#timeunit" title="TimeUnit">TimeUnit</a>" : <i>String</i>,
-        "<a href="#costtypes" title="CostTypes">CostTypes</a>" : <i>[ &lt;a href=&#34;costtypes.md&#34;&gt;CostTypes&lt;/a&gt;, ... ]</i>,
-        "<a href="#notification" title="Notification">Notification</a>" : <i>[ &lt;a href=&#34;notification.md&#34;&gt;Notification&lt;/a&gt;, ... ]</i>
+        "<a href="#costtypes" title="CostTypes">CostTypes</a>" : <i>[ <a href="costtypes.md">CostTypes</a>, ... ]</i>,
+        "<a href="#notification" title="Notification">Notification</a>" : <i>[ <a href="notification.md">Notification</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,7 +37,7 @@ Properties:
     <a href="#accountid" title="AccountId">AccountId</a>: <i>String</i>
     <a href="#budgettype" title="BudgetType">BudgetType</a>: <i>String</i>
     <a href="#costfilters" title="CostFilters">CostFilters</a>: <i>
-      - &lt;a href=&#34;costfilters.md&#34;&gt;CostFilters&lt;/a&gt;</i>
+      - <a href="costfilters.md">CostFilters</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#limitamount" title="LimitAmount">LimitAmount</a>: <i>String</i>
     <a href="#limitunit" title="LimitUnit">LimitUnit</a>: <i>String</i>
@@ -47,9 +47,9 @@ Properties:
     <a href="#timeperiodstart" title="TimePeriodStart">TimePeriodStart</a>: <i>String</i>
     <a href="#timeunit" title="TimeUnit">TimeUnit</a>: <i>String</i>
     <a href="#costtypes" title="CostTypes">CostTypes</a>: <i>
-      - &lt;a href=&#34;costtypes.md&#34;&gt;CostTypes&lt;/a&gt;</i>
+      - <a href="costtypes.md">CostTypes</a></i>
     <a href="#notification" title="Notification">Notification</a>: <i>
-      - &lt;a href=&#34;notification.md&#34;&gt;Notification&lt;/a&gt;</i>
+      - <a href="notification.md">Notification</a></i>
 </pre>
 
 ## Properties
@@ -74,7 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;costfilters.md&#34;&gt;CostFilters&lt;/a&gt;
+_Type_: List of <a href="costfilters.md">CostFilters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;costtypes.md&#34;&gt;CostTypes&lt;/a&gt;
+_Type_: List of <a href="costtypes.md">CostTypes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;notification.md&#34;&gt;Notification&lt;/a&gt;
+_Type_: List of <a href="notification.md">Notification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

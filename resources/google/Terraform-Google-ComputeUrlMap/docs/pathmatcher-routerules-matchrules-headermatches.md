@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#presentmatch" title="PresentMatch">PresentMatch</a>" : <i>Boolean</i>,
     "<a href="#regexmatch" title="RegexMatch">RegexMatch</a>" : <i>String</i>,
     "<a href="#suffixmatch" title="SuffixMatch">SuffixMatch</a>" : <i>String</i>,
-    "<a href="#rangematch" title="RangeMatch">RangeMatch</a>" : <i>[ &lt;a href=&#34;pathmatcher-routerules-matchrules-headermatches-rangematch.md&#34;&gt;RangeMatch&lt;/a&gt;, ... ]</i>
+    "<a href="#rangematch" title="RangeMatch">RangeMatch</a>" : <i>[ <a href="pathmatcher-routerules-matchrules-headermatches-rangematch.md">RangeMatch</a>, ... ]</i>
 }
 </pre>
 
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#regexmatch" title="RegexMatch">RegexMatch</a>: <i>String</i>
 <a href="#suffixmatch" title="SuffixMatch">SuffixMatch</a>: <i>String</i>
 <a href="#rangematch" title="RangeMatch">RangeMatch</a>: <i>
-      - &lt;a href=&#34;pathmatcher-routerules-matchrules-headermatches-rangematch.md&#34;&gt;RangeMatch&lt;/a&gt;</i>
+      - <a href="pathmatcher-routerules-matchrules-headermatches-rangematch.md">RangeMatch</a></i>
 </pre>
 
 ## Properties
@@ -87,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RangeMatch
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pathmatcher-routerules-matchrules-headermatches-rangematch.md&#34;&gt;RangeMatch&lt;/a&gt;
+_Type_: List of <a href="pathmatcher-routerules-matchrules-headermatches-rangematch.md">RangeMatch</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#isdefault" title="IsDefault">IsDefault</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#settings" title="Settings">Settings</a>" : <i>[ &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;, ... ]</i>,
+        "<a href="#settings" title="Settings">Settings</a>" : <i>[ <a href="settings.md">Settings</a>, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
 }
@@ -30,7 +30,7 @@ Properties:
     <a href="#isdefault" title="IsDefault">IsDefault</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#settings" title="Settings">Settings</a>: <i>
-      - &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;</i>
+      - <a href="settings.md">Settings</a></i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
@@ -64,7 +64,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;
+_Type_: List of <a href="settings.md">Settings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

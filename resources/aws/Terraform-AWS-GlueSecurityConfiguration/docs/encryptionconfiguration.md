@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#cloudwatchencryption" title="CloudwatchEncryption">CloudwatchEncryption</a>" : <i>[ &lt;a href=&#34;encryptionconfiguration-cloudwatchencryption.md&#34;&gt;CloudwatchEncryption&lt;/a&gt;, ... ]</i>,
-    "<a href="#jobbookmarksencryption" title="JobBookmarksEncryption">JobBookmarksEncryption</a>" : <i>[ &lt;a href=&#34;encryptionconfiguration-jobbookmarksencryption.md&#34;&gt;JobBookmarksEncryption&lt;/a&gt;, ... ]</i>,
-    "<a href="#s3encryption" title="S3Encryption">S3Encryption</a>" : <i>[ &lt;a href=&#34;encryptionconfiguration-s3encryption.md&#34;&gt;S3Encryption&lt;/a&gt;, ... ]</i>
+    "<a href="#cloudwatchencryption" title="CloudwatchEncryption">CloudwatchEncryption</a>" : <i>[ <a href="encryptionconfiguration-cloudwatchencryption.md">CloudwatchEncryption</a>, ... ]</i>,
+    "<a href="#jobbookmarksencryption" title="JobBookmarksEncryption">JobBookmarksEncryption</a>" : <i>[ <a href="encryptionconfiguration-jobbookmarksencryption.md">JobBookmarksEncryption</a>, ... ]</i>,
+    "<a href="#s3encryption" title="S3Encryption">S3Encryption</a>" : <i>[ <a href="encryptionconfiguration-s3encryption.md">S3Encryption</a>, ... ]</i>
 }
 </pre>
 
@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#cloudwatchencryption" title="CloudwatchEncryption">CloudwatchEncryption</a>: <i>
-      - &lt;a href=&#34;encryptionconfiguration-cloudwatchencryption.md&#34;&gt;CloudwatchEncryption&lt;/a&gt;</i>
+      - <a href="encryptionconfiguration-cloudwatchencryption.md">CloudwatchEncryption</a></i>
 <a href="#jobbookmarksencryption" title="JobBookmarksEncryption">JobBookmarksEncryption</a>: <i>
-      - &lt;a href=&#34;encryptionconfiguration-jobbookmarksencryption.md&#34;&gt;JobBookmarksEncryption&lt;/a&gt;</i>
+      - <a href="encryptionconfiguration-jobbookmarksencryption.md">JobBookmarksEncryption</a></i>
 <a href="#s3encryption" title="S3Encryption">S3Encryption</a>: <i>
-      - &lt;a href=&#34;encryptionconfiguration-s3encryption.md&#34;&gt;S3Encryption&lt;/a&gt;</i>
+      - <a href="encryptionconfiguration-s3encryption.md">S3Encryption</a></i>
 </pre>
 
 ## Properties
@@ -30,21 +30,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CloudwatchEncryption
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;encryptionconfiguration-cloudwatchencryption.md&#34;&gt;CloudwatchEncryption&lt;/a&gt;
+_Type_: List of <a href="encryptionconfiguration-cloudwatchencryption.md">CloudwatchEncryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### JobBookmarksEncryption
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;encryptionconfiguration-jobbookmarksencryption.md&#34;&gt;JobBookmarksEncryption&lt;/a&gt;
+_Type_: List of <a href="encryptionconfiguration-jobbookmarksencryption.md">JobBookmarksEncryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3Encryption
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;encryptionconfiguration-s3encryption.md&#34;&gt;S3Encryption&lt;/a&gt;
+_Type_: List of <a href="encryptionconfiguration-s3encryption.md">S3Encryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

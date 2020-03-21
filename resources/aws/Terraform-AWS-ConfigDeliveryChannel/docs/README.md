@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#s3bucketname" title="S3BucketName">S3BucketName</a>" : <i>String</i>,
         "<a href="#s3keyprefix" title="S3KeyPrefix">S3KeyPrefix</a>" : <i>String</i>,
         "<a href="#snstopicarn" title="SnsTopicArn">SnsTopicArn</a>" : <i>String</i>,
-        "<a href="#snapshotdeliveryproperties" title="SnapshotDeliveryProperties">SnapshotDeliveryProperties</a>" : <i>[ &lt;a href=&#34;snapshotdeliveryproperties.md&#34;&gt;SnapshotDeliveryProperties&lt;/a&gt;, ... ]</i>
+        "<a href="#snapshotdeliveryproperties" title="SnapshotDeliveryProperties">SnapshotDeliveryProperties</a>" : <i>[ <a href="snapshotdeliveryproperties.md">SnapshotDeliveryProperties</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,7 +33,7 @@ Properties:
     <a href="#s3keyprefix" title="S3KeyPrefix">S3KeyPrefix</a>: <i>String</i>
     <a href="#snstopicarn" title="SnsTopicArn">SnsTopicArn</a>: <i>String</i>
     <a href="#snapshotdeliveryproperties" title="SnapshotDeliveryProperties">SnapshotDeliveryProperties</a>: <i>
-      - &lt;a href=&#34;snapshotdeliveryproperties.md&#34;&gt;SnapshotDeliveryProperties&lt;/a&gt;</i>
+      - <a href="snapshotdeliveryproperties.md">SnapshotDeliveryProperties</a></i>
 </pre>
 
 ## Properties
@@ -82,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;snapshotdeliveryproperties.md&#34;&gt;SnapshotDeliveryProperties&lt;/a&gt;
+_Type_: List of <a href="snapshotdeliveryproperties.md">SnapshotDeliveryProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

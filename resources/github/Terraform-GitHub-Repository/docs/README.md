@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#private" title="Private">Private</a>" : <i>Boolean</i>,
         "<a href="#topics" title="Topics">Topics</a>" : <i>[ String, ... ]</i>,
-        "<a href="#template" title="Template">Template</a>" : <i>[ &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;, ... ]</i>
+        "<a href="#template" title="Template">Template</a>" : <i>[ <a href="template.md">Template</a>, ... ]</i>
     }
 }
 </pre>
@@ -60,7 +60,7 @@ Properties:
     <a href="#topics" title="Topics">Topics</a>: <i>
       - String</i>
     <a href="#template" title="Template">Template</a>: <i>
-      - &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;</i>
+      - <a href="template.md">Template</a></i>
 </pre>
 
 ## Properties
@@ -213,7 +213,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;
+_Type_: List of <a href="template.md">Template</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -235,29 +235,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 
 #### FullName
 
-Returns the &lt;code&gt;FullName&lt;/code&gt; value.
+Returns the <code>FullName</code> value.
 
 #### GitCloneUrl
 
-Returns the &lt;code&gt;GitCloneUrl&lt;/code&gt; value.
+Returns the <code>GitCloneUrl</code> value.
 
 #### HtmlUrl
 
-Returns the &lt;code&gt;HtmlUrl&lt;/code&gt; value.
+Returns the <code>HtmlUrl</code> value.
 
 #### HttpCloneUrl
 
-Returns the &lt;code&gt;HttpCloneUrl&lt;/code&gt; value.
+Returns the <code>HttpCloneUrl</code> value.
 
 #### SshCloneUrl
 
-Returns the &lt;code&gt;SshCloneUrl&lt;/code&gt; value.
+Returns the <code>SshCloneUrl</code> value.
 
 #### SvnUrl
 
-Returns the &lt;code&gt;SvnUrl&lt;/code&gt; value.
+Returns the <code>SvnUrl</code> value.
 

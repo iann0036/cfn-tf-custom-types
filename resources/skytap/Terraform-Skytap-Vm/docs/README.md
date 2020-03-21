@@ -21,10 +21,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#templateid" title="TemplateId">TemplateId</a>" : <i>String</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#vmid" title="VmId">VmId</a>" : <i>String</i>,
-        "<a href="#disk" title="Disk">Disk</a>" : <i>[ &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;, ... ]</i>,
-        "<a href="#label" title="Label">Label</a>" : <i>[ &lt;a href=&#34;label.md&#34;&gt;Label&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
-        "<a href="#publishedservice" title="PublishedService">PublishedService</a>" : <i>[ &lt;a href=&#34;publishedservice.md&#34;&gt;PublishedService&lt;/a&gt;, ... ]</i>
+        "<a href="#disk" title="Disk">Disk</a>" : <i>[ <a href="disk.md">Disk</a>, ... ]</i>,
+        "<a href="#label" title="Label">Label</a>" : <i>[ <a href="label.md">Label</a>, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
+        "<a href="#publishedservice" title="PublishedService">PublishedService</a>" : <i>[ <a href="publishedservice.md">PublishedService</a>, ... ]</i>
     }
 }
 </pre>
@@ -44,13 +44,13 @@ Properties:
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#vmid" title="VmId">VmId</a>: <i>String</i>
     <a href="#disk" title="Disk">Disk</a>: <i>
-      - &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;</i>
+      - <a href="disk.md">Disk</a></i>
     <a href="#label" title="Label">Label</a>: <i>
-      - &lt;a href=&#34;label.md&#34;&gt;Label&lt;/a&gt;</i>
+      - <a href="label.md">Label</a></i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
+      - <a href="networkinterface.md">NetworkInterface</a></i>
     <a href="#publishedservice" title="PublishedService">PublishedService</a>: <i>
-      - &lt;a href=&#34;publishedservice.md&#34;&gt;PublishedService&lt;/a&gt;</i>
+      - <a href="publishedservice.md">PublishedService</a></i>
 </pre>
 
 ## Properties
@@ -131,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;
+_Type_: List of <a href="disk.md">Disk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;label.md&#34;&gt;Label&lt;/a&gt;
+_Type_: List of <a href="label.md">Label</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
+_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;publishedservice.md&#34;&gt;PublishedService&lt;/a&gt;
+_Type_: List of <a href="publishedservice.md">PublishedService</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,17 +177,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MaxCpus
 
-Returns the &lt;code&gt;MaxCpus&lt;/code&gt; value.
+Returns the <code>MaxCpus</code> value.
 
 #### MaxRam
 
-Returns the &lt;code&gt;MaxRam&lt;/code&gt; value.
+Returns the <code>MaxRam</code> value.
 
 #### ServiceIps
 
-Returns the &lt;code&gt;ServiceIps&lt;/code&gt; value.
+Returns the <code>ServiceIps</code> value.
 
 #### ServicePorts
 
-Returns the &lt;code&gt;ServicePorts&lt;/code&gt; value.
+Returns the <code>ServicePorts</code> value.
 

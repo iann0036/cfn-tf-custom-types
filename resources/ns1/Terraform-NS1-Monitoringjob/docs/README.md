@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::NS1::Monitoringjob",
     "Properties" : {
         "<a href="#active" title="Active">Active</a>" : <i>Boolean</i>,
-        "<a href="#config" title="Config">Config</a>" : <i>[ &lt;a href=&#34;config.md&#34;&gt;Config&lt;/a&gt;, ... ]</i>,
+        "<a href="#config" title="Config">Config</a>" : <i>[ <a href="config.md">Config</a>, ... ]</i>,
         "<a href="#frequency" title="Frequency">Frequency</a>" : <i>Double</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#jobtype" title="JobType">JobType</a>" : <i>String</i>,
@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#policy" title="Policy">Policy</a>" : <i>String</i>,
         "<a href="#rapidrecheck" title="RapidRecheck">RapidRecheck</a>" : <i>Boolean</i>,
         "<a href="#regions" title="Regions">Regions</a>" : <i>[ String, ... ]</i>,
-        "<a href="#rules" title="Rules">Rules</a>" : <i>[ &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;, ... ]</i>
+        "<a href="#rules" title="Rules">Rules</a>" : <i>[ <a href="rules.md">Rules</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Type: Terraform::NS1::Monitoringjob
 Properties:
     <a href="#active" title="Active">Active</a>: <i>Boolean</i>
     <a href="#config" title="Config">Config</a>: <i>
-      - &lt;a href=&#34;config.md&#34;&gt;Config&lt;/a&gt;</i>
+      - <a href="config.md">Config</a></i>
     <a href="#frequency" title="Frequency">Frequency</a>: <i>Double</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#jobtype" title="JobType">JobType</a>: <i>String</i>
@@ -55,7 +55,7 @@ Properties:
     <a href="#regions" title="Regions">Regions</a>: <i>
       - String</i>
     <a href="#rules" title="Rules">Rules</a>: <i>
-      - &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;</i>
+      - <a href="rules.md">Rules</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;config.md&#34;&gt;Config&lt;/a&gt;
+_Type_: List of <a href="config.md">Config</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;
+_Type_: List of <a href="rules.md">Rules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,18 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::CoreDefaultSecurityList",
     "Properties" : {
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#managedefaultresourceid" title="ManageDefaultResourceId">ManageDefaultResourceId</a>" : <i>String</i>,
-        "<a href="#egresssecurityrules" title="EgressSecurityRules">EgressSecurityRules</a>" : <i>[ &lt;a href=&#34;egresssecurityrules.md&#34;&gt;EgressSecurityRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#ingresssecurityrules" title="IngressSecurityRules">IngressSecurityRules</a>" : <i>[ &lt;a href=&#34;ingresssecurityrules.md&#34;&gt;IngressSecurityRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#icmpoptions" title="IcmpOptions">IcmpOptions</a>" : <i>[ &lt;a href=&#34;icmpoptions.md&#34;&gt;IcmpOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#tcpoptions" title="TcpOptions">TcpOptions</a>" : <i>[ &lt;a href=&#34;tcpoptions.md&#34;&gt;TcpOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#udpoptions" title="UdpOptions">UdpOptions</a>" : <i>[ &lt;a href=&#34;udpoptions.md&#34;&gt;UdpOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>" : <i>[ &lt;a href=&#34;sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;, ... ]</i>
+        "<a href="#egresssecurityrules" title="EgressSecurityRules">EgressSecurityRules</a>" : <i>[ <a href="egresssecurityrules.md">EgressSecurityRules</a>, ... ]</i>,
+        "<a href="#ingresssecurityrules" title="IngressSecurityRules">IngressSecurityRules</a>" : <i>[ <a href="ingresssecurityrules.md">IngressSecurityRules</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#icmpoptions" title="IcmpOptions">IcmpOptions</a>" : <i>[ <a href="icmpoptions.md">IcmpOptions</a>, ... ]</i>,
+        "<a href="#tcpoptions" title="TcpOptions">TcpOptions</a>" : <i>[ <a href="tcpoptions.md">TcpOptions</a>, ... ]</i>,
+        "<a href="#udpoptions" title="UdpOptions">UdpOptions</a>" : <i>[ <a href="udpoptions.md">UdpOptions</a>, ... ]</i>,
+        "<a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>" : <i>[ <a href="sourceportrange.md">SourcePortRange</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,25 +34,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::OCI::CoreDefaultSecurityList
 Properties:
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#managedefaultresourceid" title="ManageDefaultResourceId">ManageDefaultResourceId</a>: <i>String</i>
     <a href="#egresssecurityrules" title="EgressSecurityRules">EgressSecurityRules</a>: <i>
-      - &lt;a href=&#34;egresssecurityrules.md&#34;&gt;EgressSecurityRules&lt;/a&gt;</i>
+      - <a href="egresssecurityrules.md">EgressSecurityRules</a></i>
     <a href="#ingresssecurityrules" title="IngressSecurityRules">IngressSecurityRules</a>: <i>
-      - &lt;a href=&#34;ingresssecurityrules.md&#34;&gt;IngressSecurityRules&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="ingresssecurityrules.md">IngressSecurityRules</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#icmpoptions" title="IcmpOptions">IcmpOptions</a>: <i>
-      - &lt;a href=&#34;icmpoptions.md&#34;&gt;IcmpOptions&lt;/a&gt;</i>
+      - <a href="icmpoptions.md">IcmpOptions</a></i>
     <a href="#tcpoptions" title="TcpOptions">TcpOptions</a>: <i>
-      - &lt;a href=&#34;tcpoptions.md&#34;&gt;TcpOptions&lt;/a&gt;</i>
+      - <a href="tcpoptions.md">TcpOptions</a></i>
     <a href="#udpoptions" title="UdpOptions">UdpOptions</a>: <i>
-      - &lt;a href=&#34;udpoptions.md&#34;&gt;UdpOptions&lt;/a&gt;</i>
+      - <a href="udpoptions.md">UdpOptions</a></i>
     <a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>: <i>
-      - &lt;a href=&#34;sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;</i>
+      - <a href="sourceportrange.md">SourcePortRange</a></i>
 </pre>
 
 ## Properties
@@ -61,7 +61,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -77,7 +77,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -101,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;egresssecurityrules.md&#34;&gt;EgressSecurityRules&lt;/a&gt;
+_Type_: List of <a href="egresssecurityrules.md">EgressSecurityRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -109,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ingresssecurityrules.md&#34;&gt;IngressSecurityRules&lt;/a&gt;
+_Type_: List of <a href="ingresssecurityrules.md">IngressSecurityRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;icmpoptions.md&#34;&gt;IcmpOptions&lt;/a&gt;
+_Type_: List of <a href="icmpoptions.md">IcmpOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,7 +133,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tcpoptions.md&#34;&gt;TcpOptions&lt;/a&gt;
+_Type_: List of <a href="tcpoptions.md">TcpOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -141,7 +141,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;udpoptions.md&#34;&gt;UdpOptions&lt;/a&gt;
+_Type_: List of <a href="udpoptions.md">UdpOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -149,7 +149,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;
+_Type_: List of <a href="sourceportrange.md">SourcePortRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,9 +171,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

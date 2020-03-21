@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#family" title="Family">Family</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#parameter" title="Parameter">Parameter</a>" : <i>[ &lt;a href=&#34;parameter.md&#34;&gt;Parameter&lt;/a&gt;, ... ]</i>
+        "<a href="#parameter" title="Parameter">Parameter</a>" : <i>[ <a href="parameter.md">Parameter</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +31,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#parameter" title="Parameter">Parameter</a>: <i>
-      - &lt;a href=&#34;parameter.md&#34;&gt;Parameter&lt;/a&gt;</i>
+      - <a href="parameter.md">Parameter</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parameter.md&#34;&gt;Parameter&lt;/a&gt;
+_Type_: List of <a href="parameter.md">Parameter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

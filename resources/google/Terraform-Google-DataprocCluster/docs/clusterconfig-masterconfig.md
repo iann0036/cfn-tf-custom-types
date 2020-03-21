@@ -12,8 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#machinetype" title="MachineType">MachineType</a>" : <i>String</i>,
     "<a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>" : <i>String</i>,
     "<a href="#numinstances" title="NumInstances">NumInstances</a>" : <i>Double</i>,
-    "<a href="#accelerators" title="Accelerators">Accelerators</a>" : <i>[ &lt;a href=&#34;clusterconfig-masterconfig-accelerators.md&#34;&gt;Accelerators&lt;/a&gt;, ... ]</i>,
-    "<a href="#diskconfig" title="DiskConfig">DiskConfig</a>" : <i>[ &lt;a href=&#34;clusterconfig-masterconfig-diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;, ... ]</i>
+    "<a href="#accelerators" title="Accelerators">Accelerators</a>" : <i>[ <a href="clusterconfig-masterconfig-accelerators.md">Accelerators</a>, ... ]</i>,
+    "<a href="#diskconfig" title="DiskConfig">DiskConfig</a>" : <i>[ <a href="clusterconfig-masterconfig-diskconfig.md">DiskConfig</a>, ... ]</i>
 }
 </pre>
 
@@ -25,9 +25,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>: <i>String</i>
 <a href="#numinstances" title="NumInstances">NumInstances</a>: <i>Double</i>
 <a href="#accelerators" title="Accelerators">Accelerators</a>: <i>
-      - &lt;a href=&#34;clusterconfig-masterconfig-accelerators.md&#34;&gt;Accelerators&lt;/a&gt;</i>
+      - <a href="clusterconfig-masterconfig-accelerators.md">Accelerators</a></i>
 <a href="#diskconfig" title="DiskConfig">DiskConfig</a>: <i>
-      - &lt;a href=&#34;clusterconfig-masterconfig-diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;</i>
+      - <a href="clusterconfig-masterconfig-diskconfig.md">DiskConfig</a></i>
 </pre>
 
 ## Properties
@@ -63,14 +63,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Accelerators
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;clusterconfig-masterconfig-accelerators.md&#34;&gt;Accelerators&lt;/a&gt;
+_Type_: List of <a href="clusterconfig-masterconfig-accelerators.md">Accelerators</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DiskConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;clusterconfig-masterconfig-diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;
+_Type_: List of <a href="clusterconfig-masterconfig-diskconfig.md">DiskConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

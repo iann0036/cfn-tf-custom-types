@@ -94,25 +94,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Hostname
 
-Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
+Returns the <code>Hostname</code> value.
 
 #### Ipv4
 
-Returns the &lt;code&gt;Ipv4&lt;/code&gt; value.
+Returns the <code>Ipv4</code> value.
 
 #### Ipv6
 
-Returns the &lt;code&gt;Ipv6&lt;/code&gt; value.
+Returns the <code>Ipv6</code> value.
 
 #### Transfer
 
-Returns the &lt;code&gt;Transfer&lt;/code&gt; value.
+Returns the <code>Transfer</code> value.
 
 #### Updated
 
-Returns the &lt;code&gt;Updated&lt;/code&gt; value.
+Returns the <code>Updated</code> value.
 

@@ -20,15 +20,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#readcapacity" title="ReadCapacity">ReadCapacity</a>" : <i>Double</i>,
         "<a href="#streamenabled" title="StreamEnabled">StreamEnabled</a>" : <i>Boolean</i>,
         "<a href="#streamviewtype" title="StreamViewType">StreamViewType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#writecapacity" title="WriteCapacity">WriteCapacity</a>" : <i>Double</i>,
-        "<a href="#attribute" title="Attribute">Attribute</a>" : <i>[ &lt;a href=&#34;attribute.md&#34;&gt;Attribute&lt;/a&gt;, ... ]</i>,
-        "<a href="#globalsecondaryindex" title="GlobalSecondaryIndex">GlobalSecondaryIndex</a>" : <i>[ &lt;a href=&#34;globalsecondaryindex.md&#34;&gt;GlobalSecondaryIndex&lt;/a&gt;, ... ]</i>,
-        "<a href="#localsecondaryindex" title="LocalSecondaryIndex">LocalSecondaryIndex</a>" : <i>[ &lt;a href=&#34;localsecondaryindex.md&#34;&gt;LocalSecondaryIndex&lt;/a&gt;, ... ]</i>,
-        "<a href="#pointintimerecovery" title="PointInTimeRecovery">PointInTimeRecovery</a>" : <i>[ &lt;a href=&#34;pointintimerecovery.md&#34;&gt;PointInTimeRecovery&lt;/a&gt;, ... ]</i>,
-        "<a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>" : <i>[ &lt;a href=&#34;serversideencryption.md&#34;&gt;ServerSideEncryption&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#ttl" title="Ttl">Ttl</a>" : <i>[ &lt;a href=&#34;ttl.md&#34;&gt;Ttl&lt;/a&gt;, ... ]</i>
+        "<a href="#attribute" title="Attribute">Attribute</a>" : <i>[ <a href="attribute.md">Attribute</a>, ... ]</i>,
+        "<a href="#globalsecondaryindex" title="GlobalSecondaryIndex">GlobalSecondaryIndex</a>" : <i>[ <a href="globalsecondaryindex.md">GlobalSecondaryIndex</a>, ... ]</i>,
+        "<a href="#localsecondaryindex" title="LocalSecondaryIndex">LocalSecondaryIndex</a>" : <i>[ <a href="localsecondaryindex.md">LocalSecondaryIndex</a>, ... ]</i>,
+        "<a href="#pointintimerecovery" title="PointInTimeRecovery">PointInTimeRecovery</a>" : <i>[ <a href="pointintimerecovery.md">PointInTimeRecovery</a>, ... ]</i>,
+        "<a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>" : <i>[ <a href="serversideencryption.md">ServerSideEncryption</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#ttl" title="Ttl">Ttl</a>" : <i>[ <a href="ttl.md">Ttl</a>, ... ]</i>
     }
 }
 </pre>
@@ -47,21 +47,21 @@ Properties:
     <a href="#streamenabled" title="StreamEnabled">StreamEnabled</a>: <i>Boolean</i>
     <a href="#streamviewtype" title="StreamViewType">StreamViewType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#writecapacity" title="WriteCapacity">WriteCapacity</a>: <i>Double</i>
     <a href="#attribute" title="Attribute">Attribute</a>: <i>
-      - &lt;a href=&#34;attribute.md&#34;&gt;Attribute&lt;/a&gt;</i>
+      - <a href="attribute.md">Attribute</a></i>
     <a href="#globalsecondaryindex" title="GlobalSecondaryIndex">GlobalSecondaryIndex</a>: <i>
-      - &lt;a href=&#34;globalsecondaryindex.md&#34;&gt;GlobalSecondaryIndex&lt;/a&gt;</i>
+      - <a href="globalsecondaryindex.md">GlobalSecondaryIndex</a></i>
     <a href="#localsecondaryindex" title="LocalSecondaryIndex">LocalSecondaryIndex</a>: <i>
-      - &lt;a href=&#34;localsecondaryindex.md&#34;&gt;LocalSecondaryIndex&lt;/a&gt;</i>
+      - <a href="localsecondaryindex.md">LocalSecondaryIndex</a></i>
     <a href="#pointintimerecovery" title="PointInTimeRecovery">PointInTimeRecovery</a>: <i>
-      - &lt;a href=&#34;pointintimerecovery.md&#34;&gt;PointInTimeRecovery&lt;/a&gt;</i>
+      - <a href="pointintimerecovery.md">PointInTimeRecovery</a></i>
     <a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>: <i>
-      - &lt;a href=&#34;serversideencryption.md&#34;&gt;ServerSideEncryption&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="serversideencryption.md">ServerSideEncryption</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>
-      - &lt;a href=&#34;ttl.md&#34;&gt;Ttl&lt;/a&gt;</i>
+      - <a href="ttl.md">Ttl</a></i>
 </pre>
 
 ## Properties
@@ -134,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -150,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;attribute.md&#34;&gt;Attribute&lt;/a&gt;
+_Type_: List of <a href="attribute.md">Attribute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;globalsecondaryindex.md&#34;&gt;GlobalSecondaryIndex&lt;/a&gt;
+_Type_: List of <a href="globalsecondaryindex.md">GlobalSecondaryIndex</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;localsecondaryindex.md&#34;&gt;LocalSecondaryIndex&lt;/a&gt;
+_Type_: List of <a href="localsecondaryindex.md">LocalSecondaryIndex</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;pointintimerecovery.md&#34;&gt;PointInTimeRecovery&lt;/a&gt;
+_Type_: List of <a href="pointintimerecovery.md">PointInTimeRecovery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serversideencryption.md&#34;&gt;ServerSideEncryption&lt;/a&gt;
+_Type_: List of <a href="serversideencryption.md">ServerSideEncryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ttl.md&#34;&gt;Ttl&lt;/a&gt;
+_Type_: List of <a href="ttl.md">Ttl</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -220,13 +220,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### StreamArn
 
-Returns the &lt;code&gt;StreamArn&lt;/code&gt; value.
+Returns the <code>StreamArn</code> value.
 
 #### StreamLabel
 
-Returns the &lt;code&gt;StreamLabel&lt;/code&gt; value.
+Returns the <code>StreamLabel</code> value.
 

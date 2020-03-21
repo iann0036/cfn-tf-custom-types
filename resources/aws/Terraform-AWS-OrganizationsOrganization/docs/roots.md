@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
     "<a href="#id" title="Id">Id</a>" : <i>String</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#policytypes" title="PolicyTypes">PolicyTypes</a>" : <i>[ &lt;a href=&#34;roots-policytypes.md&#34;&gt;PolicyTypes&lt;/a&gt;, ... ]</i>
+    "<a href="#policytypes" title="PolicyTypes">PolicyTypes</a>" : <i>[ <a href="roots-policytypes.md">PolicyTypes</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#id" title="Id">Id</a>: <i>String</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#policytypes" title="PolicyTypes">PolicyTypes</a>: <i>
-      - &lt;a href=&#34;roots-policytypes.md&#34;&gt;PolicyTypes&lt;/a&gt;</i>
+      - <a href="roots-policytypes.md">PolicyTypes</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PolicyTypes
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;roots-policytypes.md&#34;&gt;PolicyTypes&lt;/a&gt;
+_Type_: List of <a href="roots-policytypes.md">PolicyTypes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

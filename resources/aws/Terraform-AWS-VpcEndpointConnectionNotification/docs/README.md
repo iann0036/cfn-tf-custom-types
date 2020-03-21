@@ -94,9 +94,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NotificationType
 
-Returns the &lt;code&gt;NotificationType&lt;/code&gt; value.
+Returns the <code>NotificationType</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

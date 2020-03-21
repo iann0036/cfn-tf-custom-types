@@ -94,13 +94,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessorId
 
-Returns the &lt;code&gt;AccessorId&lt;/code&gt; value.
+Returns the <code>AccessorId</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### SecretId
 
-Returns the &lt;code&gt;SecretId&lt;/code&gt; value.
+Returns the <code>SecretId</code> value.
 

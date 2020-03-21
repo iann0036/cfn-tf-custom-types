@@ -124,9 +124,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### TagKey
 
-Returns the &lt;code&gt;TagKey&lt;/code&gt; value.
+Returns the <code>TagKey</code> value.
 
 #### TagValue
 
-Returns the &lt;code&gt;TagValue&lt;/code&gt; value.
+Returns the <code>TagValue</code> value.
 

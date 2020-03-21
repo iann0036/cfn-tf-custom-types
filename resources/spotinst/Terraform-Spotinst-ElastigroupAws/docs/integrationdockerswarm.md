@@ -12,8 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#autoscaleisenabled" title="AutoscaleIsEnabled">AutoscaleIsEnabled</a>" : <i>Boolean</i>,
     "<a href="#masterhost" title="MasterHost">MasterHost</a>" : <i>String</i>,
     "<a href="#masterport" title="MasterPort">MasterPort</a>" : <i>Double</i>,
-    "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ &lt;a href=&#34;integrationdockerswarm-autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;, ... ]</i>,
-    "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ &lt;a href=&#34;integrationdockerswarm-autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;, ... ]</i>
+    "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ <a href="integrationdockerswarm-autoscaledown.md">AutoscaleDown</a>, ... ]</i>,
+    "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ <a href="integrationdockerswarm-autoscaleheadroom.md">AutoscaleHeadroom</a>, ... ]</i>
 }
 </pre>
 
@@ -25,9 +25,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#masterhost" title="MasterHost">MasterHost</a>: <i>String</i>
 <a href="#masterport" title="MasterPort">MasterPort</a>: <i>Double</i>
 <a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>: <i>
-      - &lt;a href=&#34;integrationdockerswarm-autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;</i>
+      - <a href="integrationdockerswarm-autoscaledown.md">AutoscaleDown</a></i>
 <a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>: <i>
-      - &lt;a href=&#34;integrationdockerswarm-autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;</i>
+      - <a href="integrationdockerswarm-autoscaleheadroom.md">AutoscaleHeadroom</a></i>
 </pre>
 
 ## Properties
@@ -63,14 +63,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoscaleDown
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;integrationdockerswarm-autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;
+_Type_: List of <a href="integrationdockerswarm-autoscaledown.md">AutoscaleDown</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoscaleHeadroom
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;integrationdockerswarm-autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;
+_Type_: List of <a href="integrationdockerswarm-autoscaleheadroom.md">AutoscaleHeadroom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

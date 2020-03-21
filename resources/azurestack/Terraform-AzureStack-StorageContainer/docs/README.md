@@ -93,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Properties
 
-Returns the &lt;code&gt;Properties&lt;/code&gt; value.
+Returns the <code>Properties</code> value.
 

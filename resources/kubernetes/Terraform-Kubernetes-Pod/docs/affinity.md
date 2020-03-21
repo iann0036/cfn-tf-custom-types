@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#nodeaffinity" title="NodeAffinity">NodeAffinity</a>" : <i>[ &lt;a href=&#34;affinity-nodeaffinity.md&#34;&gt;NodeAffinity&lt;/a&gt;, ... ]</i>,
-    "<a href="#podaffinity" title="PodAffinity">PodAffinity</a>" : <i>[ &lt;a href=&#34;affinity-podaffinity.md&#34;&gt;PodAffinity&lt;/a&gt;, ... ]</i>,
-    "<a href="#podantiaffinity" title="PodAntiAffinity">PodAntiAffinity</a>" : <i>[ &lt;a href=&#34;affinity-podantiaffinity.md&#34;&gt;PodAntiAffinity&lt;/a&gt;, ... ]</i>
+    "<a href="#nodeaffinity" title="NodeAffinity">NodeAffinity</a>" : <i>[ <a href="affinity-nodeaffinity.md">NodeAffinity</a>, ... ]</i>,
+    "<a href="#podaffinity" title="PodAffinity">PodAffinity</a>" : <i>[ <a href="affinity-podaffinity.md">PodAffinity</a>, ... ]</i>,
+    "<a href="#podantiaffinity" title="PodAntiAffinity">PodAntiAffinity</a>" : <i>[ <a href="affinity-podantiaffinity.md">PodAntiAffinity</a>, ... ]</i>
 }
 </pre>
 
@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#nodeaffinity" title="NodeAffinity">NodeAffinity</a>: <i>
-      - &lt;a href=&#34;affinity-nodeaffinity.md&#34;&gt;NodeAffinity&lt;/a&gt;</i>
+      - <a href="affinity-nodeaffinity.md">NodeAffinity</a></i>
 <a href="#podaffinity" title="PodAffinity">PodAffinity</a>: <i>
-      - &lt;a href=&#34;affinity-podaffinity.md&#34;&gt;PodAffinity&lt;/a&gt;</i>
+      - <a href="affinity-podaffinity.md">PodAffinity</a></i>
 <a href="#podantiaffinity" title="PodAntiAffinity">PodAntiAffinity</a>: <i>
-      - &lt;a href=&#34;affinity-podantiaffinity.md&#34;&gt;PodAntiAffinity&lt;/a&gt;</i>
+      - <a href="affinity-podantiaffinity.md">PodAntiAffinity</a></i>
 </pre>
 
 ## Properties
@@ -30,21 +30,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### NodeAffinity
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;affinity-nodeaffinity.md&#34;&gt;NodeAffinity&lt;/a&gt;
+_Type_: List of <a href="affinity-nodeaffinity.md">NodeAffinity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PodAffinity
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;affinity-podaffinity.md&#34;&gt;PodAffinity&lt;/a&gt;
+_Type_: List of <a href="affinity-podaffinity.md">PodAffinity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PodAntiAffinity
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;affinity-podantiaffinity.md&#34;&gt;PodAntiAffinity&lt;/a&gt;
+_Type_: List of <a href="affinity-podantiaffinity.md">PodAntiAffinity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

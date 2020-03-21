@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#delayoption" title="DelayOption">DelayOption</a>" : <i>String</i>,
     "<a href="#untilhour" title="UntilHour">UntilHour</a>" : <i>Double</i>,
     "<a href="#untilminute" title="UntilMinute">UntilMinute</a>" : <i>Double</i>,
-    "<a href="#duration" title="Duration">Duration</a>" : <i>[ &lt;a href=&#34;delayaction-duration.md&#34;&gt;Duration&lt;/a&gt;, ... ]</i>
+    "<a href="#duration" title="Duration">Duration</a>" : <i>[ <a href="delayaction-duration.md">Duration</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#untilhour" title="UntilHour">UntilHour</a>: <i>Double</i>
 <a href="#untilminute" title="UntilMinute">UntilMinute</a>: <i>Double</i>
 <a href="#duration" title="Duration">Duration</a>: <i>
-      - &lt;a href=&#34;delayaction-duration.md&#34;&gt;Duration&lt;/a&gt;</i>
+      - <a href="delayaction-duration.md">Duration</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Duration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;delayaction-duration.md&#34;&gt;Duration&lt;/a&gt;
+_Type_: List of <a href="delayaction-duration.md">Duration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

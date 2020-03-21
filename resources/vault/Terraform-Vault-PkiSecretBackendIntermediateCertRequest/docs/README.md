@@ -247,13 +247,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Csr
 
-Returns the &lt;code&gt;Csr&lt;/code&gt; value.
+Returns the <code>Csr</code> value.
 
 #### PrivateKey
 
-Returns the &lt;code&gt;PrivateKey&lt;/code&gt; value.
+Returns the <code>PrivateKey</code> value.
 
 #### PrivateKeyType
 
-Returns the &lt;code&gt;PrivateKeyType&lt;/code&gt; value.
+Returns the <code>PrivateKeyType</code> value.
 

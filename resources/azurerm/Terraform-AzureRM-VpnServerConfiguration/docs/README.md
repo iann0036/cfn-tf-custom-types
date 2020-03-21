@@ -16,16 +16,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#vpnauthenticationtypes" title="VpnAuthenticationTypes">VpnAuthenticationTypes</a>" : <i>[ String, ... ]</i>,
         "<a href="#vpnprotocols" title="VpnProtocols">VpnProtocols</a>" : <i>[ String, ... ]</i>,
-        "<a href="#azureactivedirectoryauthentication" title="AzureActiveDirectoryAuthentication">AzureActiveDirectoryAuthentication</a>" : <i>[ &lt;a href=&#34;azureactivedirectoryauthentication.md&#34;&gt;AzureActiveDirectoryAuthentication&lt;/a&gt;, ... ]</i>,
-        "<a href="#clientrevokedcertificate" title="ClientRevokedCertificate">ClientRevokedCertificate</a>" : <i>[ &lt;a href=&#34;clientrevokedcertificate.md&#34;&gt;ClientRevokedCertificate&lt;/a&gt;, ... ]</i>,
-        "<a href="#clientrootcertificate" title="ClientRootCertificate">ClientRootCertificate</a>" : <i>[ &lt;a href=&#34;clientrootcertificate.md&#34;&gt;ClientRootCertificate&lt;/a&gt;, ... ]</i>,
-        "<a href="#ipsecpolicy" title="IpsecPolicy">IpsecPolicy</a>" : <i>[ &lt;a href=&#34;ipsecpolicy.md&#34;&gt;IpsecPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#radiusserver" title="RadiusServer">RadiusServer</a>" : <i>[ &lt;a href=&#34;radiusserver.md&#34;&gt;RadiusServer&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#serverrootcertificate" title="ServerRootCertificate">ServerRootCertificate</a>" : <i>[ &lt;a href=&#34;serverrootcertificate.md&#34;&gt;ServerRootCertificate&lt;/a&gt;, ... ]</i>
+        "<a href="#azureactivedirectoryauthentication" title="AzureActiveDirectoryAuthentication">AzureActiveDirectoryAuthentication</a>" : <i>[ <a href="azureactivedirectoryauthentication.md">AzureActiveDirectoryAuthentication</a>, ... ]</i>,
+        "<a href="#clientrevokedcertificate" title="ClientRevokedCertificate">ClientRevokedCertificate</a>" : <i>[ <a href="clientrevokedcertificate.md">ClientRevokedCertificate</a>, ... ]</i>,
+        "<a href="#clientrootcertificate" title="ClientRootCertificate">ClientRootCertificate</a>" : <i>[ <a href="clientrootcertificate.md">ClientRootCertificate</a>, ... ]</i>,
+        "<a href="#ipsecpolicy" title="IpsecPolicy">IpsecPolicy</a>" : <i>[ <a href="ipsecpolicy.md">IpsecPolicy</a>, ... ]</i>,
+        "<a href="#radiusserver" title="RadiusServer">RadiusServer</a>" : <i>[ <a href="radiusserver.md">RadiusServer</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#serverrootcertificate" title="ServerRootCertificate">ServerRootCertificate</a>" : <i>[ <a href="serverrootcertificate.md">ServerRootCertificate</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,24 +40,24 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#vpnauthenticationtypes" title="VpnAuthenticationTypes">VpnAuthenticationTypes</a>: <i>
       - String</i>
     <a href="#vpnprotocols" title="VpnProtocols">VpnProtocols</a>: <i>
       - String</i>
     <a href="#azureactivedirectoryauthentication" title="AzureActiveDirectoryAuthentication">AzureActiveDirectoryAuthentication</a>: <i>
-      - &lt;a href=&#34;azureactivedirectoryauthentication.md&#34;&gt;AzureActiveDirectoryAuthentication&lt;/a&gt;</i>
+      - <a href="azureactivedirectoryauthentication.md">AzureActiveDirectoryAuthentication</a></i>
     <a href="#clientrevokedcertificate" title="ClientRevokedCertificate">ClientRevokedCertificate</a>: <i>
-      - &lt;a href=&#34;clientrevokedcertificate.md&#34;&gt;ClientRevokedCertificate&lt;/a&gt;</i>
+      - <a href="clientrevokedcertificate.md">ClientRevokedCertificate</a></i>
     <a href="#clientrootcertificate" title="ClientRootCertificate">ClientRootCertificate</a>: <i>
-      - &lt;a href=&#34;clientrootcertificate.md&#34;&gt;ClientRootCertificate&lt;/a&gt;</i>
+      - <a href="clientrootcertificate.md">ClientRootCertificate</a></i>
     <a href="#ipsecpolicy" title="IpsecPolicy">IpsecPolicy</a>: <i>
-      - &lt;a href=&#34;ipsecpolicy.md&#34;&gt;IpsecPolicy&lt;/a&gt;</i>
+      - <a href="ipsecpolicy.md">IpsecPolicy</a></i>
     <a href="#radiusserver" title="RadiusServer">RadiusServer</a>: <i>
-      - &lt;a href=&#34;radiusserver.md&#34;&gt;RadiusServer&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="radiusserver.md">RadiusServer</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#serverrootcertificate" title="ServerRootCertificate">ServerRootCertificate</a>: <i>
-      - &lt;a href=&#34;serverrootcertificate.md&#34;&gt;ServerRootCertificate&lt;/a&gt;</i>
+      - <a href="serverrootcertificate.md">ServerRootCertificate</a></i>
 </pre>
 
 ## Properties
@@ -98,7 +98,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -122,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;azureactivedirectoryauthentication.md&#34;&gt;AzureActiveDirectoryAuthentication&lt;/a&gt;
+_Type_: List of <a href="azureactivedirectoryauthentication.md">AzureActiveDirectoryAuthentication</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -130,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;clientrevokedcertificate.md&#34;&gt;ClientRevokedCertificate&lt;/a&gt;
+_Type_: List of <a href="clientrevokedcertificate.md">ClientRevokedCertificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;clientrootcertificate.md&#34;&gt;ClientRootCertificate&lt;/a&gt;
+_Type_: List of <a href="clientrootcertificate.md">ClientRootCertificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipsecpolicy.md&#34;&gt;IpsecPolicy&lt;/a&gt;
+_Type_: List of <a href="ipsecpolicy.md">IpsecPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;radiusserver.md&#34;&gt;RadiusServer&lt;/a&gt;
+_Type_: List of <a href="radiusserver.md">RadiusServer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -162,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serverrootcertificate.md&#34;&gt;ServerRootCertificate&lt;/a&gt;
+_Type_: List of <a href="serverrootcertificate.md">ServerRootCertificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

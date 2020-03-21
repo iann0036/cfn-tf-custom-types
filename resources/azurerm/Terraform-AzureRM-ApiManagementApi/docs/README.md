@@ -25,10 +25,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#soappassthrough" title="SoapPassThrough">SoapPassThrough</a>" : <i>Boolean</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
         "<a href="#versionsetid" title="VersionSetId">VersionSetId</a>" : <i>String</i>,
-        "<a href="#import" title="Import">Import</a>" : <i>[ &lt;a href=&#34;import.md&#34;&gt;Import&lt;/a&gt;, ... ]</i>,
-        "<a href="#subscriptionkeyparameternames" title="SubscriptionKeyParameterNames">SubscriptionKeyParameterNames</a>" : <i>[ &lt;a href=&#34;subscriptionkeyparameternames.md&#34;&gt;SubscriptionKeyParameterNames&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#wsdlselector" title="WsdlSelector">WsdlSelector</a>" : <i>[ &lt;a href=&#34;wsdlselector.md&#34;&gt;WsdlSelector&lt;/a&gt;, ... ]</i>
+        "<a href="#import" title="Import">Import</a>" : <i>[ <a href="import.md">Import</a>, ... ]</i>,
+        "<a href="#subscriptionkeyparameternames" title="SubscriptionKeyParameterNames">SubscriptionKeyParameterNames</a>" : <i>[ <a href="subscriptionkeyparameternames.md">SubscriptionKeyParameterNames</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#wsdlselector" title="WsdlSelector">WsdlSelector</a>" : <i>[ <a href="wsdlselector.md">WsdlSelector</a>, ... ]</i>
     }
 }
 </pre>
@@ -53,12 +53,12 @@ Properties:
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#versionsetid" title="VersionSetId">VersionSetId</a>: <i>String</i>
     <a href="#import" title="Import">Import</a>: <i>
-      - &lt;a href=&#34;import.md&#34;&gt;Import&lt;/a&gt;</i>
+      - <a href="import.md">Import</a></i>
     <a href="#subscriptionkeyparameternames" title="SubscriptionKeyParameterNames">SubscriptionKeyParameterNames</a>: <i>
-      - &lt;a href=&#34;subscriptionkeyparameternames.md&#34;&gt;SubscriptionKeyParameterNames&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="subscriptionkeyparameternames.md">SubscriptionKeyParameterNames</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#wsdlselector" title="WsdlSelector">WsdlSelector</a>: <i>
-      - &lt;a href=&#34;wsdlselector.md&#34;&gt;WsdlSelector&lt;/a&gt;</i>
+      - <a href="wsdlselector.md">WsdlSelector</a></i>
 </pre>
 
 ## Properties
@@ -171,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;import.md&#34;&gt;Import&lt;/a&gt;
+_Type_: List of <a href="import.md">Import</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subscriptionkeyparameternames.md&#34;&gt;SubscriptionKeyParameterNames&lt;/a&gt;
+_Type_: List of <a href="subscriptionkeyparameternames.md">SubscriptionKeyParameterNames</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;wsdlselector.md&#34;&gt;WsdlSelector&lt;/a&gt;
+_Type_: List of <a href="wsdlselector.md">WsdlSelector</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,9 +217,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IsCurrent
 
-Returns the &lt;code&gt;IsCurrent&lt;/code&gt; value.
+Returns the <code>IsCurrent</code> value.
 
 #### IsOnline
 
-Returns the &lt;code&gt;IsOnline&lt;/code&gt; value.
+Returns the <code>IsOnline</code> value.
 

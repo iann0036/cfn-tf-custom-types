@@ -35,7 +35,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#snapshotretentionlimit" title="SnapshotRetentionLimit">SnapshotRetentionLimit</a>" : <i>Double</i>,
         "<a href="#snapshotwindow" title="SnapshotWindow">SnapshotWindow</a>" : <i>String</i>,
         "<a href="#subnetgroupname" title="SubnetGroupName">SubnetGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -74,7 +74,7 @@ Properties:
     <a href="#snapshotwindow" title="SnapshotWindow">SnapshotWindow</a>: <i>String</i>
     <a href="#subnetgroupname" title="SubnetGroupName">SubnetGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
@@ -267,7 +267,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -289,17 +289,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CacheNodes
 
-Returns the &lt;code&gt;CacheNodes&lt;/code&gt; value.
+Returns the <code>CacheNodes</code> value.
 
 #### ClusterAddress
 
-Returns the &lt;code&gt;ClusterAddress&lt;/code&gt; value.
+Returns the <code>ClusterAddress</code> value.
 
 #### ConfigurationEndpoint
 
-Returns the &lt;code&gt;ConfigurationEndpoint&lt;/code&gt; value.
+Returns the <code>ConfigurationEndpoint</code> value.
 

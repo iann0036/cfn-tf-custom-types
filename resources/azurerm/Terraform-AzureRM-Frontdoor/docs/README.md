@@ -19,17 +19,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#backendpool" title="BackendPool">BackendPool</a>" : <i>[ &lt;a href=&#34;backendpool.md&#34;&gt;BackendPool&lt;/a&gt;, ... ]</i>,
-        "<a href="#backendpoolhealthprobe" title="BackendPoolHealthProbe">BackendPoolHealthProbe</a>" : <i>[ &lt;a href=&#34;backendpoolhealthprobe.md&#34;&gt;BackendPoolHealthProbe&lt;/a&gt;, ... ]</i>,
-        "<a href="#backendpoolloadbalancing" title="BackendPoolLoadBalancing">BackendPoolLoadBalancing</a>" : <i>[ &lt;a href=&#34;backendpoolloadbalancing.md&#34;&gt;BackendPoolLoadBalancing&lt;/a&gt;, ... ]</i>,
-        "<a href="#frontendendpoint" title="FrontendEndpoint">FrontendEndpoint</a>" : <i>[ &lt;a href=&#34;frontendendpoint.md&#34;&gt;FrontendEndpoint&lt;/a&gt;, ... ]</i>,
-        "<a href="#routingrule" title="RoutingRule">RoutingRule</a>" : <i>[ &lt;a href=&#34;routingrule.md&#34;&gt;RoutingRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#backend" title="Backend">Backend</a>" : <i>[ &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;, ... ]</i>,
-        "<a href="#customhttpsconfiguration" title="CustomHttpsConfiguration">CustomHttpsConfiguration</a>" : <i>[ &lt;a href=&#34;customhttpsconfiguration.md&#34;&gt;CustomHttpsConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#forwardingconfiguration" title="ForwardingConfiguration">ForwardingConfiguration</a>" : <i>[ &lt;a href=&#34;forwardingconfiguration.md&#34;&gt;ForwardingConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#redirectconfiguration" title="RedirectConfiguration">RedirectConfiguration</a>" : <i>[ &lt;a href=&#34;redirectconfiguration.md&#34;&gt;RedirectConfiguration&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#backendpool" title="BackendPool">BackendPool</a>" : <i>[ <a href="backendpool.md">BackendPool</a>, ... ]</i>,
+        "<a href="#backendpoolhealthprobe" title="BackendPoolHealthProbe">BackendPoolHealthProbe</a>" : <i>[ <a href="backendpoolhealthprobe.md">BackendPoolHealthProbe</a>, ... ]</i>,
+        "<a href="#backendpoolloadbalancing" title="BackendPoolLoadBalancing">BackendPoolLoadBalancing</a>" : <i>[ <a href="backendpoolloadbalancing.md">BackendPoolLoadBalancing</a>, ... ]</i>,
+        "<a href="#frontendendpoint" title="FrontendEndpoint">FrontendEndpoint</a>" : <i>[ <a href="frontendendpoint.md">FrontendEndpoint</a>, ... ]</i>,
+        "<a href="#routingrule" title="RoutingRule">RoutingRule</a>" : <i>[ <a href="routingrule.md">RoutingRule</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#backend" title="Backend">Backend</a>" : <i>[ <a href="backend.md">Backend</a>, ... ]</i>,
+        "<a href="#customhttpsconfiguration" title="CustomHttpsConfiguration">CustomHttpsConfiguration</a>" : <i>[ <a href="customhttpsconfiguration.md">CustomHttpsConfiguration</a>, ... ]</i>,
+        "<a href="#forwardingconfiguration" title="ForwardingConfiguration">ForwardingConfiguration</a>" : <i>[ <a href="forwardingconfiguration.md">ForwardingConfiguration</a>, ... ]</i>,
+        "<a href="#redirectconfiguration" title="RedirectConfiguration">RedirectConfiguration</a>" : <i>[ <a href="redirectconfiguration.md">RedirectConfiguration</a>, ... ]</i>
     }
 }
 </pre>
@@ -47,26 +47,26 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#backendpool" title="BackendPool">BackendPool</a>: <i>
-      - &lt;a href=&#34;backendpool.md&#34;&gt;BackendPool&lt;/a&gt;</i>
+      - <a href="backendpool.md">BackendPool</a></i>
     <a href="#backendpoolhealthprobe" title="BackendPoolHealthProbe">BackendPoolHealthProbe</a>: <i>
-      - &lt;a href=&#34;backendpoolhealthprobe.md&#34;&gt;BackendPoolHealthProbe&lt;/a&gt;</i>
+      - <a href="backendpoolhealthprobe.md">BackendPoolHealthProbe</a></i>
     <a href="#backendpoolloadbalancing" title="BackendPoolLoadBalancing">BackendPoolLoadBalancing</a>: <i>
-      - &lt;a href=&#34;backendpoolloadbalancing.md&#34;&gt;BackendPoolLoadBalancing&lt;/a&gt;</i>
+      - <a href="backendpoolloadbalancing.md">BackendPoolLoadBalancing</a></i>
     <a href="#frontendendpoint" title="FrontendEndpoint">FrontendEndpoint</a>: <i>
-      - &lt;a href=&#34;frontendendpoint.md&#34;&gt;FrontendEndpoint&lt;/a&gt;</i>
+      - <a href="frontendendpoint.md">FrontendEndpoint</a></i>
     <a href="#routingrule" title="RoutingRule">RoutingRule</a>: <i>
-      - &lt;a href=&#34;routingrule.md&#34;&gt;RoutingRule&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="routingrule.md">RoutingRule</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#backend" title="Backend">Backend</a>: <i>
-      - &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;</i>
+      - <a href="backend.md">Backend</a></i>
     <a href="#customhttpsconfiguration" title="CustomHttpsConfiguration">CustomHttpsConfiguration</a>: <i>
-      - &lt;a href=&#34;customhttpsconfiguration.md&#34;&gt;CustomHttpsConfiguration&lt;/a&gt;</i>
+      - <a href="customhttpsconfiguration.md">CustomHttpsConfiguration</a></i>
     <a href="#forwardingconfiguration" title="ForwardingConfiguration">ForwardingConfiguration</a>: <i>
-      - &lt;a href=&#34;forwardingconfiguration.md&#34;&gt;ForwardingConfiguration&lt;/a&gt;</i>
+      - <a href="forwardingconfiguration.md">ForwardingConfiguration</a></i>
     <a href="#redirectconfiguration" title="RedirectConfiguration">RedirectConfiguration</a>: <i>
-      - &lt;a href=&#34;redirectconfiguration.md&#34;&gt;RedirectConfiguration&lt;/a&gt;</i>
+      - <a href="redirectconfiguration.md">RedirectConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -131,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backendpool.md&#34;&gt;BackendPool&lt;/a&gt;
+_Type_: List of <a href="backendpool.md">BackendPool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backendpoolhealthprobe.md&#34;&gt;BackendPoolHealthProbe&lt;/a&gt;
+_Type_: List of <a href="backendpoolhealthprobe.md">BackendPoolHealthProbe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backendpoolloadbalancing.md&#34;&gt;BackendPoolLoadBalancing&lt;/a&gt;
+_Type_: List of <a href="backendpoolloadbalancing.md">BackendPoolLoadBalancing</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;frontendendpoint.md&#34;&gt;FrontendEndpoint&lt;/a&gt;
+_Type_: List of <a href="frontendendpoint.md">FrontendEndpoint</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;routingrule.md&#34;&gt;RoutingRule&lt;/a&gt;
+_Type_: List of <a href="routingrule.md">RoutingRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;
+_Type_: List of <a href="backend.md">Backend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customhttpsconfiguration.md&#34;&gt;CustomHttpsConfiguration&lt;/a&gt;
+_Type_: List of <a href="customhttpsconfiguration.md">CustomHttpsConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,7 +203,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;forwardingconfiguration.md&#34;&gt;ForwardingConfiguration&lt;/a&gt;
+_Type_: List of <a href="forwardingconfiguration.md">ForwardingConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -211,7 +211,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;redirectconfiguration.md&#34;&gt;RedirectConfiguration&lt;/a&gt;
+_Type_: List of <a href="redirectconfiguration.md">RedirectConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,5 +233,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Cname
 
-Returns the &lt;code&gt;Cname&lt;/code&gt; value.
+Returns the <code>Cname</code> value.
 

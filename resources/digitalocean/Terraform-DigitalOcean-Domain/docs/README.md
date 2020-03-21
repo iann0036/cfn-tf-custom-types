@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Urn
 
-Returns the &lt;code&gt;Urn&lt;/code&gt; value.
+Returns the <code>Urn</code> value.
 

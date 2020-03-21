@@ -63,5 +63,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NamespaceId
 
-Returns the &lt;code&gt;NamespaceId&lt;/code&gt; value.
+Returns the <code>NamespaceId</code> value.
 

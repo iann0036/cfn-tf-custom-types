@@ -154,17 +154,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Certificate
 
-Returns the &lt;code&gt;Certificate&lt;/code&gt; value.
+Returns the <code>Certificate</code> value.
 
 #### EndpointIp
 
-Returns the &lt;code&gt;EndpointIp&lt;/code&gt; value.
+Returns the <code>EndpointIp</code> value.
 
 #### EndpointPort
 
-Returns the &lt;code&gt;EndpointPort&lt;/code&gt; value.
+Returns the <code>EndpointPort</code> value.
 
 #### ReadReplicas
 
-Returns the &lt;code&gt;ReadReplicas&lt;/code&gt; value.
+Returns the <code>ReadReplicas</code> value.
 

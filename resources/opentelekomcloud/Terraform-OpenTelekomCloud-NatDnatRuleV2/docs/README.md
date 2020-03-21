@@ -123,17 +123,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### FloatingIpAddress
 
-Returns the &lt;code&gt;FloatingIpAddress&lt;/code&gt; value.
+Returns the <code>FloatingIpAddress</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### TenantId
 
-Returns the &lt;code&gt;TenantId&lt;/code&gt; value.
+Returns the <code>TenantId</code> value.
 

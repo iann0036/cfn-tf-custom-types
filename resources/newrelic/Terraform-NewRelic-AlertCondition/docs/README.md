@@ -25,7 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#userdefinedmetric" title="UserDefinedMetric">UserDefinedMetric</a>" : <i>String</i>,
         "<a href="#userdefinedvaluefunction" title="UserDefinedValueFunction">UserDefinedValueFunction</a>" : <i>String</i>,
         "<a href="#violationclosetimer" title="ViolationCloseTimer">ViolationCloseTimer</a>" : <i>Double</i>,
-        "<a href="#term" title="Term">Term</a>" : <i>[ &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;, ... ]</i>
+        "<a href="#term" title="Term">Term</a>" : <i>[ <a href="term.md">Term</a>, ... ]</i>
     }
 }
 </pre>
@@ -50,7 +50,7 @@ Properties:
     <a href="#userdefinedvaluefunction" title="UserDefinedValueFunction">UserDefinedValueFunction</a>: <i>String</i>
     <a href="#violationclosetimer" title="ViolationCloseTimer">ViolationCloseTimer</a>: <i>Double</i>
     <a href="#term" title="Term">Term</a>: <i>
-      - &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;</i>
+      - <a href="term.md">Term</a></i>
 </pre>
 
 ## Properties
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;
+_Type_: List of <a href="term.md">Term</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

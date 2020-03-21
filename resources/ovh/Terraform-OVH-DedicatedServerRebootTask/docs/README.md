@@ -74,25 +74,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Comment
 
-Returns the &lt;code&gt;Comment&lt;/code&gt; value.
+Returns the <code>Comment</code> value.
 
 #### DoneDate
 
-Returns the &lt;code&gt;DoneDate&lt;/code&gt; value.
+Returns the <code>DoneDate</code> value.
 
 #### Function
 
-Returns the &lt;code&gt;Function&lt;/code&gt; value.
+Returns the <code>Function</code> value.
 
 #### LastUpdate
 
-Returns the &lt;code&gt;LastUpdate&lt;/code&gt; value.
+Returns the <code>LastUpdate</code> value.
 
 #### StartDate
 
-Returns the &lt;code&gt;StartDate&lt;/code&gt; value.
+Returns the <code>StartDate</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

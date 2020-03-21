@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EncryptedPassword
 
-Returns the &lt;code&gt;EncryptedPassword&lt;/code&gt; value.
+Returns the <code>EncryptedPassword</code> value.
 
 #### KeyFingerprint
 
-Returns the &lt;code&gt;KeyFingerprint&lt;/code&gt; value.
+Returns the <code>KeyFingerprint</code> value.
 

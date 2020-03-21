@@ -20,9 +20,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#redirecthttptohttps" title="RedirectHttpToHttps">RedirectHttpToHttps</a>" : <i>Boolean</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#forwardingrule" title="ForwardingRule">ForwardingRule</a>" : <i>[ &lt;a href=&#34;forwardingrule.md&#34;&gt;ForwardingRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#stickysessions" title="StickySessions">StickySessions</a>" : <i>[ &lt;a href=&#34;stickysessions.md&#34;&gt;StickySessions&lt;/a&gt;, ... ]</i>
+        "<a href="#forwardingrule" title="ForwardingRule">ForwardingRule</a>" : <i>[ <a href="forwardingrule.md">ForwardingRule</a>, ... ]</i>,
+        "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ <a href="healthcheck.md">Healthcheck</a>, ... ]</i>,
+        "<a href="#stickysessions" title="StickySessions">StickySessions</a>" : <i>[ <a href="stickysessions.md">StickySessions</a>, ... ]</i>
     }
 }
 </pre>
@@ -42,11 +42,11 @@ Properties:
     <a href="#redirecthttptohttps" title="RedirectHttpToHttps">RedirectHttpToHttps</a>: <i>Boolean</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#forwardingrule" title="ForwardingRule">ForwardingRule</a>: <i>
-      - &lt;a href=&#34;forwardingrule.md&#34;&gt;ForwardingRule&lt;/a&gt;</i>
+      - <a href="forwardingrule.md">ForwardingRule</a></i>
     <a href="#healthcheck" title="Healthcheck">Healthcheck</a>: <i>
-      - &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;</i>
+      - <a href="healthcheck.md">Healthcheck</a></i>
     <a href="#stickysessions" title="StickySessions">StickySessions</a>: <i>
-      - &lt;a href=&#34;stickysessions.md&#34;&gt;StickySessions&lt;/a&gt;</i>
+      - <a href="stickysessions.md">StickySessions</a></i>
 </pre>
 
 ## Properties
@@ -119,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;forwardingrule.md&#34;&gt;ForwardingRule&lt;/a&gt;
+_Type_: List of <a href="forwardingrule.md">ForwardingRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;
+_Type_: List of <a href="healthcheck.md">Healthcheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;stickysessions.md&#34;&gt;StickySessions&lt;/a&gt;
+_Type_: List of <a href="stickysessions.md">StickySessions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,13 +157,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Ip
 
-Returns the &lt;code&gt;Ip&lt;/code&gt; value.
+Returns the <code>Ip</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Urn
 
-Returns the &lt;code&gt;Urn&lt;/code&gt; value.
+Returns the <code>Urn</code> value.
 

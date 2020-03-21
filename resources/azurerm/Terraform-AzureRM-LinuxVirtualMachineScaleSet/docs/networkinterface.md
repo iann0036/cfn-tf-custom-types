@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#networksecuritygroupid" title="NetworkSecurityGroupId">NetworkSecurityGroupId</a>" : <i>String</i>,
     "<a href="#primary" title="Primary">Primary</a>" : <i>Boolean</i>,
-    "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ &lt;a href=&#34;networkinterface-ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;, ... ]</i>
+    "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ <a href="networkinterface-ipconfiguration.md">IpConfiguration</a>, ... ]</i>
 }
 </pre>
 
@@ -29,7 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#networksecuritygroupid" title="NetworkSecurityGroupId">NetworkSecurityGroupId</a>: <i>String</i>
 <a href="#primary" title="Primary">Primary</a>: <i>Boolean</i>
 <a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>: <i>
-      - &lt;a href=&#34;networkinterface-ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;</i>
+      - <a href="networkinterface-ipconfiguration.md">IpConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -79,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IpConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkinterface-ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;
+_Type_: List of <a href="networkinterface-ipconfiguration.md">IpConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

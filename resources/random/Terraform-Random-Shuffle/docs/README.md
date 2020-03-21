@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#input" title="Input">Input</a>" : <i>[ String, ... ]</i>,
-        "<a href="#keepers" title="Keepers">Keepers</a>" : <i>[ &lt;a href=&#34;keepers.md&#34;&gt;Keepers&lt;/a&gt;, ... ]</i>,
+        "<a href="#keepers" title="Keepers">Keepers</a>" : <i>[ <a href="keepers.md">Keepers</a>, ... ]</i>,
         "<a href="#resultcount" title="ResultCount">ResultCount</a>" : <i>Double</i>,
         "<a href="#seed" title="Seed">Seed</a>" : <i>String</i>
     }
@@ -30,7 +30,7 @@ Properties:
     <a href="#input" title="Input">Input</a>: <i>
       - String</i>
     <a href="#keepers" title="Keepers">Keepers</a>: <i>
-      - &lt;a href=&#34;keepers.md&#34;&gt;Keepers&lt;/a&gt;</i>
+      - <a href="keepers.md">Keepers</a></i>
     <a href="#resultcount" title="ResultCount">ResultCount</a>: <i>Double</i>
     <a href="#seed" title="Seed">Seed</a>: <i>String</i>
 </pre>
@@ -57,7 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;keepers.md&#34;&gt;Keepers&lt;/a&gt;
+_Type_: List of <a href="keepers.md">Keepers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,5 +95,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Result
 
-Returns the &lt;code&gt;Result&lt;/code&gt; value.
+Returns the <code>Result</code> value.
 

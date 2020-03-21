@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
     "<a href="#ruletype" title="RuleType">RuleType</a>" : <i>String</i>,
-    "<a href="#matchconditions" title="MatchConditions">MatchConditions</a>" : <i>[ &lt;a href=&#34;customrules-matchconditions.md&#34;&gt;MatchConditions&lt;/a&gt;, ... ]</i>
+    "<a href="#matchconditions" title="MatchConditions">MatchConditions</a>" : <i>[ <a href="customrules-matchconditions.md">MatchConditions</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
 <a href="#ruletype" title="RuleType">RuleType</a>: <i>String</i>
 <a href="#matchconditions" title="MatchConditions">MatchConditions</a>: <i>
-      - &lt;a href=&#34;customrules-matchconditions.md&#34;&gt;MatchConditions&lt;/a&gt;</i>
+      - <a href="customrules-matchconditions.md">MatchConditions</a></i>
 </pre>
 
 ## Properties
@@ -60,7 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MatchConditions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;customrules-matchconditions.md&#34;&gt;MatchConditions&lt;/a&gt;
+_Type_: List of <a href="customrules-matchconditions.md">MatchConditions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

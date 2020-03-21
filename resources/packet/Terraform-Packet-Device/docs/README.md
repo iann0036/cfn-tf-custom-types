@@ -33,8 +33,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#waitforreservationdeprovision" title="WaitForReservationDeprovision">WaitForReservationDeprovision</a>" : <i>Boolean</i>,
-        "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>[ &lt;a href=&#34;ipaddress.md&#34;&gt;IpAddress&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>[ <a href="ipaddress.md">IpAddress</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -70,8 +70,8 @@ Properties:
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#waitforreservationdeprovision" title="WaitForReservationDeprovision">WaitForReservationDeprovision</a>: <i>Boolean</i>
     <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>
-      - &lt;a href=&#34;ipaddress.md&#34;&gt;IpAddress&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="ipaddress.md">IpAddress</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -248,7 +248,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipaddress.md&#34;&gt;IpAddress&lt;/a&gt;
+_Type_: List of <a href="ipaddress.md">IpAddress</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -256,7 +256,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -278,49 +278,49 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessPrivateIpv4
 
-Returns the &lt;code&gt;AccessPrivateIpv4&lt;/code&gt; value.
+Returns the <code>AccessPrivateIpv4</code> value.
 
 #### AccessPublicIpv4
 
-Returns the &lt;code&gt;AccessPublicIpv4&lt;/code&gt; value.
+Returns the <code>AccessPublicIpv4</code> value.
 
 #### AccessPublicIpv6
 
-Returns the &lt;code&gt;AccessPublicIpv6&lt;/code&gt; value.
+Returns the <code>AccessPublicIpv6</code> value.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### DeployedFacility
 
-Returns the &lt;code&gt;DeployedFacility&lt;/code&gt; value.
+Returns the <code>DeployedFacility</code> value.
 
 #### Locked
 
-Returns the &lt;code&gt;Locked&lt;/code&gt; value.
+Returns the <code>Locked</code> value.
 
 #### Network
 
-Returns the &lt;code&gt;Network&lt;/code&gt; value.
+Returns the <code>Network</code> value.
 
 #### Ports
 
-Returns the &lt;code&gt;Ports&lt;/code&gt; value.
+Returns the <code>Ports</code> value.
 
 #### RootPassword
 
-Returns the &lt;code&gt;RootPassword&lt;/code&gt; value.
+Returns the <code>RootPassword</code> value.
 
 #### SshKeyIds
 
-Returns the &lt;code&gt;SshKeyIds&lt;/code&gt; value.
+Returns the <code>SshKeyIds</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Updated
 
-Returns the &lt;code&gt;Updated&lt;/code&gt; value.
+Returns the <code>Updated</code> value.
 

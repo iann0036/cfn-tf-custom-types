@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DnsServer
 
-Returns the &lt;code&gt;DnsServer&lt;/code&gt; value.
+Returns the <code>DnsServer</code> value.
 
 #### DomainId
 
-Returns the &lt;code&gt;DomainId&lt;/code&gt; value.
+Returns the <code>DomainId</code> value.
 

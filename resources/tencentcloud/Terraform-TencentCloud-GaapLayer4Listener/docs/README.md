@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#proxyid" title="ProxyId">ProxyId</a>" : <i>String</i>,
         "<a href="#realservertype" title="RealserverType">RealserverType</a>" : <i>String</i>,
         "<a href="#scheduler" title="Scheduler">Scheduler</a>" : <i>String</i>,
-        "<a href="#realserverbindset" title="RealserverBindSet">RealserverBindSet</a>" : <i>[ &lt;a href=&#34;realserverbindset.md&#34;&gt;RealserverBindSet&lt;/a&gt;, ... ]</i>
+        "<a href="#realserverbindset" title="RealserverBindSet">RealserverBindSet</a>" : <i>[ <a href="realserverbindset.md">RealserverBindSet</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,7 +43,7 @@ Properties:
     <a href="#realservertype" title="RealserverType">RealserverType</a>: <i>String</i>
     <a href="#scheduler" title="Scheduler">Scheduler</a>: <i>String</i>
     <a href="#realserverbindset" title="RealserverBindSet">RealserverBindSet</a>: <i>
-      - &lt;a href=&#34;realserverbindset.md&#34;&gt;RealserverBindSet&lt;/a&gt;</i>
+      - <a href="realserverbindset.md">RealserverBindSet</a></i>
 </pre>
 
 ## Properties
@@ -132,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;realserverbindset.md&#34;&gt;RealserverBindSet&lt;/a&gt;
+_Type_: List of <a href="realserverbindset.md">RealserverBindSet</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,9 +154,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

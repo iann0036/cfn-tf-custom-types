@@ -113,17 +113,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Active
 
-Returns the &lt;code&gt;Active&lt;/code&gt; value.
+Returns the <code>Active</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### Title
 
-Returns the &lt;code&gt;Title&lt;/code&gt; value.
+Returns the <code>Title</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

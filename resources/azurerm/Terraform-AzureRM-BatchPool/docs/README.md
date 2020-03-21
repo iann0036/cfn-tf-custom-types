@@ -16,25 +16,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#maxtaskspernode" title="MaxTasksPerNode">MaxTasksPerNode</a>" : <i>Double</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nodeagentskuid" title="NodeAgentSkuId">NodeAgentSkuId</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#stoppendingresizeoperation" title="StopPendingResizeOperation">StopPendingResizeOperation</a>" : <i>Boolean</i>,
         "<a href="#vmsize" title="VmSize">VmSize</a>" : <i>String</i>,
-        "<a href="#autoscale" title="AutoScale">AutoScale</a>" : <i>[ &lt;a href=&#34;autoscale.md&#34;&gt;AutoScale&lt;/a&gt;, ... ]</i>,
-        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;, ... ]</i>,
-        "<a href="#containerconfiguration" title="ContainerConfiguration">ContainerConfiguration</a>" : <i>[ &lt;a href=&#34;containerconfiguration.md&#34;&gt;ContainerConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#fixedscale" title="FixedScale">FixedScale</a>" : <i>[ &lt;a href=&#34;fixedscale.md&#34;&gt;FixedScale&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>" : <i>[ &lt;a href=&#34;networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#starttask" title="StartTask">StartTask</a>" : <i>[ &lt;a href=&#34;starttask.md&#34;&gt;StartTask&lt;/a&gt;, ... ]</i>,
-        "<a href="#storageimagereference" title="StorageImageReference">StorageImageReference</a>" : <i>[ &lt;a href=&#34;storageimagereference.md&#34;&gt;StorageImageReference&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#resourcefile" title="ResourceFile">ResourceFile</a>" : <i>[ &lt;a href=&#34;resourcefile.md&#34;&gt;ResourceFile&lt;/a&gt;, ... ]</i>,
-        "<a href="#useridentity" title="UserIdentity">UserIdentity</a>" : <i>[ &lt;a href=&#34;useridentity.md&#34;&gt;UserIdentity&lt;/a&gt;, ... ]</i>,
-        "<a href="#networksecuritygrouprules" title="NetworkSecurityGroupRules">NetworkSecurityGroupRules</a>" : <i>[ &lt;a href=&#34;networksecuritygrouprules.md&#34;&gt;NetworkSecurityGroupRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#autouser" title="AutoUser">AutoUser</a>" : <i>[ &lt;a href=&#34;autouser.md&#34;&gt;AutoUser&lt;/a&gt;, ... ]</i>
+        "<a href="#autoscale" title="AutoScale">AutoScale</a>" : <i>[ <a href="autoscale.md">AutoScale</a>, ... ]</i>,
+        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ <a href="certificate.md">Certificate</a>, ... ]</i>,
+        "<a href="#containerconfiguration" title="ContainerConfiguration">ContainerConfiguration</a>" : <i>[ <a href="containerconfiguration.md">ContainerConfiguration</a>, ... ]</i>,
+        "<a href="#fixedscale" title="FixedScale">FixedScale</a>" : <i>[ <a href="fixedscale.md">FixedScale</a>, ... ]</i>,
+        "<a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>" : <i>[ <a href="networkconfiguration.md">NetworkConfiguration</a>, ... ]</i>,
+        "<a href="#starttask" title="StartTask">StartTask</a>" : <i>[ <a href="starttask.md">StartTask</a>, ... ]</i>,
+        "<a href="#storageimagereference" title="StorageImageReference">StorageImageReference</a>" : <i>[ <a href="storageimagereference.md">StorageImageReference</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ <a href="endpointconfiguration.md">EndpointConfiguration</a>, ... ]</i>,
+        "<a href="#resourcefile" title="ResourceFile">ResourceFile</a>" : <i>[ <a href="resourcefile.md">ResourceFile</a>, ... ]</i>,
+        "<a href="#useridentity" title="UserIdentity">UserIdentity</a>" : <i>[ <a href="useridentity.md">UserIdentity</a>, ... ]</i>,
+        "<a href="#networksecuritygrouprules" title="NetworkSecurityGroupRules">NetworkSecurityGroupRules</a>" : <i>[ <a href="networksecuritygrouprules.md">NetworkSecurityGroupRules</a>, ... ]</i>,
+        "<a href="#autouser" title="AutoUser">AutoUser</a>" : <i>[ <a href="autouser.md">AutoUser</a>, ... ]</i>
     }
 }
 </pre>
@@ -49,37 +49,37 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#maxtaskspernode" title="MaxTasksPerNode">MaxTasksPerNode</a>: <i>Double</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nodeagentskuid" title="NodeAgentSkuId">NodeAgentSkuId</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#stoppendingresizeoperation" title="StopPendingResizeOperation">StopPendingResizeOperation</a>: <i>Boolean</i>
     <a href="#vmsize" title="VmSize">VmSize</a>: <i>String</i>
     <a href="#autoscale" title="AutoScale">AutoScale</a>: <i>
-      - &lt;a href=&#34;autoscale.md&#34;&gt;AutoScale&lt;/a&gt;</i>
+      - <a href="autoscale.md">AutoScale</a></i>
     <a href="#certificate" title="Certificate">Certificate</a>: <i>
-      - &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;</i>
+      - <a href="certificate.md">Certificate</a></i>
     <a href="#containerconfiguration" title="ContainerConfiguration">ContainerConfiguration</a>: <i>
-      - &lt;a href=&#34;containerconfiguration.md&#34;&gt;ContainerConfiguration&lt;/a&gt;</i>
+      - <a href="containerconfiguration.md">ContainerConfiguration</a></i>
     <a href="#fixedscale" title="FixedScale">FixedScale</a>: <i>
-      - &lt;a href=&#34;fixedscale.md&#34;&gt;FixedScale&lt;/a&gt;</i>
+      - <a href="fixedscale.md">FixedScale</a></i>
     <a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>: <i>
-      - &lt;a href=&#34;networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;</i>
+      - <a href="networkconfiguration.md">NetworkConfiguration</a></i>
     <a href="#starttask" title="StartTask">StartTask</a>: <i>
-      - &lt;a href=&#34;starttask.md&#34;&gt;StartTask&lt;/a&gt;</i>
+      - <a href="starttask.md">StartTask</a></i>
     <a href="#storageimagereference" title="StorageImageReference">StorageImageReference</a>: <i>
-      - &lt;a href=&#34;storageimagereference.md&#34;&gt;StorageImageReference&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="storageimagereference.md">StorageImageReference</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>: <i>
-      - &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;</i>
+      - <a href="endpointconfiguration.md">EndpointConfiguration</a></i>
     <a href="#resourcefile" title="ResourceFile">ResourceFile</a>: <i>
-      - &lt;a href=&#34;resourcefile.md&#34;&gt;ResourceFile&lt;/a&gt;</i>
+      - <a href="resourcefile.md">ResourceFile</a></i>
     <a href="#useridentity" title="UserIdentity">UserIdentity</a>: <i>
-      - &lt;a href=&#34;useridentity.md&#34;&gt;UserIdentity&lt;/a&gt;</i>
+      - <a href="useridentity.md">UserIdentity</a></i>
     <a href="#networksecuritygrouprules" title="NetworkSecurityGroupRules">NetworkSecurityGroupRules</a>: <i>
-      - &lt;a href=&#34;networksecuritygrouprules.md&#34;&gt;NetworkSecurityGroupRules&lt;/a&gt;</i>
+      - <a href="networksecuritygrouprules.md">NetworkSecurityGroupRules</a></i>
     <a href="#autouser" title="AutoUser">AutoUser</a>: <i>
-      - &lt;a href=&#34;autouser.md&#34;&gt;AutoUser&lt;/a&gt;</i>
+      - <a href="autouser.md">AutoUser</a></i>
 </pre>
 
 ## Properties
@@ -120,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscale.md&#34;&gt;AutoScale&lt;/a&gt;
+_Type_: List of <a href="autoscale.md">AutoScale</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;
+_Type_: List of <a href="certificate.md">Certificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;containerconfiguration.md&#34;&gt;ContainerConfiguration&lt;/a&gt;
+_Type_: List of <a href="containerconfiguration.md">ContainerConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +192,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fixedscale.md&#34;&gt;FixedScale&lt;/a&gt;
+_Type_: List of <a href="fixedscale.md">FixedScale</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -200,7 +200,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;
+_Type_: List of <a href="networkconfiguration.md">NetworkConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -208,7 +208,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;starttask.md&#34;&gt;StartTask&lt;/a&gt;
+_Type_: List of <a href="starttask.md">StartTask</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,7 +216,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storageimagereference.md&#34;&gt;StorageImageReference&lt;/a&gt;
+_Type_: List of <a href="storageimagereference.md">StorageImageReference</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -224,7 +224,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -232,7 +232,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;
+_Type_: List of <a href="endpointconfiguration.md">EndpointConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -240,7 +240,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;resourcefile.md&#34;&gt;ResourceFile&lt;/a&gt;
+_Type_: List of <a href="resourcefile.md">ResourceFile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -248,7 +248,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;useridentity.md&#34;&gt;UserIdentity&lt;/a&gt;
+_Type_: List of <a href="useridentity.md">UserIdentity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -256,7 +256,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networksecuritygrouprules.md&#34;&gt;NetworkSecurityGroupRules&lt;/a&gt;
+_Type_: List of <a href="networksecuritygrouprules.md">NetworkSecurityGroupRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -264,7 +264,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autouser.md&#34;&gt;AutoUser&lt;/a&gt;
+_Type_: List of <a href="autouser.md">AutoUser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

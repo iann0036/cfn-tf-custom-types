@@ -93,9 +93,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PromotionalMessagesPerSecond
 
-Returns the &lt;code&gt;PromotionalMessagesPerSecond&lt;/code&gt; value.
+Returns the <code>PromotionalMessagesPerSecond</code> value.
 
 #### TransactionalMessagesPerSecond
 
-Returns the &lt;code&gt;TransactionalMessagesPerSecond&lt;/code&gt; value.
+Returns the <code>TransactionalMessagesPerSecond</code> value.
 

@@ -123,5 +123,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Sha
 
-Returns the &lt;code&gt;Sha&lt;/code&gt; value.
+Returns the <code>Sha</code> value.
 

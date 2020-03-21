@@ -18,16 +18,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#expirationtime" title="ExpirationTime">ExpirationTime</a>" : <i>Double</i>,
         "<a href="#friendlyname" title="FriendlyName">FriendlyName</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#schema" title="Schema">Schema</a>" : <i>String</i>,
         "<a href="#tableid" title="TableId">TableId</a>" : <i>String</i>,
-        "<a href="#encryptionconfiguration" title="EncryptionConfiguration">EncryptionConfiguration</a>" : <i>[ &lt;a href=&#34;encryptionconfiguration.md&#34;&gt;EncryptionConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#externaldataconfiguration" title="ExternalDataConfiguration">ExternalDataConfiguration</a>" : <i>[ &lt;a href=&#34;externaldataconfiguration.md&#34;&gt;ExternalDataConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#timepartitioning" title="TimePartitioning">TimePartitioning</a>" : <i>[ &lt;a href=&#34;timepartitioning.md&#34;&gt;TimePartitioning&lt;/a&gt;, ... ]</i>,
-        "<a href="#view" title="View">View</a>" : <i>[ &lt;a href=&#34;view.md&#34;&gt;View&lt;/a&gt;, ... ]</i>,
-        "<a href="#csvoptions" title="CsvOptions">CsvOptions</a>" : <i>[ &lt;a href=&#34;csvoptions.md&#34;&gt;CsvOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#googlesheetsoptions" title="GoogleSheetsOptions">GoogleSheetsOptions</a>" : <i>[ &lt;a href=&#34;googlesheetsoptions.md&#34;&gt;GoogleSheetsOptions&lt;/a&gt;, ... ]</i>
+        "<a href="#encryptionconfiguration" title="EncryptionConfiguration">EncryptionConfiguration</a>" : <i>[ <a href="encryptionconfiguration.md">EncryptionConfiguration</a>, ... ]</i>,
+        "<a href="#externaldataconfiguration" title="ExternalDataConfiguration">ExternalDataConfiguration</a>" : <i>[ <a href="externaldataconfiguration.md">ExternalDataConfiguration</a>, ... ]</i>,
+        "<a href="#timepartitioning" title="TimePartitioning">TimePartitioning</a>" : <i>[ <a href="timepartitioning.md">TimePartitioning</a>, ... ]</i>,
+        "<a href="#view" title="View">View</a>" : <i>[ <a href="view.md">View</a>, ... ]</i>,
+        "<a href="#csvoptions" title="CsvOptions">CsvOptions</a>" : <i>[ <a href="csvoptions.md">CsvOptions</a>, ... ]</i>,
+        "<a href="#googlesheetsoptions" title="GoogleSheetsOptions">GoogleSheetsOptions</a>" : <i>[ <a href="googlesheetsoptions.md">GoogleSheetsOptions</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,22 +45,22 @@ Properties:
     <a href="#friendlyname" title="FriendlyName">FriendlyName</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#schema" title="Schema">Schema</a>: <i>String</i>
     <a href="#tableid" title="TableId">TableId</a>: <i>String</i>
     <a href="#encryptionconfiguration" title="EncryptionConfiguration">EncryptionConfiguration</a>: <i>
-      - &lt;a href=&#34;encryptionconfiguration.md&#34;&gt;EncryptionConfiguration&lt;/a&gt;</i>
+      - <a href="encryptionconfiguration.md">EncryptionConfiguration</a></i>
     <a href="#externaldataconfiguration" title="ExternalDataConfiguration">ExternalDataConfiguration</a>: <i>
-      - &lt;a href=&#34;externaldataconfiguration.md&#34;&gt;ExternalDataConfiguration&lt;/a&gt;</i>
+      - <a href="externaldataconfiguration.md">ExternalDataConfiguration</a></i>
     <a href="#timepartitioning" title="TimePartitioning">TimePartitioning</a>: <i>
-      - &lt;a href=&#34;timepartitioning.md&#34;&gt;TimePartitioning&lt;/a&gt;</i>
+      - <a href="timepartitioning.md">TimePartitioning</a></i>
     <a href="#view" title="View">View</a>: <i>
-      - &lt;a href=&#34;view.md&#34;&gt;View&lt;/a&gt;</i>
+      - <a href="view.md">View</a></i>
     <a href="#csvoptions" title="CsvOptions">CsvOptions</a>: <i>
-      - &lt;a href=&#34;csvoptions.md&#34;&gt;CsvOptions&lt;/a&gt;</i>
+      - <a href="csvoptions.md">CsvOptions</a></i>
     <a href="#googlesheetsoptions" title="GoogleSheetsOptions">GoogleSheetsOptions</a>: <i>
-      - &lt;a href=&#34;googlesheetsoptions.md&#34;&gt;GoogleSheetsOptions&lt;/a&gt;</i>
+      - <a href="googlesheetsoptions.md">GoogleSheetsOptions</a></i>
 </pre>
 
 ## Properties
@@ -117,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -149,7 +149,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;encryptionconfiguration.md&#34;&gt;EncryptionConfiguration&lt;/a&gt;
+_Type_: List of <a href="encryptionconfiguration.md">EncryptionConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,7 +157,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;externaldataconfiguration.md&#34;&gt;ExternalDataConfiguration&lt;/a&gt;
+_Type_: List of <a href="externaldataconfiguration.md">ExternalDataConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;timepartitioning.md&#34;&gt;TimePartitioning&lt;/a&gt;
+_Type_: List of <a href="timepartitioning.md">TimePartitioning</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -173,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;view.md&#34;&gt;View&lt;/a&gt;
+_Type_: List of <a href="view.md">View</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -181,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;csvoptions.md&#34;&gt;CsvOptions&lt;/a&gt;
+_Type_: List of <a href="csvoptions.md">CsvOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -189,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;googlesheetsoptions.md&#34;&gt;GoogleSheetsOptions&lt;/a&gt;
+_Type_: List of <a href="googlesheetsoptions.md">GoogleSheetsOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -211,37 +211,37 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTime
 
-Returns the &lt;code&gt;CreationTime&lt;/code&gt; value.
+Returns the <code>CreationTime</code> value.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 
 #### LastModifiedTime
 
-Returns the &lt;code&gt;LastModifiedTime&lt;/code&gt; value.
+Returns the <code>LastModifiedTime</code> value.
 
 #### Location
 
-Returns the &lt;code&gt;Location&lt;/code&gt; value.
+Returns the <code>Location</code> value.
 
 #### NumBytes
 
-Returns the &lt;code&gt;NumBytes&lt;/code&gt; value.
+Returns the <code>NumBytes</code> value.
 
 #### NumLongTermBytes
 
-Returns the &lt;code&gt;NumLongTermBytes&lt;/code&gt; value.
+Returns the <code>NumLongTermBytes</code> value.
 
 #### NumRows
 
-Returns the &lt;code&gt;NumRows&lt;/code&gt; value.
+Returns the <code>NumRows</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 

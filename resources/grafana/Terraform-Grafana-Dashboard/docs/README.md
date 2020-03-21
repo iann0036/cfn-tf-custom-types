@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Slug
 
-Returns the &lt;code&gt;Slug&lt;/code&gt; value.
+Returns the <code>Slug</code> value.
 

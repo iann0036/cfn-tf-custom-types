@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#dbclusteridentifier" title="DbClusterIdentifier">DbClusterIdentifier</a>" : <i>String</i>,
         "<a href="#dbclustersnapshotidentifier" title="DbClusterSnapshotIdentifier">DbClusterSnapshotIdentifier</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -28,7 +28,7 @@ Properties:
     <a href="#dbclusteridentifier" title="DbClusterIdentifier">DbClusterIdentifier</a>: <i>String</i>
     <a href="#dbclustersnapshotidentifier" title="DbClusterSnapshotIdentifier">DbClusterSnapshotIdentifier</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -61,7 +61,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -83,45 +83,45 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailabilityZones
 
-Returns the &lt;code&gt;AvailabilityZones&lt;/code&gt; value.
+Returns the <code>AvailabilityZones</code> value.
 
 #### DbClusterSnapshotArn
 
-Returns the &lt;code&gt;DbClusterSnapshotArn&lt;/code&gt; value.
+Returns the <code>DbClusterSnapshotArn</code> value.
 
 #### Engine
 
-Returns the &lt;code&gt;Engine&lt;/code&gt; value.
+Returns the <code>Engine</code> value.
 
 #### EngineVersion
 
-Returns the &lt;code&gt;EngineVersion&lt;/code&gt; value.
+Returns the <code>EngineVersion</code> value.
 
 #### KmsKeyId
 
-Returns the &lt;code&gt;KmsKeyId&lt;/code&gt; value.
+Returns the <code>KmsKeyId</code> value.
 
 #### Port
 
-Returns the &lt;code&gt;Port&lt;/code&gt; value.
+Returns the <code>Port</code> value.
 
 #### SnapshotType
 
-Returns the &lt;code&gt;SnapshotType&lt;/code&gt; value.
+Returns the <code>SnapshotType</code> value.
 
 #### SourceDbClusterSnapshotArn
 
-Returns the &lt;code&gt;SourceDbClusterSnapshotArn&lt;/code&gt; value.
+Returns the <code>SourceDbClusterSnapshotArn</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### StorageEncrypted
 
-Returns the &lt;code&gt;StorageEncrypted&lt;/code&gt; value.
+Returns the <code>StorageEncrypted</code> value.
 
 #### VpcId
 
-Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
+Returns the <code>VpcId</code> value.
 

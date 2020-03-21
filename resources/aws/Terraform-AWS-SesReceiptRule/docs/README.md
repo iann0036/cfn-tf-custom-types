@@ -20,13 +20,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#rulesetname" title="RuleSetName">RuleSetName</a>" : <i>String</i>,
         "<a href="#scanenabled" title="ScanEnabled">ScanEnabled</a>" : <i>Boolean</i>,
         "<a href="#tlspolicy" title="TlsPolicy">TlsPolicy</a>" : <i>String</i>,
-        "<a href="#addheaderaction" title="AddHeaderAction">AddHeaderAction</a>" : <i>[ &lt;a href=&#34;addheaderaction.md&#34;&gt;AddHeaderAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#bounceaction" title="BounceAction">BounceAction</a>" : <i>[ &lt;a href=&#34;bounceaction.md&#34;&gt;BounceAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#lambdaaction" title="LambdaAction">LambdaAction</a>" : <i>[ &lt;a href=&#34;lambdaaction.md&#34;&gt;LambdaAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#s3action" title="S3Action">S3Action</a>" : <i>[ &lt;a href=&#34;s3action.md&#34;&gt;S3Action&lt;/a&gt;, ... ]</i>,
-        "<a href="#snsaction" title="SnsAction">SnsAction</a>" : <i>[ &lt;a href=&#34;snsaction.md&#34;&gt;SnsAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#stopaction" title="StopAction">StopAction</a>" : <i>[ &lt;a href=&#34;stopaction.md&#34;&gt;StopAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#workmailaction" title="WorkmailAction">WorkmailAction</a>" : <i>[ &lt;a href=&#34;workmailaction.md&#34;&gt;WorkmailAction&lt;/a&gt;, ... ]</i>
+        "<a href="#addheaderaction" title="AddHeaderAction">AddHeaderAction</a>" : <i>[ <a href="addheaderaction.md">AddHeaderAction</a>, ... ]</i>,
+        "<a href="#bounceaction" title="BounceAction">BounceAction</a>" : <i>[ <a href="bounceaction.md">BounceAction</a>, ... ]</i>,
+        "<a href="#lambdaaction" title="LambdaAction">LambdaAction</a>" : <i>[ <a href="lambdaaction.md">LambdaAction</a>, ... ]</i>,
+        "<a href="#s3action" title="S3Action">S3Action</a>" : <i>[ <a href="s3action.md">S3Action</a>, ... ]</i>,
+        "<a href="#snsaction" title="SnsAction">SnsAction</a>" : <i>[ <a href="snsaction.md">SnsAction</a>, ... ]</i>,
+        "<a href="#stopaction" title="StopAction">StopAction</a>" : <i>[ <a href="stopaction.md">StopAction</a>, ... ]</i>,
+        "<a href="#workmailaction" title="WorkmailAction">WorkmailAction</a>" : <i>[ <a href="workmailaction.md">WorkmailAction</a>, ... ]</i>
     }
 }
 </pre>
@@ -46,19 +46,19 @@ Properties:
     <a href="#scanenabled" title="ScanEnabled">ScanEnabled</a>: <i>Boolean</i>
     <a href="#tlspolicy" title="TlsPolicy">TlsPolicy</a>: <i>String</i>
     <a href="#addheaderaction" title="AddHeaderAction">AddHeaderAction</a>: <i>
-      - &lt;a href=&#34;addheaderaction.md&#34;&gt;AddHeaderAction&lt;/a&gt;</i>
+      - <a href="addheaderaction.md">AddHeaderAction</a></i>
     <a href="#bounceaction" title="BounceAction">BounceAction</a>: <i>
-      - &lt;a href=&#34;bounceaction.md&#34;&gt;BounceAction&lt;/a&gt;</i>
+      - <a href="bounceaction.md">BounceAction</a></i>
     <a href="#lambdaaction" title="LambdaAction">LambdaAction</a>: <i>
-      - &lt;a href=&#34;lambdaaction.md&#34;&gt;LambdaAction&lt;/a&gt;</i>
+      - <a href="lambdaaction.md">LambdaAction</a></i>
     <a href="#s3action" title="S3Action">S3Action</a>: <i>
-      - &lt;a href=&#34;s3action.md&#34;&gt;S3Action&lt;/a&gt;</i>
+      - <a href="s3action.md">S3Action</a></i>
     <a href="#snsaction" title="SnsAction">SnsAction</a>: <i>
-      - &lt;a href=&#34;snsaction.md&#34;&gt;SnsAction&lt;/a&gt;</i>
+      - <a href="snsaction.md">SnsAction</a></i>
     <a href="#stopaction" title="StopAction">StopAction</a>: <i>
-      - &lt;a href=&#34;stopaction.md&#34;&gt;StopAction&lt;/a&gt;</i>
+      - <a href="stopaction.md">StopAction</a></i>
     <a href="#workmailaction" title="WorkmailAction">WorkmailAction</a>: <i>
-      - &lt;a href=&#34;workmailaction.md&#34;&gt;WorkmailAction&lt;/a&gt;</i>
+      - <a href="workmailaction.md">WorkmailAction</a></i>
 </pre>
 
 ## Properties
@@ -131,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;addheaderaction.md&#34;&gt;AddHeaderAction&lt;/a&gt;
+_Type_: List of <a href="addheaderaction.md">AddHeaderAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bounceaction.md&#34;&gt;BounceAction&lt;/a&gt;
+_Type_: List of <a href="bounceaction.md">BounceAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lambdaaction.md&#34;&gt;LambdaAction&lt;/a&gt;
+_Type_: List of <a href="lambdaaction.md">LambdaAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;s3action.md&#34;&gt;S3Action&lt;/a&gt;
+_Type_: List of <a href="s3action.md">S3Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;snsaction.md&#34;&gt;SnsAction&lt;/a&gt;
+_Type_: List of <a href="snsaction.md">SnsAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;stopaction.md&#34;&gt;StopAction&lt;/a&gt;
+_Type_: List of <a href="stopaction.md">StopAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;workmailaction.md&#34;&gt;WorkmailAction&lt;/a&gt;
+_Type_: List of <a href="workmailaction.md">WorkmailAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

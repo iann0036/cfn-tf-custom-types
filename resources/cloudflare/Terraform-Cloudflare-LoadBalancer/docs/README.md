@@ -23,8 +23,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#steeringpolicy" title="SteeringPolicy">SteeringPolicy</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#poppools" title="PopPools">PopPools</a>" : <i>[ &lt;a href=&#34;poppools.md&#34;&gt;PopPools&lt;/a&gt;, ... ]</i>,
-        "<a href="#regionpools" title="RegionPools">RegionPools</a>" : <i>[ &lt;a href=&#34;regionpools.md&#34;&gt;RegionPools&lt;/a&gt;, ... ]</i>
+        "<a href="#poppools" title="PopPools">PopPools</a>" : <i>[ <a href="poppools.md">PopPools</a>, ... ]</i>,
+        "<a href="#regionpools" title="RegionPools">RegionPools</a>" : <i>[ <a href="regionpools.md">RegionPools</a>, ... ]</i>
     }
 }
 </pre>
@@ -47,9 +47,9 @@ Properties:
     <a href="#ttl" title="Ttl">Ttl</a>: <i>Double</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#poppools" title="PopPools">PopPools</a>: <i>
-      - &lt;a href=&#34;poppools.md&#34;&gt;PopPools&lt;/a&gt;</i>
+      - <a href="poppools.md">PopPools</a></i>
     <a href="#regionpools" title="RegionPools">RegionPools</a>: <i>
-      - &lt;a href=&#34;regionpools.md&#34;&gt;RegionPools&lt;/a&gt;</i>
+      - <a href="regionpools.md">RegionPools</a></i>
 </pre>
 
 ## Properties
@@ -146,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;poppools.md&#34;&gt;PopPools&lt;/a&gt;
+_Type_: List of <a href="poppools.md">PopPools</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;regionpools.md&#34;&gt;RegionPools&lt;/a&gt;
+_Type_: List of <a href="regionpools.md">RegionPools</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,9 +176,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedOn
 
-Returns the &lt;code&gt;CreatedOn&lt;/code&gt; value.
+Returns the <code>CreatedOn</code> value.
 
 #### ModifiedOn
 
-Returns the &lt;code&gt;ModifiedOn&lt;/code&gt; value.
+Returns the <code>ModifiedOn</code> value.
 

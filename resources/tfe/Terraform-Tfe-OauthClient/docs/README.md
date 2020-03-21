@@ -113,5 +113,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OauthTokenId
 
-Returns the &lt;code&gt;OauthTokenId&lt;/code&gt; value.
+Returns the <code>OauthTokenId</code> value.
 

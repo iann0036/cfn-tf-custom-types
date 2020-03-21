@@ -19,13 +19,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#rolearn" title="RoleArn">RoleArn</a>" : <i>String</i>,
         "<a href="#rule" title="Rule">Rule</a>" : <i>String</i>,
         "<a href="#targetid" title="TargetId">TargetId</a>" : <i>String</i>,
-        "<a href="#batchtarget" title="BatchTarget">BatchTarget</a>" : <i>[ &lt;a href=&#34;batchtarget.md&#34;&gt;BatchTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#ecstarget" title="EcsTarget">EcsTarget</a>" : <i>[ &lt;a href=&#34;ecstarget.md&#34;&gt;EcsTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#inputtransformer" title="InputTransformer">InputTransformer</a>" : <i>[ &lt;a href=&#34;inputtransformer.md&#34;&gt;InputTransformer&lt;/a&gt;, ... ]</i>,
-        "<a href="#kinesistarget" title="KinesisTarget">KinesisTarget</a>" : <i>[ &lt;a href=&#34;kinesistarget.md&#34;&gt;KinesisTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#runcommandtargets" title="RunCommandTargets">RunCommandTargets</a>" : <i>[ &lt;a href=&#34;runcommandtargets.md&#34;&gt;RunCommandTargets&lt;/a&gt;, ... ]</i>,
-        "<a href="#sqstarget" title="SqsTarget">SqsTarget</a>" : <i>[ &lt;a href=&#34;sqstarget.md&#34;&gt;SqsTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>" : <i>[ &lt;a href=&#34;networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;, ... ]</i>
+        "<a href="#batchtarget" title="BatchTarget">BatchTarget</a>" : <i>[ <a href="batchtarget.md">BatchTarget</a>, ... ]</i>,
+        "<a href="#ecstarget" title="EcsTarget">EcsTarget</a>" : <i>[ <a href="ecstarget.md">EcsTarget</a>, ... ]</i>,
+        "<a href="#inputtransformer" title="InputTransformer">InputTransformer</a>" : <i>[ <a href="inputtransformer.md">InputTransformer</a>, ... ]</i>,
+        "<a href="#kinesistarget" title="KinesisTarget">KinesisTarget</a>" : <i>[ <a href="kinesistarget.md">KinesisTarget</a>, ... ]</i>,
+        "<a href="#runcommandtargets" title="RunCommandTargets">RunCommandTargets</a>" : <i>[ <a href="runcommandtargets.md">RunCommandTargets</a>, ... ]</i>,
+        "<a href="#sqstarget" title="SqsTarget">SqsTarget</a>" : <i>[ <a href="sqstarget.md">SqsTarget</a>, ... ]</i>,
+        "<a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>" : <i>[ <a href="networkconfiguration.md">NetworkConfiguration</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,19 +43,19 @@ Properties:
     <a href="#rule" title="Rule">Rule</a>: <i>String</i>
     <a href="#targetid" title="TargetId">TargetId</a>: <i>String</i>
     <a href="#batchtarget" title="BatchTarget">BatchTarget</a>: <i>
-      - &lt;a href=&#34;batchtarget.md&#34;&gt;BatchTarget&lt;/a&gt;</i>
+      - <a href="batchtarget.md">BatchTarget</a></i>
     <a href="#ecstarget" title="EcsTarget">EcsTarget</a>: <i>
-      - &lt;a href=&#34;ecstarget.md&#34;&gt;EcsTarget&lt;/a&gt;</i>
+      - <a href="ecstarget.md">EcsTarget</a></i>
     <a href="#inputtransformer" title="InputTransformer">InputTransformer</a>: <i>
-      - &lt;a href=&#34;inputtransformer.md&#34;&gt;InputTransformer&lt;/a&gt;</i>
+      - <a href="inputtransformer.md">InputTransformer</a></i>
     <a href="#kinesistarget" title="KinesisTarget">KinesisTarget</a>: <i>
-      - &lt;a href=&#34;kinesistarget.md&#34;&gt;KinesisTarget&lt;/a&gt;</i>
+      - <a href="kinesistarget.md">KinesisTarget</a></i>
     <a href="#runcommandtargets" title="RunCommandTargets">RunCommandTargets</a>: <i>
-      - &lt;a href=&#34;runcommandtargets.md&#34;&gt;RunCommandTargets&lt;/a&gt;</i>
+      - <a href="runcommandtargets.md">RunCommandTargets</a></i>
     <a href="#sqstarget" title="SqsTarget">SqsTarget</a>: <i>
-      - &lt;a href=&#34;sqstarget.md&#34;&gt;SqsTarget&lt;/a&gt;</i>
+      - <a href="sqstarget.md">SqsTarget</a></i>
     <a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>: <i>
-      - &lt;a href=&#34;networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;</i>
+      - <a href="networkconfiguration.md">NetworkConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -120,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;batchtarget.md&#34;&gt;BatchTarget&lt;/a&gt;
+_Type_: List of <a href="batchtarget.md">BatchTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ecstarget.md&#34;&gt;EcsTarget&lt;/a&gt;
+_Type_: List of <a href="ecstarget.md">EcsTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;inputtransformer.md&#34;&gt;InputTransformer&lt;/a&gt;
+_Type_: List of <a href="inputtransformer.md">InputTransformer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kinesistarget.md&#34;&gt;KinesisTarget&lt;/a&gt;
+_Type_: List of <a href="kinesistarget.md">KinesisTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;runcommandtargets.md&#34;&gt;RunCommandTargets&lt;/a&gt;
+_Type_: List of <a href="runcommandtargets.md">RunCommandTargets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sqstarget.md&#34;&gt;SqsTarget&lt;/a&gt;
+_Type_: List of <a href="sqstarget.md">SqsTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;
+_Type_: List of <a href="networkconfiguration.md">NetworkConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

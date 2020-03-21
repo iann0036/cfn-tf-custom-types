@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Password
 
-Returns the &lt;code&gt;Password&lt;/code&gt; value.
+Returns the <code>Password</code> value.
 
 #### Role
 
-Returns the &lt;code&gt;Role&lt;/code&gt; value.
+Returns the <code>Role</code> value.
 

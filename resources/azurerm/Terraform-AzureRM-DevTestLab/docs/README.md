@@ -17,8 +17,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#storagetype" title="StorageType">StorageType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -34,8 +34,8 @@ Properties:
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#storagetype" title="StorageType">StorageType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -84,7 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -92,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,25 +114,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ArtifactsStorageAccountId
 
-Returns the &lt;code&gt;ArtifactsStorageAccountId&lt;/code&gt; value.
+Returns the <code>ArtifactsStorageAccountId</code> value.
 
 #### DefaultPremiumStorageAccountId
 
-Returns the &lt;code&gt;DefaultPremiumStorageAccountId&lt;/code&gt; value.
+Returns the <code>DefaultPremiumStorageAccountId</code> value.
 
 #### DefaultStorageAccountId
 
-Returns the &lt;code&gt;DefaultStorageAccountId&lt;/code&gt; value.
+Returns the <code>DefaultStorageAccountId</code> value.
 
 #### KeyVaultId
 
-Returns the &lt;code&gt;KeyVaultId&lt;/code&gt; value.
+Returns the <code>KeyVaultId</code> value.
 
 #### PremiumDataDiskStorageAccountId
 
-Returns the &lt;code&gt;PremiumDataDiskStorageAccountId&lt;/code&gt; value.
+Returns the <code>PremiumDataDiskStorageAccountId</code> value.
 
 #### UniqueIdentifier
 
-Returns the &lt;code&gt;UniqueIdentifier&lt;/code&gt; value.
+Returns the <code>UniqueIdentifier</code> value.
 

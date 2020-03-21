@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>" : <i>String</i>,
         "<a href="#packetlength" title="PacketLength">PacketLength</a>" : <i>Double</i>,
         "<a href="#sessionnumber" title="SessionNumber">SessionNumber</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#trafficmirrorfilterid" title="TrafficMirrorFilterId">TrafficMirrorFilterId</a>" : <i>String</i>,
         "<a href="#trafficmirrortargetid" title="TrafficMirrorTargetId">TrafficMirrorTargetId</a>" : <i>String</i>,
         "<a href="#virtualnetworkid" title="VirtualNetworkId">VirtualNetworkId</a>" : <i>Double</i>
@@ -36,7 +36,7 @@ Properties:
     <a href="#packetlength" title="PacketLength">PacketLength</a>: <i>Double</i>
     <a href="#sessionnumber" title="SessionNumber">SessionNumber</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#trafficmirrorfilterid" title="TrafficMirrorFilterId">TrafficMirrorFilterId</a>: <i>String</i>
     <a href="#trafficmirrortargetid" title="TrafficMirrorTargetId">TrafficMirrorTargetId</a>: <i>String</i>
     <a href="#virtualnetworkid" title="VirtualNetworkId">VirtualNetworkId</a>: <i>Double</i>
@@ -88,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

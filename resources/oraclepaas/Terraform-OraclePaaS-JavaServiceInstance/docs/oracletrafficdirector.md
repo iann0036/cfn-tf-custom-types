@@ -12,8 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#ipreservations" title="IpReservations">IpReservations</a>" : <i>[ String, ... ]</i>,
     "<a href="#loadbalancingpolicy" title="LoadBalancingPolicy">LoadBalancingPolicy</a>" : <i>String</i>,
     "<a href="#shape" title="Shape">Shape</a>" : <i>String</i>,
-    "<a href="#admin" title="Admin">Admin</a>" : <i>[ &lt;a href=&#34;oracletrafficdirector-admin.md&#34;&gt;Admin&lt;/a&gt;, ... ]</i>,
-    "<a href="#listener" title="Listener">Listener</a>" : <i>[ &lt;a href=&#34;oracletrafficdirector-listener.md&#34;&gt;Listener&lt;/a&gt;, ... ]</i>
+    "<a href="#admin" title="Admin">Admin</a>" : <i>[ <a href="oracletrafficdirector-admin.md">Admin</a>, ... ]</i>,
+    "<a href="#listener" title="Listener">Listener</a>" : <i>[ <a href="oracletrafficdirector-listener.md">Listener</a>, ... ]</i>
 }
 </pre>
 
@@ -26,9 +26,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#loadbalancingpolicy" title="LoadBalancingPolicy">LoadBalancingPolicy</a>: <i>String</i>
 <a href="#shape" title="Shape">Shape</a>: <i>String</i>
 <a href="#admin" title="Admin">Admin</a>: <i>
-      - &lt;a href=&#34;oracletrafficdirector-admin.md&#34;&gt;Admin&lt;/a&gt;</i>
+      - <a href="oracletrafficdirector-admin.md">Admin</a></i>
 <a href="#listener" title="Listener">Listener</a>: <i>
-      - &lt;a href=&#34;oracletrafficdirector-listener.md&#34;&gt;Listener&lt;/a&gt;</i>
+      - <a href="oracletrafficdirector-listener.md">Listener</a></i>
 </pre>
 
 ## Properties
@@ -64,14 +64,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Admin
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;oracletrafficdirector-admin.md&#34;&gt;Admin&lt;/a&gt;
+_Type_: List of <a href="oracletrafficdirector-admin.md">Admin</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Listener
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;oracletrafficdirector-listener.md&#34;&gt;Listener&lt;/a&gt;
+_Type_: List of <a href="oracletrafficdirector-listener.md">Listener</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

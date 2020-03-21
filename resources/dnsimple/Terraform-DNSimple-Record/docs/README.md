@@ -113,9 +113,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DomainId
 
-Returns the &lt;code&gt;DomainId&lt;/code&gt; value.
+Returns the <code>DomainId</code> value.
 
 #### Hostname
 
-Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
+Returns the <code>Hostname</code> value.
 

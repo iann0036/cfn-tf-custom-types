@@ -133,13 +133,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Connections
 
-Returns the &lt;code&gt;Connections&lt;/code&gt; value.
+Returns the <code>Connections</code> value.
 
 #### InternetIp
 
-Returns the &lt;code&gt;InternetIp&lt;/code&gt; value.
+Returns the <code>InternetIp</code> value.
 
 #### MaxConnections
 
-Returns the &lt;code&gt;MaxConnections&lt;/code&gt; value.
+Returns the <code>MaxConnections</code> value.
 

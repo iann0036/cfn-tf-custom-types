@@ -83,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DefaultEnvironmentId
 
-Returns the &lt;code&gt;DefaultEnvironmentId&lt;/code&gt; value.
+Returns the <code>DefaultEnvironmentId</code> value.
 

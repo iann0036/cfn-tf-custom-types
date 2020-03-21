@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::Datadog::IntegrationAws",
     "Properties" : {
         "<a href="#accountid" title="AccountId">AccountId</a>" : <i>String</i>,
-        "<a href="#accountspecificnamespacerules" title="AccountSpecificNamespaceRules">AccountSpecificNamespaceRules</a>" : <i>[ &lt;a href=&#34;accountspecificnamespacerules.md&#34;&gt;AccountSpecificNamespaceRules&lt;/a&gt;, ... ]</i>,
+        "<a href="#accountspecificnamespacerules" title="AccountSpecificNamespaceRules">AccountSpecificNamespaceRules</a>" : <i>[ <a href="accountspecificnamespacerules.md">AccountSpecificNamespaceRules</a>, ... ]</i>,
         "<a href="#filtertags" title="FilterTags">FilterTags</a>" : <i>[ String, ... ]</i>,
         "<a href="#hosttags" title="HostTags">HostTags</a>" : <i>[ String, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
@@ -29,7 +29,7 @@ Type: Terraform::Datadog::IntegrationAws
 Properties:
     <a href="#accountid" title="AccountId">AccountId</a>: <i>String</i>
     <a href="#accountspecificnamespacerules" title="AccountSpecificNamespaceRules">AccountSpecificNamespaceRules</a>: <i>
-      - &lt;a href=&#34;accountspecificnamespacerules.md&#34;&gt;AccountSpecificNamespaceRules&lt;/a&gt;</i>
+      - <a href="accountspecificnamespacerules.md">AccountSpecificNamespaceRules</a></i>
     <a href="#filtertags" title="FilterTags">FilterTags</a>: <i>
       - String</i>
     <a href="#hosttags" title="HostTags">HostTags</a>: <i>
@@ -52,7 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accountspecificnamespacerules.md&#34;&gt;AccountSpecificNamespaceRules&lt;/a&gt;
+_Type_: List of <a href="accountspecificnamespacerules.md">AccountSpecificNamespaceRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,5 +106,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ExternalId
 
-Returns the &lt;code&gt;ExternalId&lt;/code&gt; value.
+Returns the <code>ExternalId</code> value.
 

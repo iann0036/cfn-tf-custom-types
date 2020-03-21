@@ -276,9 +276,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### SceneId
 
-Returns the &lt;code&gt;SceneId&lt;/code&gt; value.
+Returns the <code>SceneId</code> value.
 

@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VSphere::VmfsDatastore",
     "Properties" : {
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
         "<a href="#datastoreclusterid" title="DatastoreClusterId">DatastoreClusterId</a>" : <i>String</i>,
         "<a href="#disks" title="Disks">Disks</a>" : <i>[ String, ... ]</i>,
         "<a href="#folder" title="Folder">Folder</a>" : <i>String</i>,
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::VSphere::VmfsDatastore
 Properties:
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+      - <a href="customattributes.md">CustomAttributes</a></i>
     <a href="#datastoreclusterid" title="DatastoreClusterId">DatastoreClusterId</a>: <i>String</i>
     <a href="#disks" title="Disks">Disks</a>: <i>
       - String</i>
@@ -48,7 +48,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+_Type_: List of <a href="customattributes.md">CustomAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,29 +126,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessible
 
-Returns the &lt;code&gt;Accessible&lt;/code&gt; value.
+Returns the <code>Accessible</code> value.
 
 #### Capacity
 
-Returns the &lt;code&gt;Capacity&lt;/code&gt; value.
+Returns the <code>Capacity</code> value.
 
 #### FreeSpace
 
-Returns the &lt;code&gt;FreeSpace&lt;/code&gt; value.
+Returns the <code>FreeSpace</code> value.
 
 #### MaintenanceMode
 
-Returns the &lt;code&gt;MaintenanceMode&lt;/code&gt; value.
+Returns the <code>MaintenanceMode</code> value.
 
 #### MultipleHostAccess
 
-Returns the &lt;code&gt;MultipleHostAccess&lt;/code&gt; value.
+Returns the <code>MultipleHostAccess</code> value.
 
 #### UncommittedSpace
 
-Returns the &lt;code&gt;UncommittedSpace&lt;/code&gt; value.
+Returns the <code>UncommittedSpace</code> value.
 
 #### Url
 
-Returns the &lt;code&gt;Url&lt;/code&gt; value.
+Returns the <code>Url</code> value.
 

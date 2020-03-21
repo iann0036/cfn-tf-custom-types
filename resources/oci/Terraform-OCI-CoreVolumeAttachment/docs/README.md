@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#isshareable" title="IsShareable">IsShareable</a>" : <i>Boolean</i>,
         "<a href="#usechap" title="UseChap">UseChap</a>" : <i>Boolean</i>,
         "<a href="#volumeid" title="VolumeId">VolumeId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -44,7 +44,7 @@ Properties:
     <a href="#isshareable" title="IsShareable">IsShareable</a>: <i>Boolean</i>
     <a href="#usechap" title="UseChap">UseChap</a>: <i>Boolean</i>
     <a href="#volumeid" title="VolumeId">VolumeId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -141,7 +141,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,33 +163,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailabilityDomain
 
-Returns the &lt;code&gt;AvailabilityDomain&lt;/code&gt; value.
+Returns the <code>AvailabilityDomain</code> value.
 
 #### ChapSecret
 
-Returns the &lt;code&gt;ChapSecret&lt;/code&gt; value.
+Returns the <code>ChapSecret</code> value.
 
 #### ChapUsername
 
-Returns the &lt;code&gt;ChapUsername&lt;/code&gt; value.
+Returns the <code>ChapUsername</code> value.
 
 #### Ipv4
 
-Returns the &lt;code&gt;Ipv4&lt;/code&gt; value.
+Returns the <code>Ipv4</code> value.
 
 #### Iqn
 
-Returns the &lt;code&gt;Iqn&lt;/code&gt; value.
+Returns the <code>Iqn</code> value.
 
 #### Port
 
-Returns the &lt;code&gt;Port&lt;/code&gt; value.
+Returns the <code>Port</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

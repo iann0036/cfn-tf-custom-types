@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Address
 
-Returns the &lt;code&gt;Address&lt;/code&gt; value.
+Returns the <code>Address</code> value.
 
 #### Reverse
 
-Returns the &lt;code&gt;Reverse&lt;/code&gt; value.
+Returns the <code>Reverse</code> value.
 

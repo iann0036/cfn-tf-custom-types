@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#clientaffinity" title="ClientAffinity">ClientAffinity</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
-        "<a href="#portrange" title="PortRange">PortRange</a>" : <i>[ &lt;a href=&#34;portrange.md&#34;&gt;PortRange&lt;/a&gt;, ... ]</i>
+        "<a href="#portrange" title="PortRange">PortRange</a>" : <i>[ <a href="portrange.md">PortRange</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +31,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#portrange" title="PortRange">PortRange</a>: <i>
-      - &lt;a href=&#34;portrange.md&#34;&gt;PortRange&lt;/a&gt;</i>
+      - <a href="portrange.md">PortRange</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;portrange.md&#34;&gt;PortRange&lt;/a&gt;
+_Type_: List of <a href="portrange.md">PortRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

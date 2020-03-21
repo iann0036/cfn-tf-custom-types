@@ -63,21 +63,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CallerReference
 
-Returns the &lt;code&gt;CallerReference&lt;/code&gt; value.
+Returns the <code>CallerReference</code> value.
 
 #### CloudfrontAccessIdentityPath
 
-Returns the &lt;code&gt;CloudfrontAccessIdentityPath&lt;/code&gt; value.
+Returns the <code>CloudfrontAccessIdentityPath</code> value.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 
 #### IamArn
 
-Returns the &lt;code&gt;IamArn&lt;/code&gt; value.
+Returns the <code>IamArn</code> value.
 
 #### S3CanonicalUserId
 
-Returns the &lt;code&gt;S3CanonicalUserId&lt;/code&gt; value.
+Returns the <code>S3CanonicalUserId</code> value.
 

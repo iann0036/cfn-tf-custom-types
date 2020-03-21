@@ -94,13 +94,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### NetworkInfo
 
-Returns the &lt;code&gt;NetworkInfo&lt;/code&gt; value.
+Returns the <code>NetworkInfo</code> value.
 
 #### UpdateTime
 
-Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
+Returns the <code>UpdateTime</code> value.
 

@@ -25,7 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#retries" title="Retries">Retries</a>" : <i>Double</i>,
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#header" title="Header">Header</a>" : <i>[ &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;, ... ]</i>
+        "<a href="#header" title="Header">Header</a>" : <i>[ <a href="header.md">Header</a>, ... ]</i>
     }
 }
 </pre>
@@ -49,7 +49,7 @@ Properties:
     <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#header" title="Header">Header</a>: <i>
-      - &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;</i>
+      - <a href="header.md">Header</a></i>
 </pre>
 
 ## Properties
@@ -162,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;
+_Type_: List of <a href="header.md">Header</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,9 +184,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedOn
 
-Returns the &lt;code&gt;CreatedOn&lt;/code&gt; value.
+Returns the <code>CreatedOn</code> value.
 
 #### ModifiedOn
 
-Returns the &lt;code&gt;ModifiedOn&lt;/code&gt; value.
+Returns the <code>ModifiedOn</code> value.
 

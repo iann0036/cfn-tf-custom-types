@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#ipv4enabled" title="Ipv4Enabled">Ipv4Enabled</a>" : <i>Boolean</i>,
     "<a href="#privatenetwork" title="PrivateNetwork">PrivateNetwork</a>" : <i>String</i>,
     "<a href="#requiressl" title="RequireSsl">RequireSsl</a>" : <i>Boolean</i>,
-    "<a href="#authorizednetworks" title="AuthorizedNetworks">AuthorizedNetworks</a>" : <i>[ &lt;a href=&#34;settings-ipconfiguration-authorizednetworks.md&#34;&gt;AuthorizedNetworks&lt;/a&gt;, ... ]</i>
+    "<a href="#authorizednetworks" title="AuthorizedNetworks">AuthorizedNetworks</a>" : <i>[ <a href="settings-ipconfiguration-authorizednetworks.md">AuthorizedNetworks</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#privatenetwork" title="PrivateNetwork">PrivateNetwork</a>: <i>String</i>
 <a href="#requiressl" title="RequireSsl">RequireSsl</a>: <i>Boolean</i>
 <a href="#authorizednetworks" title="AuthorizedNetworks">AuthorizedNetworks</a>: <i>
-      - &lt;a href=&#34;settings-ipconfiguration-authorizednetworks.md&#34;&gt;AuthorizedNetworks&lt;/a&gt;</i>
+      - <a href="settings-ipconfiguration-authorizednetworks.md">AuthorizedNetworks</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AuthorizedNetworks
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;settings-ipconfiguration-authorizednetworks.md&#34;&gt;AuthorizedNetworks&lt;/a&gt;
+_Type_: List of <a href="settings-ipconfiguration-authorizednetworks.md">AuthorizedNetworks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

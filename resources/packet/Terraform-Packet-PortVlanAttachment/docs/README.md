@@ -103,9 +103,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PortId
 
-Returns the &lt;code&gt;PortId&lt;/code&gt; value.
+Returns the <code>PortId</code> value.
 
 #### VlanId
 
-Returns the &lt;code&gt;VlanId&lt;/code&gt; value.
+Returns the <code>VlanId</code> value.
 

@@ -73,13 +73,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### CurrentNum
 
-Returns the &lt;code&gt;CurrentNum&lt;/code&gt; value.
+Returns the <code>CurrentNum</code> value.
 
 #### CvmQuotaTotal
 
-Returns the &lt;code&gt;CvmQuotaTotal&lt;/code&gt; value.
+Returns the <code>CvmQuotaTotal</code> value.
 

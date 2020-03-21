@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#restapiid" title="RestApiId">RestApiId</a>" : <i>String</i>,
         "<a href="#stagedescription" title="StageDescription">StageDescription</a>" : <i>String</i>,
         "<a href="#stagename" title="StageName">StageName</a>" : <i>String</i>,
-        "<a href="#variables" title="Variables">Variables</a>" : <i>[ &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;, ... ]</i>
+        "<a href="#variables" title="Variables">Variables</a>" : <i>[ <a href="variables.md">Variables</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,7 +33,7 @@ Properties:
     <a href="#stagedescription" title="StageDescription">StageDescription</a>: <i>String</i>
     <a href="#stagename" title="StageName">StageName</a>: <i>String</i>
     <a href="#variables" title="Variables">Variables</a>: <i>
-      - &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;</i>
+      - <a href="variables.md">Variables</a></i>
 </pre>
 
 ## Properties
@@ -82,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;
+_Type_: List of <a href="variables.md">Variables</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,13 +104,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedDate
 
-Returns the &lt;code&gt;CreatedDate&lt;/code&gt; value.
+Returns the <code>CreatedDate</code> value.
 
 #### ExecutionArn
 
-Returns the &lt;code&gt;ExecutionArn&lt;/code&gt; value.
+Returns the <code>ExecutionArn</code> value.
 
 #### InvokeUrl
 
-Returns the &lt;code&gt;InvokeUrl&lt;/code&gt; value.
+Returns the <code>InvokeUrl</code> value.
 

@@ -83,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CertificateArn
 
-Returns the &lt;code&gt;CertificateArn&lt;/code&gt; value.
+Returns the <code>CertificateArn</code> value.
 

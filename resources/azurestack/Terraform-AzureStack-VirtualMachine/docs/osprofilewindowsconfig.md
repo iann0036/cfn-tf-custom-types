@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#enableautomaticupgrades" title="EnableAutomaticUpgrades">EnableAutomaticUpgrades</a>" : <i>Boolean</i>,
     "<a href="#provisionvmagent" title="ProvisionVmAgent">ProvisionVmAgent</a>" : <i>Boolean</i>,
-    "<a href="#additionalunattendconfig" title="AdditionalUnattendConfig">AdditionalUnattendConfig</a>" : <i>[ &lt;a href=&#34;osprofilewindowsconfig-additionalunattendconfig.md&#34;&gt;AdditionalUnattendConfig&lt;/a&gt;, ... ]</i>,
-    "<a href="#winrm" title="Winrm">Winrm</a>" : <i>[ &lt;a href=&#34;osprofilewindowsconfig-winrm.md&#34;&gt;Winrm&lt;/a&gt;, ... ]</i>
+    "<a href="#additionalunattendconfig" title="AdditionalUnattendConfig">AdditionalUnattendConfig</a>" : <i>[ <a href="osprofilewindowsconfig-additionalunattendconfig.md">AdditionalUnattendConfig</a>, ... ]</i>,
+    "<a href="#winrm" title="Winrm">Winrm</a>" : <i>[ <a href="osprofilewindowsconfig-winrm.md">Winrm</a>, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#enableautomaticupgrades" title="EnableAutomaticUpgrades">EnableAutomaticUpgrades</a>: <i>Boolean</i>
 <a href="#provisionvmagent" title="ProvisionVmAgent">ProvisionVmAgent</a>: <i>Boolean</i>
 <a href="#additionalunattendconfig" title="AdditionalUnattendConfig">AdditionalUnattendConfig</a>: <i>
-      - &lt;a href=&#34;osprofilewindowsconfig-additionalunattendconfig.md&#34;&gt;AdditionalUnattendConfig&lt;/a&gt;</i>
+      - <a href="osprofilewindowsconfig-additionalunattendconfig.md">AdditionalUnattendConfig</a></i>
 <a href="#winrm" title="Winrm">Winrm</a>: <i>
-      - &lt;a href=&#34;osprofilewindowsconfig-winrm.md&#34;&gt;Winrm&lt;/a&gt;</i>
+      - <a href="osprofilewindowsconfig-winrm.md">Winrm</a></i>
 </pre>
 
 ## Properties
@@ -45,14 +45,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AdditionalUnattendConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;osprofilewindowsconfig-additionalunattendconfig.md&#34;&gt;AdditionalUnattendConfig&lt;/a&gt;
+_Type_: List of <a href="osprofilewindowsconfig-additionalunattendconfig.md">AdditionalUnattendConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Winrm
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;osprofilewindowsconfig-winrm.md&#34;&gt;Winrm&lt;/a&gt;
+_Type_: List of <a href="osprofilewindowsconfig-winrm.md">Winrm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

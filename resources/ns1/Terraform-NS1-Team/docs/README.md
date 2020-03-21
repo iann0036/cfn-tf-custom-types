@@ -39,7 +39,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#securitymanageactivedirectory" title="SecurityManageActiveDirectory">SecurityManageActiveDirectory</a>" : <i>Boolean</i>,
         "<a href="#securitymanageglobal2fa" title="SecurityManageGlobal2fa">SecurityManageGlobal2fa</a>" : <i>Boolean</i>,
-        "<a href="#ipwhitelist" title="IpWhitelist">IpWhitelist</a>" : <i>[ &lt;a href=&#34;ipwhitelist.md&#34;&gt;IpWhitelist&lt;/a&gt;, ... ]</i>
+        "<a href="#ipwhitelist" title="IpWhitelist">IpWhitelist</a>" : <i>[ <a href="ipwhitelist.md">IpWhitelist</a>, ... ]</i>
     }
 }
 </pre>
@@ -79,7 +79,7 @@ Properties:
     <a href="#securitymanageactivedirectory" title="SecurityManageActiveDirectory">SecurityManageActiveDirectory</a>: <i>Boolean</i>
     <a href="#securitymanageglobal2fa" title="SecurityManageGlobal2fa">SecurityManageGlobal2fa</a>: <i>Boolean</i>
     <a href="#ipwhitelist" title="IpWhitelist">IpWhitelist</a>: <i>
-      - &lt;a href=&#34;ipwhitelist.md&#34;&gt;IpWhitelist&lt;/a&gt;</i>
+      - <a href="ipwhitelist.md">IpWhitelist</a></i>
 </pre>
 
 ## Properties
@@ -304,7 +304,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipwhitelist.md&#34;&gt;IpWhitelist&lt;/a&gt;
+_Type_: List of <a href="ipwhitelist.md">IpWhitelist</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

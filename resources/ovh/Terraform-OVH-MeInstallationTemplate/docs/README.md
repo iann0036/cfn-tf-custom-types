@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#removedefaultpartitionschemes" title="RemoveDefaultPartitionSchemes">RemoveDefaultPartitionSchemes</a>" : <i>Boolean</i>,
         "<a href="#templatename" title="TemplateName">TemplateName</a>" : <i>String</i>,
-        "<a href="#customization" title="Customization">Customization</a>" : <i>[ &lt;a href=&#34;customization.md&#34;&gt;Customization&lt;/a&gt;, ... ]</i>
+        "<a href="#customization" title="Customization">Customization</a>" : <i>[ <a href="customization.md">Customization</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,7 +33,7 @@ Properties:
     <a href="#removedefaultpartitionschemes" title="RemoveDefaultPartitionSchemes">RemoveDefaultPartitionSchemes</a>: <i>Boolean</i>
     <a href="#templatename" title="TemplateName">TemplateName</a>: <i>String</i>
     <a href="#customization" title="Customization">Customization</a>: <i>
-      - &lt;a href=&#34;customization.md&#34;&gt;Customization&lt;/a&gt;</i>
+      - <a href="customization.md">Customization</a></i>
 </pre>
 
 ## Properties
@@ -82,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customization.md&#34;&gt;Customization&lt;/a&gt;
+_Type_: List of <a href="customization.md">Customization</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,65 +104,65 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailableLanguages
 
-Returns the &lt;code&gt;AvailableLanguages&lt;/code&gt; value.
+Returns the <code>AvailableLanguages</code> value.
 
 #### Beta
 
-Returns the &lt;code&gt;Beta&lt;/code&gt; value.
+Returns the <code>Beta</code> value.
 
 #### BitFormat
 
-Returns the &lt;code&gt;BitFormat&lt;/code&gt; value.
+Returns the <code>BitFormat</code> value.
 
 #### Category
 
-Returns the &lt;code&gt;Category&lt;/code&gt; value.
+Returns the <code>Category</code> value.
 
 #### Deprecated
 
-Returns the &lt;code&gt;Deprecated&lt;/code&gt; value.
+Returns the <code>Deprecated</code> value.
 
 #### Description
 
-Returns the &lt;code&gt;Description&lt;/code&gt; value.
+Returns the <code>Description</code> value.
 
 #### Distribution
 
-Returns the &lt;code&gt;Distribution&lt;/code&gt; value.
+Returns the <code>Distribution</code> value.
 
 #### Family
 
-Returns the &lt;code&gt;Family&lt;/code&gt; value.
+Returns the <code>Family</code> value.
 
 #### Filesystems
 
-Returns the &lt;code&gt;Filesystems&lt;/code&gt; value.
+Returns the <code>Filesystems</code> value.
 
 #### HardRaidConfiguration
 
-Returns the &lt;code&gt;HardRaidConfiguration&lt;/code&gt; value.
+Returns the <code>HardRaidConfiguration</code> value.
 
 #### LastModification
 
-Returns the &lt;code&gt;LastModification&lt;/code&gt; value.
+Returns the <code>LastModification</code> value.
 
 #### SupportsDistributionKernel
 
-Returns the &lt;code&gt;SupportsDistributionKernel&lt;/code&gt; value.
+Returns the <code>SupportsDistributionKernel</code> value.
 
 #### SupportsGptLabel
 
-Returns the &lt;code&gt;SupportsGptLabel&lt;/code&gt; value.
+Returns the <code>SupportsGptLabel</code> value.
 
 #### SupportsRtm
 
-Returns the &lt;code&gt;SupportsRtm&lt;/code&gt; value.
+Returns the <code>SupportsRtm</code> value.
 
 #### SupportsSqlServer
 
-Returns the &lt;code&gt;SupportsSqlServer&lt;/code&gt; value.
+Returns the <code>SupportsSqlServer</code> value.
 
 #### SupportsUefi
 
-Returns the &lt;code&gt;SupportsUefi&lt;/code&gt; value.
+Returns the <code>SupportsUefi</code> value.
 

@@ -153,29 +153,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Keys
 
-Returns the &lt;code&gt;Keys&lt;/code&gt; value.
+Returns the <code>Keys</code> value.
 
 #### LatestVersion
 
-Returns the &lt;code&gt;LatestVersion&lt;/code&gt; value.
+Returns the <code>LatestVersion</code> value.
 
 #### MinAvailableVersion
 
-Returns the &lt;code&gt;MinAvailableVersion&lt;/code&gt; value.
+Returns the <code>MinAvailableVersion</code> value.
 
 #### SupportsDecryption
 
-Returns the &lt;code&gt;SupportsDecryption&lt;/code&gt; value.
+Returns the <code>SupportsDecryption</code> value.
 
 #### SupportsDerivation
 
-Returns the &lt;code&gt;SupportsDerivation&lt;/code&gt; value.
+Returns the <code>SupportsDerivation</code> value.
 
 #### SupportsEncryption
 
-Returns the &lt;code&gt;SupportsEncryption&lt;/code&gt; value.
+Returns the <code>SupportsEncryption</code> value.
 
 #### SupportsSigning
 
-Returns the &lt;code&gt;SupportsSigning&lt;/code&gt; value.
+Returns the <code>SupportsSigning</code> value.
 

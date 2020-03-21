@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#columns" title="Columns">Columns</a>" : <i>[ &lt;a href=&#34;schema-columns.md&#34;&gt;Columns&lt;/a&gt;, ... ]</i>,
+    "<a href="#columns" title="Columns">Columns</a>" : <i>[ <a href="schema-columns.md">Columns</a>, ... ]</i>,
     "<a href="#primarykey" title="PrimaryKey">PrimaryKey</a>" : <i>[ String, ... ]</i>,
     "<a href="#shardkey" title="ShardKey">ShardKey</a>" : <i>[ String, ... ]</i>,
     "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>
@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#columns" title="Columns">Columns</a>: <i>
-      - &lt;a href=&#34;schema-columns.md&#34;&gt;Columns&lt;/a&gt;</i>
+      - <a href="schema-columns.md">Columns</a></i>
 <a href="#primarykey" title="PrimaryKey">PrimaryKey</a>: <i>
       - String</i>
 <a href="#shardkey" title="ShardKey">ShardKey</a>: <i>
@@ -32,7 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Columns
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;schema-columns.md&#34;&gt;Columns&lt;/a&gt;
+_Type_: List of <a href="schema-columns.md">Columns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

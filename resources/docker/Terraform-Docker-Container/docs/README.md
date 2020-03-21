@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ipcmode" title="IpcMode">IpcMode</a>" : <i>String</i>,
         "<a href="#links" title="Links">Links</a>" : <i>[ String, ... ]</i>,
         "<a href="#logdriver" title="LogDriver">LogDriver</a>" : <i>String</i>,
-        "<a href="#logopts" title="LogOpts">LogOpts</a>" : <i>[ &lt;a href=&#34;logopts.md&#34;&gt;LogOpts&lt;/a&gt;, ... ]</i>,
+        "<a href="#logopts" title="LogOpts">LogOpts</a>" : <i>[ <a href="logopts.md">LogOpts</a>, ... ]</i>,
         "<a href="#logs" title="Logs">Logs</a>" : <i>Boolean</i>,
         "<a href="#maxretrycount" title="MaxRetryCount">MaxRetryCount</a>" : <i>Double</i>,
         "<a href="#memory" title="Memory">Memory</a>" : <i>Double</i>,
@@ -48,25 +48,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#rm" title="Rm">Rm</a>" : <i>Boolean</i>,
         "<a href="#shmsize" title="ShmSize">ShmSize</a>" : <i>Double</i>,
         "<a href="#start" title="Start">Start</a>" : <i>Boolean</i>,
-        "<a href="#sysctls" title="Sysctls">Sysctls</a>" : <i>[ &lt;a href=&#34;sysctls.md&#34;&gt;Sysctls&lt;/a&gt;, ... ]</i>,
-        "<a href="#tmpfs" title="Tmpfs">Tmpfs</a>" : <i>[ &lt;a href=&#34;tmpfs.md&#34;&gt;Tmpfs&lt;/a&gt;, ... ]</i>,
+        "<a href="#sysctls" title="Sysctls">Sysctls</a>" : <i>[ <a href="sysctls.md">Sysctls</a>, ... ]</i>,
+        "<a href="#tmpfs" title="Tmpfs">Tmpfs</a>" : <i>[ <a href="tmpfs.md">Tmpfs</a>, ... ]</i>,
         "<a href="#user" title="User">User</a>" : <i>String</i>,
         "<a href="#usernsmode" title="UsernsMode">UsernsMode</a>" : <i>String</i>,
         "<a href="#workingdir" title="WorkingDir">WorkingDir</a>" : <i>String</i>,
-        "<a href="#capabilities" title="Capabilities">Capabilities</a>" : <i>[ &lt;a href=&#34;capabilities.md&#34;&gt;Capabilities&lt;/a&gt;, ... ]</i>,
-        "<a href="#devices" title="Devices">Devices</a>" : <i>[ &lt;a href=&#34;devices.md&#34;&gt;Devices&lt;/a&gt;, ... ]</i>,
-        "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#host" title="Host">Host</a>" : <i>[ &lt;a href=&#34;host.md&#34;&gt;Host&lt;/a&gt;, ... ]</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
-        "<a href="#mounts" title="Mounts">Mounts</a>" : <i>[ &lt;a href=&#34;mounts.md&#34;&gt;Mounts&lt;/a&gt;, ... ]</i>,
-        "<a href="#networksadvanced" title="NetworksAdvanced">NetworksAdvanced</a>" : <i>[ &lt;a href=&#34;networksadvanced.md&#34;&gt;NetworksAdvanced&lt;/a&gt;, ... ]</i>,
-        "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>,
-        "<a href="#ulimit" title="Ulimit">Ulimit</a>" : <i>[ &lt;a href=&#34;ulimit.md&#34;&gt;Ulimit&lt;/a&gt;, ... ]</i>,
-        "<a href="#upload" title="Upload">Upload</a>" : <i>[ &lt;a href=&#34;upload.md&#34;&gt;Upload&lt;/a&gt;, ... ]</i>,
-        "<a href="#volumes" title="Volumes">Volumes</a>" : <i>[ &lt;a href=&#34;volumes.md&#34;&gt;Volumes&lt;/a&gt;, ... ]</i>,
-        "<a href="#bindoptions" title="BindOptions">BindOptions</a>" : <i>[ &lt;a href=&#34;bindoptions.md&#34;&gt;BindOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#tmpfsoptions" title="TmpfsOptions">TmpfsOptions</a>" : <i>[ &lt;a href=&#34;tmpfsoptions.md&#34;&gt;TmpfsOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#volumeoptions" title="VolumeOptions">VolumeOptions</a>" : <i>[ &lt;a href=&#34;volumeoptions.md&#34;&gt;VolumeOptions&lt;/a&gt;, ... ]</i>
+        "<a href="#capabilities" title="Capabilities">Capabilities</a>" : <i>[ <a href="capabilities.md">Capabilities</a>, ... ]</i>,
+        "<a href="#devices" title="Devices">Devices</a>" : <i>[ <a href="devices.md">Devices</a>, ... ]</i>,
+        "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ <a href="healthcheck.md">Healthcheck</a>, ... ]</i>,
+        "<a href="#host" title="Host">Host</a>" : <i>[ <a href="host.md">Host</a>, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
+        "<a href="#mounts" title="Mounts">Mounts</a>" : <i>[ <a href="mounts.md">Mounts</a>, ... ]</i>,
+        "<a href="#networksadvanced" title="NetworksAdvanced">NetworksAdvanced</a>" : <i>[ <a href="networksadvanced.md">NetworksAdvanced</a>, ... ]</i>,
+        "<a href="#ports" title="Ports">Ports</a>" : <i>[ <a href="ports.md">Ports</a>, ... ]</i>,
+        "<a href="#ulimit" title="Ulimit">Ulimit</a>" : <i>[ <a href="ulimit.md">Ulimit</a>, ... ]</i>,
+        "<a href="#upload" title="Upload">Upload</a>" : <i>[ <a href="upload.md">Upload</a>, ... ]</i>,
+        "<a href="#volumes" title="Volumes">Volumes</a>" : <i>[ <a href="volumes.md">Volumes</a>, ... ]</i>,
+        "<a href="#bindoptions" title="BindOptions">BindOptions</a>" : <i>[ <a href="bindoptions.md">BindOptions</a>, ... ]</i>,
+        "<a href="#tmpfsoptions" title="TmpfsOptions">TmpfsOptions</a>" : <i>[ <a href="tmpfsoptions.md">TmpfsOptions</a>, ... ]</i>,
+        "<a href="#volumeoptions" title="VolumeOptions">VolumeOptions</a>" : <i>[ <a href="volumeoptions.md">VolumeOptions</a>, ... ]</i>
     }
 }
 </pre>
@@ -103,7 +103,7 @@ Properties:
       - String</i>
     <a href="#logdriver" title="LogDriver">LogDriver</a>: <i>String</i>
     <a href="#logopts" title="LogOpts">LogOpts</a>: <i>
-      - &lt;a href=&#34;logopts.md&#34;&gt;LogOpts&lt;/a&gt;</i>
+      - <a href="logopts.md">LogOpts</a></i>
     <a href="#logs" title="Logs">Logs</a>: <i>Boolean</i>
     <a href="#maxretrycount" title="MaxRetryCount">MaxRetryCount</a>: <i>Double</i>
     <a href="#memory" title="Memory">Memory</a>: <i>Double</i>
@@ -124,40 +124,40 @@ Properties:
     <a href="#shmsize" title="ShmSize">ShmSize</a>: <i>Double</i>
     <a href="#start" title="Start">Start</a>: <i>Boolean</i>
     <a href="#sysctls" title="Sysctls">Sysctls</a>: <i>
-      - &lt;a href=&#34;sysctls.md&#34;&gt;Sysctls&lt;/a&gt;</i>
+      - <a href="sysctls.md">Sysctls</a></i>
     <a href="#tmpfs" title="Tmpfs">Tmpfs</a>: <i>
-      - &lt;a href=&#34;tmpfs.md&#34;&gt;Tmpfs&lt;/a&gt;</i>
+      - <a href="tmpfs.md">Tmpfs</a></i>
     <a href="#user" title="User">User</a>: <i>String</i>
     <a href="#usernsmode" title="UsernsMode">UsernsMode</a>: <i>String</i>
     <a href="#workingdir" title="WorkingDir">WorkingDir</a>: <i>String</i>
     <a href="#capabilities" title="Capabilities">Capabilities</a>: <i>
-      - &lt;a href=&#34;capabilities.md&#34;&gt;Capabilities&lt;/a&gt;</i>
+      - <a href="capabilities.md">Capabilities</a></i>
     <a href="#devices" title="Devices">Devices</a>: <i>
-      - &lt;a href=&#34;devices.md&#34;&gt;Devices&lt;/a&gt;</i>
+      - <a href="devices.md">Devices</a></i>
     <a href="#healthcheck" title="Healthcheck">Healthcheck</a>: <i>
-      - &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;</i>
+      - <a href="healthcheck.md">Healthcheck</a></i>
     <a href="#host" title="Host">Host</a>: <i>
-      - &lt;a href=&#34;host.md&#34;&gt;Host&lt;/a&gt;</i>
+      - <a href="host.md">Host</a></i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#mounts" title="Mounts">Mounts</a>: <i>
-      - &lt;a href=&#34;mounts.md&#34;&gt;Mounts&lt;/a&gt;</i>
+      - <a href="mounts.md">Mounts</a></i>
     <a href="#networksadvanced" title="NetworksAdvanced">NetworksAdvanced</a>: <i>
-      - &lt;a href=&#34;networksadvanced.md&#34;&gt;NetworksAdvanced&lt;/a&gt;</i>
+      - <a href="networksadvanced.md">NetworksAdvanced</a></i>
     <a href="#ports" title="Ports">Ports</a>: <i>
-      - &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;</i>
+      - <a href="ports.md">Ports</a></i>
     <a href="#ulimit" title="Ulimit">Ulimit</a>: <i>
-      - &lt;a href=&#34;ulimit.md&#34;&gt;Ulimit&lt;/a&gt;</i>
+      - <a href="ulimit.md">Ulimit</a></i>
     <a href="#upload" title="Upload">Upload</a>: <i>
-      - &lt;a href=&#34;upload.md&#34;&gt;Upload&lt;/a&gt;</i>
+      - <a href="upload.md">Upload</a></i>
     <a href="#volumes" title="Volumes">Volumes</a>: <i>
-      - &lt;a href=&#34;volumes.md&#34;&gt;Volumes&lt;/a&gt;</i>
+      - <a href="volumes.md">Volumes</a></i>
     <a href="#bindoptions" title="BindOptions">BindOptions</a>: <i>
-      - &lt;a href=&#34;bindoptions.md&#34;&gt;BindOptions&lt;/a&gt;</i>
+      - <a href="bindoptions.md">BindOptions</a></i>
     <a href="#tmpfsoptions" title="TmpfsOptions">TmpfsOptions</a>: <i>
-      - &lt;a href=&#34;tmpfsoptions.md&#34;&gt;TmpfsOptions&lt;/a&gt;</i>
+      - <a href="tmpfsoptions.md">TmpfsOptions</a></i>
     <a href="#volumeoptions" title="VolumeOptions">VolumeOptions</a>: <i>
-      - &lt;a href=&#34;volumeoptions.md&#34;&gt;VolumeOptions&lt;/a&gt;</i>
+      - <a href="volumeoptions.md">VolumeOptions</a></i>
 </pre>
 
 ## Properties
@@ -310,7 +310,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logopts.md&#34;&gt;LogOpts&lt;/a&gt;
+_Type_: List of <a href="logopts.md">LogOpts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -454,7 +454,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sysctls.md&#34;&gt;Sysctls&lt;/a&gt;
+_Type_: List of <a href="sysctls.md">Sysctls</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -462,7 +462,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tmpfs.md&#34;&gt;Tmpfs&lt;/a&gt;
+_Type_: List of <a href="tmpfs.md">Tmpfs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -494,7 +494,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;capabilities.md&#34;&gt;Capabilities&lt;/a&gt;
+_Type_: List of <a href="capabilities.md">Capabilities</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -502,7 +502,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;devices.md&#34;&gt;Devices&lt;/a&gt;
+_Type_: List of <a href="devices.md">Devices</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -510,7 +510,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;
+_Type_: List of <a href="healthcheck.md">Healthcheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -518,7 +518,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;host.md&#34;&gt;Host&lt;/a&gt;
+_Type_: List of <a href="host.md">Host</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -526,7 +526,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -534,7 +534,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;mounts.md&#34;&gt;Mounts&lt;/a&gt;
+_Type_: List of <a href="mounts.md">Mounts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -542,7 +542,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networksadvanced.md&#34;&gt;NetworksAdvanced&lt;/a&gt;
+_Type_: List of <a href="networksadvanced.md">NetworksAdvanced</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -550,7 +550,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;
+_Type_: List of <a href="ports.md">Ports</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -558,7 +558,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ulimit.md&#34;&gt;Ulimit&lt;/a&gt;
+_Type_: List of <a href="ulimit.md">Ulimit</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -566,7 +566,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;upload.md&#34;&gt;Upload&lt;/a&gt;
+_Type_: List of <a href="upload.md">Upload</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -574,7 +574,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volumes.md&#34;&gt;Volumes&lt;/a&gt;
+_Type_: List of <a href="volumes.md">Volumes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -582,7 +582,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bindoptions.md&#34;&gt;BindOptions&lt;/a&gt;
+_Type_: List of <a href="bindoptions.md">BindOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -590,7 +590,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tmpfsoptions.md&#34;&gt;TmpfsOptions&lt;/a&gt;
+_Type_: List of <a href="tmpfsoptions.md">TmpfsOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -598,7 +598,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volumeoptions.md&#34;&gt;VolumeOptions&lt;/a&gt;
+_Type_: List of <a href="volumeoptions.md">VolumeOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -620,29 +620,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Bridge
 
-Returns the &lt;code&gt;Bridge&lt;/code&gt; value.
+Returns the <code>Bridge</code> value.
 
 #### ContainerLogs
 
-Returns the &lt;code&gt;ContainerLogs&lt;/code&gt; value.
+Returns the <code>ContainerLogs</code> value.
 
 #### ExitCode
 
-Returns the &lt;code&gt;ExitCode&lt;/code&gt; value.
+Returns the <code>ExitCode</code> value.
 
 #### Gateway
 
-Returns the &lt;code&gt;Gateway&lt;/code&gt; value.
+Returns the <code>Gateway</code> value.
 
 #### IpAddress
 
-Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
+Returns the <code>IpAddress</code> value.
 
 #### IpPrefixLength
 
-Returns the &lt;code&gt;IpPrefixLength&lt;/code&gt; value.
+Returns the <code>IpPrefixLength</code> value.
 
 #### NetworkData
 
-Returns the &lt;code&gt;NetworkData&lt;/code&gt; value.
+Returns the <code>NetworkData</code> value.
 

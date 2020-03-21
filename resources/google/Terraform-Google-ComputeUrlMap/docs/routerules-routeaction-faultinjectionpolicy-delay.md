@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#percentage" title="Percentage">Percentage</a>" : <i>Double</i>,
-    "<a href="#fixeddelay" title="FixedDelay">FixedDelay</a>" : <i>[ &lt;a href=&#34;routerules-routeaction-faultinjectionpolicy-delay-fixeddelay.md&#34;&gt;FixedDelay&lt;/a&gt;, ... ]</i>
+    "<a href="#fixeddelay" title="FixedDelay">FixedDelay</a>" : <i>[ <a href="routerules-routeaction-faultinjectionpolicy-delay-fixeddelay.md">FixedDelay</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#percentage" title="Percentage">Percentage</a>: <i>Double</i>
 <a href="#fixeddelay" title="FixedDelay">FixedDelay</a>: <i>
-      - &lt;a href=&#34;routerules-routeaction-faultinjectionpolicy-delay-fixeddelay.md&#34;&gt;FixedDelay&lt;/a&gt;</i>
+      - <a href="routerules-routeaction-faultinjectionpolicy-delay-fixeddelay.md">FixedDelay</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FixedDelay
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;routerules-routeaction-faultinjectionpolicy-delay-fixeddelay.md&#34;&gt;FixedDelay&lt;/a&gt;
+_Type_: List of <a href="routerules-routeaction-faultinjectionpolicy-delay-fixeddelay.md">FixedDelay</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

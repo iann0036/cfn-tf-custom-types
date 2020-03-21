@@ -20,16 +20,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#imageid" title="ImageId">ImageId</a>" : <i>String</i>,
         "<a href="#imagename" title="ImageName">ImageName</a>" : <i>String</i>,
         "<a href="#keypair" title="KeyPair">KeyPair</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#stopbeforedestroy" title="StopBeforeDestroy">StopBeforeDestroy</a>" : <i>Boolean</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
-        "<a href="#blockdevice" title="BlockDevice">BlockDevice</a>" : <i>[ &lt;a href=&#34;blockdevice.md&#34;&gt;BlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#network" title="Network">Network</a>" : <i>[ &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#blockdevice" title="BlockDevice">BlockDevice</a>" : <i>[ <a href="blockdevice.md">BlockDevice</a>, ... ]</i>,
+        "<a href="#network" title="Network">Network</a>" : <i>[ <a href="network.md">Network</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -48,20 +48,20 @@ Properties:
     <a href="#imagename" title="ImageName">ImageName</a>: <i>String</i>
     <a href="#keypair" title="KeyPair">KeyPair</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>: <i>
       - String</i>
     <a href="#stopbeforedestroy" title="StopBeforeDestroy">StopBeforeDestroy</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#blockdevice" title="BlockDevice">BlockDevice</a>: <i>
-      - &lt;a href=&#34;blockdevice.md&#34;&gt;BlockDevice&lt;/a&gt;</i>
+      - <a href="blockdevice.md">BlockDevice</a></i>
     <a href="#network" title="Network">Network</a>: <i>
-      - &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="network.md">Network</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -134,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;blockdevice.md&#34;&gt;BlockDevice&lt;/a&gt;
+_Type_: List of <a href="blockdevice.md">BlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;
+_Type_: List of <a href="network.md">Network</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -206,7 +206,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -228,33 +228,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessIpV4
 
-Returns the &lt;code&gt;AccessIpV4&lt;/code&gt; value.
+Returns the <code>AccessIpV4</code> value.
 
 #### AccessIpV6
 
-Returns the &lt;code&gt;AccessIpV6&lt;/code&gt; value.
+Returns the <code>AccessIpV6</code> value.
 
 #### ConfigDrive
 
-Returns the &lt;code&gt;ConfigDrive&lt;/code&gt; value.
+Returns the <code>ConfigDrive</code> value.
 
 #### HostId
 
-Returns the &lt;code&gt;HostId&lt;/code&gt; value.
+Returns the <code>HostId</code> value.
 
 #### HostStatus
 
-Returns the &lt;code&gt;HostStatus&lt;/code&gt; value.
+Returns the <code>HostStatus</code> value.
 
 #### KernelId
 
-Returns the &lt;code&gt;KernelId&lt;/code&gt; value.
+Returns the <code>KernelId</code> value.
 
 #### TenantId
 
-Returns the &lt;code&gt;TenantId&lt;/code&gt; value.
+Returns the <code>TenantId</code> value.
 
 #### UserId
 
-Returns the &lt;code&gt;UserId&lt;/code&gt; value.
+Returns the <code>UserId</code> value.
 

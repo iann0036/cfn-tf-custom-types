@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::AccessRule",
     "Properties" : {
-        "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;, ... ]</i>,
+        "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ <a href="configuration.md">Configuration</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>,
         "<a href="#notes" title="Notes">Notes</a>" : <i>String</i>,
@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::Cloudflare::AccessRule
 Properties:
     <a href="#configuration" title="Configuration">Configuration</a>: <i>
-      - &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;</i>
+      - <a href="configuration.md">Configuration</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#mode" title="Mode">Mode</a>: <i>String</i>
     <a href="#notes" title="Notes">Notes</a>: <i>String</i>
@@ -40,7 +40,7 @@ Properties:
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;
+_Type_: List of <a href="configuration.md">Configuration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

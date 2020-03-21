@@ -17,11 +17,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#parent" title="Parent">Parent</a>" : <i>String</i>,
         "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#basic" title="Basic">Basic</a>" : <i>[ &lt;a href=&#34;basic.md&#34;&gt;Basic&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ &lt;a href=&#34;conditions.md&#34;&gt;Conditions&lt;/a&gt;, ... ]</i>,
-        "<a href="#devicepolicy" title="DevicePolicy">DevicePolicy</a>" : <i>[ &lt;a href=&#34;devicepolicy.md&#34;&gt;DevicePolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#osconstraints" title="OsConstraints">OsConstraints</a>" : <i>[ &lt;a href=&#34;osconstraints.md&#34;&gt;OsConstraints&lt;/a&gt;, ... ]</i>
+        "<a href="#basic" title="Basic">Basic</a>" : <i>[ <a href="basic.md">Basic</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ <a href="conditions.md">Conditions</a>, ... ]</i>,
+        "<a href="#devicepolicy" title="DevicePolicy">DevicePolicy</a>" : <i>[ <a href="devicepolicy.md">DevicePolicy</a>, ... ]</i>,
+        "<a href="#osconstraints" title="OsConstraints">OsConstraints</a>" : <i>[ <a href="osconstraints.md">OsConstraints</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,14 +37,14 @@ Properties:
     <a href="#parent" title="Parent">Parent</a>: <i>String</i>
     <a href="#title" title="Title">Title</a>: <i>String</i>
     <a href="#basic" title="Basic">Basic</a>: <i>
-      - &lt;a href=&#34;basic.md&#34;&gt;Basic&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="basic.md">Basic</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#conditions" title="Conditions">Conditions</a>: <i>
-      - &lt;a href=&#34;conditions.md&#34;&gt;Conditions&lt;/a&gt;</i>
+      - <a href="conditions.md">Conditions</a></i>
     <a href="#devicepolicy" title="DevicePolicy">DevicePolicy</a>: <i>
-      - &lt;a href=&#34;devicepolicy.md&#34;&gt;DevicePolicy&lt;/a&gt;</i>
+      - <a href="devicepolicy.md">DevicePolicy</a></i>
     <a href="#osconstraints" title="OsConstraints">OsConstraints</a>: <i>
-      - &lt;a href=&#34;osconstraints.md&#34;&gt;OsConstraints&lt;/a&gt;</i>
+      - <a href="osconstraints.md">OsConstraints</a></i>
 </pre>
 
 ## Properties
@@ -93,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;basic.md&#34;&gt;Basic&lt;/a&gt;
+_Type_: List of <a href="basic.md">Basic</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -101,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -109,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;conditions.md&#34;&gt;Conditions&lt;/a&gt;
+_Type_: List of <a href="conditions.md">Conditions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;devicepolicy.md&#34;&gt;DevicePolicy&lt;/a&gt;
+_Type_: List of <a href="devicepolicy.md">DevicePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;osconstraints.md&#34;&gt;OsConstraints&lt;/a&gt;
+_Type_: List of <a href="osconstraints.md">OsConstraints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

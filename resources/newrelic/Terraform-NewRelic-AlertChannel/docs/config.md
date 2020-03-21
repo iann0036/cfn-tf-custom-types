@@ -14,11 +14,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#authusername" title="AuthUsername">AuthUsername</a>" : <i>String</i>,
     "<a href="#baseurl" title="BaseUrl">BaseUrl</a>" : <i>String</i>,
     "<a href="#channel" title="Channel">Channel</a>" : <i>String</i>,
-    "<a href="#headers" title="Headers">Headers</a>" : <i>[ &lt;a href=&#34;config-headers.md&#34;&gt;Headers&lt;/a&gt;, ... ]</i>,
+    "<a href="#headers" title="Headers">Headers</a>" : <i>[ <a href="config-headers.md">Headers</a>, ... ]</i>,
     "<a href="#headersstring" title="HeadersString">HeadersString</a>" : <i>String</i>,
     "<a href="#includejsonattachment" title="IncludeJsonAttachment">IncludeJsonAttachment</a>" : <i>String</i>,
     "<a href="#key" title="Key">Key</a>" : <i>String</i>,
-    "<a href="#payload" title="Payload">Payload</a>" : <i>[ &lt;a href=&#34;config-payload.md&#34;&gt;Payload&lt;/a&gt;, ... ]</i>,
+    "<a href="#payload" title="Payload">Payload</a>" : <i>[ <a href="config-payload.md">Payload</a>, ... ]</i>,
     "<a href="#payloadstring" title="PayloadString">PayloadString</a>" : <i>String</i>,
     "<a href="#payloadtype" title="PayloadType">PayloadType</a>" : <i>String</i>,
     "<a href="#recipients" title="Recipients">Recipients</a>" : <i>String</i>,
@@ -42,12 +42,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#baseurl" title="BaseUrl">BaseUrl</a>: <i>String</i>
 <a href="#channel" title="Channel">Channel</a>: <i>String</i>
 <a href="#headers" title="Headers">Headers</a>: <i>
-      - &lt;a href=&#34;config-headers.md&#34;&gt;Headers&lt;/a&gt;</i>
+      - <a href="config-headers.md">Headers</a></i>
 <a href="#headersstring" title="HeadersString">HeadersString</a>: <i>String</i>
 <a href="#includejsonattachment" title="IncludeJsonAttachment">IncludeJsonAttachment</a>: <i>String</i>
 <a href="#key" title="Key">Key</a>: <i>String</i>
 <a href="#payload" title="Payload">Payload</a>: <i>
-      - &lt;a href=&#34;config-payload.md&#34;&gt;Payload&lt;/a&gt;</i>
+      - <a href="config-payload.md">Payload</a></i>
 <a href="#payloadstring" title="PayloadString">PayloadString</a>: <i>String</i>
 <a href="#payloadtype" title="PayloadType">PayloadType</a>: <i>String</i>
 <a href="#recipients" title="Recipients">Recipients</a>: <i>String</i>
@@ -107,7 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Headers
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;config-headers.md&#34;&gt;Headers&lt;/a&gt;
+_Type_: List of <a href="config-headers.md">Headers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Payload
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;config-payload.md&#34;&gt;Payload&lt;/a&gt;
+_Type_: List of <a href="config-payload.md">Payload</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

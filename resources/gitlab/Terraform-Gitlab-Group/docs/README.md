@@ -123,17 +123,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### FullName
 
-Returns the &lt;code&gt;FullName&lt;/code&gt; value.
+Returns the <code>FullName</code> value.
 
 #### FullPath
 
-Returns the &lt;code&gt;FullPath&lt;/code&gt; value.
+Returns the <code>FullPath</code> value.
 
 #### RunnersToken
 
-Returns the &lt;code&gt;RunnersToken&lt;/code&gt; value.
+Returns the <code>RunnersToken</code> value.
 
 #### WebUrl
 
-Returns the &lt;code&gt;WebUrl&lt;/code&gt; value.
+Returns the <code>WebUrl</code> value.
 

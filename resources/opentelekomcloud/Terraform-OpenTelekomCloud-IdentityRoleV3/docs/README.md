@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#displaylayer" title="DisplayLayer">DisplayLayer</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#statement" title="Statement">Statement</a>" : <i>[ &lt;a href=&#34;statement.md&#34;&gt;Statement&lt;/a&gt;, ... ]</i>
+        "<a href="#statement" title="Statement">Statement</a>" : <i>[ <a href="statement.md">Statement</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +31,7 @@ Properties:
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#statement" title="Statement">Statement</a>: <i>
-      - &lt;a href=&#34;statement.md&#34;&gt;Statement&lt;/a&gt;</i>
+      - <a href="statement.md">Statement</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;statement.md&#34;&gt;Statement&lt;/a&gt;
+_Type_: List of <a href="statement.md">Statement</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,13 +94,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Catalog
 
-Returns the &lt;code&gt;Catalog&lt;/code&gt; value.
+Returns the <code>Catalog</code> value.
 
 #### DomainId
 
-Returns the &lt;code&gt;DomainId&lt;/code&gt; value.
+Returns the <code>DomainId</code> value.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 

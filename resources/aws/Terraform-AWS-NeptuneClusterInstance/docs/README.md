@@ -29,8 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#preferredmaintenancewindow" title="PreferredMaintenanceWindow">PreferredMaintenanceWindow</a>" : <i>String</i>,
         "<a href="#promotiontier" title="PromotionTier">PromotionTier</a>" : <i>Double</i>,
         "<a href="#publiclyaccessible" title="PubliclyAccessible">PubliclyAccessible</a>" : <i>Boolean</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -58,8 +58,8 @@ Properties:
     <a href="#promotiontier" title="PromotionTier">PromotionTier</a>: <i>Double</i>
     <a href="#publiclyaccessible" title="PubliclyAccessible">PubliclyAccessible</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -204,7 +204,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -212,7 +212,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -234,29 +234,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Address
 
-Returns the &lt;code&gt;Address&lt;/code&gt; value.
+Returns the <code>Address</code> value.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### DbiResourceId
 
-Returns the &lt;code&gt;DbiResourceId&lt;/code&gt; value.
+Returns the <code>DbiResourceId</code> value.
 
 #### Endpoint
 
-Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
+Returns the <code>Endpoint</code> value.
 
 #### KmsKeyArn
 
-Returns the &lt;code&gt;KmsKeyArn&lt;/code&gt; value.
+Returns the <code>KmsKeyArn</code> value.
 
 #### StorageEncrypted
 
-Returns the &lt;code&gt;StorageEncrypted&lt;/code&gt; value.
+Returns the <code>StorageEncrypted</code> value.
 
 #### Writer
 
-Returns the &lt;code&gt;Writer&lt;/code&gt; value.
+Returns the <code>Writer</code> value.
 

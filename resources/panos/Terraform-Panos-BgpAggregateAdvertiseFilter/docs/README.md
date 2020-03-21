@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#nexthops" title="NextHops">NextHops</a>" : <i>[ String, ... ]</i>,
         "<a href="#routetable" title="RouteTable">RouteTable</a>" : <i>String</i>,
         "<a href="#virtualrouter" title="VirtualRouter">VirtualRouter</a>" : <i>String</i>,
-        "<a href="#addressprefix" title="AddressPrefix">AddressPrefix</a>" : <i>[ &lt;a href=&#34;addressprefix.md&#34;&gt;AddressPrefix&lt;/a&gt;, ... ]</i>
+        "<a href="#addressprefix" title="AddressPrefix">AddressPrefix</a>" : <i>[ <a href="addressprefix.md">AddressPrefix</a>, ... ]</i>
     }
 }
 </pre>
@@ -49,7 +49,7 @@ Properties:
     <a href="#routetable" title="RouteTable">RouteTable</a>: <i>String</i>
     <a href="#virtualrouter" title="VirtualRouter">VirtualRouter</a>: <i>String</i>
     <a href="#addressprefix" title="AddressPrefix">AddressPrefix</a>: <i>
-      - &lt;a href=&#34;addressprefix.md&#34;&gt;AddressPrefix&lt;/a&gt;</i>
+      - <a href="addressprefix.md">AddressPrefix</a></i>
 </pre>
 
 ## Properties
@@ -154,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;addressprefix.md&#34;&gt;AddressPrefix&lt;/a&gt;
+_Type_: List of <a href="addressprefix.md">AddressPrefix</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

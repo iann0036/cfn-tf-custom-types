@@ -153,17 +153,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClusterType
 
-Returns the &lt;code&gt;ClusterType&lt;/code&gt; value.
+Returns the <code>ClusterType</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### PlatformType
 
-Returns the &lt;code&gt;PlatformType&lt;/code&gt; value.
+Returns the <code>PlatformType</code> value.
 
 #### ProviderType
 
-Returns the &lt;code&gt;ProviderType&lt;/code&gt; value.
+Returns the <code>ProviderType</code> value.
 

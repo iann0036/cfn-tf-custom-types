@@ -133,5 +133,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LoadBalancerRules
 
-Returns the &lt;code&gt;LoadBalancerRules&lt;/code&gt; value.
+Returns the <code>LoadBalancerRules</code> value.
 

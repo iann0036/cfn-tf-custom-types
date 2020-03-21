@@ -255,45 +255,45 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### InternalVersion
 
-Returns the &lt;code&gt;InternalVersion&lt;/code&gt; value.
+Returns the <code>InternalVersion</code> value.
 
 #### Ip
 
-Returns the &lt;code&gt;Ip&lt;/code&gt; value.
+Returns the <code>Ip</code> value.
 
 #### MaxMemory
 
-Returns the &lt;code&gt;MaxMemory&lt;/code&gt; value.
+Returns the <code>MaxMemory</code> value.
 
 #### OrderId
 
-Returns the &lt;code&gt;OrderId&lt;/code&gt; value.
+Returns the <code>OrderId</code> value.
 
 #### Port
 
-Returns the &lt;code&gt;Port&lt;/code&gt; value.
+Returns the <code>Port</code> value.
 
 #### ResourceSpecCode
 
-Returns the &lt;code&gt;ResourceSpecCode&lt;/code&gt; value.
+Returns the <code>ResourceSpecCode</code> value.
 
 #### SecurityGroupName
 
-Returns the &lt;code&gt;SecurityGroupName&lt;/code&gt; value.
+Returns the <code>SecurityGroupName</code> value.
 
 #### SubnetName
 
-Returns the &lt;code&gt;SubnetName&lt;/code&gt; value.
+Returns the <code>SubnetName</code> value.
 
 #### UsedMemory
 
-Returns the &lt;code&gt;UsedMemory&lt;/code&gt; value.
+Returns the <code>UsedMemory</code> value.
 
 #### UserId
 
-Returns the &lt;code&gt;UserId&lt;/code&gt; value.
+Returns the <code>UserId</code> value.
 
 #### VpcName
 
-Returns the &lt;code&gt;VpcName&lt;/code&gt; value.
+Returns the <code>VpcName</code> value.
 

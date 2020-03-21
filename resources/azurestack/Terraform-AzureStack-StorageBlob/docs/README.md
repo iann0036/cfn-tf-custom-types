@@ -153,5 +153,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Url
 
-Returns the &lt;code&gt;Url&lt;/code&gt; value.
+Returns the <code>Url</code> value.
 

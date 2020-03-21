@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#object" title="Object">Object</a>" : <i>String</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -32,7 +32,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#object" title="Object">Object</a>: <i>String</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -81,7 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -103,21 +103,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Domain
 
-Returns the &lt;code&gt;Domain&lt;/code&gt; value.
+Returns the <code>Domain</code> value.
 
 #### Email
 
-Returns the &lt;code&gt;Email&lt;/code&gt; value.
+Returns the <code>Email</code> value.
 
 #### EntityId
 
-Returns the &lt;code&gt;EntityId&lt;/code&gt; value.
+Returns the <code>EntityId</code> value.
 
 #### Generation
 
-Returns the &lt;code&gt;Generation&lt;/code&gt; value.
+Returns the <code>Generation</code> value.
 
 #### ProjectTeam
 
-Returns the &lt;code&gt;ProjectTeam&lt;/code&gt; value.
+Returns the <code>ProjectTeam</code> value.
 

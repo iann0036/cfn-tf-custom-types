@@ -15,12 +15,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#acl" title="Acl">Acl</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#corsrules" title="CorsRules">CorsRules</a>" : <i>[ &lt;a href=&#34;corsrules.md&#34;&gt;CorsRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#lifecyclerules" title="LifecycleRules">LifecycleRules</a>" : <i>[ &lt;a href=&#34;lifecyclerules.md&#34;&gt;LifecycleRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#website" title="Website">Website</a>" : <i>[ &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;, ... ]</i>,
-        "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ &lt;a href=&#34;expiration.md&#34;&gt;Expiration&lt;/a&gt;, ... ]</i>,
-        "<a href="#transition" title="Transition">Transition</a>" : <i>[ &lt;a href=&#34;transition.md&#34;&gt;Transition&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#corsrules" title="CorsRules">CorsRules</a>" : <i>[ <a href="corsrules.md">CorsRules</a>, ... ]</i>,
+        "<a href="#lifecyclerules" title="LifecycleRules">LifecycleRules</a>" : <i>[ <a href="lifecyclerules.md">LifecycleRules</a>, ... ]</i>,
+        "<a href="#website" title="Website">Website</a>" : <i>[ <a href="website.md">Website</a>, ... ]</i>,
+        "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ <a href="expiration.md">Expiration</a>, ... ]</i>,
+        "<a href="#transition" title="Transition">Transition</a>" : <i>[ <a href="transition.md">Transition</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,17 +34,17 @@ Properties:
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#corsrules" title="CorsRules">CorsRules</a>: <i>
-      - &lt;a href=&#34;corsrules.md&#34;&gt;CorsRules&lt;/a&gt;</i>
+      - <a href="corsrules.md">CorsRules</a></i>
     <a href="#lifecyclerules" title="LifecycleRules">LifecycleRules</a>: <i>
-      - &lt;a href=&#34;lifecyclerules.md&#34;&gt;LifecycleRules&lt;/a&gt;</i>
+      - <a href="lifecyclerules.md">LifecycleRules</a></i>
     <a href="#website" title="Website">Website</a>: <i>
-      - &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;</i>
+      - <a href="website.md">Website</a></i>
     <a href="#expiration" title="Expiration">Expiration</a>: <i>
-      - &lt;a href=&#34;expiration.md&#34;&gt;Expiration&lt;/a&gt;</i>
+      - <a href="expiration.md">Expiration</a></i>
     <a href="#transition" title="Transition">Transition</a>: <i>
-      - &lt;a href=&#34;transition.md&#34;&gt;Transition&lt;/a&gt;</i>
+      - <a href="transition.md">Transition</a></i>
 </pre>
 
 ## Properties
@@ -77,7 +77,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -85,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;corsrules.md&#34;&gt;CorsRules&lt;/a&gt;
+_Type_: List of <a href="corsrules.md">CorsRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -93,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lifecyclerules.md&#34;&gt;LifecycleRules&lt;/a&gt;
+_Type_: List of <a href="lifecyclerules.md">LifecycleRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -101,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;
+_Type_: List of <a href="website.md">Website</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -109,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;expiration.md&#34;&gt;Expiration&lt;/a&gt;
+_Type_: List of <a href="expiration.md">Expiration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;transition.md&#34;&gt;Transition&lt;/a&gt;
+_Type_: List of <a href="transition.md">Transition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CredentialFileEnc
 
-Returns the &lt;code&gt;CredentialFileEnc&lt;/code&gt; value.
+Returns the <code>CredentialFileEnc</code> value.
 

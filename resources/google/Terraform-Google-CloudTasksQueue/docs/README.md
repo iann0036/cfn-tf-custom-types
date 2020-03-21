@@ -16,10 +16,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#appengineroutingoverride" title="AppEngineRoutingOverride">AppEngineRoutingOverride</a>" : <i>[ &lt;a href=&#34;appengineroutingoverride.md&#34;&gt;AppEngineRoutingOverride&lt;/a&gt;, ... ]</i>,
-        "<a href="#ratelimits" title="RateLimits">RateLimits</a>" : <i>[ &lt;a href=&#34;ratelimits.md&#34;&gt;RateLimits&lt;/a&gt;, ... ]</i>,
-        "<a href="#retryconfig" title="RetryConfig">RetryConfig</a>" : <i>[ &lt;a href=&#34;retryconfig.md&#34;&gt;RetryConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#appengineroutingoverride" title="AppEngineRoutingOverride">AppEngineRoutingOverride</a>" : <i>[ <a href="appengineroutingoverride.md">AppEngineRoutingOverride</a>, ... ]</i>,
+        "<a href="#ratelimits" title="RateLimits">RateLimits</a>" : <i>[ <a href="ratelimits.md">RateLimits</a>, ... ]</i>,
+        "<a href="#retryconfig" title="RetryConfig">RetryConfig</a>" : <i>[ <a href="retryconfig.md">RetryConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -34,12 +34,12 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#appengineroutingoverride" title="AppEngineRoutingOverride">AppEngineRoutingOverride</a>: <i>
-      - &lt;a href=&#34;appengineroutingoverride.md&#34;&gt;AppEngineRoutingOverride&lt;/a&gt;</i>
+      - <a href="appengineroutingoverride.md">AppEngineRoutingOverride</a></i>
     <a href="#ratelimits" title="RateLimits">RateLimits</a>: <i>
-      - &lt;a href=&#34;ratelimits.md&#34;&gt;RateLimits&lt;/a&gt;</i>
+      - <a href="ratelimits.md">RateLimits</a></i>
     <a href="#retryconfig" title="RetryConfig">RetryConfig</a>: <i>
-      - &lt;a href=&#34;retryconfig.md&#34;&gt;RetryConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="retryconfig.md">RetryConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -80,7 +80,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;appengineroutingoverride.md&#34;&gt;AppEngineRoutingOverride&lt;/a&gt;
+_Type_: List of <a href="appengineroutingoverride.md">AppEngineRoutingOverride</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -88,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ratelimits.md&#34;&gt;RateLimits&lt;/a&gt;
+_Type_: List of <a href="ratelimits.md">RateLimits</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -96,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retryconfig.md&#34;&gt;RetryConfig&lt;/a&gt;
+_Type_: List of <a href="retryconfig.md">RetryConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

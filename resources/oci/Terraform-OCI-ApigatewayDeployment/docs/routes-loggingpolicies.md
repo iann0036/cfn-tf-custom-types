@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#accesslog" title="AccessLog">AccessLog</a>" : <i>[ &lt;a href=&#34;routes-loggingpolicies-accesslog.md&#34;&gt;AccessLog&lt;/a&gt;, ... ]</i>,
-    "<a href="#executionlog" title="ExecutionLog">ExecutionLog</a>" : <i>[ &lt;a href=&#34;routes-loggingpolicies-executionlog.md&#34;&gt;ExecutionLog&lt;/a&gt;, ... ]</i>
+    "<a href="#accesslog" title="AccessLog">AccessLog</a>" : <i>[ <a href="routes-loggingpolicies-accesslog.md">AccessLog</a>, ... ]</i>,
+    "<a href="#executionlog" title="ExecutionLog">ExecutionLog</a>" : <i>[ <a href="routes-loggingpolicies-executionlog.md">ExecutionLog</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#accesslog" title="AccessLog">AccessLog</a>: <i>
-      - &lt;a href=&#34;routes-loggingpolicies-accesslog.md&#34;&gt;AccessLog&lt;/a&gt;</i>
+      - <a href="routes-loggingpolicies-accesslog.md">AccessLog</a></i>
 <a href="#executionlog" title="ExecutionLog">ExecutionLog</a>: <i>
-      - &lt;a href=&#34;routes-loggingpolicies-executionlog.md&#34;&gt;ExecutionLog&lt;/a&gt;</i>
+      - <a href="routes-loggingpolicies-executionlog.md">ExecutionLog</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AccessLog
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;routes-loggingpolicies-accesslog.md&#34;&gt;AccessLog&lt;/a&gt;
+_Type_: List of <a href="routes-loggingpolicies-accesslog.md">AccessLog</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExecutionLog
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;routes-loggingpolicies-executionlog.md&#34;&gt;ExecutionLog&lt;/a&gt;
+_Type_: List of <a href="routes-loggingpolicies-executionlog.md">ExecutionLog</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

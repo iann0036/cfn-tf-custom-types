@@ -21,12 +21,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#escalationpolicy" title="EscalationPolicy">EscalationPolicy</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#incidenturgencyrule" title="IncidentUrgencyRule">IncidentUrgencyRule</a>" : <i>[ &lt;a href=&#34;incidenturgencyrule.md&#34;&gt;IncidentUrgencyRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#scheduledactions" title="ScheduledActions">ScheduledActions</a>" : <i>[ &lt;a href=&#34;scheduledactions.md&#34;&gt;ScheduledActions&lt;/a&gt;, ... ]</i>,
-        "<a href="#supporthours" title="SupportHours">SupportHours</a>" : <i>[ &lt;a href=&#34;supporthours.md&#34;&gt;SupportHours&lt;/a&gt;, ... ]</i>,
-        "<a href="#duringsupporthours" title="DuringSupportHours">DuringSupportHours</a>" : <i>[ &lt;a href=&#34;duringsupporthours.md&#34;&gt;DuringSupportHours&lt;/a&gt;, ... ]</i>,
-        "<a href="#outsidesupporthours" title="OutsideSupportHours">OutsideSupportHours</a>" : <i>[ &lt;a href=&#34;outsidesupporthours.md&#34;&gt;OutsideSupportHours&lt;/a&gt;, ... ]</i>,
-        "<a href="#at" title="At">At</a>" : <i>[ &lt;a href=&#34;at.md&#34;&gt;At&lt;/a&gt;, ... ]</i>
+        "<a href="#incidenturgencyrule" title="IncidentUrgencyRule">IncidentUrgencyRule</a>" : <i>[ <a href="incidenturgencyrule.md">IncidentUrgencyRule</a>, ... ]</i>,
+        "<a href="#scheduledactions" title="ScheduledActions">ScheduledActions</a>" : <i>[ <a href="scheduledactions.md">ScheduledActions</a>, ... ]</i>,
+        "<a href="#supporthours" title="SupportHours">SupportHours</a>" : <i>[ <a href="supporthours.md">SupportHours</a>, ... ]</i>,
+        "<a href="#duringsupporthours" title="DuringSupportHours">DuringSupportHours</a>" : <i>[ <a href="duringsupporthours.md">DuringSupportHours</a>, ... ]</i>,
+        "<a href="#outsidesupporthours" title="OutsideSupportHours">OutsideSupportHours</a>" : <i>[ <a href="outsidesupporthours.md">OutsideSupportHours</a>, ... ]</i>,
+        "<a href="#at" title="At">At</a>" : <i>[ <a href="at.md">At</a>, ... ]</i>
     }
 }
 </pre>
@@ -46,17 +46,17 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#incidenturgencyrule" title="IncidentUrgencyRule">IncidentUrgencyRule</a>: <i>
-      - &lt;a href=&#34;incidenturgencyrule.md&#34;&gt;IncidentUrgencyRule&lt;/a&gt;</i>
+      - <a href="incidenturgencyrule.md">IncidentUrgencyRule</a></i>
     <a href="#scheduledactions" title="ScheduledActions">ScheduledActions</a>: <i>
-      - &lt;a href=&#34;scheduledactions.md&#34;&gt;ScheduledActions&lt;/a&gt;</i>
+      - <a href="scheduledactions.md">ScheduledActions</a></i>
     <a href="#supporthours" title="SupportHours">SupportHours</a>: <i>
-      - &lt;a href=&#34;supporthours.md&#34;&gt;SupportHours&lt;/a&gt;</i>
+      - <a href="supporthours.md">SupportHours</a></i>
     <a href="#duringsupporthours" title="DuringSupportHours">DuringSupportHours</a>: <i>
-      - &lt;a href=&#34;duringsupporthours.md&#34;&gt;DuringSupportHours&lt;/a&gt;</i>
+      - <a href="duringsupporthours.md">DuringSupportHours</a></i>
     <a href="#outsidesupporthours" title="OutsideSupportHours">OutsideSupportHours</a>: <i>
-      - &lt;a href=&#34;outsidesupporthours.md&#34;&gt;OutsideSupportHours&lt;/a&gt;</i>
+      - <a href="outsidesupporthours.md">OutsideSupportHours</a></i>
     <a href="#at" title="At">At</a>: <i>
-      - &lt;a href=&#34;at.md&#34;&gt;At&lt;/a&gt;</i>
+      - <a href="at.md">At</a></i>
 </pre>
 
 ## Properties
@@ -137,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;incidenturgencyrule.md&#34;&gt;IncidentUrgencyRule&lt;/a&gt;
+_Type_: List of <a href="incidenturgencyrule.md">IncidentUrgencyRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scheduledactions.md&#34;&gt;ScheduledActions&lt;/a&gt;
+_Type_: List of <a href="scheduledactions.md">ScheduledActions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -153,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;supporthours.md&#34;&gt;SupportHours&lt;/a&gt;
+_Type_: List of <a href="supporthours.md">SupportHours</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;duringsupporthours.md&#34;&gt;DuringSupportHours&lt;/a&gt;
+_Type_: List of <a href="duringsupporthours.md">DuringSupportHours</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;outsidesupporthours.md&#34;&gt;OutsideSupportHours&lt;/a&gt;
+_Type_: List of <a href="outsidesupporthours.md">OutsideSupportHours</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;at.md&#34;&gt;At&lt;/a&gt;
+_Type_: List of <a href="at.md">At</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,17 +199,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### HtmlUrl
 
-Returns the &lt;code&gt;HtmlUrl&lt;/code&gt; value.
+Returns the <code>HtmlUrl</code> value.
 
 #### LastIncidentTimestamp
 
-Returns the &lt;code&gt;LastIncidentTimestamp&lt;/code&gt; value.
+Returns the <code>LastIncidentTimestamp</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

@@ -57,47 +57,47 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#utilizereservedinstances" title="UtilizeReservedInstances">UtilizeReservedInstances</a>" : <i>Boolean</i>,
         "<a href="#waitforcapacity" title="WaitForCapacity">WaitForCapacity</a>" : <i>Double</i>,
         "<a href="#waitforcapacitytimeout" title="WaitForCapacityTimeout">WaitForCapacityTimeout</a>" : <i>Double</i>,
-        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#instancetypesweights" title="InstanceTypesWeights">InstanceTypesWeights</a>" : <i>[ &lt;a href=&#34;instancetypesweights.md&#34;&gt;InstanceTypesWeights&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationbeanstalk" title="IntegrationBeanstalk">IntegrationBeanstalk</a>" : <i>[ &lt;a href=&#34;integrationbeanstalk.md&#34;&gt;IntegrationBeanstalk&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationcodedeploy" title="IntegrationCodedeploy">IntegrationCodedeploy</a>" : <i>[ &lt;a href=&#34;integrationcodedeploy.md&#34;&gt;IntegrationCodedeploy&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationdockerswarm" title="IntegrationDockerSwarm">IntegrationDockerSwarm</a>" : <i>[ &lt;a href=&#34;integrationdockerswarm.md&#34;&gt;IntegrationDockerSwarm&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationecs" title="IntegrationEcs">IntegrationEcs</a>" : <i>[ &lt;a href=&#34;integrationecs.md&#34;&gt;IntegrationEcs&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationgitlab" title="IntegrationGitlab">IntegrationGitlab</a>" : <i>[ &lt;a href=&#34;integrationgitlab.md&#34;&gt;IntegrationGitlab&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationkubernetes" title="IntegrationKubernetes">IntegrationKubernetes</a>" : <i>[ &lt;a href=&#34;integrationkubernetes.md&#34;&gt;IntegrationKubernetes&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationmesosphere" title="IntegrationMesosphere">IntegrationMesosphere</a>" : <i>[ &lt;a href=&#34;integrationmesosphere.md&#34;&gt;IntegrationMesosphere&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationmultairuntime" title="IntegrationMultaiRuntime">IntegrationMultaiRuntime</a>" : <i>[ &lt;a href=&#34;integrationmultairuntime.md&#34;&gt;IntegrationMultaiRuntime&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationnomad" title="IntegrationNomad">IntegrationNomad</a>" : <i>[ &lt;a href=&#34;integrationnomad.md&#34;&gt;IntegrationNomad&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationrancher" title="IntegrationRancher">IntegrationRancher</a>" : <i>[ &lt;a href=&#34;integrationrancher.md&#34;&gt;IntegrationRancher&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationroute53" title="IntegrationRoute53">IntegrationRoute53</a>" : <i>[ &lt;a href=&#34;integrationroute53.md&#34;&gt;IntegrationRoute53&lt;/a&gt;, ... ]</i>,
-        "<a href="#multaitargetsets" title="MultaiTargetSets">MultaiTargetSets</a>" : <i>[ &lt;a href=&#34;multaitargetsets.md&#34;&gt;MultaiTargetSets&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
-        "<a href="#reverttospot" title="RevertToSpot">RevertToSpot</a>" : <i>[ &lt;a href=&#34;reverttospot.md&#34;&gt;RevertToSpot&lt;/a&gt;, ... ]</i>,
-        "<a href="#scalingdownpolicy" title="ScalingDownPolicy">ScalingDownPolicy</a>" : <i>[ &lt;a href=&#34;scalingdownpolicy.md&#34;&gt;ScalingDownPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#scalingstrategy" title="ScalingStrategy">ScalingStrategy</a>" : <i>[ &lt;a href=&#34;scalingstrategy.md&#34;&gt;ScalingStrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#scalingtargetpolicy" title="ScalingTargetPolicy">ScalingTargetPolicy</a>" : <i>[ &lt;a href=&#34;scalingtargetpolicy.md&#34;&gt;ScalingTargetPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#scalinguppolicy" title="ScalingUpPolicy">ScalingUpPolicy</a>" : <i>[ &lt;a href=&#34;scalinguppolicy.md&#34;&gt;ScalingUpPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;, ... ]</i>,
-        "<a href="#signal" title="Signal">Signal</a>" : <i>[ &lt;a href=&#34;signal.md&#34;&gt;Signal&lt;/a&gt;, ... ]</i>,
-        "<a href="#statefuldeallocation" title="StatefulDeallocation">StatefulDeallocation</a>" : <i>[ &lt;a href=&#34;statefuldeallocation.md&#34;&gt;StatefulDeallocation&lt;/a&gt;, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>" : <i>[ &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>" : <i>[ &lt;a href=&#34;deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;, ... ]</i>,
-        "<a href="#managedactions" title="ManagedActions">ManagedActions</a>" : <i>[ &lt;a href=&#34;managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;, ... ]</i>,
-        "<a href="#deploymentgroups" title="DeploymentGroups">DeploymentGroups</a>" : <i>[ &lt;a href=&#34;deploymentgroups.md&#34;&gt;DeploymentGroups&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ &lt;a href=&#34;autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ &lt;a href=&#34;autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscaleattributes" title="AutoscaleAttributes">AutoscaleAttributes</a>" : <i>[ &lt;a href=&#34;autoscaleattributes.md&#34;&gt;AutoscaleAttributes&lt;/a&gt;, ... ]</i>,
-        "<a href="#runner" title="Runner">Runner</a>" : <i>[ &lt;a href=&#34;runner.md&#34;&gt;Runner&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscalelabels" title="AutoscaleLabels">AutoscaleLabels</a>" : <i>[ &lt;a href=&#34;autoscalelabels.md&#34;&gt;AutoscaleLabels&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscaleconstraints" title="AutoscaleConstraints">AutoscaleConstraints</a>" : <i>[ &lt;a href=&#34;autoscaleconstraints.md&#34;&gt;AutoscaleConstraints&lt;/a&gt;, ... ]</i>,
-        "<a href="#domains" title="Domains">Domains</a>" : <i>[ &lt;a href=&#34;domains.md&#34;&gt;Domains&lt;/a&gt;, ... ]</i>,
-        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>,
-        "<a href="#rollconfig" title="RollConfig">RollConfig</a>" : <i>[ &lt;a href=&#34;rollconfig.md&#34;&gt;RollConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>" : <i>[ &lt;a href=&#34;platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;, ... ]</i>,
-        "<a href="#recordsets" title="RecordSets">RecordSets</a>" : <i>[ &lt;a href=&#34;recordsets.md&#34;&gt;RecordSets&lt;/a&gt;, ... ]</i>
+        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ <a href="ebsblockdevice.md">EbsBlockDevice</a>, ... ]</i>,
+        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>, ... ]</i>,
+        "<a href="#instancetypesweights" title="InstanceTypesWeights">InstanceTypesWeights</a>" : <i>[ <a href="instancetypesweights.md">InstanceTypesWeights</a>, ... ]</i>,
+        "<a href="#integrationbeanstalk" title="IntegrationBeanstalk">IntegrationBeanstalk</a>" : <i>[ <a href="integrationbeanstalk.md">IntegrationBeanstalk</a>, ... ]</i>,
+        "<a href="#integrationcodedeploy" title="IntegrationCodedeploy">IntegrationCodedeploy</a>" : <i>[ <a href="integrationcodedeploy.md">IntegrationCodedeploy</a>, ... ]</i>,
+        "<a href="#integrationdockerswarm" title="IntegrationDockerSwarm">IntegrationDockerSwarm</a>" : <i>[ <a href="integrationdockerswarm.md">IntegrationDockerSwarm</a>, ... ]</i>,
+        "<a href="#integrationecs" title="IntegrationEcs">IntegrationEcs</a>" : <i>[ <a href="integrationecs.md">IntegrationEcs</a>, ... ]</i>,
+        "<a href="#integrationgitlab" title="IntegrationGitlab">IntegrationGitlab</a>" : <i>[ <a href="integrationgitlab.md">IntegrationGitlab</a>, ... ]</i>,
+        "<a href="#integrationkubernetes" title="IntegrationKubernetes">IntegrationKubernetes</a>" : <i>[ <a href="integrationkubernetes.md">IntegrationKubernetes</a>, ... ]</i>,
+        "<a href="#integrationmesosphere" title="IntegrationMesosphere">IntegrationMesosphere</a>" : <i>[ <a href="integrationmesosphere.md">IntegrationMesosphere</a>, ... ]</i>,
+        "<a href="#integrationmultairuntime" title="IntegrationMultaiRuntime">IntegrationMultaiRuntime</a>" : <i>[ <a href="integrationmultairuntime.md">IntegrationMultaiRuntime</a>, ... ]</i>,
+        "<a href="#integrationnomad" title="IntegrationNomad">IntegrationNomad</a>" : <i>[ <a href="integrationnomad.md">IntegrationNomad</a>, ... ]</i>,
+        "<a href="#integrationrancher" title="IntegrationRancher">IntegrationRancher</a>" : <i>[ <a href="integrationrancher.md">IntegrationRancher</a>, ... ]</i>,
+        "<a href="#integrationroute53" title="IntegrationRoute53">IntegrationRoute53</a>" : <i>[ <a href="integrationroute53.md">IntegrationRoute53</a>, ... ]</i>,
+        "<a href="#multaitargetsets" title="MultaiTargetSets">MultaiTargetSets</a>" : <i>[ <a href="multaitargetsets.md">MultaiTargetSets</a>, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
+        "<a href="#reverttospot" title="RevertToSpot">RevertToSpot</a>" : <i>[ <a href="reverttospot.md">RevertToSpot</a>, ... ]</i>,
+        "<a href="#scalingdownpolicy" title="ScalingDownPolicy">ScalingDownPolicy</a>" : <i>[ <a href="scalingdownpolicy.md">ScalingDownPolicy</a>, ... ]</i>,
+        "<a href="#scalingstrategy" title="ScalingStrategy">ScalingStrategy</a>" : <i>[ <a href="scalingstrategy.md">ScalingStrategy</a>, ... ]</i>,
+        "<a href="#scalingtargetpolicy" title="ScalingTargetPolicy">ScalingTargetPolicy</a>" : <i>[ <a href="scalingtargetpolicy.md">ScalingTargetPolicy</a>, ... ]</i>,
+        "<a href="#scalinguppolicy" title="ScalingUpPolicy">ScalingUpPolicy</a>" : <i>[ <a href="scalinguppolicy.md">ScalingUpPolicy</a>, ... ]</i>,
+        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ <a href="scheduledtask.md">ScheduledTask</a>, ... ]</i>,
+        "<a href="#signal" title="Signal">Signal</a>" : <i>[ <a href="signal.md">Signal</a>, ... ]</i>,
+        "<a href="#statefuldeallocation" title="StatefulDeallocation">StatefulDeallocation</a>" : <i>[ <a href="statefuldeallocation.md">StatefulDeallocation</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>" : <i>[ <a href="updatepolicy.md">UpdatePolicy</a>, ... ]</i>,
+        "<a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>" : <i>[ <a href="deploymentpreferences.md">DeploymentPreferences</a>, ... ]</i>,
+        "<a href="#managedactions" title="ManagedActions">ManagedActions</a>" : <i>[ <a href="managedactions.md">ManagedActions</a>, ... ]</i>,
+        "<a href="#deploymentgroups" title="DeploymentGroups">DeploymentGroups</a>" : <i>[ <a href="deploymentgroups.md">DeploymentGroups</a>, ... ]</i>,
+        "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ <a href="autoscaledown.md">AutoscaleDown</a>, ... ]</i>,
+        "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ <a href="autoscaleheadroom.md">AutoscaleHeadroom</a>, ... ]</i>,
+        "<a href="#autoscaleattributes" title="AutoscaleAttributes">AutoscaleAttributes</a>" : <i>[ <a href="autoscaleattributes.md">AutoscaleAttributes</a>, ... ]</i>,
+        "<a href="#runner" title="Runner">Runner</a>" : <i>[ <a href="runner.md">Runner</a>, ... ]</i>,
+        "<a href="#autoscalelabels" title="AutoscaleLabels">AutoscaleLabels</a>" : <i>[ <a href="autoscalelabels.md">AutoscaleLabels</a>, ... ]</i>,
+        "<a href="#autoscaleconstraints" title="AutoscaleConstraints">AutoscaleConstraints</a>" : <i>[ <a href="autoscaleconstraints.md">AutoscaleConstraints</a>, ... ]</i>,
+        "<a href="#domains" title="Domains">Domains</a>" : <i>[ <a href="domains.md">Domains</a>, ... ]</i>,
+        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="dimensions.md">Dimensions</a>, ... ]</i>,
+        "<a href="#rollconfig" title="RollConfig">RollConfig</a>" : <i>[ <a href="rollconfig.md">RollConfig</a>, ... ]</i>,
+        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ <a href="strategy.md">Strategy</a>, ... ]</i>,
+        "<a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>" : <i>[ <a href="platformupdate.md">PlatformUpdate</a>, ... ]</i>,
+        "<a href="#recordsets" title="RecordSets">RecordSets</a>" : <i>[ <a href="recordsets.md">RecordSets</a>, ... ]</i>
     }
 }
 </pre>
@@ -163,87 +163,87 @@ Properties:
     <a href="#waitforcapacity" title="WaitForCapacity">WaitForCapacity</a>: <i>Double</i>
     <a href="#waitforcapacitytimeout" title="WaitForCapacityTimeout">WaitForCapacityTimeout</a>: <i>Double</i>
     <a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>: <i>
-      - &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;</i>
+      - <a href="ebsblockdevice.md">EbsBlockDevice</a></i>
     <a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>: <i>
-      - &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;</i>
+      - <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a></i>
     <a href="#instancetypesweights" title="InstanceTypesWeights">InstanceTypesWeights</a>: <i>
-      - &lt;a href=&#34;instancetypesweights.md&#34;&gt;InstanceTypesWeights&lt;/a&gt;</i>
+      - <a href="instancetypesweights.md">InstanceTypesWeights</a></i>
     <a href="#integrationbeanstalk" title="IntegrationBeanstalk">IntegrationBeanstalk</a>: <i>
-      - &lt;a href=&#34;integrationbeanstalk.md&#34;&gt;IntegrationBeanstalk&lt;/a&gt;</i>
+      - <a href="integrationbeanstalk.md">IntegrationBeanstalk</a></i>
     <a href="#integrationcodedeploy" title="IntegrationCodedeploy">IntegrationCodedeploy</a>: <i>
-      - &lt;a href=&#34;integrationcodedeploy.md&#34;&gt;IntegrationCodedeploy&lt;/a&gt;</i>
+      - <a href="integrationcodedeploy.md">IntegrationCodedeploy</a></i>
     <a href="#integrationdockerswarm" title="IntegrationDockerSwarm">IntegrationDockerSwarm</a>: <i>
-      - &lt;a href=&#34;integrationdockerswarm.md&#34;&gt;IntegrationDockerSwarm&lt;/a&gt;</i>
+      - <a href="integrationdockerswarm.md">IntegrationDockerSwarm</a></i>
     <a href="#integrationecs" title="IntegrationEcs">IntegrationEcs</a>: <i>
-      - &lt;a href=&#34;integrationecs.md&#34;&gt;IntegrationEcs&lt;/a&gt;</i>
+      - <a href="integrationecs.md">IntegrationEcs</a></i>
     <a href="#integrationgitlab" title="IntegrationGitlab">IntegrationGitlab</a>: <i>
-      - &lt;a href=&#34;integrationgitlab.md&#34;&gt;IntegrationGitlab&lt;/a&gt;</i>
+      - <a href="integrationgitlab.md">IntegrationGitlab</a></i>
     <a href="#integrationkubernetes" title="IntegrationKubernetes">IntegrationKubernetes</a>: <i>
-      - &lt;a href=&#34;integrationkubernetes.md&#34;&gt;IntegrationKubernetes&lt;/a&gt;</i>
+      - <a href="integrationkubernetes.md">IntegrationKubernetes</a></i>
     <a href="#integrationmesosphere" title="IntegrationMesosphere">IntegrationMesosphere</a>: <i>
-      - &lt;a href=&#34;integrationmesosphere.md&#34;&gt;IntegrationMesosphere&lt;/a&gt;</i>
+      - <a href="integrationmesosphere.md">IntegrationMesosphere</a></i>
     <a href="#integrationmultairuntime" title="IntegrationMultaiRuntime">IntegrationMultaiRuntime</a>: <i>
-      - &lt;a href=&#34;integrationmultairuntime.md&#34;&gt;IntegrationMultaiRuntime&lt;/a&gt;</i>
+      - <a href="integrationmultairuntime.md">IntegrationMultaiRuntime</a></i>
     <a href="#integrationnomad" title="IntegrationNomad">IntegrationNomad</a>: <i>
-      - &lt;a href=&#34;integrationnomad.md&#34;&gt;IntegrationNomad&lt;/a&gt;</i>
+      - <a href="integrationnomad.md">IntegrationNomad</a></i>
     <a href="#integrationrancher" title="IntegrationRancher">IntegrationRancher</a>: <i>
-      - &lt;a href=&#34;integrationrancher.md&#34;&gt;IntegrationRancher&lt;/a&gt;</i>
+      - <a href="integrationrancher.md">IntegrationRancher</a></i>
     <a href="#integrationroute53" title="IntegrationRoute53">IntegrationRoute53</a>: <i>
-      - &lt;a href=&#34;integrationroute53.md&#34;&gt;IntegrationRoute53&lt;/a&gt;</i>
+      - <a href="integrationroute53.md">IntegrationRoute53</a></i>
     <a href="#multaitargetsets" title="MultaiTargetSets">MultaiTargetSets</a>: <i>
-      - &lt;a href=&#34;multaitargetsets.md&#34;&gt;MultaiTargetSets&lt;/a&gt;</i>
+      - <a href="multaitargetsets.md">MultaiTargetSets</a></i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
+      - <a href="networkinterface.md">NetworkInterface</a></i>
     <a href="#reverttospot" title="RevertToSpot">RevertToSpot</a>: <i>
-      - &lt;a href=&#34;reverttospot.md&#34;&gt;RevertToSpot&lt;/a&gt;</i>
+      - <a href="reverttospot.md">RevertToSpot</a></i>
     <a href="#scalingdownpolicy" title="ScalingDownPolicy">ScalingDownPolicy</a>: <i>
-      - &lt;a href=&#34;scalingdownpolicy.md&#34;&gt;ScalingDownPolicy&lt;/a&gt;</i>
+      - <a href="scalingdownpolicy.md">ScalingDownPolicy</a></i>
     <a href="#scalingstrategy" title="ScalingStrategy">ScalingStrategy</a>: <i>
-      - &lt;a href=&#34;scalingstrategy.md&#34;&gt;ScalingStrategy&lt;/a&gt;</i>
+      - <a href="scalingstrategy.md">ScalingStrategy</a></i>
     <a href="#scalingtargetpolicy" title="ScalingTargetPolicy">ScalingTargetPolicy</a>: <i>
-      - &lt;a href=&#34;scalingtargetpolicy.md&#34;&gt;ScalingTargetPolicy&lt;/a&gt;</i>
+      - <a href="scalingtargetpolicy.md">ScalingTargetPolicy</a></i>
     <a href="#scalinguppolicy" title="ScalingUpPolicy">ScalingUpPolicy</a>: <i>
-      - &lt;a href=&#34;scalinguppolicy.md&#34;&gt;ScalingUpPolicy&lt;/a&gt;</i>
+      - <a href="scalinguppolicy.md">ScalingUpPolicy</a></i>
     <a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>: <i>
-      - &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;</i>
+      - <a href="scheduledtask.md">ScheduledTask</a></i>
     <a href="#signal" title="Signal">Signal</a>: <i>
-      - &lt;a href=&#34;signal.md&#34;&gt;Signal&lt;/a&gt;</i>
+      - <a href="signal.md">Signal</a></i>
     <a href="#statefuldeallocation" title="StatefulDeallocation">StatefulDeallocation</a>: <i>
-      - &lt;a href=&#34;statefuldeallocation.md&#34;&gt;StatefulDeallocation&lt;/a&gt;</i>
+      - <a href="statefuldeallocation.md">StatefulDeallocation</a></i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>: <i>
-      - &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;</i>
+      - <a href="updatepolicy.md">UpdatePolicy</a></i>
     <a href="#deploymentpreferences" title="DeploymentPreferences">DeploymentPreferences</a>: <i>
-      - &lt;a href=&#34;deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;</i>
+      - <a href="deploymentpreferences.md">DeploymentPreferences</a></i>
     <a href="#managedactions" title="ManagedActions">ManagedActions</a>: <i>
-      - &lt;a href=&#34;managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;</i>
+      - <a href="managedactions.md">ManagedActions</a></i>
     <a href="#deploymentgroups" title="DeploymentGroups">DeploymentGroups</a>: <i>
-      - &lt;a href=&#34;deploymentgroups.md&#34;&gt;DeploymentGroups&lt;/a&gt;</i>
+      - <a href="deploymentgroups.md">DeploymentGroups</a></i>
     <a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>: <i>
-      - &lt;a href=&#34;autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;</i>
+      - <a href="autoscaledown.md">AutoscaleDown</a></i>
     <a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>: <i>
-      - &lt;a href=&#34;autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;</i>
+      - <a href="autoscaleheadroom.md">AutoscaleHeadroom</a></i>
     <a href="#autoscaleattributes" title="AutoscaleAttributes">AutoscaleAttributes</a>: <i>
-      - &lt;a href=&#34;autoscaleattributes.md&#34;&gt;AutoscaleAttributes&lt;/a&gt;</i>
+      - <a href="autoscaleattributes.md">AutoscaleAttributes</a></i>
     <a href="#runner" title="Runner">Runner</a>: <i>
-      - &lt;a href=&#34;runner.md&#34;&gt;Runner&lt;/a&gt;</i>
+      - <a href="runner.md">Runner</a></i>
     <a href="#autoscalelabels" title="AutoscaleLabels">AutoscaleLabels</a>: <i>
-      - &lt;a href=&#34;autoscalelabels.md&#34;&gt;AutoscaleLabels&lt;/a&gt;</i>
+      - <a href="autoscalelabels.md">AutoscaleLabels</a></i>
     <a href="#autoscaleconstraints" title="AutoscaleConstraints">AutoscaleConstraints</a>: <i>
-      - &lt;a href=&#34;autoscaleconstraints.md&#34;&gt;AutoscaleConstraints&lt;/a&gt;</i>
+      - <a href="autoscaleconstraints.md">AutoscaleConstraints</a></i>
     <a href="#domains" title="Domains">Domains</a>: <i>
-      - &lt;a href=&#34;domains.md&#34;&gt;Domains&lt;/a&gt;</i>
+      - <a href="domains.md">Domains</a></i>
     <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
+      - <a href="dimensions.md">Dimensions</a></i>
     <a href="#rollconfig" title="RollConfig">RollConfig</a>: <i>
-      - &lt;a href=&#34;rollconfig.md&#34;&gt;RollConfig&lt;/a&gt;</i>
+      - <a href="rollconfig.md">RollConfig</a></i>
     <a href="#strategy" title="Strategy">Strategy</a>: <i>
-      - &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;</i>
+      - <a href="strategy.md">Strategy</a></i>
     <a href="#platformupdate" title="PlatformUpdate">PlatformUpdate</a>: <i>
-      - &lt;a href=&#34;platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;</i>
+      - <a href="platformupdate.md">PlatformUpdate</a></i>
     <a href="#recordsets" title="RecordSets">RecordSets</a>: <i>
-      - &lt;a href=&#34;recordsets.md&#34;&gt;RecordSets&lt;/a&gt;</i>
+      - <a href="recordsets.md">RecordSets</a></i>
 </pre>
 
 ## Properties
@@ -612,7 +612,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;
+_Type_: List of <a href="ebsblockdevice.md">EbsBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -620,7 +620,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;
+_Type_: List of <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -628,7 +628,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instancetypesweights.md&#34;&gt;InstanceTypesWeights&lt;/a&gt;
+_Type_: List of <a href="instancetypesweights.md">InstanceTypesWeights</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -636,7 +636,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationbeanstalk.md&#34;&gt;IntegrationBeanstalk&lt;/a&gt;
+_Type_: List of <a href="integrationbeanstalk.md">IntegrationBeanstalk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -644,7 +644,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationcodedeploy.md&#34;&gt;IntegrationCodedeploy&lt;/a&gt;
+_Type_: List of <a href="integrationcodedeploy.md">IntegrationCodedeploy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -652,7 +652,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationdockerswarm.md&#34;&gt;IntegrationDockerSwarm&lt;/a&gt;
+_Type_: List of <a href="integrationdockerswarm.md">IntegrationDockerSwarm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -660,7 +660,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationecs.md&#34;&gt;IntegrationEcs&lt;/a&gt;
+_Type_: List of <a href="integrationecs.md">IntegrationEcs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -668,7 +668,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationgitlab.md&#34;&gt;IntegrationGitlab&lt;/a&gt;
+_Type_: List of <a href="integrationgitlab.md">IntegrationGitlab</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -676,7 +676,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationkubernetes.md&#34;&gt;IntegrationKubernetes&lt;/a&gt;
+_Type_: List of <a href="integrationkubernetes.md">IntegrationKubernetes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -684,7 +684,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationmesosphere.md&#34;&gt;IntegrationMesosphere&lt;/a&gt;
+_Type_: List of <a href="integrationmesosphere.md">IntegrationMesosphere</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -692,7 +692,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationmultairuntime.md&#34;&gt;IntegrationMultaiRuntime&lt;/a&gt;
+_Type_: List of <a href="integrationmultairuntime.md">IntegrationMultaiRuntime</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -700,7 +700,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationnomad.md&#34;&gt;IntegrationNomad&lt;/a&gt;
+_Type_: List of <a href="integrationnomad.md">IntegrationNomad</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -708,7 +708,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationrancher.md&#34;&gt;IntegrationRancher&lt;/a&gt;
+_Type_: List of <a href="integrationrancher.md">IntegrationRancher</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -716,7 +716,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationroute53.md&#34;&gt;IntegrationRoute53&lt;/a&gt;
+_Type_: List of <a href="integrationroute53.md">IntegrationRoute53</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -724,7 +724,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;multaitargetsets.md&#34;&gt;MultaiTargetSets&lt;/a&gt;
+_Type_: List of <a href="multaitargetsets.md">MultaiTargetSets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -732,7 +732,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
+_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -740,7 +740,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;reverttospot.md&#34;&gt;RevertToSpot&lt;/a&gt;
+_Type_: List of <a href="reverttospot.md">RevertToSpot</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -748,7 +748,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalingdownpolicy.md&#34;&gt;ScalingDownPolicy&lt;/a&gt;
+_Type_: List of <a href="scalingdownpolicy.md">ScalingDownPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -756,7 +756,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalingstrategy.md&#34;&gt;ScalingStrategy&lt;/a&gt;
+_Type_: List of <a href="scalingstrategy.md">ScalingStrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -764,7 +764,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalingtargetpolicy.md&#34;&gt;ScalingTargetPolicy&lt;/a&gt;
+_Type_: List of <a href="scalingtargetpolicy.md">ScalingTargetPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -772,7 +772,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalinguppolicy.md&#34;&gt;ScalingUpPolicy&lt;/a&gt;
+_Type_: List of <a href="scalinguppolicy.md">ScalingUpPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -780,7 +780,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;
+_Type_: List of <a href="scheduledtask.md">ScheduledTask</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -788,7 +788,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;signal.md&#34;&gt;Signal&lt;/a&gt;
+_Type_: List of <a href="signal.md">Signal</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -796,7 +796,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;statefuldeallocation.md&#34;&gt;StatefulDeallocation&lt;/a&gt;
+_Type_: List of <a href="statefuldeallocation.md">StatefulDeallocation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -804,7 +804,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -812,7 +812,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;
+_Type_: List of <a href="updatepolicy.md">UpdatePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -820,7 +820,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deploymentpreferences.md&#34;&gt;DeploymentPreferences&lt;/a&gt;
+_Type_: List of <a href="deploymentpreferences.md">DeploymentPreferences</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -828,7 +828,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;managedactions.md&#34;&gt;ManagedActions&lt;/a&gt;
+_Type_: List of <a href="managedactions.md">ManagedActions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -836,7 +836,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deploymentgroups.md&#34;&gt;DeploymentGroups&lt;/a&gt;
+_Type_: List of <a href="deploymentgroups.md">DeploymentGroups</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -844,7 +844,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;
+_Type_: List of <a href="autoscaledown.md">AutoscaleDown</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -852,7 +852,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;
+_Type_: List of <a href="autoscaleheadroom.md">AutoscaleHeadroom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -860,7 +860,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscaleattributes.md&#34;&gt;AutoscaleAttributes&lt;/a&gt;
+_Type_: List of <a href="autoscaleattributes.md">AutoscaleAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -868,7 +868,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;runner.md&#34;&gt;Runner&lt;/a&gt;
+_Type_: List of <a href="runner.md">Runner</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -876,7 +876,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscalelabels.md&#34;&gt;AutoscaleLabels&lt;/a&gt;
+_Type_: List of <a href="autoscalelabels.md">AutoscaleLabels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -884,7 +884,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscaleconstraints.md&#34;&gt;AutoscaleConstraints&lt;/a&gt;
+_Type_: List of <a href="autoscaleconstraints.md">AutoscaleConstraints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -892,7 +892,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;domains.md&#34;&gt;Domains&lt;/a&gt;
+_Type_: List of <a href="domains.md">Domains</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -900,7 +900,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
+_Type_: List of <a href="dimensions.md">Dimensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -908,7 +908,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rollconfig.md&#34;&gt;RollConfig&lt;/a&gt;
+_Type_: List of <a href="rollconfig.md">RollConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -916,7 +916,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;
+_Type_: List of <a href="strategy.md">Strategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -924,7 +924,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;platformupdate.md&#34;&gt;PlatformUpdate&lt;/a&gt;
+_Type_: List of <a href="platformupdate.md">PlatformUpdate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -932,7 +932,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;recordsets.md&#34;&gt;RecordSets&lt;/a&gt;
+_Type_: List of <a href="recordsets.md">RecordSets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

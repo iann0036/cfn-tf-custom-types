@@ -144,13 +144,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DropletIds
 
-Returns the &lt;code&gt;DropletIds&lt;/code&gt; value.
+Returns the <code>DropletIds</code> value.
 
 #### FilesystemLabel
 
-Returns the &lt;code&gt;FilesystemLabel&lt;/code&gt; value.
+Returns the <code>FilesystemLabel</code> value.
 
 #### Urn
 
-Returns the &lt;code&gt;Urn&lt;/code&gt; value.
+Returns the <code>Urn</code> value.
 

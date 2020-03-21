@@ -18,10 +18,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#servicerolearn" title="ServiceRoleArn">ServiceRoleArn</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#dynamodbconfig" title="DynamodbConfig">DynamodbConfig</a>" : <i>[ &lt;a href=&#34;dynamodbconfig.md&#34;&gt;DynamodbConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#elasticsearchconfig" title="ElasticsearchConfig">ElasticsearchConfig</a>" : <i>[ &lt;a href=&#34;elasticsearchconfig.md&#34;&gt;ElasticsearchConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpconfig" title="HttpConfig">HttpConfig</a>" : <i>[ &lt;a href=&#34;httpconfig.md&#34;&gt;HttpConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#lambdaconfig" title="LambdaConfig">LambdaConfig</a>" : <i>[ &lt;a href=&#34;lambdaconfig.md&#34;&gt;LambdaConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#dynamodbconfig" title="DynamodbConfig">DynamodbConfig</a>" : <i>[ <a href="dynamodbconfig.md">DynamodbConfig</a>, ... ]</i>,
+        "<a href="#elasticsearchconfig" title="ElasticsearchConfig">ElasticsearchConfig</a>" : <i>[ <a href="elasticsearchconfig.md">ElasticsearchConfig</a>, ... ]</i>,
+        "<a href="#httpconfig" title="HttpConfig">HttpConfig</a>" : <i>[ <a href="httpconfig.md">HttpConfig</a>, ... ]</i>,
+        "<a href="#lambdaconfig" title="LambdaConfig">LambdaConfig</a>" : <i>[ <a href="lambdaconfig.md">LambdaConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,13 +38,13 @@ Properties:
     <a href="#servicerolearn" title="ServiceRoleArn">ServiceRoleArn</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#dynamodbconfig" title="DynamodbConfig">DynamodbConfig</a>: <i>
-      - &lt;a href=&#34;dynamodbconfig.md&#34;&gt;DynamodbConfig&lt;/a&gt;</i>
+      - <a href="dynamodbconfig.md">DynamodbConfig</a></i>
     <a href="#elasticsearchconfig" title="ElasticsearchConfig">ElasticsearchConfig</a>: <i>
-      - &lt;a href=&#34;elasticsearchconfig.md&#34;&gt;ElasticsearchConfig&lt;/a&gt;</i>
+      - <a href="elasticsearchconfig.md">ElasticsearchConfig</a></i>
     <a href="#httpconfig" title="HttpConfig">HttpConfig</a>: <i>
-      - &lt;a href=&#34;httpconfig.md&#34;&gt;HttpConfig&lt;/a&gt;</i>
+      - <a href="httpconfig.md">HttpConfig</a></i>
     <a href="#lambdaconfig" title="LambdaConfig">LambdaConfig</a>: <i>
-      - &lt;a href=&#34;lambdaconfig.md&#34;&gt;LambdaConfig&lt;/a&gt;</i>
+      - <a href="lambdaconfig.md">LambdaConfig</a></i>
 </pre>
 
 ## Properties
@@ -101,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dynamodbconfig.md&#34;&gt;DynamodbConfig&lt;/a&gt;
+_Type_: List of <a href="dynamodbconfig.md">DynamodbConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -109,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;elasticsearchconfig.md&#34;&gt;ElasticsearchConfig&lt;/a&gt;
+_Type_: List of <a href="elasticsearchconfig.md">ElasticsearchConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpconfig.md&#34;&gt;HttpConfig&lt;/a&gt;
+_Type_: List of <a href="httpconfig.md">HttpConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lambdaconfig.md&#34;&gt;LambdaConfig&lt;/a&gt;
+_Type_: List of <a href="lambdaconfig.md">LambdaConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,5 +147,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

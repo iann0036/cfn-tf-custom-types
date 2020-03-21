@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#category" title="Category">Category</a>" : <i>String</i>,
-    "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ &lt;a href=&#34;action-configuration.md&#34;&gt;Configuration&lt;/a&gt;, ... ]</i>,
+    "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ <a href="action-configuration.md">Configuration</a>, ... ]</i>,
     "<a href="#inputartifacts" title="InputArtifacts">InputArtifacts</a>" : <i>[ String, ... ]</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#outputartifacts" title="OutputArtifacts">OutputArtifacts</a>" : <i>[ String, ... ]</i>,
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#category" title="Category">Category</a>: <i>String</i>
 <a href="#configuration" title="Configuration">Configuration</a>: <i>
-      - &lt;a href=&#34;action-configuration.md&#34;&gt;Configuration&lt;/a&gt;</i>
+      - <a href="action-configuration.md">Configuration</a></i>
 <a href="#inputartifacts" title="InputArtifacts">InputArtifacts</a>: <i>
       - String</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Configuration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;action-configuration.md&#34;&gt;Configuration&lt;/a&gt;
+_Type_: List of <a href="action-configuration.md">Configuration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

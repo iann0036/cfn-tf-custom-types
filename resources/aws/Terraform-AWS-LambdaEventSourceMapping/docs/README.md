@@ -24,8 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#parallelizationfactor" title="ParallelizationFactor">ParallelizationFactor</a>" : <i>Double</i>,
         "<a href="#startingposition" title="StartingPosition">StartingPosition</a>" : <i>String</i>,
         "<a href="#startingpositiontimestamp" title="StartingPositionTimestamp">StartingPositionTimestamp</a>" : <i>String</i>,
-        "<a href="#destinationconfig" title="DestinationConfig">DestinationConfig</a>" : <i>[ &lt;a href=&#34;destinationconfig.md&#34;&gt;DestinationConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#onfailure" title="OnFailure">OnFailure</a>" : <i>[ &lt;a href=&#34;onfailure.md&#34;&gt;OnFailure&lt;/a&gt;, ... ]</i>
+        "<a href="#destinationconfig" title="DestinationConfig">DestinationConfig</a>" : <i>[ <a href="destinationconfig.md">DestinationConfig</a>, ... ]</i>,
+        "<a href="#onfailure" title="OnFailure">OnFailure</a>" : <i>[ <a href="onfailure.md">OnFailure</a>, ... ]</i>
     }
 }
 </pre>
@@ -48,9 +48,9 @@ Properties:
     <a href="#startingposition" title="StartingPosition">StartingPosition</a>: <i>String</i>
     <a href="#startingpositiontimestamp" title="StartingPositionTimestamp">StartingPositionTimestamp</a>: <i>String</i>
     <a href="#destinationconfig" title="DestinationConfig">DestinationConfig</a>: <i>
-      - &lt;a href=&#34;destinationconfig.md&#34;&gt;DestinationConfig&lt;/a&gt;</i>
+      - <a href="destinationconfig.md">DestinationConfig</a></i>
     <a href="#onfailure" title="OnFailure">OnFailure</a>: <i>
-      - &lt;a href=&#34;onfailure.md&#34;&gt;OnFailure&lt;/a&gt;</i>
+      - <a href="onfailure.md">OnFailure</a></i>
 </pre>
 
 ## Properties
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;destinationconfig.md&#34;&gt;DestinationConfig&lt;/a&gt;
+_Type_: List of <a href="destinationconfig.md">DestinationConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;onfailure.md&#34;&gt;OnFailure&lt;/a&gt;
+_Type_: List of <a href="onfailure.md">OnFailure</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,25 +185,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### FunctionArn
 
-Returns the &lt;code&gt;FunctionArn&lt;/code&gt; value.
+Returns the <code>FunctionArn</code> value.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 
 #### LastProcessingResult
 
-Returns the &lt;code&gt;LastProcessingResult&lt;/code&gt; value.
+Returns the <code>LastProcessingResult</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### StateTransitionReason
 
-Returns the &lt;code&gt;StateTransitionReason&lt;/code&gt; value.
+Returns the <code>StateTransitionReason</code> value.
 
 #### Uuid
 
-Returns the &lt;code&gt;Uuid&lt;/code&gt; value.
+Returns the <code>Uuid</code> value.
 

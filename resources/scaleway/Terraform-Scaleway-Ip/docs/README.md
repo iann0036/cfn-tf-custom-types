@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Ip
 
-Returns the &lt;code&gt;Ip&lt;/code&gt; value.
+Returns the <code>Ip</code> value.
 

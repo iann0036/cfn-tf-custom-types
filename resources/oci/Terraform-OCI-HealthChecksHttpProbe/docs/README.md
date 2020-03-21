@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::OCI::HealthChecksHttpProbe",
     "Properties" : {
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#headers" title="Headers">Headers</a>" : <i>[ &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;, ... ]</i>,
+        "<a href="#headers" title="Headers">Headers</a>" : <i>[ <a href="headers.md">Headers</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#method" title="Method">Method</a>" : <i>String</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#targets" title="Targets">Targets</a>" : <i>[ String, ... ]</i>,
         "<a href="#timeoutinseconds" title="TimeoutInSeconds">TimeoutInSeconds</a>" : <i>Double</i>,
         "<a href="#vantagepointnames" title="VantagePointNames">VantagePointNames</a>" : <i>[ String, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -34,7 +34,7 @@ Type: Terraform::OCI::HealthChecksHttpProbe
 Properties:
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#headers" title="Headers">Headers</a>: <i>
-      - &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;</i>
+      - <a href="headers.md">Headers</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#method" title="Method">Method</a>: <i>String</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
@@ -45,7 +45,7 @@ Properties:
     <a href="#timeoutinseconds" title="TimeoutInSeconds">TimeoutInSeconds</a>: <i>Double</i>
     <a href="#vantagepointnames" title="VantagePointNames">VantagePointNames</a>: <i>
       - String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -62,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;
+_Type_: List of <a href="headers.md">Headers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,13 +156,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HomeRegion
 
-Returns the &lt;code&gt;HomeRegion&lt;/code&gt; value.
+Returns the <code>HomeRegion</code> value.
 
 #### ResultsUrl
 
-Returns the &lt;code&gt;ResultsUrl&lt;/code&gt; value.
+Returns the <code>ResultsUrl</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

@@ -13,8 +13,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::NewRelic::InsightsEvent",
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#event" title="Event">Event</a>" : <i>[ &lt;a href=&#34;event.md&#34;&gt;Event&lt;/a&gt;, ... ]</i>,
-        "<a href="#attribute" title="Attribute">Attribute</a>" : <i>[ &lt;a href=&#34;attribute.md&#34;&gt;Attribute&lt;/a&gt;, ... ]</i>
+        "<a href="#event" title="Event">Event</a>" : <i>[ <a href="event.md">Event</a>, ... ]</i>,
+        "<a href="#attribute" title="Attribute">Attribute</a>" : <i>[ <a href="attribute.md">Attribute</a>, ... ]</i>
     }
 }
 </pre>
@@ -26,9 +26,9 @@ Type: Terraform::NewRelic::InsightsEvent
 Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#event" title="Event">Event</a>: <i>
-      - &lt;a href=&#34;event.md&#34;&gt;Event&lt;/a&gt;</i>
+      - <a href="event.md">Event</a></i>
     <a href="#attribute" title="Attribute">Attribute</a>: <i>
-      - &lt;a href=&#34;attribute.md&#34;&gt;Attribute&lt;/a&gt;</i>
+      - <a href="attribute.md">Attribute</a></i>
 </pre>
 
 ## Properties
@@ -45,7 +45,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;event.md&#34;&gt;Event&lt;/a&gt;
+_Type_: List of <a href="event.md">Event</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -53,7 +53,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;attribute.md&#34;&gt;Attribute&lt;/a&gt;
+_Type_: List of <a href="attribute.md">Attribute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

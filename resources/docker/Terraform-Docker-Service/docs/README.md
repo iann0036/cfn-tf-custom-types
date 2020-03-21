@@ -12,38 +12,38 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Docker::Service",
     "Properties" : {
-        "<a href="#auth" title="Auth">Auth</a>" : <i>[ &lt;a href=&#34;auth.md&#34;&gt;Auth&lt;/a&gt;, ... ]</i>,
+        "<a href="#auth" title="Auth">Auth</a>" : <i>[ <a href="auth.md">Auth</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#convergeconfig" title="ConvergeConfig">ConvergeConfig</a>" : <i>[ &lt;a href=&#34;convergeconfig.md&#34;&gt;ConvergeConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#endpointspec" title="EndpointSpec">EndpointSpec</a>" : <i>[ &lt;a href=&#34;endpointspec.md&#34;&gt;EndpointSpec&lt;/a&gt;, ... ]</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
-        "<a href="#mode" title="Mode">Mode</a>" : <i>[ &lt;a href=&#34;mode.md&#34;&gt;Mode&lt;/a&gt;, ... ]</i>,
-        "<a href="#rollbackconfig" title="RollbackConfig">RollbackConfig</a>" : <i>[ &lt;a href=&#34;rollbackconfig.md&#34;&gt;RollbackConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#taskspec" title="TaskSpec">TaskSpec</a>" : <i>[ &lt;a href=&#34;taskspec.md&#34;&gt;TaskSpec&lt;/a&gt;, ... ]</i>,
-        "<a href="#updateconfig" title="UpdateConfig">UpdateConfig</a>" : <i>[ &lt;a href=&#34;updateconfig.md&#34;&gt;UpdateConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>,
-        "<a href="#replicated" title="Replicated">Replicated</a>" : <i>[ &lt;a href=&#34;replicated.md&#34;&gt;Replicated&lt;/a&gt;, ... ]</i>,
-        "<a href="#containerspec" title="ContainerSpec">ContainerSpec</a>" : <i>[ &lt;a href=&#34;containerspec.md&#34;&gt;ContainerSpec&lt;/a&gt;, ... ]</i>,
-        "<a href="#logdriver" title="LogDriver">LogDriver</a>" : <i>[ &lt;a href=&#34;logdriver.md&#34;&gt;LogDriver&lt;/a&gt;, ... ]</i>,
-        "<a href="#placement" title="Placement">Placement</a>" : <i>[ &lt;a href=&#34;placement.md&#34;&gt;Placement&lt;/a&gt;, ... ]</i>,
-        "<a href="#resources" title="Resources">Resources</a>" : <i>[ &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;, ... ]</i>,
-        "<a href="#configs" title="Configs">Configs</a>" : <i>[ &lt;a href=&#34;configs.md&#34;&gt;Configs&lt;/a&gt;, ... ]</i>,
-        "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ &lt;a href=&#34;dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#hosts" title="Hosts">Hosts</a>" : <i>[ &lt;a href=&#34;hosts.md&#34;&gt;Hosts&lt;/a&gt;, ... ]</i>,
-        "<a href="#mounts" title="Mounts">Mounts</a>" : <i>[ &lt;a href=&#34;mounts.md&#34;&gt;Mounts&lt;/a&gt;, ... ]</i>,
-        "<a href="#privileges" title="Privileges">Privileges</a>" : <i>[ &lt;a href=&#34;privileges.md&#34;&gt;Privileges&lt;/a&gt;, ... ]</i>,
-        "<a href="#secrets" title="Secrets">Secrets</a>" : <i>[ &lt;a href=&#34;secrets.md&#34;&gt;Secrets&lt;/a&gt;, ... ]</i>,
-        "<a href="#platforms" title="Platforms">Platforms</a>" : <i>[ &lt;a href=&#34;platforms.md&#34;&gt;Platforms&lt;/a&gt;, ... ]</i>,
-        "<a href="#limits" title="Limits">Limits</a>" : <i>[ &lt;a href=&#34;limits.md&#34;&gt;Limits&lt;/a&gt;, ... ]</i>,
-        "<a href="#reservation" title="Reservation">Reservation</a>" : <i>[ &lt;a href=&#34;reservation.md&#34;&gt;Reservation&lt;/a&gt;, ... ]</i>,
-        "<a href="#bindoptions" title="BindOptions">BindOptions</a>" : <i>[ &lt;a href=&#34;bindoptions.md&#34;&gt;BindOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#tmpfsoptions" title="TmpfsOptions">TmpfsOptions</a>" : <i>[ &lt;a href=&#34;tmpfsoptions.md&#34;&gt;TmpfsOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#volumeoptions" title="VolumeOptions">VolumeOptions</a>" : <i>[ &lt;a href=&#34;volumeoptions.md&#34;&gt;VolumeOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#credentialspec" title="CredentialSpec">CredentialSpec</a>" : <i>[ &lt;a href=&#34;credentialspec.md&#34;&gt;CredentialSpec&lt;/a&gt;, ... ]</i>,
-        "<a href="#selinuxcontext" title="SeLinuxContext">SeLinuxContext</a>" : <i>[ &lt;a href=&#34;selinuxcontext.md&#34;&gt;SeLinuxContext&lt;/a&gt;, ... ]</i>,
-        "<a href="#genericresources" title="GenericResources">GenericResources</a>" : <i>[ &lt;a href=&#34;genericresources.md&#34;&gt;GenericResources&lt;/a&gt;, ... ]</i>
+        "<a href="#convergeconfig" title="ConvergeConfig">ConvergeConfig</a>" : <i>[ <a href="convergeconfig.md">ConvergeConfig</a>, ... ]</i>,
+        "<a href="#endpointspec" title="EndpointSpec">EndpointSpec</a>" : <i>[ <a href="endpointspec.md">EndpointSpec</a>, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
+        "<a href="#mode" title="Mode">Mode</a>" : <i>[ <a href="mode.md">Mode</a>, ... ]</i>,
+        "<a href="#rollbackconfig" title="RollbackConfig">RollbackConfig</a>" : <i>[ <a href="rollbackconfig.md">RollbackConfig</a>, ... ]</i>,
+        "<a href="#taskspec" title="TaskSpec">TaskSpec</a>" : <i>[ <a href="taskspec.md">TaskSpec</a>, ... ]</i>,
+        "<a href="#updateconfig" title="UpdateConfig">UpdateConfig</a>" : <i>[ <a href="updateconfig.md">UpdateConfig</a>, ... ]</i>,
+        "<a href="#ports" title="Ports">Ports</a>" : <i>[ <a href="ports.md">Ports</a>, ... ]</i>,
+        "<a href="#replicated" title="Replicated">Replicated</a>" : <i>[ <a href="replicated.md">Replicated</a>, ... ]</i>,
+        "<a href="#containerspec" title="ContainerSpec">ContainerSpec</a>" : <i>[ <a href="containerspec.md">ContainerSpec</a>, ... ]</i>,
+        "<a href="#logdriver" title="LogDriver">LogDriver</a>" : <i>[ <a href="logdriver.md">LogDriver</a>, ... ]</i>,
+        "<a href="#placement" title="Placement">Placement</a>" : <i>[ <a href="placement.md">Placement</a>, ... ]</i>,
+        "<a href="#resources" title="Resources">Resources</a>" : <i>[ <a href="resources.md">Resources</a>, ... ]</i>,
+        "<a href="#configs" title="Configs">Configs</a>" : <i>[ <a href="configs.md">Configs</a>, ... ]</i>,
+        "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ <a href="dnsconfig.md">DnsConfig</a>, ... ]</i>,
+        "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ <a href="healthcheck.md">Healthcheck</a>, ... ]</i>,
+        "<a href="#hosts" title="Hosts">Hosts</a>" : <i>[ <a href="hosts.md">Hosts</a>, ... ]</i>,
+        "<a href="#mounts" title="Mounts">Mounts</a>" : <i>[ <a href="mounts.md">Mounts</a>, ... ]</i>,
+        "<a href="#privileges" title="Privileges">Privileges</a>" : <i>[ <a href="privileges.md">Privileges</a>, ... ]</i>,
+        "<a href="#secrets" title="Secrets">Secrets</a>" : <i>[ <a href="secrets.md">Secrets</a>, ... ]</i>,
+        "<a href="#platforms" title="Platforms">Platforms</a>" : <i>[ <a href="platforms.md">Platforms</a>, ... ]</i>,
+        "<a href="#limits" title="Limits">Limits</a>" : <i>[ <a href="limits.md">Limits</a>, ... ]</i>,
+        "<a href="#reservation" title="Reservation">Reservation</a>" : <i>[ <a href="reservation.md">Reservation</a>, ... ]</i>,
+        "<a href="#bindoptions" title="BindOptions">BindOptions</a>" : <i>[ <a href="bindoptions.md">BindOptions</a>, ... ]</i>,
+        "<a href="#tmpfsoptions" title="TmpfsOptions">TmpfsOptions</a>" : <i>[ <a href="tmpfsoptions.md">TmpfsOptions</a>, ... ]</i>,
+        "<a href="#volumeoptions" title="VolumeOptions">VolumeOptions</a>" : <i>[ <a href="volumeoptions.md">VolumeOptions</a>, ... ]</i>,
+        "<a href="#credentialspec" title="CredentialSpec">CredentialSpec</a>" : <i>[ <a href="credentialspec.md">CredentialSpec</a>, ... ]</i>,
+        "<a href="#selinuxcontext" title="SeLinuxContext">SeLinuxContext</a>" : <i>[ <a href="selinuxcontext.md">SeLinuxContext</a>, ... ]</i>,
+        "<a href="#genericresources" title="GenericResources">GenericResources</a>" : <i>[ <a href="genericresources.md">GenericResources</a>, ... ]</i>
     }
 }
 </pre>
@@ -54,67 +54,67 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::Docker::Service
 Properties:
     <a href="#auth" title="Auth">Auth</a>: <i>
-      - &lt;a href=&#34;auth.md&#34;&gt;Auth&lt;/a&gt;</i>
+      - <a href="auth.md">Auth</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#convergeconfig" title="ConvergeConfig">ConvergeConfig</a>: <i>
-      - &lt;a href=&#34;convergeconfig.md&#34;&gt;ConvergeConfig&lt;/a&gt;</i>
+      - <a href="convergeconfig.md">ConvergeConfig</a></i>
     <a href="#endpointspec" title="EndpointSpec">EndpointSpec</a>: <i>
-      - &lt;a href=&#34;endpointspec.md&#34;&gt;EndpointSpec&lt;/a&gt;</i>
+      - <a href="endpointspec.md">EndpointSpec</a></i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#mode" title="Mode">Mode</a>: <i>
-      - &lt;a href=&#34;mode.md&#34;&gt;Mode&lt;/a&gt;</i>
+      - <a href="mode.md">Mode</a></i>
     <a href="#rollbackconfig" title="RollbackConfig">RollbackConfig</a>: <i>
-      - &lt;a href=&#34;rollbackconfig.md&#34;&gt;RollbackConfig&lt;/a&gt;</i>
+      - <a href="rollbackconfig.md">RollbackConfig</a></i>
     <a href="#taskspec" title="TaskSpec">TaskSpec</a>: <i>
-      - &lt;a href=&#34;taskspec.md&#34;&gt;TaskSpec&lt;/a&gt;</i>
+      - <a href="taskspec.md">TaskSpec</a></i>
     <a href="#updateconfig" title="UpdateConfig">UpdateConfig</a>: <i>
-      - &lt;a href=&#34;updateconfig.md&#34;&gt;UpdateConfig&lt;/a&gt;</i>
+      - <a href="updateconfig.md">UpdateConfig</a></i>
     <a href="#ports" title="Ports">Ports</a>: <i>
-      - &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;</i>
+      - <a href="ports.md">Ports</a></i>
     <a href="#replicated" title="Replicated">Replicated</a>: <i>
-      - &lt;a href=&#34;replicated.md&#34;&gt;Replicated&lt;/a&gt;</i>
+      - <a href="replicated.md">Replicated</a></i>
     <a href="#containerspec" title="ContainerSpec">ContainerSpec</a>: <i>
-      - &lt;a href=&#34;containerspec.md&#34;&gt;ContainerSpec&lt;/a&gt;</i>
+      - <a href="containerspec.md">ContainerSpec</a></i>
     <a href="#logdriver" title="LogDriver">LogDriver</a>: <i>
-      - &lt;a href=&#34;logdriver.md&#34;&gt;LogDriver&lt;/a&gt;</i>
+      - <a href="logdriver.md">LogDriver</a></i>
     <a href="#placement" title="Placement">Placement</a>: <i>
-      - &lt;a href=&#34;placement.md&#34;&gt;Placement&lt;/a&gt;</i>
+      - <a href="placement.md">Placement</a></i>
     <a href="#resources" title="Resources">Resources</a>: <i>
-      - &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;</i>
+      - <a href="resources.md">Resources</a></i>
     <a href="#configs" title="Configs">Configs</a>: <i>
-      - &lt;a href=&#34;configs.md&#34;&gt;Configs&lt;/a&gt;</i>
+      - <a href="configs.md">Configs</a></i>
     <a href="#dnsconfig" title="DnsConfig">DnsConfig</a>: <i>
-      - &lt;a href=&#34;dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;</i>
+      - <a href="dnsconfig.md">DnsConfig</a></i>
     <a href="#healthcheck" title="Healthcheck">Healthcheck</a>: <i>
-      - &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;</i>
+      - <a href="healthcheck.md">Healthcheck</a></i>
     <a href="#hosts" title="Hosts">Hosts</a>: <i>
-      - &lt;a href=&#34;hosts.md&#34;&gt;Hosts&lt;/a&gt;</i>
+      - <a href="hosts.md">Hosts</a></i>
     <a href="#mounts" title="Mounts">Mounts</a>: <i>
-      - &lt;a href=&#34;mounts.md&#34;&gt;Mounts&lt;/a&gt;</i>
+      - <a href="mounts.md">Mounts</a></i>
     <a href="#privileges" title="Privileges">Privileges</a>: <i>
-      - &lt;a href=&#34;privileges.md&#34;&gt;Privileges&lt;/a&gt;</i>
+      - <a href="privileges.md">Privileges</a></i>
     <a href="#secrets" title="Secrets">Secrets</a>: <i>
-      - &lt;a href=&#34;secrets.md&#34;&gt;Secrets&lt;/a&gt;</i>
+      - <a href="secrets.md">Secrets</a></i>
     <a href="#platforms" title="Platforms">Platforms</a>: <i>
-      - &lt;a href=&#34;platforms.md&#34;&gt;Platforms&lt;/a&gt;</i>
+      - <a href="platforms.md">Platforms</a></i>
     <a href="#limits" title="Limits">Limits</a>: <i>
-      - &lt;a href=&#34;limits.md&#34;&gt;Limits&lt;/a&gt;</i>
+      - <a href="limits.md">Limits</a></i>
     <a href="#reservation" title="Reservation">Reservation</a>: <i>
-      - &lt;a href=&#34;reservation.md&#34;&gt;Reservation&lt;/a&gt;</i>
+      - <a href="reservation.md">Reservation</a></i>
     <a href="#bindoptions" title="BindOptions">BindOptions</a>: <i>
-      - &lt;a href=&#34;bindoptions.md&#34;&gt;BindOptions&lt;/a&gt;</i>
+      - <a href="bindoptions.md">BindOptions</a></i>
     <a href="#tmpfsoptions" title="TmpfsOptions">TmpfsOptions</a>: <i>
-      - &lt;a href=&#34;tmpfsoptions.md&#34;&gt;TmpfsOptions&lt;/a&gt;</i>
+      - <a href="tmpfsoptions.md">TmpfsOptions</a></i>
     <a href="#volumeoptions" title="VolumeOptions">VolumeOptions</a>: <i>
-      - &lt;a href=&#34;volumeoptions.md&#34;&gt;VolumeOptions&lt;/a&gt;</i>
+      - <a href="volumeoptions.md">VolumeOptions</a></i>
     <a href="#credentialspec" title="CredentialSpec">CredentialSpec</a>: <i>
-      - &lt;a href=&#34;credentialspec.md&#34;&gt;CredentialSpec&lt;/a&gt;</i>
+      - <a href="credentialspec.md">CredentialSpec</a></i>
     <a href="#selinuxcontext" title="SeLinuxContext">SeLinuxContext</a>: <i>
-      - &lt;a href=&#34;selinuxcontext.md&#34;&gt;SeLinuxContext&lt;/a&gt;</i>
+      - <a href="selinuxcontext.md">SeLinuxContext</a></i>
     <a href="#genericresources" title="GenericResources">GenericResources</a>: <i>
-      - &lt;a href=&#34;genericresources.md&#34;&gt;GenericResources&lt;/a&gt;</i>
+      - <a href="genericresources.md">GenericResources</a></i>
 </pre>
 
 ## Properties
@@ -123,7 +123,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;auth.md&#34;&gt;Auth&lt;/a&gt;
+_Type_: List of <a href="auth.md">Auth</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;convergeconfig.md&#34;&gt;ConvergeConfig&lt;/a&gt;
+_Type_: List of <a href="convergeconfig.md">ConvergeConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;endpointspec.md&#34;&gt;EndpointSpec&lt;/a&gt;
+_Type_: List of <a href="endpointspec.md">EndpointSpec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;mode.md&#34;&gt;Mode&lt;/a&gt;
+_Type_: List of <a href="mode.md">Mode</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rollbackconfig.md&#34;&gt;RollbackConfig&lt;/a&gt;
+_Type_: List of <a href="rollbackconfig.md">RollbackConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;taskspec.md&#34;&gt;TaskSpec&lt;/a&gt;
+_Type_: List of <a href="taskspec.md">TaskSpec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;updateconfig.md&#34;&gt;UpdateConfig&lt;/a&gt;
+_Type_: List of <a href="updateconfig.md">UpdateConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,7 +203,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;
+_Type_: List of <a href="ports.md">Ports</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -211,7 +211,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;replicated.md&#34;&gt;Replicated&lt;/a&gt;
+_Type_: List of <a href="replicated.md">Replicated</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -219,7 +219,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;containerspec.md&#34;&gt;ContainerSpec&lt;/a&gt;
+_Type_: List of <a href="containerspec.md">ContainerSpec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,7 +227,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logdriver.md&#34;&gt;LogDriver&lt;/a&gt;
+_Type_: List of <a href="logdriver.md">LogDriver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -235,7 +235,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;placement.md&#34;&gt;Placement&lt;/a&gt;
+_Type_: List of <a href="placement.md">Placement</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -243,7 +243,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;
+_Type_: List of <a href="resources.md">Resources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -251,7 +251,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configs.md&#34;&gt;Configs&lt;/a&gt;
+_Type_: List of <a href="configs.md">Configs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -259,7 +259,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;
+_Type_: List of <a href="dnsconfig.md">DnsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -267,7 +267,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;
+_Type_: List of <a href="healthcheck.md">Healthcheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -275,7 +275,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hosts.md&#34;&gt;Hosts&lt;/a&gt;
+_Type_: List of <a href="hosts.md">Hosts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -283,7 +283,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;mounts.md&#34;&gt;Mounts&lt;/a&gt;
+_Type_: List of <a href="mounts.md">Mounts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -291,7 +291,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;privileges.md&#34;&gt;Privileges&lt;/a&gt;
+_Type_: List of <a href="privileges.md">Privileges</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -299,7 +299,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secrets.md&#34;&gt;Secrets&lt;/a&gt;
+_Type_: List of <a href="secrets.md">Secrets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -307,7 +307,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;platforms.md&#34;&gt;Platforms&lt;/a&gt;
+_Type_: List of <a href="platforms.md">Platforms</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -315,7 +315,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;limits.md&#34;&gt;Limits&lt;/a&gt;
+_Type_: List of <a href="limits.md">Limits</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -323,7 +323,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;reservation.md&#34;&gt;Reservation&lt;/a&gt;
+_Type_: List of <a href="reservation.md">Reservation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -331,7 +331,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bindoptions.md&#34;&gt;BindOptions&lt;/a&gt;
+_Type_: List of <a href="bindoptions.md">BindOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -339,7 +339,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tmpfsoptions.md&#34;&gt;TmpfsOptions&lt;/a&gt;
+_Type_: List of <a href="tmpfsoptions.md">TmpfsOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -347,7 +347,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volumeoptions.md&#34;&gt;VolumeOptions&lt;/a&gt;
+_Type_: List of <a href="volumeoptions.md">VolumeOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -355,7 +355,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;credentialspec.md&#34;&gt;CredentialSpec&lt;/a&gt;
+_Type_: List of <a href="credentialspec.md">CredentialSpec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -363,7 +363,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;selinuxcontext.md&#34;&gt;SeLinuxContext&lt;/a&gt;
+_Type_: List of <a href="selinuxcontext.md">SeLinuxContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -371,7 +371,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;genericresources.md&#34;&gt;GenericResources&lt;/a&gt;
+_Type_: List of <a href="genericresources.md">GenericResources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#local" title="Local">Local</a>" : <i>Boolean</i>,
         "<a href="#maxleasettlseconds" title="MaxLeaseTtlSeconds">MaxLeaseTtlSeconds</a>" : <i>Double</i>,
-        "<a href="#options" title="Options">Options</a>" : <i>[ &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;, ... ]</i>,
+        "<a href="#options" title="Options">Options</a>" : <i>[ <a href="options.md">Options</a>, ... ]</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#sealwrap" title="SealWrap">SealWrap</a>" : <i>Boolean</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
@@ -36,7 +36,7 @@ Properties:
     <a href="#local" title="Local">Local</a>: <i>Boolean</i>
     <a href="#maxleasettlseconds" title="MaxLeaseTtlSeconds">MaxLeaseTtlSeconds</a>: <i>Double</i>
     <a href="#options" title="Options">Options</a>: <i>
-      - &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;</i>
+      - <a href="options.md">Options</a></i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#sealwrap" title="SealWrap">SealWrap</a>: <i>Boolean</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
@@ -88,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;
+_Type_: List of <a href="options.md">Options</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,5 +134,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessor
 
-Returns the &lt;code&gt;Accessor&lt;/code&gt; value.
+Returns the <code>Accessor</code> value.
 

@@ -32,9 +32,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
         "<a href="#usedefaultroutefordnsrelay" title="UseDefaultRouteForDnsRelay">UseDefaultRouteForDnsRelay</a>" : <i>Boolean</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>" : <i>[ &lt;a href=&#34;externalnetwork.md&#34;&gt;ExternalNetwork&lt;/a&gt;, ... ]</i>,
-        "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ &lt;a href=&#34;subnet.md&#34;&gt;Subnet&lt;/a&gt;, ... ]</i>,
-        "<a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>" : <i>[ &lt;a href=&#34;suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;, ... ]</i>
+        "<a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>" : <i>[ <a href="externalnetwork.md">ExternalNetwork</a>, ... ]</i>,
+        "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ <a href="subnet.md">Subnet</a>, ... ]</i>,
+        "<a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>" : <i>[ <a href="suballocatepool.md">SuballocatePool</a>, ... ]</i>
     }
 }
 </pre>
@@ -66,11 +66,11 @@ Properties:
     <a href="#usedefaultroutefordnsrelay" title="UseDefaultRouteForDnsRelay">UseDefaultRouteForDnsRelay</a>: <i>Boolean</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>: <i>
-      - &lt;a href=&#34;externalnetwork.md&#34;&gt;ExternalNetwork&lt;/a&gt;</i>
+      - <a href="externalnetwork.md">ExternalNetwork</a></i>
     <a href="#subnet" title="Subnet">Subnet</a>: <i>
-      - &lt;a href=&#34;subnet.md&#34;&gt;Subnet&lt;/a&gt;</i>
+      - <a href="subnet.md">Subnet</a></i>
     <a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>: <i>
-      - &lt;a href=&#34;suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;</i>
+      - <a href="suballocatepool.md">SuballocatePool</a></i>
 </pre>
 
 ## Properties
@@ -239,7 +239,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;externalnetwork.md&#34;&gt;ExternalNetwork&lt;/a&gt;
+_Type_: List of <a href="externalnetwork.md">ExternalNetwork</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -247,7 +247,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subnet.md&#34;&gt;Subnet&lt;/a&gt;
+_Type_: List of <a href="subnet.md">Subnet</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -255,7 +255,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;
+_Type_: List of <a href="suballocatepool.md">SuballocatePool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -277,9 +277,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DefaultExternalNetworkIp
 
-Returns the &lt;code&gt;DefaultExternalNetworkIp&lt;/code&gt; value.
+Returns the <code>DefaultExternalNetworkIp</code> value.
 
 #### ExternalNetworkIps
 
-Returns the &lt;code&gt;ExternalNetworkIps&lt;/code&gt; value.
+Returns the <code>ExternalNetworkIps</code> value.
 

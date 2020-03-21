@@ -16,21 +16,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#defaulteventbasedhold" title="DefaultEventBasedHold">DefaultEventBasedHold</a>" : <i>Boolean</i>,
         "<a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>" : <i>Boolean</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#requesterpays" title="RequesterPays">RequesterPays</a>" : <i>Boolean</i>,
         "<a href="#storageclass" title="StorageClass">StorageClass</a>" : <i>String</i>,
-        "<a href="#cors" title="Cors">Cors</a>" : <i>[ &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;, ... ]</i>,
-        "<a href="#encryption" title="Encryption">Encryption</a>" : <i>[ &lt;a href=&#34;encryption.md&#34;&gt;Encryption&lt;/a&gt;, ... ]</i>,
-        "<a href="#lifecyclerule" title="LifecycleRule">LifecycleRule</a>" : <i>[ &lt;a href=&#34;lifecyclerule.md&#34;&gt;LifecycleRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#logging" title="Logging">Logging</a>" : <i>[ &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;, ... ]</i>,
-        "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ &lt;a href=&#34;retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#versioning" title="Versioning">Versioning</a>" : <i>[ &lt;a href=&#34;versioning.md&#34;&gt;Versioning&lt;/a&gt;, ... ]</i>,
-        "<a href="#website" title="Website">Website</a>" : <i>[ &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;, ... ]</i>,
-        "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>,
-        "<a href="#condition" title="Condition">Condition</a>" : <i>[ &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;, ... ]</i>
+        "<a href="#cors" title="Cors">Cors</a>" : <i>[ <a href="cors.md">Cors</a>, ... ]</i>,
+        "<a href="#encryption" title="Encryption">Encryption</a>" : <i>[ <a href="encryption.md">Encryption</a>, ... ]</i>,
+        "<a href="#lifecyclerule" title="LifecycleRule">LifecycleRule</a>" : <i>[ <a href="lifecyclerule.md">LifecycleRule</a>, ... ]</i>,
+        "<a href="#logging" title="Logging">Logging</a>" : <i>[ <a href="logging.md">Logging</a>, ... ]</i>,
+        "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ <a href="retentionpolicy.md">RetentionPolicy</a>, ... ]</i>,
+        "<a href="#versioning" title="Versioning">Versioning</a>" : <i>[ <a href="versioning.md">Versioning</a>, ... ]</i>,
+        "<a href="#website" title="Website">Website</a>" : <i>[ <a href="website.md">Website</a>, ... ]</i>,
+        "<a href="#action" title="Action">Action</a>" : <i>[ <a href="action.md">Action</a>, ... ]</i>,
+        "<a href="#condition" title="Condition">Condition</a>" : <i>[ <a href="condition.md">Condition</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,30 +45,30 @@ Properties:
     <a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>: <i>Boolean</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#requesterpays" title="RequesterPays">RequesterPays</a>: <i>Boolean</i>
     <a href="#storageclass" title="StorageClass">StorageClass</a>: <i>String</i>
     <a href="#cors" title="Cors">Cors</a>: <i>
-      - &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;</i>
+      - <a href="cors.md">Cors</a></i>
     <a href="#encryption" title="Encryption">Encryption</a>: <i>
-      - &lt;a href=&#34;encryption.md&#34;&gt;Encryption&lt;/a&gt;</i>
+      - <a href="encryption.md">Encryption</a></i>
     <a href="#lifecyclerule" title="LifecycleRule">LifecycleRule</a>: <i>
-      - &lt;a href=&#34;lifecyclerule.md&#34;&gt;LifecycleRule&lt;/a&gt;</i>
+      - <a href="lifecyclerule.md">LifecycleRule</a></i>
     <a href="#logging" title="Logging">Logging</a>: <i>
-      - &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;</i>
+      - <a href="logging.md">Logging</a></i>
     <a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>: <i>
-      - &lt;a href=&#34;retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;</i>
+      - <a href="retentionpolicy.md">RetentionPolicy</a></i>
     <a href="#versioning" title="Versioning">Versioning</a>: <i>
-      - &lt;a href=&#34;versioning.md&#34;&gt;Versioning&lt;/a&gt;</i>
+      - <a href="versioning.md">Versioning</a></i>
     <a href="#website" title="Website">Website</a>: <i>
-      - &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;</i>
+      - <a href="website.md">Website</a></i>
     <a href="#action" title="Action">Action</a>: <i>
-      - &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;</i>
+      - <a href="action.md">Action</a></i>
     <a href="#condition" title="Condition">Condition</a>: <i>
-      - &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;</i>
+      - <a href="condition.md">Condition</a></i>
 </pre>
 
 ## Properties
@@ -109,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,7 +157,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;
+_Type_: List of <a href="cors.md">Cors</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;encryption.md&#34;&gt;Encryption&lt;/a&gt;
+_Type_: List of <a href="encryption.md">Encryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -173,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lifecyclerule.md&#34;&gt;LifecycleRule&lt;/a&gt;
+_Type_: List of <a href="lifecyclerule.md">LifecycleRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -181,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;
+_Type_: List of <a href="logging.md">Logging</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -189,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;
+_Type_: List of <a href="retentionpolicy.md">RetentionPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;versioning.md&#34;&gt;Versioning&lt;/a&gt;
+_Type_: List of <a href="versioning.md">Versioning</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;
+_Type_: List of <a href="website.md">Website</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -213,7 +213,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;
+_Type_: List of <a href="action.md">Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,7 +221,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;
+_Type_: List of <a href="condition.md">Condition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -243,9 +243,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 
 #### Url
 
-Returns the &lt;code&gt;Url&lt;/code&gt; value.
+Returns the <code>Url</code> value.
 

@@ -144,17 +144,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CertPem
 
-Returns the &lt;code&gt;CertPem&lt;/code&gt; value.
+Returns the <code>CertPem</code> value.
 
 #### ReadyForRenewal
 
-Returns the &lt;code&gt;ReadyForRenewal&lt;/code&gt; value.
+Returns the <code>ReadyForRenewal</code> value.
 
 #### ValidityEndTime
 
-Returns the &lt;code&gt;ValidityEndTime&lt;/code&gt; value.
+Returns the <code>ValidityEndTime</code> value.
 
 #### ValidityStartTime
 
-Returns the &lt;code&gt;ValidityStartTime&lt;/code&gt; value.
+Returns the <code>ValidityStartTime</code> value.
 

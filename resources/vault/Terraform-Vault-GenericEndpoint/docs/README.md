@@ -114,9 +114,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### WriteData
 
-Returns the &lt;code&gt;WriteData&lt;/code&gt; value.
+Returns the <code>WriteData</code> value.
 
 #### WriteDataJson
 
-Returns the &lt;code&gt;WriteDataJson&lt;/code&gt; value.
+Returns the <code>WriteDataJson</code> value.
 

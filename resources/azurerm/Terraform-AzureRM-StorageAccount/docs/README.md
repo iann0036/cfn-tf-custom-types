@@ -22,19 +22,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#blobproperties" title="BlobProperties">BlobProperties</a>" : <i>[ &lt;a href=&#34;blobproperties.md&#34;&gt;BlobProperties&lt;/a&gt;, ... ]</i>,
-        "<a href="#customdomain" title="CustomDomain">CustomDomain</a>" : <i>[ &lt;a href=&#34;customdomain.md&#34;&gt;CustomDomain&lt;/a&gt;, ... ]</i>,
-        "<a href="#identity" title="Identity">Identity</a>" : <i>[ &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkrules" title="NetworkRules">NetworkRules</a>" : <i>[ &lt;a href=&#34;networkrules.md&#34;&gt;NetworkRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#queueproperties" title="QueueProperties">QueueProperties</a>" : <i>[ &lt;a href=&#34;queueproperties.md&#34;&gt;QueueProperties&lt;/a&gt;, ... ]</i>,
-        "<a href="#staticwebsite" title="StaticWebsite">StaticWebsite</a>" : <i>[ &lt;a href=&#34;staticwebsite.md&#34;&gt;StaticWebsite&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#deleteretentionpolicy" title="DeleteRetentionPolicy">DeleteRetentionPolicy</a>" : <i>[ &lt;a href=&#34;deleteretentionpolicy.md&#34;&gt;DeleteRetentionPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#hourmetrics" title="HourMetrics">HourMetrics</a>" : <i>[ &lt;a href=&#34;hourmetrics.md&#34;&gt;HourMetrics&lt;/a&gt;, ... ]</i>,
-        "<a href="#logging" title="Logging">Logging</a>" : <i>[ &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;, ... ]</i>,
-        "<a href="#minutemetrics" title="MinuteMetrics">MinuteMetrics</a>" : <i>[ &lt;a href=&#34;minutemetrics.md&#34;&gt;MinuteMetrics&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#blobproperties" title="BlobProperties">BlobProperties</a>" : <i>[ <a href="blobproperties.md">BlobProperties</a>, ... ]</i>,
+        "<a href="#customdomain" title="CustomDomain">CustomDomain</a>" : <i>[ <a href="customdomain.md">CustomDomain</a>, ... ]</i>,
+        "<a href="#identity" title="Identity">Identity</a>" : <i>[ <a href="identity.md">Identity</a>, ... ]</i>,
+        "<a href="#networkrules" title="NetworkRules">NetworkRules</a>" : <i>[ <a href="networkrules.md">NetworkRules</a>, ... ]</i>,
+        "<a href="#queueproperties" title="QueueProperties">QueueProperties</a>" : <i>[ <a href="queueproperties.md">QueueProperties</a>, ... ]</i>,
+        "<a href="#staticwebsite" title="StaticWebsite">StaticWebsite</a>" : <i>[ <a href="staticwebsite.md">StaticWebsite</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ <a href="corsrule.md">CorsRule</a>, ... ]</i>,
+        "<a href="#deleteretentionpolicy" title="DeleteRetentionPolicy">DeleteRetentionPolicy</a>" : <i>[ <a href="deleteretentionpolicy.md">DeleteRetentionPolicy</a>, ... ]</i>,
+        "<a href="#hourmetrics" title="HourMetrics">HourMetrics</a>" : <i>[ <a href="hourmetrics.md">HourMetrics</a>, ... ]</i>,
+        "<a href="#logging" title="Logging">Logging</a>" : <i>[ <a href="logging.md">Logging</a>, ... ]</i>,
+        "<a href="#minutemetrics" title="MinuteMetrics">MinuteMetrics</a>" : <i>[ <a href="minutemetrics.md">MinuteMetrics</a>, ... ]</i>
     }
 }
 </pre>
@@ -55,30 +55,30 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#blobproperties" title="BlobProperties">BlobProperties</a>: <i>
-      - &lt;a href=&#34;blobproperties.md&#34;&gt;BlobProperties&lt;/a&gt;</i>
+      - <a href="blobproperties.md">BlobProperties</a></i>
     <a href="#customdomain" title="CustomDomain">CustomDomain</a>: <i>
-      - &lt;a href=&#34;customdomain.md&#34;&gt;CustomDomain&lt;/a&gt;</i>
+      - <a href="customdomain.md">CustomDomain</a></i>
     <a href="#identity" title="Identity">Identity</a>: <i>
-      - &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;</i>
+      - <a href="identity.md">Identity</a></i>
     <a href="#networkrules" title="NetworkRules">NetworkRules</a>: <i>
-      - &lt;a href=&#34;networkrules.md&#34;&gt;NetworkRules&lt;/a&gt;</i>
+      - <a href="networkrules.md">NetworkRules</a></i>
     <a href="#queueproperties" title="QueueProperties">QueueProperties</a>: <i>
-      - &lt;a href=&#34;queueproperties.md&#34;&gt;QueueProperties&lt;/a&gt;</i>
+      - <a href="queueproperties.md">QueueProperties</a></i>
     <a href="#staticwebsite" title="StaticWebsite">StaticWebsite</a>: <i>
-      - &lt;a href=&#34;staticwebsite.md&#34;&gt;StaticWebsite&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="staticwebsite.md">StaticWebsite</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#corsrule" title="CorsRule">CorsRule</a>: <i>
-      - &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;</i>
+      - <a href="corsrule.md">CorsRule</a></i>
     <a href="#deleteretentionpolicy" title="DeleteRetentionPolicy">DeleteRetentionPolicy</a>: <i>
-      - &lt;a href=&#34;deleteretentionpolicy.md&#34;&gt;DeleteRetentionPolicy&lt;/a&gt;</i>
+      - <a href="deleteretentionpolicy.md">DeleteRetentionPolicy</a></i>
     <a href="#hourmetrics" title="HourMetrics">HourMetrics</a>: <i>
-      - &lt;a href=&#34;hourmetrics.md&#34;&gt;HourMetrics&lt;/a&gt;</i>
+      - <a href="hourmetrics.md">HourMetrics</a></i>
     <a href="#logging" title="Logging">Logging</a>: <i>
-      - &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;</i>
+      - <a href="logging.md">Logging</a></i>
     <a href="#minutemetrics" title="MinuteMetrics">MinuteMetrics</a>: <i>
-      - &lt;a href=&#34;minutemetrics.md&#34;&gt;MinuteMetrics&lt;/a&gt;</i>
+      - <a href="minutemetrics.md">MinuteMetrics</a></i>
 </pre>
 
 ## Properties
@@ -167,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,7 +175,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;blobproperties.md&#34;&gt;BlobProperties&lt;/a&gt;
+_Type_: List of <a href="blobproperties.md">BlobProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +183,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customdomain.md&#34;&gt;CustomDomain&lt;/a&gt;
+_Type_: List of <a href="customdomain.md">CustomDomain</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;
+_Type_: List of <a href="identity.md">Identity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +199,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkrules.md&#34;&gt;NetworkRules&lt;/a&gt;
+_Type_: List of <a href="networkrules.md">NetworkRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -207,7 +207,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;queueproperties.md&#34;&gt;QueueProperties&lt;/a&gt;
+_Type_: List of <a href="queueproperties.md">QueueProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -215,7 +215,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;staticwebsite.md&#34;&gt;StaticWebsite&lt;/a&gt;
+_Type_: List of <a href="staticwebsite.md">StaticWebsite</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -223,7 +223,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -231,7 +231,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;
+_Type_: List of <a href="corsrule.md">CorsRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -239,7 +239,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deleteretentionpolicy.md&#34;&gt;DeleteRetentionPolicy&lt;/a&gt;
+_Type_: List of <a href="deleteretentionpolicy.md">DeleteRetentionPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -247,7 +247,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hourmetrics.md&#34;&gt;HourMetrics&lt;/a&gt;
+_Type_: List of <a href="hourmetrics.md">HourMetrics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -255,7 +255,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;
+_Type_: List of <a href="logging.md">Logging</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -263,7 +263,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;minutemetrics.md&#34;&gt;MinuteMetrics&lt;/a&gt;
+_Type_: List of <a href="minutemetrics.md">MinuteMetrics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -285,129 +285,129 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PrimaryAccessKey
 
-Returns the &lt;code&gt;PrimaryAccessKey&lt;/code&gt; value.
+Returns the <code>PrimaryAccessKey</code> value.
 
 #### PrimaryBlobConnectionString
 
-Returns the &lt;code&gt;PrimaryBlobConnectionString&lt;/code&gt; value.
+Returns the <code>PrimaryBlobConnectionString</code> value.
 
 #### PrimaryBlobEndpoint
 
-Returns the &lt;code&gt;PrimaryBlobEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryBlobEndpoint</code> value.
 
 #### PrimaryBlobHost
 
-Returns the &lt;code&gt;PrimaryBlobHost&lt;/code&gt; value.
+Returns the <code>PrimaryBlobHost</code> value.
 
 #### PrimaryConnectionString
 
-Returns the &lt;code&gt;PrimaryConnectionString&lt;/code&gt; value.
+Returns the <code>PrimaryConnectionString</code> value.
 
 #### PrimaryDfsEndpoint
 
-Returns the &lt;code&gt;PrimaryDfsEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryDfsEndpoint</code> value.
 
 #### PrimaryDfsHost
 
-Returns the &lt;code&gt;PrimaryDfsHost&lt;/code&gt; value.
+Returns the <code>PrimaryDfsHost</code> value.
 
 #### PrimaryFileEndpoint
 
-Returns the &lt;code&gt;PrimaryFileEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryFileEndpoint</code> value.
 
 #### PrimaryFileHost
 
-Returns the &lt;code&gt;PrimaryFileHost&lt;/code&gt; value.
+Returns the <code>PrimaryFileHost</code> value.
 
 #### PrimaryLocation
 
-Returns the &lt;code&gt;PrimaryLocation&lt;/code&gt; value.
+Returns the <code>PrimaryLocation</code> value.
 
 #### PrimaryQueueEndpoint
 
-Returns the &lt;code&gt;PrimaryQueueEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryQueueEndpoint</code> value.
 
 #### PrimaryQueueHost
 
-Returns the &lt;code&gt;PrimaryQueueHost&lt;/code&gt; value.
+Returns the <code>PrimaryQueueHost</code> value.
 
 #### PrimaryTableEndpoint
 
-Returns the &lt;code&gt;PrimaryTableEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryTableEndpoint</code> value.
 
 #### PrimaryTableHost
 
-Returns the &lt;code&gt;PrimaryTableHost&lt;/code&gt; value.
+Returns the <code>PrimaryTableHost</code> value.
 
 #### PrimaryWebEndpoint
 
-Returns the &lt;code&gt;PrimaryWebEndpoint&lt;/code&gt; value.
+Returns the <code>PrimaryWebEndpoint</code> value.
 
 #### PrimaryWebHost
 
-Returns the &lt;code&gt;PrimaryWebHost&lt;/code&gt; value.
+Returns the <code>PrimaryWebHost</code> value.
 
 #### SecondaryAccessKey
 
-Returns the &lt;code&gt;SecondaryAccessKey&lt;/code&gt; value.
+Returns the <code>SecondaryAccessKey</code> value.
 
 #### SecondaryBlobConnectionString
 
-Returns the &lt;code&gt;SecondaryBlobConnectionString&lt;/code&gt; value.
+Returns the <code>SecondaryBlobConnectionString</code> value.
 
 #### SecondaryBlobEndpoint
 
-Returns the &lt;code&gt;SecondaryBlobEndpoint&lt;/code&gt; value.
+Returns the <code>SecondaryBlobEndpoint</code> value.
 
 #### SecondaryBlobHost
 
-Returns the &lt;code&gt;SecondaryBlobHost&lt;/code&gt; value.
+Returns the <code>SecondaryBlobHost</code> value.
 
 #### SecondaryConnectionString
 
-Returns the &lt;code&gt;SecondaryConnectionString&lt;/code&gt; value.
+Returns the <code>SecondaryConnectionString</code> value.
 
 #### SecondaryDfsEndpoint
 
-Returns the &lt;code&gt;SecondaryDfsEndpoint&lt;/code&gt; value.
+Returns the <code>SecondaryDfsEndpoint</code> value.
 
 #### SecondaryDfsHost
 
-Returns the &lt;code&gt;SecondaryDfsHost&lt;/code&gt; value.
+Returns the <code>SecondaryDfsHost</code> value.
 
 #### SecondaryFileEndpoint
 
-Returns the &lt;code&gt;SecondaryFileEndpoint&lt;/code&gt; value.
+Returns the <code>SecondaryFileEndpoint</code> value.
 
 #### SecondaryFileHost
 
-Returns the &lt;code&gt;SecondaryFileHost&lt;/code&gt; value.
+Returns the <code>SecondaryFileHost</code> value.
 
 #### SecondaryLocation
 
-Returns the &lt;code&gt;SecondaryLocation&lt;/code&gt; value.
+Returns the <code>SecondaryLocation</code> value.
 
 #### SecondaryQueueEndpoint
 
-Returns the &lt;code&gt;SecondaryQueueEndpoint&lt;/code&gt; value.
+Returns the <code>SecondaryQueueEndpoint</code> value.
 
 #### SecondaryQueueHost
 
-Returns the &lt;code&gt;SecondaryQueueHost&lt;/code&gt; value.
+Returns the <code>SecondaryQueueHost</code> value.
 
 #### SecondaryTableEndpoint
 
-Returns the &lt;code&gt;SecondaryTableEndpoint&lt;/code&gt; value.
+Returns the <code>SecondaryTableEndpoint</code> value.
 
 #### SecondaryTableHost
 
-Returns the &lt;code&gt;SecondaryTableHost&lt;/code&gt; value.
+Returns the <code>SecondaryTableHost</code> value.
 
 #### SecondaryWebEndpoint
 
-Returns the &lt;code&gt;SecondaryWebEndpoint&lt;/code&gt; value.
+Returns the <code>SecondaryWebEndpoint</code> value.
 
 #### SecondaryWebHost
 
-Returns the &lt;code&gt;SecondaryWebHost&lt;/code&gt; value.
+Returns the <code>SecondaryWebHost</code> value.
 

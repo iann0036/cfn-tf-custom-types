@@ -63,5 +63,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### TtlInDays
 
-Returns the &lt;code&gt;TtlInDays&lt;/code&gt; value.
+Returns the <code>TtlInDays</code> value.
 

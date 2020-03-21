@@ -55,7 +55,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#virtpxeboot" title="VirtPxeBoot">VirtPxeBoot</a>" : <i>Double</i>,
         "<a href="#virtram" title="VirtRam">VirtRam</a>" : <i>String</i>,
         "<a href="#virttype" title="VirtType">VirtType</a>" : <i>String</i>,
-        "<a href="#interface" title="Interface">Interface</a>" : <i>[ &lt;a href=&#34;interface.md&#34;&gt;Interface&lt;/a&gt;, ... ]</i>
+        "<a href="#interface" title="Interface">Interface</a>" : <i>[ <a href="interface.md">Interface</a>, ... ]</i>
     }
 }
 </pre>
@@ -113,7 +113,7 @@ Properties:
     <a href="#virtram" title="VirtRam">VirtRam</a>: <i>String</i>
     <a href="#virttype" title="VirtType">VirtType</a>: <i>String</i>
     <a href="#interface" title="Interface">Interface</a>: <i>
-      - &lt;a href=&#34;interface.md&#34;&gt;Interface&lt;/a&gt;</i>
+      - <a href="interface.md">Interface</a></i>
 </pre>
 
 ## Properties
@@ -466,7 +466,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;interface.md&#34;&gt;Interface&lt;/a&gt;
+_Type_: List of <a href="interface.md">Interface</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

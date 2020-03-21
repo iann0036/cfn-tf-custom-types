@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccountId
 
-Returns the &lt;code&gt;AccountId&lt;/code&gt; value.
+Returns the <code>AccountId</code> value.
 

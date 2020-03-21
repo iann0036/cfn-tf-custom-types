@@ -74,9 +74,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VipIpAddress
 
-Returns the &lt;code&gt;VipIpAddress&lt;/code&gt; value.
+Returns the <code>VipIpAddress</code> value.
 
 #### VipSubnetId
 
-Returns the &lt;code&gt;VipSubnetId&lt;/code&gt; value.
+Returns the <code>VipSubnetId</code> value.
 

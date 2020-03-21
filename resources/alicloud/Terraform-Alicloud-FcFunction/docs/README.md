@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#codechecksum" title="CodeChecksum">CodeChecksum</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#environmentvariables" title="EnvironmentVariables">EnvironmentVariables</a>" : <i>[ &lt;a href=&#34;environmentvariables.md&#34;&gt;EnvironmentVariables&lt;/a&gt;, ... ]</i>,
+        "<a href="#environmentvariables" title="EnvironmentVariables">EnvironmentVariables</a>" : <i>[ <a href="environmentvariables.md">EnvironmentVariables</a>, ... ]</i>,
         "<a href="#filename" title="Filename">Filename</a>" : <i>String</i>,
         "<a href="#handler" title="Handler">Handler</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
@@ -38,7 +38,7 @@ Properties:
     <a href="#codechecksum" title="CodeChecksum">CodeChecksum</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#environmentvariables" title="EnvironmentVariables">EnvironmentVariables</a>: <i>
-      - &lt;a href=&#34;environmentvariables.md&#34;&gt;EnvironmentVariables&lt;/a&gt;</i>
+      - <a href="environmentvariables.md">EnvironmentVariables</a></i>
     <a href="#filename" title="Filename">Filename</a>: <i>String</i>
     <a href="#handler" title="Handler">Handler</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
@@ -74,7 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environmentvariables.md&#34;&gt;EnvironmentVariables&lt;/a&gt;
+_Type_: List of <a href="environmentvariables.md">EnvironmentVariables</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,9 +184,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### FunctionId
 
-Returns the &lt;code&gt;FunctionId&lt;/code&gt; value.
+Returns the <code>FunctionId</code> value.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 

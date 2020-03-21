@@ -73,13 +73,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### TableCount
 
-Returns the &lt;code&gt;TableCount&lt;/code&gt; value.
+Returns the <code>TableCount</code> value.
 
 #### TotalSize
 
-Returns the &lt;code&gt;TotalSize&lt;/code&gt; value.
+Returns the <code>TotalSize</code> value.
 

@@ -103,17 +103,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Apis
 
-Returns the &lt;code&gt;Apis&lt;/code&gt; value.
+Returns the <code>Apis</code> value.
 
 #### ConfigId
 
-Returns the &lt;code&gt;ConfigId&lt;/code&gt; value.
+Returns the <code>ConfigId</code> value.
 
 #### DnsAddress
 
-Returns the &lt;code&gt;DnsAddress&lt;/code&gt; value.
+Returns the <code>DnsAddress</code> value.
 
 #### Endpoints
 
-Returns the &lt;code&gt;Endpoints&lt;/code&gt; value.
+Returns the <code>Endpoints</code> value.
 

@@ -273,5 +273,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### JobEvents
 
-Returns the &lt;code&gt;JobEvents&lt;/code&gt; value.
+Returns the <code>JobEvents</code> value.
 

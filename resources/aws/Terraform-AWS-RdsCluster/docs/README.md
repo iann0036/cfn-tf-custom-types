@@ -45,11 +45,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#snapshotidentifier" title="SnapshotIdentifier">SnapshotIdentifier</a>" : <i>String</i>,
         "<a href="#sourceregion" title="SourceRegion">SourceRegion</a>" : <i>String</i>,
         "<a href="#storageencrypted" title="StorageEncrypted">StorageEncrypted</a>" : <i>Boolean</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#s3import" title="S3Import">S3Import</a>" : <i>[ &lt;a href=&#34;s3import.md&#34;&gt;S3Import&lt;/a&gt;, ... ]</i>,
-        "<a href="#scalingconfiguration" title="ScalingConfiguration">ScalingConfiguration</a>" : <i>[ &lt;a href=&#34;scalingconfiguration.md&#34;&gt;ScalingConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#s3import" title="S3Import">S3Import</a>" : <i>[ <a href="s3import.md">S3Import</a>, ... ]</i>,
+        "<a href="#scalingconfiguration" title="ScalingConfiguration">ScalingConfiguration</a>" : <i>[ <a href="scalingconfiguration.md">ScalingConfiguration</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -97,14 +97,14 @@ Properties:
     <a href="#sourceregion" title="SourceRegion">SourceRegion</a>: <i>String</i>
     <a href="#storageencrypted" title="StorageEncrypted">StorageEncrypted</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>: <i>
       - String</i>
     <a href="#s3import" title="S3Import">S3Import</a>: <i>
-      - &lt;a href=&#34;s3import.md&#34;&gt;S3Import&lt;/a&gt;</i>
+      - <a href="s3import.md">S3Import</a></i>
     <a href="#scalingconfiguration" title="ScalingConfiguration">ScalingConfiguration</a>: <i>
-      - &lt;a href=&#34;scalingconfiguration.md&#34;&gt;ScalingConfiguration&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="scalingconfiguration.md">ScalingConfiguration</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -377,7 +377,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -393,7 +393,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;s3import.md&#34;&gt;S3Import&lt;/a&gt;
+_Type_: List of <a href="s3import.md">S3Import</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -401,7 +401,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalingconfiguration.md&#34;&gt;ScalingConfiguration&lt;/a&gt;
+_Type_: List of <a href="scalingconfiguration.md">ScalingConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -409,7 +409,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -431,21 +431,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### ClusterResourceId
 
-Returns the &lt;code&gt;ClusterResourceId&lt;/code&gt; value.
+Returns the <code>ClusterResourceId</code> value.
 
 #### Endpoint
 
-Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
+Returns the <code>Endpoint</code> value.
 
 #### HostedZoneId
 
-Returns the &lt;code&gt;HostedZoneId&lt;/code&gt; value.
+Returns the <code>HostedZoneId</code> value.
 
 #### ReaderEndpoint
 
-Returns the &lt;code&gt;ReaderEndpoint&lt;/code&gt; value.
+Returns the <code>ReaderEndpoint</code> value.
 

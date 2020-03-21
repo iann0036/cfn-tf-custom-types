@@ -73,21 +73,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailableDeadletters
 
-Returns the &lt;code&gt;AvailableDeadletters&lt;/code&gt; value.
+Returns the <code>AvailableDeadletters</code> value.
 
 #### AvailableMessages
 
-Returns the &lt;code&gt;AvailableMessages&lt;/code&gt; value.
+Returns the <code>AvailableMessages</code> value.
 
 #### ConsumedMessages
 
-Returns the &lt;code&gt;ConsumedMessages&lt;/code&gt; value.
+Returns the <code>ConsumedMessages</code> value.
 
 #### ProducedDeadletters
 
-Returns the &lt;code&gt;ProducedDeadletters&lt;/code&gt; value.
+Returns the <code>ProducedDeadletters</code> value.
 
 #### ProducedMessages
 
-Returns the &lt;code&gt;ProducedMessages&lt;/code&gt; value.
+Returns the <code>ProducedMessages</code> value.
 

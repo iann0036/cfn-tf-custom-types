@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IpAddress
 
-Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
+Returns the <code>IpAddress</code> value.
 

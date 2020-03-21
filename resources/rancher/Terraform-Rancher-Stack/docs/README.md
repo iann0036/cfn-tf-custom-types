@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#catalogid" title="CatalogId">CatalogId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#dockercompose" title="DockerCompose">DockerCompose</a>" : <i>String</i>,
-        "<a href="#environment" title="Environment">Environment</a>" : <i>[ &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;, ... ]</i>,
+        "<a href="#environment" title="Environment">Environment</a>" : <i>[ <a href="environment.md">Environment</a>, ... ]</i>,
         "<a href="#environmentid" title="EnvironmentId">EnvironmentId</a>" : <i>String</i>,
         "<a href="#finishupgrade" title="FinishUpgrade">FinishUpgrade</a>" : <i>Boolean</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
@@ -36,7 +36,7 @@ Properties:
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#dockercompose" title="DockerCompose">DockerCompose</a>: <i>String</i>
     <a href="#environment" title="Environment">Environment</a>: <i>
-      - &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;</i>
+      - <a href="environment.md">Environment</a></i>
     <a href="#environmentid" title="EnvironmentId">EnvironmentId</a>: <i>String</i>
     <a href="#finishupgrade" title="FinishUpgrade">FinishUpgrade</a>: <i>Boolean</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
@@ -76,7 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;
+_Type_: List of <a href="environment.md">Environment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,9 +154,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RenderedDockerCompose
 
-Returns the &lt;code&gt;RenderedDockerCompose&lt;/code&gt; value.
+Returns the <code>RenderedDockerCompose</code> value.
 
 #### RenderedRancherCompose
 
-Returns the &lt;code&gt;RenderedRancherCompose&lt;/code&gt; value.
+Returns the <code>RenderedRancherCompose</code> value.
 

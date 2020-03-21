@@ -35,18 +35,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#sourcedestcheck" title="SourceDestCheck">SourceDestCheck</a>" : <i>Boolean</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#tenancy" title="Tenancy">Tenancy</a>" : <i>String</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#userdatabase64" title="UserDataBase64">UserDataBase64</a>" : <i>String</i>,
-        "<a href="#volumetags" title="VolumeTags">VolumeTags</a>" : <i>[ &lt;a href=&#34;volumetags.md&#34;&gt;VolumeTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#volumetags" title="VolumeTags">VolumeTags</a>" : <i>[ <a href="volumetags.md">VolumeTags</a>, ... ]</i>,
         "<a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#creditspecification" title="CreditSpecification">CreditSpecification</a>" : <i>[ &lt;a href=&#34;creditspecification.md&#34;&gt;CreditSpecification&lt;/a&gt;, ... ]</i>,
-        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
-        "<a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>" : <i>[ &lt;a href=&#34;rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#creditspecification" title="CreditSpecification">CreditSpecification</a>" : <i>[ <a href="creditspecification.md">CreditSpecification</a>, ... ]</i>,
+        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ <a href="ebsblockdevice.md">EbsBlockDevice</a>, ... ]</i>,
+        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
+        "<a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>" : <i>[ <a href="rootblockdevice.md">RootBlockDevice</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -82,25 +82,25 @@ Properties:
     <a href="#sourcedestcheck" title="SourceDestCheck">SourceDestCheck</a>: <i>Boolean</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#tenancy" title="Tenancy">Tenancy</a>: <i>String</i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#userdatabase64" title="UserDataBase64">UserDataBase64</a>: <i>String</i>
     <a href="#volumetags" title="VolumeTags">VolumeTags</a>: <i>
-      - &lt;a href=&#34;volumetags.md&#34;&gt;VolumeTags&lt;/a&gt;</i>
+      - <a href="volumetags.md">VolumeTags</a></i>
     <a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>: <i>
       - String</i>
     <a href="#creditspecification" title="CreditSpecification">CreditSpecification</a>: <i>
-      - &lt;a href=&#34;creditspecification.md&#34;&gt;CreditSpecification&lt;/a&gt;</i>
+      - <a href="creditspecification.md">CreditSpecification</a></i>
     <a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>: <i>
-      - &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;</i>
+      - <a href="ebsblockdevice.md">EbsBlockDevice</a></i>
     <a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>: <i>
-      - &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;</i>
+      - <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a></i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
+      - <a href="networkinterface.md">NetworkInterface</a></i>
     <a href="#rootblockdevice" title="RootBlockDevice">RootBlockDevice</a>: <i>
-      - &lt;a href=&#34;rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="rootblockdevice.md">RootBlockDevice</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -293,7 +293,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -325,7 +325,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volumetags.md&#34;&gt;VolumeTags&lt;/a&gt;
+_Type_: List of <a href="volumetags.md">VolumeTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -341,7 +341,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;creditspecification.md&#34;&gt;CreditSpecification&lt;/a&gt;
+_Type_: List of <a href="creditspecification.md">CreditSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -349,7 +349,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;
+_Type_: List of <a href="ebsblockdevice.md">EbsBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -357,7 +357,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;
+_Type_: List of <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -365,7 +365,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
+_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -373,7 +373,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rootblockdevice.md&#34;&gt;RootBlockDevice&lt;/a&gt;
+_Type_: List of <a href="rootblockdevice.md">RootBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -381,7 +381,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -403,33 +403,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### InstanceState
 
-Returns the &lt;code&gt;InstanceState&lt;/code&gt; value.
+Returns the <code>InstanceState</code> value.
 
 #### NetworkInterfaceId
 
-Returns the &lt;code&gt;NetworkInterfaceId&lt;/code&gt; value.
+Returns the <code>NetworkInterfaceId</code> value.
 
 #### PasswordData
 
-Returns the &lt;code&gt;PasswordData&lt;/code&gt; value.
+Returns the <code>PasswordData</code> value.
 
 #### PrimaryNetworkInterfaceId
 
-Returns the &lt;code&gt;PrimaryNetworkInterfaceId&lt;/code&gt; value.
+Returns the <code>PrimaryNetworkInterfaceId</code> value.
 
 #### PrivateDns
 
-Returns the &lt;code&gt;PrivateDns&lt;/code&gt; value.
+Returns the <code>PrivateDns</code> value.
 
 #### PublicDns
 
-Returns the &lt;code&gt;PublicDns&lt;/code&gt; value.
+Returns the <code>PublicDns</code> value.
 
 #### PublicIp
 
-Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
+Returns the <code>PublicIp</code> value.
 

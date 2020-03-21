@@ -133,9 +133,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BackendIpConfigurationId
 
-Returns the &lt;code&gt;BackendIpConfigurationId&lt;/code&gt; value.
+Returns the <code>BackendIpConfigurationId</code> value.
 
 #### FrontendIpConfigurationId
 
-Returns the &lt;code&gt;FrontendIpConfigurationId&lt;/code&gt; value.
+Returns the <code>FrontendIpConfigurationId</code> value.
 

@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#encryptioncontextequals" title="EncryptionContextEquals">EncryptionContextEquals</a>" : <i>[ &lt;a href=&#34;constraints-encryptioncontextequals.md&#34;&gt;EncryptionContextEquals&lt;/a&gt;, ... ]</i>,
-    "<a href="#encryptioncontextsubset" title="EncryptionContextSubset">EncryptionContextSubset</a>" : <i>[ &lt;a href=&#34;constraints-encryptioncontextsubset.md&#34;&gt;EncryptionContextSubset&lt;/a&gt;, ... ]</i>
+    "<a href="#encryptioncontextequals" title="EncryptionContextEquals">EncryptionContextEquals</a>" : <i>[ <a href="constraints-encryptioncontextequals.md">EncryptionContextEquals</a>, ... ]</i>,
+    "<a href="#encryptioncontextsubset" title="EncryptionContextSubset">EncryptionContextSubset</a>" : <i>[ <a href="constraints-encryptioncontextsubset.md">EncryptionContextSubset</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#encryptioncontextequals" title="EncryptionContextEquals">EncryptionContextEquals</a>: <i>
-      - &lt;a href=&#34;constraints-encryptioncontextequals.md&#34;&gt;EncryptionContextEquals&lt;/a&gt;</i>
+      - <a href="constraints-encryptioncontextequals.md">EncryptionContextEquals</a></i>
 <a href="#encryptioncontextsubset" title="EncryptionContextSubset">EncryptionContextSubset</a>: <i>
-      - &lt;a href=&#34;constraints-encryptioncontextsubset.md&#34;&gt;EncryptionContextSubset&lt;/a&gt;</i>
+      - <a href="constraints-encryptioncontextsubset.md">EncryptionContextSubset</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### EncryptionContextEquals
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;constraints-encryptioncontextequals.md&#34;&gt;EncryptionContextEquals&lt;/a&gt;
+_Type_: List of <a href="constraints-encryptioncontextequals.md">EncryptionContextEquals</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EncryptionContextSubset
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;constraints-encryptioncontextsubset.md&#34;&gt;EncryptionContextSubset&lt;/a&gt;
+_Type_: List of <a href="constraints-encryptioncontextsubset.md">EncryptionContextSubset</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

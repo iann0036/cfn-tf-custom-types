@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#offer" title="Offer">Offer</a>" : <i>String</i>,
         "<a href="#plan" title="Plan">Plan</a>" : <i>String</i>,
         "<a href="#publisher" title="Publisher">Publisher</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -30,7 +30,7 @@ Properties:
     <a href="#offer" title="Offer">Offer</a>: <i>String</i>
     <a href="#plan" title="Plan">Plan</a>: <i>String</i>
     <a href="#publisher" title="Publisher">Publisher</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -71,7 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -93,9 +93,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LicenseTextLink
 
-Returns the &lt;code&gt;LicenseTextLink&lt;/code&gt; value.
+Returns the <code>LicenseTextLink</code> value.
 
 #### PrivacyPolicyLink
 
-Returns the &lt;code&gt;PrivacyPolicyLink&lt;/code&gt; value.
+Returns the <code>PrivacyPolicyLink</code> value.
 

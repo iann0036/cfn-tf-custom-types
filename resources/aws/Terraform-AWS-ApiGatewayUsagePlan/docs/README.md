@@ -16,10 +16,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#productcode" title="ProductCode">ProductCode</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#apistages" title="ApiStages">ApiStages</a>" : <i>[ &lt;a href=&#34;apistages.md&#34;&gt;ApiStages&lt;/a&gt;, ... ]</i>,
-        "<a href="#quotasettings" title="QuotaSettings">QuotaSettings</a>" : <i>[ &lt;a href=&#34;quotasettings.md&#34;&gt;QuotaSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#throttlesettings" title="ThrottleSettings">ThrottleSettings</a>" : <i>[ &lt;a href=&#34;throttlesettings.md&#34;&gt;ThrottleSettings&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#apistages" title="ApiStages">ApiStages</a>" : <i>[ <a href="apistages.md">ApiStages</a>, ... ]</i>,
+        "<a href="#quotasettings" title="QuotaSettings">QuotaSettings</a>" : <i>[ <a href="quotasettings.md">QuotaSettings</a>, ... ]</i>,
+        "<a href="#throttlesettings" title="ThrottleSettings">ThrottleSettings</a>" : <i>[ <a href="throttlesettings.md">ThrottleSettings</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,13 +34,13 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#productcode" title="ProductCode">ProductCode</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#apistages" title="ApiStages">ApiStages</a>: <i>
-      - &lt;a href=&#34;apistages.md&#34;&gt;ApiStages&lt;/a&gt;</i>
+      - <a href="apistages.md">ApiStages</a></i>
     <a href="#quotasettings" title="QuotaSettings">QuotaSettings</a>: <i>
-      - &lt;a href=&#34;quotasettings.md&#34;&gt;QuotaSettings&lt;/a&gt;</i>
+      - <a href="quotasettings.md">QuotaSettings</a></i>
     <a href="#throttlesettings" title="ThrottleSettings">ThrottleSettings</a>: <i>
-      - &lt;a href=&#34;throttlesettings.md&#34;&gt;ThrottleSettings&lt;/a&gt;</i>
+      - <a href="throttlesettings.md">ThrottleSettings</a></i>
 </pre>
 
 ## Properties
@@ -81,7 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -89,7 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;apistages.md&#34;&gt;ApiStages&lt;/a&gt;
+_Type_: List of <a href="apistages.md">ApiStages</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -97,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;quotasettings.md&#34;&gt;QuotaSettings&lt;/a&gt;
+_Type_: List of <a href="quotasettings.md">QuotaSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;throttlesettings.md&#34;&gt;ThrottleSettings&lt;/a&gt;
+_Type_: List of <a href="throttlesettings.md">ThrottleSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,5 +127,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

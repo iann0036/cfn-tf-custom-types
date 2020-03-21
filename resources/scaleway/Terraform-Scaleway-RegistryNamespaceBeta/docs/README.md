@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Endpoint
 
-Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
+Returns the <code>Endpoint</code> value.
 

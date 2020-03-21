@@ -25,8 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#violationclosetimer" title="ViolationCloseTimer">ViolationCloseTimer</a>" : <i>Double</i>,
         "<a href="#where" title="Where">Where</a>" : <i>String</i>,
-        "<a href="#critical" title="Critical">Critical</a>" : <i>[ &lt;a href=&#34;critical.md&#34;&gt;Critical&lt;/a&gt;, ... ]</i>,
-        "<a href="#warning" title="Warning">Warning</a>" : <i>[ &lt;a href=&#34;warning.md&#34;&gt;Warning&lt;/a&gt;, ... ]</i>
+        "<a href="#critical" title="Critical">Critical</a>" : <i>[ <a href="critical.md">Critical</a>, ... ]</i>,
+        "<a href="#warning" title="Warning">Warning</a>" : <i>[ <a href="warning.md">Warning</a>, ... ]</i>
     }
 }
 </pre>
@@ -50,9 +50,9 @@ Properties:
     <a href="#violationclosetimer" title="ViolationCloseTimer">ViolationCloseTimer</a>: <i>Double</i>
     <a href="#where" title="Where">Where</a>: <i>String</i>
     <a href="#critical" title="Critical">Critical</a>: <i>
-      - &lt;a href=&#34;critical.md&#34;&gt;Critical&lt;/a&gt;</i>
+      - <a href="critical.md">Critical</a></i>
     <a href="#warning" title="Warning">Warning</a>: <i>
-      - &lt;a href=&#34;warning.md&#34;&gt;Warning&lt;/a&gt;</i>
+      - <a href="warning.md">Warning</a></i>
 </pre>
 
 ## Properties
@@ -165,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;critical.md&#34;&gt;Critical&lt;/a&gt;
+_Type_: List of <a href="critical.md">Critical</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -173,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;warning.md&#34;&gt;Warning&lt;/a&gt;
+_Type_: List of <a href="warning.md">Warning</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,9 +195,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

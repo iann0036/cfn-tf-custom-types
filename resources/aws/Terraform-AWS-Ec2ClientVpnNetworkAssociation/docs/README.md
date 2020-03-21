@@ -73,13 +73,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SecurityGroups
 
-Returns the &lt;code&gt;SecurityGroups&lt;/code&gt; value.
+Returns the <code>SecurityGroups</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### VpcId
 
-Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
+Returns the <code>VpcId</code> value.
 

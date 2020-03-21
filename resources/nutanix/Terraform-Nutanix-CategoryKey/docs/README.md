@@ -73,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ApiVersion
 
-Returns the &lt;code&gt;ApiVersion&lt;/code&gt; value.
+Returns the <code>ApiVersion</code> value.
 
 #### SystemDefined
 
-Returns the &lt;code&gt;SystemDefined&lt;/code&gt; value.
+Returns the <code>SystemDefined</code> value.
 

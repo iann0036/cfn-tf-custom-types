@@ -224,49 +224,49 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConnectAddress
 
-Returns the &lt;code&gt;ConnectAddress&lt;/code&gt; value.
+Returns the <code>ConnectAddress</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### OrderId
 
-Returns the &lt;code&gt;OrderId&lt;/code&gt; value.
+Returns the <code>OrderId</code> value.
 
 #### Port
 
-Returns the &lt;code&gt;Port&lt;/code&gt; value.
+Returns the <code>Port</code> value.
 
 #### ResourceSpecCode
 
-Returns the &lt;code&gt;ResourceSpecCode&lt;/code&gt; value.
+Returns the <code>ResourceSpecCode</code> value.
 
 #### SecurityGroupName
 
-Returns the &lt;code&gt;SecurityGroupName&lt;/code&gt; value.
+Returns the <code>SecurityGroupName</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### SubnetName
 
-Returns the &lt;code&gt;SubnetName&lt;/code&gt; value.
+Returns the <code>SubnetName</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 
 #### UsedStorageSpace
 
-Returns the &lt;code&gt;UsedStorageSpace&lt;/code&gt; value.
+Returns the <code>UsedStorageSpace</code> value.
 
 #### UserId
 
-Returns the &lt;code&gt;UserId&lt;/code&gt; value.
+Returns the <code>UserId</code> value.
 
 #### VpcName
 
-Returns the &lt;code&gt;VpcName&lt;/code&gt; value.
+Returns the <code>VpcName</code> value.
 

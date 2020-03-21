@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#muststaple" title="MustStaple">MustStaple</a>" : <i>Boolean</i>,
         "<a href="#recursivenameservers" title="RecursiveNameservers">RecursiveNameservers</a>" : <i>[ String, ... ]</i>,
         "<a href="#subjectalternativenames" title="SubjectAlternativeNames">SubjectAlternativeNames</a>" : <i>[ String, ... ]</i>,
-        "<a href="#dnschallenge" title="DnsChallenge">DnsChallenge</a>" : <i>[ &lt;a href=&#34;dnschallenge.md&#34;&gt;DnsChallenge&lt;/a&gt;, ... ]</i>
+        "<a href="#dnschallenge" title="DnsChallenge">DnsChallenge</a>" : <i>[ <a href="dnschallenge.md">DnsChallenge</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,7 +45,7 @@ Properties:
     <a href="#subjectalternativenames" title="SubjectAlternativeNames">SubjectAlternativeNames</a>: <i>
       - String</i>
     <a href="#dnschallenge" title="DnsChallenge">DnsChallenge</a>: <i>
-      - &lt;a href=&#34;dnschallenge.md&#34;&gt;DnsChallenge&lt;/a&gt;</i>
+      - <a href="dnschallenge.md">DnsChallenge</a></i>
 </pre>
 
 ## Properties
@@ -134,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dnschallenge.md&#34;&gt;DnsChallenge&lt;/a&gt;
+_Type_: List of <a href="dnschallenge.md">DnsChallenge</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,25 +156,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CertificateDomain
 
-Returns the &lt;code&gt;CertificateDomain&lt;/code&gt; value.
+Returns the <code>CertificateDomain</code> value.
 
 #### CertificateP12
 
-Returns the &lt;code&gt;CertificateP12&lt;/code&gt; value.
+Returns the <code>CertificateP12</code> value.
 
 #### CertificatePem
 
-Returns the &lt;code&gt;CertificatePem&lt;/code&gt; value.
+Returns the <code>CertificatePem</code> value.
 
 #### CertificateUrl
 
-Returns the &lt;code&gt;CertificateUrl&lt;/code&gt; value.
+Returns the <code>CertificateUrl</code> value.
 
 #### IssuerPem
 
-Returns the &lt;code&gt;IssuerPem&lt;/code&gt; value.
+Returns the <code>IssuerPem</code> value.
 
 #### PrivateKeyPem
 
-Returns the &lt;code&gt;PrivateKeyPem&lt;/code&gt; value.
+Returns the <code>PrivateKeyPem</code> value.
 

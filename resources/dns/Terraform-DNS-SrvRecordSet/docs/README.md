@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#srv" title="Srv">Srv</a>" : <i>[ &lt;a href=&#34;srv.md&#34;&gt;Srv&lt;/a&gt;, ... ]</i>
+        "<a href="#srv" title="Srv">Srv</a>" : <i>[ <a href="srv.md">Srv</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +31,7 @@ Properties:
     <a href="#ttl" title="Ttl">Ttl</a>: <i>Double</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#srv" title="Srv">Srv</a>: <i>
-      - &lt;a href=&#34;srv.md&#34;&gt;Srv&lt;/a&gt;</i>
+      - <a href="srv.md">Srv</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;srv.md&#34;&gt;Srv&lt;/a&gt;
+_Type_: List of <a href="srv.md">Srv</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -24,17 +24,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#imageid" title="ImageId">ImageId</a>" : <i>String</i>,
         "<a href="#imagename" title="ImageName">ImageName</a>" : <i>String</i>,
         "<a href="#keypair" title="KeyPair">KeyPair</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#stopbeforedestroy" title="StopBeforeDestroy">StopBeforeDestroy</a>" : <i>Boolean</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
-        "<a href="#blockdevice" title="BlockDevice">BlockDevice</a>" : <i>[ &lt;a href=&#34;blockdevice.md&#34;&gt;BlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#network" title="Network">Network</a>" : <i>[ &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;, ... ]</i>,
-        "<a href="#schedulerhints" title="SchedulerHints">SchedulerHints</a>" : <i>[ &lt;a href=&#34;schedulerhints.md&#34;&gt;SchedulerHints&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>
+        "<a href="#blockdevice" title="BlockDevice">BlockDevice</a>" : <i>[ <a href="blockdevice.md">BlockDevice</a>, ... ]</i>,
+        "<a href="#network" title="Network">Network</a>" : <i>[ <a href="network.md">Network</a>, ... ]</i>,
+        "<a href="#schedulerhints" title="SchedulerHints">SchedulerHints</a>" : <i>[ <a href="schedulerhints.md">SchedulerHints</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="volume.md">Volume</a>, ... ]</i>
     }
 }
 </pre>
@@ -57,7 +57,7 @@ Properties:
     <a href="#imagename" title="ImageName">ImageName</a>: <i>String</i>
     <a href="#keypair" title="KeyPair">KeyPair</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>: <i>
@@ -65,14 +65,14 @@ Properties:
     <a href="#stopbeforedestroy" title="StopBeforeDestroy">StopBeforeDestroy</a>: <i>Boolean</i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#blockdevice" title="BlockDevice">BlockDevice</a>: <i>
-      - &lt;a href=&#34;blockdevice.md&#34;&gt;BlockDevice&lt;/a&gt;</i>
+      - <a href="blockdevice.md">BlockDevice</a></i>
     <a href="#network" title="Network">Network</a>: <i>
-      - &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;</i>
+      - <a href="network.md">Network</a></i>
     <a href="#schedulerhints" title="SchedulerHints">SchedulerHints</a>: <i>
-      - &lt;a href=&#34;schedulerhints.md&#34;&gt;SchedulerHints&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="schedulerhints.md">SchedulerHints</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#volume" title="Volume">Volume</a>: <i>
-      - &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;</i>
+      - <a href="volume.md">Volume</a></i>
 </pre>
 
 ## Properties
@@ -177,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +225,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;blockdevice.md&#34;&gt;BlockDevice&lt;/a&gt;
+_Type_: List of <a href="blockdevice.md">BlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +233,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;
+_Type_: List of <a href="network.md">Network</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,7 +241,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;schedulerhints.md&#34;&gt;SchedulerHints&lt;/a&gt;
+_Type_: List of <a href="schedulerhints.md">SchedulerHints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -249,7 +249,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -257,7 +257,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;
+_Type_: List of <a href="volume.md">Volume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -279,9 +279,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AllMetadata
 
-Returns the &lt;code&gt;AllMetadata&lt;/code&gt; value.
+Returns the <code>AllMetadata</code> value.
 
 #### VolumeAttached
 
-Returns the &lt;code&gt;VolumeAttached&lt;/code&gt; value.
+Returns the <code>VolumeAttached</code> value.
 

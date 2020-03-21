@@ -16,18 +16,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#matchstrategy" title="MatchStrategy">MatchStrategy</a>" : <i>String</i>,
-        "<a href="#bodycondition" title="BodyCondition">BodyCondition</a>" : <i>[ &lt;a href=&#34;bodycondition.md&#34;&gt;BodyCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#cookiecondition" title="CookieCondition">CookieCondition</a>" : <i>[ &lt;a href=&#34;cookiecondition.md&#34;&gt;CookieCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#headercondition" title="HeaderCondition">HeaderCondition</a>" : <i>[ &lt;a href=&#34;headercondition.md&#34;&gt;HeaderCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#headerrewriteaction" title="HeaderRewriteAction">HeaderRewriteAction</a>" : <i>[ &lt;a href=&#34;headerrewriteaction.md&#34;&gt;HeaderRewriteAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#ipcondition" title="IpCondition">IpCondition</a>" : <i>[ &lt;a href=&#34;ipcondition.md&#34;&gt;IpCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#methodcondition" title="MethodCondition">MethodCondition</a>" : <i>[ &lt;a href=&#34;methodcondition.md&#34;&gt;MethodCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>,
-        "<a href="#tcpcondition" title="TcpCondition">TcpCondition</a>" : <i>[ &lt;a href=&#34;tcpcondition.md&#34;&gt;TcpCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#uriargumentscondition" title="UriArgumentsCondition">UriArgumentsCondition</a>" : <i>[ &lt;a href=&#34;uriargumentscondition.md&#34;&gt;UriArgumentsCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#uricondition" title="UriCondition">UriCondition</a>" : <i>[ &lt;a href=&#34;uricondition.md&#34;&gt;UriCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#urirewriteaction" title="UriRewriteAction">UriRewriteAction</a>" : <i>[ &lt;a href=&#34;urirewriteaction.md&#34;&gt;UriRewriteAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#versioncondition" title="VersionCondition">VersionCondition</a>" : <i>[ &lt;a href=&#34;versioncondition.md&#34;&gt;VersionCondition&lt;/a&gt;, ... ]</i>
+        "<a href="#bodycondition" title="BodyCondition">BodyCondition</a>" : <i>[ <a href="bodycondition.md">BodyCondition</a>, ... ]</i>,
+        "<a href="#cookiecondition" title="CookieCondition">CookieCondition</a>" : <i>[ <a href="cookiecondition.md">CookieCondition</a>, ... ]</i>,
+        "<a href="#headercondition" title="HeaderCondition">HeaderCondition</a>" : <i>[ <a href="headercondition.md">HeaderCondition</a>, ... ]</i>,
+        "<a href="#headerrewriteaction" title="HeaderRewriteAction">HeaderRewriteAction</a>" : <i>[ <a href="headerrewriteaction.md">HeaderRewriteAction</a>, ... ]</i>,
+        "<a href="#ipcondition" title="IpCondition">IpCondition</a>" : <i>[ <a href="ipcondition.md">IpCondition</a>, ... ]</i>,
+        "<a href="#methodcondition" title="MethodCondition">MethodCondition</a>" : <i>[ <a href="methodcondition.md">MethodCondition</a>, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>,
+        "<a href="#tcpcondition" title="TcpCondition">TcpCondition</a>" : <i>[ <a href="tcpcondition.md">TcpCondition</a>, ... ]</i>,
+        "<a href="#uriargumentscondition" title="UriArgumentsCondition">UriArgumentsCondition</a>" : <i>[ <a href="uriargumentscondition.md">UriArgumentsCondition</a>, ... ]</i>,
+        "<a href="#uricondition" title="UriCondition">UriCondition</a>" : <i>[ <a href="uricondition.md">UriCondition</a>, ... ]</i>,
+        "<a href="#urirewriteaction" title="UriRewriteAction">UriRewriteAction</a>" : <i>[ <a href="urirewriteaction.md">UriRewriteAction</a>, ... ]</i>,
+        "<a href="#versioncondition" title="VersionCondition">VersionCondition</a>" : <i>[ <a href="versioncondition.md">VersionCondition</a>, ... ]</i>
     }
 }
 </pre>
@@ -42,29 +42,29 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#matchstrategy" title="MatchStrategy">MatchStrategy</a>: <i>String</i>
     <a href="#bodycondition" title="BodyCondition">BodyCondition</a>: <i>
-      - &lt;a href=&#34;bodycondition.md&#34;&gt;BodyCondition&lt;/a&gt;</i>
+      - <a href="bodycondition.md">BodyCondition</a></i>
     <a href="#cookiecondition" title="CookieCondition">CookieCondition</a>: <i>
-      - &lt;a href=&#34;cookiecondition.md&#34;&gt;CookieCondition&lt;/a&gt;</i>
+      - <a href="cookiecondition.md">CookieCondition</a></i>
     <a href="#headercondition" title="HeaderCondition">HeaderCondition</a>: <i>
-      - &lt;a href=&#34;headercondition.md&#34;&gt;HeaderCondition&lt;/a&gt;</i>
+      - <a href="headercondition.md">HeaderCondition</a></i>
     <a href="#headerrewriteaction" title="HeaderRewriteAction">HeaderRewriteAction</a>: <i>
-      - &lt;a href=&#34;headerrewriteaction.md&#34;&gt;HeaderRewriteAction&lt;/a&gt;</i>
+      - <a href="headerrewriteaction.md">HeaderRewriteAction</a></i>
     <a href="#ipcondition" title="IpCondition">IpCondition</a>: <i>
-      - &lt;a href=&#34;ipcondition.md&#34;&gt;IpCondition&lt;/a&gt;</i>
+      - <a href="ipcondition.md">IpCondition</a></i>
     <a href="#methodcondition" title="MethodCondition">MethodCondition</a>: <i>
-      - &lt;a href=&#34;methodcondition.md&#34;&gt;MethodCondition&lt;/a&gt;</i>
+      - <a href="methodcondition.md">MethodCondition</a></i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+      - <a href="tag.md">Tag</a></i>
     <a href="#tcpcondition" title="TcpCondition">TcpCondition</a>: <i>
-      - &lt;a href=&#34;tcpcondition.md&#34;&gt;TcpCondition&lt;/a&gt;</i>
+      - <a href="tcpcondition.md">TcpCondition</a></i>
     <a href="#uriargumentscondition" title="UriArgumentsCondition">UriArgumentsCondition</a>: <i>
-      - &lt;a href=&#34;uriargumentscondition.md&#34;&gt;UriArgumentsCondition&lt;/a&gt;</i>
+      - <a href="uriargumentscondition.md">UriArgumentsCondition</a></i>
     <a href="#uricondition" title="UriCondition">UriCondition</a>: <i>
-      - &lt;a href=&#34;uricondition.md&#34;&gt;UriCondition&lt;/a&gt;</i>
+      - <a href="uricondition.md">UriCondition</a></i>
     <a href="#urirewriteaction" title="UriRewriteAction">UriRewriteAction</a>: <i>
-      - &lt;a href=&#34;urirewriteaction.md&#34;&gt;UriRewriteAction&lt;/a&gt;</i>
+      - <a href="urirewriteaction.md">UriRewriteAction</a></i>
     <a href="#versioncondition" title="VersionCondition">VersionCondition</a>: <i>
-      - &lt;a href=&#34;versioncondition.md&#34;&gt;VersionCondition&lt;/a&gt;</i>
+      - <a href="versioncondition.md">VersionCondition</a></i>
 </pre>
 
 ## Properties
@@ -105,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bodycondition.md&#34;&gt;BodyCondition&lt;/a&gt;
+_Type_: List of <a href="bodycondition.md">BodyCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cookiecondition.md&#34;&gt;CookieCondition&lt;/a&gt;
+_Type_: List of <a href="cookiecondition.md">CookieCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -121,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;headercondition.md&#34;&gt;HeaderCondition&lt;/a&gt;
+_Type_: List of <a href="headercondition.md">HeaderCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;headerrewriteaction.md&#34;&gt;HeaderRewriteAction&lt;/a&gt;
+_Type_: List of <a href="headerrewriteaction.md">HeaderRewriteAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipcondition.md&#34;&gt;IpCondition&lt;/a&gt;
+_Type_: List of <a href="ipcondition.md">IpCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;methodcondition.md&#34;&gt;MethodCondition&lt;/a&gt;
+_Type_: List of <a href="methodcondition.md">MethodCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -153,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
+_Type_: List of <a href="tag.md">Tag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tcpcondition.md&#34;&gt;TcpCondition&lt;/a&gt;
+_Type_: List of <a href="tcpcondition.md">TcpCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;uriargumentscondition.md&#34;&gt;UriArgumentsCondition&lt;/a&gt;
+_Type_: List of <a href="uriargumentscondition.md">UriArgumentsCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;uricondition.md&#34;&gt;UriCondition&lt;/a&gt;
+_Type_: List of <a href="uricondition.md">UriCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,7 +185,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;urirewriteaction.md&#34;&gt;UriRewriteAction&lt;/a&gt;
+_Type_: List of <a href="urirewriteaction.md">UriRewriteAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,7 +193,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;versioncondition.md&#34;&gt;VersionCondition&lt;/a&gt;
+_Type_: List of <a href="versioncondition.md">VersionCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -215,5 +215,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Revision
 
-Returns the &lt;code&gt;Revision&lt;/code&gt; value.
+Returns the <code>Revision</code> value.
 

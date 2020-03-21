@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Token
 
-Returns the &lt;code&gt;Token&lt;/code&gt; value.
+Returns the <code>Token</code> value.
 

@@ -113,5 +113,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Host
 
-Returns the &lt;code&gt;Host&lt;/code&gt; value.
+Returns the <code>Host</code> value.
 

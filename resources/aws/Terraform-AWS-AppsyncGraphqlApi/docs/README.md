@@ -16,12 +16,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#schema" title="Schema">Schema</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#xrayenabled" title="XrayEnabled">XrayEnabled</a>" : <i>Boolean</i>,
-        "<a href="#additionalauthenticationprovider" title="AdditionalAuthenticationProvider">AdditionalAuthenticationProvider</a>" : <i>[ &lt;a href=&#34;additionalauthenticationprovider.md&#34;&gt;AdditionalAuthenticationProvider&lt;/a&gt;, ... ]</i>,
-        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#openidconnectconfig" title="OpenidConnectConfig">OpenidConnectConfig</a>" : <i>[ &lt;a href=&#34;openidconnectconfig.md&#34;&gt;OpenidConnectConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#userpoolconfig" title="UserPoolConfig">UserPoolConfig</a>" : <i>[ &lt;a href=&#34;userpoolconfig.md&#34;&gt;UserPoolConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#additionalauthenticationprovider" title="AdditionalAuthenticationProvider">AdditionalAuthenticationProvider</a>" : <i>[ <a href="additionalauthenticationprovider.md">AdditionalAuthenticationProvider</a>, ... ]</i>,
+        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ <a href="logconfig.md">LogConfig</a>, ... ]</i>,
+        "<a href="#openidconnectconfig" title="OpenidConnectConfig">OpenidConnectConfig</a>" : <i>[ <a href="openidconnectconfig.md">OpenidConnectConfig</a>, ... ]</i>,
+        "<a href="#userpoolconfig" title="UserPoolConfig">UserPoolConfig</a>" : <i>[ <a href="userpoolconfig.md">UserPoolConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -36,16 +36,16 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#schema" title="Schema">Schema</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#xrayenabled" title="XrayEnabled">XrayEnabled</a>: <i>Boolean</i>
     <a href="#additionalauthenticationprovider" title="AdditionalAuthenticationProvider">AdditionalAuthenticationProvider</a>: <i>
-      - &lt;a href=&#34;additionalauthenticationprovider.md&#34;&gt;AdditionalAuthenticationProvider&lt;/a&gt;</i>
+      - <a href="additionalauthenticationprovider.md">AdditionalAuthenticationProvider</a></i>
     <a href="#logconfig" title="LogConfig">LogConfig</a>: <i>
-      - &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;</i>
+      - <a href="logconfig.md">LogConfig</a></i>
     <a href="#openidconnectconfig" title="OpenidConnectConfig">OpenidConnectConfig</a>: <i>
-      - &lt;a href=&#34;openidconnectconfig.md&#34;&gt;OpenidConnectConfig&lt;/a&gt;</i>
+      - <a href="openidconnectconfig.md">OpenidConnectConfig</a></i>
     <a href="#userpoolconfig" title="UserPoolConfig">UserPoolConfig</a>: <i>
-      - &lt;a href=&#34;userpoolconfig.md&#34;&gt;UserPoolConfig&lt;/a&gt;</i>
+      - <a href="userpoolconfig.md">UserPoolConfig</a></i>
 </pre>
 
 ## Properties
@@ -86,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -102,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;additionalauthenticationprovider.md&#34;&gt;AdditionalAuthenticationProvider&lt;/a&gt;
+_Type_: List of <a href="additionalauthenticationprovider.md">AdditionalAuthenticationProvider</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -110,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;
+_Type_: List of <a href="logconfig.md">LogConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -118,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;openidconnectconfig.md&#34;&gt;OpenidConnectConfig&lt;/a&gt;
+_Type_: List of <a href="openidconnectconfig.md">OpenidConnectConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;userpoolconfig.md&#34;&gt;UserPoolConfig&lt;/a&gt;
+_Type_: List of <a href="userpoolconfig.md">UserPoolConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,9 +148,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### Uris
 
-Returns the &lt;code&gt;Uris&lt;/code&gt; value.
+Returns the <code>Uris</code> value.
 

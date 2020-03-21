@@ -73,17 +73,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateMode
 
-Returns the &lt;code&gt;CreateMode&lt;/code&gt; value.
+Returns the <code>CreateMode</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### PolicyName
 
-Returns the &lt;code&gt;PolicyName&lt;/code&gt; value.
+Returns the <code>PolicyName</code> value.
 
 #### PolicyType
 
-Returns the &lt;code&gt;PolicyType&lt;/code&gt; value.
+Returns the <code>PolicyType</code> value.
 

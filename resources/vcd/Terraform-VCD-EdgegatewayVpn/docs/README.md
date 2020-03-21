@@ -25,8 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#peeripaddress" title="PeerIpAddress">PeerIpAddress</a>" : <i>String</i>,
         "<a href="#sharedsecret" title="SharedSecret">SharedSecret</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#localsubnets" title="LocalSubnets">LocalSubnets</a>" : <i>[ &lt;a href=&#34;localsubnets.md&#34;&gt;LocalSubnets&lt;/a&gt;, ... ]</i>,
-        "<a href="#peersubnets" title="PeerSubnets">PeerSubnets</a>" : <i>[ &lt;a href=&#34;peersubnets.md&#34;&gt;PeerSubnets&lt;/a&gt;, ... ]</i>
+        "<a href="#localsubnets" title="LocalSubnets">LocalSubnets</a>" : <i>[ <a href="localsubnets.md">LocalSubnets</a>, ... ]</i>,
+        "<a href="#peersubnets" title="PeerSubnets">PeerSubnets</a>" : <i>[ <a href="peersubnets.md">PeerSubnets</a>, ... ]</i>
     }
 }
 </pre>
@@ -50,9 +50,9 @@ Properties:
     <a href="#sharedsecret" title="SharedSecret">SharedSecret</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#localsubnets" title="LocalSubnets">LocalSubnets</a>: <i>
-      - &lt;a href=&#34;localsubnets.md&#34;&gt;LocalSubnets&lt;/a&gt;</i>
+      - <a href="localsubnets.md">LocalSubnets</a></i>
     <a href="#peersubnets" title="PeerSubnets">PeerSubnets</a>: <i>
-      - &lt;a href=&#34;peersubnets.md&#34;&gt;PeerSubnets&lt;/a&gt;</i>
+      - <a href="peersubnets.md">PeerSubnets</a></i>
 </pre>
 
 ## Properties
@@ -165,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;localsubnets.md&#34;&gt;LocalSubnets&lt;/a&gt;
+_Type_: List of <a href="localsubnets.md">LocalSubnets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -173,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;peersubnets.md&#34;&gt;PeerSubnets&lt;/a&gt;
+_Type_: List of <a href="peersubnets.md">PeerSubnets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

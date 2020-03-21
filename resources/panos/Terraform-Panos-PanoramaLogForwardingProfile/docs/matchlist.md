@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#sendtopanorama" title="SendToPanorama">SendToPanorama</a>" : <i>Boolean</i>,
     "<a href="#snmptrapserverprofiles" title="SnmptrapServerProfiles">SnmptrapServerProfiles</a>" : <i>[ String, ... ]</i>,
     "<a href="#syslogserverprofiles" title="SyslogServerProfiles">SyslogServerProfiles</a>" : <i>[ String, ... ]</i>,
-    "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;matchlist-action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>
+    "<a href="#action" title="Action">Action</a>" : <i>[ <a href="matchlist-action.md">Action</a>, ... ]</i>
 }
 </pre>
 
@@ -38,7 +38,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#syslogserverprofiles" title="SyslogServerProfiles">SyslogServerProfiles</a>: <i>
       - String</i>
 <a href="#action" title="Action">Action</a>: <i>
-      - &lt;a href=&#34;matchlist-action.md&#34;&gt;Action&lt;/a&gt;</i>
+      - <a href="matchlist-action.md">Action</a></i>
 </pre>
 
 ## Properties
@@ -109,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Action
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;matchlist-action.md&#34;&gt;Action&lt;/a&gt;
+_Type_: List of <a href="matchlist-action.md">Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

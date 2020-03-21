@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#notes" title="Notes">Notes</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#smartqueries" title="SmartQueries">SmartQueries</a>" : <i>[ &lt;a href=&#34;smartqueries.md&#34;&gt;SmartQueries&lt;/a&gt;, ... ]</i>
+        "<a href="#smartqueries" title="SmartQueries">SmartQueries</a>" : <i>[ <a href="smartqueries.md">SmartQueries</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Properties:
       - String</i>
     <a href="#title" title="Title">Title</a>: <i>String</i>
     <a href="#smartqueries" title="SmartQueries">SmartQueries</a>: <i>
-      - &lt;a href=&#34;smartqueries.md&#34;&gt;SmartQueries&lt;/a&gt;</i>
+      - <a href="smartqueries.md">SmartQueries</a></i>
 </pre>
 
 ## Properties
@@ -104,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;smartqueries.md&#34;&gt;SmartQueries&lt;/a&gt;
+_Type_: List of <a href="smartqueries.md">SmartQueries</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

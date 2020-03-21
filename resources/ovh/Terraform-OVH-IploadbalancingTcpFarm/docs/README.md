@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#stickiness" title="Stickiness">Stickiness</a>" : <i>String</i>,
         "<a href="#vracknetworkid" title="VrackNetworkId">VrackNetworkId</a>" : <i>Double</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#probe" title="Probe">Probe</a>" : <i>[ &lt;a href=&#34;probe.md&#34;&gt;Probe&lt;/a&gt;, ... ]</i>
+        "<a href="#probe" title="Probe">Probe</a>" : <i>[ <a href="probe.md">Probe</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Properties:
     <a href="#vracknetworkid" title="VrackNetworkId">VrackNetworkId</a>: <i>Double</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#probe" title="Probe">Probe</a>: <i>
-      - &lt;a href=&#34;probe.md&#34;&gt;Probe&lt;/a&gt;</i>
+      - <a href="probe.md">Probe</a></i>
 </pre>
 
 ## Properties
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;probe.md&#34;&gt;Probe&lt;/a&gt;
+_Type_: List of <a href="probe.md">Probe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

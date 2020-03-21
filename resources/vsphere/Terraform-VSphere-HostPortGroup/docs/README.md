@@ -225,13 +225,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ComputedPolicy
 
-Returns the &lt;code&gt;ComputedPolicy&lt;/code&gt; value.
+Returns the <code>ComputedPolicy</code> value.
 
 #### Key
 
-Returns the &lt;code&gt;Key&lt;/code&gt; value.
+Returns the <code>Key</code> value.
 
 #### Ports
 
-Returns the &lt;code&gt;Ports&lt;/code&gt; value.
+Returns the <code>Ports</code> value.
 

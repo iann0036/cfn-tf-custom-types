@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#listenerid" title="ListenerId">ListenerId</a>" : <i>String</i>,
         "<a href="#privateaddress" title="PrivateAddress">PrivateAddress</a>" : <i>String</i>,
         "<a href="#serverid" title="ServerId">ServerId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -30,7 +30,7 @@ Properties:
     <a href="#listenerid" title="ListenerId">ListenerId</a>: <i>String</i>
     <a href="#privateaddress" title="PrivateAddress">PrivateAddress</a>: <i>String</i>
     <a href="#serverid" title="ServerId">ServerId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -71,7 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -93,29 +93,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### HealthStatus
 
-Returns the &lt;code&gt;HealthStatus&lt;/code&gt; value.
+Returns the <code>HealthStatus</code> value.
 
 #### Listeners
 
-Returns the &lt;code&gt;Listeners&lt;/code&gt; value.
+Returns the <code>Listeners</code> value.
 
 #### PublicAddress
 
-Returns the &lt;code&gt;PublicAddress&lt;/code&gt; value.
+Returns the <code>PublicAddress</code> value.
 
 #### ServerName
 
-Returns the &lt;code&gt;ServerName&lt;/code&gt; value.
+Returns the <code>ServerName</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdateTime
 
-Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
+Returns the <code>UpdateTime</code> value.
 

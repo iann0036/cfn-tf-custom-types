@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OriginalRouteTableId
 
-Returns the &lt;code&gt;OriginalRouteTableId&lt;/code&gt; value.
+Returns the <code>OriginalRouteTableId</code> value.
 

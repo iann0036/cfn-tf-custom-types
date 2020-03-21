@@ -183,9 +183,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CloneHttps
 
-Returns the &lt;code&gt;CloneHttps&lt;/code&gt; value.
+Returns the <code>CloneHttps</code> value.
 
 #### CloneSsh
 
-Returns the &lt;code&gt;CloneSsh&lt;/code&gt; value.
+Returns the <code>CloneSsh</code> value.
 

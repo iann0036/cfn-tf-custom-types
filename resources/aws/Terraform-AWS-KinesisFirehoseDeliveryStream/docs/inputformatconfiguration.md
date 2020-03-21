@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#deserializer" title="Deserializer">Deserializer</a>" : <i>[ &lt;a href=&#34;inputformatconfiguration-deserializer.md&#34;&gt;Deserializer&lt;/a&gt;, ... ]</i>
+    "<a href="#deserializer" title="Deserializer">Deserializer</a>" : <i>[ <a href="inputformatconfiguration-deserializer.md">Deserializer</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#deserializer" title="Deserializer">Deserializer</a>: <i>
-      - &lt;a href=&#34;inputformatconfiguration-deserializer.md&#34;&gt;Deserializer&lt;/a&gt;</i>
+      - <a href="inputformatconfiguration-deserializer.md">Deserializer</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Deserializer
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;inputformatconfiguration-deserializer.md&#34;&gt;Deserializer&lt;/a&gt;
+_Type_: List of <a href="inputformatconfiguration-deserializer.md">Deserializer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

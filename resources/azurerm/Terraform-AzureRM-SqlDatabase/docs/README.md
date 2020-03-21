@@ -29,12 +29,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#servername" title="ServerName">ServerName</a>" : <i>String</i>,
         "<a href="#sourcedatabasedeletiondate" title="SourceDatabaseDeletionDate">SourceDatabaseDeletionDate</a>" : <i>String</i>,
         "<a href="#sourcedatabaseid" title="SourceDatabaseId">SourceDatabaseId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#zoneredundant" title="ZoneRedundant">ZoneRedundant</a>" : <i>Boolean</i>,
-        "<a href="#extendedauditingpolicy" title="ExtendedAuditingPolicy">ExtendedAuditingPolicy</a>" : <i>[ &lt;a href=&#34;extendedauditingpolicy.md&#34;&gt;ExtendedAuditingPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#import" title="Import">Import</a>" : <i>[ &lt;a href=&#34;import.md&#34;&gt;Import&lt;/a&gt;, ... ]</i>,
-        "<a href="#threatdetectionpolicy" title="ThreatDetectionPolicy">ThreatDetectionPolicy</a>" : <i>[ &lt;a href=&#34;threatdetectionpolicy.md&#34;&gt;ThreatDetectionPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#extendedauditingpolicy" title="ExtendedAuditingPolicy">ExtendedAuditingPolicy</a>" : <i>[ <a href="extendedauditingpolicy.md">ExtendedAuditingPolicy</a>, ... ]</i>,
+        "<a href="#import" title="Import">Import</a>" : <i>[ <a href="import.md">Import</a>, ... ]</i>,
+        "<a href="#threatdetectionpolicy" title="ThreatDetectionPolicy">ThreatDetectionPolicy</a>" : <i>[ <a href="threatdetectionpolicy.md">ThreatDetectionPolicy</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -62,15 +62,15 @@ Properties:
     <a href="#sourcedatabasedeletiondate" title="SourceDatabaseDeletionDate">SourceDatabaseDeletionDate</a>: <i>String</i>
     <a href="#sourcedatabaseid" title="SourceDatabaseId">SourceDatabaseId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#zoneredundant" title="ZoneRedundant">ZoneRedundant</a>: <i>Boolean</i>
     <a href="#extendedauditingpolicy" title="ExtendedAuditingPolicy">ExtendedAuditingPolicy</a>: <i>
-      - &lt;a href=&#34;extendedauditingpolicy.md&#34;&gt;ExtendedAuditingPolicy&lt;/a&gt;</i>
+      - <a href="extendedauditingpolicy.md">ExtendedAuditingPolicy</a></i>
     <a href="#import" title="Import">Import</a>: <i>
-      - &lt;a href=&#34;import.md&#34;&gt;Import&lt;/a&gt;</i>
+      - <a href="import.md">Import</a></i>
     <a href="#threatdetectionpolicy" title="ThreatDetectionPolicy">ThreatDetectionPolicy</a>: <i>
-      - &lt;a href=&#34;threatdetectionpolicy.md&#34;&gt;ThreatDetectionPolicy&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="threatdetectionpolicy.md">ThreatDetectionPolicy</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -215,7 +215,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -231,7 +231,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;extendedauditingpolicy.md&#34;&gt;ExtendedAuditingPolicy&lt;/a&gt;
+_Type_: List of <a href="extendedauditingpolicy.md">ExtendedAuditingPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -239,7 +239,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;import.md&#34;&gt;Import&lt;/a&gt;
+_Type_: List of <a href="import.md">Import</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -247,7 +247,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;threatdetectionpolicy.md&#34;&gt;ThreatDetectionPolicy&lt;/a&gt;
+_Type_: List of <a href="threatdetectionpolicy.md">ThreatDetectionPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -255,7 +255,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -277,13 +277,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationDate
 
-Returns the &lt;code&gt;CreationDate&lt;/code&gt; value.
+Returns the <code>CreationDate</code> value.
 
 #### DefaultSecondaryLocation
 
-Returns the &lt;code&gt;DefaultSecondaryLocation&lt;/code&gt; value.
+Returns the <code>DefaultSecondaryLocation</code> value.
 
 #### Encryption
 
-Returns the &lt;code&gt;Encryption&lt;/code&gt; value.
+Returns the <code>Encryption</code> value.
 

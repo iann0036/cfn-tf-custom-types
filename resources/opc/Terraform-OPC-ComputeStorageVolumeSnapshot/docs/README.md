@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#parentvolumebootable" title="ParentVolumeBootable">ParentVolumeBootable</a>" : <i>Boolean</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#volumename" title="VolumeName">VolumeName</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -37,7 +37,7 @@ Properties:
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#volumename" title="VolumeName">VolumeName</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -102,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,49 +124,49 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Account
 
-Returns the &lt;code&gt;Account&lt;/code&gt; value.
+Returns the <code>Account</code> value.
 
 #### MachineImageName
 
-Returns the &lt;code&gt;MachineImageName&lt;/code&gt; value.
+Returns the <code>MachineImageName</code> value.
 
 #### Platform
 
-Returns the &lt;code&gt;Platform&lt;/code&gt; value.
+Returns the <code>Platform</code> value.
 
 #### Property
 
-Returns the &lt;code&gt;Property&lt;/code&gt; value.
+Returns the <code>Property</code> value.
 
 #### Size
 
-Returns the &lt;code&gt;Size&lt;/code&gt; value.
+Returns the <code>Size</code> value.
 
 #### SnapshotId
 
-Returns the &lt;code&gt;SnapshotId&lt;/code&gt; value.
+Returns the <code>SnapshotId</code> value.
 
 #### SnapshotTimestamp
 
-Returns the &lt;code&gt;SnapshotTimestamp&lt;/code&gt; value.
+Returns the <code>SnapshotTimestamp</code> value.
 
 #### StartTimestamp
 
-Returns the &lt;code&gt;StartTimestamp&lt;/code&gt; value.
+Returns the <code>StartTimestamp</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### StatusDetail
 
-Returns the &lt;code&gt;StatusDetail&lt;/code&gt; value.
+Returns the <code>StatusDetail</code> value.
 
 #### StatusTimestamp
 
-Returns the &lt;code&gt;StatusTimestamp&lt;/code&gt; value.
+Returns the <code>StatusTimestamp</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

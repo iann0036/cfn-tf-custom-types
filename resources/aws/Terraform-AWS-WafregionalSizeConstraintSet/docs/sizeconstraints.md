@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#comparisonoperator" title="ComparisonOperator">ComparisonOperator</a>" : <i>String</i>,
     "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
     "<a href="#texttransformation" title="TextTransformation">TextTransformation</a>" : <i>String</i>,
-    "<a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>" : <i>[ &lt;a href=&#34;sizeconstraints-fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;, ... ]</i>
+    "<a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>" : <i>[ <a href="sizeconstraints-fieldtomatch.md">FieldToMatch</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#size" title="Size">Size</a>: <i>Double</i>
 <a href="#texttransformation" title="TextTransformation">TextTransformation</a>: <i>String</i>
 <a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>: <i>
-      - &lt;a href=&#34;sizeconstraints-fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;</i>
+      - <a href="sizeconstraints-fieldtomatch.md">FieldToMatch</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FieldToMatch
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;sizeconstraints-fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;
+_Type_: List of <a href="sizeconstraints-fieldtomatch.md">FieldToMatch</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

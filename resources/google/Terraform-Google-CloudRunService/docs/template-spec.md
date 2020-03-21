@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#containerconcurrency" title="ContainerConcurrency">ContainerConcurrency</a>" : <i>Double</i>,
     "<a href="#serviceaccountname" title="ServiceAccountName">ServiceAccountName</a>" : <i>String</i>,
-    "<a href="#containers" title="Containers">Containers</a>" : <i>[ &lt;a href=&#34;template-spec-containers.md&#34;&gt;Containers&lt;/a&gt;, ... ]</i>
+    "<a href="#containers" title="Containers">Containers</a>" : <i>[ <a href="template-spec-containers.md">Containers</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#containerconcurrency" title="ContainerConcurrency">ContainerConcurrency</a>: <i>Double</i>
 <a href="#serviceaccountname" title="ServiceAccountName">ServiceAccountName</a>: <i>String</i>
 <a href="#containers" title="Containers">Containers</a>: <i>
-      - &lt;a href=&#34;template-spec-containers.md&#34;&gt;Containers&lt;/a&gt;</i>
+      - <a href="template-spec-containers.md">Containers</a></i>
 </pre>
 
 ## Properties
@@ -42,7 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Containers
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;template-spec-containers.md&#34;&gt;Containers&lt;/a&gt;
+_Type_: List of <a href="template-spec-containers.md">Containers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#isrequired" title="IsRequired">IsRequired</a>" : <i>Boolean</i>,
         "<a href="#tagdefinitionid" title="TagDefinitionId">TagDefinitionId</a>" : <i>String</i>,
         "<a href="#value" title="Value">Value</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -32,7 +32,7 @@ Properties:
     <a href="#isrequired" title="IsRequired">IsRequired</a>: <i>Boolean</i>
     <a href="#tagdefinitionid" title="TagDefinitionId">TagDefinitionId</a>: <i>String</i>
     <a href="#value" title="Value">Value</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -81,7 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -103,17 +103,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TagDefinitionName
 
-Returns the &lt;code&gt;TagDefinitionName&lt;/code&gt; value.
+Returns the <code>TagDefinitionName</code> value.
 
 #### TagNamespaceId
 
-Returns the &lt;code&gt;TagNamespaceId&lt;/code&gt; value.
+Returns the <code>TagNamespaceId</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

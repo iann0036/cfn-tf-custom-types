@@ -21,7 +21,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#resourcetype" title="ResourceType">ResourceType</a>" : <i>String</i>,
         "<a href="#smode" title="Smode">Smode</a>" : <i>String</i>,
         "<a href="#switch" title="Switch">Switch</a>" : <i>Boolean</i>,
-        "<a href="#rulelist" title="RuleList">RuleList</a>" : <i>[ &lt;a href=&#34;rulelist.md&#34;&gt;RuleList&lt;/a&gt;, ... ]</i>
+        "<a href="#rulelist" title="RuleList">RuleList</a>" : <i>[ <a href="rulelist.md">RuleList</a>, ... ]</i>
     }
 }
 </pre>
@@ -41,7 +41,7 @@ Properties:
     <a href="#smode" title="Smode">Smode</a>: <i>String</i>
     <a href="#switch" title="Switch">Switch</a>: <i>Boolean</i>
     <a href="#rulelist" title="RuleList">RuleList</a>: <i>
-      - &lt;a href=&#34;rulelist.md&#34;&gt;RuleList&lt;/a&gt;</i>
+      - <a href="rulelist.md">RuleList</a></i>
 </pre>
 
 ## Properties
@@ -122,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rulelist.md&#34;&gt;RuleList&lt;/a&gt;
+_Type_: List of <a href="rulelist.md">RuleList</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,9 +144,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### PolicyId
 
-Returns the &lt;code&gt;PolicyId&lt;/code&gt; value.
+Returns the <code>PolicyId</code> value.
 

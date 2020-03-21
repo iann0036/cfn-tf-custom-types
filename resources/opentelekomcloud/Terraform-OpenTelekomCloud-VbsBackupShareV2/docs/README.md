@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#toprojectids" title="ToProjectIds">ToProjectIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -31,7 +31,7 @@ Properties:
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#toprojectids" title="ToProjectIds">ToProjectIds</a>: <i>
       - String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,41 +94,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailabilityZone
 
-Returns the &lt;code&gt;AvailabilityZone&lt;/code&gt; value.
+Returns the <code>AvailabilityZone</code> value.
 
 #### BackupName
 
-Returns the &lt;code&gt;BackupName&lt;/code&gt; value.
+Returns the <code>BackupName</code> value.
 
 #### BackupStatus
 
-Returns the &lt;code&gt;BackupStatus&lt;/code&gt; value.
+Returns the <code>BackupStatus</code> value.
 
 #### Container
 
-Returns the &lt;code&gt;Container&lt;/code&gt; value.
+Returns the <code>Container</code> value.
 
 #### Description
 
-Returns the &lt;code&gt;Description&lt;/code&gt; value.
+Returns the <code>Description</code> value.
 
 #### ServiceMetadata
 
-Returns the &lt;code&gt;ServiceMetadata&lt;/code&gt; value.
+Returns the <code>ServiceMetadata</code> value.
 
 #### ShareIds
 
-Returns the &lt;code&gt;ShareIds&lt;/code&gt; value.
+Returns the <code>ShareIds</code> value.
 
 #### Size
 
-Returns the &lt;code&gt;Size&lt;/code&gt; value.
+Returns the <code>Size</code> value.
 
 #### SnapshotId
 
-Returns the &lt;code&gt;SnapshotId&lt;/code&gt; value.
+Returns the <code>SnapshotId</code> value.
 
 #### VolumeId
 
-Returns the &lt;code&gt;VolumeId&lt;/code&gt; value.
+Returns the <code>VolumeId</code> value.
 

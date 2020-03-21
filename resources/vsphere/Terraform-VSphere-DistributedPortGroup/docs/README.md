@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#blockallports" title="BlockAllPorts">BlockAllPorts</a>" : <i>Boolean</i>,
         "<a href="#blockoverrideallowed" title="BlockOverrideAllowed">BlockOverrideAllowed</a>" : <i>Boolean</i>,
         "<a href="#checkbeacon" title="CheckBeacon">CheckBeacon</a>" : <i>Boolean</i>,
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#directpathgen2allowed" title="DirectpathGen2Allowed">DirectpathGen2Allowed</a>" : <i>Boolean</i>,
         "<a href="#distributedvirtualswitchuuid" title="DistributedVirtualSwitchUuid">DistributedVirtualSwitchUuid</a>" : <i>String</i>,
@@ -58,7 +58,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#uplinkteamingoverrideallowed" title="UplinkTeamingOverrideAllowed">UplinkTeamingOverrideAllowed</a>" : <i>Boolean</i>,
         "<a href="#vlanid" title="VlanId">VlanId</a>" : <i>Double</i>,
         "<a href="#vlanoverrideallowed" title="VlanOverrideAllowed">VlanOverrideAllowed</a>" : <i>Boolean</i>,
-        "<a href="#vlanrange" title="VlanRange">VlanRange</a>" : <i>[ &lt;a href=&#34;vlanrange.md&#34;&gt;VlanRange&lt;/a&gt;, ... ]</i>
+        "<a href="#vlanrange" title="VlanRange">VlanRange</a>" : <i>[ <a href="vlanrange.md">VlanRange</a>, ... ]</i>
     }
 }
 </pre>
@@ -78,7 +78,7 @@ Properties:
     <a href="#blockoverrideallowed" title="BlockOverrideAllowed">BlockOverrideAllowed</a>: <i>Boolean</i>
     <a href="#checkbeacon" title="CheckBeacon">CheckBeacon</a>: <i>Boolean</i>
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+      - <a href="customattributes.md">CustomAttributes</a></i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#directpathgen2allowed" title="DirectpathGen2Allowed">DirectpathGen2Allowed</a>: <i>Boolean</i>
     <a href="#distributedvirtualswitchuuid" title="DistributedVirtualSwitchUuid">DistributedVirtualSwitchUuid</a>: <i>String</i>
@@ -119,7 +119,7 @@ Properties:
     <a href="#vlanid" title="VlanId">VlanId</a>: <i>Double</i>
     <a href="#vlanoverrideallowed" title="VlanOverrideAllowed">VlanOverrideAllowed</a>: <i>Boolean</i>
     <a href="#vlanrange" title="VlanRange">VlanRange</a>: <i>
-      - &lt;a href=&#34;vlanrange.md&#34;&gt;VlanRange&lt;/a&gt;</i>
+      - <a href="vlanrange.md">VlanRange</a></i>
 </pre>
 
 ## Properties
@@ -192,7 +192,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+_Type_: List of <a href="customattributes.md">CustomAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -496,7 +496,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vlanrange.md&#34;&gt;VlanRange&lt;/a&gt;
+_Type_: List of <a href="vlanrange.md">VlanRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -518,9 +518,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConfigVersion
 
-Returns the &lt;code&gt;ConfigVersion&lt;/code&gt; value.
+Returns the <code>ConfigVersion</code> value.
 
 #### Key
 
-Returns the &lt;code&gt;Key&lt;/code&gt; value.
+Returns the <code>Key</code> value.
 

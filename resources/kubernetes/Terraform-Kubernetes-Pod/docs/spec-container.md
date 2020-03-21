@@ -18,16 +18,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#terminationmessagepath" title="TerminationMessagePath">TerminationMessagePath</a>" : <i>String</i>,
     "<a href="#tty" title="Tty">Tty</a>" : <i>Boolean</i>,
     "<a href="#workingdir" title="WorkingDir">WorkingDir</a>" : <i>String</i>,
-    "<a href="#env" title="Env">Env</a>" : <i>[ &lt;a href=&#34;spec-container-env.md&#34;&gt;Env&lt;/a&gt;, ... ]</i>,
-    "<a href="#envfrom" title="EnvFrom">EnvFrom</a>" : <i>[ &lt;a href=&#34;spec-container-envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;, ... ]</i>,
-    "<a href="#lifecycle" title="Lifecycle">Lifecycle</a>" : <i>[ &lt;a href=&#34;spec-container-lifecycle.md&#34;&gt;Lifecycle&lt;/a&gt;, ... ]</i>,
-    "<a href="#livenessprobe" title="LivenessProbe">LivenessProbe</a>" : <i>[ &lt;a href=&#34;spec-container-livenessprobe.md&#34;&gt;LivenessProbe&lt;/a&gt;, ... ]</i>,
-    "<a href="#port" title="Port">Port</a>" : <i>[ &lt;a href=&#34;spec-container-port.md&#34;&gt;Port&lt;/a&gt;, ... ]</i>,
-    "<a href="#readinessprobe" title="ReadinessProbe">ReadinessProbe</a>" : <i>[ &lt;a href=&#34;spec-container-readinessprobe.md&#34;&gt;ReadinessProbe&lt;/a&gt;, ... ]</i>,
-    "<a href="#resources" title="Resources">Resources</a>" : <i>[ &lt;a href=&#34;spec-container-resources.md&#34;&gt;Resources&lt;/a&gt;, ... ]</i>,
-    "<a href="#securitycontext" title="SecurityContext">SecurityContext</a>" : <i>[ &lt;a href=&#34;spec-container-securitycontext.md&#34;&gt;SecurityContext&lt;/a&gt;, ... ]</i>,
-    "<a href="#startupprobe" title="StartupProbe">StartupProbe</a>" : <i>[ &lt;a href=&#34;spec-container-startupprobe.md&#34;&gt;StartupProbe&lt;/a&gt;, ... ]</i>,
-    "<a href="#volumemount" title="VolumeMount">VolumeMount</a>" : <i>[ &lt;a href=&#34;spec-container-volumemount.md&#34;&gt;VolumeMount&lt;/a&gt;, ... ]</i>
+    "<a href="#env" title="Env">Env</a>" : <i>[ <a href="spec-container-env.md">Env</a>, ... ]</i>,
+    "<a href="#envfrom" title="EnvFrom">EnvFrom</a>" : <i>[ <a href="spec-container-envfrom.md">EnvFrom</a>, ... ]</i>,
+    "<a href="#lifecycle" title="Lifecycle">Lifecycle</a>" : <i>[ <a href="spec-container-lifecycle.md">Lifecycle</a>, ... ]</i>,
+    "<a href="#livenessprobe" title="LivenessProbe">LivenessProbe</a>" : <i>[ <a href="spec-container-livenessprobe.md">LivenessProbe</a>, ... ]</i>,
+    "<a href="#port" title="Port">Port</a>" : <i>[ <a href="spec-container-port.md">Port</a>, ... ]</i>,
+    "<a href="#readinessprobe" title="ReadinessProbe">ReadinessProbe</a>" : <i>[ <a href="spec-container-readinessprobe.md">ReadinessProbe</a>, ... ]</i>,
+    "<a href="#resources" title="Resources">Resources</a>" : <i>[ <a href="spec-container-resources.md">Resources</a>, ... ]</i>,
+    "<a href="#securitycontext" title="SecurityContext">SecurityContext</a>" : <i>[ <a href="spec-container-securitycontext.md">SecurityContext</a>, ... ]</i>,
+    "<a href="#startupprobe" title="StartupProbe">StartupProbe</a>" : <i>[ <a href="spec-container-startupprobe.md">StartupProbe</a>, ... ]</i>,
+    "<a href="#volumemount" title="VolumeMount">VolumeMount</a>" : <i>[ <a href="spec-container-volumemount.md">VolumeMount</a>, ... ]</i>
 }
 </pre>
 
@@ -47,25 +47,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#tty" title="Tty">Tty</a>: <i>Boolean</i>
 <a href="#workingdir" title="WorkingDir">WorkingDir</a>: <i>String</i>
 <a href="#env" title="Env">Env</a>: <i>
-      - &lt;a href=&#34;spec-container-env.md&#34;&gt;Env&lt;/a&gt;</i>
+      - <a href="spec-container-env.md">Env</a></i>
 <a href="#envfrom" title="EnvFrom">EnvFrom</a>: <i>
-      - &lt;a href=&#34;spec-container-envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;</i>
+      - <a href="spec-container-envfrom.md">EnvFrom</a></i>
 <a href="#lifecycle" title="Lifecycle">Lifecycle</a>: <i>
-      - &lt;a href=&#34;spec-container-lifecycle.md&#34;&gt;Lifecycle&lt;/a&gt;</i>
+      - <a href="spec-container-lifecycle.md">Lifecycle</a></i>
 <a href="#livenessprobe" title="LivenessProbe">LivenessProbe</a>: <i>
-      - &lt;a href=&#34;spec-container-livenessprobe.md&#34;&gt;LivenessProbe&lt;/a&gt;</i>
+      - <a href="spec-container-livenessprobe.md">LivenessProbe</a></i>
 <a href="#port" title="Port">Port</a>: <i>
-      - &lt;a href=&#34;spec-container-port.md&#34;&gt;Port&lt;/a&gt;</i>
+      - <a href="spec-container-port.md">Port</a></i>
 <a href="#readinessprobe" title="ReadinessProbe">ReadinessProbe</a>: <i>
-      - &lt;a href=&#34;spec-container-readinessprobe.md&#34;&gt;ReadinessProbe&lt;/a&gt;</i>
+      - <a href="spec-container-readinessprobe.md">ReadinessProbe</a></i>
 <a href="#resources" title="Resources">Resources</a>: <i>
-      - &lt;a href=&#34;spec-container-resources.md&#34;&gt;Resources&lt;/a&gt;</i>
+      - <a href="spec-container-resources.md">Resources</a></i>
 <a href="#securitycontext" title="SecurityContext">SecurityContext</a>: <i>
-      - &lt;a href=&#34;spec-container-securitycontext.md&#34;&gt;SecurityContext&lt;/a&gt;</i>
+      - <a href="spec-container-securitycontext.md">SecurityContext</a></i>
 <a href="#startupprobe" title="StartupProbe">StartupProbe</a>: <i>
-      - &lt;a href=&#34;spec-container-startupprobe.md&#34;&gt;StartupProbe&lt;/a&gt;</i>
+      - <a href="spec-container-startupprobe.md">StartupProbe</a></i>
 <a href="#volumemount" title="VolumeMount">VolumeMount</a>: <i>
-      - &lt;a href=&#34;spec-container-volumemount.md&#34;&gt;VolumeMount&lt;/a&gt;</i>
+      - <a href="spec-container-volumemount.md">VolumeMount</a></i>
 </pre>
 
 ## Properties
@@ -143,70 +143,70 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Env
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-env.md&#34;&gt;Env&lt;/a&gt;
+_Type_: List of <a href="spec-container-env.md">Env</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvFrom
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;
+_Type_: List of <a href="spec-container-envfrom.md">EnvFrom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Lifecycle
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-lifecycle.md&#34;&gt;Lifecycle&lt;/a&gt;
+_Type_: List of <a href="spec-container-lifecycle.md">Lifecycle</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LivenessProbe
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-livenessprobe.md&#34;&gt;LivenessProbe&lt;/a&gt;
+_Type_: List of <a href="spec-container-livenessprobe.md">LivenessProbe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-port.md&#34;&gt;Port&lt;/a&gt;
+_Type_: List of <a href="spec-container-port.md">Port</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReadinessProbe
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-readinessprobe.md&#34;&gt;ReadinessProbe&lt;/a&gt;
+_Type_: List of <a href="spec-container-readinessprobe.md">ReadinessProbe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Resources
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-resources.md&#34;&gt;Resources&lt;/a&gt;
+_Type_: List of <a href="spec-container-resources.md">Resources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityContext
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-securitycontext.md&#34;&gt;SecurityContext&lt;/a&gt;
+_Type_: List of <a href="spec-container-securitycontext.md">SecurityContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartupProbe
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-startupprobe.md&#34;&gt;StartupProbe&lt;/a&gt;
+_Type_: List of <a href="spec-container-startupprobe.md">StartupProbe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeMount
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-container-volumemount.md&#34;&gt;VolumeMount&lt;/a&gt;
+_Type_: List of <a href="spec-container-volumemount.md">VolumeMount</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

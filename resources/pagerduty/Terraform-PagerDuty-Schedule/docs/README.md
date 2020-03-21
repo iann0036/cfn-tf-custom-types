@@ -17,8 +17,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#overflow" title="Overflow">Overflow</a>" : <i>Boolean</i>,
         "<a href="#timezone" title="TimeZone">TimeZone</a>" : <i>String</i>,
-        "<a href="#layer" title="Layer">Layer</a>" : <i>[ &lt;a href=&#34;layer.md&#34;&gt;Layer&lt;/a&gt;, ... ]</i>,
-        "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ &lt;a href=&#34;restriction.md&#34;&gt;Restriction&lt;/a&gt;, ... ]</i>
+        "<a href="#layer" title="Layer">Layer</a>" : <i>[ <a href="layer.md">Layer</a>, ... ]</i>,
+        "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ <a href="restriction.md">Restriction</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,9 +34,9 @@ Properties:
     <a href="#overflow" title="Overflow">Overflow</a>: <i>Boolean</i>
     <a href="#timezone" title="TimeZone">TimeZone</a>: <i>String</i>
     <a href="#layer" title="Layer">Layer</a>: <i>
-      - &lt;a href=&#34;layer.md&#34;&gt;Layer&lt;/a&gt;</i>
+      - <a href="layer.md">Layer</a></i>
     <a href="#restriction" title="Restriction">Restriction</a>: <i>
-      - &lt;a href=&#34;restriction.md&#34;&gt;Restriction&lt;/a&gt;</i>
+      - <a href="restriction.md">Restriction</a></i>
 </pre>
 
 ## Properties
@@ -85,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;layer.md&#34;&gt;Layer&lt;/a&gt;
+_Type_: List of <a href="layer.md">Layer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -93,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;restriction.md&#34;&gt;Restriction&lt;/a&gt;
+_Type_: List of <a href="restriction.md">Restriction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -123,5 +123,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ServerId
 
-Returns the &lt;code&gt;ServerId&lt;/code&gt; value.
+Returns the <code>ServerId</code> value.
 

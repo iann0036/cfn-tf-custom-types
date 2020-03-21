@@ -93,21 +93,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### EncryptedFingerprint
 
-Returns the &lt;code&gt;EncryptedFingerprint&lt;/code&gt; value.
+Returns the <code>EncryptedFingerprint</code> value.
 
 #### EncryptedPrivateKey
 
-Returns the &lt;code&gt;EncryptedPrivateKey&lt;/code&gt; value.
+Returns the <code>EncryptedPrivateKey</code> value.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 
 #### PrivateKey
 
-Returns the &lt;code&gt;PrivateKey&lt;/code&gt; value.
+Returns the <code>PrivateKey</code> value.
 

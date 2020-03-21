@@ -19,18 +19,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#firewallenabled" title="FirewallEnabled">FirewallEnabled</a>" : <i>Boolean</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#image" title="Image">Image</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#networks" title="Networks">Networks</a>" : <i>[ String, ... ]</i>,
         "<a href="#package" title="Package">Package</a>" : <i>String</i>,
         "<a href="#rootauthorizedkeys" title="RootAuthorizedKeys">RootAuthorizedKeys</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#userscript" title="UserScript">UserScript</a>" : <i>String</i>,
-        "<a href="#cns" title="Cns">Cns</a>" : <i>[ &lt;a href=&#34;cns.md&#34;&gt;Cns&lt;/a&gt;, ... ]</i>,
-        "<a href="#locality" title="Locality">Locality</a>" : <i>[ &lt;a href=&#34;locality.md&#34;&gt;Locality&lt;/a&gt;, ... ]</i>,
-        "<a href="#nic" title="Nic">Nic</a>" : <i>[ &lt;a href=&#34;nic.md&#34;&gt;Nic&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#cns" title="Cns">Cns</a>" : <i>[ <a href="cns.md">Cns</a>, ... ]</i>,
+        "<a href="#locality" title="Locality">Locality</a>" : <i>[ <a href="locality.md">Locality</a>, ... ]</i>,
+        "<a href="#nic" title="Nic">Nic</a>" : <i>[ <a href="nic.md">Nic</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -49,23 +49,23 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#image" title="Image">Image</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#networks" title="Networks">Networks</a>: <i>
       - String</i>
     <a href="#package" title="Package">Package</a>: <i>String</i>
     <a href="#rootauthorizedkeys" title="RootAuthorizedKeys">RootAuthorizedKeys</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#userscript" title="UserScript">UserScript</a>: <i>String</i>
     <a href="#cns" title="Cns">Cns</a>: <i>
-      - &lt;a href=&#34;cns.md&#34;&gt;Cns&lt;/a&gt;</i>
+      - <a href="cns.md">Cns</a></i>
     <a href="#locality" title="Locality">Locality</a>: <i>
-      - &lt;a href=&#34;locality.md&#34;&gt;Locality&lt;/a&gt;</i>
+      - <a href="locality.md">Locality</a></i>
     <a href="#nic" title="Nic">Nic</a>: <i>
-      - &lt;a href=&#34;nic.md&#34;&gt;Nic&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="nic.md">Nic</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -130,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -194,7 +194,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cns.md&#34;&gt;Cns&lt;/a&gt;
+_Type_: List of <a href="cns.md">Cns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -202,7 +202,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;locality.md&#34;&gt;Locality&lt;/a&gt;
+_Type_: List of <a href="locality.md">Locality</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -210,7 +210,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nic.md&#34;&gt;Nic&lt;/a&gt;
+_Type_: List of <a href="nic.md">Nic</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -218,7 +218,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -240,41 +240,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ComputeNode
 
-Returns the &lt;code&gt;ComputeNode&lt;/code&gt; value.
+Returns the <code>ComputeNode</code> value.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Dataset
 
-Returns the &lt;code&gt;Dataset&lt;/code&gt; value.
+Returns the <code>Dataset</code> value.
 
 #### Disk
 
-Returns the &lt;code&gt;Disk&lt;/code&gt; value.
+Returns the <code>Disk</code> value.
 
 #### DomainNames
 
-Returns the &lt;code&gt;DomainNames&lt;/code&gt; value.
+Returns the <code>DomainNames</code> value.
 
 #### Ips
 
-Returns the &lt;code&gt;Ips&lt;/code&gt; value.
+Returns the <code>Ips</code> value.
 
 #### Memory
 
-Returns the &lt;code&gt;Memory&lt;/code&gt; value.
+Returns the <code>Memory</code> value.
 
 #### Primaryip
 
-Returns the &lt;code&gt;Primaryip&lt;/code&gt; value.
+Returns the <code>Primaryip</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 
 #### Updated
 
-Returns the &lt;code&gt;Updated&lt;/code&gt; value.
+Returns the <code>Updated</code> value.
 

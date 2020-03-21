@@ -26,14 +26,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#objectlocklegalholdstatus" title="ObjectLockLegalHoldStatus">ObjectLockLegalHoldStatus</a>" : <i>String</i>,
         "<a href="#objectlockmode" title="ObjectLockMode">ObjectLockMode</a>" : <i>String</i>,
         "<a href="#objectlockretainuntildate" title="ObjectLockRetainUntilDate">ObjectLockRetainUntilDate</a>" : <i>String</i>,
         "<a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>" : <i>String</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
         "<a href="#storageclass" title="StorageClass">StorageClass</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#websiteredirect" title="WebsiteRedirect">WebsiteRedirect</a>" : <i>String</i>
     }
 }
@@ -59,7 +59,7 @@ Properties:
     <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#objectlocklegalholdstatus" title="ObjectLockLegalHoldStatus">ObjectLockLegalHoldStatus</a>: <i>String</i>
     <a href="#objectlockmode" title="ObjectLockMode">ObjectLockMode</a>: <i>String</i>
     <a href="#objectlockretainuntildate" title="ObjectLockRetainUntilDate">ObjectLockRetainUntilDate</a>: <i>String</i>
@@ -67,7 +67,7 @@ Properties:
     <a href="#source" title="Source">Source</a>: <i>String</i>
     <a href="#storageclass" title="StorageClass">StorageClass</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#websiteredirect" title="WebsiteRedirect">WebsiteRedirect</a>: <i>String</i>
 </pre>
 
@@ -189,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -245,7 +245,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -275,5 +275,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VersionId
 
-Returns the &lt;code&gt;VersionId&lt;/code&gt; value.
+Returns the <code>VersionId</code> value.
 

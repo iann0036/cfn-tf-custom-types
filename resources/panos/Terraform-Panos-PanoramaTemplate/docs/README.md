@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#devices" title="Devices">Devices</a>" : <i>[ &lt;a href=&#34;devices.md&#34;&gt;Devices&lt;/a&gt;, ... ]</i>
+        "<a href="#devices" title="Devices">Devices</a>" : <i>[ <a href="devices.md">Devices</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,7 +29,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#devices" title="Devices">Devices</a>: <i>
-      - &lt;a href=&#34;devices.md&#34;&gt;Devices&lt;/a&gt;</i>
+      - <a href="devices.md">Devices</a></i>
 </pre>
 
 ## Properties
@@ -62,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;devices.md&#34;&gt;Devices&lt;/a&gt;
+_Type_: List of <a href="devices.md">Devices</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DefaultVsys
 
-Returns the &lt;code&gt;DefaultVsys&lt;/code&gt; value.
+Returns the <code>DefaultVsys</code> value.
 

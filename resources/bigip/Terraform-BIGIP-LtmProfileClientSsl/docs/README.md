@@ -63,7 +63,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#strictresume" title="StrictResume">StrictResume</a>" : <i>String</i>,
         "<a href="#tmoptions" title="TmOptions">TmOptions</a>" : <i>[ String, ... ]</i>,
         "<a href="#uncleanshutdown" title="UncleanShutdown">UncleanShutdown</a>" : <i>String</i>,
-        "<a href="#certkeychain" title="CertKeyChain">CertKeyChain</a>" : <i>[ &lt;a href=&#34;certkeychain.md&#34;&gt;CertKeyChain&lt;/a&gt;, ... ]</i>
+        "<a href="#certkeychain" title="CertKeyChain">CertKeyChain</a>" : <i>[ <a href="certkeychain.md">CertKeyChain</a>, ... ]</i>
     }
 }
 </pre>
@@ -127,7 +127,7 @@ Properties:
       - String</i>
     <a href="#uncleanshutdown" title="UncleanShutdown">UncleanShutdown</a>: <i>String</i>
     <a href="#certkeychain" title="CertKeyChain">CertKeyChain</a>: <i>
-      - &lt;a href=&#34;certkeychain.md&#34;&gt;CertKeyChain&lt;/a&gt;</i>
+      - <a href="certkeychain.md">CertKeyChain</a></i>
 </pre>
 
 ## Properties
@@ -544,7 +544,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;certkeychain.md&#34;&gt;CertKeyChain&lt;/a&gt;
+_Type_: List of <a href="certkeychain.md">CertKeyChain</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

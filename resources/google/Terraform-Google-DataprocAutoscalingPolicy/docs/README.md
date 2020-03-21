@@ -16,11 +16,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#policyid" title="PolicyId">PolicyId</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#basicalgorithm" title="BasicAlgorithm">BasicAlgorithm</a>" : <i>[ &lt;a href=&#34;basicalgorithm.md&#34;&gt;BasicAlgorithm&lt;/a&gt;, ... ]</i>,
-        "<a href="#secondaryworkerconfig" title="SecondaryWorkerConfig">SecondaryWorkerConfig</a>" : <i>[ &lt;a href=&#34;secondaryworkerconfig.md&#34;&gt;SecondaryWorkerConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>" : <i>[ &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#yarnconfig" title="YarnConfig">YarnConfig</a>" : <i>[ &lt;a href=&#34;yarnconfig.md&#34;&gt;YarnConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#basicalgorithm" title="BasicAlgorithm">BasicAlgorithm</a>" : <i>[ <a href="basicalgorithm.md">BasicAlgorithm</a>, ... ]</i>,
+        "<a href="#secondaryworkerconfig" title="SecondaryWorkerConfig">SecondaryWorkerConfig</a>" : <i>[ <a href="secondaryworkerconfig.md">SecondaryWorkerConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>" : <i>[ <a href="workerconfig.md">WorkerConfig</a>, ... ]</i>,
+        "<a href="#yarnconfig" title="YarnConfig">YarnConfig</a>" : <i>[ <a href="yarnconfig.md">YarnConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,14 +35,14 @@ Properties:
     <a href="#policyid" title="PolicyId">PolicyId</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#basicalgorithm" title="BasicAlgorithm">BasicAlgorithm</a>: <i>
-      - &lt;a href=&#34;basicalgorithm.md&#34;&gt;BasicAlgorithm&lt;/a&gt;</i>
+      - <a href="basicalgorithm.md">BasicAlgorithm</a></i>
     <a href="#secondaryworkerconfig" title="SecondaryWorkerConfig">SecondaryWorkerConfig</a>: <i>
-      - &lt;a href=&#34;secondaryworkerconfig.md&#34;&gt;SecondaryWorkerConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="secondaryworkerconfig.md">SecondaryWorkerConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>: <i>
-      - &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;</i>
+      - <a href="workerconfig.md">WorkerConfig</a></i>
     <a href="#yarnconfig" title="YarnConfig">YarnConfig</a>: <i>
-      - &lt;a href=&#34;yarnconfig.md&#34;&gt;YarnConfig&lt;/a&gt;</i>
+      - <a href="yarnconfig.md">YarnConfig</a></i>
 </pre>
 
 ## Properties
@@ -83,7 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;basicalgorithm.md&#34;&gt;BasicAlgorithm&lt;/a&gt;
+_Type_: List of <a href="basicalgorithm.md">BasicAlgorithm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -91,7 +91,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secondaryworkerconfig.md&#34;&gt;SecondaryWorkerConfig&lt;/a&gt;
+_Type_: List of <a href="secondaryworkerconfig.md">SecondaryWorkerConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -99,7 +99,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -107,7 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;
+_Type_: List of <a href="workerconfig.md">WorkerConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;yarnconfig.md&#34;&gt;YarnConfig&lt;/a&gt;
+_Type_: List of <a href="yarnconfig.md">YarnConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,5 +137,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 

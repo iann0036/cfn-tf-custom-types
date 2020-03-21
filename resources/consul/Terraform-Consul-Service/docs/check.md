@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#tcp" title="Tcp">Tcp</a>" : <i>String</i>,
     "<a href="#timeout" title="Timeout">Timeout</a>" : <i>String</i>,
     "<a href="#tlsskipverify" title="TlsSkipVerify">TlsSkipVerify</a>" : <i>Boolean</i>,
-    "<a href="#header" title="Header">Header</a>" : <i>[ &lt;a href=&#34;check-header.md&#34;&gt;Header&lt;/a&gt;, ... ]</i>
+    "<a href="#header" title="Header">Header</a>" : <i>[ <a href="check-header.md">Header</a>, ... ]</i>
 }
 </pre>
 
@@ -38,7 +38,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#timeout" title="Timeout">Timeout</a>: <i>String</i>
 <a href="#tlsskipverify" title="TlsSkipVerify">TlsSkipVerify</a>: <i>Boolean</i>
 <a href="#header" title="Header">Header</a>: <i>
-      - &lt;a href=&#34;check-header.md&#34;&gt;Header&lt;/a&gt;</i>
+      - <a href="check-header.md">Header</a></i>
 </pre>
 
 ## Properties
@@ -123,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Header
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;check-header.md&#34;&gt;Header&lt;/a&gt;
+_Type_: List of <a href="check-header.md">Header</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

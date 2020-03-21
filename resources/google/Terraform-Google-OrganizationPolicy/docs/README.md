@@ -16,12 +16,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#orgid" title="OrgId">OrgId</a>" : <i>String</i>,
         "<a href="#version" title="Version">Version</a>" : <i>Double</i>,
-        "<a href="#booleanpolicy" title="BooleanPolicy">BooleanPolicy</a>" : <i>[ &lt;a href=&#34;booleanpolicy.md&#34;&gt;BooleanPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#listpolicy" title="ListPolicy">ListPolicy</a>" : <i>[ &lt;a href=&#34;listpolicy.md&#34;&gt;ListPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#restorepolicy" title="RestorePolicy">RestorePolicy</a>" : <i>[ &lt;a href=&#34;restorepolicy.md&#34;&gt;RestorePolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#allow" title="Allow">Allow</a>" : <i>[ &lt;a href=&#34;allow.md&#34;&gt;Allow&lt;/a&gt;, ... ]</i>,
-        "<a href="#deny" title="Deny">Deny</a>" : <i>[ &lt;a href=&#34;deny.md&#34;&gt;Deny&lt;/a&gt;, ... ]</i>
+        "<a href="#booleanpolicy" title="BooleanPolicy">BooleanPolicy</a>" : <i>[ <a href="booleanpolicy.md">BooleanPolicy</a>, ... ]</i>,
+        "<a href="#listpolicy" title="ListPolicy">ListPolicy</a>" : <i>[ <a href="listpolicy.md">ListPolicy</a>, ... ]</i>,
+        "<a href="#restorepolicy" title="RestorePolicy">RestorePolicy</a>" : <i>[ <a href="restorepolicy.md">RestorePolicy</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#allow" title="Allow">Allow</a>" : <i>[ <a href="allow.md">Allow</a>, ... ]</i>,
+        "<a href="#deny" title="Deny">Deny</a>" : <i>[ <a href="deny.md">Deny</a>, ... ]</i>
     }
 }
 </pre>
@@ -36,16 +36,16 @@ Properties:
     <a href="#orgid" title="OrgId">OrgId</a>: <i>String</i>
     <a href="#version" title="Version">Version</a>: <i>Double</i>
     <a href="#booleanpolicy" title="BooleanPolicy">BooleanPolicy</a>: <i>
-      - &lt;a href=&#34;booleanpolicy.md&#34;&gt;BooleanPolicy&lt;/a&gt;</i>
+      - <a href="booleanpolicy.md">BooleanPolicy</a></i>
     <a href="#listpolicy" title="ListPolicy">ListPolicy</a>: <i>
-      - &lt;a href=&#34;listpolicy.md&#34;&gt;ListPolicy&lt;/a&gt;</i>
+      - <a href="listpolicy.md">ListPolicy</a></i>
     <a href="#restorepolicy" title="RestorePolicy">RestorePolicy</a>: <i>
-      - &lt;a href=&#34;restorepolicy.md&#34;&gt;RestorePolicy&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="restorepolicy.md">RestorePolicy</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#allow" title="Allow">Allow</a>: <i>
-      - &lt;a href=&#34;allow.md&#34;&gt;Allow&lt;/a&gt;</i>
+      - <a href="allow.md">Allow</a></i>
     <a href="#deny" title="Deny">Deny</a>: <i>
-      - &lt;a href=&#34;deny.md&#34;&gt;Deny&lt;/a&gt;</i>
+      - <a href="deny.md">Deny</a></i>
 </pre>
 
 ## Properties
@@ -86,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;booleanpolicy.md&#34;&gt;BooleanPolicy&lt;/a&gt;
+_Type_: List of <a href="booleanpolicy.md">BooleanPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;listpolicy.md&#34;&gt;ListPolicy&lt;/a&gt;
+_Type_: List of <a href="listpolicy.md">ListPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -102,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;restorepolicy.md&#34;&gt;RestorePolicy&lt;/a&gt;
+_Type_: List of <a href="restorepolicy.md">RestorePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -110,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -118,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;allow.md&#34;&gt;Allow&lt;/a&gt;
+_Type_: List of <a href="allow.md">Allow</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deny.md&#34;&gt;Deny&lt;/a&gt;
+_Type_: List of <a href="deny.md">Deny</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,9 +148,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 
 #### UpdateTime
 
-Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
+Returns the <code>UpdateTime</code> value.
 

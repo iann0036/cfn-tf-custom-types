@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-    "<a href="#conditionabsent" title="ConditionAbsent">ConditionAbsent</a>" : <i>[ &lt;a href=&#34;conditions-conditionabsent.md&#34;&gt;ConditionAbsent&lt;/a&gt;, ... ]</i>,
-    "<a href="#conditionthreshold" title="ConditionThreshold">ConditionThreshold</a>" : <i>[ &lt;a href=&#34;conditions-conditionthreshold.md&#34;&gt;ConditionThreshold&lt;/a&gt;, ... ]</i>
+    "<a href="#conditionabsent" title="ConditionAbsent">ConditionAbsent</a>" : <i>[ <a href="conditions-conditionabsent.md">ConditionAbsent</a>, ... ]</i>,
+    "<a href="#conditionthreshold" title="ConditionThreshold">ConditionThreshold</a>" : <i>[ <a href="conditions-conditionthreshold.md">ConditionThreshold</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
 <a href="#conditionabsent" title="ConditionAbsent">ConditionAbsent</a>: <i>
-      - &lt;a href=&#34;conditions-conditionabsent.md&#34;&gt;ConditionAbsent&lt;/a&gt;</i>
+      - <a href="conditions-conditionabsent.md">ConditionAbsent</a></i>
 <a href="#conditionthreshold" title="ConditionThreshold">ConditionThreshold</a>: <i>
-      - &lt;a href=&#34;conditions-conditionthreshold.md&#34;&gt;ConditionThreshold&lt;/a&gt;</i>
+      - <a href="conditions-conditionthreshold.md">ConditionThreshold</a></i>
 </pre>
 
 ## Properties
@@ -36,14 +36,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ConditionAbsent
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;conditions-conditionabsent.md&#34;&gt;ConditionAbsent&lt;/a&gt;
+_Type_: List of <a href="conditions-conditionabsent.md">ConditionAbsent</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConditionThreshold
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;conditions-conditionthreshold.md&#34;&gt;ConditionThreshold&lt;/a&gt;
+_Type_: List of <a href="conditions-conditionthreshold.md">ConditionThreshold</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

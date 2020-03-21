@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#logdestination" title="LogDestination">LogDestination</a>" : <i>String</i>,
-    "<a href="#redactedfields" title="RedactedFields">RedactedFields</a>" : <i>[ &lt;a href=&#34;loggingconfiguration-redactedfields.md&#34;&gt;RedactedFields&lt;/a&gt;, ... ]</i>
+    "<a href="#redactedfields" title="RedactedFields">RedactedFields</a>" : <i>[ <a href="loggingconfiguration-redactedfields.md">RedactedFields</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#logdestination" title="LogDestination">LogDestination</a>: <i>String</i>
 <a href="#redactedfields" title="RedactedFields">RedactedFields</a>: <i>
-      - &lt;a href=&#34;loggingconfiguration-redactedfields.md&#34;&gt;RedactedFields&lt;/a&gt;</i>
+      - <a href="loggingconfiguration-redactedfields.md">RedactedFields</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RedactedFields
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;loggingconfiguration-redactedfields.md&#34;&gt;RedactedFields&lt;/a&gt;
+_Type_: List of <a href="loggingconfiguration-redactedfields.md">RedactedFields</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

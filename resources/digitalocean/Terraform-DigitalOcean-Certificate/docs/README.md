@@ -114,13 +114,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NotAfter
 
-Returns the &lt;code&gt;NotAfter&lt;/code&gt; value.
+Returns the <code>NotAfter</code> value.
 
 #### Sha1Fingerprint
 
-Returns the &lt;code&gt;Sha1Fingerprint&lt;/code&gt; value.
+Returns the <code>Sha1Fingerprint</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

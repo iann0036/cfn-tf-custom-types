@@ -63,5 +63,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PublicIp
 
-Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
+Returns the <code>PublicIp</code> value.
 

@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#listenerid" title="ListenerId">ListenerId</a>" : <i>String</i>,
         "<a href="#ruleid" title="RuleId">RuleId</a>" : <i>String</i>,
-        "<a href="#targets" title="Targets">Targets</a>" : <i>[ &lt;a href=&#34;targets.md&#34;&gt;Targets&lt;/a&gt;, ... ]</i>
+        "<a href="#targets" title="Targets">Targets</a>" : <i>[ <a href="targets.md">Targets</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +31,7 @@ Properties:
     <a href="#listenerid" title="ListenerId">ListenerId</a>: <i>String</i>
     <a href="#ruleid" title="RuleId">RuleId</a>: <i>String</i>
     <a href="#targets" title="Targets">Targets</a>: <i>
-      - &lt;a href=&#34;targets.md&#34;&gt;Targets&lt;/a&gt;</i>
+      - <a href="targets.md">Targets</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;targets.md&#34;&gt;Targets&lt;/a&gt;
+_Type_: List of <a href="targets.md">Targets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,5 +94,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ProtocolType
 
-Returns the &lt;code&gt;ProtocolType&lt;/code&gt; value.
+Returns the <code>ProtocolType</code> value.
 

@@ -93,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### GroupId
 
-Returns the &lt;code&gt;GroupId&lt;/code&gt; value.
+Returns the <code>GroupId</code> value.
 

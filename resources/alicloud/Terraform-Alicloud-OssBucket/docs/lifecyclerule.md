@@ -11,8 +11,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
     "<a href="#id" title="Id">Id</a>" : <i>String</i>,
     "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>,
-    "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ &lt;a href=&#34;lifecyclerule-expiration.md&#34;&gt;Expiration&lt;/a&gt;, ... ]</i>,
-    "<a href="#transitions" title="Transitions">Transitions</a>" : <i>[ &lt;a href=&#34;lifecyclerule-transitions.md&#34;&gt;Transitions&lt;/a&gt;, ... ]</i>
+    "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ <a href="lifecyclerule-expiration.md">Expiration</a>, ... ]</i>,
+    "<a href="#transitions" title="Transitions">Transitions</a>" : <i>[ <a href="lifecyclerule-transitions.md">Transitions</a>, ... ]</i>
 }
 </pre>
 
@@ -23,9 +23,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#id" title="Id">Id</a>: <i>String</i>
 <a href="#prefix" title="Prefix">Prefix</a>: <i>String</i>
 <a href="#expiration" title="Expiration">Expiration</a>: <i>
-      - &lt;a href=&#34;lifecyclerule-expiration.md&#34;&gt;Expiration&lt;/a&gt;</i>
+      - <a href="lifecyclerule-expiration.md">Expiration</a></i>
 <a href="#transitions" title="Transitions">Transitions</a>: <i>
-      - &lt;a href=&#34;lifecyclerule-transitions.md&#34;&gt;Transitions&lt;/a&gt;</i>
+      - <a href="lifecyclerule-transitions.md">Transitions</a></i>
 </pre>
 
 ## Properties
@@ -54,14 +54,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Expiration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerule-expiration.md&#34;&gt;Expiration&lt;/a&gt;
+_Type_: List of <a href="lifecyclerule-expiration.md">Expiration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Transitions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerule-transitions.md&#34;&gt;Transitions&lt;/a&gt;
+_Type_: List of <a href="lifecyclerule-transitions.md">Transitions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -63,5 +63,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NameServers
 
-Returns the &lt;code&gt;NameServers&lt;/code&gt; value.
+Returns the <code>NameServers</code> value.
 

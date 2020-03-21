@@ -15,13 +15,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#permanentdeletiontimeindays" title="PermanentDeletionTimeInDays">PermanentDeletionTimeInDays</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#certificateauthorityconfiguration" title="CertificateAuthorityConfiguration">CertificateAuthorityConfiguration</a>" : <i>[ &lt;a href=&#34;certificateauthorityconfiguration.md&#34;&gt;CertificateAuthorityConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#revocationconfiguration" title="RevocationConfiguration">RevocationConfiguration</a>" : <i>[ &lt;a href=&#34;revocationconfiguration.md&#34;&gt;RevocationConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#subject" title="Subject">Subject</a>" : <i>[ &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;, ... ]</i>,
-        "<a href="#crlconfiguration" title="CrlConfiguration">CrlConfiguration</a>" : <i>[ &lt;a href=&#34;crlconfiguration.md&#34;&gt;CrlConfiguration&lt;/a&gt;, ... ]</i>
+        "<a href="#certificateauthorityconfiguration" title="CertificateAuthorityConfiguration">CertificateAuthorityConfiguration</a>" : <i>[ <a href="certificateauthorityconfiguration.md">CertificateAuthorityConfiguration</a>, ... ]</i>,
+        "<a href="#revocationconfiguration" title="RevocationConfiguration">RevocationConfiguration</a>" : <i>[ <a href="revocationconfiguration.md">RevocationConfiguration</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#subject" title="Subject">Subject</a>" : <i>[ <a href="subject.md">Subject</a>, ... ]</i>,
+        "<a href="#crlconfiguration" title="CrlConfiguration">CrlConfiguration</a>" : <i>[ <a href="crlconfiguration.md">CrlConfiguration</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,17 +35,17 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#permanentdeletiontimeindays" title="PermanentDeletionTimeInDays">PermanentDeletionTimeInDays</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#certificateauthorityconfiguration" title="CertificateAuthorityConfiguration">CertificateAuthorityConfiguration</a>: <i>
-      - &lt;a href=&#34;certificateauthorityconfiguration.md&#34;&gt;CertificateAuthorityConfiguration&lt;/a&gt;</i>
+      - <a href="certificateauthorityconfiguration.md">CertificateAuthorityConfiguration</a></i>
     <a href="#revocationconfiguration" title="RevocationConfiguration">RevocationConfiguration</a>: <i>
-      - &lt;a href=&#34;revocationconfiguration.md&#34;&gt;RevocationConfiguration&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="revocationconfiguration.md">RevocationConfiguration</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#subject" title="Subject">Subject</a>: <i>
-      - &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;</i>
+      - <a href="subject.md">Subject</a></i>
     <a href="#crlconfiguration" title="CrlConfiguration">CrlConfiguration</a>: <i>
-      - &lt;a href=&#34;crlconfiguration.md&#34;&gt;CrlConfiguration&lt;/a&gt;</i>
+      - <a href="crlconfiguration.md">CrlConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -78,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;certificateauthorityconfiguration.md&#34;&gt;CertificateAuthorityConfiguration&lt;/a&gt;
+_Type_: List of <a href="certificateauthorityconfiguration.md">CertificateAuthorityConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -102,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;revocationconfiguration.md&#34;&gt;RevocationConfiguration&lt;/a&gt;
+_Type_: List of <a href="revocationconfiguration.md">RevocationConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -110,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -118,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;
+_Type_: List of <a href="subject.md">Subject</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;crlconfiguration.md&#34;&gt;CrlConfiguration&lt;/a&gt;
+_Type_: List of <a href="crlconfiguration.md">CrlConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,33 +148,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### Certificate
 
-Returns the &lt;code&gt;Certificate&lt;/code&gt; value.
+Returns the <code>Certificate</code> value.
 
 #### CertificateChain
 
-Returns the &lt;code&gt;CertificateChain&lt;/code&gt; value.
+Returns the <code>CertificateChain</code> value.
 
 #### CertificateSigningRequest
 
-Returns the &lt;code&gt;CertificateSigningRequest&lt;/code&gt; value.
+Returns the <code>CertificateSigningRequest</code> value.
 
 #### NotAfter
 
-Returns the &lt;code&gt;NotAfter&lt;/code&gt; value.
+Returns the <code>NotAfter</code> value.
 
 #### NotBefore
 
-Returns the &lt;code&gt;NotBefore&lt;/code&gt; value.
+Returns the <code>NotBefore</code> value.
 
 #### Serial
 
-Returns the &lt;code&gt;Serial&lt;/code&gt; value.
+Returns the <code>Serial</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

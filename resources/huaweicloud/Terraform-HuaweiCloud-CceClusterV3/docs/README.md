@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::CceClusterV3",
     "Properties" : {
-        "<a href="#annotations" title="Annotations">Annotations</a>" : <i>[ &lt;a href=&#34;annotations.md&#34;&gt;Annotations&lt;/a&gt;, ... ]</i>,
+        "<a href="#annotations" title="Annotations">Annotations</a>" : <i>[ <a href="annotations.md">Annotations</a>, ... ]</i>,
         "<a href="#authenticationmode" title="AuthenticationMode">AuthenticationMode</a>" : <i>String</i>,
         "<a href="#billingmode" title="BillingMode">BillingMode</a>" : <i>Double</i>,
         "<a href="#clustertype" title="ClusterType">ClusterType</a>" : <i>String</i>,
@@ -21,17 +21,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#containernetworktype" title="ContainerNetworkType">ContainerNetworkType</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#eip" title="Eip">Eip</a>" : <i>String</i>,
-        "<a href="#extendparam" title="ExtendParam">ExtendParam</a>" : <i>[ &lt;a href=&#34;extendparam.md&#34;&gt;ExtendParam&lt;/a&gt;, ... ]</i>,
+        "<a href="#extendparam" title="ExtendParam">ExtendParam</a>" : <i>[ <a href="extendparam.md">ExtendParam</a>, ... ]</i>,
         "<a href="#flavorid" title="FlavorId">FlavorId</a>" : <i>String</i>,
         "<a href="#highwaysubnetid" title="HighwaySubnetId">HighwaySubnetId</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#multiaz" title="MultiAz">MultiAz</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -42,7 +42,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::HuaweiCloud::CceClusterV3
 Properties:
     <a href="#annotations" title="Annotations">Annotations</a>: <i>
-      - &lt;a href=&#34;annotations.md&#34;&gt;Annotations&lt;/a&gt;</i>
+      - <a href="annotations.md">Annotations</a></i>
     <a href="#authenticationmode" title="AuthenticationMode">AuthenticationMode</a>: <i>String</i>
     <a href="#billingmode" title="BillingMode">BillingMode</a>: <i>Double</i>
     <a href="#clustertype" title="ClusterType">ClusterType</a>: <i>String</i>
@@ -52,18 +52,18 @@ Properties:
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#eip" title="Eip">Eip</a>: <i>String</i>
     <a href="#extendparam" title="ExtendParam">ExtendParam</a>: <i>
-      - &lt;a href=&#34;extendparam.md&#34;&gt;ExtendParam&lt;/a&gt;</i>
+      - <a href="extendparam.md">ExtendParam</a></i>
     <a href="#flavorid" title="FlavorId">FlavorId</a>: <i>String</i>
     <a href="#highwaysubnetid" title="HighwaySubnetId">HighwaySubnetId</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#multiaz" title="MultiAz">MultiAz</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;annotations.md&#34;&gt;Annotations&lt;/a&gt;
+_Type_: List of <a href="annotations.md">Annotations</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;extendparam.md&#34;&gt;ExtendParam&lt;/a&gt;
+_Type_: List of <a href="extendparam.md">ExtendParam</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -224,7 +224,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -246,13 +246,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CertificateClusters
 
-Returns the &lt;code&gt;CertificateClusters&lt;/code&gt; value.
+Returns the <code>CertificateClusters</code> value.
 
 #### CertificateUsers
 
-Returns the &lt;code&gt;CertificateUsers&lt;/code&gt; value.
+Returns the <code>CertificateUsers</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

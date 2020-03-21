@@ -21,10 +21,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#shortname" title="ShortName">ShortName</a>" : <i>String</i>,
         "<a href="#size" title="Size">Size</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#connectsettings" title="ConnectSettings">ConnectSettings</a>" : <i>[ &lt;a href=&#34;connectsettings.md&#34;&gt;ConnectSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#vpcsettings" title="VpcSettings">VpcSettings</a>" : <i>[ &lt;a href=&#34;vpcsettings.md&#34;&gt;VpcSettings&lt;/a&gt;, ... ]</i>
+        "<a href="#connectsettings" title="ConnectSettings">ConnectSettings</a>" : <i>[ <a href="connectsettings.md">ConnectSettings</a>, ... ]</i>,
+        "<a href="#vpcsettings" title="VpcSettings">VpcSettings</a>" : <i>[ <a href="vpcsettings.md">VpcSettings</a>, ... ]</i>
     }
 }
 </pre>
@@ -44,12 +44,12 @@ Properties:
     <a href="#shortname" title="ShortName">ShortName</a>: <i>String</i>
     <a href="#size" title="Size">Size</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#connectsettings" title="ConnectSettings">ConnectSettings</a>: <i>
-      - &lt;a href=&#34;connectsettings.md&#34;&gt;ConnectSettings&lt;/a&gt;</i>
+      - <a href="connectsettings.md">ConnectSettings</a></i>
     <a href="#vpcsettings" title="VpcSettings">VpcSettings</a>: <i>
-      - &lt;a href=&#34;vpcsettings.md&#34;&gt;VpcSettings&lt;/a&gt;</i>
+      - <a href="vpcsettings.md">VpcSettings</a></i>
 </pre>
 
 ## Properties
@@ -130,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;connectsettings.md&#34;&gt;ConnectSettings&lt;/a&gt;
+_Type_: List of <a href="connectsettings.md">ConnectSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vpcsettings.md&#34;&gt;VpcSettings&lt;/a&gt;
+_Type_: List of <a href="vpcsettings.md">VpcSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,13 +176,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessUrl
 
-Returns the &lt;code&gt;AccessUrl&lt;/code&gt; value.
+Returns the <code>AccessUrl</code> value.
 
 #### DnsIpAddresses
 
-Returns the &lt;code&gt;DnsIpAddresses&lt;/code&gt; value.
+Returns the <code>DnsIpAddresses</code> value.
 
 #### SecurityGroupId
 
-Returns the &lt;code&gt;SecurityGroupId&lt;/code&gt; value.
+Returns the <code>SecurityGroupId</code> value.
 

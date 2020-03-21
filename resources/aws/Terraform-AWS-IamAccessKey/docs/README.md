@@ -83,21 +83,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EncryptedSecret
 
-Returns the &lt;code&gt;EncryptedSecret&lt;/code&gt; value.
+Returns the <code>EncryptedSecret</code> value.
 
 #### KeyFingerprint
 
-Returns the &lt;code&gt;KeyFingerprint&lt;/code&gt; value.
+Returns the <code>KeyFingerprint</code> value.
 
 #### Secret
 
-Returns the &lt;code&gt;Secret&lt;/code&gt; value.
+Returns the <code>Secret</code> value.
 
 #### SesSmtpPassword
 
-Returns the &lt;code&gt;SesSmtpPassword&lt;/code&gt; value.
+Returns the <code>SesSmtpPassword</code> value.
 
 #### SesSmtpPasswordV4
 
-Returns the &lt;code&gt;SesSmtpPasswordV4&lt;/code&gt; value.
+Returns the <code>SesSmtpPasswordV4</code> value.
 

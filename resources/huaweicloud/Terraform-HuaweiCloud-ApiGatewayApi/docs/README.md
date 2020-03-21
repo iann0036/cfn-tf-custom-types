@@ -27,12 +27,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
         "<a href="#visibility" title="Visibility">Visibility</a>" : <i>Double</i>,
-        "<a href="#backendparameter" title="BackendParameter">BackendParameter</a>" : <i>[ &lt;a href=&#34;backendparameter.md&#34;&gt;BackendParameter&lt;/a&gt;, ... ]</i>,
-        "<a href="#functionbackend" title="FunctionBackend">FunctionBackend</a>" : <i>[ &lt;a href=&#34;functionbackend.md&#34;&gt;FunctionBackend&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpbackend" title="HttpBackend">HttpBackend</a>" : <i>[ &lt;a href=&#34;httpbackend.md&#34;&gt;HttpBackend&lt;/a&gt;, ... ]</i>,
-        "<a href="#mockbackend" title="MockBackend">MockBackend</a>" : <i>[ &lt;a href=&#34;mockbackend.md&#34;&gt;MockBackend&lt;/a&gt;, ... ]</i>,
-        "<a href="#requestparameter" title="RequestParameter">RequestParameter</a>" : <i>[ &lt;a href=&#34;requestparameter.md&#34;&gt;RequestParameter&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#backendparameter" title="BackendParameter">BackendParameter</a>" : <i>[ <a href="backendparameter.md">BackendParameter</a>, ... ]</i>,
+        "<a href="#functionbackend" title="FunctionBackend">FunctionBackend</a>" : <i>[ <a href="functionbackend.md">FunctionBackend</a>, ... ]</i>,
+        "<a href="#httpbackend" title="HttpBackend">HttpBackend</a>" : <i>[ <a href="httpbackend.md">HttpBackend</a>, ... ]</i>,
+        "<a href="#mockbackend" title="MockBackend">MockBackend</a>" : <i>[ <a href="mockbackend.md">MockBackend</a>, ... ]</i>,
+        "<a href="#requestparameter" title="RequestParameter">RequestParameter</a>" : <i>[ <a href="requestparameter.md">RequestParameter</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -59,16 +59,16 @@ Properties:
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#visibility" title="Visibility">Visibility</a>: <i>Double</i>
     <a href="#backendparameter" title="BackendParameter">BackendParameter</a>: <i>
-      - &lt;a href=&#34;backendparameter.md&#34;&gt;BackendParameter&lt;/a&gt;</i>
+      - <a href="backendparameter.md">BackendParameter</a></i>
     <a href="#functionbackend" title="FunctionBackend">FunctionBackend</a>: <i>
-      - &lt;a href=&#34;functionbackend.md&#34;&gt;FunctionBackend&lt;/a&gt;</i>
+      - <a href="functionbackend.md">FunctionBackend</a></i>
     <a href="#httpbackend" title="HttpBackend">HttpBackend</a>: <i>
-      - &lt;a href=&#34;httpbackend.md&#34;&gt;HttpBackend&lt;/a&gt;</i>
+      - <a href="httpbackend.md">HttpBackend</a></i>
     <a href="#mockbackend" title="MockBackend">MockBackend</a>: <i>
-      - &lt;a href=&#34;mockbackend.md&#34;&gt;MockBackend&lt;/a&gt;</i>
+      - <a href="mockbackend.md">MockBackend</a></i>
     <a href="#requestparameter" title="RequestParameter">RequestParameter</a>: <i>
-      - &lt;a href=&#34;requestparameter.md&#34;&gt;RequestParameter&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="requestparameter.md">RequestParameter</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -197,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backendparameter.md&#34;&gt;BackendParameter&lt;/a&gt;
+_Type_: List of <a href="backendparameter.md">BackendParameter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;functionbackend.md&#34;&gt;FunctionBackend&lt;/a&gt;
+_Type_: List of <a href="functionbackend.md">FunctionBackend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -213,7 +213,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpbackend.md&#34;&gt;HttpBackend&lt;/a&gt;
+_Type_: List of <a href="httpbackend.md">HttpBackend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,7 +221,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;mockbackend.md&#34;&gt;MockBackend&lt;/a&gt;
+_Type_: List of <a href="mockbackend.md">MockBackend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -229,7 +229,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requestparameter.md&#34;&gt;RequestParameter&lt;/a&gt;
+_Type_: List of <a href="requestparameter.md">RequestParameter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -237,7 +237,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -259,5 +259,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### GroupName
 
-Returns the &lt;code&gt;GroupName&lt;/code&gt; value.
+Returns the <code>GroupName</code> value.
 

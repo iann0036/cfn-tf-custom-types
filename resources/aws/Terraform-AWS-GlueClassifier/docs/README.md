@@ -14,10 +14,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#csvclassifier" title="CsvClassifier">CsvClassifier</a>" : <i>[ &lt;a href=&#34;csvclassifier.md&#34;&gt;CsvClassifier&lt;/a&gt;, ... ]</i>,
-        "<a href="#grokclassifier" title="GrokClassifier">GrokClassifier</a>" : <i>[ &lt;a href=&#34;grokclassifier.md&#34;&gt;GrokClassifier&lt;/a&gt;, ... ]</i>,
-        "<a href="#jsonclassifier" title="JsonClassifier">JsonClassifier</a>" : <i>[ &lt;a href=&#34;jsonclassifier.md&#34;&gt;JsonClassifier&lt;/a&gt;, ... ]</i>,
-        "<a href="#xmlclassifier" title="XmlClassifier">XmlClassifier</a>" : <i>[ &lt;a href=&#34;xmlclassifier.md&#34;&gt;XmlClassifier&lt;/a&gt;, ... ]</i>
+        "<a href="#csvclassifier" title="CsvClassifier">CsvClassifier</a>" : <i>[ <a href="csvclassifier.md">CsvClassifier</a>, ... ]</i>,
+        "<a href="#grokclassifier" title="GrokClassifier">GrokClassifier</a>" : <i>[ <a href="grokclassifier.md">GrokClassifier</a>, ... ]</i>,
+        "<a href="#jsonclassifier" title="JsonClassifier">JsonClassifier</a>" : <i>[ <a href="jsonclassifier.md">JsonClassifier</a>, ... ]</i>,
+        "<a href="#xmlclassifier" title="XmlClassifier">XmlClassifier</a>" : <i>[ <a href="xmlclassifier.md">XmlClassifier</a>, ... ]</i>
     }
 }
 </pre>
@@ -30,13 +30,13 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#csvclassifier" title="CsvClassifier">CsvClassifier</a>: <i>
-      - &lt;a href=&#34;csvclassifier.md&#34;&gt;CsvClassifier&lt;/a&gt;</i>
+      - <a href="csvclassifier.md">CsvClassifier</a></i>
     <a href="#grokclassifier" title="GrokClassifier">GrokClassifier</a>: <i>
-      - &lt;a href=&#34;grokclassifier.md&#34;&gt;GrokClassifier&lt;/a&gt;</i>
+      - <a href="grokclassifier.md">GrokClassifier</a></i>
     <a href="#jsonclassifier" title="JsonClassifier">JsonClassifier</a>: <i>
-      - &lt;a href=&#34;jsonclassifier.md&#34;&gt;JsonClassifier&lt;/a&gt;</i>
+      - <a href="jsonclassifier.md">JsonClassifier</a></i>
     <a href="#xmlclassifier" title="XmlClassifier">XmlClassifier</a>: <i>
-      - &lt;a href=&#34;xmlclassifier.md&#34;&gt;XmlClassifier&lt;/a&gt;</i>
+      - <a href="xmlclassifier.md">XmlClassifier</a></i>
 </pre>
 
 ## Properties
@@ -61,7 +61,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;csvclassifier.md&#34;&gt;CsvClassifier&lt;/a&gt;
+_Type_: List of <a href="csvclassifier.md">CsvClassifier</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -69,7 +69,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;grokclassifier.md&#34;&gt;GrokClassifier&lt;/a&gt;
+_Type_: List of <a href="grokclassifier.md">GrokClassifier</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -77,7 +77,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;jsonclassifier.md&#34;&gt;JsonClassifier&lt;/a&gt;
+_Type_: List of <a href="jsonclassifier.md">JsonClassifier</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -85,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;xmlclassifier.md&#34;&gt;XmlClassifier&lt;/a&gt;
+_Type_: List of <a href="xmlclassifier.md">XmlClassifier</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

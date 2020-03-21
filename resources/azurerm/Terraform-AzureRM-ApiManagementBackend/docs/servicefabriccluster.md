@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#managementendpoints" title="ManagementEndpoints">ManagementEndpoints</a>" : <i>[ String, ... ]</i>,
     "<a href="#maxpartitionresolutionretries" title="MaxPartitionResolutionRetries">MaxPartitionResolutionRetries</a>" : <i>Double</i>,
     "<a href="#servercertificatethumbprints" title="ServerCertificateThumbprints">ServerCertificateThumbprints</a>" : <i>[ String, ... ]</i>,
-    "<a href="#serverx509name" title="ServerX509Name">ServerX509Name</a>" : <i>[ &lt;a href=&#34;servicefabriccluster-serverx509name.md&#34;&gt;ServerX509Name&lt;/a&gt;, ... ]</i>
+    "<a href="#serverx509name" title="ServerX509Name">ServerX509Name</a>" : <i>[ <a href="servicefabriccluster-serverx509name.md">ServerX509Name</a>, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#servercertificatethumbprints" title="ServerCertificateThumbprints">ServerCertificateThumbprints</a>: <i>
       - String</i>
 <a href="#serverx509name" title="ServerX509Name">ServerX509Name</a>: <i>
-      - &lt;a href=&#34;servicefabriccluster-serverx509name.md&#34;&gt;ServerX509Name&lt;/a&gt;</i>
+      - <a href="servicefabriccluster-serverx509name.md">ServerX509Name</a></i>
 </pre>
 
 ## Properties
@@ -62,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ServerX509Name
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;servicefabriccluster-serverx509name.md&#34;&gt;ServerX509Name&lt;/a&gt;
+_Type_: List of <a href="servicefabriccluster-serverx509name.md">ServerX509Name</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

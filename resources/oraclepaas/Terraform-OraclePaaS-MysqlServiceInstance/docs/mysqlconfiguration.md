@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#mysqlusername" title="MysqlUsername">MysqlUsername</a>" : <i>String</i>,
     "<a href="#snapshotname" title="SnapshotName">SnapshotName</a>" : <i>String</i>,
     "<a href="#sourceservicename" title="SourceServiceName">SourceServiceName</a>" : <i>String</i>,
-    "<a href="#enterprisemonitorconfiguration" title="EnterpriseMonitorConfiguration">EnterpriseMonitorConfiguration</a>" : <i>[ &lt;a href=&#34;mysqlconfiguration-enterprisemonitorconfiguration.md&#34;&gt;EnterpriseMonitorConfiguration&lt;/a&gt;, ... ]</i>
+    "<a href="#enterprisemonitorconfiguration" title="EnterpriseMonitorConfiguration">EnterpriseMonitorConfiguration</a>" : <i>[ <a href="mysqlconfiguration-enterprisemonitorconfiguration.md">EnterpriseMonitorConfiguration</a>, ... ]</i>
 }
 </pre>
 
@@ -34,7 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#snapshotname" title="SnapshotName">SnapshotName</a>: <i>String</i>
 <a href="#sourceservicename" title="SourceServiceName">SourceServiceName</a>: <i>String</i>
 <a href="#enterprisemonitorconfiguration" title="EnterpriseMonitorConfiguration">EnterpriseMonitorConfiguration</a>: <i>
-      - &lt;a href=&#34;mysqlconfiguration-enterprisemonitorconfiguration.md&#34;&gt;EnterpriseMonitorConfiguration&lt;/a&gt;</i>
+      - <a href="mysqlconfiguration-enterprisemonitorconfiguration.md">EnterpriseMonitorConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -105,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EnterpriseMonitorConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;mysqlconfiguration-enterprisemonitorconfiguration.md&#34;&gt;EnterpriseMonitorConfiguration&lt;/a&gt;
+_Type_: List of <a href="mysqlconfiguration-enterprisemonitorconfiguration.md">EnterpriseMonitorConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

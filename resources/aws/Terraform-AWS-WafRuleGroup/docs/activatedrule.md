@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
     "<a href="#ruleid" title="RuleId">RuleId</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;activatedrule-action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>
+    "<a href="#action" title="Action">Action</a>" : <i>[ <a href="activatedrule-action.md">Action</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#ruleid" title="RuleId">RuleId</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#action" title="Action">Action</a>: <i>
-      - &lt;a href=&#34;activatedrule-action.md&#34;&gt;Action&lt;/a&gt;</i>
+      - <a href="activatedrule-action.md">Action</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Action
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;activatedrule-action.md&#34;&gt;Action&lt;/a&gt;
+_Type_: List of <a href="activatedrule-action.md">Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#identifier" title="Identifier">Identifier</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#userpoolid" title="UserPoolId">UserPoolId</a>" : <i>String</i>,
-        "<a href="#scope" title="Scope">Scope</a>" : <i>[ &lt;a href=&#34;scope.md&#34;&gt;Scope&lt;/a&gt;, ... ]</i>
+        "<a href="#scope" title="Scope">Scope</a>" : <i>[ <a href="scope.md">Scope</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +31,7 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#userpoolid" title="UserPoolId">UserPoolId</a>: <i>String</i>
     <a href="#scope" title="Scope">Scope</a>: <i>
-      - &lt;a href=&#34;scope.md&#34;&gt;Scope&lt;/a&gt;</i>
+      - <a href="scope.md">Scope</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scope.md&#34;&gt;Scope&lt;/a&gt;
+_Type_: List of <a href="scope.md">Scope</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,5 +94,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ScopeIdentifiers
 
-Returns the &lt;code&gt;ScopeIdentifiers&lt;/code&gt; value.
+Returns the <code>ScopeIdentifiers</code> value.
 

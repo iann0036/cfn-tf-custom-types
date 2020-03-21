@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#requireadminapproval" title="RequireAdminApproval">RequireAdminApproval</a>" : <i>Boolean</i>,
     "<a href="#requirecorpowned" title="RequireCorpOwned">RequireCorpOwned</a>" : <i>Boolean</i>,
     "<a href="#requirescreenlock" title="RequireScreenLock">RequireScreenLock</a>" : <i>Boolean</i>,
-    "<a href="#osconstraints" title="OsConstraints">OsConstraints</a>" : <i>[ &lt;a href=&#34;basic-conditions-devicepolicy-osconstraints.md&#34;&gt;OsConstraints&lt;/a&gt;, ... ]</i>
+    "<a href="#osconstraints" title="OsConstraints">OsConstraints</a>" : <i>[ <a href="basic-conditions-devicepolicy-osconstraints.md">OsConstraints</a>, ... ]</i>
 }
 </pre>
 
@@ -28,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#requirecorpowned" title="RequireCorpOwned">RequireCorpOwned</a>: <i>Boolean</i>
 <a href="#requirescreenlock" title="RequireScreenLock">RequireScreenLock</a>: <i>Boolean</i>
 <a href="#osconstraints" title="OsConstraints">OsConstraints</a>: <i>
-      - &lt;a href=&#34;basic-conditions-devicepolicy-osconstraints.md&#34;&gt;OsConstraints&lt;/a&gt;</i>
+      - <a href="basic-conditions-devicepolicy-osconstraints.md">OsConstraints</a></i>
 </pre>
 
 ## Properties
@@ -71,7 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OsConstraints
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;basic-conditions-devicepolicy-osconstraints.md&#34;&gt;OsConstraints&lt;/a&gt;
+_Type_: List of <a href="basic-conditions-devicepolicy-osconstraints.md">OsConstraints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

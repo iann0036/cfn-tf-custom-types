@@ -73,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### HostedZone
 
-Returns the &lt;code&gt;HostedZone&lt;/code&gt; value.
+Returns the <code>HostedZone</code> value.
 

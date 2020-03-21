@@ -93,17 +93,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ReceivingRecords
 
-Returns the &lt;code&gt;ReceivingRecords&lt;/code&gt; value.
+Returns the <code>ReceivingRecords</code> value.
 
 #### SendingRecords
 
-Returns the &lt;code&gt;SendingRecords&lt;/code&gt; value.
+Returns the <code>SendingRecords</code> value.
 
 #### SmtpLogin
 
-Returns the &lt;code&gt;SmtpLogin&lt;/code&gt; value.
+Returns the <code>SmtpLogin</code> value.
 
 #### SmtpPassword
 
-Returns the &lt;code&gt;SmtpPassword&lt;/code&gt; value.
+Returns the <code>SmtpPassword</code> value.
 

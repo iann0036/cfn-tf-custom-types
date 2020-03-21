@@ -22,11 +22,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#alias" title="Alias">Alias</a>" : <i>[ &lt;a href=&#34;alias.md&#34;&gt;Alias&lt;/a&gt;, ... ]</i>,
-        "<a href="#failoverroutingpolicy" title="FailoverRoutingPolicy">FailoverRoutingPolicy</a>" : <i>[ &lt;a href=&#34;failoverroutingpolicy.md&#34;&gt;FailoverRoutingPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#geolocationroutingpolicy" title="GeolocationRoutingPolicy">GeolocationRoutingPolicy</a>" : <i>[ &lt;a href=&#34;geolocationroutingpolicy.md&#34;&gt;GeolocationRoutingPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#latencyroutingpolicy" title="LatencyRoutingPolicy">LatencyRoutingPolicy</a>" : <i>[ &lt;a href=&#34;latencyroutingpolicy.md&#34;&gt;LatencyRoutingPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#weightedroutingpolicy" title="WeightedRoutingPolicy">WeightedRoutingPolicy</a>" : <i>[ &lt;a href=&#34;weightedroutingpolicy.md&#34;&gt;WeightedRoutingPolicy&lt;/a&gt;, ... ]</i>
+        "<a href="#alias" title="Alias">Alias</a>" : <i>[ <a href="alias.md">Alias</a>, ... ]</i>,
+        "<a href="#failoverroutingpolicy" title="FailoverRoutingPolicy">FailoverRoutingPolicy</a>" : <i>[ <a href="failoverroutingpolicy.md">FailoverRoutingPolicy</a>, ... ]</i>,
+        "<a href="#geolocationroutingpolicy" title="GeolocationRoutingPolicy">GeolocationRoutingPolicy</a>" : <i>[ <a href="geolocationroutingpolicy.md">GeolocationRoutingPolicy</a>, ... ]</i>,
+        "<a href="#latencyroutingpolicy" title="LatencyRoutingPolicy">LatencyRoutingPolicy</a>" : <i>[ <a href="latencyroutingpolicy.md">LatencyRoutingPolicy</a>, ... ]</i>,
+        "<a href="#weightedroutingpolicy" title="WeightedRoutingPolicy">WeightedRoutingPolicy</a>" : <i>[ <a href="weightedroutingpolicy.md">WeightedRoutingPolicy</a>, ... ]</i>
     }
 }
 </pre>
@@ -48,15 +48,15 @@ Properties:
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#alias" title="Alias">Alias</a>: <i>
-      - &lt;a href=&#34;alias.md&#34;&gt;Alias&lt;/a&gt;</i>
+      - <a href="alias.md">Alias</a></i>
     <a href="#failoverroutingpolicy" title="FailoverRoutingPolicy">FailoverRoutingPolicy</a>: <i>
-      - &lt;a href=&#34;failoverroutingpolicy.md&#34;&gt;FailoverRoutingPolicy&lt;/a&gt;</i>
+      - <a href="failoverroutingpolicy.md">FailoverRoutingPolicy</a></i>
     <a href="#geolocationroutingpolicy" title="GeolocationRoutingPolicy">GeolocationRoutingPolicy</a>: <i>
-      - &lt;a href=&#34;geolocationroutingpolicy.md&#34;&gt;GeolocationRoutingPolicy&lt;/a&gt;</i>
+      - <a href="geolocationroutingpolicy.md">GeolocationRoutingPolicy</a></i>
     <a href="#latencyroutingpolicy" title="LatencyRoutingPolicy">LatencyRoutingPolicy</a>: <i>
-      - &lt;a href=&#34;latencyroutingpolicy.md&#34;&gt;LatencyRoutingPolicy&lt;/a&gt;</i>
+      - <a href="latencyroutingpolicy.md">LatencyRoutingPolicy</a></i>
     <a href="#weightedroutingpolicy" title="WeightedRoutingPolicy">WeightedRoutingPolicy</a>: <i>
-      - &lt;a href=&#34;weightedroutingpolicy.md&#34;&gt;WeightedRoutingPolicy&lt;/a&gt;</i>
+      - <a href="weightedroutingpolicy.md">WeightedRoutingPolicy</a></i>
 </pre>
 
 ## Properties
@@ -145,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;alias.md&#34;&gt;Alias&lt;/a&gt;
+_Type_: List of <a href="alias.md">Alias</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -153,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;failoverroutingpolicy.md&#34;&gt;FailoverRoutingPolicy&lt;/a&gt;
+_Type_: List of <a href="failoverroutingpolicy.md">FailoverRoutingPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;geolocationroutingpolicy.md&#34;&gt;GeolocationRoutingPolicy&lt;/a&gt;
+_Type_: List of <a href="geolocationroutingpolicy.md">GeolocationRoutingPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;latencyroutingpolicy.md&#34;&gt;LatencyRoutingPolicy&lt;/a&gt;
+_Type_: List of <a href="latencyroutingpolicy.md">LatencyRoutingPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;weightedroutingpolicy.md&#34;&gt;WeightedRoutingPolicy&lt;/a&gt;
+_Type_: List of <a href="weightedroutingpolicy.md">WeightedRoutingPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,5 +199,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fqdn
 
-Returns the &lt;code&gt;Fqdn&lt;/code&gt; value.
+Returns the <code>Fqdn</code> value.
 

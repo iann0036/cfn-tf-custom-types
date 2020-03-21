@@ -103,29 +103,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BeginTime
 
-Returns the &lt;code&gt;BeginTime&lt;/code&gt; value.
+Returns the <code>BeginTime</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### Domain
 
-Returns the &lt;code&gt;Domain&lt;/code&gt; value.
+Returns the <code>Domain</code> value.
 
 #### EndTime
 
-Returns the &lt;code&gt;EndTime&lt;/code&gt; value.
+Returns the <code>EndTime</code> value.
 
 #### ProductZhName
 
-Returns the &lt;code&gt;ProductZhName&lt;/code&gt; value.
+Returns the <code>ProductZhName</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### SubjectNames
 
-Returns the &lt;code&gt;SubjectNames&lt;/code&gt; value.
+Returns the <code>SubjectNames</code> value.
 

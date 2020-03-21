@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#keyusage" title="KeyUsage">KeyUsage</a>" : <i>[ String, ... ]</i>,
     "<a href="#subject" title="Subject">Subject</a>" : <i>String</i>,
     "<a href="#validityinmonths" title="ValidityInMonths">ValidityInMonths</a>" : <i>Double</i>,
-    "<a href="#subjectalternativenames" title="SubjectAlternativeNames">SubjectAlternativeNames</a>" : <i>[ &lt;a href=&#34;certificatepolicy-x509certificateproperties-subjectalternativenames.md&#34;&gt;SubjectAlternativeNames&lt;/a&gt;, ... ]</i>
+    "<a href="#subjectalternativenames" title="SubjectAlternativeNames">SubjectAlternativeNames</a>" : <i>[ <a href="certificatepolicy-x509certificateproperties-subjectalternativenames.md">SubjectAlternativeNames</a>, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#subject" title="Subject">Subject</a>: <i>String</i>
 <a href="#validityinmonths" title="ValidityInMonths">ValidityInMonths</a>: <i>Double</i>
 <a href="#subjectalternativenames" title="SubjectAlternativeNames">SubjectAlternativeNames</a>: <i>
-      - &lt;a href=&#34;certificatepolicy-x509certificateproperties-subjectalternativenames.md&#34;&gt;SubjectAlternativeNames&lt;/a&gt;</i>
+      - <a href="certificatepolicy-x509certificateproperties-subjectalternativenames.md">SubjectAlternativeNames</a></i>
 </pre>
 
 ## Properties
@@ -62,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SubjectAlternativeNames
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;certificatepolicy-x509certificateproperties-subjectalternativenames.md&#34;&gt;SubjectAlternativeNames&lt;/a&gt;
+_Type_: List of <a href="certificatepolicy-x509certificateproperties-subjectalternativenames.md">SubjectAlternativeNames</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

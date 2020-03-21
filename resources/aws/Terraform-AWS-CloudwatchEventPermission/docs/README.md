@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#principal" title="Principal">Principal</a>" : <i>String</i>,
         "<a href="#statementid" title="StatementId">StatementId</a>" : <i>String</i>,
-        "<a href="#condition" title="Condition">Condition</a>" : <i>[ &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;, ... ]</i>
+        "<a href="#condition" title="Condition">Condition</a>" : <i>[ <a href="condition.md">Condition</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +31,7 @@ Properties:
     <a href="#principal" title="Principal">Principal</a>: <i>String</i>
     <a href="#statementid" title="StatementId">StatementId</a>: <i>String</i>
     <a href="#condition" title="Condition">Condition</a>: <i>
-      - &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;</i>
+      - <a href="condition.md">Condition</a></i>
 </pre>
 
 ## Properties
@@ -72,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;
+_Type_: List of <a href="condition.md">Condition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

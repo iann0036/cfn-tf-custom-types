@@ -27,9 +27,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#shortname" title="ShortName">ShortName</a>" : <i>String</i>,
         "<a href="#stackid" title="StackId">StackId</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#appsource" title="AppSource">AppSource</a>" : <i>[ &lt;a href=&#34;appsource.md&#34;&gt;AppSource&lt;/a&gt;, ... ]</i>,
-        "<a href="#environment" title="Environment">Environment</a>" : <i>[ &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;, ... ]</i>,
-        "<a href="#sslconfiguration" title="SslConfiguration">SslConfiguration</a>" : <i>[ &lt;a href=&#34;sslconfiguration.md&#34;&gt;SslConfiguration&lt;/a&gt;, ... ]</i>
+        "<a href="#appsource" title="AppSource">AppSource</a>" : <i>[ <a href="appsource.md">AppSource</a>, ... ]</i>,
+        "<a href="#environment" title="Environment">Environment</a>" : <i>[ <a href="environment.md">Environment</a>, ... ]</i>,
+        "<a href="#sslconfiguration" title="SslConfiguration">SslConfiguration</a>" : <i>[ <a href="sslconfiguration.md">SslConfiguration</a>, ... ]</i>
     }
 }
 </pre>
@@ -56,11 +56,11 @@ Properties:
     <a href="#stackid" title="StackId">StackId</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#appsource" title="AppSource">AppSource</a>: <i>
-      - &lt;a href=&#34;appsource.md&#34;&gt;AppSource&lt;/a&gt;</i>
+      - <a href="appsource.md">AppSource</a></i>
     <a href="#environment" title="Environment">Environment</a>: <i>
-      - &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;</i>
+      - <a href="environment.md">Environment</a></i>
     <a href="#sslconfiguration" title="SslConfiguration">SslConfiguration</a>: <i>
-      - &lt;a href=&#34;sslconfiguration.md&#34;&gt;SslConfiguration&lt;/a&gt;</i>
+      - <a href="sslconfiguration.md">SslConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -189,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;appsource.md&#34;&gt;AppSource&lt;/a&gt;
+_Type_: List of <a href="appsource.md">AppSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;
+_Type_: List of <a href="environment.md">Environment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sslconfiguration.md&#34;&gt;SslConfiguration&lt;/a&gt;
+_Type_: List of <a href="sslconfiguration.md">SslConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

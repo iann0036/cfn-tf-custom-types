@@ -83,29 +83,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Cert
 
-Returns the &lt;code&gt;Cert&lt;/code&gt; value.
+Returns the <code>Cert</code> value.
 
 #### CertSerialNumber
 
-Returns the &lt;code&gt;CertSerialNumber&lt;/code&gt; value.
+Returns the <code>CertSerialNumber</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### ExpirationTime
 
-Returns the &lt;code&gt;ExpirationTime&lt;/code&gt; value.
+Returns the <code>ExpirationTime</code> value.
 
 #### PrivateKey
 
-Returns the &lt;code&gt;PrivateKey&lt;/code&gt; value.
+Returns the <code>PrivateKey</code> value.
 
 #### ServerCaCert
 
-Returns the &lt;code&gt;ServerCaCert&lt;/code&gt; value.
+Returns the <code>ServerCaCert</code> value.
 
 #### Sha1Fingerprint
 
-Returns the &lt;code&gt;Sha1Fingerprint&lt;/code&gt; value.
+Returns the <code>Sha1Fingerprint</code> value.
 

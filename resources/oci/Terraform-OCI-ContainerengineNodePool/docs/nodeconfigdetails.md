@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
-    "<a href="#placementconfigs" title="PlacementConfigs">PlacementConfigs</a>" : <i>[ &lt;a href=&#34;nodeconfigdetails-placementconfigs.md&#34;&gt;PlacementConfigs&lt;/a&gt;, ... ]</i>
+    "<a href="#placementconfigs" title="PlacementConfigs">PlacementConfigs</a>" : <i>[ <a href="nodeconfigdetails-placementconfigs.md">PlacementConfigs</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#size" title="Size">Size</a>: <i>Double</i>
 <a href="#placementconfigs" title="PlacementConfigs">PlacementConfigs</a>: <i>
-      - &lt;a href=&#34;nodeconfigdetails-placementconfigs.md&#34;&gt;PlacementConfigs&lt;/a&gt;</i>
+      - <a href="nodeconfigdetails-placementconfigs.md">PlacementConfigs</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PlacementConfigs
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;nodeconfigdetails-placementconfigs.md&#34;&gt;PlacementConfigs&lt;/a&gt;
+_Type_: List of <a href="nodeconfigdetails-placementconfigs.md">PlacementConfigs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

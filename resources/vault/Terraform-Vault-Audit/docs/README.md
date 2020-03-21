@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#options" title="Options">Options</a>" : <i>[ &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;, ... ]</i>,
+        "<a href="#options" title="Options">Options</a>" : <i>[ <a href="options.md">Options</a>, ... ]</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
@@ -29,7 +29,7 @@ Properties:
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#options" title="Options">Options</a>: <i>
-      - &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;</i>
+      - <a href="options.md">Options</a></i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
@@ -56,7 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;
+_Type_: List of <a href="options.md">Options</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -20,8 +20,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#query" title="Query">Query</a>" : <i>[ &lt;a href=&#34;query.md&#34;&gt;Query&lt;/a&gt;, ... ]</i>,
-        "<a href="#thresholds" title="Thresholds">Thresholds</a>" : <i>[ &lt;a href=&#34;thresholds.md&#34;&gt;Thresholds&lt;/a&gt;, ... ]</i>
+        "<a href="#query" title="Query">Query</a>" : <i>[ <a href="query.md">Query</a>, ... ]</i>,
+        "<a href="#thresholds" title="Thresholds">Thresholds</a>" : <i>[ <a href="thresholds.md">Thresholds</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,9 +43,9 @@ Properties:
       - String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#query" title="Query">Query</a>: <i>
-      - &lt;a href=&#34;query.md&#34;&gt;Query&lt;/a&gt;</i>
+      - <a href="query.md">Query</a></i>
     <a href="#thresholds" title="Thresholds">Thresholds</a>: <i>
-      - &lt;a href=&#34;thresholds.md&#34;&gt;Thresholds&lt;/a&gt;</i>
+      - <a href="thresholds.md">Thresholds</a></i>
 </pre>
 
 ## Properties
@@ -118,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;query.md&#34;&gt;Query&lt;/a&gt;
+_Type_: List of <a href="query.md">Query</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;thresholds.md&#34;&gt;Thresholds&lt;/a&gt;
+_Type_: List of <a href="thresholds.md">Thresholds</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -21,13 +21,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#flavor" title="Flavor">Flavor</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#keypair" title="Keypair">Keypair</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#mastercount" title="MasterCount">MasterCount</a>" : <i>Double</i>,
         "<a href="#masterflavor" title="MasterFlavor">MasterFlavor</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nodecount" title="NodeCount">NodeCount</a>" : <i>Double</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -47,13 +47,13 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#keypair" title="Keypair">Keypair</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#mastercount" title="MasterCount">MasterCount</a>: <i>Double</i>
     <a href="#masterflavor" title="MasterFlavor">MasterFlavor</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nodecount" title="NodeCount">NodeCount</a>: <i>Double</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -134,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -204,41 +204,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ApiAddress
 
-Returns the &lt;code&gt;ApiAddress&lt;/code&gt; value.
+Returns the <code>ApiAddress</code> value.
 
 #### CoeVersion
 
-Returns the &lt;code&gt;CoeVersion&lt;/code&gt; value.
+Returns the <code>CoeVersion</code> value.
 
 #### ContainerVersion
 
-Returns the &lt;code&gt;ContainerVersion&lt;/code&gt; value.
+Returns the <code>ContainerVersion</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### MasterAddresses
 
-Returns the &lt;code&gt;MasterAddresses&lt;/code&gt; value.
+Returns the <code>MasterAddresses</code> value.
 
 #### NodeAddresses
 
-Returns the &lt;code&gt;NodeAddresses&lt;/code&gt; value.
+Returns the <code>NodeAddresses</code> value.
 
 #### ProjectId
 
-Returns the &lt;code&gt;ProjectId&lt;/code&gt; value.
+Returns the <code>ProjectId</code> value.
 
 #### StackId
 
-Returns the &lt;code&gt;StackId&lt;/code&gt; value.
+Returns the <code>StackId</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 
 #### UserId
 
-Returns the &lt;code&gt;UserId&lt;/code&gt; value.
+Returns the <code>UserId</code> value.
 

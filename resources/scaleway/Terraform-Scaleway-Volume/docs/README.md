@@ -83,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Server
 
-Returns the &lt;code&gt;Server&lt;/code&gt; value.
+Returns the <code>Server</code> value.
 

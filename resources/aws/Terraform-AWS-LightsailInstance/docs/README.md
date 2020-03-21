@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#keypairname" title="KeyPairName">KeyPairName</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
     }
 }
@@ -36,7 +36,7 @@ Properties:
     <a href="#keypairname" title="KeyPairName">KeyPairName</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
 </pre>
 
@@ -94,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,37 +124,37 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CpuCount
 
-Returns the &lt;code&gt;CpuCount&lt;/code&gt; value.
+Returns the <code>CpuCount</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### Ipv6Address
 
-Returns the &lt;code&gt;Ipv6Address&lt;/code&gt; value.
+Returns the <code>Ipv6Address</code> value.
 
 #### IsStaticIp
 
-Returns the &lt;code&gt;IsStaticIp&lt;/code&gt; value.
+Returns the <code>IsStaticIp</code> value.
 
 #### PrivateIpAddress
 
-Returns the &lt;code&gt;PrivateIpAddress&lt;/code&gt; value.
+Returns the <code>PrivateIpAddress</code> value.
 
 #### PublicIpAddress
 
-Returns the &lt;code&gt;PublicIpAddress&lt;/code&gt; value.
+Returns the <code>PublicIpAddress</code> value.
 
 #### RamSize
 
-Returns the &lt;code&gt;RamSize&lt;/code&gt; value.
+Returns the <code>RamSize</code> value.
 
 #### Username
 
-Returns the &lt;code&gt;Username&lt;/code&gt; value.
+Returns the <code>Username</code> value.
 

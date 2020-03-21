@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#filterprefix" title="FilterPrefix">FilterPrefix</a>" : <i>String</i>,
-    "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ &lt;a href=&#34;lifecyclerules-expiration.md&#34;&gt;Expiration&lt;/a&gt;, ... ]</i>,
-    "<a href="#transition" title="Transition">Transition</a>" : <i>[ &lt;a href=&#34;lifecyclerules-transition.md&#34;&gt;Transition&lt;/a&gt;, ... ]</i>
+    "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ <a href="lifecyclerules-expiration.md">Expiration</a>, ... ]</i>,
+    "<a href="#transition" title="Transition">Transition</a>" : <i>[ <a href="lifecyclerules-transition.md">Transition</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#filterprefix" title="FilterPrefix">FilterPrefix</a>: <i>String</i>
 <a href="#expiration" title="Expiration">Expiration</a>: <i>
-      - &lt;a href=&#34;lifecyclerules-expiration.md&#34;&gt;Expiration&lt;/a&gt;</i>
+      - <a href="lifecyclerules-expiration.md">Expiration</a></i>
 <a href="#transition" title="Transition">Transition</a>: <i>
-      - &lt;a href=&#34;lifecyclerules-transition.md&#34;&gt;Transition&lt;/a&gt;</i>
+      - <a href="lifecyclerules-transition.md">Transition</a></i>
 </pre>
 
 ## Properties
@@ -36,14 +36,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Expiration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerules-expiration.md&#34;&gt;Expiration&lt;/a&gt;
+_Type_: List of <a href="lifecyclerules-expiration.md">Expiration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Transition
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerules-transition.md&#34;&gt;Transition&lt;/a&gt;
+_Type_: List of <a href="lifecyclerules-transition.md">Transition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#prepaidperiod" title="PrepaidPeriod">PrepaidPeriod</a>" : <i>Double</i>,
         "<a href="#prepaidrenewflag" title="PrepaidRenewFlag">PrepaidRenewFlag</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>
     }
@@ -37,7 +37,7 @@ Properties:
     <a href="#prepaidperiod" title="PrepaidPeriod">PrepaidPeriod</a>: <i>Double</i>
     <a href="#prepaidrenewflag" title="PrepaidRenewFlag">PrepaidRenewFlag</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
 </pre>
@@ -96,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,33 +134,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### ExpiredTime
 
-Returns the &lt;code&gt;ExpiredTime&lt;/code&gt; value.
+Returns the <code>ExpiredTime</code> value.
 
 #### IsAddressBlocked
 
-Returns the &lt;code&gt;IsAddressBlocked&lt;/code&gt; value.
+Returns the <code>IsAddressBlocked</code> value.
 
 #### NewPurchasePlan
 
-Returns the &lt;code&gt;NewPurchasePlan&lt;/code&gt; value.
+Returns the <code>NewPurchasePlan</code> value.
 
 #### PublicIpAddress
 
-Returns the &lt;code&gt;PublicIpAddress&lt;/code&gt; value.
+Returns the <code>PublicIpAddress</code> value.
 
 #### RestrictState
 
-Returns the &lt;code&gt;RestrictState&lt;/code&gt; value.
+Returns the <code>RestrictState</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 

@@ -16,9 +16,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ownerteamid" title="OwnerTeamId">OwnerTeamId</a>" : <i>String</i>,
-        "<a href="#repeat" title="Repeat">Repeat</a>" : <i>[ &lt;a href=&#34;repeat.md&#34;&gt;Repeat&lt;/a&gt;, ... ]</i>,
-        "<a href="#rules" title="Rules">Rules</a>" : <i>[ &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;, ... ]</i>,
-        "<a href="#recipient" title="Recipient">Recipient</a>" : <i>[ &lt;a href=&#34;recipient.md&#34;&gt;Recipient&lt;/a&gt;, ... ]</i>
+        "<a href="#repeat" title="Repeat">Repeat</a>" : <i>[ <a href="repeat.md">Repeat</a>, ... ]</i>,
+        "<a href="#rules" title="Rules">Rules</a>" : <i>[ <a href="rules.md">Rules</a>, ... ]</i>,
+        "<a href="#recipient" title="Recipient">Recipient</a>" : <i>[ <a href="recipient.md">Recipient</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,11 +33,11 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ownerteamid" title="OwnerTeamId">OwnerTeamId</a>: <i>String</i>
     <a href="#repeat" title="Repeat">Repeat</a>: <i>
-      - &lt;a href=&#34;repeat.md&#34;&gt;Repeat&lt;/a&gt;</i>
+      - <a href="repeat.md">Repeat</a></i>
     <a href="#rules" title="Rules">Rules</a>: <i>
-      - &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;</i>
+      - <a href="rules.md">Rules</a></i>
     <a href="#recipient" title="Recipient">Recipient</a>: <i>
-      - &lt;a href=&#34;recipient.md&#34;&gt;Recipient&lt;/a&gt;</i>
+      - <a href="recipient.md">Recipient</a></i>
 </pre>
 
 ## Properties
@@ -78,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;repeat.md&#34;&gt;Repeat&lt;/a&gt;
+_Type_: List of <a href="repeat.md">Repeat</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -86,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;
+_Type_: List of <a href="rules.md">Rules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;recipient.md&#34;&gt;Recipient&lt;/a&gt;
+_Type_: List of <a href="recipient.md">Recipient</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

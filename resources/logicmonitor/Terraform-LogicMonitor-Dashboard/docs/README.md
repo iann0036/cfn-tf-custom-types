@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#public" title="Public">Public</a>" : <i>Boolean</i>,
         "<a href="#template" title="Template">Template</a>" : <i>String</i>,
-        "<a href="#widgettokens" title="WidgetTokens">WidgetTokens</a>" : <i>[ &lt;a href=&#34;widgettokens.md&#34;&gt;WidgetTokens&lt;/a&gt;, ... ]</i>
+        "<a href="#widgettokens" title="WidgetTokens">WidgetTokens</a>" : <i>[ <a href="widgettokens.md">WidgetTokens</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,7 +35,7 @@ Properties:
     <a href="#public" title="Public">Public</a>: <i>Boolean</i>
     <a href="#template" title="Template">Template</a>: <i>String</i>
     <a href="#widgettokens" title="WidgetTokens">WidgetTokens</a>: <i>
-      - &lt;a href=&#34;widgettokens.md&#34;&gt;WidgetTokens&lt;/a&gt;</i>
+      - <a href="widgettokens.md">WidgetTokens</a></i>
 </pre>
 
 ## Properties
@@ -92,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;widgettokens.md&#34;&gt;WidgetTokens&lt;/a&gt;
+_Type_: List of <a href="widgettokens.md">WidgetTokens</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

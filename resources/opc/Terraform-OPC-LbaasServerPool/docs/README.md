@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#servers" title="Servers">Servers</a>" : <i>[ String, ... ]</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#vnicset" title="VnicSet">VnicSet</a>" : <i>String</i>,
-        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;, ... ]</i>
+        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ <a href="healthcheck.md">HealthCheck</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Properties:
       - String</i>
     <a href="#vnicset" title="VnicSet">VnicSet</a>: <i>String</i>
     <a href="#healthcheck" title="HealthCheck">HealthCheck</a>: <i>
-      - &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;</i>
+      - <a href="healthcheck.md">HealthCheck</a></i>
 </pre>
 
 ## Properties
@@ -104,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;
+_Type_: List of <a href="healthcheck.md">HealthCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,21 +126,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Consumers
 
-Returns the &lt;code&gt;Consumers&lt;/code&gt; value.
+Returns the <code>Consumers</code> value.
 
 #### OperationDetails
 
-Returns the &lt;code&gt;OperationDetails&lt;/code&gt; value.
+Returns the <code>OperationDetails</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

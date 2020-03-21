@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#defaultaction" title="DefaultAction">DefaultAction</a>" : <i>String</i>,
-    "<a href="#iprule" title="IpRule">IpRule</a>" : <i>[ &lt;a href=&#34;networkrulesets-iprule.md&#34;&gt;IpRule&lt;/a&gt;, ... ]</i>,
-    "<a href="#virtualnetworkrule" title="VirtualNetworkRule">VirtualNetworkRule</a>" : <i>[ &lt;a href=&#34;networkrulesets-virtualnetworkrule.md&#34;&gt;VirtualNetworkRule&lt;/a&gt;, ... ]</i>
+    "<a href="#iprule" title="IpRule">IpRule</a>" : <i>[ <a href="networkrulesets-iprule.md">IpRule</a>, ... ]</i>,
+    "<a href="#virtualnetworkrule" title="VirtualNetworkRule">VirtualNetworkRule</a>" : <i>[ <a href="networkrulesets-virtualnetworkrule.md">VirtualNetworkRule</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#defaultaction" title="DefaultAction">DefaultAction</a>: <i>String</i>
 <a href="#iprule" title="IpRule">IpRule</a>: <i>
-      - &lt;a href=&#34;networkrulesets-iprule.md&#34;&gt;IpRule&lt;/a&gt;</i>
+      - <a href="networkrulesets-iprule.md">IpRule</a></i>
 <a href="#virtualnetworkrule" title="VirtualNetworkRule">VirtualNetworkRule</a>: <i>
-      - &lt;a href=&#34;networkrulesets-virtualnetworkrule.md&#34;&gt;VirtualNetworkRule&lt;/a&gt;</i>
+      - <a href="networkrulesets-virtualnetworkrule.md">VirtualNetworkRule</a></i>
 </pre>
 
 ## Properties
@@ -36,14 +36,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IpRule
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkrulesets-iprule.md&#34;&gt;IpRule&lt;/a&gt;
+_Type_: List of <a href="networkrulesets-iprule.md">IpRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualNetworkRule
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkrulesets-virtualnetworkrule.md&#34;&gt;VirtualNetworkRule&lt;/a&gt;
+_Type_: List of <a href="networkrulesets-virtualnetworkrule.md">VirtualNetworkRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

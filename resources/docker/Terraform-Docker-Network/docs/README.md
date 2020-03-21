@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ipamdriver" title="IpamDriver">IpamDriver</a>" : <i>String</i>,
         "<a href="#ipv6" title="Ipv6">Ipv6</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#options" title="Options">Options</a>" : <i>[ &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;, ... ]</i>,
-        "<a href="#ipamconfig" title="IpamConfig">IpamConfig</a>" : <i>[ &lt;a href=&#34;ipamconfig.md&#34;&gt;IpamConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>
+        "<a href="#options" title="Options">Options</a>" : <i>[ <a href="options.md">Options</a>, ... ]</i>,
+        "<a href="#ipamconfig" title="IpamConfig">IpamConfig</a>" : <i>[ <a href="ipamconfig.md">IpamConfig</a>, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,11 +43,11 @@ Properties:
     <a href="#ipv6" title="Ipv6">Ipv6</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#options" title="Options">Options</a>: <i>
-      - &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;</i>
+      - <a href="options.md">Options</a></i>
     <a href="#ipamconfig" title="IpamConfig">IpamConfig</a>: <i>
-      - &lt;a href=&#34;ipamconfig.md&#34;&gt;IpamConfig&lt;/a&gt;</i>
+      - <a href="ipamconfig.md">IpamConfig</a></i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
 </pre>
 
 ## Properties
@@ -128,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;options.md&#34;&gt;Options&lt;/a&gt;
+_Type_: List of <a href="options.md">Options</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipamconfig.md&#34;&gt;IpamConfig&lt;/a&gt;
+_Type_: List of <a href="ipamconfig.md">IpamConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,5 +166,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Scope
 
-Returns the &lt;code&gt;Scope&lt;/code&gt; value.
+Returns the <code>Scope</code> value.
 

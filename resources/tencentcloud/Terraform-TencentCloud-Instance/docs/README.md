@@ -39,11 +39,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#systemdiskid" title="SystemDiskId">SystemDiskId</a>" : <i>String</i>,
         "<a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>" : <i>Double</i>,
         "<a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#userdataraw" title="UserDataRaw">UserDataRaw</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#datadisks" title="DataDisks">DataDisks</a>" : <i>[ &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;, ... ]</i>
+        "<a href="#datadisks" title="DataDisks">DataDisks</a>" : <i>[ <a href="datadisks.md">DataDisks</a>, ... ]</i>
     }
 }
 </pre>
@@ -82,12 +82,12 @@ Properties:
     <a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>: <i>Double</i>
     <a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#userdataraw" title="UserDataRaw">UserDataRaw</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#datadisks" title="DataDisks">DataDisks</a>: <i>
-      - &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;</i>
+      - <a href="datadisks.md">DataDisks</a></i>
 </pre>
 
 ## Properties
@@ -312,7 +312,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -344,7 +344,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;
+_Type_: List of <a href="datadisks.md">DataDisks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -366,17 +366,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### ExpiredTime
 
-Returns the &lt;code&gt;ExpiredTime&lt;/code&gt; value.
+Returns the <code>ExpiredTime</code> value.
 
 #### InstanceStatus
 
-Returns the &lt;code&gt;InstanceStatus&lt;/code&gt; value.
+Returns the <code>InstanceStatus</code> value.
 
 #### PublicIp
 
-Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
+Returns the <code>PublicIp</code> value.
 

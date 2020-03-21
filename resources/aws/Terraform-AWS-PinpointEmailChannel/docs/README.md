@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MessagesPerSecond
 
-Returns the &lt;code&gt;MessagesPerSecond&lt;/code&gt; value.
+Returns the <code>MessagesPerSecond</code> value.
 

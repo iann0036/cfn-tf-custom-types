@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#defaulttlscontainerref" title="DefaultTlsContainerRef">DefaultTlsContainerRef</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#insertheaders" title="InsertHeaders">InsertHeaders</a>" : <i>[ &lt;a href=&#34;insertheaders.md&#34;&gt;InsertHeaders&lt;/a&gt;, ... ]</i>,
+        "<a href="#insertheaders" title="InsertHeaders">InsertHeaders</a>" : <i>[ <a href="insertheaders.md">InsertHeaders</a>, ... ]</i>,
         "<a href="#loadbalancerid" title="LoadbalancerId">LoadbalancerId</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#timeoutmemberconnect" title="TimeoutMemberConnect">TimeoutMemberConnect</a>" : <i>Double</i>,
         "<a href="#timeoutmemberdata" title="TimeoutMemberData">TimeoutMemberData</a>" : <i>Double</i>,
         "<a href="#timeouttcpinspect" title="TimeoutTcpInspect">TimeoutTcpInspect</a>" : <i>Double</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -47,7 +47,7 @@ Properties:
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#insertheaders" title="InsertHeaders">InsertHeaders</a>: <i>
-      - &lt;a href=&#34;insertheaders.md&#34;&gt;InsertHeaders&lt;/a&gt;</i>
+      - <a href="insertheaders.md">InsertHeaders</a></i>
     <a href="#loadbalancerid" title="LoadbalancerId">LoadbalancerId</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
@@ -60,7 +60,7 @@ Properties:
     <a href="#timeoutmemberconnect" title="TimeoutMemberConnect">TimeoutMemberConnect</a>: <i>Double</i>
     <a href="#timeoutmemberdata" title="TimeoutMemberData">TimeoutMemberData</a>: <i>Double</i>
     <a href="#timeouttcpinspect" title="TimeoutTcpInspect">TimeoutTcpInspect</a>: <i>Double</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -117,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;insertheaders.md&#34;&gt;InsertHeaders&lt;/a&gt;
+_Type_: List of <a href="insertheaders.md">InsertHeaders</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -213,7 +213,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

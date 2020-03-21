@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
     "<a href="#netmask" title="Netmask">Netmask</a>" : <i>String</i>,
     "<a href="#usefordefaultroute" title="UseForDefaultRoute">UseForDefaultRoute</a>" : <i>Boolean</i>,
-    "<a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>" : <i>[ &lt;a href=&#34;subnet-suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;, ... ]</i>
+    "<a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>" : <i>[ <a href="subnet-suballocatepool.md">SuballocatePool</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#netmask" title="Netmask">Netmask</a>: <i>String</i>
 <a href="#usefordefaultroute" title="UseForDefaultRoute">UseForDefaultRoute</a>: <i>Boolean</i>
 <a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>: <i>
-      - &lt;a href=&#34;subnet-suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;</i>
+      - <a href="subnet-suballocatepool.md">SuballocatePool</a></i>
 </pre>
 
 ## Properties
@@ -60,7 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SuballocatePool
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;subnet-suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;
+_Type_: List of <a href="subnet-suballocatepool.md">SuballocatePool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#target" title="Target">Target</a>" : <i>String</i>,
     "<a href="#threshold" title="Threshold">Threshold</a>" : <i>Double</i>,
     "<a href="#unit" title="Unit">Unit</a>" : <i>String</i>,
-    "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;scalingdownpolicy-dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>
+    "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="scalingdownpolicy-dimensions.md">Dimensions</a>, ... ]</i>
 }
 </pre>
 
@@ -54,7 +54,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#threshold" title="Threshold">Threshold</a>: <i>Double</i>
 <a href="#unit" title="Unit">Unit</a>: <i>String</i>
 <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - &lt;a href=&#34;scalingdownpolicy-dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
+      - <a href="scalingdownpolicy-dimensions.md">Dimensions</a></i>
 </pre>
 
 ## Properties
@@ -195,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Dimensions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;scalingdownpolicy-dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
+_Type_: List of <a href="scalingdownpolicy-dimensions.md">Dimensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

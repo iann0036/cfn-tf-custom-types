@@ -133,13 +133,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Cidr
 
-Returns the &lt;code&gt;Cidr&lt;/code&gt; value.
+Returns the <code>Cidr</code> value.
 
 #### GatewayIp
 
-Returns the &lt;code&gt;GatewayIp&lt;/code&gt; value.
+Returns the <code>GatewayIp</code> value.
 
 #### IpPools
 
-Returns the &lt;code&gt;IpPools&lt;/code&gt; value.
+Returns the <code>IpPools</code> value.
 

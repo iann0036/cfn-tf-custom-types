@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#physicalblocksizebytes" title="PhysicalBlockSizeBytes">PhysicalBlockSizeBytes</a>" : <i>Double</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
@@ -23,9 +23,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
         "<a href="#snapshot" title="Snapshot">Snapshot</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ &lt;a href=&#34;diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;, ... ]</i>,
-        "<a href="#sourcesnapshotencryptionkey" title="SourceSnapshotEncryptionKey">SourceSnapshotEncryptionKey</a>" : <i>[ &lt;a href=&#34;sourcesnapshotencryptionkey.md&#34;&gt;SourceSnapshotEncryptionKey&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ <a href="diskencryptionkey.md">DiskEncryptionKey</a>, ... ]</i>,
+        "<a href="#sourcesnapshotencryptionkey" title="SourceSnapshotEncryptionKey">SourceSnapshotEncryptionKey</a>" : <i>[ <a href="sourcesnapshotencryptionkey.md">SourceSnapshotEncryptionKey</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -38,7 +38,7 @@ Properties:
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#physicalblocksizebytes" title="PhysicalBlockSizeBytes">PhysicalBlockSizeBytes</a>: <i>Double</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
@@ -49,10 +49,10 @@ Properties:
     <a href="#snapshot" title="Snapshot">Snapshot</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>: <i>
-      - &lt;a href=&#34;diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;</i>
+      - <a href="diskencryptionkey.md">DiskEncryptionKey</a></i>
     <a href="#sourcesnapshotencryptionkey" title="SourceSnapshotEncryptionKey">SourceSnapshotEncryptionKey</a>: <i>
-      - &lt;a href=&#34;sourcesnapshotencryptionkey.md&#34;&gt;SourceSnapshotEncryptionKey&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="sourcesnapshotencryptionkey.md">SourceSnapshotEncryptionKey</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -77,7 +77,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -149,7 +149,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;
+_Type_: List of <a href="diskencryptionkey.md">DiskEncryptionKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,7 +157,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourcesnapshotencryptionkey.md&#34;&gt;SourceSnapshotEncryptionKey&lt;/a&gt;
+_Type_: List of <a href="sourcesnapshotencryptionkey.md">SourceSnapshotEncryptionKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,29 +187,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTimestamp
 
-Returns the &lt;code&gt;CreationTimestamp&lt;/code&gt; value.
+Returns the <code>CreationTimestamp</code> value.
 
 #### LabelFingerprint
 
-Returns the &lt;code&gt;LabelFingerprint&lt;/code&gt; value.
+Returns the <code>LabelFingerprint</code> value.
 
 #### LastAttachTimestamp
 
-Returns the &lt;code&gt;LastAttachTimestamp&lt;/code&gt; value.
+Returns the <code>LastAttachTimestamp</code> value.
 
 #### LastDetachTimestamp
 
-Returns the &lt;code&gt;LastDetachTimestamp&lt;/code&gt; value.
+Returns the <code>LastDetachTimestamp</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 
 #### SourceSnapshotId
 
-Returns the &lt;code&gt;SourceSnapshotId&lt;/code&gt; value.
+Returns the <code>SourceSnapshotId</code> value.
 
 #### Users
 
-Returns the &lt;code&gt;Users&lt;/code&gt; value.
+Returns the <code>Users</code> value.
 

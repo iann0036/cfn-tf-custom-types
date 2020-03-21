@@ -31,25 +31,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#shutdownscript" title="ShutdownScript">ShutdownScript</a>" : <i>String</i>,
         "<a href="#startupscript" title="StartupScript">StartupScript</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#backendservices" title="BackendServices">BackendServices</a>" : <i>[ &lt;a href=&#34;backendservices.md&#34;&gt;BackendServices&lt;/a&gt;, ... ]</i>,
-        "<a href="#disk" title="Disk">Disk</a>" : <i>[ &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;, ... ]</i>,
-        "<a href="#gpu" title="Gpu">Gpu</a>" : <i>[ &lt;a href=&#34;gpu.md&#34;&gt;Gpu&lt;/a&gt;, ... ]</i>,
-        "<a href="#instancetypescustom" title="InstanceTypesCustom">InstanceTypesCustom</a>" : <i>[ &lt;a href=&#34;instancetypescustom.md&#34;&gt;InstanceTypesCustom&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationdockerswarm" title="IntegrationDockerSwarm">IntegrationDockerSwarm</a>" : <i>[ &lt;a href=&#34;integrationdockerswarm.md&#34;&gt;IntegrationDockerSwarm&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationgke" title="IntegrationGke">IntegrationGke</a>" : <i>[ &lt;a href=&#34;integrationgke.md&#34;&gt;IntegrationGke&lt;/a&gt;, ... ]</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
-        "<a href="#scalingdownpolicy" title="ScalingDownPolicy">ScalingDownPolicy</a>" : <i>[ &lt;a href=&#34;scalingdownpolicy.md&#34;&gt;ScalingDownPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#scalinguppolicy" title="ScalingUpPolicy">ScalingUpPolicy</a>" : <i>[ &lt;a href=&#34;scalinguppolicy.md&#34;&gt;ScalingUpPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#namedports" title="NamedPorts">NamedPorts</a>" : <i>[ &lt;a href=&#34;namedports.md&#34;&gt;NamedPorts&lt;/a&gt;, ... ]</i>,
-        "<a href="#initializeparams" title="InitializeParams">InitializeParams</a>" : <i>[ &lt;a href=&#34;initializeparams.md&#34;&gt;InitializeParams&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ &lt;a href=&#34;autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ &lt;a href=&#34;autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscalelabels" title="AutoscaleLabels">AutoscaleLabels</a>" : <i>[ &lt;a href=&#34;autoscalelabels.md&#34;&gt;AutoscaleLabels&lt;/a&gt;, ... ]</i>,
-        "<a href="#accessconfigs" title="AccessConfigs">AccessConfigs</a>" : <i>[ &lt;a href=&#34;accessconfigs.md&#34;&gt;AccessConfigs&lt;/a&gt;, ... ]</i>,
-        "<a href="#aliasipranges" title="AliasIpRanges">AliasIpRanges</a>" : <i>[ &lt;a href=&#34;aliasipranges.md&#34;&gt;AliasIpRanges&lt;/a&gt;, ... ]</i>,
-        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>
+        "<a href="#backendservices" title="BackendServices">BackendServices</a>" : <i>[ <a href="backendservices.md">BackendServices</a>, ... ]</i>,
+        "<a href="#disk" title="Disk">Disk</a>" : <i>[ <a href="disk.md">Disk</a>, ... ]</i>,
+        "<a href="#gpu" title="Gpu">Gpu</a>" : <i>[ <a href="gpu.md">Gpu</a>, ... ]</i>,
+        "<a href="#instancetypescustom" title="InstanceTypesCustom">InstanceTypesCustom</a>" : <i>[ <a href="instancetypescustom.md">InstanceTypesCustom</a>, ... ]</i>,
+        "<a href="#integrationdockerswarm" title="IntegrationDockerSwarm">IntegrationDockerSwarm</a>" : <i>[ <a href="integrationdockerswarm.md">IntegrationDockerSwarm</a>, ... ]</i>,
+        "<a href="#integrationgke" title="IntegrationGke">IntegrationGke</a>" : <i>[ <a href="integrationgke.md">IntegrationGke</a>, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
+        "<a href="#scalingdownpolicy" title="ScalingDownPolicy">ScalingDownPolicy</a>" : <i>[ <a href="scalingdownpolicy.md">ScalingDownPolicy</a>, ... ]</i>,
+        "<a href="#scalinguppolicy" title="ScalingUpPolicy">ScalingUpPolicy</a>" : <i>[ <a href="scalinguppolicy.md">ScalingUpPolicy</a>, ... ]</i>,
+        "<a href="#namedports" title="NamedPorts">NamedPorts</a>" : <i>[ <a href="namedports.md">NamedPorts</a>, ... ]</i>,
+        "<a href="#initializeparams" title="InitializeParams">InitializeParams</a>" : <i>[ <a href="initializeparams.md">InitializeParams</a>, ... ]</i>,
+        "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ <a href="autoscaledown.md">AutoscaleDown</a>, ... ]</i>,
+        "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ <a href="autoscaleheadroom.md">AutoscaleHeadroom</a>, ... ]</i>,
+        "<a href="#autoscalelabels" title="AutoscaleLabels">AutoscaleLabels</a>" : <i>[ <a href="autoscalelabels.md">AutoscaleLabels</a>, ... ]</i>,
+        "<a href="#accessconfigs" title="AccessConfigs">AccessConfigs</a>" : <i>[ <a href="accessconfigs.md">AccessConfigs</a>, ... ]</i>,
+        "<a href="#aliasipranges" title="AliasIpRanges">AliasIpRanges</a>" : <i>[ <a href="aliasipranges.md">AliasIpRanges</a>, ... ]</i>,
+        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="dimensions.md">Dimensions</a>, ... ]</i>
     }
 }
 </pre>
@@ -81,43 +81,43 @@ Properties:
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#backendservices" title="BackendServices">BackendServices</a>: <i>
-      - &lt;a href=&#34;backendservices.md&#34;&gt;BackendServices&lt;/a&gt;</i>
+      - <a href="backendservices.md">BackendServices</a></i>
     <a href="#disk" title="Disk">Disk</a>: <i>
-      - &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;</i>
+      - <a href="disk.md">Disk</a></i>
     <a href="#gpu" title="Gpu">Gpu</a>: <i>
-      - &lt;a href=&#34;gpu.md&#34;&gt;Gpu&lt;/a&gt;</i>
+      - <a href="gpu.md">Gpu</a></i>
     <a href="#instancetypescustom" title="InstanceTypesCustom">InstanceTypesCustom</a>: <i>
-      - &lt;a href=&#34;instancetypescustom.md&#34;&gt;InstanceTypesCustom&lt;/a&gt;</i>
+      - <a href="instancetypescustom.md">InstanceTypesCustom</a></i>
     <a href="#integrationdockerswarm" title="IntegrationDockerSwarm">IntegrationDockerSwarm</a>: <i>
-      - &lt;a href=&#34;integrationdockerswarm.md&#34;&gt;IntegrationDockerSwarm&lt;/a&gt;</i>
+      - <a href="integrationdockerswarm.md">IntegrationDockerSwarm</a></i>
     <a href="#integrationgke" title="IntegrationGke">IntegrationGke</a>: <i>
-      - &lt;a href=&#34;integrationgke.md&#34;&gt;IntegrationGke&lt;/a&gt;</i>
+      - <a href="integrationgke.md">IntegrationGke</a></i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
+      - <a href="networkinterface.md">NetworkInterface</a></i>
     <a href="#scalingdownpolicy" title="ScalingDownPolicy">ScalingDownPolicy</a>: <i>
-      - &lt;a href=&#34;scalingdownpolicy.md&#34;&gt;ScalingDownPolicy&lt;/a&gt;</i>
+      - <a href="scalingdownpolicy.md">ScalingDownPolicy</a></i>
     <a href="#scalinguppolicy" title="ScalingUpPolicy">ScalingUpPolicy</a>: <i>
-      - &lt;a href=&#34;scalinguppolicy.md&#34;&gt;ScalingUpPolicy&lt;/a&gt;</i>
+      - <a href="scalinguppolicy.md">ScalingUpPolicy</a></i>
     <a href="#namedports" title="NamedPorts">NamedPorts</a>: <i>
-      - &lt;a href=&#34;namedports.md&#34;&gt;NamedPorts&lt;/a&gt;</i>
+      - <a href="namedports.md">NamedPorts</a></i>
     <a href="#initializeparams" title="InitializeParams">InitializeParams</a>: <i>
-      - &lt;a href=&#34;initializeparams.md&#34;&gt;InitializeParams&lt;/a&gt;</i>
+      - <a href="initializeparams.md">InitializeParams</a></i>
     <a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>: <i>
-      - &lt;a href=&#34;autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;</i>
+      - <a href="autoscaledown.md">AutoscaleDown</a></i>
     <a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>: <i>
-      - &lt;a href=&#34;autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;</i>
+      - <a href="autoscaleheadroom.md">AutoscaleHeadroom</a></i>
     <a href="#autoscalelabels" title="AutoscaleLabels">AutoscaleLabels</a>: <i>
-      - &lt;a href=&#34;autoscalelabels.md&#34;&gt;AutoscaleLabels&lt;/a&gt;</i>
+      - <a href="autoscalelabels.md">AutoscaleLabels</a></i>
     <a href="#accessconfigs" title="AccessConfigs">AccessConfigs</a>: <i>
-      - &lt;a href=&#34;accessconfigs.md&#34;&gt;AccessConfigs&lt;/a&gt;</i>
+      - <a href="accessconfigs.md">AccessConfigs</a></i>
     <a href="#aliasipranges" title="AliasIpRanges">AliasIpRanges</a>: <i>
-      - &lt;a href=&#34;aliasipranges.md&#34;&gt;AliasIpRanges&lt;/a&gt;</i>
+      - <a href="aliasipranges.md">AliasIpRanges</a></i>
     <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
+      - <a href="dimensions.md">Dimensions</a></i>
 </pre>
 
 ## Properties
@@ -278,7 +278,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backendservices.md&#34;&gt;BackendServices&lt;/a&gt;
+_Type_: List of <a href="backendservices.md">BackendServices</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -286,7 +286,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;
+_Type_: List of <a href="disk.md">Disk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -294,7 +294,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;gpu.md&#34;&gt;Gpu&lt;/a&gt;
+_Type_: List of <a href="gpu.md">Gpu</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -302,7 +302,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instancetypescustom.md&#34;&gt;InstanceTypesCustom&lt;/a&gt;
+_Type_: List of <a href="instancetypescustom.md">InstanceTypesCustom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -310,7 +310,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationdockerswarm.md&#34;&gt;IntegrationDockerSwarm&lt;/a&gt;
+_Type_: List of <a href="integrationdockerswarm.md">IntegrationDockerSwarm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -318,7 +318,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationgke.md&#34;&gt;IntegrationGke&lt;/a&gt;
+_Type_: List of <a href="integrationgke.md">IntegrationGke</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -326,7 +326,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -334,7 +334,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -342,7 +342,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
+_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -350,7 +350,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalingdownpolicy.md&#34;&gt;ScalingDownPolicy&lt;/a&gt;
+_Type_: List of <a href="scalingdownpolicy.md">ScalingDownPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -358,7 +358,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalinguppolicy.md&#34;&gt;ScalingUpPolicy&lt;/a&gt;
+_Type_: List of <a href="scalinguppolicy.md">ScalingUpPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -366,7 +366,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;namedports.md&#34;&gt;NamedPorts&lt;/a&gt;
+_Type_: List of <a href="namedports.md">NamedPorts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -374,7 +374,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;initializeparams.md&#34;&gt;InitializeParams&lt;/a&gt;
+_Type_: List of <a href="initializeparams.md">InitializeParams</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -382,7 +382,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;
+_Type_: List of <a href="autoscaledown.md">AutoscaleDown</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -390,7 +390,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;
+_Type_: List of <a href="autoscaleheadroom.md">AutoscaleHeadroom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -398,7 +398,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscalelabels.md&#34;&gt;AutoscaleLabels&lt;/a&gt;
+_Type_: List of <a href="autoscalelabels.md">AutoscaleLabels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -406,7 +406,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accessconfigs.md&#34;&gt;AccessConfigs&lt;/a&gt;
+_Type_: List of <a href="accessconfigs.md">AccessConfigs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -414,7 +414,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;aliasipranges.md&#34;&gt;AliasIpRanges&lt;/a&gt;
+_Type_: List of <a href="aliasipranges.md">AliasIpRanges</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -422,7 +422,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
+_Type_: List of <a href="dimensions.md">Dimensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

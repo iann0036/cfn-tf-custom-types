@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Icinga2::Checkcommand",
     "Properties" : {
-        "<a href="#arguments" title="Arguments">Arguments</a>" : <i>[ &lt;a href=&#34;arguments.md&#34;&gt;Arguments&lt;/a&gt;, ... ]</i>,
+        "<a href="#arguments" title="Arguments">Arguments</a>" : <i>[ <a href="arguments.md">Arguments</a>, ... ]</i>,
         "<a href="#command" title="Command">Command</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::Icinga2::Checkcommand
 Properties:
     <a href="#arguments" title="Arguments">Arguments</a>: <i>
-      - &lt;a href=&#34;arguments.md&#34;&gt;Arguments&lt;/a&gt;</i>
+      - <a href="arguments.md">Arguments</a></i>
     <a href="#command" title="Command">Command</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -41,7 +41,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;arguments.md&#34;&gt;Arguments&lt;/a&gt;
+_Type_: List of <a href="arguments.md">Arguments</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

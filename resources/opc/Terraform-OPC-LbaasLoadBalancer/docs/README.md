@@ -177,17 +177,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BalancerVips
 
-Returns the &lt;code&gt;BalancerVips&lt;/code&gt; value.
+Returns the <code>BalancerVips</code> value.
 
 #### CanonicalHostName
 
-Returns the &lt;code&gt;CanonicalHostName&lt;/code&gt; value.
+Returns the <code>CanonicalHostName</code> value.
 
 #### CloudgateCapable
 
-Returns the &lt;code&gt;CloudgateCapable&lt;/code&gt; value.
+Returns the <code>CloudgateCapable</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

@@ -24,13 +24,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#autoscaling" title="Autoscaling">Autoscaling</a>" : <i>[ &lt;a href=&#34;autoscaling.md&#34;&gt;Autoscaling&lt;/a&gt;, ... ]</i>,
-        "<a href="#management" title="Management">Management</a>" : <i>[ &lt;a href=&#34;management.md&#34;&gt;Management&lt;/a&gt;, ... ]</i>,
-        "<a href="#nodeconfig" title="NodeConfig">NodeConfig</a>" : <i>[ &lt;a href=&#34;nodeconfig.md&#34;&gt;NodeConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#sandboxconfig" title="SandboxConfig">SandboxConfig</a>" : <i>[ &lt;a href=&#34;sandboxconfig.md&#34;&gt;SandboxConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>" : <i>[ &lt;a href=&#34;shieldedinstanceconfig.md&#34;&gt;ShieldedInstanceConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#workloadmetadataconfig" title="WorkloadMetadataConfig">WorkloadMetadataConfig</a>" : <i>[ &lt;a href=&#34;workloadmetadataconfig.md&#34;&gt;WorkloadMetadataConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#autoscaling" title="Autoscaling">Autoscaling</a>" : <i>[ <a href="autoscaling.md">Autoscaling</a>, ... ]</i>,
+        "<a href="#management" title="Management">Management</a>" : <i>[ <a href="management.md">Management</a>, ... ]</i>,
+        "<a href="#nodeconfig" title="NodeConfig">NodeConfig</a>" : <i>[ <a href="nodeconfig.md">NodeConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#sandboxconfig" title="SandboxConfig">SandboxConfig</a>" : <i>[ <a href="sandboxconfig.md">SandboxConfig</a>, ... ]</i>,
+        "<a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>" : <i>[ <a href="shieldedinstanceconfig.md">ShieldedInstanceConfig</a>, ... ]</i>,
+        "<a href="#workloadmetadataconfig" title="WorkloadMetadataConfig">WorkloadMetadataConfig</a>" : <i>[ <a href="workloadmetadataconfig.md">WorkloadMetadataConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -53,18 +53,18 @@ Properties:
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#autoscaling" title="Autoscaling">Autoscaling</a>: <i>
-      - &lt;a href=&#34;autoscaling.md&#34;&gt;Autoscaling&lt;/a&gt;</i>
+      - <a href="autoscaling.md">Autoscaling</a></i>
     <a href="#management" title="Management">Management</a>: <i>
-      - &lt;a href=&#34;management.md&#34;&gt;Management&lt;/a&gt;</i>
+      - <a href="management.md">Management</a></i>
     <a href="#nodeconfig" title="NodeConfig">NodeConfig</a>: <i>
-      - &lt;a href=&#34;nodeconfig.md&#34;&gt;NodeConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="nodeconfig.md">NodeConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#sandboxconfig" title="SandboxConfig">SandboxConfig</a>: <i>
-      - &lt;a href=&#34;sandboxconfig.md&#34;&gt;SandboxConfig&lt;/a&gt;</i>
+      - <a href="sandboxconfig.md">SandboxConfig</a></i>
     <a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>: <i>
-      - &lt;a href=&#34;shieldedinstanceconfig.md&#34;&gt;ShieldedInstanceConfig&lt;/a&gt;</i>
+      - <a href="shieldedinstanceconfig.md">ShieldedInstanceConfig</a></i>
     <a href="#workloadmetadataconfig" title="WorkloadMetadataConfig">WorkloadMetadataConfig</a>: <i>
-      - &lt;a href=&#34;workloadmetadataconfig.md&#34;&gt;WorkloadMetadataConfig&lt;/a&gt;</i>
+      - <a href="workloadmetadataconfig.md">WorkloadMetadataConfig</a></i>
 </pre>
 
 ## Properties
@@ -169,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscaling.md&#34;&gt;Autoscaling&lt;/a&gt;
+_Type_: List of <a href="autoscaling.md">Autoscaling</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;management.md&#34;&gt;Management&lt;/a&gt;
+_Type_: List of <a href="management.md">Management</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,7 +185,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nodeconfig.md&#34;&gt;NodeConfig&lt;/a&gt;
+_Type_: List of <a href="nodeconfig.md">NodeConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,7 +193,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -201,7 +201,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sandboxconfig.md&#34;&gt;SandboxConfig&lt;/a&gt;
+_Type_: List of <a href="sandboxconfig.md">SandboxConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -209,7 +209,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;shieldedinstanceconfig.md&#34;&gt;ShieldedInstanceConfig&lt;/a&gt;
+_Type_: List of <a href="shieldedinstanceconfig.md">ShieldedInstanceConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,7 +217,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;workloadmetadataconfig.md&#34;&gt;WorkloadMetadataConfig&lt;/a&gt;
+_Type_: List of <a href="workloadmetadataconfig.md">WorkloadMetadataConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -239,5 +239,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### InstanceGroupUrls
 
-Returns the &lt;code&gt;InstanceGroupUrls&lt;/code&gt; value.
+Returns the <code>InstanceGroupUrls</code> value.
 

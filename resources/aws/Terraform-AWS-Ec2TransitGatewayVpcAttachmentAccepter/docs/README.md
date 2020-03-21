@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::AWS::Ec2TransitGatewayVpcAttachmentAccepter",
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#transitgatewayattachmentid" title="TransitGatewayAttachmentId">TransitGatewayAttachmentId</a>" : <i>String</i>,
         "<a href="#transitgatewaydefaultroutetableassociation" title="TransitGatewayDefaultRouteTableAssociation">TransitGatewayDefaultRouteTableAssociation</a>" : <i>Boolean</i>,
         "<a href="#transitgatewaydefaultroutetablepropagation" title="TransitGatewayDefaultRouteTablePropagation">TransitGatewayDefaultRouteTablePropagation</a>" : <i>Boolean</i>,
@@ -28,7 +28,7 @@ Type: Terraform::AWS::Ec2TransitGatewayVpcAttachmentAccepter
 Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#transitgatewayattachmentid" title="TransitGatewayAttachmentId">TransitGatewayAttachmentId</a>: <i>String</i>
     <a href="#transitgatewaydefaultroutetableassociation" title="TransitGatewayDefaultRouteTableAssociation">TransitGatewayDefaultRouteTableAssociation</a>: <i>Boolean</i>
     <a href="#transitgatewaydefaultroutetablepropagation" title="TransitGatewayDefaultRouteTablePropagation">TransitGatewayDefaultRouteTablePropagation</a>: <i>Boolean</i>
@@ -48,7 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,25 +94,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DnsSupport
 
-Returns the &lt;code&gt;DnsSupport&lt;/code&gt; value.
+Returns the <code>DnsSupport</code> value.
 
 #### Ipv6Support
 
-Returns the &lt;code&gt;Ipv6Support&lt;/code&gt; value.
+Returns the <code>Ipv6Support</code> value.
 
 #### SubnetIds
 
-Returns the &lt;code&gt;SubnetIds&lt;/code&gt; value.
+Returns the <code>SubnetIds</code> value.
 
 #### TransitGatewayId
 
-Returns the &lt;code&gt;TransitGatewayId&lt;/code&gt; value.
+Returns the <code>TransitGatewayId</code> value.
 
 #### VpcId
 
-Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
+Returns the <code>VpcId</code> value.
 
 #### VpcOwnerId
 
-Returns the &lt;code&gt;VpcOwnerId&lt;/code&gt; value.
+Returns the <code>VpcOwnerId</code> value.
 

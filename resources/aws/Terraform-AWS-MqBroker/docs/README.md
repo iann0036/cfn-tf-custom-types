@@ -23,12 +23,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#publiclyaccessible" title="PubliclyAccessible">PubliclyAccessible</a>" : <i>Boolean</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#subnetids" title="SubnetIds">SubnetIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;, ... ]</i>,
-        "<a href="#encryptionoptions" title="EncryptionOptions">EncryptionOptions</a>" : <i>[ &lt;a href=&#34;encryptionoptions.md&#34;&gt;EncryptionOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#logs" title="Logs">Logs</a>" : <i>[ &lt;a href=&#34;logs.md&#34;&gt;Logs&lt;/a&gt;, ... ]</i>,
-        "<a href="#maintenancewindowstarttime" title="MaintenanceWindowStartTime">MaintenanceWindowStartTime</a>" : <i>[ &lt;a href=&#34;maintenancewindowstarttime.md&#34;&gt;MaintenanceWindowStartTime&lt;/a&gt;, ... ]</i>,
-        "<a href="#user" title="User">User</a>" : <i>[ &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ <a href="configuration.md">Configuration</a>, ... ]</i>,
+        "<a href="#encryptionoptions" title="EncryptionOptions">EncryptionOptions</a>" : <i>[ <a href="encryptionoptions.md">EncryptionOptions</a>, ... ]</i>,
+        "<a href="#logs" title="Logs">Logs</a>" : <i>[ <a href="logs.md">Logs</a>, ... ]</i>,
+        "<a href="#maintenancewindowstarttime" title="MaintenanceWindowStartTime">MaintenanceWindowStartTime</a>" : <i>[ <a href="maintenancewindowstarttime.md">MaintenanceWindowStartTime</a>, ... ]</i>,
+        "<a href="#user" title="User">User</a>" : <i>[ <a href="user.md">User</a>, ... ]</i>
     }
 }
 </pre>
@@ -52,17 +52,17 @@ Properties:
     <a href="#subnetids" title="SubnetIds">SubnetIds</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#configuration" title="Configuration">Configuration</a>: <i>
-      - &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;</i>
+      - <a href="configuration.md">Configuration</a></i>
     <a href="#encryptionoptions" title="EncryptionOptions">EncryptionOptions</a>: <i>
-      - &lt;a href=&#34;encryptionoptions.md&#34;&gt;EncryptionOptions&lt;/a&gt;</i>
+      - <a href="encryptionoptions.md">EncryptionOptions</a></i>
     <a href="#logs" title="Logs">Logs</a>: <i>
-      - &lt;a href=&#34;logs.md&#34;&gt;Logs&lt;/a&gt;</i>
+      - <a href="logs.md">Logs</a></i>
     <a href="#maintenancewindowstarttime" title="MaintenanceWindowStartTime">MaintenanceWindowStartTime</a>: <i>
-      - &lt;a href=&#34;maintenancewindowstarttime.md&#34;&gt;MaintenanceWindowStartTime&lt;/a&gt;</i>
+      - <a href="maintenancewindowstarttime.md">MaintenanceWindowStartTime</a></i>
     <a href="#user" title="User">User</a>: <i>
-      - &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;</i>
+      - <a href="user.md">User</a></i>
 </pre>
 
 ## Properties
@@ -159,7 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;
+_Type_: List of <a href="configuration.md">Configuration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,7 +175,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;encryptionoptions.md&#34;&gt;EncryptionOptions&lt;/a&gt;
+_Type_: List of <a href="encryptionoptions.md">EncryptionOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +183,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logs.md&#34;&gt;Logs&lt;/a&gt;
+_Type_: List of <a href="logs.md">Logs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;maintenancewindowstarttime.md&#34;&gt;MaintenanceWindowStartTime&lt;/a&gt;
+_Type_: List of <a href="maintenancewindowstarttime.md">MaintenanceWindowStartTime</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +199,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;
+_Type_: List of <a href="user.md">User</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,9 +221,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### Instances
 
-Returns the &lt;code&gt;Instances&lt;/code&gt; value.
+Returns the <code>Instances</code> value.
 

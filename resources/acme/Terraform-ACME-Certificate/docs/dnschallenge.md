@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#config" title="Config">Config</a>" : <i>[ &lt;a href=&#34;dnschallenge-config.md&#34;&gt;Config&lt;/a&gt;, ... ]</i>,
+    "<a href="#config" title="Config">Config</a>" : <i>[ <a href="dnschallenge-config.md">Config</a>, ... ]</i>,
     "<a href="#provider" title="Provider">Provider</a>" : <i>String</i>
 }
 </pre>
@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#config" title="Config">Config</a>: <i>
-      - &lt;a href=&#34;dnschallenge-config.md&#34;&gt;Config&lt;/a&gt;</i>
+      - <a href="dnschallenge-config.md">Config</a></i>
 <a href="#provider" title="Provider">Provider</a>: <i>String</i>
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Config
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;dnschallenge-config.md&#34;&gt;Config&lt;/a&gt;
+_Type_: List of <a href="dnschallenge-config.md">Config</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

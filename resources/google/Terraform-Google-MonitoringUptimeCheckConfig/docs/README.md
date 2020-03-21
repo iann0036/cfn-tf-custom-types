@@ -19,14 +19,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#selectedregions" title="SelectedRegions">SelectedRegions</a>" : <i>[ String, ... ]</i>,
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>String</i>,
-        "<a href="#contentmatchers" title="ContentMatchers">ContentMatchers</a>" : <i>[ &lt;a href=&#34;contentmatchers.md&#34;&gt;ContentMatchers&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpcheck" title="HttpCheck">HttpCheck</a>" : <i>[ &lt;a href=&#34;httpcheck.md&#34;&gt;HttpCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#internalcheckers" title="InternalCheckers">InternalCheckers</a>" : <i>[ &lt;a href=&#34;internalcheckers.md&#34;&gt;InternalCheckers&lt;/a&gt;, ... ]</i>,
-        "<a href="#monitoredresource" title="MonitoredResource">MonitoredResource</a>" : <i>[ &lt;a href=&#34;monitoredresource.md&#34;&gt;MonitoredResource&lt;/a&gt;, ... ]</i>,
-        "<a href="#resourcegroup" title="ResourceGroup">ResourceGroup</a>" : <i>[ &lt;a href=&#34;resourcegroup.md&#34;&gt;ResourceGroup&lt;/a&gt;, ... ]</i>,
-        "<a href="#tcpcheck" title="TcpCheck">TcpCheck</a>" : <i>[ &lt;a href=&#34;tcpcheck.md&#34;&gt;TcpCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#authinfo" title="AuthInfo">AuthInfo</a>" : <i>[ &lt;a href=&#34;authinfo.md&#34;&gt;AuthInfo&lt;/a&gt;, ... ]</i>
+        "<a href="#contentmatchers" title="ContentMatchers">ContentMatchers</a>" : <i>[ <a href="contentmatchers.md">ContentMatchers</a>, ... ]</i>,
+        "<a href="#httpcheck" title="HttpCheck">HttpCheck</a>" : <i>[ <a href="httpcheck.md">HttpCheck</a>, ... ]</i>,
+        "<a href="#internalcheckers" title="InternalCheckers">InternalCheckers</a>" : <i>[ <a href="internalcheckers.md">InternalCheckers</a>, ... ]</i>,
+        "<a href="#monitoredresource" title="MonitoredResource">MonitoredResource</a>" : <i>[ <a href="monitoredresource.md">MonitoredResource</a>, ... ]</i>,
+        "<a href="#resourcegroup" title="ResourceGroup">ResourceGroup</a>" : <i>[ <a href="resourcegroup.md">ResourceGroup</a>, ... ]</i>,
+        "<a href="#tcpcheck" title="TcpCheck">TcpCheck</a>" : <i>[ <a href="tcpcheck.md">TcpCheck</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#authinfo" title="AuthInfo">AuthInfo</a>" : <i>[ <a href="authinfo.md">AuthInfo</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,20 +45,20 @@ Properties:
       - String</i>
     <a href="#timeout" title="Timeout">Timeout</a>: <i>String</i>
     <a href="#contentmatchers" title="ContentMatchers">ContentMatchers</a>: <i>
-      - &lt;a href=&#34;contentmatchers.md&#34;&gt;ContentMatchers&lt;/a&gt;</i>
+      - <a href="contentmatchers.md">ContentMatchers</a></i>
     <a href="#httpcheck" title="HttpCheck">HttpCheck</a>: <i>
-      - &lt;a href=&#34;httpcheck.md&#34;&gt;HttpCheck&lt;/a&gt;</i>
+      - <a href="httpcheck.md">HttpCheck</a></i>
     <a href="#internalcheckers" title="InternalCheckers">InternalCheckers</a>: <i>
-      - &lt;a href=&#34;internalcheckers.md&#34;&gt;InternalCheckers&lt;/a&gt;</i>
+      - <a href="internalcheckers.md">InternalCheckers</a></i>
     <a href="#monitoredresource" title="MonitoredResource">MonitoredResource</a>: <i>
-      - &lt;a href=&#34;monitoredresource.md&#34;&gt;MonitoredResource&lt;/a&gt;</i>
+      - <a href="monitoredresource.md">MonitoredResource</a></i>
     <a href="#resourcegroup" title="ResourceGroup">ResourceGroup</a>: <i>
-      - &lt;a href=&#34;resourcegroup.md&#34;&gt;ResourceGroup&lt;/a&gt;</i>
+      - <a href="resourcegroup.md">ResourceGroup</a></i>
     <a href="#tcpcheck" title="TcpCheck">TcpCheck</a>: <i>
-      - &lt;a href=&#34;tcpcheck.md&#34;&gt;TcpCheck&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="tcpcheck.md">TcpCheck</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#authinfo" title="AuthInfo">AuthInfo</a>: <i>
-      - &lt;a href=&#34;authinfo.md&#34;&gt;AuthInfo&lt;/a&gt;</i>
+      - <a href="authinfo.md">AuthInfo</a></i>
 </pre>
 
 ## Properties
@@ -123,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;contentmatchers.md&#34;&gt;ContentMatchers&lt;/a&gt;
+_Type_: List of <a href="contentmatchers.md">ContentMatchers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpcheck.md&#34;&gt;HttpCheck&lt;/a&gt;
+_Type_: List of <a href="httpcheck.md">HttpCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;internalcheckers.md&#34;&gt;InternalCheckers&lt;/a&gt;
+_Type_: List of <a href="internalcheckers.md">InternalCheckers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;monitoredresource.md&#34;&gt;MonitoredResource&lt;/a&gt;
+_Type_: List of <a href="monitoredresource.md">MonitoredResource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;resourcegroup.md&#34;&gt;ResourceGroup&lt;/a&gt;
+_Type_: List of <a href="resourcegroup.md">ResourceGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tcpcheck.md&#34;&gt;TcpCheck&lt;/a&gt;
+_Type_: List of <a href="tcpcheck.md">TcpCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;authinfo.md&#34;&gt;AuthInfo&lt;/a&gt;
+_Type_: List of <a href="authinfo.md">AuthInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -201,9 +201,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### UptimeCheckId
 
-Returns the &lt;code&gt;UptimeCheckId&lt;/code&gt; value.
+Returns the <code>UptimeCheckId</code> value.
 

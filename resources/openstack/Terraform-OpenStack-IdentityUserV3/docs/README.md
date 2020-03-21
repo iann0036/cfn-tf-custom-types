@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#domainid" title="DomainId">DomainId</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
-        "<a href="#extra" title="Extra">Extra</a>" : <i>[ &lt;a href=&#34;extra.md&#34;&gt;Extra&lt;/a&gt;, ... ]</i>,
+        "<a href="#extra" title="Extra">Extra</a>" : <i>[ <a href="extra.md">Extra</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ignorechangepassworduponfirstuse" title="IgnoreChangePasswordUponFirstUse">IgnoreChangePasswordUponFirstUse</a>" : <i>Boolean</i>,
         "<a href="#ignorelockoutfailureattempts" title="IgnoreLockoutFailureAttempts">IgnoreLockoutFailureAttempts</a>" : <i>Boolean</i>,
@@ -25,7 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#multifactorauthrule" title="MultiFactorAuthRule">MultiFactorAuthRule</a>" : <i>[ &lt;a href=&#34;multifactorauthrule.md&#34;&gt;MultiFactorAuthRule&lt;/a&gt;, ... ]</i>
+        "<a href="#multifactorauthrule" title="MultiFactorAuthRule">MultiFactorAuthRule</a>" : <i>[ <a href="multifactorauthrule.md">MultiFactorAuthRule</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,7 +40,7 @@ Properties:
     <a href="#domainid" title="DomainId">DomainId</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#extra" title="Extra">Extra</a>: <i>
-      - &lt;a href=&#34;extra.md&#34;&gt;Extra&lt;/a&gt;</i>
+      - <a href="extra.md">Extra</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ignorechangepassworduponfirstuse" title="IgnoreChangePasswordUponFirstUse">IgnoreChangePasswordUponFirstUse</a>: <i>Boolean</i>
     <a href="#ignorelockoutfailureattempts" title="IgnoreLockoutFailureAttempts">IgnoreLockoutFailureAttempts</a>: <i>Boolean</i>
@@ -50,7 +50,7 @@ Properties:
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#multifactorauthrule" title="MultiFactorAuthRule">MultiFactorAuthRule</a>: <i>
-      - &lt;a href=&#34;multifactorauthrule.md&#34;&gt;MultiFactorAuthRule&lt;/a&gt;</i>
+      - <a href="multifactorauthrule.md">MultiFactorAuthRule</a></i>
 </pre>
 
 ## Properties
@@ -91,7 +91,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;extra.md&#34;&gt;Extra&lt;/a&gt;
+_Type_: List of <a href="extra.md">Extra</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;multifactorauthrule.md&#34;&gt;MultiFactorAuthRule&lt;/a&gt;
+_Type_: List of <a href="multifactorauthrule.md">MultiFactorAuthRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

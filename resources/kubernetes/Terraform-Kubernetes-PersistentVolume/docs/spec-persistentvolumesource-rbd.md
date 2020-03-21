@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#rbdimage" title="RbdImage">RbdImage</a>" : <i>String</i>,
     "<a href="#rbdpool" title="RbdPool">RbdPool</a>" : <i>String</i>,
     "<a href="#readonly" title="ReadOnly">ReadOnly</a>" : <i>Boolean</i>,
-    "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ &lt;a href=&#34;spec-persistentvolumesource-rbd-secretref.md&#34;&gt;SecretRef&lt;/a&gt;, ... ]</i>
+    "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ <a href="spec-persistentvolumesource-rbd-secretref.md">SecretRef</a>, ... ]</i>
 }
 </pre>
 
@@ -31,7 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#rbdpool" title="RbdPool">RbdPool</a>: <i>String</i>
 <a href="#readonly" title="ReadOnly">ReadOnly</a>: <i>Boolean</i>
 <a href="#secretref" title="SecretRef">SecretRef</a>: <i>
-      - &lt;a href=&#34;spec-persistentvolumesource-rbd-secretref.md&#34;&gt;SecretRef&lt;/a&gt;</i>
+      - <a href="spec-persistentvolumesource-rbd-secretref.md">SecretRef</a></i>
 </pre>
 
 ## Properties
@@ -88,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SecretRef
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-persistentvolumesource-rbd-secretref.md&#34;&gt;SecretRef&lt;/a&gt;
+_Type_: List of <a href="spec-persistentvolumesource-rbd-secretref.md">SecretRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -28,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#volumesizegb" title="VolumeSizeGb">VolumeSizeGb</a>" : <i>Double</i>,
         "<a href="#zoneslug" title="ZoneSlug">ZoneSlug</a>" : <i>String</i>,
-        "<a href="#interfaces" title="Interfaces">Interfaces</a>" : <i>[ &lt;a href=&#34;interfaces.md&#34;&gt;Interfaces&lt;/a&gt;, ... ]</i>
+        "<a href="#interfaces" title="Interfaces">Interfaces</a>" : <i>[ <a href="interfaces.md">Interfaces</a>, ... ]</i>
     }
 }
 </pre>
@@ -57,7 +57,7 @@ Properties:
     <a href="#volumesizegb" title="VolumeSizeGb">VolumeSizeGb</a>: <i>Double</i>
     <a href="#zoneslug" title="ZoneSlug">ZoneSlug</a>: <i>String</i>
     <a href="#interfaces" title="Interfaces">Interfaces</a>: <i>
-      - &lt;a href=&#34;interfaces.md&#34;&gt;Interfaces&lt;/a&gt;</i>
+      - <a href="interfaces.md">Interfaces</a></i>
 </pre>
 
 ## Properties
@@ -194,7 +194,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;interfaces.md&#34;&gt;Interfaces&lt;/a&gt;
+_Type_: List of <a href="interfaces.md">Interfaces</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,33 +216,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Href
 
-Returns the &lt;code&gt;Href&lt;/code&gt; value.
+Returns the <code>Href</code> value.
 
 #### PrivateIpv4Address
 
-Returns the &lt;code&gt;PrivateIpv4Address&lt;/code&gt; value.
+Returns the <code>PrivateIpv4Address</code> value.
 
 #### PublicIpv4Address
 
-Returns the &lt;code&gt;PublicIpv4Address&lt;/code&gt; value.
+Returns the <code>PublicIpv4Address</code> value.
 
 #### PublicIpv6Address
 
-Returns the &lt;code&gt;PublicIpv6Address&lt;/code&gt; value.
+Returns the <code>PublicIpv6Address</code> value.
 
 #### ServerGroups
 
-Returns the &lt;code&gt;ServerGroups&lt;/code&gt; value.
+Returns the <code>ServerGroups</code> value.
 
 #### SshFingerprints
 
-Returns the &lt;code&gt;SshFingerprints&lt;/code&gt; value.
+Returns the <code>SshFingerprints</code> value.
 
 #### SshHostKeys
 
-Returns the &lt;code&gt;SshHostKeys&lt;/code&gt; value.
+Returns the <code>SshHostKeys</code> value.
 
 #### Volumes
 
-Returns the &lt;code&gt;Volumes&lt;/code&gt; value.
+Returns the <code>Volumes</code> value.
 

@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#memorybytes" title="MemoryBytes">MemoryBytes</a>" : <i>Double</i>,
     "<a href="#nanocpus" title="NanoCpus">NanoCpus</a>" : <i>Double</i>,
-    "<a href="#genericresources" title="GenericResources">GenericResources</a>" : <i>[ &lt;a href=&#34;resources-reservation-genericresources.md&#34;&gt;GenericResources&lt;/a&gt;, ... ]</i>
+    "<a href="#genericresources" title="GenericResources">GenericResources</a>" : <i>[ <a href="resources-reservation-genericresources.md">GenericResources</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#memorybytes" title="MemoryBytes">MemoryBytes</a>: <i>Double</i>
 <a href="#nanocpus" title="NanoCpus">NanoCpus</a>: <i>Double</i>
 <a href="#genericresources" title="GenericResources">GenericResources</a>: <i>
-      - &lt;a href=&#34;resources-reservation-genericresources.md&#34;&gt;GenericResources&lt;/a&gt;</i>
+      - <a href="resources-reservation-genericresources.md">GenericResources</a></i>
 </pre>
 
 ## Properties
@@ -42,7 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GenericResources
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;resources-reservation-genericresources.md&#34;&gt;GenericResources&lt;/a&gt;
+_Type_: List of <a href="resources-reservation-genericresources.md">GenericResources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

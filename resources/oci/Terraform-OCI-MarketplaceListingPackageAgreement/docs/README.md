@@ -83,21 +83,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Author
 
-Returns the &lt;code&gt;Author&lt;/code&gt; value.
+Returns the <code>Author</code> value.
 
 #### CompartmentId
 
-Returns the &lt;code&gt;CompartmentId&lt;/code&gt; value.
+Returns the <code>CompartmentId</code> value.
 
 #### ContentUrl
 
-Returns the &lt;code&gt;ContentUrl&lt;/code&gt; value.
+Returns the <code>ContentUrl</code> value.
 
 #### Prompt
 
-Returns the &lt;code&gt;Prompt&lt;/code&gt; value.
+Returns the <code>Prompt</code> value.
 
 #### Signature
 
-Returns the &lt;code&gt;Signature&lt;/code&gt; value.
+Returns the <code>Signature</code> value.
 

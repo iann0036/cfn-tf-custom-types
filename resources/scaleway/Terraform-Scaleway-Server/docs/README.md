@@ -25,7 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>
+        "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="volume.md">Volume</a>, ... ]</i>
     }
 }
 </pre>
@@ -50,7 +50,7 @@ Properties:
       - String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#volume" title="Volume">Volume</a>: <i>
-      - &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;</i>
+      - <a href="volume.md">Volume</a></i>
 </pre>
 
 ## Properties
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;
+_Type_: List of <a href="volume.md">Volume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,13 +185,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PrivateIp
 
-Returns the &lt;code&gt;PrivateIp&lt;/code&gt; value.
+Returns the <code>PrivateIp</code> value.
 
 #### PublicIpv6
 
-Returns the &lt;code&gt;PublicIpv6&lt;/code&gt; value.
+Returns the <code>PublicIpv6</code> value.
 
 #### StateDetail
 
-Returns the &lt;code&gt;StateDetail&lt;/code&gt; value.
+Returns the <code>StateDetail</code> value.
 

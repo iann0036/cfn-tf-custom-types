@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#vpnclientaddresspool" title="VpnClientAddressPool">VpnClientAddressPool</a>" : <i>[ &lt;a href=&#34;connectionconfiguration-vpnclientaddresspool.md&#34;&gt;VpnClientAddressPool&lt;/a&gt;, ... ]</i>
+    "<a href="#vpnclientaddresspool" title="VpnClientAddressPool">VpnClientAddressPool</a>" : <i>[ <a href="connectionconfiguration-vpnclientaddresspool.md">VpnClientAddressPool</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#vpnclientaddresspool" title="VpnClientAddressPool">VpnClientAddressPool</a>: <i>
-      - &lt;a href=&#34;connectionconfiguration-vpnclientaddresspool.md&#34;&gt;VpnClientAddressPool&lt;/a&gt;</i>
+      - <a href="connectionconfiguration-vpnclientaddresspool.md">VpnClientAddressPool</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VpnClientAddressPool
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;connectionconfiguration-vpnclientaddresspool.md&#34;&gt;VpnClientAddressPool&lt;/a&gt;
+_Type_: List of <a href="connectionconfiguration-vpnclientaddresspool.md">VpnClientAddressPool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

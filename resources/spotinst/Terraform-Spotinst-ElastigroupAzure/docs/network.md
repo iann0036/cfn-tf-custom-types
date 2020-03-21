@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
     "<a href="#subnetname" title="SubnetName">SubnetName</a>" : <i>String</i>,
     "<a href="#virtualnetworkname" title="VirtualNetworkName">VirtualNetworkName</a>" : <i>String</i>,
-    "<a href="#additionalipconfigs" title="AdditionalIpConfigs">AdditionalIpConfigs</a>" : <i>[ &lt;a href=&#34;network-additionalipconfigs.md&#34;&gt;AdditionalIpConfigs&lt;/a&gt;, ... ]</i>
+    "<a href="#additionalipconfigs" title="AdditionalIpConfigs">AdditionalIpConfigs</a>" : <i>[ <a href="network-additionalipconfigs.md">AdditionalIpConfigs</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#subnetname" title="SubnetName">SubnetName</a>: <i>String</i>
 <a href="#virtualnetworkname" title="VirtualNetworkName">VirtualNetworkName</a>: <i>String</i>
 <a href="#additionalipconfigs" title="AdditionalIpConfigs">AdditionalIpConfigs</a>: <i>
-      - &lt;a href=&#34;network-additionalipconfigs.md&#34;&gt;AdditionalIpConfigs&lt;/a&gt;</i>
+      - <a href="network-additionalipconfigs.md">AdditionalIpConfigs</a></i>
 </pre>
 
 ## Properties
@@ -60,7 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AdditionalIpConfigs
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;network-additionalipconfigs.md&#34;&gt;AdditionalIpConfigs&lt;/a&gt;
+_Type_: List of <a href="network-additionalipconfigs.md">AdditionalIpConfigs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

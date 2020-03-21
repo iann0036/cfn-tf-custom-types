@@ -30,11 +30,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#servicerolearn" title="ServiceRoleArn">ServiceRoleArn</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#usecustomcookbooks" title="UseCustomCookbooks">UseCustomCookbooks</a>" : <i>Boolean</i>,
         "<a href="#useopsworkssecuritygroups" title="UseOpsworksSecurityGroups">UseOpsworksSecurityGroups</a>" : <i>Boolean</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#customcookbookssource" title="CustomCookbooksSource">CustomCookbooksSource</a>" : <i>[ &lt;a href=&#34;customcookbookssource.md&#34;&gt;CustomCookbooksSource&lt;/a&gt;, ... ]</i>
+        "<a href="#customcookbookssource" title="CustomCookbooksSource">CustomCookbooksSource</a>" : <i>[ <a href="customcookbookssource.md">CustomCookbooksSource</a>, ... ]</i>
     }
 }
 </pre>
@@ -63,12 +63,12 @@ Properties:
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#servicerolearn" title="ServiceRoleArn">ServiceRoleArn</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#usecustomcookbooks" title="UseCustomCookbooks">UseCustomCookbooks</a>: <i>Boolean</i>
     <a href="#useopsworkssecuritygroups" title="UseOpsworksSecurityGroups">UseOpsworksSecurityGroups</a>: <i>Boolean</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#customcookbookssource" title="CustomCookbooksSource">CustomCookbooksSource</a>: <i>
-      - &lt;a href=&#34;customcookbookssource.md&#34;&gt;CustomCookbooksSource&lt;/a&gt;</i>
+      - <a href="customcookbookssource.md">CustomCookbooksSource</a></i>
 </pre>
 
 ## Properties
@@ -221,7 +221,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -253,7 +253,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customcookbookssource.md&#34;&gt;CustomCookbooksSource&lt;/a&gt;
+_Type_: List of <a href="customcookbookssource.md">CustomCookbooksSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -275,9 +275,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### StackEndpoint
 
-Returns the &lt;code&gt;StackEndpoint&lt;/code&gt; value.
+Returns the <code>StackEndpoint</code> value.
 

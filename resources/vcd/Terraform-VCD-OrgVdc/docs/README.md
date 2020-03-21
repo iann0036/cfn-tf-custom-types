@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#includevmmemoryoverhead" title="IncludeVmMemoryOverhead">IncludeVmMemoryOverhead</a>" : <i>Boolean</i>,
         "<a href="#memoryguaranteed" title="MemoryGuaranteed">MemoryGuaranteed</a>" : <i>Double</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#networkpoolname" title="NetworkPoolName">NetworkPoolName</a>" : <i>String</i>,
         "<a href="#networkquota" title="NetworkQuota">NetworkQuota</a>" : <i>Double</i>,
@@ -35,10 +35,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
         "<a href="#providervdcname" title="ProviderVdcName">ProviderVdcName</a>" : <i>String</i>,
         "<a href="#vmquota" title="VmQuota">VmQuota</a>" : <i>Double</i>,
-        "<a href="#computecapacity" title="ComputeCapacity">ComputeCapacity</a>" : <i>[ &lt;a href=&#34;computecapacity.md&#34;&gt;ComputeCapacity&lt;/a&gt;, ... ]</i>,
-        "<a href="#storageprofile" title="StorageProfile">StorageProfile</a>" : <i>[ &lt;a href=&#34;storageprofile.md&#34;&gt;StorageProfile&lt;/a&gt;, ... ]</i>,
-        "<a href="#cpu" title="Cpu">Cpu</a>" : <i>[ &lt;a href=&#34;cpu.md&#34;&gt;Cpu&lt;/a&gt;, ... ]</i>,
-        "<a href="#memory" title="Memory">Memory</a>" : <i>[ &lt;a href=&#34;memory.md&#34;&gt;Memory&lt;/a&gt;, ... ]</i>
+        "<a href="#computecapacity" title="ComputeCapacity">ComputeCapacity</a>" : <i>[ <a href="computecapacity.md">ComputeCapacity</a>, ... ]</i>,
+        "<a href="#storageprofile" title="StorageProfile">StorageProfile</a>" : <i>[ <a href="storageprofile.md">StorageProfile</a>, ... ]</i>,
+        "<a href="#cpu" title="Cpu">Cpu</a>" : <i>[ <a href="cpu.md">Cpu</a>, ... ]</i>,
+        "<a href="#memory" title="Memory">Memory</a>" : <i>[ <a href="memory.md">Memory</a>, ... ]</i>
     }
 }
 </pre>
@@ -64,7 +64,7 @@ Properties:
     <a href="#includevmmemoryoverhead" title="IncludeVmMemoryOverhead">IncludeVmMemoryOverhead</a>: <i>Boolean</i>
     <a href="#memoryguaranteed" title="MemoryGuaranteed">MemoryGuaranteed</a>: <i>Double</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#networkpoolname" title="NetworkPoolName">NetworkPoolName</a>: <i>String</i>
     <a href="#networkquota" title="NetworkQuota">NetworkQuota</a>: <i>Double</i>
@@ -73,13 +73,13 @@ Properties:
     <a href="#providervdcname" title="ProviderVdcName">ProviderVdcName</a>: <i>String</i>
     <a href="#vmquota" title="VmQuota">VmQuota</a>: <i>Double</i>
     <a href="#computecapacity" title="ComputeCapacity">ComputeCapacity</a>: <i>
-      - &lt;a href=&#34;computecapacity.md&#34;&gt;ComputeCapacity&lt;/a&gt;</i>
+      - <a href="computecapacity.md">ComputeCapacity</a></i>
     <a href="#storageprofile" title="StorageProfile">StorageProfile</a>: <i>
-      - &lt;a href=&#34;storageprofile.md&#34;&gt;StorageProfile&lt;/a&gt;</i>
+      - <a href="storageprofile.md">StorageProfile</a></i>
     <a href="#cpu" title="Cpu">Cpu</a>: <i>
-      - &lt;a href=&#34;cpu.md&#34;&gt;Cpu&lt;/a&gt;</i>
+      - <a href="cpu.md">Cpu</a></i>
     <a href="#memory" title="Memory">Memory</a>: <i>
-      - &lt;a href=&#34;memory.md&#34;&gt;Memory&lt;/a&gt;</i>
+      - <a href="memory.md">Memory</a></i>
 </pre>
 
 ## Properties
@@ -208,7 +208,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -272,7 +272,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;computecapacity.md&#34;&gt;ComputeCapacity&lt;/a&gt;
+_Type_: List of <a href="computecapacity.md">ComputeCapacity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -280,7 +280,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storageprofile.md&#34;&gt;StorageProfile&lt;/a&gt;
+_Type_: List of <a href="storageprofile.md">StorageProfile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -288,7 +288,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cpu.md&#34;&gt;Cpu&lt;/a&gt;
+_Type_: List of <a href="cpu.md">Cpu</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -296,7 +296,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;memory.md&#34;&gt;Memory&lt;/a&gt;
+_Type_: List of <a href="memory.md">Memory</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

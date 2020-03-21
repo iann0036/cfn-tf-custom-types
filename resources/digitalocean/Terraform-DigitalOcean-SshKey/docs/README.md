@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 

@@ -16,14 +16,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#recoveryvaultname" title="RecoveryVaultName">RecoveryVaultName</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#timezone" title="Timezone">Timezone</a>" : <i>String</i>,
-        "<a href="#backup" title="Backup">Backup</a>" : <i>[ &lt;a href=&#34;backup.md&#34;&gt;Backup&lt;/a&gt;, ... ]</i>,
-        "<a href="#retentiondaily" title="RetentionDaily">RetentionDaily</a>" : <i>[ &lt;a href=&#34;retentiondaily.md&#34;&gt;RetentionDaily&lt;/a&gt;, ... ]</i>,
-        "<a href="#retentionmonthly" title="RetentionMonthly">RetentionMonthly</a>" : <i>[ &lt;a href=&#34;retentionmonthly.md&#34;&gt;RetentionMonthly&lt;/a&gt;, ... ]</i>,
-        "<a href="#retentionweekly" title="RetentionWeekly">RetentionWeekly</a>" : <i>[ &lt;a href=&#34;retentionweekly.md&#34;&gt;RetentionWeekly&lt;/a&gt;, ... ]</i>,
-        "<a href="#retentionyearly" title="RetentionYearly">RetentionYearly</a>" : <i>[ &lt;a href=&#34;retentionyearly.md&#34;&gt;RetentionYearly&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#backup" title="Backup">Backup</a>" : <i>[ <a href="backup.md">Backup</a>, ... ]</i>,
+        "<a href="#retentiondaily" title="RetentionDaily">RetentionDaily</a>" : <i>[ <a href="retentiondaily.md">RetentionDaily</a>, ... ]</i>,
+        "<a href="#retentionmonthly" title="RetentionMonthly">RetentionMonthly</a>" : <i>[ <a href="retentionmonthly.md">RetentionMonthly</a>, ... ]</i>,
+        "<a href="#retentionweekly" title="RetentionWeekly">RetentionWeekly</a>" : <i>[ <a href="retentionweekly.md">RetentionWeekly</a>, ... ]</i>,
+        "<a href="#retentionyearly" title="RetentionYearly">RetentionYearly</a>" : <i>[ <a href="retentionyearly.md">RetentionYearly</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -38,19 +38,19 @@ Properties:
     <a href="#recoveryvaultname" title="RecoveryVaultName">RecoveryVaultName</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#timezone" title="Timezone">Timezone</a>: <i>String</i>
     <a href="#backup" title="Backup">Backup</a>: <i>
-      - &lt;a href=&#34;backup.md&#34;&gt;Backup&lt;/a&gt;</i>
+      - <a href="backup.md">Backup</a></i>
     <a href="#retentiondaily" title="RetentionDaily">RetentionDaily</a>: <i>
-      - &lt;a href=&#34;retentiondaily.md&#34;&gt;RetentionDaily&lt;/a&gt;</i>
+      - <a href="retentiondaily.md">RetentionDaily</a></i>
     <a href="#retentionmonthly" title="RetentionMonthly">RetentionMonthly</a>: <i>
-      - &lt;a href=&#34;retentionmonthly.md&#34;&gt;RetentionMonthly&lt;/a&gt;</i>
+      - <a href="retentionmonthly.md">RetentionMonthly</a></i>
     <a href="#retentionweekly" title="RetentionWeekly">RetentionWeekly</a>: <i>
-      - &lt;a href=&#34;retentionweekly.md&#34;&gt;RetentionWeekly&lt;/a&gt;</i>
+      - <a href="retentionweekly.md">RetentionWeekly</a></i>
     <a href="#retentionyearly" title="RetentionYearly">RetentionYearly</a>: <i>
-      - &lt;a href=&#34;retentionyearly.md&#34;&gt;RetentionYearly&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="retentionyearly.md">RetentionYearly</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -91,7 +91,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -107,7 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backup.md&#34;&gt;Backup&lt;/a&gt;
+_Type_: List of <a href="backup.md">Backup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retentiondaily.md&#34;&gt;RetentionDaily&lt;/a&gt;
+_Type_: List of <a href="retentiondaily.md">RetentionDaily</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retentionmonthly.md&#34;&gt;RetentionMonthly&lt;/a&gt;
+_Type_: List of <a href="retentionmonthly.md">RetentionMonthly</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retentionweekly.md&#34;&gt;RetentionWeekly&lt;/a&gt;
+_Type_: List of <a href="retentionweekly.md">RetentionWeekly</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retentionyearly.md&#34;&gt;RetentionYearly&lt;/a&gt;
+_Type_: List of <a href="retentionyearly.md">RetentionYearly</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

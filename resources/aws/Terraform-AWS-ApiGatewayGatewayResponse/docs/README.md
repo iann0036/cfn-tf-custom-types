@@ -13,8 +13,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::AWS::ApiGatewayGatewayResponse",
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#responseparameters" title="ResponseParameters">ResponseParameters</a>" : <i>[ &lt;a href=&#34;responseparameters.md&#34;&gt;ResponseParameters&lt;/a&gt;, ... ]</i>,
-        "<a href="#responsetemplates" title="ResponseTemplates">ResponseTemplates</a>" : <i>[ &lt;a href=&#34;responsetemplates.md&#34;&gt;ResponseTemplates&lt;/a&gt;, ... ]</i>,
+        "<a href="#responseparameters" title="ResponseParameters">ResponseParameters</a>" : <i>[ <a href="responseparameters.md">ResponseParameters</a>, ... ]</i>,
+        "<a href="#responsetemplates" title="ResponseTemplates">ResponseTemplates</a>" : <i>[ <a href="responsetemplates.md">ResponseTemplates</a>, ... ]</i>,
         "<a href="#responsetype" title="ResponseType">ResponseType</a>" : <i>String</i>,
         "<a href="#restapiid" title="RestApiId">RestApiId</a>" : <i>String</i>,
         "<a href="#statuscode" title="StatusCode">StatusCode</a>" : <i>String</i>
@@ -29,9 +29,9 @@ Type: Terraform::AWS::ApiGatewayGatewayResponse
 Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#responseparameters" title="ResponseParameters">ResponseParameters</a>: <i>
-      - &lt;a href=&#34;responseparameters.md&#34;&gt;ResponseParameters&lt;/a&gt;</i>
+      - <a href="responseparameters.md">ResponseParameters</a></i>
     <a href="#responsetemplates" title="ResponseTemplates">ResponseTemplates</a>: <i>
-      - &lt;a href=&#34;responsetemplates.md&#34;&gt;ResponseTemplates&lt;/a&gt;</i>
+      - <a href="responsetemplates.md">ResponseTemplates</a></i>
     <a href="#responsetype" title="ResponseType">ResponseType</a>: <i>String</i>
     <a href="#restapiid" title="RestApiId">RestApiId</a>: <i>String</i>
     <a href="#statuscode" title="StatusCode">StatusCode</a>: <i>String</i>
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;responseparameters.md&#34;&gt;ResponseParameters&lt;/a&gt;
+_Type_: List of <a href="responseparameters.md">ResponseParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -59,7 +59,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;responsetemplates.md&#34;&gt;ResponseTemplates&lt;/a&gt;
+_Type_: List of <a href="responsetemplates.md">ResponseTemplates</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

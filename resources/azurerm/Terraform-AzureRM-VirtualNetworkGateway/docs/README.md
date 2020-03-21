@@ -21,15 +21,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#sku" title="Sku">Sku</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#vpntype" title="VpnType">VpnType</a>" : <i>String</i>,
-        "<a href="#bgpsettings" title="BgpSettings">BgpSettings</a>" : <i>[ &lt;a href=&#34;bgpsettings.md&#34;&gt;BgpSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ &lt;a href=&#34;ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#vpnclientconfiguration" title="VpnClientConfiguration">VpnClientConfiguration</a>" : <i>[ &lt;a href=&#34;vpnclientconfiguration.md&#34;&gt;VpnClientConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#revokedcertificate" title="RevokedCertificate">RevokedCertificate</a>" : <i>[ &lt;a href=&#34;revokedcertificate.md&#34;&gt;RevokedCertificate&lt;/a&gt;, ... ]</i>,
-        "<a href="#rootcertificate" title="RootCertificate">RootCertificate</a>" : <i>[ &lt;a href=&#34;rootcertificate.md&#34;&gt;RootCertificate&lt;/a&gt;, ... ]</i>
+        "<a href="#bgpsettings" title="BgpSettings">BgpSettings</a>" : <i>[ <a href="bgpsettings.md">BgpSettings</a>, ... ]</i>,
+        "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ <a href="ipconfiguration.md">IpConfiguration</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#vpnclientconfiguration" title="VpnClientConfiguration">VpnClientConfiguration</a>" : <i>[ <a href="vpnclientconfiguration.md">VpnClientConfiguration</a>, ... ]</i>,
+        "<a href="#revokedcertificate" title="RevokedCertificate">RevokedCertificate</a>" : <i>[ <a href="revokedcertificate.md">RevokedCertificate</a>, ... ]</i>,
+        "<a href="#rootcertificate" title="RootCertificate">RootCertificate</a>" : <i>[ <a href="rootcertificate.md">RootCertificate</a>, ... ]</i>
     }
 }
 </pre>
@@ -49,20 +49,20 @@ Properties:
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#sku" title="Sku">Sku</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#vpntype" title="VpnType">VpnType</a>: <i>String</i>
     <a href="#bgpsettings" title="BgpSettings">BgpSettings</a>: <i>
-      - &lt;a href=&#34;bgpsettings.md&#34;&gt;BgpSettings&lt;/a&gt;</i>
+      - <a href="bgpsettings.md">BgpSettings</a></i>
     <a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>: <i>
-      - &lt;a href=&#34;ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="ipconfiguration.md">IpConfiguration</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#vpnclientconfiguration" title="VpnClientConfiguration">VpnClientConfiguration</a>: <i>
-      - &lt;a href=&#34;vpnclientconfiguration.md&#34;&gt;VpnClientConfiguration&lt;/a&gt;</i>
+      - <a href="vpnclientconfiguration.md">VpnClientConfiguration</a></i>
     <a href="#revokedcertificate" title="RevokedCertificate">RevokedCertificate</a>: <i>
-      - &lt;a href=&#34;revokedcertificate.md&#34;&gt;RevokedCertificate&lt;/a&gt;</i>
+      - <a href="revokedcertificate.md">RevokedCertificate</a></i>
     <a href="#rootcertificate" title="RootCertificate">RootCertificate</a>: <i>
-      - &lt;a href=&#34;rootcertificate.md&#34;&gt;RootCertificate&lt;/a&gt;</i>
+      - <a href="rootcertificate.md">RootCertificate</a></i>
 </pre>
 
 ## Properties
@@ -143,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bgpsettings.md&#34;&gt;BgpSettings&lt;/a&gt;
+_Type_: List of <a href="bgpsettings.md">BgpSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,7 +175,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;
+_Type_: List of <a href="ipconfiguration.md">IpConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +183,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vpnclientconfiguration.md&#34;&gt;VpnClientConfiguration&lt;/a&gt;
+_Type_: List of <a href="vpnclientconfiguration.md">VpnClientConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +199,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;revokedcertificate.md&#34;&gt;RevokedCertificate&lt;/a&gt;
+_Type_: List of <a href="revokedcertificate.md">RevokedCertificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -207,7 +207,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rootcertificate.md&#34;&gt;RootCertificate&lt;/a&gt;
+_Type_: List of <a href="rootcertificate.md">RootCertificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

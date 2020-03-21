@@ -143,5 +143,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ExpirePasswords
 
-Returns the &lt;code&gt;ExpirePasswords&lt;/code&gt; value.
+Returns the <code>ExpirePasswords</code> value.
 

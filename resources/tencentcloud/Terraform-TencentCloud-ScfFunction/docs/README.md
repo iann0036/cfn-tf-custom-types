@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#cosbucketregion" title="CosBucketRegion">CosBucketRegion</a>" : <i>String</i>,
         "<a href="#cosobjectname" title="CosObjectName">CosObjectName</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#environment" title="Environment">Environment</a>" : <i>[ &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;, ... ]</i>,
+        "<a href="#environment" title="Environment">Environment</a>" : <i>[ <a href="environment.md">Environment</a>, ... ]</i>,
         "<a href="#handler" title="Handler">Handler</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#l5enable" title="L5Enable">L5Enable</a>" : <i>Boolean</i>,
@@ -28,11 +28,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#runtime" title="Runtime">Runtime</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#zipfile" title="ZipFile">ZipFile</a>" : <i>String</i>,
-        "<a href="#triggers" title="Triggers">Triggers</a>" : <i>[ &lt;a href=&#34;triggers.md&#34;&gt;Triggers&lt;/a&gt;, ... ]</i>
+        "<a href="#triggers" title="Triggers">Triggers</a>" : <i>[ <a href="triggers.md">Triggers</a>, ... ]</i>
     }
 }
 </pre>
@@ -49,7 +49,7 @@ Properties:
     <a href="#cosobjectname" title="CosObjectName">CosObjectName</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#environment" title="Environment">Environment</a>: <i>
-      - &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;</i>
+      - <a href="environment.md">Environment</a></i>
     <a href="#handler" title="Handler">Handler</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#l5enable" title="L5Enable">L5Enable</a>: <i>Boolean</i>
@@ -60,12 +60,12 @@ Properties:
     <a href="#runtime" title="Runtime">Runtime</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#zipfile" title="ZipFile">ZipFile</a>: <i>String</i>
     <a href="#triggers" title="Triggers">Triggers</a>: <i>
-      - &lt;a href=&#34;triggers.md&#34;&gt;Triggers&lt;/a&gt;</i>
+      - <a href="triggers.md">Triggers</a></i>
 </pre>
 
 ## Properties
@@ -122,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;
+_Type_: List of <a href="environment.md">Environment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -202,7 +202,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -234,7 +234,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;triggers.md&#34;&gt;Triggers&lt;/a&gt;
+_Type_: List of <a href="triggers.md">Triggers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -256,53 +256,53 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CodeError
 
-Returns the &lt;code&gt;CodeError&lt;/code&gt; value.
+Returns the <code>CodeError</code> value.
 
 #### CodeResult
 
-Returns the &lt;code&gt;CodeResult&lt;/code&gt; value.
+Returns the <code>CodeResult</code> value.
 
 #### CodeSize
 
-Returns the &lt;code&gt;CodeSize&lt;/code&gt; value.
+Returns the <code>CodeSize</code> value.
 
 #### EipFixed
 
-Returns the &lt;code&gt;EipFixed&lt;/code&gt; value.
+Returns the <code>EipFixed</code> value.
 
 #### Eips
 
-Returns the &lt;code&gt;Eips&lt;/code&gt; value.
+Returns the <code>Eips</code> value.
 
 #### ErrNo
 
-Returns the &lt;code&gt;ErrNo&lt;/code&gt; value.
+Returns the <code>ErrNo</code> value.
 
 #### Host
 
-Returns the &lt;code&gt;Host&lt;/code&gt; value.
+Returns the <code>Host</code> value.
 
 #### InstallDependency
 
-Returns the &lt;code&gt;InstallDependency&lt;/code&gt; value.
+Returns the <code>InstallDependency</code> value.
 
 #### ModifyTime
 
-Returns the &lt;code&gt;ModifyTime&lt;/code&gt; value.
+Returns the <code>ModifyTime</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### StatusDesc
 
-Returns the &lt;code&gt;StatusDesc&lt;/code&gt; value.
+Returns the <code>StatusDesc</code> value.
 
 #### TriggerInfo
 
-Returns the &lt;code&gt;TriggerInfo&lt;/code&gt; value.
+Returns the <code>TriggerInfo</code> value.
 
 #### Vip
 
-Returns the &lt;code&gt;Vip&lt;/code&gt; value.
+Returns the <code>Vip</code> value.
 

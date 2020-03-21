@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#operations" title="Operations">Operations</a>" : <i>[ String, ... ]</i>,
         "<a href="#retireondelete" title="RetireOnDelete">RetireOnDelete</a>" : <i>Boolean</i>,
         "<a href="#retiringprincipal" title="RetiringPrincipal">RetiringPrincipal</a>" : <i>String</i>,
-        "<a href="#constraints" title="Constraints">Constraints</a>" : <i>[ &lt;a href=&#34;constraints.md&#34;&gt;Constraints&lt;/a&gt;, ... ]</i>
+        "<a href="#constraints" title="Constraints">Constraints</a>" : <i>[ <a href="constraints.md">Constraints</a>, ... ]</i>
     }
 }
 </pre>
@@ -41,7 +41,7 @@ Properties:
     <a href="#retireondelete" title="RetireOnDelete">RetireOnDelete</a>: <i>Boolean</i>
     <a href="#retiringprincipal" title="RetiringPrincipal">RetiringPrincipal</a>: <i>String</i>
     <a href="#constraints" title="Constraints">Constraints</a>: <i>
-      - &lt;a href=&#34;constraints.md&#34;&gt;Constraints&lt;/a&gt;</i>
+      - <a href="constraints.md">Constraints</a></i>
 </pre>
 
 ## Properties
@@ -114,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;constraints.md&#34;&gt;Constraints&lt;/a&gt;
+_Type_: List of <a href="constraints.md">Constraints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,9 +136,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### GrantId
 
-Returns the &lt;code&gt;GrantId&lt;/code&gt; value.
+Returns the <code>GrantId</code> value.
 
 #### GrantToken
 
-Returns the &lt;code&gt;GrantToken&lt;/code&gt; value.
+Returns the <code>GrantToken</code> value.
 

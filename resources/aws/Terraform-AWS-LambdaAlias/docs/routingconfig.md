@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#additionalversionweights" title="AdditionalVersionWeights">AdditionalVersionWeights</a>" : <i>[ &lt;a href=&#34;routingconfig-additionalversionweights.md&#34;&gt;AdditionalVersionWeights&lt;/a&gt;, ... ]</i>
+    "<a href="#additionalversionweights" title="AdditionalVersionWeights">AdditionalVersionWeights</a>" : <i>[ <a href="routingconfig-additionalversionweights.md">AdditionalVersionWeights</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#additionalversionweights" title="AdditionalVersionWeights">AdditionalVersionWeights</a>: <i>
-      - &lt;a href=&#34;routingconfig-additionalversionweights.md&#34;&gt;AdditionalVersionWeights&lt;/a&gt;</i>
+      - <a href="routingconfig-additionalversionweights.md">AdditionalVersionWeights</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AdditionalVersionWeights
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;routingconfig-additionalversionweights.md&#34;&gt;AdditionalVersionWeights&lt;/a&gt;
+_Type_: List of <a href="routingconfig-additionalversionweights.md">AdditionalVersionWeights</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

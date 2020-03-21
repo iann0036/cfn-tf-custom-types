@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#file" title="File">File</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#transferencoding" title="TransferEncoding">TransferEncoding</a>" : <i>String</i>
     }
@@ -45,7 +45,7 @@ Properties:
     <a href="#file" title="File">File</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#transferencoding" title="TransferEncoding">TransferEncoding</a>: <i>String</i>
 </pre>
@@ -136,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,25 +174,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AcceptRanges
 
-Returns the &lt;code&gt;AcceptRanges&lt;/code&gt; value.
+Returns the <code>AcceptRanges</code> value.
 
 #### ContentLength
 
-Returns the &lt;code&gt;ContentLength&lt;/code&gt; value.
+Returns the <code>ContentLength</code> value.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 
 #### ObjectManifest
 
-Returns the &lt;code&gt;ObjectManifest&lt;/code&gt; value.
+Returns the <code>ObjectManifest</code> value.
 
 #### Timestamp
 
-Returns the &lt;code&gt;Timestamp&lt;/code&gt; value.
+Returns the <code>Timestamp</code> value.
 
 #### TransactionId
 
-Returns the &lt;code&gt;TransactionId&lt;/code&gt; value.
+Returns the <code>TransactionId</code> value.
 

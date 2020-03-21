@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#proxy" title="Proxy">Proxy</a>" : <i>Boolean</i>,
         "<a href="#sipheaderlist" title="SipHeaderList">SipHeaderList</a>" : <i>[ String, ... ]</i>,
         "<a href="#sipheadername" title="SipHeaderName">SipHeaderName</a>" : <i>String</i>,
-        "<a href="#server" title="Server">Server</a>" : <i>[ &lt;a href=&#34;server.md&#34;&gt;Server&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#server" title="Server">Server</a>" : <i>[ <a href="server.md">Server</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -39,8 +39,8 @@ Properties:
       - String</i>
     <a href="#sipheadername" title="SipHeaderName">SipHeaderName</a>: <i>String</i>
     <a href="#server" title="Server">Server</a>: <i>
-      - &lt;a href=&#34;server.md&#34;&gt;Server&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="server.md">Server</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -105,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;server.md&#34;&gt;Server&lt;/a&gt;
+_Type_: List of <a href="server.md">Server</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,29 +135,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessCode
 
-Returns the &lt;code&gt;AccessCode&lt;/code&gt; value.
+Returns the <code>AccessCode</code> value.
 
 #### AccessStatus
 
-Returns the &lt;code&gt;AccessStatus&lt;/code&gt; value.
+Returns the <code>AccessStatus</code> value.
 
 #### Cname
 
-Returns the &lt;code&gt;Cname&lt;/code&gt; value.
+Returns the <code>Cname</code> value.
 
 #### ProtectStatus
 
-Returns the &lt;code&gt;ProtectStatus&lt;/code&gt; value.
+Returns the <code>ProtectStatus</code> value.
 
 #### Protocol
 
-Returns the &lt;code&gt;Protocol&lt;/code&gt; value.
+Returns the <code>Protocol</code> value.
 
 #### SubDomain
 
-Returns the &lt;code&gt;SubDomain&lt;/code&gt; value.
+Returns the <code>SubDomain</code> value.
 
 #### TxtCode
 
-Returns the &lt;code&gt;TxtCode&lt;/code&gt; value.
+Returns the <code>TxtCode</code> value.
 

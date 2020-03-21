@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#servicenames" title="ServiceNames">ServiceNames</a>" : <i>[ String, ... ]</i>,
-    "<a href="#listener" title="Listener">Listener</a>" : <i>[ &lt;a href=&#34;spec-listener.md&#34;&gt;Listener&lt;/a&gt;, ... ]</i>
+    "<a href="#listener" title="Listener">Listener</a>" : <i>[ <a href="spec-listener.md">Listener</a>, ... ]</i>
 }
 </pre>
 
@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#servicenames" title="ServiceNames">ServiceNames</a>: <i>
       - String</i>
 <a href="#listener" title="Listener">Listener</a>: <i>
-      - &lt;a href=&#34;spec-listener.md&#34;&gt;Listener&lt;/a&gt;</i>
+      - <a href="spec-listener.md">Listener</a></i>
 </pre>
 
 ## Properties
@@ -34,7 +34,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Listener
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-listener.md&#34;&gt;Listener&lt;/a&gt;
+_Type_: List of <a href="spec-listener.md">Listener</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

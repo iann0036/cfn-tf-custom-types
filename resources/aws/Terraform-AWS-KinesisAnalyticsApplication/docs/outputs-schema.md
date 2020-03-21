@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#recordencoding" title="RecordEncoding">RecordEncoding</a>" : <i>String</i>,
-    "<a href="#recordcolumns" title="RecordColumns">RecordColumns</a>" : <i>[ &lt;a href=&#34;outputs-schema-recordcolumns.md&#34;&gt;RecordColumns&lt;/a&gt;, ... ]</i>,
-    "<a href="#recordformat" title="RecordFormat">RecordFormat</a>" : <i>[ &lt;a href=&#34;outputs-schema-recordformat.md&#34;&gt;RecordFormat&lt;/a&gt;, ... ]</i>
+    "<a href="#recordcolumns" title="RecordColumns">RecordColumns</a>" : <i>[ <a href="outputs-schema-recordcolumns.md">RecordColumns</a>, ... ]</i>,
+    "<a href="#recordformat" title="RecordFormat">RecordFormat</a>" : <i>[ <a href="outputs-schema-recordformat.md">RecordFormat</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#recordencoding" title="RecordEncoding">RecordEncoding</a>: <i>String</i>
 <a href="#recordcolumns" title="RecordColumns">RecordColumns</a>: <i>
-      - &lt;a href=&#34;outputs-schema-recordcolumns.md&#34;&gt;RecordColumns&lt;/a&gt;</i>
+      - <a href="outputs-schema-recordcolumns.md">RecordColumns</a></i>
 <a href="#recordformat" title="RecordFormat">RecordFormat</a>: <i>
-      - &lt;a href=&#34;outputs-schema-recordformat.md&#34;&gt;RecordFormat&lt;/a&gt;</i>
+      - <a href="outputs-schema-recordformat.md">RecordFormat</a></i>
 </pre>
 
 ## Properties
@@ -36,14 +36,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RecordColumns
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;outputs-schema-recordcolumns.md&#34;&gt;RecordColumns&lt;/a&gt;
+_Type_: List of <a href="outputs-schema-recordcolumns.md">RecordColumns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RecordFormat
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;outputs-schema-recordformat.md&#34;&gt;RecordFormat&lt;/a&gt;
+_Type_: List of <a href="outputs-schema-recordformat.md">RecordFormat</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

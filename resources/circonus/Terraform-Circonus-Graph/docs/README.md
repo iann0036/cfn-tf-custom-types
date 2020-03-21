@@ -15,15 +15,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#graphstyle" title="GraphStyle">GraphStyle</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#left" title="Left">Left</a>" : <i>[ &lt;a href=&#34;left.md&#34;&gt;Left&lt;/a&gt;, ... ]</i>,
+        "<a href="#left" title="Left">Left</a>" : <i>[ <a href="left.md">Left</a>, ... ]</i>,
         "<a href="#linestyle" title="LineStyle">LineStyle</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#notes" title="Notes">Notes</a>" : <i>String</i>,
-        "<a href="#right" title="Right">Right</a>" : <i>[ &lt;a href=&#34;right.md&#34;&gt;Right&lt;/a&gt;, ... ]</i>,
+        "<a href="#right" title="Right">Right</a>" : <i>[ <a href="right.md">Right</a>, ... ]</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#guide" title="Guide">Guide</a>" : <i>[ &lt;a href=&#34;guide.md&#34;&gt;Guide&lt;/a&gt;, ... ]</i>,
-        "<a href="#metric" title="Metric">Metric</a>" : <i>[ &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;, ... ]</i>,
-        "<a href="#metriccluster" title="MetricCluster">MetricCluster</a>" : <i>[ &lt;a href=&#34;metriccluster.md&#34;&gt;MetricCluster&lt;/a&gt;, ... ]</i>
+        "<a href="#guide" title="Guide">Guide</a>" : <i>[ <a href="guide.md">Guide</a>, ... ]</i>,
+        "<a href="#metric" title="Metric">Metric</a>" : <i>[ <a href="metric.md">Metric</a>, ... ]</i>,
+        "<a href="#metriccluster" title="MetricCluster">MetricCluster</a>" : <i>[ <a href="metriccluster.md">MetricCluster</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,20 +37,20 @@ Properties:
     <a href="#graphstyle" title="GraphStyle">GraphStyle</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#left" title="Left">Left</a>: <i>
-      - &lt;a href=&#34;left.md&#34;&gt;Left&lt;/a&gt;</i>
+      - <a href="left.md">Left</a></i>
     <a href="#linestyle" title="LineStyle">LineStyle</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#notes" title="Notes">Notes</a>: <i>String</i>
     <a href="#right" title="Right">Right</a>: <i>
-      - &lt;a href=&#34;right.md&#34;&gt;Right&lt;/a&gt;</i>
+      - <a href="right.md">Right</a></i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#guide" title="Guide">Guide</a>: <i>
-      - &lt;a href=&#34;guide.md&#34;&gt;Guide&lt;/a&gt;</i>
+      - <a href="guide.md">Guide</a></i>
     <a href="#metric" title="Metric">Metric</a>: <i>
-      - &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;</i>
+      - <a href="metric.md">Metric</a></i>
     <a href="#metriccluster" title="MetricCluster">MetricCluster</a>: <i>
-      - &lt;a href=&#34;metriccluster.md&#34;&gt;MetricCluster&lt;/a&gt;</i>
+      - <a href="metriccluster.md">MetricCluster</a></i>
 </pre>
 
 ## Properties
@@ -83,7 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;left.md&#34;&gt;Left&lt;/a&gt;
+_Type_: List of <a href="left.md">Left</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;right.md&#34;&gt;Right&lt;/a&gt;
+_Type_: List of <a href="right.md">Right</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;guide.md&#34;&gt;Guide&lt;/a&gt;
+_Type_: List of <a href="guide.md">Guide</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;
+_Type_: List of <a href="metric.md">Metric</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metriccluster.md&#34;&gt;MetricCluster&lt;/a&gt;
+_Type_: List of <a href="metriccluster.md">MetricCluster</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#annotations" title="Annotations">Annotations</a>" : <i>[ &lt;a href=&#34;metadata-annotations.md&#34;&gt;Annotations&lt;/a&gt;, ... ]</i>,
-    "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;metadata-labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+    "<a href="#annotations" title="Annotations">Annotations</a>" : <i>[ <a href="metadata-annotations.md">Annotations</a>, ... ]</i>,
+    "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="metadata-labels.md">Labels</a>, ... ]</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#namespace" title="Namespace">Namespace</a>" : <i>String</i>
 }
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#annotations" title="Annotations">Annotations</a>: <i>
-      - &lt;a href=&#34;metadata-annotations.md&#34;&gt;Annotations&lt;/a&gt;</i>
+      - <a href="metadata-annotations.md">Annotations</a></i>
 <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;metadata-labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="metadata-labels.md">Labels</a></i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#namespace" title="Namespace">Namespace</a>: <i>String</i>
 </pre>
@@ -31,14 +31,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Annotations
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;metadata-annotations.md&#34;&gt;Annotations&lt;/a&gt;
+_Type_: List of <a href="metadata-annotations.md">Annotations</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Labels
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;metadata-labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="metadata-labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

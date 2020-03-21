@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#rewriterule" title="RewriteRule">RewriteRule</a>" : <i>[ &lt;a href=&#34;rewriteruleset-rewriterule.md&#34;&gt;RewriteRule&lt;/a&gt;, ... ]</i>
+    "<a href="#rewriterule" title="RewriteRule">RewriteRule</a>" : <i>[ <a href="rewriteruleset-rewriterule.md">RewriteRule</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#rewriterule" title="RewriteRule">RewriteRule</a>: <i>
-      - &lt;a href=&#34;rewriteruleset-rewriterule.md&#34;&gt;RewriteRule&lt;/a&gt;</i>
+      - <a href="rewriteruleset-rewriterule.md">RewriteRule</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RewriteRule
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rewriteruleset-rewriterule.md&#34;&gt;RewriteRule&lt;/a&gt;
+_Type_: List of <a href="rewriteruleset-rewriterule.md">RewriteRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

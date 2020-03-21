@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#userdatabase64" title="UserDataBase64">UserDataBase64</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Properties:
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#userdatabase64" title="UserDataBase64">UserDataBase64</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,45 +134,45 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fqdn
 
-Returns the &lt;code&gt;Fqdn&lt;/code&gt; value.
+Returns the <code>Fqdn</code> value.
 
 #### Hostname
 
-Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
+Returns the <code>Hostname</code> value.
 
 #### Interface
 
-Returns the &lt;code&gt;Interface&lt;/code&gt; value.
+Returns the <code>Interface</code> value.
 
 #### Ipv4Address
 
-Returns the &lt;code&gt;Ipv4Address&lt;/code&gt; value.
+Returns the <code>Ipv4Address</code> value.
 
 #### Ipv4AddressPrivate
 
-Returns the &lt;code&gt;Ipv4AddressPrivate&lt;/code&gt; value.
+Returns the <code>Ipv4AddressPrivate</code> value.
 
 #### Ipv6Address
 
-Returns the &lt;code&gt;Ipv6Address&lt;/code&gt; value.
+Returns the <code>Ipv6Address</code> value.
 
 #### Ipv6Hostname
 
-Returns the &lt;code&gt;Ipv6Hostname&lt;/code&gt; value.
+Returns the <code>Ipv6Hostname</code> value.
 
 #### Locked
 
-Returns the &lt;code&gt;Locked&lt;/code&gt; value.
+Returns the <code>Locked</code> value.
 
 #### PublicHostname
 
-Returns the &lt;code&gt;PublicHostname&lt;/code&gt; value.
+Returns the <code>PublicHostname</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Username
 
-Returns the &lt;code&gt;Username&lt;/code&gt; value.
+Returns the <code>Username</code> value.
 

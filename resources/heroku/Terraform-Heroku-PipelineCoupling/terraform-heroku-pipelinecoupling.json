@@ -1,0 +1,68 @@
+{
+    "typeName": "Terraform::Heroku::PipelineCoupling",
+    "description": "CloudFormation equivalent of heroku_pipeline_coupling",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "App": {
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Pipeline": {
+            "type": "string"
+        },
+        "Stage": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "App",
+        "Pipeline",
+        "Stage"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AppId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

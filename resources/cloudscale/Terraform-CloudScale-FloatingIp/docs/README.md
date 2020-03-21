@@ -103,13 +103,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Href
 
-Returns the &lt;code&gt;Href&lt;/code&gt; value.
+Returns the <code>Href</code> value.
 
 #### Network
 
-Returns the &lt;code&gt;Network&lt;/code&gt; value.
+Returns the <code>Network</code> value.
 
 #### NextHop
 
-Returns the &lt;code&gt;NextHop&lt;/code&gt; value.
+Returns the <code>NextHop</code> value.
 

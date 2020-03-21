@@ -26,8 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#title" title="Title">Title</a>" : <i>String</i>,
     "<a href="#visualization" title="Visualization">Visualization</a>" : <i>String</i>,
     "<a href="#width" title="Width">Width</a>" : <i>Double</i>,
-    "<a href="#comparewith" title="CompareWith">CompareWith</a>" : <i>[ &lt;a href=&#34;widget-comparewith.md&#34;&gt;CompareWith&lt;/a&gt;, ... ]</i>,
-    "<a href="#metric" title="Metric">Metric</a>" : <i>[ &lt;a href=&#34;widget-metric.md&#34;&gt;Metric&lt;/a&gt;, ... ]</i>
+    "<a href="#comparewith" title="CompareWith">CompareWith</a>" : <i>[ <a href="widget-comparewith.md">CompareWith</a>, ... ]</i>,
+    "<a href="#metric" title="Metric">Metric</a>" : <i>[ <a href="widget-metric.md">Metric</a>, ... ]</i>
 }
 </pre>
 
@@ -54,9 +54,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#visualization" title="Visualization">Visualization</a>: <i>String</i>
 <a href="#width" title="Width">Width</a>: <i>Double</i>
 <a href="#comparewith" title="CompareWith">CompareWith</a>: <i>
-      - &lt;a href=&#34;widget-comparewith.md&#34;&gt;CompareWith&lt;/a&gt;</i>
+      - <a href="widget-comparewith.md">CompareWith</a></i>
 <a href="#metric" title="Metric">Metric</a>: <i>
-      - &lt;a href=&#34;widget-metric.md&#34;&gt;Metric&lt;/a&gt;</i>
+      - <a href="widget-metric.md">Metric</a></i>
 </pre>
 
 ## Properties
@@ -190,14 +190,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CompareWith
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;widget-comparewith.md&#34;&gt;CompareWith&lt;/a&gt;
+_Type_: List of <a href="widget-comparewith.md">CompareWith</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metric
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;widget-metric.md&#34;&gt;Metric&lt;/a&gt;
+_Type_: List of <a href="widget-metric.md">Metric</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

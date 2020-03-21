@@ -12,20 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::DataFactoryLinkedServiceDataLakeStorageGen2",
     "Properties" : {
-        "<a href="#additionalproperties" title="AdditionalProperties">AdditionalProperties</a>" : <i>[ &lt;a href=&#34;additionalproperties.md&#34;&gt;AdditionalProperties&lt;/a&gt;, ... ]</i>,
+        "<a href="#additionalproperties" title="AdditionalProperties">AdditionalProperties</a>" : <i>[ <a href="additionalproperties.md">AdditionalProperties</a>, ... ]</i>,
         "<a href="#annotations" title="Annotations">Annotations</a>" : <i>[ String, ... ]</i>,
         "<a href="#datafactoryname" title="DataFactoryName">DataFactoryName</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#integrationruntimename" title="IntegrationRuntimeName">IntegrationRuntimeName</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;, ... ]</i>,
+        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ <a href="parameters.md">Parameters</a>, ... ]</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#serviceprincipalid" title="ServicePrincipalId">ServicePrincipalId</a>" : <i>String</i>,
         "<a href="#serviceprincipalkey" title="ServicePrincipalKey">ServicePrincipalKey</a>" : <i>String</i>,
         "<a href="#tenant" title="Tenant">Tenant</a>" : <i>String</i>,
         "<a href="#url" title="Url">Url</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -36,7 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::AzureRM::DataFactoryLinkedServiceDataLakeStorageGen2
 Properties:
     <a href="#additionalproperties" title="AdditionalProperties">AdditionalProperties</a>: <i>
-      - &lt;a href=&#34;additionalproperties.md&#34;&gt;AdditionalProperties&lt;/a&gt;</i>
+      - <a href="additionalproperties.md">AdditionalProperties</a></i>
     <a href="#annotations" title="Annotations">Annotations</a>: <i>
       - String</i>
     <a href="#datafactoryname" title="DataFactoryName">DataFactoryName</a>: <i>String</i>
@@ -45,13 +45,13 @@ Properties:
     <a href="#integrationruntimename" title="IntegrationRuntimeName">IntegrationRuntimeName</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#parameters" title="Parameters">Parameters</a>: <i>
-      - &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;</i>
+      - <a href="parameters.md">Parameters</a></i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#serviceprincipalid" title="ServicePrincipalId">ServicePrincipalId</a>: <i>String</i>
     <a href="#serviceprincipalkey" title="ServicePrincipalKey">ServicePrincipalKey</a>: <i>String</i>
     <a href="#tenant" title="Tenant">Tenant</a>: <i>String</i>
     <a href="#url" title="Url">Url</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -60,7 +60,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;additionalproperties.md&#34;&gt;AdditionalProperties&lt;/a&gt;
+_Type_: List of <a href="additionalproperties.md">AdditionalProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;
+_Type_: List of <a href="parameters.md">Parameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

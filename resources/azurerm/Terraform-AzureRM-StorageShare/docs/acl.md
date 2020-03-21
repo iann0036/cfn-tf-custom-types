@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-    "<a href="#accesspolicy" title="AccessPolicy">AccessPolicy</a>" : <i>[ &lt;a href=&#34;acl-accesspolicy.md&#34;&gt;AccessPolicy&lt;/a&gt;, ... ]</i>
+    "<a href="#accesspolicy" title="AccessPolicy">AccessPolicy</a>" : <i>[ <a href="acl-accesspolicy.md">AccessPolicy</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#id" title="Id">Id</a>: <i>String</i>
 <a href="#accesspolicy" title="AccessPolicy">AccessPolicy</a>: <i>
-      - &lt;a href=&#34;acl-accesspolicy.md&#34;&gt;AccessPolicy&lt;/a&gt;</i>
+      - <a href="acl-accesspolicy.md">AccessPolicy</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AccessPolicy
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;acl-accesspolicy.md&#34;&gt;AccessPolicy&lt;/a&gt;
+_Type_: List of <a href="acl-accesspolicy.md">AccessPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

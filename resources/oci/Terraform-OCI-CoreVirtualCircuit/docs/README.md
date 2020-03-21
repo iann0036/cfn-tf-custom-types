@@ -16,18 +16,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
         "<a href="#customerasn" title="CustomerAsn">CustomerAsn</a>" : <i>String</i>,
         "<a href="#customerbgpasn" title="CustomerBgpAsn">CustomerBgpAsn</a>" : <i>Double</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#gatewayid" title="GatewayId">GatewayId</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#providerserviceid" title="ProviderServiceId">ProviderServiceId</a>" : <i>String</i>,
         "<a href="#providerservicekeyname" title="ProviderServiceKeyName">ProviderServiceKeyName</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#crossconnectmappings" title="CrossConnectMappings">CrossConnectMappings</a>" : <i>[ &lt;a href=&#34;crossconnectmappings.md&#34;&gt;CrossConnectMappings&lt;/a&gt;, ... ]</i>,
-        "<a href="#publicprefixes" title="PublicPrefixes">PublicPrefixes</a>" : <i>[ &lt;a href=&#34;publicprefixes.md&#34;&gt;PublicPrefixes&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#crossconnectmappings" title="CrossConnectMappings">CrossConnectMappings</a>" : <i>[ <a href="crossconnectmappings.md">CrossConnectMappings</a>, ... ]</i>,
+        "<a href="#publicprefixes" title="PublicPrefixes">PublicPrefixes</a>" : <i>[ <a href="publicprefixes.md">PublicPrefixes</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -42,10 +42,10 @@ Properties:
     <a href="#customerasn" title="CustomerAsn">CustomerAsn</a>: <i>String</i>
     <a href="#customerbgpasn" title="CustomerBgpAsn">CustomerBgpAsn</a>: <i>Double</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#gatewayid" title="GatewayId">GatewayId</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#providerserviceid" title="ProviderServiceId">ProviderServiceId</a>: <i>String</i>
@@ -53,10 +53,10 @@ Properties:
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#crossconnectmappings" title="CrossConnectMappings">CrossConnectMappings</a>: <i>
-      - &lt;a href=&#34;crossconnectmappings.md&#34;&gt;CrossConnectMappings&lt;/a&gt;</i>
+      - <a href="crossconnectmappings.md">CrossConnectMappings</a></i>
     <a href="#publicprefixes" title="PublicPrefixes">PublicPrefixes</a>: <i>
-      - &lt;a href=&#34;publicprefixes.md&#34;&gt;PublicPrefixes&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="publicprefixes.md">PublicPrefixes</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -97,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;crossconnectmappings.md&#34;&gt;CrossConnectMappings&lt;/a&gt;
+_Type_: List of <a href="crossconnectmappings.md">CrossConnectMappings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;publicprefixes.md&#34;&gt;PublicPrefixes&lt;/a&gt;
+_Type_: List of <a href="publicprefixes.md">PublicPrefixes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,7 +185,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -207,33 +207,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BgpManagement
 
-Returns the &lt;code&gt;BgpManagement&lt;/code&gt; value.
+Returns the <code>BgpManagement</code> value.
 
 #### BgpSessionState
 
-Returns the &lt;code&gt;BgpSessionState&lt;/code&gt; value.
+Returns the <code>BgpSessionState</code> value.
 
 #### OracleBgpAsn
 
-Returns the &lt;code&gt;OracleBgpAsn&lt;/code&gt; value.
+Returns the <code>OracleBgpAsn</code> value.
 
 #### ProviderState
 
-Returns the &lt;code&gt;ProviderState&lt;/code&gt; value.
+Returns the <code>ProviderState</code> value.
 
 #### ReferenceComment
 
-Returns the &lt;code&gt;ReferenceComment&lt;/code&gt; value.
+Returns the <code>ReferenceComment</code> value.
 
 #### ServiceType
 
-Returns the &lt;code&gt;ServiceType&lt;/code&gt; value.
+Returns the <code>ServiceType</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

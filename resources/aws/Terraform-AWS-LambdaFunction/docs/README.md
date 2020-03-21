@@ -28,13 +28,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#s3key" title="S3Key">S3Key</a>" : <i>String</i>,
         "<a href="#s3objectversion" title="S3ObjectVersion">S3ObjectVersion</a>" : <i>String</i>,
         "<a href="#sourcecodehash" title="SourceCodeHash">SourceCodeHash</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
-        "<a href="#deadletterconfig" title="DeadLetterConfig">DeadLetterConfig</a>" : <i>[ &lt;a href=&#34;deadletterconfig.md&#34;&gt;DeadLetterConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#environment" title="Environment">Environment</a>" : <i>[ &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#tracingconfig" title="TracingConfig">TracingConfig</a>" : <i>[ &lt;a href=&#34;tracingconfig.md&#34;&gt;TracingConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#vpcconfig" title="VpcConfig">VpcConfig</a>" : <i>[ &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#deadletterconfig" title="DeadLetterConfig">DeadLetterConfig</a>" : <i>[ <a href="deadletterconfig.md">DeadLetterConfig</a>, ... ]</i>,
+        "<a href="#environment" title="Environment">Environment</a>" : <i>[ <a href="environment.md">Environment</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#tracingconfig" title="TracingConfig">TracingConfig</a>" : <i>[ <a href="tracingconfig.md">TracingConfig</a>, ... ]</i>,
+        "<a href="#vpcconfig" title="VpcConfig">VpcConfig</a>" : <i>[ <a href="vpcconfig.md">VpcConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -62,17 +62,17 @@ Properties:
     <a href="#s3objectversion" title="S3ObjectVersion">S3ObjectVersion</a>: <i>String</i>
     <a href="#sourcecodehash" title="SourceCodeHash">SourceCodeHash</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
     <a href="#deadletterconfig" title="DeadLetterConfig">DeadLetterConfig</a>: <i>
-      - &lt;a href=&#34;deadletterconfig.md&#34;&gt;DeadLetterConfig&lt;/a&gt;</i>
+      - <a href="deadletterconfig.md">DeadLetterConfig</a></i>
     <a href="#environment" title="Environment">Environment</a>: <i>
-      - &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="environment.md">Environment</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#tracingconfig" title="TracingConfig">TracingConfig</a>: <i>
-      - &lt;a href=&#34;tracingconfig.md&#34;&gt;TracingConfig&lt;/a&gt;</i>
+      - <a href="tracingconfig.md">TracingConfig</a></i>
     <a href="#vpcconfig" title="VpcConfig">VpcConfig</a>: <i>
-      - &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;</i>
+      - <a href="vpcconfig.md">VpcConfig</a></i>
 </pre>
 
 ## Properties
@@ -209,7 +209,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +225,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deadletterconfig.md&#34;&gt;DeadLetterConfig&lt;/a&gt;
+_Type_: List of <a href="deadletterconfig.md">DeadLetterConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +233,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;
+_Type_: List of <a href="environment.md">Environment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,7 +241,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -249,7 +249,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tracingconfig.md&#34;&gt;TracingConfig&lt;/a&gt;
+_Type_: List of <a href="tracingconfig.md">TracingConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -257,7 +257,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;
+_Type_: List of <a href="vpcconfig.md">VpcConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -279,25 +279,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### InvokeArn
 
-Returns the &lt;code&gt;InvokeArn&lt;/code&gt; value.
+Returns the <code>InvokeArn</code> value.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 
 #### QualifiedArn
 
-Returns the &lt;code&gt;QualifiedArn&lt;/code&gt; value.
+Returns the <code>QualifiedArn</code> value.
 
 #### SourceCodeSize
 
-Returns the &lt;code&gt;SourceCodeSize&lt;/code&gt; value.
+Returns the <code>SourceCodeSize</code> value.
 
 #### Version
 
-Returns the &lt;code&gt;Version&lt;/code&gt; value.
+Returns the <code>Version</code> value.
 

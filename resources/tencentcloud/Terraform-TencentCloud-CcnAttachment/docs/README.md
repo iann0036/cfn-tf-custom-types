@@ -93,13 +93,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AttachedTime
 
-Returns the &lt;code&gt;AttachedTime&lt;/code&gt; value.
+Returns the <code>AttachedTime</code> value.
 
 #### CidrBlock
 
-Returns the &lt;code&gt;CidrBlock&lt;/code&gt; value.
+Returns the <code>CidrBlock</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SnatEntryId
 
-Returns the &lt;code&gt;SnatEntryId&lt;/code&gt; value.
+Returns the <code>SnatEntryId</code> value.
 

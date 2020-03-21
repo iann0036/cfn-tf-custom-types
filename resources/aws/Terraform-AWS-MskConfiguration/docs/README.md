@@ -94,9 +94,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### LatestRevision
 
-Returns the &lt;code&gt;LatestRevision&lt;/code&gt; value.
+Returns the <code>LatestRevision</code> value.
 

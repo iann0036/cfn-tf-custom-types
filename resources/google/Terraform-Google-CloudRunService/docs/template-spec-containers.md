@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#command" title="Command">Command</a>" : <i>[ String, ... ]</i>,
     "<a href="#image" title="Image">Image</a>" : <i>String</i>,
     "<a href="#workingdir" title="WorkingDir">WorkingDir</a>" : <i>String</i>,
-    "<a href="#env" title="Env">Env</a>" : <i>[ &lt;a href=&#34;template-spec-containers-env.md&#34;&gt;Env&lt;/a&gt;, ... ]</i>,
-    "<a href="#envfrom" title="EnvFrom">EnvFrom</a>" : <i>[ &lt;a href=&#34;template-spec-containers-envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;, ... ]</i>,
-    "<a href="#resources" title="Resources">Resources</a>" : <i>[ &lt;a href=&#34;template-spec-containers-resources.md&#34;&gt;Resources&lt;/a&gt;, ... ]</i>
+    "<a href="#env" title="Env">Env</a>" : <i>[ <a href="template-spec-containers-env.md">Env</a>, ... ]</i>,
+    "<a href="#envfrom" title="EnvFrom">EnvFrom</a>" : <i>[ <a href="template-spec-containers-envfrom.md">EnvFrom</a>, ... ]</i>,
+    "<a href="#resources" title="Resources">Resources</a>" : <i>[ <a href="template-spec-containers-resources.md">Resources</a>, ... ]</i>
 }
 </pre>
 
@@ -28,11 +28,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#image" title="Image">Image</a>: <i>String</i>
 <a href="#workingdir" title="WorkingDir">WorkingDir</a>: <i>String</i>
 <a href="#env" title="Env">Env</a>: <i>
-      - &lt;a href=&#34;template-spec-containers-env.md&#34;&gt;Env&lt;/a&gt;</i>
+      - <a href="template-spec-containers-env.md">Env</a></i>
 <a href="#envfrom" title="EnvFrom">EnvFrom</a>: <i>
-      - &lt;a href=&#34;template-spec-containers-envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;</i>
+      - <a href="template-spec-containers-envfrom.md">EnvFrom</a></i>
 <a href="#resources" title="Resources">Resources</a>: <i>
-      - &lt;a href=&#34;template-spec-containers-resources.md&#34;&gt;Resources&lt;/a&gt;</i>
+      - <a href="template-spec-containers-resources.md">Resources</a></i>
 </pre>
 
 ## Properties
@@ -68,21 +68,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Env
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;template-spec-containers-env.md&#34;&gt;Env&lt;/a&gt;
+_Type_: List of <a href="template-spec-containers-env.md">Env</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnvFrom
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;template-spec-containers-envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;
+_Type_: List of <a href="template-spec-containers-envfrom.md">EnvFrom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Resources
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;template-spec-containers-resources.md&#34;&gt;Resources&lt;/a&gt;
+_Type_: List of <a href="template-spec-containers-resources.md">Resources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

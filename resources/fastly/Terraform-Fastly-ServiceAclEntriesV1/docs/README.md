@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#aclid" title="AclId">AclId</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#serviceid" title="ServiceId">ServiceId</a>" : <i>String</i>,
-        "<a href="#entry" title="Entry">Entry</a>" : <i>[ &lt;a href=&#34;entry.md&#34;&gt;Entry&lt;/a&gt;, ... ]</i>
+        "<a href="#entry" title="Entry">Entry</a>" : <i>[ <a href="entry.md">Entry</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,7 +29,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#serviceid" title="ServiceId">ServiceId</a>: <i>String</i>
     <a href="#entry" title="Entry">Entry</a>: <i>
-      - &lt;a href=&#34;entry.md&#34;&gt;Entry&lt;/a&gt;</i>
+      - <a href="entry.md">Entry</a></i>
 </pre>
 
 ## Properties
@@ -62,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;entry.md&#34;&gt;Entry&lt;/a&gt;
+_Type_: List of <a href="entry.md">Entry</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -25,7 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#visibility" title="Visibility">Visibility</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -49,7 +49,7 @@ Properties:
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#visibility" title="Visibility">Visibility</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -162,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,37 +184,37 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Checksum
 
-Returns the &lt;code&gt;Checksum&lt;/code&gt; value.
+Returns the <code>Checksum</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### File
 
-Returns the &lt;code&gt;File&lt;/code&gt; value.
+Returns the <code>File</code> value.
 
 #### Metadata
 
-Returns the &lt;code&gt;Metadata&lt;/code&gt; value.
+Returns the <code>Metadata</code> value.
 
 #### Owner
 
-Returns the &lt;code&gt;Owner&lt;/code&gt; value.
+Returns the <code>Owner</code> value.
 
 #### Schema
 
-Returns the &lt;code&gt;Schema&lt;/code&gt; value.
+Returns the <code>Schema</code> value.
 
 #### SizeBytes
 
-Returns the &lt;code&gt;SizeBytes&lt;/code&gt; value.
+Returns the <code>SizeBytes</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdateAt
 
-Returns the &lt;code&gt;UpdateAt&lt;/code&gt; value.
+Returns the <code>UpdateAt</code> value.
 

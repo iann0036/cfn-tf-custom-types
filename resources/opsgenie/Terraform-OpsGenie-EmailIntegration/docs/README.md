@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ownerteamid" title="OwnerTeamId">OwnerTeamId</a>" : <i>String</i>,
         "<a href="#suppressnotifications" title="SuppressNotifications">SuppressNotifications</a>" : <i>Boolean</i>,
-        "<a href="#responders" title="Responders">Responders</a>" : <i>[ &lt;a href=&#34;responders.md&#34;&gt;Responders&lt;/a&gt;, ... ]</i>
+        "<a href="#responders" title="Responders">Responders</a>" : <i>[ <a href="responders.md">Responders</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,7 +37,7 @@ Properties:
     <a href="#ownerteamid" title="OwnerTeamId">OwnerTeamId</a>: <i>String</i>
     <a href="#suppressnotifications" title="SuppressNotifications">SuppressNotifications</a>: <i>Boolean</i>
     <a href="#responders" title="Responders">Responders</a>: <i>
-      - &lt;a href=&#34;responders.md&#34;&gt;Responders&lt;/a&gt;</i>
+      - <a href="responders.md">Responders</a></i>
 </pre>
 
 ## Properties
@@ -102,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;responders.md&#34;&gt;Responders&lt;/a&gt;
+_Type_: List of <a href="responders.md">Responders</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

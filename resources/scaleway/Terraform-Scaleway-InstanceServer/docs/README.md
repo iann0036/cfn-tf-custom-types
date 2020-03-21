@@ -29,8 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#rootvolume" title="RootVolume">RootVolume</a>" : <i>[ &lt;a href=&#34;rootvolume.md&#34;&gt;RootVolume&lt;/a&gt;, ... ]</i>,
-        "<a href="#userdata" title="UserData">UserData</a>" : <i>[ &lt;a href=&#34;userdata.md&#34;&gt;UserData&lt;/a&gt;, ... ]</i>
+        "<a href="#rootvolume" title="RootVolume">RootVolume</a>" : <i>[ <a href="rootvolume.md">RootVolume</a>, ... ]</i>,
+        "<a href="#userdata" title="UserData">UserData</a>" : <i>[ <a href="userdata.md">UserData</a>, ... ]</i>
     }
 }
 </pre>
@@ -60,9 +60,9 @@ Properties:
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#rootvolume" title="RootVolume">RootVolume</a>: <i>
-      - &lt;a href=&#34;rootvolume.md&#34;&gt;RootVolume&lt;/a&gt;</i>
+      - <a href="rootvolume.md">RootVolume</a></i>
     <a href="#userdata" title="UserData">UserData</a>: <i>
-      - &lt;a href=&#34;userdata.md&#34;&gt;UserData&lt;/a&gt;</i>
+      - <a href="userdata.md">UserData</a></i>
 </pre>
 
 ## Properties
@@ -207,7 +207,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rootvolume.md&#34;&gt;RootVolume&lt;/a&gt;
+_Type_: List of <a href="rootvolume.md">RootVolume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -215,7 +215,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;userdata.md&#34;&gt;UserData&lt;/a&gt;
+_Type_: List of <a href="userdata.md">UserData</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -237,29 +237,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BootType
 
-Returns the &lt;code&gt;BootType&lt;/code&gt; value.
+Returns the <code>BootType</code> value.
 
 #### Ipv6Address
 
-Returns the &lt;code&gt;Ipv6Address&lt;/code&gt; value.
+Returns the <code>Ipv6Address</code> value.
 
 #### Ipv6Gateway
 
-Returns the &lt;code&gt;Ipv6Gateway&lt;/code&gt; value.
+Returns the <code>Ipv6Gateway</code> value.
 
 #### Ipv6PrefixLength
 
-Returns the &lt;code&gt;Ipv6PrefixLength&lt;/code&gt; value.
+Returns the <code>Ipv6PrefixLength</code> value.
 
 #### PlacementGroupPolicyRespected
 
-Returns the &lt;code&gt;PlacementGroupPolicyRespected&lt;/code&gt; value.
+Returns the <code>PlacementGroupPolicyRespected</code> value.
 
 #### PrivateIp
 
-Returns the &lt;code&gt;PrivateIp&lt;/code&gt; value.
+Returns the <code>PrivateIp</code> value.
 
 #### PublicIp
 
-Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
+Returns the <code>PublicIp</code> value.
 

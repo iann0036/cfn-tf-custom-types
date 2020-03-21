@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#inheritfromparent" title="InheritFromParent">InheritFromParent</a>" : <i>Boolean</i>,
     "<a href="#suggestedvalue" title="SuggestedValue">SuggestedValue</a>" : <i>String</i>,
-    "<a href="#allow" title="Allow">Allow</a>" : <i>[ &lt;a href=&#34;listpolicy-allow.md&#34;&gt;Allow&lt;/a&gt;, ... ]</i>,
-    "<a href="#deny" title="Deny">Deny</a>" : <i>[ &lt;a href=&#34;listpolicy-deny.md&#34;&gt;Deny&lt;/a&gt;, ... ]</i>
+    "<a href="#allow" title="Allow">Allow</a>" : <i>[ <a href="listpolicy-allow.md">Allow</a>, ... ]</i>,
+    "<a href="#deny" title="Deny">Deny</a>" : <i>[ <a href="listpolicy-deny.md">Deny</a>, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#inheritfromparent" title="InheritFromParent">InheritFromParent</a>: <i>Boolean</i>
 <a href="#suggestedvalue" title="SuggestedValue">SuggestedValue</a>: <i>String</i>
 <a href="#allow" title="Allow">Allow</a>: <i>
-      - &lt;a href=&#34;listpolicy-allow.md&#34;&gt;Allow&lt;/a&gt;</i>
+      - <a href="listpolicy-allow.md">Allow</a></i>
 <a href="#deny" title="Deny">Deny</a>: <i>
-      - &lt;a href=&#34;listpolicy-deny.md&#34;&gt;Deny&lt;/a&gt;</i>
+      - <a href="listpolicy-deny.md">Deny</a></i>
 </pre>
 
 ## Properties
@@ -45,14 +45,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Allow
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;listpolicy-allow.md&#34;&gt;Allow&lt;/a&gt;
+_Type_: List of <a href="listpolicy-allow.md">Allow</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Deny
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;listpolicy-deny.md&#34;&gt;Deny&lt;/a&gt;
+_Type_: List of <a href="listpolicy-deny.md">Deny</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -15,13 +15,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#defaultnodeexecutorplugin" title="DefaultNodeExecutorPlugin">DefaultNodeExecutorPlugin</a>" : <i>String</i>,
         "<a href="#defaultnodefilecopierplugin" title="DefaultNodeFileCopierPlugin">DefaultNodeFileCopierPlugin</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#extraconfig" title="ExtraConfig">ExtraConfig</a>" : <i>[ &lt;a href=&#34;extraconfig.md&#34;&gt;ExtraConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#extraconfig" title="ExtraConfig">ExtraConfig</a>" : <i>[ <a href="extraconfig.md">ExtraConfig</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#sshauthenticationtype" title="SshAuthenticationType">SshAuthenticationType</a>" : <i>String</i>,
         "<a href="#sshkeyfilepath" title="SshKeyFilePath">SshKeyFilePath</a>" : <i>String</i>,
         "<a href="#sshkeystoragepath" title="SshKeyStoragePath">SshKeyStoragePath</a>" : <i>String</i>,
-        "<a href="#resourcemodelsource" title="ResourceModelSource">ResourceModelSource</a>" : <i>[ &lt;a href=&#34;resourcemodelsource.md&#34;&gt;ResourceModelSource&lt;/a&gt;, ... ]</i>
+        "<a href="#resourcemodelsource" title="ResourceModelSource">ResourceModelSource</a>" : <i>[ <a href="resourcemodelsource.md">ResourceModelSource</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,14 +35,14 @@ Properties:
     <a href="#defaultnodefilecopierplugin" title="DefaultNodeFileCopierPlugin">DefaultNodeFileCopierPlugin</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#extraconfig" title="ExtraConfig">ExtraConfig</a>: <i>
-      - &lt;a href=&#34;extraconfig.md&#34;&gt;ExtraConfig&lt;/a&gt;</i>
+      - <a href="extraconfig.md">ExtraConfig</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#sshauthenticationtype" title="SshAuthenticationType">SshAuthenticationType</a>: <i>String</i>
     <a href="#sshkeyfilepath" title="SshKeyFilePath">SshKeyFilePath</a>: <i>String</i>
     <a href="#sshkeystoragepath" title="SshKeyStoragePath">SshKeyStoragePath</a>: <i>String</i>
     <a href="#resourcemodelsource" title="ResourceModelSource">ResourceModelSource</a>: <i>
-      - &lt;a href=&#34;resourcemodelsource.md&#34;&gt;ResourceModelSource&lt;/a&gt;</i>
+      - <a href="resourcemodelsource.md">ResourceModelSource</a></i>
 </pre>
 
 ## Properties
@@ -75,7 +75,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;extraconfig.md&#34;&gt;ExtraConfig&lt;/a&gt;
+_Type_: List of <a href="extraconfig.md">ExtraConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;resourcemodelsource.md&#34;&gt;ResourceModelSource&lt;/a&gt;
+_Type_: List of <a href="resourcemodelsource.md">ResourceModelSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,5 +145,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### UiUrl
 
-Returns the &lt;code&gt;UiUrl&lt;/code&gt; value.
+Returns the <code>UiUrl</code> value.
 

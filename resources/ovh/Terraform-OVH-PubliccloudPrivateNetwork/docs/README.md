@@ -94,13 +94,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RegionsStatus
 
-Returns the &lt;code&gt;RegionsStatus&lt;/code&gt; value.
+Returns the <code>RegionsStatus</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 

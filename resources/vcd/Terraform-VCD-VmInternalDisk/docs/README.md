@@ -163,5 +163,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ThinProvisioned
 
-Returns the &lt;code&gt;ThinProvisioned&lt;/code&gt; value.
+Returns the <code>ThinProvisioned</code> value.
 

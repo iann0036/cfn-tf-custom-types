@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#httpmethod" title="HttpMethod">HttpMethod</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
-        "<a href="#responsemodels" title="ResponseModels">ResponseModels</a>" : <i>[ &lt;a href=&#34;responsemodels.md&#34;&gt;ResponseModels&lt;/a&gt;, ... ]</i>,
-        "<a href="#responseparameters" title="ResponseParameters">ResponseParameters</a>" : <i>[ &lt;a href=&#34;responseparameters.md&#34;&gt;ResponseParameters&lt;/a&gt;, ... ]</i>,
+        "<a href="#responsemodels" title="ResponseModels">ResponseModels</a>" : <i>[ <a href="responsemodels.md">ResponseModels</a>, ... ]</i>,
+        "<a href="#responseparameters" title="ResponseParameters">ResponseParameters</a>" : <i>[ <a href="responseparameters.md">ResponseParameters</a>, ... ]</i>,
         "<a href="#responseparametersinjson" title="ResponseParametersInJson">ResponseParametersInJson</a>" : <i>String</i>,
         "<a href="#restapiid" title="RestApiId">RestApiId</a>" : <i>String</i>,
         "<a href="#statuscode" title="StatusCode">StatusCode</a>" : <i>String</i>
@@ -33,9 +33,9 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
     <a href="#responsemodels" title="ResponseModels">ResponseModels</a>: <i>
-      - &lt;a href=&#34;responsemodels.md&#34;&gt;ResponseModels&lt;/a&gt;</i>
+      - <a href="responsemodels.md">ResponseModels</a></i>
     <a href="#responseparameters" title="ResponseParameters">ResponseParameters</a>: <i>
-      - &lt;a href=&#34;responseparameters.md&#34;&gt;ResponseParameters&lt;/a&gt;</i>
+      - <a href="responseparameters.md">ResponseParameters</a></i>
     <a href="#responseparametersinjson" title="ResponseParametersInJson">ResponseParametersInJson</a>: <i>String</i>
     <a href="#restapiid" title="RestApiId">RestApiId</a>: <i>String</i>
     <a href="#statuscode" title="StatusCode">StatusCode</a>: <i>String</i>
@@ -71,7 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;responsemodels.md&#34;&gt;ResponseModels&lt;/a&gt;
+_Type_: List of <a href="responsemodels.md">ResponseModels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -79,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;responseparameters.md&#34;&gt;ResponseParameters&lt;/a&gt;
+_Type_: List of <a href="responseparameters.md">ResponseParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#sharearn" title="ShareArn">ShareArn</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -26,7 +26,7 @@ Type: Terraform::AWS::RamResourceShareAccepter
 Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#sharearn" title="ShareArn">ShareArn</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,29 +73,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### InvitationArn
 
-Returns the &lt;code&gt;InvitationArn&lt;/code&gt; value.
+Returns the <code>InvitationArn</code> value.
 
 #### ReceiverAccountId
 
-Returns the &lt;code&gt;ReceiverAccountId&lt;/code&gt; value.
+Returns the <code>ReceiverAccountId</code> value.
 
 #### Resources
 
-Returns the &lt;code&gt;Resources&lt;/code&gt; value.
+Returns the <code>Resources</code> value.
 
 #### SenderAccountId
 
-Returns the &lt;code&gt;SenderAccountId&lt;/code&gt; value.
+Returns the <code>SenderAccountId</code> value.
 
 #### ShareId
 
-Returns the &lt;code&gt;ShareId&lt;/code&gt; value.
+Returns the <code>ShareId</code> value.
 
 #### ShareName
 
-Returns the &lt;code&gt;ShareName&lt;/code&gt; value.
+Returns the <code>ShareName</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

@@ -104,21 +104,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### IsDefault
 
-Returns the &lt;code&gt;IsDefault&lt;/code&gt; value.
+Returns the <code>IsDefault</code> value.
 
 #### OwnerId
 
-Returns the &lt;code&gt;OwnerId&lt;/code&gt; value.
+Returns the <code>OwnerId</code> value.
 
 #### OwnerUuid
 
-Returns the &lt;code&gt;OwnerUuid&lt;/code&gt; value.
+Returns the <code>OwnerUuid</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#repositoryname" title="RepositoryName">RepositoryName</a>" : <i>String</i>,
-        "<a href="#trigger" title="Trigger">Trigger</a>" : <i>[ &lt;a href=&#34;trigger.md&#34;&gt;Trigger&lt;/a&gt;, ... ]</i>
+        "<a href="#trigger" title="Trigger">Trigger</a>" : <i>[ <a href="trigger.md">Trigger</a>, ... ]</i>
     }
 }
 </pre>
@@ -27,7 +27,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#repositoryname" title="RepositoryName">RepositoryName</a>: <i>String</i>
     <a href="#trigger" title="Trigger">Trigger</a>: <i>
-      - &lt;a href=&#34;trigger.md&#34;&gt;Trigger&lt;/a&gt;</i>
+      - <a href="trigger.md">Trigger</a></i>
 </pre>
 
 ## Properties
@@ -52,7 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;trigger.md&#34;&gt;Trigger&lt;/a&gt;
+_Type_: List of <a href="trigger.md">Trigger</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -74,5 +74,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConfigurationId
 
-Returns the &lt;code&gt;ConfigurationId&lt;/code&gt; value.
+Returns the <code>ConfigurationId</code> value.
 

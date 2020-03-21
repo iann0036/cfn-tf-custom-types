@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#policies" title="Policies">Policies</a>" : <i>[ String, ... ]</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>" : <i>[ &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;, ... ]</i>
+        "<a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>" : <i>[ <a href="valuespecs.md">ValueSpecs</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,7 +32,7 @@ Properties:
       - String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#valuespecs" title="ValueSpecs">ValueSpecs</a>: <i>
-      - &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;</i>
+      - <a href="valuespecs.md">ValueSpecs</a></i>
 </pre>
 
 ## Properties
@@ -73,7 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;valuespecs.md&#34;&gt;ValueSpecs&lt;/a&gt;
+_Type_: List of <a href="valuespecs.md">ValueSpecs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,5 +95,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Members
 
-Returns the &lt;code&gt;Members&lt;/code&gt; value.
+Returns the <code>Members</code> value.
 

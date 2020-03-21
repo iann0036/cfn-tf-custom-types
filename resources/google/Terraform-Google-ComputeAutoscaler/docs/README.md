@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#target" title="Target">Target</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#autoscalingpolicy" title="AutoscalingPolicy">AutoscalingPolicy</a>" : <i>[ &lt;a href=&#34;autoscalingpolicy.md&#34;&gt;AutoscalingPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#cpuutilization" title="CpuUtilization">CpuUtilization</a>" : <i>[ &lt;a href=&#34;cpuutilization.md&#34;&gt;CpuUtilization&lt;/a&gt;, ... ]</i>,
-        "<a href="#loadbalancingutilization" title="LoadBalancingUtilization">LoadBalancingUtilization</a>" : <i>[ &lt;a href=&#34;loadbalancingutilization.md&#34;&gt;LoadBalancingUtilization&lt;/a&gt;, ... ]</i>,
-        "<a href="#metric" title="Metric">Metric</a>" : <i>[ &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;, ... ]</i>
+        "<a href="#autoscalingpolicy" title="AutoscalingPolicy">AutoscalingPolicy</a>" : <i>[ <a href="autoscalingpolicy.md">AutoscalingPolicy</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#cpuutilization" title="CpuUtilization">CpuUtilization</a>" : <i>[ <a href="cpuutilization.md">CpuUtilization</a>, ... ]</i>,
+        "<a href="#loadbalancingutilization" title="LoadBalancingUtilization">LoadBalancingUtilization</a>" : <i>[ <a href="loadbalancingutilization.md">LoadBalancingUtilization</a>, ... ]</i>,
+        "<a href="#metric" title="Metric">Metric</a>" : <i>[ <a href="metric.md">Metric</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,14 +39,14 @@ Properties:
     <a href="#target" title="Target">Target</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#autoscalingpolicy" title="AutoscalingPolicy">AutoscalingPolicy</a>: <i>
-      - &lt;a href=&#34;autoscalingpolicy.md&#34;&gt;AutoscalingPolicy&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="autoscalingpolicy.md">AutoscalingPolicy</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#cpuutilization" title="CpuUtilization">CpuUtilization</a>: <i>
-      - &lt;a href=&#34;cpuutilization.md&#34;&gt;CpuUtilization&lt;/a&gt;</i>
+      - <a href="cpuutilization.md">CpuUtilization</a></i>
     <a href="#loadbalancingutilization" title="LoadBalancingUtilization">LoadBalancingUtilization</a>: <i>
-      - &lt;a href=&#34;loadbalancingutilization.md&#34;&gt;LoadBalancingUtilization&lt;/a&gt;</i>
+      - <a href="loadbalancingutilization.md">LoadBalancingUtilization</a></i>
     <a href="#metric" title="Metric">Metric</a>: <i>
-      - &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;</i>
+      - <a href="metric.md">Metric</a></i>
 </pre>
 
 ## Properties
@@ -103,7 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscalingpolicy.md&#34;&gt;AutoscalingPolicy&lt;/a&gt;
+_Type_: List of <a href="autoscalingpolicy.md">AutoscalingPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -111,7 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -119,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cpuutilization.md&#34;&gt;CpuUtilization&lt;/a&gt;
+_Type_: List of <a href="cpuutilization.md">CpuUtilization</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;loadbalancingutilization.md&#34;&gt;LoadBalancingUtilization&lt;/a&gt;
+_Type_: List of <a href="loadbalancingutilization.md">LoadBalancingUtilization</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;
+_Type_: List of <a href="metric.md">Metric</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,9 +157,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTimestamp
 
-Returns the &lt;code&gt;CreationTimestamp&lt;/code&gt; value.
+Returns the <code>CreationTimestamp</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 

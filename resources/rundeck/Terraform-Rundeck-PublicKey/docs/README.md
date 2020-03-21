@@ -73,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Delete
 
-Returns the &lt;code&gt;Delete&lt;/code&gt; value.
+Returns the <code>Delete</code> value.
 
 #### Url
 
-Returns the &lt;code&gt;Url&lt;/code&gt; value.
+Returns the <code>Url</code> value.
 

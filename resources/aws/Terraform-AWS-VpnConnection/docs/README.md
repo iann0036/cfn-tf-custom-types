@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#customergatewayid" title="CustomerGatewayId">CustomerGatewayId</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#staticroutesonly" title="StaticRoutesOnly">StaticRoutesOnly</a>" : <i>Boolean</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#transitgatewayid" title="TransitGatewayId">TransitGatewayId</a>" : <i>String</i>,
         "<a href="#tunnel1insidecidr" title="Tunnel1InsideCidr">Tunnel1InsideCidr</a>" : <i>String</i>,
         "<a href="#tunnel1presharedkey" title="Tunnel1PresharedKey">Tunnel1PresharedKey</a>" : <i>String</i>,
@@ -36,7 +36,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#staticroutesonly" title="StaticRoutesOnly">StaticRoutesOnly</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#transitgatewayid" title="TransitGatewayId">TransitGatewayId</a>: <i>String</i>
     <a href="#tunnel1insidecidr" title="Tunnel1InsideCidr">Tunnel1InsideCidr</a>: <i>String</i>
     <a href="#tunnel1presharedkey" title="Tunnel1PresharedKey">Tunnel1PresharedKey</a>: <i>String</i>
@@ -76,7 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,57 +154,57 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CustomerGatewayConfiguration
 
-Returns the &lt;code&gt;CustomerGatewayConfiguration&lt;/code&gt; value.
+Returns the <code>CustomerGatewayConfiguration</code> value.
 
 #### Routes
 
-Returns the &lt;code&gt;Routes&lt;/code&gt; value.
+Returns the <code>Routes</code> value.
 
 #### TransitGatewayAttachmentId
 
-Returns the &lt;code&gt;TransitGatewayAttachmentId&lt;/code&gt; value.
+Returns the <code>TransitGatewayAttachmentId</code> value.
 
 #### Tunnel1Address
 
-Returns the &lt;code&gt;Tunnel1Address&lt;/code&gt; value.
+Returns the <code>Tunnel1Address</code> value.
 
 #### Tunnel1BgpAsn
 
-Returns the &lt;code&gt;Tunnel1BgpAsn&lt;/code&gt; value.
+Returns the <code>Tunnel1BgpAsn</code> value.
 
 #### Tunnel1BgpHoldtime
 
-Returns the &lt;code&gt;Tunnel1BgpHoldtime&lt;/code&gt; value.
+Returns the <code>Tunnel1BgpHoldtime</code> value.
 
 #### Tunnel1CgwInsideAddress
 
-Returns the &lt;code&gt;Tunnel1CgwInsideAddress&lt;/code&gt; value.
+Returns the <code>Tunnel1CgwInsideAddress</code> value.
 
 #### Tunnel1VgwInsideAddress
 
-Returns the &lt;code&gt;Tunnel1VgwInsideAddress&lt;/code&gt; value.
+Returns the <code>Tunnel1VgwInsideAddress</code> value.
 
 #### Tunnel2Address
 
-Returns the &lt;code&gt;Tunnel2Address&lt;/code&gt; value.
+Returns the <code>Tunnel2Address</code> value.
 
 #### Tunnel2BgpAsn
 
-Returns the &lt;code&gt;Tunnel2BgpAsn&lt;/code&gt; value.
+Returns the <code>Tunnel2BgpAsn</code> value.
 
 #### Tunnel2BgpHoldtime
 
-Returns the &lt;code&gt;Tunnel2BgpHoldtime&lt;/code&gt; value.
+Returns the <code>Tunnel2BgpHoldtime</code> value.
 
 #### Tunnel2CgwInsideAddress
 
-Returns the &lt;code&gt;Tunnel2CgwInsideAddress&lt;/code&gt; value.
+Returns the <code>Tunnel2CgwInsideAddress</code> value.
 
 #### Tunnel2VgwInsideAddress
 
-Returns the &lt;code&gt;Tunnel2VgwInsideAddress&lt;/code&gt; value.
+Returns the <code>Tunnel2VgwInsideAddress</code> value.
 
 #### VgwTelemetry
 
-Returns the &lt;code&gt;VgwTelemetry&lt;/code&gt; value.
+Returns the <code>VgwTelemetry</code> value.
 

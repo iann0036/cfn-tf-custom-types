@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#password" title="Password">Password</a>" : <i>String</i>,
     "<a href="#username" title="Username">Username</a>" : <i>String</i>,
-    "<a href="#clientcertificateconfig" title="ClientCertificateConfig">ClientCertificateConfig</a>" : <i>[ &lt;a href=&#34;masterauth-clientcertificateconfig.md&#34;&gt;ClientCertificateConfig&lt;/a&gt;, ... ]</i>
+    "<a href="#clientcertificateconfig" title="ClientCertificateConfig">ClientCertificateConfig</a>" : <i>[ <a href="masterauth-clientcertificateconfig.md">ClientCertificateConfig</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#password" title="Password">Password</a>: <i>String</i>
 <a href="#username" title="Username">Username</a>: <i>String</i>
 <a href="#clientcertificateconfig" title="ClientCertificateConfig">ClientCertificateConfig</a>: <i>
-      - &lt;a href=&#34;masterauth-clientcertificateconfig.md&#34;&gt;ClientCertificateConfig&lt;/a&gt;</i>
+      - <a href="masterauth-clientcertificateconfig.md">ClientCertificateConfig</a></i>
 </pre>
 
 ## Properties
@@ -42,7 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClientCertificateConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;masterauth-clientcertificateconfig.md&#34;&gt;ClientCertificateConfig&lt;/a&gt;
+_Type_: List of <a href="masterauth-clientcertificateconfig.md">ClientCertificateConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

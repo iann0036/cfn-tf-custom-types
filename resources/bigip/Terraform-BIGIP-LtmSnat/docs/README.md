@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#translation" title="Translation">Translation</a>" : <i>String</i>,
         "<a href="#vlans" title="Vlans">Vlans</a>" : <i>[ String, ... ]</i>,
         "<a href="#vlansdisabled" title="Vlansdisabled">Vlansdisabled</a>" : <i>Boolean</i>,
-        "<a href="#origins" title="Origins">Origins</a>" : <i>[ &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;, ... ]</i>
+        "<a href="#origins" title="Origins">Origins</a>" : <i>[ <a href="origins.md">Origins</a>, ... ]</i>
     }
 }
 </pre>
@@ -46,7 +46,7 @@ Properties:
       - String</i>
     <a href="#vlansdisabled" title="Vlansdisabled">Vlansdisabled</a>: <i>Boolean</i>
     <a href="#origins" title="Origins">Origins</a>: <i>
-      - &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;</i>
+      - <a href="origins.md">Origins</a></i>
 </pre>
 
 ## Properties
@@ -143,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;
+_Type_: List of <a href="origins.md">Origins</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

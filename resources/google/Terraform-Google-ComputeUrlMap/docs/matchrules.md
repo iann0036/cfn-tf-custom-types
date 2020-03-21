@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#ignorecase" title="IgnoreCase">IgnoreCase</a>" : <i>Boolean</i>,
     "<a href="#prefixmatch" title="PrefixMatch">PrefixMatch</a>" : <i>String</i>,
     "<a href="#regexmatch" title="RegexMatch">RegexMatch</a>" : <i>String</i>,
-    "<a href="#headermatches" title="HeaderMatches">HeaderMatches</a>" : <i>[ &lt;a href=&#34;matchrules-headermatches.md&#34;&gt;HeaderMatches&lt;/a&gt;, ... ]</i>,
-    "<a href="#metadatafilters" title="MetadataFilters">MetadataFilters</a>" : <i>[ &lt;a href=&#34;matchrules-metadatafilters.md&#34;&gt;MetadataFilters&lt;/a&gt;, ... ]</i>,
-    "<a href="#queryparametermatches" title="QueryParameterMatches">QueryParameterMatches</a>" : <i>[ &lt;a href=&#34;matchrules-queryparametermatches.md&#34;&gt;QueryParameterMatches&lt;/a&gt;, ... ]</i>
+    "<a href="#headermatches" title="HeaderMatches">HeaderMatches</a>" : <i>[ <a href="matchrules-headermatches.md">HeaderMatches</a>, ... ]</i>,
+    "<a href="#metadatafilters" title="MetadataFilters">MetadataFilters</a>" : <i>[ <a href="matchrules-metadatafilters.md">MetadataFilters</a>, ... ]</i>,
+    "<a href="#queryparametermatches" title="QueryParameterMatches">QueryParameterMatches</a>" : <i>[ <a href="matchrules-queryparametermatches.md">QueryParameterMatches</a>, ... ]</i>
 }
 </pre>
 
@@ -26,11 +26,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#prefixmatch" title="PrefixMatch">PrefixMatch</a>: <i>String</i>
 <a href="#regexmatch" title="RegexMatch">RegexMatch</a>: <i>String</i>
 <a href="#headermatches" title="HeaderMatches">HeaderMatches</a>: <i>
-      - &lt;a href=&#34;matchrules-headermatches.md&#34;&gt;HeaderMatches&lt;/a&gt;</i>
+      - <a href="matchrules-headermatches.md">HeaderMatches</a></i>
 <a href="#metadatafilters" title="MetadataFilters">MetadataFilters</a>: <i>
-      - &lt;a href=&#34;matchrules-metadatafilters.md&#34;&gt;MetadataFilters&lt;/a&gt;</i>
+      - <a href="matchrules-metadatafilters.md">MetadataFilters</a></i>
 <a href="#queryparametermatches" title="QueryParameterMatches">QueryParameterMatches</a>: <i>
-      - &lt;a href=&#34;matchrules-queryparametermatches.md&#34;&gt;QueryParameterMatches&lt;/a&gt;</i>
+      - <a href="matchrules-queryparametermatches.md">QueryParameterMatches</a></i>
 </pre>
 
 ## Properties
@@ -66,21 +66,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HeaderMatches
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;matchrules-headermatches.md&#34;&gt;HeaderMatches&lt;/a&gt;
+_Type_: List of <a href="matchrules-headermatches.md">HeaderMatches</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetadataFilters
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;matchrules-metadatafilters.md&#34;&gt;MetadataFilters&lt;/a&gt;
+_Type_: List of <a href="matchrules-metadatafilters.md">MetadataFilters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### QueryParameterMatches
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;matchrules-queryparametermatches.md&#34;&gt;QueryParameterMatches&lt;/a&gt;
+_Type_: List of <a href="matchrules-queryparametermatches.md">QueryParameterMatches</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

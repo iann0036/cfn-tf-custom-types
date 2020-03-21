@@ -93,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uuid
 
-Returns the &lt;code&gt;Uuid&lt;/code&gt; value.
+Returns the <code>Uuid</code> value.
 

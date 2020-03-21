@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::Record",
     "Properties" : {
-        "<a href="#data" title="Data">Data</a>" : <i>[ &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;, ... ]</i>,
+        "<a href="#data" title="Data">Data</a>" : <i>[ <a href="data.md">Data</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
@@ -31,7 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::Cloudflare::Record
 Properties:
     <a href="#data" title="Data">Data</a>: <i>
-      - &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;</i>
+      - <a href="data.md">Data</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
@@ -48,7 +48,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;data.md&#34;&gt;Data&lt;/a&gt;
+_Type_: List of <a href="data.md">Data</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,21 +134,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedOn
 
-Returns the &lt;code&gt;CreatedOn&lt;/code&gt; value.
+Returns the <code>CreatedOn</code> value.
 
 #### Hostname
 
-Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
+Returns the <code>Hostname</code> value.
 
 #### Metadata
 
-Returns the &lt;code&gt;Metadata&lt;/code&gt; value.
+Returns the <code>Metadata</code> value.
 
 #### ModifiedOn
 
-Returns the &lt;code&gt;ModifiedOn&lt;/code&gt; value.
+Returns the <code>ModifiedOn</code> value.
 
 #### Proxiable
 
-Returns the &lt;code&gt;Proxiable&lt;/code&gt; value.
+Returns the <code>Proxiable</code> value.
 

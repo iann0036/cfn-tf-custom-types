@@ -17,13 +17,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#positionkeyword" title="PositionKeyword">PositionKeyword</a>" : <i>String</i>,
         "<a href="#positionreference" title="PositionReference">PositionReference</a>" : <i>String</i>,
         "<a href="#rulebase" title="Rulebase">Rulebase</a>" : <i>String</i>,
-        "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>,
-        "<a href="#destination" title="Destination">Destination</a>" : <i>[ &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;, ... ]</i>,
-        "<a href="#forwarding" title="Forwarding">Forwarding</a>" : <i>[ &lt;a href=&#34;forwarding.md&#34;&gt;Forwarding&lt;/a&gt;, ... ]</i>,
-        "<a href="#source" title="Source">Source</a>" : <i>[ &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;, ... ]</i>,
-        "<a href="#target" title="Target">Target</a>" : <i>[ &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;, ... ]</i>,
-        "<a href="#monitor" title="Monitor">Monitor</a>" : <i>[ &lt;a href=&#34;monitor.md&#34;&gt;Monitor&lt;/a&gt;, ... ]</i>,
-        "<a href="#symmetricreturn" title="SymmetricReturn">SymmetricReturn</a>" : <i>[ &lt;a href=&#34;symmetricreturn.md&#34;&gt;SymmetricReturn&lt;/a&gt;, ... ]</i>
+        "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="rule.md">Rule</a>, ... ]</i>,
+        "<a href="#destination" title="Destination">Destination</a>" : <i>[ <a href="destination.md">Destination</a>, ... ]</i>,
+        "<a href="#forwarding" title="Forwarding">Forwarding</a>" : <i>[ <a href="forwarding.md">Forwarding</a>, ... ]</i>,
+        "<a href="#source" title="Source">Source</a>" : <i>[ <a href="source.md">Source</a>, ... ]</i>,
+        "<a href="#target" title="Target">Target</a>" : <i>[ <a href="target.md">Target</a>, ... ]</i>,
+        "<a href="#monitor" title="Monitor">Monitor</a>" : <i>[ <a href="monitor.md">Monitor</a>, ... ]</i>,
+        "<a href="#symmetricreturn" title="SymmetricReturn">SymmetricReturn</a>" : <i>[ <a href="symmetricreturn.md">SymmetricReturn</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,19 +39,19 @@ Properties:
     <a href="#positionreference" title="PositionReference">PositionReference</a>: <i>String</i>
     <a href="#rulebase" title="Rulebase">Rulebase</a>: <i>String</i>
     <a href="#rule" title="Rule">Rule</a>: <i>
-      - &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;</i>
+      - <a href="rule.md">Rule</a></i>
     <a href="#destination" title="Destination">Destination</a>: <i>
-      - &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;</i>
+      - <a href="destination.md">Destination</a></i>
     <a href="#forwarding" title="Forwarding">Forwarding</a>: <i>
-      - &lt;a href=&#34;forwarding.md&#34;&gt;Forwarding&lt;/a&gt;</i>
+      - <a href="forwarding.md">Forwarding</a></i>
     <a href="#source" title="Source">Source</a>: <i>
-      - &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;</i>
+      - <a href="source.md">Source</a></i>
     <a href="#target" title="Target">Target</a>: <i>
-      - &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;</i>
+      - <a href="target.md">Target</a></i>
     <a href="#monitor" title="Monitor">Monitor</a>: <i>
-      - &lt;a href=&#34;monitor.md&#34;&gt;Monitor&lt;/a&gt;</i>
+      - <a href="monitor.md">Monitor</a></i>
     <a href="#symmetricreturn" title="SymmetricReturn">SymmetricReturn</a>: <i>
-      - &lt;a href=&#34;symmetricreturn.md&#34;&gt;SymmetricReturn&lt;/a&gt;</i>
+      - <a href="symmetricreturn.md">SymmetricReturn</a></i>
 </pre>
 
 ## Properties
@@ -100,7 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;
+_Type_: List of <a href="rule.md">Rule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -108,7 +108,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;
+_Type_: List of <a href="destination.md">Destination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;forwarding.md&#34;&gt;Forwarding&lt;/a&gt;
+_Type_: List of <a href="forwarding.md">Forwarding</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;
+_Type_: List of <a href="source.md">Source</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -132,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;
+_Type_: List of <a href="target.md">Target</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -140,7 +140,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;monitor.md&#34;&gt;Monitor&lt;/a&gt;
+_Type_: List of <a href="monitor.md">Monitor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;symmetricreturn.md&#34;&gt;SymmetricReturn&lt;/a&gt;
+_Type_: List of <a href="symmetricreturn.md">SymmetricReturn</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

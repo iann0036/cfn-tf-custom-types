@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#host" title="Host">Host</a>" : <i>String</i>,
-    "<a href="#http" title="Http">Http</a>" : <i>[ &lt;a href=&#34;rule-http.md&#34;&gt;Http&lt;/a&gt;, ... ]</i>
+    "<a href="#http" title="Http">Http</a>" : <i>[ <a href="rule-http.md">Http</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#host" title="Host">Host</a>: <i>String</i>
 <a href="#http" title="Http">Http</a>: <i>
-      - &lt;a href=&#34;rule-http.md&#34;&gt;Http&lt;/a&gt;</i>
+      - <a href="rule-http.md">Http</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Http
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-http.md&#34;&gt;Http&lt;/a&gt;
+_Type_: List of <a href="rule-http.md">Http</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

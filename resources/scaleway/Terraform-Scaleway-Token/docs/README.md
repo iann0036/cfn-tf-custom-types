@@ -93,21 +93,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessKey
 
-Returns the &lt;code&gt;AccessKey&lt;/code&gt; value.
+Returns the <code>AccessKey</code> value.
 
 #### CreationIp
 
-Returns the &lt;code&gt;CreationIp&lt;/code&gt; value.
+Returns the <code>CreationIp</code> value.
 
 #### ExpirationDate
 
-Returns the &lt;code&gt;ExpirationDate&lt;/code&gt; value.
+Returns the <code>ExpirationDate</code> value.
 
 #### SecretKey
 
-Returns the &lt;code&gt;SecretKey&lt;/code&gt; value.
+Returns the <code>SecretKey</code> value.
 
 #### UserId
 
-Returns the &lt;code&gt;UserId&lt;/code&gt; value.
+Returns the <code>UserId</code> value.
 

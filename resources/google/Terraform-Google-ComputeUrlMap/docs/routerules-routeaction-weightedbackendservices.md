@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#backendservice" title="BackendService">BackendService</a>" : <i>String</i>,
     "<a href="#weight" title="Weight">Weight</a>" : <i>Double</i>,
-    "<a href="#headeraction" title="HeaderAction">HeaderAction</a>" : <i>[ &lt;a href=&#34;routerules-routeaction-weightedbackendservices-headeraction.md&#34;&gt;HeaderAction&lt;/a&gt;, ... ]</i>
+    "<a href="#headeraction" title="HeaderAction">HeaderAction</a>" : <i>[ <a href="routerules-routeaction-weightedbackendservices-headeraction.md">HeaderAction</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#backendservice" title="BackendService">BackendService</a>: <i>String</i>
 <a href="#weight" title="Weight">Weight</a>: <i>Double</i>
 <a href="#headeraction" title="HeaderAction">HeaderAction</a>: <i>
-      - &lt;a href=&#34;routerules-routeaction-weightedbackendservices-headeraction.md&#34;&gt;HeaderAction&lt;/a&gt;</i>
+      - <a href="routerules-routeaction-weightedbackendservices-headeraction.md">HeaderAction</a></i>
 </pre>
 
 ## Properties
@@ -42,7 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HeaderAction
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;routerules-routeaction-weightedbackendservices-headeraction.md&#34;&gt;HeaderAction&lt;/a&gt;
+_Type_: List of <a href="routerules-routeaction-weightedbackendservices-headeraction.md">HeaderAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

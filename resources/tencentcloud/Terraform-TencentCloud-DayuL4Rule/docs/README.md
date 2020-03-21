@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#sessionswitch" title="SessionSwitch">SessionSwitch</a>" : <i>Boolean</i>,
         "<a href="#sessiontime" title="SessionTime">SessionTime</a>" : <i>Double</i>,
         "<a href="#sourcetype" title="SourceType">SourceType</a>" : <i>Double</i>,
-        "<a href="#sourcelist" title="SourceList">SourceList</a>" : <i>[ &lt;a href=&#34;sourcelist.md&#34;&gt;SourceList&lt;/a&gt;, ... ]</i>
+        "<a href="#sourcelist" title="SourceList">SourceList</a>" : <i>[ <a href="sourcelist.md">SourceList</a>, ... ]</i>
     }
 }
 </pre>
@@ -53,7 +53,7 @@ Properties:
     <a href="#sessiontime" title="SessionTime">SessionTime</a>: <i>Double</i>
     <a href="#sourcetype" title="SourceType">SourceType</a>: <i>Double</i>
     <a href="#sourcelist" title="SourceList">SourceList</a>: <i>
-      - &lt;a href=&#34;sourcelist.md&#34;&gt;SourceList&lt;/a&gt;</i>
+      - <a href="sourcelist.md">SourceList</a></i>
 </pre>
 
 ## Properties
@@ -182,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourcelist.md&#34;&gt;SourceList&lt;/a&gt;
+_Type_: List of <a href="sourcelist.md">SourceList</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -204,9 +204,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LbType
 
-Returns the &lt;code&gt;LbType&lt;/code&gt; value.
+Returns the <code>LbType</code> value.
 
 #### RuleId
 
-Returns the &lt;code&gt;RuleId&lt;/code&gt; value.
+Returns the <code>RuleId</code> value.
 

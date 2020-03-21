@@ -93,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Gateway
 
-Returns the &lt;code&gt;Gateway&lt;/code&gt; value.
+Returns the <code>Gateway</code> value.
 

@@ -19,10 +19,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#partitionkeypath" title="PartitionKeyPath">PartitionKeyPath</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#throughput" title="Throughput">Throughput</a>" : <i>Double</i>,
-        "<a href="#conflictresolutionpolicy" title="ConflictResolutionPolicy">ConflictResolutionPolicy</a>" : <i>[ &lt;a href=&#34;conflictresolutionpolicy.md&#34;&gt;ConflictResolutionPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#indexpolicy" title="IndexPolicy">IndexPolicy</a>" : <i>[ &lt;a href=&#34;indexpolicy.md&#34;&gt;IndexPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#uniquekey" title="UniqueKey">UniqueKey</a>" : <i>[ &lt;a href=&#34;uniquekey.md&#34;&gt;UniqueKey&lt;/a&gt;, ... ]</i>
+        "<a href="#conflictresolutionpolicy" title="ConflictResolutionPolicy">ConflictResolutionPolicy</a>" : <i>[ <a href="conflictresolutionpolicy.md">ConflictResolutionPolicy</a>, ... ]</i>,
+        "<a href="#indexpolicy" title="IndexPolicy">IndexPolicy</a>" : <i>[ <a href="indexpolicy.md">IndexPolicy</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#uniquekey" title="UniqueKey">UniqueKey</a>" : <i>[ <a href="uniquekey.md">UniqueKey</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,12 +40,12 @@ Properties:
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#throughput" title="Throughput">Throughput</a>: <i>Double</i>
     <a href="#conflictresolutionpolicy" title="ConflictResolutionPolicy">ConflictResolutionPolicy</a>: <i>
-      - &lt;a href=&#34;conflictresolutionpolicy.md&#34;&gt;ConflictResolutionPolicy&lt;/a&gt;</i>
+      - <a href="conflictresolutionpolicy.md">ConflictResolutionPolicy</a></i>
     <a href="#indexpolicy" title="IndexPolicy">IndexPolicy</a>: <i>
-      - &lt;a href=&#34;indexpolicy.md&#34;&gt;IndexPolicy&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="indexpolicy.md">IndexPolicy</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#uniquekey" title="UniqueKey">UniqueKey</a>: <i>
-      - &lt;a href=&#34;uniquekey.md&#34;&gt;UniqueKey&lt;/a&gt;</i>
+      - <a href="uniquekey.md">UniqueKey</a></i>
 </pre>
 
 ## Properties
@@ -110,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;conflictresolutionpolicy.md&#34;&gt;ConflictResolutionPolicy&lt;/a&gt;
+_Type_: List of <a href="conflictresolutionpolicy.md">ConflictResolutionPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -118,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;indexpolicy.md&#34;&gt;IndexPolicy&lt;/a&gt;
+_Type_: List of <a href="indexpolicy.md">IndexPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;uniquekey.md&#34;&gt;UniqueKey&lt;/a&gt;
+_Type_: List of <a href="uniquekey.md">UniqueKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

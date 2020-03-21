@@ -134,13 +134,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvatarUrl
 
-Returns the &lt;code&gt;AvatarUrl&lt;/code&gt; value.
+Returns the <code>AvatarUrl</code> value.
 
 #### HtmlUrl
 
-Returns the &lt;code&gt;HtmlUrl&lt;/code&gt; value.
+Returns the <code>HtmlUrl</code> value.
 
 #### InvitationSent
 
-Returns the &lt;code&gt;InvitationSent&lt;/code&gt; value.
+Returns the <code>InvitationSent</code> value.
 

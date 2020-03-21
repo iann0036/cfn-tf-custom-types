@@ -103,17 +103,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTime
 
-Returns the &lt;code&gt;CreationTime&lt;/code&gt; value.
+Returns the <code>CreationTime</code> value.
 
 #### IsPtr
 
-Returns the &lt;code&gt;IsPtr&lt;/code&gt; value.
+Returns the <code>IsPtr</code> value.
 
 #### RecordCount
 
-Returns the &lt;code&gt;RecordCount&lt;/code&gt; value.
+Returns the <code>RecordCount</code> value.
 
 #### UpdateTime
 
-Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
+Returns the <code>UpdateTime</code> value.
 

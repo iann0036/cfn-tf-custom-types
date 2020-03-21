@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RegistrationUrl
 
-Returns the &lt;code&gt;RegistrationUrl&lt;/code&gt; value.
+Returns the <code>RegistrationUrl</code> value.
 

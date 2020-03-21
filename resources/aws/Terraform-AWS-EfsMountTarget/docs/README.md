@@ -94,13 +94,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DnsName
 
-Returns the &lt;code&gt;DnsName&lt;/code&gt; value.
+Returns the <code>DnsName</code> value.
 
 #### FileSystemArn
 
-Returns the &lt;code&gt;FileSystemArn&lt;/code&gt; value.
+Returns the <code>FileSystemArn</code> value.
 
 #### NetworkInterfaceId
 
-Returns the &lt;code&gt;NetworkInterfaceId&lt;/code&gt; value.
+Returns the <code>NetworkInterfaceId</code> value.
 

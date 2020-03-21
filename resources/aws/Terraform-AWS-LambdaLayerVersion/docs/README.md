@@ -144,21 +144,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CreatedDate
 
-Returns the &lt;code&gt;CreatedDate&lt;/code&gt; value.
+Returns the <code>CreatedDate</code> value.
 
 #### LayerArn
 
-Returns the &lt;code&gt;LayerArn&lt;/code&gt; value.
+Returns the <code>LayerArn</code> value.
 
 #### SourceCodeSize
 
-Returns the &lt;code&gt;SourceCodeSize&lt;/code&gt; value.
+Returns the <code>SourceCodeSize</code> value.
 
 #### Version
 
-Returns the &lt;code&gt;Version&lt;/code&gt; value.
+Returns the <code>Version</code> value.
 

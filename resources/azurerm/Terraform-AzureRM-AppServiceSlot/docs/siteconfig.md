@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#dotnetframeworkversion" title="DotnetFrameworkVersion">DotnetFrameworkVersion</a>" : <i>String</i>,
     "<a href="#ftpsstate" title="FtpsState">FtpsState</a>" : <i>String</i>,
     "<a href="#http2enabled" title="Http2Enabled">Http2Enabled</a>" : <i>Boolean</i>,
-    "<a href="#iprestriction" title="IpRestriction">IpRestriction</a>" : <i>[ &lt;a href=&#34;siteconfig-iprestriction.md&#34;&gt;IpRestriction&lt;/a&gt;, ... ]</i>,
+    "<a href="#iprestriction" title="IpRestriction">IpRestriction</a>" : <i>[ <a href="siteconfig-iprestriction.md">IpRestriction</a>, ... ]</i>,
     "<a href="#javacontainer" title="JavaContainer">JavaContainer</a>" : <i>String</i>,
     "<a href="#javacontainerversion" title="JavaContainerVersion">JavaContainerVersion</a>" : <i>String</i>,
     "<a href="#javaversion" title="JavaVersion">JavaVersion</a>" : <i>String</i>,
@@ -31,7 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#use32bitworkerprocess" title="Use32BitWorkerProcess">Use32BitWorkerProcess</a>" : <i>Boolean</i>,
     "<a href="#websocketsenabled" title="WebsocketsEnabled">WebsocketsEnabled</a>" : <i>Boolean</i>,
     "<a href="#windowsfxversion" title="WindowsFxVersion">WindowsFxVersion</a>" : <i>String</i>,
-    "<a href="#cors" title="Cors">Cors</a>" : <i>[ &lt;a href=&#34;siteconfig-cors.md&#34;&gt;Cors&lt;/a&gt;, ... ]</i>
+    "<a href="#cors" title="Cors">Cors</a>" : <i>[ <a href="siteconfig-cors.md">Cors</a>, ... ]</i>
 }
 </pre>
 
@@ -47,7 +47,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#ftpsstate" title="FtpsState">FtpsState</a>: <i>String</i>
 <a href="#http2enabled" title="Http2Enabled">Http2Enabled</a>: <i>Boolean</i>
 <a href="#iprestriction" title="IpRestriction">IpRestriction</a>: <i>
-      - &lt;a href=&#34;siteconfig-iprestriction.md&#34;&gt;IpRestriction&lt;/a&gt;</i>
+      - <a href="siteconfig-iprestriction.md">IpRestriction</a></i>
 <a href="#javacontainer" title="JavaContainer">JavaContainer</a>: <i>String</i>
 <a href="#javacontainerversion" title="JavaContainerVersion">JavaContainerVersion</a>: <i>String</i>
 <a href="#javaversion" title="JavaVersion">JavaVersion</a>: <i>String</i>
@@ -64,7 +64,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#websocketsenabled" title="WebsocketsEnabled">WebsocketsEnabled</a>: <i>Boolean</i>
 <a href="#windowsfxversion" title="WindowsFxVersion">WindowsFxVersion</a>: <i>String</i>
 <a href="#cors" title="Cors">Cors</a>: <i>
-      - &lt;a href=&#34;siteconfig-cors.md&#34;&gt;Cors&lt;/a&gt;</i>
+      - <a href="siteconfig-cors.md">Cors</a></i>
 </pre>
 
 ## Properties
@@ -121,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IpRestriction
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;siteconfig-iprestriction.md&#34;&gt;IpRestriction&lt;/a&gt;
+_Type_: List of <a href="siteconfig-iprestriction.md">IpRestriction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +233,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Cors
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;siteconfig-cors.md&#34;&gt;Cors&lt;/a&gt;
+_Type_: List of <a href="siteconfig-cors.md">Cors</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

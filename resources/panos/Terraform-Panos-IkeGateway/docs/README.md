@@ -423,5 +423,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PreSharedKeyEnc
 
-Returns the &lt;code&gt;PreSharedKeyEnc&lt;/code&gt; value.
+Returns the <code>PreSharedKeyEnc</code> value.
 

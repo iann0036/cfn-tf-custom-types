@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>,
     "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
-    "<a href="#response" title="Response">Response</a>" : <i>[ &lt;a href=&#34;action-response.md&#34;&gt;Response&lt;/a&gt;, ... ]</i>
+    "<a href="#response" title="Response">Response</a>" : <i>[ <a href="action-response.md">Response</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#mode" title="Mode">Mode</a>: <i>String</i>
 <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
 <a href="#response" title="Response">Response</a>: <i>
-      - &lt;a href=&#34;action-response.md&#34;&gt;Response&lt;/a&gt;</i>
+      - <a href="action-response.md">Response</a></i>
 </pre>
 
 ## Properties
@@ -42,7 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Response
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;action-response.md&#34;&gt;Response&lt;/a&gt;
+_Type_: List of <a href="action-response.md">Response</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

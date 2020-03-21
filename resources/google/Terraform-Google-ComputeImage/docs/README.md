@@ -16,14 +16,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#disksizegb" title="DiskSizeGb">DiskSizeGb</a>" : <i>Double</i>,
         "<a href="#family" title="Family">Family</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#licenses" title="Licenses">Licenses</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#sourcedisk" title="SourceDisk">SourceDisk</a>" : <i>String</i>,
-        "<a href="#guestosfeatures" title="GuestOsFeatures">GuestOsFeatures</a>" : <i>[ &lt;a href=&#34;guestosfeatures.md&#34;&gt;GuestOsFeatures&lt;/a&gt;, ... ]</i>,
-        "<a href="#rawdisk" title="RawDisk">RawDisk</a>" : <i>[ &lt;a href=&#34;rawdisk.md&#34;&gt;RawDisk&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#guestosfeatures" title="GuestOsFeatures">GuestOsFeatures</a>" : <i>[ <a href="guestosfeatures.md">GuestOsFeatures</a>, ... ]</i>,
+        "<a href="#rawdisk" title="RawDisk">RawDisk</a>" : <i>[ <a href="rawdisk.md">RawDisk</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -38,17 +38,17 @@ Properties:
     <a href="#family" title="Family">Family</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#licenses" title="Licenses">Licenses</a>: <i>
       - String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#sourcedisk" title="SourceDisk">SourceDisk</a>: <i>String</i>
     <a href="#guestosfeatures" title="GuestOsFeatures">GuestOsFeatures</a>: <i>
-      - &lt;a href=&#34;guestosfeatures.md&#34;&gt;GuestOsFeatures&lt;/a&gt;</i>
+      - <a href="guestosfeatures.md">GuestOsFeatures</a></i>
     <a href="#rawdisk" title="RawDisk">RawDisk</a>: <i>
-      - &lt;a href=&#34;rawdisk.md&#34;&gt;RawDisk&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="rawdisk.md">RawDisk</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -89,7 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;guestosfeatures.md&#34;&gt;GuestOsFeatures&lt;/a&gt;
+_Type_: List of <a href="guestosfeatures.md">GuestOsFeatures</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rawdisk.md&#34;&gt;RawDisk&lt;/a&gt;
+_Type_: List of <a href="rawdisk.md">RawDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,17 +167,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ArchiveSizeBytes
 
-Returns the &lt;code&gt;ArchiveSizeBytes&lt;/code&gt; value.
+Returns the <code>ArchiveSizeBytes</code> value.
 
 #### CreationTimestamp
 
-Returns the &lt;code&gt;CreationTimestamp&lt;/code&gt; value.
+Returns the <code>CreationTimestamp</code> value.
 
 #### LabelFingerprint
 
-Returns the &lt;code&gt;LabelFingerprint&lt;/code&gt; value.
+Returns the <code>LabelFingerprint</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 

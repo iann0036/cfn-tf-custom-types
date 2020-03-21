@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Chef::Environment",
     "Properties" : {
-        "<a href="#cookbookconstraints" title="CookbookConstraints">CookbookConstraints</a>" : <i>[ &lt;a href=&#34;cookbookconstraints.md&#34;&gt;CookbookConstraints&lt;/a&gt;, ... ]</i>,
+        "<a href="#cookbookconstraints" title="CookbookConstraints">CookbookConstraints</a>" : <i>[ <a href="cookbookconstraints.md">CookbookConstraints</a>, ... ]</i>,
         "<a href="#defaultattributesjson" title="DefaultAttributesJson">DefaultAttributesJson</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
@@ -28,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::Chef::Environment
 Properties:
     <a href="#cookbookconstraints" title="CookbookConstraints">CookbookConstraints</a>: <i>
-      - &lt;a href=&#34;cookbookconstraints.md&#34;&gt;CookbookConstraints&lt;/a&gt;</i>
+      - <a href="cookbookconstraints.md">CookbookConstraints</a></i>
     <a href="#defaultattributesjson" title="DefaultAttributesJson">DefaultAttributesJson</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
@@ -42,7 +42,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cookbookconstraints.md&#34;&gt;CookbookConstraints&lt;/a&gt;
+_Type_: List of <a href="cookbookconstraints.md">CookbookConstraints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

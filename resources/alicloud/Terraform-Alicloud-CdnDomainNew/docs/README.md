@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>" : <i>String</i>,
         "<a href="#scope" title="Scope">Scope</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#certificateconfig" title="CertificateConfig">CertificateConfig</a>" : <i>[ &lt;a href=&#34;certificateconfig.md&#34;&gt;CertificateConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#sources" title="Sources">Sources</a>" : <i>[ &lt;a href=&#34;sources.md&#34;&gt;Sources&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#certificateconfig" title="CertificateConfig">CertificateConfig</a>" : <i>[ <a href="certificateconfig.md">CertificateConfig</a>, ... ]</i>,
+        "<a href="#sources" title="Sources">Sources</a>" : <i>[ <a href="sources.md">Sources</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,11 +35,11 @@ Properties:
     <a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>: <i>String</i>
     <a href="#scope" title="Scope">Scope</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#certificateconfig" title="CertificateConfig">CertificateConfig</a>: <i>
-      - &lt;a href=&#34;certificateconfig.md&#34;&gt;CertificateConfig&lt;/a&gt;</i>
+      - <a href="certificateconfig.md">CertificateConfig</a></i>
     <a href="#sources" title="Sources">Sources</a>: <i>
-      - &lt;a href=&#34;sources.md&#34;&gt;Sources&lt;/a&gt;</i>
+      - <a href="sources.md">Sources</a></i>
 </pre>
 
 ## Properties
@@ -88,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -96,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;certificateconfig.md&#34;&gt;CertificateConfig&lt;/a&gt;
+_Type_: List of <a href="certificateconfig.md">CertificateConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sources.md&#34;&gt;Sources&lt;/a&gt;
+_Type_: List of <a href="sources.md">Sources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

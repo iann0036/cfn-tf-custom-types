@@ -30,9 +30,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#timeoutconnect" title="TimeoutConnect">TimeoutConnect</a>" : <i>String</i>,
         "<a href="#timeoutserver" title="TimeoutServer">TimeoutServer</a>" : <i>String</i>,
         "<a href="#timeouttunnel" title="TimeoutTunnel">TimeoutTunnel</a>" : <i>String</i>,
-        "<a href="#healthcheckhttp" title="HealthCheckHttp">HealthCheckHttp</a>" : <i>[ &lt;a href=&#34;healthcheckhttp.md&#34;&gt;HealthCheckHttp&lt;/a&gt;, ... ]</i>,
-        "<a href="#healthcheckhttps" title="HealthCheckHttps">HealthCheckHttps</a>" : <i>[ &lt;a href=&#34;healthcheckhttps.md&#34;&gt;HealthCheckHttps&lt;/a&gt;, ... ]</i>,
-        "<a href="#healthchecktcp" title="HealthCheckTcp">HealthCheckTcp</a>" : <i>[ &lt;a href=&#34;healthchecktcp.md&#34;&gt;HealthCheckTcp&lt;/a&gt;, ... ]</i>
+        "<a href="#healthcheckhttp" title="HealthCheckHttp">HealthCheckHttp</a>" : <i>[ <a href="healthcheckhttp.md">HealthCheckHttp</a>, ... ]</i>,
+        "<a href="#healthcheckhttps" title="HealthCheckHttps">HealthCheckHttps</a>" : <i>[ <a href="healthcheckhttps.md">HealthCheckHttps</a>, ... ]</i>,
+        "<a href="#healthchecktcp" title="HealthCheckTcp">HealthCheckTcp</a>" : <i>[ <a href="healthchecktcp.md">HealthCheckTcp</a>, ... ]</i>
     }
 }
 </pre>
@@ -62,11 +62,11 @@ Properties:
     <a href="#timeoutserver" title="TimeoutServer">TimeoutServer</a>: <i>String</i>
     <a href="#timeouttunnel" title="TimeoutTunnel">TimeoutTunnel</a>: <i>String</i>
     <a href="#healthcheckhttp" title="HealthCheckHttp">HealthCheckHttp</a>: <i>
-      - &lt;a href=&#34;healthcheckhttp.md&#34;&gt;HealthCheckHttp&lt;/a&gt;</i>
+      - <a href="healthcheckhttp.md">HealthCheckHttp</a></i>
     <a href="#healthcheckhttps" title="HealthCheckHttps">HealthCheckHttps</a>: <i>
-      - &lt;a href=&#34;healthcheckhttps.md&#34;&gt;HealthCheckHttps&lt;/a&gt;</i>
+      - <a href="healthcheckhttps.md">HealthCheckHttps</a></i>
     <a href="#healthchecktcp" title="HealthCheckTcp">HealthCheckTcp</a>: <i>
-      - &lt;a href=&#34;healthchecktcp.md&#34;&gt;HealthCheckTcp&lt;/a&gt;</i>
+      - <a href="healthchecktcp.md">HealthCheckTcp</a></i>
 </pre>
 
 ## Properties
@@ -219,7 +219,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheckhttp.md&#34;&gt;HealthCheckHttp&lt;/a&gt;
+_Type_: List of <a href="healthcheckhttp.md">HealthCheckHttp</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,7 +227,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheckhttps.md&#34;&gt;HealthCheckHttps&lt;/a&gt;
+_Type_: List of <a href="healthcheckhttps.md">HealthCheckHttps</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -235,7 +235,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthchecktcp.md&#34;&gt;HealthCheckTcp&lt;/a&gt;
+_Type_: List of <a href="healthchecktcp.md">HealthCheckTcp</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

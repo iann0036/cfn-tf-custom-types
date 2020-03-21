@@ -18,8 +18,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#authorizerid" title="AuthorizerId">AuthorizerId</a>" : <i>String</i>,
         "<a href="#httpmethod" title="HttpMethod">HttpMethod</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#requestmodels" title="RequestModels">RequestModels</a>" : <i>[ &lt;a href=&#34;requestmodels.md&#34;&gt;RequestModels&lt;/a&gt;, ... ]</i>,
-        "<a href="#requestparameters" title="RequestParameters">RequestParameters</a>" : <i>[ &lt;a href=&#34;requestparameters.md&#34;&gt;RequestParameters&lt;/a&gt;, ... ]</i>,
+        "<a href="#requestmodels" title="RequestModels">RequestModels</a>" : <i>[ <a href="requestmodels.md">RequestModels</a>, ... ]</i>,
+        "<a href="#requestparameters" title="RequestParameters">RequestParameters</a>" : <i>[ <a href="requestparameters.md">RequestParameters</a>, ... ]</i>,
         "<a href="#requestparametersinjson" title="RequestParametersInJson">RequestParametersInJson</a>" : <i>String</i>,
         "<a href="#requestvalidatorid" title="RequestValidatorId">RequestValidatorId</a>" : <i>String</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
@@ -41,9 +41,9 @@ Properties:
     <a href="#httpmethod" title="HttpMethod">HttpMethod</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#requestmodels" title="RequestModels">RequestModels</a>: <i>
-      - &lt;a href=&#34;requestmodels.md&#34;&gt;RequestModels&lt;/a&gt;</i>
+      - <a href="requestmodels.md">RequestModels</a></i>
     <a href="#requestparameters" title="RequestParameters">RequestParameters</a>: <i>
-      - &lt;a href=&#34;requestparameters.md&#34;&gt;RequestParameters&lt;/a&gt;</i>
+      - <a href="requestparameters.md">RequestParameters</a></i>
     <a href="#requestparametersinjson" title="RequestParametersInJson">RequestParametersInJson</a>: <i>String</i>
     <a href="#requestvalidatorid" title="RequestValidatorId">RequestValidatorId</a>: <i>String</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
@@ -104,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requestmodels.md&#34;&gt;RequestModels&lt;/a&gt;
+_Type_: List of <a href="requestmodels.md">RequestModels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requestparameters.md&#34;&gt;RequestParameters&lt;/a&gt;
+_Type_: List of <a href="requestparameters.md">RequestParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

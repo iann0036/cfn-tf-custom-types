@@ -83,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Vxlan
 
-Returns the &lt;code&gt;Vxlan&lt;/code&gt; value.
+Returns the <code>Vxlan</code> value.
 

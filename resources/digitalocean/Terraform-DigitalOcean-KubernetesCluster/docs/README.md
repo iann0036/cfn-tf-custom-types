@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#nodepool" title="NodePool">NodePool</a>" : <i>[ &lt;a href=&#34;nodepool.md&#34;&gt;NodePool&lt;/a&gt;, ... ]</i>
+        "<a href="#nodepool" title="NodePool">NodePool</a>" : <i>[ <a href="nodepool.md">NodePool</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,7 +34,7 @@ Properties:
       - String</i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#nodepool" title="NodePool">NodePool</a>: <i>
-      - &lt;a href=&#34;nodepool.md&#34;&gt;NodePool&lt;/a&gt;</i>
+      - <a href="nodepool.md">NodePool</a></i>
 </pre>
 
 ## Properties
@@ -83,7 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nodepool.md&#34;&gt;NodePool&lt;/a&gt;
+_Type_: List of <a href="nodepool.md">NodePool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,33 +105,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClusterSubnet
 
-Returns the &lt;code&gt;ClusterSubnet&lt;/code&gt; value.
+Returns the <code>ClusterSubnet</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### Endpoint
 
-Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
+Returns the <code>Endpoint</code> value.
 
 #### Ipv4Address
 
-Returns the &lt;code&gt;Ipv4Address&lt;/code&gt; value.
+Returns the <code>Ipv4Address</code> value.
 
 #### KubeConfig
 
-Returns the &lt;code&gt;KubeConfig&lt;/code&gt; value.
+Returns the <code>KubeConfig</code> value.
 
 #### ServiceSubnet
 
-Returns the &lt;code&gt;ServiceSubnet&lt;/code&gt; value.
+Returns the <code>ServiceSubnet</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

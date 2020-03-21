@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#lbid" title="LbId">LbId</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#timeoutclient" title="TimeoutClient">TimeoutClient</a>" : <i>String</i>,
-        "<a href="#acl" title="Acl">Acl</a>" : <i>[ &lt;a href=&#34;acl.md&#34;&gt;Acl&lt;/a&gt;, ... ]</i>,
-        "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>,
-        "<a href="#match" title="Match">Match</a>" : <i>[ &lt;a href=&#34;match.md&#34;&gt;Match&lt;/a&gt;, ... ]</i>
+        "<a href="#acl" title="Acl">Acl</a>" : <i>[ <a href="acl.md">Acl</a>, ... ]</i>,
+        "<a href="#action" title="Action">Action</a>" : <i>[ <a href="action.md">Action</a>, ... ]</i>,
+        "<a href="#match" title="Match">Match</a>" : <i>[ <a href="match.md">Match</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,11 +39,11 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#timeoutclient" title="TimeoutClient">TimeoutClient</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>
-      - &lt;a href=&#34;acl.md&#34;&gt;Acl&lt;/a&gt;</i>
+      - <a href="acl.md">Acl</a></i>
     <a href="#action" title="Action">Action</a>: <i>
-      - &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;</i>
+      - <a href="action.md">Action</a></i>
     <a href="#match" title="Match">Match</a>: <i>
-      - &lt;a href=&#34;match.md&#34;&gt;Match&lt;/a&gt;</i>
+      - <a href="match.md">Match</a></i>
 </pre>
 
 ## Properties
@@ -108,7 +108,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;acl.md&#34;&gt;Acl&lt;/a&gt;
+_Type_: List of <a href="acl.md">Acl</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;
+_Type_: List of <a href="action.md">Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;match.md&#34;&gt;Match&lt;/a&gt;
+_Type_: List of <a href="match.md">Match</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

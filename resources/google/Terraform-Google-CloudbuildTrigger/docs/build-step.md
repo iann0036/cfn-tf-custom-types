@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#timeout" title="Timeout">Timeout</a>" : <i>String</i>,
     "<a href="#timing" title="Timing">Timing</a>" : <i>String</i>,
     "<a href="#waitfor" title="WaitFor">WaitFor</a>" : <i>[ String, ... ]</i>,
-    "<a href="#volumes" title="Volumes">Volumes</a>" : <i>[ &lt;a href=&#34;build-step-volumes.md&#34;&gt;Volumes&lt;/a&gt;, ... ]</i>
+    "<a href="#volumes" title="Volumes">Volumes</a>" : <i>[ <a href="build-step-volumes.md">Volumes</a>, ... ]</i>
 }
 </pre>
 
@@ -40,7 +40,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#waitfor" title="WaitFor">WaitFor</a>: <i>
       - String</i>
 <a href="#volumes" title="Volumes">Volumes</a>: <i>
-      - &lt;a href=&#34;build-step-volumes.md&#34;&gt;Volumes&lt;/a&gt;</i>
+      - <a href="build-step-volumes.md">Volumes</a></i>
 </pre>
 
 ## Properties
@@ -118,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Volumes
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;build-step-volumes.md&#34;&gt;Volumes&lt;/a&gt;
+_Type_: List of <a href="build-step-volumes.md">Volumes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

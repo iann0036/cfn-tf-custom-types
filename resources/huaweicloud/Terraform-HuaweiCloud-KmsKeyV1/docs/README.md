@@ -103,25 +103,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationDate
 
-Returns the &lt;code&gt;CreationDate&lt;/code&gt; value.
+Returns the <code>CreationDate</code> value.
 
 #### DefaultKeyFlag
 
-Returns the &lt;code&gt;DefaultKeyFlag&lt;/code&gt; value.
+Returns the <code>DefaultKeyFlag</code> value.
 
 #### DomainId
 
-Returns the &lt;code&gt;DomainId&lt;/code&gt; value.
+Returns the <code>DomainId</code> value.
 
 #### ExpirationTime
 
-Returns the &lt;code&gt;ExpirationTime&lt;/code&gt; value.
+Returns the <code>ExpirationTime</code> value.
 
 #### KeyId
 
-Returns the &lt;code&gt;KeyId&lt;/code&gt; value.
+Returns the <code>KeyId</code> value.
 
 #### ScheduledDeletionDate
 
-Returns the &lt;code&gt;ScheduledDeletionDate&lt;/code&gt; value.
+Returns the <code>ScheduledDeletionDate</code> value.
 

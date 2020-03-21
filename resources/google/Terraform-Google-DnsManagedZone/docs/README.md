@@ -15,15 +15,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#dnsname" title="DnsName">DnsName</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#visibility" title="Visibility">Visibility</a>" : <i>String</i>,
-        "<a href="#dnssecconfig" title="DnssecConfig">DnssecConfig</a>" : <i>[ &lt;a href=&#34;dnssecconfig.md&#34;&gt;DnssecConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#privatevisibilityconfig" title="PrivateVisibilityConfig">PrivateVisibilityConfig</a>" : <i>[ &lt;a href=&#34;privatevisibilityconfig.md&#34;&gt;PrivateVisibilityConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#defaultkeyspecs" title="DefaultKeySpecs">DefaultKeySpecs</a>" : <i>[ &lt;a href=&#34;defaultkeyspecs.md&#34;&gt;DefaultKeySpecs&lt;/a&gt;, ... ]</i>,
-        "<a href="#networks" title="Networks">Networks</a>" : <i>[ &lt;a href=&#34;networks.md&#34;&gt;Networks&lt;/a&gt;, ... ]</i>
+        "<a href="#dnssecconfig" title="DnssecConfig">DnssecConfig</a>" : <i>[ <a href="dnssecconfig.md">DnssecConfig</a>, ... ]</i>,
+        "<a href="#privatevisibilityconfig" title="PrivateVisibilityConfig">PrivateVisibilityConfig</a>" : <i>[ <a href="privatevisibilityconfig.md">PrivateVisibilityConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#defaultkeyspecs" title="DefaultKeySpecs">DefaultKeySpecs</a>" : <i>[ <a href="defaultkeyspecs.md">DefaultKeySpecs</a>, ... ]</i>,
+        "<a href="#networks" title="Networks">Networks</a>" : <i>[ <a href="networks.md">Networks</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,19 +37,19 @@ Properties:
     <a href="#dnsname" title="DnsName">DnsName</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#visibility" title="Visibility">Visibility</a>: <i>String</i>
     <a href="#dnssecconfig" title="DnssecConfig">DnssecConfig</a>: <i>
-      - &lt;a href=&#34;dnssecconfig.md&#34;&gt;DnssecConfig&lt;/a&gt;</i>
+      - <a href="dnssecconfig.md">DnssecConfig</a></i>
     <a href="#privatevisibilityconfig" title="PrivateVisibilityConfig">PrivateVisibilityConfig</a>: <i>
-      - &lt;a href=&#34;privatevisibilityconfig.md&#34;&gt;PrivateVisibilityConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="privatevisibilityconfig.md">PrivateVisibilityConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#defaultkeyspecs" title="DefaultKeySpecs">DefaultKeySpecs</a>: <i>
-      - &lt;a href=&#34;defaultkeyspecs.md&#34;&gt;DefaultKeySpecs&lt;/a&gt;</i>
+      - <a href="defaultkeyspecs.md">DefaultKeySpecs</a></i>
     <a href="#networks" title="Networks">Networks</a>: <i>
-      - &lt;a href=&#34;networks.md&#34;&gt;Networks&lt;/a&gt;</i>
+      - <a href="networks.md">Networks</a></i>
 </pre>
 
 ## Properties
@@ -82,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dnssecconfig.md&#34;&gt;DnssecConfig&lt;/a&gt;
+_Type_: List of <a href="dnssecconfig.md">DnssecConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -122,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;privatevisibilityconfig.md&#34;&gt;PrivateVisibilityConfig&lt;/a&gt;
+_Type_: List of <a href="privatevisibilityconfig.md">PrivateVisibilityConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -130,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;defaultkeyspecs.md&#34;&gt;DefaultKeySpecs&lt;/a&gt;
+_Type_: List of <a href="defaultkeyspecs.md">DefaultKeySpecs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networks.md&#34;&gt;Networks&lt;/a&gt;
+_Type_: List of <a href="networks.md">Networks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,5 +168,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NameServers
 
-Returns the &lt;code&gt;NameServers&lt;/code&gt; value.
+Returns the <code>NameServers</code> value.
 

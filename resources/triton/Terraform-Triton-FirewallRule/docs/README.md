@@ -83,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Global
 
-Returns the &lt;code&gt;Global&lt;/code&gt; value.
+Returns the <code>Global</code> value.
 

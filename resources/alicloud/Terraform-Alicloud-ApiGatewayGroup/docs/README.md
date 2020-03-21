@@ -73,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SubDomain
 
-Returns the &lt;code&gt;SubDomain&lt;/code&gt; value.
+Returns the <code>SubDomain</code> value.
 
 #### VpcDomain
 
-Returns the &lt;code&gt;VpcDomain&lt;/code&gt; value.
+Returns the <code>VpcDomain</code> value.
 

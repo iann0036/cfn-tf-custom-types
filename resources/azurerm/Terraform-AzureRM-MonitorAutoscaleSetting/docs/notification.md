@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#email" title="Email">Email</a>" : <i>[ &lt;a href=&#34;notification-email.md&#34;&gt;Email&lt;/a&gt;, ... ]</i>,
-    "<a href="#webhook" title="Webhook">Webhook</a>" : <i>[ &lt;a href=&#34;notification-webhook.md&#34;&gt;Webhook&lt;/a&gt;, ... ]</i>
+    "<a href="#email" title="Email">Email</a>" : <i>[ <a href="notification-email.md">Email</a>, ... ]</i>,
+    "<a href="#webhook" title="Webhook">Webhook</a>" : <i>[ <a href="notification-webhook.md">Webhook</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#email" title="Email">Email</a>: <i>
-      - &lt;a href=&#34;notification-email.md&#34;&gt;Email&lt;/a&gt;</i>
+      - <a href="notification-email.md">Email</a></i>
 <a href="#webhook" title="Webhook">Webhook</a>: <i>
-      - &lt;a href=&#34;notification-webhook.md&#34;&gt;Webhook&lt;/a&gt;</i>
+      - <a href="notification-webhook.md">Webhook</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Email
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;notification-email.md&#34;&gt;Email&lt;/a&gt;
+_Type_: List of <a href="notification-email.md">Email</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Webhook
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;notification-webhook.md&#34;&gt;Webhook&lt;/a&gt;
+_Type_: List of <a href="notification-webhook.md">Webhook</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

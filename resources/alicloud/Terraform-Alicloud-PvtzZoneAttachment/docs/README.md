@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#userclientip" title="UserClientIp">UserClientIp</a>" : <i>String</i>,
         "<a href="#vpcids" title="VpcIds">VpcIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#vpcs" title="Vpcs">Vpcs</a>" : <i>[ &lt;a href=&#34;vpcs.md&#34;&gt;Vpcs&lt;/a&gt;, ... ]</i>
+        "<a href="#vpcs" title="Vpcs">Vpcs</a>" : <i>[ <a href="vpcs.md">Vpcs</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,7 +34,7 @@ Properties:
       - String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#vpcs" title="Vpcs">Vpcs</a>: <i>
-      - &lt;a href=&#34;vpcs.md&#34;&gt;Vpcs&lt;/a&gt;</i>
+      - <a href="vpcs.md">Vpcs</a></i>
 </pre>
 
 ## Properties
@@ -83,7 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vpcs.md&#34;&gt;Vpcs&lt;/a&gt;
+_Type_: List of <a href="vpcs.md">Vpcs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

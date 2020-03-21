@@ -153,9 +153,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Size
 
-Returns the &lt;code&gt;Size&lt;/code&gt; value.
+Returns the <code>Size</code> value.
 
 #### VersionId
 
-Returns the &lt;code&gt;VersionId&lt;/code&gt; value.
+Returns the <code>VersionId</code> value.
 

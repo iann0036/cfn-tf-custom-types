@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Account
 
-Returns the &lt;code&gt;Account&lt;/code&gt; value.
+Returns the <code>Account</code> value.
 
 #### Secret
 
-Returns the &lt;code&gt;Secret&lt;/code&gt; value.
+Returns the <code>Secret</code> value.
 

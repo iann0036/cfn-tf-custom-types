@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BucketSelfLink
 
-Returns the &lt;code&gt;BucketSelfLink&lt;/code&gt; value.
+Returns the <code>BucketSelfLink</code> value.
 

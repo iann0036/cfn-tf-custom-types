@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#weightedtarget" title="WeightedTarget">WeightedTarget</a>" : <i>[ &lt;a href=&#34;action-weightedtarget.md&#34;&gt;WeightedTarget&lt;/a&gt;, ... ]</i>
+    "<a href="#weightedtarget" title="WeightedTarget">WeightedTarget</a>" : <i>[ <a href="action-weightedtarget.md">WeightedTarget</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#weightedtarget" title="WeightedTarget">WeightedTarget</a>: <i>
-      - &lt;a href=&#34;action-weightedtarget.md&#34;&gt;WeightedTarget&lt;/a&gt;</i>
+      - <a href="action-weightedtarget.md">WeightedTarget</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### WeightedTarget
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;action-weightedtarget.md&#34;&gt;WeightedTarget&lt;/a&gt;
+_Type_: List of <a href="action-weightedtarget.md">WeightedTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#member" title="Member">Member</a>" : <i>[ &lt;a href=&#34;member.md&#34;&gt;Member&lt;/a&gt;, ... ]</i>
+        "<a href="#member" title="Member">Member</a>" : <i>[ <a href="member.md">Member</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,7 +43,7 @@ Properties:
     <a href="#org" title="Org">Org</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#member" title="Member">Member</a>: <i>
-      - &lt;a href=&#34;member.md&#34;&gt;Member&lt;/a&gt;</i>
+      - <a href="member.md">Member</a></i>
 </pre>
 
 ## Properties
@@ -132,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;member.md&#34;&gt;Member&lt;/a&gt;
+_Type_: List of <a href="member.md">Member</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

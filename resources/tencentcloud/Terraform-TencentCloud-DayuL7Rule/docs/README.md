@@ -214,9 +214,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RuleId
 
-Returns the &lt;code&gt;RuleId&lt;/code&gt; value.
+Returns the <code>RuleId</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

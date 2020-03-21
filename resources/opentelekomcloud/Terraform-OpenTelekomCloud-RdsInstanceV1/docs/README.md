@@ -19,15 +19,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>,
         "<a href="#vpc" title="Vpc">Vpc</a>" : <i>String</i>,
-        "<a href="#backupstrategy" title="Backupstrategy">Backupstrategy</a>" : <i>[ &lt;a href=&#34;backupstrategy.md&#34;&gt;Backupstrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#datastore" title="Datastore">Datastore</a>" : <i>[ &lt;a href=&#34;datastore.md&#34;&gt;Datastore&lt;/a&gt;, ... ]</i>,
-        "<a href="#ha" title="Ha">Ha</a>" : <i>[ &lt;a href=&#34;ha.md&#34;&gt;Ha&lt;/a&gt;, ... ]</i>,
-        "<a href="#nics" title="Nics">Nics</a>" : <i>[ &lt;a href=&#34;nics.md&#34;&gt;Nics&lt;/a&gt;, ... ]</i>,
-        "<a href="#securitygroup" title="Securitygroup">Securitygroup</a>" : <i>[ &lt;a href=&#34;securitygroup.md&#34;&gt;Securitygroup&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>
+        "<a href="#backupstrategy" title="Backupstrategy">Backupstrategy</a>" : <i>[ <a href="backupstrategy.md">Backupstrategy</a>, ... ]</i>,
+        "<a href="#datastore" title="Datastore">Datastore</a>" : <i>[ <a href="datastore.md">Datastore</a>, ... ]</i>,
+        "<a href="#ha" title="Ha">Ha</a>" : <i>[ <a href="ha.md">Ha</a>, ... ]</i>,
+        "<a href="#nics" title="Nics">Nics</a>" : <i>[ <a href="nics.md">Nics</a>, ... ]</i>,
+        "<a href="#securitygroup" title="Securitygroup">Securitygroup</a>" : <i>[ <a href="securitygroup.md">Securitygroup</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="volume.md">Volume</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,21 +45,21 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+      - <a href="tag.md">Tag</a></i>
     <a href="#vpc" title="Vpc">Vpc</a>: <i>String</i>
     <a href="#backupstrategy" title="Backupstrategy">Backupstrategy</a>: <i>
-      - &lt;a href=&#34;backupstrategy.md&#34;&gt;Backupstrategy&lt;/a&gt;</i>
+      - <a href="backupstrategy.md">Backupstrategy</a></i>
     <a href="#datastore" title="Datastore">Datastore</a>: <i>
-      - &lt;a href=&#34;datastore.md&#34;&gt;Datastore&lt;/a&gt;</i>
+      - <a href="datastore.md">Datastore</a></i>
     <a href="#ha" title="Ha">Ha</a>: <i>
-      - &lt;a href=&#34;ha.md&#34;&gt;Ha&lt;/a&gt;</i>
+      - <a href="ha.md">Ha</a></i>
     <a href="#nics" title="Nics">Nics</a>: <i>
-      - &lt;a href=&#34;nics.md&#34;&gt;Nics&lt;/a&gt;</i>
+      - <a href="nics.md">Nics</a></i>
     <a href="#securitygroup" title="Securitygroup">Securitygroup</a>: <i>
-      - &lt;a href=&#34;securitygroup.md&#34;&gt;Securitygroup&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="securitygroup.md">Securitygroup</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#volume" title="Volume">Volume</a>: <i>
-      - &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;</i>
+      - <a href="volume.md">Volume</a></i>
 </pre>
 
 ## Properties
@@ -124,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
+_Type_: List of <a href="tag.md">Tag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -140,7 +140,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backupstrategy.md&#34;&gt;Backupstrategy&lt;/a&gt;
+_Type_: List of <a href="backupstrategy.md">Backupstrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datastore.md&#34;&gt;Datastore&lt;/a&gt;
+_Type_: List of <a href="datastore.md">Datastore</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ha.md&#34;&gt;Ha&lt;/a&gt;
+_Type_: List of <a href="ha.md">Ha</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nics.md&#34;&gt;Nics&lt;/a&gt;
+_Type_: List of <a href="nics.md">Nics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -172,7 +172,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;securitygroup.md&#34;&gt;Securitygroup&lt;/a&gt;
+_Type_: List of <a href="securitygroup.md">Securitygroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -180,7 +180,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,7 +188,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;
+_Type_: List of <a href="volume.md">Volume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -210,21 +210,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Hostname
 
-Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
+Returns the <code>Hostname</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 
 #### Updated
 
-Returns the &lt;code&gt;Updated&lt;/code&gt; value.
+Returns the <code>Updated</code> value.
 

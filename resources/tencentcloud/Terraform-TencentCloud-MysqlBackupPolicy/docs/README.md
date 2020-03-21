@@ -93,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BinlogPeriod
 
-Returns the &lt;code&gt;BinlogPeriod&lt;/code&gt; value.
+Returns the <code>BinlogPeriod</code> value.
 

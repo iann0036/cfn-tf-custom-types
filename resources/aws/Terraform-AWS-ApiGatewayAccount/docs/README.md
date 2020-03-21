@@ -63,5 +63,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ThrottleSettings
 
-Returns the &lt;code&gt;ThrottleSettings&lt;/code&gt; value.
+Returns the <code>ThrottleSettings</code> value.
 

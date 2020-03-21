@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#path" title="Path">Path</a>" : <i>String</i>,
-    "<a href="#backend" title="Backend">Backend</a>" : <i>[ &lt;a href=&#34;spec-rule-http-path-backend.md&#34;&gt;Backend&lt;/a&gt;, ... ]</i>
+    "<a href="#backend" title="Backend">Backend</a>" : <i>[ <a href="spec-rule-http-path-backend.md">Backend</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#path" title="Path">Path</a>: <i>String</i>
 <a href="#backend" title="Backend">Backend</a>: <i>
-      - &lt;a href=&#34;spec-rule-http-path-backend.md&#34;&gt;Backend&lt;/a&gt;</i>
+      - <a href="spec-rule-http-path-backend.md">Backend</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Backend
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-rule-http-path-backend.md&#34;&gt;Backend&lt;/a&gt;
+_Type_: List of <a href="spec-rule-http-path-backend.md">Backend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

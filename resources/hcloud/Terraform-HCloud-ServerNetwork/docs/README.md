@@ -94,5 +94,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MacAddress
 
-Returns the &lt;code&gt;MacAddress&lt;/code&gt; value.
+Returns the <code>MacAddress</code> value.
 

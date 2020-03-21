@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#isenabled" title="IsEnabled">IsEnabled</a>" : <i>Boolean</i>,
     "<a href="#maxaddresscount" title="MaxAddressCount">MaxAddressCount</a>" : <i>Double</i>,
     "<a href="#maxaddresscountexpirationinseconds" title="MaxAddressCountExpirationInSeconds">MaxAddressCountExpirationInSeconds</a>" : <i>Double</i>,
-    "<a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>" : <i>[ &lt;a href=&#34;devicefingerprintchallenge-challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;, ... ]</i>
+    "<a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>" : <i>[ <a href="devicefingerprintchallenge-challengesettings.md">ChallengeSettings</a>, ... ]</i>
 }
 </pre>
 
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#maxaddresscount" title="MaxAddressCount">MaxAddressCount</a>: <i>Double</i>
 <a href="#maxaddresscountexpirationinseconds" title="MaxAddressCountExpirationInSeconds">MaxAddressCountExpirationInSeconds</a>: <i>Double</i>
 <a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>: <i>
-      - &lt;a href=&#34;devicefingerprintchallenge-challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;</i>
+      - <a href="devicefingerprintchallenge-challengesettings.md">ChallengeSettings</a></i>
 </pre>
 
 ## Properties
@@ -87,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ChallengeSettings
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;devicefingerprintchallenge-challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;
+_Type_: List of <a href="devicefingerprintchallenge-challengesettings.md">ChallengeSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

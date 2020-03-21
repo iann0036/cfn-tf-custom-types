@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#snapshot" title="Snapshot">Snapshot</a>" : <i>String</i>,
         "<a href="#snapshotsschedule" title="SnapshotsSchedule">SnapshotsSchedule</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -47,7 +47,7 @@ Properties:
     <a href="#snapshot" title="Snapshot">Snapshot</a>: <i>String</i>
     <a href="#snapshotsschedule" title="SnapshotsSchedule">SnapshotsSchedule</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -152,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,21 +174,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AdminPassword
 
-Returns the &lt;code&gt;AdminPassword&lt;/code&gt; value.
+Returns the <code>AdminPassword</code> value.
 
 #### AdminUsername
 
-Returns the &lt;code&gt;AdminUsername&lt;/code&gt; value.
+Returns the <code>AdminUsername</code> value.
 
 #### Locked
 
-Returns the &lt;code&gt;Locked&lt;/code&gt; value.
+Returns the <code>Locked</code> value.
 
 #### SnapshotsScheduleNextAt
 
-Returns the &lt;code&gt;SnapshotsScheduleNextAt&lt;/code&gt; value.
+Returns the <code>SnapshotsScheduleNextAt</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

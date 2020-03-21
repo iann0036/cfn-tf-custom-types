@@ -193,5 +193,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VersionId
 
-Returns the &lt;code&gt;VersionId&lt;/code&gt; value.
+Returns the <code>VersionId</code> value.
 

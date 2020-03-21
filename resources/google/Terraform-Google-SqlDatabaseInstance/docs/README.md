@@ -18,15 +18,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#replicaconfiguration" title="ReplicaConfiguration">ReplicaConfiguration</a>" : <i>[ &lt;a href=&#34;replicaconfiguration.md&#34;&gt;ReplicaConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#settings" title="Settings">Settings</a>" : <i>[ &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#backupconfiguration" title="BackupConfiguration">BackupConfiguration</a>" : <i>[ &lt;a href=&#34;backupconfiguration.md&#34;&gt;BackupConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#databaseflags" title="DatabaseFlags">DatabaseFlags</a>" : <i>[ &lt;a href=&#34;databaseflags.md&#34;&gt;DatabaseFlags&lt;/a&gt;, ... ]</i>,
-        "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ &lt;a href=&#34;ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#locationpreference" title="LocationPreference">LocationPreference</a>" : <i>[ &lt;a href=&#34;locationpreference.md&#34;&gt;LocationPreference&lt;/a&gt;, ... ]</i>,
-        "<a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>" : <i>[ &lt;a href=&#34;maintenancewindow.md&#34;&gt;MaintenanceWindow&lt;/a&gt;, ... ]</i>,
-        "<a href="#authorizednetworks" title="AuthorizedNetworks">AuthorizedNetworks</a>" : <i>[ &lt;a href=&#34;authorizednetworks.md&#34;&gt;AuthorizedNetworks&lt;/a&gt;, ... ]</i>
+        "<a href="#replicaconfiguration" title="ReplicaConfiguration">ReplicaConfiguration</a>" : <i>[ <a href="replicaconfiguration.md">ReplicaConfiguration</a>, ... ]</i>,
+        "<a href="#settings" title="Settings">Settings</a>" : <i>[ <a href="settings.md">Settings</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#backupconfiguration" title="BackupConfiguration">BackupConfiguration</a>" : <i>[ <a href="backupconfiguration.md">BackupConfiguration</a>, ... ]</i>,
+        "<a href="#databaseflags" title="DatabaseFlags">DatabaseFlags</a>" : <i>[ <a href="databaseflags.md">DatabaseFlags</a>, ... ]</i>,
+        "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ <a href="ipconfiguration.md">IpConfiguration</a>, ... ]</i>,
+        "<a href="#locationpreference" title="LocationPreference">LocationPreference</a>" : <i>[ <a href="locationpreference.md">LocationPreference</a>, ... ]</i>,
+        "<a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>" : <i>[ <a href="maintenancewindow.md">MaintenanceWindow</a>, ... ]</i>,
+        "<a href="#authorizednetworks" title="AuthorizedNetworks">AuthorizedNetworks</a>" : <i>[ <a href="authorizednetworks.md">AuthorizedNetworks</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,22 +43,22 @@ Properties:
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#replicaconfiguration" title="ReplicaConfiguration">ReplicaConfiguration</a>: <i>
-      - &lt;a href=&#34;replicaconfiguration.md&#34;&gt;ReplicaConfiguration&lt;/a&gt;</i>
+      - <a href="replicaconfiguration.md">ReplicaConfiguration</a></i>
     <a href="#settings" title="Settings">Settings</a>: <i>
-      - &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="settings.md">Settings</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#backupconfiguration" title="BackupConfiguration">BackupConfiguration</a>: <i>
-      - &lt;a href=&#34;backupconfiguration.md&#34;&gt;BackupConfiguration&lt;/a&gt;</i>
+      - <a href="backupconfiguration.md">BackupConfiguration</a></i>
     <a href="#databaseflags" title="DatabaseFlags">DatabaseFlags</a>: <i>
-      - &lt;a href=&#34;databaseflags.md&#34;&gt;DatabaseFlags&lt;/a&gt;</i>
+      - <a href="databaseflags.md">DatabaseFlags</a></i>
     <a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>: <i>
-      - &lt;a href=&#34;ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;</i>
+      - <a href="ipconfiguration.md">IpConfiguration</a></i>
     <a href="#locationpreference" title="LocationPreference">LocationPreference</a>: <i>
-      - &lt;a href=&#34;locationpreference.md&#34;&gt;LocationPreference&lt;/a&gt;</i>
+      - <a href="locationpreference.md">LocationPreference</a></i>
     <a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>: <i>
-      - &lt;a href=&#34;maintenancewindow.md&#34;&gt;MaintenanceWindow&lt;/a&gt;</i>
+      - <a href="maintenancewindow.md">MaintenanceWindow</a></i>
     <a href="#authorizednetworks" title="AuthorizedNetworks">AuthorizedNetworks</a>: <i>
-      - &lt;a href=&#34;authorizednetworks.md&#34;&gt;AuthorizedNetworks&lt;/a&gt;</i>
+      - <a href="authorizednetworks.md">AuthorizedNetworks</a></i>
 </pre>
 
 ## Properties
@@ -115,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;replicaconfiguration.md&#34;&gt;ReplicaConfiguration&lt;/a&gt;
+_Type_: List of <a href="replicaconfiguration.md">ReplicaConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;
+_Type_: List of <a href="settings.md">Settings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backupconfiguration.md&#34;&gt;BackupConfiguration&lt;/a&gt;
+_Type_: List of <a href="backupconfiguration.md">BackupConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;databaseflags.md&#34;&gt;DatabaseFlags&lt;/a&gt;
+_Type_: List of <a href="databaseflags.md">DatabaseFlags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;
+_Type_: List of <a href="ipconfiguration.md">IpConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;locationpreference.md&#34;&gt;LocationPreference&lt;/a&gt;
+_Type_: List of <a href="locationpreference.md">LocationPreference</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;maintenancewindow.md&#34;&gt;MaintenanceWindow&lt;/a&gt;
+_Type_: List of <a href="maintenancewindow.md">MaintenanceWindow</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;authorizednetworks.md&#34;&gt;AuthorizedNetworks&lt;/a&gt;
+_Type_: List of <a href="authorizednetworks.md">AuthorizedNetworks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -201,33 +201,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConnectionName
 
-Returns the &lt;code&gt;ConnectionName&lt;/code&gt; value.
+Returns the <code>ConnectionName</code> value.
 
 #### FirstIpAddress
 
-Returns the &lt;code&gt;FirstIpAddress&lt;/code&gt; value.
+Returns the <code>FirstIpAddress</code> value.
 
 #### IpAddress
 
-Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
+Returns the <code>IpAddress</code> value.
 
 #### PrivateIpAddress
 
-Returns the &lt;code&gt;PrivateIpAddress&lt;/code&gt; value.
+Returns the <code>PrivateIpAddress</code> value.
 
 #### PublicIpAddress
 
-Returns the &lt;code&gt;PublicIpAddress&lt;/code&gt; value.
+Returns the <code>PublicIpAddress</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 
 #### ServerCaCert
 
-Returns the &lt;code&gt;ServerCaCert&lt;/code&gt; value.
+Returns the <code>ServerCaCert</code> value.
 
 #### ServiceAccountEmailAddress
 
-Returns the &lt;code&gt;ServiceAccountEmailAddress&lt;/code&gt; value.
+Returns the <code>ServiceAccountEmailAddress</code> value.
 

@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#monitor" title="Monitor">Monitor</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#notificationemail" title="NotificationEmail">NotificationEmail</a>" : <i>String</i>,
-        "<a href="#origins" title="Origins">Origins</a>" : <i>[ &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;, ... ]</i>
+        "<a href="#origins" title="Origins">Origins</a>" : <i>[ <a href="origins.md">Origins</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,7 +40,7 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#notificationemail" title="NotificationEmail">NotificationEmail</a>: <i>String</i>
     <a href="#origins" title="Origins">Origins</a>: <i>
-      - &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;</i>
+      - <a href="origins.md">Origins</a></i>
 </pre>
 
 ## Properties
@@ -113,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;origins.md&#34;&gt;Origins&lt;/a&gt;
+_Type_: List of <a href="origins.md">Origins</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,9 +135,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedOn
 
-Returns the &lt;code&gt;CreatedOn&lt;/code&gt; value.
+Returns the <code>CreatedOn</code> value.
 
 #### ModifiedOn
 
-Returns the &lt;code&gt;ModifiedOn&lt;/code&gt; value.
+Returns the <code>ModifiedOn</code> value.
 

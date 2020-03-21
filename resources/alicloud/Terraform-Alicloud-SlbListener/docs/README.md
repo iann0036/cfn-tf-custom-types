@@ -55,7 +55,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#stickysessiontype" title="StickySessionType">StickySessionType</a>" : <i>String</i>,
         "<a href="#tlscipherpolicy" title="TlsCipherPolicy">TlsCipherPolicy</a>" : <i>String</i>,
         "<a href="#unhealthythreshold" title="UnhealthyThreshold">UnhealthyThreshold</a>" : <i>Double</i>,
-        "<a href="#xforwardedfor" title="XForwardedFor">XForwardedFor</a>" : <i>[ &lt;a href=&#34;xforwardedfor.md&#34;&gt;XForwardedFor&lt;/a&gt;, ... ]</i>
+        "<a href="#xforwardedfor" title="XForwardedFor">XForwardedFor</a>" : <i>[ <a href="xforwardedfor.md">XForwardedFor</a>, ... ]</i>
     }
 }
 </pre>
@@ -109,7 +109,7 @@ Properties:
     <a href="#tlscipherpolicy" title="TlsCipherPolicy">TlsCipherPolicy</a>: <i>String</i>
     <a href="#unhealthythreshold" title="UnhealthyThreshold">UnhealthyThreshold</a>: <i>Double</i>
     <a href="#xforwardedfor" title="XForwardedFor">XForwardedFor</a>: <i>
-      - &lt;a href=&#34;xforwardedfor.md&#34;&gt;XForwardedFor&lt;/a&gt;</i>
+      - <a href="xforwardedfor.md">XForwardedFor</a></i>
 </pre>
 
 ## Properties
@@ -462,7 +462,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;xforwardedfor.md&#34;&gt;XForwardedFor&lt;/a&gt;
+_Type_: List of <a href="xforwardedfor.md">XForwardedFor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

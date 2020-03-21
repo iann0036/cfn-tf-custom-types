@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#roleset" title="Roleset">Roleset</a>" : <i>String</i>,
         "<a href="#secrettype" title="SecretType">SecretType</a>" : <i>String</i>,
         "<a href="#tokenscopes" title="TokenScopes">TokenScopes</a>" : <i>[ String, ... ]</i>,
-        "<a href="#binding" title="Binding">Binding</a>" : <i>[ &lt;a href=&#34;binding.md&#34;&gt;Binding&lt;/a&gt;, ... ]</i>
+        "<a href="#binding" title="Binding">Binding</a>" : <i>[ <a href="binding.md">Binding</a>, ... ]</i>
     }
 }
 </pre>
@@ -36,7 +36,7 @@ Properties:
     <a href="#tokenscopes" title="TokenScopes">TokenScopes</a>: <i>
       - String</i>
     <a href="#binding" title="Binding">Binding</a>: <i>
-      - &lt;a href=&#34;binding.md&#34;&gt;Binding&lt;/a&gt;</i>
+      - <a href="binding.md">Binding</a></i>
 </pre>
 
 ## Properties
@@ -93,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;binding.md&#34;&gt;Binding&lt;/a&gt;
+_Type_: List of <a href="binding.md">Binding</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,5 +115,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ServiceAccountEmail
 
-Returns the &lt;code&gt;ServiceAccountEmail&lt;/code&gt; value.
+Returns the <code>ServiceAccountEmail</code> value.
 

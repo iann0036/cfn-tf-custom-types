@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#maxsize" title="MaxSize">MaxSize</a>" : <i>Double</i>,
         "<a href="#minsize" title="MinSize">MinSize</a>" : <i>Double</i>,
         "<a href="#whitelist" title="Whitelist">Whitelist</a>" : <i>[ String, ... ]</i>,
-        "<a href="#backendservices" title="BackendServices">BackendServices</a>" : <i>[ &lt;a href=&#34;backendservices.md&#34;&gt;BackendServices&lt;/a&gt;, ... ]</i>,
-        "<a href="#namedports" title="NamedPorts">NamedPorts</a>" : <i>[ &lt;a href=&#34;namedports.md&#34;&gt;NamedPorts&lt;/a&gt;, ... ]</i>
+        "<a href="#backendservices" title="BackendServices">BackendServices</a>" : <i>[ <a href="backendservices.md">BackendServices</a>, ... ]</i>,
+        "<a href="#namedports" title="NamedPorts">NamedPorts</a>" : <i>[ <a href="namedports.md">NamedPorts</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,9 +39,9 @@ Properties:
     <a href="#whitelist" title="Whitelist">Whitelist</a>: <i>
       - String</i>
     <a href="#backendservices" title="BackendServices">BackendServices</a>: <i>
-      - &lt;a href=&#34;backendservices.md&#34;&gt;BackendServices&lt;/a&gt;</i>
+      - <a href="backendservices.md">BackendServices</a></i>
     <a href="#namedports" title="NamedPorts">NamedPorts</a>: <i>
-      - &lt;a href=&#34;namedports.md&#34;&gt;NamedPorts&lt;/a&gt;</i>
+      - <a href="namedports.md">NamedPorts</a></i>
 </pre>
 
 ## Properties
@@ -106,7 +106,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backendservices.md&#34;&gt;BackendServices&lt;/a&gt;
+_Type_: List of <a href="backendservices.md">BackendServices</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;namedports.md&#34;&gt;NamedPorts&lt;/a&gt;
+_Type_: List of <a href="namedports.md">NamedPorts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,5 +136,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClusterControllerId
 
-Returns the &lt;code&gt;ClusterControllerId&lt;/code&gt; value.
+Returns the <code>ClusterControllerId</code> value.
 

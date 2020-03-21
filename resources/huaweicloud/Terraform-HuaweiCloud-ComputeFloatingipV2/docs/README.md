@@ -73,13 +73,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Address
 
-Returns the &lt;code&gt;Address&lt;/code&gt; value.
+Returns the <code>Address</code> value.
 
 #### FixedIp
 
-Returns the &lt;code&gt;FixedIp&lt;/code&gt; value.
+Returns the <code>FixedIp</code> value.
 
 #### InstanceId
 
-Returns the &lt;code&gt;InstanceId&lt;/code&gt; value.
+Returns the <code>InstanceId</code> value.
 

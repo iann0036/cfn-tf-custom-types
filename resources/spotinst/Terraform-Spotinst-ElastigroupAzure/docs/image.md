@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#custom" title="Custom">Custom</a>" : <i>[ &lt;a href=&#34;image-custom.md&#34;&gt;Custom&lt;/a&gt;, ... ]</i>,
-    "<a href="#marketplace" title="Marketplace">Marketplace</a>" : <i>[ &lt;a href=&#34;image-marketplace.md&#34;&gt;Marketplace&lt;/a&gt;, ... ]</i>
+    "<a href="#custom" title="Custom">Custom</a>" : <i>[ <a href="image-custom.md">Custom</a>, ... ]</i>,
+    "<a href="#marketplace" title="Marketplace">Marketplace</a>" : <i>[ <a href="image-marketplace.md">Marketplace</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#custom" title="Custom">Custom</a>: <i>
-      - &lt;a href=&#34;image-custom.md&#34;&gt;Custom&lt;/a&gt;</i>
+      - <a href="image-custom.md">Custom</a></i>
 <a href="#marketplace" title="Marketplace">Marketplace</a>: <i>
-      - &lt;a href=&#34;image-marketplace.md&#34;&gt;Marketplace&lt;/a&gt;</i>
+      - <a href="image-marketplace.md">Marketplace</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Custom
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;image-custom.md&#34;&gt;Custom&lt;/a&gt;
+_Type_: List of <a href="image-custom.md">Custom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Marketplace
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;image-marketplace.md&#34;&gt;Marketplace&lt;/a&gt;
+_Type_: List of <a href="image-marketplace.md">Marketplace</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

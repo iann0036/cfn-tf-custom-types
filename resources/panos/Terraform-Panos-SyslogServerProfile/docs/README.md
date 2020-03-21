@@ -31,7 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#useridformat" title="UserIdFormat">UserIdFormat</a>" : <i>String</i>,
         "<a href="#vsys" title="Vsys">Vsys</a>" : <i>String</i>,
         "<a href="#wildfireformat" title="WildfireFormat">WildfireFormat</a>" : <i>String</i>,
-        "<a href="#syslogserver" title="SyslogServer">SyslogServer</a>" : <i>[ &lt;a href=&#34;syslogserver.md&#34;&gt;SyslogServer&lt;/a&gt;, ... ]</i>
+        "<a href="#syslogserver" title="SyslogServer">SyslogServer</a>" : <i>[ <a href="syslogserver.md">SyslogServer</a>, ... ]</i>
     }
 }
 </pre>
@@ -61,7 +61,7 @@ Properties:
     <a href="#vsys" title="Vsys">Vsys</a>: <i>String</i>
     <a href="#wildfireformat" title="WildfireFormat">WildfireFormat</a>: <i>String</i>
     <a href="#syslogserver" title="SyslogServer">SyslogServer</a>: <i>
-      - &lt;a href=&#34;syslogserver.md&#34;&gt;SyslogServer&lt;/a&gt;</i>
+      - <a href="syslogserver.md">SyslogServer</a></i>
 </pre>
 
 ## Properties
@@ -222,7 +222,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;syslogserver.md&#34;&gt;SyslogServer&lt;/a&gt;
+_Type_: List of <a href="syslogserver.md">SyslogServer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

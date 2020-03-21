@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
     "<a href="#requesttimeout" title="RequestTimeout">RequestTimeout</a>" : <i>Double</i>,
     "<a href="#trustedrootcertificatenames" title="TrustedRootCertificateNames">TrustedRootCertificateNames</a>" : <i>[ String, ... ]</i>,
-    "<a href="#authenticationcertificate" title="AuthenticationCertificate">AuthenticationCertificate</a>" : <i>[ &lt;a href=&#34;backendhttpsettings-authenticationcertificate.md&#34;&gt;AuthenticationCertificate&lt;/a&gt;, ... ]</i>,
-    "<a href="#connectiondraining" title="ConnectionDraining">ConnectionDraining</a>" : <i>[ &lt;a href=&#34;backendhttpsettings-connectiondraining.md&#34;&gt;ConnectionDraining&lt;/a&gt;, ... ]</i>
+    "<a href="#authenticationcertificate" title="AuthenticationCertificate">AuthenticationCertificate</a>" : <i>[ <a href="backendhttpsettings-authenticationcertificate.md">AuthenticationCertificate</a>, ... ]</i>,
+    "<a href="#connectiondraining" title="ConnectionDraining">ConnectionDraining</a>" : <i>[ <a href="backendhttpsettings-connectiondraining.md">ConnectionDraining</a>, ... ]</i>
 }
 </pre>
 
@@ -40,9 +40,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#trustedrootcertificatenames" title="TrustedRootCertificateNames">TrustedRootCertificateNames</a>: <i>
       - String</i>
 <a href="#authenticationcertificate" title="AuthenticationCertificate">AuthenticationCertificate</a>: <i>
-      - &lt;a href=&#34;backendhttpsettings-authenticationcertificate.md&#34;&gt;AuthenticationCertificate&lt;/a&gt;</i>
+      - <a href="backendhttpsettings-authenticationcertificate.md">AuthenticationCertificate</a></i>
 <a href="#connectiondraining" title="ConnectionDraining">ConnectionDraining</a>: <i>
-      - &lt;a href=&#34;backendhttpsettings-connectiondraining.md&#34;&gt;ConnectionDraining&lt;/a&gt;</i>
+      - <a href="backendhttpsettings-connectiondraining.md">ConnectionDraining</a></i>
 </pre>
 
 ## Properties
@@ -127,14 +127,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AuthenticationCertificate
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;backendhttpsettings-authenticationcertificate.md&#34;&gt;AuthenticationCertificate&lt;/a&gt;
+_Type_: List of <a href="backendhttpsettings-authenticationcertificate.md">AuthenticationCertificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConnectionDraining
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;backendhttpsettings-connectiondraining.md&#34;&gt;ConnectionDraining&lt;/a&gt;
+_Type_: List of <a href="backendhttpsettings-connectiondraining.md">ConnectionDraining</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

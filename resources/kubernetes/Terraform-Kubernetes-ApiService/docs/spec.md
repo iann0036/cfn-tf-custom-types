@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#insecureskiptlsverify" title="InsecureSkipTlsVerify">InsecureSkipTlsVerify</a>" : <i>Boolean</i>,
     "<a href="#version" title="Version">Version</a>" : <i>String</i>,
     "<a href="#versionpriority" title="VersionPriority">VersionPriority</a>" : <i>Double</i>,
-    "<a href="#service" title="Service">Service</a>" : <i>[ &lt;a href=&#34;spec-service.md&#34;&gt;Service&lt;/a&gt;, ... ]</i>
+    "<a href="#service" title="Service">Service</a>" : <i>[ <a href="spec-service.md">Service</a>, ... ]</i>
 }
 </pre>
 
@@ -28,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#version" title="Version">Version</a>: <i>String</i>
 <a href="#versionpriority" title="VersionPriority">VersionPriority</a>: <i>Double</i>
 <a href="#service" title="Service">Service</a>: <i>
-      - &lt;a href=&#34;spec-service.md&#34;&gt;Service&lt;/a&gt;</i>
+      - <a href="spec-service.md">Service</a></i>
 </pre>
 
 ## Properties
@@ -78,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Service
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-service.md&#34;&gt;Service&lt;/a&gt;
+_Type_: List of <a href="spec-service.md">Service</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

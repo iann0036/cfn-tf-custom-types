@@ -14,15 +14,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#disablerollback" title="DisableRollback">DisableRollback</a>" : <i>Boolean</i>,
         "<a href="#environment" title="Environment">Environment</a>" : <i>String</i>,
-        "<a href="#files" title="Files">Files</a>" : <i>[ &lt;a href=&#34;files.md&#34;&gt;Files&lt;/a&gt;, ... ]</i>,
+        "<a href="#files" title="Files">Files</a>" : <i>[ <a href="files.md">Files</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;, ... ]</i>,
+        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ <a href="parameters.md">Parameters</a>, ... ]</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#templatebody" title="TemplateBody">TemplateBody</a>" : <i>String</i>,
         "<a href="#templateurl" title="TemplateUrl">TemplateUrl</a>" : <i>String</i>,
         "<a href="#timeoutmins" title="TimeoutMins">TimeoutMins</a>" : <i>Double</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -35,16 +35,16 @@ Properties:
     <a href="#disablerollback" title="DisableRollback">DisableRollback</a>: <i>Boolean</i>
     <a href="#environment" title="Environment">Environment</a>: <i>String</i>
     <a href="#files" title="Files">Files</a>: <i>
-      - &lt;a href=&#34;files.md&#34;&gt;Files&lt;/a&gt;</i>
+      - <a href="files.md">Files</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#parameters" title="Parameters">Parameters</a>: <i>
-      - &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;</i>
+      - <a href="parameters.md">Parameters</a></i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#templatebody" title="TemplateBody">TemplateBody</a>: <i>String</i>
     <a href="#templateurl" title="TemplateUrl">TemplateUrl</a>: <i>String</i>
     <a href="#timeoutmins" title="TimeoutMins">TimeoutMins</a>: <i>Double</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -69,7 +69,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;files.md&#34;&gt;Files&lt;/a&gt;
+_Type_: List of <a href="files.md">Files</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -93,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;
+_Type_: List of <a href="parameters.md">Parameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,7 +133,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,21 +155,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Capabilities
 
-Returns the &lt;code&gt;Capabilities&lt;/code&gt; value.
+Returns the <code>Capabilities</code> value.
 
 #### NotificationTopics
 
-Returns the &lt;code&gt;NotificationTopics&lt;/code&gt; value.
+Returns the <code>NotificationTopics</code> value.
 
 #### Outputs
 
-Returns the &lt;code&gt;Outputs&lt;/code&gt; value.
+Returns the <code>Outputs</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### StatusReason
 
-Returns the &lt;code&gt;StatusReason&lt;/code&gt; value.
+Returns the <code>StatusReason</code> value.
 

@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AsPath
 
-Returns the &lt;code&gt;AsPath&lt;/code&gt; value.
+Returns the <code>AsPath</code> value.
 

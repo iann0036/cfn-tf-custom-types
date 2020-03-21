@@ -25,7 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#realservertype" title="RealserverType">RealserverType</a>" : <i>String</i>,
         "<a href="#scheduler" title="Scheduler">Scheduler</a>" : <i>String</i>,
-        "<a href="#realservers" title="Realservers">Realservers</a>" : <i>[ &lt;a href=&#34;realservers.md&#34;&gt;Realservers&lt;/a&gt;, ... ]</i>
+        "<a href="#realservers" title="Realservers">Realservers</a>" : <i>[ <a href="realservers.md">Realservers</a>, ... ]</i>
     }
 }
 </pre>
@@ -50,7 +50,7 @@ Properties:
     <a href="#realservertype" title="RealserverType">RealserverType</a>: <i>String</i>
     <a href="#scheduler" title="Scheduler">Scheduler</a>: <i>String</i>
     <a href="#realservers" title="Realservers">Realservers</a>: <i>
-      - &lt;a href=&#34;realservers.md&#34;&gt;Realservers&lt;/a&gt;</i>
+      - <a href="realservers.md">Realservers</a></i>
 </pre>
 
 ## Properties
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;realservers.md&#34;&gt;Realservers&lt;/a&gt;
+_Type_: List of <a href="realservers.md">Realservers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

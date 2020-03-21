@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#dashitem" title="DashItem">DashItem</a>" : <i>[ &lt;a href=&#34;dashitem.md&#34;&gt;DashItem&lt;/a&gt;, ... ]</i>
+        "<a href="#dashitem" title="DashItem">DashItem</a>" : <i>[ <a href="dashitem.md">DashItem</a>, ... ]</i>
     }
 }
 </pre>
@@ -27,7 +27,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#dashitem" title="DashItem">DashItem</a>: <i>
-      - &lt;a href=&#34;dashitem.md&#34;&gt;DashItem&lt;/a&gt;</i>
+      - <a href="dashitem.md">DashItem</a></i>
 </pre>
 
 ## Properties
@@ -52,7 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dashitem.md&#34;&gt;DashItem&lt;/a&gt;
+_Type_: List of <a href="dashitem.md">DashItem</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

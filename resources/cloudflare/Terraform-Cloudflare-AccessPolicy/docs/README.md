@@ -18,9 +18,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#precedence" title="Precedence">Precedence</a>" : <i>Double</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#exclude" title="Exclude">Exclude</a>" : <i>[ &lt;a href=&#34;exclude.md&#34;&gt;Exclude&lt;/a&gt;, ... ]</i>,
-        "<a href="#include" title="Include">Include</a>" : <i>[ &lt;a href=&#34;include.md&#34;&gt;Include&lt;/a&gt;, ... ]</i>,
-        "<a href="#require" title="Require">Require</a>" : <i>[ &lt;a href=&#34;require.md&#34;&gt;Require&lt;/a&gt;, ... ]</i>
+        "<a href="#exclude" title="Exclude">Exclude</a>" : <i>[ <a href="exclude.md">Exclude</a>, ... ]</i>,
+        "<a href="#include" title="Include">Include</a>" : <i>[ <a href="include.md">Include</a>, ... ]</i>,
+        "<a href="#require" title="Require">Require</a>" : <i>[ <a href="require.md">Require</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,11 +37,11 @@ Properties:
     <a href="#precedence" title="Precedence">Precedence</a>: <i>Double</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#exclude" title="Exclude">Exclude</a>: <i>
-      - &lt;a href=&#34;exclude.md&#34;&gt;Exclude&lt;/a&gt;</i>
+      - <a href="exclude.md">Exclude</a></i>
     <a href="#include" title="Include">Include</a>: <i>
-      - &lt;a href=&#34;include.md&#34;&gt;Include&lt;/a&gt;</i>
+      - <a href="include.md">Include</a></i>
     <a href="#require" title="Require">Require</a>: <i>
-      - &lt;a href=&#34;require.md&#34;&gt;Require&lt;/a&gt;</i>
+      - <a href="require.md">Require</a></i>
 </pre>
 
 ## Properties
@@ -98,7 +98,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;exclude.md&#34;&gt;Exclude&lt;/a&gt;
+_Type_: List of <a href="exclude.md">Exclude</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +106,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;include.md&#34;&gt;Include&lt;/a&gt;
+_Type_: List of <a href="include.md">Include</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;require.md&#34;&gt;Require&lt;/a&gt;
+_Type_: List of <a href="require.md">Require</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

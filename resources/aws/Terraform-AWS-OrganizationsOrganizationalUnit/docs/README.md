@@ -73,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accounts
 
-Returns the &lt;code&gt;Accounts&lt;/code&gt; value.
+Returns the <code>Accounts</code> value.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#scalingrulename" title="ScalingRuleName">ScalingRuleName</a>" : <i>String</i>,
         "<a href="#scalingruletype" title="ScalingRuleType">ScalingRuleType</a>" : <i>String</i>,
         "<a href="#targetvalue" title="TargetValue">TargetValue</a>" : <i>Double</i>,
-        "<a href="#stepadjustment" title="StepAdjustment">StepAdjustment</a>" : <i>[ &lt;a href=&#34;stepadjustment.md&#34;&gt;StepAdjustment&lt;/a&gt;, ... ]</i>
+        "<a href="#stepadjustment" title="StepAdjustment">StepAdjustment</a>" : <i>[ <a href="stepadjustment.md">StepAdjustment</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,7 +45,7 @@ Properties:
     <a href="#scalingruletype" title="ScalingRuleType">ScalingRuleType</a>: <i>String</i>
     <a href="#targetvalue" title="TargetValue">TargetValue</a>: <i>Double</i>
     <a href="#stepadjustment" title="StepAdjustment">StepAdjustment</a>: <i>
-      - &lt;a href=&#34;stepadjustment.md&#34;&gt;StepAdjustment&lt;/a&gt;</i>
+      - <a href="stepadjustment.md">StepAdjustment</a></i>
 </pre>
 
 ## Properties
@@ -142,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;stepadjustment.md&#34;&gt;StepAdjustment&lt;/a&gt;
+_Type_: List of <a href="stepadjustment.md">StepAdjustment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,5 +164,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Ari
 
-Returns the &lt;code&gt;Ari&lt;/code&gt; value.
+Returns the <code>Ari</code> value.
 

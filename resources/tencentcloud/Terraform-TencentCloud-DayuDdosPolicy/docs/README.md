@@ -17,10 +17,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcetype" title="ResourceType">ResourceType</a>" : <i>String</i>,
         "<a href="#whiteips" title="WhiteIps">WhiteIps</a>" : <i>[ String, ... ]</i>,
-        "<a href="#dropoptions" title="DropOptions">DropOptions</a>" : <i>[ &lt;a href=&#34;dropoptions.md&#34;&gt;DropOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#packetfilters" title="PacketFilters">PacketFilters</a>" : <i>[ &lt;a href=&#34;packetfilters.md&#34;&gt;PacketFilters&lt;/a&gt;, ... ]</i>,
-        "<a href="#portfilters" title="PortFilters">PortFilters</a>" : <i>[ &lt;a href=&#34;portfilters.md&#34;&gt;PortFilters&lt;/a&gt;, ... ]</i>,
-        "<a href="#watermarkfilters" title="WatermarkFilters">WatermarkFilters</a>" : <i>[ &lt;a href=&#34;watermarkfilters.md&#34;&gt;WatermarkFilters&lt;/a&gt;, ... ]</i>
+        "<a href="#dropoptions" title="DropOptions">DropOptions</a>" : <i>[ <a href="dropoptions.md">DropOptions</a>, ... ]</i>,
+        "<a href="#packetfilters" title="PacketFilters">PacketFilters</a>" : <i>[ <a href="packetfilters.md">PacketFilters</a>, ... ]</i>,
+        "<a href="#portfilters" title="PortFilters">PortFilters</a>" : <i>[ <a href="portfilters.md">PortFilters</a>, ... ]</i>,
+        "<a href="#watermarkfilters" title="WatermarkFilters">WatermarkFilters</a>" : <i>[ <a href="watermarkfilters.md">WatermarkFilters</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,13 +38,13 @@ Properties:
     <a href="#whiteips" title="WhiteIps">WhiteIps</a>: <i>
       - String</i>
     <a href="#dropoptions" title="DropOptions">DropOptions</a>: <i>
-      - &lt;a href=&#34;dropoptions.md&#34;&gt;DropOptions&lt;/a&gt;</i>
+      - <a href="dropoptions.md">DropOptions</a></i>
     <a href="#packetfilters" title="PacketFilters">PacketFilters</a>: <i>
-      - &lt;a href=&#34;packetfilters.md&#34;&gt;PacketFilters&lt;/a&gt;</i>
+      - <a href="packetfilters.md">PacketFilters</a></i>
     <a href="#portfilters" title="PortFilters">PortFilters</a>: <i>
-      - &lt;a href=&#34;portfilters.md&#34;&gt;PortFilters&lt;/a&gt;</i>
+      - <a href="portfilters.md">PortFilters</a></i>
     <a href="#watermarkfilters" title="WatermarkFilters">WatermarkFilters</a>: <i>
-      - &lt;a href=&#34;watermarkfilters.md&#34;&gt;WatermarkFilters&lt;/a&gt;</i>
+      - <a href="watermarkfilters.md">WatermarkFilters</a></i>
 </pre>
 
 ## Properties
@@ -93,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dropoptions.md&#34;&gt;DropOptions&lt;/a&gt;
+_Type_: List of <a href="dropoptions.md">DropOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -101,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;packetfilters.md&#34;&gt;PacketFilters&lt;/a&gt;
+_Type_: List of <a href="packetfilters.md">PacketFilters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -109,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;portfilters.md&#34;&gt;PortFilters&lt;/a&gt;
+_Type_: List of <a href="portfilters.md">PortFilters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;watermarkfilters.md&#34;&gt;WatermarkFilters&lt;/a&gt;
+_Type_: List of <a href="watermarkfilters.md">WatermarkFilters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,17 +139,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### PolicyId
 
-Returns the &lt;code&gt;PolicyId&lt;/code&gt; value.
+Returns the <code>PolicyId</code> value.
 
 #### SceneId
 
-Returns the &lt;code&gt;SceneId&lt;/code&gt; value.
+Returns the <code>SceneId</code> value.
 
 #### WatermarkKey
 
-Returns the &lt;code&gt;WatermarkKey&lt;/code&gt; value.
+Returns the <code>WatermarkKey</code> value.
 

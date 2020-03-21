@@ -22,8 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#regionalcertificatearn" title="RegionalCertificateArn">RegionalCertificateArn</a>" : <i>String</i>,
         "<a href="#regionalcertificatename" title="RegionalCertificateName">RegionalCertificateName</a>" : <i>String</i>,
         "<a href="#securitypolicy" title="SecurityPolicy">SecurityPolicy</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ <a href="endpointconfiguration.md">EndpointConfiguration</a>, ... ]</i>
     }
 }
 </pre>
@@ -44,9 +44,9 @@ Properties:
     <a href="#regionalcertificatename" title="RegionalCertificateName">RegionalCertificateName</a>: <i>String</i>
     <a href="#securitypolicy" title="SecurityPolicy">SecurityPolicy</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>: <i>
-      - &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;</i>
+      - <a href="endpointconfiguration.md">EndpointConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -135,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;
+_Type_: List of <a href="endpointconfiguration.md">EndpointConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,25 +165,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CertificateUploadDate
 
-Returns the &lt;code&gt;CertificateUploadDate&lt;/code&gt; value.
+Returns the <code>CertificateUploadDate</code> value.
 
 #### CloudfrontDomainName
 
-Returns the &lt;code&gt;CloudfrontDomainName&lt;/code&gt; value.
+Returns the <code>CloudfrontDomainName</code> value.
 
 #### CloudfrontZoneId
 
-Returns the &lt;code&gt;CloudfrontZoneId&lt;/code&gt; value.
+Returns the <code>CloudfrontZoneId</code> value.
 
 #### RegionalDomainName
 
-Returns the &lt;code&gt;RegionalDomainName&lt;/code&gt; value.
+Returns the <code>RegionalDomainName</code> value.
 
 #### RegionalZoneId
 
-Returns the &lt;code&gt;RegionalZoneId&lt;/code&gt; value.
+Returns the <code>RegionalZoneId</code> value.
 

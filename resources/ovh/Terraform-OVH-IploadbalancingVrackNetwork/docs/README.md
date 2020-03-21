@@ -114,5 +114,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VrackNetworkId
 
-Returns the &lt;code&gt;VrackNetworkId&lt;/code&gt; value.
+Returns the <code>VrackNetworkId</code> value.
 

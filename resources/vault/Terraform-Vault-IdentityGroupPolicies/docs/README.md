@@ -84,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### GroupName
 
-Returns the &lt;code&gt;GroupName&lt;/code&gt; value.
+Returns the <code>GroupName</code> value.
 

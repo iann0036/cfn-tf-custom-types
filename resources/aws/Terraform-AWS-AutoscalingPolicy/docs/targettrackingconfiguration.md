@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#disablescalein" title="DisableScaleIn">DisableScaleIn</a>" : <i>Boolean</i>,
     "<a href="#targetvalue" title="TargetValue">TargetValue</a>" : <i>Double</i>,
-    "<a href="#customizedmetricspecification" title="CustomizedMetricSpecification">CustomizedMetricSpecification</a>" : <i>[ &lt;a href=&#34;targettrackingconfiguration-customizedmetricspecification.md&#34;&gt;CustomizedMetricSpecification&lt;/a&gt;, ... ]</i>,
-    "<a href="#predefinedmetricspecification" title="PredefinedMetricSpecification">PredefinedMetricSpecification</a>" : <i>[ &lt;a href=&#34;targettrackingconfiguration-predefinedmetricspecification.md&#34;&gt;PredefinedMetricSpecification&lt;/a&gt;, ... ]</i>
+    "<a href="#customizedmetricspecification" title="CustomizedMetricSpecification">CustomizedMetricSpecification</a>" : <i>[ <a href="targettrackingconfiguration-customizedmetricspecification.md">CustomizedMetricSpecification</a>, ... ]</i>,
+    "<a href="#predefinedmetricspecification" title="PredefinedMetricSpecification">PredefinedMetricSpecification</a>" : <i>[ <a href="targettrackingconfiguration-predefinedmetricspecification.md">PredefinedMetricSpecification</a>, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#disablescalein" title="DisableScaleIn">DisableScaleIn</a>: <i>Boolean</i>
 <a href="#targetvalue" title="TargetValue">TargetValue</a>: <i>Double</i>
 <a href="#customizedmetricspecification" title="CustomizedMetricSpecification">CustomizedMetricSpecification</a>: <i>
-      - &lt;a href=&#34;targettrackingconfiguration-customizedmetricspecification.md&#34;&gt;CustomizedMetricSpecification&lt;/a&gt;</i>
+      - <a href="targettrackingconfiguration-customizedmetricspecification.md">CustomizedMetricSpecification</a></i>
 <a href="#predefinedmetricspecification" title="PredefinedMetricSpecification">PredefinedMetricSpecification</a>: <i>
-      - &lt;a href=&#34;targettrackingconfiguration-predefinedmetricspecification.md&#34;&gt;PredefinedMetricSpecification&lt;/a&gt;</i>
+      - <a href="targettrackingconfiguration-predefinedmetricspecification.md">PredefinedMetricSpecification</a></i>
 </pre>
 
 ## Properties
@@ -45,14 +45,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CustomizedMetricSpecification
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;targettrackingconfiguration-customizedmetricspecification.md&#34;&gt;CustomizedMetricSpecification&lt;/a&gt;
+_Type_: List of <a href="targettrackingconfiguration-customizedmetricspecification.md">CustomizedMetricSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PredefinedMetricSpecification
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;targettrackingconfiguration-predefinedmetricspecification.md&#34;&gt;PredefinedMetricSpecification&lt;/a&gt;
+_Type_: List of <a href="targettrackingconfiguration-predefinedmetricspecification.md">PredefinedMetricSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#source" title="Source">Source</a>" : <i>String</i>,
     "<a href="#target" title="Target">Target</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#bindoptions" title="BindOptions">BindOptions</a>" : <i>[ &lt;a href=&#34;mounts-bindoptions.md&#34;&gt;BindOptions&lt;/a&gt;, ... ]</i>,
-    "<a href="#tmpfsoptions" title="TmpfsOptions">TmpfsOptions</a>" : <i>[ &lt;a href=&#34;mounts-tmpfsoptions.md&#34;&gt;TmpfsOptions&lt;/a&gt;, ... ]</i>,
-    "<a href="#volumeoptions" title="VolumeOptions">VolumeOptions</a>" : <i>[ &lt;a href=&#34;mounts-volumeoptions.md&#34;&gt;VolumeOptions&lt;/a&gt;, ... ]</i>
+    "<a href="#bindoptions" title="BindOptions">BindOptions</a>" : <i>[ <a href="mounts-bindoptions.md">BindOptions</a>, ... ]</i>,
+    "<a href="#tmpfsoptions" title="TmpfsOptions">TmpfsOptions</a>" : <i>[ <a href="mounts-tmpfsoptions.md">TmpfsOptions</a>, ... ]</i>,
+    "<a href="#volumeoptions" title="VolumeOptions">VolumeOptions</a>" : <i>[ <a href="mounts-volumeoptions.md">VolumeOptions</a>, ... ]</i>
 }
 </pre>
 
@@ -26,11 +26,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#target" title="Target">Target</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#bindoptions" title="BindOptions">BindOptions</a>: <i>
-      - &lt;a href=&#34;mounts-bindoptions.md&#34;&gt;BindOptions&lt;/a&gt;</i>
+      - <a href="mounts-bindoptions.md">BindOptions</a></i>
 <a href="#tmpfsoptions" title="TmpfsOptions">TmpfsOptions</a>: <i>
-      - &lt;a href=&#34;mounts-tmpfsoptions.md&#34;&gt;TmpfsOptions&lt;/a&gt;</i>
+      - <a href="mounts-tmpfsoptions.md">TmpfsOptions</a></i>
 <a href="#volumeoptions" title="VolumeOptions">VolumeOptions</a>: <i>
-      - &lt;a href=&#34;mounts-volumeoptions.md&#34;&gt;VolumeOptions&lt;/a&gt;</i>
+      - <a href="mounts-volumeoptions.md">VolumeOptions</a></i>
 </pre>
 
 ## Properties
@@ -66,21 +66,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BindOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;mounts-bindoptions.md&#34;&gt;BindOptions&lt;/a&gt;
+_Type_: List of <a href="mounts-bindoptions.md">BindOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TmpfsOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;mounts-tmpfsoptions.md&#34;&gt;TmpfsOptions&lt;/a&gt;
+_Type_: List of <a href="mounts-tmpfsoptions.md">TmpfsOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;mounts-volumeoptions.md&#34;&gt;VolumeOptions&lt;/a&gt;
+_Type_: List of <a href="mounts-volumeoptions.md">VolumeOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

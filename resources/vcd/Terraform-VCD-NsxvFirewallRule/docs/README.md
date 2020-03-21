@@ -23,9 +23,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ruletag" title="RuleTag">RuleTag</a>" : <i>Double</i>,
         "<a href="#ruletype" title="RuleType">RuleType</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#destination" title="Destination">Destination</a>" : <i>[ &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;, ... ]</i>,
-        "<a href="#service" title="Service">Service</a>" : <i>[ &lt;a href=&#34;service.md&#34;&gt;Service&lt;/a&gt;, ... ]</i>,
-        "<a href="#source" title="Source">Source</a>" : <i>[ &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;, ... ]</i>
+        "<a href="#destination" title="Destination">Destination</a>" : <i>[ <a href="destination.md">Destination</a>, ... ]</i>,
+        "<a href="#service" title="Service">Service</a>" : <i>[ <a href="service.md">Service</a>, ... ]</i>,
+        "<a href="#source" title="Source">Source</a>" : <i>[ <a href="source.md">Source</a>, ... ]</i>
     }
 }
 </pre>
@@ -47,11 +47,11 @@ Properties:
     <a href="#ruletype" title="RuleType">RuleType</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#destination" title="Destination">Destination</a>: <i>
-      - &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;</i>
+      - <a href="destination.md">Destination</a></i>
     <a href="#service" title="Service">Service</a>: <i>
-      - &lt;a href=&#34;service.md&#34;&gt;Service&lt;/a&gt;</i>
+      - <a href="service.md">Service</a></i>
     <a href="#source" title="Source">Source</a>: <i>
-      - &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;</i>
+      - <a href="source.md">Source</a></i>
 </pre>
 
 ## Properties
@@ -148,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;
+_Type_: List of <a href="destination.md">Destination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;service.md&#34;&gt;Service&lt;/a&gt;
+_Type_: List of <a href="service.md">Service</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;
+_Type_: List of <a href="source.md">Source</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

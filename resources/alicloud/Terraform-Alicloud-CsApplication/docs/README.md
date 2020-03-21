@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#bluegreenconfirm" title="BlueGreenConfirm">BlueGreenConfirm</a>" : <i>Boolean</i>,
         "<a href="#clustername" title="ClusterName">ClusterName</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#environment" title="Environment">Environment</a>" : <i>[ &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;, ... ]</i>,
+        "<a href="#environment" title="Environment">Environment</a>" : <i>[ <a href="environment.md">Environment</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#latestimage" title="LatestImage">LatestImage</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -36,7 +36,7 @@ Properties:
     <a href="#clustername" title="ClusterName">ClusterName</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#environment" title="Environment">Environment</a>: <i>
-      - &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;</i>
+      - <a href="environment.md">Environment</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#latestimage" title="LatestImage">LatestImage</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -82,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;
+_Type_: List of <a href="environment.md">Environment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,9 +144,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DefaultDomain
 
-Returns the &lt;code&gt;DefaultDomain&lt;/code&gt; value.
+Returns the <code>DefaultDomain</code> value.
 
 #### Services
 
-Returns the &lt;code&gt;Services&lt;/code&gt; value.
+Returns the <code>Services</code> value.
 

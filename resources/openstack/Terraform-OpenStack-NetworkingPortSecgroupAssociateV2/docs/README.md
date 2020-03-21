@@ -94,5 +94,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AllSecurityGroupIds
 
-Returns the &lt;code&gt;AllSecurityGroupIds&lt;/code&gt; value.
+Returns the <code>AllSecurityGroupIds</code> value.
 

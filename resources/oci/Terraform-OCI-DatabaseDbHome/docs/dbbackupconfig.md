@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#autobackupenabled" title="AutoBackupEnabled">AutoBackupEnabled</a>" : <i>Boolean</i>,
     "<a href="#autobackupwindow" title="AutoBackupWindow">AutoBackupWindow</a>" : <i>String</i>,
     "<a href="#recoverywindowindays" title="RecoveryWindowInDays">RecoveryWindowInDays</a>" : <i>Double</i>,
-    "<a href="#backupdestinationdetails" title="BackupDestinationDetails">BackupDestinationDetails</a>" : <i>[ &lt;a href=&#34;dbbackupconfig-backupdestinationdetails.md&#34;&gt;BackupDestinationDetails&lt;/a&gt;, ... ]</i>
+    "<a href="#backupdestinationdetails" title="BackupDestinationDetails">BackupDestinationDetails</a>" : <i>[ <a href="dbbackupconfig-backupdestinationdetails.md">BackupDestinationDetails</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#autobackupwindow" title="AutoBackupWindow">AutoBackupWindow</a>: <i>String</i>
 <a href="#recoverywindowindays" title="RecoveryWindowInDays">RecoveryWindowInDays</a>: <i>Double</i>
 <a href="#backupdestinationdetails" title="BackupDestinationDetails">BackupDestinationDetails</a>: <i>
-      - &lt;a href=&#34;dbbackupconfig-backupdestinationdetails.md&#34;&gt;BackupDestinationDetails&lt;/a&gt;</i>
+      - <a href="dbbackupconfig-backupdestinationdetails.md">BackupDestinationDetails</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BackupDestinationDetails
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;dbbackupconfig-backupdestinationdetails.md&#34;&gt;BackupDestinationDetails&lt;/a&gt;
+_Type_: List of <a href="dbbackupconfig-backupdestinationdetails.md">BackupDestinationDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

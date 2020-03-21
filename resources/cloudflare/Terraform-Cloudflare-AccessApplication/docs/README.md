@@ -93,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Aud
 
-Returns the &lt;code&gt;Aud&lt;/code&gt; value.
+Returns the <code>Aud</code> value.
 

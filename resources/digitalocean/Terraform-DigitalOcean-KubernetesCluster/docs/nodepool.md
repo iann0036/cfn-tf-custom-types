@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#autoscale" title="AutoScale">AutoScale</a>" : <i>Boolean</i>,
-    "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;nodepool-labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+    "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="nodepool-labels.md">Labels</a>, ... ]</i>,
     "<a href="#maxnodes" title="MaxNodes">MaxNodes</a>" : <i>Double</i>,
     "<a href="#minnodes" title="MinNodes">MinNodes</a>" : <i>Double</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#autoscale" title="AutoScale">AutoScale</a>: <i>Boolean</i>
 <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;nodepool-labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="nodepool-labels.md">Labels</a></i>
 <a href="#maxnodes" title="MaxNodes">MaxNodes</a>: <i>Double</i>
 <a href="#minnodes" title="MinNodes">MinNodes</a>: <i>Double</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -46,7 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Labels
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;nodepool-labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="nodepool-labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

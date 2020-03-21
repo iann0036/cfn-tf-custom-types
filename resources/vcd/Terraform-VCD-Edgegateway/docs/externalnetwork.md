@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#incomingratelimit" title="IncomingRateLimit">IncomingRateLimit</a>" : <i>Double</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#outgoingratelimit" title="OutgoingRateLimit">OutgoingRateLimit</a>" : <i>Double</i>,
-    "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ &lt;a href=&#34;externalnetwork-subnet.md&#34;&gt;Subnet&lt;/a&gt;, ... ]</i>
+    "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ <a href="externalnetwork-subnet.md">Subnet</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#outgoingratelimit" title="OutgoingRateLimit">OutgoingRateLimit</a>: <i>Double</i>
 <a href="#subnet" title="Subnet">Subnet</a>: <i>
-      - &lt;a href=&#34;externalnetwork-subnet.md&#34;&gt;Subnet&lt;/a&gt;</i>
+      - <a href="externalnetwork-subnet.md">Subnet</a></i>
 </pre>
 
 ## Properties
@@ -60,7 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Subnet
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;externalnetwork-subnet.md&#34;&gt;Subnet&lt;/a&gt;
+_Type_: List of <a href="externalnetwork-subnet.md">Subnet</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

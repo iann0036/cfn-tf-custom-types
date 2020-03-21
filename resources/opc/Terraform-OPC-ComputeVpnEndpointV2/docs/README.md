@@ -24,9 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#requireperfectforwardsecrecy" title="RequirePerfectForwardSecrecy">RequirePerfectForwardSecrecy</a>" : <i>Boolean</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#vnicsets" title="VnicSets">VnicSets</a>" : <i>[ String, ... ]</i>,
-        "<a href="#phaseonesettings" title="PhaseOneSettings">PhaseOneSettings</a>" : <i>[ &lt;a href=&#34;phaseonesettings.md&#34;&gt;PhaseOneSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#phasetwosettings" title="PhaseTwoSettings">PhaseTwoSettings</a>" : <i>[ &lt;a href=&#34;phasetwosettings.md&#34;&gt;PhaseTwoSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#phaseonesettings" title="PhaseOneSettings">PhaseOneSettings</a>" : <i>[ <a href="phaseonesettings.md">PhaseOneSettings</a>, ... ]</i>,
+        "<a href="#phasetwosettings" title="PhaseTwoSettings">PhaseTwoSettings</a>" : <i>[ <a href="phasetwosettings.md">PhaseTwoSettings</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -52,10 +52,10 @@ Properties:
     <a href="#vnicsets" title="VnicSets">VnicSets</a>: <i>
       - String</i>
     <a href="#phaseonesettings" title="PhaseOneSettings">PhaseOneSettings</a>: <i>
-      - &lt;a href=&#34;phaseonesettings.md&#34;&gt;PhaseOneSettings&lt;/a&gt;</i>
+      - <a href="phaseonesettings.md">PhaseOneSettings</a></i>
     <a href="#phasetwosettings" title="PhaseTwoSettings">PhaseTwoSettings</a>: <i>
-      - &lt;a href=&#34;phasetwosettings.md&#34;&gt;PhaseTwoSettings&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="phasetwosettings.md">PhaseTwoSettings</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -160,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;phaseonesettings.md&#34;&gt;PhaseOneSettings&lt;/a&gt;
+_Type_: List of <a href="phaseonesettings.md">PhaseOneSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;phasetwosettings.md&#34;&gt;PhaseTwoSettings&lt;/a&gt;
+_Type_: List of <a href="phasetwosettings.md">PhaseTwoSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,17 +198,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LocalGatewayIpAddress
 
-Returns the &lt;code&gt;LocalGatewayIpAddress&lt;/code&gt; value.
+Returns the <code>LocalGatewayIpAddress</code> value.
 
 #### LocalGatewayPrivateIpAddress
 
-Returns the &lt;code&gt;LocalGatewayPrivateIpAddress&lt;/code&gt; value.
+Returns the <code>LocalGatewayPrivateIpAddress</code> value.
 
 #### TunnelStatus
 
-Returns the &lt;code&gt;TunnelStatus&lt;/code&gt; value.
+Returns the <code>TunnelStatus</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

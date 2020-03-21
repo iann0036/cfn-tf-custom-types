@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#samples" title="Samples">Samples</a>" : <i>[ String, ... ]</i>,
     "<a href="#source" title="Source">Source</a>" : <i>String</i>,
-    "<a href="#grok" title="Grok">Grok</a>" : <i>[ &lt;a href=&#34;grokparser-grok.md&#34;&gt;Grok&lt;/a&gt;, ... ]</i>
+    "<a href="#grok" title="Grok">Grok</a>" : <i>[ <a href="grokparser-grok.md">Grok</a>, ... ]</i>
 }
 </pre>
 
@@ -25,7 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#source" title="Source">Source</a>: <i>String</i>
 <a href="#grok" title="Grok">Grok</a>: <i>
-      - &lt;a href=&#34;grokparser-grok.md&#34;&gt;Grok&lt;/a&gt;</i>
+      - <a href="grokparser-grok.md">Grok</a></i>
 </pre>
 
 ## Properties
@@ -61,7 +61,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Grok
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;grokparser-grok.md&#34;&gt;Grok&lt;/a&gt;
+_Type_: List of <a href="grokparser-grok.md">Grok</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

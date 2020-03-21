@@ -63,9 +63,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessKey
 
-Returns the &lt;code&gt;AccessKey&lt;/code&gt; value.
+Returns the <code>AccessKey</code> value.
 
 #### SecretKey
 
-Returns the &lt;code&gt;SecretKey&lt;/code&gt; value.
+Returns the <code>SecretKey</code> value.
 

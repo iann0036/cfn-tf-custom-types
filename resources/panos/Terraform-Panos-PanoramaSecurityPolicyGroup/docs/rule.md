@@ -40,7 +40,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#virus" title="Virus">Virus</a>" : <i>String</i>,
     "<a href="#vulnerability" title="Vulnerability">Vulnerability</a>" : <i>String</i>,
     "<a href="#wildfireanalysis" title="WildfireAnalysis">WildfireAnalysis</a>" : <i>String</i>,
-    "<a href="#target" title="Target">Target</a>" : <i>[ &lt;a href=&#34;rule-target.md&#34;&gt;Target&lt;/a&gt;, ... ]</i>
+    "<a href="#target" title="Target">Target</a>" : <i>[ <a href="rule-target.md">Target</a>, ... ]</i>
 }
 </pre>
 
@@ -90,7 +90,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#vulnerability" title="Vulnerability">Vulnerability</a>: <i>String</i>
 <a href="#wildfireanalysis" title="WildfireAnalysis">WildfireAnalysis</a>: <i>String</i>
 <a href="#target" title="Target">Target</a>: <i>
-      - &lt;a href=&#34;rule-target.md&#34;&gt;Target&lt;/a&gt;</i>
+      - <a href="rule-target.md">Target</a></i>
 </pre>
 
 ## Properties
@@ -322,7 +322,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Target
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-target.md&#34;&gt;Target&lt;/a&gt;
+_Type_: List of <a href="rule-target.md">Target</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

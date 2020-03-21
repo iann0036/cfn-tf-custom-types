@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#status" title="Status">Status</a>" : <i>Double</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
     "<a href="#url" title="Url">Url</a>" : <i>String</i>,
-    "<a href="#headers" title="Headers">Headers</a>" : <i>[ &lt;a href=&#34;specification-routes-backend-headers.md&#34;&gt;Headers&lt;/a&gt;, ... ]</i>
+    "<a href="#headers" title="Headers">Headers</a>" : <i>[ <a href="specification-routes-backend-headers.md">Headers</a>, ... ]</i>
 }
 </pre>
 
@@ -34,7 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#url" title="Url">Url</a>: <i>String</i>
 <a href="#headers" title="Headers">Headers</a>: <i>
-      - &lt;a href=&#34;specification-routes-backend-headers.md&#34;&gt;Headers&lt;/a&gt;</i>
+      - <a href="specification-routes-backend-headers.md">Headers</a></i>
 </pre>
 
 ## Properties
@@ -105,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Headers
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;specification-routes-backend-headers.md&#34;&gt;Headers&lt;/a&gt;
+_Type_: List of <a href="specification-routes-backend-headers.md">Headers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

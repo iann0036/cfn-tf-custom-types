@@ -13,8 +13,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#networksecuritygroupid" title="NetworkSecurityGroupId">NetworkSecurityGroupId</a>" : <i>String</i>,
     "<a href="#primary" title="Primary">Primary</a>" : <i>Boolean</i>,
-    "<a href="#dnssettings" title="DnsSettings">DnsSettings</a>" : <i>[ &lt;a href=&#34;networkprofile-dnssettings.md&#34;&gt;DnsSettings&lt;/a&gt;, ... ]</i>,
-    "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ &lt;a href=&#34;networkprofile-ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;, ... ]</i>
+    "<a href="#dnssettings" title="DnsSettings">DnsSettings</a>" : <i>[ <a href="networkprofile-dnssettings.md">DnsSettings</a>, ... ]</i>,
+    "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ <a href="networkprofile-ipconfiguration.md">IpConfiguration</a>, ... ]</i>
 }
 </pre>
 
@@ -27,9 +27,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#networksecuritygroupid" title="NetworkSecurityGroupId">NetworkSecurityGroupId</a>: <i>String</i>
 <a href="#primary" title="Primary">Primary</a>: <i>Boolean</i>
 <a href="#dnssettings" title="DnsSettings">DnsSettings</a>: <i>
-      - &lt;a href=&#34;networkprofile-dnssettings.md&#34;&gt;DnsSettings&lt;/a&gt;</i>
+      - <a href="networkprofile-dnssettings.md">DnsSettings</a></i>
 <a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>: <i>
-      - &lt;a href=&#34;networkprofile-ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;</i>
+      - <a href="networkprofile-ipconfiguration.md">IpConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -72,14 +72,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DnsSettings
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkprofile-dnssettings.md&#34;&gt;DnsSettings&lt;/a&gt;
+_Type_: List of <a href="networkprofile-dnssettings.md">DnsSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkprofile-ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;
+_Type_: List of <a href="networkprofile-ipconfiguration.md">IpConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

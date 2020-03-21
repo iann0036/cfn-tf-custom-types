@@ -17,12 +17,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#videocodecoptions" title="VideoCodecOptions">VideoCodecOptions</a>" : <i>[ &lt;a href=&#34;videocodecoptions.md&#34;&gt;VideoCodecOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#audio" title="Audio">Audio</a>" : <i>[ &lt;a href=&#34;audio.md&#34;&gt;Audio&lt;/a&gt;, ... ]</i>,
-        "<a href="#audiocodecoptions" title="AudioCodecOptions">AudioCodecOptions</a>" : <i>[ &lt;a href=&#34;audiocodecoptions.md&#34;&gt;AudioCodecOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#thumbnails" title="Thumbnails">Thumbnails</a>" : <i>[ &lt;a href=&#34;thumbnails.md&#34;&gt;Thumbnails&lt;/a&gt;, ... ]</i>,
-        "<a href="#video" title="Video">Video</a>" : <i>[ &lt;a href=&#34;video.md&#34;&gt;Video&lt;/a&gt;, ... ]</i>,
-        "<a href="#videowatermarks" title="VideoWatermarks">VideoWatermarks</a>" : <i>[ &lt;a href=&#34;videowatermarks.md&#34;&gt;VideoWatermarks&lt;/a&gt;, ... ]</i>
+        "<a href="#videocodecoptions" title="VideoCodecOptions">VideoCodecOptions</a>" : <i>[ <a href="videocodecoptions.md">VideoCodecOptions</a>, ... ]</i>,
+        "<a href="#audio" title="Audio">Audio</a>" : <i>[ <a href="audio.md">Audio</a>, ... ]</i>,
+        "<a href="#audiocodecoptions" title="AudioCodecOptions">AudioCodecOptions</a>" : <i>[ <a href="audiocodecoptions.md">AudioCodecOptions</a>, ... ]</i>,
+        "<a href="#thumbnails" title="Thumbnails">Thumbnails</a>" : <i>[ <a href="thumbnails.md">Thumbnails</a>, ... ]</i>,
+        "<a href="#video" title="Video">Video</a>" : <i>[ <a href="video.md">Video</a>, ... ]</i>,
+        "<a href="#videowatermarks" title="VideoWatermarks">VideoWatermarks</a>" : <i>[ <a href="videowatermarks.md">VideoWatermarks</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,17 +38,17 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#videocodecoptions" title="VideoCodecOptions">VideoCodecOptions</a>: <i>
-      - &lt;a href=&#34;videocodecoptions.md&#34;&gt;VideoCodecOptions&lt;/a&gt;</i>
+      - <a href="videocodecoptions.md">VideoCodecOptions</a></i>
     <a href="#audio" title="Audio">Audio</a>: <i>
-      - &lt;a href=&#34;audio.md&#34;&gt;Audio&lt;/a&gt;</i>
+      - <a href="audio.md">Audio</a></i>
     <a href="#audiocodecoptions" title="AudioCodecOptions">AudioCodecOptions</a>: <i>
-      - &lt;a href=&#34;audiocodecoptions.md&#34;&gt;AudioCodecOptions&lt;/a&gt;</i>
+      - <a href="audiocodecoptions.md">AudioCodecOptions</a></i>
     <a href="#thumbnails" title="Thumbnails">Thumbnails</a>: <i>
-      - &lt;a href=&#34;thumbnails.md&#34;&gt;Thumbnails&lt;/a&gt;</i>
+      - <a href="thumbnails.md">Thumbnails</a></i>
     <a href="#video" title="Video">Video</a>: <i>
-      - &lt;a href=&#34;video.md&#34;&gt;Video&lt;/a&gt;</i>
+      - <a href="video.md">Video</a></i>
     <a href="#videowatermarks" title="VideoWatermarks">VideoWatermarks</a>: <i>
-      - &lt;a href=&#34;videowatermarks.md&#34;&gt;VideoWatermarks&lt;/a&gt;</i>
+      - <a href="videowatermarks.md">VideoWatermarks</a></i>
 </pre>
 
 ## Properties
@@ -97,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;videocodecoptions.md&#34;&gt;VideoCodecOptions&lt;/a&gt;
+_Type_: List of <a href="videocodecoptions.md">VideoCodecOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;audio.md&#34;&gt;Audio&lt;/a&gt;
+_Type_: List of <a href="audio.md">Audio</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;audiocodecoptions.md&#34;&gt;AudioCodecOptions&lt;/a&gt;
+_Type_: List of <a href="audiocodecoptions.md">AudioCodecOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -121,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;thumbnails.md&#34;&gt;Thumbnails&lt;/a&gt;
+_Type_: List of <a href="thumbnails.md">Thumbnails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;video.md&#34;&gt;Video&lt;/a&gt;
+_Type_: List of <a href="video.md">Video</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;videowatermarks.md&#34;&gt;VideoWatermarks&lt;/a&gt;
+_Type_: List of <a href="videowatermarks.md">VideoWatermarks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -159,5 +159,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

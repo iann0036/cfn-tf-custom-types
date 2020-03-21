@@ -153,13 +153,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BusinessStatus
 
-Returns the &lt;code&gt;BusinessStatus&lt;/code&gt; value.
+Returns the <code>BusinessStatus</code> value.
 
 #### InternetIp
 
-Returns the &lt;code&gt;InternetIp&lt;/code&gt; value.
+Returns the <code>InternetIp</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

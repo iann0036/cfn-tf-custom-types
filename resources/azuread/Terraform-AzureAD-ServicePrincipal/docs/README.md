@@ -84,9 +84,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DisplayName
 
-Returns the &lt;code&gt;DisplayName&lt;/code&gt; value.
+Returns the <code>DisplayName</code> value.
 
 #### ObjectId
 
-Returns the &lt;code&gt;ObjectId&lt;/code&gt; value.
+Returns the <code>ObjectId</code> value.
 

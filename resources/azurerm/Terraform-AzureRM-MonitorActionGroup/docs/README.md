@@ -17,18 +17,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#shortname" title="ShortName">ShortName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#armrolereceiver" title="ArmRoleReceiver">ArmRoleReceiver</a>" : <i>[ &lt;a href=&#34;armrolereceiver.md&#34;&gt;ArmRoleReceiver&lt;/a&gt;, ... ]</i>,
-        "<a href="#automationrunbookreceiver" title="AutomationRunbookReceiver">AutomationRunbookReceiver</a>" : <i>[ &lt;a href=&#34;automationrunbookreceiver.md&#34;&gt;AutomationRunbookReceiver&lt;/a&gt;, ... ]</i>,
-        "<a href="#azureapppushreceiver" title="AzureAppPushReceiver">AzureAppPushReceiver</a>" : <i>[ &lt;a href=&#34;azureapppushreceiver.md&#34;&gt;AzureAppPushReceiver&lt;/a&gt;, ... ]</i>,
-        "<a href="#azurefunctionreceiver" title="AzureFunctionReceiver">AzureFunctionReceiver</a>" : <i>[ &lt;a href=&#34;azurefunctionreceiver.md&#34;&gt;AzureFunctionReceiver&lt;/a&gt;, ... ]</i>,
-        "<a href="#emailreceiver" title="EmailReceiver">EmailReceiver</a>" : <i>[ &lt;a href=&#34;emailreceiver.md&#34;&gt;EmailReceiver&lt;/a&gt;, ... ]</i>,
-        "<a href="#itsmreceiver" title="ItsmReceiver">ItsmReceiver</a>" : <i>[ &lt;a href=&#34;itsmreceiver.md&#34;&gt;ItsmReceiver&lt;/a&gt;, ... ]</i>,
-        "<a href="#logicappreceiver" title="LogicAppReceiver">LogicAppReceiver</a>" : <i>[ &lt;a href=&#34;logicappreceiver.md&#34;&gt;LogicAppReceiver&lt;/a&gt;, ... ]</i>,
-        "<a href="#smsreceiver" title="SmsReceiver">SmsReceiver</a>" : <i>[ &lt;a href=&#34;smsreceiver.md&#34;&gt;SmsReceiver&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#voicereceiver" title="VoiceReceiver">VoiceReceiver</a>" : <i>[ &lt;a href=&#34;voicereceiver.md&#34;&gt;VoiceReceiver&lt;/a&gt;, ... ]</i>,
-        "<a href="#webhookreceiver" title="WebhookReceiver">WebhookReceiver</a>" : <i>[ &lt;a href=&#34;webhookreceiver.md&#34;&gt;WebhookReceiver&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#armrolereceiver" title="ArmRoleReceiver">ArmRoleReceiver</a>" : <i>[ <a href="armrolereceiver.md">ArmRoleReceiver</a>, ... ]</i>,
+        "<a href="#automationrunbookreceiver" title="AutomationRunbookReceiver">AutomationRunbookReceiver</a>" : <i>[ <a href="automationrunbookreceiver.md">AutomationRunbookReceiver</a>, ... ]</i>,
+        "<a href="#azureapppushreceiver" title="AzureAppPushReceiver">AzureAppPushReceiver</a>" : <i>[ <a href="azureapppushreceiver.md">AzureAppPushReceiver</a>, ... ]</i>,
+        "<a href="#azurefunctionreceiver" title="AzureFunctionReceiver">AzureFunctionReceiver</a>" : <i>[ <a href="azurefunctionreceiver.md">AzureFunctionReceiver</a>, ... ]</i>,
+        "<a href="#emailreceiver" title="EmailReceiver">EmailReceiver</a>" : <i>[ <a href="emailreceiver.md">EmailReceiver</a>, ... ]</i>,
+        "<a href="#itsmreceiver" title="ItsmReceiver">ItsmReceiver</a>" : <i>[ <a href="itsmreceiver.md">ItsmReceiver</a>, ... ]</i>,
+        "<a href="#logicappreceiver" title="LogicAppReceiver">LogicAppReceiver</a>" : <i>[ <a href="logicappreceiver.md">LogicAppReceiver</a>, ... ]</i>,
+        "<a href="#smsreceiver" title="SmsReceiver">SmsReceiver</a>" : <i>[ <a href="smsreceiver.md">SmsReceiver</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#voicereceiver" title="VoiceReceiver">VoiceReceiver</a>" : <i>[ <a href="voicereceiver.md">VoiceReceiver</a>, ... ]</i>,
+        "<a href="#webhookreceiver" title="WebhookReceiver">WebhookReceiver</a>" : <i>[ <a href="webhookreceiver.md">WebhookReceiver</a>, ... ]</i>
     }
 }
 </pre>
@@ -44,28 +44,28 @@ Properties:
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#shortname" title="ShortName">ShortName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#armrolereceiver" title="ArmRoleReceiver">ArmRoleReceiver</a>: <i>
-      - &lt;a href=&#34;armrolereceiver.md&#34;&gt;ArmRoleReceiver&lt;/a&gt;</i>
+      - <a href="armrolereceiver.md">ArmRoleReceiver</a></i>
     <a href="#automationrunbookreceiver" title="AutomationRunbookReceiver">AutomationRunbookReceiver</a>: <i>
-      - &lt;a href=&#34;automationrunbookreceiver.md&#34;&gt;AutomationRunbookReceiver&lt;/a&gt;</i>
+      - <a href="automationrunbookreceiver.md">AutomationRunbookReceiver</a></i>
     <a href="#azureapppushreceiver" title="AzureAppPushReceiver">AzureAppPushReceiver</a>: <i>
-      - &lt;a href=&#34;azureapppushreceiver.md&#34;&gt;AzureAppPushReceiver&lt;/a&gt;</i>
+      - <a href="azureapppushreceiver.md">AzureAppPushReceiver</a></i>
     <a href="#azurefunctionreceiver" title="AzureFunctionReceiver">AzureFunctionReceiver</a>: <i>
-      - &lt;a href=&#34;azurefunctionreceiver.md&#34;&gt;AzureFunctionReceiver&lt;/a&gt;</i>
+      - <a href="azurefunctionreceiver.md">AzureFunctionReceiver</a></i>
     <a href="#emailreceiver" title="EmailReceiver">EmailReceiver</a>: <i>
-      - &lt;a href=&#34;emailreceiver.md&#34;&gt;EmailReceiver&lt;/a&gt;</i>
+      - <a href="emailreceiver.md">EmailReceiver</a></i>
     <a href="#itsmreceiver" title="ItsmReceiver">ItsmReceiver</a>: <i>
-      - &lt;a href=&#34;itsmreceiver.md&#34;&gt;ItsmReceiver&lt;/a&gt;</i>
+      - <a href="itsmreceiver.md">ItsmReceiver</a></i>
     <a href="#logicappreceiver" title="LogicAppReceiver">LogicAppReceiver</a>: <i>
-      - &lt;a href=&#34;logicappreceiver.md&#34;&gt;LogicAppReceiver&lt;/a&gt;</i>
+      - <a href="logicappreceiver.md">LogicAppReceiver</a></i>
     <a href="#smsreceiver" title="SmsReceiver">SmsReceiver</a>: <i>
-      - &lt;a href=&#34;smsreceiver.md&#34;&gt;SmsReceiver&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="smsreceiver.md">SmsReceiver</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#voicereceiver" title="VoiceReceiver">VoiceReceiver</a>: <i>
-      - &lt;a href=&#34;voicereceiver.md&#34;&gt;VoiceReceiver&lt;/a&gt;</i>
+      - <a href="voicereceiver.md">VoiceReceiver</a></i>
     <a href="#webhookreceiver" title="WebhookReceiver">WebhookReceiver</a>: <i>
-      - &lt;a href=&#34;webhookreceiver.md&#34;&gt;WebhookReceiver&lt;/a&gt;</i>
+      - <a href="webhookreceiver.md">WebhookReceiver</a></i>
 </pre>
 
 ## Properties
@@ -114,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -122,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;armrolereceiver.md&#34;&gt;ArmRoleReceiver&lt;/a&gt;
+_Type_: List of <a href="armrolereceiver.md">ArmRoleReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -130,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;automationrunbookreceiver.md&#34;&gt;AutomationRunbookReceiver&lt;/a&gt;
+_Type_: List of <a href="automationrunbookreceiver.md">AutomationRunbookReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;azureapppushreceiver.md&#34;&gt;AzureAppPushReceiver&lt;/a&gt;
+_Type_: List of <a href="azureapppushreceiver.md">AzureAppPushReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;azurefunctionreceiver.md&#34;&gt;AzureFunctionReceiver&lt;/a&gt;
+_Type_: List of <a href="azurefunctionreceiver.md">AzureFunctionReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;emailreceiver.md&#34;&gt;EmailReceiver&lt;/a&gt;
+_Type_: List of <a href="emailreceiver.md">EmailReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -162,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;itsmreceiver.md&#34;&gt;ItsmReceiver&lt;/a&gt;
+_Type_: List of <a href="itsmreceiver.md">ItsmReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logicappreceiver.md&#34;&gt;LogicAppReceiver&lt;/a&gt;
+_Type_: List of <a href="logicappreceiver.md">LogicAppReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,7 +178,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;smsreceiver.md&#34;&gt;SmsReceiver&lt;/a&gt;
+_Type_: List of <a href="smsreceiver.md">SmsReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,7 +186,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -194,7 +194,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;voicereceiver.md&#34;&gt;VoiceReceiver&lt;/a&gt;
+_Type_: List of <a href="voicereceiver.md">VoiceReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -202,7 +202,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;webhookreceiver.md&#34;&gt;WebhookReceiver&lt;/a&gt;
+_Type_: List of <a href="webhookreceiver.md">WebhookReceiver</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

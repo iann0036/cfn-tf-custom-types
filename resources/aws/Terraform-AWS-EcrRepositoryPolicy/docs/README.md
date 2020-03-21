@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RegistryId
 
-Returns the &lt;code&gt;RegistryId&lt;/code&gt; value.
+Returns the <code>RegistryId</code> value.
 

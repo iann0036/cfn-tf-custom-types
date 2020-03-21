@@ -173,5 +173,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Cookie
 
-Returns the &lt;code&gt;Cookie&lt;/code&gt; value.
+Returns the <code>Cookie</code> value.
 

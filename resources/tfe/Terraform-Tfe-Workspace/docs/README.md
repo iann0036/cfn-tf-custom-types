@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#terraformversion" title="TerraformVersion">TerraformVersion</a>" : <i>String</i>,
         "<a href="#triggerprefixes" title="TriggerPrefixes">TriggerPrefixes</a>" : <i>[ String, ... ]</i>,
         "<a href="#workingdirectory" title="WorkingDirectory">WorkingDirectory</a>" : <i>String</i>,
-        "<a href="#vcsrepo" title="VcsRepo">VcsRepo</a>" : <i>[ &lt;a href=&#34;vcsrepo.md&#34;&gt;VcsRepo&lt;/a&gt;, ... ]</i>
+        "<a href="#vcsrepo" title="VcsRepo">VcsRepo</a>" : <i>[ <a href="vcsrepo.md">VcsRepo</a>, ... ]</i>
     }
 }
 </pre>
@@ -46,7 +46,7 @@ Properties:
       - String</i>
     <a href="#workingdirectory" title="WorkingDirectory">WorkingDirectory</a>: <i>String</i>
     <a href="#vcsrepo" title="VcsRepo">VcsRepo</a>: <i>
-      - &lt;a href=&#34;vcsrepo.md&#34;&gt;VcsRepo&lt;/a&gt;</i>
+      - <a href="vcsrepo.md">VcsRepo</a></i>
 </pre>
 
 ## Properties
@@ -143,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vcsrepo.md&#34;&gt;VcsRepo&lt;/a&gt;
+_Type_: List of <a href="vcsrepo.md">VcsRepo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,5 +165,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ExternalId
 
-Returns the &lt;code&gt;ExternalId&lt;/code&gt; value.
+Returns the <code>ExternalId</code> value.
 

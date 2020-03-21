@@ -83,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Key
 
-Returns the &lt;code&gt;Key&lt;/code&gt; value.
+Returns the <code>Key</code> value.
 

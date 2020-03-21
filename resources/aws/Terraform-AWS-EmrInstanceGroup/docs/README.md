@@ -21,7 +21,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#instancecount" title="InstanceCount">InstanceCount</a>" : <i>Double</i>,
         "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#ebsconfig" title="EbsConfig">EbsConfig</a>" : <i>[ &lt;a href=&#34;ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#ebsconfig" title="EbsConfig">EbsConfig</a>" : <i>[ <a href="ebsconfig.md">EbsConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -41,7 +41,7 @@ Properties:
     <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ebsconfig" title="EbsConfig">EbsConfig</a>: <i>
-      - &lt;a href=&#34;ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;</i>
+      - <a href="ebsconfig.md">EbsConfig</a></i>
 </pre>
 
 ## Properties
@@ -122,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;
+_Type_: List of <a href="ebsconfig.md">EbsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,9 +144,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RunningInstanceCount
 
-Returns the &lt;code&gt;RunningInstanceCount&lt;/code&gt; value.
+Returns the <code>RunningInstanceCount</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

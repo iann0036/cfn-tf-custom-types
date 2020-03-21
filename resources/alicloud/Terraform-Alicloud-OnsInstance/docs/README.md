@@ -73,13 +73,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### InstanceStatus
 
-Returns the &lt;code&gt;InstanceStatus&lt;/code&gt; value.
+Returns the <code>InstanceStatus</code> value.
 
 #### InstanceType
 
-Returns the &lt;code&gt;InstanceType&lt;/code&gt; value.
+Returns the <code>InstanceType</code> value.
 
 #### ReleaseTime
 
-Returns the &lt;code&gt;ReleaseTime&lt;/code&gt; value.
+Returns the <code>ReleaseTime</code> value.
 

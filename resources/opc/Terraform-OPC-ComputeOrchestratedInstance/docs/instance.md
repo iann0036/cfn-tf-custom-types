@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#shape" title="Shape">Shape</a>" : <i>String</i>,
     "<a href="#sshkeys" title="SshKeys">SshKeys</a>" : <i>[ String, ... ]</i>,
     "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-    "<a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>" : <i>[ &lt;a href=&#34;instance-networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;, ... ]</i>,
-    "<a href="#storage" title="Storage">Storage</a>" : <i>[ &lt;a href=&#34;instance-storage.md&#34;&gt;Storage&lt;/a&gt;, ... ]</i>
+    "<a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>" : <i>[ <a href="instance-networkinginfo.md">NetworkingInfo</a>, ... ]</i>,
+    "<a href="#storage" title="Storage">Storage</a>" : <i>[ <a href="instance-storage.md">Storage</a>, ... ]</i>
 }
 </pre>
 
@@ -42,9 +42,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
 <a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>: <i>
-      - &lt;a href=&#34;instance-networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;</i>
+      - <a href="instance-networkinginfo.md">NetworkingInfo</a></i>
 <a href="#storage" title="Storage">Storage</a>: <i>
-      - &lt;a href=&#34;instance-storage.md&#34;&gt;Storage&lt;/a&gt;</i>
+      - <a href="instance-storage.md">Storage</a></i>
 </pre>
 
 ## Properties
@@ -129,14 +129,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NetworkingInfo
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instance-networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;
+_Type_: List of <a href="instance-networkinginfo.md">NetworkingInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Storage
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instance-storage.md&#34;&gt;Storage&lt;/a&gt;
+_Type_: List of <a href="instance-storage.md">Storage</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

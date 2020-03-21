@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#httpsport" title="HttpsPort">HttpsPort</a>" : <i>Double</i>,
     "<a href="#label" title="Label">Label</a>" : <i>String</i>,
     "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
-    "<a href="#customheaders" title="CustomHeaders">CustomHeaders</a>" : <i>[ &lt;a href=&#34;origins-customheaders.md&#34;&gt;CustomHeaders&lt;/a&gt;, ... ]</i>
+    "<a href="#customheaders" title="CustomHeaders">CustomHeaders</a>" : <i>[ <a href="origins-customheaders.md">CustomHeaders</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#label" title="Label">Label</a>: <i>String</i>
 <a href="#uri" title="Uri">Uri</a>: <i>String</i>
 <a href="#customheaders" title="CustomHeaders">CustomHeaders</a>: <i>
-      - &lt;a href=&#34;origins-customheaders.md&#34;&gt;CustomHeaders&lt;/a&gt;</i>
+      - <a href="origins-customheaders.md">CustomHeaders</a></i>
 </pre>
 
 ## Properties
@@ -60,7 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CustomHeaders
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;origins-customheaders.md&#34;&gt;CustomHeaders&lt;/a&gt;
+_Type_: List of <a href="origins-customheaders.md">CustomHeaders</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -113,9 +113,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ServiceName
 
-Returns the &lt;code&gt;ServiceName&lt;/code&gt; value.
+Returns the <code>ServiceName</code> value.
 
 #### ServiceType
 
-Returns the &lt;code&gt;ServiceType&lt;/code&gt; value.
+Returns the <code>ServiceType</code> value.
 

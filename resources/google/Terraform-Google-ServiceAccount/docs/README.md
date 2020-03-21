@@ -93,13 +93,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Email
 
-Returns the &lt;code&gt;Email&lt;/code&gt; value.
+Returns the <code>Email</code> value.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### UniqueId
 
-Returns the &lt;code&gt;UniqueId&lt;/code&gt; value.
+Returns the <code>UniqueId</code> value.
 

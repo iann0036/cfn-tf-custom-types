@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#oracletermsofuselink" title="OracleTermsOfUseLink">OracleTermsOfUseLink</a>" : <i>String</i>,
         "<a href="#signature" title="Signature">Signature</a>" : <i>String</i>,
         "<a href="#timeretrieved" title="TimeRetrieved">TimeRetrieved</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -38,7 +38,7 @@ Properties:
     <a href="#oracletermsofuselink" title="OracleTermsOfUseLink">OracleTermsOfUseLink</a>: <i>String</i>
     <a href="#signature" title="Signature">Signature</a>: <i>String</i>
     <a href="#timeretrieved" title="TimeRetrieved">TimeRetrieved</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -111,7 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,21 +133,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DisplayName
 
-Returns the &lt;code&gt;DisplayName&lt;/code&gt; value.
+Returns the <code>DisplayName</code> value.
 
 #### ListingResourceId
 
-Returns the &lt;code&gt;ListingResourceId&lt;/code&gt; value.
+Returns the <code>ListingResourceId</code> value.
 
 #### PublisherName
 
-Returns the &lt;code&gt;PublisherName&lt;/code&gt; value.
+Returns the <code>PublisherName</code> value.
 
 #### Summary
 
-Returns the &lt;code&gt;Summary&lt;/code&gt; value.
+Returns the <code>Summary</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

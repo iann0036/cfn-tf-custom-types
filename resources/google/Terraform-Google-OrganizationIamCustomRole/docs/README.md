@@ -114,5 +114,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Deleted
 
-Returns the &lt;code&gt;Deleted&lt;/code&gt; value.
+Returns the <code>Deleted</code> value.
 

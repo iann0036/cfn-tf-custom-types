@@ -183,13 +183,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ContentLength
 
-Returns the &lt;code&gt;ContentLength&lt;/code&gt; value.
+Returns the <code>ContentLength</code> value.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 
 #### VersionId
 
-Returns the &lt;code&gt;VersionId&lt;/code&gt; value.
+Returns the <code>VersionId</code> value.
 

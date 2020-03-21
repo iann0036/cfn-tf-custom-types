@@ -104,25 +104,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### FailureDetail
 
-Returns the &lt;code&gt;FailureDetail&lt;/code&gt; value.
+Returns the <code>FailureDetail</code> value.
 
 #### FaultLevel
 
-Returns the &lt;code&gt;FaultLevel&lt;/code&gt; value.
+Returns the <code>FaultLevel</code> value.
 
 #### ReplicationStatus
 
-Returns the &lt;code&gt;ReplicationStatus&lt;/code&gt; value.
+Returns the <code>ReplicationStatus</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

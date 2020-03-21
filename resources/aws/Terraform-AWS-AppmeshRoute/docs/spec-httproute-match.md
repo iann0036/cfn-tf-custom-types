@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>,
     "<a href="#regex" title="Regex">Regex</a>" : <i>String</i>,
     "<a href="#suffix" title="Suffix">Suffix</a>" : <i>String</i>,
-    "<a href="#range" title="Range">Range</a>" : <i>[ &lt;a href=&#34;spec-httproute-match-range.md&#34;&gt;Range&lt;/a&gt;, ... ]</i>
+    "<a href="#range" title="Range">Range</a>" : <i>[ <a href="spec-httproute-match-range.md">Range</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#regex" title="Regex">Regex</a>: <i>String</i>
 <a href="#suffix" title="Suffix">Suffix</a>: <i>String</i>
 <a href="#range" title="Range">Range</a>: <i>
-      - &lt;a href=&#34;spec-httproute-match-range.md&#34;&gt;Range&lt;/a&gt;</i>
+      - <a href="spec-httproute-match-range.md">Range</a></i>
 </pre>
 
 ## Properties
@@ -60,7 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Range
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-httproute-match-range.md&#34;&gt;Range&lt;/a&gt;
+_Type_: List of <a href="spec-httproute-match-range.md">Range</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

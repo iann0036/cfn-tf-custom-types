@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#exec" title="Exec">Exec</a>" : <i>[ &lt;a href=&#34;initcontainer-lifecycle-prestop-exec.md&#34;&gt;Exec&lt;/a&gt;, ... ]</i>,
-    "<a href="#httpget" title="HttpGet">HttpGet</a>" : <i>[ &lt;a href=&#34;initcontainer-lifecycle-prestop-httpget.md&#34;&gt;HttpGet&lt;/a&gt;, ... ]</i>,
-    "<a href="#tcpsocket" title="TcpSocket">TcpSocket</a>" : <i>[ &lt;a href=&#34;initcontainer-lifecycle-prestop-tcpsocket.md&#34;&gt;TcpSocket&lt;/a&gt;, ... ]</i>
+    "<a href="#exec" title="Exec">Exec</a>" : <i>[ <a href="initcontainer-lifecycle-prestop-exec.md">Exec</a>, ... ]</i>,
+    "<a href="#httpget" title="HttpGet">HttpGet</a>" : <i>[ <a href="initcontainer-lifecycle-prestop-httpget.md">HttpGet</a>, ... ]</i>,
+    "<a href="#tcpsocket" title="TcpSocket">TcpSocket</a>" : <i>[ <a href="initcontainer-lifecycle-prestop-tcpsocket.md">TcpSocket</a>, ... ]</i>
 }
 </pre>
 
@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#exec" title="Exec">Exec</a>: <i>
-      - &lt;a href=&#34;initcontainer-lifecycle-prestop-exec.md&#34;&gt;Exec&lt;/a&gt;</i>
+      - <a href="initcontainer-lifecycle-prestop-exec.md">Exec</a></i>
 <a href="#httpget" title="HttpGet">HttpGet</a>: <i>
-      - &lt;a href=&#34;initcontainer-lifecycle-prestop-httpget.md&#34;&gt;HttpGet&lt;/a&gt;</i>
+      - <a href="initcontainer-lifecycle-prestop-httpget.md">HttpGet</a></i>
 <a href="#tcpsocket" title="TcpSocket">TcpSocket</a>: <i>
-      - &lt;a href=&#34;initcontainer-lifecycle-prestop-tcpsocket.md&#34;&gt;TcpSocket&lt;/a&gt;</i>
+      - <a href="initcontainer-lifecycle-prestop-tcpsocket.md">TcpSocket</a></i>
 </pre>
 
 ## Properties
@@ -30,21 +30,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Exec
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;initcontainer-lifecycle-prestop-exec.md&#34;&gt;Exec&lt;/a&gt;
+_Type_: List of <a href="initcontainer-lifecycle-prestop-exec.md">Exec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpGet
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;initcontainer-lifecycle-prestop-httpget.md&#34;&gt;HttpGet&lt;/a&gt;
+_Type_: List of <a href="initcontainer-lifecycle-prestop-httpget.md">HttpGet</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TcpSocket
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;initcontainer-lifecycle-prestop-tcpsocket.md&#34;&gt;TcpSocket&lt;/a&gt;
+_Type_: List of <a href="initcontainer-lifecycle-prestop-tcpsocket.md">TcpSocket</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

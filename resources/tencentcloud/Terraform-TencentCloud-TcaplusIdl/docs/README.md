@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### TableInfos
 
-Returns the &lt;code&gt;TableInfos&lt;/code&gt; value.
+Returns the <code>TableInfos</code> value.
 

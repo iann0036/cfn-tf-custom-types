@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#ingestendpoints" title="IngestEndpoints">IngestEndpoints</a>" : <i>[ &lt;a href=&#34;hlsingest-ingestendpoints.md&#34;&gt;IngestEndpoints&lt;/a&gt;, ... ]</i>
+    "<a href="#ingestendpoints" title="IngestEndpoints">IngestEndpoints</a>" : <i>[ <a href="hlsingest-ingestendpoints.md">IngestEndpoints</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#ingestendpoints" title="IngestEndpoints">IngestEndpoints</a>: <i>
-      - &lt;a href=&#34;hlsingest-ingestendpoints.md&#34;&gt;IngestEndpoints&lt;/a&gt;</i>
+      - <a href="hlsingest-ingestendpoints.md">IngestEndpoints</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### IngestEndpoints
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;hlsingest-ingestendpoints.md&#34;&gt;IngestEndpoints&lt;/a&gt;
+_Type_: List of <a href="hlsingest-ingestendpoints.md">IngestEndpoints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

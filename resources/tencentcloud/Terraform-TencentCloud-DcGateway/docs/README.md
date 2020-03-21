@@ -93,13 +93,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CnnRouteType
 
-Returns the &lt;code&gt;CnnRouteType&lt;/code&gt; value.
+Returns the <code>CnnRouteType</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### EnableBgp
 
-Returns the &lt;code&gt;EnableBgp&lt;/code&gt; value.
+Returns the <code>EnableBgp</code> value.
 

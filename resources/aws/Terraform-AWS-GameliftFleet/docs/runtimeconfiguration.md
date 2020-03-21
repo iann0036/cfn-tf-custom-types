@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#gamesessionactivationtimeoutseconds" title="GameSessionActivationTimeoutSeconds">GameSessionActivationTimeoutSeconds</a>" : <i>Double</i>,
     "<a href="#maxconcurrentgamesessionactivations" title="MaxConcurrentGameSessionActivations">MaxConcurrentGameSessionActivations</a>" : <i>Double</i>,
-    "<a href="#serverprocess" title="ServerProcess">ServerProcess</a>" : <i>[ &lt;a href=&#34;runtimeconfiguration-serverprocess.md&#34;&gt;ServerProcess&lt;/a&gt;, ... ]</i>
+    "<a href="#serverprocess" title="ServerProcess">ServerProcess</a>" : <i>[ <a href="runtimeconfiguration-serverprocess.md">ServerProcess</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#gamesessionactivationtimeoutseconds" title="GameSessionActivationTimeoutSeconds">GameSessionActivationTimeoutSeconds</a>: <i>Double</i>
 <a href="#maxconcurrentgamesessionactivations" title="MaxConcurrentGameSessionActivations">MaxConcurrentGameSessionActivations</a>: <i>Double</i>
 <a href="#serverprocess" title="ServerProcess">ServerProcess</a>: <i>
-      - &lt;a href=&#34;runtimeconfiguration-serverprocess.md&#34;&gt;ServerProcess&lt;/a&gt;</i>
+      - <a href="runtimeconfiguration-serverprocess.md">ServerProcess</a></i>
 </pre>
 
 ## Properties
@@ -42,7 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ServerProcess
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;runtimeconfiguration-serverprocess.md&#34;&gt;ServerProcess&lt;/a&gt;
+_Type_: List of <a href="runtimeconfiguration-serverprocess.md">ServerProcess</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

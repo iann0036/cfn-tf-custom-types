@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#splitkeys" title="SplitKeys">SplitKeys</a>" : <i>[ String, ... ]</i>,
-        "<a href="#columnfamily" title="ColumnFamily">ColumnFamily</a>" : <i>[ &lt;a href=&#34;columnfamily.md&#34;&gt;ColumnFamily&lt;/a&gt;, ... ]</i>
+        "<a href="#columnfamily" title="ColumnFamily">ColumnFamily</a>" : <i>[ <a href="columnfamily.md">ColumnFamily</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,7 +34,7 @@ Properties:
     <a href="#splitkeys" title="SplitKeys">SplitKeys</a>: <i>
       - String</i>
     <a href="#columnfamily" title="ColumnFamily">ColumnFamily</a>: <i>
-      - &lt;a href=&#34;columnfamily.md&#34;&gt;ColumnFamily&lt;/a&gt;</i>
+      - <a href="columnfamily.md">ColumnFamily</a></i>
 </pre>
 
 ## Properties
@@ -83,7 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;columnfamily.md&#34;&gt;ColumnFamily&lt;/a&gt;
+_Type_: List of <a href="columnfamily.md">ColumnFamily</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -24,14 +24,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#cpureservation" title="CpuReservation">CpuReservation</a>" : <i>Double</i>,
         "<a href="#cpusharecount" title="CpuShareCount">CpuShareCount</a>" : <i>Double</i>,
         "<a href="#cpusharelevel" title="CpuShareLevel">CpuShareLevel</a>" : <i>String</i>,
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
         "<a href="#datastoreclusterid" title="DatastoreClusterId">DatastoreClusterId</a>" : <i>String</i>,
         "<a href="#datastoreid" title="DatastoreId">DatastoreId</a>" : <i>String</i>,
         "<a href="#efisecurebootenabled" title="EfiSecureBootEnabled">EfiSecureBootEnabled</a>" : <i>Boolean</i>,
         "<a href="#enablediskuuid" title="EnableDiskUuid">EnableDiskUuid</a>" : <i>Boolean</i>,
         "<a href="#enablelogging" title="EnableLogging">EnableLogging</a>" : <i>Boolean</i>,
         "<a href="#eptrvimode" title="EptRviMode">EptRviMode</a>" : <i>String</i>,
-        "<a href="#extraconfig" title="ExtraConfig">ExtraConfig</a>" : <i>[ &lt;a href=&#34;extraconfig.md&#34;&gt;ExtraConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#extraconfig" title="ExtraConfig">ExtraConfig</a>" : <i>[ <a href="extraconfig.md">ExtraConfig</a>, ... ]</i>,
         "<a href="#firmware" title="Firmware">Firmware</a>" : <i>String</i>,
         "<a href="#folder" title="Folder">Folder</a>" : <i>String</i>,
         "<a href="#forcepoweroff" title="ForcePowerOff">ForcePowerOff</a>" : <i>Boolean</i>,
@@ -69,14 +69,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#waitforguestiptimeout" title="WaitForGuestIpTimeout">WaitForGuestIpTimeout</a>" : <i>Double</i>,
         "<a href="#waitforguestnetroutable" title="WaitForGuestNetRoutable">WaitForGuestNetRoutable</a>" : <i>Boolean</i>,
         "<a href="#waitforguestnettimeout" title="WaitForGuestNetTimeout">WaitForGuestNetTimeout</a>" : <i>Double</i>,
-        "<a href="#cdrom" title="Cdrom">Cdrom</a>" : <i>[ &lt;a href=&#34;cdrom.md&#34;&gt;Cdrom&lt;/a&gt;, ... ]</i>,
-        "<a href="#clone" title="Clone">Clone</a>" : <i>[ &lt;a href=&#34;clone.md&#34;&gt;Clone&lt;/a&gt;, ... ]</i>,
-        "<a href="#disk" title="Disk">Disk</a>" : <i>[ &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
-        "<a href="#vapp" title="Vapp">Vapp</a>" : <i>[ &lt;a href=&#34;vapp.md&#34;&gt;Vapp&lt;/a&gt;, ... ]</i>,
-        "<a href="#customize" title="Customize">Customize</a>" : <i>[ &lt;a href=&#34;customize.md&#34;&gt;Customize&lt;/a&gt;, ... ]</i>,
-        "<a href="#linuxoptions" title="LinuxOptions">LinuxOptions</a>" : <i>[ &lt;a href=&#34;linuxoptions.md&#34;&gt;LinuxOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#windowsoptions" title="WindowsOptions">WindowsOptions</a>" : <i>[ &lt;a href=&#34;windowsoptions.md&#34;&gt;WindowsOptions&lt;/a&gt;, ... ]</i>
+        "<a href="#cdrom" title="Cdrom">Cdrom</a>" : <i>[ <a href="cdrom.md">Cdrom</a>, ... ]</i>,
+        "<a href="#clone" title="Clone">Clone</a>" : <i>[ <a href="clone.md">Clone</a>, ... ]</i>,
+        "<a href="#disk" title="Disk">Disk</a>" : <i>[ <a href="disk.md">Disk</a>, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
+        "<a href="#vapp" title="Vapp">Vapp</a>" : <i>[ <a href="vapp.md">Vapp</a>, ... ]</i>,
+        "<a href="#customize" title="Customize">Customize</a>" : <i>[ <a href="customize.md">Customize</a>, ... ]</i>,
+        "<a href="#linuxoptions" title="LinuxOptions">LinuxOptions</a>" : <i>[ <a href="linuxoptions.md">LinuxOptions</a>, ... ]</i>,
+        "<a href="#windowsoptions" title="WindowsOptions">WindowsOptions</a>" : <i>[ <a href="windowsoptions.md">WindowsOptions</a>, ... ]</i>
     }
 }
 </pre>
@@ -99,7 +99,7 @@ Properties:
     <a href="#cpusharecount" title="CpuShareCount">CpuShareCount</a>: <i>Double</i>
     <a href="#cpusharelevel" title="CpuShareLevel">CpuShareLevel</a>: <i>String</i>
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+      - <a href="customattributes.md">CustomAttributes</a></i>
     <a href="#datastoreclusterid" title="DatastoreClusterId">DatastoreClusterId</a>: <i>String</i>
     <a href="#datastoreid" title="DatastoreId">DatastoreId</a>: <i>String</i>
     <a href="#efisecurebootenabled" title="EfiSecureBootEnabled">EfiSecureBootEnabled</a>: <i>Boolean</i>
@@ -107,7 +107,7 @@ Properties:
     <a href="#enablelogging" title="EnableLogging">EnableLogging</a>: <i>Boolean</i>
     <a href="#eptrvimode" title="EptRviMode">EptRviMode</a>: <i>String</i>
     <a href="#extraconfig" title="ExtraConfig">ExtraConfig</a>: <i>
-      - &lt;a href=&#34;extraconfig.md&#34;&gt;ExtraConfig&lt;/a&gt;</i>
+      - <a href="extraconfig.md">ExtraConfig</a></i>
     <a href="#firmware" title="Firmware">Firmware</a>: <i>String</i>
     <a href="#folder" title="Folder">Folder</a>: <i>String</i>
     <a href="#forcepoweroff" title="ForcePowerOff">ForcePowerOff</a>: <i>Boolean</i>
@@ -148,21 +148,21 @@ Properties:
     <a href="#waitforguestnetroutable" title="WaitForGuestNetRoutable">WaitForGuestNetRoutable</a>: <i>Boolean</i>
     <a href="#waitforguestnettimeout" title="WaitForGuestNetTimeout">WaitForGuestNetTimeout</a>: <i>Double</i>
     <a href="#cdrom" title="Cdrom">Cdrom</a>: <i>
-      - &lt;a href=&#34;cdrom.md&#34;&gt;Cdrom&lt;/a&gt;</i>
+      - <a href="cdrom.md">Cdrom</a></i>
     <a href="#clone" title="Clone">Clone</a>: <i>
-      - &lt;a href=&#34;clone.md&#34;&gt;Clone&lt;/a&gt;</i>
+      - <a href="clone.md">Clone</a></i>
     <a href="#disk" title="Disk">Disk</a>: <i>
-      - &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;</i>
+      - <a href="disk.md">Disk</a></i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
+      - <a href="networkinterface.md">NetworkInterface</a></i>
     <a href="#vapp" title="Vapp">Vapp</a>: <i>
-      - &lt;a href=&#34;vapp.md&#34;&gt;Vapp&lt;/a&gt;</i>
+      - <a href="vapp.md">Vapp</a></i>
     <a href="#customize" title="Customize">Customize</a>: <i>
-      - &lt;a href=&#34;customize.md&#34;&gt;Customize&lt;/a&gt;</i>
+      - <a href="customize.md">Customize</a></i>
     <a href="#linuxoptions" title="LinuxOptions">LinuxOptions</a>: <i>
-      - &lt;a href=&#34;linuxoptions.md&#34;&gt;LinuxOptions&lt;/a&gt;</i>
+      - <a href="linuxoptions.md">LinuxOptions</a></i>
     <a href="#windowsoptions" title="WindowsOptions">WindowsOptions</a>: <i>
-      - &lt;a href=&#34;windowsoptions.md&#34;&gt;WindowsOptions&lt;/a&gt;</i>
+      - <a href="windowsoptions.md">WindowsOptions</a></i>
 </pre>
 
 ## Properties
@@ -267,7 +267,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+_Type_: List of <a href="customattributes.md">CustomAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -323,7 +323,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;extraconfig.md&#34;&gt;ExtraConfig&lt;/a&gt;
+_Type_: List of <a href="extraconfig.md">ExtraConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -627,7 +627,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cdrom.md&#34;&gt;Cdrom&lt;/a&gt;
+_Type_: List of <a href="cdrom.md">Cdrom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -635,7 +635,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;clone.md&#34;&gt;Clone&lt;/a&gt;
+_Type_: List of <a href="clone.md">Clone</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -643,7 +643,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;
+_Type_: List of <a href="disk.md">Disk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -651,7 +651,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
+_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -659,7 +659,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vapp.md&#34;&gt;Vapp&lt;/a&gt;
+_Type_: List of <a href="vapp.md">Vapp</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -667,7 +667,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customize.md&#34;&gt;Customize&lt;/a&gt;
+_Type_: List of <a href="customize.md">Customize</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -675,7 +675,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;linuxoptions.md&#34;&gt;LinuxOptions&lt;/a&gt;
+_Type_: List of <a href="linuxoptions.md">LinuxOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -683,7 +683,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;windowsoptions.md&#34;&gt;WindowsOptions&lt;/a&gt;
+_Type_: List of <a href="windowsoptions.md">WindowsOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -705,41 +705,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ChangeVersion
 
-Returns the &lt;code&gt;ChangeVersion&lt;/code&gt; value.
+Returns the <code>ChangeVersion</code> value.
 
 #### DefaultIpAddress
 
-Returns the &lt;code&gt;DefaultIpAddress&lt;/code&gt; value.
+Returns the <code>DefaultIpAddress</code> value.
 
 #### GuestIpAddresses
 
-Returns the &lt;code&gt;GuestIpAddresses&lt;/code&gt; value.
+Returns the <code>GuestIpAddresses</code> value.
 
 #### Imported
 
-Returns the &lt;code&gt;Imported&lt;/code&gt; value.
+Returns the <code>Imported</code> value.
 
 #### Moid
 
-Returns the &lt;code&gt;Moid&lt;/code&gt; value.
+Returns the <code>Moid</code> value.
 
 #### RebootRequired
 
-Returns the &lt;code&gt;RebootRequired&lt;/code&gt; value.
+Returns the <code>RebootRequired</code> value.
 
 #### Uuid
 
-Returns the &lt;code&gt;Uuid&lt;/code&gt; value.
+Returns the <code>Uuid</code> value.
 
 #### VappTransport
 
-Returns the &lt;code&gt;VappTransport&lt;/code&gt; value.
+Returns the <code>VappTransport</code> value.
 
 #### VmwareToolsStatus
 
-Returns the &lt;code&gt;VmwareToolsStatus&lt;/code&gt; value.
+Returns the <code>VmwareToolsStatus</code> value.
 
 #### VmxPath
 
-Returns the &lt;code&gt;VmxPath&lt;/code&gt; value.
+Returns the <code>VmxPath</code> value.
 

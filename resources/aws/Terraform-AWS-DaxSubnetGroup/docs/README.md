@@ -84,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VpcId
 
-Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
+Returns the <code>VpcId</code> value.
 

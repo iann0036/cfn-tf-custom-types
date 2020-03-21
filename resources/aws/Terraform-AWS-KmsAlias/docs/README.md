@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### TargetKeyArn
 
-Returns the &lt;code&gt;TargetKeyArn&lt;/code&gt; value.
+Returns the <code>TargetKeyArn</code> value.
 

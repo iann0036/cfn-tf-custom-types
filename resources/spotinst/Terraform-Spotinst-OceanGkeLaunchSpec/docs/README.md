@@ -15,10 +15,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#oceanid" title="OceanId">OceanId</a>" : <i>String</i>,
         "<a href="#sourceimage" title="SourceImage">SourceImage</a>" : <i>String</i>,
-        "<a href="#autoscaleheadrooms" title="AutoscaleHeadrooms">AutoscaleHeadrooms</a>" : <i>[ &lt;a href=&#34;autoscaleheadrooms.md&#34;&gt;AutoscaleHeadrooms&lt;/a&gt;, ... ]</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#taints" title="Taints">Taints</a>" : <i>[ &lt;a href=&#34;taints.md&#34;&gt;Taints&lt;/a&gt;, ... ]</i>
+        "<a href="#autoscaleheadrooms" title="AutoscaleHeadrooms">AutoscaleHeadrooms</a>" : <i>[ <a href="autoscaleheadrooms.md">AutoscaleHeadrooms</a>, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#taints" title="Taints">Taints</a>" : <i>[ <a href="taints.md">Taints</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,13 +32,13 @@ Properties:
     <a href="#oceanid" title="OceanId">OceanId</a>: <i>String</i>
     <a href="#sourceimage" title="SourceImage">SourceImage</a>: <i>String</i>
     <a href="#autoscaleheadrooms" title="AutoscaleHeadrooms">AutoscaleHeadrooms</a>: <i>
-      - &lt;a href=&#34;autoscaleheadrooms.md&#34;&gt;AutoscaleHeadrooms&lt;/a&gt;</i>
+      - <a href="autoscaleheadrooms.md">AutoscaleHeadrooms</a></i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#taints" title="Taints">Taints</a>: <i>
-      - &lt;a href=&#34;taints.md&#34;&gt;Taints&lt;/a&gt;</i>
+      - <a href="taints.md">Taints</a></i>
 </pre>
 
 ## Properties
@@ -71,7 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscaleheadrooms.md&#34;&gt;AutoscaleHeadrooms&lt;/a&gt;
+_Type_: List of <a href="autoscaleheadrooms.md">AutoscaleHeadrooms</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -79,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -87,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;taints.md&#34;&gt;Taints&lt;/a&gt;
+_Type_: List of <a href="taints.md">Taints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

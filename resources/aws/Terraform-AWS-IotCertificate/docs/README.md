@@ -73,17 +73,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CertificatePem
 
-Returns the &lt;code&gt;CertificatePem&lt;/code&gt; value.
+Returns the <code>CertificatePem</code> value.
 
 #### PrivateKey
 
-Returns the &lt;code&gt;PrivateKey&lt;/code&gt; value.
+Returns the <code>PrivateKey</code> value.
 
 #### PublicKey
 
-Returns the &lt;code&gt;PublicKey&lt;/code&gt; value.
+Returns the <code>PublicKey</code> value.
 

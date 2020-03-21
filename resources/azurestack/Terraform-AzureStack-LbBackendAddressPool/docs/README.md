@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BackendIpConfigurations
 
-Returns the &lt;code&gt;BackendIpConfigurations&lt;/code&gt; value.
+Returns the <code>BackendIpConfigurations</code> value.
 
 #### LoadBalancingRules
 
-Returns the &lt;code&gt;LoadBalancingRules&lt;/code&gt; value.
+Returns the <code>LoadBalancingRules</code> value.
 

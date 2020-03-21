@@ -15,10 +15,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#availablememorymb" title="AvailableMemoryMb">AvailableMemoryMb</a>" : <i>Double</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#entrypoint" title="EntryPoint">EntryPoint</a>" : <i>String</i>,
-        "<a href="#environmentvariables" title="EnvironmentVariables">EnvironmentVariables</a>" : <i>[ &lt;a href=&#34;environmentvariables.md&#34;&gt;EnvironmentVariables&lt;/a&gt;, ... ]</i>,
+        "<a href="#environmentvariables" title="EnvironmentVariables">EnvironmentVariables</a>" : <i>[ <a href="environmentvariables.md">EnvironmentVariables</a>, ... ]</i>,
         "<a href="#httpstriggerurl" title="HttpsTriggerUrl">HttpsTriggerUrl</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#maxinstances" title="MaxInstances">MaxInstances</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
@@ -30,10 +30,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
         "<a href="#triggerhttp" title="TriggerHttp">TriggerHttp</a>" : <i>Boolean</i>,
         "<a href="#vpcconnector" title="VpcConnector">VpcConnector</a>" : <i>String</i>,
-        "<a href="#eventtrigger" title="EventTrigger">EventTrigger</a>" : <i>[ &lt;a href=&#34;eventtrigger.md&#34;&gt;EventTrigger&lt;/a&gt;, ... ]</i>,
-        "<a href="#sourcerepository" title="SourceRepository">SourceRepository</a>" : <i>[ &lt;a href=&#34;sourcerepository.md&#34;&gt;SourceRepository&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#failurepolicy" title="FailurePolicy">FailurePolicy</a>" : <i>[ &lt;a href=&#34;failurepolicy.md&#34;&gt;FailurePolicy&lt;/a&gt;, ... ]</i>
+        "<a href="#eventtrigger" title="EventTrigger">EventTrigger</a>" : <i>[ <a href="eventtrigger.md">EventTrigger</a>, ... ]</i>,
+        "<a href="#sourcerepository" title="SourceRepository">SourceRepository</a>" : <i>[ <a href="sourcerepository.md">SourceRepository</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#failurepolicy" title="FailurePolicy">FailurePolicy</a>" : <i>[ <a href="failurepolicy.md">FailurePolicy</a>, ... ]</i>
     }
 }
 </pre>
@@ -47,11 +47,11 @@ Properties:
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#entrypoint" title="EntryPoint">EntryPoint</a>: <i>String</i>
     <a href="#environmentvariables" title="EnvironmentVariables">EnvironmentVariables</a>: <i>
-      - &lt;a href=&#34;environmentvariables.md&#34;&gt;EnvironmentVariables&lt;/a&gt;</i>
+      - <a href="environmentvariables.md">EnvironmentVariables</a></i>
     <a href="#httpstriggerurl" title="HttpsTriggerUrl">HttpsTriggerUrl</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#maxinstances" title="MaxInstances">MaxInstances</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
@@ -64,12 +64,12 @@ Properties:
     <a href="#triggerhttp" title="TriggerHttp">TriggerHttp</a>: <i>Boolean</i>
     <a href="#vpcconnector" title="VpcConnector">VpcConnector</a>: <i>String</i>
     <a href="#eventtrigger" title="EventTrigger">EventTrigger</a>: <i>
-      - &lt;a href=&#34;eventtrigger.md&#34;&gt;EventTrigger&lt;/a&gt;</i>
+      - <a href="eventtrigger.md">EventTrigger</a></i>
     <a href="#sourcerepository" title="SourceRepository">SourceRepository</a>: <i>
-      - &lt;a href=&#34;sourcerepository.md&#34;&gt;SourceRepository&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="sourcerepository.md">SourceRepository</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#failurepolicy" title="FailurePolicy">FailurePolicy</a>: <i>
-      - &lt;a href=&#34;failurepolicy.md&#34;&gt;FailurePolicy&lt;/a&gt;</i>
+      - <a href="failurepolicy.md">FailurePolicy</a></i>
 </pre>
 
 ## Properties
@@ -102,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environmentvariables.md&#34;&gt;EnvironmentVariables&lt;/a&gt;
+_Type_: List of <a href="environmentvariables.md">EnvironmentVariables</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -222,7 +222,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;eventtrigger.md&#34;&gt;EventTrigger&lt;/a&gt;
+_Type_: List of <a href="eventtrigger.md">EventTrigger</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -230,7 +230,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourcerepository.md&#34;&gt;SourceRepository&lt;/a&gt;
+_Type_: List of <a href="sourcerepository.md">SourceRepository</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -238,7 +238,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -246,7 +246,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;failurepolicy.md&#34;&gt;FailurePolicy&lt;/a&gt;
+_Type_: List of <a href="failurepolicy.md">FailurePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

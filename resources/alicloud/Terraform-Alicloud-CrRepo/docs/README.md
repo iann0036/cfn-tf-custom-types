@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DomainList
 
-Returns the &lt;code&gt;DomainList&lt;/code&gt; value.
+Returns the <code>DomainList</code> value.
 

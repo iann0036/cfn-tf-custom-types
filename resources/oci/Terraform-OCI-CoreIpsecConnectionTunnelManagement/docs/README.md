@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#routing" title="Routing">Routing</a>" : <i>String</i>,
         "<a href="#sharedsecret" title="SharedSecret">SharedSecret</a>" : <i>String</i>,
         "<a href="#tunnelid" title="TunnelId">TunnelId</a>" : <i>String</i>,
-        "<a href="#bgpsessioninfo" title="BgpSessionInfo">BgpSessionInfo</a>" : <i>[ &lt;a href=&#34;bgpsessioninfo.md&#34;&gt;BgpSessionInfo&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#bgpsessioninfo" title="BgpSessionInfo">BgpSessionInfo</a>" : <i>[ <a href="bgpsessioninfo.md">BgpSessionInfo</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -38,8 +38,8 @@ Properties:
     <a href="#sharedsecret" title="SharedSecret">SharedSecret</a>: <i>String</i>
     <a href="#tunnelid" title="TunnelId">TunnelId</a>: <i>String</i>
     <a href="#bgpsessioninfo" title="BgpSessionInfo">BgpSessionInfo</a>: <i>
-      - &lt;a href=&#34;bgpsessioninfo.md&#34;&gt;BgpSessionInfo&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="bgpsessioninfo.md">BgpSessionInfo</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -104,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bgpsessioninfo.md&#34;&gt;BgpSessionInfo&lt;/a&gt;
+_Type_: List of <a href="bgpsessioninfo.md">BgpSessionInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,29 +134,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CompartmentId
 
-Returns the &lt;code&gt;CompartmentId&lt;/code&gt; value.
+Returns the <code>CompartmentId</code> value.
 
 #### CpeIp
 
-Returns the &lt;code&gt;CpeIp&lt;/code&gt; value.
+Returns the <code>CpeIp</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 
 #### TimeStatusUpdated
 
-Returns the &lt;code&gt;TimeStatusUpdated&lt;/code&gt; value.
+Returns the <code>TimeStatusUpdated</code> value.
 
 #### VpnIp
 
-Returns the &lt;code&gt;VpnIp&lt;/code&gt; value.
+Returns the <code>VpnIp</code> value.
 

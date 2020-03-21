@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AttachmentId
 
-Returns the &lt;code&gt;AttachmentId&lt;/code&gt; value.
+Returns the <code>AttachmentId</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

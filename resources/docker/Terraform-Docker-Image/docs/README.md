@@ -94,5 +94,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Latest
 
-Returns the &lt;code&gt;Latest&lt;/code&gt; value.
+Returns the <code>Latest</code> value.
 

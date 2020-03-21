@@ -25,10 +25,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#sourcesecuritygroup" title="SourceSecurityGroup">SourceSecurityGroup</a>" : <i>String</i>,
         "<a href="#subnets" title="Subnets">Subnets</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#accesslogs" title="AccessLogs">AccessLogs</a>" : <i>[ &lt;a href=&#34;accesslogs.md&#34;&gt;AccessLogs&lt;/a&gt;, ... ]</i>,
-        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#listener" title="Listener">Listener</a>" : <i>[ &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#accesslogs" title="AccessLogs">AccessLogs</a>" : <i>[ <a href="accesslogs.md">AccessLogs</a>, ... ]</i>,
+        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ <a href="healthcheck.md">HealthCheck</a>, ... ]</i>,
+        "<a href="#listener" title="Listener">Listener</a>" : <i>[ <a href="listener.md">Listener</a>, ... ]</i>
     }
 }
 </pre>
@@ -56,13 +56,13 @@ Properties:
     <a href="#subnets" title="Subnets">Subnets</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#accesslogs" title="AccessLogs">AccessLogs</a>: <i>
-      - &lt;a href=&#34;accesslogs.md&#34;&gt;AccessLogs&lt;/a&gt;</i>
+      - <a href="accesslogs.md">AccessLogs</a></i>
     <a href="#healthcheck" title="HealthCheck">HealthCheck</a>: <i>
-      - &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;</i>
+      - <a href="healthcheck.md">HealthCheck</a></i>
     <a href="#listener" title="Listener">Listener</a>: <i>
-      - &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;</i>
+      - <a href="listener.md">Listener</a></i>
 </pre>
 
 ## Properties
@@ -175,7 +175,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +183,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accesslogs.md&#34;&gt;AccessLogs&lt;/a&gt;
+_Type_: List of <a href="accesslogs.md">AccessLogs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;
+_Type_: List of <a href="healthcheck.md">HealthCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +199,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;
+_Type_: List of <a href="listener.md">Listener</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,17 +221,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### DnsName
 
-Returns the &lt;code&gt;DnsName&lt;/code&gt; value.
+Returns the <code>DnsName</code> value.
 
 #### SourceSecurityGroupId
 
-Returns the &lt;code&gt;SourceSecurityGroupId&lt;/code&gt; value.
+Returns the <code>SourceSecurityGroupId</code> value.
 
 #### ZoneId
 
-Returns the &lt;code&gt;ZoneId&lt;/code&gt; value.
+Returns the <code>ZoneId</code> value.
 

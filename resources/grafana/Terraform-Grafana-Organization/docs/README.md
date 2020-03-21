@@ -116,5 +116,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OrgId
 
-Returns the &lt;code&gt;OrgId&lt;/code&gt; value.
+Returns the <code>OrgId</code> value.
 

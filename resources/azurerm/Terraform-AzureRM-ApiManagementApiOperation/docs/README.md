@@ -21,14 +21,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#operationid" title="OperationId">OperationId</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#urltemplate" title="UrlTemplate">UrlTemplate</a>" : <i>String</i>,
-        "<a href="#request" title="Request">Request</a>" : <i>[ &lt;a href=&#34;request.md&#34;&gt;Request&lt;/a&gt;, ... ]</i>,
-        "<a href="#response" title="Response">Response</a>" : <i>[ &lt;a href=&#34;response.md&#34;&gt;Response&lt;/a&gt;, ... ]</i>,
-        "<a href="#templateparameter" title="TemplateParameter">TemplateParameter</a>" : <i>[ &lt;a href=&#34;templateparameter.md&#34;&gt;TemplateParameter&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#header" title="Header">Header</a>" : <i>[ &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;, ... ]</i>,
-        "<a href="#queryparameter" title="QueryParameter">QueryParameter</a>" : <i>[ &lt;a href=&#34;queryparameter.md&#34;&gt;QueryParameter&lt;/a&gt;, ... ]</i>,
-        "<a href="#representation" title="Representation">Representation</a>" : <i>[ &lt;a href=&#34;representation.md&#34;&gt;Representation&lt;/a&gt;, ... ]</i>,
-        "<a href="#formparameter" title="FormParameter">FormParameter</a>" : <i>[ &lt;a href=&#34;formparameter.md&#34;&gt;FormParameter&lt;/a&gt;, ... ]</i>
+        "<a href="#request" title="Request">Request</a>" : <i>[ <a href="request.md">Request</a>, ... ]</i>,
+        "<a href="#response" title="Response">Response</a>" : <i>[ <a href="response.md">Response</a>, ... ]</i>,
+        "<a href="#templateparameter" title="TemplateParameter">TemplateParameter</a>" : <i>[ <a href="templateparameter.md">TemplateParameter</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#header" title="Header">Header</a>" : <i>[ <a href="header.md">Header</a>, ... ]</i>,
+        "<a href="#queryparameter" title="QueryParameter">QueryParameter</a>" : <i>[ <a href="queryparameter.md">QueryParameter</a>, ... ]</i>,
+        "<a href="#representation" title="Representation">Representation</a>" : <i>[ <a href="representation.md">Representation</a>, ... ]</i>,
+        "<a href="#formparameter" title="FormParameter">FormParameter</a>" : <i>[ <a href="formparameter.md">FormParameter</a>, ... ]</i>
     }
 }
 </pre>
@@ -48,20 +48,20 @@ Properties:
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#urltemplate" title="UrlTemplate">UrlTemplate</a>: <i>String</i>
     <a href="#request" title="Request">Request</a>: <i>
-      - &lt;a href=&#34;request.md&#34;&gt;Request&lt;/a&gt;</i>
+      - <a href="request.md">Request</a></i>
     <a href="#response" title="Response">Response</a>: <i>
-      - &lt;a href=&#34;response.md&#34;&gt;Response&lt;/a&gt;</i>
+      - <a href="response.md">Response</a></i>
     <a href="#templateparameter" title="TemplateParameter">TemplateParameter</a>: <i>
-      - &lt;a href=&#34;templateparameter.md&#34;&gt;TemplateParameter&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="templateparameter.md">TemplateParameter</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#header" title="Header">Header</a>: <i>
-      - &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;</i>
+      - <a href="header.md">Header</a></i>
     <a href="#queryparameter" title="QueryParameter">QueryParameter</a>: <i>
-      - &lt;a href=&#34;queryparameter.md&#34;&gt;QueryParameter&lt;/a&gt;</i>
+      - <a href="queryparameter.md">QueryParameter</a></i>
     <a href="#representation" title="Representation">Representation</a>: <i>
-      - &lt;a href=&#34;representation.md&#34;&gt;Representation&lt;/a&gt;</i>
+      - <a href="representation.md">Representation</a></i>
     <a href="#formparameter" title="FormParameter">FormParameter</a>: <i>
-      - &lt;a href=&#34;formparameter.md&#34;&gt;FormParameter&lt;/a&gt;</i>
+      - <a href="formparameter.md">FormParameter</a></i>
 </pre>
 
 ## Properties
@@ -142,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;request.md&#34;&gt;Request&lt;/a&gt;
+_Type_: List of <a href="request.md">Request</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -150,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;response.md&#34;&gt;Response&lt;/a&gt;
+_Type_: List of <a href="response.md">Response</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;templateparameter.md&#34;&gt;TemplateParameter&lt;/a&gt;
+_Type_: List of <a href="templateparameter.md">TemplateParameter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;
+_Type_: List of <a href="header.md">Header</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;queryparameter.md&#34;&gt;QueryParameter&lt;/a&gt;
+_Type_: List of <a href="queryparameter.md">QueryParameter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;representation.md&#34;&gt;Representation&lt;/a&gt;
+_Type_: List of <a href="representation.md">Representation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;formparameter.md&#34;&gt;FormParameter&lt;/a&gt;
+_Type_: List of <a href="formparameter.md">FormParameter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

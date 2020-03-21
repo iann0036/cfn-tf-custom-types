@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#jmxexporter" title="JmxExporter">JmxExporter</a>" : <i>[ &lt;a href=&#34;openmonitoring-prometheus-jmxexporter.md&#34;&gt;JmxExporter&lt;/a&gt;, ... ]</i>,
-    "<a href="#nodeexporter" title="NodeExporter">NodeExporter</a>" : <i>[ &lt;a href=&#34;openmonitoring-prometheus-nodeexporter.md&#34;&gt;NodeExporter&lt;/a&gt;, ... ]</i>
+    "<a href="#jmxexporter" title="JmxExporter">JmxExporter</a>" : <i>[ <a href="openmonitoring-prometheus-jmxexporter.md">JmxExporter</a>, ... ]</i>,
+    "<a href="#nodeexporter" title="NodeExporter">NodeExporter</a>" : <i>[ <a href="openmonitoring-prometheus-nodeexporter.md">NodeExporter</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#jmxexporter" title="JmxExporter">JmxExporter</a>: <i>
-      - &lt;a href=&#34;openmonitoring-prometheus-jmxexporter.md&#34;&gt;JmxExporter&lt;/a&gt;</i>
+      - <a href="openmonitoring-prometheus-jmxexporter.md">JmxExporter</a></i>
 <a href="#nodeexporter" title="NodeExporter">NodeExporter</a>: <i>
-      - &lt;a href=&#34;openmonitoring-prometheus-nodeexporter.md&#34;&gt;NodeExporter&lt;/a&gt;</i>
+      - <a href="openmonitoring-prometheus-nodeexporter.md">NodeExporter</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### JmxExporter
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;openmonitoring-prometheus-jmxexporter.md&#34;&gt;JmxExporter&lt;/a&gt;
+_Type_: List of <a href="openmonitoring-prometheus-jmxexporter.md">JmxExporter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeExporter
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;openmonitoring-prometheus-nodeexporter.md&#34;&gt;NodeExporter&lt;/a&gt;
+_Type_: List of <a href="openmonitoring-prometheus-nodeexporter.md">NodeExporter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

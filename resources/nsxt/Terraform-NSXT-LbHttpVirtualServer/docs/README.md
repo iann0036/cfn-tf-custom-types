@@ -27,9 +27,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#port" title="Port">Port</a>" : <i>String</i>,
         "<a href="#ruleids" title="RuleIds">RuleIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#sorrypoolid" title="SorryPoolId">SorryPoolId</a>" : <i>String</i>,
-        "<a href="#clientssl" title="ClientSsl">ClientSsl</a>" : <i>[ &lt;a href=&#34;clientssl.md&#34;&gt;ClientSsl&lt;/a&gt;, ... ]</i>,
-        "<a href="#serverssl" title="ServerSsl">ServerSsl</a>" : <i>[ &lt;a href=&#34;serverssl.md&#34;&gt;ServerSsl&lt;/a&gt;, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>
+        "<a href="#clientssl" title="ClientSsl">ClientSsl</a>" : <i>[ <a href="clientssl.md">ClientSsl</a>, ... ]</i>,
+        "<a href="#serverssl" title="ServerSsl">ServerSsl</a>" : <i>[ <a href="serverssl.md">ServerSsl</a>, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>
     }
 }
 </pre>
@@ -56,11 +56,11 @@ Properties:
       - String</i>
     <a href="#sorrypoolid" title="SorryPoolId">SorryPoolId</a>: <i>String</i>
     <a href="#clientssl" title="ClientSsl">ClientSsl</a>: <i>
-      - &lt;a href=&#34;clientssl.md&#34;&gt;ClientSsl&lt;/a&gt;</i>
+      - <a href="clientssl.md">ClientSsl</a></i>
     <a href="#serverssl" title="ServerSsl">ServerSsl</a>: <i>
-      - &lt;a href=&#34;serverssl.md&#34;&gt;ServerSsl&lt;/a&gt;</i>
+      - <a href="serverssl.md">ServerSsl</a></i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+      - <a href="tag.md">Tag</a></i>
 </pre>
 
 ## Properties
@@ -189,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;clientssl.md&#34;&gt;ClientSsl&lt;/a&gt;
+_Type_: List of <a href="clientssl.md">ClientSsl</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serverssl.md&#34;&gt;ServerSsl&lt;/a&gt;
+_Type_: List of <a href="serverssl.md">ServerSsl</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
+_Type_: List of <a href="tag.md">Tag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,5 +227,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Revision
 
-Returns the &lt;code&gt;Revision&lt;/code&gt; value.
+Returns the <code>Revision</code> value.
 

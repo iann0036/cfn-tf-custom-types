@@ -104,13 +104,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CreateDate
 
-Returns the &lt;code&gt;CreateDate&lt;/code&gt; value.
+Returns the <code>CreateDate</code> value.
 
 #### UniqueId
 
-Returns the &lt;code&gt;UniqueId&lt;/code&gt; value.
+Returns the <code>UniqueId</code> value.
 

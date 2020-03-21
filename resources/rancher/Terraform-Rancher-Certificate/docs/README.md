@@ -113,41 +113,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Algorithm
 
-Returns the &lt;code&gt;Algorithm&lt;/code&gt; value.
+Returns the <code>Algorithm</code> value.
 
 #### CertFingerprint
 
-Returns the &lt;code&gt;CertFingerprint&lt;/code&gt; value.
+Returns the <code>CertFingerprint</code> value.
 
 #### Cn
 
-Returns the &lt;code&gt;Cn&lt;/code&gt; value.
+Returns the <code>Cn</code> value.
 
 #### ExpiresAt
 
-Returns the &lt;code&gt;ExpiresAt&lt;/code&gt; value.
+Returns the <code>ExpiresAt</code> value.
 
 #### IssuedAt
 
-Returns the &lt;code&gt;IssuedAt&lt;/code&gt; value.
+Returns the <code>IssuedAt</code> value.
 
 #### Issuer
 
-Returns the &lt;code&gt;Issuer&lt;/code&gt; value.
+Returns the <code>Issuer</code> value.
 
 #### KeySize
 
-Returns the &lt;code&gt;KeySize&lt;/code&gt; value.
+Returns the <code>KeySize</code> value.
 
 #### SerialNumber
 
-Returns the &lt;code&gt;SerialNumber&lt;/code&gt; value.
+Returns the <code>SerialNumber</code> value.
 
 #### SubjectAlternativeNames
 
-Returns the &lt;code&gt;SubjectAlternativeNames&lt;/code&gt; value.
+Returns the <code>SubjectAlternativeNames</code> value.
 
 #### Version
 
-Returns the &lt;code&gt;Version&lt;/code&gt; value.
+Returns the <code>Version</code> value.
 

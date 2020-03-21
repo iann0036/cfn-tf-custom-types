@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#bucketid" title="BucketId">BucketId</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#initialvariables" title="InitialVariables">InitialVariables</a>" : <i>[ &lt;a href=&#34;initialvariables.md&#34;&gt;InitialVariables&lt;/a&gt;, ... ]</i>,
+        "<a href="#initialvariables" title="InitialVariables">InitialVariables</a>" : <i>[ <a href="initialvariables.md">InitialVariables</a>, ... ]</i>,
         "<a href="#integrations" title="Integrations">Integrations</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#preservecookies" title="PreserveCookies">PreserveCookies</a>" : <i>Boolean</i>,
@@ -24,9 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#testid" title="TestId">TestId</a>" : <i>String</i>,
         "<a href="#verifyssl" title="VerifySsl">VerifySsl</a>" : <i>Boolean</i>,
         "<a href="#webhooks" title="Webhooks">Webhooks</a>" : <i>[ String, ... ]</i>,
-        "<a href="#emails" title="Emails">Emails</a>" : <i>[ &lt;a href=&#34;emails.md&#34;&gt;Emails&lt;/a&gt;, ... ]</i>,
-        "<a href="#remoteagents" title="RemoteAgents">RemoteAgents</a>" : <i>[ &lt;a href=&#34;remoteagents.md&#34;&gt;RemoteAgents&lt;/a&gt;, ... ]</i>,
-        "<a href="#recipients" title="Recipients">Recipients</a>" : <i>[ &lt;a href=&#34;recipients.md&#34;&gt;Recipients&lt;/a&gt;, ... ]</i>
+        "<a href="#emails" title="Emails">Emails</a>" : <i>[ <a href="emails.md">Emails</a>, ... ]</i>,
+        "<a href="#remoteagents" title="RemoteAgents">RemoteAgents</a>" : <i>[ <a href="remoteagents.md">RemoteAgents</a>, ... ]</i>,
+        "<a href="#recipients" title="Recipients">Recipients</a>" : <i>[ <a href="recipients.md">Recipients</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Properties:
     <a href="#bucketid" title="BucketId">BucketId</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#initialvariables" title="InitialVariables">InitialVariables</a>: <i>
-      - &lt;a href=&#34;initialvariables.md&#34;&gt;InitialVariables&lt;/a&gt;</i>
+      - <a href="initialvariables.md">InitialVariables</a></i>
     <a href="#integrations" title="Integrations">Integrations</a>: <i>
       - String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -53,11 +53,11 @@ Properties:
     <a href="#webhooks" title="Webhooks">Webhooks</a>: <i>
       - String</i>
     <a href="#emails" title="Emails">Emails</a>: <i>
-      - &lt;a href=&#34;emails.md&#34;&gt;Emails&lt;/a&gt;</i>
+      - <a href="emails.md">Emails</a></i>
     <a href="#remoteagents" title="RemoteAgents">RemoteAgents</a>: <i>
-      - &lt;a href=&#34;remoteagents.md&#34;&gt;RemoteAgents&lt;/a&gt;</i>
+      - <a href="remoteagents.md">RemoteAgents</a></i>
     <a href="#recipients" title="Recipients">Recipients</a>: <i>
-      - &lt;a href=&#34;recipients.md&#34;&gt;Recipients&lt;/a&gt;</i>
+      - <a href="recipients.md">Recipients</a></i>
 </pre>
 
 ## Properties
@@ -82,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;initialvariables.md&#34;&gt;InitialVariables&lt;/a&gt;
+_Type_: List of <a href="initialvariables.md">InitialVariables</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -162,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;emails.md&#34;&gt;Emails&lt;/a&gt;
+_Type_: List of <a href="emails.md">Emails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;remoteagents.md&#34;&gt;RemoteAgents&lt;/a&gt;
+_Type_: List of <a href="remoteagents.md">RemoteAgents</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,7 +178,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;recipients.md&#34;&gt;Recipients&lt;/a&gt;
+_Type_: List of <a href="recipients.md">Recipients</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -22,13 +22,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#networkmode" title="NetworkMode">NetworkMode</a>" : <i>String</i>,
         "<a href="#pidmode" title="PidMode">PidMode</a>" : <i>String</i>,
         "<a href="#requirescompatibilities" title="RequiresCompatibilities">RequiresCompatibilities</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#taskrolearn" title="TaskRoleArn">TaskRoleArn</a>" : <i>String</i>,
-        "<a href="#placementconstraints" title="PlacementConstraints">PlacementConstraints</a>" : <i>[ &lt;a href=&#34;placementconstraints.md&#34;&gt;PlacementConstraints&lt;/a&gt;, ... ]</i>,
-        "<a href="#proxyconfiguration" title="ProxyConfiguration">ProxyConfiguration</a>" : <i>[ &lt;a href=&#34;proxyconfiguration.md&#34;&gt;ProxyConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>,
-        "<a href="#dockervolumeconfiguration" title="DockerVolumeConfiguration">DockerVolumeConfiguration</a>" : <i>[ &lt;a href=&#34;dockervolumeconfiguration.md&#34;&gt;DockerVolumeConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#efsvolumeconfiguration" title="EfsVolumeConfiguration">EfsVolumeConfiguration</a>" : <i>[ &lt;a href=&#34;efsvolumeconfiguration.md&#34;&gt;EfsVolumeConfiguration&lt;/a&gt;, ... ]</i>
+        "<a href="#placementconstraints" title="PlacementConstraints">PlacementConstraints</a>" : <i>[ <a href="placementconstraints.md">PlacementConstraints</a>, ... ]</i>,
+        "<a href="#proxyconfiguration" title="ProxyConfiguration">ProxyConfiguration</a>" : <i>[ <a href="proxyconfiguration.md">ProxyConfiguration</a>, ... ]</i>,
+        "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="volume.md">Volume</a>, ... ]</i>,
+        "<a href="#dockervolumeconfiguration" title="DockerVolumeConfiguration">DockerVolumeConfiguration</a>" : <i>[ <a href="dockervolumeconfiguration.md">DockerVolumeConfiguration</a>, ... ]</i>,
+        "<a href="#efsvolumeconfiguration" title="EfsVolumeConfiguration">EfsVolumeConfiguration</a>" : <i>[ <a href="efsvolumeconfiguration.md">EfsVolumeConfiguration</a>, ... ]</i>
     }
 }
 </pre>
@@ -50,18 +50,18 @@ Properties:
     <a href="#requirescompatibilities" title="RequiresCompatibilities">RequiresCompatibilities</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#taskrolearn" title="TaskRoleArn">TaskRoleArn</a>: <i>String</i>
     <a href="#placementconstraints" title="PlacementConstraints">PlacementConstraints</a>: <i>
-      - &lt;a href=&#34;placementconstraints.md&#34;&gt;PlacementConstraints&lt;/a&gt;</i>
+      - <a href="placementconstraints.md">PlacementConstraints</a></i>
     <a href="#proxyconfiguration" title="ProxyConfiguration">ProxyConfiguration</a>: <i>
-      - &lt;a href=&#34;proxyconfiguration.md&#34;&gt;ProxyConfiguration&lt;/a&gt;</i>
+      - <a href="proxyconfiguration.md">ProxyConfiguration</a></i>
     <a href="#volume" title="Volume">Volume</a>: <i>
-      - &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;</i>
+      - <a href="volume.md">Volume</a></i>
     <a href="#dockervolumeconfiguration" title="DockerVolumeConfiguration">DockerVolumeConfiguration</a>: <i>
-      - &lt;a href=&#34;dockervolumeconfiguration.md&#34;&gt;DockerVolumeConfiguration&lt;/a&gt;</i>
+      - <a href="dockervolumeconfiguration.md">DockerVolumeConfiguration</a></i>
     <a href="#efsvolumeconfiguration" title="EfsVolumeConfiguration">EfsVolumeConfiguration</a>: <i>
-      - &lt;a href=&#34;efsvolumeconfiguration.md&#34;&gt;EfsVolumeConfiguration&lt;/a&gt;</i>
+      - <a href="efsvolumeconfiguration.md">EfsVolumeConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -150,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;placementconstraints.md&#34;&gt;PlacementConstraints&lt;/a&gt;
+_Type_: List of <a href="placementconstraints.md">PlacementConstraints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;proxyconfiguration.md&#34;&gt;ProxyConfiguration&lt;/a&gt;
+_Type_: List of <a href="proxyconfiguration.md">ProxyConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;
+_Type_: List of <a href="volume.md">Volume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dockervolumeconfiguration.md&#34;&gt;DockerVolumeConfiguration&lt;/a&gt;
+_Type_: List of <a href="dockervolumeconfiguration.md">DockerVolumeConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;efsvolumeconfiguration.md&#34;&gt;EfsVolumeConfiguration&lt;/a&gt;
+_Type_: List of <a href="efsvolumeconfiguration.md">EfsVolumeConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -220,9 +220,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### Revision
 
-Returns the &lt;code&gt;Revision&lt;/code&gt; value.
+Returns the <code>Revision</code> value.
 

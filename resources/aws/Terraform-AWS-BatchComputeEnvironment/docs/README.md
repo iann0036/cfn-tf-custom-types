@@ -18,8 +18,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#servicerole" title="ServiceRole">ServiceRole</a>" : <i>String</i>,
         "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#computeresources" title="ComputeResources">ComputeResources</a>" : <i>[ &lt;a href=&#34;computeresources.md&#34;&gt;ComputeResources&lt;/a&gt;, ... ]</i>,
-        "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ &lt;a href=&#34;launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;, ... ]</i>
+        "<a href="#computeresources" title="ComputeResources">ComputeResources</a>" : <i>[ <a href="computeresources.md">ComputeResources</a>, ... ]</i>,
+        "<a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>" : <i>[ <a href="launchtemplate.md">LaunchTemplate</a>, ... ]</i>
     }
 }
 </pre>
@@ -36,9 +36,9 @@ Properties:
     <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#computeresources" title="ComputeResources">ComputeResources</a>: <i>
-      - &lt;a href=&#34;computeresources.md&#34;&gt;ComputeResources&lt;/a&gt;</i>
+      - <a href="computeresources.md">ComputeResources</a></i>
     <a href="#launchtemplate" title="LaunchTemplate">LaunchTemplate</a>: <i>
-      - &lt;a href=&#34;launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;</i>
+      - <a href="launchtemplate.md">LaunchTemplate</a></i>
 </pre>
 
 ## Properties
@@ -95,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;computeresources.md&#34;&gt;ComputeResources&lt;/a&gt;
+_Type_: List of <a href="computeresources.md">ComputeResources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -103,7 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;launchtemplate.md&#34;&gt;LaunchTemplate&lt;/a&gt;
+_Type_: List of <a href="launchtemplate.md">LaunchTemplate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,21 +125,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### EccClusterArn
 
-Returns the &lt;code&gt;EccClusterArn&lt;/code&gt; value.
+Returns the <code>EccClusterArn</code> value.
 
 #### EcsClusterArn
 
-Returns the &lt;code&gt;EcsClusterArn&lt;/code&gt; value.
+Returns the <code>EcsClusterArn</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### StatusReason
 
-Returns the &lt;code&gt;StatusReason&lt;/code&gt; value.
+Returns the <code>StatusReason</code> value.
 

@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#listingid" title="ListingId">ListingId</a>" : <i>String</i>,
         "<a href="#listingresourceversion" title="ListingResourceVersion">ListingResourceVersion</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -28,7 +28,7 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#listingid" title="ListingId">ListingId</a>: <i>String</i>
     <a href="#listingresourceversion" title="ListingResourceVersion">ListingResourceVersion</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -61,7 +61,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -83,17 +83,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EulaLink
 
-Returns the &lt;code&gt;EulaLink&lt;/code&gt; value.
+Returns the <code>EulaLink</code> value.
 
 #### OracleTermsOfUseLink
 
-Returns the &lt;code&gt;OracleTermsOfUseLink&lt;/code&gt; value.
+Returns the <code>OracleTermsOfUseLink</code> value.
 
 #### Signature
 
-Returns the &lt;code&gt;Signature&lt;/code&gt; value.
+Returns the <code>Signature</code> value.
 
 #### TimeRetrieved
 
-Returns the &lt;code&gt;TimeRetrieved&lt;/code&gt; value.
+Returns the <code>TimeRetrieved</code> value.
 

@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PolicyRespected
 
-Returns the &lt;code&gt;PolicyRespected&lt;/code&gt; value.
+Returns the <code>PolicyRespected</code> value.
 

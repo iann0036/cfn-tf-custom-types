@@ -293,21 +293,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AbnormalReason
 
-Returns the &lt;code&gt;AbnormalReason&lt;/code&gt; value.
+Returns the <code>AbnormalReason</code> value.
 
 #### InstanceId
 
-Returns the &lt;code&gt;InstanceId&lt;/code&gt; value.
+Returns the <code>InstanceId</code> value.
 
 #### IsNormal
 
-Returns the &lt;code&gt;IsNormal&lt;/code&gt; value.
+Returns the <code>IsNormal</code> value.
 
 #### LanIp
 
-Returns the &lt;code&gt;LanIp&lt;/code&gt; value.
+Returns the <code>LanIp</code> value.
 
 #### WanIp
 
-Returns the &lt;code&gt;WanIp&lt;/code&gt; value.
+Returns the <code>WanIp</code> value.
 

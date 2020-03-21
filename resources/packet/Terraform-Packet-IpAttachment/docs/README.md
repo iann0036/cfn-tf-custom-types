@@ -73,41 +73,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Address
 
-Returns the &lt;code&gt;Address&lt;/code&gt; value.
+Returns the <code>Address</code> value.
 
 #### AddressFamily
 
-Returns the &lt;code&gt;AddressFamily&lt;/code&gt; value.
+Returns the <code>AddressFamily</code> value.
 
 #### Cidr
 
-Returns the &lt;code&gt;Cidr&lt;/code&gt; value.
+Returns the <code>Cidr</code> value.
 
 #### Gateway
 
-Returns the &lt;code&gt;Gateway&lt;/code&gt; value.
+Returns the <code>Gateway</code> value.
 
 #### Global
 
-Returns the &lt;code&gt;Global&lt;/code&gt; value.
+Returns the <code>Global</code> value.
 
 #### Manageable
 
-Returns the &lt;code&gt;Manageable&lt;/code&gt; value.
+Returns the <code>Manageable</code> value.
 
 #### Management
 
-Returns the &lt;code&gt;Management&lt;/code&gt; value.
+Returns the <code>Management</code> value.
 
 #### Netmask
 
-Returns the &lt;code&gt;Netmask&lt;/code&gt; value.
+Returns the <code>Netmask</code> value.
 
 #### Network
 
-Returns the &lt;code&gt;Network&lt;/code&gt; value.
+Returns the <code>Network</code> value.
 
 #### Public
 
-Returns the &lt;code&gt;Public&lt;/code&gt; value.
+Returns the <code>Public</code> value.
 

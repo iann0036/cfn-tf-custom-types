@@ -145,5 +145,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 

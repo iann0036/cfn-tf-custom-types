@@ -83,13 +83,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### LastModifyTime
 
-Returns the &lt;code&gt;LastModifyTime&lt;/code&gt; value.
+Returns the <code>LastModifyTime</code> value.
 
 #### SubId
 
-Returns the &lt;code&gt;SubId&lt;/code&gt; value.
+Returns the <code>SubId</code> value.
 

@@ -22,8 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#valuefunction" title="ValueFunction">ValueFunction</a>" : <i>String</i>,
         "<a href="#violationtimelimitseconds" title="ViolationTimeLimitSeconds">ViolationTimeLimitSeconds</a>" : <i>Double</i>,
-        "<a href="#nrql" title="Nrql">Nrql</a>" : <i>[ &lt;a href=&#34;nrql.md&#34;&gt;Nrql&lt;/a&gt;, ... ]</i>,
-        "<a href="#term" title="Term">Term</a>" : <i>[ &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;, ... ]</i>
+        "<a href="#nrql" title="Nrql">Nrql</a>" : <i>[ <a href="nrql.md">Nrql</a>, ... ]</i>,
+        "<a href="#term" title="Term">Term</a>" : <i>[ <a href="term.md">Term</a>, ... ]</i>
     }
 }
 </pre>
@@ -44,9 +44,9 @@ Properties:
     <a href="#valuefunction" title="ValueFunction">ValueFunction</a>: <i>String</i>
     <a href="#violationtimelimitseconds" title="ViolationTimeLimitSeconds">ViolationTimeLimitSeconds</a>: <i>Double</i>
     <a href="#nrql" title="Nrql">Nrql</a>: <i>
-      - &lt;a href=&#34;nrql.md&#34;&gt;Nrql&lt;/a&gt;</i>
+      - <a href="nrql.md">Nrql</a></i>
     <a href="#term" title="Term">Term</a>: <i>
-      - &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;</i>
+      - <a href="term.md">Term</a></i>
 </pre>
 
 ## Properties
@@ -135,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nrql.md&#34;&gt;Nrql&lt;/a&gt;
+_Type_: List of <a href="nrql.md">Nrql</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;
+_Type_: List of <a href="term.md">Term</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

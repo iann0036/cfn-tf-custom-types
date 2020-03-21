@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#recoveryvaultname" title="RecoveryVaultName">RecoveryVaultName</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#timezone" title="Timezone">Timezone</a>" : <i>String</i>,
-        "<a href="#backup" title="Backup">Backup</a>" : <i>[ &lt;a href=&#34;backup.md&#34;&gt;Backup&lt;/a&gt;, ... ]</i>,
-        "<a href="#retentiondaily" title="RetentionDaily">RetentionDaily</a>" : <i>[ &lt;a href=&#34;retentiondaily.md&#34;&gt;RetentionDaily&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#backup" title="Backup">Backup</a>" : <i>[ <a href="backup.md">Backup</a>, ... ]</i>,
+        "<a href="#retentiondaily" title="RetentionDaily">RetentionDaily</a>" : <i>[ <a href="retentiondaily.md">RetentionDaily</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -35,10 +35,10 @@ Properties:
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#timezone" title="Timezone">Timezone</a>: <i>String</i>
     <a href="#backup" title="Backup">Backup</a>: <i>
-      - &lt;a href=&#34;backup.md&#34;&gt;Backup&lt;/a&gt;</i>
+      - <a href="backup.md">Backup</a></i>
     <a href="#retentiondaily" title="RetentionDaily">RetentionDaily</a>: <i>
-      - &lt;a href=&#34;retentiondaily.md&#34;&gt;RetentionDaily&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="retentiondaily.md">RetentionDaily</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -87,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backup.md&#34;&gt;Backup&lt;/a&gt;
+_Type_: List of <a href="backup.md">Backup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retentiondaily.md&#34;&gt;RetentionDaily&lt;/a&gt;
+_Type_: List of <a href="retentiondaily.md">RetentionDaily</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -103,7 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

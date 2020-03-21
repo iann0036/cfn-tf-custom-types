@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#templates" title="Templates">Templates</a>" : <i>[ String, ... ]</i>,
-        "<a href="#vars" title="Vars">Vars</a>" : <i>[ &lt;a href=&#34;vars.md&#34;&gt;Vars&lt;/a&gt;, ... ]</i>
+        "<a href="#vars" title="Vars">Vars</a>" : <i>[ <a href="vars.md">Vars</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,7 +37,7 @@ Properties:
     <a href="#templates" title="Templates">Templates</a>: <i>
       - String</i>
     <a href="#vars" title="Vars">Vars</a>: <i>
-      - &lt;a href=&#34;vars.md&#34;&gt;Vars&lt;/a&gt;</i>
+      - <a href="vars.md">Vars</a></i>
 </pre>
 
 ## Properties
@@ -94,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vars.md&#34;&gt;Vars&lt;/a&gt;
+_Type_: List of <a href="vars.md">Vars</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

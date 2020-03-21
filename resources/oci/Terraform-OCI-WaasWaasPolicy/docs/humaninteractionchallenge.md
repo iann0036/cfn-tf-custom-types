@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#interactionthreshold" title="InteractionThreshold">InteractionThreshold</a>" : <i>Double</i>,
     "<a href="#isenabled" title="IsEnabled">IsEnabled</a>" : <i>Boolean</i>,
     "<a href="#recordingperiodinseconds" title="RecordingPeriodInSeconds">RecordingPeriodInSeconds</a>" : <i>Double</i>,
-    "<a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>" : <i>[ &lt;a href=&#34;humaninteractionchallenge-challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;, ... ]</i>,
-    "<a href="#sethttpheader" title="SetHttpHeader">SetHttpHeader</a>" : <i>[ &lt;a href=&#34;humaninteractionchallenge-sethttpheader.md&#34;&gt;SetHttpHeader&lt;/a&gt;, ... ]</i>
+    "<a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>" : <i>[ <a href="humaninteractionchallenge-challengesettings.md">ChallengeSettings</a>, ... ]</i>,
+    "<a href="#sethttpheader" title="SetHttpHeader">SetHttpHeader</a>" : <i>[ <a href="humaninteractionchallenge-sethttpheader.md">SetHttpHeader</a>, ... ]</i>
 }
 </pre>
 
@@ -31,9 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#isenabled" title="IsEnabled">IsEnabled</a>: <i>Boolean</i>
 <a href="#recordingperiodinseconds" title="RecordingPeriodInSeconds">RecordingPeriodInSeconds</a>: <i>Double</i>
 <a href="#challengesettings" title="ChallengeSettings">ChallengeSettings</a>: <i>
-      - &lt;a href=&#34;humaninteractionchallenge-challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;</i>
+      - <a href="humaninteractionchallenge-challengesettings.md">ChallengeSettings</a></i>
 <a href="#sethttpheader" title="SetHttpHeader">SetHttpHeader</a>: <i>
-      - &lt;a href=&#34;humaninteractionchallenge-sethttpheader.md&#34;&gt;SetHttpHeader&lt;/a&gt;</i>
+      - <a href="humaninteractionchallenge-sethttpheader.md">SetHttpHeader</a></i>
 </pre>
 
 ## Properties
@@ -90,14 +90,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ChallengeSettings
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;humaninteractionchallenge-challengesettings.md&#34;&gt;ChallengeSettings&lt;/a&gt;
+_Type_: List of <a href="humaninteractionchallenge-challengesettings.md">ChallengeSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SetHttpHeader
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;humaninteractionchallenge-sethttpheader.md&#34;&gt;SetHttpHeader&lt;/a&gt;
+_Type_: List of <a href="humaninteractionchallenge-sethttpheader.md">SetHttpHeader</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

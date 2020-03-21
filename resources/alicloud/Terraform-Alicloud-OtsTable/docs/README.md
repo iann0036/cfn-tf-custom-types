@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#maxversion" title="MaxVersion">MaxVersion</a>" : <i>Double</i>,
         "<a href="#tablename" title="TableName">TableName</a>" : <i>String</i>,
         "<a href="#timetolive" title="TimeToLive">TimeToLive</a>" : <i>Double</i>,
-        "<a href="#primarykey" title="PrimaryKey">PrimaryKey</a>" : <i>[ &lt;a href=&#34;primarykey.md&#34;&gt;PrimaryKey&lt;/a&gt;, ... ]</i>
+        "<a href="#primarykey" title="PrimaryKey">PrimaryKey</a>" : <i>[ <a href="primarykey.md">PrimaryKey</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,7 +35,7 @@ Properties:
     <a href="#tablename" title="TableName">TableName</a>: <i>String</i>
     <a href="#timetolive" title="TimeToLive">TimeToLive</a>: <i>Double</i>
     <a href="#primarykey" title="PrimaryKey">PrimaryKey</a>: <i>
-      - &lt;a href=&#34;primarykey.md&#34;&gt;PrimaryKey&lt;/a&gt;</i>
+      - <a href="primarykey.md">PrimaryKey</a></i>
 </pre>
 
 ## Properties
@@ -92,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;primarykey.md&#34;&gt;PrimaryKey&lt;/a&gt;
+_Type_: List of <a href="primarykey.md">PrimaryKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

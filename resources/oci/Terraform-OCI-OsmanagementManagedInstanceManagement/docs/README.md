@@ -14,10 +14,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#managedinstanceid" title="ManagedInstanceId">ManagedInstanceId</a>" : <i>String</i>,
-        "<a href="#childsoftwaresources" title="ChildSoftwareSources">ChildSoftwareSources</a>" : <i>[ &lt;a href=&#34;childsoftwaresources.md&#34;&gt;ChildSoftwareSources&lt;/a&gt;, ... ]</i>,
-        "<a href="#managedinstancegroups" title="ManagedInstanceGroups">ManagedInstanceGroups</a>" : <i>[ &lt;a href=&#34;managedinstancegroups.md&#34;&gt;ManagedInstanceGroups&lt;/a&gt;, ... ]</i>,
-        "<a href="#parentsoftwaresource" title="ParentSoftwareSource">ParentSoftwareSource</a>" : <i>[ &lt;a href=&#34;parentsoftwaresource.md&#34;&gt;ParentSoftwareSource&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#childsoftwaresources" title="ChildSoftwareSources">ChildSoftwareSources</a>" : <i>[ <a href="childsoftwaresources.md">ChildSoftwareSources</a>, ... ]</i>,
+        "<a href="#managedinstancegroups" title="ManagedInstanceGroups">ManagedInstanceGroups</a>" : <i>[ <a href="managedinstancegroups.md">ManagedInstanceGroups</a>, ... ]</i>,
+        "<a href="#parentsoftwaresource" title="ParentSoftwareSource">ParentSoftwareSource</a>" : <i>[ <a href="parentsoftwaresource.md">ParentSoftwareSource</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -30,12 +30,12 @@ Properties:
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#managedinstanceid" title="ManagedInstanceId">ManagedInstanceId</a>: <i>String</i>
     <a href="#childsoftwaresources" title="ChildSoftwareSources">ChildSoftwareSources</a>: <i>
-      - &lt;a href=&#34;childsoftwaresources.md&#34;&gt;ChildSoftwareSources&lt;/a&gt;</i>
+      - <a href="childsoftwaresources.md">ChildSoftwareSources</a></i>
     <a href="#managedinstancegroups" title="ManagedInstanceGroups">ManagedInstanceGroups</a>: <i>
-      - &lt;a href=&#34;managedinstancegroups.md&#34;&gt;ManagedInstanceGroups&lt;/a&gt;</i>
+      - <a href="managedinstancegroups.md">ManagedInstanceGroups</a></i>
     <a href="#parentsoftwaresource" title="ParentSoftwareSource">ParentSoftwareSource</a>: <i>
-      - &lt;a href=&#34;parentsoftwaresource.md&#34;&gt;ParentSoftwareSource&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="parentsoftwaresource.md">ParentSoftwareSource</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -60,7 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;childsoftwaresources.md&#34;&gt;ChildSoftwareSources&lt;/a&gt;
+_Type_: List of <a href="childsoftwaresources.md">ChildSoftwareSources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -68,7 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;managedinstancegroups.md&#34;&gt;ManagedInstanceGroups&lt;/a&gt;
+_Type_: List of <a href="managedinstancegroups.md">ManagedInstanceGroups</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -76,7 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parentsoftwaresource.md&#34;&gt;ParentSoftwareSource&lt;/a&gt;
+_Type_: List of <a href="parentsoftwaresource.md">ParentSoftwareSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,7 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,41 +106,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CompartmentId
 
-Returns the &lt;code&gt;CompartmentId&lt;/code&gt; value.
+Returns the <code>CompartmentId</code> value.
 
 #### Description
 
-Returns the &lt;code&gt;Description&lt;/code&gt; value.
+Returns the <code>Description</code> value.
 
 #### DisplayName
 
-Returns the &lt;code&gt;DisplayName&lt;/code&gt; value.
+Returns the <code>DisplayName</code> value.
 
 #### LastBoot
 
-Returns the &lt;code&gt;LastBoot&lt;/code&gt; value.
+Returns the <code>LastBoot</code> value.
 
 #### LastCheckin
 
-Returns the &lt;code&gt;LastCheckin&lt;/code&gt; value.
+Returns the <code>LastCheckin</code> value.
 
 #### OsKernelVersion
 
-Returns the &lt;code&gt;OsKernelVersion&lt;/code&gt; value.
+Returns the <code>OsKernelVersion</code> value.
 
 #### OsName
 
-Returns the &lt;code&gt;OsName&lt;/code&gt; value.
+Returns the <code>OsName</code> value.
 
 #### OsVersion
 
-Returns the &lt;code&gt;OsVersion&lt;/code&gt; value.
+Returns the <code>OsVersion</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdatesAvailable
 
-Returns the &lt;code&gt;UpdatesAvailable&lt;/code&gt; value.
+Returns the <code>UpdatesAvailable</code> value.
 

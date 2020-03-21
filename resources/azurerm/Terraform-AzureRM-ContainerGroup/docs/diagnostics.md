@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#loganalytics" title="LogAnalytics">LogAnalytics</a>" : <i>[ &lt;a href=&#34;diagnostics-loganalytics.md&#34;&gt;LogAnalytics&lt;/a&gt;, ... ]</i>
+    "<a href="#loganalytics" title="LogAnalytics">LogAnalytics</a>" : <i>[ <a href="diagnostics-loganalytics.md">LogAnalytics</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#loganalytics" title="LogAnalytics">LogAnalytics</a>: <i>
-      - &lt;a href=&#34;diagnostics-loganalytics.md&#34;&gt;LogAnalytics&lt;/a&gt;</i>
+      - <a href="diagnostics-loganalytics.md">LogAnalytics</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### LogAnalytics
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;diagnostics-loganalytics.md&#34;&gt;LogAnalytics&lt;/a&gt;
+_Type_: List of <a href="diagnostics-loganalytics.md">LogAnalytics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

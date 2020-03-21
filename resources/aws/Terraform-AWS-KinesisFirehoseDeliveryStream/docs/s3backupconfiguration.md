@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#kmskeyarn" title="KmsKeyArn">KmsKeyArn</a>" : <i>String</i>,
     "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>,
     "<a href="#rolearn" title="RoleArn">RoleArn</a>" : <i>String</i>,
-    "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ &lt;a href=&#34;s3backupconfiguration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;, ... ]</i>
+    "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ <a href="s3backupconfiguration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>, ... ]</i>
 }
 </pre>
 
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#prefix" title="Prefix">Prefix</a>: <i>String</i>
 <a href="#rolearn" title="RoleArn">RoleArn</a>: <i>String</i>
 <a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>: <i>
-      - &lt;a href=&#34;s3backupconfiguration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;</i>
+      - <a href="s3backupconfiguration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a></i>
 </pre>
 
 ## Properties
@@ -87,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CloudwatchLoggingOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;s3backupconfiguration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;
+_Type_: List of <a href="s3backupconfiguration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

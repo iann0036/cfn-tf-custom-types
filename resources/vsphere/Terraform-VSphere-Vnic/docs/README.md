@@ -20,8 +20,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#mtu" title="Mtu">Mtu</a>" : <i>Double</i>,
         "<a href="#netstack" title="Netstack">Netstack</a>" : <i>String</i>,
         "<a href="#portgroup" title="Portgroup">Portgroup</a>" : <i>String</i>,
-        "<a href="#ipv4" title="Ipv4">Ipv4</a>" : <i>[ &lt;a href=&#34;ipv4.md&#34;&gt;Ipv4&lt;/a&gt;, ... ]</i>,
-        "<a href="#ipv6" title="Ipv6">Ipv6</a>" : <i>[ &lt;a href=&#34;ipv6.md&#34;&gt;Ipv6&lt;/a&gt;, ... ]</i>
+        "<a href="#ipv4" title="Ipv4">Ipv4</a>" : <i>[ <a href="ipv4.md">Ipv4</a>, ... ]</i>,
+        "<a href="#ipv6" title="Ipv6">Ipv6</a>" : <i>[ <a href="ipv6.md">Ipv6</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,9 +40,9 @@ Properties:
     <a href="#netstack" title="Netstack">Netstack</a>: <i>String</i>
     <a href="#portgroup" title="Portgroup">Portgroup</a>: <i>String</i>
     <a href="#ipv4" title="Ipv4">Ipv4</a>: <i>
-      - &lt;a href=&#34;ipv4.md&#34;&gt;Ipv4&lt;/a&gt;</i>
+      - <a href="ipv4.md">Ipv4</a></i>
     <a href="#ipv6" title="Ipv6">Ipv6</a>: <i>
-      - &lt;a href=&#34;ipv6.md&#34;&gt;Ipv6&lt;/a&gt;</i>
+      - <a href="ipv6.md">Ipv6</a></i>
 </pre>
 
 ## Properties
@@ -115,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipv4.md&#34;&gt;Ipv4&lt;/a&gt;
+_Type_: List of <a href="ipv4.md">Ipv4</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipv6.md&#34;&gt;Ipv6&lt;/a&gt;
+_Type_: List of <a href="ipv6.md">Ipv6</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

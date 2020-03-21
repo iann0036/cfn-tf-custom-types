@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>,
     "<a href="#source" title="Source">Source</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#initializeparams" title="InitializeParams">InitializeParams</a>" : <i>[ &lt;a href=&#34;disk-initializeparams.md&#34;&gt;InitializeParams&lt;/a&gt;, ... ]</i>
+    "<a href="#initializeparams" title="InitializeParams">InitializeParams</a>" : <i>[ <a href="disk-initializeparams.md">InitializeParams</a>, ... ]</i>
 }
 </pre>
 
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#source" title="Source">Source</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#initializeparams" title="InitializeParams">InitializeParams</a>: <i>
-      - &lt;a href=&#34;disk-initializeparams.md&#34;&gt;InitializeParams&lt;/a&gt;</i>
+      - <a href="disk-initializeparams.md">InitializeParams</a></i>
 </pre>
 
 ## Properties
@@ -87,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InitializeParams
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;disk-initializeparams.md&#34;&gt;InitializeParams&lt;/a&gt;
+_Type_: List of <a href="disk-initializeparams.md">InitializeParams</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

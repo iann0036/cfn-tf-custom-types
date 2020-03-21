@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#tourgency" title="ToUrgency">ToUrgency</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#at" title="At">At</a>" : <i>[ &lt;a href=&#34;scheduledactions-at.md&#34;&gt;At&lt;/a&gt;, ... ]</i>
+    "<a href="#at" title="At">At</a>" : <i>[ <a href="scheduledactions-at.md">At</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#tourgency" title="ToUrgency">ToUrgency</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#at" title="At">At</a>: <i>
-      - &lt;a href=&#34;scheduledactions-at.md&#34;&gt;At&lt;/a&gt;</i>
+      - <a href="scheduledactions-at.md">At</a></i>
 </pre>
 
 ## Properties
@@ -42,7 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### At
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;scheduledactions-at.md&#34;&gt;At&lt;/a&gt;
+_Type_: List of <a href="scheduledactions-at.md">At</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

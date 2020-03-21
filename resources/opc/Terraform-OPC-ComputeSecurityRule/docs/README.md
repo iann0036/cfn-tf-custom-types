@@ -167,5 +167,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

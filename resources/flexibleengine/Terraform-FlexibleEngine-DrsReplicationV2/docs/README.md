@@ -104,37 +104,37 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### FailureDetail
 
-Returns the &lt;code&gt;FailureDetail&lt;/code&gt; value.
+Returns the <code>FailureDetail</code> value.
 
 #### FaultLevel
 
-Returns the &lt;code&gt;FaultLevel&lt;/code&gt; value.
+Returns the <code>FaultLevel</code> value.
 
 #### Progress
 
-Returns the &lt;code&gt;Progress&lt;/code&gt; value.
+Returns the <code>Progress</code> value.
 
 #### RecordMetadata
 
-Returns the &lt;code&gt;RecordMetadata&lt;/code&gt; value.
+Returns the <code>RecordMetadata</code> value.
 
 #### ReplicationConsistencyGroupId
 
-Returns the &lt;code&gt;ReplicationConsistencyGroupId&lt;/code&gt; value.
+Returns the <code>ReplicationConsistencyGroupId</code> value.
 
 #### ReplicationStatus
 
-Returns the &lt;code&gt;ReplicationStatus&lt;/code&gt; value.
+Returns the <code>ReplicationStatus</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

@@ -193,5 +193,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SourceNatIpId
 
-Returns the &lt;code&gt;SourceNatIpId&lt;/code&gt; value.
+Returns the <code>SourceNatIpId</code> value.
 

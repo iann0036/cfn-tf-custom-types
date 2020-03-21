@@ -24,8 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#url" title="Url">Url</a>" : <i>String</i>,
         "<a href="#username" title="Username">Username</a>" : <i>String</i>,
-        "<a href="#jsondata" title="JsonData">JsonData</a>" : <i>[ &lt;a href=&#34;jsondata.md&#34;&gt;JsonData&lt;/a&gt;, ... ]</i>,
-        "<a href="#securejsondata" title="SecureJsonData">SecureJsonData</a>" : <i>[ &lt;a href=&#34;securejsondata.md&#34;&gt;SecureJsonData&lt;/a&gt;, ... ]</i>
+        "<a href="#jsondata" title="JsonData">JsonData</a>" : <i>[ <a href="jsondata.md">JsonData</a>, ... ]</i>,
+        "<a href="#securejsondata" title="SecureJsonData">SecureJsonData</a>" : <i>[ <a href="securejsondata.md">SecureJsonData</a>, ... ]</i>
     }
 }
 </pre>
@@ -48,9 +48,9 @@ Properties:
     <a href="#url" title="Url">Url</a>: <i>String</i>
     <a href="#username" title="Username">Username</a>: <i>String</i>
     <a href="#jsondata" title="JsonData">JsonData</a>: <i>
-      - &lt;a href=&#34;jsondata.md&#34;&gt;JsonData&lt;/a&gt;</i>
+      - <a href="jsondata.md">JsonData</a></i>
     <a href="#securejsondata" title="SecureJsonData">SecureJsonData</a>: <i>
-      - &lt;a href=&#34;securejsondata.md&#34;&gt;SecureJsonData&lt;/a&gt;</i>
+      - <a href="securejsondata.md">SecureJsonData</a></i>
 </pre>
 
 ## Properties
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;jsondata.md&#34;&gt;JsonData&lt;/a&gt;
+_Type_: List of <a href="jsondata.md">JsonData</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;securejsondata.md&#34;&gt;SecureJsonData&lt;/a&gt;
+_Type_: List of <a href="securejsondata.md">SecureJsonData</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

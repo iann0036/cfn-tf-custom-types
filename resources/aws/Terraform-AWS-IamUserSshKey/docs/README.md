@@ -93,9 +93,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 
 #### SshPublicKeyId
 
-Returns the &lt;code&gt;SshPublicKeyId&lt;/code&gt; value.
+Returns the <code>SshPublicKeyId</code> value.
 

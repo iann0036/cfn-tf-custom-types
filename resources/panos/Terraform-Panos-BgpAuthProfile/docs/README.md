@@ -83,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SecretEnc
 
-Returns the &lt;code&gt;SecretEnc&lt;/code&gt; value.
+Returns the <code>SecretEnc</code> value.
 

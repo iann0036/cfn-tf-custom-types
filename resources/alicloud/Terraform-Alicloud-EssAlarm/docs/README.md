@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#cloudmonitorgroupid" title="CloudMonitorGroupId">CloudMonitorGroupId</a>" : <i>Double</i>,
         "<a href="#comparisonoperator" title="ComparisonOperator">ComparisonOperator</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>,
+        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="dimensions.md">Dimensions</a>, ... ]</i>,
         "<a href="#enable" title="Enable">Enable</a>" : <i>Boolean</i>,
         "<a href="#evaluationcount" title="EvaluationCount">EvaluationCount</a>" : <i>Double</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
@@ -42,7 +42,7 @@ Properties:
     <a href="#comparisonoperator" title="ComparisonOperator">ComparisonOperator</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
+      - <a href="dimensions.md">Dimensions</a></i>
     <a href="#enable" title="Enable">Enable</a>: <i>Boolean</i>
     <a href="#evaluationcount" title="EvaluationCount">EvaluationCount</a>: <i>Double</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
@@ -93,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
+_Type_: List of <a href="dimensions.md">Dimensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,5 +195,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

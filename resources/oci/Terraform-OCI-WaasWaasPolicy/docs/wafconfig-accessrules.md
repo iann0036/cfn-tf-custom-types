@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#redirectresponsecode" title="RedirectResponseCode">RedirectResponseCode</a>" : <i>String</i>,
     "<a href="#redirecturl" title="RedirectUrl">RedirectUrl</a>" : <i>String</i>,
-    "<a href="#criteria" title="Criteria">Criteria</a>" : <i>[ &lt;a href=&#34;wafconfig-accessrules-criteria.md&#34;&gt;Criteria&lt;/a&gt;, ... ]</i>
+    "<a href="#criteria" title="Criteria">Criteria</a>" : <i>[ <a href="wafconfig-accessrules-criteria.md">Criteria</a>, ... ]</i>
 }
 </pre>
 
@@ -37,7 +37,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#redirectresponsecode" title="RedirectResponseCode">RedirectResponseCode</a>: <i>String</i>
 <a href="#redirecturl" title="RedirectUrl">RedirectUrl</a>: <i>String</i>
 <a href="#criteria" title="Criteria">Criteria</a>: <i>
-      - &lt;a href=&#34;wafconfig-accessrules-criteria.md&#34;&gt;Criteria&lt;/a&gt;</i>
+      - <a href="wafconfig-accessrules-criteria.md">Criteria</a></i>
 </pre>
 
 ## Properties
@@ -115,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Criteria
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;wafconfig-accessrules-criteria.md&#34;&gt;Criteria&lt;/a&gt;
+_Type_: List of <a href="wafconfig-accessrules-criteria.md">Criteria</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

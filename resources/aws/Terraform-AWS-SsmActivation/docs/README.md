@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#registrationlimit" title="RegistrationLimit">RegistrationLimit</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,7 +35,7 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#registrationlimit" title="RegistrationLimit">RegistrationLimit</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
@@ -92,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,13 +114,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ActivationCode
 
-Returns the &lt;code&gt;ActivationCode&lt;/code&gt; value.
+Returns the <code>ActivationCode</code> value.
 
 #### Expired
 
-Returns the &lt;code&gt;Expired&lt;/code&gt; value.
+Returns the <code>Expired</code> value.
 
 #### RegistrationCount
 
-Returns the &lt;code&gt;RegistrationCount&lt;/code&gt; value.
+Returns the <code>RegistrationCount</code> value.
 

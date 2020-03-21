@@ -20,10 +20,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#storageaccountid" title="StorageAccountId">StorageAccountId</a>" : <i>String</i>,
         "<a href="#targetresourceid" title="TargetResourceId">TargetResourceId</a>" : <i>String</i>,
-        "<a href="#log" title="Log">Log</a>" : <i>[ &lt;a href=&#34;log.md&#34;&gt;Log&lt;/a&gt;, ... ]</i>,
-        "<a href="#metric" title="Metric">Metric</a>" : <i>[ &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ &lt;a href=&#34;retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;, ... ]</i>
+        "<a href="#log" title="Log">Log</a>" : <i>[ <a href="log.md">Log</a>, ... ]</i>,
+        "<a href="#metric" title="Metric">Metric</a>" : <i>[ <a href="metric.md">Metric</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ <a href="retentionpolicy.md">RetentionPolicy</a>, ... ]</i>
     }
 }
 </pre>
@@ -42,12 +42,12 @@ Properties:
     <a href="#storageaccountid" title="StorageAccountId">StorageAccountId</a>: <i>String</i>
     <a href="#targetresourceid" title="TargetResourceId">TargetResourceId</a>: <i>String</i>
     <a href="#log" title="Log">Log</a>: <i>
-      - &lt;a href=&#34;log.md&#34;&gt;Log&lt;/a&gt;</i>
+      - <a href="log.md">Log</a></i>
     <a href="#metric" title="Metric">Metric</a>: <i>
-      - &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="metric.md">Metric</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>: <i>
-      - &lt;a href=&#34;retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;</i>
+      - <a href="retentionpolicy.md">RetentionPolicy</a></i>
 </pre>
 
 ## Properties
@@ -120,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;log.md&#34;&gt;Log&lt;/a&gt;
+_Type_: List of <a href="log.md">Log</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;
+_Type_: List of <a href="metric.md">Metric</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;
+_Type_: List of <a href="retentionpolicy.md">RetentionPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

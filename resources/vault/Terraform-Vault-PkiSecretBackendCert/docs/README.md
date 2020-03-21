@@ -176,29 +176,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CaChain
 
-Returns the &lt;code&gt;CaChain&lt;/code&gt; value.
+Returns the <code>CaChain</code> value.
 
 #### Certificate
 
-Returns the &lt;code&gt;Certificate&lt;/code&gt; value.
+Returns the <code>Certificate</code> value.
 
 #### Expiration
 
-Returns the &lt;code&gt;Expiration&lt;/code&gt; value.
+Returns the <code>Expiration</code> value.
 
 #### IssuingCa
 
-Returns the &lt;code&gt;IssuingCa&lt;/code&gt; value.
+Returns the <code>IssuingCa</code> value.
 
 #### PrivateKey
 
-Returns the &lt;code&gt;PrivateKey&lt;/code&gt; value.
+Returns the <code>PrivateKey</code> value.
 
 #### PrivateKeyType
 
-Returns the &lt;code&gt;PrivateKeyType&lt;/code&gt; value.
+Returns the <code>PrivateKeyType</code> value.
 
 #### SerialNumber
 
-Returns the &lt;code&gt;SerialNumber&lt;/code&gt; value.
+Returns the <code>SerialNumber</code> value.
 

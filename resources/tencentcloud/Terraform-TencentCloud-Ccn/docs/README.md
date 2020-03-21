@@ -83,13 +83,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### InstanceCount
 
-Returns the &lt;code&gt;InstanceCount&lt;/code&gt; value.
+Returns the <code>InstanceCount</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

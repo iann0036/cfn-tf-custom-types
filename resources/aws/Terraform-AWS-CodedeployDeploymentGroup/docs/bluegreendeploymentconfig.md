@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#deploymentreadyoption" title="DeploymentReadyOption">DeploymentReadyOption</a>" : <i>[ &lt;a href=&#34;bluegreendeploymentconfig-deploymentreadyoption.md&#34;&gt;DeploymentReadyOption&lt;/a&gt;, ... ]</i>,
-    "<a href="#greenfleetprovisioningoption" title="GreenFleetProvisioningOption">GreenFleetProvisioningOption</a>" : <i>[ &lt;a href=&#34;bluegreendeploymentconfig-greenfleetprovisioningoption.md&#34;&gt;GreenFleetProvisioningOption&lt;/a&gt;, ... ]</i>,
-    "<a href="#terminateblueinstancesondeploymentsuccess" title="TerminateBlueInstancesOnDeploymentSuccess">TerminateBlueInstancesOnDeploymentSuccess</a>" : <i>[ &lt;a href=&#34;bluegreendeploymentconfig-terminateblueinstancesondeploymentsuccess.md&#34;&gt;TerminateBlueInstancesOnDeploymentSuccess&lt;/a&gt;, ... ]</i>
+    "<a href="#deploymentreadyoption" title="DeploymentReadyOption">DeploymentReadyOption</a>" : <i>[ <a href="bluegreendeploymentconfig-deploymentreadyoption.md">DeploymentReadyOption</a>, ... ]</i>,
+    "<a href="#greenfleetprovisioningoption" title="GreenFleetProvisioningOption">GreenFleetProvisioningOption</a>" : <i>[ <a href="bluegreendeploymentconfig-greenfleetprovisioningoption.md">GreenFleetProvisioningOption</a>, ... ]</i>,
+    "<a href="#terminateblueinstancesondeploymentsuccess" title="TerminateBlueInstancesOnDeploymentSuccess">TerminateBlueInstancesOnDeploymentSuccess</a>" : <i>[ <a href="bluegreendeploymentconfig-terminateblueinstancesondeploymentsuccess.md">TerminateBlueInstancesOnDeploymentSuccess</a>, ... ]</i>
 }
 </pre>
 
@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#deploymentreadyoption" title="DeploymentReadyOption">DeploymentReadyOption</a>: <i>
-      - &lt;a href=&#34;bluegreendeploymentconfig-deploymentreadyoption.md&#34;&gt;DeploymentReadyOption&lt;/a&gt;</i>
+      - <a href="bluegreendeploymentconfig-deploymentreadyoption.md">DeploymentReadyOption</a></i>
 <a href="#greenfleetprovisioningoption" title="GreenFleetProvisioningOption">GreenFleetProvisioningOption</a>: <i>
-      - &lt;a href=&#34;bluegreendeploymentconfig-greenfleetprovisioningoption.md&#34;&gt;GreenFleetProvisioningOption&lt;/a&gt;</i>
+      - <a href="bluegreendeploymentconfig-greenfleetprovisioningoption.md">GreenFleetProvisioningOption</a></i>
 <a href="#terminateblueinstancesondeploymentsuccess" title="TerminateBlueInstancesOnDeploymentSuccess">TerminateBlueInstancesOnDeploymentSuccess</a>: <i>
-      - &lt;a href=&#34;bluegreendeploymentconfig-terminateblueinstancesondeploymentsuccess.md&#34;&gt;TerminateBlueInstancesOnDeploymentSuccess&lt;/a&gt;</i>
+      - <a href="bluegreendeploymentconfig-terminateblueinstancesondeploymentsuccess.md">TerminateBlueInstancesOnDeploymentSuccess</a></i>
 </pre>
 
 ## Properties
@@ -30,21 +30,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DeploymentReadyOption
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;bluegreendeploymentconfig-deploymentreadyoption.md&#34;&gt;DeploymentReadyOption&lt;/a&gt;
+_Type_: List of <a href="bluegreendeploymentconfig-deploymentreadyoption.md">DeploymentReadyOption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GreenFleetProvisioningOption
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;bluegreendeploymentconfig-greenfleetprovisioningoption.md&#34;&gt;GreenFleetProvisioningOption&lt;/a&gt;
+_Type_: List of <a href="bluegreendeploymentconfig-greenfleetprovisioningoption.md">GreenFleetProvisioningOption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TerminateBlueInstancesOnDeploymentSuccess
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;bluegreendeploymentconfig-terminateblueinstancesondeploymentsuccess.md&#34;&gt;TerminateBlueInstancesOnDeploymentSuccess&lt;/a&gt;
+_Type_: List of <a href="bluegreendeploymentconfig-terminateblueinstancesondeploymentsuccess.md">TerminateBlueInstancesOnDeploymentSuccess</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

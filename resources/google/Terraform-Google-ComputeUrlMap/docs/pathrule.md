@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#paths" title="Paths">Paths</a>" : <i>[ String, ... ]</i>,
     "<a href="#service" title="Service">Service</a>" : <i>String</i>,
-    "<a href="#routeaction" title="RouteAction">RouteAction</a>" : <i>[ &lt;a href=&#34;pathrule-routeaction.md&#34;&gt;RouteAction&lt;/a&gt;, ... ]</i>,
-    "<a href="#urlredirect" title="UrlRedirect">UrlRedirect</a>" : <i>[ &lt;a href=&#34;pathrule-urlredirect.md&#34;&gt;UrlRedirect&lt;/a&gt;, ... ]</i>
+    "<a href="#routeaction" title="RouteAction">RouteAction</a>" : <i>[ <a href="pathrule-routeaction.md">RouteAction</a>, ... ]</i>,
+    "<a href="#urlredirect" title="UrlRedirect">UrlRedirect</a>" : <i>[ <a href="pathrule-urlredirect.md">UrlRedirect</a>, ... ]</i>
 }
 </pre>
 
@@ -22,9 +22,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#service" title="Service">Service</a>: <i>String</i>
 <a href="#routeaction" title="RouteAction">RouteAction</a>: <i>
-      - &lt;a href=&#34;pathrule-routeaction.md&#34;&gt;RouteAction&lt;/a&gt;</i>
+      - <a href="pathrule-routeaction.md">RouteAction</a></i>
 <a href="#urlredirect" title="UrlRedirect">UrlRedirect</a>: <i>
-      - &lt;a href=&#34;pathrule-urlredirect.md&#34;&gt;UrlRedirect&lt;/a&gt;</i>
+      - <a href="pathrule-urlredirect.md">UrlRedirect</a></i>
 </pre>
 
 ## Properties
@@ -46,14 +46,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RouteAction
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pathrule-routeaction.md&#34;&gt;RouteAction&lt;/a&gt;
+_Type_: List of <a href="pathrule-routeaction.md">RouteAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UrlRedirect
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pathrule-urlredirect.md&#34;&gt;UrlRedirect&lt;/a&gt;
+_Type_: List of <a href="pathrule-urlredirect.md">UrlRedirect</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

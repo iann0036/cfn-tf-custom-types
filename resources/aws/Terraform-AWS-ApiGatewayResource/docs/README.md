@@ -83,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Path
 
-Returns the &lt;code&gt;Path&lt;/code&gt; value.
+Returns the <code>Path</code> value.
 

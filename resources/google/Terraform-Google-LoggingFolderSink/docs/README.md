@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#includechildren" title="IncludeChildren">IncludeChildren</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#bigqueryoptions" title="BigqueryOptions">BigqueryOptions</a>" : <i>[ &lt;a href=&#34;bigqueryoptions.md&#34;&gt;BigqueryOptions&lt;/a&gt;, ... ]</i>
+        "<a href="#bigqueryoptions" title="BigqueryOptions">BigqueryOptions</a>" : <i>[ <a href="bigqueryoptions.md">BigqueryOptions</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,7 +35,7 @@ Properties:
     <a href="#includechildren" title="IncludeChildren">IncludeChildren</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#bigqueryoptions" title="BigqueryOptions">BigqueryOptions</a>: <i>
-      - &lt;a href=&#34;bigqueryoptions.md&#34;&gt;BigqueryOptions&lt;/a&gt;</i>
+      - <a href="bigqueryoptions.md">BigqueryOptions</a></i>
 </pre>
 
 ## Properties
@@ -92,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bigqueryoptions.md&#34;&gt;BigqueryOptions&lt;/a&gt;
+_Type_: List of <a href="bigqueryoptions.md">BigqueryOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,5 +114,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### WriterIdentity
 
-Returns the &lt;code&gt;WriterIdentity&lt;/code&gt; value.
+Returns the <code>WriterIdentity</code> value.
 

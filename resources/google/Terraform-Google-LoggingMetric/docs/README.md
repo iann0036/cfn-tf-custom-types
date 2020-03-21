@@ -15,17 +15,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#filter" title="Filter">Filter</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#labelextractors" title="LabelExtractors">LabelExtractors</a>" : <i>[ &lt;a href=&#34;labelextractors.md&#34;&gt;LabelExtractors&lt;/a&gt;, ... ]</i>,
+        "<a href="#labelextractors" title="LabelExtractors">LabelExtractors</a>" : <i>[ <a href="labelextractors.md">LabelExtractors</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#valueextractor" title="ValueExtractor">ValueExtractor</a>" : <i>String</i>,
-        "<a href="#bucketoptions" title="BucketOptions">BucketOptions</a>" : <i>[ &lt;a href=&#34;bucketoptions.md&#34;&gt;BucketOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#metricdescriptor" title="MetricDescriptor">MetricDescriptor</a>" : <i>[ &lt;a href=&#34;metricdescriptor.md&#34;&gt;MetricDescriptor&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#explicitbuckets" title="ExplicitBuckets">ExplicitBuckets</a>" : <i>[ &lt;a href=&#34;explicitbuckets.md&#34;&gt;ExplicitBuckets&lt;/a&gt;, ... ]</i>,
-        "<a href="#exponentialbuckets" title="ExponentialBuckets">ExponentialBuckets</a>" : <i>[ &lt;a href=&#34;exponentialbuckets.md&#34;&gt;ExponentialBuckets&lt;/a&gt;, ... ]</i>,
-        "<a href="#linearbuckets" title="LinearBuckets">LinearBuckets</a>" : <i>[ &lt;a href=&#34;linearbuckets.md&#34;&gt;LinearBuckets&lt;/a&gt;, ... ]</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>
+        "<a href="#bucketoptions" title="BucketOptions">BucketOptions</a>" : <i>[ <a href="bucketoptions.md">BucketOptions</a>, ... ]</i>,
+        "<a href="#metricdescriptor" title="MetricDescriptor">MetricDescriptor</a>" : <i>[ <a href="metricdescriptor.md">MetricDescriptor</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#explicitbuckets" title="ExplicitBuckets">ExplicitBuckets</a>" : <i>[ <a href="explicitbuckets.md">ExplicitBuckets</a>, ... ]</i>,
+        "<a href="#exponentialbuckets" title="ExponentialBuckets">ExponentialBuckets</a>" : <i>[ <a href="exponentialbuckets.md">ExponentialBuckets</a>, ... ]</i>,
+        "<a href="#linearbuckets" title="LinearBuckets">LinearBuckets</a>" : <i>[ <a href="linearbuckets.md">LinearBuckets</a>, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,23 +39,23 @@ Properties:
     <a href="#filter" title="Filter">Filter</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#labelextractors" title="LabelExtractors">LabelExtractors</a>: <i>
-      - &lt;a href=&#34;labelextractors.md&#34;&gt;LabelExtractors&lt;/a&gt;</i>
+      - <a href="labelextractors.md">LabelExtractors</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#valueextractor" title="ValueExtractor">ValueExtractor</a>: <i>String</i>
     <a href="#bucketoptions" title="BucketOptions">BucketOptions</a>: <i>
-      - &lt;a href=&#34;bucketoptions.md&#34;&gt;BucketOptions&lt;/a&gt;</i>
+      - <a href="bucketoptions.md">BucketOptions</a></i>
     <a href="#metricdescriptor" title="MetricDescriptor">MetricDescriptor</a>: <i>
-      - &lt;a href=&#34;metricdescriptor.md&#34;&gt;MetricDescriptor&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="metricdescriptor.md">MetricDescriptor</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#explicitbuckets" title="ExplicitBuckets">ExplicitBuckets</a>: <i>
-      - &lt;a href=&#34;explicitbuckets.md&#34;&gt;ExplicitBuckets&lt;/a&gt;</i>
+      - <a href="explicitbuckets.md">ExplicitBuckets</a></i>
     <a href="#exponentialbuckets" title="ExponentialBuckets">ExponentialBuckets</a>: <i>
-      - &lt;a href=&#34;exponentialbuckets.md&#34;&gt;ExponentialBuckets&lt;/a&gt;</i>
+      - <a href="exponentialbuckets.md">ExponentialBuckets</a></i>
     <a href="#linearbuckets" title="LinearBuckets">LinearBuckets</a>: <i>
-      - &lt;a href=&#34;linearbuckets.md&#34;&gt;LinearBuckets&lt;/a&gt;</i>
+      - <a href="linearbuckets.md">LinearBuckets</a></i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
 </pre>
 
 ## Properties
@@ -88,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labelextractors.md&#34;&gt;LabelExtractors&lt;/a&gt;
+_Type_: List of <a href="labelextractors.md">LabelExtractors</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bucketoptions.md&#34;&gt;BucketOptions&lt;/a&gt;
+_Type_: List of <a href="bucketoptions.md">BucketOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metricdescriptor.md&#34;&gt;MetricDescriptor&lt;/a&gt;
+_Type_: List of <a href="metricdescriptor.md">MetricDescriptor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;explicitbuckets.md&#34;&gt;ExplicitBuckets&lt;/a&gt;
+_Type_: List of <a href="explicitbuckets.md">ExplicitBuckets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;exponentialbuckets.md&#34;&gt;ExponentialBuckets&lt;/a&gt;
+_Type_: List of <a href="exponentialbuckets.md">ExponentialBuckets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;linearbuckets.md&#34;&gt;LinearBuckets&lt;/a&gt;
+_Type_: List of <a href="linearbuckets.md">LinearBuckets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

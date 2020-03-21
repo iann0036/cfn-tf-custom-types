@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#lambda" title="Lambda">Lambda</a>" : <i>[ &lt;a href=&#34;processingconfiguration-lambda.md&#34;&gt;Lambda&lt;/a&gt;, ... ]</i>
+    "<a href="#lambda" title="Lambda">Lambda</a>" : <i>[ <a href="processingconfiguration-lambda.md">Lambda</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#lambda" title="Lambda">Lambda</a>: <i>
-      - &lt;a href=&#34;processingconfiguration-lambda.md&#34;&gt;Lambda&lt;/a&gt;</i>
+      - <a href="processingconfiguration-lambda.md">Lambda</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Lambda
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;processingconfiguration-lambda.md&#34;&gt;Lambda&lt;/a&gt;
+_Type_: List of <a href="processingconfiguration-lambda.md">Lambda</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

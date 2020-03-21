@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#x509storename" title="X509StoreName">X509StoreName</a>" : <i>String</i>,
-    "<a href="#commonnames" title="CommonNames">CommonNames</a>" : <i>[ &lt;a href=&#34;certificatecommonnames-commonnames.md&#34;&gt;CommonNames&lt;/a&gt;, ... ]</i>
+    "<a href="#commonnames" title="CommonNames">CommonNames</a>" : <i>[ <a href="certificatecommonnames-commonnames.md">CommonNames</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#x509storename" title="X509StoreName">X509StoreName</a>: <i>String</i>
 <a href="#commonnames" title="CommonNames">CommonNames</a>: <i>
-      - &lt;a href=&#34;certificatecommonnames-commonnames.md&#34;&gt;CommonNames&lt;/a&gt;</i>
+      - <a href="certificatecommonnames-commonnames.md">CommonNames</a></i>
 </pre>
 
 ## Properties
@@ -33,7 +33,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CommonNames
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;certificatecommonnames-commonnames.md&#34;&gt;CommonNames&lt;/a&gt;
+_Type_: List of <a href="certificatecommonnames-commonnames.md">CommonNames</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

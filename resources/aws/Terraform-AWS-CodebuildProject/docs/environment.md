@@ -14,8 +14,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#imagepullcredentialstype" title="ImagePullCredentialsType">ImagePullCredentialsType</a>" : <i>String</i>,
     "<a href="#privilegedmode" title="PrivilegedMode">PrivilegedMode</a>" : <i>Boolean</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#environmentvariable" title="EnvironmentVariable">EnvironmentVariable</a>" : <i>[ &lt;a href=&#34;environment-environmentvariable.md&#34;&gt;EnvironmentVariable&lt;/a&gt;, ... ]</i>,
-    "<a href="#registrycredential" title="RegistryCredential">RegistryCredential</a>" : <i>[ &lt;a href=&#34;environment-registrycredential.md&#34;&gt;RegistryCredential&lt;/a&gt;, ... ]</i>
+    "<a href="#environmentvariable" title="EnvironmentVariable">EnvironmentVariable</a>" : <i>[ <a href="environment-environmentvariable.md">EnvironmentVariable</a>, ... ]</i>,
+    "<a href="#registrycredential" title="RegistryCredential">RegistryCredential</a>" : <i>[ <a href="environment-registrycredential.md">RegistryCredential</a>, ... ]</i>
 }
 </pre>
 
@@ -29,9 +29,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#privilegedmode" title="PrivilegedMode">PrivilegedMode</a>: <i>Boolean</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#environmentvariable" title="EnvironmentVariable">EnvironmentVariable</a>: <i>
-      - &lt;a href=&#34;environment-environmentvariable.md&#34;&gt;EnvironmentVariable&lt;/a&gt;</i>
+      - <a href="environment-environmentvariable.md">EnvironmentVariable</a></i>
 <a href="#registrycredential" title="RegistryCredential">RegistryCredential</a>: <i>
-      - &lt;a href=&#34;environment-registrycredential.md&#34;&gt;RegistryCredential&lt;/a&gt;</i>
+      - <a href="environment-registrycredential.md">RegistryCredential</a></i>
 </pre>
 
 ## Properties
@@ -81,14 +81,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EnvironmentVariable
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;environment-environmentvariable.md&#34;&gt;EnvironmentVariable&lt;/a&gt;
+_Type_: List of <a href="environment-environmentvariable.md">EnvironmentVariable</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RegistryCredential
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;environment-registrycredential.md&#34;&gt;RegistryCredential&lt;/a&gt;
+_Type_: List of <a href="environment-registrycredential.md">RegistryCredential</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

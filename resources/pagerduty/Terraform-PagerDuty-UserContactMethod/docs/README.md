@@ -113,9 +113,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Blacklisted
 
-Returns the &lt;code&gt;Blacklisted&lt;/code&gt; value.
+Returns the <code>Blacklisted</code> value.
 
 #### Enabled
 
-Returns the &lt;code&gt;Enabled&lt;/code&gt; value.
+Returns the <code>Enabled</code> value.
 

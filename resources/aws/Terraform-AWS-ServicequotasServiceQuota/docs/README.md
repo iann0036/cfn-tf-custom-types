@@ -83,29 +83,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Adjustable
 
-Returns the &lt;code&gt;Adjustable&lt;/code&gt; value.
+Returns the <code>Adjustable</code> value.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### DefaultValue
 
-Returns the &lt;code&gt;DefaultValue&lt;/code&gt; value.
+Returns the <code>DefaultValue</code> value.
 
 #### QuotaName
 
-Returns the &lt;code&gt;QuotaName&lt;/code&gt; value.
+Returns the <code>QuotaName</code> value.
 
 #### RequestId
 
-Returns the &lt;code&gt;RequestId&lt;/code&gt; value.
+Returns the <code>RequestId</code> value.
 
 #### RequestStatus
 
-Returns the &lt;code&gt;RequestStatus&lt;/code&gt; value.
+Returns the <code>RequestStatus</code> value.
 
 #### ServiceName
 
-Returns the &lt;code&gt;ServiceName&lt;/code&gt; value.
+Returns the <code>ServiceName</code> value.
 

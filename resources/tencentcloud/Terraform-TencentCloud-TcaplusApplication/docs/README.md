@@ -113,29 +113,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ApiAccessId
 
-Returns the &lt;code&gt;ApiAccessId&lt;/code&gt; value.
+Returns the <code>ApiAccessId</code> value.
 
 #### ApiAccessIp
 
-Returns the &lt;code&gt;ApiAccessIp&lt;/code&gt; value.
+Returns the <code>ApiAccessIp</code> value.
 
 #### ApiAccessPort
 
-Returns the &lt;code&gt;ApiAccessPort&lt;/code&gt; value.
+Returns the <code>ApiAccessPort</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### NetworkType
 
-Returns the &lt;code&gt;NetworkType&lt;/code&gt; value.
+Returns the <code>NetworkType</code> value.
 
 #### OldPasswordExpireTime
 
-Returns the &lt;code&gt;OldPasswordExpireTime&lt;/code&gt; value.
+Returns the <code>OldPasswordExpireTime</code> value.
 
 #### PasswordStatus
 
-Returns the &lt;code&gt;PasswordStatus&lt;/code&gt; value.
+Returns the <code>PasswordStatus</code> value.
 

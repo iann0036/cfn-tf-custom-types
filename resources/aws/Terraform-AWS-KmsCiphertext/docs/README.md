@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::KmsCiphertext",
     "Properties" : {
-        "<a href="#context" title="Context">Context</a>" : <i>[ &lt;a href=&#34;context.md&#34;&gt;Context&lt;/a&gt;, ... ]</i>,
+        "<a href="#context" title="Context">Context</a>" : <i>[ <a href="context.md">Context</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#keyid" title="KeyId">KeyId</a>" : <i>String</i>,
         "<a href="#plaintext" title="Plaintext">Plaintext</a>" : <i>String</i>
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::AWS::KmsCiphertext
 Properties:
     <a href="#context" title="Context">Context</a>: <i>
-      - &lt;a href=&#34;context.md&#34;&gt;Context&lt;/a&gt;</i>
+      - <a href="context.md">Context</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#keyid" title="KeyId">KeyId</a>: <i>String</i>
     <a href="#plaintext" title="Plaintext">Plaintext</a>: <i>String</i>
@@ -38,7 +38,7 @@ Properties:
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;context.md&#34;&gt;Context&lt;/a&gt;
+_Type_: List of <a href="context.md">Context</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CiphertextBlob
 
-Returns the &lt;code&gt;CiphertextBlob&lt;/code&gt; value.
+Returns the <code>CiphertextBlob</code> value.
 

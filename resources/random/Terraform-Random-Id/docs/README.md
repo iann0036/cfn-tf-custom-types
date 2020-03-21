@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#bytelength" title="ByteLength">ByteLength</a>" : <i>Double</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#keepers" title="Keepers">Keepers</a>" : <i>[ &lt;a href=&#34;keepers.md&#34;&gt;Keepers&lt;/a&gt;, ... ]</i>,
+        "<a href="#keepers" title="Keepers">Keepers</a>" : <i>[ <a href="keepers.md">Keepers</a>, ... ]</i>,
         "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>
     }
 }
@@ -28,7 +28,7 @@ Properties:
     <a href="#bytelength" title="ByteLength">ByteLength</a>: <i>Double</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#keepers" title="Keepers">Keepers</a>: <i>
-      - &lt;a href=&#34;keepers.md&#34;&gt;Keepers&lt;/a&gt;</i>
+      - <a href="keepers.md">Keepers</a></i>
     <a href="#prefix" title="Prefix">Prefix</a>: <i>String</i>
 </pre>
 
@@ -54,7 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;keepers.md&#34;&gt;Keepers&lt;/a&gt;
+_Type_: List of <a href="keepers.md">Keepers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,21 +84,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### B64
 
-Returns the &lt;code&gt;B64&lt;/code&gt; value.
+Returns the <code>B64</code> value.
 
 #### B64Std
 
-Returns the &lt;code&gt;B64Std&lt;/code&gt; value.
+Returns the <code>B64Std</code> value.
 
 #### B64Url
 
-Returns the &lt;code&gt;B64Url&lt;/code&gt; value.
+Returns the <code>B64Url</code> value.
 
 #### Dec
 
-Returns the &lt;code&gt;Dec&lt;/code&gt; value.
+Returns the <code>Dec</code> value.
 
 #### Hex
 
-Returns the &lt;code&gt;Hex&lt;/code&gt; value.
+Returns the <code>Hex</code> value.
 

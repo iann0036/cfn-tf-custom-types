@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#minvalue" title="MinValue">MinValue</a>" : <i>String</i>,
     "<a href="#notcontain" title="NotContain">NotContain</a>" : <i>String</i>,
     "<a href="#notmatch" title="NotMatch">NotMatch</a>" : <i>String</i>,
-    "<a href="#over" title="Over">Over</a>" : <i>[ &lt;a href=&#34;if-value-over.md&#34;&gt;Over&lt;/a&gt;, ... ]</i>
+    "<a href="#over" title="Over">Over</a>" : <i>[ <a href="if-value-over.md">Over</a>, ... ]</i>
 }
 </pre>
 
@@ -32,7 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#notcontain" title="NotContain">NotContain</a>: <i>String</i>
 <a href="#notmatch" title="NotMatch">NotMatch</a>: <i>String</i>
 <a href="#over" title="Over">Over</a>: <i>
-      - &lt;a href=&#34;if-value-over.md&#34;&gt;Over&lt;/a&gt;</i>
+      - <a href="if-value-over.md">Over</a></i>
 </pre>
 
 ## Properties
@@ -96,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Over
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;if-value-over.md&#34;&gt;Over&lt;/a&gt;
+_Type_: List of <a href="if-value-over.md">Over</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

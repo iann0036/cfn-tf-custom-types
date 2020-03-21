@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#enablefailback" title="EnableFailback">EnableFailback</a>" : <i>Boolean</i>,
         "<a href="#escalationchainid" title="EscalationChainId">EscalationChainId</a>" : <i>Double</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#properties" title="Properties">Properties</a>" : <i>[ &lt;a href=&#34;properties.md&#34;&gt;Properties&lt;/a&gt;, ... ]</i>,
+        "<a href="#properties" title="Properties">Properties</a>" : <i>[ <a href="properties.md">Properties</a>, ... ]</i>,
         "<a href="#resendinterval" title="ResendInterval">ResendInterval</a>" : <i>Double</i>,
         "<a href="#suppressalertclear" title="SuppressAlertClear">SuppressAlertClear</a>" : <i>Boolean</i>
     }
@@ -39,7 +39,7 @@ Properties:
     <a href="#escalationchainid" title="EscalationChainId">EscalationChainId</a>: <i>Double</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#properties" title="Properties">Properties</a>: <i>
-      - &lt;a href=&#34;properties.md&#34;&gt;Properties&lt;/a&gt;</i>
+      - <a href="properties.md">Properties</a></i>
     <a href="#resendinterval" title="ResendInterval">ResendInterval</a>: <i>Double</i>
     <a href="#suppressalertclear" title="SuppressAlertClear">SuppressAlertClear</a>: <i>Boolean</i>
 </pre>
@@ -106,7 +106,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;properties.md&#34;&gt;Properties&lt;/a&gt;
+_Type_: List of <a href="properties.md">Properties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

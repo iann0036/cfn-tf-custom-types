@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#oceanid" title="OceanId">OceanId</a>" : <i>String</i>,
         "<a href="#securitygroupids" title="SecurityGroupIds">SecurityGroupIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
-        "<a href="#attributes" title="Attributes">Attributes</a>" : <i>[ &lt;a href=&#34;attributes.md&#34;&gt;Attributes&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscaleheadrooms" title="AutoscaleHeadrooms">AutoscaleHeadrooms</a>" : <i>[ &lt;a href=&#34;autoscaleheadrooms.md&#34;&gt;AutoscaleHeadrooms&lt;/a&gt;, ... ]</i>
+        "<a href="#attributes" title="Attributes">Attributes</a>" : <i>[ <a href="attributes.md">Attributes</a>, ... ]</i>,
+        "<a href="#autoscaleheadrooms" title="AutoscaleHeadrooms">AutoscaleHeadrooms</a>" : <i>[ <a href="autoscaleheadrooms.md">AutoscaleHeadrooms</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,9 +39,9 @@ Properties:
       - String</i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#attributes" title="Attributes">Attributes</a>: <i>
-      - &lt;a href=&#34;attributes.md&#34;&gt;Attributes&lt;/a&gt;</i>
+      - <a href="attributes.md">Attributes</a></i>
     <a href="#autoscaleheadrooms" title="AutoscaleHeadrooms">AutoscaleHeadrooms</a>: <i>
-      - &lt;a href=&#34;autoscaleheadrooms.md&#34;&gt;AutoscaleHeadrooms&lt;/a&gt;</i>
+      - <a href="autoscaleheadrooms.md">AutoscaleHeadrooms</a></i>
 </pre>
 
 ## Properties
@@ -106,7 +106,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;attributes.md&#34;&gt;Attributes&lt;/a&gt;
+_Type_: List of <a href="attributes.md">Attributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscaleheadrooms.md&#34;&gt;AutoscaleHeadrooms&lt;/a&gt;
+_Type_: List of <a href="autoscaleheadrooms.md">AutoscaleHeadrooms</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

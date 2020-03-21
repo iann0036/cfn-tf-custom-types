@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#automaticroll" title="AutomaticRoll">AutomaticRoll</a>" : <i>Boolean</i>,
     "<a href="#batchsizepercentage" title="BatchSizePercentage">BatchSizePercentage</a>" : <i>Double</i>,
     "<a href="#graceperiod" title="GracePeriod">GracePeriod</a>" : <i>Double</i>,
-    "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ &lt;a href=&#34;integrationbeanstalk-deploymentpreferences-strategy.md&#34;&gt;Strategy&lt;/a&gt;, ... ]</i>
+    "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ <a href="integrationbeanstalk-deploymentpreferences-strategy.md">Strategy</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#batchsizepercentage" title="BatchSizePercentage">BatchSizePercentage</a>: <i>Double</i>
 <a href="#graceperiod" title="GracePeriod">GracePeriod</a>: <i>Double</i>
 <a href="#strategy" title="Strategy">Strategy</a>: <i>
-      - &lt;a href=&#34;integrationbeanstalk-deploymentpreferences-strategy.md&#34;&gt;Strategy&lt;/a&gt;</i>
+      - <a href="integrationbeanstalk-deploymentpreferences-strategy.md">Strategy</a></i>
 </pre>
 
 ## Properties
@@ -51,7 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Strategy
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;integrationbeanstalk-deploymentpreferences-strategy.md&#34;&gt;Strategy&lt;/a&gt;
+_Type_: List of <a href="integrationbeanstalk-deploymentpreferences-strategy.md">Strategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

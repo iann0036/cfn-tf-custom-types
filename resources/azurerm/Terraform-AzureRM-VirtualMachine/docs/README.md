@@ -23,25 +23,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#primarynetworkinterfaceid" title="PrimaryNetworkInterfaceId">PrimaryNetworkInterfaceId</a>" : <i>String</i>,
         "<a href="#proximityplacementgroupid" title="ProximityPlacementGroupId">ProximityPlacementGroupId</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#vmsize" title="VmSize">VmSize</a>" : <i>String</i>,
         "<a href="#zones" title="Zones">Zones</a>" : <i>[ String, ... ]</i>,
-        "<a href="#additionalcapabilities" title="AdditionalCapabilities">AdditionalCapabilities</a>" : <i>[ &lt;a href=&#34;additionalcapabilities.md&#34;&gt;AdditionalCapabilities&lt;/a&gt;, ... ]</i>,
-        "<a href="#bootdiagnostics" title="BootDiagnostics">BootDiagnostics</a>" : <i>[ &lt;a href=&#34;bootdiagnostics.md&#34;&gt;BootDiagnostics&lt;/a&gt;, ... ]</i>,
-        "<a href="#identity" title="Identity">Identity</a>" : <i>[ &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;, ... ]</i>,
-        "<a href="#osprofile" title="OsProfile">OsProfile</a>" : <i>[ &lt;a href=&#34;osprofile.md&#34;&gt;OsProfile&lt;/a&gt;, ... ]</i>,
-        "<a href="#osprofilelinuxconfig" title="OsProfileLinuxConfig">OsProfileLinuxConfig</a>" : <i>[ &lt;a href=&#34;osprofilelinuxconfig.md&#34;&gt;OsProfileLinuxConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#osprofilesecrets" title="OsProfileSecrets">OsProfileSecrets</a>" : <i>[ &lt;a href=&#34;osprofilesecrets.md&#34;&gt;OsProfileSecrets&lt;/a&gt;, ... ]</i>,
-        "<a href="#osprofilewindowsconfig" title="OsProfileWindowsConfig">OsProfileWindowsConfig</a>" : <i>[ &lt;a href=&#34;osprofilewindowsconfig.md&#34;&gt;OsProfileWindowsConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#plan" title="Plan">Plan</a>" : <i>[ &lt;a href=&#34;plan.md&#34;&gt;Plan&lt;/a&gt;, ... ]</i>,
-        "<a href="#storagedatadisk" title="StorageDataDisk">StorageDataDisk</a>" : <i>[ &lt;a href=&#34;storagedatadisk.md&#34;&gt;StorageDataDisk&lt;/a&gt;, ... ]</i>,
-        "<a href="#storageimagereference" title="StorageImageReference">StorageImageReference</a>" : <i>[ &lt;a href=&#34;storageimagereference.md&#34;&gt;StorageImageReference&lt;/a&gt;, ... ]</i>,
-        "<a href="#storageosdisk" title="StorageOsDisk">StorageOsDisk</a>" : <i>[ &lt;a href=&#34;storageosdisk.md&#34;&gt;StorageOsDisk&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#sshkeys" title="SshKeys">SshKeys</a>" : <i>[ &lt;a href=&#34;sshkeys.md&#34;&gt;SshKeys&lt;/a&gt;, ... ]</i>,
-        "<a href="#vaultcertificates" title="VaultCertificates">VaultCertificates</a>" : <i>[ &lt;a href=&#34;vaultcertificates.md&#34;&gt;VaultCertificates&lt;/a&gt;, ... ]</i>,
-        "<a href="#additionalunattendconfig" title="AdditionalUnattendConfig">AdditionalUnattendConfig</a>" : <i>[ &lt;a href=&#34;additionalunattendconfig.md&#34;&gt;AdditionalUnattendConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#winrm" title="Winrm">Winrm</a>" : <i>[ &lt;a href=&#34;winrm.md&#34;&gt;Winrm&lt;/a&gt;, ... ]</i>
+        "<a href="#additionalcapabilities" title="AdditionalCapabilities">AdditionalCapabilities</a>" : <i>[ <a href="additionalcapabilities.md">AdditionalCapabilities</a>, ... ]</i>,
+        "<a href="#bootdiagnostics" title="BootDiagnostics">BootDiagnostics</a>" : <i>[ <a href="bootdiagnostics.md">BootDiagnostics</a>, ... ]</i>,
+        "<a href="#identity" title="Identity">Identity</a>" : <i>[ <a href="identity.md">Identity</a>, ... ]</i>,
+        "<a href="#osprofile" title="OsProfile">OsProfile</a>" : <i>[ <a href="osprofile.md">OsProfile</a>, ... ]</i>,
+        "<a href="#osprofilelinuxconfig" title="OsProfileLinuxConfig">OsProfileLinuxConfig</a>" : <i>[ <a href="osprofilelinuxconfig.md">OsProfileLinuxConfig</a>, ... ]</i>,
+        "<a href="#osprofilesecrets" title="OsProfileSecrets">OsProfileSecrets</a>" : <i>[ <a href="osprofilesecrets.md">OsProfileSecrets</a>, ... ]</i>,
+        "<a href="#osprofilewindowsconfig" title="OsProfileWindowsConfig">OsProfileWindowsConfig</a>" : <i>[ <a href="osprofilewindowsconfig.md">OsProfileWindowsConfig</a>, ... ]</i>,
+        "<a href="#plan" title="Plan">Plan</a>" : <i>[ <a href="plan.md">Plan</a>, ... ]</i>,
+        "<a href="#storagedatadisk" title="StorageDataDisk">StorageDataDisk</a>" : <i>[ <a href="storagedatadisk.md">StorageDataDisk</a>, ... ]</i>,
+        "<a href="#storageimagereference" title="StorageImageReference">StorageImageReference</a>" : <i>[ <a href="storageimagereference.md">StorageImageReference</a>, ... ]</i>,
+        "<a href="#storageosdisk" title="StorageOsDisk">StorageOsDisk</a>" : <i>[ <a href="storageosdisk.md">StorageOsDisk</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#sshkeys" title="SshKeys">SshKeys</a>" : <i>[ <a href="sshkeys.md">SshKeys</a>, ... ]</i>,
+        "<a href="#vaultcertificates" title="VaultCertificates">VaultCertificates</a>" : <i>[ <a href="vaultcertificates.md">VaultCertificates</a>, ... ]</i>,
+        "<a href="#additionalunattendconfig" title="AdditionalUnattendConfig">AdditionalUnattendConfig</a>" : <i>[ <a href="additionalunattendconfig.md">AdditionalUnattendConfig</a>, ... ]</i>,
+        "<a href="#winrm" title="Winrm">Winrm</a>" : <i>[ <a href="winrm.md">Winrm</a>, ... ]</i>
     }
 }
 </pre>
@@ -64,41 +64,41 @@ Properties:
     <a href="#proximityplacementgroupid" title="ProximityPlacementGroupId">ProximityPlacementGroupId</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#vmsize" title="VmSize">VmSize</a>: <i>String</i>
     <a href="#zones" title="Zones">Zones</a>: <i>
       - String</i>
     <a href="#additionalcapabilities" title="AdditionalCapabilities">AdditionalCapabilities</a>: <i>
-      - &lt;a href=&#34;additionalcapabilities.md&#34;&gt;AdditionalCapabilities&lt;/a&gt;</i>
+      - <a href="additionalcapabilities.md">AdditionalCapabilities</a></i>
     <a href="#bootdiagnostics" title="BootDiagnostics">BootDiagnostics</a>: <i>
-      - &lt;a href=&#34;bootdiagnostics.md&#34;&gt;BootDiagnostics&lt;/a&gt;</i>
+      - <a href="bootdiagnostics.md">BootDiagnostics</a></i>
     <a href="#identity" title="Identity">Identity</a>: <i>
-      - &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;</i>
+      - <a href="identity.md">Identity</a></i>
     <a href="#osprofile" title="OsProfile">OsProfile</a>: <i>
-      - &lt;a href=&#34;osprofile.md&#34;&gt;OsProfile&lt;/a&gt;</i>
+      - <a href="osprofile.md">OsProfile</a></i>
     <a href="#osprofilelinuxconfig" title="OsProfileLinuxConfig">OsProfileLinuxConfig</a>: <i>
-      - &lt;a href=&#34;osprofilelinuxconfig.md&#34;&gt;OsProfileLinuxConfig&lt;/a&gt;</i>
+      - <a href="osprofilelinuxconfig.md">OsProfileLinuxConfig</a></i>
     <a href="#osprofilesecrets" title="OsProfileSecrets">OsProfileSecrets</a>: <i>
-      - &lt;a href=&#34;osprofilesecrets.md&#34;&gt;OsProfileSecrets&lt;/a&gt;</i>
+      - <a href="osprofilesecrets.md">OsProfileSecrets</a></i>
     <a href="#osprofilewindowsconfig" title="OsProfileWindowsConfig">OsProfileWindowsConfig</a>: <i>
-      - &lt;a href=&#34;osprofilewindowsconfig.md&#34;&gt;OsProfileWindowsConfig&lt;/a&gt;</i>
+      - <a href="osprofilewindowsconfig.md">OsProfileWindowsConfig</a></i>
     <a href="#plan" title="Plan">Plan</a>: <i>
-      - &lt;a href=&#34;plan.md&#34;&gt;Plan&lt;/a&gt;</i>
+      - <a href="plan.md">Plan</a></i>
     <a href="#storagedatadisk" title="StorageDataDisk">StorageDataDisk</a>: <i>
-      - &lt;a href=&#34;storagedatadisk.md&#34;&gt;StorageDataDisk&lt;/a&gt;</i>
+      - <a href="storagedatadisk.md">StorageDataDisk</a></i>
     <a href="#storageimagereference" title="StorageImageReference">StorageImageReference</a>: <i>
-      - &lt;a href=&#34;storageimagereference.md&#34;&gt;StorageImageReference&lt;/a&gt;</i>
+      - <a href="storageimagereference.md">StorageImageReference</a></i>
     <a href="#storageosdisk" title="StorageOsDisk">StorageOsDisk</a>: <i>
-      - &lt;a href=&#34;storageosdisk.md&#34;&gt;StorageOsDisk&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="storageosdisk.md">StorageOsDisk</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#sshkeys" title="SshKeys">SshKeys</a>: <i>
-      - &lt;a href=&#34;sshkeys.md&#34;&gt;SshKeys&lt;/a&gt;</i>
+      - <a href="sshkeys.md">SshKeys</a></i>
     <a href="#vaultcertificates" title="VaultCertificates">VaultCertificates</a>: <i>
-      - &lt;a href=&#34;vaultcertificates.md&#34;&gt;VaultCertificates&lt;/a&gt;</i>
+      - <a href="vaultcertificates.md">VaultCertificates</a></i>
     <a href="#additionalunattendconfig" title="AdditionalUnattendConfig">AdditionalUnattendConfig</a>: <i>
-      - &lt;a href=&#34;additionalunattendconfig.md&#34;&gt;AdditionalUnattendConfig&lt;/a&gt;</i>
+      - <a href="additionalunattendconfig.md">AdditionalUnattendConfig</a></i>
     <a href="#winrm" title="Winrm">Winrm</a>: <i>
-      - &lt;a href=&#34;winrm.md&#34;&gt;Winrm&lt;/a&gt;</i>
+      - <a href="winrm.md">Winrm</a></i>
 </pre>
 
 ## Properties
@@ -195,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -219,7 +219,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;additionalcapabilities.md&#34;&gt;AdditionalCapabilities&lt;/a&gt;
+_Type_: List of <a href="additionalcapabilities.md">AdditionalCapabilities</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,7 +227,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bootdiagnostics.md&#34;&gt;BootDiagnostics&lt;/a&gt;
+_Type_: List of <a href="bootdiagnostics.md">BootDiagnostics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -235,7 +235,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;
+_Type_: List of <a href="identity.md">Identity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -243,7 +243,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;osprofile.md&#34;&gt;OsProfile&lt;/a&gt;
+_Type_: List of <a href="osprofile.md">OsProfile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -251,7 +251,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;osprofilelinuxconfig.md&#34;&gt;OsProfileLinuxConfig&lt;/a&gt;
+_Type_: List of <a href="osprofilelinuxconfig.md">OsProfileLinuxConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -259,7 +259,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;osprofilesecrets.md&#34;&gt;OsProfileSecrets&lt;/a&gt;
+_Type_: List of <a href="osprofilesecrets.md">OsProfileSecrets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -267,7 +267,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;osprofilewindowsconfig.md&#34;&gt;OsProfileWindowsConfig&lt;/a&gt;
+_Type_: List of <a href="osprofilewindowsconfig.md">OsProfileWindowsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -275,7 +275,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;plan.md&#34;&gt;Plan&lt;/a&gt;
+_Type_: List of <a href="plan.md">Plan</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -283,7 +283,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storagedatadisk.md&#34;&gt;StorageDataDisk&lt;/a&gt;
+_Type_: List of <a href="storagedatadisk.md">StorageDataDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -291,7 +291,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storageimagereference.md&#34;&gt;StorageImageReference&lt;/a&gt;
+_Type_: List of <a href="storageimagereference.md">StorageImageReference</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -299,7 +299,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storageosdisk.md&#34;&gt;StorageOsDisk&lt;/a&gt;
+_Type_: List of <a href="storageosdisk.md">StorageOsDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -307,7 +307,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -315,7 +315,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sshkeys.md&#34;&gt;SshKeys&lt;/a&gt;
+_Type_: List of <a href="sshkeys.md">SshKeys</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -323,7 +323,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vaultcertificates.md&#34;&gt;VaultCertificates&lt;/a&gt;
+_Type_: List of <a href="vaultcertificates.md">VaultCertificates</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -331,7 +331,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;additionalunattendconfig.md&#34;&gt;AdditionalUnattendConfig&lt;/a&gt;
+_Type_: List of <a href="additionalunattendconfig.md">AdditionalUnattendConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -339,7 +339,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;winrm.md&#34;&gt;Winrm&lt;/a&gt;
+_Type_: List of <a href="winrm.md">Winrm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

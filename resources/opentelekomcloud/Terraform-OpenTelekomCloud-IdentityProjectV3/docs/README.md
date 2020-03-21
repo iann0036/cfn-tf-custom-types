@@ -103,9 +103,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Enabled
 
-Returns the &lt;code&gt;Enabled&lt;/code&gt; value.
+Returns the <code>Enabled</code> value.
 
 #### IsDomain
 
-Returns the &lt;code&gt;IsDomain&lt;/code&gt; value.
+Returns the <code>IsDomain</code> value.
 

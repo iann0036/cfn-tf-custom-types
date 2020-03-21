@@ -424,9 +424,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MkAuthKeyEnc
 
-Returns the &lt;code&gt;MkAuthKeyEnc&lt;/code&gt; value.
+Returns the <code>MkAuthKeyEnc</code> value.
 
 #### MkEspEncryptionKeyEnc
 
-Returns the &lt;code&gt;MkEspEncryptionKeyEnc&lt;/code&gt; value.
+Returns the <code>MkEspEncryptionKeyEnc</code> value.
 

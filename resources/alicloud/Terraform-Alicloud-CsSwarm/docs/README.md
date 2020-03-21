@@ -193,21 +193,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AgentVersion
 
-Returns the &lt;code&gt;AgentVersion&lt;/code&gt; value.
+Returns the <code>AgentVersion</code> value.
 
 #### Nodes
 
-Returns the &lt;code&gt;Nodes&lt;/code&gt; value.
+Returns the <code>Nodes</code> value.
 
 #### SecurityGroupId
 
-Returns the &lt;code&gt;SecurityGroupId&lt;/code&gt; value.
+Returns the <code>SecurityGroupId</code> value.
 
 #### SlbId
 
-Returns the &lt;code&gt;SlbId&lt;/code&gt; value.
+Returns the <code>SlbId</code> value.
 
 #### VpcId
 
-Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
+Returns the <code>VpcId</code> value.
 

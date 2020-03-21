@@ -113,21 +113,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### GroupCount
 
-Returns the &lt;code&gt;GroupCount&lt;/code&gt; value.
+Returns the <code>GroupCount</code> value.
 
 #### MaxMsgSizeByte
 
-Returns the &lt;code&gt;MaxMsgSizeByte&lt;/code&gt; value.
+Returns the <code>MaxMsgSizeByte</code> value.
 
 #### ProducedMessages
 
-Returns the &lt;code&gt;ProducedMessages&lt;/code&gt; value.
+Returns the <code>ProducedMessages</code> value.
 
 #### Reservation
 
-Returns the &lt;code&gt;Reservation&lt;/code&gt; value.
+Returns the <code>Reservation</code> value.
 

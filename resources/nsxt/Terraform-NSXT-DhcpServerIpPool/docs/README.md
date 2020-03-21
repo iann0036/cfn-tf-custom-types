@@ -20,10 +20,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#leasetime" title="LeaseTime">LeaseTime</a>" : <i>Double</i>,
         "<a href="#logicaldhcpserverid" title="LogicalDhcpServerId">LogicalDhcpServerId</a>" : <i>String</i>,
         "<a href="#warningthreshold" title="WarningThreshold">WarningThreshold</a>" : <i>Double</i>,
-        "<a href="#dhcpgenericoption" title="DhcpGenericOption">DhcpGenericOption</a>" : <i>[ &lt;a href=&#34;dhcpgenericoption.md&#34;&gt;DhcpGenericOption&lt;/a&gt;, ... ]</i>,
-        "<a href="#dhcpoption121" title="DhcpOption121">DhcpOption121</a>" : <i>[ &lt;a href=&#34;dhcpoption121.md&#34;&gt;DhcpOption121&lt;/a&gt;, ... ]</i>,
-        "<a href="#iprange" title="IpRange">IpRange</a>" : <i>[ &lt;a href=&#34;iprange.md&#34;&gt;IpRange&lt;/a&gt;, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>
+        "<a href="#dhcpgenericoption" title="DhcpGenericOption">DhcpGenericOption</a>" : <i>[ <a href="dhcpgenericoption.md">DhcpGenericOption</a>, ... ]</i>,
+        "<a href="#dhcpoption121" title="DhcpOption121">DhcpOption121</a>" : <i>[ <a href="dhcpoption121.md">DhcpOption121</a>, ... ]</i>,
+        "<a href="#iprange" title="IpRange">IpRange</a>" : <i>[ <a href="iprange.md">IpRange</a>, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>
     }
 }
 </pre>
@@ -42,13 +42,13 @@ Properties:
     <a href="#logicaldhcpserverid" title="LogicalDhcpServerId">LogicalDhcpServerId</a>: <i>String</i>
     <a href="#warningthreshold" title="WarningThreshold">WarningThreshold</a>: <i>Double</i>
     <a href="#dhcpgenericoption" title="DhcpGenericOption">DhcpGenericOption</a>: <i>
-      - &lt;a href=&#34;dhcpgenericoption.md&#34;&gt;DhcpGenericOption&lt;/a&gt;</i>
+      - <a href="dhcpgenericoption.md">DhcpGenericOption</a></i>
     <a href="#dhcpoption121" title="DhcpOption121">DhcpOption121</a>: <i>
-      - &lt;a href=&#34;dhcpoption121.md&#34;&gt;DhcpOption121&lt;/a&gt;</i>
+      - <a href="dhcpoption121.md">DhcpOption121</a></i>
     <a href="#iprange" title="IpRange">IpRange</a>: <i>
-      - &lt;a href=&#34;iprange.md&#34;&gt;IpRange&lt;/a&gt;</i>
+      - <a href="iprange.md">IpRange</a></i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+      - <a href="tag.md">Tag</a></i>
 </pre>
 
 ## Properties
@@ -121,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dhcpgenericoption.md&#34;&gt;DhcpGenericOption&lt;/a&gt;
+_Type_: List of <a href="dhcpgenericoption.md">DhcpGenericOption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dhcpoption121.md&#34;&gt;DhcpOption121&lt;/a&gt;
+_Type_: List of <a href="dhcpoption121.md">DhcpOption121</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;iprange.md&#34;&gt;IpRange&lt;/a&gt;
+_Type_: List of <a href="iprange.md">IpRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
+_Type_: List of <a href="tag.md">Tag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,5 +167,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Revision
 
-Returns the &lt;code&gt;Revision&lt;/code&gt; value.
+Returns the <code>Revision</code> value.
 

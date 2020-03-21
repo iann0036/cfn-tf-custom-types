@@ -11,8 +11,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#accessmodes" title="AccessModes">AccessModes</a>" : <i>[ String, ... ]</i>,
     "<a href="#storageclassname" title="StorageClassName">StorageClassName</a>" : <i>String</i>,
     "<a href="#volumename" title="VolumeName">VolumeName</a>" : <i>String</i>,
-    "<a href="#resources" title="Resources">Resources</a>" : <i>[ &lt;a href=&#34;spec-resources.md&#34;&gt;Resources&lt;/a&gt;, ... ]</i>,
-    "<a href="#selector" title="Selector">Selector</a>" : <i>[ &lt;a href=&#34;spec-selector.md&#34;&gt;Selector&lt;/a&gt;, ... ]</i>
+    "<a href="#resources" title="Resources">Resources</a>" : <i>[ <a href="spec-resources.md">Resources</a>, ... ]</i>,
+    "<a href="#selector" title="Selector">Selector</a>" : <i>[ <a href="spec-selector.md">Selector</a>, ... ]</i>
 }
 </pre>
 
@@ -24,9 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#storageclassname" title="StorageClassName">StorageClassName</a>: <i>String</i>
 <a href="#volumename" title="VolumeName">VolumeName</a>: <i>String</i>
 <a href="#resources" title="Resources">Resources</a>: <i>
-      - &lt;a href=&#34;spec-resources.md&#34;&gt;Resources&lt;/a&gt;</i>
+      - <a href="spec-resources.md">Resources</a></i>
 <a href="#selector" title="Selector">Selector</a>: <i>
-      - &lt;a href=&#34;spec-selector.md&#34;&gt;Selector&lt;/a&gt;</i>
+      - <a href="spec-selector.md">Selector</a></i>
 </pre>
 
 ## Properties
@@ -55,14 +55,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Resources
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-resources.md&#34;&gt;Resources&lt;/a&gt;
+_Type_: List of <a href="spec-resources.md">Resources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Selector
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-selector.md&#34;&gt;Selector&lt;/a&gt;
+_Type_: List of <a href="spec-selector.md">Selector</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

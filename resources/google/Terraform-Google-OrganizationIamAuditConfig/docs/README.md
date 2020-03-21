@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#orgid" title="OrgId">OrgId</a>" : <i>String</i>,
         "<a href="#service" title="Service">Service</a>" : <i>String</i>,
-        "<a href="#auditlogconfig" title="AuditLogConfig">AuditLogConfig</a>" : <i>[ &lt;a href=&#34;auditlogconfig.md&#34;&gt;AuditLogConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#auditlogconfig" title="AuditLogConfig">AuditLogConfig</a>" : <i>[ <a href="auditlogconfig.md">AuditLogConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,7 +29,7 @@ Properties:
     <a href="#orgid" title="OrgId">OrgId</a>: <i>String</i>
     <a href="#service" title="Service">Service</a>: <i>String</i>
     <a href="#auditlogconfig" title="AuditLogConfig">AuditLogConfig</a>: <i>
-      - &lt;a href=&#34;auditlogconfig.md&#34;&gt;AuditLogConfig&lt;/a&gt;</i>
+      - <a href="auditlogconfig.md">AuditLogConfig</a></i>
 </pre>
 
 ## Properties
@@ -62,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;auditlogconfig.md&#34;&gt;AuditLogConfig&lt;/a&gt;
+_Type_: List of <a href="auditlogconfig.md">AuditLogConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 

@@ -178,17 +178,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OperationDetails
 
-Returns the &lt;code&gt;OperationDetails&lt;/code&gt; value.
+Returns the <code>OperationDetails</code> value.
 
 #### ParentListener
 
-Returns the &lt;code&gt;ParentListener&lt;/code&gt; value.
+Returns the <code>ParentListener</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

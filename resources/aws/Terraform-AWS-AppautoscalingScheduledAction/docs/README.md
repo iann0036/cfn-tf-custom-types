@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#schedule" title="Schedule">Schedule</a>" : <i>String</i>,
         "<a href="#servicenamespace" title="ServiceNamespace">ServiceNamespace</a>" : <i>String</i>,
         "<a href="#starttime" title="StartTime">StartTime</a>" : <i>String</i>,
-        "<a href="#scalabletargetaction" title="ScalableTargetAction">ScalableTargetAction</a>" : <i>[ &lt;a href=&#34;scalabletargetaction.md&#34;&gt;ScalableTargetAction&lt;/a&gt;, ... ]</i>
+        "<a href="#scalabletargetaction" title="ScalableTargetAction">ScalableTargetAction</a>" : <i>[ <a href="scalabletargetaction.md">ScalableTargetAction</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +39,7 @@ Properties:
     <a href="#servicenamespace" title="ServiceNamespace">ServiceNamespace</a>: <i>String</i>
     <a href="#starttime" title="StartTime">StartTime</a>: <i>String</i>
     <a href="#scalabletargetaction" title="ScalableTargetAction">ScalableTargetAction</a>: <i>
-      - &lt;a href=&#34;scalabletargetaction.md&#34;&gt;ScalableTargetAction&lt;/a&gt;</i>
+      - <a href="scalabletargetaction.md">ScalableTargetAction</a></i>
 </pre>
 
 ## Properties
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalabletargetaction.md&#34;&gt;ScalableTargetAction&lt;/a&gt;
+_Type_: List of <a href="scalabletargetaction.md">ScalableTargetAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,5 +134,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

@@ -27,14 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#relatedclusterid" title="RelatedClusterId">RelatedClusterId</a>" : <i>String</i>,
         "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
         "<a href="#sshenable" title="SshEnable">SshEnable</a>" : <i>Boolean</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#uselocalmetadb" title="UseLocalMetadb">UseLocalMetadb</a>" : <i>Boolean</i>,
         "<a href="#userdefinedemrecsrole" title="UserDefinedEmrEcsRole">UserDefinedEmrEcsRole</a>" : <i>String</i>,
         "<a href="#vswitchid" title="VswitchId">VswitchId</a>" : <i>String</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#bootstrapaction" title="BootstrapAction">BootstrapAction</a>" : <i>[ &lt;a href=&#34;bootstrapaction.md&#34;&gt;BootstrapAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#hostgroup" title="HostGroup">HostGroup</a>" : <i>[ &lt;a href=&#34;hostgroup.md&#34;&gt;HostGroup&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#bootstrapaction" title="BootstrapAction">BootstrapAction</a>" : <i>[ <a href="bootstrapaction.md">BootstrapAction</a>, ... ]</i>,
+        "<a href="#hostgroup" title="HostGroup">HostGroup</a>" : <i>[ <a href="hostgroup.md">HostGroup</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -61,16 +61,16 @@ Properties:
     <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
     <a href="#sshenable" title="SshEnable">SshEnable</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#uselocalmetadb" title="UseLocalMetadb">UseLocalMetadb</a>: <i>Boolean</i>
     <a href="#userdefinedemrecsrole" title="UserDefinedEmrEcsRole">UserDefinedEmrEcsRole</a>: <i>String</i>
     <a href="#vswitchid" title="VswitchId">VswitchId</a>: <i>String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#bootstrapaction" title="BootstrapAction">BootstrapAction</a>: <i>
-      - &lt;a href=&#34;bootstrapaction.md&#34;&gt;BootstrapAction&lt;/a&gt;</i>
+      - <a href="bootstrapaction.md">BootstrapAction</a></i>
     <a href="#hostgroup" title="HostGroup">HostGroup</a>: <i>
-      - &lt;a href=&#34;hostgroup.md&#34;&gt;HostGroup&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="hostgroup.md">HostGroup</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -199,7 +199,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -239,7 +239,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bootstrapaction.md&#34;&gt;BootstrapAction&lt;/a&gt;
+_Type_: List of <a href="bootstrapaction.md">BootstrapAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -247,7 +247,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hostgroup.md&#34;&gt;HostGroup&lt;/a&gt;
+_Type_: List of <a href="hostgroup.md">HostGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -255,7 +255,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

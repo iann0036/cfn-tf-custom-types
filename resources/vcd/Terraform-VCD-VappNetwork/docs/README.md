@@ -28,8 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#retainipmacenabled" title="RetainIpMacEnabled">RetainIpMacEnabled</a>" : <i>Boolean</i>,
         "<a href="#vappname" title="VappName">VappName</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#dhcppool" title="DhcpPool">DhcpPool</a>" : <i>[ &lt;a href=&#34;dhcppool.md&#34;&gt;DhcpPool&lt;/a&gt;, ... ]</i>,
-        "<a href="#staticippool" title="StaticIpPool">StaticIpPool</a>" : <i>[ &lt;a href=&#34;staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;, ... ]</i>
+        "<a href="#dhcppool" title="DhcpPool">DhcpPool</a>" : <i>[ <a href="dhcppool.md">DhcpPool</a>, ... ]</i>,
+        "<a href="#staticippool" title="StaticIpPool">StaticIpPool</a>" : <i>[ <a href="staticippool.md">StaticIpPool</a>, ... ]</i>
     }
 }
 </pre>
@@ -56,9 +56,9 @@ Properties:
     <a href="#vappname" title="VappName">VappName</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#dhcppool" title="DhcpPool">DhcpPool</a>: <i>
-      - &lt;a href=&#34;dhcppool.md&#34;&gt;DhcpPool&lt;/a&gt;</i>
+      - <a href="dhcppool.md">DhcpPool</a></i>
     <a href="#staticippool" title="StaticIpPool">StaticIpPool</a>: <i>
-      - &lt;a href=&#34;staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;</i>
+      - <a href="staticippool.md">StaticIpPool</a></i>
 </pre>
 
 ## Properties
@@ -195,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dhcppool.md&#34;&gt;DhcpPool&lt;/a&gt;
+_Type_: List of <a href="dhcppool.md">DhcpPool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,7 +203,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;
+_Type_: List of <a href="staticippool.md">StaticIpPool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

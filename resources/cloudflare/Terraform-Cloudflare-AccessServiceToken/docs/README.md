@@ -73,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClientId
 
-Returns the &lt;code&gt;ClientId&lt;/code&gt; value.
+Returns the <code>ClientId</code> value.
 
 #### ClientSecret
 
-Returns the &lt;code&gt;ClientSecret&lt;/code&gt; value.
+Returns the <code>ClientSecret</code> value.
 

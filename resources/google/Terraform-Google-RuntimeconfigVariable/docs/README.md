@@ -103,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### UpdateTime
 
-Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
+Returns the <code>UpdateTime</code> value.
 

@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#statement" title="Statement">Statement</a>" : <i>[ &lt;a href=&#34;statement.md&#34;&gt;Statement&lt;/a&gt;, ... ]</i>
+        "<a href="#statement" title="Statement">Statement</a>" : <i>[ <a href="statement.md">Statement</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,7 +35,7 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#statement" title="Statement">Statement</a>: <i>
-      - &lt;a href=&#34;statement.md&#34;&gt;Statement&lt;/a&gt;</i>
+      - <a href="statement.md">Statement</a></i>
 </pre>
 
 ## Properties
@@ -92,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;statement.md&#34;&gt;Statement&lt;/a&gt;
+_Type_: List of <a href="statement.md">Statement</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,9 +114,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AttachmentCount
 
-Returns the &lt;code&gt;AttachmentCount&lt;/code&gt; value.
+Returns the <code>AttachmentCount</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 

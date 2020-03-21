@@ -123,21 +123,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ExternalNetworkDns1
 
-Returns the &lt;code&gt;ExternalNetworkDns1&lt;/code&gt; value.
+Returns the <code>ExternalNetworkDns1</code> value.
 
 #### ExternalNetworkDns2
 
-Returns the &lt;code&gt;ExternalNetworkDns2&lt;/code&gt; value.
+Returns the <code>ExternalNetworkDns2</code> value.
 
 #### ExternalNetworkDnsSuffix
 
-Returns the &lt;code&gt;ExternalNetworkDnsSuffix&lt;/code&gt; value.
+Returns the <code>ExternalNetworkDnsSuffix</code> value.
 
 #### ExternalNetworkGateway
 
-Returns the &lt;code&gt;ExternalNetworkGateway&lt;/code&gt; value.
+Returns the <code>ExternalNetworkGateway</code> value.
 
 #### ExternalNetworkNetmask
 
-Returns the &lt;code&gt;ExternalNetworkNetmask&lt;/code&gt; value.
+Returns the <code>ExternalNetworkNetmask</code> value.
 

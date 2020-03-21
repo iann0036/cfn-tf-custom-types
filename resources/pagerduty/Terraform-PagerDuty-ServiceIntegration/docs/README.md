@@ -113,5 +113,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HtmlUrl
 
-Returns the &lt;code&gt;HtmlUrl&lt;/code&gt; value.
+Returns the <code>HtmlUrl</code> value.
 

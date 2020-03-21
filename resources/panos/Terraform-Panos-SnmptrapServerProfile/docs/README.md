@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#vsys" title="Vsys">Vsys</a>" : <i>String</i>,
-        "<a href="#v2cserver" title="V2cServer">V2cServer</a>" : <i>[ &lt;a href=&#34;v2cserver.md&#34;&gt;V2cServer&lt;/a&gt;, ... ]</i>,
-        "<a href="#v3server" title="V3Server">V3Server</a>" : <i>[ &lt;a href=&#34;v3server.md&#34;&gt;V3Server&lt;/a&gt;, ... ]</i>
+        "<a href="#v2cserver" title="V2cServer">V2cServer</a>" : <i>[ <a href="v2cserver.md">V2cServer</a>, ... ]</i>,
+        "<a href="#v3server" title="V3Server">V3Server</a>" : <i>[ <a href="v3server.md">V3Server</a>, ... ]</i>
     }
 }
 </pre>
@@ -30,9 +30,9 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#vsys" title="Vsys">Vsys</a>: <i>String</i>
     <a href="#v2cserver" title="V2cServer">V2cServer</a>: <i>
-      - &lt;a href=&#34;v2cserver.md&#34;&gt;V2cServer&lt;/a&gt;</i>
+      - <a href="v2cserver.md">V2cServer</a></i>
     <a href="#v3server" title="V3Server">V3Server</a>: <i>
-      - &lt;a href=&#34;v3server.md&#34;&gt;V3Server&lt;/a&gt;</i>
+      - <a href="v3server.md">V3Server</a></i>
 </pre>
 
 ## Properties
@@ -65,7 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;v2cserver.md&#34;&gt;V2cServer&lt;/a&gt;
+_Type_: List of <a href="v2cserver.md">V2cServer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,7 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;v3server.md&#34;&gt;V3Server&lt;/a&gt;
+_Type_: List of <a href="v3server.md">V3Server</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,17 +95,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AuthPasswordEnc
 
-Returns the &lt;code&gt;AuthPasswordEnc&lt;/code&gt; value.
+Returns the <code>AuthPasswordEnc</code> value.
 
 #### AuthPasswordRaw
 
-Returns the &lt;code&gt;AuthPasswordRaw&lt;/code&gt; value.
+Returns the <code>AuthPasswordRaw</code> value.
 
 #### PrivPasswordEnc
 
-Returns the &lt;code&gt;PrivPasswordEnc&lt;/code&gt; value.
+Returns the <code>PrivPasswordEnc</code> value.
 
 #### PrivPasswordRaw
 
-Returns the &lt;code&gt;PrivPasswordRaw&lt;/code&gt; value.
+Returns the <code>PrivPasswordRaw</code> value.
 

@@ -63,5 +63,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DkimTokens
 
-Returns the &lt;code&gt;DkimTokens&lt;/code&gt; value.
+Returns the <code>DkimTokens</code> value.
 

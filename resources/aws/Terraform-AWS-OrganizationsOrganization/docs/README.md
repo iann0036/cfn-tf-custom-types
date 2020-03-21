@@ -85,29 +85,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accounts
 
-Returns the &lt;code&gt;Accounts&lt;/code&gt; value.
+Returns the <code>Accounts</code> value.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### MasterAccountArn
 
-Returns the &lt;code&gt;MasterAccountArn&lt;/code&gt; value.
+Returns the <code>MasterAccountArn</code> value.
 
 #### MasterAccountEmail
 
-Returns the &lt;code&gt;MasterAccountEmail&lt;/code&gt; value.
+Returns the <code>MasterAccountEmail</code> value.
 
 #### MasterAccountId
 
-Returns the &lt;code&gt;MasterAccountId&lt;/code&gt; value.
+Returns the <code>MasterAccountId</code> value.
 
 #### NonMasterAccounts
 
-Returns the &lt;code&gt;NonMasterAccounts&lt;/code&gt; value.
+Returns the <code>NonMasterAccounts</code> value.
 
 #### Roots
 
-Returns the &lt;code&gt;Roots&lt;/code&gt; value.
+Returns the <code>Roots</code> value.
 

@@ -16,9 +16,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#retainnetinfoacrossdeployments" title="RetainNetInfoAcrossDeployments">RetainNetInfoAcrossDeployments</a>" : <i>Boolean</i>,
-        "<a href="#ipscope" title="IpScope">IpScope</a>" : <i>[ &lt;a href=&#34;ipscope.md&#34;&gt;IpScope&lt;/a&gt;, ... ]</i>,
-        "<a href="#vspherenetwork" title="VsphereNetwork">VsphereNetwork</a>" : <i>[ &lt;a href=&#34;vspherenetwork.md&#34;&gt;VsphereNetwork&lt;/a&gt;, ... ]</i>,
-        "<a href="#staticippool" title="StaticIpPool">StaticIpPool</a>" : <i>[ &lt;a href=&#34;staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;, ... ]</i>
+        "<a href="#ipscope" title="IpScope">IpScope</a>" : <i>[ <a href="ipscope.md">IpScope</a>, ... ]</i>,
+        "<a href="#vspherenetwork" title="VsphereNetwork">VsphereNetwork</a>" : <i>[ <a href="vspherenetwork.md">VsphereNetwork</a>, ... ]</i>,
+        "<a href="#staticippool" title="StaticIpPool">StaticIpPool</a>" : <i>[ <a href="staticippool.md">StaticIpPool</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,11 +33,11 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#retainnetinfoacrossdeployments" title="RetainNetInfoAcrossDeployments">RetainNetInfoAcrossDeployments</a>: <i>Boolean</i>
     <a href="#ipscope" title="IpScope">IpScope</a>: <i>
-      - &lt;a href=&#34;ipscope.md&#34;&gt;IpScope&lt;/a&gt;</i>
+      - <a href="ipscope.md">IpScope</a></i>
     <a href="#vspherenetwork" title="VsphereNetwork">VsphereNetwork</a>: <i>
-      - &lt;a href=&#34;vspherenetwork.md&#34;&gt;VsphereNetwork&lt;/a&gt;</i>
+      - <a href="vspherenetwork.md">VsphereNetwork</a></i>
     <a href="#staticippool" title="StaticIpPool">StaticIpPool</a>: <i>
-      - &lt;a href=&#34;staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;</i>
+      - <a href="staticippool.md">StaticIpPool</a></i>
 </pre>
 
 ## Properties
@@ -78,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipscope.md&#34;&gt;IpScope&lt;/a&gt;
+_Type_: List of <a href="ipscope.md">IpScope</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -86,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vspherenetwork.md&#34;&gt;VsphereNetwork&lt;/a&gt;
+_Type_: List of <a href="vspherenetwork.md">VsphereNetwork</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;staticippool.md&#34;&gt;StaticIpPool&lt;/a&gt;
+_Type_: List of <a href="staticippool.md">StaticIpPool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

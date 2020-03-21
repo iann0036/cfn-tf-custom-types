@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#maxdelaytime" title="MaxDelayTime">MaxDelayTime</a>" : <i>Double</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
-        "<a href="#weight" title="Weight">Weight</a>" : <i>[ &lt;a href=&#34;weight.md&#34;&gt;Weight&lt;/a&gt;, ... ]</i>
+        "<a href="#weight" title="Weight">Weight</a>" : <i>[ <a href="weight.md">Weight</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,7 +35,7 @@ Properties:
     <a href="#maxdelaytime" title="MaxDelayTime">MaxDelayTime</a>: <i>Double</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#weight" title="Weight">Weight</a>: <i>
-      - &lt;a href=&#34;weight.md&#34;&gt;Weight&lt;/a&gt;</i>
+      - <a href="weight.md">Weight</a></i>
 </pre>
 
 ## Properties
@@ -92,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;weight.md&#34;&gt;Weight&lt;/a&gt;
+_Type_: List of <a href="weight.md">Weight</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,5 +114,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConnectionString
 
-Returns the &lt;code&gt;ConnectionString&lt;/code&gt; value.
+Returns the <code>ConnectionString</code> value.
 

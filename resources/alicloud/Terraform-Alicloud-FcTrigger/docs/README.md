@@ -143,9 +143,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 
 #### TriggerId
 
-Returns the &lt;code&gt;TriggerId&lt;/code&gt; value.
+Returns the <code>TriggerId</code> value.
 

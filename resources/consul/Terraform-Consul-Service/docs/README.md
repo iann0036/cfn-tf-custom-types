@@ -16,14 +16,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#datacenter" title="Datacenter">Datacenter</a>" : <i>String</i>,
         "<a href="#external" title="External">External</a>" : <i>Boolean</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#meta" title="Meta">Meta</a>" : <i>[ &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;, ... ]</i>,
+        "<a href="#meta" title="Meta">Meta</a>" : <i>[ <a href="meta.md">Meta</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#node" title="Node">Node</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#serviceid" title="ServiceId">ServiceId</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#check" title="Check">Check</a>" : <i>[ &lt;a href=&#34;check.md&#34;&gt;Check&lt;/a&gt;, ... ]</i>,
-        "<a href="#header" title="Header">Header</a>" : <i>[ &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;, ... ]</i>
+        "<a href="#check" title="Check">Check</a>" : <i>[ <a href="check.md">Check</a>, ... ]</i>,
+        "<a href="#header" title="Header">Header</a>" : <i>[ <a href="header.md">Header</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,7 +38,7 @@ Properties:
     <a href="#external" title="External">External</a>: <i>Boolean</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#meta" title="Meta">Meta</a>: <i>
-      - &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;</i>
+      - <a href="meta.md">Meta</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#node" title="Node">Node</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
@@ -46,9 +46,9 @@ Properties:
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#check" title="Check">Check</a>: <i>
-      - &lt;a href=&#34;check.md&#34;&gt;Check&lt;/a&gt;</i>
+      - <a href="check.md">Check</a></i>
     <a href="#header" title="Header">Header</a>: <i>
-      - &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;</i>
+      - <a href="header.md">Header</a></i>
 </pre>
 
 ## Properties
@@ -89,7 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;
+_Type_: List of <a href="meta.md">Meta</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;check.md&#34;&gt;Check&lt;/a&gt;
+_Type_: List of <a href="check.md">Check</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;header.md&#34;&gt;Header&lt;/a&gt;
+_Type_: List of <a href="header.md">Header</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#producttype" title="ProductType">ProductType</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#validityinyears" title="ValidityInYears">ValidityInYears</a>" : <i>Double</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -43,9 +43,9 @@ Properties:
     <a href="#producttype" title="ProductType">ProductType</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#validityinyears" title="ValidityInYears">ValidityInYears</a>: <i>Double</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -126,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -142,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,37 +164,37 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AppServiceCertificateNotRenewableReasons
 
-Returns the &lt;code&gt;AppServiceCertificateNotRenewableReasons&lt;/code&gt; value.
+Returns the <code>AppServiceCertificateNotRenewableReasons</code> value.
 
 #### Certificates
 
-Returns the &lt;code&gt;Certificates&lt;/code&gt; value.
+Returns the <code>Certificates</code> value.
 
 #### DomainVerificationToken
 
-Returns the &lt;code&gt;DomainVerificationToken&lt;/code&gt; value.
+Returns the <code>DomainVerificationToken</code> value.
 
 #### ExpirationTime
 
-Returns the &lt;code&gt;ExpirationTime&lt;/code&gt; value.
+Returns the <code>ExpirationTime</code> value.
 
 #### IntermediateThumbprint
 
-Returns the &lt;code&gt;IntermediateThumbprint&lt;/code&gt; value.
+Returns the <code>IntermediateThumbprint</code> value.
 
 #### IsPrivateKeyExternal
 
-Returns the &lt;code&gt;IsPrivateKeyExternal&lt;/code&gt; value.
+Returns the <code>IsPrivateKeyExternal</code> value.
 
 #### RootThumbprint
 
-Returns the &lt;code&gt;RootThumbprint&lt;/code&gt; value.
+Returns the <code>RootThumbprint</code> value.
 
 #### SignedCertificateThumbprint
 
-Returns the &lt;code&gt;SignedCertificateThumbprint&lt;/code&gt; value.
+Returns the <code>SignedCertificateThumbprint</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

@@ -184,5 +184,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PasswordEnc
 
-Returns the &lt;code&gt;PasswordEnc&lt;/code&gt; value.
+Returns the <code>PasswordEnc</code> value.
 

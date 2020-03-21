@@ -83,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### Value
 
-Returns the &lt;code&gt;Value&lt;/code&gt; value.
+Returns the <code>Value</code> value.
 

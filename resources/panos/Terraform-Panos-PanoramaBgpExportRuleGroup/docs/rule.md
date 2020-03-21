@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#nexthop" title="NextHop">NextHop</a>" : <i>String</i>,
     "<a href="#origin" title="Origin">Origin</a>" : <i>String</i>,
     "<a href="#usedby" title="UsedBy">UsedBy</a>" : <i>[ String, ... ]</i>,
-    "<a href="#matchaddressprefix" title="MatchAddressPrefix">MatchAddressPrefix</a>" : <i>[ &lt;a href=&#34;rule-matchaddressprefix.md&#34;&gt;MatchAddressPrefix&lt;/a&gt;, ... ]</i>
+    "<a href="#matchaddressprefix" title="MatchAddressPrefix">MatchAddressPrefix</a>" : <i>[ <a href="rule-matchaddressprefix.md">MatchAddressPrefix</a>, ... ]</i>
 }
 </pre>
 
@@ -63,7 +63,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#usedby" title="UsedBy">UsedBy</a>: <i>
       - String</i>
 <a href="#matchaddressprefix" title="MatchAddressPrefix">MatchAddressPrefix</a>: <i>
-      - &lt;a href=&#34;rule-matchaddressprefix.md&#34;&gt;MatchAddressPrefix&lt;/a&gt;</i>
+      - <a href="rule-matchaddressprefix.md">MatchAddressPrefix</a></i>
 </pre>
 
 ## Properties
@@ -225,7 +225,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MatchAddressPrefix
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-matchaddressprefix.md&#34;&gt;MatchAddressPrefix&lt;/a&gt;
+_Type_: List of <a href="rule-matchaddressprefix.md">MatchAddressPrefix</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

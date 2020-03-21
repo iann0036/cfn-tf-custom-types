@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#targetinstancecount" title="TargetInstanceCount">TargetInstanceCount</a>" : <i>Double</i>,
     "<a href="#vmsize" title="VmSize">VmSize</a>" : <i>String</i>,
-    "<a href="#installscriptaction" title="InstallScriptAction">InstallScriptAction</a>" : <i>[ &lt;a href=&#34;edgenode-installscriptaction.md&#34;&gt;InstallScriptAction&lt;/a&gt;, ... ]</i>
+    "<a href="#installscriptaction" title="InstallScriptAction">InstallScriptAction</a>" : <i>[ <a href="edgenode-installscriptaction.md">InstallScriptAction</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#targetinstancecount" title="TargetInstanceCount">TargetInstanceCount</a>: <i>Double</i>
 <a href="#vmsize" title="VmSize">VmSize</a>: <i>String</i>
 <a href="#installscriptaction" title="InstallScriptAction">InstallScriptAction</a>: <i>
-      - &lt;a href=&#34;edgenode-installscriptaction.md&#34;&gt;InstallScriptAction&lt;/a&gt;</i>
+      - <a href="edgenode-installscriptaction.md">InstallScriptAction</a></i>
 </pre>
 
 ## Properties
@@ -42,7 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstallScriptAction
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;edgenode-installscriptaction.md&#34;&gt;InstallScriptAction&lt;/a&gt;
+_Type_: List of <a href="edgenode-installscriptaction.md">InstallScriptAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

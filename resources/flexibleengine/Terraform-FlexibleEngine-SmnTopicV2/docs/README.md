@@ -73,17 +73,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### PushPolicy
 
-Returns the &lt;code&gt;PushPolicy&lt;/code&gt; value.
+Returns the <code>PushPolicy</code> value.
 
 #### TopicUrn
 
-Returns the &lt;code&gt;TopicUrn&lt;/code&gt; value.
+Returns the <code>TopicUrn</code> value.
 
 #### UpdateTime
 
-Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
+Returns the <code>UpdateTime</code> value.
 

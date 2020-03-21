@@ -20,12 +20,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#includedfiles" title="IncludedFiles">IncludedFiles</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#substitutions" title="Substitutions">Substitutions</a>" : <i>[ &lt;a href=&#34;substitutions.md&#34;&gt;Substitutions&lt;/a&gt;, ... ]</i>,
-        "<a href="#build" title="Build">Build</a>" : <i>[ &lt;a href=&#34;build.md&#34;&gt;Build&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#triggertemplate" title="TriggerTemplate">TriggerTemplate</a>" : <i>[ &lt;a href=&#34;triggertemplate.md&#34;&gt;TriggerTemplate&lt;/a&gt;, ... ]</i>,
-        "<a href="#step" title="Step">Step</a>" : <i>[ &lt;a href=&#34;step.md&#34;&gt;Step&lt;/a&gt;, ... ]</i>,
-        "<a href="#volumes" title="Volumes">Volumes</a>" : <i>[ &lt;a href=&#34;volumes.md&#34;&gt;Volumes&lt;/a&gt;, ... ]</i>
+        "<a href="#substitutions" title="Substitutions">Substitutions</a>" : <i>[ <a href="substitutions.md">Substitutions</a>, ... ]</i>,
+        "<a href="#build" title="Build">Build</a>" : <i>[ <a href="build.md">Build</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#triggertemplate" title="TriggerTemplate">TriggerTemplate</a>" : <i>[ <a href="triggertemplate.md">TriggerTemplate</a>, ... ]</i>,
+        "<a href="#step" title="Step">Step</a>" : <i>[ <a href="step.md">Step</a>, ... ]</i>,
+        "<a href="#volumes" title="Volumes">Volumes</a>" : <i>[ <a href="volumes.md">Volumes</a>, ... ]</i>
     }
 }
 </pre>
@@ -46,16 +46,16 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#substitutions" title="Substitutions">Substitutions</a>: <i>
-      - &lt;a href=&#34;substitutions.md&#34;&gt;Substitutions&lt;/a&gt;</i>
+      - <a href="substitutions.md">Substitutions</a></i>
     <a href="#build" title="Build">Build</a>: <i>
-      - &lt;a href=&#34;build.md&#34;&gt;Build&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="build.md">Build</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#triggertemplate" title="TriggerTemplate">TriggerTemplate</a>: <i>
-      - &lt;a href=&#34;triggertemplate.md&#34;&gt;TriggerTemplate&lt;/a&gt;</i>
+      - <a href="triggertemplate.md">TriggerTemplate</a></i>
     <a href="#step" title="Step">Step</a>: <i>
-      - &lt;a href=&#34;step.md&#34;&gt;Step&lt;/a&gt;</i>
+      - <a href="step.md">Step</a></i>
     <a href="#volumes" title="Volumes">Volumes</a>: <i>
-      - &lt;a href=&#34;volumes.md&#34;&gt;Volumes&lt;/a&gt;</i>
+      - <a href="volumes.md">Volumes</a></i>
 </pre>
 
 ## Properties
@@ -128,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;substitutions.md&#34;&gt;Substitutions&lt;/a&gt;
+_Type_: List of <a href="substitutions.md">Substitutions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;build.md&#34;&gt;Build&lt;/a&gt;
+_Type_: List of <a href="build.md">Build</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;triggertemplate.md&#34;&gt;TriggerTemplate&lt;/a&gt;
+_Type_: List of <a href="triggertemplate.md">TriggerTemplate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;step.md&#34;&gt;Step&lt;/a&gt;
+_Type_: List of <a href="step.md">Step</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volumes.md&#34;&gt;Volumes&lt;/a&gt;
+_Type_: List of <a href="volumes.md">Volumes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,9 +190,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### TriggerId
 
-Returns the &lt;code&gt;TriggerId&lt;/code&gt; value.
+Returns the <code>TriggerId</code> value.
 

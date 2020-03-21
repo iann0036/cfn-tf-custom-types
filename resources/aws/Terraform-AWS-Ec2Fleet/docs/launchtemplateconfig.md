@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#launchtemplatespecification" title="LaunchTemplateSpecification">LaunchTemplateSpecification</a>" : <i>[ &lt;a href=&#34;launchtemplateconfig-launchtemplatespecification.md&#34;&gt;LaunchTemplateSpecification&lt;/a&gt;, ... ]</i>,
-    "<a href="#override" title="Override">Override</a>" : <i>[ &lt;a href=&#34;launchtemplateconfig-override.md&#34;&gt;Override&lt;/a&gt;, ... ]</i>
+    "<a href="#launchtemplatespecification" title="LaunchTemplateSpecification">LaunchTemplateSpecification</a>" : <i>[ <a href="launchtemplateconfig-launchtemplatespecification.md">LaunchTemplateSpecification</a>, ... ]</i>,
+    "<a href="#override" title="Override">Override</a>" : <i>[ <a href="launchtemplateconfig-override.md">Override</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#launchtemplatespecification" title="LaunchTemplateSpecification">LaunchTemplateSpecification</a>: <i>
-      - &lt;a href=&#34;launchtemplateconfig-launchtemplatespecification.md&#34;&gt;LaunchTemplateSpecification&lt;/a&gt;</i>
+      - <a href="launchtemplateconfig-launchtemplatespecification.md">LaunchTemplateSpecification</a></i>
 <a href="#override" title="Override">Override</a>: <i>
-      - &lt;a href=&#34;launchtemplateconfig-override.md&#34;&gt;Override&lt;/a&gt;</i>
+      - <a href="launchtemplateconfig-override.md">Override</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### LaunchTemplateSpecification
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;launchtemplateconfig-launchtemplatespecification.md&#34;&gt;LaunchTemplateSpecification&lt;/a&gt;
+_Type_: List of <a href="launchtemplateconfig-launchtemplatespecification.md">LaunchTemplateSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Override
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;launchtemplateconfig-override.md&#34;&gt;Override&lt;/a&gt;
+_Type_: List of <a href="launchtemplateconfig-override.md">Override</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

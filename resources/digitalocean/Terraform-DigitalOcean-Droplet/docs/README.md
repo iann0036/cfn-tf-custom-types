@@ -186,53 +186,53 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### Disk
 
-Returns the &lt;code&gt;Disk&lt;/code&gt; value.
+Returns the <code>Disk</code> value.
 
 #### Ipv4Address
 
-Returns the &lt;code&gt;Ipv4Address&lt;/code&gt; value.
+Returns the <code>Ipv4Address</code> value.
 
 #### Ipv4AddressPrivate
 
-Returns the &lt;code&gt;Ipv4AddressPrivate&lt;/code&gt; value.
+Returns the <code>Ipv4AddressPrivate</code> value.
 
 #### Ipv6Address
 
-Returns the &lt;code&gt;Ipv6Address&lt;/code&gt; value.
+Returns the <code>Ipv6Address</code> value.
 
 #### Ipv6AddressPrivate
 
-Returns the &lt;code&gt;Ipv6AddressPrivate&lt;/code&gt; value.
+Returns the <code>Ipv6AddressPrivate</code> value.
 
 #### Locked
 
-Returns the &lt;code&gt;Locked&lt;/code&gt; value.
+Returns the <code>Locked</code> value.
 
 #### Memory
 
-Returns the &lt;code&gt;Memory&lt;/code&gt; value.
+Returns the <code>Memory</code> value.
 
 #### PriceHourly
 
-Returns the &lt;code&gt;PriceHourly&lt;/code&gt; value.
+Returns the <code>PriceHourly</code> value.
 
 #### PriceMonthly
 
-Returns the &lt;code&gt;PriceMonthly&lt;/code&gt; value.
+Returns the <code>PriceMonthly</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Urn
 
-Returns the &lt;code&gt;Urn&lt;/code&gt; value.
+Returns the <code>Urn</code> value.
 
 #### Vcpus
 
-Returns the &lt;code&gt;Vcpus&lt;/code&gt; value.
+Returns the <code>Vcpus</code> value.
 

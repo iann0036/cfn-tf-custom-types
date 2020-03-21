@@ -17,10 +17,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#inputmappingdefaultvalues" title="InputMappingDefaultValues">InputMappingDefaultValues</a>" : <i>[ &lt;a href=&#34;inputmappingdefaultvalues.md&#34;&gt;InputMappingDefaultValues&lt;/a&gt;, ... ]</i>,
-        "<a href="#inputmappingfields" title="InputMappingFields">InputMappingFields</a>" : <i>[ &lt;a href=&#34;inputmappingfields.md&#34;&gt;InputMappingFields&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#inputmappingdefaultvalues" title="InputMappingDefaultValues">InputMappingDefaultValues</a>" : <i>[ <a href="inputmappingdefaultvalues.md">InputMappingDefaultValues</a>, ... ]</i>,
+        "<a href="#inputmappingfields" title="InputMappingFields">InputMappingFields</a>" : <i>[ <a href="inputmappingfields.md">InputMappingFields</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -36,12 +36,12 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#inputmappingdefaultvalues" title="InputMappingDefaultValues">InputMappingDefaultValues</a>: <i>
-      - &lt;a href=&#34;inputmappingdefaultvalues.md&#34;&gt;InputMappingDefaultValues&lt;/a&gt;</i>
+      - <a href="inputmappingdefaultvalues.md">InputMappingDefaultValues</a></i>
     <a href="#inputmappingfields" title="InputMappingFields">InputMappingFields</a>: <i>
-      - &lt;a href=&#34;inputmappingfields.md&#34;&gt;InputMappingFields&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="inputmappingfields.md">InputMappingFields</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -90,7 +90,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,7 +98,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;inputmappingdefaultvalues.md&#34;&gt;InputMappingDefaultValues&lt;/a&gt;
+_Type_: List of <a href="inputmappingdefaultvalues.md">InputMappingDefaultValues</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +106,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;inputmappingfields.md&#34;&gt;InputMappingFields&lt;/a&gt;
+_Type_: List of <a href="inputmappingfields.md">InputMappingFields</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,13 +136,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Endpoint
 
-Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
+Returns the <code>Endpoint</code> value.
 
 #### PrimaryAccessKey
 
-Returns the &lt;code&gt;PrimaryAccessKey&lt;/code&gt; value.
+Returns the <code>PrimaryAccessKey</code> value.
 
 #### SecondaryAccessKey
 
-Returns the &lt;code&gt;SecondaryAccessKey&lt;/code&gt; value.
+Returns the <code>SecondaryAccessKey</code> value.
 

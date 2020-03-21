@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::PagerDuty::UserNotificationRule",
     "Properties" : {
-        "<a href="#contactmethod" title="ContactMethod">ContactMethod</a>" : <i>[ &lt;a href=&#34;contactmethod.md&#34;&gt;ContactMethod&lt;/a&gt;, ... ]</i>,
+        "<a href="#contactmethod" title="ContactMethod">ContactMethod</a>" : <i>[ <a href="contactmethod.md">ContactMethod</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#startdelayinminutes" title="StartDelayInMinutes">StartDelayInMinutes</a>" : <i>Double</i>,
         "<a href="#urgency" title="Urgency">Urgency</a>" : <i>String</i>,
@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 Type: Terraform::PagerDuty::UserNotificationRule
 Properties:
     <a href="#contactmethod" title="ContactMethod">ContactMethod</a>: <i>
-      - &lt;a href=&#34;contactmethod.md&#34;&gt;ContactMethod&lt;/a&gt;</i>
+      - <a href="contactmethod.md">ContactMethod</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#startdelayinminutes" title="StartDelayInMinutes">StartDelayInMinutes</a>: <i>Double</i>
     <a href="#urgency" title="Urgency">Urgency</a>: <i>String</i>
@@ -40,7 +40,7 @@ Properties:
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;contactmethod.md&#34;&gt;ContactMethod&lt;/a&gt;
+_Type_: List of <a href="contactmethod.md">ContactMethod</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -38,13 +38,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#systemdiskdescription" title="SystemDiskDescription">SystemDiskDescription</a>" : <i>String</i>,
         "<a href="#systemdiskname" title="SystemDiskName">SystemDiskName</a>" : <i>String</i>,
         "<a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#userdata" title="Userdata">Userdata</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#vswitchid" title="VswitchId">VswitchId</a>" : <i>String</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#datadisks" title="DataDisks">DataDisks</a>" : <i>[ &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkinterfaces" title="NetworkInterfaces">NetworkInterfaces</a>" : <i>[ &lt;a href=&#34;networkinterfaces.md&#34;&gt;NetworkInterfaces&lt;/a&gt;, ... ]</i>
+        "<a href="#datadisks" title="DataDisks">DataDisks</a>" : <i>[ <a href="datadisks.md">DataDisks</a>, ... ]</i>,
+        "<a href="#networkinterfaces" title="NetworkInterfaces">NetworkInterfaces</a>" : <i>[ <a href="networkinterfaces.md">NetworkInterfaces</a>, ... ]</i>
     }
 }
 </pre>
@@ -81,15 +81,15 @@ Properties:
     <a href="#systemdiskname" title="SystemDiskName">SystemDiskName</a>: <i>String</i>
     <a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#userdata" title="Userdata">Userdata</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#vswitchid" title="VswitchId">VswitchId</a>: <i>String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#datadisks" title="DataDisks">DataDisks</a>: <i>
-      - &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;</i>
+      - <a href="datadisks.md">DataDisks</a></i>
     <a href="#networkinterfaces" title="NetworkInterfaces">NetworkInterfaces</a>: <i>
-      - &lt;a href=&#34;networkinterfaces.md&#34;&gt;NetworkInterfaces&lt;/a&gt;</i>
+      - <a href="networkinterfaces.md">NetworkInterfaces</a></i>
 </pre>
 
 ## Properties
@@ -306,7 +306,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -346,7 +346,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;
+_Type_: List of <a href="datadisks.md">DataDisks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -354,7 +354,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinterfaces.md&#34;&gt;NetworkInterfaces&lt;/a&gt;
+_Type_: List of <a href="networkinterfaces.md">NetworkInterfaces</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

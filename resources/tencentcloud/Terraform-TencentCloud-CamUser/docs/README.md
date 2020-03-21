@@ -143,17 +143,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SecretId
 
-Returns the &lt;code&gt;SecretId&lt;/code&gt; value.
+Returns the <code>SecretId</code> value.
 
 #### SecretKey
 
-Returns the &lt;code&gt;SecretKey&lt;/code&gt; value.
+Returns the <code>SecretKey</code> value.
 
 #### Uid
 
-Returns the &lt;code&gt;Uid&lt;/code&gt; value.
+Returns the <code>Uid</code> value.
 
 #### Uin
 
-Returns the &lt;code&gt;Uin&lt;/code&gt; value.
+Returns the <code>Uin</code> value.
 

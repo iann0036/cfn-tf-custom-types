@@ -13,8 +13,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#nexthoptype" title="NextHopType">NextHopType</a>" : <i>String</i>,
     "<a href="#nexthopvalue" title="NextHopValue">NextHopValue</a>" : <i>String</i>,
     "<a href="#vsys" title="Vsys">Vsys</a>" : <i>String</i>,
-    "<a href="#monitor" title="Monitor">Monitor</a>" : <i>[ &lt;a href=&#34;forwarding-monitor.md&#34;&gt;Monitor&lt;/a&gt;, ... ]</i>,
-    "<a href="#symmetricreturn" title="SymmetricReturn">SymmetricReturn</a>" : <i>[ &lt;a href=&#34;forwarding-symmetricreturn.md&#34;&gt;SymmetricReturn&lt;/a&gt;, ... ]</i>
+    "<a href="#monitor" title="Monitor">Monitor</a>" : <i>[ <a href="forwarding-monitor.md">Monitor</a>, ... ]</i>,
+    "<a href="#symmetricreturn" title="SymmetricReturn">SymmetricReturn</a>" : <i>[ <a href="forwarding-symmetricreturn.md">SymmetricReturn</a>, ... ]</i>
 }
 </pre>
 
@@ -27,9 +27,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#nexthopvalue" title="NextHopValue">NextHopValue</a>: <i>String</i>
 <a href="#vsys" title="Vsys">Vsys</a>: <i>String</i>
 <a href="#monitor" title="Monitor">Monitor</a>: <i>
-      - &lt;a href=&#34;forwarding-monitor.md&#34;&gt;Monitor&lt;/a&gt;</i>
+      - <a href="forwarding-monitor.md">Monitor</a></i>
 <a href="#symmetricreturn" title="SymmetricReturn">SymmetricReturn</a>: <i>
-      - &lt;a href=&#34;forwarding-symmetricreturn.md&#34;&gt;SymmetricReturn&lt;/a&gt;</i>
+      - <a href="forwarding-symmetricreturn.md">SymmetricReturn</a></i>
 </pre>
 
 ## Properties
@@ -72,14 +72,14 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Monitor
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;forwarding-monitor.md&#34;&gt;Monitor&lt;/a&gt;
+_Type_: List of <a href="forwarding-monitor.md">Monitor</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SymmetricReturn
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;forwarding-symmetricreturn.md&#34;&gt;SymmetricReturn&lt;/a&gt;
+_Type_: List of <a href="forwarding-symmetricreturn.md">SymmetricReturn</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

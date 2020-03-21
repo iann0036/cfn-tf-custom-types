@@ -104,33 +104,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Database
 
-Returns the &lt;code&gt;Database&lt;/code&gt; value.
+Returns the <code>Database</code> value.
 
 #### Host
 
-Returns the &lt;code&gt;Host&lt;/code&gt; value.
+Returns the <code>Host</code> value.
 
 #### Password
 
-Returns the &lt;code&gt;Password&lt;/code&gt; value.
+Returns the <code>Password</code> value.
 
 #### Port
 
-Returns the &lt;code&gt;Port&lt;/code&gt; value.
+Returns the <code>Port</code> value.
 
 #### PrivateHost
 
-Returns the &lt;code&gt;PrivateHost&lt;/code&gt; value.
+Returns the <code>PrivateHost</code> value.
 
 #### PrivateUri
 
-Returns the &lt;code&gt;PrivateUri&lt;/code&gt; value.
+Returns the <code>PrivateUri</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 
 #### User
 
-Returns the &lt;code&gt;User&lt;/code&gt; value.
+Returns the <code>User</code> value.
 

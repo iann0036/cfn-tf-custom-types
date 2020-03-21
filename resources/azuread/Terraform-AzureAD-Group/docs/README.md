@@ -95,5 +95,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ObjectId
 
-Returns the &lt;code&gt;ObjectId&lt;/code&gt; value.
+Returns the <code>ObjectId</code> value.
 

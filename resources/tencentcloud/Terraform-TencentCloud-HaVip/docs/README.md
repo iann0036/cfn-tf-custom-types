@@ -93,21 +93,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AddressIp
 
-Returns the &lt;code&gt;AddressIp&lt;/code&gt; value.
+Returns the <code>AddressIp</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### InstanceId
 
-Returns the &lt;code&gt;InstanceId&lt;/code&gt; value.
+Returns the <code>InstanceId</code> value.
 
 #### NetworkInterfaceId
 
-Returns the &lt;code&gt;NetworkInterfaceId&lt;/code&gt; value.
+Returns the <code>NetworkInterfaceId</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

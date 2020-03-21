@@ -63,9 +63,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 
 #### KeyId
 
-Returns the &lt;code&gt;KeyId&lt;/code&gt; value.
+Returns the <code>KeyId</code> value.
 

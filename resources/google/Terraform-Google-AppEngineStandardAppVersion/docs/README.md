@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::Google::AppEngineStandardAppVersion",
     "Properties" : {
         "<a href="#deleteserviceondestroy" title="DeleteServiceOnDestroy">DeleteServiceOnDestroy</a>" : <i>Boolean</i>,
-        "<a href="#envvariables" title="EnvVariables">EnvVariables</a>" : <i>[ &lt;a href=&#34;envvariables.md&#34;&gt;EnvVariables&lt;/a&gt;, ... ]</i>,
+        "<a href="#envvariables" title="EnvVariables">EnvVariables</a>" : <i>[ <a href="envvariables.md">EnvVariables</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#instanceclass" title="InstanceClass">InstanceClass</a>" : <i>String</i>,
         "<a href="#noopondestroy" title="NoopOnDestroy">NoopOnDestroy</a>" : <i>Boolean</i>,
@@ -23,15 +23,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#service" title="Service">Service</a>" : <i>String</i>,
         "<a href="#threadsafe" title="Threadsafe">Threadsafe</a>" : <i>Boolean</i>,
         "<a href="#versionid" title="VersionId">VersionId</a>" : <i>String</i>,
-        "<a href="#deployment" title="Deployment">Deployment</a>" : <i>[ &lt;a href=&#34;deployment.md&#34;&gt;Deployment&lt;/a&gt;, ... ]</i>,
-        "<a href="#entrypoint" title="Entrypoint">Entrypoint</a>" : <i>[ &lt;a href=&#34;entrypoint.md&#34;&gt;Entrypoint&lt;/a&gt;, ... ]</i>,
-        "<a href="#handlers" title="Handlers">Handlers</a>" : <i>[ &lt;a href=&#34;handlers.md&#34;&gt;Handlers&lt;/a&gt;, ... ]</i>,
-        "<a href="#libraries" title="Libraries">Libraries</a>" : <i>[ &lt;a href=&#34;libraries.md&#34;&gt;Libraries&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#files" title="Files">Files</a>" : <i>[ &lt;a href=&#34;files.md&#34;&gt;Files&lt;/a&gt;, ... ]</i>,
-        "<a href="#zip" title="Zip">Zip</a>" : <i>[ &lt;a href=&#34;zip.md&#34;&gt;Zip&lt;/a&gt;, ... ]</i>,
-        "<a href="#script" title="Script">Script</a>" : <i>[ &lt;a href=&#34;script.md&#34;&gt;Script&lt;/a&gt;, ... ]</i>,
-        "<a href="#staticfiles" title="StaticFiles">StaticFiles</a>" : <i>[ &lt;a href=&#34;staticfiles.md&#34;&gt;StaticFiles&lt;/a&gt;, ... ]</i>
+        "<a href="#deployment" title="Deployment">Deployment</a>" : <i>[ <a href="deployment.md">Deployment</a>, ... ]</i>,
+        "<a href="#entrypoint" title="Entrypoint">Entrypoint</a>" : <i>[ <a href="entrypoint.md">Entrypoint</a>, ... ]</i>,
+        "<a href="#handlers" title="Handlers">Handlers</a>" : <i>[ <a href="handlers.md">Handlers</a>, ... ]</i>,
+        "<a href="#libraries" title="Libraries">Libraries</a>" : <i>[ <a href="libraries.md">Libraries</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#files" title="Files">Files</a>" : <i>[ <a href="files.md">Files</a>, ... ]</i>,
+        "<a href="#zip" title="Zip">Zip</a>" : <i>[ <a href="zip.md">Zip</a>, ... ]</i>,
+        "<a href="#script" title="Script">Script</a>" : <i>[ <a href="script.md">Script</a>, ... ]</i>,
+        "<a href="#staticfiles" title="StaticFiles">StaticFiles</a>" : <i>[ <a href="staticfiles.md">StaticFiles</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,7 +43,7 @@ Type: Terraform::Google::AppEngineStandardAppVersion
 Properties:
     <a href="#deleteserviceondestroy" title="DeleteServiceOnDestroy">DeleteServiceOnDestroy</a>: <i>Boolean</i>
     <a href="#envvariables" title="EnvVariables">EnvVariables</a>: <i>
-      - &lt;a href=&#34;envvariables.md&#34;&gt;EnvVariables&lt;/a&gt;</i>
+      - <a href="envvariables.md">EnvVariables</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#instanceclass" title="InstanceClass">InstanceClass</a>: <i>String</i>
     <a href="#noopondestroy" title="NoopOnDestroy">NoopOnDestroy</a>: <i>Boolean</i>
@@ -54,22 +54,22 @@ Properties:
     <a href="#threadsafe" title="Threadsafe">Threadsafe</a>: <i>Boolean</i>
     <a href="#versionid" title="VersionId">VersionId</a>: <i>String</i>
     <a href="#deployment" title="Deployment">Deployment</a>: <i>
-      - &lt;a href=&#34;deployment.md&#34;&gt;Deployment&lt;/a&gt;</i>
+      - <a href="deployment.md">Deployment</a></i>
     <a href="#entrypoint" title="Entrypoint">Entrypoint</a>: <i>
-      - &lt;a href=&#34;entrypoint.md&#34;&gt;Entrypoint&lt;/a&gt;</i>
+      - <a href="entrypoint.md">Entrypoint</a></i>
     <a href="#handlers" title="Handlers">Handlers</a>: <i>
-      - &lt;a href=&#34;handlers.md&#34;&gt;Handlers&lt;/a&gt;</i>
+      - <a href="handlers.md">Handlers</a></i>
     <a href="#libraries" title="Libraries">Libraries</a>: <i>
-      - &lt;a href=&#34;libraries.md&#34;&gt;Libraries&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="libraries.md">Libraries</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#files" title="Files">Files</a>: <i>
-      - &lt;a href=&#34;files.md&#34;&gt;Files&lt;/a&gt;</i>
+      - <a href="files.md">Files</a></i>
     <a href="#zip" title="Zip">Zip</a>: <i>
-      - &lt;a href=&#34;zip.md&#34;&gt;Zip&lt;/a&gt;</i>
+      - <a href="zip.md">Zip</a></i>
     <a href="#script" title="Script">Script</a>: <i>
-      - &lt;a href=&#34;script.md&#34;&gt;Script&lt;/a&gt;</i>
+      - <a href="script.md">Script</a></i>
     <a href="#staticfiles" title="StaticFiles">StaticFiles</a>: <i>
-      - &lt;a href=&#34;staticfiles.md&#34;&gt;StaticFiles&lt;/a&gt;</i>
+      - <a href="staticfiles.md">StaticFiles</a></i>
 </pre>
 
 ## Properties
@@ -86,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;envvariables.md&#34;&gt;EnvVariables&lt;/a&gt;
+_Type_: List of <a href="envvariables.md">EnvVariables</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deployment.md&#34;&gt;Deployment&lt;/a&gt;
+_Type_: List of <a href="deployment.md">Deployment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;entrypoint.md&#34;&gt;Entrypoint&lt;/a&gt;
+_Type_: List of <a href="entrypoint.md">Entrypoint</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;handlers.md&#34;&gt;Handlers&lt;/a&gt;
+_Type_: List of <a href="handlers.md">Handlers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;libraries.md&#34;&gt;Libraries&lt;/a&gt;
+_Type_: List of <a href="libraries.md">Libraries</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -206,7 +206,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;files.md&#34;&gt;Files&lt;/a&gt;
+_Type_: List of <a href="files.md">Files</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,7 +214,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;zip.md&#34;&gt;Zip&lt;/a&gt;
+_Type_: List of <a href="zip.md">Zip</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -222,7 +222,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;script.md&#34;&gt;Script&lt;/a&gt;
+_Type_: List of <a href="script.md">Script</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -230,7 +230,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;staticfiles.md&#34;&gt;StaticFiles&lt;/a&gt;
+_Type_: List of <a href="staticfiles.md">StaticFiles</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -252,5 +252,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 

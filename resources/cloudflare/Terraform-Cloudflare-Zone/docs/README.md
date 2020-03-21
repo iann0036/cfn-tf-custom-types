@@ -103,21 +103,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Meta
 
-Returns the &lt;code&gt;Meta&lt;/code&gt; value.
+Returns the <code>Meta</code> value.
 
 #### NameServers
 
-Returns the &lt;code&gt;NameServers&lt;/code&gt; value.
+Returns the <code>NameServers</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### VanityNameServers
 
-Returns the &lt;code&gt;VanityNameServers&lt;/code&gt; value.
+Returns the <code>VanityNameServers</code> value.
 
 #### VerificationKey
 
-Returns the &lt;code&gt;VerificationKey&lt;/code&gt; value.
+Returns the <code>VerificationKey</code> value.
 

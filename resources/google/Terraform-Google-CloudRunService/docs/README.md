@@ -16,18 +16,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#template" title="Template">Template</a>" : <i>[ &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#traffic" title="Traffic">Traffic</a>" : <i>[ &lt;a href=&#34;traffic.md&#34;&gt;Traffic&lt;/a&gt;, ... ]</i>,
-        "<a href="#spec" title="Spec">Spec</a>" : <i>[ &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;, ... ]</i>,
-        "<a href="#containers" title="Containers">Containers</a>" : <i>[ &lt;a href=&#34;containers.md&#34;&gt;Containers&lt;/a&gt;, ... ]</i>,
-        "<a href="#env" title="Env">Env</a>" : <i>[ &lt;a href=&#34;env.md&#34;&gt;Env&lt;/a&gt;, ... ]</i>,
-        "<a href="#envfrom" title="EnvFrom">EnvFrom</a>" : <i>[ &lt;a href=&#34;envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;, ... ]</i>,
-        "<a href="#resources" title="Resources">Resources</a>" : <i>[ &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;, ... ]</i>,
-        "<a href="#configmapref" title="ConfigMapRef">ConfigMapRef</a>" : <i>[ &lt;a href=&#34;configmapref.md&#34;&gt;ConfigMapRef&lt;/a&gt;, ... ]</i>,
-        "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ &lt;a href=&#34;secretref.md&#34;&gt;SecretRef&lt;/a&gt;, ... ]</i>,
-        "<a href="#localobjectreference" title="LocalObjectReference">LocalObjectReference</a>" : <i>[ &lt;a href=&#34;localobjectreference.md&#34;&gt;LocalObjectReference&lt;/a&gt;, ... ]</i>
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#template" title="Template">Template</a>" : <i>[ <a href="template.md">Template</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#traffic" title="Traffic">Traffic</a>" : <i>[ <a href="traffic.md">Traffic</a>, ... ]</i>,
+        "<a href="#spec" title="Spec">Spec</a>" : <i>[ <a href="spec.md">Spec</a>, ... ]</i>,
+        "<a href="#containers" title="Containers">Containers</a>" : <i>[ <a href="containers.md">Containers</a>, ... ]</i>,
+        "<a href="#env" title="Env">Env</a>" : <i>[ <a href="env.md">Env</a>, ... ]</i>,
+        "<a href="#envfrom" title="EnvFrom">EnvFrom</a>" : <i>[ <a href="envfrom.md">EnvFrom</a>, ... ]</i>,
+        "<a href="#resources" title="Resources">Resources</a>" : <i>[ <a href="resources.md">Resources</a>, ... ]</i>,
+        "<a href="#configmapref" title="ConfigMapRef">ConfigMapRef</a>" : <i>[ <a href="configmapref.md">ConfigMapRef</a>, ... ]</i>,
+        "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ <a href="secretref.md">SecretRef</a>, ... ]</i>,
+        "<a href="#localobjectreference" title="LocalObjectReference">LocalObjectReference</a>" : <i>[ <a href="localobjectreference.md">LocalObjectReference</a>, ... ]</i>
     }
 }
 </pre>
@@ -42,28 +42,28 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#template" title="Template">Template</a>: <i>
-      - &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="template.md">Template</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#traffic" title="Traffic">Traffic</a>: <i>
-      - &lt;a href=&#34;traffic.md&#34;&gt;Traffic&lt;/a&gt;</i>
+      - <a href="traffic.md">Traffic</a></i>
     <a href="#spec" title="Spec">Spec</a>: <i>
-      - &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;</i>
+      - <a href="spec.md">Spec</a></i>
     <a href="#containers" title="Containers">Containers</a>: <i>
-      - &lt;a href=&#34;containers.md&#34;&gt;Containers&lt;/a&gt;</i>
+      - <a href="containers.md">Containers</a></i>
     <a href="#env" title="Env">Env</a>: <i>
-      - &lt;a href=&#34;env.md&#34;&gt;Env&lt;/a&gt;</i>
+      - <a href="env.md">Env</a></i>
     <a href="#envfrom" title="EnvFrom">EnvFrom</a>: <i>
-      - &lt;a href=&#34;envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;</i>
+      - <a href="envfrom.md">EnvFrom</a></i>
     <a href="#resources" title="Resources">Resources</a>: <i>
-      - &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;</i>
+      - <a href="resources.md">Resources</a></i>
     <a href="#configmapref" title="ConfigMapRef">ConfigMapRef</a>: <i>
-      - &lt;a href=&#34;configmapref.md&#34;&gt;ConfigMapRef&lt;/a&gt;</i>
+      - <a href="configmapref.md">ConfigMapRef</a></i>
     <a href="#secretref" title="SecretRef">SecretRef</a>: <i>
-      - &lt;a href=&#34;secretref.md&#34;&gt;SecretRef&lt;/a&gt;</i>
+      - <a href="secretref.md">SecretRef</a></i>
     <a href="#localobjectreference" title="LocalObjectReference">LocalObjectReference</a>: <i>
-      - &lt;a href=&#34;localobjectreference.md&#34;&gt;LocalObjectReference&lt;/a&gt;</i>
+      - <a href="localobjectreference.md">LocalObjectReference</a></i>
 </pre>
 
 ## Properties
@@ -104,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -112,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;
+_Type_: List of <a href="template.md">Template</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;traffic.md&#34;&gt;Traffic&lt;/a&gt;
+_Type_: List of <a href="traffic.md">Traffic</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;
+_Type_: List of <a href="spec.md">Spec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;containers.md&#34;&gt;Containers&lt;/a&gt;
+_Type_: List of <a href="containers.md">Containers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;env.md&#34;&gt;Env&lt;/a&gt;
+_Type_: List of <a href="env.md">Env</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;
+_Type_: List of <a href="envfrom.md">EnvFrom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;
+_Type_: List of <a href="resources.md">Resources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configmapref.md&#34;&gt;ConfigMapRef&lt;/a&gt;
+_Type_: List of <a href="configmapref.md">ConfigMapRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secretref.md&#34;&gt;SecretRef&lt;/a&gt;
+_Type_: List of <a href="secretref.md">SecretRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +192,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;localobjectreference.md&#34;&gt;LocalObjectReference&lt;/a&gt;
+_Type_: List of <a href="localobjectreference.md">LocalObjectReference</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,5 +214,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

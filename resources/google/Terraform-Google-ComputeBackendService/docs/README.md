@@ -26,11 +26,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#securitypolicy" title="SecurityPolicy">SecurityPolicy</a>" : <i>String</i>,
         "<a href="#sessionaffinity" title="SessionAffinity">SessionAffinity</a>" : <i>String</i>,
         "<a href="#timeoutsec" title="TimeoutSec">TimeoutSec</a>" : <i>Double</i>,
-        "<a href="#backend" title="Backend">Backend</a>" : <i>[ &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;, ... ]</i>,
-        "<a href="#cdnpolicy" title="CdnPolicy">CdnPolicy</a>" : <i>[ &lt;a href=&#34;cdnpolicy.md&#34;&gt;CdnPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#iap" title="Iap">Iap</a>" : <i>[ &lt;a href=&#34;iap.md&#34;&gt;Iap&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#cachekeypolicy" title="CacheKeyPolicy">CacheKeyPolicy</a>" : <i>[ &lt;a href=&#34;cachekeypolicy.md&#34;&gt;CacheKeyPolicy&lt;/a&gt;, ... ]</i>
+        "<a href="#backend" title="Backend">Backend</a>" : <i>[ <a href="backend.md">Backend</a>, ... ]</i>,
+        "<a href="#cdnpolicy" title="CdnPolicy">CdnPolicy</a>" : <i>[ <a href="cdnpolicy.md">CdnPolicy</a>, ... ]</i>,
+        "<a href="#iap" title="Iap">Iap</a>" : <i>[ <a href="iap.md">Iap</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#cachekeypolicy" title="CacheKeyPolicy">CacheKeyPolicy</a>" : <i>[ <a href="cachekeypolicy.md">CacheKeyPolicy</a>, ... ]</i>
     }
 }
 </pre>
@@ -56,14 +56,14 @@ Properties:
     <a href="#sessionaffinity" title="SessionAffinity">SessionAffinity</a>: <i>String</i>
     <a href="#timeoutsec" title="TimeoutSec">TimeoutSec</a>: <i>Double</i>
     <a href="#backend" title="Backend">Backend</a>: <i>
-      - &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;</i>
+      - <a href="backend.md">Backend</a></i>
     <a href="#cdnpolicy" title="CdnPolicy">CdnPolicy</a>: <i>
-      - &lt;a href=&#34;cdnpolicy.md&#34;&gt;CdnPolicy&lt;/a&gt;</i>
+      - <a href="cdnpolicy.md">CdnPolicy</a></i>
     <a href="#iap" title="Iap">Iap</a>: <i>
-      - &lt;a href=&#34;iap.md&#34;&gt;Iap&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="iap.md">Iap</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#cachekeypolicy" title="CacheKeyPolicy">CacheKeyPolicy</a>: <i>
-      - &lt;a href=&#34;cachekeypolicy.md&#34;&gt;CacheKeyPolicy&lt;/a&gt;</i>
+      - <a href="cachekeypolicy.md">CacheKeyPolicy</a></i>
 </pre>
 
 ## Properties
@@ -184,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;
+_Type_: List of <a href="backend.md">Backend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +192,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cdnpolicy.md&#34;&gt;CdnPolicy&lt;/a&gt;
+_Type_: List of <a href="cdnpolicy.md">CdnPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -200,7 +200,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;iap.md&#34;&gt;Iap&lt;/a&gt;
+_Type_: List of <a href="iap.md">Iap</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -208,7 +208,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,7 +216,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cachekeypolicy.md&#34;&gt;CacheKeyPolicy&lt;/a&gt;
+_Type_: List of <a href="cachekeypolicy.md">CacheKeyPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -238,13 +238,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTimestamp
 
-Returns the &lt;code&gt;CreationTimestamp&lt;/code&gt; value.
+Returns the <code>CreationTimestamp</code> value.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 

@@ -93,9 +93,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EncryptedSecret
 
-Returns the &lt;code&gt;EncryptedSecret&lt;/code&gt; value.
+Returns the <code>EncryptedSecret</code> value.
 
 #### KeyFingerprint
 
-Returns the &lt;code&gt;KeyFingerprint&lt;/code&gt; value.
+Returns the <code>KeyFingerprint</code> value.
 

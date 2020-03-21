@@ -21,7 +21,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#internetservice" title="InternetService">InternetService</a>" : <i>Double</i>,
         "<a href="#intranetport" title="IntranetPort">IntranetPort</a>" : <i>Double</i>,
         "<a href="#memsize" title="MemSize">MemSize</a>" : <i>Double</i>,
-        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;, ... ]</i>,
+        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ <a href="parameters.md">Parameters</a>, ... ]</i>,
         "<a href="#paytype" title="PayType">PayType</a>" : <i>Double</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>Double</i>,
@@ -31,7 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#slavedeploymode" title="SlaveDeployMode">SlaveDeployMode</a>" : <i>Double</i>,
         "<a href="#slavesyncmode" title="SlaveSyncMode">SlaveSyncMode</a>" : <i>Double</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#volumesize" title="VolumeSize">VolumeSize</a>" : <i>Double</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>
     }
@@ -53,7 +53,7 @@ Properties:
     <a href="#intranetport" title="IntranetPort">IntranetPort</a>: <i>Double</i>
     <a href="#memsize" title="MemSize">MemSize</a>: <i>Double</i>
     <a href="#parameters" title="Parameters">Parameters</a>: <i>
-      - &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;</i>
+      - <a href="parameters.md">Parameters</a></i>
     <a href="#paytype" title="PayType">PayType</a>: <i>Double</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>Double</i>
@@ -65,7 +65,7 @@ Properties:
     <a href="#slavesyncmode" title="SlaveSyncMode">SlaveSyncMode</a>: <i>Double</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#volumesize" title="VolumeSize">VolumeSize</a>: <i>Double</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
 </pre>
@@ -148,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;
+_Type_: List of <a href="parameters.md">Parameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -228,7 +228,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -266,29 +266,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Gtid
 
-Returns the &lt;code&gt;Gtid&lt;/code&gt; value.
+Returns the <code>Gtid</code> value.
 
 #### InternetHost
 
-Returns the &lt;code&gt;InternetHost&lt;/code&gt; value.
+Returns the <code>InternetHost</code> value.
 
 #### InternetPort
 
-Returns the &lt;code&gt;InternetPort&lt;/code&gt; value.
+Returns the <code>InternetPort</code> value.
 
 #### IntranetIp
 
-Returns the &lt;code&gt;IntranetIp&lt;/code&gt; value.
+Returns the <code>IntranetIp</code> value.
 
 #### Locked
 
-Returns the &lt;code&gt;Locked&lt;/code&gt; value.
+Returns the <code>Locked</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### TaskStatus
 
-Returns the &lt;code&gt;TaskStatus&lt;/code&gt; value.
+Returns the <code>TaskStatus</code> value.
 

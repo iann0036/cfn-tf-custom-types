@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#invert" title="Invert">Invert</a>" : <i>Boolean</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#match" title="Match">Match</a>" : <i>[ &lt;a href=&#34;header-match.md&#34;&gt;Match&lt;/a&gt;, ... ]</i>
+    "<a href="#match" title="Match">Match</a>" : <i>[ <a href="header-match.md">Match</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#invert" title="Invert">Invert</a>: <i>Boolean</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#match" title="Match">Match</a>: <i>
-      - &lt;a href=&#34;header-match.md&#34;&gt;Match&lt;/a&gt;</i>
+      - <a href="header-match.md">Match</a></i>
 </pre>
 
 ## Properties
@@ -42,7 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Match
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;header-match.md&#34;&gt;Match&lt;/a&gt;
+_Type_: List of <a href="header-match.md">Match</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

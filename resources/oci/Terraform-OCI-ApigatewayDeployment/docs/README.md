@@ -13,25 +13,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::OCI::ApigatewayDeployment",
     "Properties" : {
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#gatewayid" title="GatewayId">GatewayId</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#pathprefix" title="PathPrefix">PathPrefix</a>" : <i>String</i>,
-        "<a href="#specification" title="Specification">Specification</a>" : <i>[ &lt;a href=&#34;specification.md&#34;&gt;Specification&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#loggingpolicies" title="LoggingPolicies">LoggingPolicies</a>" : <i>[ &lt;a href=&#34;loggingpolicies.md&#34;&gt;LoggingPolicies&lt;/a&gt;, ... ]</i>,
-        "<a href="#requestpolicies" title="RequestPolicies">RequestPolicies</a>" : <i>[ &lt;a href=&#34;requestpolicies.md&#34;&gt;RequestPolicies&lt;/a&gt;, ... ]</i>,
-        "<a href="#routes" title="Routes">Routes</a>" : <i>[ &lt;a href=&#34;routes.md&#34;&gt;Routes&lt;/a&gt;, ... ]</i>,
-        "<a href="#accesslog" title="AccessLog">AccessLog</a>" : <i>[ &lt;a href=&#34;accesslog.md&#34;&gt;AccessLog&lt;/a&gt;, ... ]</i>,
-        "<a href="#executionlog" title="ExecutionLog">ExecutionLog</a>" : <i>[ &lt;a href=&#34;executionlog.md&#34;&gt;ExecutionLog&lt;/a&gt;, ... ]</i>,
-        "<a href="#authentication" title="Authentication">Authentication</a>" : <i>[ &lt;a href=&#34;authentication.md&#34;&gt;Authentication&lt;/a&gt;, ... ]</i>,
-        "<a href="#cors" title="Cors">Cors</a>" : <i>[ &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;, ... ]</i>,
-        "<a href="#ratelimiting" title="RateLimiting">RateLimiting</a>" : <i>[ &lt;a href=&#34;ratelimiting.md&#34;&gt;RateLimiting&lt;/a&gt;, ... ]</i>,
-        "<a href="#backend" title="Backend">Backend</a>" : <i>[ &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;, ... ]</i>,
-        "<a href="#headers" title="Headers">Headers</a>" : <i>[ &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;, ... ]</i>,
-        "<a href="#authorization" title="Authorization">Authorization</a>" : <i>[ &lt;a href=&#34;authorization.md&#34;&gt;Authorization&lt;/a&gt;, ... ]</i>
+        "<a href="#specification" title="Specification">Specification</a>" : <i>[ <a href="specification.md">Specification</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#loggingpolicies" title="LoggingPolicies">LoggingPolicies</a>" : <i>[ <a href="loggingpolicies.md">LoggingPolicies</a>, ... ]</i>,
+        "<a href="#requestpolicies" title="RequestPolicies">RequestPolicies</a>" : <i>[ <a href="requestpolicies.md">RequestPolicies</a>, ... ]</i>,
+        "<a href="#routes" title="Routes">Routes</a>" : <i>[ <a href="routes.md">Routes</a>, ... ]</i>,
+        "<a href="#accesslog" title="AccessLog">AccessLog</a>" : <i>[ <a href="accesslog.md">AccessLog</a>, ... ]</i>,
+        "<a href="#executionlog" title="ExecutionLog">ExecutionLog</a>" : <i>[ <a href="executionlog.md">ExecutionLog</a>, ... ]</i>,
+        "<a href="#authentication" title="Authentication">Authentication</a>" : <i>[ <a href="authentication.md">Authentication</a>, ... ]</i>,
+        "<a href="#cors" title="Cors">Cors</a>" : <i>[ <a href="cors.md">Cors</a>, ... ]</i>,
+        "<a href="#ratelimiting" title="RateLimiting">RateLimiting</a>" : <i>[ <a href="ratelimiting.md">RateLimiting</a>, ... ]</i>,
+        "<a href="#backend" title="Backend">Backend</a>" : <i>[ <a href="backend.md">Backend</a>, ... ]</i>,
+        "<a href="#headers" title="Headers">Headers</a>" : <i>[ <a href="headers.md">Headers</a>, ... ]</i>,
+        "<a href="#authorization" title="Authorization">Authorization</a>" : <i>[ <a href="authorization.md">Authorization</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,38 +43,38 @@ Type: Terraform::OCI::ApigatewayDeployment
 Properties:
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#gatewayid" title="GatewayId">GatewayId</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#pathprefix" title="PathPrefix">PathPrefix</a>: <i>String</i>
     <a href="#specification" title="Specification">Specification</a>: <i>
-      - &lt;a href=&#34;specification.md&#34;&gt;Specification&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="specification.md">Specification</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#loggingpolicies" title="LoggingPolicies">LoggingPolicies</a>: <i>
-      - &lt;a href=&#34;loggingpolicies.md&#34;&gt;LoggingPolicies&lt;/a&gt;</i>
+      - <a href="loggingpolicies.md">LoggingPolicies</a></i>
     <a href="#requestpolicies" title="RequestPolicies">RequestPolicies</a>: <i>
-      - &lt;a href=&#34;requestpolicies.md&#34;&gt;RequestPolicies&lt;/a&gt;</i>
+      - <a href="requestpolicies.md">RequestPolicies</a></i>
     <a href="#routes" title="Routes">Routes</a>: <i>
-      - &lt;a href=&#34;routes.md&#34;&gt;Routes&lt;/a&gt;</i>
+      - <a href="routes.md">Routes</a></i>
     <a href="#accesslog" title="AccessLog">AccessLog</a>: <i>
-      - &lt;a href=&#34;accesslog.md&#34;&gt;AccessLog&lt;/a&gt;</i>
+      - <a href="accesslog.md">AccessLog</a></i>
     <a href="#executionlog" title="ExecutionLog">ExecutionLog</a>: <i>
-      - &lt;a href=&#34;executionlog.md&#34;&gt;ExecutionLog&lt;/a&gt;</i>
+      - <a href="executionlog.md">ExecutionLog</a></i>
     <a href="#authentication" title="Authentication">Authentication</a>: <i>
-      - &lt;a href=&#34;authentication.md&#34;&gt;Authentication&lt;/a&gt;</i>
+      - <a href="authentication.md">Authentication</a></i>
     <a href="#cors" title="Cors">Cors</a>: <i>
-      - &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;</i>
+      - <a href="cors.md">Cors</a></i>
     <a href="#ratelimiting" title="RateLimiting">RateLimiting</a>: <i>
-      - &lt;a href=&#34;ratelimiting.md&#34;&gt;RateLimiting&lt;/a&gt;</i>
+      - <a href="ratelimiting.md">RateLimiting</a></i>
     <a href="#backend" title="Backend">Backend</a>: <i>
-      - &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;</i>
+      - <a href="backend.md">Backend</a></i>
     <a href="#headers" title="Headers">Headers</a>: <i>
-      - &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;</i>
+      - <a href="headers.md">Headers</a></i>
     <a href="#authorization" title="Authorization">Authorization</a>: <i>
-      - &lt;a href=&#34;authorization.md&#34;&gt;Authorization&lt;/a&gt;</i>
+      - <a href="authorization.md">Authorization</a></i>
 </pre>
 
 ## Properties
@@ -91,7 +91,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -107,7 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;specification.md&#34;&gt;Specification&lt;/a&gt;
+_Type_: List of <a href="specification.md">Specification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;loggingpolicies.md&#34;&gt;LoggingPolicies&lt;/a&gt;
+_Type_: List of <a href="loggingpolicies.md">LoggingPolicies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requestpolicies.md&#34;&gt;RequestPolicies&lt;/a&gt;
+_Type_: List of <a href="requestpolicies.md">RequestPolicies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;routes.md&#34;&gt;Routes&lt;/a&gt;
+_Type_: List of <a href="routes.md">Routes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accesslog.md&#34;&gt;AccessLog&lt;/a&gt;
+_Type_: List of <a href="accesslog.md">AccessLog</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;executionlog.md&#34;&gt;ExecutionLog&lt;/a&gt;
+_Type_: List of <a href="executionlog.md">ExecutionLog</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;authentication.md&#34;&gt;Authentication&lt;/a&gt;
+_Type_: List of <a href="authentication.md">Authentication</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,7 +203,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;
+_Type_: List of <a href="cors.md">Cors</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -211,7 +211,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ratelimiting.md&#34;&gt;RateLimiting&lt;/a&gt;
+_Type_: List of <a href="ratelimiting.md">RateLimiting</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -219,7 +219,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;
+_Type_: List of <a href="backend.md">Backend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,7 +227,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;
+_Type_: List of <a href="headers.md">Headers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -235,7 +235,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;authorization.md&#34;&gt;Authorization&lt;/a&gt;
+_Type_: List of <a href="authorization.md">Authorization</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -257,21 +257,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Endpoint
 
-Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
+Returns the <code>Endpoint</code> value.
 
 #### LifecycleDetails
 
-Returns the &lt;code&gt;LifecycleDetails&lt;/code&gt; value.
+Returns the <code>LifecycleDetails</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 
 #### TimeUpdated
 
-Returns the &lt;code&gt;TimeUpdated&lt;/code&gt; value.
+Returns the <code>TimeUpdated</code> value.
 

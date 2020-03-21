@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#edgegateway" title="EdgeGateway">EdgeGateway</a>" : <i>String</i>,
         "<a href="#expected" title="Expected">Expected</a>" : <i>String</i>,
-        "<a href="#extension" title="Extension">Extension</a>" : <i>[ &lt;a href=&#34;extension.md&#34;&gt;Extension&lt;/a&gt;, ... ]</i>,
+        "<a href="#extension" title="Extension">Extension</a>" : <i>[ <a href="extension.md">Extension</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#interval" title="Interval">Interval</a>" : <i>Double</i>,
         "<a href="#maxretries" title="MaxRetries">MaxRetries</a>" : <i>Double</i>,
@@ -39,7 +39,7 @@ Properties:
     <a href="#edgegateway" title="EdgeGateway">EdgeGateway</a>: <i>String</i>
     <a href="#expected" title="Expected">Expected</a>: <i>String</i>
     <a href="#extension" title="Extension">Extension</a>: <i>
-      - &lt;a href=&#34;extension.md&#34;&gt;Extension&lt;/a&gt;</i>
+      - <a href="extension.md">Extension</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#interval" title="Interval">Interval</a>: <i>Double</i>
     <a href="#maxretries" title="MaxRetries">MaxRetries</a>: <i>Double</i>
@@ -76,7 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;extension.md&#34;&gt;Extension&lt;/a&gt;
+_Type_: List of <a href="extension.md">Extension</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

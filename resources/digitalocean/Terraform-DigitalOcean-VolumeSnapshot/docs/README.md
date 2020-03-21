@@ -84,17 +84,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### MinDiskSize
 
-Returns the &lt;code&gt;MinDiskSize&lt;/code&gt; value.
+Returns the <code>MinDiskSize</code> value.
 
 #### Regions
 
-Returns the &lt;code&gt;Regions&lt;/code&gt; value.
+Returns the <code>Regions</code> value.
 
 #### Size
 
-Returns the &lt;code&gt;Size&lt;/code&gt; value.
+Returns the <code>Size</code> value.
 

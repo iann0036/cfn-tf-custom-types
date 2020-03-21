@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#rolearn" title="RoleArn">RoleArn</a>" : <i>String</i>,
     "<a href="#s3backupmode" title="S3BackupMode">S3BackupMode</a>" : <i>String</i>,
     "<a href="#username" title="Username">Username</a>" : <i>String</i>,
-    "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ &lt;a href=&#34;redshiftconfiguration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;, ... ]</i>,
-    "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ &lt;a href=&#34;redshiftconfiguration-processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;, ... ]</i>,
-    "<a href="#s3backupconfiguration" title="S3BackupConfiguration">S3BackupConfiguration</a>" : <i>[ &lt;a href=&#34;redshiftconfiguration-s3backupconfiguration.md&#34;&gt;S3BackupConfiguration&lt;/a&gt;, ... ]</i>
+    "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ <a href="redshiftconfiguration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>, ... ]</i>,
+    "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ <a href="redshiftconfiguration-processingconfiguration.md">ProcessingConfiguration</a>, ... ]</i>,
+    "<a href="#s3backupconfiguration" title="S3BackupConfiguration">S3BackupConfiguration</a>" : <i>[ <a href="redshiftconfiguration-s3backupconfiguration.md">S3BackupConfiguration</a>, ... ]</i>
 }
 </pre>
 
@@ -36,11 +36,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#s3backupmode" title="S3BackupMode">S3BackupMode</a>: <i>String</i>
 <a href="#username" title="Username">Username</a>: <i>String</i>
 <a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>: <i>
-      - &lt;a href=&#34;redshiftconfiguration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;</i>
+      - <a href="redshiftconfiguration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a></i>
 <a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>: <i>
-      - &lt;a href=&#34;redshiftconfiguration-processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;</i>
+      - <a href="redshiftconfiguration-processingconfiguration.md">ProcessingConfiguration</a></i>
 <a href="#s3backupconfiguration" title="S3BackupConfiguration">S3BackupConfiguration</a>: <i>
-      - &lt;a href=&#34;redshiftconfiguration-s3backupconfiguration.md&#34;&gt;S3BackupConfiguration&lt;/a&gt;</i>
+      - <a href="redshiftconfiguration-s3backupconfiguration.md">S3BackupConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -111,21 +111,21 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CloudwatchLoggingOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;redshiftconfiguration-cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;
+_Type_: List of <a href="redshiftconfiguration-cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProcessingConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;redshiftconfiguration-processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;
+_Type_: List of <a href="redshiftconfiguration-processingconfiguration.md">ProcessingConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3BackupConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;redshiftconfiguration-s3backupconfiguration.md&#34;&gt;S3BackupConfiguration&lt;/a&gt;
+_Type_: List of <a href="redshiftconfiguration-s3backupconfiguration.md">S3BackupConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

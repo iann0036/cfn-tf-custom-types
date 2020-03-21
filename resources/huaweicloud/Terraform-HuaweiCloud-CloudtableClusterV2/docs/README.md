@@ -23,8 +23,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#storagetype" title="StorageType">StorageType</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -46,8 +46,8 @@ Properties:
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -144,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,33 +174,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### HbasePublicEndpoint
 
-Returns the &lt;code&gt;HbasePublicEndpoint&lt;/code&gt; value.
+Returns the <code>HbasePublicEndpoint</code> value.
 
 #### LemonLink
 
-Returns the &lt;code&gt;LemonLink&lt;/code&gt; value.
+Returns the <code>LemonLink</code> value.
 
 #### OpenTsdbLink
 
-Returns the &lt;code&gt;OpenTsdbLink&lt;/code&gt; value.
+Returns the <code>OpenTsdbLink</code> value.
 
 #### OpentsdbPublicEndpoint
 
-Returns the &lt;code&gt;OpentsdbPublicEndpoint&lt;/code&gt; value.
+Returns the <code>OpentsdbPublicEndpoint</code> value.
 
 #### StorageQuota
 
-Returns the &lt;code&gt;StorageQuota&lt;/code&gt; value.
+Returns the <code>StorageQuota</code> value.
 
 #### UsedStorageSize
 
-Returns the &lt;code&gt;UsedStorageSize&lt;/code&gt; value.
+Returns the <code>UsedStorageSize</code> value.
 
 #### ZookeeperLink
 
-Returns the &lt;code&gt;ZookeeperLink&lt;/code&gt; value.
+Returns the <code>ZookeeperLink</code> value.
 

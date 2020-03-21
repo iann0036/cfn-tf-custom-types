@@ -133,17 +133,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Mail
 
-Returns the &lt;code&gt;Mail&lt;/code&gt; value.
+Returns the <code>Mail</code> value.
 
 #### ObjectId
 
-Returns the &lt;code&gt;ObjectId&lt;/code&gt; value.
+Returns the <code>ObjectId</code> value.
 
 #### OnpremisesSamAccountName
 
-Returns the &lt;code&gt;OnpremisesSamAccountName&lt;/code&gt; value.
+Returns the <code>OnpremisesSamAccountName</code> value.
 
 #### OnpremisesUserPrincipalName
 
-Returns the &lt;code&gt;OnpremisesUserPrincipalName&lt;/code&gt; value.
+Returns the <code>OnpremisesUserPrincipalName</code> value.
 

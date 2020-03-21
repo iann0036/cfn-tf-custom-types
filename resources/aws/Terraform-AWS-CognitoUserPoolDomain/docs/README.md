@@ -83,17 +83,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AwsAccountId
 
-Returns the &lt;code&gt;AwsAccountId&lt;/code&gt; value.
+Returns the <code>AwsAccountId</code> value.
 
 #### CloudfrontDistributionArn
 
-Returns the &lt;code&gt;CloudfrontDistributionArn&lt;/code&gt; value.
+Returns the <code>CloudfrontDistributionArn</code> value.
 
 #### S3Bucket
 
-Returns the &lt;code&gt;S3Bucket&lt;/code&gt; value.
+Returns the <code>S3Bucket</code> value.
 
 #### Version
 
-Returns the &lt;code&gt;Version&lt;/code&gt; value.
+Returns the <code>Version</code> value.
 

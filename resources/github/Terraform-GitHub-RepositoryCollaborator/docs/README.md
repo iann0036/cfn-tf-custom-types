@@ -83,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### InvitationId
 
-Returns the &lt;code&gt;InvitationId&lt;/code&gt; value.
+Returns the <code>InvitationId</code> value.
 

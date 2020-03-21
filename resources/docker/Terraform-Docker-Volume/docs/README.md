@@ -13,10 +13,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::Docker::Volume",
     "Properties" : {
         "<a href="#driver" title="Driver">Driver</a>" : <i>String</i>,
-        "<a href="#driveropts" title="DriverOpts">DriverOpts</a>" : <i>[ &lt;a href=&#34;driveropts.md&#34;&gt;DriverOpts&lt;/a&gt;, ... ]</i>,
+        "<a href="#driveropts" title="DriverOpts">DriverOpts</a>" : <i>[ <a href="driveropts.md">DriverOpts</a>, ... ]</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>
     }
 }
 </pre>
@@ -28,11 +28,11 @@ Type: Terraform::Docker::Volume
 Properties:
     <a href="#driver" title="Driver">Driver</a>: <i>String</i>
     <a href="#driveropts" title="DriverOpts">DriverOpts</a>: <i>
-      - &lt;a href=&#34;driveropts.md&#34;&gt;DriverOpts&lt;/a&gt;</i>
+      - <a href="driveropts.md">DriverOpts</a></i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
 </pre>
 
 ## Properties
@@ -49,7 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;driveropts.md&#34;&gt;DriverOpts&lt;/a&gt;
+_Type_: List of <a href="driveropts.md">DriverOpts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -73,7 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -95,5 +95,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Mountpoint
 
-Returns the &lt;code&gt;Mountpoint&lt;/code&gt; value.
+Returns the <code>Mountpoint</code> value.
 

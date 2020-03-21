@@ -34,14 +34,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#safemode" title="SafeMode">SafeMode</a>" : <i>Double</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#volumesize" title="VolumeSize">VolumeSize</a>" : <i>Double</i>,
         "<a href="#volumetype" title="VolumeType">VolumeType</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#addjobs" title="AddJobs">AddJobs</a>" : <i>[ &lt;a href=&#34;addjobs.md&#34;&gt;AddJobs&lt;/a&gt;, ... ]</i>,
-        "<a href="#bootstrapscripts" title="BootstrapScripts">BootstrapScripts</a>" : <i>[ &lt;a href=&#34;bootstrapscripts.md&#34;&gt;BootstrapScripts&lt;/a&gt;, ... ]</i>,
-        "<a href="#componentlist" title="ComponentList">ComponentList</a>" : <i>[ &lt;a href=&#34;componentlist.md&#34;&gt;ComponentList&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#addjobs" title="AddJobs">AddJobs</a>" : <i>[ <a href="addjobs.md">AddJobs</a>, ... ]</i>,
+        "<a href="#bootstrapscripts" title="BootstrapScripts">BootstrapScripts</a>" : <i>[ <a href="bootstrapscripts.md">BootstrapScripts</a>, ... ]</i>,
+        "<a href="#componentlist" title="ComponentList">ComponentList</a>" : <i>[ <a href="componentlist.md">ComponentList</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -74,17 +74,17 @@ Properties:
     <a href="#safemode" title="SafeMode">SafeMode</a>: <i>Double</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#volumesize" title="VolumeSize">VolumeSize</a>: <i>Double</i>
     <a href="#volumetype" title="VolumeType">VolumeType</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#addjobs" title="AddJobs">AddJobs</a>: <i>
-      - &lt;a href=&#34;addjobs.md&#34;&gt;AddJobs&lt;/a&gt;</i>
+      - <a href="addjobs.md">AddJobs</a></i>
     <a href="#bootstrapscripts" title="BootstrapScripts">BootstrapScripts</a>: <i>
-      - &lt;a href=&#34;bootstrapscripts.md&#34;&gt;BootstrapScripts&lt;/a&gt;</i>
+      - <a href="bootstrapscripts.md">BootstrapScripts</a></i>
     <a href="#componentlist" title="ComponentList">ComponentList</a>: <i>
-      - &lt;a href=&#34;componentlist.md&#34;&gt;ComponentList&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="componentlist.md">ComponentList</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
@@ -269,7 +269,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -301,7 +301,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;addjobs.md&#34;&gt;AddJobs&lt;/a&gt;
+_Type_: List of <a href="addjobs.md">AddJobs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -309,7 +309,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bootstrapscripts.md&#34;&gt;BootstrapScripts&lt;/a&gt;
+_Type_: List of <a href="bootstrapscripts.md">BootstrapScripts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -317,7 +317,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;componentlist.md&#34;&gt;ComponentList&lt;/a&gt;
+_Type_: List of <a href="componentlist.md">ComponentList</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -325,7 +325,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -347,109 +347,109 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailableZoneName
 
-Returns the &lt;code&gt;AvailableZoneName&lt;/code&gt; value.
+Returns the <code>AvailableZoneName</code> value.
 
 #### ChargingStartTime
 
-Returns the &lt;code&gt;ChargingStartTime&lt;/code&gt; value.
+Returns the <code>ChargingStartTime</code> value.
 
 #### ClusterId
 
-Returns the &lt;code&gt;ClusterId&lt;/code&gt; value.
+Returns the <code>ClusterId</code> value.
 
 #### ClusterState
 
-Returns the &lt;code&gt;ClusterState&lt;/code&gt; value.
+Returns the <code>ClusterState</code> value.
 
 #### CoreNodeProductId
 
-Returns the &lt;code&gt;CoreNodeProductId&lt;/code&gt; value.
+Returns the <code>CoreNodeProductId</code> value.
 
 #### CoreNodeSpecId
 
-Returns the &lt;code&gt;CoreNodeSpecId&lt;/code&gt; value.
+Returns the <code>CoreNodeSpecId</code> value.
 
 #### CreateAt
 
-Returns the &lt;code&gt;CreateAt&lt;/code&gt; value.
+Returns the <code>CreateAt</code> value.
 
 #### DeploymentId
 
-Returns the &lt;code&gt;DeploymentId&lt;/code&gt; value.
+Returns the <code>DeploymentId</code> value.
 
 #### Duration
 
-Returns the &lt;code&gt;Duration&lt;/code&gt; value.
+Returns the <code>Duration</code> value.
 
 #### ErrorInfo
 
-Returns the &lt;code&gt;ErrorInfo&lt;/code&gt; value.
+Returns the <code>ErrorInfo</code> value.
 
 #### ExternalAlternateIp
 
-Returns the &lt;code&gt;ExternalAlternateIp&lt;/code&gt; value.
+Returns the <code>ExternalAlternateIp</code> value.
 
 #### ExternalIp
 
-Returns the &lt;code&gt;ExternalIp&lt;/code&gt; value.
+Returns the <code>ExternalIp</code> value.
 
 #### Fee
 
-Returns the &lt;code&gt;Fee&lt;/code&gt; value.
+Returns the <code>Fee</code> value.
 
 #### HadoopVersion
 
-Returns the &lt;code&gt;HadoopVersion&lt;/code&gt; value.
+Returns the <code>HadoopVersion</code> value.
 
 #### InstanceId
 
-Returns the &lt;code&gt;InstanceId&lt;/code&gt; value.
+Returns the <code>InstanceId</code> value.
 
 #### InternalIp
 
-Returns the &lt;code&gt;InternalIp&lt;/code&gt; value.
+Returns the <code>InternalIp</code> value.
 
 #### MasterNodeIp
 
-Returns the &lt;code&gt;MasterNodeIp&lt;/code&gt; value.
+Returns the <code>MasterNodeIp</code> value.
 
 #### MasterNodeProductId
 
-Returns the &lt;code&gt;MasterNodeProductId&lt;/code&gt; value.
+Returns the <code>MasterNodeProductId</code> value.
 
 #### MasterNodeSpecId
 
-Returns the &lt;code&gt;MasterNodeSpecId&lt;/code&gt; value.
+Returns the <code>MasterNodeSpecId</code> value.
 
 #### OrderId
 
-Returns the &lt;code&gt;OrderId&lt;/code&gt; value.
+Returns the <code>OrderId</code> value.
 
 #### PrivateIpFirst
 
-Returns the &lt;code&gt;PrivateIpFirst&lt;/code&gt; value.
+Returns the <code>PrivateIpFirst</code> value.
 
 #### Remark
 
-Returns the &lt;code&gt;Remark&lt;/code&gt; value.
+Returns the <code>Remark</code> value.
 
 #### SecurityGroupsId
 
-Returns the &lt;code&gt;SecurityGroupsId&lt;/code&gt; value.
+Returns the <code>SecurityGroupsId</code> value.
 
 #### SlaveSecurityGroupsId
 
-Returns the &lt;code&gt;SlaveSecurityGroupsId&lt;/code&gt; value.
+Returns the <code>SlaveSecurityGroupsId</code> value.
 
 #### TenantId
 
-Returns the &lt;code&gt;TenantId&lt;/code&gt; value.
+Returns the <code>TenantId</code> value.
 
 #### UpdateAt
 
-Returns the &lt;code&gt;UpdateAt&lt;/code&gt; value.
+Returns the <code>UpdateAt</code> value.
 
 #### Vnc
 
-Returns the &lt;code&gt;Vnc&lt;/code&gt; value.
+Returns the <code>Vnc</code> value.
 

@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#scalinggroupid" title="ScalingGroupId">ScalingGroupId</a>" : <i>String</i>,
         "<a href="#scalingpolicyname" title="ScalingPolicyName">ScalingPolicyName</a>" : <i>String</i>,
         "<a href="#scalingpolicytype" title="ScalingPolicyType">ScalingPolicyType</a>" : <i>String</i>,
-        "<a href="#scalingpolicyaction" title="ScalingPolicyAction">ScalingPolicyAction</a>" : <i>[ &lt;a href=&#34;scalingpolicyaction.md&#34;&gt;ScalingPolicyAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#scheduledpolicy" title="ScheduledPolicy">ScheduledPolicy</a>" : <i>[ &lt;a href=&#34;scheduledpolicy.md&#34;&gt;ScheduledPolicy&lt;/a&gt;, ... ]</i>
+        "<a href="#scalingpolicyaction" title="ScalingPolicyAction">ScalingPolicyAction</a>" : <i>[ <a href="scalingpolicyaction.md">ScalingPolicyAction</a>, ... ]</i>,
+        "<a href="#scheduledpolicy" title="ScheduledPolicy">ScheduledPolicy</a>" : <i>[ <a href="scheduledpolicy.md">ScheduledPolicy</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,9 +38,9 @@ Properties:
     <a href="#scalingpolicyname" title="ScalingPolicyName">ScalingPolicyName</a>: <i>String</i>
     <a href="#scalingpolicytype" title="ScalingPolicyType">ScalingPolicyType</a>: <i>String</i>
     <a href="#scalingpolicyaction" title="ScalingPolicyAction">ScalingPolicyAction</a>: <i>
-      - &lt;a href=&#34;scalingpolicyaction.md&#34;&gt;ScalingPolicyAction&lt;/a&gt;</i>
+      - <a href="scalingpolicyaction.md">ScalingPolicyAction</a></i>
     <a href="#scheduledpolicy" title="ScheduledPolicy">ScheduledPolicy</a>: <i>
-      - &lt;a href=&#34;scheduledpolicy.md&#34;&gt;ScheduledPolicy&lt;/a&gt;</i>
+      - <a href="scheduledpolicy.md">ScheduledPolicy</a></i>
 </pre>
 
 ## Properties
@@ -105,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalingpolicyaction.md&#34;&gt;ScalingPolicyAction&lt;/a&gt;
+_Type_: List of <a href="scalingpolicyaction.md">ScalingPolicyAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scheduledpolicy.md&#34;&gt;ScheduledPolicy&lt;/a&gt;
+_Type_: List of <a href="scheduledpolicy.md">ScheduledPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

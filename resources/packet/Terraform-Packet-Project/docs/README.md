@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#organizationid" title="OrganizationId">OrganizationId</a>" : <i>String</i>,
         "<a href="#paymentmethodid" title="PaymentMethodId">PaymentMethodId</a>" : <i>String</i>,
-        "<a href="#bgpconfig" title="BgpConfig">BgpConfig</a>" : <i>[ &lt;a href=&#34;bgpconfig.md&#34;&gt;BgpConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#bgpconfig" title="BgpConfig">BgpConfig</a>" : <i>[ <a href="bgpconfig.md">BgpConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,7 +33,7 @@ Properties:
     <a href="#organizationid" title="OrganizationId">OrganizationId</a>: <i>String</i>
     <a href="#paymentmethodid" title="PaymentMethodId">PaymentMethodId</a>: <i>String</i>
     <a href="#bgpconfig" title="BgpConfig">BgpConfig</a>: <i>
-      - &lt;a href=&#34;bgpconfig.md&#34;&gt;BgpConfig&lt;/a&gt;</i>
+      - <a href="bgpconfig.md">BgpConfig</a></i>
 </pre>
 
 ## Properties
@@ -82,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bgpconfig.md&#34;&gt;BgpConfig&lt;/a&gt;
+_Type_: List of <a href="bgpconfig.md">BgpConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -104,9 +104,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Updated
 
-Returns the &lt;code&gt;Updated&lt;/code&gt; value.
+Returns the <code>Updated</code> value.
 

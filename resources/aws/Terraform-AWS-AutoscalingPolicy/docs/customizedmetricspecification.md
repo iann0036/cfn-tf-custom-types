@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#namespace" title="Namespace">Namespace</a>" : <i>String</i>,
     "<a href="#statistic" title="Statistic">Statistic</a>" : <i>String</i>,
     "<a href="#unit" title="Unit">Unit</a>" : <i>String</i>,
-    "<a href="#metricdimension" title="MetricDimension">MetricDimension</a>" : <i>[ &lt;a href=&#34;customizedmetricspecification-metricdimension.md&#34;&gt;MetricDimension&lt;/a&gt;, ... ]</i>
+    "<a href="#metricdimension" title="MetricDimension">MetricDimension</a>" : <i>[ <a href="customizedmetricspecification-metricdimension.md">MetricDimension</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#statistic" title="Statistic">Statistic</a>: <i>String</i>
 <a href="#unit" title="Unit">Unit</a>: <i>String</i>
 <a href="#metricdimension" title="MetricDimension">MetricDimension</a>: <i>
-      - &lt;a href=&#34;customizedmetricspecification-metricdimension.md&#34;&gt;MetricDimension&lt;/a&gt;</i>
+      - <a href="customizedmetricspecification-metricdimension.md">MetricDimension</a></i>
 </pre>
 
 ## Properties
@@ -60,7 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MetricDimension
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;customizedmetricspecification-metricdimension.md&#34;&gt;MetricDimension&lt;/a&gt;
+_Type_: List of <a href="customizedmetricspecification-metricdimension.md">MetricDimension</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

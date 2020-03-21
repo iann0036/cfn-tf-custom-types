@@ -24,9 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#autoupgrade" title="AutoUpgrade">AutoUpgrade</a>" : <i>[ &lt;a href=&#34;autoupgrade.md&#34;&gt;AutoUpgrade&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscalerconfig" title="AutoscalerConfig">AutoscalerConfig</a>" : <i>[ &lt;a href=&#34;autoscalerconfig.md&#34;&gt;AutoscalerConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#defaultpool" title="DefaultPool">DefaultPool</a>" : <i>[ &lt;a href=&#34;defaultpool.md&#34;&gt;DefaultPool&lt;/a&gt;, ... ]</i>
+        "<a href="#autoupgrade" title="AutoUpgrade">AutoUpgrade</a>" : <i>[ <a href="autoupgrade.md">AutoUpgrade</a>, ... ]</i>,
+        "<a href="#autoscalerconfig" title="AutoscalerConfig">AutoscalerConfig</a>" : <i>[ <a href="autoscalerconfig.md">AutoscalerConfig</a>, ... ]</i>,
+        "<a href="#defaultpool" title="DefaultPool">DefaultPool</a>" : <i>[ <a href="defaultpool.md">DefaultPool</a>, ... ]</i>
     }
 }
 </pre>
@@ -52,11 +52,11 @@ Properties:
       - String</i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#autoupgrade" title="AutoUpgrade">AutoUpgrade</a>: <i>
-      - &lt;a href=&#34;autoupgrade.md&#34;&gt;AutoUpgrade&lt;/a&gt;</i>
+      - <a href="autoupgrade.md">AutoUpgrade</a></i>
     <a href="#autoscalerconfig" title="AutoscalerConfig">AutoscalerConfig</a>: <i>
-      - &lt;a href=&#34;autoscalerconfig.md&#34;&gt;AutoscalerConfig&lt;/a&gt;</i>
+      - <a href="autoscalerconfig.md">AutoscalerConfig</a></i>
     <a href="#defaultpool" title="DefaultPool">DefaultPool</a>: <i>
-      - &lt;a href=&#34;defaultpool.md&#34;&gt;DefaultPool&lt;/a&gt;</i>
+      - <a href="defaultpool.md">DefaultPool</a></i>
 </pre>
 
 ## Properties
@@ -161,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoupgrade.md&#34;&gt;AutoUpgrade&lt;/a&gt;
+_Type_: List of <a href="autoupgrade.md">AutoUpgrade</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscalerconfig.md&#34;&gt;AutoscalerConfig&lt;/a&gt;
+_Type_: List of <a href="autoscalerconfig.md">AutoscalerConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;defaultpool.md&#34;&gt;DefaultPool&lt;/a&gt;
+_Type_: List of <a href="defaultpool.md">DefaultPool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,29 +199,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ApiserverUrl
 
-Returns the &lt;code&gt;ApiserverUrl&lt;/code&gt; value.
+Returns the <code>ApiserverUrl</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### Kubeconfig
 
-Returns the &lt;code&gt;Kubeconfig&lt;/code&gt; value.
+Returns the <code>Kubeconfig</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 
 #### UpgradeAvailable
 
-Returns the &lt;code&gt;UpgradeAvailable&lt;/code&gt; value.
+Returns the <code>UpgradeAvailable</code> value.
 
 #### WildcardDns
 
-Returns the &lt;code&gt;WildcardDns&lt;/code&gt; value.
+Returns the <code>WildcardDns</code> value.
 

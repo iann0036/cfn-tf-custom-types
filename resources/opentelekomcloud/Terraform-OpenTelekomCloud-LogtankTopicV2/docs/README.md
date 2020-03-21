@@ -73,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IndexEnabled
 
-Returns the &lt;code&gt;IndexEnabled&lt;/code&gt; value.
+Returns the <code>IndexEnabled</code> value.
 

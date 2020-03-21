@@ -22,9 +22,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#transportzoneid" title="TransportZoneId">TransportZoneId</a>" : <i>String</i>,
         "<a href="#vlan" title="Vlan">Vlan</a>" : <i>Double</i>,
         "<a href="#vni" title="Vni">Vni</a>" : <i>Double</i>,
-        "<a href="#addressbinding" title="AddressBinding">AddressBinding</a>" : <i>[ &lt;a href=&#34;addressbinding.md&#34;&gt;AddressBinding&lt;/a&gt;, ... ]</i>,
-        "<a href="#switchingprofileid" title="SwitchingProfileId">SwitchingProfileId</a>" : <i>[ &lt;a href=&#34;switchingprofileid.md&#34;&gt;SwitchingProfileId&lt;/a&gt;, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>
+        "<a href="#addressbinding" title="AddressBinding">AddressBinding</a>" : <i>[ <a href="addressbinding.md">AddressBinding</a>, ... ]</i>,
+        "<a href="#switchingprofileid" title="SwitchingProfileId">SwitchingProfileId</a>" : <i>[ <a href="switchingprofileid.md">SwitchingProfileId</a>, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,11 +45,11 @@ Properties:
     <a href="#vlan" title="Vlan">Vlan</a>: <i>Double</i>
     <a href="#vni" title="Vni">Vni</a>: <i>Double</i>
     <a href="#addressbinding" title="AddressBinding">AddressBinding</a>: <i>
-      - &lt;a href=&#34;addressbinding.md&#34;&gt;AddressBinding&lt;/a&gt;</i>
+      - <a href="addressbinding.md">AddressBinding</a></i>
     <a href="#switchingprofileid" title="SwitchingProfileId">SwitchingProfileId</a>: <i>
-      - &lt;a href=&#34;switchingprofileid.md&#34;&gt;SwitchingProfileId&lt;/a&gt;</i>
+      - <a href="switchingprofileid.md">SwitchingProfileId</a></i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+      - <a href="tag.md">Tag</a></i>
 </pre>
 
 ## Properties
@@ -138,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;addressbinding.md&#34;&gt;AddressBinding&lt;/a&gt;
+_Type_: List of <a href="addressbinding.md">AddressBinding</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;switchingprofileid.md&#34;&gt;SwitchingProfileId&lt;/a&gt;
+_Type_: List of <a href="switchingprofileid.md">SwitchingProfileId</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
+_Type_: List of <a href="tag.md">Tag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,5 +176,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Revision
 
-Returns the &lt;code&gt;Revision&lt;/code&gt; value.
+Returns the <code>Revision</code> value.
 
