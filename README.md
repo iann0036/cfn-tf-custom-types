@@ -1,4 +1,4 @@
-# Terraform Custom Types
+# CloudFormation Custom Types for Terraform
 
 [![Resource Count](https://img.shields.io/badge/resource%20count-3098-blue.svg)](docs/README.md)
 
