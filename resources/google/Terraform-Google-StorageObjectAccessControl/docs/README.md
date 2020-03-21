@@ -12,17 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::StorageObjectAccessControl",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
-        "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
-        "<a href="#email" title="Email">Email</a>" : <i>String</i>,
         "<a href="#entity" title="Entity">Entity</a>" : <i>String</i>,
-        "<a href="#entityid" title="EntityId">EntityId</a>" : <i>String</i>,
-        "<a href="#generation" title="Generation">Generation</a>" : <i>Double</i>,
         "<a href="#object" title="Object">Object</a>" : <i>String</i>,
-        "<a href="#projectteam" title="ProjectTeam">ProjectTeam</a>" : <i>[ &lt;a href=&#34;projectteam.md&#34;&gt;ProjectTeam&lt;/a&gt;, ... ]</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -32,51 +26,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::StorageObjectAccessControl
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
-    <a href="#domain" title="Domain">Domain</a>: <i>String</i>
-    <a href="#email" title="Email">Email</a>: <i>String</i>
     <a href="#entity" title="Entity">Entity</a>: <i>String</i>
-    <a href="#entityid" title="EntityId">EntityId</a>: <i>String</i>
-    <a href="#generation" title="Generation">Generation</a>: <i>Double</i>
     <a href="#object" title="Object">Object</a>: <i>String</i>
-    <a href="#projectteam" title="ProjectTeam">ProjectTeam</a>: <i>
-      - &lt;a href=&#34;projectteam.md&#34;&gt;ProjectTeam&lt;/a&gt;</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Bucket
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Domain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Email
-
-_Required_: No
 
 _Type_: String
 
@@ -90,35 +51,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### EntityId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Generation
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Object
 
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ProjectTeam
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;projectteam.md&#34;&gt;ProjectTeam&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,7 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,21 +93,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Domain
 
-Returns the &lt;code&gt;Domain&lt;/code&gt; value.
+Returns the <code>Domain</code> value.
 
 #### Email
 
-Returns the &lt;code&gt;Email&lt;/code&gt; value.
+Returns the <code>Email</code> value.
 
 #### EntityId
 
-Returns the &lt;code&gt;EntityId&lt;/code&gt; value.
+Returns the <code>EntityId</code> value.
 
 #### Generation
 
-Returns the &lt;code&gt;Generation&lt;/code&gt; value.
+Returns the <code>Generation</code> value.
 
 #### ProjectTeam
 
-Returns the &lt;code&gt;ProjectTeam&lt;/code&gt; value.
+Returns the <code>ProjectTeam</code> value.
 

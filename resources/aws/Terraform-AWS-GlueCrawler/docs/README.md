@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::GlueCrawler",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#classifiers" title="Classifiers">Classifiers</a>" : <i>[ String, ... ]</i>,
         "<a href="#configuration" title="Configuration">Configuration</a>" : <i>String</i>,
         "<a href="#databasename" title="DatabaseName">DatabaseName</a>" : <i>String</i>,
@@ -23,12 +21,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#schedule" title="Schedule">Schedule</a>" : <i>String</i>,
         "<a href="#securityconfiguration" title="SecurityConfiguration">SecurityConfiguration</a>" : <i>String</i>,
         "<a href="#tableprefix" title="TablePrefix">TablePrefix</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#catalogtarget" title="CatalogTarget">CatalogTarget</a>" : <i>[ &lt;a href=&#34;catalogtarget.md&#34;&gt;CatalogTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#dynamodbtarget" title="DynamodbTarget">DynamodbTarget</a>" : <i>[ &lt;a href=&#34;dynamodbtarget.md&#34;&gt;DynamodbTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#jdbctarget" title="JdbcTarget">JdbcTarget</a>" : <i>[ &lt;a href=&#34;jdbctarget.md&#34;&gt;JdbcTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#s3target" title="S3Target">S3Target</a>" : <i>[ &lt;a href=&#34;s3target.md&#34;&gt;S3Target&lt;/a&gt;, ... ]</i>,
-        "<a href="#schemachangepolicy" title="SchemaChangePolicy">SchemaChangePolicy</a>" : <i>[ &lt;a href=&#34;schemachangepolicy.md&#34;&gt;SchemaChangePolicy&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#catalogtarget" title="CatalogTarget">CatalogTarget</a>" : <i>[ <a href="catalogtarget.md">CatalogTarget</a>, ... ]</i>,
+        "<a href="#dynamodbtarget" title="DynamodbTarget">DynamodbTarget</a>" : <i>[ <a href="dynamodbtarget.md">DynamodbTarget</a>, ... ]</i>,
+        "<a href="#jdbctarget" title="JdbcTarget">JdbcTarget</a>" : <i>[ <a href="jdbctarget.md">JdbcTarget</a>, ... ]</i>,
+        "<a href="#s3target" title="S3Target">S3Target</a>" : <i>[ <a href="s3target.md">S3Target</a>, ... ]</i>,
+        "<a href="#schemachangepolicy" title="SchemaChangePolicy">SchemaChangePolicy</a>" : <i>[ <a href="schemachangepolicy.md">SchemaChangePolicy</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,8 +36,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::GlueCrawler
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#classifiers" title="Classifiers">Classifiers</a>: <i>
       - String</i>
     <a href="#configuration" title="Configuration">Configuration</a>: <i>String</i>
@@ -51,38 +47,20 @@ Properties:
     <a href="#securityconfiguration" title="SecurityConfiguration">SecurityConfiguration</a>: <i>String</i>
     <a href="#tableprefix" title="TablePrefix">TablePrefix</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#catalogtarget" title="CatalogTarget">CatalogTarget</a>: <i>
-      - &lt;a href=&#34;catalogtarget.md&#34;&gt;CatalogTarget&lt;/a&gt;</i>
+      - <a href="catalogtarget.md">CatalogTarget</a></i>
     <a href="#dynamodbtarget" title="DynamodbTarget">DynamodbTarget</a>: <i>
-      - &lt;a href=&#34;dynamodbtarget.md&#34;&gt;DynamodbTarget&lt;/a&gt;</i>
+      - <a href="dynamodbtarget.md">DynamodbTarget</a></i>
     <a href="#jdbctarget" title="JdbcTarget">JdbcTarget</a>: <i>
-      - &lt;a href=&#34;jdbctarget.md&#34;&gt;JdbcTarget&lt;/a&gt;</i>
+      - <a href="jdbctarget.md">JdbcTarget</a></i>
     <a href="#s3target" title="S3Target">S3Target</a>: <i>
-      - &lt;a href=&#34;s3target.md&#34;&gt;S3Target&lt;/a&gt;</i>
+      - <a href="s3target.md">S3Target</a></i>
     <a href="#schemachangepolicy" title="SchemaChangePolicy">SchemaChangePolicy</a>: <i>
-      - &lt;a href=&#34;schemachangepolicy.md&#34;&gt;SchemaChangePolicy&lt;/a&gt;</i>
+      - <a href="schemachangepolicy.md">SchemaChangePolicy</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Classifiers
 
@@ -160,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;catalogtarget.md&#34;&gt;CatalogTarget&lt;/a&gt;
+_Type_: List of <a href="catalogtarget.md">CatalogTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dynamodbtarget.md&#34;&gt;DynamodbTarget&lt;/a&gt;
+_Type_: List of <a href="dynamodbtarget.md">DynamodbTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;jdbctarget.md&#34;&gt;JdbcTarget&lt;/a&gt;
+_Type_: List of <a href="jdbctarget.md">JdbcTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;s3target.md&#34;&gt;S3Target&lt;/a&gt;
+_Type_: List of <a href="s3target.md">S3Target</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -200,7 +178,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;schemachangepolicy.md&#34;&gt;SchemaChangePolicy&lt;/a&gt;
+_Type_: List of <a href="schemachangepolicy.md">SchemaChangePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -222,5 +200,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

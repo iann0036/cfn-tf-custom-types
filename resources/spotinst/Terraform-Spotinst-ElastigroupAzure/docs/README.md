@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::ElastigroupAzure",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#customdata" title="CustomData">CustomData</a>" : <i>String</i>,
         "<a href="#desiredcapacity" title="DesiredCapacity">DesiredCapacity</a>" : <i>Double</i>,
         "<a href="#lowprioritysizes" title="LowPrioritySizes">LowPrioritySizes</a>" : <i>[ String, ... ]</i>,
@@ -25,24 +24,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#shutdownscript" title="ShutdownScript">ShutdownScript</a>" : <i>String</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
-        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#image" title="Image">Image</a>" : <i>[ &lt;a href=&#34;image.md&#34;&gt;Image&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationkubernetes" title="IntegrationKubernetes">IntegrationKubernetes</a>" : <i>[ &lt;a href=&#34;integrationkubernetes.md&#34;&gt;IntegrationKubernetes&lt;/a&gt;, ... ]</i>,
-        "<a href="#integrationmultairuntime" title="IntegrationMultaiRuntime">IntegrationMultaiRuntime</a>" : <i>[ &lt;a href=&#34;integrationmultairuntime.md&#34;&gt;IntegrationMultaiRuntime&lt;/a&gt;, ... ]</i>,
-        "<a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>" : <i>[ &lt;a href=&#34;loadbalancers.md&#34;&gt;LoadBalancers&lt;/a&gt;, ... ]</i>,
-        "<a href="#login" title="Login">Login</a>" : <i>[ &lt;a href=&#34;login.md&#34;&gt;Login&lt;/a&gt;, ... ]</i>,
-        "<a href="#managedserviceidentities" title="ManagedServiceIdentities">ManagedServiceIdentities</a>" : <i>[ &lt;a href=&#34;managedserviceidentities.md&#34;&gt;ManagedServiceIdentities&lt;/a&gt;, ... ]</i>,
-        "<a href="#network" title="Network">Network</a>" : <i>[ &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;, ... ]</i>,
-        "<a href="#scalingdownpolicy" title="ScalingDownPolicy">ScalingDownPolicy</a>" : <i>[ &lt;a href=&#34;scalingdownpolicy.md&#34;&gt;ScalingDownPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#scalinguppolicy" title="ScalingUpPolicy">ScalingUpPolicy</a>" : <i>[ &lt;a href=&#34;scalinguppolicy.md&#34;&gt;ScalingUpPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;, ... ]</i>,
-        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>" : <i>[ &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#custom" title="Custom">Custom</a>" : <i>[ &lt;a href=&#34;custom.md&#34;&gt;Custom&lt;/a&gt;, ... ]</i>,
-        "<a href="#marketplace" title="Marketplace">Marketplace</a>" : <i>[ &lt;a href=&#34;marketplace.md&#34;&gt;Marketplace&lt;/a&gt;, ... ]</i>,
-        "<a href="#additionalipconfigs" title="AdditionalIpConfigs">AdditionalIpConfigs</a>" : <i>[ &lt;a href=&#34;additionalipconfigs.md&#34;&gt;AdditionalIpConfigs&lt;/a&gt;, ... ]</i>,
-        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>,
-        "<a href="#rollconfig" title="RollConfig">RollConfig</a>" : <i>[ &lt;a href=&#34;rollconfig.md&#34;&gt;RollConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ <a href="healthcheck.md">HealthCheck</a>, ... ]</i>,
+        "<a href="#image" title="Image">Image</a>" : <i>[ <a href="image.md">Image</a>, ... ]</i>,
+        "<a href="#integrationkubernetes" title="IntegrationKubernetes">IntegrationKubernetes</a>" : <i>[ <a href="integrationkubernetes.md">IntegrationKubernetes</a>, ... ]</i>,
+        "<a href="#integrationmultairuntime" title="IntegrationMultaiRuntime">IntegrationMultaiRuntime</a>" : <i>[ <a href="integrationmultairuntime.md">IntegrationMultaiRuntime</a>, ... ]</i>,
+        "<a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>" : <i>[ <a href="loadbalancers.md">LoadBalancers</a>, ... ]</i>,
+        "<a href="#login" title="Login">Login</a>" : <i>[ <a href="login.md">Login</a>, ... ]</i>,
+        "<a href="#managedserviceidentities" title="ManagedServiceIdentities">ManagedServiceIdentities</a>" : <i>[ <a href="managedserviceidentities.md">ManagedServiceIdentities</a>, ... ]</i>,
+        "<a href="#network" title="Network">Network</a>" : <i>[ <a href="network.md">Network</a>, ... ]</i>,
+        "<a href="#scalingdownpolicy" title="ScalingDownPolicy">ScalingDownPolicy</a>" : <i>[ <a href="scalingdownpolicy.md">ScalingDownPolicy</a>, ... ]</i>,
+        "<a href="#scalinguppolicy" title="ScalingUpPolicy">ScalingUpPolicy</a>" : <i>[ <a href="scalinguppolicy.md">ScalingUpPolicy</a>, ... ]</i>,
+        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ <a href="scheduledtask.md">ScheduledTask</a>, ... ]</i>,
+        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ <a href="strategy.md">Strategy</a>, ... ]</i>,
+        "<a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>" : <i>[ <a href="updatepolicy.md">UpdatePolicy</a>, ... ]</i>,
+        "<a href="#custom" title="Custom">Custom</a>" : <i>[ <a href="custom.md">Custom</a>, ... ]</i>,
+        "<a href="#marketplace" title="Marketplace">Marketplace</a>" : <i>[ <a href="marketplace.md">Marketplace</a>, ... ]</i>,
+        "<a href="#additionalipconfigs" title="AdditionalIpConfigs">AdditionalIpConfigs</a>" : <i>[ <a href="additionalipconfigs.md">AdditionalIpConfigs</a>, ... ]</i>,
+        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="dimensions.md">Dimensions</a>, ... ]</i>,
+        "<a href="#rollconfig" title="RollConfig">RollConfig</a>" : <i>[ <a href="rollconfig.md">RollConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -52,7 +51,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::ElastigroupAzure
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#customdata" title="CustomData">CustomData</a>: <i>String</i>
     <a href="#desiredcapacity" title="DesiredCapacity">DesiredCapacity</a>: <i>Double</i>
     <a href="#lowprioritysizes" title="LowPrioritySizes">LowPrioritySizes</a>: <i>
@@ -68,54 +66,44 @@ Properties:
     <a href="#shutdownscript" title="ShutdownScript">ShutdownScript</a>: <i>String</i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#healthcheck" title="HealthCheck">HealthCheck</a>: <i>
-      - &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;</i>
+      - <a href="healthcheck.md">HealthCheck</a></i>
     <a href="#image" title="Image">Image</a>: <i>
-      - &lt;a href=&#34;image.md&#34;&gt;Image&lt;/a&gt;</i>
+      - <a href="image.md">Image</a></i>
     <a href="#integrationkubernetes" title="IntegrationKubernetes">IntegrationKubernetes</a>: <i>
-      - &lt;a href=&#34;integrationkubernetes.md&#34;&gt;IntegrationKubernetes&lt;/a&gt;</i>
+      - <a href="integrationkubernetes.md">IntegrationKubernetes</a></i>
     <a href="#integrationmultairuntime" title="IntegrationMultaiRuntime">IntegrationMultaiRuntime</a>: <i>
-      - &lt;a href=&#34;integrationmultairuntime.md&#34;&gt;IntegrationMultaiRuntime&lt;/a&gt;</i>
+      - <a href="integrationmultairuntime.md">IntegrationMultaiRuntime</a></i>
     <a href="#loadbalancers" title="LoadBalancers">LoadBalancers</a>: <i>
-      - &lt;a href=&#34;loadbalancers.md&#34;&gt;LoadBalancers&lt;/a&gt;</i>
+      - <a href="loadbalancers.md">LoadBalancers</a></i>
     <a href="#login" title="Login">Login</a>: <i>
-      - &lt;a href=&#34;login.md&#34;&gt;Login&lt;/a&gt;</i>
+      - <a href="login.md">Login</a></i>
     <a href="#managedserviceidentities" title="ManagedServiceIdentities">ManagedServiceIdentities</a>: <i>
-      - &lt;a href=&#34;managedserviceidentities.md&#34;&gt;ManagedServiceIdentities&lt;/a&gt;</i>
+      - <a href="managedserviceidentities.md">ManagedServiceIdentities</a></i>
     <a href="#network" title="Network">Network</a>: <i>
-      - &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;</i>
+      - <a href="network.md">Network</a></i>
     <a href="#scalingdownpolicy" title="ScalingDownPolicy">ScalingDownPolicy</a>: <i>
-      - &lt;a href=&#34;scalingdownpolicy.md&#34;&gt;ScalingDownPolicy&lt;/a&gt;</i>
+      - <a href="scalingdownpolicy.md">ScalingDownPolicy</a></i>
     <a href="#scalinguppolicy" title="ScalingUpPolicy">ScalingUpPolicy</a>: <i>
-      - &lt;a href=&#34;scalinguppolicy.md&#34;&gt;ScalingUpPolicy&lt;/a&gt;</i>
+      - <a href="scalinguppolicy.md">ScalingUpPolicy</a></i>
     <a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>: <i>
-      - &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;</i>
+      - <a href="scheduledtask.md">ScheduledTask</a></i>
     <a href="#strategy" title="Strategy">Strategy</a>: <i>
-      - &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;</i>
+      - <a href="strategy.md">Strategy</a></i>
     <a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>: <i>
-      - &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;</i>
+      - <a href="updatepolicy.md">UpdatePolicy</a></i>
     <a href="#custom" title="Custom">Custom</a>: <i>
-      - &lt;a href=&#34;custom.md&#34;&gt;Custom&lt;/a&gt;</i>
+      - <a href="custom.md">Custom</a></i>
     <a href="#marketplace" title="Marketplace">Marketplace</a>: <i>
-      - &lt;a href=&#34;marketplace.md&#34;&gt;Marketplace&lt;/a&gt;</i>
+      - <a href="marketplace.md">Marketplace</a></i>
     <a href="#additionalipconfigs" title="AdditionalIpConfigs">AdditionalIpConfigs</a>: <i>
-      - &lt;a href=&#34;additionalipconfigs.md&#34;&gt;AdditionalIpConfigs&lt;/a&gt;</i>
+      - <a href="additionalipconfigs.md">AdditionalIpConfigs</a></i>
     <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
+      - <a href="dimensions.md">Dimensions</a></i>
     <a href="#rollconfig" title="RollConfig">RollConfig</a>: <i>
-      - &lt;a href=&#34;rollconfig.md&#34;&gt;RollConfig&lt;/a&gt;</i>
+      - <a href="rollconfig.md">RollConfig</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomData
 
@@ -217,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;
+_Type_: List of <a href="healthcheck.md">HealthCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +213,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;image.md&#34;&gt;Image&lt;/a&gt;
+_Type_: List of <a href="image.md">Image</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +221,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationkubernetes.md&#34;&gt;IntegrationKubernetes&lt;/a&gt;
+_Type_: List of <a href="integrationkubernetes.md">IntegrationKubernetes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,7 +229,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;integrationmultairuntime.md&#34;&gt;IntegrationMultaiRuntime&lt;/a&gt;
+_Type_: List of <a href="integrationmultairuntime.md">IntegrationMultaiRuntime</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -249,7 +237,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;loadbalancers.md&#34;&gt;LoadBalancers&lt;/a&gt;
+_Type_: List of <a href="loadbalancers.md">LoadBalancers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -257,7 +245,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;login.md&#34;&gt;Login&lt;/a&gt;
+_Type_: List of <a href="login.md">Login</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -265,7 +253,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;managedserviceidentities.md&#34;&gt;ManagedServiceIdentities&lt;/a&gt;
+_Type_: List of <a href="managedserviceidentities.md">ManagedServiceIdentities</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -273,7 +261,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;
+_Type_: List of <a href="network.md">Network</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -281,7 +269,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalingdownpolicy.md&#34;&gt;ScalingDownPolicy&lt;/a&gt;
+_Type_: List of <a href="scalingdownpolicy.md">ScalingDownPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -289,7 +277,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalinguppolicy.md&#34;&gt;ScalingUpPolicy&lt;/a&gt;
+_Type_: List of <a href="scalinguppolicy.md">ScalingUpPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -297,7 +285,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;
+_Type_: List of <a href="scheduledtask.md">ScheduledTask</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -305,7 +293,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;
+_Type_: List of <a href="strategy.md">Strategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -313,7 +301,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;
+_Type_: List of <a href="updatepolicy.md">UpdatePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -321,7 +309,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;custom.md&#34;&gt;Custom&lt;/a&gt;
+_Type_: List of <a href="custom.md">Custom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -329,7 +317,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;marketplace.md&#34;&gt;Marketplace&lt;/a&gt;
+_Type_: List of <a href="marketplace.md">Marketplace</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -337,7 +325,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;additionalipconfigs.md&#34;&gt;AdditionalIpConfigs&lt;/a&gt;
+_Type_: List of <a href="additionalipconfigs.md">AdditionalIpConfigs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -345,7 +333,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
+_Type_: List of <a href="dimensions.md">Dimensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -353,7 +341,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rollconfig.md&#34;&gt;RollConfig&lt;/a&gt;
+_Type_: List of <a href="rollconfig.md">RollConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

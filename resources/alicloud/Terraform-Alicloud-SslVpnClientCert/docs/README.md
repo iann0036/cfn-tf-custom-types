@@ -12,14 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::SslVpnClientCert",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#cacert" title="CaCert">CaCert</a>" : <i>String</i>,
-        "<a href="#clientcert" title="ClientCert">ClientCert</a>" : <i>String</i>,
-        "<a href="#clientconfig" title="ClientConfig">ClientConfig</a>" : <i>String</i>,
-        "<a href="#clientkey" title="ClientKey">ClientKey</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#sslvpnserverid" title="SslVpnServerId">SslVpnServerId</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>
     }
 }
 </pre>
@@ -29,59 +23,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::SslVpnClientCert
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#cacert" title="CaCert">CaCert</a>: <i>String</i>
-    <a href="#clientcert" title="ClientCert">ClientCert</a>: <i>String</i>
-    <a href="#clientconfig" title="ClientConfig">ClientConfig</a>: <i>String</i>
-    <a href="#clientkey" title="ClientKey">ClientKey</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#sslvpnserverid" title="SslVpnServerId">SslVpnServerId</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CaCert
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ClientCert
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ClientConfig
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ClientKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
@@ -94,14 +40,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SslVpnServerId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
 
 _Type_: String
 
@@ -125,21 +63,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CaCert
 
-Returns the &lt;code&gt;CaCert&lt;/code&gt; value.
+Returns the <code>CaCert</code> value.
 
 #### ClientCert
 
-Returns the &lt;code&gt;ClientCert&lt;/code&gt; value.
+Returns the <code>ClientCert</code> value.
 
 #### ClientConfig
 
-Returns the &lt;code&gt;ClientConfig&lt;/code&gt; value.
+Returns the <code>ClientConfig</code> value.
 
 #### ClientKey
 
-Returns the &lt;code&gt;ClientKey&lt;/code&gt; value.
+Returns the <code>ClientKey</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

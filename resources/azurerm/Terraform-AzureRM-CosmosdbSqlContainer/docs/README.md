@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::CosmosdbSqlContainer",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountname" title="AccountName">AccountName</a>" : <i>String</i>,
         "<a href="#databasename" title="DatabaseName">DatabaseName</a>" : <i>String</i>,
         "<a href="#defaultttl" title="DefaultTtl">DefaultTtl</a>" : <i>Double</i>,
@@ -20,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#partitionkeypath" title="PartitionKeyPath">PartitionKeyPath</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#throughput" title="Throughput">Throughput</a>" : <i>Double</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#uniquekey" title="UniqueKey">UniqueKey</a>" : <i>[ &lt;a href=&#34;uniquekey.md&#34;&gt;UniqueKey&lt;/a&gt;, ... ]</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#uniquekey" title="UniqueKey">UniqueKey</a>" : <i>[ <a href="uniquekey.md">UniqueKey</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::CosmosdbSqlContainer
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountname" title="AccountName">AccountName</a>: <i>String</i>
     <a href="#databasename" title="DatabaseName">DatabaseName</a>: <i>String</i>
     <a href="#defaultttl" title="DefaultTtl">DefaultTtl</a>: <i>Double</i>
@@ -39,22 +37,12 @@ Properties:
     <a href="#partitionkeypath" title="PartitionKeyPath">PartitionKeyPath</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#throughput" title="Throughput">Throughput</a>: <i>Double</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#uniquekey" title="UniqueKey">UniqueKey</a>: <i>
-      - &lt;a href=&#34;uniquekey.md&#34;&gt;UniqueKey&lt;/a&gt;</i>
+      - <a href="uniquekey.md">UniqueKey</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountName
 
@@ -116,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;uniquekey.md&#34;&gt;UniqueKey&lt;/a&gt;
+_Type_: List of <a href="uniquekey.md">UniqueKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

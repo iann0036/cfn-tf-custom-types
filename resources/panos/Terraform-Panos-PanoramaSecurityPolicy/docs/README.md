@@ -12,11 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaSecurityPolicy",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>" : <i>String</i>,
         "<a href="#rulebase" title="Rulebase">Rulebase</a>" : <i>String</i>,
-        "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>,
-        "<a href="#target" title="Target">Target</a>" : <i>[ &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;, ... ]</i>
+        "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="rule.md">Rule</a>, ... ]</i>,
+        "<a href="#target" title="Target">Target</a>" : <i>[ <a href="target.md">Target</a>, ... ]</i>
     }
 }
 </pre>
@@ -26,26 +25,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaSecurityPolicy
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>: <i>String</i>
     <a href="#rulebase" title="Rulebase">Rulebase</a>: <i>String</i>
     <a href="#rule" title="Rule">Rule</a>: <i>
-      - &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;</i>
+      - <a href="rule.md">Rule</a></i>
     <a href="#target" title="Target">Target</a>: <i>
-      - &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;</i>
+      - <a href="target.md">Target</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceGroup
 
@@ -67,7 +55,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;
+_Type_: List of <a href="rule.md">Rule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -75,7 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;target.md&#34;&gt;Target&lt;/a&gt;
+_Type_: List of <a href="target.md">Target</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

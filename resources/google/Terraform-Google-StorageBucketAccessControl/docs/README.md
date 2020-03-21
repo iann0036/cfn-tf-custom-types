@@ -12,13 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::StorageBucketAccessControl",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
-        "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
-        "<a href="#email" title="Email">Email</a>" : <i>String</i>,
         "<a href="#entity" title="Entity">Entity</a>" : <i>String</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -28,46 +25,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::StorageBucketAccessControl
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
-    <a href="#domain" title="Domain">Domain</a>: <i>String</i>
-    <a href="#email" title="Email">Email</a>: <i>String</i>
     <a href="#entity" title="Entity">Entity</a>: <i>String</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Bucket
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Domain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Email
-
-_Required_: No
 
 _Type_: String
 
@@ -93,7 +61,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Domain
 
-Returns the &lt;code&gt;Domain&lt;/code&gt; value.
+Returns the <code>Domain</code> value.
 
 #### Email
 
-Returns the &lt;code&gt;Email&lt;/code&gt; value.
+Returns the <code>Email</code> value.
 

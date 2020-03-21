@@ -8,10 +8,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ &lt;a href=&#34;queueproperties-corsrule.md&#34;&gt;CorsRule&lt;/a&gt;, ... ]</i>,
-    "<a href="#hourmetrics" title="HourMetrics">HourMetrics</a>" : <i>[ &lt;a href=&#34;queueproperties-hourmetrics.md&#34;&gt;HourMetrics&lt;/a&gt;, ... ]</i>,
-    "<a href="#logging" title="Logging">Logging</a>" : <i>[ &lt;a href=&#34;queueproperties-logging.md&#34;&gt;Logging&lt;/a&gt;, ... ]</i>,
-    "<a href="#minutemetrics" title="MinuteMetrics">MinuteMetrics</a>" : <i>[ &lt;a href=&#34;queueproperties-minutemetrics.md&#34;&gt;MinuteMetrics&lt;/a&gt;, ... ]</i>
+    "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ <a href="queueproperties-corsrule.md">CorsRule</a>, ... ]</i>,
+    "<a href="#hourmetrics" title="HourMetrics">HourMetrics</a>" : <i>[ <a href="queueproperties-hourmetrics.md">HourMetrics</a>, ... ]</i>,
+    "<a href="#logging" title="Logging">Logging</a>" : <i>[ <a href="queueproperties-logging.md">Logging</a>, ... ]</i>,
+    "<a href="#minutemetrics" title="MinuteMetrics">MinuteMetrics</a>" : <i>[ <a href="queueproperties-minutemetrics.md">MinuteMetrics</a>, ... ]</i>
 }
 </pre>
 
@@ -19,13 +19,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#corsrule" title="CorsRule">CorsRule</a>: <i>
-      - &lt;a href=&#34;queueproperties-corsrule.md&#34;&gt;CorsRule&lt;/a&gt;</i>
+      - <a href="queueproperties-corsrule.md">CorsRule</a></i>
 <a href="#hourmetrics" title="HourMetrics">HourMetrics</a>: <i>
-      - &lt;a href=&#34;queueproperties-hourmetrics.md&#34;&gt;HourMetrics&lt;/a&gt;</i>
+      - <a href="queueproperties-hourmetrics.md">HourMetrics</a></i>
 <a href="#logging" title="Logging">Logging</a>: <i>
-      - &lt;a href=&#34;queueproperties-logging.md&#34;&gt;Logging&lt;/a&gt;</i>
+      - <a href="queueproperties-logging.md">Logging</a></i>
 <a href="#minutemetrics" title="MinuteMetrics">MinuteMetrics</a>: <i>
-      - &lt;a href=&#34;queueproperties-minutemetrics.md&#34;&gt;MinuteMetrics&lt;/a&gt;</i>
+      - <a href="queueproperties-minutemetrics.md">MinuteMetrics</a></i>
 </pre>
 
 ## Properties
@@ -33,28 +33,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CorsRule
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;queueproperties-corsrule.md&#34;&gt;CorsRule&lt;/a&gt;
+
+_Type_: List of <a href="queueproperties-corsrule.md">CorsRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HourMetrics
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;queueproperties-hourmetrics.md&#34;&gt;HourMetrics&lt;/a&gt;
+
+_Type_: List of <a href="queueproperties-hourmetrics.md">HourMetrics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Logging
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;queueproperties-logging.md&#34;&gt;Logging&lt;/a&gt;
+
+_Type_: List of <a href="queueproperties-logging.md">Logging</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinuteMetrics
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;queueproperties-minutemetrics.md&#34;&gt;MinuteMetrics&lt;/a&gt;
+
+_Type_: List of <a href="queueproperties-minutemetrics.md">MinuteMetrics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

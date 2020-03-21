@@ -12,13 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::NatGateway",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allocationid" title="AllocationId">AllocationId</a>" : <i>String</i>,
-        "<a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>" : <i>String</i>,
-        "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>String</i>,
-        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -28,55 +24,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::NatGateway
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allocationid" title="AllocationId">AllocationId</a>: <i>String</i>
-    <a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>: <i>String</i>
-    <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>String</i>
-    <a href="#publicip" title="PublicIp">PublicIp</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AllocationId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### NetworkInterfaceId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrivateIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PublicIp
-
-_Required_: No
 
 _Type_: String
 
@@ -94,7 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,13 +74,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NetworkInterfaceId
 
-Returns the &lt;code&gt;NetworkInterfaceId&lt;/code&gt; value.
+Returns the <code>NetworkInterfaceId</code> value.
 
 #### PrivateIp
 
-Returns the &lt;code&gt;PrivateIp&lt;/code&gt; value.
+Returns the <code>PrivateIp</code> value.
 
 #### PublicIp
 
-Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
+Returns the <code>PublicIp</code> value.
 

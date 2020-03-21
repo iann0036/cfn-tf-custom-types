@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#incomingratelimit" title="IncomingRateLimit">IncomingRateLimit</a>" : <i>Double</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#outgoingratelimit" title="OutgoingRateLimit">OutgoingRateLimit</a>" : <i>Double</i>,
-    "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ &lt;a href=&#34;externalnetwork-subnet.md&#34;&gt;Subnet&lt;/a&gt;, ... ]</i>
+    "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ <a href="externalnetwork-subnet.md">Subnet</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#outgoingratelimit" title="OutgoingRateLimit">OutgoingRateLimit</a>: <i>Double</i>
 <a href="#subnet" title="Subnet">Subnet</a>: <i>
-      - &lt;a href=&#34;externalnetwork-subnet.md&#34;&gt;Subnet&lt;/a&gt;</i>
+      - <a href="externalnetwork-subnet.md">Subnet</a></i>
 </pre>
 
 ## Properties
@@ -32,6 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### EnableRateLimit
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,6 +40,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IncomingRateLimit
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OutgoingRateLimit
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,7 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Subnet
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;externalnetwork-subnet.md&#34;&gt;Subnet&lt;/a&gt;
+
+_Type_: List of <a href="externalnetwork-subnet.md">Subnet</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

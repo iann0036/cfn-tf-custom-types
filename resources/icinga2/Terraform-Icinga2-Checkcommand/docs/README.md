@@ -12,8 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Icinga2::Checkcommand",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arguments" title="Arguments">Arguments</a>" : <i>[ &lt;a href=&#34;arguments.md&#34;&gt;Arguments&lt;/a&gt;, ... ]</i>,
+        "<a href="#arguments" title="Arguments">Arguments</a>" : <i>[ <a href="arguments.md">Arguments</a>, ... ]</i>,
         "<a href="#command" title="Command">Command</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#templates" title="Templates">Templates</a>" : <i>[ String, ... ]</i>
@@ -26,9 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Icinga2::Checkcommand
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#arguments" title="Arguments">Arguments</a>: <i>
-      - &lt;a href=&#34;arguments.md&#34;&gt;Arguments&lt;/a&gt;</i>
+      - <a href="arguments.md">Arguments</a></i>
     <a href="#command" title="Command">Command</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#templates" title="Templates">Templates</a>: <i>
@@ -37,21 +35,11 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Arguments
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;arguments.md&#34;&gt;Arguments&lt;/a&gt;
+_Type_: List of <a href="arguments.md">Arguments</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

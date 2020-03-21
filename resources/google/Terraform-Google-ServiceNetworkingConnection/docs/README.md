@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ServiceNetworkingConnection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#network" title="Network">Network</a>" : <i>String</i>,
-        "<a href="#peering" title="Peering">Peering</a>" : <i>String</i>,
         "<a href="#reservedpeeringranges" title="ReservedPeeringRanges">ReservedPeeringRanges</a>" : <i>[ String, ... ]</i>,
         "<a href="#service" title="Service">Service</a>" : <i>String</i>
     }
@@ -26,9 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ServiceNetworkingConnection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#network" title="Network">Network</a>: <i>String</i>
-    <a href="#peering" title="Peering">Peering</a>: <i>String</i>
     <a href="#reservedpeeringranges" title="ReservedPeeringRanges">ReservedPeeringRanges</a>: <i>
       - String</i>
     <a href="#service" title="Service">Service</a>: <i>String</i>
@@ -36,27 +32,9 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Network
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Peering
-
-_Required_: No
 
 _Type_: String
 
@@ -96,5 +74,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Peering
 
-Returns the &lt;code&gt;Peering&lt;/code&gt; value.
+Returns the <code>Peering</code> value.
 

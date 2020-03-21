@@ -12,19 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::TcaplusTable",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#appid" title="AppId">AppId</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#error" title="Error">Error</a>" : <i>String</i>,
         "<a href="#idlid" title="IdlId">IdlId</a>" : <i>String</i>,
         "<a href="#reservedreadqps" title="ReservedReadQps">ReservedReadQps</a>" : <i>Double</i>,
         "<a href="#reservedvolume" title="ReservedVolume">ReservedVolume</a>" : <i>Double</i>,
         "<a href="#reservedwriteqps" title="ReservedWriteQps">ReservedWriteQps</a>" : <i>Double</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#tableidltype" title="TableIdlType">TableIdlType</a>" : <i>String</i>,
         "<a href="#tablename" title="TableName">TableName</a>" : <i>String</i>,
-        "<a href="#tablesize" title="TableSize">TableSize</a>" : <i>Double</i>,
         "<a href="#tabletype" title="TableType">TableType</a>" : <i>String</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>
     }
@@ -36,34 +31,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::TcaplusTable
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#appid" title="AppId">AppId</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#error" title="Error">Error</a>: <i>String</i>
     <a href="#idlid" title="IdlId">IdlId</a>: <i>String</i>
     <a href="#reservedreadqps" title="ReservedReadQps">ReservedReadQps</a>: <i>Double</i>
     <a href="#reservedvolume" title="ReservedVolume">ReservedVolume</a>: <i>Double</i>
     <a href="#reservedwriteqps" title="ReservedWriteQps">ReservedWriteQps</a>: <i>Double</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#tableidltype" title="TableIdlType">TableIdlType</a>: <i>String</i>
     <a href="#tablename" title="TableName">TableName</a>: <i>String</i>
-    <a href="#tablesize" title="TableSize">TableSize</a>: <i>Double</i>
     <a href="#tabletype" title="TableType">TableType</a>: <i>String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppId
 
@@ -73,23 +53,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CreateTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Error
 
 _Required_: No
 
@@ -129,14 +93,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### TableIdlType
 
 _Required_: Yes
@@ -150,14 +106,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TableSize
-
-_Required_: No
-
-_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,17 +143,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### Error
 
-Returns the &lt;code&gt;Error&lt;/code&gt; value.
+Returns the <code>Error</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### TableSize
 
-Returns the &lt;code&gt;TableSize&lt;/code&gt; value.
+Returns the <code>TableSize</code> value.
 

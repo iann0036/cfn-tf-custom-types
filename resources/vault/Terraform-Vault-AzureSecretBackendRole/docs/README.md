@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::AzureSecretBackendRole",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#applicationobjectid" title="ApplicationObjectId">ApplicationObjectId</a>" : <i>String</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#maxttl" title="MaxTtl">MaxTtl</a>" : <i>String</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>String</i>,
-        "<a href="#azureroles" title="AzureRoles">AzureRoles</a>" : <i>[ &lt;a href=&#34;azureroles.md&#34;&gt;AzureRoles&lt;/a&gt;, ... ]</i>
+        "<a href="#azureroles" title="AzureRoles">AzureRoles</a>" : <i>[ <a href="azureroles.md">AzureRoles</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::AzureSecretBackendRole
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#applicationobjectid" title="ApplicationObjectId">ApplicationObjectId</a>: <i>String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
@@ -37,20 +35,10 @@ Properties:
     <a href="#role" title="Role">Role</a>: <i>String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>String</i>
     <a href="#azureroles" title="AzureRoles">AzureRoles</a>: <i>
-      - &lt;a href=&#34;azureroles.md&#34;&gt;AzureRoles&lt;/a&gt;</i>
+      - <a href="azureroles.md">AzureRoles</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplicationObjectId
 
@@ -104,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;azureroles.md&#34;&gt;AzureRoles&lt;/a&gt;
+_Type_: List of <a href="azureroles.md">AzureRoles</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

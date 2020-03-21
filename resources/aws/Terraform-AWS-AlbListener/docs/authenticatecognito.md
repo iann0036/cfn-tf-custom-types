@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#authenticationrequestextraparams" title="AuthenticationRequestExtraParams">AuthenticationRequestExtraParams</a>" : <i>[ &lt;a href=&#34;authenticatecognito-authenticationrequestextraparams.md&#34;&gt;AuthenticationRequestExtraParams&lt;/a&gt;, ... ]</i>,
+    "<a href="#authenticationrequestextraparams" title="AuthenticationRequestExtraParams">AuthenticationRequestExtraParams</a>" : <i>[ <a href="authenticatecognito-authenticationrequestextraparams.md">AuthenticationRequestExtraParams</a>, ... ]</i>,
     "<a href="#onunauthenticatedrequest" title="OnUnauthenticatedRequest">OnUnauthenticatedRequest</a>" : <i>String</i>,
     "<a href="#scope" title="Scope">Scope</a>" : <i>String</i>,
     "<a href="#sessioncookiename" title="SessionCookieName">SessionCookieName</a>" : <i>String</i>,
@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#authenticationrequestextraparams" title="AuthenticationRequestExtraParams">AuthenticationRequestExtraParams</a>: <i>
-      - &lt;a href=&#34;authenticatecognito-authenticationrequestextraparams.md&#34;&gt;AuthenticationRequestExtraParams&lt;/a&gt;</i>
+      - <a href="authenticatecognito-authenticationrequestextraparams.md">AuthenticationRequestExtraParams</a></i>
 <a href="#onunauthenticatedrequest" title="OnUnauthenticatedRequest">OnUnauthenticatedRequest</a>: <i>String</i>
 <a href="#scope" title="Scope">Scope</a>: <i>String</i>
 <a href="#sessioncookiename" title="SessionCookieName">SessionCookieName</a>: <i>String</i>
@@ -38,13 +38,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AuthenticationRequestExtraParams
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;authenticatecognito-authenticationrequestextraparams.md&#34;&gt;AuthenticationRequestExtraParams&lt;/a&gt;
+
+_Type_: List of <a href="authenticatecognito-authenticationrequestextraparams.md">AuthenticationRequestExtraParams</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OnUnauthenticatedRequest
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -52,6 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Scope
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -59,6 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SessionCookieName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,6 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SessionTimeout
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -73,6 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UserPoolArn
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,6 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UserPoolClientId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -87,6 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UserPoolDomain
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

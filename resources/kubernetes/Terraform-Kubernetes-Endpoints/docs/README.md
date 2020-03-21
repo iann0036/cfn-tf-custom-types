@@ -12,12 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Kubernetes::Endpoints",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#subset" title="Subset">Subset</a>" : <i>[ &lt;a href=&#34;subset.md&#34;&gt;Subset&lt;/a&gt;, ... ]</i>,
-        "<a href="#address" title="Address">Address</a>" : <i>[ &lt;a href=&#34;address.md&#34;&gt;Address&lt;/a&gt;, ... ]</i>,
-        "<a href="#notreadyaddress" title="NotReadyAddress">NotReadyAddress</a>" : <i>[ &lt;a href=&#34;notreadyaddress.md&#34;&gt;NotReadyAddress&lt;/a&gt;, ... ]</i>,
-        "<a href="#port" title="Port">Port</a>" : <i>[ &lt;a href=&#34;port.md&#34;&gt;Port&lt;/a&gt;, ... ]</i>
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#subset" title="Subset">Subset</a>" : <i>[ <a href="subset.md">Subset</a>, ... ]</i>,
+        "<a href="#address" title="Address">Address</a>" : <i>[ <a href="address.md">Address</a>, ... ]</i>,
+        "<a href="#notreadyaddress" title="NotReadyAddress">NotReadyAddress</a>" : <i>[ <a href="notreadyaddress.md">NotReadyAddress</a>, ... ]</i>,
+        "<a href="#port" title="Port">Port</a>" : <i>[ <a href="port.md">Port</a>, ... ]</i>
     }
 }
 </pre>
@@ -27,36 +26,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Kubernetes::Endpoints
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#subset" title="Subset">Subset</a>: <i>
-      - &lt;a href=&#34;subset.md&#34;&gt;Subset&lt;/a&gt;</i>
+      - <a href="subset.md">Subset</a></i>
     <a href="#address" title="Address">Address</a>: <i>
-      - &lt;a href=&#34;address.md&#34;&gt;Address&lt;/a&gt;</i>
+      - <a href="address.md">Address</a></i>
     <a href="#notreadyaddress" title="NotReadyAddress">NotReadyAddress</a>: <i>
-      - &lt;a href=&#34;notreadyaddress.md&#34;&gt;NotReadyAddress&lt;/a&gt;</i>
+      - <a href="notreadyaddress.md">NotReadyAddress</a></i>
     <a href="#port" title="Port">Port</a>: <i>
-      - &lt;a href=&#34;port.md&#34;&gt;Port&lt;/a&gt;</i>
+      - <a href="port.md">Port</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -64,7 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subset.md&#34;&gt;Subset&lt;/a&gt;
+_Type_: List of <a href="subset.md">Subset</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -72,7 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;address.md&#34;&gt;Address&lt;/a&gt;
+_Type_: List of <a href="address.md">Address</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -80,7 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;notreadyaddress.md&#34;&gt;NotReadyAddress&lt;/a&gt;
+_Type_: List of <a href="notreadyaddress.md">NotReadyAddress</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -88,7 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;port.md&#34;&gt;Port&lt;/a&gt;
+_Type_: List of <a href="port.md">Port</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

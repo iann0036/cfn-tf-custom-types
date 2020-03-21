@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Circonus::Worksheet",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#favourite" title="Favourite">Favourite</a>" : <i>Boolean</i>,
         "<a href="#graphs" title="Graphs">Graphs</a>" : <i>[ String, ... ]</i>,
         "<a href="#notes" title="Notes">Notes</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#smartqueries" title="SmartQueries">SmartQueries</a>" : <i>[ &lt;a href=&#34;smartqueries.md&#34;&gt;SmartQueries&lt;/a&gt;, ... ]</i>
+        "<a href="#smartqueries" title="SmartQueries">SmartQueries</a>" : <i>[ <a href="smartqueries.md">SmartQueries</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Circonus::Worksheet
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#favourite" title="Favourite">Favourite</a>: <i>Boolean</i>
     <a href="#graphs" title="Graphs">Graphs</a>: <i>
@@ -39,20 +37,10 @@ Properties:
       - String</i>
     <a href="#title" title="Title">Title</a>: <i>String</i>
     <a href="#smartqueries" title="SmartQueries">SmartQueries</a>: <i>
-      - &lt;a href=&#34;smartqueries.md&#34;&gt;SmartQueries&lt;/a&gt;</i>
+      - <a href="smartqueries.md">SmartQueries</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -106,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;smartqueries.md&#34;&gt;SmartQueries&lt;/a&gt;
+_Type_: List of <a href="smartqueries.md">SmartQueries</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

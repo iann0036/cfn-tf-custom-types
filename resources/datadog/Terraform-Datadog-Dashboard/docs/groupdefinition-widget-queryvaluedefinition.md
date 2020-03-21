@@ -12,11 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#customunit" title="CustomUnit">CustomUnit</a>" : <i>String</i>,
     "<a href="#precision" title="Precision">Precision</a>" : <i>Double</i>,
     "<a href="#textalign" title="TextAlign">TextAlign</a>" : <i>String</i>,
-    "<a href="#time" title="Time">Time</a>" : <i>[ &lt;a href=&#34;groupdefinition-widget-queryvaluedefinition-time.md&#34;&gt;Time&lt;/a&gt;, ... ]</i>,
+    "<a href="#time" title="Time">Time</a>" : <i>[ <a href="groupdefinition-widget-queryvaluedefinition-time.md">Time</a>, ... ]</i>,
     "<a href="#title" title="Title">Title</a>" : <i>String</i>,
     "<a href="#titlealign" title="TitleAlign">TitleAlign</a>" : <i>String</i>,
     "<a href="#titlesize" title="TitleSize">TitleSize</a>" : <i>String</i>,
-    "<a href="#request" title="Request">Request</a>" : <i>[ &lt;a href=&#34;groupdefinition-widget-queryvaluedefinition-request.md&#34;&gt;Request&lt;/a&gt;, ... ]</i>
+    "<a href="#request" title="Request">Request</a>" : <i>[ <a href="groupdefinition-widget-queryvaluedefinition-request.md">Request</a>, ... ]</i>
 }
 </pre>
 
@@ -28,12 +28,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#precision" title="Precision">Precision</a>: <i>Double</i>
 <a href="#textalign" title="TextAlign">TextAlign</a>: <i>String</i>
 <a href="#time" title="Time">Time</a>: <i>
-      - &lt;a href=&#34;groupdefinition-widget-queryvaluedefinition-time.md&#34;&gt;Time&lt;/a&gt;</i>
+      - <a href="groupdefinition-widget-queryvaluedefinition-time.md">Time</a></i>
 <a href="#title" title="Title">Title</a>: <i>String</i>
 <a href="#titlealign" title="TitleAlign">TitleAlign</a>: <i>String</i>
 <a href="#titlesize" title="TitleSize">TitleSize</a>: <i>String</i>
 <a href="#request" title="Request">Request</a>: <i>
-      - &lt;a href=&#34;groupdefinition-widget-queryvaluedefinition-request.md&#34;&gt;Request&lt;/a&gt;</i>
+      - <a href="groupdefinition-widget-queryvaluedefinition-request.md">Request</a></i>
 </pre>
 
 ## Properties
@@ -41,6 +41,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Autoscale
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CustomUnit
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Precision
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TextAlign
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,13 +73,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Time
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;groupdefinition-widget-queryvaluedefinition-time.md&#34;&gt;Time&lt;/a&gt;
+
+_Type_: List of <a href="groupdefinition-widget-queryvaluedefinition-time.md">Time</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Title
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -83,6 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TitleAlign
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,6 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TitleSize
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -97,7 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Request
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;groupdefinition-widget-queryvaluedefinition-request.md&#34;&gt;Request&lt;/a&gt;
+
+_Type_: List of <a href="groupdefinition-widget-queryvaluedefinition-request.md">Request</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

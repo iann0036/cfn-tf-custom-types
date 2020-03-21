@@ -9,10 +9,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#count" title="Count">Count</a>" : <i>Double</i>,
-    "<a href="#meta" title="Meta">Meta</a>" : <i>[ &lt;a href=&#34;taskgroups-meta.md&#34;&gt;Meta&lt;/a&gt;, ... ]</i>,
+    "<a href="#meta" title="Meta">Meta</a>" : <i>[ <a href="taskgroups-meta.md">Meta</a>, ... ]</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#task" title="Task">Task</a>" : <i>[ &lt;a href=&#34;taskgroups-task.md&#34;&gt;Task&lt;/a&gt;, ... ]</i>,
-    "<a href="#volumes" title="Volumes">Volumes</a>" : <i>[ &lt;a href=&#34;taskgroups-volumes.md&#34;&gt;Volumes&lt;/a&gt;, ... ]</i>
+    "<a href="#task" title="Task">Task</a>" : <i>[ <a href="taskgroups-task.md">Task</a>, ... ]</i>,
+    "<a href="#volumes" title="Volumes">Volumes</a>" : <i>[ <a href="taskgroups-volumes.md">Volumes</a>, ... ]</i>
 }
 </pre>
 
@@ -21,12 +21,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#count" title="Count">Count</a>: <i>Double</i>
 <a href="#meta" title="Meta">Meta</a>: <i>
-      - &lt;a href=&#34;taskgroups-meta.md&#34;&gt;Meta&lt;/a&gt;</i>
+      - <a href="taskgroups-meta.md">Meta</a></i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#task" title="Task">Task</a>: <i>
-      - &lt;a href=&#34;taskgroups-task.md&#34;&gt;Task&lt;/a&gt;</i>
+      - <a href="taskgroups-task.md">Task</a></i>
 <a href="#volumes" title="Volumes">Volumes</a>: <i>
-      - &lt;a href=&#34;taskgroups-volumes.md&#34;&gt;Volumes&lt;/a&gt;</i>
+      - <a href="taskgroups-volumes.md">Volumes</a></i>
 </pre>
 
 ## Properties
@@ -34,6 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Count
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -41,13 +42,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Meta
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskgroups-meta.md&#34;&gt;Meta&lt;/a&gt;
+
+_Type_: List of <a href="taskgroups-meta.md">Meta</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,14 +58,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Task
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskgroups-task.md&#34;&gt;Task&lt;/a&gt;
+
+_Type_: List of <a href="taskgroups-task.md">Task</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Volumes
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskgroups-volumes.md&#34;&gt;Volumes&lt;/a&gt;
+
+_Type_: List of <a href="taskgroups-volumes.md">Volumes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

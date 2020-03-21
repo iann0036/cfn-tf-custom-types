@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::SharedImage",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#eula" title="Eula">Eula</a>" : <i>String</i>,
         "<a href="#galleryname" title="GalleryName">GalleryName</a>" : <i>String</i>,
@@ -22,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#privacystatementuri" title="PrivacyStatementUri">PrivacyStatementUri</a>" : <i>String</i>,
         "<a href="#releasenoteuri" title="ReleaseNoteUri">ReleaseNoteUri</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#identifier" title="Identifier">Identifier</a>" : <i>[ &lt;a href=&#34;identifier.md&#34;&gt;Identifier&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#identifier" title="Identifier">Identifier</a>" : <i>[ <a href="identifier.md">Identifier</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -34,7 +33,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::SharedImage
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#eula" title="Eula">Eula</a>: <i>String</i>
     <a href="#galleryname" title="GalleryName">GalleryName</a>: <i>String</i>
@@ -45,23 +43,13 @@ Properties:
     <a href="#releasenoteuri" title="ReleaseNoteUri">ReleaseNoteUri</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#identifier" title="Identifier">Identifier</a>: <i>
-      - &lt;a href=&#34;identifier.md&#34;&gt;Identifier&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="identifier.md">Identifier</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -139,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;identifier.md&#34;&gt;Identifier&lt;/a&gt;
+_Type_: List of <a href="identifier.md">Identifier</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

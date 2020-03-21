@@ -12,20 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::CoreAppCatalogSubscription",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#eulalink" title="EulaLink">EulaLink</a>" : <i>String</i>,
         "<a href="#listingid" title="ListingId">ListingId</a>" : <i>String</i>,
-        "<a href="#listingresourceid" title="ListingResourceId">ListingResourceId</a>" : <i>String</i>,
         "<a href="#listingresourceversion" title="ListingResourceVersion">ListingResourceVersion</a>" : <i>String</i>,
         "<a href="#oracletermsofuselink" title="OracleTermsOfUseLink">OracleTermsOfUseLink</a>" : <i>String</i>,
-        "<a href="#publishername" title="PublisherName">PublisherName</a>" : <i>String</i>,
         "<a href="#signature" title="Signature">Signature</a>" : <i>String</i>,
-        "<a href="#summary" title="Summary">Summary</a>" : <i>String</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
         "<a href="#timeretrieved" title="TimeRetrieved">TimeRetrieved</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -35,45 +29,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::CoreAppCatalogSubscription
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
-    <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#eulalink" title="EulaLink">EulaLink</a>: <i>String</i>
     <a href="#listingid" title="ListingId">ListingId</a>: <i>String</i>
-    <a href="#listingresourceid" title="ListingResourceId">ListingResourceId</a>: <i>String</i>
     <a href="#listingresourceversion" title="ListingResourceVersion">ListingResourceVersion</a>: <i>String</i>
     <a href="#oracletermsofuselink" title="OracleTermsOfUseLink">OracleTermsOfUseLink</a>: <i>String</i>
-    <a href="#publishername" title="PublisherName">PublisherName</a>: <i>String</i>
     <a href="#signature" title="Signature">Signature</a>: <i>String</i>
-    <a href="#summary" title="Summary">Summary</a>: <i>String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#timeretrieved" title="TimeRetrieved">TimeRetrieved</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CompartmentId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DisplayName
-
-_Required_: No
 
 _Type_: String
 
@@ -95,14 +65,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ListingResourceId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ListingResourceVersion
 
 _Required_: Yes
@@ -119,33 +81,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PublisherName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Signature
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Summary
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeCreated
-
-_Required_: No
 
 _Type_: String
 
@@ -163,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,21 +123,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DisplayName
 
-Returns the &lt;code&gt;DisplayName&lt;/code&gt; value.
+Returns the <code>DisplayName</code> value.
 
 #### ListingResourceId
 
-Returns the &lt;code&gt;ListingResourceId&lt;/code&gt; value.
+Returns the <code>ListingResourceId</code> value.
 
 #### PublisherName
 
-Returns the &lt;code&gt;PublisherName&lt;/code&gt; value.
+Returns the <code>PublisherName</code> value.
 
 #### Summary
 
-Returns the &lt;code&gt;Summary&lt;/code&gt; value.
+Returns the <code>Summary</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

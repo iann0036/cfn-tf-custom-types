@@ -12,12 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::EmrCluster",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#additionalinfo" title="AdditionalInfo">AdditionalInfo</a>" : <i>String</i>,
         "<a href="#applications" title="Applications">Applications</a>" : <i>[ String, ... ]</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#autoscalingrole" title="AutoscalingRole">AutoscalingRole</a>" : <i>String</i>,
-        "<a href="#clusterstate" title="ClusterState">ClusterState</a>" : <i>String</i>,
         "<a href="#configurations" title="Configurations">Configurations</a>" : <i>String</i>,
         "<a href="#configurationsjson" title="ConfigurationsJson">ConfigurationsJson</a>" : <i>String</i>,
         "<a href="#coreinstancecount" title="CoreInstanceCount">CoreInstanceCount</a>" : <i>Double</i>,
@@ -27,24 +24,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#keepjobflowalivewhennosteps" title="KeepJobFlowAliveWhenNoSteps">KeepJobFlowAliveWhenNoSteps</a>" : <i>Boolean</i>,
         "<a href="#loguri" title="LogUri">LogUri</a>" : <i>String</i>,
         "<a href="#masterinstancetype" title="MasterInstanceType">MasterInstanceType</a>" : <i>String</i>,
-        "<a href="#masterpublicdns" title="MasterPublicDns">MasterPublicDns</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#releaselabel" title="ReleaseLabel">ReleaseLabel</a>" : <i>String</i>,
         "<a href="#scaledownbehavior" title="ScaleDownBehavior">ScaleDownBehavior</a>" : <i>String</i>,
         "<a href="#securityconfiguration" title="SecurityConfiguration">SecurityConfiguration</a>" : <i>String</i>,
         "<a href="#servicerole" title="ServiceRole">ServiceRole</a>" : <i>String</i>,
-        "<a href="#step" title="Step">Step</a>" : <i>[ &lt;a href=&#34;step.md&#34;&gt;Step&lt;/a&gt;, ... ]</i>,
+        "<a href="#step" title="Step">Step</a>" : <i>[ <a href="step.md">Step</a>, ... ]</i>,
         "<a href="#stepconcurrencylevel" title="StepConcurrencyLevel">StepConcurrencyLevel</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#terminationprotection" title="TerminationProtection">TerminationProtection</a>" : <i>Boolean</i>,
         "<a href="#visibletoallusers" title="VisibleToAllUsers">VisibleToAllUsers</a>" : <i>Boolean</i>,
-        "<a href="#bootstrapaction" title="BootstrapAction">BootstrapAction</a>" : <i>[ &lt;a href=&#34;bootstrapaction.md&#34;&gt;BootstrapAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#coreinstancegroup" title="CoreInstanceGroup">CoreInstanceGroup</a>" : <i>[ &lt;a href=&#34;coreinstancegroup.md&#34;&gt;CoreInstanceGroup&lt;/a&gt;, ... ]</i>,
-        "<a href="#ec2attributes" title="Ec2Attributes">Ec2Attributes</a>" : <i>[ &lt;a href=&#34;ec2attributes.md&#34;&gt;Ec2Attributes&lt;/a&gt;, ... ]</i>,
-        "<a href="#instancegroup" title="InstanceGroup">InstanceGroup</a>" : <i>[ &lt;a href=&#34;instancegroup.md&#34;&gt;InstanceGroup&lt;/a&gt;, ... ]</i>,
-        "<a href="#kerberosattributes" title="KerberosAttributes">KerberosAttributes</a>" : <i>[ &lt;a href=&#34;kerberosattributes.md&#34;&gt;KerberosAttributes&lt;/a&gt;, ... ]</i>,
-        "<a href="#masterinstancegroup" title="MasterInstanceGroup">MasterInstanceGroup</a>" : <i>[ &lt;a href=&#34;masterinstancegroup.md&#34;&gt;MasterInstanceGroup&lt;/a&gt;, ... ]</i>,
-        "<a href="#ebsconfig" title="EbsConfig">EbsConfig</a>" : <i>[ &lt;a href=&#34;ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#bootstrapaction" title="BootstrapAction">BootstrapAction</a>" : <i>[ <a href="bootstrapaction.md">BootstrapAction</a>, ... ]</i>,
+        "<a href="#coreinstancegroup" title="CoreInstanceGroup">CoreInstanceGroup</a>" : <i>[ <a href="coreinstancegroup.md">CoreInstanceGroup</a>, ... ]</i>,
+        "<a href="#ec2attributes" title="Ec2Attributes">Ec2Attributes</a>" : <i>[ <a href="ec2attributes.md">Ec2Attributes</a>, ... ]</i>,
+        "<a href="#instancegroup" title="InstanceGroup">InstanceGroup</a>" : <i>[ <a href="instancegroup.md">InstanceGroup</a>, ... ]</i>,
+        "<a href="#kerberosattributes" title="KerberosAttributes">KerberosAttributes</a>" : <i>[ <a href="kerberosattributes.md">KerberosAttributes</a>, ... ]</i>,
+        "<a href="#masterinstancegroup" title="MasterInstanceGroup">MasterInstanceGroup</a>" : <i>[ <a href="masterinstancegroup.md">MasterInstanceGroup</a>, ... ]</i>,
+        "<a href="#ebsconfig" title="EbsConfig">EbsConfig</a>" : <i>[ <a href="ebsconfig.md">EbsConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -54,13 +50,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::EmrCluster
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#additionalinfo" title="AdditionalInfo">AdditionalInfo</a>: <i>String</i>
     <a href="#applications" title="Applications">Applications</a>: <i>
       - String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#autoscalingrole" title="AutoscalingRole">AutoscalingRole</a>: <i>String</i>
-    <a href="#clusterstate" title="ClusterState">ClusterState</a>: <i>String</i>
     <a href="#configurations" title="Configurations">Configurations</a>: <i>String</i>
     <a href="#configurationsjson" title="ConfigurationsJson">ConfigurationsJson</a>: <i>String</i>
     <a href="#coreinstancecount" title="CoreInstanceCount">CoreInstanceCount</a>: <i>Double</i>
@@ -70,46 +63,35 @@ Properties:
     <a href="#keepjobflowalivewhennosteps" title="KeepJobFlowAliveWhenNoSteps">KeepJobFlowAliveWhenNoSteps</a>: <i>Boolean</i>
     <a href="#loguri" title="LogUri">LogUri</a>: <i>String</i>
     <a href="#masterinstancetype" title="MasterInstanceType">MasterInstanceType</a>: <i>String</i>
-    <a href="#masterpublicdns" title="MasterPublicDns">MasterPublicDns</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#releaselabel" title="ReleaseLabel">ReleaseLabel</a>: <i>String</i>
     <a href="#scaledownbehavior" title="ScaleDownBehavior">ScaleDownBehavior</a>: <i>String</i>
     <a href="#securityconfiguration" title="SecurityConfiguration">SecurityConfiguration</a>: <i>String</i>
     <a href="#servicerole" title="ServiceRole">ServiceRole</a>: <i>String</i>
     <a href="#step" title="Step">Step</a>: <i>
-      - &lt;a href=&#34;step.md&#34;&gt;Step&lt;/a&gt;</i>
+      - <a href="step.md">Step</a></i>
     <a href="#stepconcurrencylevel" title="StepConcurrencyLevel">StepConcurrencyLevel</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#terminationprotection" title="TerminationProtection">TerminationProtection</a>: <i>Boolean</i>
     <a href="#visibletoallusers" title="VisibleToAllUsers">VisibleToAllUsers</a>: <i>Boolean</i>
     <a href="#bootstrapaction" title="BootstrapAction">BootstrapAction</a>: <i>
-      - &lt;a href=&#34;bootstrapaction.md&#34;&gt;BootstrapAction&lt;/a&gt;</i>
+      - <a href="bootstrapaction.md">BootstrapAction</a></i>
     <a href="#coreinstancegroup" title="CoreInstanceGroup">CoreInstanceGroup</a>: <i>
-      - &lt;a href=&#34;coreinstancegroup.md&#34;&gt;CoreInstanceGroup&lt;/a&gt;</i>
+      - <a href="coreinstancegroup.md">CoreInstanceGroup</a></i>
     <a href="#ec2attributes" title="Ec2Attributes">Ec2Attributes</a>: <i>
-      - &lt;a href=&#34;ec2attributes.md&#34;&gt;Ec2Attributes&lt;/a&gt;</i>
+      - <a href="ec2attributes.md">Ec2Attributes</a></i>
     <a href="#instancegroup" title="InstanceGroup">InstanceGroup</a>: <i>
-      - &lt;a href=&#34;instancegroup.md&#34;&gt;InstanceGroup&lt;/a&gt;</i>
+      - <a href="instancegroup.md">InstanceGroup</a></i>
     <a href="#kerberosattributes" title="KerberosAttributes">KerberosAttributes</a>: <i>
-      - &lt;a href=&#34;kerberosattributes.md&#34;&gt;KerberosAttributes&lt;/a&gt;</i>
+      - <a href="kerberosattributes.md">KerberosAttributes</a></i>
     <a href="#masterinstancegroup" title="MasterInstanceGroup">MasterInstanceGroup</a>: <i>
-      - &lt;a href=&#34;masterinstancegroup.md&#34;&gt;MasterInstanceGroup&lt;/a&gt;</i>
+      - <a href="masterinstancegroup.md">MasterInstanceGroup</a></i>
     <a href="#ebsconfig" title="EbsConfig">EbsConfig</a>: <i>
-      - &lt;a href=&#34;ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;</i>
+      - <a href="ebsconfig.md">EbsConfig</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdditionalInfo
 
@@ -127,23 +109,7 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AutoscalingRole
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ClusterState
 
 _Required_: No
 
@@ -223,14 +189,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### MasterPublicDns
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
@@ -275,7 +233,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;step.md&#34;&gt;Step&lt;/a&gt;
+_Type_: List of <a href="step.md">Step</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -291,7 +249,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -315,7 +273,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bootstrapaction.md&#34;&gt;BootstrapAction&lt;/a&gt;
+_Type_: List of <a href="bootstrapaction.md">BootstrapAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -323,7 +281,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;coreinstancegroup.md&#34;&gt;CoreInstanceGroup&lt;/a&gt;
+_Type_: List of <a href="coreinstancegroup.md">CoreInstanceGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -331,7 +289,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ec2attributes.md&#34;&gt;Ec2Attributes&lt;/a&gt;
+_Type_: List of <a href="ec2attributes.md">Ec2Attributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -339,7 +297,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instancegroup.md&#34;&gt;InstanceGroup&lt;/a&gt;
+_Type_: List of <a href="instancegroup.md">InstanceGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -347,7 +305,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kerberosattributes.md&#34;&gt;KerberosAttributes&lt;/a&gt;
+_Type_: List of <a href="kerberosattributes.md">KerberosAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -355,7 +313,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;masterinstancegroup.md&#34;&gt;MasterInstanceGroup&lt;/a&gt;
+_Type_: List of <a href="masterinstancegroup.md">MasterInstanceGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -363,7 +321,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;
+_Type_: List of <a href="ebsconfig.md">EbsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -385,13 +343,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### ClusterState
 
-Returns the &lt;code&gt;ClusterState&lt;/code&gt; value.
+Returns the <code>ClusterState</code> value.
 
 #### MasterPublicDns
 
-Returns the &lt;code&gt;MasterPublicDns&lt;/code&gt; value.
+Returns the <code>MasterPublicDns</code> value.
 

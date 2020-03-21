@@ -12,11 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::StorageContainer",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowedorigins" title="AllowedOrigins">AllowedOrigins</a>" : <i>[ String, ... ]</i>,
         "<a href="#exposedheaders" title="ExposedHeaders">ExposedHeaders</a>" : <i>[ String, ... ]</i>,
         "<a href="#maxage" title="MaxAge">MaxAge</a>" : <i>Double</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#primarykey" title="PrimaryKey">PrimaryKey</a>" : <i>String</i>,
         "<a href="#quotabytes" title="QuotaBytes">QuotaBytes</a>" : <i>Double</i>,
@@ -33,14 +32,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::StorageContainer
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowedorigins" title="AllowedOrigins">AllowedOrigins</a>: <i>
       - String</i>
     <a href="#exposedheaders" title="ExposedHeaders">ExposedHeaders</a>: <i>
       - String</i>
     <a href="#maxage" title="MaxAge">MaxAge</a>: <i>Double</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#primarykey" title="PrimaryKey">PrimaryKey</a>: <i>String</i>
     <a href="#quotabytes" title="QuotaBytes">QuotaBytes</a>: <i>Double</i>
@@ -53,16 +51,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedOrigins
 
@@ -92,7 +80,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

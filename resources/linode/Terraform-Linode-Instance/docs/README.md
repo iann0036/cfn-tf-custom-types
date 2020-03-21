@@ -12,45 +12,37 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Linode::Instance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#authorizedkeys" title="AuthorizedKeys">AuthorizedKeys</a>" : <i>[ String, ... ]</i>,
         "<a href="#authorizedusers" title="AuthorizedUsers">AuthorizedUsers</a>" : <i>[ String, ... ]</i>,
         "<a href="#backupid" title="BackupId">BackupId</a>" : <i>Double</i>,
-        "<a href="#backups" title="Backups">Backups</a>" : <i>[ &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;, ... ]</i>,
         "<a href="#backupsenabled" title="BackupsEnabled">BackupsEnabled</a>" : <i>Boolean</i>,
         "<a href="#bootconfiglabel" title="BootConfigLabel">BootConfigLabel</a>" : <i>String</i>,
         "<a href="#group" title="Group">Group</a>" : <i>String</i>,
         "<a href="#image" title="Image">Image</a>" : <i>String</i>,
-        "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
-        "<a href="#ipv4" title="Ipv4">Ipv4</a>" : <i>[ String, ... ]</i>,
-        "<a href="#ipv6" title="Ipv6">Ipv6</a>" : <i>String</i>,
         "<a href="#label" title="Label">Label</a>" : <i>String</i>,
         "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>Boolean</i>,
-        "<a href="#privateipaddress" title="PrivateIpAddress">PrivateIpAddress</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#rootpass" title="RootPass">RootPass</a>" : <i>String</i>,
-        "<a href="#specs" title="Specs">Specs</a>" : <i>[ &lt;a href=&#34;specs.md&#34;&gt;Specs&lt;/a&gt;, ... ]</i>,
-        "<a href="#stackscriptdata" title="StackscriptData">StackscriptData</a>" : <i>[ &lt;a href=&#34;stackscriptdata.md&#34;&gt;StackscriptData&lt;/a&gt;, ... ]</i>,
+        "<a href="#stackscriptdata" title="StackscriptData">StackscriptData</a>" : <i>[ <a href="stackscriptdata.md">StackscriptData</a>, ... ]</i>,
         "<a href="#stackscriptid" title="StackscriptId">StackscriptId</a>" : <i>Double</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#swapsize" title="SwapSize">SwapSize</a>" : <i>Double</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#watchdogenabled" title="WatchdogEnabled">WatchdogEnabled</a>" : <i>Boolean</i>,
-        "<a href="#alerts" title="Alerts">Alerts</a>" : <i>[ &lt;a href=&#34;alerts.md&#34;&gt;Alerts&lt;/a&gt;, ... ]</i>,
-        "<a href="#config" title="Config">Config</a>" : <i>[ &lt;a href=&#34;config.md&#34;&gt;Config&lt;/a&gt;, ... ]</i>,
-        "<a href="#disk" title="Disk">Disk</a>" : <i>[ &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#devices" title="Devices">Devices</a>" : <i>[ &lt;a href=&#34;devices.md&#34;&gt;Devices&lt;/a&gt;, ... ]</i>,
-        "<a href="#helpers" title="Helpers">Helpers</a>" : <i>[ &lt;a href=&#34;helpers.md&#34;&gt;Helpers&lt;/a&gt;, ... ]</i>,
-        "<a href="#sda" title="Sda">Sda</a>" : <i>[ &lt;a href=&#34;sda.md&#34;&gt;Sda&lt;/a&gt;, ... ]</i>,
-        "<a href="#sdb" title="Sdb">Sdb</a>" : <i>[ &lt;a href=&#34;sdb.md&#34;&gt;Sdb&lt;/a&gt;, ... ]</i>,
-        "<a href="#sdc" title="Sdc">Sdc</a>" : <i>[ &lt;a href=&#34;sdc.md&#34;&gt;Sdc&lt;/a&gt;, ... ]</i>,
-        "<a href="#sdd" title="Sdd">Sdd</a>" : <i>[ &lt;a href=&#34;sdd.md&#34;&gt;Sdd&lt;/a&gt;, ... ]</i>,
-        "<a href="#sde" title="Sde">Sde</a>" : <i>[ &lt;a href=&#34;sde.md&#34;&gt;Sde&lt;/a&gt;, ... ]</i>,
-        "<a href="#sdf" title="Sdf">Sdf</a>" : <i>[ &lt;a href=&#34;sdf.md&#34;&gt;Sdf&lt;/a&gt;, ... ]</i>,
-        "<a href="#sdg" title="Sdg">Sdg</a>" : <i>[ &lt;a href=&#34;sdg.md&#34;&gt;Sdg&lt;/a&gt;, ... ]</i>,
-        "<a href="#sdh" title="Sdh">Sdh</a>" : <i>[ &lt;a href=&#34;sdh.md&#34;&gt;Sdh&lt;/a&gt;, ... ]</i>
+        "<a href="#alerts" title="Alerts">Alerts</a>" : <i>[ <a href="alerts.md">Alerts</a>, ... ]</i>,
+        "<a href="#config" title="Config">Config</a>" : <i>[ <a href="config.md">Config</a>, ... ]</i>,
+        "<a href="#disk" title="Disk">Disk</a>" : <i>[ <a href="disk.md">Disk</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#devices" title="Devices">Devices</a>" : <i>[ <a href="devices.md">Devices</a>, ... ]</i>,
+        "<a href="#helpers" title="Helpers">Helpers</a>" : <i>[ <a href="helpers.md">Helpers</a>, ... ]</i>,
+        "<a href="#sda" title="Sda">Sda</a>" : <i>[ <a href="sda.md">Sda</a>, ... ]</i>,
+        "<a href="#sdb" title="Sdb">Sdb</a>" : <i>[ <a href="sdb.md">Sdb</a>, ... ]</i>,
+        "<a href="#sdc" title="Sdc">Sdc</a>" : <i>[ <a href="sdc.md">Sdc</a>, ... ]</i>,
+        "<a href="#sdd" title="Sdd">Sdd</a>" : <i>[ <a href="sdd.md">Sdd</a>, ... ]</i>,
+        "<a href="#sde" title="Sde">Sde</a>" : <i>[ <a href="sde.md">Sde</a>, ... ]</i>,
+        "<a href="#sdf" title="Sdf">Sdf</a>" : <i>[ <a href="sdf.md">Sdf</a>, ... ]</i>,
+        "<a href="#sdg" title="Sdg">Sdg</a>" : <i>[ <a href="sdg.md">Sdg</a>, ... ]</i>,
+        "<a href="#sdh" title="Sdh">Sdh</a>" : <i>[ <a href="sdh.md">Sdh</a>, ... ]</i>
     }
 }
 </pre>
@@ -60,78 +52,57 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Linode::Instance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#authorizedkeys" title="AuthorizedKeys">AuthorizedKeys</a>: <i>
       - String</i>
     <a href="#authorizedusers" title="AuthorizedUsers">AuthorizedUsers</a>: <i>
       - String</i>
     <a href="#backupid" title="BackupId">BackupId</a>: <i>Double</i>
-    <a href="#backups" title="Backups">Backups</a>: <i>
-      - &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;</i>
     <a href="#backupsenabled" title="BackupsEnabled">BackupsEnabled</a>: <i>Boolean</i>
     <a href="#bootconfiglabel" title="BootConfigLabel">BootConfigLabel</a>: <i>String</i>
     <a href="#group" title="Group">Group</a>: <i>String</i>
     <a href="#image" title="Image">Image</a>: <i>String</i>
-    <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
-    <a href="#ipv4" title="Ipv4">Ipv4</a>: <i>
-      - String</i>
-    <a href="#ipv6" title="Ipv6">Ipv6</a>: <i>String</i>
     <a href="#label" title="Label">Label</a>: <i>String</i>
     <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>Boolean</i>
-    <a href="#privateipaddress" title="PrivateIpAddress">PrivateIpAddress</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#rootpass" title="RootPass">RootPass</a>: <i>String</i>
-    <a href="#specs" title="Specs">Specs</a>: <i>
-      - &lt;a href=&#34;specs.md&#34;&gt;Specs&lt;/a&gt;</i>
     <a href="#stackscriptdata" title="StackscriptData">StackscriptData</a>: <i>
-      - &lt;a href=&#34;stackscriptdata.md&#34;&gt;StackscriptData&lt;/a&gt;</i>
+      - <a href="stackscriptdata.md">StackscriptData</a></i>
     <a href="#stackscriptid" title="StackscriptId">StackscriptId</a>: <i>Double</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#swapsize" title="SwapSize">SwapSize</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#watchdogenabled" title="WatchdogEnabled">WatchdogEnabled</a>: <i>Boolean</i>
     <a href="#alerts" title="Alerts">Alerts</a>: <i>
-      - &lt;a href=&#34;alerts.md&#34;&gt;Alerts&lt;/a&gt;</i>
+      - <a href="alerts.md">Alerts</a></i>
     <a href="#config" title="Config">Config</a>: <i>
-      - &lt;a href=&#34;config.md&#34;&gt;Config&lt;/a&gt;</i>
+      - <a href="config.md">Config</a></i>
     <a href="#disk" title="Disk">Disk</a>: <i>
-      - &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="disk.md">Disk</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#devices" title="Devices">Devices</a>: <i>
-      - &lt;a href=&#34;devices.md&#34;&gt;Devices&lt;/a&gt;</i>
+      - <a href="devices.md">Devices</a></i>
     <a href="#helpers" title="Helpers">Helpers</a>: <i>
-      - &lt;a href=&#34;helpers.md&#34;&gt;Helpers&lt;/a&gt;</i>
+      - <a href="helpers.md">Helpers</a></i>
     <a href="#sda" title="Sda">Sda</a>: <i>
-      - &lt;a href=&#34;sda.md&#34;&gt;Sda&lt;/a&gt;</i>
+      - <a href="sda.md">Sda</a></i>
     <a href="#sdb" title="Sdb">Sdb</a>: <i>
-      - &lt;a href=&#34;sdb.md&#34;&gt;Sdb&lt;/a&gt;</i>
+      - <a href="sdb.md">Sdb</a></i>
     <a href="#sdc" title="Sdc">Sdc</a>: <i>
-      - &lt;a href=&#34;sdc.md&#34;&gt;Sdc&lt;/a&gt;</i>
+      - <a href="sdc.md">Sdc</a></i>
     <a href="#sdd" title="Sdd">Sdd</a>: <i>
-      - &lt;a href=&#34;sdd.md&#34;&gt;Sdd&lt;/a&gt;</i>
+      - <a href="sdd.md">Sdd</a></i>
     <a href="#sde" title="Sde">Sde</a>: <i>
-      - &lt;a href=&#34;sde.md&#34;&gt;Sde&lt;/a&gt;</i>
+      - <a href="sde.md">Sde</a></i>
     <a href="#sdf" title="Sdf">Sdf</a>: <i>
-      - &lt;a href=&#34;sdf.md&#34;&gt;Sdf&lt;/a&gt;</i>
+      - <a href="sdf.md">Sdf</a></i>
     <a href="#sdg" title="Sdg">Sdg</a>: <i>
-      - &lt;a href=&#34;sdg.md&#34;&gt;Sdg&lt;/a&gt;</i>
+      - <a href="sdg.md">Sdg</a></i>
     <a href="#sdh" title="Sdh">Sdh</a>: <i>
-      - &lt;a href=&#34;sdh.md&#34;&gt;Sdh&lt;/a&gt;</i>
+      - <a href="sdh.md">Sdh</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthorizedKeys
 
@@ -154,14 +125,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Backups
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;backups.md&#34;&gt;Backups&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,30 +160,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### IpAddress
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Ipv4
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Ipv6
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Label
 
 _Required_: No
@@ -234,14 +173,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrivateIpAddress
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -261,19 +192,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Specs
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;specs.md&#34;&gt;Specs&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### StackscriptData
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;stackscriptdata.md&#34;&gt;StackscriptData&lt;/a&gt;
+_Type_: List of <a href="stackscriptdata.md">StackscriptData</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -282,14 +205,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -329,7 +244,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;alerts.md&#34;&gt;Alerts&lt;/a&gt;
+_Type_: List of <a href="alerts.md">Alerts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -337,7 +252,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;config.md&#34;&gt;Config&lt;/a&gt;
+_Type_: List of <a href="config.md">Config</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -345,7 +260,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;
+_Type_: List of <a href="disk.md">Disk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -353,7 +268,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -361,7 +276,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;devices.md&#34;&gt;Devices&lt;/a&gt;
+_Type_: List of <a href="devices.md">Devices</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -369,7 +284,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;helpers.md&#34;&gt;Helpers&lt;/a&gt;
+_Type_: List of <a href="helpers.md">Helpers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -377,7 +292,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sda.md&#34;&gt;Sda&lt;/a&gt;
+_Type_: List of <a href="sda.md">Sda</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -385,7 +300,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sdb.md&#34;&gt;Sdb&lt;/a&gt;
+_Type_: List of <a href="sdb.md">Sdb</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -393,7 +308,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sdc.md&#34;&gt;Sdc&lt;/a&gt;
+_Type_: List of <a href="sdc.md">Sdc</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -401,7 +316,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sdd.md&#34;&gt;Sdd&lt;/a&gt;
+_Type_: List of <a href="sdd.md">Sdd</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -409,7 +324,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sde.md&#34;&gt;Sde&lt;/a&gt;
+_Type_: List of <a href="sde.md">Sde</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -417,7 +332,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sdf.md&#34;&gt;Sdf&lt;/a&gt;
+_Type_: List of <a href="sdf.md">Sdf</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -425,7 +340,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sdg.md&#34;&gt;Sdg&lt;/a&gt;
+_Type_: List of <a href="sdg.md">Sdg</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -433,7 +348,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sdh.md&#34;&gt;Sdh&lt;/a&gt;
+_Type_: List of <a href="sdh.md">Sdh</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -455,29 +370,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Backups
 
-Returns the &lt;code&gt;Backups&lt;/code&gt; value.
+Returns the <code>Backups</code> value.
 
 #### IpAddress
 
-Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
+Returns the <code>IpAddress</code> value.
 
 #### Ipv4
 
-Returns the &lt;code&gt;Ipv4&lt;/code&gt; value.
+Returns the <code>Ipv4</code> value.
 
 #### Ipv6
 
-Returns the &lt;code&gt;Ipv6&lt;/code&gt; value.
+Returns the <code>Ipv6</code> value.
 
 #### PrivateIpAddress
 
-Returns the &lt;code&gt;PrivateIpAddress&lt;/code&gt; value.
+Returns the <code>PrivateIpAddress</code> value.
 
 #### Specs
 
-Returns the &lt;code&gt;Specs&lt;/code&gt; value.
+Returns the <code>Specs</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

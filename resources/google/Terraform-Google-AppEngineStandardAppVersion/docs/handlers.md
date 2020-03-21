@@ -13,8 +13,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#redirecthttpresponsecode" title="RedirectHttpResponseCode">RedirectHttpResponseCode</a>" : <i>String</i>,
     "<a href="#securitylevel" title="SecurityLevel">SecurityLevel</a>" : <i>String</i>,
     "<a href="#urlregex" title="UrlRegex">UrlRegex</a>" : <i>String</i>,
-    "<a href="#script" title="Script">Script</a>" : <i>[ &lt;a href=&#34;handlers-script.md&#34;&gt;Script&lt;/a&gt;, ... ]</i>,
-    "<a href="#staticfiles" title="StaticFiles">StaticFiles</a>" : <i>[ &lt;a href=&#34;handlers-staticfiles.md&#34;&gt;StaticFiles&lt;/a&gt;, ... ]</i>
+    "<a href="#script" title="Script">Script</a>" : <i>[ <a href="handlers-script.md">Script</a>, ... ]</i>,
+    "<a href="#staticfiles" title="StaticFiles">StaticFiles</a>" : <i>[ <a href="handlers-staticfiles.md">StaticFiles</a>, ... ]</i>
 }
 </pre>
 
@@ -27,9 +27,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#securitylevel" title="SecurityLevel">SecurityLevel</a>: <i>String</i>
 <a href="#urlregex" title="UrlRegex">UrlRegex</a>: <i>String</i>
 <a href="#script" title="Script">Script</a>: <i>
-      - &lt;a href=&#34;handlers-script.md&#34;&gt;Script&lt;/a&gt;</i>
+      - <a href="handlers-script.md">Script</a></i>
 <a href="#staticfiles" title="StaticFiles">StaticFiles</a>: <i>
-      - &lt;a href=&#34;handlers-staticfiles.md&#34;&gt;StaticFiles&lt;/a&gt;</i>
+      - <a href="handlers-staticfiles.md">StaticFiles</a></i>
 </pre>
 
 ## Properties
@@ -37,6 +37,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AuthFailAction
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +45,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Login
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,6 +53,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RedirectHttpResponseCode
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,6 +61,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SecurityLevel
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -65,6 +69,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UrlRegex
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,14 +77,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Script
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;handlers-script.md&#34;&gt;Script&lt;/a&gt;
+
+_Type_: List of <a href="handlers-script.md">Script</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StaticFiles
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;handlers-staticfiles.md&#34;&gt;StaticFiles&lt;/a&gt;
+
+_Type_: List of <a href="handlers-staticfiles.md">StaticFiles</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

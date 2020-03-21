@@ -12,12 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CognitoUserPoolClient",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowedoauthflows" title="AllowedOauthFlows">AllowedOauthFlows</a>" : <i>[ String, ... ]</i>,
         "<a href="#allowedoauthflowsuserpoolclient" title="AllowedOauthFlowsUserPoolClient">AllowedOauthFlowsUserPoolClient</a>" : <i>Boolean</i>,
         "<a href="#allowedoauthscopes" title="AllowedOauthScopes">AllowedOauthScopes</a>" : <i>[ String, ... ]</i>,
         "<a href="#callbackurls" title="CallbackUrls">CallbackUrls</a>" : <i>[ String, ... ]</i>,
-        "<a href="#clientsecret" title="ClientSecret">ClientSecret</a>" : <i>String</i>,
         "<a href="#defaultredirecturi" title="DefaultRedirectUri">DefaultRedirectUri</a>" : <i>String</i>,
         "<a href="#explicitauthflows" title="ExplicitAuthFlows">ExplicitAuthFlows</a>" : <i>[ String, ... ]</i>,
         "<a href="#generatesecret" title="GenerateSecret">GenerateSecret</a>" : <i>Boolean</i>,
@@ -29,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#supportedidentityproviders" title="SupportedIdentityProviders">SupportedIdentityProviders</a>" : <i>[ String, ... ]</i>,
         "<a href="#userpoolid" title="UserPoolId">UserPoolId</a>" : <i>String</i>,
         "<a href="#writeattributes" title="WriteAttributes">WriteAttributes</a>" : <i>[ String, ... ]</i>,
-        "<a href="#analyticsconfiguration" title="AnalyticsConfiguration">AnalyticsConfiguration</a>" : <i>[ &lt;a href=&#34;analyticsconfiguration.md&#34;&gt;AnalyticsConfiguration&lt;/a&gt;, ... ]</i>
+        "<a href="#analyticsconfiguration" title="AnalyticsConfiguration">AnalyticsConfiguration</a>" : <i>[ <a href="analyticsconfiguration.md">AnalyticsConfiguration</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,7 +37,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CognitoUserPoolClient
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowedoauthflows" title="AllowedOauthFlows">AllowedOauthFlows</a>: <i>
       - String</i>
     <a href="#allowedoauthflowsuserpoolclient" title="AllowedOauthFlowsUserPoolClient">AllowedOauthFlowsUserPoolClient</a>: <i>Boolean</i>
@@ -47,7 +44,6 @@ Properties:
       - String</i>
     <a href="#callbackurls" title="CallbackUrls">CallbackUrls</a>: <i>
       - String</i>
-    <a href="#clientsecret" title="ClientSecret">ClientSecret</a>: <i>String</i>
     <a href="#defaultredirecturi" title="DefaultRedirectUri">DefaultRedirectUri</a>: <i>String</i>
     <a href="#explicitauthflows" title="ExplicitAuthFlows">ExplicitAuthFlows</a>: <i>
       - String</i>
@@ -65,20 +61,10 @@ Properties:
     <a href="#writeattributes" title="WriteAttributes">WriteAttributes</a>: <i>
       - String</i>
     <a href="#analyticsconfiguration" title="AnalyticsConfiguration">AnalyticsConfiguration</a>: <i>
-      - &lt;a href=&#34;analyticsconfiguration.md&#34;&gt;AnalyticsConfiguration&lt;/a&gt;</i>
+      - <a href="analyticsconfiguration.md">AnalyticsConfiguration</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedOauthFlows
 
@@ -109,14 +95,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ClientSecret
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -212,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;analyticsconfiguration.md&#34;&gt;AnalyticsConfiguration&lt;/a&gt;
+_Type_: List of <a href="analyticsconfiguration.md">AnalyticsConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -234,5 +212,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClientSecret
 
-Returns the &lt;code&gt;ClientSecret&lt;/code&gt; value.
+Returns the <code>ClientSecret</code> value.
 

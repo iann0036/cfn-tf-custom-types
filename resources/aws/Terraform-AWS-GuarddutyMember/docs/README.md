@@ -12,15 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::GuarddutyMember",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountid" title="AccountId">AccountId</a>" : <i>String</i>,
         "<a href="#detectorid" title="DetectorId">DetectorId</a>" : <i>String</i>,
         "<a href="#disableemailnotification" title="DisableEmailNotification">DisableEmailNotification</a>" : <i>Boolean</i>,
         "<a href="#email" title="Email">Email</a>" : <i>String</i>,
         "<a href="#invitationmessage" title="InvitationMessage">InvitationMessage</a>" : <i>String</i>,
         "<a href="#invite" title="Invite">Invite</a>" : <i>Boolean</i>,
-        "<a href="#relationshipstatus" title="RelationshipStatus">RelationshipStatus</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -30,28 +28,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::GuarddutyMember
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountid" title="AccountId">AccountId</a>: <i>String</i>
     <a href="#detectorid" title="DetectorId">DetectorId</a>: <i>String</i>
     <a href="#disableemailnotification" title="DisableEmailNotification">DisableEmailNotification</a>: <i>Boolean</i>
     <a href="#email" title="Email">Email</a>: <i>String</i>
     <a href="#invitationmessage" title="InvitationMessage">InvitationMessage</a>: <i>String</i>
     <a href="#invite" title="Invite">Invite</a>: <i>Boolean</i>
-    <a href="#relationshipstatus" title="RelationshipStatus">RelationshipStatus</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountId
 
@@ -101,19 +87,11 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### RelationshipStatus
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Timeouts
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,5 +113,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RelationshipStatus
 
-Returns the &lt;code&gt;RelationshipStatus&lt;/code&gt; value.
+Returns the <code>RelationshipStatus</code> value.
 

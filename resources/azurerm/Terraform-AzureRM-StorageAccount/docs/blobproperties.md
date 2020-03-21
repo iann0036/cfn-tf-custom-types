@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ &lt;a href=&#34;blobproperties-corsrule.md&#34;&gt;CorsRule&lt;/a&gt;, ... ]</i>,
-    "<a href="#deleteretentionpolicy" title="DeleteRetentionPolicy">DeleteRetentionPolicy</a>" : <i>[ &lt;a href=&#34;blobproperties-deleteretentionpolicy.md&#34;&gt;DeleteRetentionPolicy&lt;/a&gt;, ... ]</i>
+    "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ <a href="blobproperties-corsrule.md">CorsRule</a>, ... ]</i>,
+    "<a href="#deleteretentionpolicy" title="DeleteRetentionPolicy">DeleteRetentionPolicy</a>" : <i>[ <a href="blobproperties-deleteretentionpolicy.md">DeleteRetentionPolicy</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#corsrule" title="CorsRule">CorsRule</a>: <i>
-      - &lt;a href=&#34;blobproperties-corsrule.md&#34;&gt;CorsRule&lt;/a&gt;</i>
+      - <a href="blobproperties-corsrule.md">CorsRule</a></i>
 <a href="#deleteretentionpolicy" title="DeleteRetentionPolicy">DeleteRetentionPolicy</a>: <i>
-      - &lt;a href=&#34;blobproperties-deleteretentionpolicy.md&#34;&gt;DeleteRetentionPolicy&lt;/a&gt;</i>
+      - <a href="blobproperties-deleteretentionpolicy.md">DeleteRetentionPolicy</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CorsRule
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;blobproperties-corsrule.md&#34;&gt;CorsRule&lt;/a&gt;
+
+_Type_: List of <a href="blobproperties-corsrule.md">CorsRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeleteRetentionPolicy
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;blobproperties-deleteretentionpolicy.md&#34;&gt;DeleteRetentionPolicy&lt;/a&gt;
+
+_Type_: List of <a href="blobproperties-deleteretentionpolicy.md">DeleteRetentionPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

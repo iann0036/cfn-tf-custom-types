@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::PkiSecretBackendRole",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowanyname" title="AllowAnyName">AllowAnyName</a>" : <i>Boolean</i>,
         "<a href="#allowbaredomains" title="AllowBareDomains">AllowBareDomains</a>" : <i>Boolean</i>,
         "<a href="#allowglobdomains" title="AllowGlobDomains">AllowGlobDomains</a>" : <i>Boolean</i>,
@@ -59,7 +58,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::PkiSecretBackendRole
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowanyname" title="AllowAnyName">AllowAnyName</a>: <i>Boolean</i>
     <a href="#allowbaredomains" title="AllowBareDomains">AllowBareDomains</a>: <i>Boolean</i>
     <a href="#allowglobdomains" title="AllowGlobDomains">AllowGlobDomains</a>: <i>Boolean</i>
@@ -113,16 +111,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowAnyName
 

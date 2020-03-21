@@ -12,22 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Route",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#destinationcidrblock" title="DestinationCidrBlock">DestinationCidrBlock</a>" : <i>String</i>,
         "<a href="#destinationipv6cidrblock" title="DestinationIpv6CidrBlock">DestinationIpv6CidrBlock</a>" : <i>String</i>,
-        "<a href="#destinationprefixlistid" title="DestinationPrefixListId">DestinationPrefixListId</a>" : <i>String</i>,
         "<a href="#egressonlygatewayid" title="EgressOnlyGatewayId">EgressOnlyGatewayId</a>" : <i>String</i>,
         "<a href="#gatewayid" title="GatewayId">GatewayId</a>" : <i>String</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
-        "<a href="#instanceownerid" title="InstanceOwnerId">InstanceOwnerId</a>" : <i>String</i>,
         "<a href="#natgatewayid" title="NatGatewayId">NatGatewayId</a>" : <i>String</i>,
         "<a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>" : <i>String</i>,
-        "<a href="#origin" title="Origin">Origin</a>" : <i>String</i>,
         "<a href="#routetableid" title="RouteTableId">RouteTableId</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#transitgatewayid" title="TransitGatewayId">TransitGatewayId</a>" : <i>String</i>,
         "<a href="#vpcpeeringconnectionid" title="VpcPeeringConnectionId">VpcPeeringConnectionId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -37,35 +32,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Route
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#destinationcidrblock" title="DestinationCidrBlock">DestinationCidrBlock</a>: <i>String</i>
     <a href="#destinationipv6cidrblock" title="DestinationIpv6CidrBlock">DestinationIpv6CidrBlock</a>: <i>String</i>
-    <a href="#destinationprefixlistid" title="DestinationPrefixListId">DestinationPrefixListId</a>: <i>String</i>
     <a href="#egressonlygatewayid" title="EgressOnlyGatewayId">EgressOnlyGatewayId</a>: <i>String</i>
     <a href="#gatewayid" title="GatewayId">GatewayId</a>: <i>String</i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
-    <a href="#instanceownerid" title="InstanceOwnerId">InstanceOwnerId</a>: <i>String</i>
     <a href="#natgatewayid" title="NatGatewayId">NatGatewayId</a>: <i>String</i>
     <a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>: <i>String</i>
-    <a href="#origin" title="Origin">Origin</a>: <i>String</i>
     <a href="#routetableid" title="RouteTableId">RouteTableId</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#transitgatewayid" title="TransitGatewayId">TransitGatewayId</a>: <i>String</i>
     <a href="#vpcpeeringconnectionid" title="VpcPeeringConnectionId">VpcPeeringConnectionId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationCidrBlock
 
@@ -76,14 +56,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationIpv6CidrBlock
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DestinationPrefixListId
 
 _Required_: No
 
@@ -115,14 +87,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### InstanceOwnerId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### NatGatewayId
 
 _Required_: No
@@ -139,25 +103,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Origin
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### RouteTableId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### State
-
-_Required_: No
 
 _Type_: String
 
@@ -183,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,17 +153,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DestinationPrefixListId
 
-Returns the &lt;code&gt;DestinationPrefixListId&lt;/code&gt; value.
+Returns the <code>DestinationPrefixListId</code> value.
 
 #### InstanceOwnerId
 
-Returns the &lt;code&gt;InstanceOwnerId&lt;/code&gt; value.
+Returns the <code>InstanceOwnerId</code> value.
 
 #### Origin
 
-Returns the &lt;code&gt;Origin&lt;/code&gt; value.
+Returns the <code>Origin</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

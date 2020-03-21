@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::BigtableGcPolicy",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#columnfamily" title="ColumnFamily">ColumnFamily</a>" : <i>String</i>,
         "<a href="#instancename" title="InstanceName">InstanceName</a>" : <i>String</i>,
         "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#table" title="Table">Table</a>" : <i>String</i>,
-        "<a href="#maxage" title="MaxAge">MaxAge</a>" : <i>[ &lt;a href=&#34;maxage.md&#34;&gt;MaxAge&lt;/a&gt;, ... ]</i>,
-        "<a href="#maxversion" title="MaxVersion">MaxVersion</a>" : <i>[ &lt;a href=&#34;maxversion.md&#34;&gt;MaxVersion&lt;/a&gt;, ... ]</i>
+        "<a href="#maxage" title="MaxAge">MaxAge</a>" : <i>[ <a href="maxage.md">MaxAge</a>, ... ]</i>,
+        "<a href="#maxversion" title="MaxVersion">MaxVersion</a>" : <i>[ <a href="maxversion.md">MaxVersion</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,29 +28,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::BigtableGcPolicy
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#columnfamily" title="ColumnFamily">ColumnFamily</a>: <i>String</i>
     <a href="#instancename" title="InstanceName">InstanceName</a>: <i>String</i>
     <a href="#mode" title="Mode">Mode</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#table" title="Table">Table</a>: <i>String</i>
     <a href="#maxage" title="MaxAge">MaxAge</a>: <i>
-      - &lt;a href=&#34;maxage.md&#34;&gt;MaxAge&lt;/a&gt;</i>
+      - <a href="maxage.md">MaxAge</a></i>
     <a href="#maxversion" title="MaxVersion">MaxVersion</a>: <i>
-      - &lt;a href=&#34;maxversion.md&#34;&gt;MaxVersion&lt;/a&gt;</i>
+      - <a href="maxversion.md">MaxVersion</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ColumnFamily
 
@@ -97,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;maxage.md&#34;&gt;MaxAge&lt;/a&gt;
+_Type_: List of <a href="maxage.md">MaxAge</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;maxversion.md&#34;&gt;MaxVersion&lt;/a&gt;
+_Type_: List of <a href="maxversion.md">MaxVersion</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

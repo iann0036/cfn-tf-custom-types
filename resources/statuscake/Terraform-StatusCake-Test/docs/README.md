@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::StatusCake::Test",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#basicpass" title="BasicPass">BasicPass</a>" : <i>String</i>,
         "<a href="#basicuser" title="BasicUser">BasicUser</a>" : <i>String</i>,
         "<a href="#branding" title="Branding">Branding</a>" : <i>Double</i>,
@@ -34,14 +33,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#postraw" title="PostRaw">PostRaw</a>" : <i>String</i>,
         "<a href="#public" title="Public">Public</a>" : <i>Double</i>,
         "<a href="#realbrowser" title="RealBrowser">RealBrowser</a>" : <i>Double</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#statuscodes" title="StatusCodes">StatusCodes</a>" : <i>String</i>,
-        "<a href="#testid" title="TestId">TestId</a>" : <i>String</i>,
         "<a href="#testtags" title="TestTags">TestTags</a>" : <i>[ String, ... ]</i>,
         "<a href="#testtype" title="TestType">TestType</a>" : <i>String</i>,
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
         "<a href="#triggerrate" title="TriggerRate">TriggerRate</a>" : <i>Double</i>,
-        "<a href="#uptime" title="Uptime">Uptime</a>" : <i>Double</i>,
         "<a href="#usejar" title="UseJar">UseJar</a>" : <i>Double</i>,
         "<a href="#useragent" title="UserAgent">UserAgent</a>" : <i>String</i>,
         "<a href="#virus" title="Virus">Virus</a>" : <i>Double</i>,
@@ -57,7 +53,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::StatusCake::Test
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#basicpass" title="BasicPass">BasicPass</a>: <i>String</i>
     <a href="#basicuser" title="BasicUser">BasicUser</a>: <i>String</i>
     <a href="#branding" title="Branding">Branding</a>: <i>Double</i>
@@ -81,15 +76,12 @@ Properties:
     <a href="#postraw" title="PostRaw">PostRaw</a>: <i>String</i>
     <a href="#public" title="Public">Public</a>: <i>Double</i>
     <a href="#realbrowser" title="RealBrowser">RealBrowser</a>: <i>Double</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#statuscodes" title="StatusCodes">StatusCodes</a>: <i>String</i>
-    <a href="#testid" title="TestId">TestId</a>: <i>String</i>
     <a href="#testtags" title="TestTags">TestTags</a>: <i>
       - String</i>
     <a href="#testtype" title="TestType">TestType</a>: <i>String</i>
     <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
     <a href="#triggerrate" title="TriggerRate">TriggerRate</a>: <i>Double</i>
-    <a href="#uptime" title="Uptime">Uptime</a>: <i>Double</i>
     <a href="#usejar" title="UseJar">UseJar</a>: <i>Double</i>
     <a href="#useragent" title="UserAgent">UserAgent</a>: <i>String</i>
     <a href="#virus" title="Virus">Virus</a>: <i>Double</i>
@@ -99,16 +91,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BasicPass
 
@@ -278,23 +260,7 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### StatusCodes
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TestId
 
 _Required_: No
 
@@ -327,14 +293,6 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TriggerRate
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uptime
 
 _Required_: No
 
@@ -408,13 +366,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### TestId
 
-Returns the &lt;code&gt;TestId&lt;/code&gt; value.
+Returns the <code>TestId</code> value.
 
 #### Uptime
 
-Returns the &lt;code&gt;Uptime&lt;/code&gt; value.
+Returns the <code>Uptime</code> value.
 

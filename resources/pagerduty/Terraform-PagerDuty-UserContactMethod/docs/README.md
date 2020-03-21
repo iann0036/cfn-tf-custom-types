@@ -12,11 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::PagerDuty::UserContactMethod",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#address" title="Address">Address</a>" : <i>String</i>,
-        "<a href="#blacklisted" title="Blacklisted">Blacklisted</a>" : <i>Boolean</i>,
         "<a href="#countrycode" title="CountryCode">CountryCode</a>" : <i>Double</i>,
-        "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#label" title="Label">Label</a>" : <i>String</i>,
         "<a href="#sendshortemail" title="SendShortEmail">SendShortEmail</a>" : <i>Boolean</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
@@ -30,11 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::PagerDuty::UserContactMethod
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#address" title="Address">Address</a>: <i>String</i>
-    <a href="#blacklisted" title="Blacklisted">Blacklisted</a>: <i>Boolean</i>
     <a href="#countrycode" title="CountryCode">CountryCode</a>: <i>Double</i>
-    <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#label" title="Label">Label</a>: <i>String</i>
     <a href="#sendshortemail" title="SendShortEmail">SendShortEmail</a>: <i>Boolean</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
@@ -42,16 +36,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Address
 
@@ -61,27 +45,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Blacklisted
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CountryCode
 
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Enabled
-
-_Required_: No
-
-_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,9 +103,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Blacklisted
 
-Returns the &lt;code&gt;Blacklisted&lt;/code&gt; value.
+Returns the <code>Blacklisted</code> value.
 
 #### Enabled
 
-Returns the &lt;code&gt;Enabled&lt;/code&gt; value.
+Returns the <code>Enabled</code> value.
 

@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::TrafficManagerEndpoint",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#endpointlocation" title="EndpointLocation">EndpointLocation</a>" : <i>String</i>,
-        "<a href="#endpointmonitorstatus" title="EndpointMonitorStatus">EndpointMonitorStatus</a>" : <i>String</i>,
         "<a href="#endpointstatus" title="EndpointStatus">EndpointStatus</a>" : <i>String</i>,
         "<a href="#geomappings" title="GeoMappings">GeoMappings</a>" : <i>[ String, ... ]</i>,
         "<a href="#minchildendpoints" title="MinChildEndpoints">MinChildEndpoints</a>" : <i>Double</i>,
@@ -26,9 +24,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#targetresourceid" title="TargetResourceId">TargetResourceId</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#weight" title="Weight">Weight</a>" : <i>Double</i>,
-        "<a href="#customheader" title="CustomHeader">CustomHeader</a>" : <i>[ &lt;a href=&#34;customheader.md&#34;&gt;CustomHeader&lt;/a&gt;, ... ]</i>,
-        "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ &lt;a href=&#34;subnet.md&#34;&gt;Subnet&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#customheader" title="CustomHeader">CustomHeader</a>" : <i>[ <a href="customheader.md">CustomHeader</a>, ... ]</i>,
+        "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ <a href="subnet.md">Subnet</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -38,9 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::TrafficManagerEndpoint
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#endpointlocation" title="EndpointLocation">EndpointLocation</a>: <i>String</i>
-    <a href="#endpointmonitorstatus" title="EndpointMonitorStatus">EndpointMonitorStatus</a>: <i>String</i>
     <a href="#endpointstatus" title="EndpointStatus">EndpointStatus</a>: <i>String</i>
     <a href="#geomappings" title="GeoMappings">GeoMappings</a>: <i>
       - String</i>
@@ -54,33 +50,15 @@ Properties:
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#weight" title="Weight">Weight</a>: <i>Double</i>
     <a href="#customheader" title="CustomHeader">CustomHeader</a>: <i>
-      - &lt;a href=&#34;customheader.md&#34;&gt;CustomHeader&lt;/a&gt;</i>
+      - <a href="customheader.md">CustomHeader</a></i>
     <a href="#subnet" title="Subnet">Subnet</a>: <i>
-      - &lt;a href=&#34;subnet.md&#34;&gt;Subnet&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="subnet.md">Subnet</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### EndpointLocation
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### EndpointMonitorStatus
 
 _Required_: No
 
@@ -180,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customheader.md&#34;&gt;CustomHeader&lt;/a&gt;
+_Type_: List of <a href="customheader.md">CustomHeader</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subnet.md&#34;&gt;Subnet&lt;/a&gt;
+_Type_: List of <a href="subnet.md">Subnet</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -218,5 +196,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EndpointMonitorStatus
 
-Returns the &lt;code&gt;EndpointMonitorStatus&lt;/code&gt; value.
+Returns the <code>EndpointMonitorStatus</code> value.
 

@@ -12,14 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::AppServiceCustomHostnameBinding",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#appservicename" title="AppServiceName">AppServiceName</a>" : <i>String</i>,
         "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#sslstate" title="SslState">SslState</a>" : <i>String</i>,
         "<a href="#thumbprint" title="Thumbprint">Thumbprint</a>" : <i>String</i>,
-        "<a href="#virtualip" title="VirtualIp">VirtualIp</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -29,27 +27,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::AppServiceCustomHostnameBinding
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#appservicename" title="AppServiceName">AppServiceName</a>: <i>String</i>
     <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#sslstate" title="SslState">SslState</a>: <i>String</i>
     <a href="#thumbprint" title="Thumbprint">Thumbprint</a>: <i>String</i>
-    <a href="#virtualip" title="VirtualIp">VirtualIp</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppServiceName
 
@@ -91,19 +77,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### VirtualIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Timeouts
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VirtualIp
 
-Returns the &lt;code&gt;VirtualIp&lt;/code&gt; value.
+Returns the <code>VirtualIp</code> value.
 

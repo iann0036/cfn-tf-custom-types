@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#limitiplistsize" title="LimitIpListSize">LimitIpListSize</a>" : <i>Boolean</i>,
     "<a href="#maxiplistsize" title="MaxIpListSize">MaxIpListSize</a>" : <i>Double</i>,
     "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
-    "<a href="#groupingobject" title="GroupingObject">GroupingObject</a>" : <i>[ &lt;a href=&#34;membergroup-groupingobject.md&#34;&gt;GroupingObject&lt;/a&gt;, ... ]</i>
+    "<a href="#groupingobject" title="GroupingObject">GroupingObject</a>" : <i>[ <a href="membergroup-groupingobject.md">GroupingObject</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#maxiplistsize" title="MaxIpListSize">MaxIpListSize</a>: <i>Double</i>
 <a href="#port" title="Port">Port</a>: <i>Double</i>
 <a href="#groupingobject" title="GroupingObject">GroupingObject</a>: <i>
-      - &lt;a href=&#34;membergroup-groupingobject.md&#34;&gt;GroupingObject&lt;/a&gt;</i>
+      - <a href="membergroup-groupingobject.md">GroupingObject</a></i>
 </pre>
 
 ## Properties
@@ -32,6 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### IpVersionFilter
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,6 +40,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LimitIpListSize
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MaxIpListSize
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Port
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,7 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GroupingObject
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;membergroup-groupingobject.md&#34;&gt;GroupingObject&lt;/a&gt;
+
+_Type_: List of <a href="membergroup-groupingobject.md">GroupingObject</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

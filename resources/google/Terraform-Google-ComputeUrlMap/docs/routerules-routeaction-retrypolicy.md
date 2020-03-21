@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#numretries" title="NumRetries">NumRetries</a>" : <i>Double</i>,
     "<a href="#retryconditions" title="RetryConditions">RetryConditions</a>" : <i>[ String, ... ]</i>,
-    "<a href="#pertrytimeout" title="PerTryTimeout">PerTryTimeout</a>" : <i>[ &lt;a href=&#34;routerules-routeaction-retrypolicy-pertrytimeout.md&#34;&gt;PerTryTimeout&lt;/a&gt;, ... ]</i>
+    "<a href="#pertrytimeout" title="PerTryTimeout">PerTryTimeout</a>" : <i>[ <a href="routerules-routeaction-retrypolicy-pertrytimeout.md">PerTryTimeout</a>, ... ]</i>
 }
 </pre>
 
@@ -21,7 +21,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#retryconditions" title="RetryConditions">RetryConditions</a>: <i>
       - String</i>
 <a href="#pertrytimeout" title="PerTryTimeout">PerTryTimeout</a>: <i>
-      - &lt;a href=&#34;routerules-routeaction-retrypolicy-pertrytimeout.md&#34;&gt;PerTryTimeout&lt;/a&gt;</i>
+      - <a href="routerules-routeaction-retrypolicy-pertrytimeout.md">PerTryTimeout</a></i>
 </pre>
 
 ## Properties
@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### NumRetries
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,6 +37,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RetryConditions
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,7 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PerTryTimeout
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;routerules-routeaction-retrypolicy-pertrytimeout.md&#34;&gt;PerTryTimeout&lt;/a&gt;
+
+_Type_: List of <a href="routerules-routeaction-retrypolicy-pertrytimeout.md">PerTryTimeout</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,18 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::WorklinkFleet",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#auditstreamarn" title="AuditStreamArn">AuditStreamArn</a>" : <i>String</i>,
-        "<a href="#companycode" title="CompanyCode">CompanyCode</a>" : <i>String</i>,
-        "<a href="#createdtime" title="CreatedTime">CreatedTime</a>" : <i>String</i>,
         "<a href="#devicecacertificate" title="DeviceCaCertificate">DeviceCaCertificate</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#lastupdatedtime" title="LastUpdatedTime">LastUpdatedTime</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#optimizeforenduserlocation" title="OptimizeForEndUserLocation">OptimizeForEndUserLocation</a>" : <i>Boolean</i>,
-        "<a href="#identityprovider" title="IdentityProvider">IdentityProvider</a>" : <i>[ &lt;a href=&#34;identityprovider.md&#34;&gt;IdentityProvider&lt;/a&gt;, ... ]</i>,
-        "<a href="#network" title="Network">Network</a>" : <i>[ &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;, ... ]</i>
+        "<a href="#identityprovider" title="IdentityProvider">IdentityProvider</a>" : <i>[ <a href="identityprovider.md">IdentityProvider</a>, ... ]</i>,
+        "<a href="#network" title="Network">Network</a>" : <i>[ <a href="network.md">Network</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,59 +28,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::WorklinkFleet
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#auditstreamarn" title="AuditStreamArn">AuditStreamArn</a>: <i>String</i>
-    <a href="#companycode" title="CompanyCode">CompanyCode</a>: <i>String</i>
-    <a href="#createdtime" title="CreatedTime">CreatedTime</a>: <i>String</i>
     <a href="#devicecacertificate" title="DeviceCaCertificate">DeviceCaCertificate</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
-    <a href="#lastupdatedtime" title="LastUpdatedTime">LastUpdatedTime</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#optimizeforenduserlocation" title="OptimizeForEndUserLocation">OptimizeForEndUserLocation</a>: <i>Boolean</i>
     <a href="#identityprovider" title="IdentityProvider">IdentityProvider</a>: <i>
-      - &lt;a href=&#34;identityprovider.md&#34;&gt;IdentityProvider&lt;/a&gt;</i>
+      - <a href="identityprovider.md">IdentityProvider</a></i>
     <a href="#network" title="Network">Network</a>: <i>
-      - &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;</i>
+      - <a href="network.md">Network</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AuditStreamArn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CompanyCode
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedTime
 
 _Required_: No
 
@@ -102,14 +58,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastUpdatedTime
 
 _Required_: No
 
@@ -137,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;identityprovider.md&#34;&gt;IdentityProvider&lt;/a&gt;
+_Type_: List of <a href="identityprovider.md">IdentityProvider</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;
+_Type_: List of <a href="network.md">Network</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,17 +115,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CompanyCode
 
-Returns the &lt;code&gt;CompanyCode&lt;/code&gt; value.
+Returns the <code>CompanyCode</code> value.
 
 #### CreatedTime
 
-Returns the &lt;code&gt;CreatedTime&lt;/code&gt; value.
+Returns the <code>CreatedTime</code> value.
 
 #### LastUpdatedTime
 
-Returns the &lt;code&gt;LastUpdatedTime&lt;/code&gt; value.
+Returns the <code>LastUpdatedTime</code> value.
 

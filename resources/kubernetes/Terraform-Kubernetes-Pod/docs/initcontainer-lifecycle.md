@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#poststart" title="PostStart">PostStart</a>" : <i>[ &lt;a href=&#34;initcontainer-lifecycle-poststart.md&#34;&gt;PostStart&lt;/a&gt;, ... ]</i>,
-    "<a href="#prestop" title="PreStop">PreStop</a>" : <i>[ &lt;a href=&#34;initcontainer-lifecycle-prestop.md&#34;&gt;PreStop&lt;/a&gt;, ... ]</i>
+    "<a href="#poststart" title="PostStart">PostStart</a>" : <i>[ <a href="initcontainer-lifecycle-poststart.md">PostStart</a>, ... ]</i>,
+    "<a href="#prestop" title="PreStop">PreStop</a>" : <i>[ <a href="initcontainer-lifecycle-prestop.md">PreStop</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#poststart" title="PostStart">PostStart</a>: <i>
-      - &lt;a href=&#34;initcontainer-lifecycle-poststart.md&#34;&gt;PostStart&lt;/a&gt;</i>
+      - <a href="initcontainer-lifecycle-poststart.md">PostStart</a></i>
 <a href="#prestop" title="PreStop">PreStop</a>: <i>
-      - &lt;a href=&#34;initcontainer-lifecycle-prestop.md&#34;&gt;PreStop&lt;/a&gt;</i>
+      - <a href="initcontainer-lifecycle-prestop.md">PreStop</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### PostStart
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;initcontainer-lifecycle-poststart.md&#34;&gt;PostStart&lt;/a&gt;
+
+_Type_: List of <a href="initcontainer-lifecycle-poststart.md">PostStart</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PreStop
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;initcontainer-lifecycle-prestop.md&#34;&gt;PreStop&lt;/a&gt;
+
+_Type_: List of <a href="initcontainer-lifecycle-prestop.md">PreStop</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

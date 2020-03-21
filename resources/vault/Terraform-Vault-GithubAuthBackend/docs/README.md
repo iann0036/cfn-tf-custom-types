@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::GithubAuthBackend",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#accessor" title="Accessor">Accessor</a>" : <i>String</i>,
         "<a href="#baseurl" title="BaseUrl">BaseUrl</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#maxttl" title="MaxTtl">MaxTtl</a>" : <i>String</i>,
@@ -29,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tokenttl" title="TokenTtl">TokenTtl</a>" : <i>Double</i>,
         "<a href="#tokentype" title="TokenType">TokenType</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>String</i>,
-        "<a href="#tune" title="Tune">Tune</a>" : <i>[ &lt;a href=&#34;tune.md&#34;&gt;Tune&lt;/a&gt;, ... ]</i>
+        "<a href="#tune" title="Tune">Tune</a>" : <i>[ <a href="tune.md">Tune</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,8 +37,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::GithubAuthBackend
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#accessor" title="Accessor">Accessor</a>: <i>String</i>
     <a href="#baseurl" title="BaseUrl">BaseUrl</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#maxttl" title="MaxTtl">MaxTtl</a>: <i>String</i>
@@ -59,28 +55,10 @@ Properties:
     <a href="#tokentype" title="TokenType">TokenType</a>: <i>String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>String</i>
     <a href="#tune" title="Tune">Tune</a>: <i>
-      - &lt;a href=&#34;tune.md&#34;&gt;Tune&lt;/a&gt;</i>
+      - <a href="tune.md">Tune</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Accessor
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BaseUrl
 
@@ -206,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tune.md&#34;&gt;Tune&lt;/a&gt;
+_Type_: List of <a href="tune.md">Tune</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -228,5 +206,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessor
 
-Returns the &lt;code&gt;Accessor&lt;/code&gt; value.
+Returns the <code>Accessor</code> value.
 

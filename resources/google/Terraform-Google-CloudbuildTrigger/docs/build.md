@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#images" title="Images">Images</a>" : <i>[ String, ... ]</i>,
     "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
     "<a href="#timeout" title="Timeout">Timeout</a>" : <i>String</i>,
-    "<a href="#step" title="Step">Step</a>" : <i>[ &lt;a href=&#34;build-step.md&#34;&gt;Step&lt;/a&gt;, ... ]</i>
+    "<a href="#step" title="Step">Step</a>" : <i>[ <a href="build-step.md">Step</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#timeout" title="Timeout">Timeout</a>: <i>String</i>
 <a href="#step" title="Step">Step</a>: <i>
-      - &lt;a href=&#34;build-step.md&#34;&gt;Step&lt;/a&gt;</i>
+      - <a href="build-step.md">Step</a></i>
 </pre>
 
 ## Properties
@@ -32,6 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Images
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,6 +40,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tags
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Timeout
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,7 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Step
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;build-step.md&#34;&gt;Step&lt;/a&gt;
+
+_Type_: List of <a href="build-step.md">Step</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

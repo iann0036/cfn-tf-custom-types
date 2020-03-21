@@ -12,19 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Brightbox::LoadBalancer",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#buffersize" title="BufferSize">BufferSize</a>" : <i>Double</i>,
         "<a href="#certificatepem" title="CertificatePem">CertificatePem</a>" : <i>String</i>,
         "<a href="#certificateprivatekey" title="CertificatePrivateKey">CertificatePrivateKey</a>" : <i>String</i>,
-        "<a href="#locked" title="Locked">Locked</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nodes" title="Nodes">Nodes</a>" : <i>[ String, ... ]</i>,
         "<a href="#policy" title="Policy">Policy</a>" : <i>String</i>,
         "<a href="#sslv3" title="Sslv3">Sslv3</a>" : <i>Boolean</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
-        "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#listener" title="Listener">Listener</a>" : <i>[ &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ <a href="healthcheck.md">Healthcheck</a>, ... ]</i>,
+        "<a href="#listener" title="Listener">Listener</a>" : <i>[ <a href="listener.md">Listener</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -34,35 +31,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Brightbox::LoadBalancer
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#buffersize" title="BufferSize">BufferSize</a>: <i>Double</i>
     <a href="#certificatepem" title="CertificatePem">CertificatePem</a>: <i>String</i>
     <a href="#certificateprivatekey" title="CertificatePrivateKey">CertificatePrivateKey</a>: <i>String</i>
-    <a href="#locked" title="Locked">Locked</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nodes" title="Nodes">Nodes</a>: <i>
       - String</i>
     <a href="#policy" title="Policy">Policy</a>: <i>String</i>
     <a href="#sslv3" title="Sslv3">Sslv3</a>: <i>Boolean</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#healthcheck" title="Healthcheck">Healthcheck</a>: <i>
-      - &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;</i>
+      - <a href="healthcheck.md">Healthcheck</a></i>
     <a href="#listener" title="Listener">Listener</a>: <i>
-      - &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="listener.md">Listener</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BufferSize
 
@@ -85,14 +69,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Locked
-
-_Required_: No
-
-_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,19 +104,11 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Healthcheck
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;
+_Type_: List of <a href="healthcheck.md">Healthcheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;
+_Type_: List of <a href="listener.md">Listener</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,9 +146,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Locked
 
-Returns the &lt;code&gt;Locked&lt;/code&gt; value.
+Returns the <code>Locked</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

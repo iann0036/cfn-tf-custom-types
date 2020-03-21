@@ -12,20 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Linode::Image",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#created" title="Created">Created</a>" : <i>String</i>,
-        "<a href="#createdby" title="CreatedBy">CreatedBy</a>" : <i>String</i>,
-        "<a href="#deprecated" title="Deprecated">Deprecated</a>" : <i>Boolean</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#diskid" title="DiskId">DiskId</a>" : <i>Double</i>,
-        "<a href="#expiry" title="Expiry">Expiry</a>" : <i>String</i>,
-        "<a href="#ispublic" title="IsPublic">IsPublic</a>" : <i>Boolean</i>,
         "<a href="#label" title="Label">Label</a>" : <i>String</i>,
         "<a href="#linodeid" title="LinodeId">LinodeId</a>" : <i>Double</i>,
-        "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
-        "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#vendor" title="Vendor">Vendor</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -35,57 +26,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Linode::Image
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#created" title="Created">Created</a>: <i>String</i>
-    <a href="#createdby" title="CreatedBy">CreatedBy</a>: <i>String</i>
-    <a href="#deprecated" title="Deprecated">Deprecated</a>: <i>Boolean</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#diskid" title="DiskId">DiskId</a>: <i>Double</i>
-    <a href="#expiry" title="Expiry">Expiry</a>: <i>String</i>
-    <a href="#ispublic" title="IsPublic">IsPublic</a>: <i>Boolean</i>
     <a href="#label" title="Label">Label</a>: <i>String</i>
     <a href="#linodeid" title="LinodeId">LinodeId</a>: <i>Double</i>
-    <a href="#size" title="Size">Size</a>: <i>Double</i>
-    <a href="#type" title="Type">Type</a>: <i>String</i>
-    <a href="#vendor" title="Vendor">Vendor</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Created
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedBy
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Deprecated
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -100,22 +48,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Expiry
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### IsPublic
-
-_Required_: No
-
-_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,35 +67,11 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Size
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Type
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Vendor
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Timeouts
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,33 +93,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### CreatedBy
 
-Returns the &lt;code&gt;CreatedBy&lt;/code&gt; value.
+Returns the <code>CreatedBy</code> value.
 
 #### Deprecated
 
-Returns the &lt;code&gt;Deprecated&lt;/code&gt; value.
+Returns the <code>Deprecated</code> value.
 
 #### Expiry
 
-Returns the &lt;code&gt;Expiry&lt;/code&gt; value.
+Returns the <code>Expiry</code> value.
 
 #### IsPublic
 
-Returns the &lt;code&gt;IsPublic&lt;/code&gt; value.
+Returns the <code>IsPublic</code> value.
 
 #### Size
 
-Returns the &lt;code&gt;Size&lt;/code&gt; value.
+Returns the <code>Size</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 
 #### Vendor
 
-Returns the &lt;code&gt;Vendor&lt;/code&gt; value.
+Returns the <code>Vendor</code> value.
 

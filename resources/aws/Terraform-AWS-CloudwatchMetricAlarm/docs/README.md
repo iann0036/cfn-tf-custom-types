@@ -12,15 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CloudwatchMetricAlarm",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#actionsenabled" title="ActionsEnabled">ActionsEnabled</a>" : <i>Boolean</i>,
         "<a href="#alarmactions" title="AlarmActions">AlarmActions</a>" : <i>[ String, ... ]</i>,
         "<a href="#alarmdescription" title="AlarmDescription">AlarmDescription</a>" : <i>String</i>,
         "<a href="#alarmname" title="AlarmName">AlarmName</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#comparisonoperator" title="ComparisonOperator">ComparisonOperator</a>" : <i>String</i>,
         "<a href="#datapointstoalarm" title="DatapointsToAlarm">DatapointsToAlarm</a>" : <i>Double</i>,
-        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>,
+        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="dimensions.md">Dimensions</a>, ... ]</i>,
         "<a href="#evaluatelowsamplecountpercentiles" title="EvaluateLowSampleCountPercentiles">EvaluateLowSampleCountPercentiles</a>" : <i>String</i>,
         "<a href="#evaluationperiods" title="EvaluationPeriods">EvaluationPeriods</a>" : <i>Double</i>,
         "<a href="#extendedstatistic" title="ExtendedStatistic">ExtendedStatistic</a>" : <i>String</i>,
@@ -30,13 +28,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#okactions" title="OkActions">OkActions</a>" : <i>[ String, ... ]</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
         "<a href="#statistic" title="Statistic">Statistic</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#threshold" title="Threshold">Threshold</a>" : <i>Double</i>,
         "<a href="#thresholdmetricid" title="ThresholdMetricId">ThresholdMetricId</a>" : <i>String</i>,
         "<a href="#treatmissingdata" title="TreatMissingData">TreatMissingData</a>" : <i>String</i>,
         "<a href="#unit" title="Unit">Unit</a>" : <i>String</i>,
-        "<a href="#metricquery" title="MetricQuery">MetricQuery</a>" : <i>[ &lt;a href=&#34;metricquery.md&#34;&gt;MetricQuery&lt;/a&gt;, ... ]</i>,
-        "<a href="#metric" title="Metric">Metric</a>" : <i>[ &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;, ... ]</i>
+        "<a href="#metricquery" title="MetricQuery">MetricQuery</a>" : <i>[ <a href="metricquery.md">MetricQuery</a>, ... ]</i>,
+        "<a href="#metric" title="Metric">Metric</a>" : <i>[ <a href="metric.md">Metric</a>, ... ]</i>
     }
 }
 </pre>
@@ -46,17 +44,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CloudwatchMetricAlarm
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#actionsenabled" title="ActionsEnabled">ActionsEnabled</a>: <i>Boolean</i>
     <a href="#alarmactions" title="AlarmActions">AlarmActions</a>: <i>
       - String</i>
     <a href="#alarmdescription" title="AlarmDescription">AlarmDescription</a>: <i>String</i>
     <a href="#alarmname" title="AlarmName">AlarmName</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#comparisonoperator" title="ComparisonOperator">ComparisonOperator</a>: <i>String</i>
     <a href="#datapointstoalarm" title="DatapointsToAlarm">DatapointsToAlarm</a>: <i>Double</i>
     <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
+      - <a href="dimensions.md">Dimensions</a></i>
     <a href="#evaluatelowsamplecountpercentiles" title="EvaluateLowSampleCountPercentiles">EvaluateLowSampleCountPercentiles</a>: <i>String</i>
     <a href="#evaluationperiods" title="EvaluationPeriods">EvaluationPeriods</a>: <i>Double</i>
     <a href="#extendedstatistic" title="ExtendedStatistic">ExtendedStatistic</a>: <i>String</i>
@@ -69,28 +65,18 @@ Properties:
     <a href="#period" title="Period">Period</a>: <i>Double</i>
     <a href="#statistic" title="Statistic">Statistic</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#threshold" title="Threshold">Threshold</a>: <i>Double</i>
     <a href="#thresholdmetricid" title="ThresholdMetricId">ThresholdMetricId</a>: <i>String</i>
     <a href="#treatmissingdata" title="TreatMissingData">TreatMissingData</a>: <i>String</i>
     <a href="#unit" title="Unit">Unit</a>: <i>String</i>
     <a href="#metricquery" title="MetricQuery">MetricQuery</a>: <i>
-      - &lt;a href=&#34;metricquery.md&#34;&gt;MetricQuery&lt;/a&gt;</i>
+      - <a href="metricquery.md">MetricQuery</a></i>
     <a href="#metric" title="Metric">Metric</a>: <i>
-      - &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;</i>
+      - <a href="metric.md">Metric</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ActionsEnabled
 
@@ -124,14 +110,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ComparisonOperator
 
 _Required_: Yes
@@ -152,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
+_Type_: List of <a href="dimensions.md">Dimensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -232,7 +210,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -272,7 +250,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metricquery.md&#34;&gt;MetricQuery&lt;/a&gt;
+_Type_: List of <a href="metricquery.md">MetricQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -280,7 +258,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;
+_Type_: List of <a href="metric.md">Metric</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -302,5 +280,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

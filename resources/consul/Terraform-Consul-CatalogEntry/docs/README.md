@@ -12,12 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Consul::CatalogEntry",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#address" title="Address">Address</a>" : <i>String</i>,
         "<a href="#datacenter" title="Datacenter">Datacenter</a>" : <i>String</i>,
         "<a href="#node" title="Node">Node</a>" : <i>String</i>,
         "<a href="#token" title="Token">Token</a>" : <i>String</i>,
-        "<a href="#service" title="Service">Service</a>" : <i>[ &lt;a href=&#34;service.md&#34;&gt;Service&lt;/a&gt;, ... ]</i>
+        "<a href="#service" title="Service">Service</a>" : <i>[ <a href="service.md">Service</a>, ... ]</i>
     }
 }
 </pre>
@@ -27,26 +26,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Consul::CatalogEntry
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#address" title="Address">Address</a>: <i>String</i>
     <a href="#datacenter" title="Datacenter">Datacenter</a>: <i>String</i>
     <a href="#node" title="Node">Node</a>: <i>String</i>
     <a href="#token" title="Token">Token</a>: <i>String</i>
     <a href="#service" title="Service">Service</a>: <i>
-      - &lt;a href=&#34;service.md&#34;&gt;Service&lt;/a&gt;</i>
+      - <a href="service.md">Service</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Address
 
@@ -84,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;service.md&#34;&gt;Service&lt;/a&gt;
+_Type_: List of <a href="service.md">Service</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

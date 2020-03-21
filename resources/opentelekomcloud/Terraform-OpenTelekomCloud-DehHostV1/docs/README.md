@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::DehHostV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autoplacement" title="AutoPlacement">AutoPlacement</a>" : <i>String</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#availablememory" title="AvailableMemory">AvailableMemory</a>" : <i>String</i>,
@@ -28,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#sockets" title="Sockets">Sockets</a>" : <i>String</i>,
         "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#vcpus" title="Vcpus">Vcpus</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -38,7 +37,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::DehHostV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autoplacement" title="AutoPlacement">AutoPlacement</a>: <i>String</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#availablememory" title="AvailableMemory">AvailableMemory</a>: <i>String</i>
@@ -55,20 +53,10 @@ Properties:
     <a href="#sockets" title="Sockets">Sockets</a>: <i>String</i>
     <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#vcpus" title="Vcpus">Vcpus</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoPlacement
 
@@ -194,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

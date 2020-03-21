@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Docker::Image",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#keeplocally" title="KeepLocally">KeepLocally</a>" : <i>Boolean</i>,
-        "<a href="#latest" title="Latest">Latest</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#pulltrigger" title="PullTrigger">PullTrigger</a>" : <i>String</i>,
         "<a href="#pulltriggers" title="PullTriggers">PullTriggers</a>" : <i>[ String, ... ]</i>
@@ -27,9 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Docker::Image
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#keeplocally" title="KeepLocally">KeepLocally</a>: <i>Boolean</i>
-    <a href="#latest" title="Latest">Latest</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#pulltrigger" title="PullTrigger">PullTrigger</a>: <i>String</i>
     <a href="#pulltriggers" title="PullTriggers">PullTriggers</a>: <i>
@@ -38,29 +34,11 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### KeepLocally
 
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Latest
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Latest
 
-Returns the &lt;code&gt;Latest&lt;/code&gt; value.
+Returns the <code>Latest</code> value.
 

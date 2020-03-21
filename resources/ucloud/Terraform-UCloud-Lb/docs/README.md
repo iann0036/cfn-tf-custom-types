@@ -12,14 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::UCloud::Lb",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#chargetype" title="ChargeType">ChargeType</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
-        "<a href="#expiretime" title="ExpireTime">ExpireTime</a>" : <i>String</i>,
         "<a href="#internal" title="Internal">Internal</a>" : <i>Boolean</i>,
-        "<a href="#ipset" title="IpSet">IpSet</a>" : <i>[ &lt;a href=&#34;ipset.md&#34;&gt;IpSet&lt;/a&gt;, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>String</i>,
         "<a href="#remark" title="Remark">Remark</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#tag" title="Tag">Tag</a>" : <i>String</i>,
@@ -33,15 +28,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::UCloud::Lb
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#chargetype" title="ChargeType">ChargeType</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
-    <a href="#expiretime" title="ExpireTime">ExpireTime</a>: <i>String</i>
     <a href="#internal" title="Internal">Internal</a>: <i>Boolean</i>
-    <a href="#ipset" title="IpSet">IpSet</a>: <i>
-      - &lt;a href=&#34;ipset.md&#34;&gt;IpSet&lt;/a&gt;</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>String</i>
     <a href="#remark" title="Remark">Remark</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tag" title="Tag">Tag</a>: <i>String</i>
@@ -50,33 +39,7 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ChargeType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreateTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExpireTime
 
 _Required_: No
 
@@ -92,23 +55,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### IpSet
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;ipset.md&#34;&gt;IpSet&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrivateIp
 
 _Required_: No
 
@@ -166,17 +113,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### ExpireTime
 
-Returns the &lt;code&gt;ExpireTime&lt;/code&gt; value.
+Returns the <code>ExpireTime</code> value.
 
 #### IpSet
 
-Returns the &lt;code&gt;IpSet&lt;/code&gt; value.
+Returns the <code>IpSet</code> value.
 
 #### PrivateIp
 
-Returns the &lt;code&gt;PrivateIp&lt;/code&gt; value.
+Returns the <code>PrivateIp</code> value.
 

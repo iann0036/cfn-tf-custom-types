@@ -12,19 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::ServicebusTopicAuthorizationRule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#listen" title="Listen">Listen</a>" : <i>Boolean</i>,
         "<a href="#manage" title="Manage">Manage</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#namespacename" title="NamespaceName">NamespaceName</a>" : <i>String</i>,
-        "<a href="#primaryconnectionstring" title="PrimaryConnectionString">PrimaryConnectionString</a>" : <i>String</i>,
-        "<a href="#primarykey" title="PrimaryKey">PrimaryKey</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#secondaryconnectionstring" title="SecondaryConnectionString">SecondaryConnectionString</a>" : <i>String</i>,
-        "<a href="#secondarykey" title="SecondaryKey">SecondaryKey</a>" : <i>String</i>,
         "<a href="#send" title="Send">Send</a>" : <i>Boolean</i>,
         "<a href="#topicname" title="TopicName">TopicName</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -34,32 +29,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::ServicebusTopicAuthorizationRule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#listen" title="Listen">Listen</a>: <i>Boolean</i>
     <a href="#manage" title="Manage">Manage</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#namespacename" title="NamespaceName">NamespaceName</a>: <i>String</i>
-    <a href="#primaryconnectionstring" title="PrimaryConnectionString">PrimaryConnectionString</a>: <i>String</i>
-    <a href="#primarykey" title="PrimaryKey">PrimaryKey</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
-    <a href="#secondaryconnectionstring" title="SecondaryConnectionString">SecondaryConnectionString</a>: <i>String</i>
-    <a href="#secondarykey" title="SecondaryKey">SecondaryKey</a>: <i>String</i>
     <a href="#send" title="Send">Send</a>: <i>Boolean</i>
     <a href="#topicname" title="TopicName">TopicName</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Listen
 
@@ -93,41 +73,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrimaryConnectionString
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrimaryKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ResourceGroupName
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecondaryConnectionString
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecondaryKey
-
-_Required_: No
 
 _Type_: String
 
@@ -153,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,17 +123,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PrimaryConnectionString
 
-Returns the &lt;code&gt;PrimaryConnectionString&lt;/code&gt; value.
+Returns the <code>PrimaryConnectionString</code> value.
 
 #### PrimaryKey
 
-Returns the &lt;code&gt;PrimaryKey&lt;/code&gt; value.
+Returns the <code>PrimaryKey</code> value.
 
 #### SecondaryConnectionString
 
-Returns the &lt;code&gt;SecondaryConnectionString&lt;/code&gt; value.
+Returns the <code>SecondaryConnectionString</code> value.
 
 #### SecondaryKey
 
-Returns the &lt;code&gt;SecondaryKey&lt;/code&gt; value.
+Returns the <code>SecondaryKey</code> value.
 

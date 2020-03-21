@@ -12,11 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::OrganizationIamAuditConfig",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#orgid" title="OrgId">OrgId</a>" : <i>String</i>,
         "<a href="#service" title="Service">Service</a>" : <i>String</i>,
-        "<a href="#auditlogconfig" title="AuditLogConfig">AuditLogConfig</a>" : <i>[ &lt;a href=&#34;auditlogconfig.md&#34;&gt;AuditLogConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#auditlogconfig" title="AuditLogConfig">AuditLogConfig</a>" : <i>[ <a href="auditlogconfig.md">AuditLogConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -26,33 +24,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::OrganizationIamAuditConfig
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#orgid" title="OrgId">OrgId</a>: <i>String</i>
     <a href="#service" title="Service">Service</a>: <i>String</i>
     <a href="#auditlogconfig" title="AuditLogConfig">AuditLogConfig</a>: <i>
-      - &lt;a href=&#34;auditlogconfig.md&#34;&gt;AuditLogConfig&lt;/a&gt;</i>
+      - <a href="auditlogconfig.md">AuditLogConfig</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Etag
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OrgId
 
@@ -74,7 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;auditlogconfig.md&#34;&gt;AuditLogConfig&lt;/a&gt;
+_Type_: List of <a href="auditlogconfig.md">AuditLogConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -96,5 +74,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 

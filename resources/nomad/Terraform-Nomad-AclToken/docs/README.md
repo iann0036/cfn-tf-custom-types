@@ -12,13 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Nomad::AclToken",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#accessorid" title="AccessorId">AccessorId</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#global" title="Global">Global</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#policies" title="Policies">Policies</a>" : <i>[ String, ... ]</i>,
-        "<a href="#secretid" title="SecretId">SecretId</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
 }
@@ -29,44 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Nomad::AclToken
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#accessorid" title="AccessorId">AccessorId</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#global" title="Global">Global</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#policies" title="Policies">Policies</a>: <i>
       - String</i>
-    <a href="#secretid" title="SecretId">SecretId</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AccessorId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreateTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Global
 
@@ -89,14 +55,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecretId
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,13 +84,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessorId
 
-Returns the &lt;code&gt;AccessorId&lt;/code&gt; value.
+Returns the <code>AccessorId</code> value.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### SecretId
 
-Returns the &lt;code&gt;SecretId&lt;/code&gt; value.
+Returns the <code>SecretId</code> value.
 

@@ -12,14 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::FcFunction",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#codechecksum" title="CodeChecksum">CodeChecksum</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#environmentvariables" title="EnvironmentVariables">EnvironmentVariables</a>" : <i>[ &lt;a href=&#34;environmentvariables.md&#34;&gt;EnvironmentVariables&lt;/a&gt;, ... ]</i>,
+        "<a href="#environmentvariables" title="EnvironmentVariables">EnvironmentVariables</a>" : <i>[ <a href="environmentvariables.md">EnvironmentVariables</a>, ... ]</i>,
         "<a href="#filename" title="Filename">Filename</a>" : <i>String</i>,
-        "<a href="#functionid" title="FunctionId">FunctionId</a>" : <i>String</i>,
         "<a href="#handler" title="Handler">Handler</a>" : <i>String</i>,
-        "<a href="#lastmodified" title="LastModified">LastModified</a>" : <i>String</i>,
         "<a href="#memorysize" title="MemorySize">MemorySize</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
@@ -37,15 +34,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::FcFunction
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#codechecksum" title="CodeChecksum">CodeChecksum</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#environmentvariables" title="EnvironmentVariables">EnvironmentVariables</a>: <i>
-      - &lt;a href=&#34;environmentvariables.md&#34;&gt;EnvironmentVariables&lt;/a&gt;</i>
+      - <a href="environmentvariables.md">EnvironmentVariables</a></i>
     <a href="#filename" title="Filename">Filename</a>: <i>String</i>
-    <a href="#functionid" title="FunctionId">FunctionId</a>: <i>String</i>
     <a href="#handler" title="Handler">Handler</a>: <i>String</i>
-    <a href="#lastmodified" title="LastModified">LastModified</a>: <i>String</i>
     <a href="#memorysize" title="MemorySize">MemorySize</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
@@ -57,16 +51,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CodeChecksum
 
@@ -88,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environmentvariables.md&#34;&gt;EnvironmentVariables&lt;/a&gt;
+_Type_: List of <a href="environmentvariables.md">EnvironmentVariables</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -100,25 +84,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### FunctionId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Handler
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastModified
-
-_Required_: No
 
 _Type_: String
 
@@ -206,9 +174,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### FunctionId
 
-Returns the &lt;code&gt;FunctionId&lt;/code&gt; value.
+Returns the <code>FunctionId</code> value.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 

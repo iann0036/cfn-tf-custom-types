@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#logtype" title="LogType">LogType</a>" : <i>String</i>,
-    "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;diagnostics-loganalytics-metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+    "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="diagnostics-loganalytics-metadata.md">Metadata</a>, ... ]</i>,
     "<a href="#workspaceid" title="WorkspaceId">WorkspaceId</a>" : <i>String</i>,
     "<a href="#workspacekey" title="WorkspaceKey">WorkspaceKey</a>" : <i>String</i>
 }
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#logtype" title="LogType">LogType</a>: <i>String</i>
 <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;diagnostics-loganalytics-metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="diagnostics-loganalytics-metadata.md">Metadata</a></i>
 <a href="#workspaceid" title="WorkspaceId">WorkspaceId</a>: <i>String</i>
 <a href="#workspacekey" title="WorkspaceKey">WorkspaceKey</a>: <i>String</i>
 </pre>
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### LogType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,13 +38,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Metadata
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;diagnostics-loganalytics-metadata.md&#34;&gt;Metadata&lt;/a&gt;
+
+_Type_: List of <a href="diagnostics-loganalytics-metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkspaceId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,6 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### WorkspaceKey
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

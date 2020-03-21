@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::NsxvDhcpRelay",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#domainnames" title="DomainNames">DomainNames</a>" : <i>[ String, ... ]</i>,
         "<a href="#edgegateway" title="EdgeGateway">EdgeGateway</a>" : <i>String</i>,
         "<a href="#ipaddresses" title="IpAddresses">IpAddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#ipsets" title="IpSets">IpSets</a>" : <i>[ String, ... ]</i>,
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#relayagent" title="RelayAgent">RelayAgent</a>" : <i>[ &lt;a href=&#34;relayagent.md&#34;&gt;RelayAgent&lt;/a&gt;, ... ]</i>
+        "<a href="#relayagent" title="RelayAgent">RelayAgent</a>" : <i>[ <a href="relayagent.md">RelayAgent</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::NsxvDhcpRelay
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#domainnames" title="DomainNames">DomainNames</a>: <i>
       - String</i>
     <a href="#edgegateway" title="EdgeGateway">EdgeGateway</a>: <i>String</i>
@@ -40,20 +38,10 @@ Properties:
     <a href="#org" title="Org">Org</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#relayagent" title="RelayAgent">RelayAgent</a>: <i>
-      - &lt;a href=&#34;relayagent.md&#34;&gt;RelayAgent&lt;/a&gt;</i>
+      - <a href="relayagent.md">RelayAgent</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainNames
 
@@ -107,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;relayagent.md&#34;&gt;RelayAgent&lt;/a&gt;
+_Type_: List of <a href="relayagent.md">RelayAgent</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

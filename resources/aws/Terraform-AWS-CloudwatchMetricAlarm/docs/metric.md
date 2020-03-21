@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;metric-dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>,
+    "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="metric-dimensions.md">Dimensions</a>, ... ]</i>,
     "<a href="#metricname" title="MetricName">MetricName</a>" : <i>String</i>,
     "<a href="#namespace" title="Namespace">Namespace</a>" : <i>String</i>,
     "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
@@ -21,7 +21,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - &lt;a href=&#34;metric-dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
+      - <a href="metric-dimensions.md">Dimensions</a></i>
 <a href="#metricname" title="MetricName">MetricName</a>: <i>String</i>
 <a href="#namespace" title="Namespace">Namespace</a>: <i>String</i>
 <a href="#period" title="Period">Period</a>: <i>Double</i>
@@ -34,13 +34,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Dimensions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;metric-dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
+
+_Type_: List of <a href="metric-dimensions.md">Dimensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetricName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +50,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Namespace
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Period
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Stat
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,6 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Unit
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::S3BucketObject",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acl" title="Acl">Acl</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
         "<a href="#cachecontrol" title="CacheControl">CacheControl</a>" : <i>String</i>,
@@ -26,7 +25,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>" : <i>String</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
         "<a href="#ssekmskeyid" title="SseKmsKeyId">SseKmsKeyId</a>" : <i>String</i>,
-        "<a href="#versionid" title="VersionId">VersionId</a>" : <i>String</i>,
         "<a href="#websiteredirect" title="WebsiteRedirect">WebsiteRedirect</a>" : <i>String</i>
     }
 }
@@ -37,7 +35,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::S3BucketObject
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
     <a href="#cachecontrol" title="CacheControl">CacheControl</a>: <i>String</i>
@@ -51,21 +48,10 @@ Properties:
     <a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
     <a href="#ssekmskeyid" title="SseKmsKeyId">SseKmsKeyId</a>: <i>String</i>
-    <a href="#versionid" title="VersionId">VersionId</a>: <i>String</i>
     <a href="#websiteredirect" title="WebsiteRedirect">WebsiteRedirect</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Acl
 
@@ -171,14 +157,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### VersionId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### WebsiteRedirect
 
 _Required_: No
@@ -205,5 +183,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VersionId
 
-Returns the &lt;code&gt;VersionId&lt;/code&gt; value.
+Returns the <code>VersionId</code> value.
 

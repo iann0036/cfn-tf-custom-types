@@ -12,14 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::DigitalOcean::SpacesBucket",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acl" title="Acl">Acl</a>" : <i>String</i>,
-        "<a href="#bucketdomainname" title="BucketDomainName">BucketDomainName</a>" : <i>String</i>,
         "<a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#urn" title="Urn">Urn</a>" : <i>String</i>,
-        "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;, ... ]</i>
+        "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ <a href="corsrule.md">CorsRule</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,38 +26,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::DigitalOcean::SpacesBucket
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>String</i>
-    <a href="#bucketdomainname" title="BucketDomainName">BucketDomainName</a>: <i>String</i>
     <a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#urn" title="Urn">Urn</a>: <i>String</i>
     <a href="#corsrule" title="CorsRule">CorsRule</a>: <i>
-      - &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;</i>
+      - <a href="corsrule.md">CorsRule</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Acl
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### BucketDomainName
 
 _Required_: No
 
@@ -92,19 +68,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Urn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CorsRule
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;
+_Type_: List of <a href="corsrule.md">CorsRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,9 +94,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BucketDomainName
 
-Returns the &lt;code&gt;BucketDomainName&lt;/code&gt; value.
+Returns the <code>BucketDomainName</code> value.
 
 #### Urn
 
-Returns the &lt;code&gt;Urn&lt;/code&gt; value.
+Returns the <code>Urn</code> value.
 

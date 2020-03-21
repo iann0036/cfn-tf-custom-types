@@ -12,13 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::ComputeInterfaceAttachV2",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#fixedip" title="FixedIp">FixedIp</a>" : <i>String</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#networkid" title="NetworkId">NetworkId</a>" : <i>String</i>,
         "<a href="#portid" title="PortId">PortId</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -28,26 +27,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::ComputeInterfaceAttachV2
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#fixedip" title="FixedIp">FixedIp</a>: <i>String</i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#networkid" title="NetworkId">NetworkId</a>: <i>String</i>
     <a href="#portid" title="PortId">PortId</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FixedIp
 
@@ -93,7 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

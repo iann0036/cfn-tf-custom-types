@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::CmDevicegroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autosync" title="AutoSync">AutoSync</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#fullloadonsync" title="FullLoadOnSync">FullLoadOnSync</a>" : <i>String</i>,
@@ -22,7 +21,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#partition" title="Partition">Partition</a>" : <i>String</i>,
         "<a href="#saveonautosync" title="SaveOnAutoSync">SaveOnAutoSync</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#device" title="Device">Device</a>" : <i>[ &lt;a href=&#34;device.md&#34;&gt;Device&lt;/a&gt;, ... ]</i>
+        "<a href="#device" title="Device">Device</a>" : <i>[ <a href="device.md">Device</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::CmDevicegroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autosync" title="AutoSync">AutoSync</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#fullloadonsync" title="FullLoadOnSync">FullLoadOnSync</a>: <i>String</i>
@@ -43,20 +41,10 @@ Properties:
     <a href="#saveonautosync" title="SaveOnAutoSync">SaveOnAutoSync</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#device" title="Device">Device</a>: <i>
-      - &lt;a href=&#34;device.md&#34;&gt;Device&lt;/a&gt;</i>
+      - <a href="device.md">Device</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoSync
 
@@ -134,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;device.md&#34;&gt;Device&lt;/a&gt;
+_Type_: List of <a href="device.md">Device</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

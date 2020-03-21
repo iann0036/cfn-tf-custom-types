@@ -12,14 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::Edgegateway",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#advanced" title="Advanced">Advanced</a>" : <i>Boolean</i>,
         "<a href="#configuration" title="Configuration">Configuration</a>" : <i>String</i>,
-        "<a href="#defaultexternalnetworkip" title="DefaultExternalNetworkIp">DefaultExternalNetworkIp</a>" : <i>String</i>,
         "<a href="#defaultgatewaynetwork" title="DefaultGatewayNetwork">DefaultGatewayNetwork</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#distributedrouting" title="DistributedRouting">DistributedRouting</a>" : <i>Boolean</i>,
-        "<a href="#externalnetworkips" title="ExternalNetworkIps">ExternalNetworkIps</a>" : <i>[ String, ... ]</i>,
         "<a href="#externalnetworks" title="ExternalNetworks">ExternalNetworks</a>" : <i>[ String, ... ]</i>,
         "<a href="#fipsmodeenabled" title="FipsModeEnabled">FipsModeEnabled</a>" : <i>Boolean</i>,
         "<a href="#fwdefaultruleaction" title="FwDefaultRuleAction">FwDefaultRuleAction</a>" : <i>String</i>,
@@ -34,9 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
         "<a href="#usedefaultroutefordnsrelay" title="UseDefaultRouteForDnsRelay">UseDefaultRouteForDnsRelay</a>" : <i>Boolean</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>" : <i>[ &lt;a href=&#34;externalnetwork.md&#34;&gt;ExternalNetwork&lt;/a&gt;, ... ]</i>,
-        "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ &lt;a href=&#34;subnet.md&#34;&gt;Subnet&lt;/a&gt;, ... ]</i>,
-        "<a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>" : <i>[ &lt;a href=&#34;suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;, ... ]</i>
+        "<a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>" : <i>[ <a href="externalnetwork.md">ExternalNetwork</a>, ... ]</i>,
+        "<a href="#subnet" title="Subnet">Subnet</a>" : <i>[ <a href="subnet.md">Subnet</a>, ... ]</i>,
+        "<a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>" : <i>[ <a href="suballocatepool.md">SuballocatePool</a>, ... ]</i>
     }
 }
 </pre>
@@ -46,15 +43,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::Edgegateway
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#advanced" title="Advanced">Advanced</a>: <i>Boolean</i>
     <a href="#configuration" title="Configuration">Configuration</a>: <i>String</i>
-    <a href="#defaultexternalnetworkip" title="DefaultExternalNetworkIp">DefaultExternalNetworkIp</a>: <i>String</i>
     <a href="#defaultgatewaynetwork" title="DefaultGatewayNetwork">DefaultGatewayNetwork</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#distributedrouting" title="DistributedRouting">DistributedRouting</a>: <i>Boolean</i>
-    <a href="#externalnetworkips" title="ExternalNetworkIps">ExternalNetworkIps</a>: <i>
-      - String</i>
     <a href="#externalnetworks" title="ExternalNetworks">ExternalNetworks</a>: <i>
       - String</i>
     <a href="#fipsmodeenabled" title="FipsModeEnabled">FipsModeEnabled</a>: <i>Boolean</i>
@@ -71,24 +64,14 @@ Properties:
     <a href="#usedefaultroutefordnsrelay" title="UseDefaultRouteForDnsRelay">UseDefaultRouteForDnsRelay</a>: <i>Boolean</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>: <i>
-      - &lt;a href=&#34;externalnetwork.md&#34;&gt;ExternalNetwork&lt;/a&gt;</i>
+      - <a href="externalnetwork.md">ExternalNetwork</a></i>
     <a href="#subnet" title="Subnet">Subnet</a>: <i>
-      - &lt;a href=&#34;subnet.md&#34;&gt;Subnet&lt;/a&gt;</i>
+      - <a href="subnet.md">Subnet</a></i>
     <a href="#suballocatepool" title="SuballocatePool">SuballocatePool</a>: <i>
-      - &lt;a href=&#34;suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;</i>
+      - <a href="suballocatepool.md">SuballocatePool</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Advanced
 
@@ -101,14 +84,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Configuration
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DefaultExternalNetworkIp
-
-_Required_: No
 
 _Type_: String
 
@@ -135,14 +110,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExternalNetworkIps
-
-_Required_: No
-
-_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -262,7 +229,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;externalnetwork.md&#34;&gt;ExternalNetwork&lt;/a&gt;
+_Type_: List of <a href="externalnetwork.md">ExternalNetwork</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -270,7 +237,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subnet.md&#34;&gt;Subnet&lt;/a&gt;
+_Type_: List of <a href="subnet.md">Subnet</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -278,7 +245,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;suballocatepool.md&#34;&gt;SuballocatePool&lt;/a&gt;
+_Type_: List of <a href="suballocatepool.md">SuballocatePool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -300,9 +267,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DefaultExternalNetworkIp
 
-Returns the &lt;code&gt;DefaultExternalNetworkIp&lt;/code&gt; value.
+Returns the <code>DefaultExternalNetworkIp</code> value.
 
 #### ExternalNetworkIps
 
-Returns the &lt;code&gt;ExternalNetworkIps&lt;/code&gt; value.
+Returns the <code>ExternalNetworkIps</code> value.
 

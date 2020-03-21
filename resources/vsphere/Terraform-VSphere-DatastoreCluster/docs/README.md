@@ -12,12 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VSphere::DatastoreCluster",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
         "<a href="#datacenterid" title="DatacenterId">DatacenterId</a>" : <i>String</i>,
         "<a href="#folder" title="Folder">Folder</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#sdrsadvancedoptions" title="SdrsAdvancedOptions">SdrsAdvancedOptions</a>" : <i>[ &lt;a href=&#34;sdrsadvancedoptions.md&#34;&gt;SdrsAdvancedOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#sdrsadvancedoptions" title="SdrsAdvancedOptions">SdrsAdvancedOptions</a>" : <i>[ <a href="sdrsadvancedoptions.md">SdrsAdvancedOptions</a>, ... ]</i>,
         "<a href="#sdrsautomationlevel" title="SdrsAutomationLevel">SdrsAutomationLevel</a>" : <i>String</i>,
         "<a href="#sdrsdefaultintravmaffinity" title="SdrsDefaultIntraVmAffinity">SdrsDefaultIntraVmAffinity</a>" : <i>Boolean</i>,
         "<a href="#sdrsenabled" title="SdrsEnabled">SdrsEnabled</a>" : <i>Boolean</i>,
@@ -47,14 +46,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VSphere::DatastoreCluster
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+      - <a href="customattributes.md">CustomAttributes</a></i>
     <a href="#datacenterid" title="DatacenterId">DatacenterId</a>: <i>String</i>
     <a href="#folder" title="Folder">Folder</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#sdrsadvancedoptions" title="SdrsAdvancedOptions">SdrsAdvancedOptions</a>: <i>
-      - &lt;a href=&#34;sdrsadvancedoptions.md&#34;&gt;SdrsAdvancedOptions&lt;/a&gt;</i>
+      - <a href="sdrsadvancedoptions.md">SdrsAdvancedOptions</a></i>
     <a href="#sdrsautomationlevel" title="SdrsAutomationLevel">SdrsAutomationLevel</a>: <i>String</i>
     <a href="#sdrsdefaultintravmaffinity" title="SdrsDefaultIntraVmAffinity">SdrsDefaultIntraVmAffinity</a>: <i>Boolean</i>
     <a href="#sdrsenabled" title="SdrsEnabled">SdrsEnabled</a>: <i>Boolean</i>
@@ -80,21 +78,11 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CustomAttributes
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+_Type_: List of <a href="customattributes.md">CustomAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sdrsadvancedoptions.md&#34;&gt;SdrsAdvancedOptions&lt;/a&gt;
+_Type_: List of <a href="sdrsadvancedoptions.md">SdrsAdvancedOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

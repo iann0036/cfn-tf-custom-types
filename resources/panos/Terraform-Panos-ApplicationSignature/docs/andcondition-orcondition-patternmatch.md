@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#context" title="Context">Context</a>" : <i>String</i>,
     "<a href="#pattern" title="Pattern">Pattern</a>" : <i>String</i>,
-    "<a href="#qualifiers" title="Qualifiers">Qualifiers</a>" : <i>[ &lt;a href=&#34;andcondition-orcondition-patternmatch-qualifiers.md&#34;&gt;Qualifiers&lt;/a&gt;, ... ]</i>
+    "<a href="#qualifiers" title="Qualifiers">Qualifiers</a>" : <i>[ <a href="andcondition-orcondition-patternmatch-qualifiers.md">Qualifiers</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#context" title="Context">Context</a>: <i>String</i>
 <a href="#pattern" title="Pattern">Pattern</a>: <i>String</i>
 <a href="#qualifiers" title="Qualifiers">Qualifiers</a>: <i>
-      - &lt;a href=&#34;andcondition-orcondition-patternmatch-qualifiers.md&#34;&gt;Qualifiers&lt;/a&gt;</i>
+      - <a href="andcondition-orcondition-patternmatch-qualifiers.md">Qualifiers</a></i>
 </pre>
 
 ## Properties
@@ -28,6 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Context
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -35,6 +36,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Pattern
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Qualifiers
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;andcondition-orcondition-patternmatch-qualifiers.md&#34;&gt;Qualifiers&lt;/a&gt;
+
+_Type_: List of <a href="andcondition-orcondition-patternmatch-qualifiers.md">Qualifiers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

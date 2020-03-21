@@ -12,24 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::DayuL4Rule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#dport" title="DPort">DPort</a>" : <i>Double</i>,
         "<a href="#healthcheckhealthnum" title="HealthCheckHealthNum">HealthCheckHealthNum</a>" : <i>Double</i>,
         "<a href="#healthcheckinterval" title="HealthCheckInterval">HealthCheckInterval</a>" : <i>Double</i>,
         "<a href="#healthcheckswitch" title="HealthCheckSwitch">HealthCheckSwitch</a>" : <i>Boolean</i>,
         "<a href="#healthchecktimeout" title="HealthCheckTimeout">HealthCheckTimeout</a>" : <i>Double</i>,
         "<a href="#healthcheckunhealthnum" title="HealthCheckUnhealthNum">HealthCheckUnhealthNum</a>" : <i>Double</i>,
-        "<a href="#lbtype" title="LbType">LbType</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
         "<a href="#resourcetype" title="ResourceType">ResourceType</a>" : <i>String</i>,
-        "<a href="#ruleid" title="RuleId">RuleId</a>" : <i>String</i>,
         "<a href="#sport" title="SPort">SPort</a>" : <i>Double</i>,
         "<a href="#sessionswitch" title="SessionSwitch">SessionSwitch</a>" : <i>Boolean</i>,
         "<a href="#sessiontime" title="SessionTime">SessionTime</a>" : <i>Double</i>,
         "<a href="#sourcetype" title="SourceType">SourceType</a>" : <i>Double</i>,
-        "<a href="#sourcelist" title="SourceList">SourceList</a>" : <i>[ &lt;a href=&#34;sourcelist.md&#34;&gt;SourceList&lt;/a&gt;, ... ]</i>
+        "<a href="#sourcelist" title="SourceList">SourceList</a>" : <i>[ <a href="sourcelist.md">SourceList</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,38 +36,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::DayuL4Rule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#dport" title="DPort">DPort</a>: <i>Double</i>
     <a href="#healthcheckhealthnum" title="HealthCheckHealthNum">HealthCheckHealthNum</a>: <i>Double</i>
     <a href="#healthcheckinterval" title="HealthCheckInterval">HealthCheckInterval</a>: <i>Double</i>
     <a href="#healthcheckswitch" title="HealthCheckSwitch">HealthCheckSwitch</a>: <i>Boolean</i>
     <a href="#healthchecktimeout" title="HealthCheckTimeout">HealthCheckTimeout</a>: <i>Double</i>
     <a href="#healthcheckunhealthnum" title="HealthCheckUnhealthNum">HealthCheckUnhealthNum</a>: <i>Double</i>
-    <a href="#lbtype" title="LbType">LbType</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
     <a href="#resourcetype" title="ResourceType">ResourceType</a>: <i>String</i>
-    <a href="#ruleid" title="RuleId">RuleId</a>: <i>String</i>
     <a href="#sport" title="SPort">SPort</a>: <i>Double</i>
     <a href="#sessionswitch" title="SessionSwitch">SessionSwitch</a>: <i>Boolean</i>
     <a href="#sessiontime" title="SessionTime">SessionTime</a>: <i>Double</i>
     <a href="#sourcetype" title="SourceType">SourceType</a>: <i>Double</i>
     <a href="#sourcelist" title="SourceList">SourceList</a>: <i>
-      - &lt;a href=&#34;sourcelist.md&#34;&gt;SourceList&lt;/a&gt;</i>
+      - <a href="sourcelist.md">SourceList</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DPort
 
@@ -120,14 +104,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### LbType
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
@@ -155,14 +131,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ResourceType
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### RuleId
-
-_Required_: No
 
 _Type_: String
 
@@ -204,7 +172,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourcelist.md&#34;&gt;SourceList&lt;/a&gt;
+_Type_: List of <a href="sourcelist.md">SourceList</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -226,9 +194,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LbType
 
-Returns the &lt;code&gt;LbType&lt;/code&gt; value.
+Returns the <code>LbType</code> value.
 
 #### RuleId
 
-Returns the &lt;code&gt;RuleId&lt;/code&gt; value.
+Returns the <code>RuleId</code> value.
 

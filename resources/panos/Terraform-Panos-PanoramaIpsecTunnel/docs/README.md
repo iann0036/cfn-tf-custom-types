@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaIpsecTunnel",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#akikegateway" title="AkIkeGateway">AkIkeGateway</a>" : <i>String</i>,
         "<a href="#akipseccryptoprofile" title="AkIpsecCryptoProfile">AkIpsecCryptoProfile</a>" : <i>String</i>,
         "<a href="#antireplay" title="AntiReplay">AntiReplay</a>" : <i>Boolean</i>,
@@ -33,10 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#gpspublishconnectedroutes" title="GpsPublishConnectedRoutes">GpsPublishConnectedRoutes</a>" : <i>Boolean</i>,
         "<a href="#gpspublishroutes" title="GpsPublishRoutes">GpsPublishRoutes</a>" : <i>[ String, ... ]</i>,
         "<a href="#mkauthkey" title="MkAuthKey">MkAuthKey</a>" : <i>String</i>,
-        "<a href="#mkauthkeyenc" title="MkAuthKeyEnc">MkAuthKeyEnc</a>" : <i>String</i>,
         "<a href="#mkauthtype" title="MkAuthType">MkAuthType</a>" : <i>String</i>,
         "<a href="#mkespencryptionkey" title="MkEspEncryptionKey">MkEspEncryptionKey</a>" : <i>String</i>,
-        "<a href="#mkespencryptionkeyenc" title="MkEspEncryptionKeyEnc">MkEspEncryptionKeyEnc</a>" : <i>String</i>,
         "<a href="#mkespencryptiontype" title="MkEspEncryptionType">MkEspEncryptionType</a>" : <i>String</i>,
         "<a href="#mkinterface" title="MkInterface">MkInterface</a>" : <i>String</i>,
         "<a href="#mklocaladdressfloatingip" title="MkLocalAddressFloatingIp">MkLocalAddressFloatingIp</a>" : <i>String</i>,
@@ -62,7 +59,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaIpsecTunnel
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#akikegateway" title="AkIkeGateway">AkIkeGateway</a>: <i>String</i>
     <a href="#akipseccryptoprofile" title="AkIpsecCryptoProfile">AkIpsecCryptoProfile</a>: <i>String</i>
     <a href="#antireplay" title="AntiReplay">AntiReplay</a>: <i>Boolean</i>
@@ -84,10 +80,8 @@ Properties:
     <a href="#gpspublishroutes" title="GpsPublishRoutes">GpsPublishRoutes</a>: <i>
       - String</i>
     <a href="#mkauthkey" title="MkAuthKey">MkAuthKey</a>: <i>String</i>
-    <a href="#mkauthkeyenc" title="MkAuthKeyEnc">MkAuthKeyEnc</a>: <i>String</i>
     <a href="#mkauthtype" title="MkAuthType">MkAuthType</a>: <i>String</i>
     <a href="#mkespencryptionkey" title="MkEspEncryptionKey">MkEspEncryptionKey</a>: <i>String</i>
-    <a href="#mkespencryptionkeyenc" title="MkEspEncryptionKeyEnc">MkEspEncryptionKeyEnc</a>: <i>String</i>
     <a href="#mkespencryptiontype" title="MkEspEncryptionType">MkEspEncryptionType</a>: <i>String</i>
     <a href="#mkinterface" title="MkInterface">MkInterface</a>: <i>String</i>
     <a href="#mklocaladdressfloatingip" title="MkLocalAddressFloatingIp">MkLocalAddressFloatingIp</a>: <i>String</i>
@@ -107,16 +101,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AkIkeGateway
 
@@ -278,14 +262,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### MkAuthKeyEnc
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### MkAuthType
 
 _Required_: No
@@ -295,14 +271,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MkEspEncryptionKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### MkEspEncryptionKeyEnc
 
 _Required_: No
 
@@ -456,9 +424,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MkAuthKeyEnc
 
-Returns the &lt;code&gt;MkAuthKeyEnc&lt;/code&gt; value.
+Returns the <code>MkAuthKeyEnc</code> value.
 
 #### MkEspEncryptionKeyEnc
 
-Returns the &lt;code&gt;MkEspEncryptionKeyEnc&lt;/code&gt; value.
+Returns the <code>MkEspEncryptionKeyEnc</code> value.
 

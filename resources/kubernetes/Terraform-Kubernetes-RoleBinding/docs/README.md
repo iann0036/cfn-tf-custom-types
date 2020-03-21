@@ -12,10 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Kubernetes::RoleBinding",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#roleref" title="RoleRef">RoleRef</a>" : <i>[ &lt;a href=&#34;roleref.md&#34;&gt;RoleRef&lt;/a&gt;, ... ]</i>,
-        "<a href="#subject" title="Subject">Subject</a>" : <i>[ &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;, ... ]</i>
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#roleref" title="RoleRef">RoleRef</a>" : <i>[ <a href="roleref.md">RoleRef</a>, ... ]</i>,
+        "<a href="#subject" title="Subject">Subject</a>" : <i>[ <a href="subject.md">Subject</a>, ... ]</i>
     }
 }
 </pre>
@@ -25,32 +24,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Kubernetes::RoleBinding
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#roleref" title="RoleRef">RoleRef</a>: <i>
-      - &lt;a href=&#34;roleref.md&#34;&gt;RoleRef&lt;/a&gt;</i>
+      - <a href="roleref.md">RoleRef</a></i>
     <a href="#subject" title="Subject">Subject</a>: <i>
-      - &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;</i>
+      - <a href="subject.md">Subject</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -58,7 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;roleref.md&#34;&gt;RoleRef&lt;/a&gt;
+_Type_: List of <a href="roleref.md">RoleRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -66,7 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;
+_Type_: List of <a href="subject.md">Subject</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

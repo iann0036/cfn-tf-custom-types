@@ -12,25 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::DataprocJob",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#drivercontrolsfilesuri" title="DriverControlsFilesUri">DriverControlsFilesUri</a>" : <i>String</i>,
-        "<a href="#driveroutputresourceuri" title="DriverOutputResourceUri">DriverOutputResourceUri</a>" : <i>String</i>,
         "<a href="#forcedelete" title="ForceDelete">ForceDelete</a>" : <i>Boolean</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>[ &lt;a href=&#34;status.md&#34;&gt;Status&lt;/a&gt;, ... ]</i>,
-        "<a href="#hadoopconfig" title="HadoopConfig">HadoopConfig</a>" : <i>[ &lt;a href=&#34;hadoopconfig.md&#34;&gt;HadoopConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#hiveconfig" title="HiveConfig">HiveConfig</a>" : <i>[ &lt;a href=&#34;hiveconfig.md&#34;&gt;HiveConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#pigconfig" title="PigConfig">PigConfig</a>" : <i>[ &lt;a href=&#34;pigconfig.md&#34;&gt;PigConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#placement" title="Placement">Placement</a>" : <i>[ &lt;a href=&#34;placement.md&#34;&gt;Placement&lt;/a&gt;, ... ]</i>,
-        "<a href="#pysparkconfig" title="PysparkConfig">PysparkConfig</a>" : <i>[ &lt;a href=&#34;pysparkconfig.md&#34;&gt;PysparkConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#reference" title="Reference">Reference</a>" : <i>[ &lt;a href=&#34;reference.md&#34;&gt;Reference&lt;/a&gt;, ... ]</i>,
-        "<a href="#scheduling" title="Scheduling">Scheduling</a>" : <i>[ &lt;a href=&#34;scheduling.md&#34;&gt;Scheduling&lt;/a&gt;, ... ]</i>,
-        "<a href="#sparkconfig" title="SparkConfig">SparkConfig</a>" : <i>[ &lt;a href=&#34;sparkconfig.md&#34;&gt;SparkConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#sparksqlconfig" title="SparksqlConfig">SparksqlConfig</a>" : <i>[ &lt;a href=&#34;sparksqlconfig.md&#34;&gt;SparksqlConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#loggingconfig" title="LoggingConfig">LoggingConfig</a>" : <i>[ &lt;a href=&#34;loggingconfig.md&#34;&gt;LoggingConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#hadoopconfig" title="HadoopConfig">HadoopConfig</a>" : <i>[ <a href="hadoopconfig.md">HadoopConfig</a>, ... ]</i>,
+        "<a href="#hiveconfig" title="HiveConfig">HiveConfig</a>" : <i>[ <a href="hiveconfig.md">HiveConfig</a>, ... ]</i>,
+        "<a href="#pigconfig" title="PigConfig">PigConfig</a>" : <i>[ <a href="pigconfig.md">PigConfig</a>, ... ]</i>,
+        "<a href="#placement" title="Placement">Placement</a>" : <i>[ <a href="placement.md">Placement</a>, ... ]</i>,
+        "<a href="#pysparkconfig" title="PysparkConfig">PysparkConfig</a>" : <i>[ <a href="pysparkconfig.md">PysparkConfig</a>, ... ]</i>,
+        "<a href="#reference" title="Reference">Reference</a>" : <i>[ <a href="reference.md">Reference</a>, ... ]</i>,
+        "<a href="#scheduling" title="Scheduling">Scheduling</a>" : <i>[ <a href="scheduling.md">Scheduling</a>, ... ]</i>,
+        "<a href="#sparkconfig" title="SparkConfig">SparkConfig</a>" : <i>[ <a href="sparkconfig.md">SparkConfig</a>, ... ]</i>,
+        "<a href="#sparksqlconfig" title="SparksqlConfig">SparksqlConfig</a>" : <i>[ <a href="sparksqlconfig.md">SparksqlConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#loggingconfig" title="LoggingConfig">LoggingConfig</a>" : <i>[ <a href="loggingconfig.md">LoggingConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,66 +36,35 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::DataprocJob
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#drivercontrolsfilesuri" title="DriverControlsFilesUri">DriverControlsFilesUri</a>: <i>String</i>
-    <a href="#driveroutputresourceuri" title="DriverOutputResourceUri">DriverOutputResourceUri</a>: <i>String</i>
     <a href="#forcedelete" title="ForceDelete">ForceDelete</a>: <i>Boolean</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>
-      - &lt;a href=&#34;status.md&#34;&gt;Status&lt;/a&gt;</i>
     <a href="#hadoopconfig" title="HadoopConfig">HadoopConfig</a>: <i>
-      - &lt;a href=&#34;hadoopconfig.md&#34;&gt;HadoopConfig&lt;/a&gt;</i>
+      - <a href="hadoopconfig.md">HadoopConfig</a></i>
     <a href="#hiveconfig" title="HiveConfig">HiveConfig</a>: <i>
-      - &lt;a href=&#34;hiveconfig.md&#34;&gt;HiveConfig&lt;/a&gt;</i>
+      - <a href="hiveconfig.md">HiveConfig</a></i>
     <a href="#pigconfig" title="PigConfig">PigConfig</a>: <i>
-      - &lt;a href=&#34;pigconfig.md&#34;&gt;PigConfig&lt;/a&gt;</i>
+      - <a href="pigconfig.md">PigConfig</a></i>
     <a href="#placement" title="Placement">Placement</a>: <i>
-      - &lt;a href=&#34;placement.md&#34;&gt;Placement&lt;/a&gt;</i>
+      - <a href="placement.md">Placement</a></i>
     <a href="#pysparkconfig" title="PysparkConfig">PysparkConfig</a>: <i>
-      - &lt;a href=&#34;pysparkconfig.md&#34;&gt;PysparkConfig&lt;/a&gt;</i>
+      - <a href="pysparkconfig.md">PysparkConfig</a></i>
     <a href="#reference" title="Reference">Reference</a>: <i>
-      - &lt;a href=&#34;reference.md&#34;&gt;Reference&lt;/a&gt;</i>
+      - <a href="reference.md">Reference</a></i>
     <a href="#scheduling" title="Scheduling">Scheduling</a>: <i>
-      - &lt;a href=&#34;scheduling.md&#34;&gt;Scheduling&lt;/a&gt;</i>
+      - <a href="scheduling.md">Scheduling</a></i>
     <a href="#sparkconfig" title="SparkConfig">SparkConfig</a>: <i>
-      - &lt;a href=&#34;sparkconfig.md&#34;&gt;SparkConfig&lt;/a&gt;</i>
+      - <a href="sparkconfig.md">SparkConfig</a></i>
     <a href="#sparksqlconfig" title="SparksqlConfig">SparksqlConfig</a>: <i>
-      - &lt;a href=&#34;sparksqlconfig.md&#34;&gt;SparksqlConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="sparksqlconfig.md">SparksqlConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#loggingconfig" title="LoggingConfig">LoggingConfig</a>: <i>
-      - &lt;a href=&#34;loggingconfig.md&#34;&gt;LoggingConfig&lt;/a&gt;</i>
+      - <a href="loggingconfig.md">LoggingConfig</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DriverControlsFilesUri
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DriverOutputResourceUri
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForceDelete
 
@@ -113,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -133,19 +98,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;status.md&#34;&gt;Status&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### HadoopConfig
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hadoopconfig.md&#34;&gt;HadoopConfig&lt;/a&gt;
+_Type_: List of <a href="hadoopconfig.md">HadoopConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -153,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hiveconfig.md&#34;&gt;HiveConfig&lt;/a&gt;
+_Type_: List of <a href="hiveconfig.md">HiveConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;pigconfig.md&#34;&gt;PigConfig&lt;/a&gt;
+_Type_: List of <a href="pigconfig.md">PigConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;placement.md&#34;&gt;Placement&lt;/a&gt;
+_Type_: List of <a href="placement.md">Placement</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;pysparkconfig.md&#34;&gt;PysparkConfig&lt;/a&gt;
+_Type_: List of <a href="pysparkconfig.md">PysparkConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;reference.md&#34;&gt;Reference&lt;/a&gt;
+_Type_: List of <a href="reference.md">Reference</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scheduling.md&#34;&gt;Scheduling&lt;/a&gt;
+_Type_: List of <a href="scheduling.md">Scheduling</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -201,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sparkconfig.md&#34;&gt;SparkConfig&lt;/a&gt;
+_Type_: List of <a href="sparkconfig.md">SparkConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -209,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sparksqlconfig.md&#34;&gt;SparksqlConfig&lt;/a&gt;
+_Type_: List of <a href="sparksqlconfig.md">SparksqlConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;loggingconfig.md&#34;&gt;LoggingConfig&lt;/a&gt;
+_Type_: List of <a href="loggingconfig.md">LoggingConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -247,13 +204,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DriverControlsFilesUri
 
-Returns the &lt;code&gt;DriverControlsFilesUri&lt;/code&gt; value.
+Returns the <code>DriverControlsFilesUri</code> value.
 
 #### DriverOutputResourceUri
 
-Returns the &lt;code&gt;DriverOutputResourceUri&lt;/code&gt; value.
+Returns the <code>DriverOutputResourceUri</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

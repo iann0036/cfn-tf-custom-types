@@ -12,11 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Rundeck::PublicKey",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#delete" title="Delete">Delete</a>" : <i>Boolean</i>,
         "<a href="#keymaterial" title="KeyMaterial">KeyMaterial</a>" : <i>String</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
-        "<a href="#url" title="Url">Url</a>" : <i>String</i>
     }
 }
 </pre>
@@ -26,32 +23,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Rundeck::PublicKey
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#delete" title="Delete">Delete</a>: <i>Boolean</i>
     <a href="#keymaterial" title="KeyMaterial">KeyMaterial</a>: <i>String</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
-    <a href="#url" title="Url">Url</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Delete
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyMaterial
 
@@ -64,14 +40,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Path
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Url
-
-_Required_: No
 
 _Type_: String
 
@@ -95,9 +63,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Delete
 
-Returns the &lt;code&gt;Delete&lt;/code&gt; value.
+Returns the <code>Delete</code> value.
 
 #### Url
 
-Returns the &lt;code&gt;Url&lt;/code&gt; value.
+Returns the <code>Url</code> value.
 

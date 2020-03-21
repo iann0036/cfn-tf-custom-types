@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#isenabled" title="IsEnabled">IsEnabled</a>" : <i>Boolean</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#target" title="Target">Target</a>" : <i>String</i>,
-    "<a href="#category" title="Category">Category</a>" : <i>[ &lt;a href=&#34;processor-categoryprocessor-category.md&#34;&gt;Category&lt;/a&gt;, ... ]</i>
+    "<a href="#category" title="Category">Category</a>" : <i>[ <a href="processor-categoryprocessor-category.md">Category</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#target" title="Target">Target</a>: <i>String</i>
 <a href="#category" title="Category">Category</a>: <i>
-      - &lt;a href=&#34;processor-categoryprocessor-category.md&#34;&gt;Category&lt;/a&gt;</i>
+      - <a href="processor-categoryprocessor-category.md">Category</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### IsEnabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Target
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Category
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;processor-categoryprocessor-category.md&#34;&gt;Category&lt;/a&gt;
+
+_Type_: List of <a href="processor-categoryprocessor-category.md">Category</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

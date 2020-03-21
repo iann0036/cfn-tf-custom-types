@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureStack::ManagedDisk",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#createoption" title="CreateOption">CreateOption</a>" : <i>String</i>,
         "<a href="#disksizegb" title="DiskSizeGb">DiskSizeGb</a>" : <i>Double</i>,
         "<a href="#imagereferenceid" title="ImageReferenceId">ImageReferenceId</a>" : <i>String</i>,
@@ -23,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#sourceresourceid" title="SourceResourceId">SourceResourceId</a>" : <i>String</i>,
         "<a href="#sourceuri" title="SourceUri">SourceUri</a>" : <i>String</i>,
         "<a href="#storageaccounttype" title="StorageAccountType">StorageAccountType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,7 +32,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureStack::ManagedDisk
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#createoption" title="CreateOption">CreateOption</a>: <i>String</i>
     <a href="#disksizegb" title="DiskSizeGb">DiskSizeGb</a>: <i>Double</i>
     <a href="#imagereferenceid" title="ImageReferenceId">ImageReferenceId</a>: <i>String</i>
@@ -45,20 +43,10 @@ Properties:
     <a href="#sourceuri" title="SourceUri">SourceUri</a>: <i>String</i>
     <a href="#storageaccounttype" title="StorageAccountType">StorageAccountType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CreateOption
 
@@ -144,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -8,10 +8,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#equalto" title="EqualTo">EqualTo</a>" : <i>[ &lt;a href=&#34;andcondition-orcondition-equalto.md&#34;&gt;EqualTo&lt;/a&gt;, ... ]</i>,
-    "<a href="#greaterthan" title="GreaterThan">GreaterThan</a>" : <i>[ &lt;a href=&#34;andcondition-orcondition-greaterthan.md&#34;&gt;GreaterThan&lt;/a&gt;, ... ]</i>,
-    "<a href="#lessthan" title="LessThan">LessThan</a>" : <i>[ &lt;a href=&#34;andcondition-orcondition-lessthan.md&#34;&gt;LessThan&lt;/a&gt;, ... ]</i>,
-    "<a href="#patternmatch" title="PatternMatch">PatternMatch</a>" : <i>[ &lt;a href=&#34;andcondition-orcondition-patternmatch.md&#34;&gt;PatternMatch&lt;/a&gt;, ... ]</i>
+    "<a href="#equalto" title="EqualTo">EqualTo</a>" : <i>[ <a href="andcondition-orcondition-equalto.md">EqualTo</a>, ... ]</i>,
+    "<a href="#greaterthan" title="GreaterThan">GreaterThan</a>" : <i>[ <a href="andcondition-orcondition-greaterthan.md">GreaterThan</a>, ... ]</i>,
+    "<a href="#lessthan" title="LessThan">LessThan</a>" : <i>[ <a href="andcondition-orcondition-lessthan.md">LessThan</a>, ... ]</i>,
+    "<a href="#patternmatch" title="PatternMatch">PatternMatch</a>" : <i>[ <a href="andcondition-orcondition-patternmatch.md">PatternMatch</a>, ... ]</i>
 }
 </pre>
 
@@ -19,13 +19,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#equalto" title="EqualTo">EqualTo</a>: <i>
-      - &lt;a href=&#34;andcondition-orcondition-equalto.md&#34;&gt;EqualTo&lt;/a&gt;</i>
+      - <a href="andcondition-orcondition-equalto.md">EqualTo</a></i>
 <a href="#greaterthan" title="GreaterThan">GreaterThan</a>: <i>
-      - &lt;a href=&#34;andcondition-orcondition-greaterthan.md&#34;&gt;GreaterThan&lt;/a&gt;</i>
+      - <a href="andcondition-orcondition-greaterthan.md">GreaterThan</a></i>
 <a href="#lessthan" title="LessThan">LessThan</a>: <i>
-      - &lt;a href=&#34;andcondition-orcondition-lessthan.md&#34;&gt;LessThan&lt;/a&gt;</i>
+      - <a href="andcondition-orcondition-lessthan.md">LessThan</a></i>
 <a href="#patternmatch" title="PatternMatch">PatternMatch</a>: <i>
-      - &lt;a href=&#34;andcondition-orcondition-patternmatch.md&#34;&gt;PatternMatch&lt;/a&gt;</i>
+      - <a href="andcondition-orcondition-patternmatch.md">PatternMatch</a></i>
 </pre>
 
 ## Properties
@@ -33,28 +33,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### EqualTo
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;andcondition-orcondition-equalto.md&#34;&gt;EqualTo&lt;/a&gt;
+
+_Type_: List of <a href="andcondition-orcondition-equalto.md">EqualTo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GreaterThan
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;andcondition-orcondition-greaterthan.md&#34;&gt;GreaterThan&lt;/a&gt;
+
+_Type_: List of <a href="andcondition-orcondition-greaterthan.md">GreaterThan</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LessThan
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;andcondition-orcondition-lessthan.md&#34;&gt;LessThan&lt;/a&gt;
+
+_Type_: List of <a href="andcondition-orcondition-lessthan.md">LessThan</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PatternMatch
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;andcondition-orcondition-patternmatch.md&#34;&gt;PatternMatch&lt;/a&gt;
+
+_Type_: List of <a href="andcondition-orcondition-patternmatch.md">PatternMatch</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

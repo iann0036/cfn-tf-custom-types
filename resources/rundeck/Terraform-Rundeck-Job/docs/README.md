@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Rundeck::Job",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowconcurrentexecutions" title="AllowConcurrentExecutions">AllowConcurrentExecutions</a>" : <i>Boolean</i>,
         "<a href="#commandorderingstrategy" title="CommandOrderingStrategy">CommandOrderingStrategy</a>" : <i>String</i>,
         "<a href="#continueonerror" title="ContinueOnError">ContinueOnError</a>" : <i>Boolean</i>,
@@ -31,14 +30,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#schedule" title="Schedule">Schedule</a>" : <i>String</i>,
         "<a href="#scheduleenabled" title="ScheduleEnabled">ScheduleEnabled</a>" : <i>Boolean</i>,
         "<a href="#successonemptynodefilter" title="SuccessOnEmptyNodeFilter">SuccessOnEmptyNodeFilter</a>" : <i>Boolean</i>,
-        "<a href="#command" title="Command">Command</a>" : <i>[ &lt;a href=&#34;command.md&#34;&gt;Command&lt;/a&gt;, ... ]</i>,
-        "<a href="#notification" title="Notification">Notification</a>" : <i>[ &lt;a href=&#34;notification.md&#34;&gt;Notification&lt;/a&gt;, ... ]</i>,
-        "<a href="#option" title="Option">Option</a>" : <i>[ &lt;a href=&#34;option.md&#34;&gt;Option&lt;/a&gt;, ... ]</i>,
-        "<a href="#job" title="Job">Job</a>" : <i>[ &lt;a href=&#34;job.md&#34;&gt;Job&lt;/a&gt;, ... ]</i>,
-        "<a href="#nodestepplugin" title="NodeStepPlugin">NodeStepPlugin</a>" : <i>[ &lt;a href=&#34;nodestepplugin.md&#34;&gt;NodeStepPlugin&lt;/a&gt;, ... ]</i>,
-        "<a href="#stepplugin" title="StepPlugin">StepPlugin</a>" : <i>[ &lt;a href=&#34;stepplugin.md&#34;&gt;StepPlugin&lt;/a&gt;, ... ]</i>,
-        "<a href="#email" title="Email">Email</a>" : <i>[ &lt;a href=&#34;email.md&#34;&gt;Email&lt;/a&gt;, ... ]</i>,
-        "<a href="#plugin" title="Plugin">Plugin</a>" : <i>[ &lt;a href=&#34;plugin.md&#34;&gt;Plugin&lt;/a&gt;, ... ]</i>
+        "<a href="#command" title="Command">Command</a>" : <i>[ <a href="command.md">Command</a>, ... ]</i>,
+        "<a href="#notification" title="Notification">Notification</a>" : <i>[ <a href="notification.md">Notification</a>, ... ]</i>,
+        "<a href="#option" title="Option">Option</a>" : <i>[ <a href="option.md">Option</a>, ... ]</i>,
+        "<a href="#job" title="Job">Job</a>" : <i>[ <a href="job.md">Job</a>, ... ]</i>,
+        "<a href="#nodestepplugin" title="NodeStepPlugin">NodeStepPlugin</a>" : <i>[ <a href="nodestepplugin.md">NodeStepPlugin</a>, ... ]</i>,
+        "<a href="#stepplugin" title="StepPlugin">StepPlugin</a>" : <i>[ <a href="stepplugin.md">StepPlugin</a>, ... ]</i>,
+        "<a href="#email" title="Email">Email</a>" : <i>[ <a href="email.md">Email</a>, ... ]</i>,
+        "<a href="#plugin" title="Plugin">Plugin</a>" : <i>[ <a href="plugin.md">Plugin</a>, ... ]</i>
     }
 }
 </pre>
@@ -48,7 +47,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Rundeck::Job
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowconcurrentexecutions" title="AllowConcurrentExecutions">AllowConcurrentExecutions</a>: <i>Boolean</i>
     <a href="#commandorderingstrategy" title="CommandOrderingStrategy">CommandOrderingStrategy</a>: <i>String</i>
     <a href="#continueonerror" title="ContinueOnError">ContinueOnError</a>: <i>Boolean</i>
@@ -68,34 +66,24 @@ Properties:
     <a href="#scheduleenabled" title="ScheduleEnabled">ScheduleEnabled</a>: <i>Boolean</i>
     <a href="#successonemptynodefilter" title="SuccessOnEmptyNodeFilter">SuccessOnEmptyNodeFilter</a>: <i>Boolean</i>
     <a href="#command" title="Command">Command</a>: <i>
-      - &lt;a href=&#34;command.md&#34;&gt;Command&lt;/a&gt;</i>
+      - <a href="command.md">Command</a></i>
     <a href="#notification" title="Notification">Notification</a>: <i>
-      - &lt;a href=&#34;notification.md&#34;&gt;Notification&lt;/a&gt;</i>
+      - <a href="notification.md">Notification</a></i>
     <a href="#option" title="Option">Option</a>: <i>
-      - &lt;a href=&#34;option.md&#34;&gt;Option&lt;/a&gt;</i>
+      - <a href="option.md">Option</a></i>
     <a href="#job" title="Job">Job</a>: <i>
-      - &lt;a href=&#34;job.md&#34;&gt;Job&lt;/a&gt;</i>
+      - <a href="job.md">Job</a></i>
     <a href="#nodestepplugin" title="NodeStepPlugin">NodeStepPlugin</a>: <i>
-      - &lt;a href=&#34;nodestepplugin.md&#34;&gt;NodeStepPlugin&lt;/a&gt;</i>
+      - <a href="nodestepplugin.md">NodeStepPlugin</a></i>
     <a href="#stepplugin" title="StepPlugin">StepPlugin</a>: <i>
-      - &lt;a href=&#34;stepplugin.md&#34;&gt;StepPlugin&lt;/a&gt;</i>
+      - <a href="stepplugin.md">StepPlugin</a></i>
     <a href="#email" title="Email">Email</a>: <i>
-      - &lt;a href=&#34;email.md&#34;&gt;Email&lt;/a&gt;</i>
+      - <a href="email.md">Email</a></i>
     <a href="#plugin" title="Plugin">Plugin</a>: <i>
-      - &lt;a href=&#34;plugin.md&#34;&gt;Plugin&lt;/a&gt;</i>
+      - <a href="plugin.md">Plugin</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowConcurrentExecutions
 
@@ -245,7 +233,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;command.md&#34;&gt;Command&lt;/a&gt;
+_Type_: List of <a href="command.md">Command</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -253,7 +241,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;notification.md&#34;&gt;Notification&lt;/a&gt;
+_Type_: List of <a href="notification.md">Notification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -261,7 +249,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;option.md&#34;&gt;Option&lt;/a&gt;
+_Type_: List of <a href="option.md">Option</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -269,7 +257,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;job.md&#34;&gt;Job&lt;/a&gt;
+_Type_: List of <a href="job.md">Job</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -277,7 +265,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nodestepplugin.md&#34;&gt;NodeStepPlugin&lt;/a&gt;
+_Type_: List of <a href="nodestepplugin.md">NodeStepPlugin</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -285,7 +273,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;stepplugin.md&#34;&gt;StepPlugin&lt;/a&gt;
+_Type_: List of <a href="stepplugin.md">StepPlugin</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -293,7 +281,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;email.md&#34;&gt;Email&lt;/a&gt;
+_Type_: List of <a href="email.md">Email</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -301,7 +289,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;plugin.md&#34;&gt;Plugin&lt;/a&gt;
+_Type_: List of <a href="plugin.md">Plugin</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

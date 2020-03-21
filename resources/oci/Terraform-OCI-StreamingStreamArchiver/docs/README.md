@@ -12,17 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::StreamingStreamArchiver",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#batchrolloversizeinmbs" title="BatchRolloverSizeInMbs">BatchRolloverSizeInMbs</a>" : <i>Double</i>,
         "<a href="#batchrollovertimeinseconds" title="BatchRolloverTimeInSeconds">BatchRolloverTimeInSeconds</a>" : <i>Double</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
-        "<a href="#error" title="Error">Error</a>" : <i>[ &lt;a href=&#34;error.md&#34;&gt;Error&lt;/a&gt;, ... ]</i>,
         "<a href="#startposition" title="StartPosition">StartPosition</a>" : <i>String</i>,
         "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#streamid" title="StreamId">StreamId</a>" : <i>String</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
         "<a href="#useexistingbucket" title="UseExistingBucket">UseExistingBucket</a>" : <i>Boolean</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -32,31 +29,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::StreamingStreamArchiver
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#batchrolloversizeinmbs" title="BatchRolloverSizeInMbs">BatchRolloverSizeInMbs</a>: <i>Double</i>
     <a href="#batchrollovertimeinseconds" title="BatchRolloverTimeInSeconds">BatchRolloverTimeInSeconds</a>: <i>Double</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
-    <a href="#error" title="Error">Error</a>: <i>
-      - &lt;a href=&#34;error.md&#34;&gt;Error&lt;/a&gt;</i>
     <a href="#startposition" title="StartPosition">StartPosition</a>: <i>String</i>
     <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#streamid" title="StreamId">StreamId</a>: <i>String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#useexistingbucket" title="UseExistingBucket">UseExistingBucket</a>: <i>Boolean</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BatchRolloverSizeInMbs
 
@@ -79,14 +62,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Error
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;error.md&#34;&gt;Error&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,14 +89,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TimeCreated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### UseExistingBucket
 
 _Required_: Yes
@@ -134,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,9 +123,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Error
 
-Returns the &lt;code&gt;Error&lt;/code&gt; value.
+Returns the <code>Error</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

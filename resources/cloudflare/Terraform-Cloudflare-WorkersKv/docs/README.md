@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::WorkersKv",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#namespaceid" title="NamespaceId">NamespaceId</a>" : <i>String</i>,
         "<a href="#value" title="Value">Value</a>" : <i>String</i>
@@ -25,23 +24,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cloudflare::WorkersKv
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#namespaceid" title="NamespaceId">NamespaceId</a>: <i>String</i>
     <a href="#value" title="Value">Value</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Key
 

@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#ssekms" title="SseKms">SseKms</a>" : <i>[ &lt;a href=&#34;destination-bucket-encryption-ssekms.md&#34;&gt;SseKms&lt;/a&gt;, ... ]</i>,
-    "<a href="#sses3" title="SseS3">SseS3</a>" : <i>[ &lt;a href=&#34;destination-bucket-encryption-sses3.md&#34;&gt;SseS3&lt;/a&gt;, ... ]</i>
+    "<a href="#ssekms" title="SseKms">SseKms</a>" : <i>[ <a href="destination-bucket-encryption-ssekms.md">SseKms</a>, ... ]</i>,
+    "<a href="#sses3" title="SseS3">SseS3</a>" : <i>[ <a href="destination-bucket-encryption-sses3.md">SseS3</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#ssekms" title="SseKms">SseKms</a>: <i>
-      - &lt;a href=&#34;destination-bucket-encryption-ssekms.md&#34;&gt;SseKms&lt;/a&gt;</i>
+      - <a href="destination-bucket-encryption-ssekms.md">SseKms</a></i>
 <a href="#sses3" title="SseS3">SseS3</a>: <i>
-      - &lt;a href=&#34;destination-bucket-encryption-sses3.md&#34;&gt;SseS3&lt;/a&gt;</i>
+      - <a href="destination-bucket-encryption-sses3.md">SseS3</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### SseKms
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;destination-bucket-encryption-ssekms.md&#34;&gt;SseKms&lt;/a&gt;
+
+_Type_: List of <a href="destination-bucket-encryption-ssekms.md">SseKms</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SseS3
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;destination-bucket-encryption-sses3.md&#34;&gt;SseS3&lt;/a&gt;
+
+_Type_: List of <a href="destination-bucket-encryption-sses3.md">SseS3</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,19 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::ComputeMachineImage",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#account" title="Account">Account</a>" : <i>String</i>,
         "<a href="#attributes" title="Attributes">Attributes</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#errorreason" title="ErrorReason">ErrorReason</a>" : <i>String</i>,
         "<a href="#file" title="File">File</a>" : <i>String</i>,
-        "<a href="#hypervisor" title="Hypervisor">Hypervisor</a>" : <i>[ &lt;a href=&#34;hypervisor.md&#34;&gt;Hypervisor&lt;/a&gt;, ... ]</i>,
-        "<a href="#imageformat" title="ImageFormat">ImageFormat</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#noupload" title="NoUpload">NoUpload</a>" : <i>Boolean</i>,
-        "<a href="#platform" title="Platform">Platform</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>
     }
 }
 </pre>
@@ -34,33 +26,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::ComputeMachineImage
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#account" title="Account">Account</a>: <i>String</i>
     <a href="#attributes" title="Attributes">Attributes</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#errorreason" title="ErrorReason">ErrorReason</a>: <i>String</i>
     <a href="#file" title="File">File</a>: <i>String</i>
-    <a href="#hypervisor" title="Hypervisor">Hypervisor</a>: <i>
-      - &lt;a href=&#34;hypervisor.md&#34;&gt;Hypervisor&lt;/a&gt;</i>
-    <a href="#imageformat" title="ImageFormat">ImageFormat</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#noupload" title="NoUpload">NoUpload</a>: <i>Boolean</i>
-    <a href="#platform" title="Platform">Platform</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Account
 
@@ -86,14 +59,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ErrorReason
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### File
 
 _Required_: Yes
@@ -102,57 +67,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Hypervisor
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;hypervisor.md&#34;&gt;Hypervisor&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ImageFormat
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### NoUpload
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Platform
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uri
-
-_Required_: No
 
 _Type_: String
 
@@ -176,29 +93,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ErrorReason
 
-Returns the &lt;code&gt;ErrorReason&lt;/code&gt; value.
+Returns the <code>ErrorReason</code> value.
 
 #### Hypervisor
 
-Returns the &lt;code&gt;Hypervisor&lt;/code&gt; value.
+Returns the <code>Hypervisor</code> value.
 
 #### ImageFormat
 
-Returns the &lt;code&gt;ImageFormat&lt;/code&gt; value.
+Returns the <code>ImageFormat</code> value.
 
 #### NoUpload
 
-Returns the &lt;code&gt;NoUpload&lt;/code&gt; value.
+Returns the <code>NoUpload</code> value.
 
 #### Platform
 
-Returns the &lt;code&gt;Platform&lt;/code&gt; value.
+Returns the <code>Platform</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

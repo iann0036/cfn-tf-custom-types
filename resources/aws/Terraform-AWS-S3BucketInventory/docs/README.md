@@ -12,18 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::S3BucketInventory",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#bucket" title="Bucket">Bucket</a>" : <i>[ &lt;a href=&#34;bucket.md&#34;&gt;Bucket&lt;/a&gt;, ... ]</i>,
+        "<a href="#bucket" title="Bucket">Bucket</a>" : <i>[ <a href="bucket.md">Bucket</a>, ... ]</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#includedobjectversions" title="IncludedObjectVersions">IncludedObjectVersions</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#optionalfields" title="OptionalFields">OptionalFields</a>" : <i>[ String, ... ]</i>,
-        "<a href="#destination" title="Destination">Destination</a>" : <i>[ &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;, ... ]</i>,
-        "<a href="#filter" title="Filter">Filter</a>" : <i>[ &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;, ... ]</i>,
-        "<a href="#schedule" title="Schedule">Schedule</a>" : <i>[ &lt;a href=&#34;schedule.md&#34;&gt;Schedule&lt;/a&gt;, ... ]</i>,
-        "<a href="#encryption" title="Encryption">Encryption</a>" : <i>[ &lt;a href=&#34;encryption.md&#34;&gt;Encryption&lt;/a&gt;, ... ]</i>,
-        "<a href="#ssekms" title="SseKms">SseKms</a>" : <i>[ &lt;a href=&#34;ssekms.md&#34;&gt;SseKms&lt;/a&gt;, ... ]</i>,
-        "<a href="#sses3" title="SseS3">SseS3</a>" : <i>[ &lt;a href=&#34;sses3.md&#34;&gt;SseS3&lt;/a&gt;, ... ]</i>
+        "<a href="#destination" title="Destination">Destination</a>" : <i>[ <a href="destination.md">Destination</a>, ... ]</i>,
+        "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="filter.md">Filter</a>, ... ]</i>,
+        "<a href="#schedule" title="Schedule">Schedule</a>" : <i>[ <a href="schedule.md">Schedule</a>, ... ]</i>,
+        "<a href="#encryption" title="Encryption">Encryption</a>" : <i>[ <a href="encryption.md">Encryption</a>, ... ]</i>,
+        "<a href="#ssekms" title="SseKms">SseKms</a>" : <i>[ <a href="ssekms.md">SseKms</a>, ... ]</i>,
+        "<a href="#sses3" title="SseS3">SseS3</a>" : <i>[ <a href="sses3.md">SseS3</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,45 +32,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::S3BucketInventory
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>
-      - &lt;a href=&#34;bucket.md&#34;&gt;Bucket&lt;/a&gt;</i>
+      - <a href="bucket.md">Bucket</a></i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#includedobjectversions" title="IncludedObjectVersions">IncludedObjectVersions</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#optionalfields" title="OptionalFields">OptionalFields</a>: <i>
       - String</i>
     <a href="#destination" title="Destination">Destination</a>: <i>
-      - &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;</i>
+      - <a href="destination.md">Destination</a></i>
     <a href="#filter" title="Filter">Filter</a>: <i>
-      - &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;</i>
+      - <a href="filter.md">Filter</a></i>
     <a href="#schedule" title="Schedule">Schedule</a>: <i>
-      - &lt;a href=&#34;schedule.md&#34;&gt;Schedule&lt;/a&gt;</i>
+      - <a href="schedule.md">Schedule</a></i>
     <a href="#encryption" title="Encryption">Encryption</a>: <i>
-      - &lt;a href=&#34;encryption.md&#34;&gt;Encryption&lt;/a&gt;</i>
+      - <a href="encryption.md">Encryption</a></i>
     <a href="#ssekms" title="SseKms">SseKms</a>: <i>
-      - &lt;a href=&#34;ssekms.md&#34;&gt;SseKms&lt;/a&gt;</i>
+      - <a href="ssekms.md">SseKms</a></i>
     <a href="#sses3" title="SseS3">SseS3</a>: <i>
-      - &lt;a href=&#34;sses3.md&#34;&gt;SseS3&lt;/a&gt;</i>
+      - <a href="sses3.md">SseS3</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;bucket.md&#34;&gt;Bucket&lt;/a&gt;
+_Type_: List of <a href="bucket.md">Bucket</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -111,7 +99,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;
+_Type_: List of <a href="destination.md">Destination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -119,7 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;
+_Type_: List of <a href="filter.md">Filter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;schedule.md&#34;&gt;Schedule&lt;/a&gt;
+_Type_: List of <a href="schedule.md">Schedule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;encryption.md&#34;&gt;Encryption&lt;/a&gt;
+_Type_: List of <a href="encryption.md">Encryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ssekms.md&#34;&gt;SseKms&lt;/a&gt;
+_Type_: List of <a href="ssekms.md">SseKms</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -151,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sses3.md&#34;&gt;SseS3&lt;/a&gt;
+_Type_: List of <a href="sses3.md">SseS3</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

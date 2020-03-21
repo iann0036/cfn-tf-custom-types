@@ -12,10 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CodebuildProject",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#badgeenabled" title="BadgeEnabled">BadgeEnabled</a>" : <i>Boolean</i>,
-        "<a href="#badgeurl" title="BadgeUrl">BadgeUrl</a>" : <i>String</i>,
         "<a href="#buildtimeout" title="BuildTimeout">BuildTimeout</a>" : <i>Double</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#encryptionkey" title="EncryptionKey">EncryptionKey</a>" : <i>String</i>,
@@ -23,21 +20,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#queuedtimeout" title="QueuedTimeout">QueuedTimeout</a>" : <i>Double</i>,
         "<a href="#servicerole" title="ServiceRole">ServiceRole</a>" : <i>String</i>,
         "<a href="#sourceversion" title="SourceVersion">SourceVersion</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#artifacts" title="Artifacts">Artifacts</a>" : <i>[ &lt;a href=&#34;artifacts.md&#34;&gt;Artifacts&lt;/a&gt;, ... ]</i>,
-        "<a href="#cache" title="Cache">Cache</a>" : <i>[ &lt;a href=&#34;cache.md&#34;&gt;Cache&lt;/a&gt;, ... ]</i>,
-        "<a href="#environment" title="Environment">Environment</a>" : <i>[ &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;, ... ]</i>,
-        "<a href="#logsconfig" title="LogsConfig">LogsConfig</a>" : <i>[ &lt;a href=&#34;logsconfig.md&#34;&gt;LogsConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#secondaryartifacts" title="SecondaryArtifacts">SecondaryArtifacts</a>" : <i>[ &lt;a href=&#34;secondaryartifacts.md&#34;&gt;SecondaryArtifacts&lt;/a&gt;, ... ]</i>,
-        "<a href="#secondarysources" title="SecondarySources">SecondarySources</a>" : <i>[ &lt;a href=&#34;secondarysources.md&#34;&gt;SecondarySources&lt;/a&gt;, ... ]</i>,
-        "<a href="#source" title="Source">Source</a>" : <i>[ &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;, ... ]</i>,
-        "<a href="#vpcconfig" title="VpcConfig">VpcConfig</a>" : <i>[ &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#environmentvariable" title="EnvironmentVariable">EnvironmentVariable</a>" : <i>[ &lt;a href=&#34;environmentvariable.md&#34;&gt;EnvironmentVariable&lt;/a&gt;, ... ]</i>,
-        "<a href="#registrycredential" title="RegistryCredential">RegistryCredential</a>" : <i>[ &lt;a href=&#34;registrycredential.md&#34;&gt;RegistryCredential&lt;/a&gt;, ... ]</i>,
-        "<a href="#cloudwatchlogs" title="CloudwatchLogs">CloudwatchLogs</a>" : <i>[ &lt;a href=&#34;cloudwatchlogs.md&#34;&gt;CloudwatchLogs&lt;/a&gt;, ... ]</i>,
-        "<a href="#s3logs" title="S3Logs">S3Logs</a>" : <i>[ &lt;a href=&#34;s3logs.md&#34;&gt;S3Logs&lt;/a&gt;, ... ]</i>,
-        "<a href="#auth" title="Auth">Auth</a>" : <i>[ &lt;a href=&#34;auth.md&#34;&gt;Auth&lt;/a&gt;, ... ]</i>,
-        "<a href="#gitsubmodulesconfig" title="GitSubmodulesConfig">GitSubmodulesConfig</a>" : <i>[ &lt;a href=&#34;gitsubmodulesconfig.md&#34;&gt;GitSubmodulesConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#artifacts" title="Artifacts">Artifacts</a>" : <i>[ <a href="artifacts.md">Artifacts</a>, ... ]</i>,
+        "<a href="#cache" title="Cache">Cache</a>" : <i>[ <a href="cache.md">Cache</a>, ... ]</i>,
+        "<a href="#environment" title="Environment">Environment</a>" : <i>[ <a href="environment.md">Environment</a>, ... ]</i>,
+        "<a href="#logsconfig" title="LogsConfig">LogsConfig</a>" : <i>[ <a href="logsconfig.md">LogsConfig</a>, ... ]</i>,
+        "<a href="#secondaryartifacts" title="SecondaryArtifacts">SecondaryArtifacts</a>" : <i>[ <a href="secondaryartifacts.md">SecondaryArtifacts</a>, ... ]</i>,
+        "<a href="#secondarysources" title="SecondarySources">SecondarySources</a>" : <i>[ <a href="secondarysources.md">SecondarySources</a>, ... ]</i>,
+        "<a href="#source" title="Source">Source</a>" : <i>[ <a href="source.md">Source</a>, ... ]</i>,
+        "<a href="#vpcconfig" title="VpcConfig">VpcConfig</a>" : <i>[ <a href="vpcconfig.md">VpcConfig</a>, ... ]</i>,
+        "<a href="#environmentvariable" title="EnvironmentVariable">EnvironmentVariable</a>" : <i>[ <a href="environmentvariable.md">EnvironmentVariable</a>, ... ]</i>,
+        "<a href="#registrycredential" title="RegistryCredential">RegistryCredential</a>" : <i>[ <a href="registrycredential.md">RegistryCredential</a>, ... ]</i>,
+        "<a href="#cloudwatchlogs" title="CloudwatchLogs">CloudwatchLogs</a>" : <i>[ <a href="cloudwatchlogs.md">CloudwatchLogs</a>, ... ]</i>,
+        "<a href="#s3logs" title="S3Logs">S3Logs</a>" : <i>[ <a href="s3logs.md">S3Logs</a>, ... ]</i>,
+        "<a href="#auth" title="Auth">Auth</a>" : <i>[ <a href="auth.md">Auth</a>, ... ]</i>,
+        "<a href="#gitsubmodulesconfig" title="GitSubmodulesConfig">GitSubmodulesConfig</a>" : <i>[ <a href="gitsubmodulesconfig.md">GitSubmodulesConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -47,10 +44,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CodebuildProject
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#badgeenabled" title="BadgeEnabled">BadgeEnabled</a>: <i>Boolean</i>
-    <a href="#badgeurl" title="BadgeUrl">BadgeUrl</a>: <i>String</i>
     <a href="#buildtimeout" title="BuildTimeout">BuildTimeout</a>: <i>Double</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#encryptionkey" title="EncryptionKey">EncryptionKey</a>: <i>String</i>
@@ -59,70 +53,44 @@ Properties:
     <a href="#servicerole" title="ServiceRole">ServiceRole</a>: <i>String</i>
     <a href="#sourceversion" title="SourceVersion">SourceVersion</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#artifacts" title="Artifacts">Artifacts</a>: <i>
-      - &lt;a href=&#34;artifacts.md&#34;&gt;Artifacts&lt;/a&gt;</i>
+      - <a href="artifacts.md">Artifacts</a></i>
     <a href="#cache" title="Cache">Cache</a>: <i>
-      - &lt;a href=&#34;cache.md&#34;&gt;Cache&lt;/a&gt;</i>
+      - <a href="cache.md">Cache</a></i>
     <a href="#environment" title="Environment">Environment</a>: <i>
-      - &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;</i>
+      - <a href="environment.md">Environment</a></i>
     <a href="#logsconfig" title="LogsConfig">LogsConfig</a>: <i>
-      - &lt;a href=&#34;logsconfig.md&#34;&gt;LogsConfig&lt;/a&gt;</i>
+      - <a href="logsconfig.md">LogsConfig</a></i>
     <a href="#secondaryartifacts" title="SecondaryArtifacts">SecondaryArtifacts</a>: <i>
-      - &lt;a href=&#34;secondaryartifacts.md&#34;&gt;SecondaryArtifacts&lt;/a&gt;</i>
+      - <a href="secondaryartifacts.md">SecondaryArtifacts</a></i>
     <a href="#secondarysources" title="SecondarySources">SecondarySources</a>: <i>
-      - &lt;a href=&#34;secondarysources.md&#34;&gt;SecondarySources&lt;/a&gt;</i>
+      - <a href="secondarysources.md">SecondarySources</a></i>
     <a href="#source" title="Source">Source</a>: <i>
-      - &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;</i>
+      - <a href="source.md">Source</a></i>
     <a href="#vpcconfig" title="VpcConfig">VpcConfig</a>: <i>
-      - &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;</i>
+      - <a href="vpcconfig.md">VpcConfig</a></i>
     <a href="#environmentvariable" title="EnvironmentVariable">EnvironmentVariable</a>: <i>
-      - &lt;a href=&#34;environmentvariable.md&#34;&gt;EnvironmentVariable&lt;/a&gt;</i>
+      - <a href="environmentvariable.md">EnvironmentVariable</a></i>
     <a href="#registrycredential" title="RegistryCredential">RegistryCredential</a>: <i>
-      - &lt;a href=&#34;registrycredential.md&#34;&gt;RegistryCredential&lt;/a&gt;</i>
+      - <a href="registrycredential.md">RegistryCredential</a></i>
     <a href="#cloudwatchlogs" title="CloudwatchLogs">CloudwatchLogs</a>: <i>
-      - &lt;a href=&#34;cloudwatchlogs.md&#34;&gt;CloudwatchLogs&lt;/a&gt;</i>
+      - <a href="cloudwatchlogs.md">CloudwatchLogs</a></i>
     <a href="#s3logs" title="S3Logs">S3Logs</a>: <i>
-      - &lt;a href=&#34;s3logs.md&#34;&gt;S3Logs&lt;/a&gt;</i>
+      - <a href="s3logs.md">S3Logs</a></i>
     <a href="#auth" title="Auth">Auth</a>: <i>
-      - &lt;a href=&#34;auth.md&#34;&gt;Auth&lt;/a&gt;</i>
+      - <a href="auth.md">Auth</a></i>
     <a href="#gitsubmodulesconfig" title="GitSubmodulesConfig">GitSubmodulesConfig</a>: <i>
-      - &lt;a href=&#34;gitsubmodulesconfig.md&#34;&gt;GitSubmodulesConfig&lt;/a&gt;</i>
+      - <a href="gitsubmodulesconfig.md">GitSubmodulesConfig</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BadgeEnabled
 
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### BadgeUrl
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -194,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;artifacts.md&#34;&gt;Artifacts&lt;/a&gt;
+_Type_: List of <a href="artifacts.md">Artifacts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -202,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cache.md&#34;&gt;Cache&lt;/a&gt;
+_Type_: List of <a href="cache.md">Cache</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -210,7 +178,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;
+_Type_: List of <a href="environment.md">Environment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -218,7 +186,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logsconfig.md&#34;&gt;LogsConfig&lt;/a&gt;
+_Type_: List of <a href="logsconfig.md">LogsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -226,7 +194,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secondaryartifacts.md&#34;&gt;SecondaryArtifacts&lt;/a&gt;
+_Type_: List of <a href="secondaryartifacts.md">SecondaryArtifacts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -234,7 +202,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secondarysources.md&#34;&gt;SecondarySources&lt;/a&gt;
+_Type_: List of <a href="secondarysources.md">SecondarySources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -242,7 +210,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;
+_Type_: List of <a href="source.md">Source</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -250,7 +218,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;
+_Type_: List of <a href="vpcconfig.md">VpcConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -258,7 +226,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environmentvariable.md&#34;&gt;EnvironmentVariable&lt;/a&gt;
+_Type_: List of <a href="environmentvariable.md">EnvironmentVariable</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -266,7 +234,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;registrycredential.md&#34;&gt;RegistryCredential&lt;/a&gt;
+_Type_: List of <a href="registrycredential.md">RegistryCredential</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -274,7 +242,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cloudwatchlogs.md&#34;&gt;CloudwatchLogs&lt;/a&gt;
+_Type_: List of <a href="cloudwatchlogs.md">CloudwatchLogs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -282,7 +250,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;s3logs.md&#34;&gt;S3Logs&lt;/a&gt;
+_Type_: List of <a href="s3logs.md">S3Logs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -290,7 +258,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;auth.md&#34;&gt;Auth&lt;/a&gt;
+_Type_: List of <a href="auth.md">Auth</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -298,7 +266,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;gitsubmodulesconfig.md&#34;&gt;GitSubmodulesConfig&lt;/a&gt;
+_Type_: List of <a href="gitsubmodulesconfig.md">GitSubmodulesConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -320,9 +288,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### BadgeUrl
 
-Returns the &lt;code&gt;BadgeUrl&lt;/code&gt; value.
+Returns the <code>BadgeUrl</code> value.
 

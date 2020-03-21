@@ -19,8 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#shape" title="Shape">Shape</a>" : <i>String</i>,
     "<a href="#sshkeys" title="SshKeys">SshKeys</a>" : <i>[ String, ... ]</i>,
     "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-    "<a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>" : <i>[ &lt;a href=&#34;instance-networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;, ... ]</i>,
-    "<a href="#storage" title="Storage">Storage</a>" : <i>[ &lt;a href=&#34;instance-storage.md&#34;&gt;Storage&lt;/a&gt;, ... ]</i>
+    "<a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>" : <i>[ <a href="instance-networkinginfo.md">NetworkingInfo</a>, ... ]</i>,
+    "<a href="#storage" title="Storage">Storage</a>" : <i>[ <a href="instance-storage.md">Storage</a>, ... ]</i>
 }
 </pre>
 
@@ -42,9 +42,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
 <a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>: <i>
-      - &lt;a href=&#34;instance-networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;</i>
+      - <a href="instance-networkinginfo.md">NetworkingInfo</a></i>
 <a href="#storage" title="Storage">Storage</a>: <i>
-      - &lt;a href=&#34;instance-storage.md&#34;&gt;Storage&lt;/a&gt;</i>
+      - <a href="instance-storage.md">Storage</a></i>
 </pre>
 
 ## Properties
@@ -52,6 +52,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### BootOrder
 
 _Required_: No
+
 _Type_: List of Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -59,6 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Hostname
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ImageList
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -73,6 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceAttributes
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,6 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Label
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -87,6 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -94,6 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Persistent
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -101,6 +108,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ReverseDns
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -108,6 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Shape
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -115,6 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SshKeys
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -122,6 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tags
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -129,14 +140,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NetworkingInfo
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instance-networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;
+
+_Type_: List of <a href="instance-networkinginfo.md">NetworkingInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Storage
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instance-storage.md&#34;&gt;Storage&lt;/a&gt;
+
+_Type_: List of <a href="instance-storage.md">Storage</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

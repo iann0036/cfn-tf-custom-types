@@ -12,17 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ComputeRouter",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#creationtimestamp" title="CreationTimestamp">CreationTimestamp</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#network" title="Network">Network</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
-        "<a href="#bgp" title="Bgp">Bgp</a>" : <i>[ &lt;a href=&#34;bgp.md&#34;&gt;Bgp&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#advertisedipranges" title="AdvertisedIpRanges">AdvertisedIpRanges</a>" : <i>[ &lt;a href=&#34;advertisedipranges.md&#34;&gt;AdvertisedIpRanges&lt;/a&gt;, ... ]</i>
+        "<a href="#bgp" title="Bgp">Bgp</a>" : <i>[ <a href="bgp.md">Bgp</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#advertisedipranges" title="AdvertisedIpRanges">AdvertisedIpRanges</a>" : <i>[ <a href="advertisedipranges.md">AdvertisedIpRanges</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,40 +29,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ComputeRouter
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#creationtimestamp" title="CreationTimestamp">CreationTimestamp</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#network" title="Network">Network</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
     <a href="#bgp" title="Bgp">Bgp</a>: <i>
-      - &lt;a href=&#34;bgp.md&#34;&gt;Bgp&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="bgp.md">Bgp</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#advertisedipranges" title="AdvertisedIpRanges">AdvertisedIpRanges</a>: <i>
-      - &lt;a href=&#34;advertisedipranges.md&#34;&gt;AdvertisedIpRanges&lt;/a&gt;</i>
+      - <a href="advertisedipranges.md">AdvertisedIpRanges</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreationTimestamp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -107,19 +83,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SelfLink
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Bgp
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bgp.md&#34;&gt;Bgp&lt;/a&gt;
+_Type_: List of <a href="bgp.md">Bgp</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;advertisedipranges.md&#34;&gt;AdvertisedIpRanges&lt;/a&gt;
+_Type_: List of <a href="advertisedipranges.md">AdvertisedIpRanges</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,9 +125,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTimestamp
 
-Returns the &lt;code&gt;CreationTimestamp&lt;/code&gt; value.
+Returns the <code>CreationTimestamp</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 

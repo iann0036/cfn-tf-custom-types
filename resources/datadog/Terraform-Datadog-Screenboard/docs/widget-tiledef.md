@@ -16,12 +16,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#nodetype" title="NodeType">NodeType</a>" : <i>String</i>,
     "<a href="#precision" title="Precision">Precision</a>" : <i>String</i>,
     "<a href="#scope" title="Scope">Scope</a>" : <i>[ String, ... ]</i>,
-    "<a href="#style" title="Style">Style</a>" : <i>[ &lt;a href=&#34;widget-tiledef-style.md&#34;&gt;Style&lt;/a&gt;, ... ]</i>,
+    "<a href="#style" title="Style">Style</a>" : <i>[ <a href="widget-tiledef-style.md">Style</a>, ... ]</i>,
     "<a href="#textalign" title="TextAlign">TextAlign</a>" : <i>String</i>,
     "<a href="#viz" title="Viz">Viz</a>" : <i>String</i>,
-    "<a href="#event" title="Event">Event</a>" : <i>[ &lt;a href=&#34;widget-tiledef-event.md&#34;&gt;Event&lt;/a&gt;, ... ]</i>,
-    "<a href="#marker" title="Marker">Marker</a>" : <i>[ &lt;a href=&#34;widget-tiledef-marker.md&#34;&gt;Marker&lt;/a&gt;, ... ]</i>,
-    "<a href="#request" title="Request">Request</a>" : <i>[ &lt;a href=&#34;widget-tiledef-request.md&#34;&gt;Request&lt;/a&gt;, ... ]</i>
+    "<a href="#event" title="Event">Event</a>" : <i>[ <a href="widget-tiledef-event.md">Event</a>, ... ]</i>,
+    "<a href="#marker" title="Marker">Marker</a>" : <i>[ <a href="widget-tiledef-marker.md">Marker</a>, ... ]</i>,
+    "<a href="#request" title="Request">Request</a>" : <i>[ <a href="widget-tiledef-request.md">Request</a>, ... ]</i>
 }
 </pre>
 
@@ -39,15 +39,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#scope" title="Scope">Scope</a>: <i>
       - String</i>
 <a href="#style" title="Style">Style</a>: <i>
-      - &lt;a href=&#34;widget-tiledef-style.md&#34;&gt;Style&lt;/a&gt;</i>
+      - <a href="widget-tiledef-style.md">Style</a></i>
 <a href="#textalign" title="TextAlign">TextAlign</a>: <i>String</i>
 <a href="#viz" title="Viz">Viz</a>: <i>String</i>
 <a href="#event" title="Event">Event</a>: <i>
-      - &lt;a href=&#34;widget-tiledef-event.md&#34;&gt;Event&lt;/a&gt;</i>
+      - <a href="widget-tiledef-event.md">Event</a></i>
 <a href="#marker" title="Marker">Marker</a>: <i>
-      - &lt;a href=&#34;widget-tiledef-marker.md&#34;&gt;Marker&lt;/a&gt;</i>
+      - <a href="widget-tiledef-marker.md">Marker</a></i>
 <a href="#request" title="Request">Request</a>: <i>
-      - &lt;a href=&#34;widget-tiledef-request.md&#34;&gt;Request&lt;/a&gt;</i>
+      - <a href="widget-tiledef-request.md">Request</a></i>
 </pre>
 
 ## Properties
@@ -55,6 +55,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Autoscale
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CustomUnit
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,6 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Group
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -76,6 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NoGroupHosts
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -83,6 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NoMetricHosts
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,6 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NodeType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -97,6 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Precision
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -104,6 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Scope
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -111,13 +119,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Style
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;widget-tiledef-style.md&#34;&gt;Style&lt;/a&gt;
+
+_Type_: List of <a href="widget-tiledef-style.md">Style</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TextAlign
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -125,6 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Viz
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -132,21 +143,24 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Event
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;widget-tiledef-event.md&#34;&gt;Event&lt;/a&gt;
+
+_Type_: List of <a href="widget-tiledef-event.md">Event</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Marker
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;widget-tiledef-marker.md&#34;&gt;Marker&lt;/a&gt;
+
+_Type_: List of <a href="widget-tiledef-marker.md">Marker</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Request
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;widget-tiledef-request.md&#34;&gt;Request&lt;/a&gt;
+
+_Type_: List of <a href="widget-tiledef-request.md">Request</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

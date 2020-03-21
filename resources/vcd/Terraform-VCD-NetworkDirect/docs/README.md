@@ -12,14 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::NetworkDirect",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>" : <i>String</i>,
-        "<a href="#externalnetworkdns1" title="ExternalNetworkDns1">ExternalNetworkDns1</a>" : <i>String</i>,
-        "<a href="#externalnetworkdns2" title="ExternalNetworkDns2">ExternalNetworkDns2</a>" : <i>String</i>,
-        "<a href="#externalnetworkdnssuffix" title="ExternalNetworkDnsSuffix">ExternalNetworkDnsSuffix</a>" : <i>String</i>,
-        "<a href="#externalnetworkgateway" title="ExternalNetworkGateway">ExternalNetworkGateway</a>" : <i>String</i>,
-        "<a href="#externalnetworknetmask" title="ExternalNetworkNetmask">ExternalNetworkNetmask</a>" : <i>String</i>,
         "<a href="#href" title="Href">Href</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
@@ -34,14 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::NetworkDirect
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#externalnetwork" title="ExternalNetwork">ExternalNetwork</a>: <i>String</i>
-    <a href="#externalnetworkdns1" title="ExternalNetworkDns1">ExternalNetworkDns1</a>: <i>String</i>
-    <a href="#externalnetworkdns2" title="ExternalNetworkDns2">ExternalNetworkDns2</a>: <i>String</i>
-    <a href="#externalnetworkdnssuffix" title="ExternalNetworkDnsSuffix">ExternalNetworkDnsSuffix</a>: <i>String</i>
-    <a href="#externalnetworkgateway" title="ExternalNetworkGateway">ExternalNetworkGateway</a>: <i>String</i>
-    <a href="#externalnetworknetmask" title="ExternalNetworkNetmask">ExternalNetworkNetmask</a>: <i>String</i>
     <a href="#href" title="Href">Href</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#org" title="Org">Org</a>: <i>String</i>
@@ -50,16 +38,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -72,46 +50,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ExternalNetwork
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExternalNetworkDns1
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExternalNetworkDns2
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExternalNetworkDnsSuffix
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExternalNetworkGateway
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExternalNetworkNetmask
-
-_Required_: No
 
 _Type_: String
 
@@ -175,21 +113,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ExternalNetworkDns1
 
-Returns the &lt;code&gt;ExternalNetworkDns1&lt;/code&gt; value.
+Returns the <code>ExternalNetworkDns1</code> value.
 
 #### ExternalNetworkDns2
 
-Returns the &lt;code&gt;ExternalNetworkDns2&lt;/code&gt; value.
+Returns the <code>ExternalNetworkDns2</code> value.
 
 #### ExternalNetworkDnsSuffix
 
-Returns the &lt;code&gt;ExternalNetworkDnsSuffix&lt;/code&gt; value.
+Returns the <code>ExternalNetworkDnsSuffix</code> value.
 
 #### ExternalNetworkGateway
 
-Returns the &lt;code&gt;ExternalNetworkGateway&lt;/code&gt; value.
+Returns the <code>ExternalNetworkGateway</code> value.
 
 #### ExternalNetworkNetmask
 
-Returns the &lt;code&gt;ExternalNetworkNetmask&lt;/code&gt; value.
+Returns the <code>ExternalNetworkNetmask</code> value.
 

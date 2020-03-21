@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#matchlabels" title="MatchLabels">MatchLabels</a>" : <i>[ &lt;a href=&#34;ingress-from-namespaceselector-matchlabels.md&#34;&gt;MatchLabels&lt;/a&gt;, ... ]</i>,
-    "<a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>" : <i>[ &lt;a href=&#34;ingress-from-namespaceselector-matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;, ... ]</i>
+    "<a href="#matchlabels" title="MatchLabels">MatchLabels</a>" : <i>[ <a href="ingress-from-namespaceselector-matchlabels.md">MatchLabels</a>, ... ]</i>,
+    "<a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>" : <i>[ <a href="ingress-from-namespaceselector-matchexpressions.md">MatchExpressions</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#matchlabels" title="MatchLabels">MatchLabels</a>: <i>
-      - &lt;a href=&#34;ingress-from-namespaceselector-matchlabels.md&#34;&gt;MatchLabels&lt;/a&gt;</i>
+      - <a href="ingress-from-namespaceselector-matchlabels.md">MatchLabels</a></i>
 <a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>: <i>
-      - &lt;a href=&#34;ingress-from-namespaceselector-matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;</i>
+      - <a href="ingress-from-namespaceselector-matchexpressions.md">MatchExpressions</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### MatchLabels
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;ingress-from-namespaceselector-matchlabels.md&#34;&gt;MatchLabels&lt;/a&gt;
+
+_Type_: List of <a href="ingress-from-namespaceselector-matchlabels.md">MatchLabels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MatchExpressions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;ingress-from-namespaceselector-matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;
+
+_Type_: List of <a href="ingress-from-namespaceselector-matchexpressions.md">MatchExpressions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

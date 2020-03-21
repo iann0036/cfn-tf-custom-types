@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::CloudSchedulerJob",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#attemptdeadline" title="AttemptDeadline">AttemptDeadline</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -20,14 +19,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#schedule" title="Schedule">Schedule</a>" : <i>String</i>,
         "<a href="#timezone" title="TimeZone">TimeZone</a>" : <i>String</i>,
-        "<a href="#appenginehttptarget" title="AppEngineHttpTarget">AppEngineHttpTarget</a>" : <i>[ &lt;a href=&#34;appenginehttptarget.md&#34;&gt;AppEngineHttpTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#httptarget" title="HttpTarget">HttpTarget</a>" : <i>[ &lt;a href=&#34;httptarget.md&#34;&gt;HttpTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#pubsubtarget" title="PubsubTarget">PubsubTarget</a>" : <i>[ &lt;a href=&#34;pubsubtarget.md&#34;&gt;PubsubTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#retryconfig" title="RetryConfig">RetryConfig</a>" : <i>[ &lt;a href=&#34;retryconfig.md&#34;&gt;RetryConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#appenginerouting" title="AppEngineRouting">AppEngineRouting</a>" : <i>[ &lt;a href=&#34;appenginerouting.md&#34;&gt;AppEngineRouting&lt;/a&gt;, ... ]</i>,
-        "<a href="#oauthtoken" title="OauthToken">OauthToken</a>" : <i>[ &lt;a href=&#34;oauthtoken.md&#34;&gt;OauthToken&lt;/a&gt;, ... ]</i>,
-        "<a href="#oidctoken" title="OidcToken">OidcToken</a>" : <i>[ &lt;a href=&#34;oidctoken.md&#34;&gt;OidcToken&lt;/a&gt;, ... ]</i>
+        "<a href="#appenginehttptarget" title="AppEngineHttpTarget">AppEngineHttpTarget</a>" : <i>[ <a href="appenginehttptarget.md">AppEngineHttpTarget</a>, ... ]</i>,
+        "<a href="#httptarget" title="HttpTarget">HttpTarget</a>" : <i>[ <a href="httptarget.md">HttpTarget</a>, ... ]</i>,
+        "<a href="#pubsubtarget" title="PubsubTarget">PubsubTarget</a>" : <i>[ <a href="pubsubtarget.md">PubsubTarget</a>, ... ]</i>,
+        "<a href="#retryconfig" title="RetryConfig">RetryConfig</a>" : <i>[ <a href="retryconfig.md">RetryConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#appenginerouting" title="AppEngineRouting">AppEngineRouting</a>" : <i>[ <a href="appenginerouting.md">AppEngineRouting</a>, ... ]</i>,
+        "<a href="#oauthtoken" title="OauthToken">OauthToken</a>" : <i>[ <a href="oauthtoken.md">OauthToken</a>, ... ]</i>,
+        "<a href="#oidctoken" title="OidcToken">OidcToken</a>" : <i>[ <a href="oidctoken.md">OidcToken</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,7 +36,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::CloudSchedulerJob
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#attemptdeadline" title="AttemptDeadline">AttemptDeadline</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -46,33 +44,23 @@ Properties:
     <a href="#schedule" title="Schedule">Schedule</a>: <i>String</i>
     <a href="#timezone" title="TimeZone">TimeZone</a>: <i>String</i>
     <a href="#appenginehttptarget" title="AppEngineHttpTarget">AppEngineHttpTarget</a>: <i>
-      - &lt;a href=&#34;appenginehttptarget.md&#34;&gt;AppEngineHttpTarget&lt;/a&gt;</i>
+      - <a href="appenginehttptarget.md">AppEngineHttpTarget</a></i>
     <a href="#httptarget" title="HttpTarget">HttpTarget</a>: <i>
-      - &lt;a href=&#34;httptarget.md&#34;&gt;HttpTarget&lt;/a&gt;</i>
+      - <a href="httptarget.md">HttpTarget</a></i>
     <a href="#pubsubtarget" title="PubsubTarget">PubsubTarget</a>: <i>
-      - &lt;a href=&#34;pubsubtarget.md&#34;&gt;PubsubTarget&lt;/a&gt;</i>
+      - <a href="pubsubtarget.md">PubsubTarget</a></i>
     <a href="#retryconfig" title="RetryConfig">RetryConfig</a>: <i>
-      - &lt;a href=&#34;retryconfig.md&#34;&gt;RetryConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="retryconfig.md">RetryConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#appenginerouting" title="AppEngineRouting">AppEngineRouting</a>: <i>
-      - &lt;a href=&#34;appenginerouting.md&#34;&gt;AppEngineRouting&lt;/a&gt;</i>
+      - <a href="appenginerouting.md">AppEngineRouting</a></i>
     <a href="#oauthtoken" title="OauthToken">OauthToken</a>: <i>
-      - &lt;a href=&#34;oauthtoken.md&#34;&gt;OauthToken&lt;/a&gt;</i>
+      - <a href="oauthtoken.md">OauthToken</a></i>
     <a href="#oidctoken" title="OidcToken">OidcToken</a>: <i>
-      - &lt;a href=&#34;oidctoken.md&#34;&gt;OidcToken&lt;/a&gt;</i>
+      - <a href="oidctoken.md">OidcToken</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AttemptDeadline
 
@@ -134,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;appenginehttptarget.md&#34;&gt;AppEngineHttpTarget&lt;/a&gt;
+_Type_: List of <a href="appenginehttptarget.md">AppEngineHttpTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -142,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httptarget.md&#34;&gt;HttpTarget&lt;/a&gt;
+_Type_: List of <a href="httptarget.md">HttpTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -150,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;pubsubtarget.md&#34;&gt;PubsubTarget&lt;/a&gt;
+_Type_: List of <a href="pubsubtarget.md">PubsubTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retryconfig.md&#34;&gt;RetryConfig&lt;/a&gt;
+_Type_: List of <a href="retryconfig.md">RetryConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;appenginerouting.md&#34;&gt;AppEngineRouting&lt;/a&gt;
+_Type_: List of <a href="appenginerouting.md">AppEngineRouting</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;oauthtoken.md&#34;&gt;OauthToken&lt;/a&gt;
+_Type_: List of <a href="oauthtoken.md">OauthToken</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +178,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;oidctoken.md&#34;&gt;OidcToken&lt;/a&gt;
+_Type_: List of <a href="oidctoken.md">OidcToken</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

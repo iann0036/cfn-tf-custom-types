@@ -12,14 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::GitHub::Team",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#ldapdn" title="LdapDn">LdapDn</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#parentteamid" title="ParentTeamId">ParentTeamId</a>" : <i>Double</i>,
         "<a href="#privacy" title="Privacy">Privacy</a>" : <i>String</i>,
-        "<a href="#slug" title="Slug">Slug</a>" : <i>String</i>
     }
 }
 </pre>
@@ -29,37 +26,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::GitHub::Team
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#ldapdn" title="LdapDn">LdapDn</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#parentteamid" title="ParentTeamId">ParentTeamId</a>: <i>Double</i>
     <a href="#privacy" title="Privacy">Privacy</a>: <i>String</i>
-    <a href="#slug" title="Slug">Slug</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Etag
 
 _Required_: No
 
@@ -99,14 +75,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Slug
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -125,9 +93,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 
 #### Slug
 
-Returns the &lt;code&gt;Slug&lt;/code&gt; value.
+Returns the <code>Slug</code> value.
 

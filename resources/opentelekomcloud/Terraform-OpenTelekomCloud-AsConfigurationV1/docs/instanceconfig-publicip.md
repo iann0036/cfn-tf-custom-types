@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#eip" title="Eip">Eip</a>" : <i>[ &lt;a href=&#34;instanceconfig-publicip-eip.md&#34;&gt;Eip&lt;/a&gt;, ... ]</i>
+    "<a href="#eip" title="Eip">Eip</a>" : <i>[ <a href="instanceconfig-publicip-eip.md">Eip</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#eip" title="Eip">Eip</a>: <i>
-      - &lt;a href=&#34;instanceconfig-publicip-eip.md&#34;&gt;Eip&lt;/a&gt;</i>
+      - <a href="instanceconfig-publicip-eip.md">Eip</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Eip
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instanceconfig-publicip-eip.md&#34;&gt;Eip&lt;/a&gt;
+
+_Type_: List of <a href="instanceconfig-publicip-eip.md">Eip</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

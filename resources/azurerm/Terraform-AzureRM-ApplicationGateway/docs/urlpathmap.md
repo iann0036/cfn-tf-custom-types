@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#defaultredirectconfigurationname" title="DefaultRedirectConfigurationName">DefaultRedirectConfigurationName</a>" : <i>String</i>,
     "<a href="#defaultrewriterulesetname" title="DefaultRewriteRuleSetName">DefaultRewriteRuleSetName</a>" : <i>String</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#pathrule" title="PathRule">PathRule</a>" : <i>[ &lt;a href=&#34;urlpathmap-pathrule.md&#34;&gt;PathRule&lt;/a&gt;, ... ]</i>
+    "<a href="#pathrule" title="PathRule">PathRule</a>" : <i>[ <a href="urlpathmap-pathrule.md">PathRule</a>, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#defaultrewriterulesetname" title="DefaultRewriteRuleSetName">DefaultRewriteRuleSetName</a>: <i>String</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#pathrule" title="PathRule">PathRule</a>: <i>
-      - &lt;a href=&#34;urlpathmap-pathrule.md&#34;&gt;PathRule&lt;/a&gt;</i>
+      - <a href="urlpathmap-pathrule.md">PathRule</a></i>
 </pre>
 
 ## Properties
@@ -34,6 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DefaultBackendAddressPoolName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -41,6 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DefaultBackendHttpSettingsName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +50,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DefaultRedirectConfigurationName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DefaultRewriteRuleSetName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,7 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PathRule
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;urlpathmap-pathrule.md&#34;&gt;PathRule&lt;/a&gt;
+
+_Type_: List of <a href="urlpathmap-pathrule.md">PathRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

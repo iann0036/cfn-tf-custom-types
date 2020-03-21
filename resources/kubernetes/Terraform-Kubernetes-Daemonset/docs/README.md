@@ -12,83 +12,82 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Kubernetes::Daemonset",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#spec" title="Spec">Spec</a>" : <i>[ &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#selector" title="Selector">Selector</a>" : <i>[ &lt;a href=&#34;selector.md&#34;&gt;Selector&lt;/a&gt;, ... ]</i>,
-        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#template" title="Template">Template</a>" : <i>[ &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;, ... ]</i>,
-        "<a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>" : <i>[ &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;, ... ]</i>,
-        "<a href="#rollingupdate" title="RollingUpdate">RollingUpdate</a>" : <i>[ &lt;a href=&#34;rollingupdate.md&#34;&gt;RollingUpdate&lt;/a&gt;, ... ]</i>,
-        "<a href="#affinity" title="Affinity">Affinity</a>" : <i>[ &lt;a href=&#34;affinity.md&#34;&gt;Affinity&lt;/a&gt;, ... ]</i>,
-        "<a href="#container" title="Container">Container</a>" : <i>[ &lt;a href=&#34;container.md&#34;&gt;Container&lt;/a&gt;, ... ]</i>,
-        "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ &lt;a href=&#34;dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#hostaliases" title="HostAliases">HostAliases</a>" : <i>[ &lt;a href=&#34;hostaliases.md&#34;&gt;HostAliases&lt;/a&gt;, ... ]</i>,
-        "<a href="#imagepullsecrets" title="ImagePullSecrets">ImagePullSecrets</a>" : <i>[ &lt;a href=&#34;imagepullsecrets.md&#34;&gt;ImagePullSecrets&lt;/a&gt;, ... ]</i>,
-        "<a href="#initcontainer" title="InitContainer">InitContainer</a>" : <i>[ &lt;a href=&#34;initcontainer.md&#34;&gt;InitContainer&lt;/a&gt;, ... ]</i>,
-        "<a href="#securitycontext" title="SecurityContext">SecurityContext</a>" : <i>[ &lt;a href=&#34;securitycontext.md&#34;&gt;SecurityContext&lt;/a&gt;, ... ]</i>,
-        "<a href="#toleration" title="Toleration">Toleration</a>" : <i>[ &lt;a href=&#34;toleration.md&#34;&gt;Toleration&lt;/a&gt;, ... ]</i>,
-        "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>,
-        "<a href="#nodeaffinity" title="NodeAffinity">NodeAffinity</a>" : <i>[ &lt;a href=&#34;nodeaffinity.md&#34;&gt;NodeAffinity&lt;/a&gt;, ... ]</i>,
-        "<a href="#podaffinity" title="PodAffinity">PodAffinity</a>" : <i>[ &lt;a href=&#34;podaffinity.md&#34;&gt;PodAffinity&lt;/a&gt;, ... ]</i>,
-        "<a href="#podantiaffinity" title="PodAntiAffinity">PodAntiAffinity</a>" : <i>[ &lt;a href=&#34;podantiaffinity.md&#34;&gt;PodAntiAffinity&lt;/a&gt;, ... ]</i>,
-        "<a href="#env" title="Env">Env</a>" : <i>[ &lt;a href=&#34;env.md&#34;&gt;Env&lt;/a&gt;, ... ]</i>,
-        "<a href="#envfrom" title="EnvFrom">EnvFrom</a>" : <i>[ &lt;a href=&#34;envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;, ... ]</i>,
-        "<a href="#lifecycle" title="Lifecycle">Lifecycle</a>" : <i>[ &lt;a href=&#34;lifecycle.md&#34;&gt;Lifecycle&lt;/a&gt;, ... ]</i>,
-        "<a href="#livenessprobe" title="LivenessProbe">LivenessProbe</a>" : <i>[ &lt;a href=&#34;livenessprobe.md&#34;&gt;LivenessProbe&lt;/a&gt;, ... ]</i>,
-        "<a href="#port" title="Port">Port</a>" : <i>[ &lt;a href=&#34;port.md&#34;&gt;Port&lt;/a&gt;, ... ]</i>,
-        "<a href="#readinessprobe" title="ReadinessProbe">ReadinessProbe</a>" : <i>[ &lt;a href=&#34;readinessprobe.md&#34;&gt;ReadinessProbe&lt;/a&gt;, ... ]</i>,
-        "<a href="#resources" title="Resources">Resources</a>" : <i>[ &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;, ... ]</i>,
-        "<a href="#startupprobe" title="StartupProbe">StartupProbe</a>" : <i>[ &lt;a href=&#34;startupprobe.md&#34;&gt;StartupProbe&lt;/a&gt;, ... ]</i>,
-        "<a href="#volumemount" title="VolumeMount">VolumeMount</a>" : <i>[ &lt;a href=&#34;volumemount.md&#34;&gt;VolumeMount&lt;/a&gt;, ... ]</i>,
-        "<a href="#option" title="Option">Option</a>" : <i>[ &lt;a href=&#34;option.md&#34;&gt;Option&lt;/a&gt;, ... ]</i>,
-        "<a href="#capabilities" title="Capabilities">Capabilities</a>" : <i>[ &lt;a href=&#34;capabilities.md&#34;&gt;Capabilities&lt;/a&gt;, ... ]</i>,
-        "<a href="#selinuxoptions" title="SeLinuxOptions">SeLinuxOptions</a>" : <i>[ &lt;a href=&#34;selinuxoptions.md&#34;&gt;SeLinuxOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#awselasticblockstore" title="AwsElasticBlockStore">AwsElasticBlockStore</a>" : <i>[ &lt;a href=&#34;awselasticblockstore.md&#34;&gt;AwsElasticBlockStore&lt;/a&gt;, ... ]</i>,
-        "<a href="#azuredisk" title="AzureDisk">AzureDisk</a>" : <i>[ &lt;a href=&#34;azuredisk.md&#34;&gt;AzureDisk&lt;/a&gt;, ... ]</i>,
-        "<a href="#azurefile" title="AzureFile">AzureFile</a>" : <i>[ &lt;a href=&#34;azurefile.md&#34;&gt;AzureFile&lt;/a&gt;, ... ]</i>,
-        "<a href="#cephfs" title="CephFs">CephFs</a>" : <i>[ &lt;a href=&#34;cephfs.md&#34;&gt;CephFs&lt;/a&gt;, ... ]</i>,
-        "<a href="#cinder" title="Cinder">Cinder</a>" : <i>[ &lt;a href=&#34;cinder.md&#34;&gt;Cinder&lt;/a&gt;, ... ]</i>,
-        "<a href="#configmap" title="ConfigMap">ConfigMap</a>" : <i>[ &lt;a href=&#34;configmap.md&#34;&gt;ConfigMap&lt;/a&gt;, ... ]</i>,
-        "<a href="#downwardapi" title="DownwardApi">DownwardApi</a>" : <i>[ &lt;a href=&#34;downwardapi.md&#34;&gt;DownwardApi&lt;/a&gt;, ... ]</i>,
-        "<a href="#emptydir" title="EmptyDir">EmptyDir</a>" : <i>[ &lt;a href=&#34;emptydir.md&#34;&gt;EmptyDir&lt;/a&gt;, ... ]</i>,
-        "<a href="#fc" title="Fc">Fc</a>" : <i>[ &lt;a href=&#34;fc.md&#34;&gt;Fc&lt;/a&gt;, ... ]</i>,
-        "<a href="#flexvolume" title="FlexVolume">FlexVolume</a>" : <i>[ &lt;a href=&#34;flexvolume.md&#34;&gt;FlexVolume&lt;/a&gt;, ... ]</i>,
-        "<a href="#flocker" title="Flocker">Flocker</a>" : <i>[ &lt;a href=&#34;flocker.md&#34;&gt;Flocker&lt;/a&gt;, ... ]</i>,
-        "<a href="#gcepersistentdisk" title="GcePersistentDisk">GcePersistentDisk</a>" : <i>[ &lt;a href=&#34;gcepersistentdisk.md&#34;&gt;GcePersistentDisk&lt;/a&gt;, ... ]</i>,
-        "<a href="#gitrepo" title="GitRepo">GitRepo</a>" : <i>[ &lt;a href=&#34;gitrepo.md&#34;&gt;GitRepo&lt;/a&gt;, ... ]</i>,
-        "<a href="#glusterfs" title="Glusterfs">Glusterfs</a>" : <i>[ &lt;a href=&#34;glusterfs.md&#34;&gt;Glusterfs&lt;/a&gt;, ... ]</i>,
-        "<a href="#hostpath" title="HostPath">HostPath</a>" : <i>[ &lt;a href=&#34;hostpath.md&#34;&gt;HostPath&lt;/a&gt;, ... ]</i>,
-        "<a href="#iscsi" title="Iscsi">Iscsi</a>" : <i>[ &lt;a href=&#34;iscsi.md&#34;&gt;Iscsi&lt;/a&gt;, ... ]</i>,
-        "<a href="#local" title="Local">Local</a>" : <i>[ &lt;a href=&#34;local.md&#34;&gt;Local&lt;/a&gt;, ... ]</i>,
-        "<a href="#nfs" title="Nfs">Nfs</a>" : <i>[ &lt;a href=&#34;nfs.md&#34;&gt;Nfs&lt;/a&gt;, ... ]</i>,
-        "<a href="#persistentvolumeclaim" title="PersistentVolumeClaim">PersistentVolumeClaim</a>" : <i>[ &lt;a href=&#34;persistentvolumeclaim.md&#34;&gt;PersistentVolumeClaim&lt;/a&gt;, ... ]</i>,
-        "<a href="#photonpersistentdisk" title="PhotonPersistentDisk">PhotonPersistentDisk</a>" : <i>[ &lt;a href=&#34;photonpersistentdisk.md&#34;&gt;PhotonPersistentDisk&lt;/a&gt;, ... ]</i>,
-        "<a href="#quobyte" title="Quobyte">Quobyte</a>" : <i>[ &lt;a href=&#34;quobyte.md&#34;&gt;Quobyte&lt;/a&gt;, ... ]</i>,
-        "<a href="#rbd" title="Rbd">Rbd</a>" : <i>[ &lt;a href=&#34;rbd.md&#34;&gt;Rbd&lt;/a&gt;, ... ]</i>,
-        "<a href="#secret" title="Secret">Secret</a>" : <i>[ &lt;a href=&#34;secret.md&#34;&gt;Secret&lt;/a&gt;, ... ]</i>,
-        "<a href="#vspherevolume" title="VsphereVolume">VsphereVolume</a>" : <i>[ &lt;a href=&#34;vspherevolume.md&#34;&gt;VsphereVolume&lt;/a&gt;, ... ]</i>,
-        "<a href="#preferredduringschedulingignoredduringexecution" title="PreferredDuringSchedulingIgnoredDuringExecution">PreferredDuringSchedulingIgnoredDuringExecution</a>" : <i>[ &lt;a href=&#34;preferredduringschedulingignoredduringexecution.md&#34;&gt;PreferredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;, ... ]</i>,
-        "<a href="#requiredduringschedulingignoredduringexecution" title="RequiredDuringSchedulingIgnoredDuringExecution">RequiredDuringSchedulingIgnoredDuringExecution</a>" : <i>[ &lt;a href=&#34;requiredduringschedulingignoredduringexecution.md&#34;&gt;RequiredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;, ... ]</i>,
-        "<a href="#valuefrom" title="ValueFrom">ValueFrom</a>" : <i>[ &lt;a href=&#34;valuefrom.md&#34;&gt;ValueFrom&lt;/a&gt;, ... ]</i>,
-        "<a href="#configmapref" title="ConfigMapRef">ConfigMapRef</a>" : <i>[ &lt;a href=&#34;configmapref.md&#34;&gt;ConfigMapRef&lt;/a&gt;, ... ]</i>,
-        "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ &lt;a href=&#34;secretref.md&#34;&gt;SecretRef&lt;/a&gt;, ... ]</i>,
-        "<a href="#poststart" title="PostStart">PostStart</a>" : <i>[ &lt;a href=&#34;poststart.md&#34;&gt;PostStart&lt;/a&gt;, ... ]</i>,
-        "<a href="#prestop" title="PreStop">PreStop</a>" : <i>[ &lt;a href=&#34;prestop.md&#34;&gt;PreStop&lt;/a&gt;, ... ]</i>,
-        "<a href="#exec" title="Exec">Exec</a>" : <i>[ &lt;a href=&#34;exec.md&#34;&gt;Exec&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpget" title="HttpGet">HttpGet</a>" : <i>[ &lt;a href=&#34;httpget.md&#34;&gt;HttpGet&lt;/a&gt;, ... ]</i>,
-        "<a href="#tcpsocket" title="TcpSocket">TcpSocket</a>" : <i>[ &lt;a href=&#34;tcpsocket.md&#34;&gt;TcpSocket&lt;/a&gt;, ... ]</i>,
-        "<a href="#limits" title="Limits">Limits</a>" : <i>[ &lt;a href=&#34;limits.md&#34;&gt;Limits&lt;/a&gt;, ... ]</i>,
-        "<a href="#requests" title="Requests">Requests</a>" : <i>[ &lt;a href=&#34;requests.md&#34;&gt;Requests&lt;/a&gt;, ... ]</i>,
-        "<a href="#items" title="Items">Items</a>" : <i>[ &lt;a href=&#34;items.md&#34;&gt;Items&lt;/a&gt;, ... ]</i>,
-        "<a href="#podaffinityterm" title="PodAffinityTerm">PodAffinityTerm</a>" : <i>[ &lt;a href=&#34;podaffinityterm.md&#34;&gt;PodAffinityTerm&lt;/a&gt;, ... ]</i>,
-        "<a href="#labelselector" title="LabelSelector">LabelSelector</a>" : <i>[ &lt;a href=&#34;labelselector.md&#34;&gt;LabelSelector&lt;/a&gt;, ... ]</i>,
-        "<a href="#configmapkeyref" title="ConfigMapKeyRef">ConfigMapKeyRef</a>" : <i>[ &lt;a href=&#34;configmapkeyref.md&#34;&gt;ConfigMapKeyRef&lt;/a&gt;, ... ]</i>,
-        "<a href="#fieldref" title="FieldRef">FieldRef</a>" : <i>[ &lt;a href=&#34;fieldref.md&#34;&gt;FieldRef&lt;/a&gt;, ... ]</i>,
-        "<a href="#resourcefieldref" title="ResourceFieldRef">ResourceFieldRef</a>" : <i>[ &lt;a href=&#34;resourcefieldref.md&#34;&gt;ResourceFieldRef&lt;/a&gt;, ... ]</i>,
-        "<a href="#secretkeyref" title="SecretKeyRef">SecretKeyRef</a>" : <i>[ &lt;a href=&#34;secretkeyref.md&#34;&gt;SecretKeyRef&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpheader" title="HttpHeader">HttpHeader</a>" : <i>[ &lt;a href=&#34;httpheader.md&#34;&gt;HttpHeader&lt;/a&gt;, ... ]</i>
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#spec" title="Spec">Spec</a>" : <i>[ <a href="spec.md">Spec</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#selector" title="Selector">Selector</a>" : <i>[ <a href="selector.md">Selector</a>, ... ]</i>,
+        "<a href="#strategy" title="Strategy">Strategy</a>" : <i>[ <a href="strategy.md">Strategy</a>, ... ]</i>,
+        "<a href="#template" title="Template">Template</a>" : <i>[ <a href="template.md">Template</a>, ... ]</i>,
+        "<a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>" : <i>[ <a href="matchexpressions.md">MatchExpressions</a>, ... ]</i>,
+        "<a href="#rollingupdate" title="RollingUpdate">RollingUpdate</a>" : <i>[ <a href="rollingupdate.md">RollingUpdate</a>, ... ]</i>,
+        "<a href="#affinity" title="Affinity">Affinity</a>" : <i>[ <a href="affinity.md">Affinity</a>, ... ]</i>,
+        "<a href="#container" title="Container">Container</a>" : <i>[ <a href="container.md">Container</a>, ... ]</i>,
+        "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ <a href="dnsconfig.md">DnsConfig</a>, ... ]</i>,
+        "<a href="#hostaliases" title="HostAliases">HostAliases</a>" : <i>[ <a href="hostaliases.md">HostAliases</a>, ... ]</i>,
+        "<a href="#imagepullsecrets" title="ImagePullSecrets">ImagePullSecrets</a>" : <i>[ <a href="imagepullsecrets.md">ImagePullSecrets</a>, ... ]</i>,
+        "<a href="#initcontainer" title="InitContainer">InitContainer</a>" : <i>[ <a href="initcontainer.md">InitContainer</a>, ... ]</i>,
+        "<a href="#securitycontext" title="SecurityContext">SecurityContext</a>" : <i>[ <a href="securitycontext.md">SecurityContext</a>, ... ]</i>,
+        "<a href="#toleration" title="Toleration">Toleration</a>" : <i>[ <a href="toleration.md">Toleration</a>, ... ]</i>,
+        "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="volume.md">Volume</a>, ... ]</i>,
+        "<a href="#nodeaffinity" title="NodeAffinity">NodeAffinity</a>" : <i>[ <a href="nodeaffinity.md">NodeAffinity</a>, ... ]</i>,
+        "<a href="#podaffinity" title="PodAffinity">PodAffinity</a>" : <i>[ <a href="podaffinity.md">PodAffinity</a>, ... ]</i>,
+        "<a href="#podantiaffinity" title="PodAntiAffinity">PodAntiAffinity</a>" : <i>[ <a href="podantiaffinity.md">PodAntiAffinity</a>, ... ]</i>,
+        "<a href="#env" title="Env">Env</a>" : <i>[ <a href="env.md">Env</a>, ... ]</i>,
+        "<a href="#envfrom" title="EnvFrom">EnvFrom</a>" : <i>[ <a href="envfrom.md">EnvFrom</a>, ... ]</i>,
+        "<a href="#lifecycle" title="Lifecycle">Lifecycle</a>" : <i>[ <a href="lifecycle.md">Lifecycle</a>, ... ]</i>,
+        "<a href="#livenessprobe" title="LivenessProbe">LivenessProbe</a>" : <i>[ <a href="livenessprobe.md">LivenessProbe</a>, ... ]</i>,
+        "<a href="#port" title="Port">Port</a>" : <i>[ <a href="port.md">Port</a>, ... ]</i>,
+        "<a href="#readinessprobe" title="ReadinessProbe">ReadinessProbe</a>" : <i>[ <a href="readinessprobe.md">ReadinessProbe</a>, ... ]</i>,
+        "<a href="#resources" title="Resources">Resources</a>" : <i>[ <a href="resources.md">Resources</a>, ... ]</i>,
+        "<a href="#startupprobe" title="StartupProbe">StartupProbe</a>" : <i>[ <a href="startupprobe.md">StartupProbe</a>, ... ]</i>,
+        "<a href="#volumemount" title="VolumeMount">VolumeMount</a>" : <i>[ <a href="volumemount.md">VolumeMount</a>, ... ]</i>,
+        "<a href="#option" title="Option">Option</a>" : <i>[ <a href="option.md">Option</a>, ... ]</i>,
+        "<a href="#capabilities" title="Capabilities">Capabilities</a>" : <i>[ <a href="capabilities.md">Capabilities</a>, ... ]</i>,
+        "<a href="#selinuxoptions" title="SeLinuxOptions">SeLinuxOptions</a>" : <i>[ <a href="selinuxoptions.md">SeLinuxOptions</a>, ... ]</i>,
+        "<a href="#awselasticblockstore" title="AwsElasticBlockStore">AwsElasticBlockStore</a>" : <i>[ <a href="awselasticblockstore.md">AwsElasticBlockStore</a>, ... ]</i>,
+        "<a href="#azuredisk" title="AzureDisk">AzureDisk</a>" : <i>[ <a href="azuredisk.md">AzureDisk</a>, ... ]</i>,
+        "<a href="#azurefile" title="AzureFile">AzureFile</a>" : <i>[ <a href="azurefile.md">AzureFile</a>, ... ]</i>,
+        "<a href="#cephfs" title="CephFs">CephFs</a>" : <i>[ <a href="cephfs.md">CephFs</a>, ... ]</i>,
+        "<a href="#cinder" title="Cinder">Cinder</a>" : <i>[ <a href="cinder.md">Cinder</a>, ... ]</i>,
+        "<a href="#configmap" title="ConfigMap">ConfigMap</a>" : <i>[ <a href="configmap.md">ConfigMap</a>, ... ]</i>,
+        "<a href="#downwardapi" title="DownwardApi">DownwardApi</a>" : <i>[ <a href="downwardapi.md">DownwardApi</a>, ... ]</i>,
+        "<a href="#emptydir" title="EmptyDir">EmptyDir</a>" : <i>[ <a href="emptydir.md">EmptyDir</a>, ... ]</i>,
+        "<a href="#fc" title="Fc">Fc</a>" : <i>[ <a href="fc.md">Fc</a>, ... ]</i>,
+        "<a href="#flexvolume" title="FlexVolume">FlexVolume</a>" : <i>[ <a href="flexvolume.md">FlexVolume</a>, ... ]</i>,
+        "<a href="#flocker" title="Flocker">Flocker</a>" : <i>[ <a href="flocker.md">Flocker</a>, ... ]</i>,
+        "<a href="#gcepersistentdisk" title="GcePersistentDisk">GcePersistentDisk</a>" : <i>[ <a href="gcepersistentdisk.md">GcePersistentDisk</a>, ... ]</i>,
+        "<a href="#gitrepo" title="GitRepo">GitRepo</a>" : <i>[ <a href="gitrepo.md">GitRepo</a>, ... ]</i>,
+        "<a href="#glusterfs" title="Glusterfs">Glusterfs</a>" : <i>[ <a href="glusterfs.md">Glusterfs</a>, ... ]</i>,
+        "<a href="#hostpath" title="HostPath">HostPath</a>" : <i>[ <a href="hostpath.md">HostPath</a>, ... ]</i>,
+        "<a href="#iscsi" title="Iscsi">Iscsi</a>" : <i>[ <a href="iscsi.md">Iscsi</a>, ... ]</i>,
+        "<a href="#local" title="Local">Local</a>" : <i>[ <a href="local.md">Local</a>, ... ]</i>,
+        "<a href="#nfs" title="Nfs">Nfs</a>" : <i>[ <a href="nfs.md">Nfs</a>, ... ]</i>,
+        "<a href="#persistentvolumeclaim" title="PersistentVolumeClaim">PersistentVolumeClaim</a>" : <i>[ <a href="persistentvolumeclaim.md">PersistentVolumeClaim</a>, ... ]</i>,
+        "<a href="#photonpersistentdisk" title="PhotonPersistentDisk">PhotonPersistentDisk</a>" : <i>[ <a href="photonpersistentdisk.md">PhotonPersistentDisk</a>, ... ]</i>,
+        "<a href="#quobyte" title="Quobyte">Quobyte</a>" : <i>[ <a href="quobyte.md">Quobyte</a>, ... ]</i>,
+        "<a href="#rbd" title="Rbd">Rbd</a>" : <i>[ <a href="rbd.md">Rbd</a>, ... ]</i>,
+        "<a href="#secret" title="Secret">Secret</a>" : <i>[ <a href="secret.md">Secret</a>, ... ]</i>,
+        "<a href="#vspherevolume" title="VsphereVolume">VsphereVolume</a>" : <i>[ <a href="vspherevolume.md">VsphereVolume</a>, ... ]</i>,
+        "<a href="#preferredduringschedulingignoredduringexecution" title="PreferredDuringSchedulingIgnoredDuringExecution">PreferredDuringSchedulingIgnoredDuringExecution</a>" : <i>[ <a href="preferredduringschedulingignoredduringexecution.md">PreferredDuringSchedulingIgnoredDuringExecution</a>, ... ]</i>,
+        "<a href="#requiredduringschedulingignoredduringexecution" title="RequiredDuringSchedulingIgnoredDuringExecution">RequiredDuringSchedulingIgnoredDuringExecution</a>" : <i>[ <a href="requiredduringschedulingignoredduringexecution.md">RequiredDuringSchedulingIgnoredDuringExecution</a>, ... ]</i>,
+        "<a href="#valuefrom" title="ValueFrom">ValueFrom</a>" : <i>[ <a href="valuefrom.md">ValueFrom</a>, ... ]</i>,
+        "<a href="#configmapref" title="ConfigMapRef">ConfigMapRef</a>" : <i>[ <a href="configmapref.md">ConfigMapRef</a>, ... ]</i>,
+        "<a href="#secretref" title="SecretRef">SecretRef</a>" : <i>[ <a href="secretref.md">SecretRef</a>, ... ]</i>,
+        "<a href="#poststart" title="PostStart">PostStart</a>" : <i>[ <a href="poststart.md">PostStart</a>, ... ]</i>,
+        "<a href="#prestop" title="PreStop">PreStop</a>" : <i>[ <a href="prestop.md">PreStop</a>, ... ]</i>,
+        "<a href="#exec" title="Exec">Exec</a>" : <i>[ <a href="exec.md">Exec</a>, ... ]</i>,
+        "<a href="#httpget" title="HttpGet">HttpGet</a>" : <i>[ <a href="httpget.md">HttpGet</a>, ... ]</i>,
+        "<a href="#tcpsocket" title="TcpSocket">TcpSocket</a>" : <i>[ <a href="tcpsocket.md">TcpSocket</a>, ... ]</i>,
+        "<a href="#limits" title="Limits">Limits</a>" : <i>[ <a href="limits.md">Limits</a>, ... ]</i>,
+        "<a href="#requests" title="Requests">Requests</a>" : <i>[ <a href="requests.md">Requests</a>, ... ]</i>,
+        "<a href="#items" title="Items">Items</a>" : <i>[ <a href="items.md">Items</a>, ... ]</i>,
+        "<a href="#podaffinityterm" title="PodAffinityTerm">PodAffinityTerm</a>" : <i>[ <a href="podaffinityterm.md">PodAffinityTerm</a>, ... ]</i>,
+        "<a href="#labelselector" title="LabelSelector">LabelSelector</a>" : <i>[ <a href="labelselector.md">LabelSelector</a>, ... ]</i>,
+        "<a href="#configmapkeyref" title="ConfigMapKeyRef">ConfigMapKeyRef</a>" : <i>[ <a href="configmapkeyref.md">ConfigMapKeyRef</a>, ... ]</i>,
+        "<a href="#fieldref" title="FieldRef">FieldRef</a>" : <i>[ <a href="fieldref.md">FieldRef</a>, ... ]</i>,
+        "<a href="#resourcefieldref" title="ResourceFieldRef">ResourceFieldRef</a>" : <i>[ <a href="resourcefieldref.md">ResourceFieldRef</a>, ... ]</i>,
+        "<a href="#secretkeyref" title="SecretKeyRef">SecretKeyRef</a>" : <i>[ <a href="secretkeyref.md">SecretKeyRef</a>, ... ]</i>,
+        "<a href="#httpheader" title="HttpHeader">HttpHeader</a>" : <i>[ <a href="httpheader.md">HttpHeader</a>, ... ]</i>
     }
 }
 </pre>
@@ -98,177 +97,166 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Kubernetes::Daemonset
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#spec" title="Spec">Spec</a>: <i>
-      - &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="spec.md">Spec</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#selector" title="Selector">Selector</a>: <i>
-      - &lt;a href=&#34;selector.md&#34;&gt;Selector&lt;/a&gt;</i>
+      - <a href="selector.md">Selector</a></i>
     <a href="#strategy" title="Strategy">Strategy</a>: <i>
-      - &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;</i>
+      - <a href="strategy.md">Strategy</a></i>
     <a href="#template" title="Template">Template</a>: <i>
-      - &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;</i>
+      - <a href="template.md">Template</a></i>
     <a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>: <i>
-      - &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;</i>
+      - <a href="matchexpressions.md">MatchExpressions</a></i>
     <a href="#rollingupdate" title="RollingUpdate">RollingUpdate</a>: <i>
-      - &lt;a href=&#34;rollingupdate.md&#34;&gt;RollingUpdate&lt;/a&gt;</i>
+      - <a href="rollingupdate.md">RollingUpdate</a></i>
     <a href="#affinity" title="Affinity">Affinity</a>: <i>
-      - &lt;a href=&#34;affinity.md&#34;&gt;Affinity&lt;/a&gt;</i>
+      - <a href="affinity.md">Affinity</a></i>
     <a href="#container" title="Container">Container</a>: <i>
-      - &lt;a href=&#34;container.md&#34;&gt;Container&lt;/a&gt;</i>
+      - <a href="container.md">Container</a></i>
     <a href="#dnsconfig" title="DnsConfig">DnsConfig</a>: <i>
-      - &lt;a href=&#34;dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;</i>
+      - <a href="dnsconfig.md">DnsConfig</a></i>
     <a href="#hostaliases" title="HostAliases">HostAliases</a>: <i>
-      - &lt;a href=&#34;hostaliases.md&#34;&gt;HostAliases&lt;/a&gt;</i>
+      - <a href="hostaliases.md">HostAliases</a></i>
     <a href="#imagepullsecrets" title="ImagePullSecrets">ImagePullSecrets</a>: <i>
-      - &lt;a href=&#34;imagepullsecrets.md&#34;&gt;ImagePullSecrets&lt;/a&gt;</i>
+      - <a href="imagepullsecrets.md">ImagePullSecrets</a></i>
     <a href="#initcontainer" title="InitContainer">InitContainer</a>: <i>
-      - &lt;a href=&#34;initcontainer.md&#34;&gt;InitContainer&lt;/a&gt;</i>
+      - <a href="initcontainer.md">InitContainer</a></i>
     <a href="#securitycontext" title="SecurityContext">SecurityContext</a>: <i>
-      - &lt;a href=&#34;securitycontext.md&#34;&gt;SecurityContext&lt;/a&gt;</i>
+      - <a href="securitycontext.md">SecurityContext</a></i>
     <a href="#toleration" title="Toleration">Toleration</a>: <i>
-      - &lt;a href=&#34;toleration.md&#34;&gt;Toleration&lt;/a&gt;</i>
+      - <a href="toleration.md">Toleration</a></i>
     <a href="#volume" title="Volume">Volume</a>: <i>
-      - &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;</i>
+      - <a href="volume.md">Volume</a></i>
     <a href="#nodeaffinity" title="NodeAffinity">NodeAffinity</a>: <i>
-      - &lt;a href=&#34;nodeaffinity.md&#34;&gt;NodeAffinity&lt;/a&gt;</i>
+      - <a href="nodeaffinity.md">NodeAffinity</a></i>
     <a href="#podaffinity" title="PodAffinity">PodAffinity</a>: <i>
-      - &lt;a href=&#34;podaffinity.md&#34;&gt;PodAffinity&lt;/a&gt;</i>
+      - <a href="podaffinity.md">PodAffinity</a></i>
     <a href="#podantiaffinity" title="PodAntiAffinity">PodAntiAffinity</a>: <i>
-      - &lt;a href=&#34;podantiaffinity.md&#34;&gt;PodAntiAffinity&lt;/a&gt;</i>
+      - <a href="podantiaffinity.md">PodAntiAffinity</a></i>
     <a href="#env" title="Env">Env</a>: <i>
-      - &lt;a href=&#34;env.md&#34;&gt;Env&lt;/a&gt;</i>
+      - <a href="env.md">Env</a></i>
     <a href="#envfrom" title="EnvFrom">EnvFrom</a>: <i>
-      - &lt;a href=&#34;envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;</i>
+      - <a href="envfrom.md">EnvFrom</a></i>
     <a href="#lifecycle" title="Lifecycle">Lifecycle</a>: <i>
-      - &lt;a href=&#34;lifecycle.md&#34;&gt;Lifecycle&lt;/a&gt;</i>
+      - <a href="lifecycle.md">Lifecycle</a></i>
     <a href="#livenessprobe" title="LivenessProbe">LivenessProbe</a>: <i>
-      - &lt;a href=&#34;livenessprobe.md&#34;&gt;LivenessProbe&lt;/a&gt;</i>
+      - <a href="livenessprobe.md">LivenessProbe</a></i>
     <a href="#port" title="Port">Port</a>: <i>
-      - &lt;a href=&#34;port.md&#34;&gt;Port&lt;/a&gt;</i>
+      - <a href="port.md">Port</a></i>
     <a href="#readinessprobe" title="ReadinessProbe">ReadinessProbe</a>: <i>
-      - &lt;a href=&#34;readinessprobe.md&#34;&gt;ReadinessProbe&lt;/a&gt;</i>
+      - <a href="readinessprobe.md">ReadinessProbe</a></i>
     <a href="#resources" title="Resources">Resources</a>: <i>
-      - &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;</i>
+      - <a href="resources.md">Resources</a></i>
     <a href="#startupprobe" title="StartupProbe">StartupProbe</a>: <i>
-      - &lt;a href=&#34;startupprobe.md&#34;&gt;StartupProbe&lt;/a&gt;</i>
+      - <a href="startupprobe.md">StartupProbe</a></i>
     <a href="#volumemount" title="VolumeMount">VolumeMount</a>: <i>
-      - &lt;a href=&#34;volumemount.md&#34;&gt;VolumeMount&lt;/a&gt;</i>
+      - <a href="volumemount.md">VolumeMount</a></i>
     <a href="#option" title="Option">Option</a>: <i>
-      - &lt;a href=&#34;option.md&#34;&gt;Option&lt;/a&gt;</i>
+      - <a href="option.md">Option</a></i>
     <a href="#capabilities" title="Capabilities">Capabilities</a>: <i>
-      - &lt;a href=&#34;capabilities.md&#34;&gt;Capabilities&lt;/a&gt;</i>
+      - <a href="capabilities.md">Capabilities</a></i>
     <a href="#selinuxoptions" title="SeLinuxOptions">SeLinuxOptions</a>: <i>
-      - &lt;a href=&#34;selinuxoptions.md&#34;&gt;SeLinuxOptions&lt;/a&gt;</i>
+      - <a href="selinuxoptions.md">SeLinuxOptions</a></i>
     <a href="#awselasticblockstore" title="AwsElasticBlockStore">AwsElasticBlockStore</a>: <i>
-      - &lt;a href=&#34;awselasticblockstore.md&#34;&gt;AwsElasticBlockStore&lt;/a&gt;</i>
+      - <a href="awselasticblockstore.md">AwsElasticBlockStore</a></i>
     <a href="#azuredisk" title="AzureDisk">AzureDisk</a>: <i>
-      - &lt;a href=&#34;azuredisk.md&#34;&gt;AzureDisk&lt;/a&gt;</i>
+      - <a href="azuredisk.md">AzureDisk</a></i>
     <a href="#azurefile" title="AzureFile">AzureFile</a>: <i>
-      - &lt;a href=&#34;azurefile.md&#34;&gt;AzureFile&lt;/a&gt;</i>
+      - <a href="azurefile.md">AzureFile</a></i>
     <a href="#cephfs" title="CephFs">CephFs</a>: <i>
-      - &lt;a href=&#34;cephfs.md&#34;&gt;CephFs&lt;/a&gt;</i>
+      - <a href="cephfs.md">CephFs</a></i>
     <a href="#cinder" title="Cinder">Cinder</a>: <i>
-      - &lt;a href=&#34;cinder.md&#34;&gt;Cinder&lt;/a&gt;</i>
+      - <a href="cinder.md">Cinder</a></i>
     <a href="#configmap" title="ConfigMap">ConfigMap</a>: <i>
-      - &lt;a href=&#34;configmap.md&#34;&gt;ConfigMap&lt;/a&gt;</i>
+      - <a href="configmap.md">ConfigMap</a></i>
     <a href="#downwardapi" title="DownwardApi">DownwardApi</a>: <i>
-      - &lt;a href=&#34;downwardapi.md&#34;&gt;DownwardApi&lt;/a&gt;</i>
+      - <a href="downwardapi.md">DownwardApi</a></i>
     <a href="#emptydir" title="EmptyDir">EmptyDir</a>: <i>
-      - &lt;a href=&#34;emptydir.md&#34;&gt;EmptyDir&lt;/a&gt;</i>
+      - <a href="emptydir.md">EmptyDir</a></i>
     <a href="#fc" title="Fc">Fc</a>: <i>
-      - &lt;a href=&#34;fc.md&#34;&gt;Fc&lt;/a&gt;</i>
+      - <a href="fc.md">Fc</a></i>
     <a href="#flexvolume" title="FlexVolume">FlexVolume</a>: <i>
-      - &lt;a href=&#34;flexvolume.md&#34;&gt;FlexVolume&lt;/a&gt;</i>
+      - <a href="flexvolume.md">FlexVolume</a></i>
     <a href="#flocker" title="Flocker">Flocker</a>: <i>
-      - &lt;a href=&#34;flocker.md&#34;&gt;Flocker&lt;/a&gt;</i>
+      - <a href="flocker.md">Flocker</a></i>
     <a href="#gcepersistentdisk" title="GcePersistentDisk">GcePersistentDisk</a>: <i>
-      - &lt;a href=&#34;gcepersistentdisk.md&#34;&gt;GcePersistentDisk&lt;/a&gt;</i>
+      - <a href="gcepersistentdisk.md">GcePersistentDisk</a></i>
     <a href="#gitrepo" title="GitRepo">GitRepo</a>: <i>
-      - &lt;a href=&#34;gitrepo.md&#34;&gt;GitRepo&lt;/a&gt;</i>
+      - <a href="gitrepo.md">GitRepo</a></i>
     <a href="#glusterfs" title="Glusterfs">Glusterfs</a>: <i>
-      - &lt;a href=&#34;glusterfs.md&#34;&gt;Glusterfs&lt;/a&gt;</i>
+      - <a href="glusterfs.md">Glusterfs</a></i>
     <a href="#hostpath" title="HostPath">HostPath</a>: <i>
-      - &lt;a href=&#34;hostpath.md&#34;&gt;HostPath&lt;/a&gt;</i>
+      - <a href="hostpath.md">HostPath</a></i>
     <a href="#iscsi" title="Iscsi">Iscsi</a>: <i>
-      - &lt;a href=&#34;iscsi.md&#34;&gt;Iscsi&lt;/a&gt;</i>
+      - <a href="iscsi.md">Iscsi</a></i>
     <a href="#local" title="Local">Local</a>: <i>
-      - &lt;a href=&#34;local.md&#34;&gt;Local&lt;/a&gt;</i>
+      - <a href="local.md">Local</a></i>
     <a href="#nfs" title="Nfs">Nfs</a>: <i>
-      - &lt;a href=&#34;nfs.md&#34;&gt;Nfs&lt;/a&gt;</i>
+      - <a href="nfs.md">Nfs</a></i>
     <a href="#persistentvolumeclaim" title="PersistentVolumeClaim">PersistentVolumeClaim</a>: <i>
-      - &lt;a href=&#34;persistentvolumeclaim.md&#34;&gt;PersistentVolumeClaim&lt;/a&gt;</i>
+      - <a href="persistentvolumeclaim.md">PersistentVolumeClaim</a></i>
     <a href="#photonpersistentdisk" title="PhotonPersistentDisk">PhotonPersistentDisk</a>: <i>
-      - &lt;a href=&#34;photonpersistentdisk.md&#34;&gt;PhotonPersistentDisk&lt;/a&gt;</i>
+      - <a href="photonpersistentdisk.md">PhotonPersistentDisk</a></i>
     <a href="#quobyte" title="Quobyte">Quobyte</a>: <i>
-      - &lt;a href=&#34;quobyte.md&#34;&gt;Quobyte&lt;/a&gt;</i>
+      - <a href="quobyte.md">Quobyte</a></i>
     <a href="#rbd" title="Rbd">Rbd</a>: <i>
-      - &lt;a href=&#34;rbd.md&#34;&gt;Rbd&lt;/a&gt;</i>
+      - <a href="rbd.md">Rbd</a></i>
     <a href="#secret" title="Secret">Secret</a>: <i>
-      - &lt;a href=&#34;secret.md&#34;&gt;Secret&lt;/a&gt;</i>
+      - <a href="secret.md">Secret</a></i>
     <a href="#vspherevolume" title="VsphereVolume">VsphereVolume</a>: <i>
-      - &lt;a href=&#34;vspherevolume.md&#34;&gt;VsphereVolume&lt;/a&gt;</i>
+      - <a href="vspherevolume.md">VsphereVolume</a></i>
     <a href="#preferredduringschedulingignoredduringexecution" title="PreferredDuringSchedulingIgnoredDuringExecution">PreferredDuringSchedulingIgnoredDuringExecution</a>: <i>
-      - &lt;a href=&#34;preferredduringschedulingignoredduringexecution.md&#34;&gt;PreferredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;</i>
+      - <a href="preferredduringschedulingignoredduringexecution.md">PreferredDuringSchedulingIgnoredDuringExecution</a></i>
     <a href="#requiredduringschedulingignoredduringexecution" title="RequiredDuringSchedulingIgnoredDuringExecution">RequiredDuringSchedulingIgnoredDuringExecution</a>: <i>
-      - &lt;a href=&#34;requiredduringschedulingignoredduringexecution.md&#34;&gt;RequiredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;</i>
+      - <a href="requiredduringschedulingignoredduringexecution.md">RequiredDuringSchedulingIgnoredDuringExecution</a></i>
     <a href="#valuefrom" title="ValueFrom">ValueFrom</a>: <i>
-      - &lt;a href=&#34;valuefrom.md&#34;&gt;ValueFrom&lt;/a&gt;</i>
+      - <a href="valuefrom.md">ValueFrom</a></i>
     <a href="#configmapref" title="ConfigMapRef">ConfigMapRef</a>: <i>
-      - &lt;a href=&#34;configmapref.md&#34;&gt;ConfigMapRef&lt;/a&gt;</i>
+      - <a href="configmapref.md">ConfigMapRef</a></i>
     <a href="#secretref" title="SecretRef">SecretRef</a>: <i>
-      - &lt;a href=&#34;secretref.md&#34;&gt;SecretRef&lt;/a&gt;</i>
+      - <a href="secretref.md">SecretRef</a></i>
     <a href="#poststart" title="PostStart">PostStart</a>: <i>
-      - &lt;a href=&#34;poststart.md&#34;&gt;PostStart&lt;/a&gt;</i>
+      - <a href="poststart.md">PostStart</a></i>
     <a href="#prestop" title="PreStop">PreStop</a>: <i>
-      - &lt;a href=&#34;prestop.md&#34;&gt;PreStop&lt;/a&gt;</i>
+      - <a href="prestop.md">PreStop</a></i>
     <a href="#exec" title="Exec">Exec</a>: <i>
-      - &lt;a href=&#34;exec.md&#34;&gt;Exec&lt;/a&gt;</i>
+      - <a href="exec.md">Exec</a></i>
     <a href="#httpget" title="HttpGet">HttpGet</a>: <i>
-      - &lt;a href=&#34;httpget.md&#34;&gt;HttpGet&lt;/a&gt;</i>
+      - <a href="httpget.md">HttpGet</a></i>
     <a href="#tcpsocket" title="TcpSocket">TcpSocket</a>: <i>
-      - &lt;a href=&#34;tcpsocket.md&#34;&gt;TcpSocket&lt;/a&gt;</i>
+      - <a href="tcpsocket.md">TcpSocket</a></i>
     <a href="#limits" title="Limits">Limits</a>: <i>
-      - &lt;a href=&#34;limits.md&#34;&gt;Limits&lt;/a&gt;</i>
+      - <a href="limits.md">Limits</a></i>
     <a href="#requests" title="Requests">Requests</a>: <i>
-      - &lt;a href=&#34;requests.md&#34;&gt;Requests&lt;/a&gt;</i>
+      - <a href="requests.md">Requests</a></i>
     <a href="#items" title="Items">Items</a>: <i>
-      - &lt;a href=&#34;items.md&#34;&gt;Items&lt;/a&gt;</i>
+      - <a href="items.md">Items</a></i>
     <a href="#podaffinityterm" title="PodAffinityTerm">PodAffinityTerm</a>: <i>
-      - &lt;a href=&#34;podaffinityterm.md&#34;&gt;PodAffinityTerm&lt;/a&gt;</i>
+      - <a href="podaffinityterm.md">PodAffinityTerm</a></i>
     <a href="#labelselector" title="LabelSelector">LabelSelector</a>: <i>
-      - &lt;a href=&#34;labelselector.md&#34;&gt;LabelSelector&lt;/a&gt;</i>
+      - <a href="labelselector.md">LabelSelector</a></i>
     <a href="#configmapkeyref" title="ConfigMapKeyRef">ConfigMapKeyRef</a>: <i>
-      - &lt;a href=&#34;configmapkeyref.md&#34;&gt;ConfigMapKeyRef&lt;/a&gt;</i>
+      - <a href="configmapkeyref.md">ConfigMapKeyRef</a></i>
     <a href="#fieldref" title="FieldRef">FieldRef</a>: <i>
-      - &lt;a href=&#34;fieldref.md&#34;&gt;FieldRef&lt;/a&gt;</i>
+      - <a href="fieldref.md">FieldRef</a></i>
     <a href="#resourcefieldref" title="ResourceFieldRef">ResourceFieldRef</a>: <i>
-      - &lt;a href=&#34;resourcefieldref.md&#34;&gt;ResourceFieldRef&lt;/a&gt;</i>
+      - <a href="resourcefieldref.md">ResourceFieldRef</a></i>
     <a href="#secretkeyref" title="SecretKeyRef">SecretKeyRef</a>: <i>
-      - &lt;a href=&#34;secretkeyref.md&#34;&gt;SecretKeyRef&lt;/a&gt;</i>
+      - <a href="secretkeyref.md">SecretKeyRef</a></i>
     <a href="#httpheader" title="HttpHeader">HttpHeader</a>: <i>
-      - &lt;a href=&#34;httpheader.md&#34;&gt;HttpHeader&lt;/a&gt;</i>
+      - <a href="httpheader.md">HttpHeader</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -276,7 +264,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;
+_Type_: List of <a href="spec.md">Spec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -284,7 +272,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -292,7 +280,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;selector.md&#34;&gt;Selector&lt;/a&gt;
+_Type_: List of <a href="selector.md">Selector</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -300,7 +288,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;strategy.md&#34;&gt;Strategy&lt;/a&gt;
+_Type_: List of <a href="strategy.md">Strategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -308,7 +296,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;
+_Type_: List of <a href="template.md">Template</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -316,7 +304,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;
+_Type_: List of <a href="matchexpressions.md">MatchExpressions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -324,7 +312,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rollingupdate.md&#34;&gt;RollingUpdate&lt;/a&gt;
+_Type_: List of <a href="rollingupdate.md">RollingUpdate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -332,7 +320,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;affinity.md&#34;&gt;Affinity&lt;/a&gt;
+_Type_: List of <a href="affinity.md">Affinity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -340,7 +328,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;container.md&#34;&gt;Container&lt;/a&gt;
+_Type_: List of <a href="container.md">Container</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -348,7 +336,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;
+_Type_: List of <a href="dnsconfig.md">DnsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -356,7 +344,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hostaliases.md&#34;&gt;HostAliases&lt;/a&gt;
+_Type_: List of <a href="hostaliases.md">HostAliases</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -364,7 +352,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;imagepullsecrets.md&#34;&gt;ImagePullSecrets&lt;/a&gt;
+_Type_: List of <a href="imagepullsecrets.md">ImagePullSecrets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -372,7 +360,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;initcontainer.md&#34;&gt;InitContainer&lt;/a&gt;
+_Type_: List of <a href="initcontainer.md">InitContainer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -380,7 +368,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;securitycontext.md&#34;&gt;SecurityContext&lt;/a&gt;
+_Type_: List of <a href="securitycontext.md">SecurityContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -388,7 +376,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;toleration.md&#34;&gt;Toleration&lt;/a&gt;
+_Type_: List of <a href="toleration.md">Toleration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -396,7 +384,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;
+_Type_: List of <a href="volume.md">Volume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -404,7 +392,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nodeaffinity.md&#34;&gt;NodeAffinity&lt;/a&gt;
+_Type_: List of <a href="nodeaffinity.md">NodeAffinity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -412,7 +400,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;podaffinity.md&#34;&gt;PodAffinity&lt;/a&gt;
+_Type_: List of <a href="podaffinity.md">PodAffinity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -420,7 +408,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;podantiaffinity.md&#34;&gt;PodAntiAffinity&lt;/a&gt;
+_Type_: List of <a href="podantiaffinity.md">PodAntiAffinity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -428,7 +416,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;env.md&#34;&gt;Env&lt;/a&gt;
+_Type_: List of <a href="env.md">Env</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -436,7 +424,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;envfrom.md&#34;&gt;EnvFrom&lt;/a&gt;
+_Type_: List of <a href="envfrom.md">EnvFrom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -444,7 +432,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lifecycle.md&#34;&gt;Lifecycle&lt;/a&gt;
+_Type_: List of <a href="lifecycle.md">Lifecycle</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -452,7 +440,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;livenessprobe.md&#34;&gt;LivenessProbe&lt;/a&gt;
+_Type_: List of <a href="livenessprobe.md">LivenessProbe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -460,7 +448,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;port.md&#34;&gt;Port&lt;/a&gt;
+_Type_: List of <a href="port.md">Port</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -468,7 +456,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;readinessprobe.md&#34;&gt;ReadinessProbe&lt;/a&gt;
+_Type_: List of <a href="readinessprobe.md">ReadinessProbe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -476,7 +464,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;
+_Type_: List of <a href="resources.md">Resources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -484,7 +472,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;startupprobe.md&#34;&gt;StartupProbe&lt;/a&gt;
+_Type_: List of <a href="startupprobe.md">StartupProbe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -492,7 +480,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volumemount.md&#34;&gt;VolumeMount&lt;/a&gt;
+_Type_: List of <a href="volumemount.md">VolumeMount</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -500,7 +488,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;option.md&#34;&gt;Option&lt;/a&gt;
+_Type_: List of <a href="option.md">Option</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -508,7 +496,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;capabilities.md&#34;&gt;Capabilities&lt;/a&gt;
+_Type_: List of <a href="capabilities.md">Capabilities</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -516,7 +504,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;selinuxoptions.md&#34;&gt;SeLinuxOptions&lt;/a&gt;
+_Type_: List of <a href="selinuxoptions.md">SeLinuxOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -524,7 +512,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;awselasticblockstore.md&#34;&gt;AwsElasticBlockStore&lt;/a&gt;
+_Type_: List of <a href="awselasticblockstore.md">AwsElasticBlockStore</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -532,7 +520,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;azuredisk.md&#34;&gt;AzureDisk&lt;/a&gt;
+_Type_: List of <a href="azuredisk.md">AzureDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -540,7 +528,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;azurefile.md&#34;&gt;AzureFile&lt;/a&gt;
+_Type_: List of <a href="azurefile.md">AzureFile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -548,7 +536,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cephfs.md&#34;&gt;CephFs&lt;/a&gt;
+_Type_: List of <a href="cephfs.md">CephFs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -556,7 +544,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cinder.md&#34;&gt;Cinder&lt;/a&gt;
+_Type_: List of <a href="cinder.md">Cinder</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -564,7 +552,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configmap.md&#34;&gt;ConfigMap&lt;/a&gt;
+_Type_: List of <a href="configmap.md">ConfigMap</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -572,7 +560,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;downwardapi.md&#34;&gt;DownwardApi&lt;/a&gt;
+_Type_: List of <a href="downwardapi.md">DownwardApi</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -580,7 +568,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;emptydir.md&#34;&gt;EmptyDir&lt;/a&gt;
+_Type_: List of <a href="emptydir.md">EmptyDir</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -588,7 +576,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fc.md&#34;&gt;Fc&lt;/a&gt;
+_Type_: List of <a href="fc.md">Fc</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -596,7 +584,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;flexvolume.md&#34;&gt;FlexVolume&lt;/a&gt;
+_Type_: List of <a href="flexvolume.md">FlexVolume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -604,7 +592,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;flocker.md&#34;&gt;Flocker&lt;/a&gt;
+_Type_: List of <a href="flocker.md">Flocker</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -612,7 +600,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;gcepersistentdisk.md&#34;&gt;GcePersistentDisk&lt;/a&gt;
+_Type_: List of <a href="gcepersistentdisk.md">GcePersistentDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -620,7 +608,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;gitrepo.md&#34;&gt;GitRepo&lt;/a&gt;
+_Type_: List of <a href="gitrepo.md">GitRepo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -628,7 +616,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;glusterfs.md&#34;&gt;Glusterfs&lt;/a&gt;
+_Type_: List of <a href="glusterfs.md">Glusterfs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -636,7 +624,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hostpath.md&#34;&gt;HostPath&lt;/a&gt;
+_Type_: List of <a href="hostpath.md">HostPath</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -644,7 +632,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;iscsi.md&#34;&gt;Iscsi&lt;/a&gt;
+_Type_: List of <a href="iscsi.md">Iscsi</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -652,7 +640,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;local.md&#34;&gt;Local&lt;/a&gt;
+_Type_: List of <a href="local.md">Local</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -660,7 +648,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nfs.md&#34;&gt;Nfs&lt;/a&gt;
+_Type_: List of <a href="nfs.md">Nfs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -668,7 +656,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;persistentvolumeclaim.md&#34;&gt;PersistentVolumeClaim&lt;/a&gt;
+_Type_: List of <a href="persistentvolumeclaim.md">PersistentVolumeClaim</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -676,7 +664,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;photonpersistentdisk.md&#34;&gt;PhotonPersistentDisk&lt;/a&gt;
+_Type_: List of <a href="photonpersistentdisk.md">PhotonPersistentDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -684,7 +672,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;quobyte.md&#34;&gt;Quobyte&lt;/a&gt;
+_Type_: List of <a href="quobyte.md">Quobyte</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -692,7 +680,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rbd.md&#34;&gt;Rbd&lt;/a&gt;
+_Type_: List of <a href="rbd.md">Rbd</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -700,7 +688,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secret.md&#34;&gt;Secret&lt;/a&gt;
+_Type_: List of <a href="secret.md">Secret</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -708,7 +696,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vspherevolume.md&#34;&gt;VsphereVolume&lt;/a&gt;
+_Type_: List of <a href="vspherevolume.md">VsphereVolume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -716,7 +704,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;preferredduringschedulingignoredduringexecution.md&#34;&gt;PreferredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;
+_Type_: List of <a href="preferredduringschedulingignoredduringexecution.md">PreferredDuringSchedulingIgnoredDuringExecution</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -724,7 +712,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requiredduringschedulingignoredduringexecution.md&#34;&gt;RequiredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;
+_Type_: List of <a href="requiredduringschedulingignoredduringexecution.md">RequiredDuringSchedulingIgnoredDuringExecution</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -732,7 +720,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;valuefrom.md&#34;&gt;ValueFrom&lt;/a&gt;
+_Type_: List of <a href="valuefrom.md">ValueFrom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -740,7 +728,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configmapref.md&#34;&gt;ConfigMapRef&lt;/a&gt;
+_Type_: List of <a href="configmapref.md">ConfigMapRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -748,7 +736,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secretref.md&#34;&gt;SecretRef&lt;/a&gt;
+_Type_: List of <a href="secretref.md">SecretRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -756,7 +744,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;poststart.md&#34;&gt;PostStart&lt;/a&gt;
+_Type_: List of <a href="poststart.md">PostStart</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -764,7 +752,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;prestop.md&#34;&gt;PreStop&lt;/a&gt;
+_Type_: List of <a href="prestop.md">PreStop</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -772,7 +760,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;exec.md&#34;&gt;Exec&lt;/a&gt;
+_Type_: List of <a href="exec.md">Exec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -780,7 +768,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpget.md&#34;&gt;HttpGet&lt;/a&gt;
+_Type_: List of <a href="httpget.md">HttpGet</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -788,7 +776,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tcpsocket.md&#34;&gt;TcpSocket&lt;/a&gt;
+_Type_: List of <a href="tcpsocket.md">TcpSocket</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -796,7 +784,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;limits.md&#34;&gt;Limits&lt;/a&gt;
+_Type_: List of <a href="limits.md">Limits</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -804,7 +792,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requests.md&#34;&gt;Requests&lt;/a&gt;
+_Type_: List of <a href="requests.md">Requests</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -812,7 +800,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;items.md&#34;&gt;Items&lt;/a&gt;
+_Type_: List of <a href="items.md">Items</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -820,7 +808,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;podaffinityterm.md&#34;&gt;PodAffinityTerm&lt;/a&gt;
+_Type_: List of <a href="podaffinityterm.md">PodAffinityTerm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -828,7 +816,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labelselector.md&#34;&gt;LabelSelector&lt;/a&gt;
+_Type_: List of <a href="labelselector.md">LabelSelector</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -836,7 +824,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configmapkeyref.md&#34;&gt;ConfigMapKeyRef&lt;/a&gt;
+_Type_: List of <a href="configmapkeyref.md">ConfigMapKeyRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -844,7 +832,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fieldref.md&#34;&gt;FieldRef&lt;/a&gt;
+_Type_: List of <a href="fieldref.md">FieldRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -852,7 +840,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;resourcefieldref.md&#34;&gt;ResourceFieldRef&lt;/a&gt;
+_Type_: List of <a href="resourcefieldref.md">ResourceFieldRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -860,7 +848,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secretkeyref.md&#34;&gt;SecretKeyRef&lt;/a&gt;
+_Type_: List of <a href="secretkeyref.md">SecretKeyRef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -868,7 +856,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpheader.md&#34;&gt;HttpHeader&lt;/a&gt;
+_Type_: List of <a href="httpheader.md">HttpHeader</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

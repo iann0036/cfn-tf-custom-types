@@ -12,40 +12,33 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::KubernetesCluster",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#apiserverauthorizedipranges" title="ApiServerAuthorizedIpRanges">ApiServerAuthorizedIpRanges</a>" : <i>[ String, ... ]</i>,
         "<a href="#dnsprefix" title="DnsPrefix">DnsPrefix</a>" : <i>String</i>,
         "<a href="#enablepodsecuritypolicy" title="EnablePodSecurityPolicy">EnablePodSecurityPolicy</a>" : <i>Boolean</i>,
-        "<a href="#fqdn" title="Fqdn">Fqdn</a>" : <i>String</i>,
-        "<a href="#kubeadminconfig" title="KubeAdminConfig">KubeAdminConfig</a>" : <i>[ &lt;a href=&#34;kubeadminconfig.md&#34;&gt;KubeAdminConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#kubeadminconfigraw" title="KubeAdminConfigRaw">KubeAdminConfigRaw</a>" : <i>String</i>,
-        "<a href="#kubeconfig" title="KubeConfig">KubeConfig</a>" : <i>[ &lt;a href=&#34;kubeconfig.md&#34;&gt;KubeConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#kubeconfigraw" title="KubeConfigRaw">KubeConfigRaw</a>" : <i>String</i>,
         "<a href="#kubernetesversion" title="KubernetesVersion">KubernetesVersion</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#noderesourcegroup" title="NodeResourceGroup">NodeResourceGroup</a>" : <i>String</i>,
-        "<a href="#privatefqdn" title="PrivateFqdn">PrivateFqdn</a>" : <i>String</i>,
         "<a href="#privatelinkenabled" title="PrivateLinkEnabled">PrivateLinkEnabled</a>" : <i>Boolean</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#addonprofile" title="AddonProfile">AddonProfile</a>" : <i>[ &lt;a href=&#34;addonprofile.md&#34;&gt;AddonProfile&lt;/a&gt;, ... ]</i>,
-        "<a href="#defaultnodepool" title="DefaultNodePool">DefaultNodePool</a>" : <i>[ &lt;a href=&#34;defaultnodepool.md&#34;&gt;DefaultNodePool&lt;/a&gt;, ... ]</i>,
-        "<a href="#identity" title="Identity">Identity</a>" : <i>[ &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;, ... ]</i>,
-        "<a href="#linuxprofile" title="LinuxProfile">LinuxProfile</a>" : <i>[ &lt;a href=&#34;linuxprofile.md&#34;&gt;LinuxProfile&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkprofile" title="NetworkProfile">NetworkProfile</a>" : <i>[ &lt;a href=&#34;networkprofile.md&#34;&gt;NetworkProfile&lt;/a&gt;, ... ]</i>,
-        "<a href="#rolebasedaccesscontrol" title="RoleBasedAccessControl">RoleBasedAccessControl</a>" : <i>[ &lt;a href=&#34;rolebasedaccesscontrol.md&#34;&gt;RoleBasedAccessControl&lt;/a&gt;, ... ]</i>,
-        "<a href="#serviceprincipal" title="ServicePrincipal">ServicePrincipal</a>" : <i>[ &lt;a href=&#34;serviceprincipal.md&#34;&gt;ServicePrincipal&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#windowsprofile" title="WindowsProfile">WindowsProfile</a>" : <i>[ &lt;a href=&#34;windowsprofile.md&#34;&gt;WindowsProfile&lt;/a&gt;, ... ]</i>,
-        "<a href="#aciconnectorlinux" title="AciConnectorLinux">AciConnectorLinux</a>" : <i>[ &lt;a href=&#34;aciconnectorlinux.md&#34;&gt;AciConnectorLinux&lt;/a&gt;, ... ]</i>,
-        "<a href="#azurepolicy" title="AzurePolicy">AzurePolicy</a>" : <i>[ &lt;a href=&#34;azurepolicy.md&#34;&gt;AzurePolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpapplicationrouting" title="HttpApplicationRouting">HttpApplicationRouting</a>" : <i>[ &lt;a href=&#34;httpapplicationrouting.md&#34;&gt;HttpApplicationRouting&lt;/a&gt;, ... ]</i>,
-        "<a href="#kubedashboard" title="KubeDashboard">KubeDashboard</a>" : <i>[ &lt;a href=&#34;kubedashboard.md&#34;&gt;KubeDashboard&lt;/a&gt;, ... ]</i>,
-        "<a href="#omsagent" title="OmsAgent">OmsAgent</a>" : <i>[ &lt;a href=&#34;omsagent.md&#34;&gt;OmsAgent&lt;/a&gt;, ... ]</i>,
-        "<a href="#sshkey" title="SshKey">SshKey</a>" : <i>[ &lt;a href=&#34;sshkey.md&#34;&gt;SshKey&lt;/a&gt;, ... ]</i>,
-        "<a href="#loadbalancerprofile" title="LoadBalancerProfile">LoadBalancerProfile</a>" : <i>[ &lt;a href=&#34;loadbalancerprofile.md&#34;&gt;LoadBalancerProfile&lt;/a&gt;, ... ]</i>,
-        "<a href="#azureactivedirectory" title="AzureActiveDirectory">AzureActiveDirectory</a>" : <i>[ &lt;a href=&#34;azureactivedirectory.md&#34;&gt;AzureActiveDirectory&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#addonprofile" title="AddonProfile">AddonProfile</a>" : <i>[ <a href="addonprofile.md">AddonProfile</a>, ... ]</i>,
+        "<a href="#defaultnodepool" title="DefaultNodePool">DefaultNodePool</a>" : <i>[ <a href="defaultnodepool.md">DefaultNodePool</a>, ... ]</i>,
+        "<a href="#identity" title="Identity">Identity</a>" : <i>[ <a href="identity.md">Identity</a>, ... ]</i>,
+        "<a href="#linuxprofile" title="LinuxProfile">LinuxProfile</a>" : <i>[ <a href="linuxprofile.md">LinuxProfile</a>, ... ]</i>,
+        "<a href="#networkprofile" title="NetworkProfile">NetworkProfile</a>" : <i>[ <a href="networkprofile.md">NetworkProfile</a>, ... ]</i>,
+        "<a href="#rolebasedaccesscontrol" title="RoleBasedAccessControl">RoleBasedAccessControl</a>" : <i>[ <a href="rolebasedaccesscontrol.md">RoleBasedAccessControl</a>, ... ]</i>,
+        "<a href="#serviceprincipal" title="ServicePrincipal">ServicePrincipal</a>" : <i>[ <a href="serviceprincipal.md">ServicePrincipal</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#windowsprofile" title="WindowsProfile">WindowsProfile</a>" : <i>[ <a href="windowsprofile.md">WindowsProfile</a>, ... ]</i>,
+        "<a href="#aciconnectorlinux" title="AciConnectorLinux">AciConnectorLinux</a>" : <i>[ <a href="aciconnectorlinux.md">AciConnectorLinux</a>, ... ]</i>,
+        "<a href="#azurepolicy" title="AzurePolicy">AzurePolicy</a>" : <i>[ <a href="azurepolicy.md">AzurePolicy</a>, ... ]</i>,
+        "<a href="#httpapplicationrouting" title="HttpApplicationRouting">HttpApplicationRouting</a>" : <i>[ <a href="httpapplicationrouting.md">HttpApplicationRouting</a>, ... ]</i>,
+        "<a href="#kubedashboard" title="KubeDashboard">KubeDashboard</a>" : <i>[ <a href="kubedashboard.md">KubeDashboard</a>, ... ]</i>,
+        "<a href="#omsagent" title="OmsAgent">OmsAgent</a>" : <i>[ <a href="omsagent.md">OmsAgent</a>, ... ]</i>,
+        "<a href="#sshkey" title="SshKey">SshKey</a>" : <i>[ <a href="sshkey.md">SshKey</a>, ... ]</i>,
+        "<a href="#loadbalancerprofile" title="LoadBalancerProfile">LoadBalancerProfile</a>" : <i>[ <a href="loadbalancerprofile.md">LoadBalancerProfile</a>, ... ]</i>,
+        "<a href="#azureactivedirectory" title="AzureActiveDirectory">AzureActiveDirectory</a>" : <i>[ <a href="azureactivedirectory.md">AzureActiveDirectory</a>, ... ]</i>
     }
 }
 </pre>
@@ -55,73 +48,54 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::KubernetesCluster
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#apiserverauthorizedipranges" title="ApiServerAuthorizedIpRanges">ApiServerAuthorizedIpRanges</a>: <i>
       - String</i>
     <a href="#dnsprefix" title="DnsPrefix">DnsPrefix</a>: <i>String</i>
     <a href="#enablepodsecuritypolicy" title="EnablePodSecurityPolicy">EnablePodSecurityPolicy</a>: <i>Boolean</i>
-    <a href="#fqdn" title="Fqdn">Fqdn</a>: <i>String</i>
-    <a href="#kubeadminconfig" title="KubeAdminConfig">KubeAdminConfig</a>: <i>
-      - &lt;a href=&#34;kubeadminconfig.md&#34;&gt;KubeAdminConfig&lt;/a&gt;</i>
-    <a href="#kubeadminconfigraw" title="KubeAdminConfigRaw">KubeAdminConfigRaw</a>: <i>String</i>
-    <a href="#kubeconfig" title="KubeConfig">KubeConfig</a>: <i>
-      - &lt;a href=&#34;kubeconfig.md&#34;&gt;KubeConfig&lt;/a&gt;</i>
-    <a href="#kubeconfigraw" title="KubeConfigRaw">KubeConfigRaw</a>: <i>String</i>
     <a href="#kubernetesversion" title="KubernetesVersion">KubernetesVersion</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#noderesourcegroup" title="NodeResourceGroup">NodeResourceGroup</a>: <i>String</i>
-    <a href="#privatefqdn" title="PrivateFqdn">PrivateFqdn</a>: <i>String</i>
     <a href="#privatelinkenabled" title="PrivateLinkEnabled">PrivateLinkEnabled</a>: <i>Boolean</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#addonprofile" title="AddonProfile">AddonProfile</a>: <i>
-      - &lt;a href=&#34;addonprofile.md&#34;&gt;AddonProfile&lt;/a&gt;</i>
+      - <a href="addonprofile.md">AddonProfile</a></i>
     <a href="#defaultnodepool" title="DefaultNodePool">DefaultNodePool</a>: <i>
-      - &lt;a href=&#34;defaultnodepool.md&#34;&gt;DefaultNodePool&lt;/a&gt;</i>
+      - <a href="defaultnodepool.md">DefaultNodePool</a></i>
     <a href="#identity" title="Identity">Identity</a>: <i>
-      - &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;</i>
+      - <a href="identity.md">Identity</a></i>
     <a href="#linuxprofile" title="LinuxProfile">LinuxProfile</a>: <i>
-      - &lt;a href=&#34;linuxprofile.md&#34;&gt;LinuxProfile&lt;/a&gt;</i>
+      - <a href="linuxprofile.md">LinuxProfile</a></i>
     <a href="#networkprofile" title="NetworkProfile">NetworkProfile</a>: <i>
-      - &lt;a href=&#34;networkprofile.md&#34;&gt;NetworkProfile&lt;/a&gt;</i>
+      - <a href="networkprofile.md">NetworkProfile</a></i>
     <a href="#rolebasedaccesscontrol" title="RoleBasedAccessControl">RoleBasedAccessControl</a>: <i>
-      - &lt;a href=&#34;rolebasedaccesscontrol.md&#34;&gt;RoleBasedAccessControl&lt;/a&gt;</i>
+      - <a href="rolebasedaccesscontrol.md">RoleBasedAccessControl</a></i>
     <a href="#serviceprincipal" title="ServicePrincipal">ServicePrincipal</a>: <i>
-      - &lt;a href=&#34;serviceprincipal.md&#34;&gt;ServicePrincipal&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="serviceprincipal.md">ServicePrincipal</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#windowsprofile" title="WindowsProfile">WindowsProfile</a>: <i>
-      - &lt;a href=&#34;windowsprofile.md&#34;&gt;WindowsProfile&lt;/a&gt;</i>
+      - <a href="windowsprofile.md">WindowsProfile</a></i>
     <a href="#aciconnectorlinux" title="AciConnectorLinux">AciConnectorLinux</a>: <i>
-      - &lt;a href=&#34;aciconnectorlinux.md&#34;&gt;AciConnectorLinux&lt;/a&gt;</i>
+      - <a href="aciconnectorlinux.md">AciConnectorLinux</a></i>
     <a href="#azurepolicy" title="AzurePolicy">AzurePolicy</a>: <i>
-      - &lt;a href=&#34;azurepolicy.md&#34;&gt;AzurePolicy&lt;/a&gt;</i>
+      - <a href="azurepolicy.md">AzurePolicy</a></i>
     <a href="#httpapplicationrouting" title="HttpApplicationRouting">HttpApplicationRouting</a>: <i>
-      - &lt;a href=&#34;httpapplicationrouting.md&#34;&gt;HttpApplicationRouting&lt;/a&gt;</i>
+      - <a href="httpapplicationrouting.md">HttpApplicationRouting</a></i>
     <a href="#kubedashboard" title="KubeDashboard">KubeDashboard</a>: <i>
-      - &lt;a href=&#34;kubedashboard.md&#34;&gt;KubeDashboard&lt;/a&gt;</i>
+      - <a href="kubedashboard.md">KubeDashboard</a></i>
     <a href="#omsagent" title="OmsAgent">OmsAgent</a>: <i>
-      - &lt;a href=&#34;omsagent.md&#34;&gt;OmsAgent&lt;/a&gt;</i>
+      - <a href="omsagent.md">OmsAgent</a></i>
     <a href="#sshkey" title="SshKey">SshKey</a>: <i>
-      - &lt;a href=&#34;sshkey.md&#34;&gt;SshKey&lt;/a&gt;</i>
+      - <a href="sshkey.md">SshKey</a></i>
     <a href="#loadbalancerprofile" title="LoadBalancerProfile">LoadBalancerProfile</a>: <i>
-      - &lt;a href=&#34;loadbalancerprofile.md&#34;&gt;LoadBalancerProfile&lt;/a&gt;</i>
+      - <a href="loadbalancerprofile.md">LoadBalancerProfile</a></i>
     <a href="#azureactivedirectory" title="AzureActiveDirectory">AzureActiveDirectory</a>: <i>
-      - &lt;a href=&#34;azureactivedirectory.md&#34;&gt;AzureActiveDirectory&lt;/a&gt;</i>
+      - <a href="azureactivedirectory.md">AzureActiveDirectory</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApiServerAuthorizedIpRanges
 
@@ -144,46 +118,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Fqdn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### KubeAdminConfig
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;kubeadminconfig.md&#34;&gt;KubeAdminConfig&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### KubeAdminConfigRaw
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### KubeConfig
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;kubeconfig.md&#34;&gt;KubeConfig&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### KubeConfigRaw
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -219,14 +153,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrivateFqdn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### PrivateLinkEnabled
 
 _Required_: No
@@ -247,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -255,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;addonprofile.md&#34;&gt;AddonProfile&lt;/a&gt;
+_Type_: List of <a href="addonprofile.md">AddonProfile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -263,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;defaultnodepool.md&#34;&gt;DefaultNodePool&lt;/a&gt;
+_Type_: List of <a href="defaultnodepool.md">DefaultNodePool</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -271,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;
+_Type_: List of <a href="identity.md">Identity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -279,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;linuxprofile.md&#34;&gt;LinuxProfile&lt;/a&gt;
+_Type_: List of <a href="linuxprofile.md">LinuxProfile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -287,7 +213,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkprofile.md&#34;&gt;NetworkProfile&lt;/a&gt;
+_Type_: List of <a href="networkprofile.md">NetworkProfile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -295,7 +221,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rolebasedaccesscontrol.md&#34;&gt;RoleBasedAccessControl&lt;/a&gt;
+_Type_: List of <a href="rolebasedaccesscontrol.md">RoleBasedAccessControl</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -303,7 +229,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serviceprincipal.md&#34;&gt;ServicePrincipal&lt;/a&gt;
+_Type_: List of <a href="serviceprincipal.md">ServicePrincipal</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -311,7 +237,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -319,7 +245,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;windowsprofile.md&#34;&gt;WindowsProfile&lt;/a&gt;
+_Type_: List of <a href="windowsprofile.md">WindowsProfile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -327,7 +253,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;aciconnectorlinux.md&#34;&gt;AciConnectorLinux&lt;/a&gt;
+_Type_: List of <a href="aciconnectorlinux.md">AciConnectorLinux</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -335,7 +261,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;azurepolicy.md&#34;&gt;AzurePolicy&lt;/a&gt;
+_Type_: List of <a href="azurepolicy.md">AzurePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -343,7 +269,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpapplicationrouting.md&#34;&gt;HttpApplicationRouting&lt;/a&gt;
+_Type_: List of <a href="httpapplicationrouting.md">HttpApplicationRouting</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -351,7 +277,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kubedashboard.md&#34;&gt;KubeDashboard&lt;/a&gt;
+_Type_: List of <a href="kubedashboard.md">KubeDashboard</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -359,7 +285,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;omsagent.md&#34;&gt;OmsAgent&lt;/a&gt;
+_Type_: List of <a href="omsagent.md">OmsAgent</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -367,7 +293,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sshkey.md&#34;&gt;SshKey&lt;/a&gt;
+_Type_: List of <a href="sshkey.md">SshKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -375,7 +301,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;loadbalancerprofile.md&#34;&gt;LoadBalancerProfile&lt;/a&gt;
+_Type_: List of <a href="loadbalancerprofile.md">LoadBalancerProfile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -383,7 +309,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;azureactivedirectory.md&#34;&gt;AzureActiveDirectory&lt;/a&gt;
+_Type_: List of <a href="azureactivedirectory.md">AzureActiveDirectory</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -405,25 +331,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fqdn
 
-Returns the &lt;code&gt;Fqdn&lt;/code&gt; value.
+Returns the <code>Fqdn</code> value.
 
 #### KubeAdminConfig
 
-Returns the &lt;code&gt;KubeAdminConfig&lt;/code&gt; value.
+Returns the <code>KubeAdminConfig</code> value.
 
 #### KubeAdminConfigRaw
 
-Returns the &lt;code&gt;KubeAdminConfigRaw&lt;/code&gt; value.
+Returns the <code>KubeAdminConfigRaw</code> value.
 
 #### KubeConfig
 
-Returns the &lt;code&gt;KubeConfig&lt;/code&gt; value.
+Returns the <code>KubeConfig</code> value.
 
 #### KubeConfigRaw
 
-Returns the &lt;code&gt;KubeConfigRaw&lt;/code&gt; value.
+Returns the <code>KubeConfigRaw</code> value.
 
 #### PrivateFqdn
 
-Returns the &lt;code&gt;PrivateFqdn&lt;/code&gt; value.
+Returns the <code>PrivateFqdn</code> value.
 

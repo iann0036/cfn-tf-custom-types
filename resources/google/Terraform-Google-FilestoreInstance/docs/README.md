@@ -12,18 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::FilestoreInstance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#tier" title="Tier">Tier</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#fileshares" title="FileShares">FileShares</a>" : <i>[ &lt;a href=&#34;fileshares.md&#34;&gt;FileShares&lt;/a&gt;, ... ]</i>,
-        "<a href="#networks" title="Networks">Networks</a>" : <i>[ &lt;a href=&#34;networks.md&#34;&gt;Networks&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#fileshares" title="FileShares">FileShares</a>" : <i>[ <a href="fileshares.md">FileShares</a>, ... ]</i>,
+        "<a href="#networks" title="Networks">Networks</a>" : <i>[ <a href="networks.md">Networks</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -33,52 +30,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::FilestoreInstance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#tier" title="Tier">Tier</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#fileshares" title="FileShares">FileShares</a>: <i>
-      - &lt;a href=&#34;fileshares.md&#34;&gt;FileShares&lt;/a&gt;</i>
+      - <a href="fileshares.md">FileShares</a></i>
     <a href="#networks" title="Networks">Networks</a>: <i>
-      - &lt;a href=&#34;networks.md&#34;&gt;Networks&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="networks.md">Networks</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreateTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Etag
 
 _Required_: No
 
@@ -90,7 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -130,7 +98,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fileshares.md&#34;&gt;FileShares&lt;/a&gt;
+_Type_: List of <a href="fileshares.md">FileShares</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,7 +106,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networks.md&#34;&gt;Networks&lt;/a&gt;
+_Type_: List of <a href="networks.md">Networks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,9 +136,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 

@@ -16,7 +16,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#availabilityzonereference" title="AvailabilityZoneReference">AvailabilityZoneReference</a>" : <i>[ <a href="availabilityzonereference.md">AvailabilityZoneReference</a>, ... ]</i>,
         "<a href="#checksum" title="Checksum">Checksum</a>" : <i>[ <a href="checksum.md">Checksum</a>, ... ]</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#imagetype" title="ImageType">ImageType</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ownerreference" title="OwnerReference">OwnerReference</a>" : <i>[ <a href="ownerreference.md">OwnerReference</a>, ... ]</i>,
@@ -40,7 +39,6 @@ Properties:
     <a href="#checksum" title="Checksum">Checksum</a>: <i>
       - <a href="checksum.md">Checksum</a></i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#imagetype" title="ImageType">ImageType</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ownerreference" title="OwnerReference">OwnerReference</a>: <i>
@@ -82,14 +80,6 @@ _Type_: List of <a href="checksum.md">Checksum</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
 
 _Required_: No
 

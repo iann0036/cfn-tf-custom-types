@@ -12,9 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Bitbucket::Repository",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#clonehttps" title="CloneHttps">CloneHttps</a>" : <i>String</i>,
-        "<a href="#clonessh" title="CloneSsh">CloneSsh</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#forkpolicy" title="ForkPolicy">ForkPolicy</a>" : <i>String</i>,
         "<a href="#hasissues" title="HasIssues">HasIssues</a>" : <i>Boolean</i>,
@@ -37,9 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Bitbucket::Repository
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#clonehttps" title="CloneHttps">CloneHttps</a>: <i>String</i>
-    <a href="#clonessh" title="CloneSsh">CloneSsh</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#forkpolicy" title="ForkPolicy">ForkPolicy</a>: <i>String</i>
     <a href="#hasissues" title="HasIssues">HasIssues</a>: <i>Boolean</i>
@@ -56,32 +50,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CloneHttps
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CloneSsh
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -205,9 +173,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CloneHttps
 
-Returns the &lt;code&gt;CloneHttps&lt;/code&gt; value.
+Returns the <code>CloneHttps</code> value.
 
 #### CloneSsh
 
-Returns the &lt;code&gt;CloneSsh&lt;/code&gt; value.
+Returns the <code>CloneSsh</code> value.
 

@@ -12,10 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::IdentityGroupPolicies",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#exclusive" title="Exclusive">Exclusive</a>" : <i>Boolean</i>,
         "<a href="#groupid" title="GroupId">GroupId</a>" : <i>String</i>,
-        "<a href="#groupname" title="GroupName">GroupName</a>" : <i>String</i>,
         "<a href="#policies" title="Policies">Policies</a>" : <i>[ String, ... ]</i>
     }
 }
@@ -26,25 +24,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::IdentityGroupPolicies
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#exclusive" title="Exclusive">Exclusive</a>: <i>Boolean</i>
     <a href="#groupid" title="GroupId">GroupId</a>: <i>String</i>
-    <a href="#groupname" title="GroupName">GroupName</a>: <i>String</i>
     <a href="#policies" title="Policies">Policies</a>: <i>
       - String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Exclusive
 
@@ -57,14 +43,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GroupId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### GroupName
-
-_Required_: No
 
 _Type_: String
 
@@ -96,5 +74,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### GroupName
 
-Returns the &lt;code&gt;GroupName&lt;/code&gt; value.
+Returns the <code>GroupName</code> value.
 

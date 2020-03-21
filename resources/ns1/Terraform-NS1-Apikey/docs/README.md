@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NS1::Apikey",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountmanageaccountsettings" title="AccountManageAccountSettings">AccountManageAccountSettings</a>" : <i>Boolean</i>,
         "<a href="#accountmanageapikeys" title="AccountManageApikeys">AccountManageApikeys</a>" : <i>Boolean</i>,
         "<a href="#accountmanagepaymentmethods" title="AccountManagePaymentMethods">AccountManagePaymentMethods</a>" : <i>Boolean</i>,
@@ -35,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ipwhiteliststrict" title="IpWhitelistStrict">IpWhitelistStrict</a>" : <i>Boolean</i>,
         "<a href="#ipammanageipam" title="IpamManageIpam">IpamManageIpam</a>" : <i>Boolean</i>,
         "<a href="#ipamviewipam" title="IpamViewIpam">IpamViewIpam</a>" : <i>Boolean</i>,
-        "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#monitoringmanagejobs" title="MonitoringManageJobs">MonitoringManageJobs</a>" : <i>Boolean</i>,
         "<a href="#monitoringmanagelists" title="MonitoringManageLists">MonitoringManageLists</a>" : <i>Boolean</i>,
         "<a href="#monitoringviewjobs" title="MonitoringViewJobs">MonitoringViewJobs</a>" : <i>Boolean</i>,
@@ -52,7 +50,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NS1::Apikey
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountmanageaccountsettings" title="AccountManageAccountSettings">AccountManageAccountSettings</a>: <i>Boolean</i>
     <a href="#accountmanageapikeys" title="AccountManageApikeys">AccountManageApikeys</a>: <i>Boolean</i>
     <a href="#accountmanagepaymentmethods" title="AccountManagePaymentMethods">AccountManagePaymentMethods</a>: <i>Boolean</i>
@@ -78,7 +75,6 @@ Properties:
     <a href="#ipwhiteliststrict" title="IpWhitelistStrict">IpWhitelistStrict</a>: <i>Boolean</i>
     <a href="#ipammanageipam" title="IpamManageIpam">IpamManageIpam</a>: <i>Boolean</i>
     <a href="#ipamviewipam" title="IpamViewIpam">IpamViewIpam</a>: <i>Boolean</i>
-    <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#monitoringmanagejobs" title="MonitoringManageJobs">MonitoringManageJobs</a>: <i>Boolean</i>
     <a href="#monitoringmanagelists" title="MonitoringManageLists">MonitoringManageLists</a>: <i>Boolean</i>
     <a href="#monitoringviewjobs" title="MonitoringViewJobs">MonitoringViewJobs</a>: <i>Boolean</i>
@@ -90,16 +86,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountManageAccountSettings
 
@@ -277,14 +263,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Key
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### MonitoringManageJobs
 
 _Required_: No
@@ -359,5 +337,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Key
 
-Returns the &lt;code&gt;Key&lt;/code&gt; value.
+Returns the <code>Key</code> value.
 

@@ -12,10 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NSXT::VmTags",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
-        "<a href="#logicalporttag" title="LogicalPortTag">LogicalPortTag</a>" : <i>[ &lt;a href=&#34;logicalporttag.md&#34;&gt;LogicalPortTag&lt;/a&gt;, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>
+        "<a href="#logicalporttag" title="LogicalPortTag">LogicalPortTag</a>" : <i>[ <a href="logicalporttag.md">LogicalPortTag</a>, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>
     }
 }
 </pre>
@@ -25,25 +24,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NSXT::VmTags
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#logicalporttag" title="LogicalPortTag">LogicalPortTag</a>: <i>
-      - &lt;a href=&#34;logicalporttag.md&#34;&gt;LogicalPortTag&lt;/a&gt;</i>
+      - <a href="logicalporttag.md">LogicalPortTag</a></i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+      - <a href="tag.md">Tag</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceId
 
@@ -57,7 +45,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logicalporttag.md&#34;&gt;LogicalPortTag&lt;/a&gt;
+_Type_: List of <a href="logicalporttag.md">LogicalPortTag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -65,7 +53,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
+_Type_: List of <a href="tag.md">Tag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

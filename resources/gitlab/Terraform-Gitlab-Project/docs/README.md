@@ -12,13 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Gitlab::Project",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#approvalsbeforemerge" title="ApprovalsBeforeMerge">ApprovalsBeforeMerge</a>" : <i>Double</i>,
         "<a href="#archived" title="Archived">Archived</a>" : <i>Boolean</i>,
         "<a href="#containerregistryenabled" title="ContainerRegistryEnabled">ContainerRegistryEnabled</a>" : <i>Boolean</i>,
         "<a href="#defaultbranch" title="DefaultBranch">DefaultBranch</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#httpurltorepo" title="HttpUrlToRepo">HttpUrlToRepo</a>" : <i>String</i>,
         "<a href="#initializewithreadme" title="InitializeWithReadme">InitializeWithReadme</a>" : <i>Boolean</i>,
         "<a href="#issuesenabled" title="IssuesEnabled">IssuesEnabled</a>" : <i>Boolean</i>,
         "<a href="#lfsenabled" title="LfsEnabled">LfsEnabled</a>" : <i>Boolean</i>,
@@ -31,15 +29,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#pipelinesenabled" title="PipelinesEnabled">PipelinesEnabled</a>" : <i>Boolean</i>,
         "<a href="#requestaccessenabled" title="RequestAccessEnabled">RequestAccessEnabled</a>" : <i>Boolean</i>,
-        "<a href="#runnerstoken" title="RunnersToken">RunnersToken</a>" : <i>String</i>,
         "<a href="#sharedrunnersenabled" title="SharedRunnersEnabled">SharedRunnersEnabled</a>" : <i>Boolean</i>,
         "<a href="#snippetsenabled" title="SnippetsEnabled">SnippetsEnabled</a>" : <i>Boolean</i>,
-        "<a href="#sshurltorepo" title="SshUrlToRepo">SshUrlToRepo</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#visibilitylevel" title="VisibilityLevel">VisibilityLevel</a>" : <i>String</i>,
-        "<a href="#weburl" title="WebUrl">WebUrl</a>" : <i>String</i>,
         "<a href="#wikienabled" title="WikiEnabled">WikiEnabled</a>" : <i>Boolean</i>,
-        "<a href="#sharedwithgroups" title="SharedWithGroups">SharedWithGroups</a>" : <i>[ &lt;a href=&#34;sharedwithgroups.md&#34;&gt;SharedWithGroups&lt;/a&gt;, ... ]</i>
+        "<a href="#sharedwithgroups" title="SharedWithGroups">SharedWithGroups</a>" : <i>[ <a href="sharedwithgroups.md">SharedWithGroups</a>, ... ]</i>
     }
 }
 </pre>
@@ -49,13 +44,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Gitlab::Project
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#approvalsbeforemerge" title="ApprovalsBeforeMerge">ApprovalsBeforeMerge</a>: <i>Double</i>
     <a href="#archived" title="Archived">Archived</a>: <i>Boolean</i>
     <a href="#containerregistryenabled" title="ContainerRegistryEnabled">ContainerRegistryEnabled</a>: <i>Boolean</i>
     <a href="#defaultbranch" title="DefaultBranch">DefaultBranch</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#httpurltorepo" title="HttpUrlToRepo">HttpUrlToRepo</a>: <i>String</i>
     <a href="#initializewithreadme" title="InitializeWithReadme">InitializeWithReadme</a>: <i>Boolean</i>
     <a href="#issuesenabled" title="IssuesEnabled">IssuesEnabled</a>: <i>Boolean</i>
     <a href="#lfsenabled" title="LfsEnabled">LfsEnabled</a>: <i>Boolean</i>
@@ -68,30 +61,17 @@ Properties:
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#pipelinesenabled" title="PipelinesEnabled">PipelinesEnabled</a>: <i>Boolean</i>
     <a href="#requestaccessenabled" title="RequestAccessEnabled">RequestAccessEnabled</a>: <i>Boolean</i>
-    <a href="#runnerstoken" title="RunnersToken">RunnersToken</a>: <i>String</i>
     <a href="#sharedrunnersenabled" title="SharedRunnersEnabled">SharedRunnersEnabled</a>: <i>Boolean</i>
     <a href="#snippetsenabled" title="SnippetsEnabled">SnippetsEnabled</a>: <i>Boolean</i>
-    <a href="#sshurltorepo" title="SshUrlToRepo">SshUrlToRepo</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#visibilitylevel" title="VisibilityLevel">VisibilityLevel</a>: <i>String</i>
-    <a href="#weburl" title="WebUrl">WebUrl</a>: <i>String</i>
     <a href="#wikienabled" title="WikiEnabled">WikiEnabled</a>: <i>Boolean</i>
     <a href="#sharedwithgroups" title="SharedWithGroups">SharedWithGroups</a>: <i>
-      - &lt;a href=&#34;sharedwithgroups.md&#34;&gt;SharedWithGroups&lt;/a&gt;</i>
+      - <a href="sharedwithgroups.md">SharedWithGroups</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApprovalsBeforeMerge
 
@@ -126,14 +106,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HttpUrlToRepo
 
 _Required_: No
 
@@ -237,14 +209,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### RunnersToken
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SharedRunnersEnabled
 
 _Required_: No
@@ -258,14 +222,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SshUrlToRepo
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -285,14 +241,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### WebUrl
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### WikiEnabled
 
 _Required_: No
@@ -305,7 +253,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sharedwithgroups.md&#34;&gt;SharedWithGroups&lt;/a&gt;
+_Type_: List of <a href="sharedwithgroups.md">SharedWithGroups</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -327,17 +275,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HttpUrlToRepo
 
-Returns the &lt;code&gt;HttpUrlToRepo&lt;/code&gt; value.
+Returns the <code>HttpUrlToRepo</code> value.
 
 #### RunnersToken
 
-Returns the &lt;code&gt;RunnersToken&lt;/code&gt; value.
+Returns the <code>RunnersToken</code> value.
 
 #### SshUrlToRepo
 
-Returns the &lt;code&gt;SshUrlToRepo&lt;/code&gt; value.
+Returns the <code>SshUrlToRepo</code> value.
 
 #### WebUrl
 
-Returns the &lt;code&gt;WebUrl&lt;/code&gt; value.
+Returns the <code>WebUrl</code> value.
 

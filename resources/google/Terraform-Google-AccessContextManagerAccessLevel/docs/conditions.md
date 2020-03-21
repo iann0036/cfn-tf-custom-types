@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#members" title="Members">Members</a>" : <i>[ String, ... ]</i>,
     "<a href="#negate" title="Negate">Negate</a>" : <i>Boolean</i>,
     "<a href="#requiredaccesslevels" title="RequiredAccessLevels">RequiredAccessLevels</a>" : <i>[ String, ... ]</i>,
-    "<a href="#devicepolicy" title="DevicePolicy">DevicePolicy</a>" : <i>[ &lt;a href=&#34;conditions-devicepolicy.md&#34;&gt;DevicePolicy&lt;/a&gt;, ... ]</i>
+    "<a href="#devicepolicy" title="DevicePolicy">DevicePolicy</a>" : <i>[ <a href="conditions-devicepolicy.md">DevicePolicy</a>, ... ]</i>
 }
 </pre>
 
@@ -27,7 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#requiredaccesslevels" title="RequiredAccessLevels">RequiredAccessLevels</a>: <i>
       - String</i>
 <a href="#devicepolicy" title="DevicePolicy">DevicePolicy</a>: <i>
-      - &lt;a href=&#34;conditions-devicepolicy.md&#34;&gt;DevicePolicy&lt;/a&gt;</i>
+      - <a href="conditions-devicepolicy.md">DevicePolicy</a></i>
 </pre>
 
 ## Properties
@@ -35,6 +35,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### IpSubnetworks
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,6 +43,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Members
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -49,6 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Negate
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,6 +59,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RequiredAccessLevels
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -63,7 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DevicePolicy
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;conditions-devicepolicy.md&#34;&gt;DevicePolicy&lt;/a&gt;
+
+_Type_: List of <a href="conditions-devicepolicy.md">DevicePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,17 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::ZoneSettingsOverride",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#initialsettings" title="InitialSettings">InitialSettings</a>" : <i>[ &lt;a href=&#34;initialsettings.md&#34;&gt;InitialSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#initialsettingsreadat" title="InitialSettingsReadAt">InitialSettingsReadAt</a>" : <i>String</i>,
-        "<a href="#readonlysettings" title="ReadonlySettings">ReadonlySettings</a>" : <i>[ String, ... ]</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#zonestatus" title="ZoneStatus">ZoneStatus</a>" : <i>String</i>,
-        "<a href="#zonetype" title="ZoneType">ZoneType</a>" : <i>String</i>,
-        "<a href="#settings" title="Settings">Settings</a>" : <i>[ &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;, ... ]</i>,
-        "<a href="#minify" title="Minify">Minify</a>" : <i>[ &lt;a href=&#34;minify.md&#34;&gt;Minify&lt;/a&gt;, ... ]</i>,
-        "<a href="#mobileredirect" title="MobileRedirect">MobileRedirect</a>" : <i>[ &lt;a href=&#34;mobileredirect.md&#34;&gt;MobileRedirect&lt;/a&gt;, ... ]</i>,
-        "<a href="#securityheader" title="SecurityHeader">SecurityHeader</a>" : <i>[ &lt;a href=&#34;securityheader.md&#34;&gt;SecurityHeader&lt;/a&gt;, ... ]</i>
+        "<a href="#settings" title="Settings">Settings</a>" : <i>[ <a href="settings.md">Settings</a>, ... ]</i>,
+        "<a href="#minify" title="Minify">Minify</a>" : <i>[ <a href="minify.md">Minify</a>, ... ]</i>,
+        "<a href="#mobileredirect" title="MobileRedirect">MobileRedirect</a>" : <i>[ <a href="mobileredirect.md">MobileRedirect</a>, ... ]</i>,
+        "<a href="#securityheader" title="SecurityHeader">SecurityHeader</a>" : <i>[ <a href="securityheader.md">SecurityHeader</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,60 +26,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cloudflare::ZoneSettingsOverride
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#initialsettings" title="InitialSettings">InitialSettings</a>: <i>
-      - &lt;a href=&#34;initialsettings.md&#34;&gt;InitialSettings&lt;/a&gt;</i>
-    <a href="#initialsettingsreadat" title="InitialSettingsReadAt">InitialSettingsReadAt</a>: <i>String</i>
-    <a href="#readonlysettings" title="ReadonlySettings">ReadonlySettings</a>: <i>
-      - String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
-    <a href="#zonestatus" title="ZoneStatus">ZoneStatus</a>: <i>String</i>
-    <a href="#zonetype" title="ZoneType">ZoneType</a>: <i>String</i>
     <a href="#settings" title="Settings">Settings</a>: <i>
-      - &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;</i>
+      - <a href="settings.md">Settings</a></i>
     <a href="#minify" title="Minify">Minify</a>: <i>
-      - &lt;a href=&#34;minify.md&#34;&gt;Minify&lt;/a&gt;</i>
+      - <a href="minify.md">Minify</a></i>
     <a href="#mobileredirect" title="MobileRedirect">MobileRedirect</a>: <i>
-      - &lt;a href=&#34;mobileredirect.md&#34;&gt;MobileRedirect&lt;/a&gt;</i>
+      - <a href="mobileredirect.md">MobileRedirect</a></i>
     <a href="#securityheader" title="SecurityHeader">SecurityHeader</a>: <i>
-      - &lt;a href=&#34;securityheader.md&#34;&gt;SecurityHeader&lt;/a&gt;</i>
+      - <a href="securityheader.md">SecurityHeader</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### InitialSettings
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;initialsettings.md&#34;&gt;InitialSettings&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### InitialSettingsReadAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ReadonlySettings
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
 
@@ -95,27 +47,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ZoneStatus
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ZoneType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Settings
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;
+_Type_: List of <a href="settings.md">Settings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +59,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;minify.md&#34;&gt;Minify&lt;/a&gt;
+_Type_: List of <a href="minify.md">Minify</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +67,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;mobileredirect.md&#34;&gt;MobileRedirect&lt;/a&gt;
+_Type_: List of <a href="mobileredirect.md">MobileRedirect</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +75,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;securityheader.md&#34;&gt;SecurityHeader&lt;/a&gt;
+_Type_: List of <a href="securityheader.md">SecurityHeader</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,21 +97,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### InitialSettings
 
-Returns the &lt;code&gt;InitialSettings&lt;/code&gt; value.
+Returns the <code>InitialSettings</code> value.
 
 #### InitialSettingsReadAt
 
-Returns the &lt;code&gt;InitialSettingsReadAt&lt;/code&gt; value.
+Returns the <code>InitialSettingsReadAt</code> value.
 
 #### ReadonlySettings
 
-Returns the &lt;code&gt;ReadonlySettings&lt;/code&gt; value.
+Returns the <code>ReadonlySettings</code> value.
 
 #### ZoneStatus
 
-Returns the &lt;code&gt;ZoneStatus&lt;/code&gt; value.
+Returns the <code>ZoneStatus</code> value.
 
 #### ZoneType
 
-Returns the &lt;code&gt;ZoneType&lt;/code&gt; value.
+Returns the <code>ZoneType</code> value.
 

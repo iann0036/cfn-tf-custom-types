@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
     "<a href="#nicindex" title="NicIndex">NicIndex</a>" : <i>Double</i>,
-    "<a href="#createvnicdetails" title="CreateVnicDetails">CreateVnicDetails</a>" : <i>[ &lt;a href=&#34;instancedetails-secondaryvnics-createvnicdetails.md&#34;&gt;CreateVnicDetails&lt;/a&gt;, ... ]</i>
+    "<a href="#createvnicdetails" title="CreateVnicDetails">CreateVnicDetails</a>" : <i>[ <a href="instancedetails-secondaryvnics-createvnicdetails.md">CreateVnicDetails</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
 <a href="#nicindex" title="NicIndex">NicIndex</a>: <i>Double</i>
 <a href="#createvnicdetails" title="CreateVnicDetails">CreateVnicDetails</a>: <i>
-      - &lt;a href=&#34;instancedetails-secondaryvnics-createvnicdetails.md&#34;&gt;CreateVnicDetails&lt;/a&gt;</i>
+      - <a href="instancedetails-secondaryvnics-createvnicdetails.md">CreateVnicDetails</a></i>
 </pre>
 
 ## Properties
@@ -28,6 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DisplayName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -35,6 +36,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NicIndex
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CreateVnicDetails
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instancedetails-secondaryvnics-createvnicdetails.md&#34;&gt;CreateVnicDetails&lt;/a&gt;
+
+_Type_: List of <a href="instancedetails-secondaryvnics-createvnicdetails.md">CreateVnicDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

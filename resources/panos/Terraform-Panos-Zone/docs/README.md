@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::Zone",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#enableuserid" title="EnableUserId">EnableUserId</a>" : <i>Boolean</i>,
         "<a href="#excludeacls" title="ExcludeAcls">ExcludeAcls</a>" : <i>[ String, ... ]</i>,
         "<a href="#includeacls" title="IncludeAcls">IncludeAcls</a>" : <i>[ String, ... ]</i>,
@@ -31,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::Zone
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#enableuserid" title="EnableUserId">EnableUserId</a>: <i>Boolean</i>
     <a href="#excludeacls" title="ExcludeAcls">ExcludeAcls</a>: <i>
       - String</i>
@@ -47,16 +45,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableUserId
 

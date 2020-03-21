@@ -12,22 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::ApiGatewayApi",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#apiid" title="ApiId">ApiId</a>" : <i>String</i>,
         "<a href="#authtype" title="AuthType">AuthType</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#groupid" title="GroupId">GroupId</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#servicetype" title="ServiceType">ServiceType</a>" : <i>String</i>,
         "<a href="#stagenames" title="StageNames">StageNames</a>" : <i>[ String, ... ]</i>,
-        "<a href="#constantparameters" title="ConstantParameters">ConstantParameters</a>" : <i>[ &lt;a href=&#34;constantparameters.md&#34;&gt;ConstantParameters&lt;/a&gt;, ... ]</i>,
-        "<a href="#fcserviceconfig" title="FcServiceConfig">FcServiceConfig</a>" : <i>[ &lt;a href=&#34;fcserviceconfig.md&#34;&gt;FcServiceConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpserviceconfig" title="HttpServiceConfig">HttpServiceConfig</a>" : <i>[ &lt;a href=&#34;httpserviceconfig.md&#34;&gt;HttpServiceConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpvpcserviceconfig" title="HttpVpcServiceConfig">HttpVpcServiceConfig</a>" : <i>[ &lt;a href=&#34;httpvpcserviceconfig.md&#34;&gt;HttpVpcServiceConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#mockserviceconfig" title="MockServiceConfig">MockServiceConfig</a>" : <i>[ &lt;a href=&#34;mockserviceconfig.md&#34;&gt;MockServiceConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#requestconfig" title="RequestConfig">RequestConfig</a>" : <i>[ &lt;a href=&#34;requestconfig.md&#34;&gt;RequestConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#requestparameters" title="RequestParameters">RequestParameters</a>" : <i>[ &lt;a href=&#34;requestparameters.md&#34;&gt;RequestParameters&lt;/a&gt;, ... ]</i>,
-        "<a href="#systemparameters" title="SystemParameters">SystemParameters</a>" : <i>[ &lt;a href=&#34;systemparameters.md&#34;&gt;SystemParameters&lt;/a&gt;, ... ]</i>
+        "<a href="#constantparameters" title="ConstantParameters">ConstantParameters</a>" : <i>[ <a href="constantparameters.md">ConstantParameters</a>, ... ]</i>,
+        "<a href="#fcserviceconfig" title="FcServiceConfig">FcServiceConfig</a>" : <i>[ <a href="fcserviceconfig.md">FcServiceConfig</a>, ... ]</i>,
+        "<a href="#httpserviceconfig" title="HttpServiceConfig">HttpServiceConfig</a>" : <i>[ <a href="httpserviceconfig.md">HttpServiceConfig</a>, ... ]</i>,
+        "<a href="#httpvpcserviceconfig" title="HttpVpcServiceConfig">HttpVpcServiceConfig</a>" : <i>[ <a href="httpvpcserviceconfig.md">HttpVpcServiceConfig</a>, ... ]</i>,
+        "<a href="#mockserviceconfig" title="MockServiceConfig">MockServiceConfig</a>" : <i>[ <a href="mockserviceconfig.md">MockServiceConfig</a>, ... ]</i>,
+        "<a href="#requestconfig" title="RequestConfig">RequestConfig</a>" : <i>[ <a href="requestconfig.md">RequestConfig</a>, ... ]</i>,
+        "<a href="#requestparameters" title="RequestParameters">RequestParameters</a>" : <i>[ <a href="requestparameters.md">RequestParameters</a>, ... ]</i>,
+        "<a href="#systemparameters" title="SystemParameters">SystemParameters</a>" : <i>[ <a href="systemparameters.md">SystemParameters</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,8 +35,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::ApiGatewayApi
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#apiid" title="ApiId">ApiId</a>: <i>String</i>
     <a href="#authtype" title="AuthType">AuthType</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#groupid" title="GroupId">GroupId</a>: <i>String</i>
@@ -47,42 +43,24 @@ Properties:
     <a href="#stagenames" title="StageNames">StageNames</a>: <i>
       - String</i>
     <a href="#constantparameters" title="ConstantParameters">ConstantParameters</a>: <i>
-      - &lt;a href=&#34;constantparameters.md&#34;&gt;ConstantParameters&lt;/a&gt;</i>
+      - <a href="constantparameters.md">ConstantParameters</a></i>
     <a href="#fcserviceconfig" title="FcServiceConfig">FcServiceConfig</a>: <i>
-      - &lt;a href=&#34;fcserviceconfig.md&#34;&gt;FcServiceConfig&lt;/a&gt;</i>
+      - <a href="fcserviceconfig.md">FcServiceConfig</a></i>
     <a href="#httpserviceconfig" title="HttpServiceConfig">HttpServiceConfig</a>: <i>
-      - &lt;a href=&#34;httpserviceconfig.md&#34;&gt;HttpServiceConfig&lt;/a&gt;</i>
+      - <a href="httpserviceconfig.md">HttpServiceConfig</a></i>
     <a href="#httpvpcserviceconfig" title="HttpVpcServiceConfig">HttpVpcServiceConfig</a>: <i>
-      - &lt;a href=&#34;httpvpcserviceconfig.md&#34;&gt;HttpVpcServiceConfig&lt;/a&gt;</i>
+      - <a href="httpvpcserviceconfig.md">HttpVpcServiceConfig</a></i>
     <a href="#mockserviceconfig" title="MockServiceConfig">MockServiceConfig</a>: <i>
-      - &lt;a href=&#34;mockserviceconfig.md&#34;&gt;MockServiceConfig&lt;/a&gt;</i>
+      - <a href="mockserviceconfig.md">MockServiceConfig</a></i>
     <a href="#requestconfig" title="RequestConfig">RequestConfig</a>: <i>
-      - &lt;a href=&#34;requestconfig.md&#34;&gt;RequestConfig&lt;/a&gt;</i>
+      - <a href="requestconfig.md">RequestConfig</a></i>
     <a href="#requestparameters" title="RequestParameters">RequestParameters</a>: <i>
-      - &lt;a href=&#34;requestparameters.md&#34;&gt;RequestParameters&lt;/a&gt;</i>
+      - <a href="requestparameters.md">RequestParameters</a></i>
     <a href="#systemparameters" title="SystemParameters">SystemParameters</a>: <i>
-      - &lt;a href=&#34;systemparameters.md&#34;&gt;SystemParameters&lt;/a&gt;</i>
+      - <a href="systemparameters.md">SystemParameters</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ApiId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthType
 
@@ -136,7 +114,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;constantparameters.md&#34;&gt;ConstantParameters&lt;/a&gt;
+_Type_: List of <a href="constantparameters.md">ConstantParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fcserviceconfig.md&#34;&gt;FcServiceConfig&lt;/a&gt;
+_Type_: List of <a href="fcserviceconfig.md">FcServiceConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpserviceconfig.md&#34;&gt;HttpServiceConfig&lt;/a&gt;
+_Type_: List of <a href="httpserviceconfig.md">HttpServiceConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpvpcserviceconfig.md&#34;&gt;HttpVpcServiceConfig&lt;/a&gt;
+_Type_: List of <a href="httpvpcserviceconfig.md">HttpVpcServiceConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;mockserviceconfig.md&#34;&gt;MockServiceConfig&lt;/a&gt;
+_Type_: List of <a href="mockserviceconfig.md">MockServiceConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requestconfig.md&#34;&gt;RequestConfig&lt;/a&gt;
+_Type_: List of <a href="requestconfig.md">RequestConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requestparameters.md&#34;&gt;RequestParameters&lt;/a&gt;
+_Type_: List of <a href="requestparameters.md">RequestParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;systemparameters.md&#34;&gt;SystemParameters&lt;/a&gt;
+_Type_: List of <a href="systemparameters.md">SystemParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,5 +192,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ApiId
 
-Returns the &lt;code&gt;ApiId&lt;/code&gt; value.
+Returns the <code>ApiId</code> value.
 

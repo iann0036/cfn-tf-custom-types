@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#action" title="Action">Action</a>" : <i>String</i>,
     "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
     "<a href="#ruleid" title="RuleId">RuleId</a>" : <i>String</i>,
-    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ &lt;a href=&#34;rule-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;, ... ]</i>
+    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ <a href="rule-exclusion.md">Exclusion</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
 <a href="#ruleid" title="RuleId">RuleId</a>: <i>String</i>
 <a href="#exclusion" title="Exclusion">Exclusion</a>: <i>
-      - &lt;a href=&#34;rule-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;</i>
+      - <a href="rule-exclusion.md">Exclusion</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Action
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Enabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RuleId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Exclusion
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;
+
+_Type_: List of <a href="rule-exclusion.md">Exclusion</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

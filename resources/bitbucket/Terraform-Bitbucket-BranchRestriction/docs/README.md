@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Bitbucket::BranchRestriction",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#kind" title="Kind">Kind</a>" : <i>String</i>,
         "<a href="#owner" title="Owner">Owner</a>" : <i>String</i>,
         "<a href="#pattern" title="Pattern">Pattern</a>" : <i>String</i>,
         "<a href="#repository" title="Repository">Repository</a>" : <i>String</i>,
         "<a href="#users" title="Users">Users</a>" : <i>[ String, ... ]</i>,
         "<a href="#value" title="Value">Value</a>" : <i>Double</i>,
-        "<a href="#groups" title="Groups">Groups</a>" : <i>[ &lt;a href=&#34;groups.md&#34;&gt;Groups&lt;/a&gt;, ... ]</i>
+        "<a href="#groups" title="Groups">Groups</a>" : <i>[ <a href="groups.md">Groups</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Bitbucket::BranchRestriction
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#kind" title="Kind">Kind</a>: <i>String</i>
     <a href="#owner" title="Owner">Owner</a>: <i>String</i>
     <a href="#pattern" title="Pattern">Pattern</a>: <i>String</i>
@@ -38,20 +36,10 @@ Properties:
       - String</i>
     <a href="#value" title="Value">Value</a>: <i>Double</i>
     <a href="#groups" title="Groups">Groups</a>: <i>
-      - &lt;a href=&#34;groups.md&#34;&gt;Groups&lt;/a&gt;</i>
+      - <a href="groups.md">Groups</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Kind
 
@@ -105,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;groups.md&#34;&gt;Groups&lt;/a&gt;
+_Type_: List of <a href="groups.md">Groups</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

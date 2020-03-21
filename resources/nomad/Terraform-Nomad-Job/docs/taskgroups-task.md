@@ -9,9 +9,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#driver" title="Driver">Driver</a>" : <i>String</i>,
-    "<a href="#meta" title="Meta">Meta</a>" : <i>[ &lt;a href=&#34;taskgroups-task-meta.md&#34;&gt;Meta&lt;/a&gt;, ... ]</i>,
+    "<a href="#meta" title="Meta">Meta</a>" : <i>[ <a href="taskgroups-task-meta.md">Meta</a>, ... ]</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#volumemounts" title="VolumeMounts">VolumeMounts</a>" : <i>[ &lt;a href=&#34;taskgroups-task-volumemounts.md&#34;&gt;VolumeMounts&lt;/a&gt;, ... ]</i>
+    "<a href="#volumemounts" title="VolumeMounts">VolumeMounts</a>" : <i>[ <a href="taskgroups-task-volumemounts.md">VolumeMounts</a>, ... ]</i>
 }
 </pre>
 
@@ -20,10 +20,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#driver" title="Driver">Driver</a>: <i>String</i>
 <a href="#meta" title="Meta">Meta</a>: <i>
-      - &lt;a href=&#34;taskgroups-task-meta.md&#34;&gt;Meta&lt;/a&gt;</i>
+      - <a href="taskgroups-task-meta.md">Meta</a></i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#volumemounts" title="VolumeMounts">VolumeMounts</a>: <i>
-      - &lt;a href=&#34;taskgroups-task-volumemounts.md&#34;&gt;VolumeMounts&lt;/a&gt;</i>
+      - <a href="taskgroups-task-volumemounts.md">VolumeMounts</a></i>
 </pre>
 
 ## Properties
@@ -31,6 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Driver
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -38,13 +39,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Meta
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskgroups-task-meta.md&#34;&gt;Meta&lt;/a&gt;
+
+_Type_: List of <a href="taskgroups-task-meta.md">Meta</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -52,7 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VolumeMounts
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskgroups-task-volumemounts.md&#34;&gt;VolumeMounts&lt;/a&gt;
+
+_Type_: List of <a href="taskgroups-task-volumemounts.md">VolumeMounts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

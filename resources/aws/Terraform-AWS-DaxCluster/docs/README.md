@@ -12,26 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DaxCluster",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>" : <i>[ String, ... ]</i>,
-        "<a href="#clusteraddress" title="ClusterAddress">ClusterAddress</a>" : <i>String</i>,
         "<a href="#clustername" title="ClusterName">ClusterName</a>" : <i>String</i>,
-        "<a href="#configurationendpoint" title="ConfigurationEndpoint">ConfigurationEndpoint</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#iamrolearn" title="IamRoleArn">IamRoleArn</a>" : <i>String</i>,
         "<a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>" : <i>String</i>,
         "<a href="#nodetype" title="NodeType">NodeType</a>" : <i>String</i>,
-        "<a href="#nodes" title="Nodes">Nodes</a>" : <i>[ &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;, ... ]</i>,
         "<a href="#notificationtopicarn" title="NotificationTopicArn">NotificationTopicArn</a>" : <i>String</i>,
         "<a href="#parametergroupname" title="ParameterGroupName">ParameterGroupName</a>" : <i>String</i>,
-        "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#replicationfactor" title="ReplicationFactor">ReplicationFactor</a>" : <i>Double</i>,
         "<a href="#securitygroupids" title="SecurityGroupIds">SecurityGroupIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#subnetgroupname" title="SubnetGroupName">SubnetGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>" : <i>[ &lt;a href=&#34;serversideencryption.md&#34;&gt;ServerSideEncryption&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>" : <i>[ <a href="serversideencryption.md">ServerSideEncryption</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -41,52 +35,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DaxCluster
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>: <i>
       - String</i>
-    <a href="#clusteraddress" title="ClusterAddress">ClusterAddress</a>: <i>String</i>
     <a href="#clustername" title="ClusterName">ClusterName</a>: <i>String</i>
-    <a href="#configurationendpoint" title="ConfigurationEndpoint">ConfigurationEndpoint</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#iamrolearn" title="IamRoleArn">IamRoleArn</a>: <i>String</i>
     <a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>: <i>String</i>
     <a href="#nodetype" title="NodeType">NodeType</a>: <i>String</i>
-    <a href="#nodes" title="Nodes">Nodes</a>: <i>
-      - &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;</i>
     <a href="#notificationtopicarn" title="NotificationTopicArn">NotificationTopicArn</a>: <i>String</i>
     <a href="#parametergroupname" title="ParameterGroupName">ParameterGroupName</a>: <i>String</i>
-    <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#replicationfactor" title="ReplicationFactor">ReplicationFactor</a>: <i>Double</i>
     <a href="#securitygroupids" title="SecurityGroupIds">SecurityGroupIds</a>: <i>
       - String</i>
     <a href="#subnetgroupname" title="SubnetGroupName">SubnetGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#serversideencryption" title="ServerSideEncryption">ServerSideEncryption</a>: <i>
-      - &lt;a href=&#34;serversideencryption.md&#34;&gt;ServerSideEncryption&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="serversideencryption.md">ServerSideEncryption</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZones
 
@@ -96,25 +65,9 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ClusterAddress
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ClusterName
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ConfigurationEndpoint
-
-_Required_: No
 
 _Type_: String
 
@@ -152,14 +105,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Nodes
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### NotificationTopicArn
 
 _Required_: No
@@ -173,14 +118,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Port
-
-_Required_: No
-
-_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -212,7 +149,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -220,7 +157,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serversideencryption.md&#34;&gt;ServerSideEncryption&lt;/a&gt;
+_Type_: List of <a href="serversideencryption.md">ServerSideEncryption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -228,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -250,21 +187,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### ClusterAddress
 
-Returns the &lt;code&gt;ClusterAddress&lt;/code&gt; value.
+Returns the <code>ClusterAddress</code> value.
 
 #### ConfigurationEndpoint
 
-Returns the &lt;code&gt;ConfigurationEndpoint&lt;/code&gt; value.
+Returns the <code>ConfigurationEndpoint</code> value.
 
 #### Nodes
 
-Returns the &lt;code&gt;Nodes&lt;/code&gt; value.
+Returns the <code>Nodes</code> value.
 
 #### Port
 
-Returns the &lt;code&gt;Port&lt;/code&gt; value.
+Returns the <code>Port</code> value.
 

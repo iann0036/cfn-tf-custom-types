@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#approveafterdays" title="ApproveAfterDays">ApproveAfterDays</a>" : <i>Double</i>,
     "<a href="#compliancelevel" title="ComplianceLevel">ComplianceLevel</a>" : <i>String</i>,
     "<a href="#enablenonsecurity" title="EnableNonSecurity">EnableNonSecurity</a>" : <i>Boolean</i>,
-    "<a href="#patchfilter" title="PatchFilter">PatchFilter</a>" : <i>[ &lt;a href=&#34;approvalrule-patchfilter.md&#34;&gt;PatchFilter&lt;/a&gt;, ... ]</i>
+    "<a href="#patchfilter" title="PatchFilter">PatchFilter</a>" : <i>[ <a href="approvalrule-patchfilter.md">PatchFilter</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#compliancelevel" title="ComplianceLevel">ComplianceLevel</a>: <i>String</i>
 <a href="#enablenonsecurity" title="EnableNonSecurity">EnableNonSecurity</a>: <i>Boolean</i>
 <a href="#patchfilter" title="PatchFilter">PatchFilter</a>: <i>
-      - &lt;a href=&#34;approvalrule-patchfilter.md&#34;&gt;PatchFilter&lt;/a&gt;</i>
+      - <a href="approvalrule-patchfilter.md">PatchFilter</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ApproveAfterDays
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ComplianceLevel
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EnableNonSecurity
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PatchFilter
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;approvalrule-patchfilter.md&#34;&gt;PatchFilter&lt;/a&gt;
+
+_Type_: List of <a href="approvalrule-patchfilter.md">PatchFilter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

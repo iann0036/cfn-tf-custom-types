@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VSphere::DistributedPortGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#activeuplinks" title="ActiveUplinks">ActiveUplinks</a>" : <i>[ String, ... ]</i>,
         "<a href="#allowforgedtransmits" title="AllowForgedTransmits">AllowForgedTransmits</a>" : <i>Boolean</i>,
         "<a href="#allowmacchanges" title="AllowMacChanges">AllowMacChanges</a>" : <i>Boolean</i>,
@@ -21,8 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#blockallports" title="BlockAllPorts">BlockAllPorts</a>" : <i>Boolean</i>,
         "<a href="#blockoverrideallowed" title="BlockOverrideAllowed">BlockOverrideAllowed</a>" : <i>Boolean</i>,
         "<a href="#checkbeacon" title="CheckBeacon">CheckBeacon</a>" : <i>Boolean</i>,
-        "<a href="#configversion" title="ConfigVersion">ConfigVersion</a>" : <i>String</i>,
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#directpathgen2allowed" title="DirectpathGen2Allowed">DirectpathGen2Allowed</a>" : <i>Boolean</i>,
         "<a href="#distributedvirtualswitchuuid" title="DistributedVirtualSwitchUuid">DistributedVirtualSwitchUuid</a>" : <i>String</i>,
@@ -35,7 +33,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ingressshapingburstsize" title="IngressShapingBurstSize">IngressShapingBurstSize</a>" : <i>Double</i>,
         "<a href="#ingressshapingenabled" title="IngressShapingEnabled">IngressShapingEnabled</a>" : <i>Boolean</i>,
         "<a href="#ingressshapingpeakbandwidth" title="IngressShapingPeakBandwidth">IngressShapingPeakBandwidth</a>" : <i>Double</i>,
-        "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#lacpenabled" title="LacpEnabled">LacpEnabled</a>" : <i>Boolean</i>,
         "<a href="#lacpmode" title="LacpMode">LacpMode</a>" : <i>String</i>,
         "<a href="#liveportmovingallowed" title="LivePortMovingAllowed">LivePortMovingAllowed</a>" : <i>Boolean</i>,
@@ -60,7 +57,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#uplinkteamingoverrideallowed" title="UplinkTeamingOverrideAllowed">UplinkTeamingOverrideAllowed</a>" : <i>Boolean</i>,
         "<a href="#vlanid" title="VlanId">VlanId</a>" : <i>Double</i>,
         "<a href="#vlanoverrideallowed" title="VlanOverrideAllowed">VlanOverrideAllowed</a>" : <i>Boolean</i>,
-        "<a href="#vlanrange" title="VlanRange">VlanRange</a>" : <i>[ &lt;a href=&#34;vlanrange.md&#34;&gt;VlanRange&lt;/a&gt;, ... ]</i>
+        "<a href="#vlanrange" title="VlanRange">VlanRange</a>" : <i>[ <a href="vlanrange.md">VlanRange</a>, ... ]</i>
     }
 }
 </pre>
@@ -70,7 +67,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VSphere::DistributedPortGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#activeuplinks" title="ActiveUplinks">ActiveUplinks</a>: <i>
       - String</i>
     <a href="#allowforgedtransmits" title="AllowForgedTransmits">AllowForgedTransmits</a>: <i>Boolean</i>
@@ -80,9 +76,8 @@ Properties:
     <a href="#blockallports" title="BlockAllPorts">BlockAllPorts</a>: <i>Boolean</i>
     <a href="#blockoverrideallowed" title="BlockOverrideAllowed">BlockOverrideAllowed</a>: <i>Boolean</i>
     <a href="#checkbeacon" title="CheckBeacon">CheckBeacon</a>: <i>Boolean</i>
-    <a href="#configversion" title="ConfigVersion">ConfigVersion</a>: <i>String</i>
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+      - <a href="customattributes.md">CustomAttributes</a></i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#directpathgen2allowed" title="DirectpathGen2Allowed">DirectpathGen2Allowed</a>: <i>Boolean</i>
     <a href="#distributedvirtualswitchuuid" title="DistributedVirtualSwitchUuid">DistributedVirtualSwitchUuid</a>: <i>String</i>
@@ -95,7 +90,6 @@ Properties:
     <a href="#ingressshapingburstsize" title="IngressShapingBurstSize">IngressShapingBurstSize</a>: <i>Double</i>
     <a href="#ingressshapingenabled" title="IngressShapingEnabled">IngressShapingEnabled</a>: <i>Boolean</i>
     <a href="#ingressshapingpeakbandwidth" title="IngressShapingPeakBandwidth">IngressShapingPeakBandwidth</a>: <i>Double</i>
-    <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#lacpenabled" title="LacpEnabled">LacpEnabled</a>: <i>Boolean</i>
     <a href="#lacpmode" title="LacpMode">LacpMode</a>: <i>String</i>
     <a href="#liveportmovingallowed" title="LivePortMovingAllowed">LivePortMovingAllowed</a>: <i>Boolean</i>
@@ -123,20 +117,10 @@ Properties:
     <a href="#vlanid" title="VlanId">VlanId</a>: <i>Double</i>
     <a href="#vlanoverrideallowed" title="VlanOverrideAllowed">VlanOverrideAllowed</a>: <i>Boolean</i>
     <a href="#vlanrange" title="VlanRange">VlanRange</a>: <i>
-      - &lt;a href=&#34;vlanrange.md&#34;&gt;VlanRange&lt;/a&gt;</i>
+      - <a href="vlanrange.md">VlanRange</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ActiveUplinks
 
@@ -202,19 +186,11 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ConfigVersion
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CustomAttributes
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+_Type_: List of <a href="customattributes.md">CustomAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -311,14 +287,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Key
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -518,7 +486,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vlanrange.md&#34;&gt;VlanRange&lt;/a&gt;
+_Type_: List of <a href="vlanrange.md">VlanRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -540,9 +508,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConfigVersion
 
-Returns the &lt;code&gt;ConfigVersion&lt;/code&gt; value.
+Returns the <code>ConfigVersion</code> value.
 
 #### Key
 
-Returns the &lt;code&gt;Key&lt;/code&gt; value.
+Returns the <code>Key</code> value.
 

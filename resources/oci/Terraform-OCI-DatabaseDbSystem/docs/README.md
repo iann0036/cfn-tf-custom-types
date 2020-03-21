@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::DatabaseDbSystem",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
         "<a href="#backupnetworknsgids" title="BackupNetworkNsgIds">BackupNetworkNsgIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#backupsubnetid" title="BackupSubnetId">BackupSubnetId</a>" : <i>String</i>,
@@ -22,39 +21,28 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#datastoragepercentage" title="DataStoragePercentage">DataStoragePercentage</a>" : <i>Double</i>,
         "<a href="#datastoragesizeingb" title="DataStorageSizeInGb">DataStorageSizeInGb</a>" : <i>Double</i>,
         "<a href="#databaseedition" title="DatabaseEdition">DatabaseEdition</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#diskredundancy" title="DiskRedundancy">DiskRedundancy</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
         "<a href="#faultdomains" title="FaultDomains">FaultDomains</a>" : <i>[ String, ... ]</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
-        "<a href="#iormconfigcache" title="IormConfigCache">IormConfigCache</a>" : <i>[ &lt;a href=&#34;iormconfigcache.md&#34;&gt;IormConfigCache&lt;/a&gt;, ... ]</i>,
-        "<a href="#lastpatchhistoryentryid" title="LastPatchHistoryEntryId">LastPatchHistoryEntryId</a>" : <i>String</i>,
         "<a href="#licensemodel" title="LicenseModel">LicenseModel</a>" : <i>String</i>,
-        "<a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>" : <i>String</i>,
-        "<a href="#listenerport" title="ListenerPort">ListenerPort</a>" : <i>Double</i>,
         "<a href="#nodecount" title="NodeCount">NodeCount</a>" : <i>Double</i>,
         "<a href="#nsgids" title="NsgIds">NsgIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#recostoragesizeingb" title="RecoStorageSizeInGb">RecoStorageSizeInGb</a>" : <i>Double</i>,
-        "<a href="#scandnsrecordid" title="ScanDnsRecordId">ScanDnsRecordId</a>" : <i>String</i>,
-        "<a href="#scanipids" title="ScanIpIds">ScanIpIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#shape" title="Shape">Shape</a>" : <i>String</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
         "<a href="#sparsediskgroup" title="SparseDiskgroup">SparseDiskgroup</a>" : <i>Boolean</i>,
         "<a href="#sshpublickeys" title="SshPublicKeys">SshPublicKeys</a>" : <i>[ String, ... ]</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
         "<a href="#timezone" title="TimeZone">TimeZone</a>" : <i>String</i>,
-        "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#vipids" title="VipIds">VipIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#dbhome" title="DbHome">DbHome</a>" : <i>[ &lt;a href=&#34;dbhome.md&#34;&gt;DbHome&lt;/a&gt;, ... ]</i>,
-        "<a href="#dbsystemoptions" title="DbSystemOptions">DbSystemOptions</a>" : <i>[ &lt;a href=&#34;dbsystemoptions.md&#34;&gt;DbSystemOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#database" title="Database">Database</a>" : <i>[ &lt;a href=&#34;database.md&#34;&gt;Database&lt;/a&gt;, ... ]</i>,
-        "<a href="#dbbackupconfig" title="DbBackupConfig">DbBackupConfig</a>" : <i>[ &lt;a href=&#34;dbbackupconfig.md&#34;&gt;DbBackupConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#backupdestinationdetails" title="BackupDestinationDetails">BackupDestinationDetails</a>" : <i>[ &lt;a href=&#34;backupdestinationdetails.md&#34;&gt;BackupDestinationDetails&lt;/a&gt;, ... ]</i>
+        "<a href="#dbhome" title="DbHome">DbHome</a>" : <i>[ <a href="dbhome.md">DbHome</a>, ... ]</i>,
+        "<a href="#dbsystemoptions" title="DbSystemOptions">DbSystemOptions</a>" : <i>[ <a href="dbsystemoptions.md">DbSystemOptions</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#database" title="Database">Database</a>" : <i>[ <a href="database.md">Database</a>, ... ]</i>,
+        "<a href="#dbbackupconfig" title="DbBackupConfig">DbBackupConfig</a>" : <i>[ <a href="dbbackupconfig.md">DbBackupConfig</a>, ... ]</i>,
+        "<a href="#backupdestinationdetails" title="BackupDestinationDetails">BackupDestinationDetails</a>" : <i>[ <a href="backupdestinationdetails.md">BackupDestinationDetails</a>, ... ]</i>
     }
 }
 </pre>
@@ -64,7 +52,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::DatabaseDbSystem
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>: <i>String</i>
     <a href="#backupnetworknsgids" title="BackupNetworkNsgIds">BackupNetworkNsgIds</a>: <i>
       - String</i>
@@ -76,64 +63,40 @@ Properties:
     <a href="#datastoragesizeingb" title="DataStorageSizeInGb">DataStorageSizeInGb</a>: <i>Double</i>
     <a href="#databaseedition" title="DatabaseEdition">DatabaseEdition</a>: <i>String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#diskredundancy" title="DiskRedundancy">DiskRedundancy</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#faultdomains" title="FaultDomains">FaultDomains</a>: <i>
       - String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
-    <a href="#iormconfigcache" title="IormConfigCache">IormConfigCache</a>: <i>
-      - &lt;a href=&#34;iormconfigcache.md&#34;&gt;IormConfigCache&lt;/a&gt;</i>
-    <a href="#lastpatchhistoryentryid" title="LastPatchHistoryEntryId">LastPatchHistoryEntryId</a>: <i>String</i>
     <a href="#licensemodel" title="LicenseModel">LicenseModel</a>: <i>String</i>
-    <a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>: <i>String</i>
-    <a href="#listenerport" title="ListenerPort">ListenerPort</a>: <i>Double</i>
     <a href="#nodecount" title="NodeCount">NodeCount</a>: <i>Double</i>
     <a href="#nsgids" title="NsgIds">NsgIds</a>: <i>
-      - String</i>
-    <a href="#recostoragesizeingb" title="RecoStorageSizeInGb">RecoStorageSizeInGb</a>: <i>Double</i>
-    <a href="#scandnsrecordid" title="ScanDnsRecordId">ScanDnsRecordId</a>: <i>String</i>
-    <a href="#scanipids" title="ScanIpIds">ScanIpIds</a>: <i>
       - String</i>
     <a href="#shape" title="Shape">Shape</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
     <a href="#sparsediskgroup" title="SparseDiskgroup">SparseDiskgroup</a>: <i>Boolean</i>
     <a href="#sshpublickeys" title="SshPublicKeys">SshPublicKeys</a>: <i>
       - String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#timezone" title="TimeZone">TimeZone</a>: <i>String</i>
-    <a href="#version" title="Version">Version</a>: <i>String</i>
-    <a href="#vipids" title="VipIds">VipIds</a>: <i>
-      - String</i>
     <a href="#dbhome" title="DbHome">DbHome</a>: <i>
-      - &lt;a href=&#34;dbhome.md&#34;&gt;DbHome&lt;/a&gt;</i>
+      - <a href="dbhome.md">DbHome</a></i>
     <a href="#dbsystemoptions" title="DbSystemOptions">DbSystemOptions</a>: <i>
-      - &lt;a href=&#34;dbsystemoptions.md&#34;&gt;DbSystemOptions&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="dbsystemoptions.md">DbSystemOptions</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#database" title="Database">Database</a>: <i>
-      - &lt;a href=&#34;database.md&#34;&gt;Database&lt;/a&gt;</i>
+      - <a href="database.md">Database</a></i>
     <a href="#dbbackupconfig" title="DbBackupConfig">DbBackupConfig</a>: <i>
-      - &lt;a href=&#34;dbbackupconfig.md&#34;&gt;DbBackupConfig&lt;/a&gt;</i>
+      - <a href="dbbackupconfig.md">DbBackupConfig</a></i>
     <a href="#backupdestinationdetails" title="BackupDestinationDetails">BackupDestinationDetails</a>: <i>
-      - &lt;a href=&#34;backupdestinationdetails.md&#34;&gt;BackupDestinationDetails&lt;/a&gt;</i>
+      - <a href="backupdestinationdetails.md">BackupDestinationDetails</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityDomain
 
@@ -211,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -251,29 +214,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hostname
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### IormConfigCache
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;iormconfigcache.md&#34;&gt;IormConfigCache&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastPatchHistoryEntryId
-
-_Required_: No
 
 _Type_: String
 
@@ -287,22 +234,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### LifecycleDetails
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ListenerPort
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### NodeCount
 
 _Required_: No
@@ -312,30 +243,6 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NsgIds
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### RecoStorageSizeInGb
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ScanDnsRecordId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ScanIpIds
 
 _Required_: No
 
@@ -375,25 +282,9 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SubnetId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeCreated
-
-_Required_: No
 
 _Type_: String
 
@@ -407,27 +298,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Version
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VipIds
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### DbHome
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dbhome.md&#34;&gt;DbHome&lt;/a&gt;
+_Type_: List of <a href="dbhome.md">DbHome</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -435,7 +310,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dbsystemoptions.md&#34;&gt;DbSystemOptions&lt;/a&gt;
+_Type_: List of <a href="dbsystemoptions.md">DbSystemOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -443,7 +318,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -451,7 +326,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;database.md&#34;&gt;Database&lt;/a&gt;
+_Type_: List of <a href="database.md">Database</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -459,7 +334,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dbbackupconfig.md&#34;&gt;DbBackupConfig&lt;/a&gt;
+_Type_: List of <a href="dbbackupconfig.md">DbBackupConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -467,7 +342,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backupdestinationdetails.md&#34;&gt;BackupDestinationDetails&lt;/a&gt;
+_Type_: List of <a href="backupdestinationdetails.md">BackupDestinationDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -489,45 +364,45 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### IormConfigCache
 
-Returns the &lt;code&gt;IormConfigCache&lt;/code&gt; value.
+Returns the <code>IormConfigCache</code> value.
 
 #### LastPatchHistoryEntryId
 
-Returns the &lt;code&gt;LastPatchHistoryEntryId&lt;/code&gt; value.
+Returns the <code>LastPatchHistoryEntryId</code> value.
 
 #### LifecycleDetails
 
-Returns the &lt;code&gt;LifecycleDetails&lt;/code&gt; value.
+Returns the <code>LifecycleDetails</code> value.
 
 #### ListenerPort
 
-Returns the &lt;code&gt;ListenerPort&lt;/code&gt; value.
+Returns the <code>ListenerPort</code> value.
 
 #### RecoStorageSizeInGb
 
-Returns the &lt;code&gt;RecoStorageSizeInGb&lt;/code&gt; value.
+Returns the <code>RecoStorageSizeInGb</code> value.
 
 #### ScanDnsRecordId
 
-Returns the &lt;code&gt;ScanDnsRecordId&lt;/code&gt; value.
+Returns the <code>ScanDnsRecordId</code> value.
 
 #### ScanIpIds
 
-Returns the &lt;code&gt;ScanIpIds&lt;/code&gt; value.
+Returns the <code>ScanIpIds</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 
 #### Version
 
-Returns the &lt;code&gt;Version&lt;/code&gt; value.
+Returns the <code>Version</code> value.
 
 #### VipIds
 
-Returns the &lt;code&gt;VipIds&lt;/code&gt; value.
+Returns the <code>VipIds</code> value.
 

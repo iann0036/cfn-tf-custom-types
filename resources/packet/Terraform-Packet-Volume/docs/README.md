@@ -12,20 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Packet::Volume",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#attachments" title="Attachments">Attachments</a>" : <i>[ &lt;a href=&#34;attachments.md&#34;&gt;Attachments&lt;/a&gt;, ... ]</i>,
         "<a href="#billingcycle" title="BillingCycle">BillingCycle</a>" : <i>String</i>,
-        "<a href="#created" title="Created">Created</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#facility" title="Facility">Facility</a>" : <i>String</i>,
         "<a href="#locked" title="Locked">Locked</a>" : <i>Boolean</i>,
-        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#plan" title="Plan">Plan</a>" : <i>String</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
         "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#updated" title="Updated">Updated</a>" : <i>String</i>,
-        "<a href="#snapshotpolicies" title="SnapshotPolicies">SnapshotPolicies</a>" : <i>[ &lt;a href=&#34;snapshotpolicies.md&#34;&gt;SnapshotPolicies&lt;/a&gt;, ... ]</i>
+        "<a href="#snapshotpolicies" title="SnapshotPolicies">SnapshotPolicies</a>" : <i>[ <a href="snapshotpolicies.md">SnapshotPolicies</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,53 +29,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Packet::Volume
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#attachments" title="Attachments">Attachments</a>: <i>
-      - &lt;a href=&#34;attachments.md&#34;&gt;Attachments&lt;/a&gt;</i>
     <a href="#billingcycle" title="BillingCycle">BillingCycle</a>: <i>String</i>
-    <a href="#created" title="Created">Created</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#facility" title="Facility">Facility</a>: <i>String</i>
     <a href="#locked" title="Locked">Locked</a>: <i>Boolean</i>
-    <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#plan" title="Plan">Plan</a>: <i>String</i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
     <a href="#size" title="Size">Size</a>: <i>Double</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#updated" title="Updated">Updated</a>: <i>String</i>
     <a href="#snapshotpolicies" title="SnapshotPolicies">SnapshotPolicies</a>: <i>
-      - &lt;a href=&#34;snapshotpolicies.md&#34;&gt;SnapshotPolicies&lt;/a&gt;</i>
+      - <a href="snapshotpolicies.md">SnapshotPolicies</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Attachments
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;attachments.md&#34;&gt;Attachments&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### BillingCycle
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Created
 
 _Required_: No
 
@@ -113,14 +74,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Name
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Plan
 
 _Required_: Yes
@@ -145,27 +98,11 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Updated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SnapshotPolicies
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;snapshotpolicies.md&#34;&gt;SnapshotPolicies&lt;/a&gt;
+_Type_: List of <a href="snapshotpolicies.md">SnapshotPolicies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,21 +124,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Attachments
 
-Returns the &lt;code&gt;Attachments&lt;/code&gt; value.
+Returns the <code>Attachments</code> value.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Updated
 
-Returns the &lt;code&gt;Updated&lt;/code&gt; value.
+Returns the <code>Updated</code> value.
 

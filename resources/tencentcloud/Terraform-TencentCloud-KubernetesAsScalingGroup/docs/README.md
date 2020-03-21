@@ -12,13 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::KubernetesAsScalingGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#clusterid" title="ClusterId">ClusterId</a>" : <i>String</i>,
-        "<a href="#autoscalingconfig" title="AutoScalingConfig">AutoScalingConfig</a>" : <i>[ &lt;a href=&#34;autoscalingconfig.md&#34;&gt;AutoScalingConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#autoscalinggroup" title="AutoScalingGroup">AutoScalingGroup</a>" : <i>[ &lt;a href=&#34;autoscalinggroup.md&#34;&gt;AutoScalingGroup&lt;/a&gt;, ... ]</i>,
-        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;, ... ]</i>,
-        "<a href="#forwardbalancerids" title="ForwardBalancerIds">ForwardBalancerIds</a>" : <i>[ &lt;a href=&#34;forwardbalancerids.md&#34;&gt;ForwardBalancerIds&lt;/a&gt;, ... ]</i>,
-        "<a href="#targetattribute" title="TargetAttribute">TargetAttribute</a>" : <i>[ &lt;a href=&#34;targetattribute.md&#34;&gt;TargetAttribute&lt;/a&gt;, ... ]</i>
+        "<a href="#autoscalingconfig" title="AutoScalingConfig">AutoScalingConfig</a>" : <i>[ <a href="autoscalingconfig.md">AutoScalingConfig</a>, ... ]</i>,
+        "<a href="#autoscalinggroup" title="AutoScalingGroup">AutoScalingGroup</a>" : <i>[ <a href="autoscalinggroup.md">AutoScalingGroup</a>, ... ]</i>,
+        "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ <a href="datadisk.md">DataDisk</a>, ... ]</i>,
+        "<a href="#forwardbalancerids" title="ForwardBalancerIds">ForwardBalancerIds</a>" : <i>[ <a href="forwardbalancerids.md">ForwardBalancerIds</a>, ... ]</i>,
+        "<a href="#targetattribute" title="TargetAttribute">TargetAttribute</a>" : <i>[ <a href="targetattribute.md">TargetAttribute</a>, ... ]</i>
     }
 }
 </pre>
@@ -28,31 +27,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::KubernetesAsScalingGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#clusterid" title="ClusterId">ClusterId</a>: <i>String</i>
     <a href="#autoscalingconfig" title="AutoScalingConfig">AutoScalingConfig</a>: <i>
-      - &lt;a href=&#34;autoscalingconfig.md&#34;&gt;AutoScalingConfig&lt;/a&gt;</i>
+      - <a href="autoscalingconfig.md">AutoScalingConfig</a></i>
     <a href="#autoscalinggroup" title="AutoScalingGroup">AutoScalingGroup</a>: <i>
-      - &lt;a href=&#34;autoscalinggroup.md&#34;&gt;AutoScalingGroup&lt;/a&gt;</i>
+      - <a href="autoscalinggroup.md">AutoScalingGroup</a></i>
     <a href="#datadisk" title="DataDisk">DataDisk</a>: <i>
-      - &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;</i>
+      - <a href="datadisk.md">DataDisk</a></i>
     <a href="#forwardbalancerids" title="ForwardBalancerIds">ForwardBalancerIds</a>: <i>
-      - &lt;a href=&#34;forwardbalancerids.md&#34;&gt;ForwardBalancerIds&lt;/a&gt;</i>
+      - <a href="forwardbalancerids.md">ForwardBalancerIds</a></i>
     <a href="#targetattribute" title="TargetAttribute">TargetAttribute</a>: <i>
-      - &lt;a href=&#34;targetattribute.md&#34;&gt;TargetAttribute&lt;/a&gt;</i>
+      - <a href="targetattribute.md">TargetAttribute</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterId
 
@@ -66,7 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscalingconfig.md&#34;&gt;AutoScalingConfig&lt;/a&gt;
+_Type_: List of <a href="autoscalingconfig.md">AutoScalingConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -74,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscalinggroup.md&#34;&gt;AutoScalingGroup&lt;/a&gt;
+_Type_: List of <a href="autoscalinggroup.md">AutoScalingGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -82,7 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datadisk.md&#34;&gt;DataDisk&lt;/a&gt;
+_Type_: List of <a href="datadisk.md">DataDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -90,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;forwardbalancerids.md&#34;&gt;ForwardBalancerIds&lt;/a&gt;
+_Type_: List of <a href="forwardbalancerids.md">ForwardBalancerIds</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;targetattribute.md&#34;&gt;TargetAttribute&lt;/a&gt;
+_Type_: List of <a href="targetattribute.md">TargetAttribute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

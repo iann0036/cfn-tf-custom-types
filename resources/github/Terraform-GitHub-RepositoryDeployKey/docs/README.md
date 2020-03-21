@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::GitHub::RepositoryDeployKey",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#readonly" title="ReadOnly">ReadOnly</a>" : <i>Boolean</i>,
         "<a href="#repository" title="Repository">Repository</a>" : <i>String</i>,
@@ -27,8 +25,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::GitHub::RepositoryDeployKey
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#readonly" title="ReadOnly">ReadOnly</a>: <i>Boolean</i>
     <a href="#repository" title="Repository">Repository</a>: <i>String</i>
@@ -36,24 +32,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Etag
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Key
 
@@ -105,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 

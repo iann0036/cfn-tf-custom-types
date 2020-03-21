@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#notifyall" title="NotifyAll">NotifyAll</a>" : <i>Boolean</i>,
     "<a href="#notifyon" title="NotifyOn">NotifyOn</a>" : <i>String</i>,
     "<a href="#notifythreshold" title="NotifyThreshold">NotifyThreshold</a>" : <i>Double</i>,
-    "<a href="#recipients" title="Recipients">Recipients</a>" : <i>[ &lt;a href=&#34;emails-recipients.md&#34;&gt;Recipients&lt;/a&gt;, ... ]</i>
+    "<a href="#recipients" title="Recipients">Recipients</a>" : <i>[ <a href="emails-recipients.md">Recipients</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#notifyon" title="NotifyOn">NotifyOn</a>: <i>String</i>
 <a href="#notifythreshold" title="NotifyThreshold">NotifyThreshold</a>: <i>Double</i>
 <a href="#recipients" title="Recipients">Recipients</a>: <i>
-      - &lt;a href=&#34;emails-recipients.md&#34;&gt;Recipients&lt;/a&gt;</i>
+      - <a href="emails-recipients.md">Recipients</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### NotifyAll
 
 _Required_: Yes
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NotifyOn
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NotifyThreshold
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Recipients
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;emails-recipients.md&#34;&gt;Recipients&lt;/a&gt;
+
+_Type_: List of <a href="emails-recipients.md">Recipients</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

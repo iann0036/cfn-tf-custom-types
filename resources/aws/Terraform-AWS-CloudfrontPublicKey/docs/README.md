@@ -12,11 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CloudfrontPublicKey",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#callerreference" title="CallerReference">CallerReference</a>" : <i>String</i>,
         "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
         "<a href="#encodedkey" title="EncodedKey">EncodedKey</a>" : <i>String</i>,
-        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>
     }
@@ -28,34 +25,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CloudfrontPublicKey
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#callerreference" title="CallerReference">CallerReference</a>: <i>String</i>
     <a href="#comment" title="Comment">Comment</a>: <i>String</i>
     <a href="#encodedkey" title="EncodedKey">EncodedKey</a>: <i>String</i>
-    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CallerReference
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Comment
 
@@ -68,14 +44,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EncodedKey
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Etag
-
-_Required_: No
 
 _Type_: String
 
@@ -115,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CallerReference
 
-Returns the &lt;code&gt;CallerReference&lt;/code&gt; value.
+Returns the <code>CallerReference</code> value.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 

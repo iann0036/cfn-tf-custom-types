@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DmsCertificate",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#certificatearn" title="CertificateArn">CertificateArn</a>" : <i>String</i>,
         "<a href="#certificateid" title="CertificateId">CertificateId</a>" : <i>String</i>,
         "<a href="#certificatepem" title="CertificatePem">CertificatePem</a>" : <i>String</i>,
         "<a href="#certificatewallet" title="CertificateWallet">CertificateWallet</a>" : <i>String</i>
@@ -26,32 +24,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DmsCertificate
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#certificatearn" title="CertificateArn">CertificateArn</a>: <i>String</i>
     <a href="#certificateid" title="CertificateId">CertificateId</a>: <i>String</i>
     <a href="#certificatepem" title="CertificatePem">CertificatePem</a>: <i>String</i>
     <a href="#certificatewallet" title="CertificateWallet">CertificateWallet</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CertificateArn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateId
 
@@ -95,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CertificateArn
 
-Returns the &lt;code&gt;CertificateArn&lt;/code&gt; value.
+Returns the <code>CertificateArn</code> value.
 

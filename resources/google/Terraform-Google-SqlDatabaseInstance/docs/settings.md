@@ -18,12 +18,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#pricingplan" title="PricingPlan">PricingPlan</a>" : <i>String</i>,
     "<a href="#replicationtype" title="ReplicationType">ReplicationType</a>" : <i>String</i>,
     "<a href="#tier" title="Tier">Tier</a>" : <i>String</i>,
-    "<a href="#userlabels" title="UserLabels">UserLabels</a>" : <i>[ &lt;a href=&#34;settings-userlabels.md&#34;&gt;UserLabels&lt;/a&gt;, ... ]</i>,
-    "<a href="#backupconfiguration" title="BackupConfiguration">BackupConfiguration</a>" : <i>[ &lt;a href=&#34;settings-backupconfiguration.md&#34;&gt;BackupConfiguration&lt;/a&gt;, ... ]</i>,
-    "<a href="#databaseflags" title="DatabaseFlags">DatabaseFlags</a>" : <i>[ &lt;a href=&#34;settings-databaseflags.md&#34;&gt;DatabaseFlags&lt;/a&gt;, ... ]</i>,
-    "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ &lt;a href=&#34;settings-ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;, ... ]</i>,
-    "<a href="#locationpreference" title="LocationPreference">LocationPreference</a>" : <i>[ &lt;a href=&#34;settings-locationpreference.md&#34;&gt;LocationPreference&lt;/a&gt;, ... ]</i>,
-    "<a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>" : <i>[ &lt;a href=&#34;settings-maintenancewindow.md&#34;&gt;MaintenanceWindow&lt;/a&gt;, ... ]</i>
+    "<a href="#userlabels" title="UserLabels">UserLabels</a>" : <i>[ <a href="settings-userlabels.md">UserLabels</a>, ... ]</i>,
+    "<a href="#backupconfiguration" title="BackupConfiguration">BackupConfiguration</a>" : <i>[ <a href="settings-backupconfiguration.md">BackupConfiguration</a>, ... ]</i>,
+    "<a href="#databaseflags" title="DatabaseFlags">DatabaseFlags</a>" : <i>[ <a href="settings-databaseflags.md">DatabaseFlags</a>, ... ]</i>,
+    "<a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>" : <i>[ <a href="settings-ipconfiguration.md">IpConfiguration</a>, ... ]</i>,
+    "<a href="#locationpreference" title="LocationPreference">LocationPreference</a>" : <i>[ <a href="settings-locationpreference.md">LocationPreference</a>, ... ]</i>,
+    "<a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>" : <i>[ <a href="settings-maintenancewindow.md">MaintenanceWindow</a>, ... ]</i>
 }
 </pre>
 
@@ -42,17 +42,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#replicationtype" title="ReplicationType">ReplicationType</a>: <i>String</i>
 <a href="#tier" title="Tier">Tier</a>: <i>String</i>
 <a href="#userlabels" title="UserLabels">UserLabels</a>: <i>
-      - &lt;a href=&#34;settings-userlabels.md&#34;&gt;UserLabels&lt;/a&gt;</i>
+      - <a href="settings-userlabels.md">UserLabels</a></i>
 <a href="#backupconfiguration" title="BackupConfiguration">BackupConfiguration</a>: <i>
-      - &lt;a href=&#34;settings-backupconfiguration.md&#34;&gt;BackupConfiguration&lt;/a&gt;</i>
+      - <a href="settings-backupconfiguration.md">BackupConfiguration</a></i>
 <a href="#databaseflags" title="DatabaseFlags">DatabaseFlags</a>: <i>
-      - &lt;a href=&#34;settings-databaseflags.md&#34;&gt;DatabaseFlags&lt;/a&gt;</i>
+      - <a href="settings-databaseflags.md">DatabaseFlags</a></i>
 <a href="#ipconfiguration" title="IpConfiguration">IpConfiguration</a>: <i>
-      - &lt;a href=&#34;settings-ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;</i>
+      - <a href="settings-ipconfiguration.md">IpConfiguration</a></i>
 <a href="#locationpreference" title="LocationPreference">LocationPreference</a>: <i>
-      - &lt;a href=&#34;settings-locationpreference.md&#34;&gt;LocationPreference&lt;/a&gt;</i>
+      - <a href="settings-locationpreference.md">LocationPreference</a></i>
 <a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>: <i>
-      - &lt;a href=&#34;settings-maintenancewindow.md&#34;&gt;MaintenanceWindow&lt;/a&gt;</i>
+      - <a href="settings-maintenancewindow.md">MaintenanceWindow</a></i>
 </pre>
 
 ## Properties
@@ -60,6 +60,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ActivationPolicy
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -67,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AuthorizedGaeApplications
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,6 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AvailabilityType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -81,6 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CrashSafeReplication
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -88,6 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DiskAutoresize
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -95,6 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DiskSize
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -102,6 +108,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DiskType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -109,6 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PricingPlan
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -116,6 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ReplicationType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -123,6 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tier
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -130,42 +140,48 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UserLabels
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;settings-userlabels.md&#34;&gt;UserLabels&lt;/a&gt;
+
+_Type_: List of <a href="settings-userlabels.md">UserLabels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackupConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;settings-backupconfiguration.md&#34;&gt;BackupConfiguration&lt;/a&gt;
+
+_Type_: List of <a href="settings-backupconfiguration.md">BackupConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatabaseFlags
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;settings-databaseflags.md&#34;&gt;DatabaseFlags&lt;/a&gt;
+
+_Type_: List of <a href="settings-databaseflags.md">DatabaseFlags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;settings-ipconfiguration.md&#34;&gt;IpConfiguration&lt;/a&gt;
+
+_Type_: List of <a href="settings-ipconfiguration.md">IpConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocationPreference
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;settings-locationpreference.md&#34;&gt;LocationPreference&lt;/a&gt;
+
+_Type_: List of <a href="settings-locationpreference.md">LocationPreference</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaintenanceWindow
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;settings-maintenancewindow.md&#34;&gt;MaintenanceWindow&lt;/a&gt;
+
+_Type_: List of <a href="settings-maintenancewindow.md">MaintenanceWindow</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

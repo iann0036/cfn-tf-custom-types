@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::LtmProfileClientSsl",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#alerttimeout" title="AlertTimeout">AlertTimeout</a>" : <i>String</i>,
         "<a href="#allownonssl" title="AllowNonSsl">AllowNonSsl</a>" : <i>String</i>,
         "<a href="#authenticate" title="Authenticate">Authenticate</a>" : <i>String</i>,
@@ -63,7 +62,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#strictresume" title="StrictResume">StrictResume</a>" : <i>String</i>,
         "<a href="#tmoptions" title="TmOptions">TmOptions</a>" : <i>[ String, ... ]</i>,
         "<a href="#uncleanshutdown" title="UncleanShutdown">UncleanShutdown</a>" : <i>String</i>,
-        "<a href="#certkeychain" title="CertKeyChain">CertKeyChain</a>" : <i>[ &lt;a href=&#34;certkeychain.md&#34;&gt;CertKeyChain&lt;/a&gt;, ... ]</i>
+        "<a href="#certkeychain" title="CertKeyChain">CertKeyChain</a>" : <i>[ <a href="certkeychain.md">CertKeyChain</a>, ... ]</i>
     }
 }
 </pre>
@@ -73,7 +72,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::LtmProfileClientSsl
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#alerttimeout" title="AlertTimeout">AlertTimeout</a>: <i>String</i>
     <a href="#allownonssl" title="AllowNonSsl">AllowNonSsl</a>: <i>String</i>
     <a href="#authenticate" title="Authenticate">Authenticate</a>: <i>String</i>
@@ -127,20 +125,10 @@ Properties:
       - String</i>
     <a href="#uncleanshutdown" title="UncleanShutdown">UncleanShutdown</a>: <i>String</i>
     <a href="#certkeychain" title="CertKeyChain">CertKeyChain</a>: <i>
-      - &lt;a href=&#34;certkeychain.md&#34;&gt;CertKeyChain&lt;/a&gt;</i>
+      - <a href="certkeychain.md">CertKeyChain</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AlertTimeout
 
@@ -546,7 +534,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;certkeychain.md&#34;&gt;CertKeyChain&lt;/a&gt;
+_Type_: List of <a href="certkeychain.md">CertKeyChain</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

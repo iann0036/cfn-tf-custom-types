@@ -12,12 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Circonus::ContactGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#aggregationwindow" title="AggregationWindow">AggregationWindow</a>" : <i>String</i>,
         "<a href="#alwayssendclear" title="AlwaysSendClear">AlwaysSendClear</a>" : <i>Boolean</i>,
         "<a href="#grouptype" title="GroupType">GroupType</a>" : <i>String</i>,
-        "<a href="#lastmodified" title="LastModified">LastModified</a>" : <i>Double</i>,
-        "<a href="#lastmodifiedby" title="LastModifiedBy">LastModifiedBy</a>" : <i>String</i>,
         "<a href="#longmessage" title="LongMessage">LongMessage</a>" : <i>String</i>,
         "<a href="#longsubject" title="LongSubject">LongSubject</a>" : <i>String</i>,
         "<a href="#longsummary" title="LongSummary">LongSummary</a>" : <i>String</i>,
@@ -25,15 +22,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#shortmessage" title="ShortMessage">ShortMessage</a>" : <i>String</i>,
         "<a href="#shortsummary" title="ShortSummary">ShortSummary</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#alertoption" title="AlertOption">AlertOption</a>" : <i>[ &lt;a href=&#34;alertoption.md&#34;&gt;AlertOption&lt;/a&gt;, ... ]</i>,
-        "<a href="#email" title="Email">Email</a>" : <i>[ &lt;a href=&#34;email.md&#34;&gt;Email&lt;/a&gt;, ... ]</i>,
-        "<a href="#http" title="Http">Http</a>" : <i>[ &lt;a href=&#34;http.md&#34;&gt;Http&lt;/a&gt;, ... ]</i>,
-        "<a href="#irc" title="Irc">Irc</a>" : <i>[ &lt;a href=&#34;irc.md&#34;&gt;Irc&lt;/a&gt;, ... ]</i>,
-        "<a href="#pagerduty" title="PagerDuty">PagerDuty</a>" : <i>[ &lt;a href=&#34;pagerduty.md&#34;&gt;PagerDuty&lt;/a&gt;, ... ]</i>,
-        "<a href="#slack" title="Slack">Slack</a>" : <i>[ &lt;a href=&#34;slack.md&#34;&gt;Slack&lt;/a&gt;, ... ]</i>,
-        "<a href="#sms" title="Sms">Sms</a>" : <i>[ &lt;a href=&#34;sms.md&#34;&gt;Sms&lt;/a&gt;, ... ]</i>,
-        "<a href="#victorops" title="Victorops">Victorops</a>" : <i>[ &lt;a href=&#34;victorops.md&#34;&gt;Victorops&lt;/a&gt;, ... ]</i>,
-        "<a href="#xmpp" title="Xmpp">Xmpp</a>" : <i>[ &lt;a href=&#34;xmpp.md&#34;&gt;Xmpp&lt;/a&gt;, ... ]</i>
+        "<a href="#alertoption" title="AlertOption">AlertOption</a>" : <i>[ <a href="alertoption.md">AlertOption</a>, ... ]</i>,
+        "<a href="#email" title="Email">Email</a>" : <i>[ <a href="email.md">Email</a>, ... ]</i>,
+        "<a href="#http" title="Http">Http</a>" : <i>[ <a href="http.md">Http</a>, ... ]</i>,
+        "<a href="#irc" title="Irc">Irc</a>" : <i>[ <a href="irc.md">Irc</a>, ... ]</i>,
+        "<a href="#pagerduty" title="PagerDuty">PagerDuty</a>" : <i>[ <a href="pagerduty.md">PagerDuty</a>, ... ]</i>,
+        "<a href="#slack" title="Slack">Slack</a>" : <i>[ <a href="slack.md">Slack</a>, ... ]</i>,
+        "<a href="#sms" title="Sms">Sms</a>" : <i>[ <a href="sms.md">Sms</a>, ... ]</i>,
+        "<a href="#victorops" title="Victorops">Victorops</a>" : <i>[ <a href="victorops.md">Victorops</a>, ... ]</i>,
+        "<a href="#xmpp" title="Xmpp">Xmpp</a>" : <i>[ <a href="xmpp.md">Xmpp</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,12 +40,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Circonus::ContactGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#aggregationwindow" title="AggregationWindow">AggregationWindow</a>: <i>String</i>
     <a href="#alwayssendclear" title="AlwaysSendClear">AlwaysSendClear</a>: <i>Boolean</i>
     <a href="#grouptype" title="GroupType">GroupType</a>: <i>String</i>
-    <a href="#lastmodified" title="LastModified">LastModified</a>: <i>Double</i>
-    <a href="#lastmodifiedby" title="LastModifiedBy">LastModifiedBy</a>: <i>String</i>
     <a href="#longmessage" title="LongMessage">LongMessage</a>: <i>String</i>
     <a href="#longsubject" title="LongSubject">LongSubject</a>: <i>String</i>
     <a href="#longsummary" title="LongSummary">LongSummary</a>: <i>String</i>
@@ -58,36 +52,26 @@ Properties:
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#alertoption" title="AlertOption">AlertOption</a>: <i>
-      - &lt;a href=&#34;alertoption.md&#34;&gt;AlertOption&lt;/a&gt;</i>
+      - <a href="alertoption.md">AlertOption</a></i>
     <a href="#email" title="Email">Email</a>: <i>
-      - &lt;a href=&#34;email.md&#34;&gt;Email&lt;/a&gt;</i>
+      - <a href="email.md">Email</a></i>
     <a href="#http" title="Http">Http</a>: <i>
-      - &lt;a href=&#34;http.md&#34;&gt;Http&lt;/a&gt;</i>
+      - <a href="http.md">Http</a></i>
     <a href="#irc" title="Irc">Irc</a>: <i>
-      - &lt;a href=&#34;irc.md&#34;&gt;Irc&lt;/a&gt;</i>
+      - <a href="irc.md">Irc</a></i>
     <a href="#pagerduty" title="PagerDuty">PagerDuty</a>: <i>
-      - &lt;a href=&#34;pagerduty.md&#34;&gt;PagerDuty&lt;/a&gt;</i>
+      - <a href="pagerduty.md">PagerDuty</a></i>
     <a href="#slack" title="Slack">Slack</a>: <i>
-      - &lt;a href=&#34;slack.md&#34;&gt;Slack&lt;/a&gt;</i>
+      - <a href="slack.md">Slack</a></i>
     <a href="#sms" title="Sms">Sms</a>: <i>
-      - &lt;a href=&#34;sms.md&#34;&gt;Sms&lt;/a&gt;</i>
+      - <a href="sms.md">Sms</a></i>
     <a href="#victorops" title="Victorops">Victorops</a>: <i>
-      - &lt;a href=&#34;victorops.md&#34;&gt;Victorops&lt;/a&gt;</i>
+      - <a href="victorops.md">Victorops</a></i>
     <a href="#xmpp" title="Xmpp">Xmpp</a>: <i>
-      - &lt;a href=&#34;xmpp.md&#34;&gt;Xmpp&lt;/a&gt;</i>
+      - <a href="xmpp.md">Xmpp</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AggregationWindow
 
@@ -106,22 +90,6 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GroupType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastModified
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastModifiedBy
 
 _Required_: No
 
@@ -189,7 +157,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;alertoption.md&#34;&gt;AlertOption&lt;/a&gt;
+_Type_: List of <a href="alertoption.md">AlertOption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;email.md&#34;&gt;Email&lt;/a&gt;
+_Type_: List of <a href="email.md">Email</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;http.md&#34;&gt;Http&lt;/a&gt;
+_Type_: List of <a href="http.md">Http</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -213,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;irc.md&#34;&gt;Irc&lt;/a&gt;
+_Type_: List of <a href="irc.md">Irc</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,7 +189,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;pagerduty.md&#34;&gt;PagerDuty&lt;/a&gt;
+_Type_: List of <a href="pagerduty.md">PagerDuty</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -229,7 +197,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;slack.md&#34;&gt;Slack&lt;/a&gt;
+_Type_: List of <a href="slack.md">Slack</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -237,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sms.md&#34;&gt;Sms&lt;/a&gt;
+_Type_: List of <a href="sms.md">Sms</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -245,7 +213,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;victorops.md&#34;&gt;Victorops&lt;/a&gt;
+_Type_: List of <a href="victorops.md">Victorops</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -253,7 +221,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;xmpp.md&#34;&gt;Xmpp&lt;/a&gt;
+_Type_: List of <a href="xmpp.md">Xmpp</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -275,9 +243,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 
 #### LastModifiedBy
 
-Returns the &lt;code&gt;LastModifiedBy&lt;/code&gt; value.
+Returns the <code>LastModifiedBy</code> value.
 

@@ -12,20 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::Instance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allocatepublicip" title="AllocatePublicIp">AllocatePublicIp</a>" : <i>Boolean</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#disablemonitorservice" title="DisableMonitorService">DisableMonitorService</a>" : <i>Boolean</i>,
         "<a href="#disablesecurityservice" title="DisableSecurityService">DisableSecurityService</a>" : <i>Boolean</i>,
-        "<a href="#expiredtime" title="ExpiredTime">ExpiredTime</a>" : <i>String</i>,
         "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
         "<a href="#imageid" title="ImageId">ImageId</a>" : <i>String</i>,
         "<a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>" : <i>String</i>,
         "<a href="#instancechargetypeprepaidperiod" title="InstanceChargeTypePrepaidPeriod">InstanceChargeTypePrepaidPeriod</a>" : <i>Double</i>,
         "<a href="#instancechargetypeprepaidrenewflag" title="InstanceChargeTypePrepaidRenewFlag">InstanceChargeTypePrepaidRenewFlag</a>" : <i>String</i>,
         "<a href="#instancename" title="InstanceName">InstanceName</a>" : <i>String</i>,
-        "<a href="#instancestatus" title="InstanceStatus">InstanceStatus</a>" : <i>String</i>,
         "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
         "<a href="#internetchargetype" title="InternetChargeType">InternetChargeType</a>" : <i>String</i>,
         "<a href="#internetmaxbandwidthout" title="InternetMaxBandwidthOut">InternetMaxBandwidthOut</a>" : <i>Double</i>,
@@ -34,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#placementgroupid" title="PlacementGroupId">PlacementGroupId</a>" : <i>String</i>,
         "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>String</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>Double</i>,
-        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>String</i>,
         "<a href="#runningflag" title="RunningFlag">RunningFlag</a>" : <i>Boolean</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#spotinstancetype" title="SpotInstanceType">SpotInstanceType</a>" : <i>String</i>,
@@ -43,11 +38,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#systemdiskid" title="SystemDiskId">SystemDiskId</a>" : <i>String</i>,
         "<a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>" : <i>Double</i>,
         "<a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#userdataraw" title="UserDataRaw">UserDataRaw</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#datadisks" title="DataDisks">DataDisks</a>" : <i>[ &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;, ... ]</i>
+        "<a href="#datadisks" title="DataDisks">DataDisks</a>" : <i>[ <a href="datadisks.md">DataDisks</a>, ... ]</i>
     }
 }
 </pre>
@@ -57,20 +52,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::Instance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allocatepublicip" title="AllocatePublicIp">AllocatePublicIp</a>: <i>Boolean</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#disablemonitorservice" title="DisableMonitorService">DisableMonitorService</a>: <i>Boolean</i>
     <a href="#disablesecurityservice" title="DisableSecurityService">DisableSecurityService</a>: <i>Boolean</i>
-    <a href="#expiredtime" title="ExpiredTime">ExpiredTime</a>: <i>String</i>
     <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
     <a href="#imageid" title="ImageId">ImageId</a>: <i>String</i>
     <a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>: <i>String</i>
     <a href="#instancechargetypeprepaidperiod" title="InstanceChargeTypePrepaidPeriod">InstanceChargeTypePrepaidPeriod</a>: <i>Double</i>
     <a href="#instancechargetypeprepaidrenewflag" title="InstanceChargeTypePrepaidRenewFlag">InstanceChargeTypePrepaidRenewFlag</a>: <i>String</i>
     <a href="#instancename" title="InstanceName">InstanceName</a>: <i>String</i>
-    <a href="#instancestatus" title="InstanceStatus">InstanceStatus</a>: <i>String</i>
     <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
     <a href="#internetchargetype" title="InternetChargeType">InternetChargeType</a>: <i>String</i>
     <a href="#internetmaxbandwidthout" title="InternetMaxBandwidthOut">InternetMaxBandwidthOut</a>: <i>Double</i>
@@ -79,7 +70,6 @@ Properties:
     <a href="#placementgroupid" title="PlacementGroupId">PlacementGroupId</a>: <i>String</i>
     <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>String</i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>Double</i>
-    <a href="#publicip" title="PublicIp">PublicIp</a>: <i>String</i>
     <a href="#runningflag" title="RunningFlag">RunningFlag</a>: <i>Boolean</i>
     <a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>: <i>
       - String</i>
@@ -90,25 +80,15 @@ Properties:
     <a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>: <i>Double</i>
     <a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#userdataraw" title="UserDataRaw">UserDataRaw</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#datadisks" title="DataDisks">DataDisks</a>: <i>
-      - &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;</i>
+      - <a href="datadisks.md">DataDisks</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllocatePublicIp
 
@@ -121,14 +101,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AvailabilityZone
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreateTime
-
-_Required_: No
 
 _Type_: String
 
@@ -147,14 +119,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExpiredTime
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,14 +163,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### InstanceStatus
 
 _Required_: No
 
@@ -278,14 +234,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PublicIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### RunningFlag
 
 _Required_: No
@@ -354,7 +302,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -386,7 +334,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;
+_Type_: List of <a href="datadisks.md">DataDisks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -408,17 +356,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### ExpiredTime
 
-Returns the &lt;code&gt;ExpiredTime&lt;/code&gt; value.
+Returns the <code>ExpiredTime</code> value.
 
 #### InstanceStatus
 
-Returns the &lt;code&gt;InstanceStatus&lt;/code&gt; value.
+Returns the <code>InstanceStatus</code> value.
 
 #### PublicIp
 
-Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
+Returns the <code>PublicIp</code> value.
 

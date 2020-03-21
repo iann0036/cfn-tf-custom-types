@@ -12,10 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Fastly::ServiceAclEntriesV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#aclid" title="AclId">AclId</a>" : <i>String</i>,
         "<a href="#serviceid" title="ServiceId">ServiceId</a>" : <i>String</i>,
-        "<a href="#entry" title="Entry">Entry</a>" : <i>[ &lt;a href=&#34;entry.md&#34;&gt;Entry&lt;/a&gt;, ... ]</i>
+        "<a href="#entry" title="Entry">Entry</a>" : <i>[ <a href="entry.md">Entry</a>, ... ]</i>
     }
 }
 </pre>
@@ -25,24 +24,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Fastly::ServiceAclEntriesV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#aclid" title="AclId">AclId</a>: <i>String</i>
     <a href="#serviceid" title="ServiceId">ServiceId</a>: <i>String</i>
     <a href="#entry" title="Entry">Entry</a>: <i>
-      - &lt;a href=&#34;entry.md&#34;&gt;Entry&lt;/a&gt;</i>
+      - <a href="entry.md">Entry</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AclId
 
@@ -64,7 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;entry.md&#34;&gt;Entry&lt;/a&gt;
+_Type_: List of <a href="entry.md">Entry</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

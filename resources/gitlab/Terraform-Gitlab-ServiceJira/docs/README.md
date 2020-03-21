@@ -12,15 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Gitlab::ServiceJira",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#active" title="Active">Active</a>" : <i>Boolean</i>,
-        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#jiraissuetransitionid" title="JiraIssueTransitionId">JiraIssueTransitionId</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#projectkey" title="ProjectKey">ProjectKey</a>" : <i>String</i>,
-        "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>,
         "<a href="#url" title="Url">Url</a>" : <i>String</i>,
         "<a href="#username" title="Username">Username</a>" : <i>String</i>
     }
@@ -32,46 +27,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Gitlab::ServiceJira
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#active" title="Active">Active</a>: <i>Boolean</i>
-    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#jiraissuetransitionid" title="JiraIssueTransitionId">JiraIssueTransitionId</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#projectkey" title="ProjectKey">ProjectKey</a>: <i>String</i>
-    <a href="#title" title="Title">Title</a>: <i>String</i>
-    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
     <a href="#url" title="Url">Url</a>: <i>String</i>
     <a href="#username" title="Username">Username</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Active
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### JiraIssueTransitionId
 
@@ -98,22 +62,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Title
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UpdatedAt
 
 _Required_: No
 
@@ -155,17 +103,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Active
 
-Returns the &lt;code&gt;Active&lt;/code&gt; value.
+Returns the <code>Active</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### Title
 
-Returns the &lt;code&gt;Title&lt;/code&gt; value.
+Returns the <code>Title</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

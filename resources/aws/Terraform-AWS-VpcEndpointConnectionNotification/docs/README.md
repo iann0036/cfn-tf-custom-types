@@ -12,11 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::VpcEndpointConnectionNotification",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#connectionevents" title="ConnectionEvents">ConnectionEvents</a>" : <i>[ String, ... ]</i>,
         "<a href="#connectionnotificationarn" title="ConnectionNotificationArn">ConnectionNotificationArn</a>" : <i>String</i>,
-        "<a href="#notificationtype" title="NotificationType">NotificationType</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#vpcendpointid" title="VpcEndpointId">VpcEndpointId</a>" : <i>String</i>,
         "<a href="#vpcendpointserviceid" title="VpcEndpointServiceId">VpcEndpointServiceId</a>" : <i>String</i>
     }
@@ -28,27 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::VpcEndpointConnectionNotification
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#connectionevents" title="ConnectionEvents">ConnectionEvents</a>: <i>
       - String</i>
     <a href="#connectionnotificationarn" title="ConnectionNotificationArn">ConnectionNotificationArn</a>: <i>String</i>
-    <a href="#notificationtype" title="NotificationType">NotificationType</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#vpcendpointid" title="VpcEndpointId">VpcEndpointId</a>: <i>String</i>
     <a href="#vpcendpointserviceid" title="VpcEndpointServiceId">VpcEndpointServiceId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConnectionEvents
 
@@ -61,22 +45,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ConnectionNotificationArn
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### NotificationType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### State
-
-_Required_: No
 
 _Type_: String
 
@@ -116,9 +84,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NotificationType
 
-Returns the &lt;code&gt;NotificationType&lt;/code&gt; value.
+Returns the <code>NotificationType</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

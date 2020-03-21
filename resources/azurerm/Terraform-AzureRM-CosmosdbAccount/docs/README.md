@@ -12,30 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::CosmosdbAccount",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#connectionstrings" title="ConnectionStrings">ConnectionStrings</a>" : <i>[ String, ... ]</i>,
         "<a href="#enableautomaticfailover" title="EnableAutomaticFailover">EnableAutomaticFailover</a>" : <i>Boolean</i>,
         "<a href="#enablemultiplewritelocations" title="EnableMultipleWriteLocations">EnableMultipleWriteLocations</a>" : <i>Boolean</i>,
-        "<a href="#endpoint" title="Endpoint">Endpoint</a>" : <i>String</i>,
         "<a href="#iprangefilter" title="IpRangeFilter">IpRangeFilter</a>" : <i>String</i>,
         "<a href="#isvirtualnetworkfilterenabled" title="IsVirtualNetworkFilterEnabled">IsVirtualNetworkFilterEnabled</a>" : <i>Boolean</i>,
         "<a href="#kind" title="Kind">Kind</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#offertype" title="OfferType">OfferType</a>" : <i>String</i>,
-        "<a href="#primarymasterkey" title="PrimaryMasterKey">PrimaryMasterKey</a>" : <i>String</i>,
-        "<a href="#primaryreadonlymasterkey" title="PrimaryReadonlyMasterKey">PrimaryReadonlyMasterKey</a>" : <i>String</i>,
-        "<a href="#readendpoints" title="ReadEndpoints">ReadEndpoints</a>" : <i>[ String, ... ]</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#secondarymasterkey" title="SecondaryMasterKey">SecondaryMasterKey</a>" : <i>String</i>,
-        "<a href="#secondaryreadonlymasterkey" title="SecondaryReadonlyMasterKey">SecondaryReadonlyMasterKey</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#writeendpoints" title="WriteEndpoints">WriteEndpoints</a>" : <i>[ String, ... ]</i>,
-        "<a href="#capabilities" title="Capabilities">Capabilities</a>" : <i>[ &lt;a href=&#34;capabilities.md&#34;&gt;Capabilities&lt;/a&gt;, ... ]</i>,
-        "<a href="#consistencypolicy" title="ConsistencyPolicy">ConsistencyPolicy</a>" : <i>[ &lt;a href=&#34;consistencypolicy.md&#34;&gt;ConsistencyPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#geolocation" title="GeoLocation">GeoLocation</a>" : <i>[ &lt;a href=&#34;geolocation.md&#34;&gt;GeoLocation&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#virtualnetworkrule" title="VirtualNetworkRule">VirtualNetworkRule</a>" : <i>[ &lt;a href=&#34;virtualnetworkrule.md&#34;&gt;VirtualNetworkRule&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#capabilities" title="Capabilities">Capabilities</a>" : <i>[ <a href="capabilities.md">Capabilities</a>, ... ]</i>,
+        "<a href="#consistencypolicy" title="ConsistencyPolicy">ConsistencyPolicy</a>" : <i>[ <a href="consistencypolicy.md">ConsistencyPolicy</a>, ... ]</i>,
+        "<a href="#geolocation" title="GeoLocation">GeoLocation</a>" : <i>[ <a href="geolocation.md">GeoLocation</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#virtualnetworkrule" title="VirtualNetworkRule">VirtualNetworkRule</a>" : <i>[ <a href="virtualnetworkrule.md">VirtualNetworkRule</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,59 +36,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::CosmosdbAccount
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#connectionstrings" title="ConnectionStrings">ConnectionStrings</a>: <i>
-      - String</i>
     <a href="#enableautomaticfailover" title="EnableAutomaticFailover">EnableAutomaticFailover</a>: <i>Boolean</i>
     <a href="#enablemultiplewritelocations" title="EnableMultipleWriteLocations">EnableMultipleWriteLocations</a>: <i>Boolean</i>
-    <a href="#endpoint" title="Endpoint">Endpoint</a>: <i>String</i>
     <a href="#iprangefilter" title="IpRangeFilter">IpRangeFilter</a>: <i>String</i>
     <a href="#isvirtualnetworkfilterenabled" title="IsVirtualNetworkFilterEnabled">IsVirtualNetworkFilterEnabled</a>: <i>Boolean</i>
     <a href="#kind" title="Kind">Kind</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#offertype" title="OfferType">OfferType</a>: <i>String</i>
-    <a href="#primarymasterkey" title="PrimaryMasterKey">PrimaryMasterKey</a>: <i>String</i>
-    <a href="#primaryreadonlymasterkey" title="PrimaryReadonlyMasterKey">PrimaryReadonlyMasterKey</a>: <i>String</i>
-    <a href="#readendpoints" title="ReadEndpoints">ReadEndpoints</a>: <i>
-      - String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
-    <a href="#secondarymasterkey" title="SecondaryMasterKey">SecondaryMasterKey</a>: <i>String</i>
-    <a href="#secondaryreadonlymasterkey" title="SecondaryReadonlyMasterKey">SecondaryReadonlyMasterKey</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
-    <a href="#writeendpoints" title="WriteEndpoints">WriteEndpoints</a>: <i>
-      - String</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#capabilities" title="Capabilities">Capabilities</a>: <i>
-      - &lt;a href=&#34;capabilities.md&#34;&gt;Capabilities&lt;/a&gt;</i>
+      - <a href="capabilities.md">Capabilities</a></i>
     <a href="#consistencypolicy" title="ConsistencyPolicy">ConsistencyPolicy</a>: <i>
-      - &lt;a href=&#34;consistencypolicy.md&#34;&gt;ConsistencyPolicy&lt;/a&gt;</i>
+      - <a href="consistencypolicy.md">ConsistencyPolicy</a></i>
     <a href="#geolocation" title="GeoLocation">GeoLocation</a>: <i>
-      - &lt;a href=&#34;geolocation.md&#34;&gt;GeoLocation&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="geolocation.md">GeoLocation</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#virtualnetworkrule" title="VirtualNetworkRule">VirtualNetworkRule</a>: <i>
-      - &lt;a href=&#34;virtualnetworkrule.md&#34;&gt;VirtualNetworkRule&lt;/a&gt;</i>
+      - <a href="virtualnetworkrule.md">VirtualNetworkRule</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ConnectionStrings
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableAutomaticFailover
 
@@ -112,14 +73,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Endpoint
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,49 +124,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrimaryMasterKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrimaryReadonlyMasterKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ReadEndpoints
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ResourceGroupName
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecondaryMasterKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecondaryReadonlyMasterKey
-
-_Required_: No
 
 _Type_: String
 
@@ -223,15 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### WriteEndpoints
-
-_Required_: No
-
-_Type_: List of String
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -239,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;capabilities.md&#34;&gt;Capabilities&lt;/a&gt;
+_Type_: List of <a href="capabilities.md">Capabilities</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -247,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;consistencypolicy.md&#34;&gt;ConsistencyPolicy&lt;/a&gt;
+_Type_: List of <a href="consistencypolicy.md">ConsistencyPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -255,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;geolocation.md&#34;&gt;GeoLocation&lt;/a&gt;
+_Type_: List of <a href="geolocation.md">GeoLocation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -263,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -271,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;virtualnetworkrule.md&#34;&gt;VirtualNetworkRule&lt;/a&gt;
+_Type_: List of <a href="virtualnetworkrule.md">VirtualNetworkRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -293,33 +198,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConnectionStrings
 
-Returns the &lt;code&gt;ConnectionStrings&lt;/code&gt; value.
+Returns the <code>ConnectionStrings</code> value.
 
 #### Endpoint
 
-Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
+Returns the <code>Endpoint</code> value.
 
 #### PrimaryMasterKey
 
-Returns the &lt;code&gt;PrimaryMasterKey&lt;/code&gt; value.
+Returns the <code>PrimaryMasterKey</code> value.
 
 #### PrimaryReadonlyMasterKey
 
-Returns the &lt;code&gt;PrimaryReadonlyMasterKey&lt;/code&gt; value.
+Returns the <code>PrimaryReadonlyMasterKey</code> value.
 
 #### ReadEndpoints
 
-Returns the &lt;code&gt;ReadEndpoints&lt;/code&gt; value.
+Returns the <code>ReadEndpoints</code> value.
 
 #### SecondaryMasterKey
 
-Returns the &lt;code&gt;SecondaryMasterKey&lt;/code&gt; value.
+Returns the <code>SecondaryMasterKey</code> value.
 
 #### SecondaryReadonlyMasterKey
 
-Returns the &lt;code&gt;SecondaryReadonlyMasterKey&lt;/code&gt; value.
+Returns the <code>SecondaryReadonlyMasterKey</code> value.
 
 #### WriteEndpoints
 
-Returns the &lt;code&gt;WriteEndpoints&lt;/code&gt; value.
+Returns the <code>WriteEndpoints</code> value.
 

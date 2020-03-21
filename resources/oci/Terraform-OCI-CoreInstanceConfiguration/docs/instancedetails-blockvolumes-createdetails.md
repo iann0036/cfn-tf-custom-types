@@ -11,11 +11,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
     "<a href="#backuppolicyid" title="BackupPolicyId">BackupPolicyId</a>" : <i>String</i>,
     "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-    "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;instancedetails-blockvolumes-createdetails-definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+    "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="instancedetails-blockvolumes-createdetails-definedtags.md">DefinedTags</a>, ... ]</i>,
     "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-    "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;instancedetails-blockvolumes-createdetails-freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+    "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="instancedetails-blockvolumes-createdetails-freeformtags.md">FreeformTags</a>, ... ]</i>,
     "<a href="#sizeingbs" title="SizeInGbs">SizeInGbs</a>" : <i>String</i>,
-    "<a href="#sourcedetails" title="SourceDetails">SourceDetails</a>" : <i>[ &lt;a href=&#34;instancedetails-blockvolumes-createdetails-sourcedetails.md&#34;&gt;SourceDetails&lt;/a&gt;, ... ]</i>
+    "<a href="#sourcedetails" title="SourceDetails">SourceDetails</a>" : <i>[ <a href="instancedetails-blockvolumes-createdetails-sourcedetails.md">SourceDetails</a>, ... ]</i>
 }
 </pre>
 
@@ -26,13 +26,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#backuppolicyid" title="BackupPolicyId">BackupPolicyId</a>: <i>String</i>
 <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
 <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;instancedetails-blockvolumes-createdetails-definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="instancedetails-blockvolumes-createdetails-definedtags.md">DefinedTags</a></i>
 <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
 <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;instancedetails-blockvolumes-createdetails-freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="instancedetails-blockvolumes-createdetails-freeformtags.md">FreeformTags</a></i>
 <a href="#sizeingbs" title="SizeInGbs">SizeInGbs</a>: <i>String</i>
 <a href="#sourcedetails" title="SourceDetails">SourceDetails</a>: <i>
-      - &lt;a href=&#34;instancedetails-blockvolumes-createdetails-sourcedetails.md&#34;&gt;SourceDetails&lt;/a&gt;</i>
+      - <a href="instancedetails-blockvolumes-createdetails-sourcedetails.md">SourceDetails</a></i>
 </pre>
 
 ## Properties
@@ -40,6 +40,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AvailabilityDomain
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BackupPolicyId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CompartmentId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,13 +64,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DefinedTags
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instancedetails-blockvolumes-createdetails-definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+
+_Type_: List of <a href="instancedetails-blockvolumes-createdetails-definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -75,13 +80,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FreeformTags
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instancedetails-blockvolumes-createdetails-freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+
+_Type_: List of <a href="instancedetails-blockvolumes-createdetails-freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SizeInGbs
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -89,7 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SourceDetails
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instancedetails-blockvolumes-createdetails-sourcedetails.md&#34;&gt;SourceDetails&lt;/a&gt;
+
+_Type_: List of <a href="instancedetails-blockvolumes-createdetails-sourcedetails.md">SourceDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

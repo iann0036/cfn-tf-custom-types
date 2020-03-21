@@ -12,10 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::Subscription",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#endpoint" title="Endpoint">Endpoint</a>" : <i>String</i>,
         "<a href="#eventtype" title="EventType">EventType</a>" : <i>String</i>,
-        "<a href="#format" title="Format">Format</a>" : <i>[ &lt;a href=&#34;format.md&#34;&gt;Format&lt;/a&gt;, ... ]</i>,
+        "<a href="#format" title="Format">Format</a>" : <i>[ <a href="format.md">Format</a>, ... ]</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>
     }
@@ -27,26 +26,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::Subscription
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#endpoint" title="Endpoint">Endpoint</a>: <i>String</i>
     <a href="#eventtype" title="EventType">EventType</a>: <i>String</i>
     <a href="#format" title="Format">Format</a>: <i>
-      - &lt;a href=&#34;format.md&#34;&gt;Format&lt;/a&gt;</i>
+      - <a href="format.md">Format</a></i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Endpoint
 
@@ -68,7 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;format.md&#34;&gt;Format&lt;/a&gt;
+_Type_: List of <a href="format.md">Format</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

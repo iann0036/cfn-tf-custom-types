@@ -12,11 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::ContainerinfraClustertemplateV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#apiserverport" title="ApiserverPort">ApiserverPort</a>" : <i>Double</i>,
         "<a href="#clusterdistro" title="ClusterDistro">ClusterDistro</a>" : <i>String</i>,
         "<a href="#coe" title="Coe">Coe</a>" : <i>String</i>,
-        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#dnsnameserver" title="DnsNameserver">DnsNameserver</a>" : <i>String</i>,
         "<a href="#dockerstoragedriver" title="DockerStorageDriver">DockerStorageDriver</a>" : <i>String</i>,
         "<a href="#dockervolumesize" title="DockerVolumeSize">DockerVolumeSize</a>" : <i>Double</i>,
@@ -30,22 +28,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#image" title="Image">Image</a>" : <i>String</i>,
         "<a href="#insecureregistry" title="InsecureRegistry">InsecureRegistry</a>" : <i>String</i>,
         "<a href="#keypairid" title="KeypairId">KeypairId</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#masterflavor" title="MasterFlavor">MasterFlavor</a>" : <i>String</i>,
         "<a href="#masterlbenabled" title="MasterLbEnabled">MasterLbEnabled</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#networkdriver" title="NetworkDriver">NetworkDriver</a>" : <i>String</i>,
         "<a href="#noproxy" title="NoProxy">NoProxy</a>" : <i>String</i>,
-        "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
         "<a href="#public" title="Public">Public</a>" : <i>Boolean</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#registryenabled" title="RegistryEnabled">RegistryEnabled</a>" : <i>Boolean</i>,
         "<a href="#servertype" title="ServerType">ServerType</a>" : <i>String</i>,
         "<a href="#tlsdisabled" title="TlsDisabled">TlsDisabled</a>" : <i>Boolean</i>,
-        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>,
-        "<a href="#userid" title="UserId">UserId</a>" : <i>String</i>,
         "<a href="#volumedriver" title="VolumeDriver">VolumeDriver</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -55,11 +50,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::ContainerinfraClustertemplateV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#apiserverport" title="ApiserverPort">ApiserverPort</a>: <i>Double</i>
     <a href="#clusterdistro" title="ClusterDistro">ClusterDistro</a>: <i>String</i>
     <a href="#coe" title="Coe">Coe</a>: <i>String</i>
-    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#dnsnameserver" title="DnsNameserver">DnsNameserver</a>: <i>String</i>
     <a href="#dockerstoragedriver" title="DockerStorageDriver">DockerStorageDriver</a>: <i>String</i>
     <a href="#dockervolumesize" title="DockerVolumeSize">DockerVolumeSize</a>: <i>Double</i>
@@ -74,35 +67,22 @@ Properties:
     <a href="#insecureregistry" title="InsecureRegistry">InsecureRegistry</a>: <i>String</i>
     <a href="#keypairid" title="KeypairId">KeypairId</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#masterflavor" title="MasterFlavor">MasterFlavor</a>: <i>String</i>
     <a href="#masterlbenabled" title="MasterLbEnabled">MasterLbEnabled</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#networkdriver" title="NetworkDriver">NetworkDriver</a>: <i>String</i>
     <a href="#noproxy" title="NoProxy">NoProxy</a>: <i>String</i>
-    <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
     <a href="#public" title="Public">Public</a>: <i>Boolean</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#registryenabled" title="RegistryEnabled">RegistryEnabled</a>: <i>Boolean</i>
     <a href="#servertype" title="ServerType">ServerType</a>: <i>String</i>
     <a href="#tlsdisabled" title="TlsDisabled">TlsDisabled</a>: <i>Boolean</i>
-    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
-    <a href="#userid" title="UserId">UserId</a>: <i>String</i>
     <a href="#volumedriver" title="VolumeDriver">VolumeDriver</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApiserverPort
 
@@ -123,14 +103,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Coe
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedAt
-
-_Required_: No
 
 _Type_: String
 
@@ -244,7 +216,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -281,14 +253,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NoProxy
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ProjectId
 
 _Required_: No
 
@@ -336,22 +300,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### UpdatedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UserId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### VolumeDriver
 
 _Required_: No
@@ -364,7 +312,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -386,17 +334,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### ProjectId
 
-Returns the &lt;code&gt;ProjectId&lt;/code&gt; value.
+Returns the <code>ProjectId</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 
 #### UserId
 
-Returns the &lt;code&gt;UserId&lt;/code&gt; value.
+Returns the <code>UserId</code> value.
 

@@ -12,20 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::TpuNode",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acceleratortype" title="AcceleratorType">AcceleratorType</a>" : <i>String</i>,
         "<a href="#cidrblock" title="CidrBlock">CidrBlock</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#network" title="Network">Network</a>" : <i>String</i>,
-        "<a href="#networkendpoints" title="NetworkEndpoints">NetworkEndpoints</a>" : <i>[ &lt;a href=&#34;networkendpoints.md&#34;&gt;NetworkEndpoints&lt;/a&gt;, ... ]</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>" : <i>String</i>,
         "<a href="#tensorflowversion" title="TensorflowVersion">TensorflowVersion</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#schedulingconfig" title="SchedulingConfig">SchedulingConfig</a>" : <i>[ &lt;a href=&#34;schedulingconfig.md&#34;&gt;SchedulingConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#schedulingconfig" title="SchedulingConfig">SchedulingConfig</a>" : <i>[ <a href="schedulingconfig.md">SchedulingConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -35,36 +32,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::TpuNode
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acceleratortype" title="AcceleratorType">AcceleratorType</a>: <i>String</i>
     <a href="#cidrblock" title="CidrBlock">CidrBlock</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#network" title="Network">Network</a>: <i>String</i>
-    <a href="#networkendpoints" title="NetworkEndpoints">NetworkEndpoints</a>: <i>
-      - &lt;a href=&#34;networkendpoints.md&#34;&gt;NetworkEndpoints&lt;/a&gt;</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
-    <a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>: <i>String</i>
     <a href="#tensorflowversion" title="TensorflowVersion">TensorflowVersion</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#schedulingconfig" title="SchedulingConfig">SchedulingConfig</a>: <i>
-      - &lt;a href=&#34;schedulingconfig.md&#34;&gt;SchedulingConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="schedulingconfig.md">SchedulingConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AcceleratorType
 
@@ -94,7 +77,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,23 +97,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### NetworkEndpoints
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;networkendpoints.md&#34;&gt;NetworkEndpoints&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Project
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ServiceAccount
 
 _Required_: No
 
@@ -158,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;schedulingconfig.md&#34;&gt;SchedulingConfig&lt;/a&gt;
+_Type_: List of <a href="schedulingconfig.md">SchedulingConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +133,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,9 +155,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NetworkEndpoints
 
-Returns the &lt;code&gt;NetworkEndpoints&lt;/code&gt; value.
+Returns the <code>NetworkEndpoints</code> value.
 
 #### ServiceAccount
 
-Returns the &lt;code&gt;ServiceAccount&lt;/code&gt; value.
+Returns the <code>ServiceAccount</code> value.
 

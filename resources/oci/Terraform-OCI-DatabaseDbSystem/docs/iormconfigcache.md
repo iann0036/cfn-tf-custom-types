@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#dbplans" title="DbPlans">DbPlans</a>" : <i>[ &lt;a href=&#34;iormconfigcache-dbplans.md&#34;&gt;DbPlans&lt;/a&gt;, ... ]</i>,
+    "<a href="#dbplans" title="DbPlans">DbPlans</a>" : <i>[ <a href="iormconfigcache-dbplans.md">DbPlans</a>, ... ]</i>,
     "<a href="#dbsystemid" title="DbSystemId">DbSystemId</a>" : <i>String</i>,
     "<a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>" : <i>String</i>,
     "<a href="#objective" title="Objective">Objective</a>" : <i>String</i>,
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#dbplans" title="DbPlans">DbPlans</a>: <i>
-      - &lt;a href=&#34;iormconfigcache-dbplans.md&#34;&gt;DbPlans&lt;/a&gt;</i>
+      - <a href="iormconfigcache-dbplans.md">DbPlans</a></i>
 <a href="#dbsystemid" title="DbSystemId">DbSystemId</a>: <i>String</i>
 <a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>: <i>String</i>
 <a href="#objective" title="Objective">Objective</a>: <i>String</i>
@@ -32,13 +32,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DbPlans
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;iormconfigcache-dbplans.md&#34;&gt;DbPlans&lt;/a&gt;
+
+_Type_: List of <a href="iormconfigcache-dbplans.md">DbPlans</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbSystemId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LifecycleDetails
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Objective
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,6 +64,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### State
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

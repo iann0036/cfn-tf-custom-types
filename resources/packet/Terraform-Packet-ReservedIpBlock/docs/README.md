@@ -12,21 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Packet::ReservedIpBlock",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#address" title="Address">Address</a>" : <i>String</i>,
-        "<a href="#addressfamily" title="AddressFamily">AddressFamily</a>" : <i>Double</i>,
-        "<a href="#cidr" title="Cidr">Cidr</a>" : <i>Double</i>,
-        "<a href="#cidrnotation" title="CidrNotation">CidrNotation</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#facility" title="Facility">Facility</a>" : <i>String</i>,
-        "<a href="#gateway" title="Gateway">Gateway</a>" : <i>String</i>,
-        "<a href="#global" title="Global">Global</a>" : <i>Boolean</i>,
-        "<a href="#manageable" title="Manageable">Manageable</a>" : <i>Boolean</i>,
-        "<a href="#management" title="Management">Management</a>" : <i>Boolean</i>,
-        "<a href="#netmask" title="Netmask">Netmask</a>" : <i>String</i>,
-        "<a href="#network" title="Network">Network</a>" : <i>String</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
-        "<a href="#public" title="Public">Public</a>" : <i>Boolean</i>,
         "<a href="#quantity" title="Quantity">Quantity</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
@@ -38,68 +26,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Packet::ReservedIpBlock
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#address" title="Address">Address</a>: <i>String</i>
-    <a href="#addressfamily" title="AddressFamily">AddressFamily</a>: <i>Double</i>
-    <a href="#cidr" title="Cidr">Cidr</a>: <i>Double</i>
-    <a href="#cidrnotation" title="CidrNotation">CidrNotation</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#facility" title="Facility">Facility</a>: <i>String</i>
-    <a href="#gateway" title="Gateway">Gateway</a>: <i>String</i>
-    <a href="#global" title="Global">Global</a>: <i>Boolean</i>
-    <a href="#manageable" title="Manageable">Manageable</a>: <i>Boolean</i>
-    <a href="#management" title="Management">Management</a>: <i>Boolean</i>
-    <a href="#netmask" title="Netmask">Netmask</a>: <i>String</i>
-    <a href="#network" title="Network">Network</a>: <i>String</i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
-    <a href="#public" title="Public">Public</a>: <i>Boolean</i>
     <a href="#quantity" title="Quantity">Quantity</a>: <i>Double</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Address
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AddressFamily
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Cidr
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CidrNotation
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -117,67 +51,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Gateway
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Global
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Manageable
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Management
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Netmask
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Network
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ProjectId
 
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Public
-
-_Required_: No
-
-_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -215,45 +93,45 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Address
 
-Returns the &lt;code&gt;Address&lt;/code&gt; value.
+Returns the <code>Address</code> value.
 
 #### AddressFamily
 
-Returns the &lt;code&gt;AddressFamily&lt;/code&gt; value.
+Returns the <code>AddressFamily</code> value.
 
 #### Cidr
 
-Returns the &lt;code&gt;Cidr&lt;/code&gt; value.
+Returns the <code>Cidr</code> value.
 
 #### CidrNotation
 
-Returns the &lt;code&gt;CidrNotation&lt;/code&gt; value.
+Returns the <code>CidrNotation</code> value.
 
 #### Gateway
 
-Returns the &lt;code&gt;Gateway&lt;/code&gt; value.
+Returns the <code>Gateway</code> value.
 
 #### Global
 
-Returns the &lt;code&gt;Global&lt;/code&gt; value.
+Returns the <code>Global</code> value.
 
 #### Manageable
 
-Returns the &lt;code&gt;Manageable&lt;/code&gt; value.
+Returns the <code>Manageable</code> value.
 
 #### Management
 
-Returns the &lt;code&gt;Management&lt;/code&gt; value.
+Returns the <code>Management</code> value.
 
 #### Netmask
 
-Returns the &lt;code&gt;Netmask&lt;/code&gt; value.
+Returns the <code>Netmask</code> value.
 
 #### Network
 
-Returns the &lt;code&gt;Network&lt;/code&gt; value.
+Returns the <code>Network</code> value.
 
 #### Public
 
-Returns the &lt;code&gt;Public&lt;/code&gt; value.
+Returns the <code>Public</code> value.
 

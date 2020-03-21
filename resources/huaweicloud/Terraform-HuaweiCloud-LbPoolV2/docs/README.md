@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::LbPoolV2",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adminstateup" title="AdminStateUp">AdminStateUp</a>" : <i>Boolean</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#lbmethod" title="LbMethod">LbMethod</a>" : <i>String</i>,
@@ -22,8 +21,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#tenantid" title="TenantId">TenantId</a>" : <i>String</i>,
-        "<a href="#persistence" title="Persistence">Persistence</a>" : <i>[ &lt;a href=&#34;persistence.md&#34;&gt;Persistence&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#persistence" title="Persistence">Persistence</a>" : <i>[ <a href="persistence.md">Persistence</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -33,7 +32,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::LbPoolV2
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adminstateup" title="AdminStateUp">AdminStateUp</a>: <i>Boolean</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#lbmethod" title="LbMethod">LbMethod</a>: <i>String</i>
@@ -44,21 +42,11 @@ Properties:
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#tenantid" title="TenantId">TenantId</a>: <i>String</i>
     <a href="#persistence" title="Persistence">Persistence</a>: <i>
-      - &lt;a href=&#34;persistence.md&#34;&gt;Persistence&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="persistence.md">Persistence</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminStateUp
 
@@ -136,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;persistence.md&#34;&gt;Persistence&lt;/a&gt;
+_Type_: List of <a href="persistence.md">Persistence</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

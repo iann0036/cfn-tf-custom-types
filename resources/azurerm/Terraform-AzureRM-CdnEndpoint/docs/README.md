@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::CdnEndpoint",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#contenttypestocompress" title="ContentTypesToCompress">ContentTypesToCompress</a>" : <i>[ String, ... ]</i>,
-        "<a href="#hostname" title="HostName">HostName</a>" : <i>String</i>,
         "<a href="#iscompressionenabled" title="IsCompressionEnabled">IsCompressionEnabled</a>" : <i>Boolean</i>,
         "<a href="#ishttpallowed" title="IsHttpAllowed">IsHttpAllowed</a>" : <i>Boolean</i>,
         "<a href="#ishttpsallowed" title="IsHttpsAllowed">IsHttpsAllowed</a>" : <i>Boolean</i>,
@@ -27,10 +25,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#profilename" title="ProfileName">ProfileName</a>" : <i>String</i>,
         "<a href="#querystringcachingbehaviour" title="QuerystringCachingBehaviour">QuerystringCachingBehaviour</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#geofilter" title="GeoFilter">GeoFilter</a>" : <i>[ &lt;a href=&#34;geofilter.md&#34;&gt;GeoFilter&lt;/a&gt;, ... ]</i>,
-        "<a href="#origin" title="Origin">Origin</a>" : <i>[ &lt;a href=&#34;origin.md&#34;&gt;Origin&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#geofilter" title="GeoFilter">GeoFilter</a>" : <i>[ <a href="geofilter.md">GeoFilter</a>, ... ]</i>,
+        "<a href="#origin" title="Origin">Origin</a>" : <i>[ <a href="origin.md">Origin</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -40,10 +38,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::CdnEndpoint
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#contenttypestocompress" title="ContentTypesToCompress">ContentTypesToCompress</a>: <i>
       - String</i>
-    <a href="#hostname" title="HostName">HostName</a>: <i>String</i>
     <a href="#iscompressionenabled" title="IsCompressionEnabled">IsCompressionEnabled</a>: <i>Boolean</i>
     <a href="#ishttpallowed" title="IsHttpAllowed">IsHttpAllowed</a>: <i>Boolean</i>
     <a href="#ishttpsallowed" title="IsHttpsAllowed">IsHttpsAllowed</a>: <i>Boolean</i>
@@ -57,39 +53,21 @@ Properties:
     <a href="#querystringcachingbehaviour" title="QuerystringCachingBehaviour">QuerystringCachingBehaviour</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#geofilter" title="GeoFilter">GeoFilter</a>: <i>
-      - &lt;a href=&#34;geofilter.md&#34;&gt;GeoFilter&lt;/a&gt;</i>
+      - <a href="geofilter.md">GeoFilter</a></i>
     <a href="#origin" title="Origin">Origin</a>: <i>
-      - &lt;a href=&#34;origin.md&#34;&gt;Origin&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="origin.md">Origin</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentTypesToCompress
 
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HostName
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -201,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;geofilter.md&#34;&gt;GeoFilter&lt;/a&gt;
+_Type_: List of <a href="geofilter.md">GeoFilter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -209,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;origin.md&#34;&gt;Origin&lt;/a&gt;
+_Type_: List of <a href="origin.md">Origin</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -239,5 +217,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HostName
 
-Returns the &lt;code&gt;HostName&lt;/code&gt; value.
+Returns the <code>HostName</code> value.
 

@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::ObsBucketObject",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acl" title="Acl">Acl</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
         "<a href="#content" title="Content">Content</a>" : <i>String</i>,
@@ -21,10 +20,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>" : <i>String</i>,
-        "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
         "<a href="#storageclass" title="StorageClass">StorageClass</a>" : <i>String</i>,
-        "<a href="#versionid" title="VersionId">VersionId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -34,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::ObsBucketObject
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
     <a href="#content" title="Content">Content</a>: <i>String</i>
@@ -43,23 +39,11 @@ Properties:
     <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>: <i>String</i>
-    <a href="#size" title="Size">Size</a>: <i>Double</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
     <a href="#storageclass" title="StorageClass">StorageClass</a>: <i>String</i>
-    <a href="#versionid" title="VersionId">VersionId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Acl
 
@@ -125,14 +109,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Size
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Source
 
 _Required_: No
@@ -142,14 +118,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageClass
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VersionId
 
 _Required_: No
 
@@ -175,9 +143,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Size
 
-Returns the &lt;code&gt;Size&lt;/code&gt; value.
+Returns the <code>Size</code> value.
 
 #### VersionId
 
-Returns the &lt;code&gt;VersionId&lt;/code&gt; value.
+Returns the <code>VersionId</code> value.
 

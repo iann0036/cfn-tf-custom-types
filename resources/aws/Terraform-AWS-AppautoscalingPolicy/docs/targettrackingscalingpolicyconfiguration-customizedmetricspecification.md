@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#namespace" title="Namespace">Namespace</a>" : <i>String</i>,
     "<a href="#statistic" title="Statistic">Statistic</a>" : <i>String</i>,
     "<a href="#unit" title="Unit">Unit</a>" : <i>String</i>,
-    "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;targettrackingscalingpolicyconfiguration-customizedmetricspecification-dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>
+    "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="targettrackingscalingpolicyconfiguration-customizedmetricspecification-dimensions.md">Dimensions</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#statistic" title="Statistic">Statistic</a>: <i>String</i>
 <a href="#unit" title="Unit">Unit</a>: <i>String</i>
 <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - &lt;a href=&#34;targettrackingscalingpolicyconfiguration-customizedmetricspecification-dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
+      - <a href="targettrackingscalingpolicyconfiguration-customizedmetricspecification-dimensions.md">Dimensions</a></i>
 </pre>
 
 ## Properties
@@ -32,6 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### MetricName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,6 +40,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Namespace
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Statistic
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Unit
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,7 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Dimensions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;targettrackingscalingpolicyconfiguration-customizedmetricspecification-dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
+
+_Type_: List of <a href="targettrackingscalingpolicyconfiguration-customizedmetricspecification-dimensions.md">Dimensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

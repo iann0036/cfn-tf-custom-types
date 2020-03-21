@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::GeneralSettings",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#dnsprimary" title="DnsPrimary">DnsPrimary</a>" : <i>String</i>,
         "<a href="#dnssecondary" title="DnsSecondary">DnsSecondary</a>" : <i>String</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
@@ -28,7 +27,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ntpsecondaryauthtype" title="NtpSecondaryAuthType">NtpSecondaryAuthType</a>" : <i>String</i>,
         "<a href="#ntpsecondarykeyid" title="NtpSecondaryKeyId">NtpSecondaryKeyId</a>" : <i>Double</i>,
         "<a href="#proxypassword" title="ProxyPassword">ProxyPassword</a>" : <i>String</i>,
-        "<a href="#proxypasswordenc" title="ProxyPasswordEnc">ProxyPasswordEnc</a>" : <i>String</i>,
         "<a href="#proxyport" title="ProxyPort">ProxyPort</a>" : <i>Double</i>,
         "<a href="#proxyserver" title="ProxyServer">ProxyServer</a>" : <i>String</i>,
         "<a href="#proxyuser" title="ProxyUser">ProxyUser</a>" : <i>String</i>,
@@ -44,7 +42,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::GeneralSettings
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#dnsprimary" title="DnsPrimary">DnsPrimary</a>: <i>String</i>
     <a href="#dnssecondary" title="DnsSecondary">DnsSecondary</a>: <i>String</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
@@ -60,7 +57,6 @@ Properties:
     <a href="#ntpsecondaryauthtype" title="NtpSecondaryAuthType">NtpSecondaryAuthType</a>: <i>String</i>
     <a href="#ntpsecondarykeyid" title="NtpSecondaryKeyId">NtpSecondaryKeyId</a>: <i>Double</i>
     <a href="#proxypassword" title="ProxyPassword">ProxyPassword</a>: <i>String</i>
-    <a href="#proxypasswordenc" title="ProxyPasswordEnc">ProxyPasswordEnc</a>: <i>String</i>
     <a href="#proxyport" title="ProxyPort">ProxyPort</a>: <i>Double</i>
     <a href="#proxyserver" title="ProxyServer">ProxyServer</a>: <i>String</i>
     <a href="#proxyuser" title="ProxyUser">ProxyUser</a>: <i>String</i>
@@ -70,16 +66,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsPrimary
 
@@ -201,14 +187,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ProxyPasswordEnc
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ProxyPort
 
 _Required_: No
@@ -275,5 +253,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ProxyPasswordEnc
 
-Returns the &lt;code&gt;ProxyPasswordEnc&lt;/code&gt; value.
+Returns the <code>ProxyPasswordEnc</code> value.
 

@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AppautoscalingScheduledAction",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#endtime" title="EndTime">EndTime</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
@@ -21,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#schedule" title="Schedule">Schedule</a>" : <i>String</i>,
         "<a href="#servicenamespace" title="ServiceNamespace">ServiceNamespace</a>" : <i>String</i>,
         "<a href="#starttime" title="StartTime">StartTime</a>" : <i>String</i>,
-        "<a href="#scalabletargetaction" title="ScalableTargetAction">ScalableTargetAction</a>" : <i>[ &lt;a href=&#34;scalabletargetaction.md&#34;&gt;ScalableTargetAction&lt;/a&gt;, ... ]</i>
+        "<a href="#scalabletargetaction" title="ScalableTargetAction">ScalableTargetAction</a>" : <i>[ <a href="scalabletargetaction.md">ScalableTargetAction</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,8 +29,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AppautoscalingScheduledAction
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#endtime" title="EndTime">EndTime</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
@@ -41,28 +37,10 @@ Properties:
     <a href="#servicenamespace" title="ServiceNamespace">ServiceNamespace</a>: <i>String</i>
     <a href="#starttime" title="StartTime">StartTime</a>: <i>String</i>
     <a href="#scalabletargetaction" title="ScalableTargetAction">ScalableTargetAction</a>: <i>
-      - &lt;a href=&#34;scalabletargetaction.md&#34;&gt;ScalableTargetAction&lt;/a&gt;</i>
+      - <a href="scalabletargetaction.md">ScalableTargetAction</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndTime
 
@@ -124,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scalabletargetaction.md&#34;&gt;ScalableTargetAction&lt;/a&gt;
+_Type_: List of <a href="scalabletargetaction.md">ScalableTargetAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,5 +124,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

@@ -12,18 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NS1::Record",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
         "<a href="#link" title="Link">Link</a>" : <i>String</i>,
-        "<a href="#meta" title="Meta">Meta</a>" : <i>[ &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;, ... ]</i>,
+        "<a href="#meta" title="Meta">Meta</a>" : <i>[ <a href="meta.md">Meta</a>, ... ]</i>,
         "<a href="#shortanswers" title="ShortAnswers">ShortAnswers</a>" : <i>[ String, ... ]</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#useclientsubnet" title="UseClientSubnet">UseClientSubnet</a>" : <i>Boolean</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#answers" title="Answers">Answers</a>" : <i>[ &lt;a href=&#34;answers.md&#34;&gt;Answers&lt;/a&gt;, ... ]</i>,
-        "<a href="#filters" title="Filters">Filters</a>" : <i>[ &lt;a href=&#34;filters.md&#34;&gt;Filters&lt;/a&gt;, ... ]</i>,
-        "<a href="#regions" title="Regions">Regions</a>" : <i>[ &lt;a href=&#34;regions.md&#34;&gt;Regions&lt;/a&gt;, ... ]</i>
+        "<a href="#answers" title="Answers">Answers</a>" : <i>[ <a href="answers.md">Answers</a>, ... ]</i>,
+        "<a href="#filters" title="Filters">Filters</a>" : <i>[ <a href="filters.md">Filters</a>, ... ]</i>,
+        "<a href="#regions" title="Regions">Regions</a>" : <i>[ <a href="regions.md">Regions</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,11 +32,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NS1::Record
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#link" title="Link">Link</a>: <i>String</i>
     <a href="#meta" title="Meta">Meta</a>: <i>
-      - &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;</i>
+      - <a href="meta.md">Meta</a></i>
     <a href="#shortanswers" title="ShortAnswers">ShortAnswers</a>: <i>
       - String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>Double</i>
@@ -45,24 +43,14 @@ Properties:
     <a href="#useclientsubnet" title="UseClientSubnet">UseClientSubnet</a>: <i>Boolean</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#answers" title="Answers">Answers</a>: <i>
-      - &lt;a href=&#34;answers.md&#34;&gt;Answers&lt;/a&gt;</i>
+      - <a href="answers.md">Answers</a></i>
     <a href="#filters" title="Filters">Filters</a>: <i>
-      - &lt;a href=&#34;filters.md&#34;&gt;Filters&lt;/a&gt;</i>
+      - <a href="filters.md">Filters</a></i>
     <a href="#regions" title="Regions">Regions</a>: <i>
-      - &lt;a href=&#34;regions.md&#34;&gt;Regions&lt;/a&gt;</i>
+      - <a href="regions.md">Regions</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
 
@@ -84,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;meta.md&#34;&gt;Meta&lt;/a&gt;
+_Type_: List of <a href="meta.md">Meta</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -132,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;answers.md&#34;&gt;Answers&lt;/a&gt;
+_Type_: List of <a href="answers.md">Answers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -140,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;filters.md&#34;&gt;Filters&lt;/a&gt;
+_Type_: List of <a href="filters.md">Filters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;regions.md&#34;&gt;Regions&lt;/a&gt;
+_Type_: List of <a href="regions.md">Regions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,12 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::EfsMountTarget",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#dnsname" title="DnsName">DnsName</a>" : <i>String</i>,
-        "<a href="#filesystemarn" title="FileSystemArn">FileSystemArn</a>" : <i>String</i>,
         "<a href="#filesystemid" title="FileSystemId">FileSystemId</a>" : <i>String</i>,
         "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
-        "<a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>" : <i>String</i>,
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>
     }
@@ -29,44 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::EfsMountTarget
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#dnsname" title="DnsName">DnsName</a>: <i>String</i>
-    <a href="#filesystemarn" title="FileSystemArn">FileSystemArn</a>: <i>String</i>
     <a href="#filesystemid" title="FileSystemId">FileSystemId</a>: <i>String</i>
     <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
-    <a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>: <i>String</i>
     <a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>: <i>
       - String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DnsName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### FileSystemArn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FileSystemId
 
@@ -77,14 +43,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddress
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### NetworkInterfaceId
 
 _Required_: No
 
@@ -126,13 +84,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DnsName
 
-Returns the &lt;code&gt;DnsName&lt;/code&gt; value.
+Returns the <code>DnsName</code> value.
 
 #### FileSystemArn
 
-Returns the &lt;code&gt;FileSystemArn&lt;/code&gt; value.
+Returns the <code>FileSystemArn</code> value.
 
 #### NetworkInterfaceId
 
-Returns the &lt;code&gt;NetworkInterfaceId&lt;/code&gt; value.
+Returns the <code>NetworkInterfaceId</code> value.
 

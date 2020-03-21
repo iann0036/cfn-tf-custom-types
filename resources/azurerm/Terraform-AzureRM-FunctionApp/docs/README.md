@@ -12,37 +12,31 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::FunctionApp",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#appserviceplanid" title="AppServicePlanId">AppServicePlanId</a>" : <i>String</i>,
-        "<a href="#appsettings" title="AppSettings">AppSettings</a>" : <i>[ &lt;a href=&#34;appsettings.md&#34;&gt;AppSettings&lt;/a&gt;, ... ]</i>,
+        "<a href="#appsettings" title="AppSettings">AppSettings</a>" : <i>[ <a href="appsettings.md">AppSettings</a>, ... ]</i>,
         "<a href="#clientaffinityenabled" title="ClientAffinityEnabled">ClientAffinityEnabled</a>" : <i>Boolean</i>,
         "<a href="#dailymemorytimequota" title="DailyMemoryTimeQuota">DailyMemoryTimeQuota</a>" : <i>Double</i>,
-        "<a href="#defaulthostname" title="DefaultHostname">DefaultHostname</a>" : <i>String</i>,
         "<a href="#enablebuiltinlogging" title="EnableBuiltinLogging">EnableBuiltinLogging</a>" : <i>Boolean</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#httpsonly" title="HttpsOnly">HttpsOnly</a>" : <i>Boolean</i>,
-        "<a href="#kind" title="Kind">Kind</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ostype" title="OsType">OsType</a>" : <i>String</i>,
-        "<a href="#outboundipaddresses" title="OutboundIpAddresses">OutboundIpAddresses</a>" : <i>String</i>,
-        "<a href="#possibleoutboundipaddresses" title="PossibleOutboundIpAddresses">PossibleOutboundIpAddresses</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#sitecredential" title="SiteCredential">SiteCredential</a>" : <i>[ &lt;a href=&#34;sitecredential.md&#34;&gt;SiteCredential&lt;/a&gt;, ... ]</i>,
         "<a href="#storageconnectionstring" title="StorageConnectionString">StorageConnectionString</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#authsettings" title="AuthSettings">AuthSettings</a>" : <i>[ &lt;a href=&#34;authsettings.md&#34;&gt;AuthSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#connectionstring" title="ConnectionString">ConnectionString</a>" : <i>[ &lt;a href=&#34;connectionstring.md&#34;&gt;ConnectionString&lt;/a&gt;, ... ]</i>,
-        "<a href="#identity" title="Identity">Identity</a>" : <i>[ &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;, ... ]</i>,
-        "<a href="#siteconfig" title="SiteConfig">SiteConfig</a>" : <i>[ &lt;a href=&#34;siteconfig.md&#34;&gt;SiteConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#activedirectory" title="ActiveDirectory">ActiveDirectory</a>" : <i>[ &lt;a href=&#34;activedirectory.md&#34;&gt;ActiveDirectory&lt;/a&gt;, ... ]</i>,
-        "<a href="#facebook" title="Facebook">Facebook</a>" : <i>[ &lt;a href=&#34;facebook.md&#34;&gt;Facebook&lt;/a&gt;, ... ]</i>,
-        "<a href="#google" title="Google">Google</a>" : <i>[ &lt;a href=&#34;google.md&#34;&gt;Google&lt;/a&gt;, ... ]</i>,
-        "<a href="#microsoft" title="Microsoft">Microsoft</a>" : <i>[ &lt;a href=&#34;microsoft.md&#34;&gt;Microsoft&lt;/a&gt;, ... ]</i>,
-        "<a href="#twitter" title="Twitter">Twitter</a>" : <i>[ &lt;a href=&#34;twitter.md&#34;&gt;Twitter&lt;/a&gt;, ... ]</i>,
-        "<a href="#cors" title="Cors">Cors</a>" : <i>[ &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;, ... ]</i>
+        "<a href="#authsettings" title="AuthSettings">AuthSettings</a>" : <i>[ <a href="authsettings.md">AuthSettings</a>, ... ]</i>,
+        "<a href="#connectionstring" title="ConnectionString">ConnectionString</a>" : <i>[ <a href="connectionstring.md">ConnectionString</a>, ... ]</i>,
+        "<a href="#identity" title="Identity">Identity</a>" : <i>[ <a href="identity.md">Identity</a>, ... ]</i>,
+        "<a href="#siteconfig" title="SiteConfig">SiteConfig</a>" : <i>[ <a href="siteconfig.md">SiteConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#activedirectory" title="ActiveDirectory">ActiveDirectory</a>" : <i>[ <a href="activedirectory.md">ActiveDirectory</a>, ... ]</i>,
+        "<a href="#facebook" title="Facebook">Facebook</a>" : <i>[ <a href="facebook.md">Facebook</a>, ... ]</i>,
+        "<a href="#google" title="Google">Google</a>" : <i>[ <a href="google.md">Google</a>, ... ]</i>,
+        "<a href="#microsoft" title="Microsoft">Microsoft</a>" : <i>[ <a href="microsoft.md">Microsoft</a>, ... ]</i>,
+        "<a href="#twitter" title="Twitter">Twitter</a>" : <i>[ <a href="twitter.md">Twitter</a>, ... ]</i>,
+        "<a href="#cors" title="Cors">Cors</a>" : <i>[ <a href="cors.md">Cors</a>, ... ]</i>
     }
 }
 </pre>
@@ -52,63 +46,46 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::FunctionApp
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#appserviceplanid" title="AppServicePlanId">AppServicePlanId</a>: <i>String</i>
     <a href="#appsettings" title="AppSettings">AppSettings</a>: <i>
-      - &lt;a href=&#34;appsettings.md&#34;&gt;AppSettings&lt;/a&gt;</i>
+      - <a href="appsettings.md">AppSettings</a></i>
     <a href="#clientaffinityenabled" title="ClientAffinityEnabled">ClientAffinityEnabled</a>: <i>Boolean</i>
     <a href="#dailymemorytimequota" title="DailyMemoryTimeQuota">DailyMemoryTimeQuota</a>: <i>Double</i>
-    <a href="#defaulthostname" title="DefaultHostname">DefaultHostname</a>: <i>String</i>
     <a href="#enablebuiltinlogging" title="EnableBuiltinLogging">EnableBuiltinLogging</a>: <i>Boolean</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#httpsonly" title="HttpsOnly">HttpsOnly</a>: <i>Boolean</i>
-    <a href="#kind" title="Kind">Kind</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ostype" title="OsType">OsType</a>: <i>String</i>
-    <a href="#outboundipaddresses" title="OutboundIpAddresses">OutboundIpAddresses</a>: <i>String</i>
-    <a href="#possibleoutboundipaddresses" title="PossibleOutboundIpAddresses">PossibleOutboundIpAddresses</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
-    <a href="#sitecredential" title="SiteCredential">SiteCredential</a>: <i>
-      - &lt;a href=&#34;sitecredential.md&#34;&gt;SiteCredential&lt;/a&gt;</i>
     <a href="#storageconnectionstring" title="StorageConnectionString">StorageConnectionString</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#authsettings" title="AuthSettings">AuthSettings</a>: <i>
-      - &lt;a href=&#34;authsettings.md&#34;&gt;AuthSettings&lt;/a&gt;</i>
+      - <a href="authsettings.md">AuthSettings</a></i>
     <a href="#connectionstring" title="ConnectionString">ConnectionString</a>: <i>
-      - &lt;a href=&#34;connectionstring.md&#34;&gt;ConnectionString&lt;/a&gt;</i>
+      - <a href="connectionstring.md">ConnectionString</a></i>
     <a href="#identity" title="Identity">Identity</a>: <i>
-      - &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;</i>
+      - <a href="identity.md">Identity</a></i>
     <a href="#siteconfig" title="SiteConfig">SiteConfig</a>: <i>
-      - &lt;a href=&#34;siteconfig.md&#34;&gt;SiteConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="siteconfig.md">SiteConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#activedirectory" title="ActiveDirectory">ActiveDirectory</a>: <i>
-      - &lt;a href=&#34;activedirectory.md&#34;&gt;ActiveDirectory&lt;/a&gt;</i>
+      - <a href="activedirectory.md">ActiveDirectory</a></i>
     <a href="#facebook" title="Facebook">Facebook</a>: <i>
-      - &lt;a href=&#34;facebook.md&#34;&gt;Facebook&lt;/a&gt;</i>
+      - <a href="facebook.md">Facebook</a></i>
     <a href="#google" title="Google">Google</a>: <i>
-      - &lt;a href=&#34;google.md&#34;&gt;Google&lt;/a&gt;</i>
+      - <a href="google.md">Google</a></i>
     <a href="#microsoft" title="Microsoft">Microsoft</a>: <i>
-      - &lt;a href=&#34;microsoft.md&#34;&gt;Microsoft&lt;/a&gt;</i>
+      - <a href="microsoft.md">Microsoft</a></i>
     <a href="#twitter" title="Twitter">Twitter</a>: <i>
-      - &lt;a href=&#34;twitter.md&#34;&gt;Twitter&lt;/a&gt;</i>
+      - <a href="twitter.md">Twitter</a></i>
     <a href="#cors" title="Cors">Cors</a>: <i>
-      - &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;</i>
+      - <a href="cors.md">Cors</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppServicePlanId
 
@@ -122,7 +99,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;appsettings.md&#34;&gt;AppSettings&lt;/a&gt;
+_Type_: List of <a href="appsettings.md">AppSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,14 +116,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DefaultHostname
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,14 +143,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Kind
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Location
 
 _Required_: Yes
@@ -206,35 +167,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### OutboundIpAddresses
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PossibleOutboundIpAddresses
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ResourceGroupName
 
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SiteCredential
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;sitecredential.md&#34;&gt;SiteCredential&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -250,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -266,7 +203,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;authsettings.md&#34;&gt;AuthSettings&lt;/a&gt;
+_Type_: List of <a href="authsettings.md">AuthSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -274,7 +211,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;connectionstring.md&#34;&gt;ConnectionString&lt;/a&gt;
+_Type_: List of <a href="connectionstring.md">ConnectionString</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -282,7 +219,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;
+_Type_: List of <a href="identity.md">Identity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -290,7 +227,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;siteconfig.md&#34;&gt;SiteConfig&lt;/a&gt;
+_Type_: List of <a href="siteconfig.md">SiteConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -298,7 +235,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -306,7 +243,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;activedirectory.md&#34;&gt;ActiveDirectory&lt;/a&gt;
+_Type_: List of <a href="activedirectory.md">ActiveDirectory</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -314,7 +251,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;facebook.md&#34;&gt;Facebook&lt;/a&gt;
+_Type_: List of <a href="facebook.md">Facebook</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -322,7 +259,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;google.md&#34;&gt;Google&lt;/a&gt;
+_Type_: List of <a href="google.md">Google</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -330,7 +267,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;microsoft.md&#34;&gt;Microsoft&lt;/a&gt;
+_Type_: List of <a href="microsoft.md">Microsoft</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -338,7 +275,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;twitter.md&#34;&gt;Twitter&lt;/a&gt;
+_Type_: List of <a href="twitter.md">Twitter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -346,7 +283,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cors.md&#34;&gt;Cors&lt;/a&gt;
+_Type_: List of <a href="cors.md">Cors</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -368,21 +305,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DefaultHostname
 
-Returns the &lt;code&gt;DefaultHostname&lt;/code&gt; value.
+Returns the <code>DefaultHostname</code> value.
 
 #### Kind
 
-Returns the &lt;code&gt;Kind&lt;/code&gt; value.
+Returns the <code>Kind</code> value.
 
 #### OutboundIpAddresses
 
-Returns the &lt;code&gt;OutboundIpAddresses&lt;/code&gt; value.
+Returns the <code>OutboundIpAddresses</code> value.
 
 #### PossibleOutboundIpAddresses
 
-Returns the &lt;code&gt;PossibleOutboundIpAddresses&lt;/code&gt; value.
+Returns the <code>PossibleOutboundIpAddresses</code> value.
 
 #### SiteCredential
 
-Returns the &lt;code&gt;SiteCredential&lt;/code&gt; value.
+Returns the <code>SiteCredential</code> value.
 

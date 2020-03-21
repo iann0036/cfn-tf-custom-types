@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#defaultmode" title="DefaultMode">DefaultMode</a>" : <i>String</i>,
-    "<a href="#items" title="Items">Items</a>" : <i>[ &lt;a href=&#34;volume-downwardapi-items.md&#34;&gt;Items&lt;/a&gt;, ... ]</i>
+    "<a href="#items" title="Items">Items</a>" : <i>[ <a href="volume-downwardapi-items.md">Items</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#defaultmode" title="DefaultMode">DefaultMode</a>: <i>String</i>
 <a href="#items" title="Items">Items</a>: <i>
-      - &lt;a href=&#34;volume-downwardapi-items.md&#34;&gt;Items&lt;/a&gt;</i>
+      - <a href="volume-downwardapi-items.md">Items</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DefaultMode
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Items
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;volume-downwardapi-items.md&#34;&gt;Items&lt;/a&gt;
+
+_Type_: List of <a href="volume-downwardapi-items.md">Items</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

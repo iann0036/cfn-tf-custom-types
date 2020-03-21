@@ -12,10 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::ComputeFloatingipV2",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#address" title="Address">Address</a>" : <i>String</i>,
-        "<a href="#fixedip" title="FixedIp">FixedIp</a>" : <i>String</i>,
-        "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#pool" title="Pool">Pool</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>
     }
@@ -27,49 +23,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::ComputeFloatingipV2
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#address" title="Address">Address</a>: <i>String</i>
-    <a href="#fixedip" title="FixedIp">FixedIp</a>: <i>String</i>
-    <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#pool" title="Pool">Pool</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Address
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### FixedIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### InstanceId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Pool
 
@@ -105,13 +63,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Address
 
-Returns the &lt;code&gt;Address&lt;/code&gt; value.
+Returns the <code>Address</code> value.
 
 #### FixedIp
 
-Returns the &lt;code&gt;FixedIp&lt;/code&gt; value.
+Returns the <code>FixedIp</code> value.
 
 #### InstanceId
 
-Returns the &lt;code&gt;InstanceId&lt;/code&gt; value.
+Returns the <code>InstanceId</code> value.
 

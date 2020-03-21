@@ -12,14 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OVH::PubliccloudUser",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#creationdate" title="CreationDate">CreationDate</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#openstackrc" title="OpenstackRc">OpenstackRc</a>" : <i>[ &lt;a href=&#34;openstackrc.md&#34;&gt;OpenstackRc&lt;/a&gt;, ... ]</i>,
-        "<a href="#password" title="Password">Password</a>" : <i>String</i>,
+        "<a href="#openstackrc" title="OpenstackRc">OpenstackRc</a>" : <i>[ <a href="openstackrc.md">OpenstackRc</a>, ... ]</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
-        "<a href="#username" title="Username">Username</a>" : <i>String</i>
     }
 }
 </pre>
@@ -29,36 +24,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OVH::PubliccloudUser
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#creationdate" title="CreationDate">CreationDate</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#openstackrc" title="OpenstackRc">OpenstackRc</a>: <i>
-      - &lt;a href=&#34;openstackrc.md&#34;&gt;OpenstackRc&lt;/a&gt;</i>
-    <a href="#password" title="Password">Password</a>: <i>String</i>
+      - <a href="openstackrc.md">OpenstackRc</a></i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
-    <a href="#username" title="Username">Username</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreationDate
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -72,37 +44,13 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;openstackrc.md&#34;&gt;OpenstackRc&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Password
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="openstackrc.md">OpenstackRc</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Username
-
-_Required_: No
 
 _Type_: String
 
@@ -126,17 +74,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationDate
 
-Returns the &lt;code&gt;CreationDate&lt;/code&gt; value.
+Returns the <code>CreationDate</code> value.
 
 #### Password
 
-Returns the &lt;code&gt;Password&lt;/code&gt; value.
+Returns the <code>Password</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Username
 
-Returns the &lt;code&gt;Username&lt;/code&gt; value.
+Returns the <code>Username</code> value.
 

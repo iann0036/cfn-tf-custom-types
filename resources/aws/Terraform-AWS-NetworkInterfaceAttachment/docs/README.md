@@ -12,12 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::NetworkInterfaceAttachment",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#attachmentid" title="AttachmentId">AttachmentId</a>" : <i>String</i>,
         "<a href="#deviceindex" title="DeviceIndex">DeviceIndex</a>" : <i>Double</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>
     }
 }
 </pre>
@@ -27,33 +24,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::NetworkInterfaceAttachment
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#attachmentid" title="AttachmentId">AttachmentId</a>: <i>String</i>
     <a href="#deviceindex" title="DeviceIndex">DeviceIndex</a>: <i>Double</i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#networkinterfaceid" title="NetworkInterfaceId">NetworkInterfaceId</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AttachmentId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceIndex
 
@@ -79,14 +55,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -105,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AttachmentId
 
-Returns the &lt;code&gt;AttachmentId&lt;/code&gt; value.
+Returns the <code>AttachmentId</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

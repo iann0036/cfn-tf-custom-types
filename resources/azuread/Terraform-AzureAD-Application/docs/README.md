@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureAD::Application",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#applicationid" title="ApplicationId">ApplicationId</a>" : <i>String</i>,
         "<a href="#availabletoothertenants" title="AvailableToOtherTenants">AvailableToOtherTenants</a>" : <i>Boolean</i>,
         "<a href="#groupmembershipclaims" title="GroupMembershipClaims">GroupMembershipClaims</a>" : <i>String</i>,
         "<a href="#homepage" title="Homepage">Homepage</a>" : <i>String</i>,
@@ -21,14 +19,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#logouturl" title="LogoutUrl">LogoutUrl</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#oauth2allowimplicitflow" title="Oauth2AllowImplicitFlow">Oauth2AllowImplicitFlow</a>" : <i>Boolean</i>,
-        "<a href="#objectid" title="ObjectId">ObjectId</a>" : <i>String</i>,
         "<a href="#owners" title="Owners">Owners</a>" : <i>[ String, ... ]</i>,
         "<a href="#publicclient" title="PublicClient">PublicClient</a>" : <i>Boolean</i>,
         "<a href="#replyurls" title="ReplyUrls">ReplyUrls</a>" : <i>[ String, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#approle" title="AppRole">AppRole</a>" : <i>[ &lt;a href=&#34;approle.md&#34;&gt;AppRole&lt;/a&gt;, ... ]</i>,
-        "<a href="#requiredresourceaccess" title="RequiredResourceAccess">RequiredResourceAccess</a>" : <i>[ &lt;a href=&#34;requiredresourceaccess.md&#34;&gt;RequiredResourceAccess&lt;/a&gt;, ... ]</i>,
-        "<a href="#resourceaccess" title="ResourceAccess">ResourceAccess</a>" : <i>[ &lt;a href=&#34;resourceaccess.md&#34;&gt;ResourceAccess&lt;/a&gt;, ... ]</i>
+        "<a href="#approle" title="AppRole">AppRole</a>" : <i>[ <a href="approle.md">AppRole</a>, ... ]</i>,
+        "<a href="#requiredresourceaccess" title="RequiredResourceAccess">RequiredResourceAccess</a>" : <i>[ <a href="requiredresourceaccess.md">RequiredResourceAccess</a>, ... ]</i>,
+        "<a href="#resourceaccess" title="ResourceAccess">ResourceAccess</a>" : <i>[ <a href="resourceaccess.md">ResourceAccess</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,8 +35,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureAD::Application
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#applicationid" title="ApplicationId">ApplicationId</a>: <i>String</i>
     <a href="#availabletoothertenants" title="AvailableToOtherTenants">AvailableToOtherTenants</a>: <i>Boolean</i>
     <a href="#groupmembershipclaims" title="GroupMembershipClaims">GroupMembershipClaims</a>: <i>String</i>
     <a href="#homepage" title="Homepage">Homepage</a>: <i>String</i>
@@ -48,7 +43,6 @@ Properties:
     <a href="#logouturl" title="LogoutUrl">LogoutUrl</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#oauth2allowimplicitflow" title="Oauth2AllowImplicitFlow">Oauth2AllowImplicitFlow</a>: <i>Boolean</i>
-    <a href="#objectid" title="ObjectId">ObjectId</a>: <i>String</i>
     <a href="#owners" title="Owners">Owners</a>: <i>
       - String</i>
     <a href="#publicclient" title="PublicClient">PublicClient</a>: <i>Boolean</i>
@@ -56,32 +50,14 @@ Properties:
       - String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#approle" title="AppRole">AppRole</a>: <i>
-      - &lt;a href=&#34;approle.md&#34;&gt;AppRole&lt;/a&gt;</i>
+      - <a href="approle.md">AppRole</a></i>
     <a href="#requiredresourceaccess" title="RequiredResourceAccess">RequiredResourceAccess</a>: <i>
-      - &lt;a href=&#34;requiredresourceaccess.md&#34;&gt;RequiredResourceAccess&lt;/a&gt;</i>
+      - <a href="requiredresourceaccess.md">RequiredResourceAccess</a></i>
     <a href="#resourceaccess" title="ResourceAccess">ResourceAccess</a>: <i>
-      - &lt;a href=&#34;resourceaccess.md&#34;&gt;ResourceAccess&lt;/a&gt;</i>
+      - <a href="resourceaccess.md">ResourceAccess</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ApplicationId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailableToOtherTenants
 
@@ -139,14 +115,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ObjectId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Owners
 
 _Required_: No
@@ -183,7 +151,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;approle.md&#34;&gt;AppRole&lt;/a&gt;
+_Type_: List of <a href="approle.md">AppRole</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requiredresourceaccess.md&#34;&gt;RequiredResourceAccess&lt;/a&gt;
+_Type_: List of <a href="requiredresourceaccess.md">RequiredResourceAccess</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;resourceaccess.md&#34;&gt;ResourceAccess&lt;/a&gt;
+_Type_: List of <a href="resourceaccess.md">ResourceAccess</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,9 +189,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ApplicationId
 
-Returns the &lt;code&gt;ApplicationId&lt;/code&gt; value.
+Returns the <code>ApplicationId</code> value.
 
 #### ObjectId
 
-Returns the &lt;code&gt;ObjectId&lt;/code&gt; value.
+Returns the <code>ObjectId</code> value.
 

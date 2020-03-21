@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#objectlockenabled" title="ObjectLockEnabled">ObjectLockEnabled</a>" : <i>String</i>,
-    "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;objectlockconfiguration-rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>
+    "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="objectlockconfiguration-rule.md">Rule</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#objectlockenabled" title="ObjectLockEnabled">ObjectLockEnabled</a>: <i>String</i>
 <a href="#rule" title="Rule">Rule</a>: <i>
-      - &lt;a href=&#34;objectlockconfiguration-rule.md&#34;&gt;Rule&lt;/a&gt;</i>
+      - <a href="objectlockconfiguration-rule.md">Rule</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ObjectLockEnabled
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Rule
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;objectlockconfiguration-rule.md&#34;&gt;Rule&lt;/a&gt;
+
+_Type_: List of <a href="objectlockconfiguration-rule.md">Rule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

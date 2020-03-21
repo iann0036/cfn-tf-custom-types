@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#networkpolicy" title="NetworkPolicy">NetworkPolicy</a>" : <i>String</i>,
     "<a href="#podcidr" title="PodCidr">PodCidr</a>" : <i>String</i>,
     "<a href="#servicecidr" title="ServiceCidr">ServiceCidr</a>" : <i>String</i>,
-    "<a href="#loadbalancerprofile" title="LoadBalancerProfile">LoadBalancerProfile</a>" : <i>[ &lt;a href=&#34;networkprofile-loadbalancerprofile.md&#34;&gt;LoadBalancerProfile&lt;/a&gt;, ... ]</i>
+    "<a href="#loadbalancerprofile" title="LoadBalancerProfile">LoadBalancerProfile</a>" : <i>[ <a href="networkprofile-loadbalancerprofile.md">LoadBalancerProfile</a>, ... ]</i>
 }
 </pre>
 
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#podcidr" title="PodCidr">PodCidr</a>: <i>String</i>
 <a href="#servicecidr" title="ServiceCidr">ServiceCidr</a>: <i>String</i>
 <a href="#loadbalancerprofile" title="LoadBalancerProfile">LoadBalancerProfile</a>: <i>
-      - &lt;a href=&#34;networkprofile-loadbalancerprofile.md&#34;&gt;LoadBalancerProfile&lt;/a&gt;</i>
+      - <a href="networkprofile-loadbalancerprofile.md">LoadBalancerProfile</a></i>
 </pre>
 
 ## Properties
@@ -38,6 +38,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DnsServiceIp
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DockerBridgeCidr
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -52,6 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LoadBalancerSku
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -59,6 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NetworkPlugin
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,6 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NetworkPolicy
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -73,6 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PodCidr
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,6 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ServiceCidr
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -87,7 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LoadBalancerProfile
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkprofile-loadbalancerprofile.md&#34;&gt;LoadBalancerProfile&lt;/a&gt;
+
+_Type_: List of <a href="networkprofile-loadbalancerprofile.md">LoadBalancerProfile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#args" title="Args">Args</a>" : <i>[ String, ... ]</i>,
     "<a href="#command" title="Command">Command</a>" : <i>[ String, ... ]</i>,
     "<a href="#dir" title="Dir">Dir</a>" : <i>String</i>,
-    "<a href="#env" title="Env">Env</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-env.md&#34;&gt;Env&lt;/a&gt;, ... ]</i>,
+    "<a href="#env" title="Env">Env</a>" : <i>[ <a href="taskspec-containerspec-env.md">Env</a>, ... ]</i>,
     "<a href="#groups" title="Groups">Groups</a>" : <i>[ String, ... ]</i>,
     "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
     "<a href="#image" title="Image">Image</a>" : <i>String</i>,
@@ -20,14 +20,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#stopgraceperiod" title="StopGracePeriod">StopGracePeriod</a>" : <i>String</i>,
     "<a href="#stopsignal" title="StopSignal">StopSignal</a>" : <i>String</i>,
     "<a href="#user" title="User">User</a>" : <i>String</i>,
-    "<a href="#configs" title="Configs">Configs</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-configs.md&#34;&gt;Configs&lt;/a&gt;, ... ]</i>,
-    "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;, ... ]</i>,
-    "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;, ... ]</i>,
-    "<a href="#hosts" title="Hosts">Hosts</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-hosts.md&#34;&gt;Hosts&lt;/a&gt;, ... ]</i>,
-    "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
-    "<a href="#mounts" title="Mounts">Mounts</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-mounts.md&#34;&gt;Mounts&lt;/a&gt;, ... ]</i>,
-    "<a href="#privileges" title="Privileges">Privileges</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-privileges.md&#34;&gt;Privileges&lt;/a&gt;, ... ]</i>,
-    "<a href="#secrets" title="Secrets">Secrets</a>" : <i>[ &lt;a href=&#34;taskspec-containerspec-secrets.md&#34;&gt;Secrets&lt;/a&gt;, ... ]</i>
+    "<a href="#configs" title="Configs">Configs</a>" : <i>[ <a href="taskspec-containerspec-configs.md">Configs</a>, ... ]</i>,
+    "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ <a href="taskspec-containerspec-dnsconfig.md">DnsConfig</a>, ... ]</i>,
+    "<a href="#healthcheck" title="Healthcheck">Healthcheck</a>" : <i>[ <a href="taskspec-containerspec-healthcheck.md">Healthcheck</a>, ... ]</i>,
+    "<a href="#hosts" title="Hosts">Hosts</a>" : <i>[ <a href="taskspec-containerspec-hosts.md">Hosts</a>, ... ]</i>,
+    "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="taskspec-containerspec-labels.md">Labels</a>, ... ]</i>,
+    "<a href="#mounts" title="Mounts">Mounts</a>" : <i>[ <a href="taskspec-containerspec-mounts.md">Mounts</a>, ... ]</i>,
+    "<a href="#privileges" title="Privileges">Privileges</a>" : <i>[ <a href="taskspec-containerspec-privileges.md">Privileges</a>, ... ]</i>,
+    "<a href="#secrets" title="Secrets">Secrets</a>" : <i>[ <a href="taskspec-containerspec-secrets.md">Secrets</a>, ... ]</i>
 }
 </pre>
 
@@ -40,7 +40,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#dir" title="Dir">Dir</a>: <i>String</i>
 <a href="#env" title="Env">Env</a>: <i>
-      - &lt;a href=&#34;taskspec-containerspec-env.md&#34;&gt;Env&lt;/a&gt;</i>
+      - <a href="taskspec-containerspec-env.md">Env</a></i>
 <a href="#groups" title="Groups">Groups</a>: <i>
       - String</i>
 <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
@@ -51,21 +51,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#stopsignal" title="StopSignal">StopSignal</a>: <i>String</i>
 <a href="#user" title="User">User</a>: <i>String</i>
 <a href="#configs" title="Configs">Configs</a>: <i>
-      - &lt;a href=&#34;taskspec-containerspec-configs.md&#34;&gt;Configs&lt;/a&gt;</i>
+      - <a href="taskspec-containerspec-configs.md">Configs</a></i>
 <a href="#dnsconfig" title="DnsConfig">DnsConfig</a>: <i>
-      - &lt;a href=&#34;taskspec-containerspec-dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;</i>
+      - <a href="taskspec-containerspec-dnsconfig.md">DnsConfig</a></i>
 <a href="#healthcheck" title="Healthcheck">Healthcheck</a>: <i>
-      - &lt;a href=&#34;taskspec-containerspec-healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;</i>
+      - <a href="taskspec-containerspec-healthcheck.md">Healthcheck</a></i>
 <a href="#hosts" title="Hosts">Hosts</a>: <i>
-      - &lt;a href=&#34;taskspec-containerspec-hosts.md&#34;&gt;Hosts&lt;/a&gt;</i>
+      - <a href="taskspec-containerspec-hosts.md">Hosts</a></i>
 <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;taskspec-containerspec-labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="taskspec-containerspec-labels.md">Labels</a></i>
 <a href="#mounts" title="Mounts">Mounts</a>: <i>
-      - &lt;a href=&#34;taskspec-containerspec-mounts.md&#34;&gt;Mounts&lt;/a&gt;</i>
+      - <a href="taskspec-containerspec-mounts.md">Mounts</a></i>
 <a href="#privileges" title="Privileges">Privileges</a>: <i>
-      - &lt;a href=&#34;taskspec-containerspec-privileges.md&#34;&gt;Privileges&lt;/a&gt;</i>
+      - <a href="taskspec-containerspec-privileges.md">Privileges</a></i>
 <a href="#secrets" title="Secrets">Secrets</a>: <i>
-      - &lt;a href=&#34;taskspec-containerspec-secrets.md&#34;&gt;Secrets&lt;/a&gt;</i>
+      - <a href="taskspec-containerspec-secrets.md">Secrets</a></i>
 </pre>
 
 ## Properties
@@ -73,6 +73,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Args
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,6 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Command
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -87,6 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Dir
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -94,13 +97,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Env
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskspec-containerspec-env.md&#34;&gt;Env&lt;/a&gt;
+
+_Type_: List of <a href="taskspec-containerspec-env.md">Env</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Groups
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -108,6 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Hostname
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -115,6 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Image
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -122,6 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Isolation
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -129,6 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ReadOnly
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -136,6 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StopGracePeriod
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -143,6 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StopSignal
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -150,6 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### User
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -157,56 +169,64 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Configs
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskspec-containerspec-configs.md&#34;&gt;Configs&lt;/a&gt;
+
+_Type_: List of <a href="taskspec-containerspec-configs.md">Configs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskspec-containerspec-dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;
+
+_Type_: List of <a href="taskspec-containerspec-dnsconfig.md">DnsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Healthcheck
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskspec-containerspec-healthcheck.md&#34;&gt;Healthcheck&lt;/a&gt;
+
+_Type_: List of <a href="taskspec-containerspec-healthcheck.md">Healthcheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Hosts
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskspec-containerspec-hosts.md&#34;&gt;Hosts&lt;/a&gt;
+
+_Type_: List of <a href="taskspec-containerspec-hosts.md">Hosts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Labels
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskspec-containerspec-labels.md&#34;&gt;Labels&lt;/a&gt;
+
+_Type_: List of <a href="taskspec-containerspec-labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mounts
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskspec-containerspec-mounts.md&#34;&gt;Mounts&lt;/a&gt;
+
+_Type_: List of <a href="taskspec-containerspec-mounts.md">Mounts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Privileges
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskspec-containerspec-privileges.md&#34;&gt;Privileges&lt;/a&gt;
+
+_Type_: List of <a href="taskspec-containerspec-privileges.md">Privileges</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Secrets
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;taskspec-containerspec-secrets.md&#34;&gt;Secrets&lt;/a&gt;
+
+_Type_: List of <a href="taskspec-containerspec-secrets.md">Secrets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

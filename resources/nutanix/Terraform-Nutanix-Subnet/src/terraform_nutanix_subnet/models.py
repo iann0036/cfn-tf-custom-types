@@ -47,7 +47,6 @@ class ResourceModel(BaseResourceModel):
     DhcpOptions: Optional[Sequence["_DhcpOptions"]]
     DhcpServerAddress: Optional[Sequence["_DhcpServerAddress"]]
     DhcpServerAddressPort: Optional[float]
-    Id: Optional[str]
     IpConfigPoolListRanges: Optional[Sequence[str]]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -82,7 +81,6 @@ class ResourceModel(BaseResourceModel):
             DhcpOptions=json_data.get("DhcpOptions"),
             DhcpServerAddress=json_data.get("DhcpServerAddress"),
             DhcpServerAddressPort=json_data.get("DhcpServerAddressPort"),
-            Id=json_data.get("Id"),
             IpConfigPoolListRanges=json_data.get("IpConfigPoolListRanges"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),

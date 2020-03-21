@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::NasAccessRule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accessgroupname" title="AccessGroupName">AccessGroupName</a>" : <i>String</i>,
-        "<a href="#accessruleid" title="AccessRuleId">AccessRuleId</a>" : <i>String</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
         "<a href="#rwaccesstype" title="RwAccessType">RwAccessType</a>" : <i>String</i>,
         "<a href="#sourcecidrip" title="SourceCidrIp">SourceCidrIp</a>" : <i>String</i>,
@@ -28,9 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::NasAccessRule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accessgroupname" title="AccessGroupName">AccessGroupName</a>: <i>String</i>
-    <a href="#accessruleid" title="AccessRuleId">AccessRuleId</a>: <i>String</i>
     <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
     <a href="#rwaccesstype" title="RwAccessType">RwAccessType</a>: <i>String</i>
     <a href="#sourcecidrip" title="SourceCidrIp">SourceCidrIp</a>: <i>String</i>
@@ -39,27 +35,9 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AccessGroupName
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AccessRuleId
-
-_Required_: No
 
 _Type_: String
 
@@ -115,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessRuleId
 
-Returns the &lt;code&gt;AccessRuleId&lt;/code&gt; value.
+Returns the <code>AccessRuleId</code> value.
 

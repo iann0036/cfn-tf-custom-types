@@ -12,27 +12,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Datadog::Screenboard",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#height" title="Height">Height</a>" : <i>String</i>,
         "<a href="#readonly" title="ReadOnly">ReadOnly</a>" : <i>Boolean</i>,
         "<a href="#shared" title="Shared">Shared</a>" : <i>Boolean</i>,
         "<a href="#title" title="Title">Title</a>" : <i>String</i>,
         "<a href="#width" title="Width">Width</a>" : <i>String</i>,
-        "<a href="#templatevariable" title="TemplateVariable">TemplateVariable</a>" : <i>[ &lt;a href=&#34;templatevariable.md&#34;&gt;TemplateVariable&lt;/a&gt;, ... ]</i>,
-        "<a href="#widget" title="Widget">Widget</a>" : <i>[ &lt;a href=&#34;widget.md&#34;&gt;Widget&lt;/a&gt;, ... ]</i>,
-        "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>,
-        "<a href="#tiledef" title="TileDef">TileDef</a>" : <i>[ &lt;a href=&#34;tiledef.md&#34;&gt;TileDef&lt;/a&gt;, ... ]</i>,
-        "<a href="#event" title="Event">Event</a>" : <i>[ &lt;a href=&#34;event.md&#34;&gt;Event&lt;/a&gt;, ... ]</i>,
-        "<a href="#marker" title="Marker">Marker</a>" : <i>[ &lt;a href=&#34;marker.md&#34;&gt;Marker&lt;/a&gt;, ... ]</i>,
-        "<a href="#request" title="Request">Request</a>" : <i>[ &lt;a href=&#34;request.md&#34;&gt;Request&lt;/a&gt;, ... ]</i>,
-        "<a href="#apmquery" title="ApmQuery">ApmQuery</a>" : <i>[ &lt;a href=&#34;apmquery.md&#34;&gt;ApmQuery&lt;/a&gt;, ... ]</i>,
-        "<a href="#conditionalformat" title="ConditionalFormat">ConditionalFormat</a>" : <i>[ &lt;a href=&#34;conditionalformat.md&#34;&gt;ConditionalFormat&lt;/a&gt;, ... ]</i>,
-        "<a href="#logquery" title="LogQuery">LogQuery</a>" : <i>[ &lt;a href=&#34;logquery.md&#34;&gt;LogQuery&lt;/a&gt;, ... ]</i>,
-        "<a href="#processquery" title="ProcessQuery">ProcessQuery</a>" : <i>[ &lt;a href=&#34;processquery.md&#34;&gt;ProcessQuery&lt;/a&gt;, ... ]</i>,
-        "<a href="#compute" title="Compute">Compute</a>" : <i>[ &lt;a href=&#34;compute.md&#34;&gt;Compute&lt;/a&gt;, ... ]</i>,
-        "<a href="#groupby" title="GroupBy">GroupBy</a>" : <i>[ &lt;a href=&#34;groupby.md&#34;&gt;GroupBy&lt;/a&gt;, ... ]</i>,
-        "<a href="#search" title="Search">Search</a>" : <i>[ &lt;a href=&#34;search.md&#34;&gt;Search&lt;/a&gt;, ... ]</i>,
-        "<a href="#sort" title="Sort">Sort</a>" : <i>[ &lt;a href=&#34;sort.md&#34;&gt;Sort&lt;/a&gt;, ... ]</i>
+        "<a href="#templatevariable" title="TemplateVariable">TemplateVariable</a>" : <i>[ <a href="templatevariable.md">TemplateVariable</a>, ... ]</i>,
+        "<a href="#widget" title="Widget">Widget</a>" : <i>[ <a href="widget.md">Widget</a>, ... ]</i>,
+        "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="rule.md">Rule</a>, ... ]</i>,
+        "<a href="#tiledef" title="TileDef">TileDef</a>" : <i>[ <a href="tiledef.md">TileDef</a>, ... ]</i>,
+        "<a href="#event" title="Event">Event</a>" : <i>[ <a href="event.md">Event</a>, ... ]</i>,
+        "<a href="#marker" title="Marker">Marker</a>" : <i>[ <a href="marker.md">Marker</a>, ... ]</i>,
+        "<a href="#request" title="Request">Request</a>" : <i>[ <a href="request.md">Request</a>, ... ]</i>,
+        "<a href="#apmquery" title="ApmQuery">ApmQuery</a>" : <i>[ <a href="apmquery.md">ApmQuery</a>, ... ]</i>,
+        "<a href="#conditionalformat" title="ConditionalFormat">ConditionalFormat</a>" : <i>[ <a href="conditionalformat.md">ConditionalFormat</a>, ... ]</i>,
+        "<a href="#logquery" title="LogQuery">LogQuery</a>" : <i>[ <a href="logquery.md">LogQuery</a>, ... ]</i>,
+        "<a href="#processquery" title="ProcessQuery">ProcessQuery</a>" : <i>[ <a href="processquery.md">ProcessQuery</a>, ... ]</i>,
+        "<a href="#compute" title="Compute">Compute</a>" : <i>[ <a href="compute.md">Compute</a>, ... ]</i>,
+        "<a href="#groupby" title="GroupBy">GroupBy</a>" : <i>[ <a href="groupby.md">GroupBy</a>, ... ]</i>,
+        "<a href="#search" title="Search">Search</a>" : <i>[ <a href="search.md">Search</a>, ... ]</i>,
+        "<a href="#sort" title="Sort">Sort</a>" : <i>[ <a href="sort.md">Sort</a>, ... ]</i>
     }
 }
 </pre>
@@ -42,55 +41,44 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Datadog::Screenboard
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#height" title="Height">Height</a>: <i>String</i>
     <a href="#readonly" title="ReadOnly">ReadOnly</a>: <i>Boolean</i>
     <a href="#shared" title="Shared">Shared</a>: <i>Boolean</i>
     <a href="#title" title="Title">Title</a>: <i>String</i>
     <a href="#width" title="Width">Width</a>: <i>String</i>
     <a href="#templatevariable" title="TemplateVariable">TemplateVariable</a>: <i>
-      - &lt;a href=&#34;templatevariable.md&#34;&gt;TemplateVariable&lt;/a&gt;</i>
+      - <a href="templatevariable.md">TemplateVariable</a></i>
     <a href="#widget" title="Widget">Widget</a>: <i>
-      - &lt;a href=&#34;widget.md&#34;&gt;Widget&lt;/a&gt;</i>
+      - <a href="widget.md">Widget</a></i>
     <a href="#rule" title="Rule">Rule</a>: <i>
-      - &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;</i>
+      - <a href="rule.md">Rule</a></i>
     <a href="#tiledef" title="TileDef">TileDef</a>: <i>
-      - &lt;a href=&#34;tiledef.md&#34;&gt;TileDef&lt;/a&gt;</i>
+      - <a href="tiledef.md">TileDef</a></i>
     <a href="#event" title="Event">Event</a>: <i>
-      - &lt;a href=&#34;event.md&#34;&gt;Event&lt;/a&gt;</i>
+      - <a href="event.md">Event</a></i>
     <a href="#marker" title="Marker">Marker</a>: <i>
-      - &lt;a href=&#34;marker.md&#34;&gt;Marker&lt;/a&gt;</i>
+      - <a href="marker.md">Marker</a></i>
     <a href="#request" title="Request">Request</a>: <i>
-      - &lt;a href=&#34;request.md&#34;&gt;Request&lt;/a&gt;</i>
+      - <a href="request.md">Request</a></i>
     <a href="#apmquery" title="ApmQuery">ApmQuery</a>: <i>
-      - &lt;a href=&#34;apmquery.md&#34;&gt;ApmQuery&lt;/a&gt;</i>
+      - <a href="apmquery.md">ApmQuery</a></i>
     <a href="#conditionalformat" title="ConditionalFormat">ConditionalFormat</a>: <i>
-      - &lt;a href=&#34;conditionalformat.md&#34;&gt;ConditionalFormat&lt;/a&gt;</i>
+      - <a href="conditionalformat.md">ConditionalFormat</a></i>
     <a href="#logquery" title="LogQuery">LogQuery</a>: <i>
-      - &lt;a href=&#34;logquery.md&#34;&gt;LogQuery&lt;/a&gt;</i>
+      - <a href="logquery.md">LogQuery</a></i>
     <a href="#processquery" title="ProcessQuery">ProcessQuery</a>: <i>
-      - &lt;a href=&#34;processquery.md&#34;&gt;ProcessQuery&lt;/a&gt;</i>
+      - <a href="processquery.md">ProcessQuery</a></i>
     <a href="#compute" title="Compute">Compute</a>: <i>
-      - &lt;a href=&#34;compute.md&#34;&gt;Compute&lt;/a&gt;</i>
+      - <a href="compute.md">Compute</a></i>
     <a href="#groupby" title="GroupBy">GroupBy</a>: <i>
-      - &lt;a href=&#34;groupby.md&#34;&gt;GroupBy&lt;/a&gt;</i>
+      - <a href="groupby.md">GroupBy</a></i>
     <a href="#search" title="Search">Search</a>: <i>
-      - &lt;a href=&#34;search.md&#34;&gt;Search&lt;/a&gt;</i>
+      - <a href="search.md">Search</a></i>
     <a href="#sort" title="Sort">Sort</a>: <i>
-      - &lt;a href=&#34;sort.md&#34;&gt;Sort&lt;/a&gt;</i>
+      - <a href="sort.md">Sort</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Height
 
@@ -136,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;templatevariable.md&#34;&gt;TemplateVariable&lt;/a&gt;
+_Type_: List of <a href="templatevariable.md">TemplateVariable</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;widget.md&#34;&gt;Widget&lt;/a&gt;
+_Type_: List of <a href="widget.md">Widget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +140,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;
+_Type_: List of <a href="rule.md">Rule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tiledef.md&#34;&gt;TileDef&lt;/a&gt;
+_Type_: List of <a href="tiledef.md">TileDef</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;event.md&#34;&gt;Event&lt;/a&gt;
+_Type_: List of <a href="event.md">Event</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;marker.md&#34;&gt;Marker&lt;/a&gt;
+_Type_: List of <a href="marker.md">Marker</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +172,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;request.md&#34;&gt;Request&lt;/a&gt;
+_Type_: List of <a href="request.md">Request</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +180,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;apmquery.md&#34;&gt;ApmQuery&lt;/a&gt;
+_Type_: List of <a href="apmquery.md">ApmQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -200,7 +188,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;conditionalformat.md&#34;&gt;ConditionalFormat&lt;/a&gt;
+_Type_: List of <a href="conditionalformat.md">ConditionalFormat</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -208,7 +196,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logquery.md&#34;&gt;LogQuery&lt;/a&gt;
+_Type_: List of <a href="logquery.md">LogQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,7 +204,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;processquery.md&#34;&gt;ProcessQuery&lt;/a&gt;
+_Type_: List of <a href="processquery.md">ProcessQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -224,7 +212,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;compute.md&#34;&gt;Compute&lt;/a&gt;
+_Type_: List of <a href="compute.md">Compute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -232,7 +220,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;groupby.md&#34;&gt;GroupBy&lt;/a&gt;
+_Type_: List of <a href="groupby.md">GroupBy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -240,7 +228,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;search.md&#34;&gt;Search&lt;/a&gt;
+_Type_: List of <a href="search.md">Search</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -248,7 +236,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sort.md&#34;&gt;Sort&lt;/a&gt;
+_Type_: List of <a href="sort.md">Sort</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

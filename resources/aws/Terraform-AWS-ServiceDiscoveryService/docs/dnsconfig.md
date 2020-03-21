@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#namespaceid" title="NamespaceId">NamespaceId</a>" : <i>String</i>,
     "<a href="#routingpolicy" title="RoutingPolicy">RoutingPolicy</a>" : <i>String</i>,
-    "<a href="#dnsrecords" title="DnsRecords">DnsRecords</a>" : <i>[ &lt;a href=&#34;dnsconfig-dnsrecords.md&#34;&gt;DnsRecords&lt;/a&gt;, ... ]</i>
+    "<a href="#dnsrecords" title="DnsRecords">DnsRecords</a>" : <i>[ <a href="dnsconfig-dnsrecords.md">DnsRecords</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#namespaceid" title="NamespaceId">NamespaceId</a>: <i>String</i>
 <a href="#routingpolicy" title="RoutingPolicy">RoutingPolicy</a>: <i>String</i>
 <a href="#dnsrecords" title="DnsRecords">DnsRecords</a>: <i>
-      - &lt;a href=&#34;dnsconfig-dnsrecords.md&#34;&gt;DnsRecords&lt;/a&gt;</i>
+      - <a href="dnsconfig-dnsrecords.md">DnsRecords</a></i>
 </pre>
 
 ## Properties
@@ -28,6 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### NamespaceId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -35,6 +36,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RoutingPolicy
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DnsRecords
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;dnsconfig-dnsrecords.md&#34;&gt;DnsRecords&lt;/a&gt;
+
+_Type_: List of <a href="dnsconfig-dnsrecords.md">DnsRecords</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

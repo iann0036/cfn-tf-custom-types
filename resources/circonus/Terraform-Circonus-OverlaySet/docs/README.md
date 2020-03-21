@@ -12,12 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Circonus::OverlaySet",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#graphcid" title="GraphCid">GraphCid</a>" : <i>String</i>,
         "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#overlays" title="Overlays">Overlays</a>" : <i>[ &lt;a href=&#34;overlays.md&#34;&gt;Overlays&lt;/a&gt;, ... ]</i>,
-        "<a href="#dataopts" title="DataOpts">DataOpts</a>" : <i>[ &lt;a href=&#34;dataopts.md&#34;&gt;DataOpts&lt;/a&gt;, ... ]</i>,
-        "<a href="#uispecs" title="UiSpecs">UiSpecs</a>" : <i>[ &lt;a href=&#34;uispecs.md&#34;&gt;UiSpecs&lt;/a&gt;, ... ]</i>
+        "<a href="#overlays" title="Overlays">Overlays</a>" : <i>[ <a href="overlays.md">Overlays</a>, ... ]</i>,
+        "<a href="#dataopts" title="DataOpts">DataOpts</a>" : <i>[ <a href="dataopts.md">DataOpts</a>, ... ]</i>,
+        "<a href="#uispecs" title="UiSpecs">UiSpecs</a>" : <i>[ <a href="uispecs.md">UiSpecs</a>, ... ]</i>
     }
 }
 </pre>
@@ -27,28 +26,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Circonus::OverlaySet
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#graphcid" title="GraphCid">GraphCid</a>: <i>String</i>
     <a href="#title" title="Title">Title</a>: <i>String</i>
     <a href="#overlays" title="Overlays">Overlays</a>: <i>
-      - &lt;a href=&#34;overlays.md&#34;&gt;Overlays&lt;/a&gt;</i>
+      - <a href="overlays.md">Overlays</a></i>
     <a href="#dataopts" title="DataOpts">DataOpts</a>: <i>
-      - &lt;a href=&#34;dataopts.md&#34;&gt;DataOpts&lt;/a&gt;</i>
+      - <a href="dataopts.md">DataOpts</a></i>
     <a href="#uispecs" title="UiSpecs">UiSpecs</a>: <i>
-      - &lt;a href=&#34;uispecs.md&#34;&gt;UiSpecs&lt;/a&gt;</i>
+      - <a href="uispecs.md">UiSpecs</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GraphCid
 
@@ -70,7 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;overlays.md&#34;&gt;Overlays&lt;/a&gt;
+_Type_: List of <a href="overlays.md">Overlays</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -78,7 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dataopts.md&#34;&gt;DataOpts&lt;/a&gt;
+_Type_: List of <a href="dataopts.md">DataOpts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -86,7 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;uispecs.md&#34;&gt;UiSpecs&lt;/a&gt;
+_Type_: List of <a href="uispecs.md">UiSpecs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

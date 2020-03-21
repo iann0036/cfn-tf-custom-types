@@ -12,22 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Heroku::App",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acm" title="Acm">Acm</a>" : <i>Boolean</i>,
-        "<a href="#allconfigvars" title="AllConfigVars">AllConfigVars</a>" : <i>[ &lt;a href=&#34;allconfigvars.md&#34;&gt;AllConfigVars&lt;/a&gt;, ... ]</i>,
         "<a href="#buildpacks" title="Buildpacks">Buildpacks</a>" : <i>[ String, ... ]</i>,
-        "<a href="#configvars" title="ConfigVars">ConfigVars</a>" : <i>[ &lt;a href=&#34;configvars.md&#34;&gt;ConfigVars&lt;/a&gt;, ... ]</i>,
-        "<a href="#giturl" title="GitUrl">GitUrl</a>" : <i>String</i>,
-        "<a href="#herokuhostname" title="HerokuHostname">HerokuHostname</a>" : <i>String</i>,
+        "<a href="#configvars" title="ConfigVars">ConfigVars</a>" : <i>[ <a href="configvars.md">ConfigVars</a>, ... ]</i>,
         "<a href="#internalrouting" title="InternalRouting">InternalRouting</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#sensitiveconfigvars" title="SensitiveConfigVars">SensitiveConfigVars</a>" : <i>[ &lt;a href=&#34;sensitiveconfigvars.md&#34;&gt;SensitiveConfigVars&lt;/a&gt;, ... ]</i>,
+        "<a href="#sensitiveconfigvars" title="SensitiveConfigVars">SensitiveConfigVars</a>" : <i>[ <a href="sensitiveconfigvars.md">SensitiveConfigVars</a>, ... ]</i>,
         "<a href="#space" title="Space">Space</a>" : <i>String</i>,
         "<a href="#stack" title="Stack">Stack</a>" : <i>String</i>,
         "<a href="#uuid" title="Uuid">Uuid</a>" : <i>String</i>,
-        "<a href="#weburl" title="WebUrl">WebUrl</a>" : <i>String</i>,
-        "<a href="#organization" title="Organization">Organization</a>" : <i>[ &lt;a href=&#34;organization.md&#34;&gt;Organization&lt;/a&gt;, ... ]</i>
+        "<a href="#organization" title="Organization">Organization</a>" : <i>[ <a href="organization.md">Organization</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,54 +32,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Heroku::App
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acm" title="Acm">Acm</a>: <i>Boolean</i>
-    <a href="#allconfigvars" title="AllConfigVars">AllConfigVars</a>: <i>
-      - &lt;a href=&#34;allconfigvars.md&#34;&gt;AllConfigVars&lt;/a&gt;</i>
     <a href="#buildpacks" title="Buildpacks">Buildpacks</a>: <i>
       - String</i>
     <a href="#configvars" title="ConfigVars">ConfigVars</a>: <i>
-      - &lt;a href=&#34;configvars.md&#34;&gt;ConfigVars&lt;/a&gt;</i>
-    <a href="#giturl" title="GitUrl">GitUrl</a>: <i>String</i>
-    <a href="#herokuhostname" title="HerokuHostname">HerokuHostname</a>: <i>String</i>
+      - <a href="configvars.md">ConfigVars</a></i>
     <a href="#internalrouting" title="InternalRouting">InternalRouting</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#sensitiveconfigvars" title="SensitiveConfigVars">SensitiveConfigVars</a>: <i>
-      - &lt;a href=&#34;sensitiveconfigvars.md&#34;&gt;SensitiveConfigVars&lt;/a&gt;</i>
+      - <a href="sensitiveconfigvars.md">SensitiveConfigVars</a></i>
     <a href="#space" title="Space">Space</a>: <i>String</i>
     <a href="#stack" title="Stack">Stack</a>: <i>String</i>
     <a href="#uuid" title="Uuid">Uuid</a>: <i>String</i>
-    <a href="#weburl" title="WebUrl">WebUrl</a>: <i>String</i>
     <a href="#organization" title="Organization">Organization</a>: <i>
-      - &lt;a href=&#34;organization.md&#34;&gt;Organization&lt;/a&gt;</i>
+      - <a href="organization.md">Organization</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Acm
 
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AllConfigVars
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;allconfigvars.md&#34;&gt;AllConfigVars&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -100,23 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configvars.md&#34;&gt;ConfigVars&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### GitUrl
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HerokuHostname
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="configvars.md">ConfigVars</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sensitiveconfigvars.md&#34;&gt;SensitiveConfigVars&lt;/a&gt;
+_Type_: List of <a href="sensitiveconfigvars.md">SensitiveConfigVars</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,19 +131,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### WebUrl
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Organization
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;organization.md&#34;&gt;Organization&lt;/a&gt;
+_Type_: List of <a href="organization.md">Organization</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -210,17 +157,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AllConfigVars
 
-Returns the &lt;code&gt;AllConfigVars&lt;/code&gt; value.
+Returns the <code>AllConfigVars</code> value.
 
 #### GitUrl
 
-Returns the &lt;code&gt;GitUrl&lt;/code&gt; value.
+Returns the <code>GitUrl</code> value.
 
 #### HerokuHostname
 
-Returns the &lt;code&gt;HerokuHostname&lt;/code&gt; value.
+Returns the <code>HerokuHostname</code> value.
 
 #### WebUrl
 
-Returns the &lt;code&gt;WebUrl&lt;/code&gt; value.
+Returns the <code>WebUrl</code> value.
 

@@ -12,17 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Triton::Fabric",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#fabric" title="Fabric">Fabric</a>" : <i>Boolean</i>,
         "<a href="#gateway" title="Gateway">Gateway</a>" : <i>String</i>,
         "<a href="#internetnat" title="InternetNat">InternetNat</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#provisionendip" title="ProvisionEndIp">ProvisionEndIp</a>" : <i>String</i>,
         "<a href="#provisionstartip" title="ProvisionStartIp">ProvisionStartIp</a>" : <i>String</i>,
-        "<a href="#public" title="Public">Public</a>" : <i>Boolean</i>,
         "<a href="#resolvers" title="Resolvers">Resolvers</a>" : <i>[ String, ... ]</i>,
-        "<a href="#routes" title="Routes">Routes</a>" : <i>[ &lt;a href=&#34;routes.md&#34;&gt;Routes&lt;/a&gt;, ... ]</i>,
+        "<a href="#routes" title="Routes">Routes</a>" : <i>[ <a href="routes.md">Routes</a>, ... ]</i>,
         "<a href="#subnet" title="Subnet">Subnet</a>" : <i>String</i>,
         "<a href="#vlanid" title="VlanId">VlanId</a>" : <i>Double</i>
     }
@@ -34,48 +31,27 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Triton::Fabric
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#fabric" title="Fabric">Fabric</a>: <i>Boolean</i>
     <a href="#gateway" title="Gateway">Gateway</a>: <i>String</i>
     <a href="#internetnat" title="InternetNat">InternetNat</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#provisionendip" title="ProvisionEndIp">ProvisionEndIp</a>: <i>String</i>
     <a href="#provisionstartip" title="ProvisionStartIp">ProvisionStartIp</a>: <i>String</i>
-    <a href="#public" title="Public">Public</a>: <i>Boolean</i>
     <a href="#resolvers" title="Resolvers">Resolvers</a>: <i>
       - String</i>
     <a href="#routes" title="Routes">Routes</a>: <i>
-      - &lt;a href=&#34;routes.md&#34;&gt;Routes&lt;/a&gt;</i>
+      - <a href="routes.md">Routes</a></i>
     <a href="#subnet" title="Subnet">Subnet</a>: <i>String</i>
     <a href="#vlanid" title="VlanId">VlanId</a>: <i>Double</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Description
 
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Fabric
-
-_Required_: No
-
-_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -119,14 +95,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Public
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Resolvers
 
 _Required_: No
@@ -139,7 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;routes.md&#34;&gt;Routes&lt;/a&gt;
+_Type_: List of <a href="routes.md">Routes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,9 +145,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fabric
 
-Returns the &lt;code&gt;Fabric&lt;/code&gt; value.
+Returns the <code>Fabric</code> value.
 
 #### Public
 
-Returns the &lt;code&gt;Public&lt;/code&gt; value.
+Returns the <code>Public</code> value.
 

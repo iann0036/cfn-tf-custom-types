@@ -12,32 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::ContainerinfraClusterV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#apiaddress" title="ApiAddress">ApiAddress</a>" : <i>String</i>,
         "<a href="#clustertemplateid" title="ClusterTemplateId">ClusterTemplateId</a>" : <i>String</i>,
-        "<a href="#coeversion" title="CoeVersion">CoeVersion</a>" : <i>String</i>,
-        "<a href="#containerversion" title="ContainerVersion">ContainerVersion</a>" : <i>String</i>,
         "<a href="#createtimeout" title="CreateTimeout">CreateTimeout</a>" : <i>Double</i>,
-        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#discoveryurl" title="DiscoveryUrl">DiscoveryUrl</a>" : <i>String</i>,
         "<a href="#dockervolumesize" title="DockerVolumeSize">DockerVolumeSize</a>" : <i>Double</i>,
         "<a href="#fixednetwork" title="FixedNetwork">FixedNetwork</a>" : <i>String</i>,
         "<a href="#fixedsubnet" title="FixedSubnet">FixedSubnet</a>" : <i>String</i>,
         "<a href="#flavor" title="Flavor">Flavor</a>" : <i>String</i>,
         "<a href="#keypair" title="Keypair">Keypair</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
-        "<a href="#masteraddresses" title="MasterAddresses">MasterAddresses</a>" : <i>String</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#mastercount" title="MasterCount">MasterCount</a>" : <i>Double</i>,
         "<a href="#masterflavor" title="MasterFlavor">MasterFlavor</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#nodeaddresses" title="NodeAddresses">NodeAddresses</a>" : <i>String</i>,
         "<a href="#nodecount" title="NodeCount">NodeCount</a>" : <i>Double</i>,
-        "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#stackid" title="StackId">StackId</a>" : <i>String</i>,
-        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>,
-        "<a href="#userid" title="UserId">UserId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -47,13 +36,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::ContainerinfraClusterV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#apiaddress" title="ApiAddress">ApiAddress</a>: <i>String</i>
     <a href="#clustertemplateid" title="ClusterTemplateId">ClusterTemplateId</a>: <i>String</i>
-    <a href="#coeversion" title="CoeVersion">CoeVersion</a>: <i>String</i>
-    <a href="#containerversion" title="ContainerVersion">ContainerVersion</a>: <i>String</i>
     <a href="#createtimeout" title="CreateTimeout">CreateTimeout</a>: <i>Double</i>
-    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#discoveryurl" title="DiscoveryUrl">DiscoveryUrl</a>: <i>String</i>
     <a href="#dockervolumesize" title="DockerVolumeSize">DockerVolumeSize</a>: <i>Double</i>
     <a href="#fixednetwork" title="FixedNetwork">FixedNetwork</a>: <i>String</i>
@@ -61,60 +45,20 @@ Properties:
     <a href="#flavor" title="Flavor">Flavor</a>: <i>String</i>
     <a href="#keypair" title="Keypair">Keypair</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
-    <a href="#masteraddresses" title="MasterAddresses">MasterAddresses</a>: <i>String</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#mastercount" title="MasterCount">MasterCount</a>: <i>Double</i>
     <a href="#masterflavor" title="MasterFlavor">MasterFlavor</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#nodeaddresses" title="NodeAddresses">NodeAddresses</a>: <i>String</i>
     <a href="#nodecount" title="NodeCount">NodeCount</a>: <i>Double</i>
-    <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#stackid" title="StackId">StackId</a>: <i>String</i>
-    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
-    <a href="#userid" title="UserId">UserId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ApiAddress
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ClusterTemplateId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CoeVersion
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ContainerVersion
-
-_Required_: No
 
 _Type_: String
 
@@ -125,14 +69,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedAt
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,15 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### MasterAddresses
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -224,27 +152,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### NodeAddresses
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### NodeCount
 
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ProjectId
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -256,35 +168,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### StackId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UpdatedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UserId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Timeouts
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -306,41 +194,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ApiAddress
 
-Returns the &lt;code&gt;ApiAddress&lt;/code&gt; value.
+Returns the <code>ApiAddress</code> value.
 
 #### CoeVersion
 
-Returns the &lt;code&gt;CoeVersion&lt;/code&gt; value.
+Returns the <code>CoeVersion</code> value.
 
 #### ContainerVersion
 
-Returns the &lt;code&gt;ContainerVersion&lt;/code&gt; value.
+Returns the <code>ContainerVersion</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### MasterAddresses
 
-Returns the &lt;code&gt;MasterAddresses&lt;/code&gt; value.
+Returns the <code>MasterAddresses</code> value.
 
 #### NodeAddresses
 
-Returns the &lt;code&gt;NodeAddresses&lt;/code&gt; value.
+Returns the <code>NodeAddresses</code> value.
 
 #### ProjectId
 
-Returns the &lt;code&gt;ProjectId&lt;/code&gt; value.
+Returns the <code>ProjectId</code> value.
 
 #### StackId
 
-Returns the &lt;code&gt;StackId&lt;/code&gt; value.
+Returns the <code>StackId</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 
 #### UserId
 
-Returns the &lt;code&gt;UserId&lt;/code&gt; value.
+Returns the <code>UserId</code> value.
 

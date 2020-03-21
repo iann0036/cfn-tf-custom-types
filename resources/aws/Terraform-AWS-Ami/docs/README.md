@@ -12,23 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Ami",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#architecture" title="Architecture">Architecture</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enasupport" title="EnaSupport">EnaSupport</a>" : <i>Boolean</i>,
         "<a href="#imagelocation" title="ImageLocation">ImageLocation</a>" : <i>String</i>,
         "<a href="#kernelid" title="KernelId">KernelId</a>" : <i>String</i>,
-        "<a href="#manageebssnapshots" title="ManageEbsSnapshots">ManageEbsSnapshots</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ramdiskid" title="RamdiskId">RamdiskId</a>" : <i>String</i>,
         "<a href="#rootdevicename" title="RootDeviceName">RootDeviceName</a>" : <i>String</i>,
-        "<a href="#rootsnapshotid" title="RootSnapshotId">RootSnapshotId</a>" : <i>String</i>,
         "<a href="#sriovnetsupport" title="SriovNetSupport">SriovNetSupport</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#virtualizationtype" title="VirtualizationType">VirtualizationType</a>" : <i>String</i>,
-        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>" : <i>[ <a href="ebsblockdevice.md">EbsBlockDevice</a>, ... ]</i>,
+        "<a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>" : <i>[ <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -38,39 +35,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Ami
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#architecture" title="Architecture">Architecture</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enasupport" title="EnaSupport">EnaSupport</a>: <i>Boolean</i>
     <a href="#imagelocation" title="ImageLocation">ImageLocation</a>: <i>String</i>
     <a href="#kernelid" title="KernelId">KernelId</a>: <i>String</i>
-    <a href="#manageebssnapshots" title="ManageEbsSnapshots">ManageEbsSnapshots</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ramdiskid" title="RamdiskId">RamdiskId</a>: <i>String</i>
     <a href="#rootdevicename" title="RootDeviceName">RootDeviceName</a>: <i>String</i>
-    <a href="#rootsnapshotid" title="RootSnapshotId">RootSnapshotId</a>: <i>String</i>
     <a href="#sriovnetsupport" title="SriovNetSupport">SriovNetSupport</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#virtualizationtype" title="VirtualizationType">VirtualizationType</a>: <i>String</i>
     <a href="#ebsblockdevice" title="EbsBlockDevice">EbsBlockDevice</a>: <i>
-      - &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;</i>
+      - <a href="ebsblockdevice.md">EbsBlockDevice</a></i>
     <a href="#ephemeralblockdevice" title="EphemeralBlockDevice">EphemeralBlockDevice</a>: <i>
-      - &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Architecture
 
@@ -112,14 +96,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ManageEbsSnapshots
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
@@ -144,14 +120,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### RootSnapshotId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SriovNetSupport
 
 _Required_: No
@@ -164,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -180,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ebsblockdevice.md&#34;&gt;EbsBlockDevice&lt;/a&gt;
+_Type_: List of <a href="ebsblockdevice.md">EbsBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ephemeralblockdevice.md&#34;&gt;EphemeralBlockDevice&lt;/a&gt;
+_Type_: List of <a href="ephemeralblockdevice.md">EphemeralBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -218,9 +186,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ManageEbsSnapshots
 
-Returns the &lt;code&gt;ManageEbsSnapshots&lt;/code&gt; value.
+Returns the <code>ManageEbsSnapshots</code> value.
 
 #### RootSnapshotId
 
-Returns the &lt;code&gt;RootSnapshotId&lt;/code&gt; value.
+Returns the <code>RootSnapshotId</code> value.
 

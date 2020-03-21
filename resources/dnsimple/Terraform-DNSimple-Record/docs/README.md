@@ -12,10 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::DNSimple::Record",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
-        "<a href="#domainid" title="DomainId">DomainId</a>" : <i>String</i>,
-        "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>String</i>,
@@ -30,10 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::DNSimple::Record
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
-    <a href="#domainid" title="DomainId">DomainId</a>: <i>String</i>
-    <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#priority" title="Priority">Priority</a>: <i>String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>String</i>
@@ -43,35 +37,9 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Domain
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DomainId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Hostname
-
-_Required_: No
 
 _Type_: String
 
@@ -135,9 +103,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DomainId
 
-Returns the &lt;code&gt;DomainId&lt;/code&gt; value.
+Returns the <code>DomainId</code> value.
 
 #### Hostname
 
-Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
+Returns the <code>Hostname</code> value.
 

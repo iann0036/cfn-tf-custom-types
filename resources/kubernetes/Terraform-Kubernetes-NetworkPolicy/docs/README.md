@@ -12,18 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Kubernetes::NetworkPolicy",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#spec" title="Spec">Spec</a>" : <i>[ &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;, ... ]</i>,
-        "<a href="#egress" title="Egress">Egress</a>" : <i>[ &lt;a href=&#34;egress.md&#34;&gt;Egress&lt;/a&gt;, ... ]</i>,
-        "<a href="#ingress" title="Ingress">Ingress</a>" : <i>[ &lt;a href=&#34;ingress.md&#34;&gt;Ingress&lt;/a&gt;, ... ]</i>,
-        "<a href="#podselector" title="PodSelector">PodSelector</a>" : <i>[ &lt;a href=&#34;podselector.md&#34;&gt;PodSelector&lt;/a&gt;, ... ]</i>,
-        "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>,
-        "<a href="#to" title="To">To</a>" : <i>[ &lt;a href=&#34;to.md&#34;&gt;To&lt;/a&gt;, ... ]</i>,
-        "<a href="#from" title="From">From</a>" : <i>[ &lt;a href=&#34;from.md&#34;&gt;From&lt;/a&gt;, ... ]</i>,
-        "<a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>" : <i>[ &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;, ... ]</i>,
-        "<a href="#ipblock" title="IpBlock">IpBlock</a>" : <i>[ &lt;a href=&#34;ipblock.md&#34;&gt;IpBlock&lt;/a&gt;, ... ]</i>,
-        "<a href="#namespaceselector" title="NamespaceSelector">NamespaceSelector</a>" : <i>[ &lt;a href=&#34;namespaceselector.md&#34;&gt;NamespaceSelector&lt;/a&gt;, ... ]</i>
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#spec" title="Spec">Spec</a>" : <i>[ <a href="spec.md">Spec</a>, ... ]</i>,
+        "<a href="#egress" title="Egress">Egress</a>" : <i>[ <a href="egress.md">Egress</a>, ... ]</i>,
+        "<a href="#ingress" title="Ingress">Ingress</a>" : <i>[ <a href="ingress.md">Ingress</a>, ... ]</i>,
+        "<a href="#podselector" title="PodSelector">PodSelector</a>" : <i>[ <a href="podselector.md">PodSelector</a>, ... ]</i>,
+        "<a href="#ports" title="Ports">Ports</a>" : <i>[ <a href="ports.md">Ports</a>, ... ]</i>,
+        "<a href="#to" title="To">To</a>" : <i>[ <a href="to.md">To</a>, ... ]</i>,
+        "<a href="#from" title="From">From</a>" : <i>[ <a href="from.md">From</a>, ... ]</i>,
+        "<a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>" : <i>[ <a href="matchexpressions.md">MatchExpressions</a>, ... ]</i>,
+        "<a href="#ipblock" title="IpBlock">IpBlock</a>" : <i>[ <a href="ipblock.md">IpBlock</a>, ... ]</i>,
+        "<a href="#namespaceselector" title="NamespaceSelector">NamespaceSelector</a>" : <i>[ <a href="namespaceselector.md">NamespaceSelector</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,48 +32,37 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Kubernetes::NetworkPolicy
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#spec" title="Spec">Spec</a>: <i>
-      - &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;</i>
+      - <a href="spec.md">Spec</a></i>
     <a href="#egress" title="Egress">Egress</a>: <i>
-      - &lt;a href=&#34;egress.md&#34;&gt;Egress&lt;/a&gt;</i>
+      - <a href="egress.md">Egress</a></i>
     <a href="#ingress" title="Ingress">Ingress</a>: <i>
-      - &lt;a href=&#34;ingress.md&#34;&gt;Ingress&lt;/a&gt;</i>
+      - <a href="ingress.md">Ingress</a></i>
     <a href="#podselector" title="PodSelector">PodSelector</a>: <i>
-      - &lt;a href=&#34;podselector.md&#34;&gt;PodSelector&lt;/a&gt;</i>
+      - <a href="podselector.md">PodSelector</a></i>
     <a href="#ports" title="Ports">Ports</a>: <i>
-      - &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;</i>
+      - <a href="ports.md">Ports</a></i>
     <a href="#to" title="To">To</a>: <i>
-      - &lt;a href=&#34;to.md&#34;&gt;To&lt;/a&gt;</i>
+      - <a href="to.md">To</a></i>
     <a href="#from" title="From">From</a>: <i>
-      - &lt;a href=&#34;from.md&#34;&gt;From&lt;/a&gt;</i>
+      - <a href="from.md">From</a></i>
     <a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>: <i>
-      - &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;</i>
+      - <a href="matchexpressions.md">MatchExpressions</a></i>
     <a href="#ipblock" title="IpBlock">IpBlock</a>: <i>
-      - &lt;a href=&#34;ipblock.md&#34;&gt;IpBlock&lt;/a&gt;</i>
+      - <a href="ipblock.md">IpBlock</a></i>
     <a href="#namespaceselector" title="NamespaceSelector">NamespaceSelector</a>: <i>
-      - &lt;a href=&#34;namespaceselector.md&#34;&gt;NamespaceSelector&lt;/a&gt;</i>
+      - <a href="namespaceselector.md">NamespaceSelector</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -82,7 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;
+_Type_: List of <a href="spec.md">Spec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -90,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;egress.md&#34;&gt;Egress&lt;/a&gt;
+_Type_: List of <a href="egress.md">Egress</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ingress.md&#34;&gt;Ingress&lt;/a&gt;
+_Type_: List of <a href="ingress.md">Ingress</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;podselector.md&#34;&gt;PodSelector&lt;/a&gt;
+_Type_: List of <a href="podselector.md">PodSelector</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;
+_Type_: List of <a href="ports.md">Ports</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -122,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;to.md&#34;&gt;To&lt;/a&gt;
+_Type_: List of <a href="to.md">To</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -130,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;from.md&#34;&gt;From&lt;/a&gt;
+_Type_: List of <a href="from.md">From</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;
+_Type_: List of <a href="matchexpressions.md">MatchExpressions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipblock.md&#34;&gt;IpBlock&lt;/a&gt;
+_Type_: List of <a href="ipblock.md">IpBlock</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;namespaceselector.md&#34;&gt;NamespaceSelector&lt;/a&gt;
+_Type_: List of <a href="namespaceselector.md">NamespaceSelector</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,14 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::DatabaseDbNodeConsoleConnection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#connectionstring" title="ConnectionString">ConnectionString</a>" : <i>String</i>,
         "<a href="#dbnodeid" title="DbNodeId">DbNodeId</a>" : <i>String</i>,
-        "<a href="#fingerprint" title="Fingerprint">Fingerprint</a>" : <i>String</i>,
         "<a href="#publickey" title="PublicKey">PublicKey</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -29,55 +24,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::DatabaseDbNodeConsoleConnection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
-    <a href="#connectionstring" title="ConnectionString">ConnectionString</a>: <i>String</i>
     <a href="#dbnodeid" title="DbNodeId">DbNodeId</a>: <i>String</i>
-    <a href="#fingerprint" title="Fingerprint">Fingerprint</a>: <i>String</i>
     <a href="#publickey" title="PublicKey">PublicKey</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CompartmentId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ConnectionString
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### DbNodeId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Fingerprint
-
-_Required_: No
 
 _Type_: String
 
@@ -91,19 +47,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Timeouts
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,17 +73,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CompartmentId
 
-Returns the &lt;code&gt;CompartmentId&lt;/code&gt; value.
+Returns the <code>CompartmentId</code> value.
 
 #### ConnectionString
 
-Returns the &lt;code&gt;ConnectionString&lt;/code&gt; value.
+Returns the <code>ConnectionString</code> value.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#orcserde" title="OrcSerDe">OrcSerDe</a>" : <i>[ &lt;a href=&#34;outputformatconfiguration-serializer-orcserde.md&#34;&gt;OrcSerDe&lt;/a&gt;, ... ]</i>,
-    "<a href="#parquetserde" title="ParquetSerDe">ParquetSerDe</a>" : <i>[ &lt;a href=&#34;outputformatconfiguration-serializer-parquetserde.md&#34;&gt;ParquetSerDe&lt;/a&gt;, ... ]</i>
+    "<a href="#orcserde" title="OrcSerDe">OrcSerDe</a>" : <i>[ <a href="outputformatconfiguration-serializer-orcserde.md">OrcSerDe</a>, ... ]</i>,
+    "<a href="#parquetserde" title="ParquetSerDe">ParquetSerDe</a>" : <i>[ <a href="outputformatconfiguration-serializer-parquetserde.md">ParquetSerDe</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#orcserde" title="OrcSerDe">OrcSerDe</a>: <i>
-      - &lt;a href=&#34;outputformatconfiguration-serializer-orcserde.md&#34;&gt;OrcSerDe&lt;/a&gt;</i>
+      - <a href="outputformatconfiguration-serializer-orcserde.md">OrcSerDe</a></i>
 <a href="#parquetserde" title="ParquetSerDe">ParquetSerDe</a>: <i>
-      - &lt;a href=&#34;outputformatconfiguration-serializer-parquetserde.md&#34;&gt;ParquetSerDe&lt;/a&gt;</i>
+      - <a href="outputformatconfiguration-serializer-parquetserde.md">ParquetSerDe</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### OrcSerDe
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;outputformatconfiguration-serializer-orcserde.md&#34;&gt;OrcSerDe&lt;/a&gt;
+
+_Type_: List of <a href="outputformatconfiguration-serializer-orcserde.md">OrcSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParquetSerDe
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;outputformatconfiguration-serializer-parquetserde.md&#34;&gt;ParquetSerDe&lt;/a&gt;
+
+_Type_: List of <a href="outputformatconfiguration-serializer-parquetserde.md">ParquetSerDe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

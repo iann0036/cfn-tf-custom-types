@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#allconnectionstrings" title="AllConnectionStrings">AllConnectionStrings</a>" : <i>[ &lt;a href=&#34;connectionstrings-allconnectionstrings.md&#34;&gt;AllConnectionStrings&lt;/a&gt;, ... ]</i>,
+    "<a href="#allconnectionstrings" title="AllConnectionStrings">AllConnectionStrings</a>" : <i>[ <a href="connectionstrings-allconnectionstrings.md">AllConnectionStrings</a>, ... ]</i>,
     "<a href="#dedicated" title="Dedicated">Dedicated</a>" : <i>String</i>,
     "<a href="#high" title="High">High</a>" : <i>String</i>,
     "<a href="#low" title="Low">Low</a>" : <i>String</i>,
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#allconnectionstrings" title="AllConnectionStrings">AllConnectionStrings</a>: <i>
-      - &lt;a href=&#34;connectionstrings-allconnectionstrings.md&#34;&gt;AllConnectionStrings&lt;/a&gt;</i>
+      - <a href="connectionstrings-allconnectionstrings.md">AllConnectionStrings</a></i>
 <a href="#dedicated" title="Dedicated">Dedicated</a>: <i>String</i>
 <a href="#high" title="High">High</a>: <i>String</i>
 <a href="#low" title="Low">Low</a>: <i>String</i>
@@ -32,13 +32,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AllConnectionStrings
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;connectionstrings-allconnectionstrings.md&#34;&gt;AllConnectionStrings&lt;/a&gt;
+
+_Type_: List of <a href="connectionstrings-allconnectionstrings.md">AllConnectionStrings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Dedicated
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### High
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Low
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,6 +64,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Medium
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

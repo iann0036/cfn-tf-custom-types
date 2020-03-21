@@ -12,17 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::S3AccessPoint",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountid" title="AccountId">AccountId</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
-        "<a href="#domainname" title="DomainName">DomainName</a>" : <i>String</i>,
-        "<a href="#haspublicaccesspolicy" title="HasPublicAccessPolicy">HasPublicAccessPolicy</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#networkorigin" title="NetworkOrigin">NetworkOrigin</a>" : <i>String</i>,
         "<a href="#policy" title="Policy">Policy</a>" : <i>String</i>,
-        "<a href="#publicaccessblockconfiguration" title="PublicAccessBlockConfiguration">PublicAccessBlockConfiguration</a>" : <i>[ &lt;a href=&#34;publicaccessblockconfiguration.md&#34;&gt;PublicAccessBlockConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#vpcconfiguration" title="VpcConfiguration">VpcConfiguration</a>" : <i>[ &lt;a href=&#34;vpcconfiguration.md&#34;&gt;VpcConfiguration&lt;/a&gt;, ... ]</i>
+        "<a href="#publicaccessblockconfiguration" title="PublicAccessBlockConfiguration">PublicAccessBlockConfiguration</a>" : <i>[ <a href="publicaccessblockconfiguration.md">PublicAccessBlockConfiguration</a>, ... ]</i>,
+        "<a href="#vpcconfiguration" title="VpcConfiguration">VpcConfiguration</a>" : <i>[ <a href="vpcconfiguration.md">VpcConfiguration</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,42 +27,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::S3AccessPoint
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountid" title="AccountId">AccountId</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
-    <a href="#domainname" title="DomainName">DomainName</a>: <i>String</i>
-    <a href="#haspublicaccesspolicy" title="HasPublicAccessPolicy">HasPublicAccessPolicy</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#networkorigin" title="NetworkOrigin">NetworkOrigin</a>: <i>String</i>
     <a href="#policy" title="Policy">Policy</a>: <i>String</i>
     <a href="#publicaccessblockconfiguration" title="PublicAccessBlockConfiguration">PublicAccessBlockConfiguration</a>: <i>
-      - &lt;a href=&#34;publicaccessblockconfiguration.md&#34;&gt;PublicAccessBlockConfiguration&lt;/a&gt;</i>
+      - <a href="publicaccessblockconfiguration.md">PublicAccessBlockConfiguration</a></i>
     <a href="#vpcconfiguration" title="VpcConfiguration">VpcConfiguration</a>: <i>
-      - &lt;a href=&#34;vpcconfiguration.md&#34;&gt;VpcConfiguration&lt;/a&gt;</i>
+      - <a href="vpcconfiguration.md">VpcConfiguration</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AccountId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
 
 _Required_: No
 
@@ -83,33 +55,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### DomainName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HasPublicAccessPolicy
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### NetworkOrigin
-
-_Required_: No
 
 _Type_: String
 
@@ -127,7 +75,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;publicaccessblockconfiguration.md&#34;&gt;PublicAccessBlockConfiguration&lt;/a&gt;
+_Type_: List of <a href="publicaccessblockconfiguration.md">PublicAccessBlockConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vpcconfiguration.md&#34;&gt;VpcConfiguration&lt;/a&gt;
+_Type_: List of <a href="vpcconfiguration.md">VpcConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,17 +105,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### DomainName
 
-Returns the &lt;code&gt;DomainName&lt;/code&gt; value.
+Returns the <code>DomainName</code> value.
 
 #### HasPublicAccessPolicy
 
-Returns the &lt;code&gt;HasPublicAccessPolicy&lt;/code&gt; value.
+Returns the <code>HasPublicAccessPolicy</code> value.
 
 #### NetworkOrigin
 
-Returns the &lt;code&gt;NetworkOrigin&lt;/code&gt; value.
+Returns the <code>NetworkOrigin</code> value.
 

@@ -12,21 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::ContainerClusterInstance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#abnormalreason" title="AbnormalReason">AbnormalReason</a>" : <i>String</i>,
         "<a href="#bandwidth" title="Bandwidth">Bandwidth</a>" : <i>Double</i>,
         "<a href="#bandwidthtype" title="BandwidthType">BandwidthType</a>" : <i>String</i>,
         "<a href="#clusterid" title="ClusterId">ClusterId</a>" : <i>String</i>,
         "<a href="#cpu" title="Cpu">Cpu</a>" : <i>Double</i>,
         "<a href="#cvmtype" title="CvmType">CvmType</a>" : <i>String</i>,
         "<a href="#dockergraphpath" title="DockerGraphPath">DockerGraphPath</a>" : <i>String</i>,
-        "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#instancename" title="InstanceName">InstanceName</a>" : <i>String</i>,
         "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
-        "<a href="#isnormal" title="IsNormal">IsNormal</a>" : <i>Double</i>,
         "<a href="#isvpcgateway" title="IsVpcGateway">IsVpcGateway</a>" : <i>Double</i>,
         "<a href="#keyid" title="KeyId">KeyId</a>" : <i>String</i>,
-        "<a href="#lanip" title="LanIp">LanIp</a>" : <i>String</i>,
         "<a href="#mem" title="Mem">Mem</a>" : <i>Double</i>,
         "<a href="#mounttarget" title="MountTarget">MountTarget</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
@@ -40,7 +35,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#unschedulable" title="Unschedulable">Unschedulable</a>" : <i>Double</i>,
         "<a href="#userscript" title="UserScript">UserScript</a>" : <i>String</i>,
-        "<a href="#wanip" title="WanIp">WanIp</a>" : <i>String</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>
     }
 }
@@ -51,21 +45,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::ContainerClusterInstance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#abnormalreason" title="AbnormalReason">AbnormalReason</a>: <i>String</i>
     <a href="#bandwidth" title="Bandwidth">Bandwidth</a>: <i>Double</i>
     <a href="#bandwidthtype" title="BandwidthType">BandwidthType</a>: <i>String</i>
     <a href="#clusterid" title="ClusterId">ClusterId</a>: <i>String</i>
     <a href="#cpu" title="Cpu">Cpu</a>: <i>Double</i>
     <a href="#cvmtype" title="CvmType">CvmType</a>: <i>String</i>
     <a href="#dockergraphpath" title="DockerGraphPath">DockerGraphPath</a>: <i>String</i>
-    <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#instancename" title="InstanceName">InstanceName</a>: <i>String</i>
     <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
-    <a href="#isnormal" title="IsNormal">IsNormal</a>: <i>Double</i>
     <a href="#isvpcgateway" title="IsVpcGateway">IsVpcGateway</a>: <i>Double</i>
     <a href="#keyid" title="KeyId">KeyId</a>: <i>String</i>
-    <a href="#lanip" title="LanIp">LanIp</a>: <i>String</i>
     <a href="#mem" title="Mem">Mem</a>: <i>Double</i>
     <a href="#mounttarget" title="MountTarget">MountTarget</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
@@ -79,29 +68,10 @@ Properties:
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#unschedulable" title="Unschedulable">Unschedulable</a>: <i>Double</i>
     <a href="#userscript" title="UserScript">UserScript</a>: <i>String</i>
-    <a href="#wanip" title="WanIp">WanIp</a>: <i>String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AbnormalReason
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bandwidth
 
@@ -151,14 +121,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### InstanceId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InstanceName
 
 _Required_: No
@@ -175,14 +137,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### IsNormal
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### IsVpcGateway
 
 _Required_: Yes
@@ -192,14 +146,6 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LanIp
 
 _Required_: No
 
@@ -311,14 +257,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### WanIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ZoneId
 
 _Required_: Yes
@@ -345,21 +283,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AbnormalReason
 
-Returns the &lt;code&gt;AbnormalReason&lt;/code&gt; value.
+Returns the <code>AbnormalReason</code> value.
 
 #### InstanceId
 
-Returns the &lt;code&gt;InstanceId&lt;/code&gt; value.
+Returns the <code>InstanceId</code> value.
 
 #### IsNormal
 
-Returns the &lt;code&gt;IsNormal&lt;/code&gt; value.
+Returns the <code>IsNormal</code> value.
 
 #### LanIp
 
-Returns the &lt;code&gt;LanIp&lt;/code&gt; value.
+Returns the <code>LanIp</code> value.
 
 #### WanIp
 
-Returns the &lt;code&gt;WanIp&lt;/code&gt; value.
+Returns the <code>WanIp</code> value.
 

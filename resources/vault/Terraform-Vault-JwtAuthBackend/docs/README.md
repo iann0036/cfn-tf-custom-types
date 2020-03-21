@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::JwtAuthBackend",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#accessor" title="Accessor">Accessor</a>" : <i>String</i>,
         "<a href="#boundissuer" title="BoundIssuer">BoundIssuer</a>" : <i>String</i>,
         "<a href="#defaultrole" title="DefaultRole">DefaultRole</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
@@ -26,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#oidcdiscoverycapem" title="OidcDiscoveryCaPem">OidcDiscoveryCaPem</a>" : <i>String</i>,
         "<a href="#oidcdiscoveryurl" title="OidcDiscoveryUrl">OidcDiscoveryUrl</a>" : <i>String</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
-        "<a href="#tune" title="Tune">Tune</a>" : <i>[ &lt;a href=&#34;tune.md&#34;&gt;Tune&lt;/a&gt;, ... ]</i>,
+        "<a href="#tune" title="Tune">Tune</a>" : <i>[ <a href="tune.md">Tune</a>, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
 }
@@ -37,8 +35,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::JwtAuthBackend
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#accessor" title="Accessor">Accessor</a>: <i>String</i>
     <a href="#boundissuer" title="BoundIssuer">BoundIssuer</a>: <i>String</i>
     <a href="#defaultrole" title="DefaultRole">DefaultRole</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
@@ -54,29 +50,11 @@ Properties:
     <a href="#oidcdiscoveryurl" title="OidcDiscoveryUrl">OidcDiscoveryUrl</a>: <i>String</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#tune" title="Tune">Tune</a>: <i>
-      - &lt;a href=&#34;tune.md&#34;&gt;Tune&lt;/a&gt;</i>
+      - <a href="tune.md">Tune</a></i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Accessor
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BoundIssuer
 
@@ -178,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tune.md&#34;&gt;Tune&lt;/a&gt;
+_Type_: List of <a href="tune.md">Tune</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -208,5 +186,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessor
 
-Returns the &lt;code&gt;Accessor&lt;/code&gt; value.
+Returns the <code>Accessor</code> value.
 

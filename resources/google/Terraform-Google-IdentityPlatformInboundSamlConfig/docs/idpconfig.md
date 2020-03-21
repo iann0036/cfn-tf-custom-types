@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#idpentityid" title="IdpEntityId">IdpEntityId</a>" : <i>String</i>,
     "<a href="#signrequest" title="SignRequest">SignRequest</a>" : <i>Boolean</i>,
     "<a href="#ssourl" title="SsoUrl">SsoUrl</a>" : <i>String</i>,
-    "<a href="#idpcertificates" title="IdpCertificates">IdpCertificates</a>" : <i>[ &lt;a href=&#34;idpconfig-idpcertificates.md&#34;&gt;IdpCertificates&lt;/a&gt;, ... ]</i>
+    "<a href="#idpcertificates" title="IdpCertificates">IdpCertificates</a>" : <i>[ <a href="idpconfig-idpcertificates.md">IdpCertificates</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#signrequest" title="SignRequest">SignRequest</a>: <i>Boolean</i>
 <a href="#ssourl" title="SsoUrl">SsoUrl</a>: <i>String</i>
 <a href="#idpcertificates" title="IdpCertificates">IdpCertificates</a>: <i>
-      - &lt;a href=&#34;idpconfig-idpcertificates.md&#34;&gt;IdpCertificates&lt;/a&gt;</i>
+      - <a href="idpconfig-idpcertificates.md">IdpCertificates</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### IdpEntityId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SignRequest
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SsoUrl
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IdpCertificates
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;idpconfig-idpcertificates.md&#34;&gt;IdpCertificates&lt;/a&gt;
+
+_Type_: List of <a href="idpconfig-idpcertificates.md">IdpCertificates</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

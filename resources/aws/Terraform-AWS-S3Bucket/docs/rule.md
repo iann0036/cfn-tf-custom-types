@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#applyserversideencryptionbydefault" title="ApplyServerSideEncryptionByDefault">ApplyServerSideEncryptionByDefault</a>" : <i>[ &lt;a href=&#34;rule-applyserversideencryptionbydefault.md&#34;&gt;ApplyServerSideEncryptionByDefault&lt;/a&gt;, ... ]</i>
+    "<a href="#applyserversideencryptionbydefault" title="ApplyServerSideEncryptionByDefault">ApplyServerSideEncryptionByDefault</a>" : <i>[ <a href="rule-applyserversideencryptionbydefault.md">ApplyServerSideEncryptionByDefault</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#applyserversideencryptionbydefault" title="ApplyServerSideEncryptionByDefault">ApplyServerSideEncryptionByDefault</a>: <i>
-      - &lt;a href=&#34;rule-applyserversideencryptionbydefault.md&#34;&gt;ApplyServerSideEncryptionByDefault&lt;/a&gt;</i>
+      - <a href="rule-applyserversideencryptionbydefault.md">ApplyServerSideEncryptionByDefault</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ApplyServerSideEncryptionByDefault
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-applyserversideencryptionbydefault.md&#34;&gt;ApplyServerSideEncryptionByDefault&lt;/a&gt;
+
+_Type_: List of <a href="rule-applyserversideencryptionbydefault.md">ApplyServerSideEncryptionByDefault</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

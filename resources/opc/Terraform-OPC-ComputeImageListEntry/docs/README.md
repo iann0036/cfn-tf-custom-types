@@ -12,11 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::ComputeImageListEntry",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#attributes" title="Attributes">Attributes</a>" : <i>String</i>,
         "<a href="#machineimages" title="MachineImages">MachineImages</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
         "<a href="#version" title="Version">Version</a>" : <i>Double</i>
     }
 }
@@ -27,26 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::ComputeImageListEntry
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#attributes" title="Attributes">Attributes</a>: <i>String</i>
     <a href="#machineimages" title="MachineImages">MachineImages</a>: <i>
       - String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
     <a href="#version" title="Version">Version</a>: <i>Double</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Attributes
 
@@ -67,14 +53,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uri
-
-_Required_: No
 
 _Type_: String
 
@@ -106,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

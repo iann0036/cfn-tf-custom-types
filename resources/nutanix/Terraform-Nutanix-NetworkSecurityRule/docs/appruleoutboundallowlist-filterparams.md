@@ -1,4 +1,4 @@
-# Terraform::Nutanix::VirtualMachine Memo
+# Terraform::Nutanix::NetworkSecurityRule AppRuleOutboundAllowList FilterParams
 
 ## Syntax
 
@@ -8,31 +8,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#heading" title="Heading">Heading</a>" : <i>String</i>,
-    "<a href="#body" title="Body">Body</a>" : <i>String</i>
+    "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+    "<a href="#values" title="Values">Values</a>" : <i>[ String, ... ]</i>
 }
 </pre>
 
 ### YAML
 
 <pre>
-<a href="#heading" title="Heading">Heading</a>: <i>String</i>
-<a href="#body" title="Body">Body</a>: <i>String</i>
+<a href="#name" title="Name">Name</a>: <i>String</i>
+<a href="#values" title="Values">Values</a>: <i>
+      - String</i>
 </pre>
 
 ## Properties
 
-#### Heading
+#### Name
 
-_Required_: No
+_Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Body
+#### Values
 
-_Required_: No
-_Type_: String
+_Required_: Yes
+
+_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

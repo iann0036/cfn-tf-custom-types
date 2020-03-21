@@ -16,22 +16,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#hostpid" title="HostPid">HostPid</a>" : <i>Boolean</i>,
     "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
     "<a href="#nodename" title="NodeName">NodeName</a>" : <i>String</i>,
-    "<a href="#nodeselector" title="NodeSelector">NodeSelector</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-nodeselector.md&#34;&gt;NodeSelector&lt;/a&gt;, ... ]</i>,
+    "<a href="#nodeselector" title="NodeSelector">NodeSelector</a>" : <i>[ <a href="jobtemplate-spec-nodeselector.md">NodeSelector</a>, ... ]</i>,
     "<a href="#priorityclassname" title="PriorityClassName">PriorityClassName</a>" : <i>String</i>,
     "<a href="#restartpolicy" title="RestartPolicy">RestartPolicy</a>" : <i>String</i>,
     "<a href="#serviceaccountname" title="ServiceAccountName">ServiceAccountName</a>" : <i>String</i>,
     "<a href="#shareprocessnamespace" title="ShareProcessNamespace">ShareProcessNamespace</a>" : <i>Boolean</i>,
     "<a href="#subdomain" title="Subdomain">Subdomain</a>" : <i>String</i>,
     "<a href="#terminationgraceperiodseconds" title="TerminationGracePeriodSeconds">TerminationGracePeriodSeconds</a>" : <i>Double</i>,
-    "<a href="#affinity" title="Affinity">Affinity</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-affinity.md&#34;&gt;Affinity&lt;/a&gt;, ... ]</i>,
-    "<a href="#container" title="Container">Container</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-container.md&#34;&gt;Container&lt;/a&gt;, ... ]</i>,
-    "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;, ... ]</i>,
-    "<a href="#hostaliases" title="HostAliases">HostAliases</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-hostaliases.md&#34;&gt;HostAliases&lt;/a&gt;, ... ]</i>,
-    "<a href="#imagepullsecrets" title="ImagePullSecrets">ImagePullSecrets</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-imagepullsecrets.md&#34;&gt;ImagePullSecrets&lt;/a&gt;, ... ]</i>,
-    "<a href="#initcontainer" title="InitContainer">InitContainer</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-initcontainer.md&#34;&gt;InitContainer&lt;/a&gt;, ... ]</i>,
-    "<a href="#securitycontext" title="SecurityContext">SecurityContext</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-securitycontext.md&#34;&gt;SecurityContext&lt;/a&gt;, ... ]</i>,
-    "<a href="#toleration" title="Toleration">Toleration</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-toleration.md&#34;&gt;Toleration&lt;/a&gt;, ... ]</i>,
-    "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;jobtemplate-spec-volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>
+    "<a href="#affinity" title="Affinity">Affinity</a>" : <i>[ <a href="jobtemplate-spec-affinity.md">Affinity</a>, ... ]</i>,
+    "<a href="#container" title="Container">Container</a>" : <i>[ <a href="jobtemplate-spec-container.md">Container</a>, ... ]</i>,
+    "<a href="#dnsconfig" title="DnsConfig">DnsConfig</a>" : <i>[ <a href="jobtemplate-spec-dnsconfig.md">DnsConfig</a>, ... ]</i>,
+    "<a href="#hostaliases" title="HostAliases">HostAliases</a>" : <i>[ <a href="jobtemplate-spec-hostaliases.md">HostAliases</a>, ... ]</i>,
+    "<a href="#imagepullsecrets" title="ImagePullSecrets">ImagePullSecrets</a>" : <i>[ <a href="jobtemplate-spec-imagepullsecrets.md">ImagePullSecrets</a>, ... ]</i>,
+    "<a href="#initcontainer" title="InitContainer">InitContainer</a>" : <i>[ <a href="jobtemplate-spec-initcontainer.md">InitContainer</a>, ... ]</i>,
+    "<a href="#securitycontext" title="SecurityContext">SecurityContext</a>" : <i>[ <a href="jobtemplate-spec-securitycontext.md">SecurityContext</a>, ... ]</i>,
+    "<a href="#toleration" title="Toleration">Toleration</a>" : <i>[ <a href="jobtemplate-spec-toleration.md">Toleration</a>, ... ]</i>,
+    "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="jobtemplate-spec-volume.md">Volume</a>, ... ]</i>
 }
 </pre>
 
@@ -47,7 +47,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
 <a href="#nodename" title="NodeName">NodeName</a>: <i>String</i>
 <a href="#nodeselector" title="NodeSelector">NodeSelector</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-nodeselector.md&#34;&gt;NodeSelector&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-nodeselector.md">NodeSelector</a></i>
 <a href="#priorityclassname" title="PriorityClassName">PriorityClassName</a>: <i>String</i>
 <a href="#restartpolicy" title="RestartPolicy">RestartPolicy</a>: <i>String</i>
 <a href="#serviceaccountname" title="ServiceAccountName">ServiceAccountName</a>: <i>String</i>
@@ -55,23 +55,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#subdomain" title="Subdomain">Subdomain</a>: <i>String</i>
 <a href="#terminationgraceperiodseconds" title="TerminationGracePeriodSeconds">TerminationGracePeriodSeconds</a>: <i>Double</i>
 <a href="#affinity" title="Affinity">Affinity</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-affinity.md&#34;&gt;Affinity&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-affinity.md">Affinity</a></i>
 <a href="#container" title="Container">Container</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-container.md&#34;&gt;Container&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-container.md">Container</a></i>
 <a href="#dnsconfig" title="DnsConfig">DnsConfig</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-dnsconfig.md">DnsConfig</a></i>
 <a href="#hostaliases" title="HostAliases">HostAliases</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-hostaliases.md&#34;&gt;HostAliases&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-hostaliases.md">HostAliases</a></i>
 <a href="#imagepullsecrets" title="ImagePullSecrets">ImagePullSecrets</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-imagepullsecrets.md&#34;&gt;ImagePullSecrets&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-imagepullsecrets.md">ImagePullSecrets</a></i>
 <a href="#initcontainer" title="InitContainer">InitContainer</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-initcontainer.md&#34;&gt;InitContainer&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-initcontainer.md">InitContainer</a></i>
 <a href="#securitycontext" title="SecurityContext">SecurityContext</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-securitycontext.md&#34;&gt;SecurityContext&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-securitycontext.md">SecurityContext</a></i>
 <a href="#toleration" title="Toleration">Toleration</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-toleration.md&#34;&gt;Toleration&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-toleration.md">Toleration</a></i>
 <a href="#volume" title="Volume">Volume</a>: <i>
-      - &lt;a href=&#34;jobtemplate-spec-volume.md&#34;&gt;Volume&lt;/a&gt;</i>
+      - <a href="jobtemplate-spec-volume.md">Volume</a></i>
 </pre>
 
 ## Properties
@@ -79,6 +79,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ActiveDeadlineSeconds
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -86,6 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutomountServiceAccountToken
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -93,6 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DnsPolicy
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -100,6 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HostIpc
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -107,6 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HostNetwork
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -114,6 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HostPid
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -121,6 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Hostname
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -128,6 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NodeName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -135,13 +143,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NodeSelector
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-nodeselector.md&#34;&gt;NodeSelector&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-nodeselector.md">NodeSelector</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PriorityClassName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -149,6 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RestartPolicy
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -156,6 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ServiceAccountName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -163,6 +175,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ShareProcessNamespace
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -170,6 +183,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Subdomain
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -177,6 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TerminationGracePeriodSeconds
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -184,63 +199,72 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Affinity
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-affinity.md&#34;&gt;Affinity&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-affinity.md">Affinity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Container
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-container.md&#34;&gt;Container&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-container.md">Container</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-dnsconfig.md&#34;&gt;DnsConfig&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-dnsconfig.md">DnsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HostAliases
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-hostaliases.md&#34;&gt;HostAliases&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-hostaliases.md">HostAliases</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImagePullSecrets
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-imagepullsecrets.md&#34;&gt;ImagePullSecrets&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-imagepullsecrets.md">ImagePullSecrets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InitContainer
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-initcontainer.md&#34;&gt;InitContainer&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-initcontainer.md">InitContainer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityContext
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-securitycontext.md&#34;&gt;SecurityContext&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-securitycontext.md">SecurityContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Toleration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-toleration.md&#34;&gt;Toleration&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-toleration.md">Toleration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Volume
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jobtemplate-spec-volume.md&#34;&gt;Volume&lt;/a&gt;
+
+_Type_: List of <a href="jobtemplate-spec-volume.md">Volume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

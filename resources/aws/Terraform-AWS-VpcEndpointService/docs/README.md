@@ -12,18 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::VpcEndpointService",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acceptancerequired" title="AcceptanceRequired">AcceptanceRequired</a>" : <i>Boolean</i>,
         "<a href="#allowedprincipals" title="AllowedPrincipals">AllowedPrincipals</a>" : <i>[ String, ... ]</i>,
-        "<a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>" : <i>[ String, ... ]</i>,
-        "<a href="#baseendpointdnsnames" title="BaseEndpointDnsNames">BaseEndpointDnsNames</a>" : <i>[ String, ... ]</i>,
-        "<a href="#managesvpcendpoints" title="ManagesVpcEndpoints">ManagesVpcEndpoints</a>" : <i>Boolean</i>,
         "<a href="#networkloadbalancerarns" title="NetworkLoadBalancerArns">NetworkLoadBalancerArns</a>" : <i>[ String, ... ]</i>,
-        "<a href="#privatednsname" title="PrivateDnsName">PrivateDnsName</a>" : <i>String</i>,
-        "<a href="#servicename" title="ServiceName">ServiceName</a>" : <i>String</i>,
-        "<a href="#servicetype" title="ServiceType">ServiceType</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,36 +25,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::VpcEndpointService
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acceptancerequired" title="AcceptanceRequired">AcceptanceRequired</a>: <i>Boolean</i>
     <a href="#allowedprincipals" title="AllowedPrincipals">AllowedPrincipals</a>: <i>
       - String</i>
-    <a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>: <i>
-      - String</i>
-    <a href="#baseendpointdnsnames" title="BaseEndpointDnsNames">BaseEndpointDnsNames</a>: <i>
-      - String</i>
-    <a href="#managesvpcendpoints" title="ManagesVpcEndpoints">ManagesVpcEndpoints</a>: <i>Boolean</i>
     <a href="#networkloadbalancerarns" title="NetworkLoadBalancerArns">NetworkLoadBalancerArns</a>: <i>
       - String</i>
-    <a href="#privatednsname" title="PrivateDnsName">PrivateDnsName</a>: <i>String</i>
-    <a href="#servicename" title="ServiceName">ServiceName</a>: <i>String</i>
-    <a href="#servicetype" title="ServiceType">ServiceType</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AcceptanceRequired
 
@@ -80,30 +52,6 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### AvailabilityZones
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### BaseEndpointDnsNames
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ManagesVpcEndpoints
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### NetworkLoadBalancerArns
 
 _Required_: Yes
@@ -112,43 +60,11 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrivateDnsName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ServiceName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ServiceType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,29 +86,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailabilityZones
 
-Returns the &lt;code&gt;AvailabilityZones&lt;/code&gt; value.
+Returns the <code>AvailabilityZones</code> value.
 
 #### BaseEndpointDnsNames
 
-Returns the &lt;code&gt;BaseEndpointDnsNames&lt;/code&gt; value.
+Returns the <code>BaseEndpointDnsNames</code> value.
 
 #### ManagesVpcEndpoints
 
-Returns the &lt;code&gt;ManagesVpcEndpoints&lt;/code&gt; value.
+Returns the <code>ManagesVpcEndpoints</code> value.
 
 #### PrivateDnsName
 
-Returns the &lt;code&gt;PrivateDnsName&lt;/code&gt; value.
+Returns the <code>PrivateDnsName</code> value.
 
 #### ServiceName
 
-Returns the &lt;code&gt;ServiceName&lt;/code&gt; value.
+Returns the <code>ServiceName</code> value.
 
 #### ServiceType
 
-Returns the &lt;code&gt;ServiceType&lt;/code&gt; value.
+Returns the <code>ServiceType</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 

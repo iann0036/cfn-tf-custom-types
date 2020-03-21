@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Bitbucket::Hook",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#active" title="Active">Active</a>" : <i>Boolean</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#events" title="Events">Events</a>" : <i>[ String, ... ]</i>,
@@ -20,7 +19,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#repository" title="Repository">Repository</a>" : <i>String</i>,
         "<a href="#skipcertverification" title="SkipCertVerification">SkipCertVerification</a>" : <i>Boolean</i>,
         "<a href="#url" title="Url">Url</a>" : <i>String</i>,
-        "<a href="#uuid" title="Uuid">Uuid</a>" : <i>String</i>
     }
 }
 </pre>
@@ -30,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Bitbucket::Hook
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#active" title="Active">Active</a>: <i>Boolean</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#events" title="Events">Events</a>: <i>
@@ -39,20 +36,9 @@ Properties:
     <a href="#repository" title="Repository">Repository</a>: <i>String</i>
     <a href="#skipcertverification" title="SkipCertVerification">SkipCertVerification</a>: <i>Boolean</i>
     <a href="#url" title="Url">Url</a>: <i>String</i>
-    <a href="#uuid" title="Uuid">Uuid</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Active
 
@@ -110,14 +96,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Uuid
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -136,5 +114,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uuid
 
-Returns the &lt;code&gt;Uuid&lt;/code&gt; value.
+Returns the <code>Uuid</code> value.
 

@@ -12,14 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::GenericEndpoint",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#datajson" title="DataJson">DataJson</a>" : <i>String</i>,
         "<a href="#disabledelete" title="DisableDelete">DisableDelete</a>" : <i>Boolean</i>,
         "<a href="#disableread" title="DisableRead">DisableRead</a>" : <i>Boolean</i>,
         "<a href="#ignoreabsentfields" title="IgnoreAbsentFields">IgnoreAbsentFields</a>" : <i>Boolean</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
-        "<a href="#writedata" title="WriteData">WriteData</a>" : <i>[ &lt;a href=&#34;writedata.md&#34;&gt;WriteData&lt;/a&gt;, ... ]</i>,
-        "<a href="#writedatajson" title="WriteDataJson">WriteDataJson</a>" : <i>String</i>,
         "<a href="#writefields" title="WriteFields">WriteFields</a>" : <i>[ String, ... ]</i>
     }
 }
@@ -30,30 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::GenericEndpoint
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#datajson" title="DataJson">DataJson</a>: <i>String</i>
     <a href="#disabledelete" title="DisableDelete">DisableDelete</a>: <i>Boolean</i>
     <a href="#disableread" title="DisableRead">DisableRead</a>: <i>Boolean</i>
     <a href="#ignoreabsentfields" title="IgnoreAbsentFields">IgnoreAbsentFields</a>: <i>Boolean</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
-    <a href="#writedata" title="WriteData">WriteData</a>: <i>
-      - &lt;a href=&#34;writedata.md&#34;&gt;WriteData&lt;/a&gt;</i>
-    <a href="#writedatajson" title="WriteDataJson">WriteDataJson</a>: <i>String</i>
     <a href="#writefields" title="WriteFields">WriteFields</a>: <i>
       - String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataJson
 
@@ -95,22 +78,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### WriteData
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;writedata.md&#34;&gt;WriteData&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### WriteDataJson
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### WriteFields
 
 _Required_: No
@@ -137,9 +104,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### WriteData
 
-Returns the &lt;code&gt;WriteData&lt;/code&gt; value.
+Returns the <code>WriteData</code> value.
 
 #### WriteDataJson
 
-Returns the &lt;code&gt;WriteDataJson&lt;/code&gt; value.
+Returns the <code>WriteDataJson</code> value.
 

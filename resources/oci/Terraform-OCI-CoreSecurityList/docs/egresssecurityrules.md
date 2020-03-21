@@ -13,9 +13,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#destinationtype" title="DestinationType">DestinationType</a>" : <i>String</i>,
     "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
     "<a href="#stateless" title="Stateless">Stateless</a>" : <i>Boolean</i>,
-    "<a href="#icmpoptions" title="IcmpOptions">IcmpOptions</a>" : <i>[ &lt;a href=&#34;egresssecurityrules-icmpoptions.md&#34;&gt;IcmpOptions&lt;/a&gt;, ... ]</i>,
-    "<a href="#tcpoptions" title="TcpOptions">TcpOptions</a>" : <i>[ &lt;a href=&#34;egresssecurityrules-tcpoptions.md&#34;&gt;TcpOptions&lt;/a&gt;, ... ]</i>,
-    "<a href="#udpoptions" title="UdpOptions">UdpOptions</a>" : <i>[ &lt;a href=&#34;egresssecurityrules-udpoptions.md&#34;&gt;UdpOptions&lt;/a&gt;, ... ]</i>
+    "<a href="#icmpoptions" title="IcmpOptions">IcmpOptions</a>" : <i>[ <a href="egresssecurityrules-icmpoptions.md">IcmpOptions</a>, ... ]</i>,
+    "<a href="#tcpoptions" title="TcpOptions">TcpOptions</a>" : <i>[ <a href="egresssecurityrules-tcpoptions.md">TcpOptions</a>, ... ]</i>,
+    "<a href="#udpoptions" title="UdpOptions">UdpOptions</a>" : <i>[ <a href="egresssecurityrules-udpoptions.md">UdpOptions</a>, ... ]</i>
 }
 </pre>
 
@@ -28,11 +28,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
 <a href="#stateless" title="Stateless">Stateless</a>: <i>Boolean</i>
 <a href="#icmpoptions" title="IcmpOptions">IcmpOptions</a>: <i>
-      - &lt;a href=&#34;egresssecurityrules-icmpoptions.md&#34;&gt;IcmpOptions&lt;/a&gt;</i>
+      - <a href="egresssecurityrules-icmpoptions.md">IcmpOptions</a></i>
 <a href="#tcpoptions" title="TcpOptions">TcpOptions</a>: <i>
-      - &lt;a href=&#34;egresssecurityrules-tcpoptions.md&#34;&gt;TcpOptions&lt;/a&gt;</i>
+      - <a href="egresssecurityrules-tcpoptions.md">TcpOptions</a></i>
 <a href="#udpoptions" title="UdpOptions">UdpOptions</a>: <i>
-      - &lt;a href=&#34;egresssecurityrules-udpoptions.md&#34;&gt;UdpOptions&lt;/a&gt;</i>
+      - <a href="egresssecurityrules-udpoptions.md">UdpOptions</a></i>
 </pre>
 
 ## Properties
@@ -40,6 +40,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Description
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Destination
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DestinationType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,6 +64,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Protocol
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -68,6 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Stateless
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -75,21 +80,24 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IcmpOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;egresssecurityrules-icmpoptions.md&#34;&gt;IcmpOptions&lt;/a&gt;
+
+_Type_: List of <a href="egresssecurityrules-icmpoptions.md">IcmpOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TcpOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;egresssecurityrules-tcpoptions.md&#34;&gt;TcpOptions&lt;/a&gt;
+
+_Type_: List of <a href="egresssecurityrules-tcpoptions.md">TcpOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UdpOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;egresssecurityrules-udpoptions.md&#34;&gt;UdpOptions&lt;/a&gt;
+
+_Type_: List of <a href="egresssecurityrules-udpoptions.md">UdpOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

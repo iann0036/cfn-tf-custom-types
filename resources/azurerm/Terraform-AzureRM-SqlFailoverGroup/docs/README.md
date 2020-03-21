@@ -12,18 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::SqlFailoverGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#databases" title="Databases">Databases</a>" : <i>[ String, ... ]</i>,
-        "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#servername" title="ServerName">ServerName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#partnerservers" title="PartnerServers">PartnerServers</a>" : <i>[ &lt;a href=&#34;partnerservers.md&#34;&gt;PartnerServers&lt;/a&gt;, ... ]</i>,
-        "<a href="#readwriteendpointfailoverpolicy" title="ReadWriteEndpointFailoverPolicy">ReadWriteEndpointFailoverPolicy</a>" : <i>[ &lt;a href=&#34;readwriteendpointfailoverpolicy.md&#34;&gt;ReadWriteEndpointFailoverPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#readonlyendpointfailoverpolicy" title="ReadonlyEndpointFailoverPolicy">ReadonlyEndpointFailoverPolicy</a>" : <i>[ &lt;a href=&#34;readonlyendpointfailoverpolicy.md&#34;&gt;ReadonlyEndpointFailoverPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#partnerservers" title="PartnerServers">PartnerServers</a>" : <i>[ <a href="partnerservers.md">PartnerServers</a>, ... ]</i>,
+        "<a href="#readwriteendpointfailoverpolicy" title="ReadWriteEndpointFailoverPolicy">ReadWriteEndpointFailoverPolicy</a>" : <i>[ <a href="readwriteendpointfailoverpolicy.md">ReadWriteEndpointFailoverPolicy</a>, ... ]</i>,
+        "<a href="#readonlyendpointfailoverpolicy" title="ReadonlyEndpointFailoverPolicy">ReadonlyEndpointFailoverPolicy</a>" : <i>[ <a href="readonlyendpointfailoverpolicy.md">ReadonlyEndpointFailoverPolicy</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -33,50 +30,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::SqlFailoverGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#databases" title="Databases">Databases</a>: <i>
       - String</i>
-    <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
-    <a href="#role" title="Role">Role</a>: <i>String</i>
     <a href="#servername" title="ServerName">ServerName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#partnerservers" title="PartnerServers">PartnerServers</a>: <i>
-      - &lt;a href=&#34;partnerservers.md&#34;&gt;PartnerServers&lt;/a&gt;</i>
+      - <a href="partnerservers.md">PartnerServers</a></i>
     <a href="#readwriteendpointfailoverpolicy" title="ReadWriteEndpointFailoverPolicy">ReadWriteEndpointFailoverPolicy</a>: <i>
-      - &lt;a href=&#34;readwriteendpointfailoverpolicy.md&#34;&gt;ReadWriteEndpointFailoverPolicy&lt;/a&gt;</i>
+      - <a href="readwriteendpointfailoverpolicy.md">ReadWriteEndpointFailoverPolicy</a></i>
     <a href="#readonlyendpointfailoverpolicy" title="ReadonlyEndpointFailoverPolicy">ReadonlyEndpointFailoverPolicy</a>: <i>
-      - &lt;a href=&#34;readonlyendpointfailoverpolicy.md&#34;&gt;ReadonlyEndpointFailoverPolicy&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="readonlyendpointfailoverpolicy.md">ReadonlyEndpointFailoverPolicy</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Databases
 
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Location
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -96,14 +72,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Role
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ServerName
 
 _Required_: Yes
@@ -116,7 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;partnerservers.md&#34;&gt;PartnerServers&lt;/a&gt;
+_Type_: List of <a href="partnerservers.md">PartnerServers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -132,7 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;readwriteendpointfailoverpolicy.md&#34;&gt;ReadWriteEndpointFailoverPolicy&lt;/a&gt;
+_Type_: List of <a href="readwriteendpointfailoverpolicy.md">ReadWriteEndpointFailoverPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -140,7 +108,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;readonlyendpointfailoverpolicy.md&#34;&gt;ReadonlyEndpointFailoverPolicy&lt;/a&gt;
+_Type_: List of <a href="readonlyendpointfailoverpolicy.md">ReadonlyEndpointFailoverPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,9 +138,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Location
 
-Returns the &lt;code&gt;Location&lt;/code&gt; value.
+Returns the <code>Location</code> value.
 
 #### Role
 
-Returns the &lt;code&gt;Role&lt;/code&gt; value.
+Returns the <code>Role</code> value.
 

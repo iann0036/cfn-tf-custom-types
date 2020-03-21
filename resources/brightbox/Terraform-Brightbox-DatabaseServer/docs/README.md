@@ -12,24 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Brightbox::DatabaseServer",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#adminpassword" title="AdminPassword">AdminPassword</a>" : <i>String</i>,
-        "<a href="#adminusername" title="AdminUsername">AdminUsername</a>" : <i>String</i>,
         "<a href="#allowaccess" title="AllowAccess">AllowAccess</a>" : <i>[ String, ... ]</i>,
         "<a href="#databaseengine" title="DatabaseEngine">DatabaseEngine</a>" : <i>String</i>,
         "<a href="#databasetype" title="DatabaseType">DatabaseType</a>" : <i>String</i>,
         "<a href="#databaseversion" title="DatabaseVersion">DatabaseVersion</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#locked" title="Locked">Locked</a>" : <i>Boolean</i>,
         "<a href="#maintenancehour" title="MaintenanceHour">MaintenanceHour</a>" : <i>Double</i>,
         "<a href="#maintenanceweekday" title="MaintenanceWeekday">MaintenanceWeekday</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#snapshot" title="Snapshot">Snapshot</a>" : <i>String</i>,
         "<a href="#snapshotsschedule" title="SnapshotsSchedule">SnapshotsSchedule</a>" : <i>String</i>,
-        "<a href="#snapshotsschedulenextat" title="SnapshotsScheduleNextAt">SnapshotsScheduleNextAt</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -39,54 +33,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Brightbox::DatabaseServer
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#adminpassword" title="AdminPassword">AdminPassword</a>: <i>String</i>
-    <a href="#adminusername" title="AdminUsername">AdminUsername</a>: <i>String</i>
     <a href="#allowaccess" title="AllowAccess">AllowAccess</a>: <i>
       - String</i>
     <a href="#databaseengine" title="DatabaseEngine">DatabaseEngine</a>: <i>String</i>
     <a href="#databasetype" title="DatabaseType">DatabaseType</a>: <i>String</i>
     <a href="#databaseversion" title="DatabaseVersion">DatabaseVersion</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#locked" title="Locked">Locked</a>: <i>Boolean</i>
     <a href="#maintenancehour" title="MaintenanceHour">MaintenanceHour</a>: <i>Double</i>
     <a href="#maintenanceweekday" title="MaintenanceWeekday">MaintenanceWeekday</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#snapshot" title="Snapshot">Snapshot</a>: <i>String</i>
     <a href="#snapshotsschedule" title="SnapshotsSchedule">SnapshotsSchedule</a>: <i>String</i>
-    <a href="#snapshotsschedulenextat" title="SnapshotsScheduleNextAt">SnapshotsScheduleNextAt</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AdminPassword
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AdminUsername
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowAccess
 
@@ -125,14 +87,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Locked
-
-_Required_: No
-
-_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,22 +130,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SnapshotsScheduleNextAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Zone
 
 _Required_: No
@@ -204,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -226,21 +164,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AdminPassword
 
-Returns the &lt;code&gt;AdminPassword&lt;/code&gt; value.
+Returns the <code>AdminPassword</code> value.
 
 #### AdminUsername
 
-Returns the &lt;code&gt;AdminUsername&lt;/code&gt; value.
+Returns the <code>AdminUsername</code> value.
 
 #### Locked
 
-Returns the &lt;code&gt;Locked&lt;/code&gt; value.
+Returns the <code>Locked</code> value.
 
 #### SnapshotsScheduleNextAt
 
-Returns the &lt;code&gt;SnapshotsScheduleNextAt&lt;/code&gt; value.
+Returns the <code>SnapshotsScheduleNextAt</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

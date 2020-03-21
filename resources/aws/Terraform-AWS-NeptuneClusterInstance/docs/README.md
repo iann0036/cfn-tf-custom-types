@@ -12,21 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::NeptuneClusterInstance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#address" title="Address">Address</a>" : <i>String</i>,
         "<a href="#applyimmediately" title="ApplyImmediately">ApplyImmediately</a>" : <i>Boolean</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#autominorversionupgrade" title="AutoMinorVersionUpgrade">AutoMinorVersionUpgrade</a>" : <i>Boolean</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#clusteridentifier" title="ClusterIdentifier">ClusterIdentifier</a>" : <i>String</i>,
-        "<a href="#dbiresourceid" title="DbiResourceId">DbiResourceId</a>" : <i>String</i>,
-        "<a href="#endpoint" title="Endpoint">Endpoint</a>" : <i>String</i>,
         "<a href="#engine" title="Engine">Engine</a>" : <i>String</i>,
         "<a href="#engineversion" title="EngineVersion">EngineVersion</a>" : <i>String</i>,
         "<a href="#identifier" title="Identifier">Identifier</a>" : <i>String</i>,
         "<a href="#identifierprefix" title="IdentifierPrefix">IdentifierPrefix</a>" : <i>String</i>,
         "<a href="#instanceclass" title="InstanceClass">InstanceClass</a>" : <i>String</i>,
-        "<a href="#kmskeyarn" title="KmsKeyArn">KmsKeyArn</a>" : <i>String</i>,
         "<a href="#neptuneparametergroupname" title="NeptuneParameterGroupName">NeptuneParameterGroupName</a>" : <i>String</i>,
         "<a href="#neptunesubnetgroupname" title="NeptuneSubnetGroupName">NeptuneSubnetGroupName</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
@@ -34,10 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#preferredmaintenancewindow" title="PreferredMaintenanceWindow">PreferredMaintenanceWindow</a>" : <i>String</i>,
         "<a href="#promotiontier" title="PromotionTier">PromotionTier</a>" : <i>Double</i>,
         "<a href="#publiclyaccessible" title="PubliclyAccessible">PubliclyAccessible</a>" : <i>Boolean</i>,
-        "<a href="#storageencrypted" title="StorageEncrypted">StorageEncrypted</a>" : <i>Boolean</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#writer" title="Writer">Writer</a>" : <i>Boolean</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -47,21 +39,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::NeptuneClusterInstance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#address" title="Address">Address</a>: <i>String</i>
     <a href="#applyimmediately" title="ApplyImmediately">ApplyImmediately</a>: <i>Boolean</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#autominorversionupgrade" title="AutoMinorVersionUpgrade">AutoMinorVersionUpgrade</a>: <i>Boolean</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#clusteridentifier" title="ClusterIdentifier">ClusterIdentifier</a>: <i>String</i>
-    <a href="#dbiresourceid" title="DbiResourceId">DbiResourceId</a>: <i>String</i>
-    <a href="#endpoint" title="Endpoint">Endpoint</a>: <i>String</i>
     <a href="#engine" title="Engine">Engine</a>: <i>String</i>
     <a href="#engineversion" title="EngineVersion">EngineVersion</a>: <i>String</i>
     <a href="#identifier" title="Identifier">Identifier</a>: <i>String</i>
     <a href="#identifierprefix" title="IdentifierPrefix">IdentifierPrefix</a>: <i>String</i>
     <a href="#instanceclass" title="InstanceClass">InstanceClass</a>: <i>String</i>
-    <a href="#kmskeyarn" title="KmsKeyArn">KmsKeyArn</a>: <i>String</i>
     <a href="#neptuneparametergroupname" title="NeptuneParameterGroupName">NeptuneParameterGroupName</a>: <i>String</i>
     <a href="#neptunesubnetgroupname" title="NeptuneSubnetGroupName">NeptuneSubnetGroupName</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
@@ -69,46 +55,18 @@ Properties:
     <a href="#preferredmaintenancewindow" title="PreferredMaintenanceWindow">PreferredMaintenanceWindow</a>: <i>String</i>
     <a href="#promotiontier" title="PromotionTier">PromotionTier</a>: <i>Double</i>
     <a href="#publiclyaccessible" title="PubliclyAccessible">PubliclyAccessible</a>: <i>Boolean</i>
-    <a href="#storageencrypted" title="StorageEncrypted">StorageEncrypted</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
-    <a href="#writer" title="Writer">Writer</a>: <i>Boolean</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Address
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplyImmediately
 
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,22 +89,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClusterIdentifier
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DbiResourceId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Endpoint
-
-_Required_: No
 
 _Type_: String
 
@@ -187,14 +129,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceClass
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### KmsKeyArn
-
-_Required_: No
 
 _Type_: String
 
@@ -256,27 +190,11 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### StorageEncrypted
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Writer
-
-_Required_: No
-
-_Type_: Boolean
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -284,7 +202,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -306,29 +224,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Address
 
-Returns the &lt;code&gt;Address&lt;/code&gt; value.
+Returns the <code>Address</code> value.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### DbiResourceId
 
-Returns the &lt;code&gt;DbiResourceId&lt;/code&gt; value.
+Returns the <code>DbiResourceId</code> value.
 
 #### Endpoint
 
-Returns the &lt;code&gt;Endpoint&lt;/code&gt; value.
+Returns the <code>Endpoint</code> value.
 
 #### KmsKeyArn
 
-Returns the &lt;code&gt;KmsKeyArn&lt;/code&gt; value.
+Returns the <code>KmsKeyArn</code> value.
 
 #### StorageEncrypted
 
-Returns the &lt;code&gt;StorageEncrypted&lt;/code&gt; value.
+Returns the <code>StorageEncrypted</code> value.
 
 #### Writer
 
-Returns the &lt;code&gt;Writer&lt;/code&gt; value.
+Returns the <code>Writer</code> value.
 

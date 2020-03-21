@@ -12,26 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::ObjectstorageObjectV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#containername" title="ContainerName">ContainerName</a>" : <i>String</i>,
         "<a href="#content" title="Content">Content</a>" : <i>String</i>,
         "<a href="#contentdisposition" title="ContentDisposition">ContentDisposition</a>" : <i>String</i>,
         "<a href="#contentencoding" title="ContentEncoding">ContentEncoding</a>" : <i>String</i>,
-        "<a href="#contentlength" title="ContentLength">ContentLength</a>" : <i>Double</i>,
         "<a href="#contenttype" title="ContentType">ContentType</a>" : <i>String</i>,
         "<a href="#copyfrom" title="CopyFrom">CopyFrom</a>" : <i>String</i>,
-        "<a href="#date" title="Date">Date</a>" : <i>String</i>,
         "<a href="#deleteafter" title="DeleteAfter">DeleteAfter</a>" : <i>Double</i>,
         "<a href="#deleteat" title="DeleteAt">DeleteAt</a>" : <i>String</i>,
         "<a href="#detectcontenttype" title="DetectContentType">DetectContentType</a>" : <i>Boolean</i>,
         "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
-        "<a href="#lastmodified" title="LastModified">LastModified</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#objectmanifest" title="ObjectManifest">ObjectManifest</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
-        "<a href="#transid" title="TransId">TransId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -41,40 +36,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::ObjectstorageObjectV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#containername" title="ContainerName">ContainerName</a>: <i>String</i>
     <a href="#content" title="Content">Content</a>: <i>String</i>
     <a href="#contentdisposition" title="ContentDisposition">ContentDisposition</a>: <i>String</i>
     <a href="#contentencoding" title="ContentEncoding">ContentEncoding</a>: <i>String</i>
-    <a href="#contentlength" title="ContentLength">ContentLength</a>: <i>Double</i>
     <a href="#contenttype" title="ContentType">ContentType</a>: <i>String</i>
     <a href="#copyfrom" title="CopyFrom">CopyFrom</a>: <i>String</i>
-    <a href="#date" title="Date">Date</a>: <i>String</i>
     <a href="#deleteafter" title="DeleteAfter">DeleteAfter</a>: <i>Double</i>
     <a href="#deleteat" title="DeleteAt">DeleteAt</a>: <i>String</i>
     <a href="#detectcontenttype" title="DetectContentType">DetectContentType</a>: <i>Boolean</i>
     <a href="#etag" title="Etag">Etag</a>: <i>String</i>
-    <a href="#lastmodified" title="LastModified">LastModified</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#objectmanifest" title="ObjectManifest">ObjectManifest</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
-    <a href="#transid" title="TransId">TransId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContainerName
 
@@ -108,14 +88,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ContentLength
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ContentType
 
 _Required_: No
@@ -125,14 +97,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CopyFrom
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Date
 
 _Required_: No
 
@@ -172,19 +136,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### LastModified
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Metadata
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -220,14 +176,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TransId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -246,17 +194,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ContentLength
 
-Returns the &lt;code&gt;ContentLength&lt;/code&gt; value.
+Returns the <code>ContentLength</code> value.
 
 #### Date
 
-Returns the &lt;code&gt;Date&lt;/code&gt; value.
+Returns the <code>Date</code> value.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 
 #### TransId
 
-Returns the &lt;code&gt;TransId&lt;/code&gt; value.
+Returns the <code>TransId</code> value.
 

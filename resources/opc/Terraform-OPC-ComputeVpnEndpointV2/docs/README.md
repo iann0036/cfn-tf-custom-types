@@ -12,25 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::ComputeVpnEndpointV2",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#customervpngateway" title="CustomerVpnGateway">CustomerVpnGateway</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#ikeidentifier" title="IkeIdentifier">IkeIdentifier</a>" : <i>String</i>,
         "<a href="#ipnetwork" title="IpNetwork">IpNetwork</a>" : <i>String</i>,
-        "<a href="#localgatewayipaddress" title="LocalGatewayIpAddress">LocalGatewayIpAddress</a>" : <i>String</i>,
-        "<a href="#localgatewayprivateipaddress" title="LocalGatewayPrivateIpAddress">LocalGatewayPrivateIpAddress</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#presharedkey" title="PreSharedKey">PreSharedKey</a>" : <i>String</i>,
         "<a href="#reachableroutes" title="ReachableRoutes">ReachableRoutes</a>" : <i>[ String, ... ]</i>,
         "<a href="#requireperfectforwardsecrecy" title="RequirePerfectForwardSecrecy">RequirePerfectForwardSecrecy</a>" : <i>Boolean</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tunnelstatus" title="TunnelStatus">TunnelStatus</a>" : <i>String</i>,
-        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
         "<a href="#vnicsets" title="VnicSets">VnicSets</a>" : <i>[ String, ... ]</i>,
-        "<a href="#phaseonesettings" title="PhaseOneSettings">PhaseOneSettings</a>" : <i>[ &lt;a href=&#34;phaseonesettings.md&#34;&gt;PhaseOneSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#phasetwosettings" title="PhaseTwoSettings">PhaseTwoSettings</a>" : <i>[ &lt;a href=&#34;phasetwosettings.md&#34;&gt;PhaseTwoSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#phaseonesettings" title="PhaseOneSettings">PhaseOneSettings</a>" : <i>[ <a href="phaseonesettings.md">PhaseOneSettings</a>, ... ]</i>,
+        "<a href="#phasetwosettings" title="PhaseTwoSettings">PhaseTwoSettings</a>" : <i>[ <a href="phasetwosettings.md">PhaseTwoSettings</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -40,14 +35,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::ComputeVpnEndpointV2
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#customervpngateway" title="CustomerVpnGateway">CustomerVpnGateway</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#ikeidentifier" title="IkeIdentifier">IkeIdentifier</a>: <i>String</i>
     <a href="#ipnetwork" title="IpNetwork">IpNetwork</a>: <i>String</i>
-    <a href="#localgatewayipaddress" title="LocalGatewayIpAddress">LocalGatewayIpAddress</a>: <i>String</i>
-    <a href="#localgatewayprivateipaddress" title="LocalGatewayPrivateIpAddress">LocalGatewayPrivateIpAddress</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#presharedkey" title="PreSharedKey">PreSharedKey</a>: <i>String</i>
     <a href="#reachableroutes" title="ReachableRoutes">ReachableRoutes</a>: <i>
@@ -55,28 +47,16 @@ Properties:
     <a href="#requireperfectforwardsecrecy" title="RequirePerfectForwardSecrecy">RequirePerfectForwardSecrecy</a>: <i>Boolean</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
-    <a href="#tunnelstatus" title="TunnelStatus">TunnelStatus</a>: <i>String</i>
-    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
     <a href="#vnicsets" title="VnicSets">VnicSets</a>: <i>
       - String</i>
     <a href="#phaseonesettings" title="PhaseOneSettings">PhaseOneSettings</a>: <i>
-      - &lt;a href=&#34;phaseonesettings.md&#34;&gt;PhaseOneSettings&lt;/a&gt;</i>
+      - <a href="phaseonesettings.md">PhaseOneSettings</a></i>
     <a href="#phasetwosettings" title="PhaseTwoSettings">PhaseTwoSettings</a>: <i>
-      - &lt;a href=&#34;phasetwosettings.md&#34;&gt;PhaseTwoSettings&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="phasetwosettings.md">PhaseTwoSettings</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomerVpnGateway
 
@@ -113,22 +93,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IpNetwork
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LocalGatewayIpAddress
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LocalGatewayPrivateIpAddress
-
-_Required_: No
 
 _Type_: String
 
@@ -174,22 +138,6 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TunnelStatus
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uri
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### VnicSets
 
 _Required_: Yes
@@ -202,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;phaseonesettings.md&#34;&gt;PhaseOneSettings&lt;/a&gt;
+_Type_: List of <a href="phaseonesettings.md">PhaseOneSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -210,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;phasetwosettings.md&#34;&gt;PhaseTwoSettings&lt;/a&gt;
+_Type_: List of <a href="phasetwosettings.md">PhaseTwoSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -218,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -240,17 +188,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LocalGatewayIpAddress
 
-Returns the &lt;code&gt;LocalGatewayIpAddress&lt;/code&gt; value.
+Returns the <code>LocalGatewayIpAddress</code> value.
 
 #### LocalGatewayPrivateIpAddress
 
-Returns the &lt;code&gt;LocalGatewayPrivateIpAddress&lt;/code&gt; value.
+Returns the <code>LocalGatewayPrivateIpAddress</code> value.
 
 #### TunnelStatus
 
-Returns the &lt;code&gt;TunnelStatus&lt;/code&gt; value.
+Returns the <code>TunnelStatus</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

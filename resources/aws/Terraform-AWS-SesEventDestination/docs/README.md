@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::SesEventDestination",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#configurationsetname" title="ConfigurationSetName">ConfigurationSetName</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#matchingtypes" title="MatchingTypes">MatchingTypes</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#cloudwatchdestination" title="CloudwatchDestination">CloudwatchDestination</a>" : <i>[ &lt;a href=&#34;cloudwatchdestination.md&#34;&gt;CloudwatchDestination&lt;/a&gt;, ... ]</i>,
-        "<a href="#kinesisdestination" title="KinesisDestination">KinesisDestination</a>" : <i>[ &lt;a href=&#34;kinesisdestination.md&#34;&gt;KinesisDestination&lt;/a&gt;, ... ]</i>,
-        "<a href="#snsdestination" title="SnsDestination">SnsDestination</a>" : <i>[ &lt;a href=&#34;snsdestination.md&#34;&gt;SnsDestination&lt;/a&gt;, ... ]</i>
+        "<a href="#cloudwatchdestination" title="CloudwatchDestination">CloudwatchDestination</a>" : <i>[ <a href="cloudwatchdestination.md">CloudwatchDestination</a>, ... ]</i>,
+        "<a href="#kinesisdestination" title="KinesisDestination">KinesisDestination</a>" : <i>[ <a href="kinesisdestination.md">KinesisDestination</a>, ... ]</i>,
+        "<a href="#snsdestination" title="SnsDestination">SnsDestination</a>" : <i>[ <a href="snsdestination.md">SnsDestination</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,31 +28,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::SesEventDestination
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#configurationsetname" title="ConfigurationSetName">ConfigurationSetName</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#matchingtypes" title="MatchingTypes">MatchingTypes</a>: <i>
       - String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#cloudwatchdestination" title="CloudwatchDestination">CloudwatchDestination</a>: <i>
-      - &lt;a href=&#34;cloudwatchdestination.md&#34;&gt;CloudwatchDestination&lt;/a&gt;</i>
+      - <a href="cloudwatchdestination.md">CloudwatchDestination</a></i>
     <a href="#kinesisdestination" title="KinesisDestination">KinesisDestination</a>: <i>
-      - &lt;a href=&#34;kinesisdestination.md&#34;&gt;KinesisDestination&lt;/a&gt;</i>
+      - <a href="kinesisdestination.md">KinesisDestination</a></i>
     <a href="#snsdestination" title="SnsDestination">SnsDestination</a>: <i>
-      - &lt;a href=&#34;snsdestination.md&#34;&gt;SnsDestination&lt;/a&gt;</i>
+      - <a href="snsdestination.md">SnsDestination</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConfigurationSetName
 
@@ -91,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cloudwatchdestination.md&#34;&gt;CloudwatchDestination&lt;/a&gt;
+_Type_: List of <a href="cloudwatchdestination.md">CloudwatchDestination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -99,7 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kinesisdestination.md&#34;&gt;KinesisDestination&lt;/a&gt;
+_Type_: List of <a href="kinesisdestination.md">KinesisDestination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -107,7 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;snsdestination.md&#34;&gt;SnsDestination&lt;/a&gt;
+_Type_: List of <a href="snsdestination.md">SnsDestination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

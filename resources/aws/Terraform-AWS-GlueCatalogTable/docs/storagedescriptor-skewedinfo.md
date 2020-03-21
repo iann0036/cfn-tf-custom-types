@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#skewedcolumnnames" title="SkewedColumnNames">SkewedColumnNames</a>" : <i>[ String, ... ]</i>,
-    "<a href="#skewedcolumnvaluelocationmaps" title="SkewedColumnValueLocationMaps">SkewedColumnValueLocationMaps</a>" : <i>[ &lt;a href=&#34;storagedescriptor-skewedinfo-skewedcolumnvaluelocationmaps.md&#34;&gt;SkewedColumnValueLocationMaps&lt;/a&gt;, ... ]</i>,
+    "<a href="#skewedcolumnvaluelocationmaps" title="SkewedColumnValueLocationMaps">SkewedColumnValueLocationMaps</a>" : <i>[ <a href="storagedescriptor-skewedinfo-skewedcolumnvaluelocationmaps.md">SkewedColumnValueLocationMaps</a>, ... ]</i>,
     "<a href="#skewedcolumnvalues" title="SkewedColumnValues">SkewedColumnValues</a>" : <i>[ String, ... ]</i>
 }
 </pre>
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#skewedcolumnnames" title="SkewedColumnNames">SkewedColumnNames</a>: <i>
       - String</i>
 <a href="#skewedcolumnvaluelocationmaps" title="SkewedColumnValueLocationMaps">SkewedColumnValueLocationMaps</a>: <i>
-      - &lt;a href=&#34;storagedescriptor-skewedinfo-skewedcolumnvaluelocationmaps.md&#34;&gt;SkewedColumnValueLocationMaps&lt;/a&gt;</i>
+      - <a href="storagedescriptor-skewedinfo-skewedcolumnvaluelocationmaps.md">SkewedColumnValueLocationMaps</a></i>
 <a href="#skewedcolumnvalues" title="SkewedColumnValues">SkewedColumnValues</a>: <i>
       - String</i>
 </pre>
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### SkewedColumnNames
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,13 +38,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SkewedColumnValueLocationMaps
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;storagedescriptor-skewedinfo-skewedcolumnvaluelocationmaps.md&#34;&gt;SkewedColumnValueLocationMaps&lt;/a&gt;
+
+_Type_: List of <a href="storagedescriptor-skewedinfo-skewedcolumnvaluelocationmaps.md">SkewedColumnValueLocationMaps</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SkewedColumnValues
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

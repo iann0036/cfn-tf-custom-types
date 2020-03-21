@@ -12,20 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NSXT::LogicalSwitch",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adminstate" title="AdminState">AdminState</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#ippoolid" title="IpPoolId">IpPoolId</a>" : <i>String</i>,
         "<a href="#macpoolid" title="MacPoolId">MacPoolId</a>" : <i>String</i>,
         "<a href="#replicationmode" title="ReplicationMode">ReplicationMode</a>" : <i>String</i>,
-        "<a href="#revision" title="Revision">Revision</a>" : <i>Double</i>,
         "<a href="#transportzoneid" title="TransportZoneId">TransportZoneId</a>" : <i>String</i>,
         "<a href="#vlan" title="Vlan">Vlan</a>" : <i>Double</i>,
         "<a href="#vni" title="Vni">Vni</a>" : <i>Double</i>,
-        "<a href="#addressbinding" title="AddressBinding">AddressBinding</a>" : <i>[ &lt;a href=&#34;addressbinding.md&#34;&gt;AddressBinding&lt;/a&gt;, ... ]</i>,
-        "<a href="#switchingprofileid" title="SwitchingProfileId">SwitchingProfileId</a>" : <i>[ &lt;a href=&#34;switchingprofileid.md&#34;&gt;SwitchingProfileId&lt;/a&gt;, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>
+        "<a href="#addressbinding" title="AddressBinding">AddressBinding</a>" : <i>[ <a href="addressbinding.md">AddressBinding</a>, ... ]</i>,
+        "<a href="#switchingprofileid" title="SwitchingProfileId">SwitchingProfileId</a>" : <i>[ <a href="switchingprofileid.md">SwitchingProfileId</a>, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,36 +33,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NSXT::LogicalSwitch
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adminstate" title="AdminState">AdminState</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#ippoolid" title="IpPoolId">IpPoolId</a>: <i>String</i>
     <a href="#macpoolid" title="MacPoolId">MacPoolId</a>: <i>String</i>
     <a href="#replicationmode" title="ReplicationMode">ReplicationMode</a>: <i>String</i>
-    <a href="#revision" title="Revision">Revision</a>: <i>Double</i>
     <a href="#transportzoneid" title="TransportZoneId">TransportZoneId</a>: <i>String</i>
     <a href="#vlan" title="Vlan">Vlan</a>: <i>Double</i>
     <a href="#vni" title="Vni">Vni</a>: <i>Double</i>
     <a href="#addressbinding" title="AddressBinding">AddressBinding</a>: <i>
-      - &lt;a href=&#34;addressbinding.md&#34;&gt;AddressBinding&lt;/a&gt;</i>
+      - <a href="addressbinding.md">AddressBinding</a></i>
     <a href="#switchingprofileid" title="SwitchingProfileId">SwitchingProfileId</a>: <i>
-      - &lt;a href=&#34;switchingprofileid.md&#34;&gt;SwitchingProfileId&lt;/a&gt;</i>
+      - <a href="switchingprofileid.md">SwitchingProfileId</a></i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+      - <a href="tag.md">Tag</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminState
 
@@ -114,14 +100,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Revision
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### TransportZoneId
 
 _Required_: Yes
@@ -150,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;addressbinding.md&#34;&gt;AddressBinding&lt;/a&gt;
+_Type_: List of <a href="addressbinding.md">AddressBinding</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;switchingprofileid.md&#34;&gt;SwitchingProfileId&lt;/a&gt;
+_Type_: List of <a href="switchingprofileid.md">SwitchingProfileId</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
+_Type_: List of <a href="tag.md">Tag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,5 +166,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Revision
 
-Returns the &lt;code&gt;Revision&lt;/code&gt; value.
+Returns the <code>Revision</code> value.
 

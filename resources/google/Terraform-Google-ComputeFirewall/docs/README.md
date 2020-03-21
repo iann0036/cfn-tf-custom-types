@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ComputeFirewall",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#creationtimestamp" title="CreationTimestamp">CreationTimestamp</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#destinationranges" title="DestinationRanges">DestinationRanges</a>" : <i>[ String, ... ]</i>,
         "<a href="#direction" title="Direction">Direction</a>" : <i>String</i>,
@@ -23,15 +21,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#network" title="Network">Network</a>" : <i>String</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
         "<a href="#sourceranges" title="SourceRanges">SourceRanges</a>" : <i>[ String, ... ]</i>,
         "<a href="#sourceserviceaccounts" title="SourceServiceAccounts">SourceServiceAccounts</a>" : <i>[ String, ... ]</i>,
         "<a href="#sourcetags" title="SourceTags">SourceTags</a>" : <i>[ String, ... ]</i>,
         "<a href="#targetserviceaccounts" title="TargetServiceAccounts">TargetServiceAccounts</a>" : <i>[ String, ... ]</i>,
         "<a href="#targettags" title="TargetTags">TargetTags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#allow" title="Allow">Allow</a>" : <i>[ &lt;a href=&#34;allow.md&#34;&gt;Allow&lt;/a&gt;, ... ]</i>,
-        "<a href="#deny" title="Deny">Deny</a>" : <i>[ &lt;a href=&#34;deny.md&#34;&gt;Deny&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#allow" title="Allow">Allow</a>" : <i>[ <a href="allow.md">Allow</a>, ... ]</i>,
+        "<a href="#deny" title="Deny">Deny</a>" : <i>[ <a href="deny.md">Deny</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -41,8 +38,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ComputeFirewall
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#creationtimestamp" title="CreationTimestamp">CreationTimestamp</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#destinationranges" title="DestinationRanges">DestinationRanges</a>: <i>
       - String</i>
@@ -53,7 +48,6 @@ Properties:
     <a href="#network" title="Network">Network</a>: <i>String</i>
     <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
-    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
     <a href="#sourceranges" title="SourceRanges">SourceRanges</a>: <i>
       - String</i>
     <a href="#sourceserviceaccounts" title="SourceServiceAccounts">SourceServiceAccounts</a>: <i>
@@ -65,31 +59,13 @@ Properties:
     <a href="#targettags" title="TargetTags">TargetTags</a>: <i>
       - String</i>
     <a href="#allow" title="Allow">Allow</a>: <i>
-      - &lt;a href=&#34;allow.md&#34;&gt;Allow&lt;/a&gt;</i>
+      - <a href="allow.md">Allow</a></i>
     <a href="#deny" title="Deny">Deny</a>: <i>
-      - &lt;a href=&#34;deny.md&#34;&gt;Deny&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="deny.md">Deny</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreationTimestamp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -163,14 +139,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SelfLink
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SourceRanges
 
 _Required_: No
@@ -215,7 +183,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;allow.md&#34;&gt;Allow&lt;/a&gt;
+_Type_: List of <a href="allow.md">Allow</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -223,7 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deny.md&#34;&gt;Deny&lt;/a&gt;
+_Type_: List of <a href="deny.md">Deny</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -231,7 +199,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -253,9 +221,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTimestamp
 
-Returns the &lt;code&gt;CreationTimestamp&lt;/code&gt; value.
+Returns the <code>CreationTimestamp</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 

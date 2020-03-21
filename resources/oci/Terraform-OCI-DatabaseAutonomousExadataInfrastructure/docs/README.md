@@ -12,28 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::DatabaseAutonomousExadataInfrastructure",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
-        "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
-        "<a href="#lastmaintenancerunid" title="LastMaintenanceRunId">LastMaintenanceRunId</a>" : <i>String</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#licensemodel" title="LicenseModel">LicenseModel</a>" : <i>String</i>,
-        "<a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>" : <i>String</i>,
-        "<a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>" : <i>[ &lt;a href=&#34;maintenancewindow.md&#34;&gt;MaintenanceWindow&lt;/a&gt;, ... ]</i>,
-        "<a href="#nextmaintenancerunid" title="NextMaintenanceRunId">NextMaintenanceRunId</a>" : <i>String</i>,
         "<a href="#nsgids" title="NsgIds">NsgIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#shape" title="Shape">Shape</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
-        "<a href="#maintenancewindowdetails" title="MaintenanceWindowDetails">MaintenanceWindowDetails</a>" : <i>[ &lt;a href=&#34;maintenancewindowdetails.md&#34;&gt;MaintenanceWindowDetails&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#daysofweek" title="DaysOfWeek">DaysOfWeek</a>" : <i>[ &lt;a href=&#34;daysofweek.md&#34;&gt;DaysOfWeek&lt;/a&gt;, ... ]</i>,
-        "<a href="#months" title="Months">Months</a>" : <i>[ &lt;a href=&#34;months.md&#34;&gt;Months&lt;/a&gt;, ... ]</i>
+        "<a href="#maintenancewindowdetails" title="MaintenanceWindowDetails">MaintenanceWindowDetails</a>" : <i>[ <a href="maintenancewindowdetails.md">MaintenanceWindowDetails</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#daysofweek" title="DaysOfWeek">DaysOfWeek</a>" : <i>[ <a href="daysofweek.md">DaysOfWeek</a>, ... ]</i>,
+        "<a href="#months" title="Months">Months</a>" : <i>[ <a href="months.md">Months</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,48 +35,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::DatabaseAutonomousExadataInfrastructure
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
-    <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
-    <a href="#lastmaintenancerunid" title="LastMaintenanceRunId">LastMaintenanceRunId</a>: <i>String</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#licensemodel" title="LicenseModel">LicenseModel</a>: <i>String</i>
-    <a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>: <i>String</i>
-    <a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>: <i>
-      - &lt;a href=&#34;maintenancewindow.md&#34;&gt;MaintenanceWindow&lt;/a&gt;</i>
-    <a href="#nextmaintenancerunid" title="NextMaintenanceRunId">NextMaintenanceRunId</a>: <i>String</i>
     <a href="#nsgids" title="NsgIds">NsgIds</a>: <i>
       - String</i>
     <a href="#shape" title="Shape">Shape</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#maintenancewindowdetails" title="MaintenanceWindowDetails">MaintenanceWindowDetails</a>: <i>
-      - &lt;a href=&#34;maintenancewindowdetails.md&#34;&gt;MaintenanceWindowDetails&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="maintenancewindowdetails.md">MaintenanceWindowDetails</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#daysofweek" title="DaysOfWeek">DaysOfWeek</a>: <i>
-      - &lt;a href=&#34;daysofweek.md&#34;&gt;DaysOfWeek&lt;/a&gt;</i>
+      - <a href="daysofweek.md">DaysOfWeek</a></i>
     <a href="#months" title="Months">Months</a>: <i>
-      - &lt;a href=&#34;months.md&#34;&gt;Months&lt;/a&gt;</i>
+      - <a href="months.md">Months</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityDomain
 
@@ -106,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -130,51 +103,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Hostname
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastMaintenanceRunId
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseModel
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LifecycleDetails
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### MaintenanceWindow
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;maintenancewindow.md&#34;&gt;MaintenanceWindow&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### NextMaintenanceRunId
 
 _Required_: No
 
@@ -198,25 +131,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SubnetId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeCreated
-
-_Required_: No
 
 _Type_: String
 
@@ -226,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;maintenancewindowdetails.md&#34;&gt;MaintenanceWindowDetails&lt;/a&gt;
+_Type_: List of <a href="maintenancewindowdetails.md">MaintenanceWindowDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -234,7 +151,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -242,7 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;daysofweek.md&#34;&gt;DaysOfWeek&lt;/a&gt;
+_Type_: List of <a href="daysofweek.md">DaysOfWeek</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -250,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;months.md&#34;&gt;Months&lt;/a&gt;
+_Type_: List of <a href="months.md">Months</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -272,29 +189,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Hostname
 
-Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
+Returns the <code>Hostname</code> value.
 
 #### LastMaintenanceRunId
 
-Returns the &lt;code&gt;LastMaintenanceRunId&lt;/code&gt; value.
+Returns the <code>LastMaintenanceRunId</code> value.
 
 #### LifecycleDetails
 
-Returns the &lt;code&gt;LifecycleDetails&lt;/code&gt; value.
+Returns the <code>LifecycleDetails</code> value.
 
 #### MaintenanceWindow
 
-Returns the &lt;code&gt;MaintenanceWindow&lt;/code&gt; value.
+Returns the <code>MaintenanceWindow</code> value.
 
 #### NextMaintenanceRunId
 
-Returns the &lt;code&gt;NextMaintenanceRunId&lt;/code&gt; value.
+Returns the <code>NextMaintenanceRunId</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

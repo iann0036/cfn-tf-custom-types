@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Grafana::DataSource",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accessmode" title="AccessMode">AccessMode</a>" : <i>String</i>,
         "<a href="#basicauthenabled" title="BasicAuthEnabled">BasicAuthEnabled</a>" : <i>Boolean</i>,
         "<a href="#basicauthpassword" title="BasicAuthPassword">BasicAuthPassword</a>" : <i>String</i>,
@@ -24,8 +23,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#url" title="Url">Url</a>" : <i>String</i>,
         "<a href="#username" title="Username">Username</a>" : <i>String</i>,
-        "<a href="#jsondata" title="JsonData">JsonData</a>" : <i>[ &lt;a href=&#34;jsondata.md&#34;&gt;JsonData&lt;/a&gt;, ... ]</i>,
-        "<a href="#securejsondata" title="SecureJsonData">SecureJsonData</a>" : <i>[ &lt;a href=&#34;securejsondata.md&#34;&gt;SecureJsonData&lt;/a&gt;, ... ]</i>
+        "<a href="#jsondata" title="JsonData">JsonData</a>" : <i>[ <a href="jsondata.md">JsonData</a>, ... ]</i>,
+        "<a href="#securejsondata" title="SecureJsonData">SecureJsonData</a>" : <i>[ <a href="securejsondata.md">SecureJsonData</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Grafana::DataSource
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accessmode" title="AccessMode">AccessMode</a>: <i>String</i>
     <a href="#basicauthenabled" title="BasicAuthEnabled">BasicAuthEnabled</a>: <i>Boolean</i>
     <a href="#basicauthpassword" title="BasicAuthPassword">BasicAuthPassword</a>: <i>String</i>
@@ -48,22 +46,12 @@ Properties:
     <a href="#url" title="Url">Url</a>: <i>String</i>
     <a href="#username" title="Username">Username</a>: <i>String</i>
     <a href="#jsondata" title="JsonData">JsonData</a>: <i>
-      - &lt;a href=&#34;jsondata.md&#34;&gt;JsonData&lt;/a&gt;</i>
+      - <a href="jsondata.md">JsonData</a></i>
     <a href="#securejsondata" title="SecureJsonData">SecureJsonData</a>: <i>
-      - &lt;a href=&#34;securejsondata.md&#34;&gt;SecureJsonData&lt;/a&gt;</i>
+      - <a href="securejsondata.md">SecureJsonData</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccessMode
 
@@ -157,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;jsondata.md&#34;&gt;JsonData&lt;/a&gt;
+_Type_: List of <a href="jsondata.md">JsonData</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;securejsondata.md&#34;&gt;SecureJsonData&lt;/a&gt;
+_Type_: List of <a href="securejsondata.md">SecureJsonData</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

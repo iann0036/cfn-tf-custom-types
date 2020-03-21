@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Datadog::Monitor",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#enablelogssample" title="EnableLogsSample">EnableLogsSample</a>" : <i>Boolean</i>,
         "<a href="#escalationmessage" title="EscalationMessage">EscalationMessage</a>" : <i>String</i>,
         "<a href="#evaluationdelay" title="EvaluationDelay">EvaluationDelay</a>" : <i>Double</i>,
@@ -27,10 +26,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#query" title="Query">Query</a>" : <i>String</i>,
         "<a href="#renotifyinterval" title="RenotifyInterval">RenotifyInterval</a>" : <i>Double</i>,
         "<a href="#requirefullwindow" title="RequireFullWindow">RequireFullWindow</a>" : <i>Boolean</i>,
-        "<a href="#silenced" title="Silenced">Silenced</a>" : <i>[ &lt;a href=&#34;silenced.md&#34;&gt;Silenced&lt;/a&gt;, ... ]</i>,
+        "<a href="#silenced" title="Silenced">Silenced</a>" : <i>[ <a href="silenced.md">Silenced</a>, ... ]</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#thresholdwindows" title="ThresholdWindows">ThresholdWindows</a>" : <i>[ &lt;a href=&#34;thresholdwindows.md&#34;&gt;ThresholdWindows&lt;/a&gt;, ... ]</i>,
-        "<a href="#thresholds" title="Thresholds">Thresholds</a>" : <i>[ &lt;a href=&#34;thresholds.md&#34;&gt;Thresholds&lt;/a&gt;, ... ]</i>,
+        "<a href="#thresholdwindows" title="ThresholdWindows">ThresholdWindows</a>" : <i>[ <a href="thresholdwindows.md">ThresholdWindows</a>, ... ]</i>,
+        "<a href="#thresholds" title="Thresholds">Thresholds</a>" : <i>[ <a href="thresholds.md">Thresholds</a>, ... ]</i>,
         "<a href="#timeouth" title="TimeoutH">TimeoutH</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
@@ -42,7 +41,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Datadog::Monitor
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#enablelogssample" title="EnableLogsSample">EnableLogsSample</a>: <i>Boolean</i>
     <a href="#escalationmessage" title="EscalationMessage">EscalationMessage</a>: <i>String</i>
     <a href="#evaluationdelay" title="EvaluationDelay">EvaluationDelay</a>: <i>Double</i>
@@ -58,28 +56,18 @@ Properties:
     <a href="#renotifyinterval" title="RenotifyInterval">RenotifyInterval</a>: <i>Double</i>
     <a href="#requirefullwindow" title="RequireFullWindow">RequireFullWindow</a>: <i>Boolean</i>
     <a href="#silenced" title="Silenced">Silenced</a>: <i>
-      - &lt;a href=&#34;silenced.md&#34;&gt;Silenced&lt;/a&gt;</i>
+      - <a href="silenced.md">Silenced</a></i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#thresholdwindows" title="ThresholdWindows">ThresholdWindows</a>: <i>
-      - &lt;a href=&#34;thresholdwindows.md&#34;&gt;ThresholdWindows&lt;/a&gt;</i>
+      - <a href="thresholdwindows.md">ThresholdWindows</a></i>
     <a href="#thresholds" title="Thresholds">Thresholds</a>: <i>
-      - &lt;a href=&#34;thresholds.md&#34;&gt;Thresholds&lt;/a&gt;</i>
+      - <a href="thresholds.md">Thresholds</a></i>
     <a href="#timeouth" title="TimeoutH">TimeoutH</a>: <i>Double</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableLogsSample
 
@@ -197,7 +185,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;silenced.md&#34;&gt;Silenced&lt;/a&gt;
+_Type_: List of <a href="silenced.md">Silenced</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -213,7 +201,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;thresholdwindows.md&#34;&gt;ThresholdWindows&lt;/a&gt;
+_Type_: List of <a href="thresholdwindows.md">ThresholdWindows</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,7 +209,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;thresholds.md&#34;&gt;Thresholds&lt;/a&gt;
+_Type_: List of <a href="thresholds.md">Thresholds</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

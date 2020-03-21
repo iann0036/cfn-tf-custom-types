@@ -15,9 +15,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#clusteridentifier" title="ClusterIdentifier">ClusterIdentifier</a>" : <i>String</i>,
     "<a href="#integrationmode" title="IntegrationMode">IntegrationMode</a>" : <i>String</i>,
     "<a href="#token" title="Token">Token</a>" : <i>String</i>,
-    "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ &lt;a href=&#34;integrationkubernetes-autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;, ... ]</i>,
-    "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ &lt;a href=&#34;integrationkubernetes-autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;, ... ]</i>,
-    "<a href="#autoscalelabels" title="AutoscaleLabels">AutoscaleLabels</a>" : <i>[ &lt;a href=&#34;integrationkubernetes-autoscalelabels.md&#34;&gt;AutoscaleLabels&lt;/a&gt;, ... ]</i>
+    "<a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>" : <i>[ <a href="integrationkubernetes-autoscaledown.md">AutoscaleDown</a>, ... ]</i>,
+    "<a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>" : <i>[ <a href="integrationkubernetes-autoscaleheadroom.md">AutoscaleHeadroom</a>, ... ]</i>,
+    "<a href="#autoscalelabels" title="AutoscaleLabels">AutoscaleLabels</a>" : <i>[ <a href="integrationkubernetes-autoscalelabels.md">AutoscaleLabels</a>, ... ]</i>
 }
 </pre>
 
@@ -32,11 +32,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#integrationmode" title="IntegrationMode">IntegrationMode</a>: <i>String</i>
 <a href="#token" title="Token">Token</a>: <i>String</i>
 <a href="#autoscaledown" title="AutoscaleDown">AutoscaleDown</a>: <i>
-      - &lt;a href=&#34;integrationkubernetes-autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;</i>
+      - <a href="integrationkubernetes-autoscaledown.md">AutoscaleDown</a></i>
 <a href="#autoscaleheadroom" title="AutoscaleHeadroom">AutoscaleHeadroom</a>: <i>
-      - &lt;a href=&#34;integrationkubernetes-autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;</i>
+      - <a href="integrationkubernetes-autoscaleheadroom.md">AutoscaleHeadroom</a></i>
 <a href="#autoscalelabels" title="AutoscaleLabels">AutoscaleLabels</a>: <i>
-      - &lt;a href=&#34;integrationkubernetes-autoscalelabels.md&#34;&gt;AutoscaleLabels&lt;/a&gt;</i>
+      - <a href="integrationkubernetes-autoscalelabels.md">AutoscaleLabels</a></i>
 </pre>
 
 ## Properties
@@ -44,6 +44,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ApiServer
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,6 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoscaleCooldown
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,6 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoscaleIsAutoConfig
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -65,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoscaleIsEnabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,6 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClusterIdentifier
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -79,6 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IntegrationMode
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -86,6 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Token
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -93,21 +100,24 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoscaleDown
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;integrationkubernetes-autoscaledown.md&#34;&gt;AutoscaleDown&lt;/a&gt;
+
+_Type_: List of <a href="integrationkubernetes-autoscaledown.md">AutoscaleDown</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoscaleHeadroom
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;integrationkubernetes-autoscaleheadroom.md&#34;&gt;AutoscaleHeadroom&lt;/a&gt;
+
+_Type_: List of <a href="integrationkubernetes-autoscaleheadroom.md">AutoscaleHeadroom</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoscaleLabels
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;integrationkubernetes-autoscalelabels.md&#34;&gt;AutoscaleLabels&lt;/a&gt;
+
+_Type_: List of <a href="integrationkubernetes-autoscalelabels.md">AutoscaleLabels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

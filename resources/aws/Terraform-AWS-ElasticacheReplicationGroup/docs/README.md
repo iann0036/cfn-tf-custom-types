@@ -12,25 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ElasticacheReplicationGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#applyimmediately" title="ApplyImmediately">ApplyImmediately</a>" : <i>Boolean</i>,
         "<a href="#atrestencryptionenabled" title="AtRestEncryptionEnabled">AtRestEncryptionEnabled</a>" : <i>Boolean</i>,
         "<a href="#authtoken" title="AuthToken">AuthToken</a>" : <i>String</i>,
         "<a href="#autominorversionupgrade" title="AutoMinorVersionUpgrade">AutoMinorVersionUpgrade</a>" : <i>Boolean</i>,
         "<a href="#automaticfailoverenabled" title="AutomaticFailoverEnabled">AutomaticFailoverEnabled</a>" : <i>Boolean</i>,
         "<a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>" : <i>[ String, ... ]</i>,
-        "<a href="#configurationendpointaddress" title="ConfigurationEndpointAddress">ConfigurationEndpointAddress</a>" : <i>String</i>,
         "<a href="#engine" title="Engine">Engine</a>" : <i>String</i>,
         "<a href="#engineversion" title="EngineVersion">EngineVersion</a>" : <i>String</i>,
         "<a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>" : <i>String</i>,
         "<a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>" : <i>String</i>,
-        "<a href="#memberclusters" title="MemberClusters">MemberClusters</a>" : <i>[ String, ... ]</i>,
         "<a href="#nodetype" title="NodeType">NodeType</a>" : <i>String</i>,
         "<a href="#notificationtopicarn" title="NotificationTopicArn">NotificationTopicArn</a>" : <i>String</i>,
         "<a href="#numbercacheclusters" title="NumberCacheClusters">NumberCacheClusters</a>" : <i>Double</i>,
         "<a href="#parametergroupname" title="ParameterGroupName">ParameterGroupName</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
-        "<a href="#primaryendpointaddress" title="PrimaryEndpointAddress">PrimaryEndpointAddress</a>" : <i>String</i>,
         "<a href="#replicationgroupdescription" title="ReplicationGroupDescription">ReplicationGroupDescription</a>" : <i>String</i>,
         "<a href="#replicationgroupid" title="ReplicationGroupId">ReplicationGroupId</a>" : <i>String</i>,
         "<a href="#securitygroupids" title="SecurityGroupIds">SecurityGroupIds</a>" : <i>[ String, ... ]</i>,
@@ -40,10 +36,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#snapshotretentionlimit" title="SnapshotRetentionLimit">SnapshotRetentionLimit</a>" : <i>Double</i>,
         "<a href="#snapshotwindow" title="SnapshotWindow">SnapshotWindow</a>" : <i>String</i>,
         "<a href="#subnetgroupname" title="SubnetGroupName">SubnetGroupName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#transitencryptionenabled" title="TransitEncryptionEnabled">TransitEncryptionEnabled</a>" : <i>Boolean</i>,
-        "<a href="#clustermode" title="ClusterMode">ClusterMode</a>" : <i>[ &lt;a href=&#34;clustermode.md&#34;&gt;ClusterMode&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#clustermode" title="ClusterMode">ClusterMode</a>" : <i>[ <a href="clustermode.md">ClusterMode</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -53,7 +49,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ElasticacheReplicationGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#applyimmediately" title="ApplyImmediately">ApplyImmediately</a>: <i>Boolean</i>
     <a href="#atrestencryptionenabled" title="AtRestEncryptionEnabled">AtRestEncryptionEnabled</a>: <i>Boolean</i>
     <a href="#authtoken" title="AuthToken">AuthToken</a>: <i>String</i>
@@ -61,19 +56,15 @@ Properties:
     <a href="#automaticfailoverenabled" title="AutomaticFailoverEnabled">AutomaticFailoverEnabled</a>: <i>Boolean</i>
     <a href="#availabilityzones" title="AvailabilityZones">AvailabilityZones</a>: <i>
       - String</i>
-    <a href="#configurationendpointaddress" title="ConfigurationEndpointAddress">ConfigurationEndpointAddress</a>: <i>String</i>
     <a href="#engine" title="Engine">Engine</a>: <i>String</i>
     <a href="#engineversion" title="EngineVersion">EngineVersion</a>: <i>String</i>
     <a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>: <i>String</i>
     <a href="#maintenancewindow" title="MaintenanceWindow">MaintenanceWindow</a>: <i>String</i>
-    <a href="#memberclusters" title="MemberClusters">MemberClusters</a>: <i>
-      - String</i>
     <a href="#nodetype" title="NodeType">NodeType</a>: <i>String</i>
     <a href="#notificationtopicarn" title="NotificationTopicArn">NotificationTopicArn</a>: <i>String</i>
     <a href="#numbercacheclusters" title="NumberCacheClusters">NumberCacheClusters</a>: <i>Double</i>
     <a href="#parametergroupname" title="ParameterGroupName">ParameterGroupName</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
-    <a href="#primaryendpointaddress" title="PrimaryEndpointAddress">PrimaryEndpointAddress</a>: <i>String</i>
     <a href="#replicationgroupdescription" title="ReplicationGroupDescription">ReplicationGroupDescription</a>: <i>String</i>
     <a href="#replicationgroupid" title="ReplicationGroupId">ReplicationGroupId</a>: <i>String</i>
     <a href="#securitygroupids" title="SecurityGroupIds">SecurityGroupIds</a>: <i>
@@ -87,24 +78,14 @@ Properties:
     <a href="#snapshotwindow" title="SnapshotWindow">SnapshotWindow</a>: <i>String</i>
     <a href="#subnetgroupname" title="SubnetGroupName">SubnetGroupName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#transitencryptionenabled" title="TransitEncryptionEnabled">TransitEncryptionEnabled</a>: <i>Boolean</i>
     <a href="#clustermode" title="ClusterMode">ClusterMode</a>: <i>
-      - &lt;a href=&#34;clustermode.md&#34;&gt;ClusterMode&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="clustermode.md">ClusterMode</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplyImmediately
 
@@ -154,14 +135,6 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ConfigurationEndpointAddress
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Engine
 
 _Required_: No
@@ -191,14 +164,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### MemberClusters
-
-_Required_: No
-
-_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -239,14 +204,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrimaryEndpointAddress
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -326,7 +283,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -342,7 +299,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;clustermode.md&#34;&gt;ClusterMode&lt;/a&gt;
+_Type_: List of <a href="clustermode.md">ClusterMode</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -350,7 +307,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -372,13 +329,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConfigurationEndpointAddress
 
-Returns the &lt;code&gt;ConfigurationEndpointAddress&lt;/code&gt; value.
+Returns the <code>ConfigurationEndpointAddress</code> value.
 
 #### MemberClusters
 
-Returns the &lt;code&gt;MemberClusters&lt;/code&gt; value.
+Returns the <code>MemberClusters</code> value.
 
 #### PrimaryEndpointAddress
 
-Returns the &lt;code&gt;PrimaryEndpointAddress&lt;/code&gt; value.
+Returns the <code>PrimaryEndpointAddress</code> value.
 

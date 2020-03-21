@@ -12,13 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::IotCertificate",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#active" title="Active">Active</a>" : <i>Boolean</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
-        "<a href="#certificatepem" title="CertificatePem">CertificatePem</a>" : <i>String</i>,
         "<a href="#csr" title="Csr">Csr</a>" : <i>String</i>,
-        "<a href="#privatekey" title="PrivateKey">PrivateKey</a>" : <i>String</i>,
-        "<a href="#publickey" title="PublicKey">PublicKey</a>" : <i>String</i>
     }
 }
 </pre>
@@ -28,26 +23,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::IotCertificate
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#active" title="Active">Active</a>: <i>Boolean</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
-    <a href="#certificatepem" title="CertificatePem">CertificatePem</a>: <i>String</i>
     <a href="#csr" title="Csr">Csr</a>: <i>String</i>
-    <a href="#privatekey" title="PrivateKey">PrivateKey</a>: <i>String</i>
-    <a href="#publickey" title="PublicKey">PublicKey</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Active
 
@@ -57,39 +37,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CertificatePem
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Csr
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrivateKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PublicKey
 
 _Required_: No
 
@@ -115,17 +63,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CertificatePem
 
-Returns the &lt;code&gt;CertificatePem&lt;/code&gt; value.
+Returns the <code>CertificatePem</code> value.
 
 #### PrivateKey
 
-Returns the &lt;code&gt;PrivateKey&lt;/code&gt; value.
+Returns the <code>PrivateKey</code> value.
 
 #### PublicKey
 
-Returns the &lt;code&gt;PublicKey&lt;/code&gt; value.
+Returns the <code>PublicKey</code> value.
 

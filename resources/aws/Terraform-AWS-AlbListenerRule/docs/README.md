@@ -12,22 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AlbListenerRule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#listenerarn" title="ListenerArn">ListenerArn</a>" : <i>String</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
-        "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>,
-        "<a href="#condition" title="Condition">Condition</a>" : <i>[ &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;, ... ]</i>,
-        "<a href="#authenticatecognito" title="AuthenticateCognito">AuthenticateCognito</a>" : <i>[ &lt;a href=&#34;authenticatecognito.md&#34;&gt;AuthenticateCognito&lt;/a&gt;, ... ]</i>,
-        "<a href="#authenticateoidc" title="AuthenticateOidc">AuthenticateOidc</a>" : <i>[ &lt;a href=&#34;authenticateoidc.md&#34;&gt;AuthenticateOidc&lt;/a&gt;, ... ]</i>,
-        "<a href="#fixedresponse" title="FixedResponse">FixedResponse</a>" : <i>[ &lt;a href=&#34;fixedresponse.md&#34;&gt;FixedResponse&lt;/a&gt;, ... ]</i>,
-        "<a href="#redirect" title="Redirect">Redirect</a>" : <i>[ &lt;a href=&#34;redirect.md&#34;&gt;Redirect&lt;/a&gt;, ... ]</i>,
-        "<a href="#hostheader" title="HostHeader">HostHeader</a>" : <i>[ &lt;a href=&#34;hostheader.md&#34;&gt;HostHeader&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpheader" title="HttpHeader">HttpHeader</a>" : <i>[ &lt;a href=&#34;httpheader.md&#34;&gt;HttpHeader&lt;/a&gt;, ... ]</i>,
-        "<a href="#httprequestmethod" title="HttpRequestMethod">HttpRequestMethod</a>" : <i>[ &lt;a href=&#34;httprequestmethod.md&#34;&gt;HttpRequestMethod&lt;/a&gt;, ... ]</i>,
-        "<a href="#pathpattern" title="PathPattern">PathPattern</a>" : <i>[ &lt;a href=&#34;pathpattern.md&#34;&gt;PathPattern&lt;/a&gt;, ... ]</i>,
-        "<a href="#querystring" title="QueryString">QueryString</a>" : <i>[ &lt;a href=&#34;querystring.md&#34;&gt;QueryString&lt;/a&gt;, ... ]</i>,
-        "<a href="#sourceip" title="SourceIp">SourceIp</a>" : <i>[ &lt;a href=&#34;sourceip.md&#34;&gt;SourceIp&lt;/a&gt;, ... ]</i>
+        "<a href="#action" title="Action">Action</a>" : <i>[ <a href="action.md">Action</a>, ... ]</i>,
+        "<a href="#condition" title="Condition">Condition</a>" : <i>[ <a href="condition.md">Condition</a>, ... ]</i>,
+        "<a href="#authenticatecognito" title="AuthenticateCognito">AuthenticateCognito</a>" : <i>[ <a href="authenticatecognito.md">AuthenticateCognito</a>, ... ]</i>,
+        "<a href="#authenticateoidc" title="AuthenticateOidc">AuthenticateOidc</a>" : <i>[ <a href="authenticateoidc.md">AuthenticateOidc</a>, ... ]</i>,
+        "<a href="#fixedresponse" title="FixedResponse">FixedResponse</a>" : <i>[ <a href="fixedresponse.md">FixedResponse</a>, ... ]</i>,
+        "<a href="#redirect" title="Redirect">Redirect</a>" : <i>[ <a href="redirect.md">Redirect</a>, ... ]</i>,
+        "<a href="#hostheader" title="HostHeader">HostHeader</a>" : <i>[ <a href="hostheader.md">HostHeader</a>, ... ]</i>,
+        "<a href="#httpheader" title="HttpHeader">HttpHeader</a>" : <i>[ <a href="httpheader.md">HttpHeader</a>, ... ]</i>,
+        "<a href="#httprequestmethod" title="HttpRequestMethod">HttpRequestMethod</a>" : <i>[ <a href="httprequestmethod.md">HttpRequestMethod</a>, ... ]</i>,
+        "<a href="#pathpattern" title="PathPattern">PathPattern</a>" : <i>[ <a href="pathpattern.md">PathPattern</a>, ... ]</i>,
+        "<a href="#querystring" title="QueryString">QueryString</a>" : <i>[ <a href="querystring.md">QueryString</a>, ... ]</i>,
+        "<a href="#sourceip" title="SourceIp">SourceIp</a>" : <i>[ <a href="sourceip.md">SourceIp</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,55 +35,35 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AlbListenerRule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#listenerarn" title="ListenerArn">ListenerArn</a>: <i>String</i>
     <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
     <a href="#action" title="Action">Action</a>: <i>
-      - &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;</i>
+      - <a href="action.md">Action</a></i>
     <a href="#condition" title="Condition">Condition</a>: <i>
-      - &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;</i>
+      - <a href="condition.md">Condition</a></i>
     <a href="#authenticatecognito" title="AuthenticateCognito">AuthenticateCognito</a>: <i>
-      - &lt;a href=&#34;authenticatecognito.md&#34;&gt;AuthenticateCognito&lt;/a&gt;</i>
+      - <a href="authenticatecognito.md">AuthenticateCognito</a></i>
     <a href="#authenticateoidc" title="AuthenticateOidc">AuthenticateOidc</a>: <i>
-      - &lt;a href=&#34;authenticateoidc.md&#34;&gt;AuthenticateOidc&lt;/a&gt;</i>
+      - <a href="authenticateoidc.md">AuthenticateOidc</a></i>
     <a href="#fixedresponse" title="FixedResponse">FixedResponse</a>: <i>
-      - &lt;a href=&#34;fixedresponse.md&#34;&gt;FixedResponse&lt;/a&gt;</i>
+      - <a href="fixedresponse.md">FixedResponse</a></i>
     <a href="#redirect" title="Redirect">Redirect</a>: <i>
-      - &lt;a href=&#34;redirect.md&#34;&gt;Redirect&lt;/a&gt;</i>
+      - <a href="redirect.md">Redirect</a></i>
     <a href="#hostheader" title="HostHeader">HostHeader</a>: <i>
-      - &lt;a href=&#34;hostheader.md&#34;&gt;HostHeader&lt;/a&gt;</i>
+      - <a href="hostheader.md">HostHeader</a></i>
     <a href="#httpheader" title="HttpHeader">HttpHeader</a>: <i>
-      - &lt;a href=&#34;httpheader.md&#34;&gt;HttpHeader&lt;/a&gt;</i>
+      - <a href="httpheader.md">HttpHeader</a></i>
     <a href="#httprequestmethod" title="HttpRequestMethod">HttpRequestMethod</a>: <i>
-      - &lt;a href=&#34;httprequestmethod.md&#34;&gt;HttpRequestMethod&lt;/a&gt;</i>
+      - <a href="httprequestmethod.md">HttpRequestMethod</a></i>
     <a href="#pathpattern" title="PathPattern">PathPattern</a>: <i>
-      - &lt;a href=&#34;pathpattern.md&#34;&gt;PathPattern&lt;/a&gt;</i>
+      - <a href="pathpattern.md">PathPattern</a></i>
     <a href="#querystring" title="QueryString">QueryString</a>: <i>
-      - &lt;a href=&#34;querystring.md&#34;&gt;QueryString&lt;/a&gt;</i>
+      - <a href="querystring.md">QueryString</a></i>
     <a href="#sourceip" title="SourceIp">SourceIp</a>: <i>
-      - &lt;a href=&#34;sourceip.md&#34;&gt;SourceIp&lt;/a&gt;</i>
+      - <a href="sourceip.md">SourceIp</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ListenerArn
 
@@ -107,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;
+_Type_: List of <a href="action.md">Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;condition.md&#34;&gt;Condition&lt;/a&gt;
+_Type_: List of <a href="condition.md">Condition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;authenticatecognito.md&#34;&gt;AuthenticateCognito&lt;/a&gt;
+_Type_: List of <a href="authenticatecognito.md">AuthenticateCognito</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;authenticateoidc.md&#34;&gt;AuthenticateOidc&lt;/a&gt;
+_Type_: List of <a href="authenticateoidc.md">AuthenticateOidc</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fixedresponse.md&#34;&gt;FixedResponse&lt;/a&gt;
+_Type_: List of <a href="fixedresponse.md">FixedResponse</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;redirect.md&#34;&gt;Redirect&lt;/a&gt;
+_Type_: List of <a href="redirect.md">Redirect</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +133,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hostheader.md&#34;&gt;HostHeader&lt;/a&gt;
+_Type_: List of <a href="hostheader.md">HostHeader</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +141,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpheader.md&#34;&gt;HttpHeader&lt;/a&gt;
+_Type_: List of <a href="httpheader.md">HttpHeader</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +149,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httprequestmethod.md&#34;&gt;HttpRequestMethod&lt;/a&gt;
+_Type_: List of <a href="httprequestmethod.md">HttpRequestMethod</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +157,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;pathpattern.md&#34;&gt;PathPattern&lt;/a&gt;
+_Type_: List of <a href="pathpattern.md">PathPattern</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;querystring.md&#34;&gt;QueryString&lt;/a&gt;
+_Type_: List of <a href="querystring.md">QueryString</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourceip.md&#34;&gt;SourceIp&lt;/a&gt;
+_Type_: List of <a href="sourceip.md">SourceIp</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,5 +195,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

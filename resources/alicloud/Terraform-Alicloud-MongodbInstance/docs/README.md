@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::MongodbInstance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accountpassword" title="AccountPassword">AccountPassword</a>" : <i>String</i>,
         "<a href="#backupperiod" title="BackupPeriod">BackupPeriod</a>" : <i>[ String, ... ]</i>,
         "<a href="#backuptime" title="BackupTime">BackupTime</a>" : <i>String</i>,
@@ -21,22 +20,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#engineversion" title="EngineVersion">EngineVersion</a>" : <i>String</i>,
         "<a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>" : <i>String</i>,
         "<a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>" : <i>String</i>,
-        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;, ... ]</i>,
+        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>, ... ]</i>,
         "<a href="#maintainendtime" title="MaintainEndTime">MaintainEndTime</a>" : <i>String</i>,
         "<a href="#maintainstarttime" title="MaintainStartTime">MaintainStartTime</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
-        "<a href="#replicasetname" title="ReplicaSetName">ReplicaSetName</a>" : <i>String</i>,
         "<a href="#replicationfactor" title="ReplicationFactor">ReplicationFactor</a>" : <i>Double</i>,
-        "<a href="#retentionperiod" title="RetentionPeriod">RetentionPeriod</a>" : <i>Double</i>,
         "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
         "<a href="#securityiplist" title="SecurityIpList">SecurityIpList</a>" : <i>[ String, ... ]</i>,
         "<a href="#storageengine" title="StorageEngine">StorageEngine</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#tdestatus" title="TdeStatus">TdeStatus</a>" : <i>String</i>,
         "<a href="#vswitchid" title="VswitchId">VswitchId</a>" : <i>String</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -46,7 +43,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::MongodbInstance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accountpassword" title="AccountPassword">AccountPassword</a>: <i>String</i>
     <a href="#backupperiod" title="BackupPeriod">BackupPeriod</a>: <i>
       - String</i>
@@ -57,37 +53,25 @@ Properties:
     <a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>: <i>String</i>
     <a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>: <i>String</i>
     <a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>: <i>
-      - &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;</i>
+      - <a href="kmsencryptioncontext.md">KmsEncryptionContext</a></i>
     <a href="#maintainendtime" title="MaintainEndTime">MaintainEndTime</a>: <i>String</i>
     <a href="#maintainstarttime" title="MaintainStartTime">MaintainStartTime</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
-    <a href="#replicasetname" title="ReplicaSetName">ReplicaSetName</a>: <i>String</i>
     <a href="#replicationfactor" title="ReplicationFactor">ReplicationFactor</a>: <i>Double</i>
-    <a href="#retentionperiod" title="RetentionPeriod">RetentionPeriod</a>: <i>Double</i>
     <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
     <a href="#securityiplist" title="SecurityIpList">SecurityIpList</a>: <i>
       - String</i>
     <a href="#storageengine" title="StorageEngine">StorageEngine</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#tdestatus" title="TdeStatus">TdeStatus</a>: <i>String</i>
     <a href="#vswitchid" title="VswitchId">VswitchId</a>: <i>String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountPassword
 
@@ -157,7 +141,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;
+_Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,23 +177,7 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ReplicaSetName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ReplicationFactor
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### RetentionPeriod
 
 _Required_: No
 
@@ -245,7 +213,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -277,7 +245,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -299,9 +267,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ReplicaSetName
 
-Returns the &lt;code&gt;ReplicaSetName&lt;/code&gt; value.
+Returns the <code>ReplicaSetName</code> value.
 
 #### RetentionPeriod
 
-Returns the &lt;code&gt;RetentionPeriod&lt;/code&gt; value.
+Returns the <code>RetentionPeriod</code> value.
 

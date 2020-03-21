@@ -12,11 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::NetworkingRbacPolicyV2",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#action" title="Action">Action</a>" : <i>String</i>,
         "<a href="#objectid" title="ObjectId">ObjectId</a>" : <i>String</i>,
         "<a href="#objecttype" title="ObjectType">ObjectType</a>" : <i>String</i>,
-        "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#targettenant" title="TargetTenant">TargetTenant</a>" : <i>String</i>
     }
@@ -28,26 +26,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::NetworkingRbacPolicyV2
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#action" title="Action">Action</a>: <i>String</i>
     <a href="#objectid" title="ObjectId">ObjectId</a>: <i>String</i>
     <a href="#objecttype" title="ObjectType">ObjectType</a>: <i>String</i>
-    <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#targettenant" title="TargetTenant">TargetTenant</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Action
 
@@ -68,14 +54,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ObjectType
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ProjectId
-
-_Required_: No
 
 _Type_: String
 
@@ -115,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ProjectId
 
-Returns the &lt;code&gt;ProjectId&lt;/code&gt; value.
+Returns the <code>ProjectId</code> value.
 

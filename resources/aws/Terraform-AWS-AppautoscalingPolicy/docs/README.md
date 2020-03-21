@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AppautoscalingPolicy",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adjustmenttype" title="AdjustmentType">AdjustmentType</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#cooldown" title="Cooldown">Cooldown</a>" : <i>Double</i>,
         "<a href="#metricaggregationtype" title="MetricAggregationType">MetricAggregationType</a>" : <i>String</i>,
         "<a href="#minadjustmentmagnitude" title="MinAdjustmentMagnitude">MinAdjustmentMagnitude</a>" : <i>Double</i>,
@@ -23,12 +21,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
         "<a href="#scalabledimension" title="ScalableDimension">ScalableDimension</a>" : <i>String</i>,
         "<a href="#servicenamespace" title="ServiceNamespace">ServiceNamespace</a>" : <i>String</i>,
-        "<a href="#stepadjustment" title="StepAdjustment">StepAdjustment</a>" : <i>[ &lt;a href=&#34;stepadjustment.md&#34;&gt;StepAdjustment&lt;/a&gt;, ... ]</i>,
-        "<a href="#stepscalingpolicyconfiguration" title="StepScalingPolicyConfiguration">StepScalingPolicyConfiguration</a>" : <i>[ &lt;a href=&#34;stepscalingpolicyconfiguration.md&#34;&gt;StepScalingPolicyConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#targettrackingscalingpolicyconfiguration" title="TargetTrackingScalingPolicyConfiguration">TargetTrackingScalingPolicyConfiguration</a>" : <i>[ &lt;a href=&#34;targettrackingscalingpolicyconfiguration.md&#34;&gt;TargetTrackingScalingPolicyConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#customizedmetricspecification" title="CustomizedMetricSpecification">CustomizedMetricSpecification</a>" : <i>[ &lt;a href=&#34;customizedmetricspecification.md&#34;&gt;CustomizedMetricSpecification&lt;/a&gt;, ... ]</i>,
-        "<a href="#predefinedmetricspecification" title="PredefinedMetricSpecification">PredefinedMetricSpecification</a>" : <i>[ &lt;a href=&#34;predefinedmetricspecification.md&#34;&gt;PredefinedMetricSpecification&lt;/a&gt;, ... ]</i>,
-        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;, ... ]</i>
+        "<a href="#stepadjustment" title="StepAdjustment">StepAdjustment</a>" : <i>[ <a href="stepadjustment.md">StepAdjustment</a>, ... ]</i>,
+        "<a href="#stepscalingpolicyconfiguration" title="StepScalingPolicyConfiguration">StepScalingPolicyConfiguration</a>" : <i>[ <a href="stepscalingpolicyconfiguration.md">StepScalingPolicyConfiguration</a>, ... ]</i>,
+        "<a href="#targettrackingscalingpolicyconfiguration" title="TargetTrackingScalingPolicyConfiguration">TargetTrackingScalingPolicyConfiguration</a>" : <i>[ <a href="targettrackingscalingpolicyconfiguration.md">TargetTrackingScalingPolicyConfiguration</a>, ... ]</i>,
+        "<a href="#customizedmetricspecification" title="CustomizedMetricSpecification">CustomizedMetricSpecification</a>" : <i>[ <a href="customizedmetricspecification.md">CustomizedMetricSpecification</a>, ... ]</i>,
+        "<a href="#predefinedmetricspecification" title="PredefinedMetricSpecification">PredefinedMetricSpecification</a>" : <i>[ <a href="predefinedmetricspecification.md">PredefinedMetricSpecification</a>, ... ]</i>,
+        "<a href="#dimensions" title="Dimensions">Dimensions</a>" : <i>[ <a href="dimensions.md">Dimensions</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,9 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AppautoscalingPolicy
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adjustmenttype" title="AdjustmentType">AdjustmentType</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#cooldown" title="Cooldown">Cooldown</a>: <i>Double</i>
     <a href="#metricaggregationtype" title="MetricAggregationType">MetricAggregationType</a>: <i>String</i>
     <a href="#minadjustmentmagnitude" title="MinAdjustmentMagnitude">MinAdjustmentMagnitude</a>: <i>Double</i>
@@ -50,40 +46,22 @@ Properties:
     <a href="#scalabledimension" title="ScalableDimension">ScalableDimension</a>: <i>String</i>
     <a href="#servicenamespace" title="ServiceNamespace">ServiceNamespace</a>: <i>String</i>
     <a href="#stepadjustment" title="StepAdjustment">StepAdjustment</a>: <i>
-      - &lt;a href=&#34;stepadjustment.md&#34;&gt;StepAdjustment&lt;/a&gt;</i>
+      - <a href="stepadjustment.md">StepAdjustment</a></i>
     <a href="#stepscalingpolicyconfiguration" title="StepScalingPolicyConfiguration">StepScalingPolicyConfiguration</a>: <i>
-      - &lt;a href=&#34;stepscalingpolicyconfiguration.md&#34;&gt;StepScalingPolicyConfiguration&lt;/a&gt;</i>
+      - <a href="stepscalingpolicyconfiguration.md">StepScalingPolicyConfiguration</a></i>
     <a href="#targettrackingscalingpolicyconfiguration" title="TargetTrackingScalingPolicyConfiguration">TargetTrackingScalingPolicyConfiguration</a>: <i>
-      - &lt;a href=&#34;targettrackingscalingpolicyconfiguration.md&#34;&gt;TargetTrackingScalingPolicyConfiguration&lt;/a&gt;</i>
+      - <a href="targettrackingscalingpolicyconfiguration.md">TargetTrackingScalingPolicyConfiguration</a></i>
     <a href="#customizedmetricspecification" title="CustomizedMetricSpecification">CustomizedMetricSpecification</a>: <i>
-      - &lt;a href=&#34;customizedmetricspecification.md&#34;&gt;CustomizedMetricSpecification&lt;/a&gt;</i>
+      - <a href="customizedmetricspecification.md">CustomizedMetricSpecification</a></i>
     <a href="#predefinedmetricspecification" title="PredefinedMetricSpecification">PredefinedMetricSpecification</a>: <i>
-      - &lt;a href=&#34;predefinedmetricspecification.md&#34;&gt;PredefinedMetricSpecification&lt;/a&gt;</i>
+      - <a href="predefinedmetricspecification.md">PredefinedMetricSpecification</a></i>
     <a href="#dimensions" title="Dimensions">Dimensions</a>: <i>
-      - &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;</i>
+      - <a href="dimensions.md">Dimensions</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AdjustmentType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
 
 _Required_: No
 
@@ -159,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;stepadjustment.md&#34;&gt;StepAdjustment&lt;/a&gt;
+_Type_: List of <a href="stepadjustment.md">StepAdjustment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;stepscalingpolicyconfiguration.md&#34;&gt;StepScalingPolicyConfiguration&lt;/a&gt;
+_Type_: List of <a href="stepscalingpolicyconfiguration.md">StepScalingPolicyConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;targettrackingscalingpolicyconfiguration.md&#34;&gt;TargetTrackingScalingPolicyConfiguration&lt;/a&gt;
+_Type_: List of <a href="targettrackingscalingpolicyconfiguration.md">TargetTrackingScalingPolicyConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +161,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customizedmetricspecification.md&#34;&gt;CustomizedMetricSpecification&lt;/a&gt;
+_Type_: List of <a href="customizedmetricspecification.md">CustomizedMetricSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +169,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;predefinedmetricspecification.md&#34;&gt;PredefinedMetricSpecification&lt;/a&gt;
+_Type_: List of <a href="predefinedmetricspecification.md">PredefinedMetricSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +177,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dimensions.md&#34;&gt;Dimensions&lt;/a&gt;
+_Type_: List of <a href="dimensions.md">Dimensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,5 +199,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

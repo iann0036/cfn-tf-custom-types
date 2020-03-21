@@ -12,26 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::AsScalingGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#configurationid" title="ConfigurationId">ConfigurationId</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#defaultcooldown" title="DefaultCooldown">DefaultCooldown</a>" : <i>Double</i>,
         "<a href="#desiredcapacity" title="DesiredCapacity">DesiredCapacity</a>" : <i>Double</i>,
-        "<a href="#instancecount" title="InstanceCount">InstanceCount</a>" : <i>Double</i>,
         "<a href="#loadbalancerids" title="LoadBalancerIds">LoadBalancerIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#maxsize" title="MaxSize">MaxSize</a>" : <i>Double</i>,
         "<a href="#minsize" title="MinSize">MinSize</a>" : <i>Double</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>Double</i>,
         "<a href="#retrypolicy" title="RetryPolicy">RetryPolicy</a>" : <i>String</i>,
         "<a href="#scalinggroupname" title="ScalingGroupName">ScalingGroupName</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#subnetids" title="SubnetIds">SubnetIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#terminationpolicies" title="TerminationPolicies">TerminationPolicies</a>" : <i>[ String, ... ]</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#zones" title="Zones">Zones</a>" : <i>[ String, ... ]</i>,
-        "<a href="#forwardbalancerids" title="ForwardBalancerIds">ForwardBalancerIds</a>" : <i>[ &lt;a href=&#34;forwardbalancerids.md&#34;&gt;ForwardBalancerIds&lt;/a&gt;, ... ]</i>,
-        "<a href="#targetattribute" title="TargetAttribute">TargetAttribute</a>" : <i>[ &lt;a href=&#34;targetattribute.md&#34;&gt;TargetAttribute&lt;/a&gt;, ... ]</i>
+        "<a href="#forwardbalancerids" title="ForwardBalancerIds">ForwardBalancerIds</a>" : <i>[ <a href="forwardbalancerids.md">ForwardBalancerIds</a>, ... ]</i>,
+        "<a href="#targetattribute" title="TargetAttribute">TargetAttribute</a>" : <i>[ <a href="targetattribute.md">TargetAttribute</a>, ... ]</i>
     }
 }
 </pre>
@@ -41,12 +37,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::AsScalingGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#configurationid" title="ConfigurationId">ConfigurationId</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#defaultcooldown" title="DefaultCooldown">DefaultCooldown</a>: <i>Double</i>
     <a href="#desiredcapacity" title="DesiredCapacity">DesiredCapacity</a>: <i>Double</i>
-    <a href="#instancecount" title="InstanceCount">InstanceCount</a>: <i>Double</i>
     <a href="#loadbalancerids" title="LoadBalancerIds">LoadBalancerIds</a>: <i>
       - String</i>
     <a href="#maxsize" title="MaxSize">MaxSize</a>: <i>Double</i>
@@ -54,45 +47,26 @@ Properties:
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>Double</i>
     <a href="#retrypolicy" title="RetryPolicy">RetryPolicy</a>: <i>String</i>
     <a href="#scalinggroupname" title="ScalingGroupName">ScalingGroupName</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#subnetids" title="SubnetIds">SubnetIds</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#terminationpolicies" title="TerminationPolicies">TerminationPolicies</a>: <i>
       - String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#zones" title="Zones">Zones</a>: <i>
       - String</i>
     <a href="#forwardbalancerids" title="ForwardBalancerIds">ForwardBalancerIds</a>: <i>
-      - &lt;a href=&#34;forwardbalancerids.md&#34;&gt;ForwardBalancerIds&lt;/a&gt;</i>
+      - <a href="forwardbalancerids.md">ForwardBalancerIds</a></i>
     <a href="#targetattribute" title="TargetAttribute">TargetAttribute</a>: <i>
-      - &lt;a href=&#34;targetattribute.md&#34;&gt;TargetAttribute&lt;/a&gt;</i>
+      - <a href="targetattribute.md">TargetAttribute</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ConfigurationId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreateTime
-
-_Required_: No
 
 _Type_: String
 
@@ -107,14 +81,6 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DesiredCapacity
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### InstanceCount
 
 _Required_: No
 
@@ -170,14 +136,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SubnetIds
 
 _Required_: No
@@ -190,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -222,7 +180,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;forwardbalancerids.md&#34;&gt;ForwardBalancerIds&lt;/a&gt;
+_Type_: List of <a href="forwardbalancerids.md">ForwardBalancerIds</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -230,7 +188,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;targetattribute.md&#34;&gt;TargetAttribute&lt;/a&gt;
+_Type_: List of <a href="targetattribute.md">TargetAttribute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -252,13 +210,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### InstanceCount
 
-Returns the &lt;code&gt;InstanceCount&lt;/code&gt; value.
+Returns the <code>InstanceCount</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

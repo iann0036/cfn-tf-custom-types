@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::GlobalacceleratorEndpointGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#endpointgroupregion" title="EndpointGroupRegion">EndpointGroupRegion</a>" : <i>String</i>,
         "<a href="#healthcheckintervalseconds" title="HealthCheckIntervalSeconds">HealthCheckIntervalSeconds</a>" : <i>Double</i>,
         "<a href="#healthcheckpath" title="HealthCheckPath">HealthCheckPath</a>" : <i>String</i>,
@@ -21,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#listenerarn" title="ListenerArn">ListenerArn</a>" : <i>String</i>,
         "<a href="#thresholdcount" title="ThresholdCount">ThresholdCount</a>" : <i>Double</i>,
         "<a href="#trafficdialpercentage" title="TrafficDialPercentage">TrafficDialPercentage</a>" : <i>Double</i>,
-        "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;, ... ]</i>
+        "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ <a href="endpointconfiguration.md">EndpointConfiguration</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::GlobalacceleratorEndpointGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#endpointgroupregion" title="EndpointGroupRegion">EndpointGroupRegion</a>: <i>String</i>
     <a href="#healthcheckintervalseconds" title="HealthCheckIntervalSeconds">HealthCheckIntervalSeconds</a>: <i>Double</i>
     <a href="#healthcheckpath" title="HealthCheckPath">HealthCheckPath</a>: <i>String</i>
@@ -41,20 +39,10 @@ Properties:
     <a href="#thresholdcount" title="ThresholdCount">ThresholdCount</a>: <i>Double</i>
     <a href="#trafficdialpercentage" title="TrafficDialPercentage">TrafficDialPercentage</a>: <i>Double</i>
     <a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>: <i>
-      - &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;</i>
+      - <a href="endpointconfiguration.md">EndpointConfiguration</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndpointGroupRegion
 
@@ -124,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;
+_Type_: List of <a href="endpointconfiguration.md">EndpointConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

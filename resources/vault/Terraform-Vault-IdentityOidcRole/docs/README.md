@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::IdentityOidcRole",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#clientid" title="ClientId">ClientId</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#template" title="Template">Template</a>" : <i>String</i>,
@@ -27,8 +25,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::IdentityOidcRole
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#clientid" title="ClientId">ClientId</a>: <i>String</i>
     <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#template" title="Template">Template</a>: <i>String</i>
@@ -36,24 +32,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ClientId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Key
 
@@ -105,5 +83,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClientId
 
-Returns the &lt;code&gt;ClientId&lt;/code&gt; value.
+Returns the <code>ClientId</code> value.
 

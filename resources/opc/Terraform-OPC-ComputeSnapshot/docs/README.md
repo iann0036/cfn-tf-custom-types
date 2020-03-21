@@ -12,14 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::ComputeSnapshot",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#account" title="Account">Account</a>" : <i>String</i>,
-        "<a href="#creationtime" title="CreationTime">CreationTime</a>" : <i>String</i>,
         "<a href="#instance" title="Instance">Instance</a>" : <i>String</i>,
         "<a href="#machineimage" title="MachineImage">MachineImage</a>" : <i>String</i>,
-        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -29,37 +25,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::ComputeSnapshot
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#account" title="Account">Account</a>: <i>String</i>
-    <a href="#creationtime" title="CreationTime">CreationTime</a>: <i>String</i>
     <a href="#instance" title="Instance">Instance</a>: <i>String</i>
     <a href="#machineimage" title="MachineImage">MachineImage</a>: <i>String</i>
-    <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Account
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreationTime
 
 _Required_: No
 
@@ -83,27 +57,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Name
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uri
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Timeouts
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,13 +83,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTime
 
-Returns the &lt;code&gt;CreationTime&lt;/code&gt; value.
+Returns the <code>CreationTime</code> value.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

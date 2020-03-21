@@ -12,19 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AlbListener",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#certificatearn" title="CertificateArn">CertificateArn</a>" : <i>String</i>,
         "<a href="#loadbalancerarn" title="LoadBalancerArn">LoadBalancerArn</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
         "<a href="#sslpolicy" title="SslPolicy">SslPolicy</a>" : <i>String</i>,
-        "<a href="#defaultaction" title="DefaultAction">DefaultAction</a>" : <i>[ &lt;a href=&#34;defaultaction.md&#34;&gt;DefaultAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#authenticatecognito" title="AuthenticateCognito">AuthenticateCognito</a>" : <i>[ &lt;a href=&#34;authenticatecognito.md&#34;&gt;AuthenticateCognito&lt;/a&gt;, ... ]</i>,
-        "<a href="#authenticateoidc" title="AuthenticateOidc">AuthenticateOidc</a>" : <i>[ &lt;a href=&#34;authenticateoidc.md&#34;&gt;AuthenticateOidc&lt;/a&gt;, ... ]</i>,
-        "<a href="#fixedresponse" title="FixedResponse">FixedResponse</a>" : <i>[ &lt;a href=&#34;fixedresponse.md&#34;&gt;FixedResponse&lt;/a&gt;, ... ]</i>,
-        "<a href="#redirect" title="Redirect">Redirect</a>" : <i>[ &lt;a href=&#34;redirect.md&#34;&gt;Redirect&lt;/a&gt;, ... ]</i>
+        "<a href="#defaultaction" title="DefaultAction">DefaultAction</a>" : <i>[ <a href="defaultaction.md">DefaultAction</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#authenticatecognito" title="AuthenticateCognito">AuthenticateCognito</a>" : <i>[ <a href="authenticatecognito.md">AuthenticateCognito</a>, ... ]</i>,
+        "<a href="#authenticateoidc" title="AuthenticateOidc">AuthenticateOidc</a>" : <i>[ <a href="authenticateoidc.md">AuthenticateOidc</a>, ... ]</i>,
+        "<a href="#fixedresponse" title="FixedResponse">FixedResponse</a>" : <i>[ <a href="fixedresponse.md">FixedResponse</a>, ... ]</i>,
+        "<a href="#redirect" title="Redirect">Redirect</a>" : <i>[ <a href="redirect.md">Redirect</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,45 +32,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AlbListener
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#certificatearn" title="CertificateArn">CertificateArn</a>: <i>String</i>
     <a href="#loadbalancerarn" title="LoadBalancerArn">LoadBalancerArn</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#sslpolicy" title="SslPolicy">SslPolicy</a>: <i>String</i>
     <a href="#defaultaction" title="DefaultAction">DefaultAction</a>: <i>
-      - &lt;a href=&#34;defaultaction.md&#34;&gt;DefaultAction&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="defaultaction.md">DefaultAction</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#authenticatecognito" title="AuthenticateCognito">AuthenticateCognito</a>: <i>
-      - &lt;a href=&#34;authenticatecognito.md&#34;&gt;AuthenticateCognito&lt;/a&gt;</i>
+      - <a href="authenticatecognito.md">AuthenticateCognito</a></i>
     <a href="#authenticateoidc" title="AuthenticateOidc">AuthenticateOidc</a>: <i>
-      - &lt;a href=&#34;authenticateoidc.md&#34;&gt;AuthenticateOidc&lt;/a&gt;</i>
+      - <a href="authenticateoidc.md">AuthenticateOidc</a></i>
     <a href="#fixedresponse" title="FixedResponse">FixedResponse</a>: <i>
-      - &lt;a href=&#34;fixedresponse.md&#34;&gt;FixedResponse&lt;/a&gt;</i>
+      - <a href="fixedresponse.md">FixedResponse</a></i>
     <a href="#redirect" title="Redirect">Redirect</a>: <i>
-      - &lt;a href=&#34;redirect.md&#34;&gt;Redirect&lt;/a&gt;</i>
+      - <a href="redirect.md">Redirect</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateArn
 
@@ -118,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;defaultaction.md&#34;&gt;DefaultAction&lt;/a&gt;
+_Type_: List of <a href="defaultaction.md">DefaultAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -134,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;authenticatecognito.md&#34;&gt;AuthenticateCognito&lt;/a&gt;
+_Type_: List of <a href="authenticatecognito.md">AuthenticateCognito</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -142,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;authenticateoidc.md&#34;&gt;AuthenticateOidc&lt;/a&gt;
+_Type_: List of <a href="authenticateoidc.md">AuthenticateOidc</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -150,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fixedresponse.md&#34;&gt;FixedResponse&lt;/a&gt;
+_Type_: List of <a href="fixedresponse.md">FixedResponse</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;redirect.md&#34;&gt;Redirect&lt;/a&gt;
+_Type_: List of <a href="redirect.md">Redirect</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -180,5 +158,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

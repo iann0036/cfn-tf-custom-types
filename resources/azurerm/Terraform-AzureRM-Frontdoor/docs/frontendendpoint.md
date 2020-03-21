@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#sessionaffinityenabled" title="SessionAffinityEnabled">SessionAffinityEnabled</a>" : <i>Boolean</i>,
     "<a href="#sessionaffinityttlseconds" title="SessionAffinityTtlSeconds">SessionAffinityTtlSeconds</a>" : <i>Double</i>,
     "<a href="#webapplicationfirewallpolicylinkid" title="WebApplicationFirewallPolicyLinkId">WebApplicationFirewallPolicyLinkId</a>" : <i>String</i>,
-    "<a href="#customhttpsconfiguration" title="CustomHttpsConfiguration">CustomHttpsConfiguration</a>" : <i>[ &lt;a href=&#34;frontendendpoint-customhttpsconfiguration.md&#34;&gt;CustomHttpsConfiguration&lt;/a&gt;, ... ]</i>
+    "<a href="#customhttpsconfiguration" title="CustomHttpsConfiguration">CustomHttpsConfiguration</a>" : <i>[ <a href="frontendendpoint-customhttpsconfiguration.md">CustomHttpsConfiguration</a>, ... ]</i>
 }
 </pre>
 
@@ -28,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#sessionaffinityttlseconds" title="SessionAffinityTtlSeconds">SessionAffinityTtlSeconds</a>: <i>Double</i>
 <a href="#webapplicationfirewallpolicylinkid" title="WebApplicationFirewallPolicyLinkId">WebApplicationFirewallPolicyLinkId</a>: <i>String</i>
 <a href="#customhttpsconfiguration" title="CustomHttpsConfiguration">CustomHttpsConfiguration</a>: <i>
-      - &lt;a href=&#34;frontendendpoint-customhttpsconfiguration.md&#34;&gt;CustomHttpsConfiguration&lt;/a&gt;</i>
+      - <a href="frontendendpoint-customhttpsconfiguration.md">CustomHttpsConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -36,6 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CustomHttpsProvisioningEnabled
 
 _Required_: Yes
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,6 +44,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HostName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,6 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -57,6 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SessionAffinityEnabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SessionAffinityTtlSeconds
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -71,6 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### WebApplicationFirewallPolicyLinkId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -78,7 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CustomHttpsConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;frontendendpoint-customhttpsconfiguration.md&#34;&gt;CustomHttpsConfiguration&lt;/a&gt;
+
+_Type_: List of <a href="frontendendpoint-customhttpsconfiguration.md">CustomHttpsConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

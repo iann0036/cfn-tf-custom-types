@@ -12,17 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ConfigConfigRule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#inputparameters" title="InputParameters">InputParameters</a>" : <i>String</i>,
         "<a href="#maximumexecutionfrequency" title="MaximumExecutionFrequency">MaximumExecutionFrequency</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#ruleid" title="RuleId">RuleId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#scope" title="Scope">Scope</a>" : <i>[ &lt;a href=&#34;scope.md&#34;&gt;Scope&lt;/a&gt;, ... ]</i>,
-        "<a href="#source" title="Source">Source</a>" : <i>[ &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;, ... ]</i>,
-        "<a href="#sourcedetail" title="SourceDetail">SourceDetail</a>" : <i>[ &lt;a href=&#34;sourcedetail.md&#34;&gt;SourceDetail&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#scope" title="Scope">Scope</a>" : <i>[ <a href="scope.md">Scope</a>, ... ]</i>,
+        "<a href="#source" title="Source">Source</a>" : <i>[ <a href="source.md">Source</a>, ... ]</i>,
+        "<a href="#sourcedetail" title="SourceDetail">SourceDetail</a>" : <i>[ <a href="sourcedetail.md">SourceDetail</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,42 +29,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ConfigConfigRule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#inputparameters" title="InputParameters">InputParameters</a>: <i>String</i>
     <a href="#maximumexecutionfrequency" title="MaximumExecutionFrequency">MaximumExecutionFrequency</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#ruleid" title="RuleId">RuleId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#scope" title="Scope">Scope</a>: <i>
-      - &lt;a href=&#34;scope.md&#34;&gt;Scope&lt;/a&gt;</i>
+      - <a href="scope.md">Scope</a></i>
     <a href="#source" title="Source">Source</a>: <i>
-      - &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;</i>
+      - <a href="source.md">Source</a></i>
     <a href="#sourcedetail" title="SourceDetail">SourceDetail</a>: <i>
-      - &lt;a href=&#34;sourcedetail.md&#34;&gt;SourceDetail&lt;/a&gt;</i>
+      - <a href="sourcedetail.md">SourceDetail</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -101,19 +77,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### RuleId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -121,7 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scope.md&#34;&gt;Scope&lt;/a&gt;
+_Type_: List of <a href="scope.md">Scope</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;
+_Type_: List of <a href="source.md">Source</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourcedetail.md&#34;&gt;SourceDetail&lt;/a&gt;
+_Type_: List of <a href="sourcedetail.md">SourceDetail</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -159,9 +127,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### RuleId
 
-Returns the &lt;code&gt;RuleId&lt;/code&gt; value.
+Returns the <code>RuleId</code> value.
 

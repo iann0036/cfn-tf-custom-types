@@ -12,24 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::BigqueryDataset",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#creationtime" title="CreationTime">CreationTime</a>" : <i>Double</i>,
         "<a href="#datasetid" title="DatasetId">DatasetId</a>" : <i>String</i>,
         "<a href="#defaultpartitionexpirationms" title="DefaultPartitionExpirationMs">DefaultPartitionExpirationMs</a>" : <i>Double</i>,
         "<a href="#defaulttableexpirationms" title="DefaultTableExpirationMs">DefaultTableExpirationMs</a>" : <i>Double</i>,
         "<a href="#deletecontentsondestroy" title="DeleteContentsOnDestroy">DeleteContentsOnDestroy</a>" : <i>Boolean</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#friendlyname" title="FriendlyName">FriendlyName</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
-        "<a href="#lastmodifiedtime" title="LastModifiedTime">LastModifiedTime</a>" : <i>Double</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
-        "<a href="#access" title="Access">Access</a>" : <i>[ &lt;a href=&#34;access.md&#34;&gt;Access&lt;/a&gt;, ... ]</i>,
-        "<a href="#defaultencryptionconfiguration" title="DefaultEncryptionConfiguration">DefaultEncryptionConfiguration</a>" : <i>[ &lt;a href=&#34;defaultencryptionconfiguration.md&#34;&gt;DefaultEncryptionConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#view" title="View">View</a>" : <i>[ &lt;a href=&#34;view.md&#34;&gt;View&lt;/a&gt;, ... ]</i>
+        "<a href="#access" title="Access">Access</a>" : <i>[ <a href="access.md">Access</a>, ... ]</i>,
+        "<a href="#defaultencryptionconfiguration" title="DefaultEncryptionConfiguration">DefaultEncryptionConfiguration</a>" : <i>[ <a href="defaultencryptionconfiguration.md">DefaultEncryptionConfiguration</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#view" title="View">View</a>" : <i>[ <a href="view.md">View</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,49 +34,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::BigqueryDataset
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#creationtime" title="CreationTime">CreationTime</a>: <i>Double</i>
     <a href="#datasetid" title="DatasetId">DatasetId</a>: <i>String</i>
     <a href="#defaultpartitionexpirationms" title="DefaultPartitionExpirationMs">DefaultPartitionExpirationMs</a>: <i>Double</i>
     <a href="#defaulttableexpirationms" title="DefaultTableExpirationMs">DefaultTableExpirationMs</a>: <i>Double</i>
     <a href="#deletecontentsondestroy" title="DeleteContentsOnDestroy">DeleteContentsOnDestroy</a>: <i>Boolean</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#friendlyname" title="FriendlyName">FriendlyName</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
-    <a href="#lastmodifiedtime" title="LastModifiedTime">LastModifiedTime</a>: <i>Double</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
-    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
     <a href="#access" title="Access">Access</a>: <i>
-      - &lt;a href=&#34;access.md&#34;&gt;Access&lt;/a&gt;</i>
+      - <a href="access.md">Access</a></i>
     <a href="#defaultencryptionconfiguration" title="DefaultEncryptionConfiguration">DefaultEncryptionConfiguration</a>: <i>
-      - &lt;a href=&#34;defaultencryptionconfiguration.md&#34;&gt;DefaultEncryptionConfiguration&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="defaultencryptionconfiguration.md">DefaultEncryptionConfiguration</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#view" title="View">View</a>: <i>
-      - &lt;a href=&#34;view.md&#34;&gt;View&lt;/a&gt;</i>
+      - <a href="view.md">View</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreationTime
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatasetId
 
@@ -123,14 +95,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Etag
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### FriendlyName
 
 _Required_: No
@@ -143,15 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastModifiedTime
-
-_Required_: No
-
-_Type_: Double
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,19 +127,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SelfLink
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Access
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;access.md&#34;&gt;Access&lt;/a&gt;
+_Type_: List of <a href="access.md">Access</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;defaultencryptionconfiguration.md&#34;&gt;DefaultEncryptionConfiguration&lt;/a&gt;
+_Type_: List of <a href="defaultencryptionconfiguration.md">DefaultEncryptionConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -207,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;view.md&#34;&gt;View&lt;/a&gt;
+_Type_: List of <a href="view.md">View</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -229,17 +177,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTime
 
-Returns the &lt;code&gt;CreationTime&lt;/code&gt; value.
+Returns the <code>CreationTime</code> value.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 
 #### LastModifiedTime
 
-Returns the &lt;code&gt;LastModifiedTime&lt;/code&gt; value.
+Returns the <code>LastModifiedTime</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 

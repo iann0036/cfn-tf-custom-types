@@ -12,8 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::CceNodeV3",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#annotations" title="Annotations">Annotations</a>" : <i>[ &lt;a href=&#34;annotations.md&#34;&gt;Annotations&lt;/a&gt;, ... ]</i>,
+        "<a href="#annotations" title="Annotations">Annotations</a>" : <i>[ <a href="annotations.md">Annotations</a>, ... ]</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#bandwidthchargemode" title="BandwidthChargeMode">BandwidthChargeMode</a>" : <i>String</i>,
         "<a href="#bandwidthsize" title="BandwidthSize">BandwidthSize</a>" : <i>Double</i>,
@@ -26,7 +25,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#flavorid" title="FlavorId">FlavorId</a>" : <i>String</i>,
         "<a href="#iptype" title="Iptype">Iptype</a>" : <i>String</i>,
         "<a href="#keypair" title="KeyPair">KeyPair</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#maxpods" title="MaxPods">MaxPods</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#orderid" title="OrderId">OrderId</a>" : <i>String</i>,
@@ -34,16 +33,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#postinstall" title="Postinstall">Postinstall</a>" : <i>String</i>,
         "<a href="#preinstall" title="Preinstall">Preinstall</a>" : <i>String</i>,
-        "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>String</i>,
         "<a href="#productid" title="ProductId">ProductId</a>" : <i>String</i>,
-        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>String</i>,
         "<a href="#publickey" title="PublicKey">PublicKey</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#serverid" title="ServerId">ServerId</a>" : <i>String</i>,
         "<a href="#sharetype" title="Sharetype">Sharetype</a>" : <i>String</i>,
-        "<a href="#datavolumes" title="DataVolumes">DataVolumes</a>" : <i>[ &lt;a href=&#34;datavolumes.md&#34;&gt;DataVolumes&lt;/a&gt;, ... ]</i>,
-        "<a href="#rootvolume" title="RootVolume">RootVolume</a>" : <i>[ &lt;a href=&#34;rootvolume.md&#34;&gt;RootVolume&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#datavolumes" title="DataVolumes">DataVolumes</a>" : <i>[ <a href="datavolumes.md">DataVolumes</a>, ... ]</i>,
+        "<a href="#rootvolume" title="RootVolume">RootVolume</a>" : <i>[ <a href="rootvolume.md">RootVolume</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -53,9 +49,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::CceNodeV3
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#annotations" title="Annotations">Annotations</a>: <i>
-      - &lt;a href=&#34;annotations.md&#34;&gt;Annotations&lt;/a&gt;</i>
+      - <a href="annotations.md">Annotations</a></i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#bandwidthchargemode" title="BandwidthChargeMode">BandwidthChargeMode</a>: <i>String</i>
     <a href="#bandwidthsize" title="BandwidthSize">BandwidthSize</a>: <i>Double</i>
@@ -70,7 +65,7 @@ Properties:
     <a href="#iptype" title="Iptype">Iptype</a>: <i>String</i>
     <a href="#keypair" title="KeyPair">KeyPair</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#maxpods" title="MaxPods">MaxPods</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#orderid" title="OrderId">OrderId</a>: <i>String</i>
@@ -78,37 +73,24 @@ Properties:
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#postinstall" title="Postinstall">Postinstall</a>: <i>String</i>
     <a href="#preinstall" title="Preinstall">Preinstall</a>: <i>String</i>
-    <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>String</i>
     <a href="#productid" title="ProductId">ProductId</a>: <i>String</i>
-    <a href="#publicip" title="PublicIp">PublicIp</a>: <i>String</i>
     <a href="#publickey" title="PublicKey">PublicKey</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#serverid" title="ServerId">ServerId</a>: <i>String</i>
     <a href="#sharetype" title="Sharetype">Sharetype</a>: <i>String</i>
     <a href="#datavolumes" title="DataVolumes">DataVolumes</a>: <i>
-      - &lt;a href=&#34;datavolumes.md&#34;&gt;DataVolumes&lt;/a&gt;</i>
+      - <a href="datavolumes.md">DataVolumes</a></i>
     <a href="#rootvolume" title="RootVolume">RootVolume</a>: <i>
-      - &lt;a href=&#34;rootvolume.md&#34;&gt;RootVolume&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="rootvolume.md">RootVolume</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Annotations
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;annotations.md&#34;&gt;Annotations&lt;/a&gt;
+_Type_: List of <a href="annotations.md">Annotations</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -212,7 +194,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -272,23 +254,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrivateIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ProductId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PublicIp
 
 _Required_: No
 
@@ -312,14 +278,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ServerId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Sharetype
 
 _Required_: No
@@ -332,7 +290,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datavolumes.md&#34;&gt;DataVolumes&lt;/a&gt;
+_Type_: List of <a href="datavolumes.md">DataVolumes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -340,7 +298,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rootvolume.md&#34;&gt;RootVolume&lt;/a&gt;
+_Type_: List of <a href="rootvolume.md">RootVolume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -348,7 +306,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -370,13 +328,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PrivateIp
 
-Returns the &lt;code&gt;PrivateIp&lt;/code&gt; value.
+Returns the <code>PrivateIp</code> value.
 
 #### PublicIp
 
-Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
+Returns the <code>PublicIp</code> value.
 
 #### ServerId
 
-Returns the &lt;code&gt;ServerId&lt;/code&gt; value.
+Returns the <code>ServerId</code> value.
 

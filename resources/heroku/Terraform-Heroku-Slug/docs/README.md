@@ -12,19 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Heroku::Slug",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#app" title="App">App</a>" : <i>String</i>,
-        "<a href="#blob" title="Blob">Blob</a>" : <i>[ &lt;a href=&#34;blob.md&#34;&gt;Blob&lt;/a&gt;, ... ]</i>,
         "<a href="#buildpackprovideddescription" title="BuildpackProvidedDescription">BuildpackProvidedDescription</a>" : <i>String</i>,
         "<a href="#checksum" title="Checksum">Checksum</a>" : <i>String</i>,
         "<a href="#commit" title="Commit">Commit</a>" : <i>String</i>,
         "<a href="#commitdescription" title="CommitDescription">CommitDescription</a>" : <i>String</i>,
         "<a href="#filepath" title="FilePath">FilePath</a>" : <i>String</i>,
         "<a href="#fileurl" title="FileUrl">FileUrl</a>" : <i>String</i>,
-        "<a href="#processtypes" title="ProcessTypes">ProcessTypes</a>" : <i>[ &lt;a href=&#34;processtypes.md&#34;&gt;ProcessTypes&lt;/a&gt;, ... ]</i>,
-        "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
+        "<a href="#processtypes" title="ProcessTypes">ProcessTypes</a>" : <i>[ <a href="processtypes.md">ProcessTypes</a>, ... ]</i>,
         "<a href="#stack" title="Stack">Stack</a>" : <i>String</i>,
-        "<a href="#stackid" title="StackId">StackId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -34,10 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Heroku::Slug
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#app" title="App">App</a>: <i>String</i>
-    <a href="#blob" title="Blob">Blob</a>: <i>
-      - &lt;a href=&#34;blob.md&#34;&gt;Blob&lt;/a&gt;</i>
     <a href="#buildpackprovideddescription" title="BuildpackProvidedDescription">BuildpackProvidedDescription</a>: <i>String</i>
     <a href="#checksum" title="Checksum">Checksum</a>: <i>String</i>
     <a href="#commit" title="Commit">Commit</a>: <i>String</i>
@@ -45,37 +38,17 @@ Properties:
     <a href="#filepath" title="FilePath">FilePath</a>: <i>String</i>
     <a href="#fileurl" title="FileUrl">FileUrl</a>: <i>String</i>
     <a href="#processtypes" title="ProcessTypes">ProcessTypes</a>: <i>
-      - &lt;a href=&#34;processtypes.md&#34;&gt;ProcessTypes&lt;/a&gt;</i>
-    <a href="#size" title="Size">Size</a>: <i>Double</i>
+      - <a href="processtypes.md">ProcessTypes</a></i>
     <a href="#stack" title="Stack">Stack</a>: <i>String</i>
-    <a href="#stackid" title="StackId">StackId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### App
 
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Blob
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;blob.md&#34;&gt;Blob&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,27 +104,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;processtypes.md&#34;&gt;ProcessTypes&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Size
-
-_Required_: No
-
-_Type_: Double
+_Type_: List of <a href="processtypes.md">ProcessTypes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Stack
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### StackId
 
 _Required_: No
 
@@ -177,13 +134,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Blob
 
-Returns the &lt;code&gt;Blob&lt;/code&gt; value.
+Returns the <code>Blob</code> value.
 
 #### Size
 
-Returns the &lt;code&gt;Size&lt;/code&gt; value.
+Returns the <code>Size</code> value.
 
 #### StackId
 
-Returns the &lt;code&gt;StackId&lt;/code&gt; value.
+Returns the <code>StackId</code> value.
 

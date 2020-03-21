@@ -8,10 +8,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#edgenode" title="EdgeNode">EdgeNode</a>" : <i>[ &lt;a href=&#34;roles-edgenode.md&#34;&gt;EdgeNode&lt;/a&gt;, ... ]</i>,
-    "<a href="#headnode" title="HeadNode">HeadNode</a>" : <i>[ &lt;a href=&#34;roles-headnode.md&#34;&gt;HeadNode&lt;/a&gt;, ... ]</i>,
-    "<a href="#workernode" title="WorkerNode">WorkerNode</a>" : <i>[ &lt;a href=&#34;roles-workernode.md&#34;&gt;WorkerNode&lt;/a&gt;, ... ]</i>,
-    "<a href="#zookeepernode" title="ZookeeperNode">ZookeeperNode</a>" : <i>[ &lt;a href=&#34;roles-zookeepernode.md&#34;&gt;ZookeeperNode&lt;/a&gt;, ... ]</i>
+    "<a href="#edgenode" title="EdgeNode">EdgeNode</a>" : <i>[ <a href="roles-edgenode.md">EdgeNode</a>, ... ]</i>,
+    "<a href="#headnode" title="HeadNode">HeadNode</a>" : <i>[ <a href="roles-headnode.md">HeadNode</a>, ... ]</i>,
+    "<a href="#workernode" title="WorkerNode">WorkerNode</a>" : <i>[ <a href="roles-workernode.md">WorkerNode</a>, ... ]</i>,
+    "<a href="#zookeepernode" title="ZookeeperNode">ZookeeperNode</a>" : <i>[ <a href="roles-zookeepernode.md">ZookeeperNode</a>, ... ]</i>
 }
 </pre>
 
@@ -19,13 +19,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#edgenode" title="EdgeNode">EdgeNode</a>: <i>
-      - &lt;a href=&#34;roles-edgenode.md&#34;&gt;EdgeNode&lt;/a&gt;</i>
+      - <a href="roles-edgenode.md">EdgeNode</a></i>
 <a href="#headnode" title="HeadNode">HeadNode</a>: <i>
-      - &lt;a href=&#34;roles-headnode.md&#34;&gt;HeadNode&lt;/a&gt;</i>
+      - <a href="roles-headnode.md">HeadNode</a></i>
 <a href="#workernode" title="WorkerNode">WorkerNode</a>: <i>
-      - &lt;a href=&#34;roles-workernode.md&#34;&gt;WorkerNode&lt;/a&gt;</i>
+      - <a href="roles-workernode.md">WorkerNode</a></i>
 <a href="#zookeepernode" title="ZookeeperNode">ZookeeperNode</a>: <i>
-      - &lt;a href=&#34;roles-zookeepernode.md&#34;&gt;ZookeeperNode&lt;/a&gt;</i>
+      - <a href="roles-zookeepernode.md">ZookeeperNode</a></i>
 </pre>
 
 ## Properties
@@ -33,28 +33,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### EdgeNode
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;roles-edgenode.md&#34;&gt;EdgeNode&lt;/a&gt;
+
+_Type_: List of <a href="roles-edgenode.md">EdgeNode</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HeadNode
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;roles-headnode.md&#34;&gt;HeadNode&lt;/a&gt;
+
+_Type_: List of <a href="roles-headnode.md">HeadNode</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkerNode
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;roles-workernode.md&#34;&gt;WorkerNode&lt;/a&gt;
+
+_Type_: List of <a href="roles-workernode.md">WorkerNode</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZookeeperNode
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;roles-zookeepernode.md&#34;&gt;ZookeeperNode&lt;/a&gt;
+
+_Type_: List of <a href="roles-zookeepernode.md">ZookeeperNode</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

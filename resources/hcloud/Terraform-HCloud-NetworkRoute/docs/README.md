@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HCloud::NetworkRoute",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#destination" title="Destination">Destination</a>" : <i>String</i>,
         "<a href="#gateway" title="Gateway">Gateway</a>" : <i>String</i>,
         "<a href="#networkid" title="NetworkId">NetworkId</a>" : <i>Double</i>
@@ -25,23 +24,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HCloud::NetworkRoute
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#destination" title="Destination">Destination</a>: <i>String</i>
     <a href="#gateway" title="Gateway">Gateway</a>: <i>String</i>
     <a href="#networkid" title="NetworkId">NetworkId</a>: <i>Double</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Destination
 

@@ -12,13 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Gitlab::ServiceSlack",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#confidentialissuechannel" title="ConfidentialIssueChannel">ConfidentialIssueChannel</a>" : <i>String</i>,
         "<a href="#confidentialissuesevents" title="ConfidentialIssuesEvents">ConfidentialIssuesEvents</a>" : <i>Boolean</i>,
         "<a href="#confidentialnoteevents" title="ConfidentialNoteEvents">ConfidentialNoteEvents</a>" : <i>Boolean</i>,
         "<a href="#issuechannel" title="IssueChannel">IssueChannel</a>" : <i>String</i>,
         "<a href="#issuesevents" title="IssuesEvents">IssuesEvents</a>" : <i>Boolean</i>,
-        "<a href="#jobevents" title="JobEvents">JobEvents</a>" : <i>Boolean</i>,
         "<a href="#mergerequestchannel" title="MergeRequestChannel">MergeRequestChannel</a>" : <i>String</i>,
         "<a href="#mergerequestsevents" title="MergeRequestsEvents">MergeRequestsEvents</a>" : <i>Boolean</i>,
         "<a href="#notechannel" title="NoteChannel">NoteChannel</a>" : <i>String</i>,
@@ -45,13 +43,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Gitlab::ServiceSlack
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#confidentialissuechannel" title="ConfidentialIssueChannel">ConfidentialIssueChannel</a>: <i>String</i>
     <a href="#confidentialissuesevents" title="ConfidentialIssuesEvents">ConfidentialIssuesEvents</a>: <i>Boolean</i>
     <a href="#confidentialnoteevents" title="ConfidentialNoteEvents">ConfidentialNoteEvents</a>: <i>Boolean</i>
     <a href="#issuechannel" title="IssueChannel">IssueChannel</a>: <i>String</i>
     <a href="#issuesevents" title="IssuesEvents">IssuesEvents</a>: <i>Boolean</i>
-    <a href="#jobevents" title="JobEvents">JobEvents</a>: <i>Boolean</i>
     <a href="#mergerequestchannel" title="MergeRequestChannel">MergeRequestChannel</a>: <i>String</i>
     <a href="#mergerequestsevents" title="MergeRequestsEvents">MergeRequestsEvents</a>: <i>Boolean</i>
     <a href="#notechannel" title="NoteChannel">NoteChannel</a>: <i>String</i>
@@ -72,16 +68,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConfidentialIssueChannel
 
@@ -116,14 +102,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IssuesEvents
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### JobEvents
 
 _Required_: No
 
@@ -285,5 +263,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### JobEvents
 
-Returns the &lt;code&gt;JobEvents&lt;/code&gt; value.
+Returns the <code>JobEvents</code> value.
 

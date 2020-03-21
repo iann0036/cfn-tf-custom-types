@@ -12,22 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ApiGatewayStage",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#cacheclusterenabled" title="CacheClusterEnabled">CacheClusterEnabled</a>" : <i>Boolean</i>,
         "<a href="#cacheclustersize" title="CacheClusterSize">CacheClusterSize</a>" : <i>String</i>,
         "<a href="#clientcertificateid" title="ClientCertificateId">ClientCertificateId</a>" : <i>String</i>,
         "<a href="#deploymentid" title="DeploymentId">DeploymentId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#documentationversion" title="DocumentationVersion">DocumentationVersion</a>" : <i>String</i>,
-        "<a href="#executionarn" title="ExecutionArn">ExecutionArn</a>" : <i>String</i>,
-        "<a href="#invokeurl" title="InvokeUrl">InvokeUrl</a>" : <i>String</i>,
         "<a href="#restapiid" title="RestApiId">RestApiId</a>" : <i>String</i>,
         "<a href="#stagename" title="StageName">StageName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#variables" title="Variables">Variables</a>" : <i>[ &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#variables" title="Variables">Variables</a>" : <i>[ <a href="variables.md">Variables</a>, ... ]</i>,
         "<a href="#xraytracingenabled" title="XrayTracingEnabled">XrayTracingEnabled</a>" : <i>Boolean</i>,
-        "<a href="#accesslogsettings" title="AccessLogSettings">AccessLogSettings</a>" : <i>[ &lt;a href=&#34;accesslogsettings.md&#34;&gt;AccessLogSettings&lt;/a&gt;, ... ]</i>
+        "<a href="#accesslogsettings" title="AccessLogSettings">AccessLogSettings</a>" : <i>[ <a href="accesslogsettings.md">AccessLogSettings</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,46 +33,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ApiGatewayStage
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#cacheclusterenabled" title="CacheClusterEnabled">CacheClusterEnabled</a>: <i>Boolean</i>
     <a href="#cacheclustersize" title="CacheClusterSize">CacheClusterSize</a>: <i>String</i>
     <a href="#clientcertificateid" title="ClientCertificateId">ClientCertificateId</a>: <i>String</i>
     <a href="#deploymentid" title="DeploymentId">DeploymentId</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#documentationversion" title="DocumentationVersion">DocumentationVersion</a>: <i>String</i>
-    <a href="#executionarn" title="ExecutionArn">ExecutionArn</a>: <i>String</i>
-    <a href="#invokeurl" title="InvokeUrl">InvokeUrl</a>: <i>String</i>
     <a href="#restapiid" title="RestApiId">RestApiId</a>: <i>String</i>
     <a href="#stagename" title="StageName">StageName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#variables" title="Variables">Variables</a>: <i>
-      - &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;</i>
+      - <a href="variables.md">Variables</a></i>
     <a href="#xraytracingenabled" title="XrayTracingEnabled">XrayTracingEnabled</a>: <i>Boolean</i>
     <a href="#accesslogsettings" title="AccessLogSettings">AccessLogSettings</a>: <i>
-      - &lt;a href=&#34;accesslogsettings.md&#34;&gt;AccessLogSettings&lt;/a&gt;</i>
+      - <a href="accesslogsettings.md">AccessLogSettings</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CacheClusterEnabled
 
@@ -126,22 +100,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ExecutionArn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### InvokeUrl
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### RestApiId
 
 _Required_: Yes
@@ -162,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;variables.md&#34;&gt;Variables&lt;/a&gt;
+_Type_: List of <a href="variables.md">Variables</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accesslogsettings.md&#34;&gt;AccessLogSettings&lt;/a&gt;
+_Type_: List of <a href="accesslogsettings.md">AccessLogSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -208,13 +166,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### ExecutionArn
 
-Returns the &lt;code&gt;ExecutionArn&lt;/code&gt; value.
+Returns the <code>ExecutionArn</code> value.
 
 #### InvokeUrl
 
-Returns the &lt;code&gt;InvokeUrl&lt;/code&gt; value.
+Returns the <code>InvokeUrl</code> value.
 

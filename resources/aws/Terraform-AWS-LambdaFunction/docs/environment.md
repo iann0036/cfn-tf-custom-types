@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#variables" title="Variables">Variables</a>" : <i>[ &lt;a href=&#34;environment-variables.md&#34;&gt;Variables&lt;/a&gt;, ... ]</i>
+    "<a href="#variables" title="Variables">Variables</a>" : <i>[ <a href="environment-variables.md">Variables</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#variables" title="Variables">Variables</a>: <i>
-      - &lt;a href=&#34;environment-variables.md&#34;&gt;Variables&lt;/a&gt;</i>
+      - <a href="environment-variables.md">Variables</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Variables
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;environment-variables.md&#34;&gt;Variables&lt;/a&gt;
+
+_Type_: List of <a href="environment-variables.md">Variables</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

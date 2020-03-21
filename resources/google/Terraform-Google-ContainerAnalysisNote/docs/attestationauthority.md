@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#hint" title="Hint">Hint</a>" : <i>[ &lt;a href=&#34;attestationauthority-hint.md&#34;&gt;Hint&lt;/a&gt;, ... ]</i>
+    "<a href="#hint" title="Hint">Hint</a>" : <i>[ <a href="attestationauthority-hint.md">Hint</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#hint" title="Hint">Hint</a>: <i>
-      - &lt;a href=&#34;attestationauthority-hint.md&#34;&gt;Hint&lt;/a&gt;</i>
+      - <a href="attestationauthority-hint.md">Hint</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Hint
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;attestationauthority-hint.md&#34;&gt;Hint&lt;/a&gt;
+
+_Type_: List of <a href="attestationauthority-hint.md">Hint</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -16,10 +16,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#schedule" title="Schedule">Schedule</a>" : <i>String</i>,
     "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
     "<a href="#uuid" title="Uuid">Uuid</a>" : <i>String</i>,
-    "<a href="#destination" title="Destination">Destination</a>" : <i>[ &lt;a href=&#34;rule-destination.md&#34;&gt;Destination&lt;/a&gt;, ... ]</i>,
-    "<a href="#forwarding" title="Forwarding">Forwarding</a>" : <i>[ &lt;a href=&#34;rule-forwarding.md&#34;&gt;Forwarding&lt;/a&gt;, ... ]</i>,
-    "<a href="#source" title="Source">Source</a>" : <i>[ &lt;a href=&#34;rule-source.md&#34;&gt;Source&lt;/a&gt;, ... ]</i>,
-    "<a href="#target" title="Target">Target</a>" : <i>[ &lt;a href=&#34;rule-target.md&#34;&gt;Target&lt;/a&gt;, ... ]</i>
+    "<a href="#destination" title="Destination">Destination</a>" : <i>[ <a href="rule-destination.md">Destination</a>, ... ]</i>,
+    "<a href="#forwarding" title="Forwarding">Forwarding</a>" : <i>[ <a href="rule-forwarding.md">Forwarding</a>, ... ]</i>,
+    "<a href="#source" title="Source">Source</a>" : <i>[ <a href="rule-source.md">Source</a>, ... ]</i>,
+    "<a href="#target" title="Target">Target</a>" : <i>[ <a href="rule-target.md">Target</a>, ... ]</i>
 }
 </pre>
 
@@ -36,13 +36,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#uuid" title="Uuid">Uuid</a>: <i>String</i>
 <a href="#destination" title="Destination">Destination</a>: <i>
-      - &lt;a href=&#34;rule-destination.md&#34;&gt;Destination&lt;/a&gt;</i>
+      - <a href="rule-destination.md">Destination</a></i>
 <a href="#forwarding" title="Forwarding">Forwarding</a>: <i>
-      - &lt;a href=&#34;rule-forwarding.md&#34;&gt;Forwarding&lt;/a&gt;</i>
+      - <a href="rule-forwarding.md">Forwarding</a></i>
 <a href="#source" title="Source">Source</a>: <i>
-      - &lt;a href=&#34;rule-source.md&#34;&gt;Source&lt;/a&gt;</i>
+      - <a href="rule-source.md">Source</a></i>
 <a href="#target" title="Target">Target</a>: <i>
-      - &lt;a href=&#34;rule-target.md&#34;&gt;Target&lt;/a&gt;</i>
+      - <a href="rule-target.md">Target</a></i>
 </pre>
 
 ## Properties
@@ -50,6 +50,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ActiveActiveDeviceBinding
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -57,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Description
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Disabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -71,6 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -78,6 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NegateTarget
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -85,6 +90,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Schedule
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -92,6 +98,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tags
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -99,6 +106,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Uuid
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -106,28 +114,32 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Destination
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-destination.md&#34;&gt;Destination&lt;/a&gt;
+
+_Type_: List of <a href="rule-destination.md">Destination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Forwarding
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-forwarding.md&#34;&gt;Forwarding&lt;/a&gt;
+
+_Type_: List of <a href="rule-forwarding.md">Forwarding</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Source
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-source.md&#34;&gt;Source&lt;/a&gt;
+
+_Type_: List of <a href="rule-source.md">Source</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Target
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rule-target.md&#34;&gt;Target&lt;/a&gt;
+
+_Type_: List of <a href="rule-target.md">Target</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

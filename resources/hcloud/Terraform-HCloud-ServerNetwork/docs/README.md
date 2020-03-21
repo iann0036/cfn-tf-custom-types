@@ -12,10 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HCloud::ServerNetwork",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#aliasips" title="AliasIps">AliasIps</a>" : <i>[ String, ... ]</i>,
         "<a href="#ip" title="Ip">Ip</a>" : <i>String</i>,
-        "<a href="#macaddress" title="MacAddress">MacAddress</a>" : <i>String</i>,
         "<a href="#networkid" title="NetworkId">NetworkId</a>" : <i>Double</i>,
         "<a href="#serverid" title="ServerId">ServerId</a>" : <i>Double</i>
     }
@@ -27,26 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HCloud::ServerNetwork
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#aliasips" title="AliasIps">AliasIps</a>: <i>
       - String</i>
     <a href="#ip" title="Ip">Ip</a>: <i>String</i>
-    <a href="#macaddress" title="MacAddress">MacAddress</a>: <i>String</i>
     <a href="#networkid" title="NetworkId">NetworkId</a>: <i>Double</i>
     <a href="#serverid" title="ServerId">ServerId</a>: <i>Double</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AliasIps
 
@@ -57,14 +43,6 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ip
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### MacAddress
 
 _Required_: No
 
@@ -106,5 +84,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MacAddress
 
-Returns the &lt;code&gt;MacAddress&lt;/code&gt; value.
+Returns the <code>MacAddress</code> value.
 

@@ -12,16 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::ComputeOrchestratedInstance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#desiredstate" title="DesiredState">DesiredState</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#version" title="Version">Version</a>" : <i>Double</i>,
-        "<a href="#instance" title="Instance">Instance</a>" : <i>[ &lt;a href=&#34;instance.md&#34;&gt;Instance&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>" : <i>[ &lt;a href=&#34;networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;, ... ]</i>,
-        "<a href="#storage" title="Storage">Storage</a>" : <i>[ &lt;a href=&#34;storage.md&#34;&gt;Storage&lt;/a&gt;, ... ]</i>
+        "<a href="#instance" title="Instance">Instance</a>" : <i>[ <a href="instance.md">Instance</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>" : <i>[ <a href="networkinginfo.md">NetworkingInfo</a>, ... ]</i>,
+        "<a href="#storage" title="Storage">Storage</a>" : <i>[ <a href="storage.md">Storage</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,33 +29,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::ComputeOrchestratedInstance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#desiredstate" title="DesiredState">DesiredState</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
-    <a href="#version" title="Version">Version</a>: <i>Double</i>
     <a href="#instance" title="Instance">Instance</a>: <i>
-      - &lt;a href=&#34;instance.md&#34;&gt;Instance&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="instance.md">Instance</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#networkinginfo" title="NetworkingInfo">NetworkingInfo</a>: <i>
-      - &lt;a href=&#34;networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;</i>
+      - <a href="networkinginfo.md">NetworkingInfo</a></i>
     <a href="#storage" title="Storage">Storage</a>: <i>
-      - &lt;a href=&#34;storage.md&#34;&gt;Storage&lt;/a&gt;</i>
+      - <a href="storage.md">Storage</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -91,19 +77,11 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Version
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Instance
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instance.md&#34;&gt;Instance&lt;/a&gt;
+_Type_: List of <a href="instance.md">Instance</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -111,7 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -119,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinginfo.md&#34;&gt;NetworkingInfo&lt;/a&gt;
+_Type_: List of <a href="networkinginfo.md">NetworkingInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storage.md&#34;&gt;Storage&lt;/a&gt;
+_Type_: List of <a href="storage.md">Storage</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -149,5 +127,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Version
 
-Returns the &lt;code&gt;Version&lt;/code&gt; value.
+Returns the <code>Version</code> value.
 

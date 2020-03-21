@@ -12,11 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ApiGatewayMethodSettings",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#methodpath" title="MethodPath">MethodPath</a>" : <i>String</i>,
         "<a href="#restapiid" title="RestApiId">RestApiId</a>" : <i>String</i>,
         "<a href="#stagename" title="StageName">StageName</a>" : <i>String</i>,
-        "<a href="#settings" title="Settings">Settings</a>" : <i>[ &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;, ... ]</i>
+        "<a href="#settings" title="Settings">Settings</a>" : <i>[ <a href="settings.md">Settings</a>, ... ]</i>
     }
 }
 </pre>
@@ -26,25 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ApiGatewayMethodSettings
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#methodpath" title="MethodPath">MethodPath</a>: <i>String</i>
     <a href="#restapiid" title="RestApiId">RestApiId</a>: <i>String</i>
     <a href="#stagename" title="StageName">StageName</a>: <i>String</i>
     <a href="#settings" title="Settings">Settings</a>: <i>
-      - &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;</i>
+      - <a href="settings.md">Settings</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MethodPath
 
@@ -74,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;settings.md&#34;&gt;Settings&lt;/a&gt;
+_Type_: List of <a href="settings.md">Settings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

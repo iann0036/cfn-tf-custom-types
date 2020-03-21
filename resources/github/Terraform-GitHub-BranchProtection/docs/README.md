@@ -12,15 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::GitHub::BranchProtection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#branch" title="Branch">Branch</a>" : <i>String</i>,
         "<a href="#enforceadmins" title="EnforceAdmins">EnforceAdmins</a>" : <i>Boolean</i>,
-        "<a href="#etag" title="Etag">Etag</a>" : <i>String</i>,
         "<a href="#repository" title="Repository">Repository</a>" : <i>String</i>,
         "<a href="#requiresignedcommits" title="RequireSignedCommits">RequireSignedCommits</a>" : <i>Boolean</i>,
-        "<a href="#requiredpullrequestreviews" title="RequiredPullRequestReviews">RequiredPullRequestReviews</a>" : <i>[ &lt;a href=&#34;requiredpullrequestreviews.md&#34;&gt;RequiredPullRequestReviews&lt;/a&gt;, ... ]</i>,
-        "<a href="#requiredstatuschecks" title="RequiredStatusChecks">RequiredStatusChecks</a>" : <i>[ &lt;a href=&#34;requiredstatuschecks.md&#34;&gt;RequiredStatusChecks&lt;/a&gt;, ... ]</i>,
-        "<a href="#restrictions" title="Restrictions">Restrictions</a>" : <i>[ &lt;a href=&#34;restrictions.md&#34;&gt;Restrictions&lt;/a&gt;, ... ]</i>
+        "<a href="#requiredpullrequestreviews" title="RequiredPullRequestReviews">RequiredPullRequestReviews</a>" : <i>[ <a href="requiredpullrequestreviews.md">RequiredPullRequestReviews</a>, ... ]</i>,
+        "<a href="#requiredstatuschecks" title="RequiredStatusChecks">RequiredStatusChecks</a>" : <i>[ <a href="requiredstatuschecks.md">RequiredStatusChecks</a>, ... ]</i>,
+        "<a href="#restrictions" title="Restrictions">Restrictions</a>" : <i>[ <a href="restrictions.md">Restrictions</a>, ... ]</i>
     }
 }
 </pre>
@@ -30,31 +28,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::GitHub::BranchProtection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#branch" title="Branch">Branch</a>: <i>String</i>
     <a href="#enforceadmins" title="EnforceAdmins">EnforceAdmins</a>: <i>Boolean</i>
-    <a href="#etag" title="Etag">Etag</a>: <i>String</i>
     <a href="#repository" title="Repository">Repository</a>: <i>String</i>
     <a href="#requiresignedcommits" title="RequireSignedCommits">RequireSignedCommits</a>: <i>Boolean</i>
     <a href="#requiredpullrequestreviews" title="RequiredPullRequestReviews">RequiredPullRequestReviews</a>: <i>
-      - &lt;a href=&#34;requiredpullrequestreviews.md&#34;&gt;RequiredPullRequestReviews&lt;/a&gt;</i>
+      - <a href="requiredpullrequestreviews.md">RequiredPullRequestReviews</a></i>
     <a href="#requiredstatuschecks" title="RequiredStatusChecks">RequiredStatusChecks</a>: <i>
-      - &lt;a href=&#34;requiredstatuschecks.md&#34;&gt;RequiredStatusChecks&lt;/a&gt;</i>
+      - <a href="requiredstatuschecks.md">RequiredStatusChecks</a></i>
     <a href="#restrictions" title="Restrictions">Restrictions</a>: <i>
-      - &lt;a href=&#34;restrictions.md&#34;&gt;Restrictions&lt;/a&gt;</i>
+      - <a href="restrictions.md">Restrictions</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Branch
 
@@ -69,14 +55,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Etag
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -100,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requiredpullrequestreviews.md&#34;&gt;RequiredPullRequestReviews&lt;/a&gt;
+_Type_: List of <a href="requiredpullrequestreviews.md">RequiredPullRequestReviews</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -108,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;requiredstatuschecks.md&#34;&gt;RequiredStatusChecks&lt;/a&gt;
+_Type_: List of <a href="requiredstatuschecks.md">RequiredStatusChecks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;restrictions.md&#34;&gt;Restrictions&lt;/a&gt;
+_Type_: List of <a href="restrictions.md">Restrictions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,5 +116,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Etag
 
-Returns the &lt;code&gt;Etag&lt;/code&gt; value.
+Returns the <code>Etag</code> value.
 

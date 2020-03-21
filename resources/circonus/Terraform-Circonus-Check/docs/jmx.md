@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
     "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
     "<a href="#username" title="Username">Username</a>" : <i>String</i>,
-    "<a href="#mbeanproperties" title="MbeanProperties">MbeanProperties</a>" : <i>[ &lt;a href=&#34;jmx-mbeanproperties.md&#34;&gt;MbeanProperties&lt;/a&gt;, ... ]</i>
+    "<a href="#mbeanproperties" title="MbeanProperties">MbeanProperties</a>" : <i>[ <a href="jmx-mbeanproperties.md">MbeanProperties</a>, ... ]</i>
 }
 </pre>
 
@@ -29,7 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#uri" title="Uri">Uri</a>: <i>String</i>
 <a href="#username" title="Username">Username</a>: <i>String</i>
 <a href="#mbeanproperties" title="MbeanProperties">MbeanProperties</a>: <i>
-      - &lt;a href=&#34;jmx-mbeanproperties.md&#34;&gt;MbeanProperties&lt;/a&gt;</i>
+      - <a href="jmx-mbeanproperties.md">MbeanProperties</a></i>
 </pre>
 
 ## Properties
@@ -37,6 +37,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Host
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +45,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MbeanDomains
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,6 +53,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Password
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,6 +61,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Port
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -65,6 +69,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Uri
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,6 +77,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Username
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -79,7 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MbeanProperties
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;jmx-mbeanproperties.md&#34;&gt;MbeanProperties&lt;/a&gt;
+
+_Type_: List of <a href="jmx-mbeanproperties.md">MbeanProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

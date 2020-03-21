@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::LinuxVirtualMachine",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adminpassword" title="AdminPassword">AdminPassword</a>" : <i>String</i>,
         "<a href="#adminusername" title="AdminUsername">AdminUsername</a>" : <i>String</i>,
         "<a href="#allowextensionoperations" title="AllowExtensionOperations">AllowExtensionOperations</a>" : <i>Boolean</i>,
@@ -27,29 +26,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#networkinterfaceids" title="NetworkInterfaceIds">NetworkInterfaceIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>String</i>,
-        "<a href="#privateipaddress" title="PrivateIpAddress">PrivateIpAddress</a>" : <i>String</i>,
-        "<a href="#privateipaddresses" title="PrivateIpAddresses">PrivateIpAddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#provisionvmagent" title="ProvisionVmAgent">ProvisionVmAgent</a>" : <i>Boolean</i>,
         "<a href="#proximityplacementgroupid" title="ProximityPlacementGroupId">ProximityPlacementGroupId</a>" : <i>String</i>,
-        "<a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>" : <i>String</i>,
-        "<a href="#publicipaddresses" title="PublicIpAddresses">PublicIpAddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#size" title="Size">Size</a>" : <i>String</i>,
         "<a href="#sourceimageid" title="SourceImageId">SourceImageId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#virtualmachineid" title="VirtualMachineId">VirtualMachineId</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#additionalcapabilities" title="AdditionalCapabilities">AdditionalCapabilities</a>" : <i>[ &lt;a href=&#34;additionalcapabilities.md&#34;&gt;AdditionalCapabilities&lt;/a&gt;, ... ]</i>,
-        "<a href="#adminsshkey" title="AdminSshKey">AdminSshKey</a>" : <i>[ &lt;a href=&#34;adminsshkey.md&#34;&gt;AdminSshKey&lt;/a&gt;, ... ]</i>,
-        "<a href="#bootdiagnostics" title="BootDiagnostics">BootDiagnostics</a>" : <i>[ &lt;a href=&#34;bootdiagnostics.md&#34;&gt;BootDiagnostics&lt;/a&gt;, ... ]</i>,
-        "<a href="#identity" title="Identity">Identity</a>" : <i>[ &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;, ... ]</i>,
-        "<a href="#osdisk" title="OsDisk">OsDisk</a>" : <i>[ &lt;a href=&#34;osdisk.md&#34;&gt;OsDisk&lt;/a&gt;, ... ]</i>,
-        "<a href="#plan" title="Plan">Plan</a>" : <i>[ &lt;a href=&#34;plan.md&#34;&gt;Plan&lt;/a&gt;, ... ]</i>,
-        "<a href="#secret" title="Secret">Secret</a>" : <i>[ &lt;a href=&#34;secret.md&#34;&gt;Secret&lt;/a&gt;, ... ]</i>,
-        "<a href="#sourceimagereference" title="SourceImageReference">SourceImageReference</a>" : <i>[ &lt;a href=&#34;sourceimagereference.md&#34;&gt;SourceImageReference&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#diffdisksettings" title="DiffDiskSettings">DiffDiskSettings</a>" : <i>[ &lt;a href=&#34;diffdisksettings.md&#34;&gt;DiffDiskSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;, ... ]</i>
+        "<a href="#additionalcapabilities" title="AdditionalCapabilities">AdditionalCapabilities</a>" : <i>[ <a href="additionalcapabilities.md">AdditionalCapabilities</a>, ... ]</i>,
+        "<a href="#adminsshkey" title="AdminSshKey">AdminSshKey</a>" : <i>[ <a href="adminsshkey.md">AdminSshKey</a>, ... ]</i>,
+        "<a href="#bootdiagnostics" title="BootDiagnostics">BootDiagnostics</a>" : <i>[ <a href="bootdiagnostics.md">BootDiagnostics</a>, ... ]</i>,
+        "<a href="#identity" title="Identity">Identity</a>" : <i>[ <a href="identity.md">Identity</a>, ... ]</i>,
+        "<a href="#osdisk" title="OsDisk">OsDisk</a>" : <i>[ <a href="osdisk.md">OsDisk</a>, ... ]</i>,
+        "<a href="#plan" title="Plan">Plan</a>" : <i>[ <a href="plan.md">Plan</a>, ... ]</i>,
+        "<a href="#secret" title="Secret">Secret</a>" : <i>[ <a href="secret.md">Secret</a>, ... ]</i>,
+        "<a href="#sourceimagereference" title="SourceImageReference">SourceImageReference</a>" : <i>[ <a href="sourceimagereference.md">SourceImageReference</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#diffdisksettings" title="DiffDiskSettings">DiffDiskSettings</a>" : <i>[ <a href="diffdisksettings.md">DiffDiskSettings</a>, ... ]</i>,
+        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>[ <a href="certificate.md">Certificate</a>, ... ]</i>
     }
 }
 </pre>
@@ -59,7 +53,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::LinuxVirtualMachine
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adminpassword" title="AdminPassword">AdminPassword</a>: <i>String</i>
     <a href="#adminusername" title="AdminUsername">AdminUsername</a>: <i>String</i>
     <a href="#allowextensionoperations" title="AllowExtensionOperations">AllowExtensionOperations</a>: <i>Boolean</i>
@@ -75,55 +68,38 @@ Properties:
     <a href="#networkinterfaceids" title="NetworkInterfaceIds">NetworkInterfaceIds</a>: <i>
       - String</i>
     <a href="#priority" title="Priority">Priority</a>: <i>String</i>
-    <a href="#privateipaddress" title="PrivateIpAddress">PrivateIpAddress</a>: <i>String</i>
-    <a href="#privateipaddresses" title="PrivateIpAddresses">PrivateIpAddresses</a>: <i>
-      - String</i>
     <a href="#provisionvmagent" title="ProvisionVmAgent">ProvisionVmAgent</a>: <i>Boolean</i>
     <a href="#proximityplacementgroupid" title="ProximityPlacementGroupId">ProximityPlacementGroupId</a>: <i>String</i>
-    <a href="#publicipaddress" title="PublicIpAddress">PublicIpAddress</a>: <i>String</i>
-    <a href="#publicipaddresses" title="PublicIpAddresses">PublicIpAddresses</a>: <i>
-      - String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#size" title="Size">Size</a>: <i>String</i>
     <a href="#sourceimageid" title="SourceImageId">SourceImageId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
-    <a href="#virtualmachineid" title="VirtualMachineId">VirtualMachineId</a>: <i>String</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#additionalcapabilities" title="AdditionalCapabilities">AdditionalCapabilities</a>: <i>
-      - &lt;a href=&#34;additionalcapabilities.md&#34;&gt;AdditionalCapabilities&lt;/a&gt;</i>
+      - <a href="additionalcapabilities.md">AdditionalCapabilities</a></i>
     <a href="#adminsshkey" title="AdminSshKey">AdminSshKey</a>: <i>
-      - &lt;a href=&#34;adminsshkey.md&#34;&gt;AdminSshKey&lt;/a&gt;</i>
+      - <a href="adminsshkey.md">AdminSshKey</a></i>
     <a href="#bootdiagnostics" title="BootDiagnostics">BootDiagnostics</a>: <i>
-      - &lt;a href=&#34;bootdiagnostics.md&#34;&gt;BootDiagnostics&lt;/a&gt;</i>
+      - <a href="bootdiagnostics.md">BootDiagnostics</a></i>
     <a href="#identity" title="Identity">Identity</a>: <i>
-      - &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;</i>
+      - <a href="identity.md">Identity</a></i>
     <a href="#osdisk" title="OsDisk">OsDisk</a>: <i>
-      - &lt;a href=&#34;osdisk.md&#34;&gt;OsDisk&lt;/a&gt;</i>
+      - <a href="osdisk.md">OsDisk</a></i>
     <a href="#plan" title="Plan">Plan</a>: <i>
-      - &lt;a href=&#34;plan.md&#34;&gt;Plan&lt;/a&gt;</i>
+      - <a href="plan.md">Plan</a></i>
     <a href="#secret" title="Secret">Secret</a>: <i>
-      - &lt;a href=&#34;secret.md&#34;&gt;Secret&lt;/a&gt;</i>
+      - <a href="secret.md">Secret</a></i>
     <a href="#sourceimagereference" title="SourceImageReference">SourceImageReference</a>: <i>
-      - &lt;a href=&#34;sourceimagereference.md&#34;&gt;SourceImageReference&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="sourceimagereference.md">SourceImageReference</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#diffdisksettings" title="DiffDiskSettings">DiffDiskSettings</a>: <i>
-      - &lt;a href=&#34;diffdisksettings.md&#34;&gt;DiffDiskSettings&lt;/a&gt;</i>
+      - <a href="diffdisksettings.md">DiffDiskSettings</a></i>
     <a href="#certificate" title="Certificate">Certificate</a>: <i>
-      - &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;</i>
+      - <a href="certificate.md">Certificate</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminPassword
 
@@ -237,22 +213,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrivateIpAddress
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrivateIpAddresses
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ProvisionVmAgent
 
 _Required_: No
@@ -266,22 +226,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PublicIpAddress
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PublicIpAddresses
-
-_Required_: No
-
-_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -313,15 +257,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VirtualMachineId
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -337,7 +273,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;additionalcapabilities.md&#34;&gt;AdditionalCapabilities&lt;/a&gt;
+_Type_: List of <a href="additionalcapabilities.md">AdditionalCapabilities</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -345,7 +281,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;adminsshkey.md&#34;&gt;AdminSshKey&lt;/a&gt;
+_Type_: List of <a href="adminsshkey.md">AdminSshKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -353,7 +289,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bootdiagnostics.md&#34;&gt;BootDiagnostics&lt;/a&gt;
+_Type_: List of <a href="bootdiagnostics.md">BootDiagnostics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -361,7 +297,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;
+_Type_: List of <a href="identity.md">Identity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -369,7 +305,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;osdisk.md&#34;&gt;OsDisk&lt;/a&gt;
+_Type_: List of <a href="osdisk.md">OsDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -377,7 +313,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;plan.md&#34;&gt;Plan&lt;/a&gt;
+_Type_: List of <a href="plan.md">Plan</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -385,7 +321,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secret.md&#34;&gt;Secret&lt;/a&gt;
+_Type_: List of <a href="secret.md">Secret</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -393,7 +329,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourceimagereference.md&#34;&gt;SourceImageReference&lt;/a&gt;
+_Type_: List of <a href="sourceimagereference.md">SourceImageReference</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -401,7 +337,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -409,7 +345,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;diffdisksettings.md&#34;&gt;DiffDiskSettings&lt;/a&gt;
+_Type_: List of <a href="diffdisksettings.md">DiffDiskSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -417,7 +353,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;certificate.md&#34;&gt;Certificate&lt;/a&gt;
+_Type_: List of <a href="certificate.md">Certificate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -439,21 +375,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PrivateIpAddress
 
-Returns the &lt;code&gt;PrivateIpAddress&lt;/code&gt; value.
+Returns the <code>PrivateIpAddress</code> value.
 
 #### PrivateIpAddresses
 
-Returns the &lt;code&gt;PrivateIpAddresses&lt;/code&gt; value.
+Returns the <code>PrivateIpAddresses</code> value.
 
 #### PublicIpAddress
 
-Returns the &lt;code&gt;PublicIpAddress&lt;/code&gt; value.
+Returns the <code>PublicIpAddress</code> value.
 
 #### PublicIpAddresses
 
-Returns the &lt;code&gt;PublicIpAddresses&lt;/code&gt; value.
+Returns the <code>PublicIpAddresses</code> value.
 
 #### VirtualMachineId
 
-Returns the &lt;code&gt;VirtualMachineId&lt;/code&gt; value.
+Returns the <code>VirtualMachineId</code> value.
 

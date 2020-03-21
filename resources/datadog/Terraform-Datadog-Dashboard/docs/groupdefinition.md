@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#layouttype" title="LayoutType">LayoutType</a>" : <i>String</i>,
     "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-    "<a href="#widget" title="Widget">Widget</a>" : <i>[ &lt;a href=&#34;groupdefinition-widget.md&#34;&gt;Widget&lt;/a&gt;, ... ]</i>
+    "<a href="#widget" title="Widget">Widget</a>" : <i>[ <a href="groupdefinition-widget.md">Widget</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#layouttype" title="LayoutType">LayoutType</a>: <i>String</i>
 <a href="#title" title="Title">Title</a>: <i>String</i>
 <a href="#widget" title="Widget">Widget</a>: <i>
-      - &lt;a href=&#34;groupdefinition-widget.md&#34;&gt;Widget&lt;/a&gt;</i>
+      - <a href="groupdefinition-widget.md">Widget</a></i>
 </pre>
 
 ## Properties
@@ -28,6 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### LayoutType
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -35,6 +36,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Title
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Widget
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;groupdefinition-widget.md&#34;&gt;Widget&lt;/a&gt;
+
+_Type_: List of <a href="groupdefinition-widget.md">Widget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

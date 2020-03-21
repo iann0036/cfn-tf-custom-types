@@ -12,16 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Kubernetes::StatefulSet",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#spec" title="Spec">Spec</a>" : <i>[ &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;, ... ]</i>,
-        "<a href="#selector" title="Selector">Selector</a>" : <i>[ &lt;a href=&#34;selector.md&#34;&gt;Selector&lt;/a&gt;, ... ]</i>,
-        "<a href="#template" title="Template">Template</a>" : <i>[ &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;, ... ]</i>,
-        "<a href="#updatestrategy" title="UpdateStrategy">UpdateStrategy</a>" : <i>[ &lt;a href=&#34;updatestrategy.md&#34;&gt;UpdateStrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#volumeclaimtemplate" title="VolumeClaimTemplate">VolumeClaimTemplate</a>" : <i>[ &lt;a href=&#34;volumeclaimtemplate.md&#34;&gt;VolumeClaimTemplate&lt;/a&gt;, ... ]</i>,
-        "<a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>" : <i>[ &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;, ... ]</i>,
-        "<a href="#rollingupdate" title="RollingUpdate">RollingUpdate</a>" : <i>[ &lt;a href=&#34;rollingupdate.md&#34;&gt;RollingUpdate&lt;/a&gt;, ... ]</i>,
-        "<a href="#resources" title="Resources">Resources</a>" : <i>[ &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;, ... ]</i>
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#spec" title="Spec">Spec</a>" : <i>[ <a href="spec.md">Spec</a>, ... ]</i>,
+        "<a href="#selector" title="Selector">Selector</a>" : <i>[ <a href="selector.md">Selector</a>, ... ]</i>,
+        "<a href="#template" title="Template">Template</a>" : <i>[ <a href="template.md">Template</a>, ... ]</i>,
+        "<a href="#updatestrategy" title="UpdateStrategy">UpdateStrategy</a>" : <i>[ <a href="updatestrategy.md">UpdateStrategy</a>, ... ]</i>,
+        "<a href="#volumeclaimtemplate" title="VolumeClaimTemplate">VolumeClaimTemplate</a>" : <i>[ <a href="volumeclaimtemplate.md">VolumeClaimTemplate</a>, ... ]</i>,
+        "<a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>" : <i>[ <a href="matchexpressions.md">MatchExpressions</a>, ... ]</i>,
+        "<a href="#rollingupdate" title="RollingUpdate">RollingUpdate</a>" : <i>[ <a href="rollingupdate.md">RollingUpdate</a>, ... ]</i>,
+        "<a href="#resources" title="Resources">Resources</a>" : <i>[ <a href="resources.md">Resources</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,44 +30,33 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Kubernetes::StatefulSet
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#spec" title="Spec">Spec</a>: <i>
-      - &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;</i>
+      - <a href="spec.md">Spec</a></i>
     <a href="#selector" title="Selector">Selector</a>: <i>
-      - &lt;a href=&#34;selector.md&#34;&gt;Selector&lt;/a&gt;</i>
+      - <a href="selector.md">Selector</a></i>
     <a href="#template" title="Template">Template</a>: <i>
-      - &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;</i>
+      - <a href="template.md">Template</a></i>
     <a href="#updatestrategy" title="UpdateStrategy">UpdateStrategy</a>: <i>
-      - &lt;a href=&#34;updatestrategy.md&#34;&gt;UpdateStrategy&lt;/a&gt;</i>
+      - <a href="updatestrategy.md">UpdateStrategy</a></i>
     <a href="#volumeclaimtemplate" title="VolumeClaimTemplate">VolumeClaimTemplate</a>: <i>
-      - &lt;a href=&#34;volumeclaimtemplate.md&#34;&gt;VolumeClaimTemplate&lt;/a&gt;</i>
+      - <a href="volumeclaimtemplate.md">VolumeClaimTemplate</a></i>
     <a href="#matchexpressions" title="MatchExpressions">MatchExpressions</a>: <i>
-      - &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;</i>
+      - <a href="matchexpressions.md">MatchExpressions</a></i>
     <a href="#rollingupdate" title="RollingUpdate">RollingUpdate</a>: <i>
-      - &lt;a href=&#34;rollingupdate.md&#34;&gt;RollingUpdate&lt;/a&gt;</i>
+      - <a href="rollingupdate.md">RollingUpdate</a></i>
     <a href="#resources" title="Resources">Resources</a>: <i>
-      - &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;</i>
+      - <a href="resources.md">Resources</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -76,7 +64,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;
+_Type_: List of <a href="spec.md">Spec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -84,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;selector.md&#34;&gt;Selector&lt;/a&gt;
+_Type_: List of <a href="selector.md">Selector</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -92,7 +80,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;
+_Type_: List of <a href="template.md">Template</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -100,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;updatestrategy.md&#34;&gt;UpdateStrategy&lt;/a&gt;
+_Type_: List of <a href="updatestrategy.md">UpdateStrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -108,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volumeclaimtemplate.md&#34;&gt;VolumeClaimTemplate&lt;/a&gt;
+_Type_: List of <a href="volumeclaimtemplate.md">VolumeClaimTemplate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;matchexpressions.md&#34;&gt;MatchExpressions&lt;/a&gt;
+_Type_: List of <a href="matchexpressions.md">MatchExpressions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rollingupdate.md&#34;&gt;RollingUpdate&lt;/a&gt;
+_Type_: List of <a href="rollingupdate.md">RollingUpdate</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -132,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;resources.md&#34;&gt;Resources&lt;/a&gt;
+_Type_: List of <a href="resources.md">Resources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,18 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::FlexibleEngine::DrsReplicationconsistencygroupV2",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#failuredetail" title="FailureDetail">FailureDetail</a>" : <i>String</i>,
-        "<a href="#faultlevel" title="FaultLevel">FaultLevel</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#prioritystation" title="PriorityStation">PriorityStation</a>" : <i>String</i>,
         "<a href="#replicationids" title="ReplicationIds">ReplicationIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#replicationmodel" title="ReplicationModel">ReplicationModel</a>" : <i>String</i>,
-        "<a href="#replicationstatus" title="ReplicationStatus">ReplicationStatus</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
-        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>
     }
 }
 </pre>
@@ -33,58 +26,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::FlexibleEngine::DrsReplicationconsistencygroupV2
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#failuredetail" title="FailureDetail">FailureDetail</a>: <i>String</i>
-    <a href="#faultlevel" title="FaultLevel">FaultLevel</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#prioritystation" title="PriorityStation">PriorityStation</a>: <i>String</i>
     <a href="#replicationids" title="ReplicationIds">ReplicationIds</a>: <i>
       - String</i>
     <a href="#replicationmodel" title="ReplicationModel">ReplicationModel</a>: <i>String</i>
-    <a href="#replicationstatus" title="ReplicationStatus">ReplicationStatus</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
-    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### FailureDetail
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### FaultLevel
 
 _Required_: No
 
@@ -124,30 +76,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ReplicationStatus
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UpdatedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -166,25 +94,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### FailureDetail
 
-Returns the &lt;code&gt;FailureDetail&lt;/code&gt; value.
+Returns the <code>FailureDetail</code> value.
 
 #### FaultLevel
 
-Returns the &lt;code&gt;FaultLevel&lt;/code&gt; value.
+Returns the <code>FaultLevel</code> value.
 
 #### ReplicationStatus
 
-Returns the &lt;code&gt;ReplicationStatus&lt;/code&gt; value.
+Returns the <code>ReplicationStatus</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

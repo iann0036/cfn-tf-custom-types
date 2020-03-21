@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#capacityreservationpreference" title="CapacityReservationPreference">CapacityReservationPreference</a>" : <i>String</i>,
-    "<a href="#capacityreservationtarget" title="CapacityReservationTarget">CapacityReservationTarget</a>" : <i>[ &lt;a href=&#34;capacityreservationspecification-capacityreservationtarget.md&#34;&gt;CapacityReservationTarget&lt;/a&gt;, ... ]</i>
+    "<a href="#capacityreservationtarget" title="CapacityReservationTarget">CapacityReservationTarget</a>" : <i>[ <a href="capacityreservationspecification-capacityreservationtarget.md">CapacityReservationTarget</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#capacityreservationpreference" title="CapacityReservationPreference">CapacityReservationPreference</a>: <i>String</i>
 <a href="#capacityreservationtarget" title="CapacityReservationTarget">CapacityReservationTarget</a>: <i>
-      - &lt;a href=&#34;capacityreservationspecification-capacityreservationtarget.md&#34;&gt;CapacityReservationTarget&lt;/a&gt;</i>
+      - <a href="capacityreservationspecification-capacityreservationtarget.md">CapacityReservationTarget</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CapacityReservationPreference
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CapacityReservationTarget
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;capacityreservationspecification-capacityreservationtarget.md&#34;&gt;CapacityReservationTarget&lt;/a&gt;
+
+_Type_: List of <a href="capacityreservationspecification-capacityreservationtarget.md">CapacityReservationTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,16 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::OceanGkeImport",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#clustercontrollerid" title="ClusterControllerId">ClusterControllerId</a>" : <i>String</i>,
         "<a href="#clustername" title="ClusterName">ClusterName</a>" : <i>String</i>,
         "<a href="#desiredcapacity" title="DesiredCapacity">DesiredCapacity</a>" : <i>Double</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#maxsize" title="MaxSize">MaxSize</a>" : <i>Double</i>,
         "<a href="#minsize" title="MinSize">MinSize</a>" : <i>Double</i>,
         "<a href="#whitelist" title="Whitelist">Whitelist</a>" : <i>[ String, ... ]</i>,
-        "<a href="#backendservices" title="BackendServices">BackendServices</a>" : <i>[ &lt;a href=&#34;backendservices.md&#34;&gt;BackendServices&lt;/a&gt;, ... ]</i>,
-        "<a href="#namedports" title="NamedPorts">NamedPorts</a>" : <i>[ &lt;a href=&#34;namedports.md&#34;&gt;NamedPorts&lt;/a&gt;, ... ]</i>
+        "<a href="#backendservices" title="BackendServices">BackendServices</a>" : <i>[ <a href="backendservices.md">BackendServices</a>, ... ]</i>,
+        "<a href="#namedports" title="NamedPorts">NamedPorts</a>" : <i>[ <a href="namedports.md">NamedPorts</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,8 +29,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::OceanGkeImport
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#clustercontrollerid" title="ClusterControllerId">ClusterControllerId</a>: <i>String</i>
     <a href="#clustername" title="ClusterName">ClusterName</a>: <i>String</i>
     <a href="#desiredcapacity" title="DesiredCapacity">DesiredCapacity</a>: <i>Double</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
@@ -41,30 +37,12 @@ Properties:
     <a href="#whitelist" title="Whitelist">Whitelist</a>: <i>
       - String</i>
     <a href="#backendservices" title="BackendServices">BackendServices</a>: <i>
-      - &lt;a href=&#34;backendservices.md&#34;&gt;BackendServices&lt;/a&gt;</i>
+      - <a href="backendservices.md">BackendServices</a></i>
     <a href="#namedports" title="NamedPorts">NamedPorts</a>: <i>
-      - &lt;a href=&#34;namedports.md&#34;&gt;NamedPorts&lt;/a&gt;</i>
+      - <a href="namedports.md">NamedPorts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ClusterControllerId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterName
 
@@ -118,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backendservices.md&#34;&gt;BackendServices&lt;/a&gt;
+_Type_: List of <a href="backendservices.md">BackendServices</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;namedports.md&#34;&gt;NamedPorts&lt;/a&gt;
+_Type_: List of <a href="namedports.md">NamedPorts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,5 +126,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClusterControllerId
 
-Returns the &lt;code&gt;ClusterControllerId&lt;/code&gt; value.
+Returns the <code>ClusterControllerId</code> value.
 

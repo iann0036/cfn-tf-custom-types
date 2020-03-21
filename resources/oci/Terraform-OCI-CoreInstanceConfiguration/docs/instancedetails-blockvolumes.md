@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#volumeid" title="VolumeId">VolumeId</a>" : <i>String</i>,
-    "<a href="#attachdetails" title="AttachDetails">AttachDetails</a>" : <i>[ &lt;a href=&#34;instancedetails-blockvolumes-attachdetails.md&#34;&gt;AttachDetails&lt;/a&gt;, ... ]</i>,
-    "<a href="#createdetails" title="CreateDetails">CreateDetails</a>" : <i>[ &lt;a href=&#34;instancedetails-blockvolumes-createdetails.md&#34;&gt;CreateDetails&lt;/a&gt;, ... ]</i>
+    "<a href="#attachdetails" title="AttachDetails">AttachDetails</a>" : <i>[ <a href="instancedetails-blockvolumes-attachdetails.md">AttachDetails</a>, ... ]</i>,
+    "<a href="#createdetails" title="CreateDetails">CreateDetails</a>" : <i>[ <a href="instancedetails-blockvolumes-createdetails.md">CreateDetails</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#volumeid" title="VolumeId">VolumeId</a>: <i>String</i>
 <a href="#attachdetails" title="AttachDetails">AttachDetails</a>: <i>
-      - &lt;a href=&#34;instancedetails-blockvolumes-attachdetails.md&#34;&gt;AttachDetails&lt;/a&gt;</i>
+      - <a href="instancedetails-blockvolumes-attachdetails.md">AttachDetails</a></i>
 <a href="#createdetails" title="CreateDetails">CreateDetails</a>: <i>
-      - &lt;a href=&#34;instancedetails-blockvolumes-createdetails.md&#34;&gt;CreateDetails&lt;/a&gt;</i>
+      - <a href="instancedetails-blockvolumes-createdetails.md">CreateDetails</a></i>
 </pre>
 
 ## Properties
@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### VolumeId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,14 +37,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AttachDetails
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instancedetails-blockvolumes-attachdetails.md&#34;&gt;AttachDetails&lt;/a&gt;
+
+_Type_: List of <a href="instancedetails-blockvolumes-attachdetails.md">AttachDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CreateDetails
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instancedetails-blockvolumes-createdetails.md&#34;&gt;CreateDetails&lt;/a&gt;
+
+_Type_: List of <a href="instancedetails-blockvolumes-createdetails.md">CreateDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

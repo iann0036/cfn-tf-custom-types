@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#authorization" title="Authorization">Authorization</a>" : <i>[ &lt;a href=&#34;specification-routes-requestpolicies-authorization.md&#34;&gt;Authorization&lt;/a&gt;, ... ]</i>,
-    "<a href="#cors" title="Cors">Cors</a>" : <i>[ &lt;a href=&#34;specification-routes-requestpolicies-cors.md&#34;&gt;Cors&lt;/a&gt;, ... ]</i>
+    "<a href="#authorization" title="Authorization">Authorization</a>" : <i>[ <a href="specification-routes-requestpolicies-authorization.md">Authorization</a>, ... ]</i>,
+    "<a href="#cors" title="Cors">Cors</a>" : <i>[ <a href="specification-routes-requestpolicies-cors.md">Cors</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#authorization" title="Authorization">Authorization</a>: <i>
-      - &lt;a href=&#34;specification-routes-requestpolicies-authorization.md&#34;&gt;Authorization&lt;/a&gt;</i>
+      - <a href="specification-routes-requestpolicies-authorization.md">Authorization</a></i>
 <a href="#cors" title="Cors">Cors</a>: <i>
-      - &lt;a href=&#34;specification-routes-requestpolicies-cors.md&#34;&gt;Cors&lt;/a&gt;</i>
+      - <a href="specification-routes-requestpolicies-cors.md">Cors</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Authorization
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;specification-routes-requestpolicies-authorization.md&#34;&gt;Authorization&lt;/a&gt;
+
+_Type_: List of <a href="specification-routes-requestpolicies-authorization.md">Authorization</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cors
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;specification-routes-requestpolicies-cors.md&#34;&gt;Cors&lt;/a&gt;
+
+_Type_: List of <a href="specification-routes-requestpolicies-cors.md">Cors</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

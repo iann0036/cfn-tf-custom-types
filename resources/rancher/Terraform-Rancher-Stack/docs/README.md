@@ -12,17 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Rancher::Stack",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#catalogid" title="CatalogId">CatalogId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#dockercompose" title="DockerCompose">DockerCompose</a>" : <i>String</i>,
-        "<a href="#environment" title="Environment">Environment</a>" : <i>[ &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;, ... ]</i>,
+        "<a href="#environment" title="Environment">Environment</a>" : <i>[ <a href="environment.md">Environment</a>, ... ]</i>,
         "<a href="#environmentid" title="EnvironmentId">EnvironmentId</a>" : <i>String</i>,
         "<a href="#finishupgrade" title="FinishUpgrade">FinishUpgrade</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ranchercompose" title="RancherCompose">RancherCompose</a>" : <i>String</i>,
-        "<a href="#rendereddockercompose" title="RenderedDockerCompose">RenderedDockerCompose</a>" : <i>String</i>,
-        "<a href="#renderedranchercompose" title="RenderedRancherCompose">RenderedRancherCompose</a>" : <i>String</i>,
         "<a href="#scope" title="Scope">Scope</a>" : <i>String</i>,
         "<a href="#startoncreate" title="StartOnCreate">StartOnCreate</a>" : <i>Boolean</i>
     }
@@ -34,33 +31,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Rancher::Stack
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#catalogid" title="CatalogId">CatalogId</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#dockercompose" title="DockerCompose">DockerCompose</a>: <i>String</i>
     <a href="#environment" title="Environment">Environment</a>: <i>
-      - &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;</i>
+      - <a href="environment.md">Environment</a></i>
     <a href="#environmentid" title="EnvironmentId">EnvironmentId</a>: <i>String</i>
     <a href="#finishupgrade" title="FinishUpgrade">FinishUpgrade</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#ranchercompose" title="RancherCompose">RancherCompose</a>: <i>String</i>
-    <a href="#rendereddockercompose" title="RenderedDockerCompose">RenderedDockerCompose</a>: <i>String</i>
-    <a href="#renderedranchercompose" title="RenderedRancherCompose">RenderedRancherCompose</a>: <i>String</i>
     <a href="#scope" title="Scope">Scope</a>: <i>String</i>
     <a href="#startoncreate" title="StartOnCreate">StartOnCreate</a>: <i>Boolean</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CatalogId
 
@@ -90,7 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environment.md&#34;&gt;Environment&lt;/a&gt;
+_Type_: List of <a href="environment.md">Environment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -119,22 +103,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RancherCompose
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### RenderedDockerCompose
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### RenderedRancherCompose
 
 _Required_: No
 
@@ -176,9 +144,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RenderedDockerCompose
 
-Returns the &lt;code&gt;RenderedDockerCompose&lt;/code&gt; value.
+Returns the <code>RenderedDockerCompose</code> value.
 
 #### RenderedRancherCompose
 
-Returns the &lt;code&gt;RenderedRancherCompose&lt;/code&gt; value.
+Returns the <code>RenderedRancherCompose</code> value.
 

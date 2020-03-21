@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#virtualservice" title="VirtualService">VirtualService</a>" : <i>[ &lt;a href=&#34;spec-backend-virtualservice.md&#34;&gt;VirtualService&lt;/a&gt;, ... ]</i>
+    "<a href="#virtualservice" title="VirtualService">VirtualService</a>" : <i>[ <a href="spec-backend-virtualservice.md">VirtualService</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#virtualservice" title="VirtualService">VirtualService</a>: <i>
-      - &lt;a href=&#34;spec-backend-virtualservice.md&#34;&gt;VirtualService&lt;/a&gt;</i>
+      - <a href="spec-backend-virtualservice.md">VirtualService</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### VirtualService
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;spec-backend-virtualservice.md&#34;&gt;VirtualService&lt;/a&gt;
+
+_Type_: List of <a href="spec-backend-virtualservice.md">VirtualService</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

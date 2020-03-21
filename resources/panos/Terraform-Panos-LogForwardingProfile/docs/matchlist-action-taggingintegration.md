@@ -11,9 +11,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#action" title="Action">Action</a>" : <i>String</i>,
     "<a href="#target" title="Target">Target</a>" : <i>String</i>,
     "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
-    "<a href="#localregistration" title="LocalRegistration">LocalRegistration</a>" : <i>[ &lt;a href=&#34;matchlist-action-taggingintegration-localregistration.md&#34;&gt;LocalRegistration&lt;/a&gt;, ... ]</i>,
-    "<a href="#panoramaregistration" title="PanoramaRegistration">PanoramaRegistration</a>" : <i>[ &lt;a href=&#34;matchlist-action-taggingintegration-panoramaregistration.md&#34;&gt;PanoramaRegistration&lt;/a&gt;, ... ]</i>,
-    "<a href="#remoteregistration" title="RemoteRegistration">RemoteRegistration</a>" : <i>[ &lt;a href=&#34;matchlist-action-taggingintegration-remoteregistration.md&#34;&gt;RemoteRegistration&lt;/a&gt;, ... ]</i>
+    "<a href="#localregistration" title="LocalRegistration">LocalRegistration</a>" : <i>[ <a href="matchlist-action-taggingintegration-localregistration.md">LocalRegistration</a>, ... ]</i>,
+    "<a href="#panoramaregistration" title="PanoramaRegistration">PanoramaRegistration</a>" : <i>[ <a href="matchlist-action-taggingintegration-panoramaregistration.md">PanoramaRegistration</a>, ... ]</i>,
+    "<a href="#remoteregistration" title="RemoteRegistration">RemoteRegistration</a>" : <i>[ <a href="matchlist-action-taggingintegration-remoteregistration.md">RemoteRegistration</a>, ... ]</i>
 }
 </pre>
 
@@ -24,11 +24,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#target" title="Target">Target</a>: <i>String</i>
 <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
 <a href="#localregistration" title="LocalRegistration">LocalRegistration</a>: <i>
-      - &lt;a href=&#34;matchlist-action-taggingintegration-localregistration.md&#34;&gt;LocalRegistration&lt;/a&gt;</i>
+      - <a href="matchlist-action-taggingintegration-localregistration.md">LocalRegistration</a></i>
 <a href="#panoramaregistration" title="PanoramaRegistration">PanoramaRegistration</a>: <i>
-      - &lt;a href=&#34;matchlist-action-taggingintegration-panoramaregistration.md&#34;&gt;PanoramaRegistration&lt;/a&gt;</i>
+      - <a href="matchlist-action-taggingintegration-panoramaregistration.md">PanoramaRegistration</a></i>
 <a href="#remoteregistration" title="RemoteRegistration">RemoteRegistration</a>: <i>
-      - &lt;a href=&#34;matchlist-action-taggingintegration-remoteregistration.md&#34;&gt;RemoteRegistration&lt;/a&gt;</i>
+      - <a href="matchlist-action-taggingintegration-remoteregistration.md">RemoteRegistration</a></i>
 </pre>
 
 ## Properties
@@ -36,6 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Action
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,6 +44,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Target
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,6 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Timeout
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -57,21 +60,24 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LocalRegistration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;matchlist-action-taggingintegration-localregistration.md&#34;&gt;LocalRegistration&lt;/a&gt;
+
+_Type_: List of <a href="matchlist-action-taggingintegration-localregistration.md">LocalRegistration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PanoramaRegistration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;matchlist-action-taggingintegration-panoramaregistration.md&#34;&gt;PanoramaRegistration&lt;/a&gt;
+
+_Type_: List of <a href="matchlist-action-taggingintegration-panoramaregistration.md">PanoramaRegistration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RemoteRegistration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;matchlist-action-taggingintegration-remoteregistration.md&#34;&gt;RemoteRegistration&lt;/a&gt;
+
+_Type_: List of <a href="matchlist-action-taggingintegration-remoteregistration.md">RemoteRegistration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

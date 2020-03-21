@@ -12,16 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::IdentityApplicationCredentialV3",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#expiresat" title="ExpiresAt">ExpiresAt</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#roles" title="Roles">Roles</a>" : <i>[ String, ... ]</i>,
         "<a href="#secret" title="Secret">Secret</a>" : <i>String</i>,
         "<a href="#unrestricted" title="Unrestricted">Unrestricted</a>" : <i>Boolean</i>,
-        "<a href="#accessrules" title="AccessRules">AccessRules</a>" : <i>[ &lt;a href=&#34;accessrules.md&#34;&gt;AccessRules&lt;/a&gt;, ... ]</i>
+        "<a href="#accessrules" title="AccessRules">AccessRules</a>" : <i>[ <a href="accessrules.md">AccessRules</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,31 +29,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::IdentityApplicationCredentialV3
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#expiresat" title="ExpiresAt">ExpiresAt</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#roles" title="Roles">Roles</a>: <i>
       - String</i>
     <a href="#secret" title="Secret">Secret</a>: <i>String</i>
     <a href="#unrestricted" title="Unrestricted">Unrestricted</a>: <i>Boolean</i>
     <a href="#accessrules" title="AccessRules">AccessRules</a>: <i>
-      - &lt;a href=&#34;accessrules.md&#34;&gt;AccessRules&lt;/a&gt;</i>
+      - <a href="accessrules.md">AccessRules</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -76,14 +62,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ProjectId
-
-_Required_: No
 
 _Type_: String
 
@@ -125,7 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accessrules.md&#34;&gt;AccessRules&lt;/a&gt;
+_Type_: List of <a href="accessrules.md">AccessRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,5 +125,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ProjectId
 
-Returns the &lt;code&gt;ProjectId&lt;/code&gt; value.
+Returns the <code>ProjectId</code> value.
 

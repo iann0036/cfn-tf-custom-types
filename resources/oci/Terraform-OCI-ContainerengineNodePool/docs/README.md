@@ -12,25 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::ContainerengineNodePool",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#clusterid" title="ClusterId">ClusterId</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
         "<a href="#kubernetesversion" title="KubernetesVersion">KubernetesVersion</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nodeimageid" title="NodeImageId">NodeImageId</a>" : <i>String</i>,
         "<a href="#nodeimagename" title="NodeImageName">NodeImageName</a>" : <i>String</i>,
-        "<a href="#nodemetadata" title="NodeMetadata">NodeMetadata</a>" : <i>[ &lt;a href=&#34;nodemetadata.md&#34;&gt;NodeMetadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#nodemetadata" title="NodeMetadata">NodeMetadata</a>" : <i>[ <a href="nodemetadata.md">NodeMetadata</a>, ... ]</i>,
         "<a href="#nodeshape" title="NodeShape">NodeShape</a>" : <i>String</i>,
-        "<a href="#nodesource" title="NodeSource">NodeSource</a>" : <i>[ &lt;a href=&#34;nodesource.md&#34;&gt;NodeSource&lt;/a&gt;, ... ]</i>,
-        "<a href="#nodes" title="Nodes">Nodes</a>" : <i>[ &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;, ... ]</i>,
         "<a href="#quantitypersubnet" title="QuantityPerSubnet">QuantityPerSubnet</a>" : <i>Double</i>,
         "<a href="#sshpublickey" title="SshPublicKey">SshPublicKey</a>" : <i>String</i>,
         "<a href="#subnetids" title="SubnetIds">SubnetIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#initialnodelabels" title="InitialNodeLabels">InitialNodeLabels</a>" : <i>[ &lt;a href=&#34;initialnodelabels.md&#34;&gt;InitialNodeLabels&lt;/a&gt;, ... ]</i>,
-        "<a href="#nodeconfigdetails" title="NodeConfigDetails">NodeConfigDetails</a>" : <i>[ &lt;a href=&#34;nodeconfigdetails.md&#34;&gt;NodeConfigDetails&lt;/a&gt;, ... ]</i>,
-        "<a href="#nodesourcedetails" title="NodeSourceDetails">NodeSourceDetails</a>" : <i>[ &lt;a href=&#34;nodesourcedetails.md&#34;&gt;NodeSourceDetails&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#placementconfigs" title="PlacementConfigs">PlacementConfigs</a>" : <i>[ &lt;a href=&#34;placementconfigs.md&#34;&gt;PlacementConfigs&lt;/a&gt;, ... ]</i>
+        "<a href="#initialnodelabels" title="InitialNodeLabels">InitialNodeLabels</a>" : <i>[ <a href="initialnodelabels.md">InitialNodeLabels</a>, ... ]</i>,
+        "<a href="#nodeconfigdetails" title="NodeConfigDetails">NodeConfigDetails</a>" : <i>[ <a href="nodeconfigdetails.md">NodeConfigDetails</a>, ... ]</i>,
+        "<a href="#nodesourcedetails" title="NodeSourceDetails">NodeSourceDetails</a>" : <i>[ <a href="nodesourcedetails.md">NodeSourceDetails</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#placementconfigs" title="PlacementConfigs">PlacementConfigs</a>" : <i>[ <a href="placementconfigs.md">PlacementConfigs</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,7 +37,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::ContainerengineNodePool
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#clusterid" title="ClusterId">ClusterId</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#kubernetesversion" title="KubernetesVersion">KubernetesVersion</a>: <i>String</i>
@@ -48,38 +44,24 @@ Properties:
     <a href="#nodeimageid" title="NodeImageId">NodeImageId</a>: <i>String</i>
     <a href="#nodeimagename" title="NodeImageName">NodeImageName</a>: <i>String</i>
     <a href="#nodemetadata" title="NodeMetadata">NodeMetadata</a>: <i>
-      - &lt;a href=&#34;nodemetadata.md&#34;&gt;NodeMetadata&lt;/a&gt;</i>
+      - <a href="nodemetadata.md">NodeMetadata</a></i>
     <a href="#nodeshape" title="NodeShape">NodeShape</a>: <i>String</i>
-    <a href="#nodesource" title="NodeSource">NodeSource</a>: <i>
-      - &lt;a href=&#34;nodesource.md&#34;&gt;NodeSource&lt;/a&gt;</i>
-    <a href="#nodes" title="Nodes">Nodes</a>: <i>
-      - &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;</i>
     <a href="#quantitypersubnet" title="QuantityPerSubnet">QuantityPerSubnet</a>: <i>Double</i>
     <a href="#sshpublickey" title="SshPublicKey">SshPublicKey</a>: <i>String</i>
     <a href="#subnetids" title="SubnetIds">SubnetIds</a>: <i>
       - String</i>
     <a href="#initialnodelabels" title="InitialNodeLabels">InitialNodeLabels</a>: <i>
-      - &lt;a href=&#34;initialnodelabels.md&#34;&gt;InitialNodeLabels&lt;/a&gt;</i>
+      - <a href="initialnodelabels.md">InitialNodeLabels</a></i>
     <a href="#nodeconfigdetails" title="NodeConfigDetails">NodeConfigDetails</a>: <i>
-      - &lt;a href=&#34;nodeconfigdetails.md&#34;&gt;NodeConfigDetails&lt;/a&gt;</i>
+      - <a href="nodeconfigdetails.md">NodeConfigDetails</a></i>
     <a href="#nodesourcedetails" title="NodeSourceDetails">NodeSourceDetails</a>: <i>
-      - &lt;a href=&#34;nodesourcedetails.md&#34;&gt;NodeSourceDetails&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="nodesourcedetails.md">NodeSourceDetails</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#placementconfigs" title="PlacementConfigs">PlacementConfigs</a>: <i>
-      - &lt;a href=&#34;placementconfigs.md&#34;&gt;PlacementConfigs&lt;/a&gt;</i>
+      - <a href="placementconfigs.md">PlacementConfigs</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterId
 
@@ -133,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nodemetadata.md&#34;&gt;NodeMetadata&lt;/a&gt;
+_Type_: List of <a href="nodemetadata.md">NodeMetadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -142,22 +124,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### NodeSource
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;nodesource.md&#34;&gt;NodeSource&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Nodes
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -189,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;initialnodelabels.md&#34;&gt;InitialNodeLabels&lt;/a&gt;
+_Type_: List of <a href="initialnodelabels.md">InitialNodeLabels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nodeconfigdetails.md&#34;&gt;NodeConfigDetails&lt;/a&gt;
+_Type_: List of <a href="nodeconfigdetails.md">NodeConfigDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nodesourcedetails.md&#34;&gt;NodeSourceDetails&lt;/a&gt;
+_Type_: List of <a href="nodesourcedetails.md">NodeSourceDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -213,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;placementconfigs.md&#34;&gt;PlacementConfigs&lt;/a&gt;
+_Type_: List of <a href="placementconfigs.md">PlacementConfigs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -243,9 +209,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NodeSource
 
-Returns the &lt;code&gt;NodeSource&lt;/code&gt; value.
+Returns the <code>NodeSource</code> value.
 
 #### Nodes
 
-Returns the &lt;code&gt;Nodes&lt;/code&gt; value.
+Returns the <code>Nodes</code> value.
 

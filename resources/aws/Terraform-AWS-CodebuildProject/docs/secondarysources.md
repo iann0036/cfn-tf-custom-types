@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#reportbuildstatus" title="ReportBuildStatus">ReportBuildStatus</a>" : <i>Boolean</i>,
     "<a href="#sourceidentifier" title="SourceIdentifier">SourceIdentifier</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#auth" title="Auth">Auth</a>" : <i>[ &lt;a href=&#34;secondarysources-auth.md&#34;&gt;Auth&lt;/a&gt;, ... ]</i>,
-    "<a href="#gitsubmodulesconfig" title="GitSubmodulesConfig">GitSubmodulesConfig</a>" : <i>[ &lt;a href=&#34;secondarysources-gitsubmodulesconfig.md&#34;&gt;GitSubmodulesConfig&lt;/a&gt;, ... ]</i>
+    "<a href="#auth" title="Auth">Auth</a>" : <i>[ <a href="secondarysources-auth.md">Auth</a>, ... ]</i>,
+    "<a href="#gitsubmodulesconfig" title="GitSubmodulesConfig">GitSubmodulesConfig</a>" : <i>[ <a href="secondarysources-gitsubmodulesconfig.md">GitSubmodulesConfig</a>, ... ]</i>
 }
 </pre>
 
@@ -31,9 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#sourceidentifier" title="SourceIdentifier">SourceIdentifier</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#auth" title="Auth">Auth</a>: <i>
-      - &lt;a href=&#34;secondarysources-auth.md&#34;&gt;Auth&lt;/a&gt;</i>
+      - <a href="secondarysources-auth.md">Auth</a></i>
 <a href="#gitsubmodulesconfig" title="GitSubmodulesConfig">GitSubmodulesConfig</a>: <i>
-      - &lt;a href=&#34;secondarysources-gitsubmodulesconfig.md&#34;&gt;GitSubmodulesConfig&lt;/a&gt;</i>
+      - <a href="secondarysources-gitsubmodulesconfig.md">GitSubmodulesConfig</a></i>
 </pre>
 
 ## Properties
@@ -41,6 +41,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Buildspec
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GitCloneDepth
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InsecureSsl
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Location
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,6 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ReportBuildStatus
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -76,6 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SourceIdentifier
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -83,6 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,14 +97,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Auth
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;secondarysources-auth.md&#34;&gt;Auth&lt;/a&gt;
+
+_Type_: List of <a href="secondarysources-auth.md">Auth</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GitSubmodulesConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;secondarysources-gitsubmodulesconfig.md&#34;&gt;GitSubmodulesConfig&lt;/a&gt;
+
+_Type_: List of <a href="secondarysources-gitsubmodulesconfig.md">GitSubmodulesConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,11 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::ApiGatewayGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#subdomain" title="SubDomain">SubDomain</a>" : <i>String</i>,
-        "<a href="#vpcdomain" title="VpcDomain">VpcDomain</a>" : <i>String</i>
     }
 }
 </pre>
@@ -26,24 +23,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::ApiGatewayGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#subdomain" title="SubDomain">SubDomain</a>: <i>String</i>
-    <a href="#vpcdomain" title="VpcDomain">VpcDomain</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -56,22 +40,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SubDomain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VpcDomain
-
-_Required_: No
 
 _Type_: String
 
@@ -95,9 +63,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SubDomain
 
-Returns the &lt;code&gt;SubDomain&lt;/code&gt; value.
+Returns the <code>SubDomain</code> value.
 
 #### VpcDomain
 
-Returns the &lt;code&gt;VpcDomain&lt;/code&gt; value.
+Returns the <code>VpcDomain</code> value.
 

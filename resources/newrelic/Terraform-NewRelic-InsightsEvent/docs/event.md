@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#timestamp" title="Timestamp">Timestamp</a>" : <i>Double</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#attribute" title="Attribute">Attribute</a>" : <i>[ &lt;a href=&#34;event-attribute.md&#34;&gt;Attribute&lt;/a&gt;, ... ]</i>
+    "<a href="#attribute" title="Attribute">Attribute</a>" : <i>[ <a href="event-attribute.md">Attribute</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#timestamp" title="Timestamp">Timestamp</a>: <i>Double</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#attribute" title="Attribute">Attribute</a>: <i>
-      - &lt;a href=&#34;event-attribute.md&#34;&gt;Attribute&lt;/a&gt;</i>
+      - <a href="event-attribute.md">Attribute</a></i>
 </pre>
 
 ## Properties
@@ -28,6 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Timestamp
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -35,6 +36,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Attribute
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;event-attribute.md&#34;&gt;Attribute&lt;/a&gt;
+
+_Type_: List of <a href="event-attribute.md">Attribute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

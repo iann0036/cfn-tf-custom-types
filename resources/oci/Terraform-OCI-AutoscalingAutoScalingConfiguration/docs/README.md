@@ -12,22 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::AutoscalingAutoScalingConfiguration",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
         "<a href="#cooldowninseconds" title="CoolDownInSeconds">CoolDownInSeconds</a>" : <i>Double</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#isenabled" title="IsEnabled">IsEnabled</a>" : <i>Boolean</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
-        "<a href="#autoscalingresources" title="AutoScalingResources">AutoScalingResources</a>" : <i>[ &lt;a href=&#34;autoscalingresources.md&#34;&gt;AutoScalingResources&lt;/a&gt;, ... ]</i>,
-        "<a href="#policies" title="Policies">Policies</a>" : <i>[ &lt;a href=&#34;policies.md&#34;&gt;Policies&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#capacity" title="Capacity">Capacity</a>" : <i>[ &lt;a href=&#34;capacity.md&#34;&gt;Capacity&lt;/a&gt;, ... ]</i>,
-        "<a href="#rules" title="Rules">Rules</a>" : <i>[ &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;, ... ]</i>,
-        "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>,
-        "<a href="#metric" title="Metric">Metric</a>" : <i>[ &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;, ... ]</i>,
-        "<a href="#threshold" title="Threshold">Threshold</a>" : <i>[ &lt;a href=&#34;threshold.md&#34;&gt;Threshold&lt;/a&gt;, ... ]</i>
+        "<a href="#autoscalingresources" title="AutoScalingResources">AutoScalingResources</a>" : <i>[ <a href="autoscalingresources.md">AutoScalingResources</a>, ... ]</i>,
+        "<a href="#policies" title="Policies">Policies</a>" : <i>[ <a href="policies.md">Policies</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#capacity" title="Capacity">Capacity</a>" : <i>[ <a href="capacity.md">Capacity</a>, ... ]</i>,
+        "<a href="#rules" title="Rules">Rules</a>" : <i>[ <a href="rules.md">Rules</a>, ... ]</i>,
+        "<a href="#action" title="Action">Action</a>" : <i>[ <a href="action.md">Action</a>, ... ]</i>,
+        "<a href="#metric" title="Metric">Metric</a>" : <i>[ <a href="metric.md">Metric</a>, ... ]</i>,
+        "<a href="#threshold" title="Threshold">Threshold</a>" : <i>[ <a href="threshold.md">Threshold</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,44 +35,32 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::AutoscalingAutoScalingConfiguration
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#cooldowninseconds" title="CoolDownInSeconds">CoolDownInSeconds</a>: <i>Double</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#isenabled" title="IsEnabled">IsEnabled</a>: <i>Boolean</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#autoscalingresources" title="AutoScalingResources">AutoScalingResources</a>: <i>
-      - &lt;a href=&#34;autoscalingresources.md&#34;&gt;AutoScalingResources&lt;/a&gt;</i>
+      - <a href="autoscalingresources.md">AutoScalingResources</a></i>
     <a href="#policies" title="Policies">Policies</a>: <i>
-      - &lt;a href=&#34;policies.md&#34;&gt;Policies&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="policies.md">Policies</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#capacity" title="Capacity">Capacity</a>: <i>
-      - &lt;a href=&#34;capacity.md&#34;&gt;Capacity&lt;/a&gt;</i>
+      - <a href="capacity.md">Capacity</a></i>
     <a href="#rules" title="Rules">Rules</a>: <i>
-      - &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;</i>
+      - <a href="rules.md">Rules</a></i>
     <a href="#action" title="Action">Action</a>: <i>
-      - &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;</i>
+      - <a href="action.md">Action</a></i>
     <a href="#metric" title="Metric">Metric</a>: <i>
-      - &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;</i>
+      - <a href="metric.md">Metric</a></i>
     <a href="#threshold" title="Threshold">Threshold</a>: <i>
-      - &lt;a href=&#34;threshold.md&#34;&gt;Threshold&lt;/a&gt;</i>
+      - <a href="threshold.md">Threshold</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
 
@@ -96,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -112,7 +98,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -124,19 +110,11 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TimeCreated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AutoScalingResources
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscalingresources.md&#34;&gt;AutoScalingResources&lt;/a&gt;
+_Type_: List of <a href="autoscalingresources.md">AutoScalingResources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;policies.md&#34;&gt;Policies&lt;/a&gt;
+_Type_: List of <a href="policies.md">Policies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -152,7 +130,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -160,7 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;capacity.md&#34;&gt;Capacity&lt;/a&gt;
+_Type_: List of <a href="capacity.md">Capacity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,7 +146,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;
+_Type_: List of <a href="rules.md">Rules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +154,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;
+_Type_: List of <a href="action.md">Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +162,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metric.md&#34;&gt;Metric&lt;/a&gt;
+_Type_: List of <a href="metric.md">Metric</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +170,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;threshold.md&#34;&gt;Threshold&lt;/a&gt;
+_Type_: List of <a href="threshold.md">Threshold</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,5 +192,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

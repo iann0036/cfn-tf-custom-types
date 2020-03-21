@@ -12,27 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::UCloud::DbInstance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#backupbegintime" title="BackupBeginTime">BackupBeginTime</a>" : <i>Double</i>,
         "<a href="#backupblacklist" title="BackupBlackList">BackupBlackList</a>" : <i>[ String, ... ]</i>,
         "<a href="#backupcount" title="BackupCount">BackupCount</a>" : <i>Double</i>,
         "<a href="#backupdate" title="BackupDate">BackupDate</a>" : <i>String</i>,
         "<a href="#chargetype" title="ChargeType">ChargeType</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#duration" title="Duration">Duration</a>" : <i>Double</i>,
         "<a href="#engine" title="Engine">Engine</a>" : <i>String</i>,
         "<a href="#engineversion" title="EngineVersion">EngineVersion</a>" : <i>String</i>,
-        "<a href="#expiretime" title="ExpireTime">ExpireTime</a>" : <i>String</i>,
         "<a href="#instancestorage" title="InstanceStorage">InstanceStorage</a>" : <i>Double</i>,
         "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
-        "<a href="#modifytime" title="ModifyTime">ModifyTime</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
-        "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>String</i>,
         "<a href="#standbyzone" title="StandbyZone">StandbyZone</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#tag" title="Tag">Tag</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>
@@ -45,7 +39,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::UCloud::DbInstance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#backupbegintime" title="BackupBeginTime">BackupBeginTime</a>: <i>Double</i>
     <a href="#backupblacklist" title="BackupBlackList">BackupBlackList</a>: <i>
@@ -53,36 +46,21 @@ Properties:
     <a href="#backupcount" title="BackupCount">BackupCount</a>: <i>Double</i>
     <a href="#backupdate" title="BackupDate">BackupDate</a>: <i>String</i>
     <a href="#chargetype" title="ChargeType">ChargeType</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#duration" title="Duration">Duration</a>: <i>Double</i>
     <a href="#engine" title="Engine">Engine</a>: <i>String</i>
     <a href="#engineversion" title="EngineVersion">EngineVersion</a>: <i>String</i>
-    <a href="#expiretime" title="ExpireTime">ExpireTime</a>: <i>String</i>
     <a href="#instancestorage" title="InstanceStorage">InstanceStorage</a>: <i>Double</i>
     <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
-    <a href="#modifytime" title="ModifyTime">ModifyTime</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
-    <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>String</i>
     <a href="#standbyzone" title="StandbyZone">StandbyZone</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#tag" title="Tag">Tag</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
 
@@ -132,14 +110,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CreateTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Duration
 
 _Required_: No
@@ -164,14 +134,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ExpireTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InstanceStorage
 
 _Required_: Yes
@@ -183,14 +145,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceType
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ModifyTime
-
-_Required_: No
 
 _Type_: String
 
@@ -220,23 +174,7 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrivateIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### StandbyZone
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
 
 _Required_: No
 
@@ -286,21 +224,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### ExpireTime
 
-Returns the &lt;code&gt;ExpireTime&lt;/code&gt; value.
+Returns the <code>ExpireTime</code> value.
 
 #### ModifyTime
 
-Returns the &lt;code&gt;ModifyTime&lt;/code&gt; value.
+Returns the <code>ModifyTime</code> value.
 
 #### PrivateIp
 
-Returns the &lt;code&gt;PrivateIp&lt;/code&gt; value.
+Returns the <code>PrivateIp</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

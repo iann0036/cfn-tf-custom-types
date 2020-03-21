@@ -12,18 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Gitlab::Group",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#fullname" title="FullName">FullName</a>" : <i>String</i>,
-        "<a href="#fullpath" title="FullPath">FullPath</a>" : <i>String</i>,
         "<a href="#lfsenabled" title="LfsEnabled">LfsEnabled</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#parentid" title="ParentId">ParentId</a>" : <i>Double</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#requestaccessenabled" title="RequestAccessEnabled">RequestAccessEnabled</a>" : <i>Boolean</i>,
-        "<a href="#runnerstoken" title="RunnersToken">RunnersToken</a>" : <i>String</i>,
         "<a href="#visibilitylevel" title="VisibilityLevel">VisibilityLevel</a>" : <i>String</i>,
-        "<a href="#weburl" title="WebUrl">WebUrl</a>" : <i>String</i>
     }
 }
 </pre>
@@ -33,49 +28,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Gitlab::Group
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#fullname" title="FullName">FullName</a>: <i>String</i>
-    <a href="#fullpath" title="FullPath">FullPath</a>: <i>String</i>
     <a href="#lfsenabled" title="LfsEnabled">LfsEnabled</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#parentid" title="ParentId">ParentId</a>: <i>Double</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#requestaccessenabled" title="RequestAccessEnabled">RequestAccessEnabled</a>: <i>Boolean</i>
-    <a href="#runnerstoken" title="RunnersToken">RunnersToken</a>: <i>String</i>
     <a href="#visibilitylevel" title="VisibilityLevel">VisibilityLevel</a>: <i>String</i>
-    <a href="#weburl" title="WebUrl">WebUrl</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### FullName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### FullPath
 
 _Required_: No
 
@@ -123,23 +87,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### RunnersToken
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### VisibilityLevel
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### WebUrl
 
 _Required_: No
 
@@ -165,17 +113,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### FullName
 
-Returns the &lt;code&gt;FullName&lt;/code&gt; value.
+Returns the <code>FullName</code> value.
 
 #### FullPath
 
-Returns the &lt;code&gt;FullPath&lt;/code&gt; value.
+Returns the <code>FullPath</code> value.
 
 #### RunnersToken
 
-Returns the &lt;code&gt;RunnersToken&lt;/code&gt; value.
+Returns the <code>RunnersToken</code> value.
 
 #### WebUrl
 
-Returns the &lt;code&gt;WebUrl&lt;/code&gt; value.
+Returns the <code>WebUrl</code> value.
 

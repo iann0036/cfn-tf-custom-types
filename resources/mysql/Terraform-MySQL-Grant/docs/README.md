@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::MySQL::Grant",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#database" title="Database">Database</a>" : <i>String</i>,
         "<a href="#grant" title="Grant">Grant</a>" : <i>Boolean</i>,
         "<a href="#host" title="Host">Host</a>" : <i>String</i>,
@@ -31,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::MySQL::Grant
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#database" title="Database">Database</a>: <i>String</i>
     <a href="#grant" title="Grant">Grant</a>: <i>Boolean</i>
     <a href="#host" title="Host">Host</a>: <i>String</i>
@@ -46,16 +44,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Database
 

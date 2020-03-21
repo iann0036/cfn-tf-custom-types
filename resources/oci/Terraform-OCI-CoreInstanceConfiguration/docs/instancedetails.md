@@ -9,9 +9,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
-    "<a href="#blockvolumes" title="BlockVolumes">BlockVolumes</a>" : <i>[ &lt;a href=&#34;instancedetails-blockvolumes.md&#34;&gt;BlockVolumes&lt;/a&gt;, ... ]</i>,
-    "<a href="#launchdetails" title="LaunchDetails">LaunchDetails</a>" : <i>[ &lt;a href=&#34;instancedetails-launchdetails.md&#34;&gt;LaunchDetails&lt;/a&gt;, ... ]</i>,
-    "<a href="#secondaryvnics" title="SecondaryVnics">SecondaryVnics</a>" : <i>[ &lt;a href=&#34;instancedetails-secondaryvnics.md&#34;&gt;SecondaryVnics&lt;/a&gt;, ... ]</i>
+    "<a href="#blockvolumes" title="BlockVolumes">BlockVolumes</a>" : <i>[ <a href="instancedetails-blockvolumes.md">BlockVolumes</a>, ... ]</i>,
+    "<a href="#launchdetails" title="LaunchDetails">LaunchDetails</a>" : <i>[ <a href="instancedetails-launchdetails.md">LaunchDetails</a>, ... ]</i>,
+    "<a href="#secondaryvnics" title="SecondaryVnics">SecondaryVnics</a>" : <i>[ <a href="instancedetails-secondaryvnics.md">SecondaryVnics</a>, ... ]</i>
 }
 </pre>
 
@@ -20,11 +20,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
 <a href="#blockvolumes" title="BlockVolumes">BlockVolumes</a>: <i>
-      - &lt;a href=&#34;instancedetails-blockvolumes.md&#34;&gt;BlockVolumes&lt;/a&gt;</i>
+      - <a href="instancedetails-blockvolumes.md">BlockVolumes</a></i>
 <a href="#launchdetails" title="LaunchDetails">LaunchDetails</a>: <i>
-      - &lt;a href=&#34;instancedetails-launchdetails.md&#34;&gt;LaunchDetails&lt;/a&gt;</i>
+      - <a href="instancedetails-launchdetails.md">LaunchDetails</a></i>
 <a href="#secondaryvnics" title="SecondaryVnics">SecondaryVnics</a>: <i>
-      - &lt;a href=&#34;instancedetails-secondaryvnics.md&#34;&gt;SecondaryVnics&lt;/a&gt;</i>
+      - <a href="instancedetails-secondaryvnics.md">SecondaryVnics</a></i>
 </pre>
 
 ## Properties
@@ -32,6 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### InstanceType
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,21 +40,24 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BlockVolumes
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instancedetails-blockvolumes.md&#34;&gt;BlockVolumes&lt;/a&gt;
+
+_Type_: List of <a href="instancedetails-blockvolumes.md">BlockVolumes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LaunchDetails
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instancedetails-launchdetails.md&#34;&gt;LaunchDetails&lt;/a&gt;
+
+_Type_: List of <a href="instancedetails-launchdetails.md">LaunchDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecondaryVnics
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;instancedetails-secondaryvnics.md&#34;&gt;SecondaryVnics&lt;/a&gt;
+
+_Type_: List of <a href="instancedetails-secondaryvnics.md">SecondaryVnics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

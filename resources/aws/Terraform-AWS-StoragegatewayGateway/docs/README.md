@@ -12,21 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::StoragegatewayGateway",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#activationkey" title="ActivationKey">ActivationKey</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#cloudwatchloggrouparn" title="CloudwatchLogGroupArn">CloudwatchLogGroupArn</a>" : <i>String</i>,
-        "<a href="#gatewayid" title="GatewayId">GatewayId</a>" : <i>String</i>,
         "<a href="#gatewayipaddress" title="GatewayIpAddress">GatewayIpAddress</a>" : <i>String</i>,
         "<a href="#gatewayname" title="GatewayName">GatewayName</a>" : <i>String</i>,
         "<a href="#gatewaytimezone" title="GatewayTimezone">GatewayTimezone</a>" : <i>String</i>,
         "<a href="#gatewaytype" title="GatewayType">GatewayType</a>" : <i>String</i>,
         "<a href="#mediumchangertype" title="MediumChangerType">MediumChangerType</a>" : <i>String</i>,
         "<a href="#smbguestpassword" title="SmbGuestPassword">SmbGuestPassword</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#tapedrivetype" title="TapeDriveType">TapeDriveType</a>" : <i>String</i>,
-        "<a href="#smbactivedirectorysettings" title="SmbActiveDirectorySettings">SmbActiveDirectorySettings</a>" : <i>[ &lt;a href=&#34;smbactivedirectorysettings.md&#34;&gt;SmbActiveDirectorySettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#smbactivedirectorysettings" title="SmbActiveDirectorySettings">SmbActiveDirectorySettings</a>" : <i>[ <a href="smbactivedirectorysettings.md">SmbActiveDirectorySettings</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -36,11 +33,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::StoragegatewayGateway
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#activationkey" title="ActivationKey">ActivationKey</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#cloudwatchloggrouparn" title="CloudwatchLogGroupArn">CloudwatchLogGroupArn</a>: <i>String</i>
-    <a href="#gatewayid" title="GatewayId">GatewayId</a>: <i>String</i>
     <a href="#gatewayipaddress" title="GatewayIpAddress">GatewayIpAddress</a>: <i>String</i>
     <a href="#gatewayname" title="GatewayName">GatewayName</a>: <i>String</i>
     <a href="#gatewaytimezone" title="GatewayTimezone">GatewayTimezone</a>: <i>String</i>
@@ -48,24 +42,14 @@ Properties:
     <a href="#mediumchangertype" title="MediumChangerType">MediumChangerType</a>: <i>String</i>
     <a href="#smbguestpassword" title="SmbGuestPassword">SmbGuestPassword</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#tapedrivetype" title="TapeDriveType">TapeDriveType</a>: <i>String</i>
     <a href="#smbactivedirectorysettings" title="SmbActiveDirectorySettings">SmbActiveDirectorySettings</a>: <i>
-      - &lt;a href=&#34;smbactivedirectorysettings.md&#34;&gt;SmbActiveDirectorySettings&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="smbactivedirectorysettings.md">SmbActiveDirectorySettings</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ActivationKey
 
@@ -75,23 +59,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CloudwatchLogGroupArn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### GatewayId
 
 _Required_: No
 
@@ -151,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;smbactivedirectorysettings.md&#34;&gt;SmbActiveDirectorySettings&lt;/a&gt;
+_Type_: List of <a href="smbactivedirectorysettings.md">SmbActiveDirectorySettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,9 +165,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### GatewayId
 
-Returns the &lt;code&gt;GatewayId&lt;/code&gt; value.
+Returns the <code>GatewayId</code> value.
 

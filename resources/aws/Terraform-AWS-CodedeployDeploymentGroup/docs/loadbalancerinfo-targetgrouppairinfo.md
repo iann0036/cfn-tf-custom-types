@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#prodtrafficroute" title="ProdTrafficRoute">ProdTrafficRoute</a>" : <i>[ &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo-prodtrafficroute.md&#34;&gt;ProdTrafficRoute&lt;/a&gt;, ... ]</i>,
-    "<a href="#targetgroup" title="TargetGroup">TargetGroup</a>" : <i>[ &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo-targetgroup.md&#34;&gt;TargetGroup&lt;/a&gt;, ... ]</i>,
-    "<a href="#testtrafficroute" title="TestTrafficRoute">TestTrafficRoute</a>" : <i>[ &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo-testtrafficroute.md&#34;&gt;TestTrafficRoute&lt;/a&gt;, ... ]</i>
+    "<a href="#prodtrafficroute" title="ProdTrafficRoute">ProdTrafficRoute</a>" : <i>[ <a href="loadbalancerinfo-targetgrouppairinfo-prodtrafficroute.md">ProdTrafficRoute</a>, ... ]</i>,
+    "<a href="#targetgroup" title="TargetGroup">TargetGroup</a>" : <i>[ <a href="loadbalancerinfo-targetgrouppairinfo-targetgroup.md">TargetGroup</a>, ... ]</i>,
+    "<a href="#testtrafficroute" title="TestTrafficRoute">TestTrafficRoute</a>" : <i>[ <a href="loadbalancerinfo-targetgrouppairinfo-testtrafficroute.md">TestTrafficRoute</a>, ... ]</i>
 }
 </pre>
 
@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#prodtrafficroute" title="ProdTrafficRoute">ProdTrafficRoute</a>: <i>
-      - &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo-prodtrafficroute.md&#34;&gt;ProdTrafficRoute&lt;/a&gt;</i>
+      - <a href="loadbalancerinfo-targetgrouppairinfo-prodtrafficroute.md">ProdTrafficRoute</a></i>
 <a href="#targetgroup" title="TargetGroup">TargetGroup</a>: <i>
-      - &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo-targetgroup.md&#34;&gt;TargetGroup&lt;/a&gt;</i>
+      - <a href="loadbalancerinfo-targetgrouppairinfo-targetgroup.md">TargetGroup</a></i>
 <a href="#testtrafficroute" title="TestTrafficRoute">TestTrafficRoute</a>: <i>
-      - &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo-testtrafficroute.md&#34;&gt;TestTrafficRoute&lt;/a&gt;</i>
+      - <a href="loadbalancerinfo-targetgrouppairinfo-testtrafficroute.md">TestTrafficRoute</a></i>
 </pre>
 
 ## Properties
@@ -30,21 +30,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ProdTrafficRoute
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo-prodtrafficroute.md&#34;&gt;ProdTrafficRoute&lt;/a&gt;
+
+_Type_: List of <a href="loadbalancerinfo-targetgrouppairinfo-prodtrafficroute.md">ProdTrafficRoute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetGroup
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo-targetgroup.md&#34;&gt;TargetGroup&lt;/a&gt;
+
+_Type_: List of <a href="loadbalancerinfo-targetgrouppairinfo-targetgroup.md">TargetGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TestTrafficRoute
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;loadbalancerinfo-targetgrouppairinfo-testtrafficroute.md&#34;&gt;TestTrafficRoute&lt;/a&gt;
+
+_Type_: List of <a href="loadbalancerinfo-targetgrouppairinfo-testtrafficroute.md">TestTrafficRoute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

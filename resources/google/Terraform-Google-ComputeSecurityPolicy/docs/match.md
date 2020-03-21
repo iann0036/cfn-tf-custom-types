@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#versionedexpr" title="VersionedExpr">VersionedExpr</a>" : <i>String</i>,
-    "<a href="#config" title="Config">Config</a>" : <i>[ &lt;a href=&#34;match-config.md&#34;&gt;Config&lt;/a&gt;, ... ]</i>,
-    "<a href="#expr" title="Expr">Expr</a>" : <i>[ &lt;a href=&#34;match-expr.md&#34;&gt;Expr&lt;/a&gt;, ... ]</i>
+    "<a href="#config" title="Config">Config</a>" : <i>[ <a href="match-config.md">Config</a>, ... ]</i>,
+    "<a href="#expr" title="Expr">Expr</a>" : <i>[ <a href="match-expr.md">Expr</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#versionedexpr" title="VersionedExpr">VersionedExpr</a>: <i>String</i>
 <a href="#config" title="Config">Config</a>: <i>
-      - &lt;a href=&#34;match-config.md&#34;&gt;Config&lt;/a&gt;</i>
+      - <a href="match-config.md">Config</a></i>
 <a href="#expr" title="Expr">Expr</a>: <i>
-      - &lt;a href=&#34;match-expr.md&#34;&gt;Expr&lt;/a&gt;</i>
+      - <a href="match-expr.md">Expr</a></i>
 </pre>
 
 ## Properties
@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### VersionedExpr
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,14 +37,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Config
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;match-config.md&#34;&gt;Config&lt;/a&gt;
+
+_Type_: List of <a href="match-config.md">Config</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Expr
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;match-expr.md&#34;&gt;Expr&lt;/a&gt;
+
+_Type_: List of <a href="match-expr.md">Expr</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

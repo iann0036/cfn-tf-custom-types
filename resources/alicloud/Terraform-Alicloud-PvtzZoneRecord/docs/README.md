@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::PvtzZoneRecord",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
-        "<a href="#recordid" title="RecordId">RecordId</a>" : <i>Double</i>,
         "<a href="#resourcerecord" title="ResourceRecord">ResourceRecord</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
@@ -29,9 +27,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::PvtzZoneRecord
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
-    <a href="#recordid" title="RecordId">RecordId</a>: <i>Double</i>
     <a href="#resourcerecord" title="ResourceRecord">ResourceRecord</a>: <i>String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>Double</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
@@ -41,25 +37,7 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Priority
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### RecordId
 
 _Required_: No
 
@@ -125,5 +103,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RecordId
 
-Returns the &lt;code&gt;RecordId&lt;/code&gt; value.
+Returns the <code>RecordId</code> value.
 

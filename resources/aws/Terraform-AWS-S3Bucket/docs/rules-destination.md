@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
     "<a href="#replicakmskeyid" title="ReplicaKmsKeyId">ReplicaKmsKeyId</a>" : <i>String</i>,
     "<a href="#storageclass" title="StorageClass">StorageClass</a>" : <i>String</i>,
-    "<a href="#accesscontroltranslation" title="AccessControlTranslation">AccessControlTranslation</a>" : <i>[ &lt;a href=&#34;rules-destination-accesscontroltranslation.md&#34;&gt;AccessControlTranslation&lt;/a&gt;, ... ]</i>
+    "<a href="#accesscontroltranslation" title="AccessControlTranslation">AccessControlTranslation</a>" : <i>[ <a href="rules-destination-accesscontroltranslation.md">AccessControlTranslation</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#replicakmskeyid" title="ReplicaKmsKeyId">ReplicaKmsKeyId</a>: <i>String</i>
 <a href="#storageclass" title="StorageClass">StorageClass</a>: <i>String</i>
 <a href="#accesscontroltranslation" title="AccessControlTranslation">AccessControlTranslation</a>: <i>
-      - &lt;a href=&#34;rules-destination-accesscontroltranslation.md&#34;&gt;AccessControlTranslation&lt;/a&gt;</i>
+      - <a href="rules-destination-accesscontroltranslation.md">AccessControlTranslation</a></i>
 </pre>
 
 ## Properties
@@ -32,6 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AccountId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,6 +40,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Bucket
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ReplicaKmsKeyId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StorageClass
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,7 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AccessControlTranslation
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rules-destination-accesscontroltranslation.md&#34;&gt;AccessControlTranslation&lt;/a&gt;
+
+_Type_: List of <a href="rules-destination-accesscontroltranslation.md">AccessControlTranslation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

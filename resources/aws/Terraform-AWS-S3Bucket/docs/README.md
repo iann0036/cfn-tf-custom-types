@@ -12,43 +12,40 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::S3Bucket",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accelerationstatus" title="AccelerationStatus">AccelerationStatus</a>" : <i>String</i>,
         "<a href="#acl" title="Acl">Acl</a>" : <i>String</i>,
         "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
-        "<a href="#bucketdomainname" title="BucketDomainName">BucketDomainName</a>" : <i>String</i>,
         "<a href="#bucketprefix" title="BucketPrefix">BucketPrefix</a>" : <i>String</i>,
-        "<a href="#bucketregionaldomainname" title="BucketRegionalDomainName">BucketRegionalDomainName</a>" : <i>String</i>,
         "<a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>" : <i>Boolean</i>,
         "<a href="#hostedzoneid" title="HostedZoneId">HostedZoneId</a>" : <i>String</i>,
         "<a href="#policy" title="Policy">Policy</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#requestpayer" title="RequestPayer">RequestPayer</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#websitedomain" title="WebsiteDomain">WebsiteDomain</a>" : <i>String</i>,
         "<a href="#websiteendpoint" title="WebsiteEndpoint">WebsiteEndpoint</a>" : <i>String</i>,
-        "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#grant" title="Grant">Grant</a>" : <i>[ &lt;a href=&#34;grant.md&#34;&gt;Grant&lt;/a&gt;, ... ]</i>,
-        "<a href="#lifecyclerule" title="LifecycleRule">LifecycleRule</a>" : <i>[ &lt;a href=&#34;lifecyclerule.md&#34;&gt;LifecycleRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#logging" title="Logging">Logging</a>" : <i>[ &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;, ... ]</i>,
-        "<a href="#objectlockconfiguration" title="ObjectLockConfiguration">ObjectLockConfiguration</a>" : <i>[ &lt;a href=&#34;objectlockconfiguration.md&#34;&gt;ObjectLockConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#replicationconfiguration" title="ReplicationConfiguration">ReplicationConfiguration</a>" : <i>[ &lt;a href=&#34;replicationconfiguration.md&#34;&gt;ReplicationConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#serversideencryptionconfiguration" title="ServerSideEncryptionConfiguration">ServerSideEncryptionConfiguration</a>" : <i>[ &lt;a href=&#34;serversideencryptionconfiguration.md&#34;&gt;ServerSideEncryptionConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#versioning" title="Versioning">Versioning</a>" : <i>[ &lt;a href=&#34;versioning.md&#34;&gt;Versioning&lt;/a&gt;, ... ]</i>,
-        "<a href="#website" title="Website">Website</a>" : <i>[ &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;, ... ]</i>,
-        "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ &lt;a href=&#34;expiration.md&#34;&gt;Expiration&lt;/a&gt;, ... ]</i>,
-        "<a href="#noncurrentversionexpiration" title="NoncurrentVersionExpiration">NoncurrentVersionExpiration</a>" : <i>[ &lt;a href=&#34;noncurrentversionexpiration.md&#34;&gt;NoncurrentVersionExpiration&lt;/a&gt;, ... ]</i>,
-        "<a href="#noncurrentversiontransition" title="NoncurrentVersionTransition">NoncurrentVersionTransition</a>" : <i>[ &lt;a href=&#34;noncurrentversiontransition.md&#34;&gt;NoncurrentVersionTransition&lt;/a&gt;, ... ]</i>,
-        "<a href="#transition" title="Transition">Transition</a>" : <i>[ &lt;a href=&#34;transition.md&#34;&gt;Transition&lt;/a&gt;, ... ]</i>,
-        "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>,
-        "<a href="#rules" title="Rules">Rules</a>" : <i>[ &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;, ... ]</i>,
-        "<a href="#applyserversideencryptionbydefault" title="ApplyServerSideEncryptionByDefault">ApplyServerSideEncryptionByDefault</a>" : <i>[ &lt;a href=&#34;applyserversideencryptionbydefault.md&#34;&gt;ApplyServerSideEncryptionByDefault&lt;/a&gt;, ... ]</i>,
-        "<a href="#destination" title="Destination">Destination</a>" : <i>[ &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;, ... ]</i>,
-        "<a href="#filter" title="Filter">Filter</a>" : <i>[ &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;, ... ]</i>,
-        "<a href="#sourceselectioncriteria" title="SourceSelectionCriteria">SourceSelectionCriteria</a>" : <i>[ &lt;a href=&#34;sourceselectioncriteria.md&#34;&gt;SourceSelectionCriteria&lt;/a&gt;, ... ]</i>,
-        "<a href="#accesscontroltranslation" title="AccessControlTranslation">AccessControlTranslation</a>" : <i>[ &lt;a href=&#34;accesscontroltranslation.md&#34;&gt;AccessControlTranslation&lt;/a&gt;, ... ]</i>,
-        "<a href="#ssekmsencryptedobjects" title="SseKmsEncryptedObjects">SseKmsEncryptedObjects</a>" : <i>[ &lt;a href=&#34;ssekmsencryptedobjects.md&#34;&gt;SseKmsEncryptedObjects&lt;/a&gt;, ... ]</i>
+        "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ <a href="corsrule.md">CorsRule</a>, ... ]</i>,
+        "<a href="#grant" title="Grant">Grant</a>" : <i>[ <a href="grant.md">Grant</a>, ... ]</i>,
+        "<a href="#lifecyclerule" title="LifecycleRule">LifecycleRule</a>" : <i>[ <a href="lifecyclerule.md">LifecycleRule</a>, ... ]</i>,
+        "<a href="#logging" title="Logging">Logging</a>" : <i>[ <a href="logging.md">Logging</a>, ... ]</i>,
+        "<a href="#objectlockconfiguration" title="ObjectLockConfiguration">ObjectLockConfiguration</a>" : <i>[ <a href="objectlockconfiguration.md">ObjectLockConfiguration</a>, ... ]</i>,
+        "<a href="#replicationconfiguration" title="ReplicationConfiguration">ReplicationConfiguration</a>" : <i>[ <a href="replicationconfiguration.md">ReplicationConfiguration</a>, ... ]</i>,
+        "<a href="#serversideencryptionconfiguration" title="ServerSideEncryptionConfiguration">ServerSideEncryptionConfiguration</a>" : <i>[ <a href="serversideencryptionconfiguration.md">ServerSideEncryptionConfiguration</a>, ... ]</i>,
+        "<a href="#versioning" title="Versioning">Versioning</a>" : <i>[ <a href="versioning.md">Versioning</a>, ... ]</i>,
+        "<a href="#website" title="Website">Website</a>" : <i>[ <a href="website.md">Website</a>, ... ]</i>,
+        "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ <a href="expiration.md">Expiration</a>, ... ]</i>,
+        "<a href="#noncurrentversionexpiration" title="NoncurrentVersionExpiration">NoncurrentVersionExpiration</a>" : <i>[ <a href="noncurrentversionexpiration.md">NoncurrentVersionExpiration</a>, ... ]</i>,
+        "<a href="#noncurrentversiontransition" title="NoncurrentVersionTransition">NoncurrentVersionTransition</a>" : <i>[ <a href="noncurrentversiontransition.md">NoncurrentVersionTransition</a>, ... ]</i>,
+        "<a href="#transition" title="Transition">Transition</a>" : <i>[ <a href="transition.md">Transition</a>, ... ]</i>,
+        "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="rule.md">Rule</a>, ... ]</i>,
+        "<a href="#rules" title="Rules">Rules</a>" : <i>[ <a href="rules.md">Rules</a>, ... ]</i>,
+        "<a href="#applyserversideencryptionbydefault" title="ApplyServerSideEncryptionByDefault">ApplyServerSideEncryptionByDefault</a>" : <i>[ <a href="applyserversideencryptionbydefault.md">ApplyServerSideEncryptionByDefault</a>, ... ]</i>,
+        "<a href="#destination" title="Destination">Destination</a>" : <i>[ <a href="destination.md">Destination</a>, ... ]</i>,
+        "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="filter.md">Filter</a>, ... ]</i>,
+        "<a href="#sourceselectioncriteria" title="SourceSelectionCriteria">SourceSelectionCriteria</a>" : <i>[ <a href="sourceselectioncriteria.md">SourceSelectionCriteria</a>, ... ]</i>,
+        "<a href="#accesscontroltranslation" title="AccessControlTranslation">AccessControlTranslation</a>" : <i>[ <a href="accesscontroltranslation.md">AccessControlTranslation</a>, ... ]</i>,
+        "<a href="#ssekmsencryptedobjects" title="SseKmsEncryptedObjects">SseKmsEncryptedObjects</a>" : <i>[ <a href="ssekmsencryptedobjects.md">SseKmsEncryptedObjects</a>, ... ]</i>
     }
 }
 </pre>
@@ -58,78 +55,65 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::S3Bucket
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accelerationstatus" title="AccelerationStatus">AccelerationStatus</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>String</i>
     <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
-    <a href="#bucketdomainname" title="BucketDomainName">BucketDomainName</a>: <i>String</i>
     <a href="#bucketprefix" title="BucketPrefix">BucketPrefix</a>: <i>String</i>
-    <a href="#bucketregionaldomainname" title="BucketRegionalDomainName">BucketRegionalDomainName</a>: <i>String</i>
     <a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>: <i>Boolean</i>
     <a href="#hostedzoneid" title="HostedZoneId">HostedZoneId</a>: <i>String</i>
     <a href="#policy" title="Policy">Policy</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#requestpayer" title="RequestPayer">RequestPayer</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#websitedomain" title="WebsiteDomain">WebsiteDomain</a>: <i>String</i>
     <a href="#websiteendpoint" title="WebsiteEndpoint">WebsiteEndpoint</a>: <i>String</i>
     <a href="#corsrule" title="CorsRule">CorsRule</a>: <i>
-      - &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;</i>
+      - <a href="corsrule.md">CorsRule</a></i>
     <a href="#grant" title="Grant">Grant</a>: <i>
-      - &lt;a href=&#34;grant.md&#34;&gt;Grant&lt;/a&gt;</i>
+      - <a href="grant.md">Grant</a></i>
     <a href="#lifecyclerule" title="LifecycleRule">LifecycleRule</a>: <i>
-      - &lt;a href=&#34;lifecyclerule.md&#34;&gt;LifecycleRule&lt;/a&gt;</i>
+      - <a href="lifecyclerule.md">LifecycleRule</a></i>
     <a href="#logging" title="Logging">Logging</a>: <i>
-      - &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;</i>
+      - <a href="logging.md">Logging</a></i>
     <a href="#objectlockconfiguration" title="ObjectLockConfiguration">ObjectLockConfiguration</a>: <i>
-      - &lt;a href=&#34;objectlockconfiguration.md&#34;&gt;ObjectLockConfiguration&lt;/a&gt;</i>
+      - <a href="objectlockconfiguration.md">ObjectLockConfiguration</a></i>
     <a href="#replicationconfiguration" title="ReplicationConfiguration">ReplicationConfiguration</a>: <i>
-      - &lt;a href=&#34;replicationconfiguration.md&#34;&gt;ReplicationConfiguration&lt;/a&gt;</i>
+      - <a href="replicationconfiguration.md">ReplicationConfiguration</a></i>
     <a href="#serversideencryptionconfiguration" title="ServerSideEncryptionConfiguration">ServerSideEncryptionConfiguration</a>: <i>
-      - &lt;a href=&#34;serversideencryptionconfiguration.md&#34;&gt;ServerSideEncryptionConfiguration&lt;/a&gt;</i>
+      - <a href="serversideencryptionconfiguration.md">ServerSideEncryptionConfiguration</a></i>
     <a href="#versioning" title="Versioning">Versioning</a>: <i>
-      - &lt;a href=&#34;versioning.md&#34;&gt;Versioning&lt;/a&gt;</i>
+      - <a href="versioning.md">Versioning</a></i>
     <a href="#website" title="Website">Website</a>: <i>
-      - &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;</i>
+      - <a href="website.md">Website</a></i>
     <a href="#expiration" title="Expiration">Expiration</a>: <i>
-      - &lt;a href=&#34;expiration.md&#34;&gt;Expiration&lt;/a&gt;</i>
+      - <a href="expiration.md">Expiration</a></i>
     <a href="#noncurrentversionexpiration" title="NoncurrentVersionExpiration">NoncurrentVersionExpiration</a>: <i>
-      - &lt;a href=&#34;noncurrentversionexpiration.md&#34;&gt;NoncurrentVersionExpiration&lt;/a&gt;</i>
+      - <a href="noncurrentversionexpiration.md">NoncurrentVersionExpiration</a></i>
     <a href="#noncurrentversiontransition" title="NoncurrentVersionTransition">NoncurrentVersionTransition</a>: <i>
-      - &lt;a href=&#34;noncurrentversiontransition.md&#34;&gt;NoncurrentVersionTransition&lt;/a&gt;</i>
+      - <a href="noncurrentversiontransition.md">NoncurrentVersionTransition</a></i>
     <a href="#transition" title="Transition">Transition</a>: <i>
-      - &lt;a href=&#34;transition.md&#34;&gt;Transition&lt;/a&gt;</i>
+      - <a href="transition.md">Transition</a></i>
     <a href="#rule" title="Rule">Rule</a>: <i>
-      - &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;</i>
+      - <a href="rule.md">Rule</a></i>
     <a href="#rules" title="Rules">Rules</a>: <i>
-      - &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;</i>
+      - <a href="rules.md">Rules</a></i>
     <a href="#applyserversideencryptionbydefault" title="ApplyServerSideEncryptionByDefault">ApplyServerSideEncryptionByDefault</a>: <i>
-      - &lt;a href=&#34;applyserversideencryptionbydefault.md&#34;&gt;ApplyServerSideEncryptionByDefault&lt;/a&gt;</i>
+      - <a href="applyserversideencryptionbydefault.md">ApplyServerSideEncryptionByDefault</a></i>
     <a href="#destination" title="Destination">Destination</a>: <i>
-      - &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;</i>
+      - <a href="destination.md">Destination</a></i>
     <a href="#filter" title="Filter">Filter</a>: <i>
-      - &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;</i>
+      - <a href="filter.md">Filter</a></i>
     <a href="#sourceselectioncriteria" title="SourceSelectionCriteria">SourceSelectionCriteria</a>: <i>
-      - &lt;a href=&#34;sourceselectioncriteria.md&#34;&gt;SourceSelectionCriteria&lt;/a&gt;</i>
+      - <a href="sourceselectioncriteria.md">SourceSelectionCriteria</a></i>
     <a href="#accesscontroltranslation" title="AccessControlTranslation">AccessControlTranslation</a>: <i>
-      - &lt;a href=&#34;accesscontroltranslation.md&#34;&gt;AccessControlTranslation&lt;/a&gt;</i>
+      - <a href="accesscontroltranslation.md">AccessControlTranslation</a></i>
     <a href="#ssekmsencryptedobjects" title="SseKmsEncryptedObjects">SseKmsEncryptedObjects</a>: <i>
-      - &lt;a href=&#34;ssekmsencryptedobjects.md&#34;&gt;SseKmsEncryptedObjects&lt;/a&gt;</i>
+      - <a href="ssekmsencryptedobjects.md">SseKmsEncryptedObjects</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccelerationStatus
 
@@ -163,23 +147,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### BucketDomainName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### BucketPrefix
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### BucketRegionalDomainName
 
 _Required_: No
 
@@ -231,7 +199,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -255,7 +223,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;
+_Type_: List of <a href="corsrule.md">CorsRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -263,7 +231,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;grant.md&#34;&gt;Grant&lt;/a&gt;
+_Type_: List of <a href="grant.md">Grant</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -271,7 +239,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lifecyclerule.md&#34;&gt;LifecycleRule&lt;/a&gt;
+_Type_: List of <a href="lifecyclerule.md">LifecycleRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -279,7 +247,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;
+_Type_: List of <a href="logging.md">Logging</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -287,7 +255,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;objectlockconfiguration.md&#34;&gt;ObjectLockConfiguration&lt;/a&gt;
+_Type_: List of <a href="objectlockconfiguration.md">ObjectLockConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -295,7 +263,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;replicationconfiguration.md&#34;&gt;ReplicationConfiguration&lt;/a&gt;
+_Type_: List of <a href="replicationconfiguration.md">ReplicationConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -303,7 +271,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serversideencryptionconfiguration.md&#34;&gt;ServerSideEncryptionConfiguration&lt;/a&gt;
+_Type_: List of <a href="serversideencryptionconfiguration.md">ServerSideEncryptionConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -311,7 +279,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;versioning.md&#34;&gt;Versioning&lt;/a&gt;
+_Type_: List of <a href="versioning.md">Versioning</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -319,7 +287,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;
+_Type_: List of <a href="website.md">Website</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -327,7 +295,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;expiration.md&#34;&gt;Expiration&lt;/a&gt;
+_Type_: List of <a href="expiration.md">Expiration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -335,7 +303,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;noncurrentversionexpiration.md&#34;&gt;NoncurrentVersionExpiration&lt;/a&gt;
+_Type_: List of <a href="noncurrentversionexpiration.md">NoncurrentVersionExpiration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -343,7 +311,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;noncurrentversiontransition.md&#34;&gt;NoncurrentVersionTransition&lt;/a&gt;
+_Type_: List of <a href="noncurrentversiontransition.md">NoncurrentVersionTransition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -351,7 +319,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;transition.md&#34;&gt;Transition&lt;/a&gt;
+_Type_: List of <a href="transition.md">Transition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -359,7 +327,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;
+_Type_: List of <a href="rule.md">Rule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -367,7 +335,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rules.md&#34;&gt;Rules&lt;/a&gt;
+_Type_: List of <a href="rules.md">Rules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -375,7 +343,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;applyserversideencryptionbydefault.md&#34;&gt;ApplyServerSideEncryptionByDefault&lt;/a&gt;
+_Type_: List of <a href="applyserversideencryptionbydefault.md">ApplyServerSideEncryptionByDefault</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -383,7 +351,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;destination.md&#34;&gt;Destination&lt;/a&gt;
+_Type_: List of <a href="destination.md">Destination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -391,7 +359,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;
+_Type_: List of <a href="filter.md">Filter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -399,7 +367,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourceselectioncriteria.md&#34;&gt;SourceSelectionCriteria&lt;/a&gt;
+_Type_: List of <a href="sourceselectioncriteria.md">SourceSelectionCriteria</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -407,7 +375,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accesscontroltranslation.md&#34;&gt;AccessControlTranslation&lt;/a&gt;
+_Type_: List of <a href="accesscontroltranslation.md">AccessControlTranslation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -415,7 +383,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ssekmsencryptedobjects.md&#34;&gt;SseKmsEncryptedObjects&lt;/a&gt;
+_Type_: List of <a href="ssekmsencryptedobjects.md">SseKmsEncryptedObjects</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -437,9 +405,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### BucketDomainName
 
-Returns the &lt;code&gt;BucketDomainName&lt;/code&gt; value.
+Returns the <code>BucketDomainName</code> value.
 
 #### BucketRegionalDomainName
 
-Returns the &lt;code&gt;BucketRegionalDomainName&lt;/code&gt; value.
+Returns the <code>BucketRegionalDomainName</code> value.
 

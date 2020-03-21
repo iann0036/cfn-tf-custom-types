@@ -12,24 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::ObjectstorageObject",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
         "<a href="#cachecontrol" title="CacheControl">CacheControl</a>" : <i>String</i>,
         "<a href="#content" title="Content">Content</a>" : <i>String</i>,
         "<a href="#contentdisposition" title="ContentDisposition">ContentDisposition</a>" : <i>String</i>,
         "<a href="#contentencoding" title="ContentEncoding">ContentEncoding</a>" : <i>String</i>,
         "<a href="#contentlanguage" title="ContentLanguage">ContentLanguage</a>" : <i>String</i>,
-        "<a href="#contentlength" title="ContentLength">ContentLength</a>" : <i>String</i>,
-        "<a href="#contentmd5" title="ContentMd5">ContentMd5</a>" : <i>String</i>,
         "<a href="#contenttype" title="ContentType">ContentType</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#namespace" title="Namespace">Namespace</a>" : <i>String</i>,
         "<a href="#object" title="Object">Object</a>" : <i>String</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#workrequestid" title="WorkRequestId">WorkRequestId</a>" : <i>String</i>,
-        "<a href="#sourceuridetails" title="SourceUriDetails">SourceUriDetails</a>" : <i>[ &lt;a href=&#34;sourceuridetails.md&#34;&gt;SourceUriDetails&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#sourceuridetails" title="SourceUriDetails">SourceUriDetails</a>" : <i>[ <a href="sourceuridetails.md">SourceUriDetails</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -39,39 +34,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::ObjectstorageObject
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
     <a href="#cachecontrol" title="CacheControl">CacheControl</a>: <i>String</i>
     <a href="#content" title="Content">Content</a>: <i>String</i>
     <a href="#contentdisposition" title="ContentDisposition">ContentDisposition</a>: <i>String</i>
     <a href="#contentencoding" title="ContentEncoding">ContentEncoding</a>: <i>String</i>
     <a href="#contentlanguage" title="ContentLanguage">ContentLanguage</a>: <i>String</i>
-    <a href="#contentlength" title="ContentLength">ContentLength</a>: <i>String</i>
-    <a href="#contentmd5" title="ContentMd5">ContentMd5</a>: <i>String</i>
     <a href="#contenttype" title="ContentType">ContentType</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#namespace" title="Namespace">Namespace</a>: <i>String</i>
     <a href="#object" title="Object">Object</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#workrequestid" title="WorkRequestId">WorkRequestId</a>: <i>String</i>
     <a href="#sourceuridetails" title="SourceUriDetails">SourceUriDetails</a>: <i>
-      - &lt;a href=&#34;sourceuridetails.md&#34;&gt;SourceUriDetails&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="sourceuridetails.md">SourceUriDetails</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
 
@@ -121,22 +101,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ContentLength
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ContentMd5
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ContentType
 
 _Required_: No
@@ -149,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,27 +141,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### WorkRequestId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SourceUriDetails
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourceuridetails.md&#34;&gt;SourceUriDetails&lt;/a&gt;
+_Type_: List of <a href="sourceuridetails.md">SourceUriDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,17 +175,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ContentLength
 
-Returns the &lt;code&gt;ContentLength&lt;/code&gt; value.
+Returns the <code>ContentLength</code> value.
 
 #### ContentMd5
 
-Returns the &lt;code&gt;ContentMd5&lt;/code&gt; value.
+Returns the <code>ContentMd5</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### WorkRequestId
 
-Returns the &lt;code&gt;WorkRequestId&lt;/code&gt; value.
+Returns the <code>WorkRequestId</code> value.
 

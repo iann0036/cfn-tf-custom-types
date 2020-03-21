@@ -12,12 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::PkiSecretBackendIntermediateCertRequest",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#altnames" title="AltNames">AltNames</a>" : <i>[ String, ... ]</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
         "<a href="#commonname" title="CommonName">CommonName</a>" : <i>String</i>,
         "<a href="#country" title="Country">Country</a>" : <i>String</i>,
-        "<a href="#csr" title="Csr">Csr</a>" : <i>String</i>,
         "<a href="#excludecnfromsans" title="ExcludeCnFromSans">ExcludeCnFromSans</a>" : <i>Boolean</i>,
         "<a href="#format" title="Format">Format</a>" : <i>String</i>,
         "<a href="#ipsans" title="IpSans">IpSans</a>" : <i>[ String, ... ]</i>,
@@ -28,9 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#othersans" title="OtherSans">OtherSans</a>" : <i>[ String, ... ]</i>,
         "<a href="#ou" title="Ou">Ou</a>" : <i>String</i>,
         "<a href="#postalcode" title="PostalCode">PostalCode</a>" : <i>String</i>,
-        "<a href="#privatekey" title="PrivateKey">PrivateKey</a>" : <i>String</i>,
         "<a href="#privatekeyformat" title="PrivateKeyFormat">PrivateKeyFormat</a>" : <i>String</i>,
-        "<a href="#privatekeytype" title="PrivateKeyType">PrivateKeyType</a>" : <i>String</i>,
         "<a href="#province" title="Province">Province</a>" : <i>String</i>,
         "<a href="#streetaddress" title="StreetAddress">StreetAddress</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
@@ -44,13 +40,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::PkiSecretBackendIntermediateCertRequest
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#altnames" title="AltNames">AltNames</a>: <i>
       - String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
     <a href="#commonname" title="CommonName">CommonName</a>: <i>String</i>
     <a href="#country" title="Country">Country</a>: <i>String</i>
-    <a href="#csr" title="Csr">Csr</a>: <i>String</i>
     <a href="#excludecnfromsans" title="ExcludeCnFromSans">ExcludeCnFromSans</a>: <i>Boolean</i>
     <a href="#format" title="Format">Format</a>: <i>String</i>
     <a href="#ipsans" title="IpSans">IpSans</a>: <i>
@@ -63,9 +57,7 @@ Properties:
       - String</i>
     <a href="#ou" title="Ou">Ou</a>: <i>String</i>
     <a href="#postalcode" title="PostalCode">PostalCode</a>: <i>String</i>
-    <a href="#privatekey" title="PrivateKey">PrivateKey</a>: <i>String</i>
     <a href="#privatekeyformat" title="PrivateKeyFormat">PrivateKeyFormat</a>: <i>String</i>
-    <a href="#privatekeytype" title="PrivateKeyType">PrivateKeyType</a>: <i>String</i>
     <a href="#province" title="Province">Province</a>: <i>String</i>
     <a href="#streetaddress" title="StreetAddress">StreetAddress</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
@@ -74,16 +66,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AltNames
 
@@ -110,14 +92,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Country
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Csr
 
 _Required_: No
 
@@ -205,23 +179,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrivateKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### PrivateKeyFormat
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrivateKeyType
 
 _Required_: No
 
@@ -279,13 +237,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Csr
 
-Returns the &lt;code&gt;Csr&lt;/code&gt; value.
+Returns the <code>Csr</code> value.
 
 #### PrivateKey
 
-Returns the &lt;code&gt;PrivateKey&lt;/code&gt; value.
+Returns the <code>PrivateKey</code> value.
 
 #### PrivateKeyType
 
-Returns the &lt;code&gt;PrivateKeyType&lt;/code&gt; value.
+Returns the <code>PrivateKeyType</code> value.
 

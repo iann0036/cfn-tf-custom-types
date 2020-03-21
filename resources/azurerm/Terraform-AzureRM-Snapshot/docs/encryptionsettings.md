@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
-    "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ &lt;a href=&#34;encryptionsettings-diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;, ... ]</i>,
-    "<a href="#keyencryptionkey" title="KeyEncryptionKey">KeyEncryptionKey</a>" : <i>[ &lt;a href=&#34;encryptionsettings-keyencryptionkey.md&#34;&gt;KeyEncryptionKey&lt;/a&gt;, ... ]</i>
+    "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ <a href="encryptionsettings-diskencryptionkey.md">DiskEncryptionKey</a>, ... ]</i>,
+    "<a href="#keyencryptionkey" title="KeyEncryptionKey">KeyEncryptionKey</a>" : <i>[ <a href="encryptionsettings-keyencryptionkey.md">KeyEncryptionKey</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
 <a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>: <i>
-      - &lt;a href=&#34;encryptionsettings-diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;</i>
+      - <a href="encryptionsettings-diskencryptionkey.md">DiskEncryptionKey</a></i>
 <a href="#keyencryptionkey" title="KeyEncryptionKey">KeyEncryptionKey</a>: <i>
-      - &lt;a href=&#34;encryptionsettings-keyencryptionkey.md&#34;&gt;KeyEncryptionKey&lt;/a&gt;</i>
+      - <a href="encryptionsettings-keyencryptionkey.md">KeyEncryptionKey</a></i>
 </pre>
 
 ## Properties
@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Enabled
 
 _Required_: Yes
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,14 +37,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DiskEncryptionKey
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;encryptionsettings-diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;
+
+_Type_: List of <a href="encryptionsettings-diskencryptionkey.md">DiskEncryptionKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyEncryptionKey
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;encryptionsettings-keyencryptionkey.md&#34;&gt;KeyEncryptionKey&lt;/a&gt;
+
+_Type_: List of <a href="encryptionsettings-keyencryptionkey.md">KeyEncryptionKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

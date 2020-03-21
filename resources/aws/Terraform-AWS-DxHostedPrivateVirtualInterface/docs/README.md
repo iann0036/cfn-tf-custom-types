@@ -12,22 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DxHostedPrivateVirtualInterface",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#addressfamily" title="AddressFamily">AddressFamily</a>" : <i>String</i>,
         "<a href="#amazonaddress" title="AmazonAddress">AmazonAddress</a>" : <i>String</i>,
-        "<a href="#amazonsideasn" title="AmazonSideAsn">AmazonSideAsn</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
-        "<a href="#awsdevice" title="AwsDevice">AwsDevice</a>" : <i>String</i>,
         "<a href="#bgpasn" title="BgpAsn">BgpAsn</a>" : <i>Double</i>,
         "<a href="#bgpauthkey" title="BgpAuthKey">BgpAuthKey</a>" : <i>String</i>,
         "<a href="#connectionid" title="ConnectionId">ConnectionId</a>" : <i>String</i>,
         "<a href="#customeraddress" title="CustomerAddress">CustomerAddress</a>" : <i>String</i>,
-        "<a href="#jumboframecapable" title="JumboFrameCapable">JumboFrameCapable</a>" : <i>Boolean</i>,
         "<a href="#mtu" title="Mtu">Mtu</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#owneraccountid" title="OwnerAccountId">OwnerAccountId</a>" : <i>String</i>,
         "<a href="#vlan" title="Vlan">Vlan</a>" : <i>Double</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -37,35 +32,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DxHostedPrivateVirtualInterface
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#addressfamily" title="AddressFamily">AddressFamily</a>: <i>String</i>
     <a href="#amazonaddress" title="AmazonAddress">AmazonAddress</a>: <i>String</i>
-    <a href="#amazonsideasn" title="AmazonSideAsn">AmazonSideAsn</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
-    <a href="#awsdevice" title="AwsDevice">AwsDevice</a>: <i>String</i>
     <a href="#bgpasn" title="BgpAsn">BgpAsn</a>: <i>Double</i>
     <a href="#bgpauthkey" title="BgpAuthKey">BgpAuthKey</a>: <i>String</i>
     <a href="#connectionid" title="ConnectionId">ConnectionId</a>: <i>String</i>
     <a href="#customeraddress" title="CustomerAddress">CustomerAddress</a>: <i>String</i>
-    <a href="#jumboframecapable" title="JumboFrameCapable">JumboFrameCapable</a>: <i>Boolean</i>
     <a href="#mtu" title="Mtu">Mtu</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#owneraccountid" title="OwnerAccountId">OwnerAccountId</a>: <i>String</i>
     <a href="#vlan" title="Vlan">Vlan</a>: <i>Double</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AddressFamily
 
@@ -76,30 +56,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AmazonAddress
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AmazonSideAsn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AwsDevice
 
 _Required_: No
 
@@ -139,14 +95,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### JumboFrameCapable
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Mtu
 
 _Required_: No
@@ -183,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,17 +153,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AmazonSideAsn
 
-Returns the &lt;code&gt;AmazonSideAsn&lt;/code&gt; value.
+Returns the <code>AmazonSideAsn</code> value.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### AwsDevice
 
-Returns the &lt;code&gt;AwsDevice&lt;/code&gt; value.
+Returns the <code>AwsDevice</code> value.
 
 #### JumboFrameCapable
 
-Returns the &lt;code&gt;JumboFrameCapable&lt;/code&gt; value.
+Returns the <code>JumboFrameCapable</code> value.
 

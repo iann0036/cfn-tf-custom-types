@@ -8,12 +8,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#awss3datasource" title="AwsS3DataSource">AwsS3DataSource</a>" : <i>[ &lt;a href=&#34;transferspec-awss3datasource.md&#34;&gt;AwsS3DataSource&lt;/a&gt;, ... ]</i>,
-    "<a href="#gcsdatasink" title="GcsDataSink">GcsDataSink</a>" : <i>[ &lt;a href=&#34;transferspec-gcsdatasink.md&#34;&gt;GcsDataSink&lt;/a&gt;, ... ]</i>,
-    "<a href="#gcsdatasource" title="GcsDataSource">GcsDataSource</a>" : <i>[ &lt;a href=&#34;transferspec-gcsdatasource.md&#34;&gt;GcsDataSource&lt;/a&gt;, ... ]</i>,
-    "<a href="#httpdatasource" title="HttpDataSource">HttpDataSource</a>" : <i>[ &lt;a href=&#34;transferspec-httpdatasource.md&#34;&gt;HttpDataSource&lt;/a&gt;, ... ]</i>,
-    "<a href="#objectconditions" title="ObjectConditions">ObjectConditions</a>" : <i>[ &lt;a href=&#34;transferspec-objectconditions.md&#34;&gt;ObjectConditions&lt;/a&gt;, ... ]</i>,
-    "<a href="#transferoptions" title="TransferOptions">TransferOptions</a>" : <i>[ &lt;a href=&#34;transferspec-transferoptions.md&#34;&gt;TransferOptions&lt;/a&gt;, ... ]</i>
+    "<a href="#awss3datasource" title="AwsS3DataSource">AwsS3DataSource</a>" : <i>[ <a href="transferspec-awss3datasource.md">AwsS3DataSource</a>, ... ]</i>,
+    "<a href="#gcsdatasink" title="GcsDataSink">GcsDataSink</a>" : <i>[ <a href="transferspec-gcsdatasink.md">GcsDataSink</a>, ... ]</i>,
+    "<a href="#gcsdatasource" title="GcsDataSource">GcsDataSource</a>" : <i>[ <a href="transferspec-gcsdatasource.md">GcsDataSource</a>, ... ]</i>,
+    "<a href="#httpdatasource" title="HttpDataSource">HttpDataSource</a>" : <i>[ <a href="transferspec-httpdatasource.md">HttpDataSource</a>, ... ]</i>,
+    "<a href="#objectconditions" title="ObjectConditions">ObjectConditions</a>" : <i>[ <a href="transferspec-objectconditions.md">ObjectConditions</a>, ... ]</i>,
+    "<a href="#transferoptions" title="TransferOptions">TransferOptions</a>" : <i>[ <a href="transferspec-transferoptions.md">TransferOptions</a>, ... ]</i>
 }
 </pre>
 
@@ -21,17 +21,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#awss3datasource" title="AwsS3DataSource">AwsS3DataSource</a>: <i>
-      - &lt;a href=&#34;transferspec-awss3datasource.md&#34;&gt;AwsS3DataSource&lt;/a&gt;</i>
+      - <a href="transferspec-awss3datasource.md">AwsS3DataSource</a></i>
 <a href="#gcsdatasink" title="GcsDataSink">GcsDataSink</a>: <i>
-      - &lt;a href=&#34;transferspec-gcsdatasink.md&#34;&gt;GcsDataSink&lt;/a&gt;</i>
+      - <a href="transferspec-gcsdatasink.md">GcsDataSink</a></i>
 <a href="#gcsdatasource" title="GcsDataSource">GcsDataSource</a>: <i>
-      - &lt;a href=&#34;transferspec-gcsdatasource.md&#34;&gt;GcsDataSource&lt;/a&gt;</i>
+      - <a href="transferspec-gcsdatasource.md">GcsDataSource</a></i>
 <a href="#httpdatasource" title="HttpDataSource">HttpDataSource</a>: <i>
-      - &lt;a href=&#34;transferspec-httpdatasource.md&#34;&gt;HttpDataSource&lt;/a&gt;</i>
+      - <a href="transferspec-httpdatasource.md">HttpDataSource</a></i>
 <a href="#objectconditions" title="ObjectConditions">ObjectConditions</a>: <i>
-      - &lt;a href=&#34;transferspec-objectconditions.md&#34;&gt;ObjectConditions&lt;/a&gt;</i>
+      - <a href="transferspec-objectconditions.md">ObjectConditions</a></i>
 <a href="#transferoptions" title="TransferOptions">TransferOptions</a>: <i>
-      - &lt;a href=&#34;transferspec-transferoptions.md&#34;&gt;TransferOptions&lt;/a&gt;</i>
+      - <a href="transferspec-transferoptions.md">TransferOptions</a></i>
 </pre>
 
 ## Properties
@@ -39,42 +39,48 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AwsS3DataSource
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;transferspec-awss3datasource.md&#34;&gt;AwsS3DataSource&lt;/a&gt;
+
+_Type_: List of <a href="transferspec-awss3datasource.md">AwsS3DataSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GcsDataSink
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;transferspec-gcsdatasink.md&#34;&gt;GcsDataSink&lt;/a&gt;
+
+_Type_: List of <a href="transferspec-gcsdatasink.md">GcsDataSink</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GcsDataSource
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;transferspec-gcsdatasource.md&#34;&gt;GcsDataSource&lt;/a&gt;
+
+_Type_: List of <a href="transferspec-gcsdatasource.md">GcsDataSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpDataSource
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;transferspec-httpdatasource.md&#34;&gt;HttpDataSource&lt;/a&gt;
+
+_Type_: List of <a href="transferspec-httpdatasource.md">HttpDataSource</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ObjectConditions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;transferspec-objectconditions.md&#34;&gt;ObjectConditions&lt;/a&gt;
+
+_Type_: List of <a href="transferspec-objectconditions.md">ObjectConditions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransferOptions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;transferspec-transferoptions.md&#34;&gt;TransferOptions&lt;/a&gt;
+
+_Type_: List of <a href="transferspec-transferoptions.md">TransferOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

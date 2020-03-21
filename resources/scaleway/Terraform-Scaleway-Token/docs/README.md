@@ -12,16 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Scaleway::Token",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#accesskey" title="AccessKey">AccessKey</a>" : <i>String</i>,
-        "<a href="#creationip" title="CreationIp">CreationIp</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#email" title="Email">Email</a>" : <i>String</i>,
-        "<a href="#expirationdate" title="ExpirationDate">ExpirationDate</a>" : <i>String</i>,
         "<a href="#expires" title="Expires">Expires</a>" : <i>Boolean</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
-        "<a href="#secretkey" title="SecretKey">SecretKey</a>" : <i>String</i>,
-        "<a href="#userid" title="UserId">UserId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -31,45 +25,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Scaleway::Token
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#accesskey" title="AccessKey">AccessKey</a>: <i>String</i>
-    <a href="#creationip" title="CreationIp">CreationIp</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#email" title="Email">Email</a>: <i>String</i>
-    <a href="#expirationdate" title="ExpirationDate">ExpirationDate</a>: <i>String</i>
     <a href="#expires" title="Expires">Expires</a>: <i>Boolean</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
-    <a href="#secretkey" title="SecretKey">SecretKey</a>: <i>String</i>
-    <a href="#userid" title="UserId">UserId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AccessKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreationIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -87,14 +49,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ExpirationDate
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Expires
 
 _Required_: No
@@ -104,22 +58,6 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecretKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UserId
 
 _Required_: No
 
@@ -145,21 +83,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessKey
 
-Returns the &lt;code&gt;AccessKey&lt;/code&gt; value.
+Returns the <code>AccessKey</code> value.
 
 #### CreationIp
 
-Returns the &lt;code&gt;CreationIp&lt;/code&gt; value.
+Returns the <code>CreationIp</code> value.
 
 #### ExpirationDate
 
-Returns the &lt;code&gt;ExpirationDate&lt;/code&gt; value.
+Returns the <code>ExpirationDate</code> value.
 
 #### SecretKey
 
-Returns the &lt;code&gt;SecretKey&lt;/code&gt; value.
+Returns the <code>SecretKey</code> value.
 
 #### UserId
 
-Returns the &lt;code&gt;UserId&lt;/code&gt; value.
+Returns the <code>UserId</code> value.
 

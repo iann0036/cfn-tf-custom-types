@@ -12,21 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::VbsBackupShareV2",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#backupid" title="BackupId">BackupId</a>" : <i>String</i>,
-        "<a href="#backupname" title="BackupName">BackupName</a>" : <i>String</i>,
-        "<a href="#backupstatus" title="BackupStatus">BackupStatus</a>" : <i>String</i>,
-        "<a href="#container" title="Container">Container</a>" : <i>String</i>,
-        "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#servicemetadata" title="ServiceMetadata">ServiceMetadata</a>" : <i>String</i>,
-        "<a href="#shareids" title="ShareIds">ShareIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
-        "<a href="#snapshotid" title="SnapshotId">SnapshotId</a>" : <i>String</i>,
         "<a href="#toprojectids" title="ToProjectIds">ToProjectIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#volumeid" title="VolumeId">VolumeId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -36,44 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::VbsBackupShareV2
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#backupid" title="BackupId">BackupId</a>: <i>String</i>
-    <a href="#backupname" title="BackupName">BackupName</a>: <i>String</i>
-    <a href="#backupstatus" title="BackupStatus">BackupStatus</a>: <i>String</i>
-    <a href="#container" title="Container">Container</a>: <i>String</i>
-    <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#servicemetadata" title="ServiceMetadata">ServiceMetadata</a>: <i>String</i>
-    <a href="#shareids" title="ShareIds">ShareIds</a>: <i>
-      - String</i>
-    <a href="#size" title="Size">Size</a>: <i>Double</i>
-    <a href="#snapshotid" title="SnapshotId">SnapshotId</a>: <i>String</i>
     <a href="#toprojectids" title="ToProjectIds">ToProjectIds</a>: <i>
       - String</i>
-    <a href="#volumeid" title="VolumeId">VolumeId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AvailabilityZone
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BackupId
 
@@ -83,71 +42,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### BackupName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### BackupStatus
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Container
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Region
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ServiceMetadata
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ShareIds
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Size
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SnapshotId
 
 _Required_: No
 
@@ -163,19 +58,11 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### VolumeId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Timeouts
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,41 +84,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailabilityZone
 
-Returns the &lt;code&gt;AvailabilityZone&lt;/code&gt; value.
+Returns the <code>AvailabilityZone</code> value.
 
 #### BackupName
 
-Returns the &lt;code&gt;BackupName&lt;/code&gt; value.
+Returns the <code>BackupName</code> value.
 
 #### BackupStatus
 
-Returns the &lt;code&gt;BackupStatus&lt;/code&gt; value.
+Returns the <code>BackupStatus</code> value.
 
 #### Container
 
-Returns the &lt;code&gt;Container&lt;/code&gt; value.
+Returns the <code>Container</code> value.
 
 #### Description
 
-Returns the &lt;code&gt;Description&lt;/code&gt; value.
+Returns the <code>Description</code> value.
 
 #### ServiceMetadata
 
-Returns the &lt;code&gt;ServiceMetadata&lt;/code&gt; value.
+Returns the <code>ServiceMetadata</code> value.
 
 #### ShareIds
 
-Returns the &lt;code&gt;ShareIds&lt;/code&gt; value.
+Returns the <code>ShareIds</code> value.
 
 #### Size
 
-Returns the &lt;code&gt;Size&lt;/code&gt; value.
+Returns the <code>Size</code> value.
 
 #### SnapshotId
 
-Returns the &lt;code&gt;SnapshotId&lt;/code&gt; value.
+Returns the <code>SnapshotId</code> value.
 
 #### VolumeId
 
-Returns the &lt;code&gt;VolumeId&lt;/code&gt; value.
+Returns the <code>VolumeId</code> value.
 

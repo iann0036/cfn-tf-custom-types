@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::BinaryAuthorizationPolicy",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#globalpolicyevaluationmode" title="GlobalPolicyEvaluationMode">GlobalPolicyEvaluationMode</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#admissionwhitelistpatterns" title="AdmissionWhitelistPatterns">AdmissionWhitelistPatterns</a>" : <i>[ &lt;a href=&#34;admissionwhitelistpatterns.md&#34;&gt;AdmissionWhitelistPatterns&lt;/a&gt;, ... ]</i>,
-        "<a href="#clusteradmissionrules" title="ClusterAdmissionRules">ClusterAdmissionRules</a>" : <i>[ &lt;a href=&#34;clusteradmissionrules.md&#34;&gt;ClusterAdmissionRules&lt;/a&gt;, ... ]</i>,
-        "<a href="#defaultadmissionrule" title="DefaultAdmissionRule">DefaultAdmissionRule</a>" : <i>[ &lt;a href=&#34;defaultadmissionrule.md&#34;&gt;DefaultAdmissionRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#admissionwhitelistpatterns" title="AdmissionWhitelistPatterns">AdmissionWhitelistPatterns</a>" : <i>[ <a href="admissionwhitelistpatterns.md">AdmissionWhitelistPatterns</a>, ... ]</i>,
+        "<a href="#clusteradmissionrules" title="ClusterAdmissionRules">ClusterAdmissionRules</a>" : <i>[ <a href="clusteradmissionrules.md">ClusterAdmissionRules</a>, ... ]</i>,
+        "<a href="#defaultadmissionrule" title="DefaultAdmissionRule">DefaultAdmissionRule</a>" : <i>[ <a href="defaultadmissionrule.md">DefaultAdmissionRule</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -29,30 +28,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::BinaryAuthorizationPolicy
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#globalpolicyevaluationmode" title="GlobalPolicyEvaluationMode">GlobalPolicyEvaluationMode</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#admissionwhitelistpatterns" title="AdmissionWhitelistPatterns">AdmissionWhitelistPatterns</a>: <i>
-      - &lt;a href=&#34;admissionwhitelistpatterns.md&#34;&gt;AdmissionWhitelistPatterns&lt;/a&gt;</i>
+      - <a href="admissionwhitelistpatterns.md">AdmissionWhitelistPatterns</a></i>
     <a href="#clusteradmissionrules" title="ClusterAdmissionRules">ClusterAdmissionRules</a>: <i>
-      - &lt;a href=&#34;clusteradmissionrules.md&#34;&gt;ClusterAdmissionRules&lt;/a&gt;</i>
+      - <a href="clusteradmissionrules.md">ClusterAdmissionRules</a></i>
     <a href="#defaultadmissionrule" title="DefaultAdmissionRule">DefaultAdmissionRule</a>: <i>
-      - &lt;a href=&#34;defaultadmissionrule.md&#34;&gt;DefaultAdmissionRule&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="defaultadmissionrule.md">DefaultAdmissionRule</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -82,7 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;admissionwhitelistpatterns.md&#34;&gt;AdmissionWhitelistPatterns&lt;/a&gt;
+_Type_: List of <a href="admissionwhitelistpatterns.md">AdmissionWhitelistPatterns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -90,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;clusteradmissionrules.md&#34;&gt;ClusterAdmissionRules&lt;/a&gt;
+_Type_: List of <a href="clusteradmissionrules.md">ClusterAdmissionRules</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;defaultadmissionrule.md&#34;&gt;DefaultAdmissionRule&lt;/a&gt;
+_Type_: List of <a href="defaultadmissionrule.md">DefaultAdmissionRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

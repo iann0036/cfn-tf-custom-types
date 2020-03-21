@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>,
-    "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;replicationconfiguration-rules-filter-tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+    "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="replicationconfiguration-rules-filter-tags.md">Tags</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#prefix" title="Prefix">Prefix</a>: <i>String</i>
 <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;replicationconfiguration-rules-filter-tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="replicationconfiguration-rules-filter-tags.md">Tags</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Prefix
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tags
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;replicationconfiguration-rules-filter-tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Type_: List of <a href="replicationconfiguration-rules-filter-tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

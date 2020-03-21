@@ -12,25 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::HealthChecksHttpMonitor",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
-        "<a href="#headers" title="Headers">Headers</a>" : <i>[ &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;, ... ]</i>,
-        "<a href="#homeregion" title="HomeRegion">HomeRegion</a>" : <i>String</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
+        "<a href="#headers" title="Headers">Headers</a>" : <i>[ <a href="headers.md">Headers</a>, ... ]</i>,
         "<a href="#intervalinseconds" title="IntervalInSeconds">IntervalInSeconds</a>" : <i>Double</i>,
         "<a href="#isenabled" title="IsEnabled">IsEnabled</a>" : <i>Boolean</i>,
         "<a href="#method" title="Method">Method</a>" : <i>String</i>,
         "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
-        "<a href="#resultsurl" title="ResultsUrl">ResultsUrl</a>" : <i>String</i>,
         "<a href="#targets" title="Targets">Targets</a>" : <i>[ String, ... ]</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
         "<a href="#timeoutinseconds" title="TimeoutInSeconds">TimeoutInSeconds</a>" : <i>Double</i>,
         "<a href="#vantagepointnames" title="VantagePointNames">VantagePointNames</a>" : <i>[ String, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -40,43 +36,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::HealthChecksHttpMonitor
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#headers" title="Headers">Headers</a>: <i>
-      - &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;</i>
-    <a href="#homeregion" title="HomeRegion">HomeRegion</a>: <i>String</i>
+      - <a href="headers.md">Headers</a></i>
     <a href="#intervalinseconds" title="IntervalInSeconds">IntervalInSeconds</a>: <i>Double</i>
     <a href="#isenabled" title="IsEnabled">IsEnabled</a>: <i>Boolean</i>
     <a href="#method" title="Method">Method</a>: <i>String</i>
     <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
-    <a href="#resultsurl" title="ResultsUrl">ResultsUrl</a>: <i>String</i>
     <a href="#targets" title="Targets">Targets</a>: <i>
       - String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#timeoutinseconds" title="TimeoutInSeconds">TimeoutInSeconds</a>: <i>Double</i>
     <a href="#vantagepointnames" title="VantagePointNames">VantagePointNames</a>: <i>
       - String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
 
@@ -90,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -114,15 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;headers.md&#34;&gt;Headers&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HomeRegion
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="headers.md">Headers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,27 +148,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ResultsUrl
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Targets
 
 _Required_: Yes
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeCreated
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -218,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -240,13 +198,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HomeRegion
 
-Returns the &lt;code&gt;HomeRegion&lt;/code&gt; value.
+Returns the <code>HomeRegion</code> value.
 
 #### ResultsUrl
 
-Returns the &lt;code&gt;ResultsUrl&lt;/code&gt; value.
+Returns the <code>ResultsUrl</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

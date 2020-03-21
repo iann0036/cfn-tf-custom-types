@@ -12,12 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Ec2ClientVpnNetworkAssociation",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#clientvpnendpointid" title="ClientVpnEndpointId">ClientVpnEndpointId</a>" : <i>String</i>,
-        "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>
     }
 }
 </pre>
@@ -27,26 +23,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Ec2ClientVpnNetworkAssociation
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#clientvpnendpointid" title="ClientVpnEndpointId">ClientVpnEndpointId</a>: <i>String</i>
-    <a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>: <i>
-      - String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
-    <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientVpnEndpointId
 
@@ -56,33 +37,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SecurityGroups
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SubnetId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VpcId
-
-_Required_: No
 
 _Type_: String
 
@@ -106,13 +63,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SecurityGroups
 
-Returns the &lt;code&gt;SecurityGroups&lt;/code&gt; value.
+Returns the <code>SecurityGroups</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### VpcId
 
-Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
+Returns the <code>VpcId</code> value.
 

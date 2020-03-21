@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Consul::PreparedQuery",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#connect" title="Connect">Connect</a>" : <i>Boolean</i>,
         "<a href="#datacenter" title="Datacenter">Datacenter</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -23,9 +22,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#storedtoken" title="StoredToken">StoredToken</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#token" title="Token">Token</a>" : <i>String</i>,
-        "<a href="#dns" title="Dns">Dns</a>" : <i>[ &lt;a href=&#34;dns.md&#34;&gt;Dns&lt;/a&gt;, ... ]</i>,
-        "<a href="#failover" title="Failover">Failover</a>" : <i>[ &lt;a href=&#34;failover.md&#34;&gt;Failover&lt;/a&gt;, ... ]</i>,
-        "<a href="#template" title="Template">Template</a>" : <i>[ &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;, ... ]</i>
+        "<a href="#dns" title="Dns">Dns</a>" : <i>[ <a href="dns.md">Dns</a>, ... ]</i>,
+        "<a href="#failover" title="Failover">Failover</a>" : <i>[ <a href="failover.md">Failover</a>, ... ]</i>,
+        "<a href="#template" title="Template">Template</a>" : <i>[ <a href="template.md">Template</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Consul::PreparedQuery
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#connect" title="Connect">Connect</a>: <i>Boolean</i>
     <a href="#datacenter" title="Datacenter">Datacenter</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -48,24 +46,14 @@ Properties:
       - String</i>
     <a href="#token" title="Token">Token</a>: <i>String</i>
     <a href="#dns" title="Dns">Dns</a>: <i>
-      - &lt;a href=&#34;dns.md&#34;&gt;Dns&lt;/a&gt;</i>
+      - <a href="dns.md">Dns</a></i>
     <a href="#failover" title="Failover">Failover</a>: <i>
-      - &lt;a href=&#34;failover.md&#34;&gt;Failover&lt;/a&gt;</i>
+      - <a href="failover.md">Failover</a></i>
     <a href="#template" title="Template">Template</a>: <i>
-      - &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;</i>
+      - <a href="template.md">Template</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Connect
 
@@ -151,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dns.md&#34;&gt;Dns&lt;/a&gt;
+_Type_: List of <a href="dns.md">Dns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -159,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;failover.md&#34;&gt;Failover&lt;/a&gt;
+_Type_: List of <a href="failover.md">Failover</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;template.md&#34;&gt;Template&lt;/a&gt;
+_Type_: List of <a href="template.md">Template</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

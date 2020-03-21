@@ -12,18 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::DayuCcHttpPolicy",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#action" title="Action">Action</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#frequency" title="Frequency">Frequency</a>" : <i>Double</i>,
         "<a href="#ip" title="Ip">Ip</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#policyid" title="PolicyId">PolicyId</a>" : <i>String</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
         "<a href="#resourcetype" title="ResourceType">ResourceType</a>" : <i>String</i>,
         "<a href="#smode" title="Smode">Smode</a>" : <i>String</i>,
         "<a href="#switch" title="Switch">Switch</a>" : <i>Boolean</i>,
-        "<a href="#rulelist" title="RuleList">RuleList</a>" : <i>[ &lt;a href=&#34;rulelist.md&#34;&gt;RuleList&lt;/a&gt;, ... ]</i>
+        "<a href="#rulelist" title="RuleList">RuleList</a>" : <i>[ <a href="rulelist.md">RuleList</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,42 +30,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::DayuCcHttpPolicy
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#action" title="Action">Action</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#frequency" title="Frequency">Frequency</a>: <i>Double</i>
     <a href="#ip" title="Ip">Ip</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#policyid" title="PolicyId">PolicyId</a>: <i>String</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
     <a href="#resourcetype" title="ResourceType">ResourceType</a>: <i>String</i>
     <a href="#smode" title="Smode">Smode</a>: <i>String</i>
     <a href="#switch" title="Switch">Switch</a>: <i>Boolean</i>
     <a href="#rulelist" title="RuleList">RuleList</a>: <i>
-      - &lt;a href=&#34;rulelist.md&#34;&gt;RuleList&lt;/a&gt;</i>
+      - <a href="rulelist.md">RuleList</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Action
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreateTime
 
 _Required_: No
 
@@ -95,14 +71,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PolicyId
-
-_Required_: No
 
 _Type_: String
 
@@ -144,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rulelist.md&#34;&gt;RuleList&lt;/a&gt;
+_Type_: List of <a href="rulelist.md">RuleList</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,9 +134,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### PolicyId
 
-Returns the &lt;code&gt;PolicyId&lt;/code&gt; value.
+Returns the <code>PolicyId</code> value.
 

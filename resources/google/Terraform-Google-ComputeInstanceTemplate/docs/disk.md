@@ -15,12 +15,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#disksizegb" title="DiskSizeGb">DiskSizeGb</a>" : <i>Double</i>,
     "<a href="#disktype" title="DiskType">DiskType</a>" : <i>String</i>,
     "<a href="#interface" title="Interface">Interface</a>" : <i>String</i>,
-    "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;disk-labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+    "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="disk-labels.md">Labels</a>, ... ]</i>,
     "<a href="#mode" title="Mode">Mode</a>" : <i>String</i>,
     "<a href="#source" title="Source">Source</a>" : <i>String</i>,
     "<a href="#sourceimage" title="SourceImage">SourceImage</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ &lt;a href=&#34;disk-diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;, ... ]</i>
+    "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ <a href="disk-diskencryptionkey.md">DiskEncryptionKey</a>, ... ]</i>
 }
 </pre>
 
@@ -35,13 +35,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#disktype" title="DiskType">DiskType</a>: <i>String</i>
 <a href="#interface" title="Interface">Interface</a>: <i>String</i>
 <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;disk-labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="disk-labels.md">Labels</a></i>
 <a href="#mode" title="Mode">Mode</a>: <i>String</i>
 <a href="#source" title="Source">Source</a>: <i>String</i>
 <a href="#sourceimage" title="SourceImage">SourceImage</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>: <i>
-      - &lt;a href=&#34;disk-diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;</i>
+      - <a href="disk-diskencryptionkey.md">DiskEncryptionKey</a></i>
 </pre>
 
 ## Properties
@@ -49,6 +49,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AutoDelete
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Boot
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -63,6 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DeviceName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -70,6 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DiskName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -77,6 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DiskSizeGb
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -84,6 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DiskType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -91,6 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Interface
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -98,13 +105,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Labels
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;disk-labels.md&#34;&gt;Labels&lt;/a&gt;
+
+_Type_: List of <a href="disk-labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Mode
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -112,6 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Source
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -119,6 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SourceImage
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -126,6 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -133,7 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DiskEncryptionKey
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;disk-diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;
+
+_Type_: List of <a href="disk-diskencryptionkey.md">DiskEncryptionKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

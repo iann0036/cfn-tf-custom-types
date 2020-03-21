@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#s3bucketdestination" title="S3BucketDestination">S3BucketDestination</a>" : <i>[ &lt;a href=&#34;destination-s3bucketdestination.md&#34;&gt;S3BucketDestination&lt;/a&gt;, ... ]</i>
+    "<a href="#s3bucketdestination" title="S3BucketDestination">S3BucketDestination</a>" : <i>[ <a href="destination-s3bucketdestination.md">S3BucketDestination</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#s3bucketdestination" title="S3BucketDestination">S3BucketDestination</a>: <i>
-      - &lt;a href=&#34;destination-s3bucketdestination.md&#34;&gt;S3BucketDestination&lt;/a&gt;</i>
+      - <a href="destination-s3bucketdestination.md">S3BucketDestination</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### S3BucketDestination
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;destination-s3bucketdestination.md&#34;&gt;S3BucketDestination&lt;/a&gt;
+
+_Type_: List of <a href="destination-s3bucketdestination.md">S3BucketDestination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

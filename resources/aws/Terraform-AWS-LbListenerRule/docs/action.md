@@ -11,10 +11,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#order" title="Order">Order</a>" : <i>Double</i>,
     "<a href="#targetgrouparn" title="TargetGroupArn">TargetGroupArn</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#authenticatecognito" title="AuthenticateCognito">AuthenticateCognito</a>" : <i>[ &lt;a href=&#34;action-authenticatecognito.md&#34;&gt;AuthenticateCognito&lt;/a&gt;, ... ]</i>,
-    "<a href="#authenticateoidc" title="AuthenticateOidc">AuthenticateOidc</a>" : <i>[ &lt;a href=&#34;action-authenticateoidc.md&#34;&gt;AuthenticateOidc&lt;/a&gt;, ... ]</i>,
-    "<a href="#fixedresponse" title="FixedResponse">FixedResponse</a>" : <i>[ &lt;a href=&#34;action-fixedresponse.md&#34;&gt;FixedResponse&lt;/a&gt;, ... ]</i>,
-    "<a href="#redirect" title="Redirect">Redirect</a>" : <i>[ &lt;a href=&#34;action-redirect.md&#34;&gt;Redirect&lt;/a&gt;, ... ]</i>
+    "<a href="#authenticatecognito" title="AuthenticateCognito">AuthenticateCognito</a>" : <i>[ <a href="action-authenticatecognito.md">AuthenticateCognito</a>, ... ]</i>,
+    "<a href="#authenticateoidc" title="AuthenticateOidc">AuthenticateOidc</a>" : <i>[ <a href="action-authenticateoidc.md">AuthenticateOidc</a>, ... ]</i>,
+    "<a href="#fixedresponse" title="FixedResponse">FixedResponse</a>" : <i>[ <a href="action-fixedresponse.md">FixedResponse</a>, ... ]</i>,
+    "<a href="#redirect" title="Redirect">Redirect</a>" : <i>[ <a href="action-redirect.md">Redirect</a>, ... ]</i>
 }
 </pre>
 
@@ -25,13 +25,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#targetgrouparn" title="TargetGroupArn">TargetGroupArn</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#authenticatecognito" title="AuthenticateCognito">AuthenticateCognito</a>: <i>
-      - &lt;a href=&#34;action-authenticatecognito.md&#34;&gt;AuthenticateCognito&lt;/a&gt;</i>
+      - <a href="action-authenticatecognito.md">AuthenticateCognito</a></i>
 <a href="#authenticateoidc" title="AuthenticateOidc">AuthenticateOidc</a>: <i>
-      - &lt;a href=&#34;action-authenticateoidc.md&#34;&gt;AuthenticateOidc&lt;/a&gt;</i>
+      - <a href="action-authenticateoidc.md">AuthenticateOidc</a></i>
 <a href="#fixedresponse" title="FixedResponse">FixedResponse</a>: <i>
-      - &lt;a href=&#34;action-fixedresponse.md&#34;&gt;FixedResponse&lt;/a&gt;</i>
+      - <a href="action-fixedresponse.md">FixedResponse</a></i>
 <a href="#redirect" title="Redirect">Redirect</a>: <i>
-      - &lt;a href=&#34;action-redirect.md&#34;&gt;Redirect&lt;/a&gt;</i>
+      - <a href="action-redirect.md">Redirect</a></i>
 </pre>
 
 ## Properties
@@ -39,6 +39,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Order
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +47,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TargetGroupArn
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +55,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,28 +63,32 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AuthenticateCognito
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;action-authenticatecognito.md&#34;&gt;AuthenticateCognito&lt;/a&gt;
+
+_Type_: List of <a href="action-authenticatecognito.md">AuthenticateCognito</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthenticateOidc
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;action-authenticateoidc.md&#34;&gt;AuthenticateOidc&lt;/a&gt;
+
+_Type_: List of <a href="action-authenticateoidc.md">AuthenticateOidc</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FixedResponse
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;action-fixedresponse.md&#34;&gt;FixedResponse&lt;/a&gt;
+
+_Type_: List of <a href="action-fixedresponse.md">FixedResponse</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Redirect
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;action-redirect.md&#34;&gt;Redirect&lt;/a&gt;
+
+_Type_: List of <a href="action-redirect.md">Redirect</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

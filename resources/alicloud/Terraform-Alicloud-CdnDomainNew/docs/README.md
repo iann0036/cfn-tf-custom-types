@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::CdnDomainNew",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cdntype" title="CdnType">CdnType</a>" : <i>String</i>,
         "<a href="#domainname" title="DomainName">DomainName</a>" : <i>String</i>,
         "<a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>" : <i>String</i>,
         "<a href="#scope" title="Scope">Scope</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#certificateconfig" title="CertificateConfig">CertificateConfig</a>" : <i>[ &lt;a href=&#34;certificateconfig.md&#34;&gt;CertificateConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#sources" title="Sources">Sources</a>" : <i>[ &lt;a href=&#34;sources.md&#34;&gt;Sources&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#certificateconfig" title="CertificateConfig">CertificateConfig</a>" : <i>[ <a href="certificateconfig.md">CertificateConfig</a>, ... ]</i>,
+        "<a href="#sources" title="Sources">Sources</a>" : <i>[ <a href="sources.md">Sources</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,30 +28,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::CdnDomainNew
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cdntype" title="CdnType">CdnType</a>: <i>String</i>
     <a href="#domainname" title="DomainName">DomainName</a>: <i>String</i>
     <a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>: <i>String</i>
     <a href="#scope" title="Scope">Scope</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#certificateconfig" title="CertificateConfig">CertificateConfig</a>: <i>
-      - &lt;a href=&#34;certificateconfig.md&#34;&gt;CertificateConfig&lt;/a&gt;</i>
+      - <a href="certificateconfig.md">CertificateConfig</a></i>
     <a href="#sources" title="Sources">Sources</a>: <i>
-      - &lt;a href=&#34;sources.md&#34;&gt;Sources&lt;/a&gt;</i>
+      - <a href="sources.md">Sources</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CdnType
 
@@ -90,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;certificateconfig.md&#34;&gt;CertificateConfig&lt;/a&gt;
+_Type_: List of <a href="certificateconfig.md">CertificateConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sources.md&#34;&gt;Sources&lt;/a&gt;
+_Type_: List of <a href="sources.md">Sources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

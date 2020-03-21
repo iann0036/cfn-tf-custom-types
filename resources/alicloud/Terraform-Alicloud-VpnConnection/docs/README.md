@@ -12,16 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::VpnConnection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#customergatewayid" title="CustomerGatewayId">CustomerGatewayId</a>" : <i>String</i>,
         "<a href="#effectimmediately" title="EffectImmediately">EffectImmediately</a>" : <i>Boolean</i>,
         "<a href="#localsubnet" title="LocalSubnet">LocalSubnet</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#remotesubnet" title="RemoteSubnet">RemoteSubnet</a>" : <i>[ String, ... ]</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#vpngatewayid" title="VpnGatewayId">VpnGatewayId</a>" : <i>String</i>,
-        "<a href="#ikeconfig" title="IkeConfig">IkeConfig</a>" : <i>[ &lt;a href=&#34;ikeconfig.md&#34;&gt;IkeConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#ipsecconfig" title="IpsecConfig">IpsecConfig</a>" : <i>[ &lt;a href=&#34;ipsecconfig.md&#34;&gt;IpsecConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#ikeconfig" title="IkeConfig">IkeConfig</a>" : <i>[ <a href="ikeconfig.md">IkeConfig</a>, ... ]</i>,
+        "<a href="#ipsecconfig" title="IpsecConfig">IpsecConfig</a>" : <i>[ <a href="ipsecconfig.md">IpsecConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,7 +29,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::VpnConnection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#customergatewayid" title="CustomerGatewayId">CustomerGatewayId</a>: <i>String</i>
     <a href="#effectimmediately" title="EffectImmediately">EffectImmediately</a>: <i>Boolean</i>
     <a href="#localsubnet" title="LocalSubnet">LocalSubnet</a>: <i>
@@ -39,25 +36,14 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#remotesubnet" title="RemoteSubnet">RemoteSubnet</a>: <i>
       - String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#vpngatewayid" title="VpnGatewayId">VpnGatewayId</a>: <i>String</i>
     <a href="#ikeconfig" title="IkeConfig">IkeConfig</a>: <i>
-      - &lt;a href=&#34;ikeconfig.md&#34;&gt;IkeConfig&lt;/a&gt;</i>
+      - <a href="ikeconfig.md">IkeConfig</a></i>
     <a href="#ipsecconfig" title="IpsecConfig">IpsecConfig</a>: <i>
-      - &lt;a href=&#34;ipsecconfig.md&#34;&gt;IpsecConfig&lt;/a&gt;</i>
+      - <a href="ipsecconfig.md">IpsecConfig</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomerGatewayId
 
@@ -99,14 +85,6 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### VpnGatewayId
 
 _Required_: Yes
@@ -119,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ikeconfig.md&#34;&gt;IkeConfig&lt;/a&gt;
+_Type_: List of <a href="ikeconfig.md">IkeConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipsecconfig.md&#34;&gt;IpsecConfig&lt;/a&gt;
+_Type_: List of <a href="ipsecconfig.md">IpsecConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -149,5 +127,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

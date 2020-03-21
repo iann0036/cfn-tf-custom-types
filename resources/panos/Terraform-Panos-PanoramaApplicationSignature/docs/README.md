@@ -12,19 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaApplicationSignature",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#applicationobject" title="ApplicationObject">ApplicationObject</a>" : <i>String</i>,
         "<a href="#comment" title="Comment">Comment</a>" : <i>String</i>,
         "<a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#orderedmatch" title="OrderedMatch">OrderedMatch</a>" : <i>Boolean</i>,
         "<a href="#scope" title="Scope">Scope</a>" : <i>String</i>,
-        "<a href="#andcondition" title="AndCondition">AndCondition</a>" : <i>[ &lt;a href=&#34;andcondition.md&#34;&gt;AndCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#orcondition" title="OrCondition">OrCondition</a>" : <i>[ &lt;a href=&#34;orcondition.md&#34;&gt;OrCondition&lt;/a&gt;, ... ]</i>,
-        "<a href="#equalto" title="EqualTo">EqualTo</a>" : <i>[ &lt;a href=&#34;equalto.md&#34;&gt;EqualTo&lt;/a&gt;, ... ]</i>,
-        "<a href="#greaterthan" title="GreaterThan">GreaterThan</a>" : <i>[ &lt;a href=&#34;greaterthan.md&#34;&gt;GreaterThan&lt;/a&gt;, ... ]</i>,
-        "<a href="#lessthan" title="LessThan">LessThan</a>" : <i>[ &lt;a href=&#34;lessthan.md&#34;&gt;LessThan&lt;/a&gt;, ... ]</i>,
-        "<a href="#patternmatch" title="PatternMatch">PatternMatch</a>" : <i>[ &lt;a href=&#34;patternmatch.md&#34;&gt;PatternMatch&lt;/a&gt;, ... ]</i>
+        "<a href="#andcondition" title="AndCondition">AndCondition</a>" : <i>[ <a href="andcondition.md">AndCondition</a>, ... ]</i>,
+        "<a href="#orcondition" title="OrCondition">OrCondition</a>" : <i>[ <a href="orcondition.md">OrCondition</a>, ... ]</i>,
+        "<a href="#equalto" title="EqualTo">EqualTo</a>" : <i>[ <a href="equalto.md">EqualTo</a>, ... ]</i>,
+        "<a href="#greaterthan" title="GreaterThan">GreaterThan</a>" : <i>[ <a href="greaterthan.md">GreaterThan</a>, ... ]</i>,
+        "<a href="#lessthan" title="LessThan">LessThan</a>" : <i>[ <a href="lessthan.md">LessThan</a>, ... ]</i>,
+        "<a href="#patternmatch" title="PatternMatch">PatternMatch</a>" : <i>[ <a href="patternmatch.md">PatternMatch</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,7 +33,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaApplicationSignature
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#applicationobject" title="ApplicationObject">ApplicationObject</a>: <i>String</i>
     <a href="#comment" title="Comment">Comment</a>: <i>String</i>
     <a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>: <i>String</i>
@@ -42,30 +40,20 @@ Properties:
     <a href="#orderedmatch" title="OrderedMatch">OrderedMatch</a>: <i>Boolean</i>
     <a href="#scope" title="Scope">Scope</a>: <i>String</i>
     <a href="#andcondition" title="AndCondition">AndCondition</a>: <i>
-      - &lt;a href=&#34;andcondition.md&#34;&gt;AndCondition&lt;/a&gt;</i>
+      - <a href="andcondition.md">AndCondition</a></i>
     <a href="#orcondition" title="OrCondition">OrCondition</a>: <i>
-      - &lt;a href=&#34;orcondition.md&#34;&gt;OrCondition&lt;/a&gt;</i>
+      - <a href="orcondition.md">OrCondition</a></i>
     <a href="#equalto" title="EqualTo">EqualTo</a>: <i>
-      - &lt;a href=&#34;equalto.md&#34;&gt;EqualTo&lt;/a&gt;</i>
+      - <a href="equalto.md">EqualTo</a></i>
     <a href="#greaterthan" title="GreaterThan">GreaterThan</a>: <i>
-      - &lt;a href=&#34;greaterthan.md&#34;&gt;GreaterThan&lt;/a&gt;</i>
+      - <a href="greaterthan.md">GreaterThan</a></i>
     <a href="#lessthan" title="LessThan">LessThan</a>: <i>
-      - &lt;a href=&#34;lessthan.md&#34;&gt;LessThan&lt;/a&gt;</i>
+      - <a href="lessthan.md">LessThan</a></i>
     <a href="#patternmatch" title="PatternMatch">PatternMatch</a>: <i>
-      - &lt;a href=&#34;patternmatch.md&#34;&gt;PatternMatch&lt;/a&gt;</i>
+      - <a href="patternmatch.md">PatternMatch</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplicationObject
 
@@ -119,7 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;andcondition.md&#34;&gt;AndCondition&lt;/a&gt;
+_Type_: List of <a href="andcondition.md">AndCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;orcondition.md&#34;&gt;OrCondition&lt;/a&gt;
+_Type_: List of <a href="orcondition.md">OrCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;equalto.md&#34;&gt;EqualTo&lt;/a&gt;
+_Type_: List of <a href="equalto.md">EqualTo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;greaterthan.md&#34;&gt;GreaterThan&lt;/a&gt;
+_Type_: List of <a href="greaterthan.md">GreaterThan</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -151,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lessthan.md&#34;&gt;LessThan&lt;/a&gt;
+_Type_: List of <a href="lessthan.md">LessThan</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -159,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;patternmatch.md&#34;&gt;PatternMatch&lt;/a&gt;
+_Type_: List of <a href="patternmatch.md">PatternMatch</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

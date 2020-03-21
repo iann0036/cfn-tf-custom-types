@@ -12,37 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::DataflowInvokeRun",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#applicationid" title="ApplicationId">ApplicationId</a>" : <i>String</i>,
         "<a href="#arguments" title="Arguments">Arguments</a>" : <i>[ String, ... ]</i>,
         "<a href="#asynchronous" title="Asynchronous">Asynchronous</a>" : <i>Boolean</i>,
-        "<a href="#classname" title="ClassName">ClassName</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;, ... ]</i>,
-        "<a href="#datareadinbytes" title="DataReadInBytes">DataReadInBytes</a>" : <i>String</i>,
-        "<a href="#datawritteninbytes" title="DataWrittenInBytes">DataWrittenInBytes</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#configuration" title="Configuration">Configuration</a>" : <i>[ <a href="configuration.md">Configuration</a>, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#drivershape" title="DriverShape">DriverShape</a>" : <i>String</i>,
         "<a href="#executorshape" title="ExecutorShape">ExecutorShape</a>" : <i>String</i>,
-        "<a href="#fileuri" title="FileUri">FileUri</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
-        "<a href="#language" title="Language">Language</a>" : <i>String</i>,
-        "<a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>" : <i>String</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#logsbucketuri" title="LogsBucketUri">LogsBucketUri</a>" : <i>String</i>,
         "<a href="#numexecutors" title="NumExecutors">NumExecutors</a>" : <i>Double</i>,
-        "<a href="#opcrequestid" title="OpcRequestId">OpcRequestId</a>" : <i>String</i>,
-        "<a href="#ownerprincipalid" title="OwnerPrincipalId">OwnerPrincipalId</a>" : <i>String</i>,
-        "<a href="#ownerusername" title="OwnerUserName">OwnerUserName</a>" : <i>String</i>,
-        "<a href="#rundurationinmilliseconds" title="RunDurationInMilliseconds">RunDurationInMilliseconds</a>" : <i>String</i>,
-        "<a href="#sparkversion" title="SparkVersion">SparkVersion</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
-        "<a href="#timeupdated" title="TimeUpdated">TimeUpdated</a>" : <i>String</i>,
-        "<a href="#totalocpu" title="TotalOcpu">TotalOcpu</a>" : <i>Double</i>,
         "<a href="#warehousebucketuri" title="WarehouseBucketUri">WarehouseBucketUri</a>" : <i>String</i>,
-        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ <a href="parameters.md">Parameters</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -52,55 +36,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::DataflowInvokeRun
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#applicationid" title="ApplicationId">ApplicationId</a>: <i>String</i>
     <a href="#arguments" title="Arguments">Arguments</a>: <i>
       - String</i>
     <a href="#asynchronous" title="Asynchronous">Asynchronous</a>: <i>Boolean</i>
-    <a href="#classname" title="ClassName">ClassName</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#configuration" title="Configuration">Configuration</a>: <i>
-      - &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;</i>
-    <a href="#datareadinbytes" title="DataReadInBytes">DataReadInBytes</a>: <i>String</i>
-    <a href="#datawritteninbytes" title="DataWrittenInBytes">DataWrittenInBytes</a>: <i>String</i>
+      - <a href="configuration.md">Configuration</a></i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#drivershape" title="DriverShape">DriverShape</a>: <i>String</i>
     <a href="#executorshape" title="ExecutorShape">ExecutorShape</a>: <i>String</i>
-    <a href="#fileuri" title="FileUri">FileUri</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
-    <a href="#language" title="Language">Language</a>: <i>String</i>
-    <a href="#lifecycledetails" title="LifecycleDetails">LifecycleDetails</a>: <i>String</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#logsbucketuri" title="LogsBucketUri">LogsBucketUri</a>: <i>String</i>
     <a href="#numexecutors" title="NumExecutors">NumExecutors</a>: <i>Double</i>
-    <a href="#opcrequestid" title="OpcRequestId">OpcRequestId</a>: <i>String</i>
-    <a href="#ownerprincipalid" title="OwnerPrincipalId">OwnerPrincipalId</a>: <i>String</i>
-    <a href="#ownerusername" title="OwnerUserName">OwnerUserName</a>: <i>String</i>
-    <a href="#rundurationinmilliseconds" title="RunDurationInMilliseconds">RunDurationInMilliseconds</a>: <i>String</i>
-    <a href="#sparkversion" title="SparkVersion">SparkVersion</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
-    <a href="#timeupdated" title="TimeUpdated">TimeUpdated</a>: <i>String</i>
-    <a href="#totalocpu" title="TotalOcpu">TotalOcpu</a>: <i>Double</i>
     <a href="#warehousebucketuri" title="WarehouseBucketUri">WarehouseBucketUri</a>: <i>String</i>
     <a href="#parameters" title="Parameters">Parameters</a>: <i>
-      - &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="parameters.md">Parameters</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplicationId
 
@@ -126,14 +84,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ClassName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CompartmentId
 
 _Required_: Yes
@@ -146,23 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configuration.md&#34;&gt;Configuration&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DataReadInBytes
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DataWrittenInBytes
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="configuration.md">Configuration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,35 +132,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### FileUri
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### FreeformTags
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Language
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LifecycleDetails
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -246,78 +156,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### OpcRequestId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### OwnerPrincipalId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### OwnerUserName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### RunDurationInMilliseconds
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SparkVersion
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeCreated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeUpdated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TotalOcpu
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### WarehouseBucketUri
 
 _Required_: No
@@ -330,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;
+_Type_: List of <a href="parameters.md">Parameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -338,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -360,61 +198,61 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClassName
 
-Returns the &lt;code&gt;ClassName&lt;/code&gt; value.
+Returns the <code>ClassName</code> value.
 
 #### DataReadInBytes
 
-Returns the &lt;code&gt;DataReadInBytes&lt;/code&gt; value.
+Returns the <code>DataReadInBytes</code> value.
 
 #### DataWrittenInBytes
 
-Returns the &lt;code&gt;DataWrittenInBytes&lt;/code&gt; value.
+Returns the <code>DataWrittenInBytes</code> value.
 
 #### FileUri
 
-Returns the &lt;code&gt;FileUri&lt;/code&gt; value.
+Returns the <code>FileUri</code> value.
 
 #### Language
 
-Returns the &lt;code&gt;Language&lt;/code&gt; value.
+Returns the <code>Language</code> value.
 
 #### LifecycleDetails
 
-Returns the &lt;code&gt;LifecycleDetails&lt;/code&gt; value.
+Returns the <code>LifecycleDetails</code> value.
 
 #### OpcRequestId
 
-Returns the &lt;code&gt;OpcRequestId&lt;/code&gt; value.
+Returns the <code>OpcRequestId</code> value.
 
 #### OwnerPrincipalId
 
-Returns the &lt;code&gt;OwnerPrincipalId&lt;/code&gt; value.
+Returns the <code>OwnerPrincipalId</code> value.
 
 #### OwnerUserName
 
-Returns the &lt;code&gt;OwnerUserName&lt;/code&gt; value.
+Returns the <code>OwnerUserName</code> value.
 
 #### RunDurationInMilliseconds
 
-Returns the &lt;code&gt;RunDurationInMilliseconds&lt;/code&gt; value.
+Returns the <code>RunDurationInMilliseconds</code> value.
 
 #### SparkVersion
 
-Returns the &lt;code&gt;SparkVersion&lt;/code&gt; value.
+Returns the <code>SparkVersion</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 
 #### TimeUpdated
 
-Returns the &lt;code&gt;TimeUpdated&lt;/code&gt; value.
+Returns the <code>TimeUpdated</code> value.
 
 #### TotalOcpu
 
-Returns the &lt;code&gt;TotalOcpu&lt;/code&gt; value.
+Returns the <code>TotalOcpu</code> value.
 

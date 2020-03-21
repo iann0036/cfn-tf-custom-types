@@ -12,14 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::SqlDatabase",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#collation" title="Collation">Collation</a>" : <i>String</i>,
         "<a href="#createmode" title="CreateMode">CreateMode</a>" : <i>String</i>,
-        "<a href="#creationdate" title="CreationDate">CreationDate</a>" : <i>String</i>,
-        "<a href="#defaultsecondarylocation" title="DefaultSecondaryLocation">DefaultSecondaryLocation</a>" : <i>String</i>,
         "<a href="#edition" title="Edition">Edition</a>" : <i>String</i>,
         "<a href="#elasticpoolname" title="ElasticPoolName">ElasticPoolName</a>" : <i>String</i>,
-        "<a href="#encryption" title="Encryption">Encryption</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#maxsizebytes" title="MaxSizeBytes">MaxSizeBytes</a>" : <i>String</i>,
         "<a href="#maxsizegb" title="MaxSizeGb">MaxSizeGb</a>" : <i>String</i>,
@@ -32,12 +28,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#servername" title="ServerName">ServerName</a>" : <i>String</i>,
         "<a href="#sourcedatabasedeletiondate" title="SourceDatabaseDeletionDate">SourceDatabaseDeletionDate</a>" : <i>String</i>,
         "<a href="#sourcedatabaseid" title="SourceDatabaseId">SourceDatabaseId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#zoneredundant" title="ZoneRedundant">ZoneRedundant</a>" : <i>Boolean</i>,
-        "<a href="#extendedauditingpolicy" title="ExtendedAuditingPolicy">ExtendedAuditingPolicy</a>" : <i>[ &lt;a href=&#34;extendedauditingpolicy.md&#34;&gt;ExtendedAuditingPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#import" title="Import">Import</a>" : <i>[ &lt;a href=&#34;import.md&#34;&gt;Import&lt;/a&gt;, ... ]</i>,
-        "<a href="#threatdetectionpolicy" title="ThreatDetectionPolicy">ThreatDetectionPolicy</a>" : <i>[ &lt;a href=&#34;threatdetectionpolicy.md&#34;&gt;ThreatDetectionPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#extendedauditingpolicy" title="ExtendedAuditingPolicy">ExtendedAuditingPolicy</a>" : <i>[ <a href="extendedauditingpolicy.md">ExtendedAuditingPolicy</a>, ... ]</i>,
+        "<a href="#import" title="Import">Import</a>" : <i>[ <a href="import.md">Import</a>, ... ]</i>,
+        "<a href="#threatdetectionpolicy" title="ThreatDetectionPolicy">ThreatDetectionPolicy</a>" : <i>[ <a href="threatdetectionpolicy.md">ThreatDetectionPolicy</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -47,14 +43,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::SqlDatabase
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#collation" title="Collation">Collation</a>: <i>String</i>
     <a href="#createmode" title="CreateMode">CreateMode</a>: <i>String</i>
-    <a href="#creationdate" title="CreationDate">CreationDate</a>: <i>String</i>
-    <a href="#defaultsecondarylocation" title="DefaultSecondaryLocation">DefaultSecondaryLocation</a>: <i>String</i>
     <a href="#edition" title="Edition">Edition</a>: <i>String</i>
     <a href="#elasticpoolname" title="ElasticPoolName">ElasticPoolName</a>: <i>String</i>
-    <a href="#encryption" title="Encryption">Encryption</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#maxsizebytes" title="MaxSizeBytes">MaxSizeBytes</a>: <i>String</i>
     <a href="#maxsizegb" title="MaxSizeGb">MaxSizeGb</a>: <i>String</i>
@@ -68,28 +60,18 @@ Properties:
     <a href="#sourcedatabasedeletiondate" title="SourceDatabaseDeletionDate">SourceDatabaseDeletionDate</a>: <i>String</i>
     <a href="#sourcedatabaseid" title="SourceDatabaseId">SourceDatabaseId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#zoneredundant" title="ZoneRedundant">ZoneRedundant</a>: <i>Boolean</i>
     <a href="#extendedauditingpolicy" title="ExtendedAuditingPolicy">ExtendedAuditingPolicy</a>: <i>
-      - &lt;a href=&#34;extendedauditingpolicy.md&#34;&gt;ExtendedAuditingPolicy&lt;/a&gt;</i>
+      - <a href="extendedauditingpolicy.md">ExtendedAuditingPolicy</a></i>
     <a href="#import" title="Import">Import</a>: <i>
-      - &lt;a href=&#34;import.md&#34;&gt;Import&lt;/a&gt;</i>
+      - <a href="import.md">Import</a></i>
     <a href="#threatdetectionpolicy" title="ThreatDetectionPolicy">ThreatDetectionPolicy</a>: <i>
-      - &lt;a href=&#34;threatdetectionpolicy.md&#34;&gt;ThreatDetectionPolicy&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="threatdetectionpolicy.md">ThreatDetectionPolicy</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Collation
 
@@ -107,22 +89,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CreationDate
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DefaultSecondaryLocation
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Edition
 
 _Required_: No
@@ -132,14 +98,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ElasticPoolName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Encryption
 
 _Required_: No
 
@@ -247,7 +205,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -263,7 +221,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;extendedauditingpolicy.md&#34;&gt;ExtendedAuditingPolicy&lt;/a&gt;
+_Type_: List of <a href="extendedauditingpolicy.md">ExtendedAuditingPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -271,7 +229,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;import.md&#34;&gt;Import&lt;/a&gt;
+_Type_: List of <a href="import.md">Import</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -279,7 +237,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;threatdetectionpolicy.md&#34;&gt;ThreatDetectionPolicy&lt;/a&gt;
+_Type_: List of <a href="threatdetectionpolicy.md">ThreatDetectionPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -287,7 +245,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -309,13 +267,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationDate
 
-Returns the &lt;code&gt;CreationDate&lt;/code&gt; value.
+Returns the <code>CreationDate</code> value.
 
 #### DefaultSecondaryLocation
 
-Returns the &lt;code&gt;DefaultSecondaryLocation&lt;/code&gt; value.
+Returns the <code>DefaultSecondaryLocation</code> value.
 
 #### Encryption
 
-Returns the &lt;code&gt;Encryption&lt;/code&gt; value.
+Returns the <code>Encryption</code> value.
 

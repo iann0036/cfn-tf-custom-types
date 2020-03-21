@@ -12,14 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::AppEngineDomainMapping",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#domainname" title="DomainName">DomainName</a>" : <i>String</i>,
-        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#overridestrategy" title="OverrideStrategy">OverrideStrategy</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#resourcerecords" title="ResourceRecords">ResourceRecords</a>" : <i>[ &lt;a href=&#34;resourcerecords.md&#34;&gt;ResourceRecords&lt;/a&gt;, ... ]</i>,
-        "<a href="#sslsettings" title="SslSettings">SslSettings</a>" : <i>[ &lt;a href=&#34;sslsettings.md&#34;&gt;SslSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#sslsettings" title="SslSettings">SslSettings</a>" : <i>[ <a href="sslsettings.md">SslSettings</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -29,41 +26,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::AppEngineDomainMapping
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#domainname" title="DomainName">DomainName</a>: <i>String</i>
-    <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#overridestrategy" title="OverrideStrategy">OverrideStrategy</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
-    <a href="#resourcerecords" title="ResourceRecords">ResourceRecords</a>: <i>
-      - &lt;a href=&#34;resourcerecords.md&#34;&gt;ResourceRecords&lt;/a&gt;</i>
     <a href="#sslsettings" title="SslSettings">SslSettings</a>: <i>
-      - &lt;a href=&#34;sslsettings.md&#34;&gt;SslSettings&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="sslsettings.md">SslSettings</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### DomainName
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Name
-
-_Required_: No
 
 _Type_: String
 
@@ -85,19 +60,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ResourceRecords
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;resourcerecords.md&#34;&gt;ResourceRecords&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SslSettings
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sslsettings.md&#34;&gt;SslSettings&lt;/a&gt;
+_Type_: List of <a href="sslsettings.md">SslSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,9 +94,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### ResourceRecords
 
-Returns the &lt;code&gt;ResourceRecords&lt;/code&gt; value.
+Returns the <code>ResourceRecords</code> value.
 

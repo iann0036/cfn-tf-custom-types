@@ -12,12 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::UCloud::UdpnConnection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bandwidth" title="Bandwidth">Bandwidth</a>" : <i>Double</i>,
         "<a href="#chargetype" title="ChargeType">ChargeType</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#duration" title="Duration">Duration</a>" : <i>Double</i>,
-        "<a href="#expiretime" title="ExpireTime">ExpireTime</a>" : <i>String</i>,
         "<a href="#peerregion" title="PeerRegion">PeerRegion</a>" : <i>String</i>
     }
 }
@@ -28,26 +25,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::UCloud::UdpnConnection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bandwidth" title="Bandwidth">Bandwidth</a>: <i>Double</i>
     <a href="#chargetype" title="ChargeType">ChargeType</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#duration" title="Duration">Duration</a>: <i>Double</i>
-    <a href="#expiretime" title="ExpireTime">ExpireTime</a>: <i>String</i>
     <a href="#peerregion" title="PeerRegion">PeerRegion</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bandwidth
 
@@ -65,27 +49,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CreateTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Duration
 
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExpireTime
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### ExpireTime
 
-Returns the &lt;code&gt;ExpireTime&lt;/code&gt; value.
+Returns the <code>ExpireTime</code> value.
 

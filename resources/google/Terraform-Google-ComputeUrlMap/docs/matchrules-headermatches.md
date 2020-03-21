@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#presentmatch" title="PresentMatch">PresentMatch</a>" : <i>Boolean</i>,
     "<a href="#regexmatch" title="RegexMatch">RegexMatch</a>" : <i>String</i>,
     "<a href="#suffixmatch" title="SuffixMatch">SuffixMatch</a>" : <i>String</i>,
-    "<a href="#rangematch" title="RangeMatch">RangeMatch</a>" : <i>[ &lt;a href=&#34;matchrules-headermatches-rangematch.md&#34;&gt;RangeMatch&lt;/a&gt;, ... ]</i>
+    "<a href="#rangematch" title="RangeMatch">RangeMatch</a>" : <i>[ <a href="matchrules-headermatches-rangematch.md">RangeMatch</a>, ... ]</i>
 }
 </pre>
 
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#regexmatch" title="RegexMatch">RegexMatch</a>: <i>String</i>
 <a href="#suffixmatch" title="SuffixMatch">SuffixMatch</a>: <i>String</i>
 <a href="#rangematch" title="RangeMatch">RangeMatch</a>: <i>
-      - &lt;a href=&#34;matchrules-headermatches-rangematch.md&#34;&gt;RangeMatch&lt;/a&gt;</i>
+      - <a href="matchrules-headermatches-rangematch.md">RangeMatch</a></i>
 </pre>
 
 ## Properties
@@ -38,6 +38,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ExactMatch
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HeaderName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -52,6 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InvertMatch
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -59,6 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PrefixMatch
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,6 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PresentMatch
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -73,6 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RegexMatch
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,6 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SuffixMatch
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -87,7 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RangeMatch
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;matchrules-headermatches-rangematch.md&#34;&gt;RangeMatch&lt;/a&gt;
+
+_Type_: List of <a href="matchrules-headermatches-rangematch.md">RangeMatch</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

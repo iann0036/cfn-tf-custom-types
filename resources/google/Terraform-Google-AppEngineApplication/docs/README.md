@@ -12,20 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::AppEngineApplication",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#appid" title="AppId">AppId</a>" : <i>String</i>,
         "<a href="#authdomain" title="AuthDomain">AuthDomain</a>" : <i>String</i>,
-        "<a href="#codebucket" title="CodeBucket">CodeBucket</a>" : <i>String</i>,
-        "<a href="#defaultbucket" title="DefaultBucket">DefaultBucket</a>" : <i>String</i>,
-        "<a href="#defaulthostname" title="DefaultHostname">DefaultHostname</a>" : <i>String</i>,
-        "<a href="#gcrdomain" title="GcrDomain">GcrDomain</a>" : <i>String</i>,
         "<a href="#locationid" title="LocationId">LocationId</a>" : <i>String</i>,
-        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#servingstatus" title="ServingStatus">ServingStatus</a>" : <i>String</i>,
-        "<a href="#urldispatchrule" title="UrlDispatchRule">UrlDispatchRule</a>" : <i>[ &lt;a href=&#34;urldispatchrule.md&#34;&gt;UrlDispatchRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#featuresettings" title="FeatureSettings">FeatureSettings</a>" : <i>[ &lt;a href=&#34;featuresettings.md&#34;&gt;FeatureSettings&lt;/a&gt;, ... ]</i>,
-        "<a href="#iap" title="Iap">Iap</a>" : <i>[ &lt;a href=&#34;iap.md&#34;&gt;Iap&lt;/a&gt;, ... ]</i>
+        "<a href="#featuresettings" title="FeatureSettings">FeatureSettings</a>" : <i>[ <a href="featuresettings.md">FeatureSettings</a>, ... ]</i>,
+        "<a href="#iap" title="Iap">Iap</a>" : <i>[ <a href="iap.md">Iap</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,78 +27,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::AppEngineApplication
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#appid" title="AppId">AppId</a>: <i>String</i>
     <a href="#authdomain" title="AuthDomain">AuthDomain</a>: <i>String</i>
-    <a href="#codebucket" title="CodeBucket">CodeBucket</a>: <i>String</i>
-    <a href="#defaultbucket" title="DefaultBucket">DefaultBucket</a>: <i>String</i>
-    <a href="#defaulthostname" title="DefaultHostname">DefaultHostname</a>: <i>String</i>
-    <a href="#gcrdomain" title="GcrDomain">GcrDomain</a>: <i>String</i>
     <a href="#locationid" title="LocationId">LocationId</a>: <i>String</i>
-    <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#servingstatus" title="ServingStatus">ServingStatus</a>: <i>String</i>
-    <a href="#urldispatchrule" title="UrlDispatchRule">UrlDispatchRule</a>: <i>
-      - &lt;a href=&#34;urldispatchrule.md&#34;&gt;UrlDispatchRule&lt;/a&gt;</i>
     <a href="#featuresettings" title="FeatureSettings">FeatureSettings</a>: <i>
-      - &lt;a href=&#34;featuresettings.md&#34;&gt;FeatureSettings&lt;/a&gt;</i>
+      - <a href="featuresettings.md">FeatureSettings</a></i>
     <a href="#iap" title="Iap">Iap</a>: <i>
-      - &lt;a href=&#34;iap.md&#34;&gt;Iap&lt;/a&gt;</i>
+      - <a href="iap.md">Iap</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AppId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AuthDomain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CodeBucket
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DefaultBucket
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DefaultHostname
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### GcrDomain
 
 _Required_: No
 
@@ -117,14 +50,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### LocationId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Name
-
-_Required_: No
 
 _Type_: String
 
@@ -146,19 +71,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### UrlDispatchRule
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;urldispatchrule.md&#34;&gt;UrlDispatchRule&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### FeatureSettings
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;featuresettings.md&#34;&gt;FeatureSettings&lt;/a&gt;
+_Type_: List of <a href="featuresettings.md">FeatureSettings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;iap.md&#34;&gt;Iap&lt;/a&gt;
+_Type_: List of <a href="iap.md">Iap</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,29 +105,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AppId
 
-Returns the &lt;code&gt;AppId&lt;/code&gt; value.
+Returns the <code>AppId</code> value.
 
 #### CodeBucket
 
-Returns the &lt;code&gt;CodeBucket&lt;/code&gt; value.
+Returns the <code>CodeBucket</code> value.
 
 #### DefaultBucket
 
-Returns the &lt;code&gt;DefaultBucket&lt;/code&gt; value.
+Returns the <code>DefaultBucket</code> value.
 
 #### DefaultHostname
 
-Returns the &lt;code&gt;DefaultHostname&lt;/code&gt; value.
+Returns the <code>DefaultHostname</code> value.
 
 #### GcrDomain
 
-Returns the &lt;code&gt;GcrDomain&lt;/code&gt; value.
+Returns the <code>GcrDomain</code> value.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### UrlDispatchRule
 
-Returns the &lt;code&gt;UrlDispatchRule&lt;/code&gt; value.
+Returns the <code>UrlDispatchRule</code> value.
 

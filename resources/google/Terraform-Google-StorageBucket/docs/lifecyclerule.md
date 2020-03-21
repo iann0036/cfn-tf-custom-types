@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;lifecyclerule-action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>,
-    "<a href="#condition" title="Condition">Condition</a>" : <i>[ &lt;a href=&#34;lifecyclerule-condition.md&#34;&gt;Condition&lt;/a&gt;, ... ]</i>
+    "<a href="#action" title="Action">Action</a>" : <i>[ <a href="lifecyclerule-action.md">Action</a>, ... ]</i>,
+    "<a href="#condition" title="Condition">Condition</a>" : <i>[ <a href="lifecyclerule-condition.md">Condition</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#action" title="Action">Action</a>: <i>
-      - &lt;a href=&#34;lifecyclerule-action.md&#34;&gt;Action&lt;/a&gt;</i>
+      - <a href="lifecyclerule-action.md">Action</a></i>
 <a href="#condition" title="Condition">Condition</a>: <i>
-      - &lt;a href=&#34;lifecyclerule-condition.md&#34;&gt;Condition&lt;/a&gt;</i>
+      - <a href="lifecyclerule-condition.md">Condition</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Action
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerule-action.md&#34;&gt;Action&lt;/a&gt;
+
+_Type_: List of <a href="lifecyclerule-action.md">Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Condition
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerule-condition.md&#34;&gt;Condition&lt;/a&gt;
+
+_Type_: List of <a href="lifecyclerule-condition.md">Condition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,18 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::EfsFileSystem",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#creationtoken" title="CreationToken">CreationToken</a>" : <i>String</i>,
-        "<a href="#dnsname" title="DnsName">DnsName</a>" : <i>String</i>,
         "<a href="#encrypted" title="Encrypted">Encrypted</a>" : <i>Boolean</i>,
         "<a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>" : <i>String</i>,
         "<a href="#performancemode" title="PerformanceMode">PerformanceMode</a>" : <i>String</i>,
         "<a href="#provisionedthroughputinmibps" title="ProvisionedThroughputInMibps">ProvisionedThroughputInMibps</a>" : <i>Double</i>,
         "<a href="#referencename" title="ReferenceName">ReferenceName</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#throughputmode" title="ThroughputMode">ThroughputMode</a>" : <i>String</i>,
-        "<a href="#lifecyclepolicy" title="LifecyclePolicy">LifecyclePolicy</a>" : <i>[ &lt;a href=&#34;lifecyclepolicy.md&#34;&gt;LifecyclePolicy&lt;/a&gt;, ... ]</i>
+        "<a href="#lifecyclepolicy" title="LifecyclePolicy">LifecyclePolicy</a>" : <i>[ <a href="lifecyclepolicy.md">LifecyclePolicy</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,51 +30,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::EfsFileSystem
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#creationtoken" title="CreationToken">CreationToken</a>: <i>String</i>
-    <a href="#dnsname" title="DnsName">DnsName</a>: <i>String</i>
     <a href="#encrypted" title="Encrypted">Encrypted</a>: <i>Boolean</i>
     <a href="#kmskeyid" title="KmsKeyId">KmsKeyId</a>: <i>String</i>
     <a href="#performancemode" title="PerformanceMode">PerformanceMode</a>: <i>String</i>
     <a href="#provisionedthroughputinmibps" title="ProvisionedThroughputInMibps">ProvisionedThroughputInMibps</a>: <i>Double</i>
     <a href="#referencename" title="ReferenceName">ReferenceName</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#throughputmode" title="ThroughputMode">ThroughputMode</a>: <i>String</i>
     <a href="#lifecyclepolicy" title="LifecyclePolicy">LifecyclePolicy</a>: <i>
-      - &lt;a href=&#34;lifecyclepolicy.md&#34;&gt;LifecyclePolicy&lt;/a&gt;</i>
+      - <a href="lifecyclepolicy.md">LifecyclePolicy</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CreationToken
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DnsName
 
 _Required_: No
 
@@ -129,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lifecyclepolicy.md&#34;&gt;LifecyclePolicy&lt;/a&gt;
+_Type_: List of <a href="lifecyclepolicy.md">LifecyclePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,9 +135,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### DnsName
 
-Returns the &lt;code&gt;DnsName&lt;/code&gt; value.
+Returns the <code>DnsName</code> value.
 

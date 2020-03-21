@@ -12,14 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::LambdaAlias",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#functionname" title="FunctionName">FunctionName</a>" : <i>String</i>,
         "<a href="#functionversion" title="FunctionVersion">FunctionVersion</a>" : <i>String</i>,
-        "<a href="#invokearn" title="InvokeArn">InvokeArn</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#routingconfig" title="RoutingConfig">RoutingConfig</a>" : <i>[ &lt;a href=&#34;routingconfig.md&#34;&gt;RoutingConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#routingconfig" title="RoutingConfig">RoutingConfig</a>" : <i>[ <a href="routingconfig.md">RoutingConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,36 +26,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::LambdaAlias
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#functionname" title="FunctionName">FunctionName</a>: <i>String</i>
     <a href="#functionversion" title="FunctionVersion">FunctionVersion</a>: <i>String</i>
-    <a href="#invokearn" title="InvokeArn">InvokeArn</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#routingconfig" title="RoutingConfig">RoutingConfig</a>: <i>
-      - &lt;a href=&#34;routingconfig.md&#34;&gt;RoutingConfig&lt;/a&gt;</i>
+      - <a href="routingconfig.md">RoutingConfig</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -84,14 +60,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### InvokeArn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
@@ -104,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;routingconfig.md&#34;&gt;RoutingConfig&lt;/a&gt;
+_Type_: List of <a href="routingconfig.md">RoutingConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,9 +94,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### InvokeArn
 
-Returns the &lt;code&gt;InvokeArn&lt;/code&gt; value.
+Returns the <code>InvokeArn</code> value.
 

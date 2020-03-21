@@ -12,11 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::WafregionalByteMatchSet",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#bytematchtuple" title="ByteMatchTuple">ByteMatchTuple</a>" : <i>[ &lt;a href=&#34;bytematchtuple.md&#34;&gt;ByteMatchTuple&lt;/a&gt;, ... ]</i>,
-        "<a href="#bytematchtuples" title="ByteMatchTuples">ByteMatchTuples</a>" : <i>[ &lt;a href=&#34;bytematchtuples.md&#34;&gt;ByteMatchTuples&lt;/a&gt;, ... ]</i>,
-        "<a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>" : <i>[ &lt;a href=&#34;fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;, ... ]</i>
+        "<a href="#bytematchtuple" title="ByteMatchTuple">ByteMatchTuple</a>" : <i>[ <a href="bytematchtuple.md">ByteMatchTuple</a>, ... ]</i>,
+        "<a href="#bytematchtuples" title="ByteMatchTuples">ByteMatchTuples</a>" : <i>[ <a href="bytematchtuples.md">ByteMatchTuples</a>, ... ]</i>,
+        "<a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>" : <i>[ <a href="fieldtomatch.md">FieldToMatch</a>, ... ]</i>
     }
 }
 </pre>
@@ -26,27 +25,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::WafregionalByteMatchSet
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#bytematchtuple" title="ByteMatchTuple">ByteMatchTuple</a>: <i>
-      - &lt;a href=&#34;bytematchtuple.md&#34;&gt;ByteMatchTuple&lt;/a&gt;</i>
+      - <a href="bytematchtuple.md">ByteMatchTuple</a></i>
     <a href="#bytematchtuples" title="ByteMatchTuples">ByteMatchTuples</a>: <i>
-      - &lt;a href=&#34;bytematchtuples.md&#34;&gt;ByteMatchTuples&lt;/a&gt;</i>
+      - <a href="bytematchtuples.md">ByteMatchTuples</a></i>
     <a href="#fieldtomatch" title="FieldToMatch">FieldToMatch</a>: <i>
-      - &lt;a href=&#34;fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;</i>
+      - <a href="fieldtomatch.md">FieldToMatch</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
@@ -60,7 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bytematchtuple.md&#34;&gt;ByteMatchTuple&lt;/a&gt;
+_Type_: List of <a href="bytematchtuple.md">ByteMatchTuple</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -68,7 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bytematchtuples.md&#34;&gt;ByteMatchTuples&lt;/a&gt;
+_Type_: List of <a href="bytematchtuples.md">ByteMatchTuples</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -76,7 +64,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fieldtomatch.md&#34;&gt;FieldToMatch&lt;/a&gt;
+_Type_: List of <a href="fieldtomatch.md">FieldToMatch</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

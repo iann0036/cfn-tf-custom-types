@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Cloudflare::PageRule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
         "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#target" title="Target">Target</a>" : <i>String</i>,
         "<a href="#zoneid" title="ZoneId">ZoneId</a>" : <i>String</i>,
-        "<a href="#actions" title="Actions">Actions</a>" : <i>[ &lt;a href=&#34;actions.md&#34;&gt;Actions&lt;/a&gt;, ... ]</i>,
-        "<a href="#forwardingurl" title="ForwardingUrl">ForwardingUrl</a>" : <i>[ &lt;a href=&#34;forwardingurl.md&#34;&gt;ForwardingUrl&lt;/a&gt;, ... ]</i>,
-        "<a href="#minify" title="Minify">Minify</a>" : <i>[ &lt;a href=&#34;minify.md&#34;&gt;Minify&lt;/a&gt;, ... ]</i>
+        "<a href="#actions" title="Actions">Actions</a>" : <i>[ <a href="actions.md">Actions</a>, ... ]</i>,
+        "<a href="#forwardingurl" title="ForwardingUrl">ForwardingUrl</a>" : <i>[ <a href="forwardingurl.md">ForwardingUrl</a>, ... ]</i>,
+        "<a href="#minify" title="Minify">Minify</a>" : <i>[ <a href="minify.md">Minify</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,30 +28,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Cloudflare::PageRule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
     <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#target" title="Target">Target</a>: <i>String</i>
     <a href="#zoneid" title="ZoneId">ZoneId</a>: <i>String</i>
     <a href="#actions" title="Actions">Actions</a>: <i>
-      - &lt;a href=&#34;actions.md&#34;&gt;Actions&lt;/a&gt;</i>
+      - <a href="actions.md">Actions</a></i>
     <a href="#forwardingurl" title="ForwardingUrl">ForwardingUrl</a>: <i>
-      - &lt;a href=&#34;forwardingurl.md&#34;&gt;ForwardingUrl&lt;/a&gt;</i>
+      - <a href="forwardingurl.md">ForwardingUrl</a></i>
     <a href="#minify" title="Minify">Minify</a>: <i>
-      - &lt;a href=&#34;minify.md&#34;&gt;Minify&lt;/a&gt;</i>
+      - <a href="minify.md">Minify</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Priority
 
@@ -90,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;actions.md&#34;&gt;Actions&lt;/a&gt;
+_Type_: List of <a href="actions.md">Actions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -98,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;forwardingurl.md&#34;&gt;ForwardingUrl&lt;/a&gt;
+_Type_: List of <a href="forwardingurl.md">ForwardingUrl</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;minify.md&#34;&gt;Minify&lt;/a&gt;
+_Type_: List of <a href="minify.md">Minify</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

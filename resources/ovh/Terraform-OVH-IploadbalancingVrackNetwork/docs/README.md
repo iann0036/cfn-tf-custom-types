@@ -12,14 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OVH::IploadbalancingVrackNetwork",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#farmid" title="FarmId">FarmId</a>" : <i>[ Double, ... ]</i>,
         "<a href="#natip" title="NatIp">NatIp</a>" : <i>String</i>,
         "<a href="#servicename" title="ServiceName">ServiceName</a>" : <i>String</i>,
         "<a href="#subnet" title="Subnet">Subnet</a>" : <i>String</i>,
         "<a href="#vlan" title="Vlan">Vlan</a>" : <i>Double</i>,
-        "<a href="#vracknetworkid" title="VrackNetworkId">VrackNetworkId</a>" : <i>Double</i>
     }
 }
 </pre>
@@ -29,7 +27,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OVH::IploadbalancingVrackNetwork
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#farmid" title="FarmId">FarmId</a>: <i>
       - Double</i>
@@ -37,20 +34,9 @@ Properties:
     <a href="#servicename" title="ServiceName">ServiceName</a>: <i>String</i>
     <a href="#subnet" title="Subnet">Subnet</a>: <i>String</i>
     <a href="#vlan" title="Vlan">Vlan</a>: <i>Double</i>
-    <a href="#vracknetworkid" title="VrackNetworkId">VrackNetworkId</a>: <i>Double</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisplayName
 
@@ -100,14 +86,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### VrackNetworkId
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -126,5 +104,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VrackNetworkId
 
-Returns the &lt;code&gt;VrackNetworkId&lt;/code&gt; value.
+Returns the <code>VrackNetworkId</code> value.
 

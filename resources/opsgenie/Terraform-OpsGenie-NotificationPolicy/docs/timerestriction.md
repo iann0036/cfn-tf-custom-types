@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ &lt;a href=&#34;timerestriction-restriction.md&#34;&gt;Restriction&lt;/a&gt;, ... ]</i>,
-    "<a href="#restrictions" title="Restrictions">Restrictions</a>" : <i>[ &lt;a href=&#34;timerestriction-restrictions.md&#34;&gt;Restrictions&lt;/a&gt;, ... ]</i>
+    "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ <a href="timerestriction-restriction.md">Restriction</a>, ... ]</i>,
+    "<a href="#restrictions" title="Restrictions">Restrictions</a>" : <i>[ <a href="timerestriction-restrictions.md">Restrictions</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#restriction" title="Restriction">Restriction</a>: <i>
-      - &lt;a href=&#34;timerestriction-restriction.md&#34;&gt;Restriction&lt;/a&gt;</i>
+      - <a href="timerestriction-restriction.md">Restriction</a></i>
 <a href="#restrictions" title="Restrictions">Restrictions</a>: <i>
-      - &lt;a href=&#34;timerestriction-restrictions.md&#34;&gt;Restrictions&lt;/a&gt;</i>
+      - <a href="timerestriction-restrictions.md">Restrictions</a></i>
 </pre>
 
 ## Properties
@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Type
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,14 +37,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Restriction
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;timerestriction-restriction.md&#34;&gt;Restriction&lt;/a&gt;
+
+_Type_: List of <a href="timerestriction-restriction.md">Restriction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Restrictions
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;timerestriction-restrictions.md&#34;&gt;Restrictions&lt;/a&gt;
+
+_Type_: List of <a href="timerestriction-restrictions.md">Restrictions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

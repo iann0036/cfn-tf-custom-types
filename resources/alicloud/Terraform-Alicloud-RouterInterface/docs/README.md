@@ -12,19 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::RouterInterface",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#accesspointid" title="AccessPointId">AccessPointId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#healthchecksourceip" title="HealthCheckSourceIp">HealthCheckSourceIp</a>" : <i>String</i>,
         "<a href="#healthchecktargetip" title="HealthCheckTargetIp">HealthCheckTargetIp</a>" : <i>String</i>,
         "<a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#oppositeaccesspointid" title="OppositeAccessPointId">OppositeAccessPointId</a>" : <i>String</i>,
-        "<a href="#oppositeinterfaceid" title="OppositeInterfaceId">OppositeInterfaceId</a>" : <i>String</i>,
-        "<a href="#oppositeinterfaceownerid" title="OppositeInterfaceOwnerId">OppositeInterfaceOwnerId</a>" : <i>String</i>,
         "<a href="#oppositeregion" title="OppositeRegion">OppositeRegion</a>" : <i>String</i>,
-        "<a href="#oppositerouterid" title="OppositeRouterId">OppositeRouterId</a>" : <i>String</i>,
-        "<a href="#oppositeroutertype" title="OppositeRouterType">OppositeRouterType</a>" : <i>String</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#routerid" title="RouterId">RouterId</a>" : <i>String</i>,
@@ -39,19 +33,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::RouterInterface
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#accesspointid" title="AccessPointId">AccessPointId</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#healthchecksourceip" title="HealthCheckSourceIp">HealthCheckSourceIp</a>: <i>String</i>
     <a href="#healthchecktargetip" title="HealthCheckTargetIp">HealthCheckTargetIp</a>: <i>String</i>
     <a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#oppositeaccesspointid" title="OppositeAccessPointId">OppositeAccessPointId</a>: <i>String</i>
-    <a href="#oppositeinterfaceid" title="OppositeInterfaceId">OppositeInterfaceId</a>: <i>String</i>
-    <a href="#oppositeinterfaceownerid" title="OppositeInterfaceOwnerId">OppositeInterfaceOwnerId</a>: <i>String</i>
     <a href="#oppositeregion" title="OppositeRegion">OppositeRegion</a>: <i>String</i>
-    <a href="#oppositerouterid" title="OppositeRouterId">OppositeRouterId</a>: <i>String</i>
-    <a href="#oppositeroutertype" title="OppositeRouterType">OppositeRouterType</a>: <i>String</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
     <a href="#routerid" title="RouterId">RouterId</a>: <i>String</i>
@@ -60,24 +48,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AccessPointId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -127,41 +97,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### OppositeInterfaceId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### OppositeInterfaceOwnerId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### OppositeRegion
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### OppositeRouterId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### OppositeRouterType
-
-_Required_: No
 
 _Type_: String
 
@@ -225,21 +163,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccessPointId
 
-Returns the &lt;code&gt;AccessPointId&lt;/code&gt; value.
+Returns the <code>AccessPointId</code> value.
 
 #### OppositeInterfaceId
 
-Returns the &lt;code&gt;OppositeInterfaceId&lt;/code&gt; value.
+Returns the <code>OppositeInterfaceId</code> value.
 
 #### OppositeInterfaceOwnerId
 
-Returns the &lt;code&gt;OppositeInterfaceOwnerId&lt;/code&gt; value.
+Returns the <code>OppositeInterfaceOwnerId</code> value.
 
 #### OppositeRouterId
 
-Returns the &lt;code&gt;OppositeRouterId&lt;/code&gt; value.
+Returns the <code>OppositeRouterId</code> value.
 
 #### OppositeRouterType
 
-Returns the &lt;code&gt;OppositeRouterType&lt;/code&gt; value.
+Returns the <code>OppositeRouterType</code> value.
 

@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Route53DelegationSet",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#nameservers" title="NameServers">NameServers</a>" : <i>[ String, ... ]</i>,
         "<a href="#referencename" title="ReferenceName">ReferenceName</a>" : <i>String</i>
     }
 }
@@ -24,31 +22,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Route53DelegationSet
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#nameservers" title="NameServers">NameServers</a>: <i>
-      - String</i>
     <a href="#referencename" title="ReferenceName">ReferenceName</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### NameServers
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReferenceName
 
@@ -76,5 +53,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NameServers
 
-Returns the &lt;code&gt;NameServers&lt;/code&gt; value.
+Returns the <code>NameServers</code> value.
 

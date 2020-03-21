@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#config" title="Config">Config</a>" : <i>[ &lt;a href=&#34;filters-config.md&#34;&gt;Config&lt;/a&gt;, ... ]</i>,
+    "<a href="#config" title="Config">Config</a>" : <i>[ <a href="filters-config.md">Config</a>, ... ]</i>,
     "<a href="#disabled" title="Disabled">Disabled</a>" : <i>Boolean</i>,
     "<a href="#filter" title="Filter">Filter</a>" : <i>String</i>
 }
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#config" title="Config">Config</a>: <i>
-      - &lt;a href=&#34;filters-config.md&#34;&gt;Config&lt;/a&gt;</i>
+      - <a href="filters-config.md">Config</a></i>
 <a href="#disabled" title="Disabled">Disabled</a>: <i>Boolean</i>
 <a href="#filter" title="Filter">Filter</a>: <i>String</i>
 </pre>
@@ -28,13 +28,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Config
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;filters-config.md&#34;&gt;Config&lt;/a&gt;
+
+_Type_: List of <a href="filters-config.md">Config</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Disabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,6 +44,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Filter
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

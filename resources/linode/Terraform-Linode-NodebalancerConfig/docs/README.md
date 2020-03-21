@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Linode::NodebalancerConfig",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#algorithm" title="Algorithm">Algorithm</a>" : <i>String</i>,
         "<a href="#check" title="Check">Check</a>" : <i>String</i>,
         "<a href="#checkattempts" title="CheckAttempts">CheckAttempts</a>" : <i>Double</i>,
@@ -22,13 +21,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#checkpath" title="CheckPath">CheckPath</a>" : <i>String</i>,
         "<a href="#checktimeout" title="CheckTimeout">CheckTimeout</a>" : <i>Double</i>,
         "<a href="#ciphersuite" title="CipherSuite">CipherSuite</a>" : <i>String</i>,
-        "<a href="#nodestatus" title="NodeStatus">NodeStatus</a>" : <i>[ &lt;a href=&#34;nodestatus.md&#34;&gt;NodeStatus&lt;/a&gt;, ... ]</i>,
         "<a href="#nodebalancerid" title="NodebalancerId">NodebalancerId</a>" : <i>Double</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
         "<a href="#sslcert" title="SslCert">SslCert</a>" : <i>String</i>,
-        "<a href="#sslcommonname" title="SslCommonname">SslCommonname</a>" : <i>String</i>,
-        "<a href="#sslfingerprint" title="SslFingerprint">SslFingerprint</a>" : <i>String</i>,
         "<a href="#sslkey" title="SslKey">SslKey</a>" : <i>String</i>,
         "<a href="#stickiness" title="Stickiness">Stickiness</a>" : <i>String</i>
     }
@@ -40,7 +36,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Linode::NodebalancerConfig
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#algorithm" title="Algorithm">Algorithm</a>: <i>String</i>
     <a href="#check" title="Check">Check</a>: <i>String</i>
     <a href="#checkattempts" title="CheckAttempts">CheckAttempts</a>: <i>Double</i>
@@ -50,29 +45,15 @@ Properties:
     <a href="#checkpath" title="CheckPath">CheckPath</a>: <i>String</i>
     <a href="#checktimeout" title="CheckTimeout">CheckTimeout</a>: <i>Double</i>
     <a href="#ciphersuite" title="CipherSuite">CipherSuite</a>: <i>String</i>
-    <a href="#nodestatus" title="NodeStatus">NodeStatus</a>: <i>
-      - &lt;a href=&#34;nodestatus.md&#34;&gt;NodeStatus&lt;/a&gt;</i>
     <a href="#nodebalancerid" title="NodebalancerId">NodebalancerId</a>: <i>Double</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#sslcert" title="SslCert">SslCert</a>: <i>String</i>
-    <a href="#sslcommonname" title="SslCommonname">SslCommonname</a>: <i>String</i>
-    <a href="#sslfingerprint" title="SslFingerprint">SslFingerprint</a>: <i>String</i>
     <a href="#sslkey" title="SslKey">SslKey</a>: <i>String</i>
     <a href="#stickiness" title="Stickiness">Stickiness</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Algorithm
 
@@ -146,14 +127,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### NodeStatus
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;nodestatus.md&#34;&gt;NodeStatus&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### NodebalancerId
 
 _Required_: Yes
@@ -179,22 +152,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslCert
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SslCommonname
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SslFingerprint
 
 _Required_: No
 
@@ -236,13 +193,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### NodeStatus
 
-Returns the &lt;code&gt;NodeStatus&lt;/code&gt; value.
+Returns the <code>NodeStatus</code> value.
 
 #### SslCommonname
 
-Returns the &lt;code&gt;SslCommonname&lt;/code&gt; value.
+Returns the <code>SslCommonname</code> value.
 
 #### SslFingerprint
 
-Returns the &lt;code&gt;SslFingerprint&lt;/code&gt; value.
+Returns the <code>SslFingerprint</code> value.
 

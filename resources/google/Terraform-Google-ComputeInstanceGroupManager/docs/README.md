@@ -12,25 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ComputeInstanceGroupManager",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#baseinstancename" title="BaseInstanceName">BaseInstanceName</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#fingerprint" title="Fingerprint">Fingerprint</a>" : <i>String</i>,
-        "<a href="#instancegroup" title="InstanceGroup">InstanceGroup</a>" : <i>String</i>,
         "<a href="#instancetemplate" title="InstanceTemplate">InstanceTemplate</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
         "<a href="#targetpools" title="TargetPools">TargetPools</a>" : <i>[ String, ... ]</i>,
-        "<a href="#targetsize" title="TargetSize">TargetSize</a>" : <i>[ &lt;a href=&#34;targetsize.md&#34;&gt;TargetSize&lt;/a&gt;, ... ]</i>,
-        "<a href="#updatestrategy" title="UpdateStrategy">UpdateStrategy</a>" : <i>String</i>,
+        "<a href="#targetsize" title="TargetSize">TargetSize</a>" : <i>[ <a href="targetsize.md">TargetSize</a>, ... ]</i>,
         "<a href="#waitforinstances" title="WaitForInstances">WaitForInstances</a>" : <i>Boolean</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#autohealingpolicies" title="AutoHealingPolicies">AutoHealingPolicies</a>" : <i>[ &lt;a href=&#34;autohealingpolicies.md&#34;&gt;AutoHealingPolicies&lt;/a&gt;, ... ]</i>,
-        "<a href="#namedport" title="NamedPort">NamedPort</a>" : <i>[ &lt;a href=&#34;namedport.md&#34;&gt;NamedPort&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>" : <i>[ &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#version" title="Version">Version</a>" : <i>[ &lt;a href=&#34;version.md&#34;&gt;Version&lt;/a&gt;, ... ]</i>
+        "<a href="#autohealingpolicies" title="AutoHealingPolicies">AutoHealingPolicies</a>" : <i>[ <a href="autohealingpolicies.md">AutoHealingPolicies</a>, ... ]</i>,
+        "<a href="#namedport" title="NamedPort">NamedPort</a>" : <i>[ <a href="namedport.md">NamedPort</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>" : <i>[ <a href="updatepolicy.md">UpdatePolicy</a>, ... ]</i>,
+        "<a href="#version" title="Version">Version</a>" : <i>[ <a href="version.md">Version</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,44 +35,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ComputeInstanceGroupManager
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#baseinstancename" title="BaseInstanceName">BaseInstanceName</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#fingerprint" title="Fingerprint">Fingerprint</a>: <i>String</i>
-    <a href="#instancegroup" title="InstanceGroup">InstanceGroup</a>: <i>String</i>
     <a href="#instancetemplate" title="InstanceTemplate">InstanceTemplate</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
-    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
     <a href="#targetpools" title="TargetPools">TargetPools</a>: <i>
       - String</i>
     <a href="#targetsize" title="TargetSize">TargetSize</a>: <i>
-      - &lt;a href=&#34;targetsize.md&#34;&gt;TargetSize&lt;/a&gt;</i>
-    <a href="#updatestrategy" title="UpdateStrategy">UpdateStrategy</a>: <i>String</i>
+      - <a href="targetsize.md">TargetSize</a></i>
     <a href="#waitforinstances" title="WaitForInstances">WaitForInstances</a>: <i>Boolean</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#autohealingpolicies" title="AutoHealingPolicies">AutoHealingPolicies</a>: <i>
-      - &lt;a href=&#34;autohealingpolicies.md&#34;&gt;AutoHealingPolicies&lt;/a&gt;</i>
+      - <a href="autohealingpolicies.md">AutoHealingPolicies</a></i>
     <a href="#namedport" title="NamedPort">NamedPort</a>: <i>
-      - &lt;a href=&#34;namedport.md&#34;&gt;NamedPort&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="namedport.md">NamedPort</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#updatepolicy" title="UpdatePolicy">UpdatePolicy</a>: <i>
-      - &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;</i>
+      - <a href="updatepolicy.md">UpdatePolicy</a></i>
     <a href="#version" title="Version">Version</a>: <i>
-      - &lt;a href=&#34;version.md&#34;&gt;Version&lt;/a&gt;</i>
+      - <a href="version.md">Version</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BaseInstanceName
 
@@ -88,22 +68,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Fingerprint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### InstanceGroup
 
 _Required_: No
 
@@ -135,14 +99,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SelfLink
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### TargetPools
 
 _Required_: No
@@ -155,15 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;targetsize.md&#34;&gt;TargetSize&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UpdateStrategy
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="targetsize.md">TargetSize</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autohealingpolicies.md&#34;&gt;AutoHealingPolicies&lt;/a&gt;
+_Type_: List of <a href="autohealingpolicies.md">AutoHealingPolicies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;namedport.md&#34;&gt;NamedPort&lt;/a&gt;
+_Type_: List of <a href="namedport.md">NamedPort</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,7 +151,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -211,7 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;updatepolicy.md&#34;&gt;UpdatePolicy&lt;/a&gt;
+_Type_: List of <a href="updatepolicy.md">UpdatePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -219,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;version.md&#34;&gt;Version&lt;/a&gt;
+_Type_: List of <a href="version.md">Version</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,17 +189,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 
 #### InstanceGroup
 
-Returns the &lt;code&gt;InstanceGroup&lt;/code&gt; value.
+Returns the <code>InstanceGroup</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 
 #### UpdateStrategy
 
-Returns the &lt;code&gt;UpdateStrategy&lt;/code&gt; value.
+Returns the <code>UpdateStrategy</code> value.
 

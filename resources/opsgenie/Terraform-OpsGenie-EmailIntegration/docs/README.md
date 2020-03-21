@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpsGenie::EmailIntegration",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#emailusername" title="EmailUsername">EmailUsername</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#ignorerespondersfrompayload" title="IgnoreRespondersFromPayload">IgnoreRespondersFromPayload</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#ownerteamid" title="OwnerTeamId">OwnerTeamId</a>" : <i>String</i>,
         "<a href="#suppressnotifications" title="SuppressNotifications">SuppressNotifications</a>" : <i>Boolean</i>,
-        "<a href="#responders" title="Responders">Responders</a>" : <i>[ &lt;a href=&#34;responders.md&#34;&gt;Responders&lt;/a&gt;, ... ]</i>
+        "<a href="#responders" title="Responders">Responders</a>" : <i>[ <a href="responders.md">Responders</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,7 +28,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpsGenie::EmailIntegration
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#emailusername" title="EmailUsername">EmailUsername</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#ignorerespondersfrompayload" title="IgnoreRespondersFromPayload">IgnoreRespondersFromPayload</a>: <i>Boolean</i>
@@ -37,20 +35,10 @@ Properties:
     <a href="#ownerteamid" title="OwnerTeamId">OwnerTeamId</a>: <i>String</i>
     <a href="#suppressnotifications" title="SuppressNotifications">SuppressNotifications</a>: <i>Boolean</i>
     <a href="#responders" title="Responders">Responders</a>: <i>
-      - &lt;a href=&#34;responders.md&#34;&gt;Responders&lt;/a&gt;</i>
+      - <a href="responders.md">Responders</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EmailUsername
 
@@ -104,7 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;responders.md&#34;&gt;Responders&lt;/a&gt;
+_Type_: List of <a href="responders.md">Responders</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

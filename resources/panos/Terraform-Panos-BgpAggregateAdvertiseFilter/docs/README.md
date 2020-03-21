@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::BgpAggregateAdvertiseFilter",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#aspathregex" title="AsPathRegex">AsPathRegex</a>" : <i>String</i>,
         "<a href="#bgpaggregate" title="BgpAggregate">BgpAggregate</a>" : <i>String</i>,
         "<a href="#communityregex" title="CommunityRegex">CommunityRegex</a>" : <i>String</i>,
@@ -24,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#nexthops" title="NextHops">NextHops</a>" : <i>[ String, ... ]</i>,
         "<a href="#routetable" title="RouteTable">RouteTable</a>" : <i>String</i>,
         "<a href="#virtualrouter" title="VirtualRouter">VirtualRouter</a>" : <i>String</i>,
-        "<a href="#addressprefix" title="AddressPrefix">AddressPrefix</a>" : <i>[ &lt;a href=&#34;addressprefix.md&#34;&gt;AddressPrefix&lt;/a&gt;, ... ]</i>
+        "<a href="#addressprefix" title="AddressPrefix">AddressPrefix</a>" : <i>[ <a href="addressprefix.md">AddressPrefix</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,7 +33,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::BgpAggregateAdvertiseFilter
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#aspathregex" title="AsPathRegex">AsPathRegex</a>: <i>String</i>
     <a href="#bgpaggregate" title="BgpAggregate">BgpAggregate</a>: <i>String</i>
     <a href="#communityregex" title="CommunityRegex">CommunityRegex</a>: <i>String</i>
@@ -49,20 +47,10 @@ Properties:
     <a href="#routetable" title="RouteTable">RouteTable</a>: <i>String</i>
     <a href="#virtualrouter" title="VirtualRouter">VirtualRouter</a>: <i>String</i>
     <a href="#addressprefix" title="AddressPrefix">AddressPrefix</a>: <i>
-      - &lt;a href=&#34;addressprefix.md&#34;&gt;AddressPrefix&lt;/a&gt;</i>
+      - <a href="addressprefix.md">AddressPrefix</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AsPathRegex
 
@@ -156,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;addressprefix.md&#34;&gt;AddressPrefix&lt;/a&gt;
+_Type_: List of <a href="addressprefix.md">AddressPrefix</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

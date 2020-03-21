@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Gitlab::GroupVariable",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#group" title="Group">Group</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
         "<a href="#protected" title="Protected">Protected</a>" : <i>Boolean</i>,
@@ -27,7 +26,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Gitlab::GroupVariable
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#group" title="Group">Group</a>: <i>String</i>
     <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#protected" title="Protected">Protected</a>: <i>Boolean</i>
@@ -36,16 +34,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Group
 

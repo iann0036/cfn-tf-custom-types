@@ -12,13 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ApiGatewayIntegrationResponse",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#contenthandling" title="ContentHandling">ContentHandling</a>" : <i>String</i>,
         "<a href="#httpmethod" title="HttpMethod">HttpMethod</a>" : <i>String</i>,
         "<a href="#resourceid" title="ResourceId">ResourceId</a>" : <i>String</i>,
-        "<a href="#responseparameters" title="ResponseParameters">ResponseParameters</a>" : <i>[ &lt;a href=&#34;responseparameters.md&#34;&gt;ResponseParameters&lt;/a&gt;, ... ]</i>,
+        "<a href="#responseparameters" title="ResponseParameters">ResponseParameters</a>" : <i>[ <a href="responseparameters.md">ResponseParameters</a>, ... ]</i>,
         "<a href="#responseparametersinjson" title="ResponseParametersInJson">ResponseParametersInJson</a>" : <i>String</i>,
-        "<a href="#responsetemplates" title="ResponseTemplates">ResponseTemplates</a>" : <i>[ &lt;a href=&#34;responsetemplates.md&#34;&gt;ResponseTemplates&lt;/a&gt;, ... ]</i>,
+        "<a href="#responsetemplates" title="ResponseTemplates">ResponseTemplates</a>" : <i>[ <a href="responsetemplates.md">ResponseTemplates</a>, ... ]</i>,
         "<a href="#restapiid" title="RestApiId">RestApiId</a>" : <i>String</i>,
         "<a href="#selectionpattern" title="SelectionPattern">SelectionPattern</a>" : <i>String</i>,
         "<a href="#statuscode" title="StatusCode">StatusCode</a>" : <i>String</i>
@@ -31,31 +30,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ApiGatewayIntegrationResponse
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#contenthandling" title="ContentHandling">ContentHandling</a>: <i>String</i>
     <a href="#httpmethod" title="HttpMethod">HttpMethod</a>: <i>String</i>
     <a href="#resourceid" title="ResourceId">ResourceId</a>: <i>String</i>
     <a href="#responseparameters" title="ResponseParameters">ResponseParameters</a>: <i>
-      - &lt;a href=&#34;responseparameters.md&#34;&gt;ResponseParameters&lt;/a&gt;</i>
+      - <a href="responseparameters.md">ResponseParameters</a></i>
     <a href="#responseparametersinjson" title="ResponseParametersInJson">ResponseParametersInJson</a>: <i>String</i>
     <a href="#responsetemplates" title="ResponseTemplates">ResponseTemplates</a>: <i>
-      - &lt;a href=&#34;responsetemplates.md&#34;&gt;ResponseTemplates&lt;/a&gt;</i>
+      - <a href="responsetemplates.md">ResponseTemplates</a></i>
     <a href="#restapiid" title="RestApiId">RestApiId</a>: <i>String</i>
     <a href="#selectionpattern" title="SelectionPattern">SelectionPattern</a>: <i>String</i>
     <a href="#statuscode" title="StatusCode">StatusCode</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContentHandling
 
@@ -85,7 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;responseparameters.md&#34;&gt;ResponseParameters&lt;/a&gt;
+_Type_: List of <a href="responseparameters.md">ResponseParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -101,7 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;responsetemplates.md&#34;&gt;ResponseTemplates&lt;/a&gt;
+_Type_: List of <a href="responsetemplates.md">ResponseTemplates</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::LbMonitorV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adminstateup" title="AdminStateUp">AdminStateUp</a>" : <i>String</i>,
         "<a href="#delay" title="Delay">Delay</a>" : <i>Double</i>,
         "<a href="#expectedcodes" title="ExpectedCodes">ExpectedCodes</a>" : <i>String</i>,
@@ -23,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#timeout" title="Timeout">Timeout</a>" : <i>Double</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#urlpath" title="UrlPath">UrlPath</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -33,7 +32,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::LbMonitorV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adminstateup" title="AdminStateUp">AdminStateUp</a>: <i>String</i>
     <a href="#delay" title="Delay">Delay</a>: <i>Double</i>
     <a href="#expectedcodes" title="ExpectedCodes">ExpectedCodes</a>: <i>String</i>
@@ -44,20 +42,10 @@ Properties:
     <a href="#timeout" title="Timeout">Timeout</a>: <i>Double</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#urlpath" title="UrlPath">UrlPath</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminStateUp
 
@@ -143,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

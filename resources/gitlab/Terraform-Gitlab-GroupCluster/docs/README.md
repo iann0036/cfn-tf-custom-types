@@ -12,9 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Gitlab::GroupCluster",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#clustertype" title="ClusterType">ClusterType</a>" : <i>String</i>,
-        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#environmentscope" title="EnvironmentScope">EnvironmentScope</a>" : <i>String</i>,
@@ -25,8 +22,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#kubernetestoken" title="KubernetesToken">KubernetesToken</a>" : <i>String</i>,
         "<a href="#managed" title="Managed">Managed</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#platformtype" title="PlatformType">PlatformType</a>" : <i>String</i>,
-        "<a href="#providertype" title="ProviderType">ProviderType</a>" : <i>String</i>
     }
 }
 </pre>
@@ -36,9 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Gitlab::GroupCluster
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#clustertype" title="ClusterType">ClusterType</a>: <i>String</i>
-    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#environmentscope" title="EnvironmentScope">EnvironmentScope</a>: <i>String</i>
@@ -49,37 +41,9 @@ Properties:
     <a href="#kubernetestoken" title="KubernetesToken">KubernetesToken</a>: <i>String</i>
     <a href="#managed" title="Managed">Managed</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#platformtype" title="PlatformType">PlatformType</a>: <i>String</i>
-    <a href="#providertype" title="ProviderType">ProviderType</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ClusterType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
 
@@ -161,22 +125,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PlatformType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ProviderType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -195,17 +143,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ClusterType
 
-Returns the &lt;code&gt;ClusterType&lt;/code&gt; value.
+Returns the <code>ClusterType</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### PlatformType
 
-Returns the &lt;code&gt;PlatformType&lt;/code&gt; value.
+Returns the <code>PlatformType</code> value.
 
 #### ProviderType
 
-Returns the &lt;code&gt;ProviderType&lt;/code&gt; value.
+Returns the <code>ProviderType</code> value.
 

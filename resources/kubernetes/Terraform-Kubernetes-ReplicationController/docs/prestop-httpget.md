@@ -12,7 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#path" title="Path">Path</a>" : <i>String</i>,
     "<a href="#port" title="Port">Port</a>" : <i>String</i>,
     "<a href="#scheme" title="Scheme">Scheme</a>" : <i>String</i>,
-    "<a href="#httpheader" title="HttpHeader">HttpHeader</a>" : <i>[ &lt;a href=&#34;prestop-httpget-httpheader.md&#34;&gt;HttpHeader&lt;/a&gt;, ... ]</i>
+    "<a href="#httpheader" title="HttpHeader">HttpHeader</a>" : <i>[ <a href="prestop-httpget-httpheader.md">HttpHeader</a>, ... ]</i>
 }
 </pre>
 
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#port" title="Port">Port</a>: <i>String</i>
 <a href="#scheme" title="Scheme">Scheme</a>: <i>String</i>
 <a href="#httpheader" title="HttpHeader">HttpHeader</a>: <i>
-      - &lt;a href=&#34;prestop-httpget-httpheader.md&#34;&gt;HttpHeader&lt;/a&gt;</i>
+      - <a href="prestop-httpget-httpheader.md">HttpHeader</a></i>
 </pre>
 
 ## Properties
@@ -32,6 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Host
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,6 +40,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Path
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Port
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Scheme
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,7 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HttpHeader
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;prestop-httpget-httpheader.md&#34;&gt;HttpHeader&lt;/a&gt;
+
+_Type_: List of <a href="prestop-httpget-httpheader.md">HttpHeader</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

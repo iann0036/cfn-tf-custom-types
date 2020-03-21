@@ -12,20 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ComputeResourcePolicy",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
-        "<a href="#snapshotschedulepolicy" title="SnapshotSchedulePolicy">SnapshotSchedulePolicy</a>" : <i>[ &lt;a href=&#34;snapshotschedulepolicy.md&#34;&gt;SnapshotSchedulePolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ &lt;a href=&#34;retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#schedule" title="Schedule">Schedule</a>" : <i>[ &lt;a href=&#34;schedule.md&#34;&gt;Schedule&lt;/a&gt;, ... ]</i>,
-        "<a href="#snapshotproperties" title="SnapshotProperties">SnapshotProperties</a>" : <i>[ &lt;a href=&#34;snapshotproperties.md&#34;&gt;SnapshotProperties&lt;/a&gt;, ... ]</i>,
-        "<a href="#dailyschedule" title="DailySchedule">DailySchedule</a>" : <i>[ &lt;a href=&#34;dailyschedule.md&#34;&gt;DailySchedule&lt;/a&gt;, ... ]</i>,
-        "<a href="#hourlyschedule" title="HourlySchedule">HourlySchedule</a>" : <i>[ &lt;a href=&#34;hourlyschedule.md&#34;&gt;HourlySchedule&lt;/a&gt;, ... ]</i>,
-        "<a href="#weeklyschedule" title="WeeklySchedule">WeeklySchedule</a>" : <i>[ &lt;a href=&#34;weeklyschedule.md&#34;&gt;WeeklySchedule&lt;/a&gt;, ... ]</i>,
-        "<a href="#dayofweeks" title="DayOfWeeks">DayOfWeeks</a>" : <i>[ &lt;a href=&#34;dayofweeks.md&#34;&gt;DayOfWeeks&lt;/a&gt;, ... ]</i>
+        "<a href="#snapshotschedulepolicy" title="SnapshotSchedulePolicy">SnapshotSchedulePolicy</a>" : <i>[ <a href="snapshotschedulepolicy.md">SnapshotSchedulePolicy</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>" : <i>[ <a href="retentionpolicy.md">RetentionPolicy</a>, ... ]</i>,
+        "<a href="#schedule" title="Schedule">Schedule</a>" : <i>[ <a href="schedule.md">Schedule</a>, ... ]</i>,
+        "<a href="#snapshotproperties" title="SnapshotProperties">SnapshotProperties</a>" : <i>[ <a href="snapshotproperties.md">SnapshotProperties</a>, ... ]</i>,
+        "<a href="#dailyschedule" title="DailySchedule">DailySchedule</a>" : <i>[ <a href="dailyschedule.md">DailySchedule</a>, ... ]</i>,
+        "<a href="#hourlyschedule" title="HourlySchedule">HourlySchedule</a>" : <i>[ <a href="hourlyschedule.md">HourlySchedule</a>, ... ]</i>,
+        "<a href="#weeklyschedule" title="WeeklySchedule">WeeklySchedule</a>" : <i>[ <a href="weeklyschedule.md">WeeklySchedule</a>, ... ]</i>,
+        "<a href="#dayofweeks" title="DayOfWeeks">DayOfWeeks</a>" : <i>[ <a href="dayofweeks.md">DayOfWeeks</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,41 +33,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ComputeResourcePolicy
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
     <a href="#snapshotschedulepolicy" title="SnapshotSchedulePolicy">SnapshotSchedulePolicy</a>: <i>
-      - &lt;a href=&#34;snapshotschedulepolicy.md&#34;&gt;SnapshotSchedulePolicy&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="snapshotschedulepolicy.md">SnapshotSchedulePolicy</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#retentionpolicy" title="RetentionPolicy">RetentionPolicy</a>: <i>
-      - &lt;a href=&#34;retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;</i>
+      - <a href="retentionpolicy.md">RetentionPolicy</a></i>
     <a href="#schedule" title="Schedule">Schedule</a>: <i>
-      - &lt;a href=&#34;schedule.md&#34;&gt;Schedule&lt;/a&gt;</i>
+      - <a href="schedule.md">Schedule</a></i>
     <a href="#snapshotproperties" title="SnapshotProperties">SnapshotProperties</a>: <i>
-      - &lt;a href=&#34;snapshotproperties.md&#34;&gt;SnapshotProperties&lt;/a&gt;</i>
+      - <a href="snapshotproperties.md">SnapshotProperties</a></i>
     <a href="#dailyschedule" title="DailySchedule">DailySchedule</a>: <i>
-      - &lt;a href=&#34;dailyschedule.md&#34;&gt;DailySchedule&lt;/a&gt;</i>
+      - <a href="dailyschedule.md">DailySchedule</a></i>
     <a href="#hourlyschedule" title="HourlySchedule">HourlySchedule</a>: <i>
-      - &lt;a href=&#34;hourlyschedule.md&#34;&gt;HourlySchedule&lt;/a&gt;</i>
+      - <a href="hourlyschedule.md">HourlySchedule</a></i>
     <a href="#weeklyschedule" title="WeeklySchedule">WeeklySchedule</a>: <i>
-      - &lt;a href=&#34;weeklyschedule.md&#34;&gt;WeeklySchedule&lt;/a&gt;</i>
+      - <a href="weeklyschedule.md">WeeklySchedule</a></i>
     <a href="#dayofweeks" title="DayOfWeeks">DayOfWeeks</a>: <i>
-      - &lt;a href=&#34;dayofweeks.md&#34;&gt;DayOfWeeks&lt;/a&gt;</i>
+      - <a href="dayofweeks.md">DayOfWeeks</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
@@ -95,19 +81,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SelfLink
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SnapshotSchedulePolicy
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;snapshotschedulepolicy.md&#34;&gt;SnapshotSchedulePolicy&lt;/a&gt;
+_Type_: List of <a href="snapshotschedulepolicy.md">SnapshotSchedulePolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retentionpolicy.md&#34;&gt;RetentionPolicy&lt;/a&gt;
+_Type_: List of <a href="retentionpolicy.md">RetentionPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;schedule.md&#34;&gt;Schedule&lt;/a&gt;
+_Type_: List of <a href="schedule.md">Schedule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;snapshotproperties.md&#34;&gt;SnapshotProperties&lt;/a&gt;
+_Type_: List of <a href="snapshotproperties.md">SnapshotProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dailyschedule.md&#34;&gt;DailySchedule&lt;/a&gt;
+_Type_: List of <a href="dailyschedule.md">DailySchedule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +133,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;hourlyschedule.md&#34;&gt;HourlySchedule&lt;/a&gt;
+_Type_: List of <a href="hourlyschedule.md">HourlySchedule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +141,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;weeklyschedule.md&#34;&gt;WeeklySchedule&lt;/a&gt;
+_Type_: List of <a href="weeklyschedule.md">WeeklySchedule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +149,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dayofweeks.md&#34;&gt;DayOfWeeks&lt;/a&gt;
+_Type_: List of <a href="dayofweeks.md">DayOfWeeks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,5 +171,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 

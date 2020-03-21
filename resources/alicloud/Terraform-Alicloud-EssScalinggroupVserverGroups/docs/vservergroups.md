@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#loadbalancerid" title="LoadbalancerId">LoadbalancerId</a>" : <i>String</i>,
-    "<a href="#vserverattributes" title="VserverAttributes">VserverAttributes</a>" : <i>[ &lt;a href=&#34;vservergroups-vserverattributes.md&#34;&gt;VserverAttributes&lt;/a&gt;, ... ]</i>
+    "<a href="#vserverattributes" title="VserverAttributes">VserverAttributes</a>" : <i>[ <a href="vservergroups-vserverattributes.md">VserverAttributes</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#loadbalancerid" title="LoadbalancerId">LoadbalancerId</a>: <i>String</i>
 <a href="#vserverattributes" title="VserverAttributes">VserverAttributes</a>: <i>
-      - &lt;a href=&#34;vservergroups-vserverattributes.md&#34;&gt;VserverAttributes&lt;/a&gt;</i>
+      - <a href="vservergroups-vserverattributes.md">VserverAttributes</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### LoadbalancerId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VserverAttributes
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;vservergroups-vserverattributes.md&#34;&gt;VserverAttributes&lt;/a&gt;
+
+_Type_: List of <a href="vservergroups-vserverattributes.md">VserverAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

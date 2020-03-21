@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::LtmProfileOneconnect",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#defaultsfrom" title="DefaultsFrom">DefaultsFrom</a>" : <i>String</i>,
         "<a href="#idletimeoutoverride" title="IdleTimeoutOverride">IdleTimeoutOverride</a>" : <i>String</i>,
         "<a href="#maxage" title="MaxAge">MaxAge</a>" : <i>Double</i>,
@@ -31,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::LtmProfileOneconnect
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#defaultsfrom" title="DefaultsFrom">DefaultsFrom</a>: <i>String</i>
     <a href="#idletimeoutoverride" title="IdleTimeoutOverride">IdleTimeoutOverride</a>: <i>String</i>
     <a href="#maxage" title="MaxAge">MaxAge</a>: <i>Double</i>
@@ -44,16 +42,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultsFrom
 

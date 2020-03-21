@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NSXT::LogicalDhcpServer",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#attachedlogicalportid" title="AttachedLogicalPortId">AttachedLogicalPortId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#dhcpprofileid" title="DhcpProfileId">DhcpProfileId</a>" : <i>String</i>,
         "<a href="#dhcpserverip" title="DhcpServerIp">DhcpServerIp</a>" : <i>String</i>,
@@ -21,10 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#dnsnameservers" title="DnsNameServers">DnsNameServers</a>" : <i>[ String, ... ]</i>,
         "<a href="#domainname" title="DomainName">DomainName</a>" : <i>String</i>,
         "<a href="#gatewayip" title="GatewayIp">GatewayIp</a>" : <i>String</i>,
-        "<a href="#revision" title="Revision">Revision</a>" : <i>Double</i>,
-        "<a href="#dhcpgenericoption" title="DhcpGenericOption">DhcpGenericOption</a>" : <i>[ &lt;a href=&#34;dhcpgenericoption.md&#34;&gt;DhcpGenericOption&lt;/a&gt;, ... ]</i>,
-        "<a href="#dhcpoption121" title="DhcpOption121">DhcpOption121</a>" : <i>[ &lt;a href=&#34;dhcpoption121.md&#34;&gt;DhcpOption121&lt;/a&gt;, ... ]</i>,
-        "<a href="#tag" title="Tag">Tag</a>" : <i>[ &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;, ... ]</i>
+        "<a href="#dhcpgenericoption" title="DhcpGenericOption">DhcpGenericOption</a>" : <i>[ <a href="dhcpgenericoption.md">DhcpGenericOption</a>, ... ]</i>,
+        "<a href="#dhcpoption121" title="DhcpOption121">DhcpOption121</a>" : <i>[ <a href="dhcpoption121.md">DhcpOption121</a>, ... ]</i>,
+        "<a href="#tag" title="Tag">Tag</a>" : <i>[ <a href="tag.md">Tag</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,8 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NSXT::LogicalDhcpServer
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#attachedlogicalportid" title="AttachedLogicalPortId">AttachedLogicalPortId</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#dhcpprofileid" title="DhcpProfileId">DhcpProfileId</a>: <i>String</i>
     <a href="#dhcpserverip" title="DhcpServerIp">DhcpServerIp</a>: <i>String</i>
@@ -44,34 +39,15 @@ Properties:
       - String</i>
     <a href="#domainname" title="DomainName">DomainName</a>: <i>String</i>
     <a href="#gatewayip" title="GatewayIp">GatewayIp</a>: <i>String</i>
-    <a href="#revision" title="Revision">Revision</a>: <i>Double</i>
     <a href="#dhcpgenericoption" title="DhcpGenericOption">DhcpGenericOption</a>: <i>
-      - &lt;a href=&#34;dhcpgenericoption.md&#34;&gt;DhcpGenericOption&lt;/a&gt;</i>
+      - <a href="dhcpgenericoption.md">DhcpGenericOption</a></i>
     <a href="#dhcpoption121" title="DhcpOption121">DhcpOption121</a>: <i>
-      - &lt;a href=&#34;dhcpoption121.md&#34;&gt;DhcpOption121&lt;/a&gt;</i>
+      - <a href="dhcpoption121.md">DhcpOption121</a></i>
     <a href="#tag" title="Tag">Tag</a>: <i>
-      - &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;</i>
+      - <a href="tag.md">Tag</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AttachedLogicalPortId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -129,19 +105,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Revision
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### DhcpGenericOption
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dhcpgenericoption.md&#34;&gt;DhcpGenericOption&lt;/a&gt;
+_Type_: List of <a href="dhcpgenericoption.md">DhcpGenericOption</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -149,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dhcpoption121.md&#34;&gt;DhcpOption121&lt;/a&gt;
+_Type_: List of <a href="dhcpoption121.md">DhcpOption121</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tag.md&#34;&gt;Tag&lt;/a&gt;
+_Type_: List of <a href="tag.md">Tag</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,9 +147,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AttachedLogicalPortId
 
-Returns the &lt;code&gt;AttachedLogicalPortId&lt;/code&gt; value.
+Returns the <code>AttachedLogicalPortId</code> value.
 
 #### Revision
 
-Returns the &lt;code&gt;Revision&lt;/code&gt; value.
+Returns the <code>Revision</code> value.
 

@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#destinationportrange" title="DestinationPortRange">DestinationPortRange</a>" : <i>[ &lt;a href=&#34;tcpoptions-destinationportrange.md&#34;&gt;DestinationPortRange&lt;/a&gt;, ... ]</i>,
-    "<a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>" : <i>[ &lt;a href=&#34;tcpoptions-sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;, ... ]</i>
+    "<a href="#destinationportrange" title="DestinationPortRange">DestinationPortRange</a>" : <i>[ <a href="tcpoptions-destinationportrange.md">DestinationPortRange</a>, ... ]</i>,
+    "<a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>" : <i>[ <a href="tcpoptions-sourceportrange.md">SourcePortRange</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#destinationportrange" title="DestinationPortRange">DestinationPortRange</a>: <i>
-      - &lt;a href=&#34;tcpoptions-destinationportrange.md&#34;&gt;DestinationPortRange&lt;/a&gt;</i>
+      - <a href="tcpoptions-destinationportrange.md">DestinationPortRange</a></i>
 <a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>: <i>
-      - &lt;a href=&#34;tcpoptions-sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;</i>
+      - <a href="tcpoptions-sourceportrange.md">SourcePortRange</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DestinationPortRange
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;tcpoptions-destinationportrange.md&#34;&gt;DestinationPortRange&lt;/a&gt;
+
+_Type_: List of <a href="tcpoptions-destinationportrange.md">DestinationPortRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourcePortRange
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;tcpoptions-sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;
+
+_Type_: List of <a href="tcpoptions-sourceportrange.md">SourcePortRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

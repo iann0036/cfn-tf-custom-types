@@ -12,22 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::VappVm",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acceptalleulas" title="AcceptAllEulas">AcceptAllEulas</a>" : <i>Boolean</i>,
         "<a href="#catalogname" title="CatalogName">CatalogName</a>" : <i>String</i>,
         "<a href="#computername" title="ComputerName">ComputerName</a>" : <i>String</i>,
         "<a href="#cpucores" title="CpuCores">CpuCores</a>" : <i>Double</i>,
         "<a href="#cpus" title="Cpus">Cpus</a>" : <i>Double</i>,
-        "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#exposehardwarevirtualization" title="ExposeHardwareVirtualization">ExposeHardwareVirtualization</a>" : <i>Boolean</i>,
-        "<a href="#guestproperties" title="GuestProperties">GuestProperties</a>" : <i>[ &lt;a href=&#34;guestproperties.md&#34;&gt;GuestProperties&lt;/a&gt;, ... ]</i>,
+        "<a href="#guestproperties" title="GuestProperties">GuestProperties</a>" : <i>[ <a href="guestproperties.md">GuestProperties</a>, ... ]</i>,
         "<a href="#href" title="Href">Href</a>" : <i>String</i>,
         "<a href="#initscript" title="Initscript">Initscript</a>" : <i>String</i>,
-        "<a href="#internaldisk" title="InternalDisk">InternalDisk</a>" : <i>[ &lt;a href=&#34;internaldisk.md&#34;&gt;InternalDisk&lt;/a&gt;, ... ]</i>,
         "<a href="#ip" title="Ip">Ip</a>" : <i>String</i>,
         "<a href="#mac" title="Mac">Mac</a>" : <i>String</i>,
         "<a href="#memory" title="Memory">Memory</a>" : <i>Double</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#networkdhcpwaitseconds" title="NetworkDhcpWaitSeconds">NetworkDhcpWaitSeconds</a>" : <i>Double</i>,
         "<a href="#networkhref" title="NetworkHref">NetworkHref</a>" : <i>String</i>,
@@ -39,10 +36,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#vappname" title="VappName">VappName</a>" : <i>String</i>,
         "<a href="#vappnetworkname" title="VappNetworkName">VappNetworkName</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>,
-        "<a href="#customization" title="Customization">Customization</a>" : <i>[ &lt;a href=&#34;customization.md&#34;&gt;Customization&lt;/a&gt;, ... ]</i>,
-        "<a href="#disk" title="Disk">Disk</a>" : <i>[ &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;, ... ]</i>,
-        "<a href="#network" title="Network">Network</a>" : <i>[ &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;, ... ]</i>,
-        "<a href="#overridetemplatedisk" title="OverrideTemplateDisk">OverrideTemplateDisk</a>" : <i>[ &lt;a href=&#34;overridetemplatedisk.md&#34;&gt;OverrideTemplateDisk&lt;/a&gt;, ... ]</i>
+        "<a href="#customization" title="Customization">Customization</a>" : <i>[ <a href="customization.md">Customization</a>, ... ]</i>,
+        "<a href="#disk" title="Disk">Disk</a>" : <i>[ <a href="disk.md">Disk</a>, ... ]</i>,
+        "<a href="#network" title="Network">Network</a>" : <i>[ <a href="network.md">Network</a>, ... ]</i>,
+        "<a href="#overridetemplatedisk" title="OverrideTemplateDisk">OverrideTemplateDisk</a>" : <i>[ <a href="overridetemplatedisk.md">OverrideTemplateDisk</a>, ... ]</i>
     }
 }
 </pre>
@@ -52,25 +49,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::VappVm
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acceptalleulas" title="AcceptAllEulas">AcceptAllEulas</a>: <i>Boolean</i>
     <a href="#catalogname" title="CatalogName">CatalogName</a>: <i>String</i>
     <a href="#computername" title="ComputerName">ComputerName</a>: <i>String</i>
     <a href="#cpucores" title="CpuCores">CpuCores</a>: <i>Double</i>
     <a href="#cpus" title="Cpus">Cpus</a>: <i>Double</i>
-    <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#exposehardwarevirtualization" title="ExposeHardwareVirtualization">ExposeHardwareVirtualization</a>: <i>Boolean</i>
     <a href="#guestproperties" title="GuestProperties">GuestProperties</a>: <i>
-      - &lt;a href=&#34;guestproperties.md&#34;&gt;GuestProperties&lt;/a&gt;</i>
+      - <a href="guestproperties.md">GuestProperties</a></i>
     <a href="#href" title="Href">Href</a>: <i>String</i>
     <a href="#initscript" title="Initscript">Initscript</a>: <i>String</i>
-    <a href="#internaldisk" title="InternalDisk">InternalDisk</a>: <i>
-      - &lt;a href=&#34;internaldisk.md&#34;&gt;InternalDisk&lt;/a&gt;</i>
     <a href="#ip" title="Ip">Ip</a>: <i>String</i>
     <a href="#mac" title="Mac">Mac</a>: <i>String</i>
     <a href="#memory" title="Memory">Memory</a>: <i>Double</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#networkdhcpwaitseconds" title="NetworkDhcpWaitSeconds">NetworkDhcpWaitSeconds</a>: <i>Double</i>
     <a href="#networkhref" title="NetworkHref">NetworkHref</a>: <i>String</i>
@@ -83,26 +76,16 @@ Properties:
     <a href="#vappnetworkname" title="VappNetworkName">VappNetworkName</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
     <a href="#customization" title="Customization">Customization</a>: <i>
-      - &lt;a href=&#34;customization.md&#34;&gt;Customization&lt;/a&gt;</i>
+      - <a href="customization.md">Customization</a></i>
     <a href="#disk" title="Disk">Disk</a>: <i>
-      - &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;</i>
+      - <a href="disk.md">Disk</a></i>
     <a href="#network" title="Network">Network</a>: <i>
-      - &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;</i>
+      - <a href="network.md">Network</a></i>
     <a href="#overridetemplatedisk" title="OverrideTemplateDisk">OverrideTemplateDisk</a>: <i>
-      - &lt;a href=&#34;overridetemplatedisk.md&#34;&gt;OverrideTemplateDisk&lt;/a&gt;</i>
+      - <a href="overridetemplatedisk.md">OverrideTemplateDisk</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AcceptAllEulas
 
@@ -144,14 +127,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ExposeHardwareVirtualization
 
 _Required_: No
@@ -164,7 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;guestproperties.md&#34;&gt;GuestProperties&lt;/a&gt;
+_Type_: List of <a href="guestproperties.md">GuestProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -181,14 +156,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### InternalDisk
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;internaldisk.md&#34;&gt;InternalDisk&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -220,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -316,7 +283,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customization.md&#34;&gt;Customization&lt;/a&gt;
+_Type_: List of <a href="customization.md">Customization</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -324,7 +291,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;
+_Type_: List of <a href="disk.md">Disk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -332,7 +299,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;network.md&#34;&gt;Network&lt;/a&gt;
+_Type_: List of <a href="network.md">Network</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -340,7 +307,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;overridetemplatedisk.md&#34;&gt;OverrideTemplateDisk&lt;/a&gt;
+_Type_: List of <a href="overridetemplatedisk.md">OverrideTemplateDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -362,9 +329,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Description
 
-Returns the &lt;code&gt;Description&lt;/code&gt; value.
+Returns the <code>Description</code> value.
 
 #### InternalDisk
 
-Returns the &lt;code&gt;InternalDisk&lt;/code&gt; value.
+Returns the <code>InternalDisk</code> value.
 

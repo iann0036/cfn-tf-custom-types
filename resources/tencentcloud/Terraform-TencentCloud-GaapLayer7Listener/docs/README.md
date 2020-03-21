@@ -12,18 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::GaapLayer7Listener",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#authtype" title="AuthType">AuthType</a>" : <i>Double</i>,
         "<a href="#certificateid" title="CertificateId">CertificateId</a>" : <i>String</i>,
         "<a href="#clientcertificateid" title="ClientCertificateId">ClientCertificateId</a>" : <i>String</i>,
         "<a href="#clientcertificateids" title="ClientCertificateIds">ClientCertificateIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#forwardprotocol" title="ForwardProtocol">ForwardProtocol</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
         "<a href="#proxyid" title="ProxyId">ProxyId</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>Double</i>
     }
 }
 </pre>
@@ -33,32 +30,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::GaapLayer7Listener
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#authtype" title="AuthType">AuthType</a>: <i>Double</i>
     <a href="#certificateid" title="CertificateId">CertificateId</a>: <i>String</i>
     <a href="#clientcertificateid" title="ClientCertificateId">ClientCertificateId</a>: <i>String</i>
     <a href="#clientcertificateids" title="ClientCertificateIds">ClientCertificateIds</a>: <i>
       - String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#forwardprotocol" title="ForwardProtocol">ForwardProtocol</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>String</i>
     <a href="#proxyid" title="ProxyId">ProxyId</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>Double</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthType
 
@@ -89,14 +73,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreateTime
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -140,14 +116,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -166,9 +134,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

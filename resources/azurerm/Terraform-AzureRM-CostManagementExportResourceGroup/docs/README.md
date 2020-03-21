@@ -12,16 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::CostManagementExportResourceGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#active" title="Active">Active</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#recurrenceperiodend" title="RecurrencePeriodEnd">RecurrencePeriodEnd</a>" : <i>String</i>,
         "<a href="#recurrenceperiodstart" title="RecurrencePeriodStart">RecurrencePeriodStart</a>" : <i>String</i>,
         "<a href="#recurrencetype" title="RecurrenceType">RecurrenceType</a>" : <i>String</i>,
         "<a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>" : <i>String</i>,
-        "<a href="#deliveryinfo" title="DeliveryInfo">DeliveryInfo</a>" : <i>[ &lt;a href=&#34;deliveryinfo.md&#34;&gt;DeliveryInfo&lt;/a&gt;, ... ]</i>,
-        "<a href="#query" title="Query">Query</a>" : <i>[ &lt;a href=&#34;query.md&#34;&gt;Query&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#deliveryinfo" title="DeliveryInfo">DeliveryInfo</a>" : <i>[ <a href="deliveryinfo.md">DeliveryInfo</a>, ... ]</i>,
+        "<a href="#query" title="Query">Query</a>" : <i>[ <a href="query.md">Query</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -31,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::CostManagementExportResourceGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#active" title="Active">Active</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#recurrenceperiodend" title="RecurrencePeriodEnd">RecurrencePeriodEnd</a>: <i>String</i>
@@ -39,23 +37,13 @@ Properties:
     <a href="#recurrencetype" title="RecurrenceType">RecurrenceType</a>: <i>String</i>
     <a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>: <i>String</i>
     <a href="#deliveryinfo" title="DeliveryInfo">DeliveryInfo</a>: <i>
-      - &lt;a href=&#34;deliveryinfo.md&#34;&gt;DeliveryInfo&lt;/a&gt;</i>
+      - <a href="deliveryinfo.md">DeliveryInfo</a></i>
     <a href="#query" title="Query">Query</a>: <i>
-      - &lt;a href=&#34;query.md&#34;&gt;Query&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="query.md">Query</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Active
 
@@ -109,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deliveryinfo.md&#34;&gt;DeliveryInfo&lt;/a&gt;
+_Type_: List of <a href="deliveryinfo.md">DeliveryInfo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -117,7 +105,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;query.md&#34;&gt;Query&lt;/a&gt;
+_Type_: List of <a href="query.md">Query</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

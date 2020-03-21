@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OVH::IploadbalancingTcpFrontend",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowedsource" title="AllowedSource">AllowedSource</a>" : <i>[ String, ... ]</i>,
         "<a href="#dedicatedipfo" title="DedicatedIpfo">DedicatedIpfo</a>" : <i>[ String, ... ]</i>,
         "<a href="#defaultfarmid" title="DefaultFarmId">DefaultFarmId</a>" : <i>Double</i>,
@@ -32,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OVH::IploadbalancingTcpFrontend
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowedsource" title="AllowedSource">AllowedSource</a>: <i>
       - String</i>
     <a href="#dedicatedipfo" title="DedicatedIpfo">DedicatedIpfo</a>: <i>
@@ -48,16 +46,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedSource
 

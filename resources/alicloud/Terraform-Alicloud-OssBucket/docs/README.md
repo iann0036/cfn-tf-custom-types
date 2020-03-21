@@ -12,28 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::OssBucket",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acl" title="Acl">Acl</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
-        "<a href="#creationdate" title="CreationDate">CreationDate</a>" : <i>String</i>,
-        "<a href="#extranetendpoint" title="ExtranetEndpoint">ExtranetEndpoint</a>" : <i>String</i>,
         "<a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>" : <i>Boolean</i>,
-        "<a href="#intranetendpoint" title="IntranetEndpoint">IntranetEndpoint</a>" : <i>String</i>,
-        "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#loggingisenable" title="LoggingIsenable">LoggingIsenable</a>" : <i>Boolean</i>,
-        "<a href="#owner" title="Owner">Owner</a>" : <i>String</i>,
         "<a href="#policy" title="Policy">Policy</a>" : <i>String</i>,
         "<a href="#storageclass" title="StorageClass">StorageClass</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#lifecyclerule" title="LifecycleRule">LifecycleRule</a>" : <i>[ &lt;a href=&#34;lifecyclerule.md&#34;&gt;LifecycleRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#logging" title="Logging">Logging</a>" : <i>[ &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;, ... ]</i>,
-        "<a href="#refererconfig" title="RefererConfig">RefererConfig</a>" : <i>[ &lt;a href=&#34;refererconfig.md&#34;&gt;RefererConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#serversideencryptionrule" title="ServerSideEncryptionRule">ServerSideEncryptionRule</a>" : <i>[ &lt;a href=&#34;serversideencryptionrule.md&#34;&gt;ServerSideEncryptionRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#versioning" title="Versioning">Versioning</a>" : <i>[ &lt;a href=&#34;versioning.md&#34;&gt;Versioning&lt;/a&gt;, ... ]</i>,
-        "<a href="#website" title="Website">Website</a>" : <i>[ &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;, ... ]</i>,
-        "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ &lt;a href=&#34;expiration.md&#34;&gt;Expiration&lt;/a&gt;, ... ]</i>,
-        "<a href="#transitions" title="Transitions">Transitions</a>" : <i>[ &lt;a href=&#34;transitions.md&#34;&gt;Transitions&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ <a href="corsrule.md">CorsRule</a>, ... ]</i>,
+        "<a href="#lifecyclerule" title="LifecycleRule">LifecycleRule</a>" : <i>[ <a href="lifecyclerule.md">LifecycleRule</a>, ... ]</i>,
+        "<a href="#logging" title="Logging">Logging</a>" : <i>[ <a href="logging.md">Logging</a>, ... ]</i>,
+        "<a href="#refererconfig" title="RefererConfig">RefererConfig</a>" : <i>[ <a href="refererconfig.md">RefererConfig</a>, ... ]</i>,
+        "<a href="#serversideencryptionrule" title="ServerSideEncryptionRule">ServerSideEncryptionRule</a>" : <i>[ <a href="serversideencryptionrule.md">ServerSideEncryptionRule</a>, ... ]</i>,
+        "<a href="#versioning" title="Versioning">Versioning</a>" : <i>[ <a href="versioning.md">Versioning</a>, ... ]</i>,
+        "<a href="#website" title="Website">Website</a>" : <i>[ <a href="website.md">Website</a>, ... ]</i>,
+        "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ <a href="expiration.md">Expiration</a>, ... ]</i>,
+        "<a href="#transitions" title="Transitions">Transitions</a>" : <i>[ <a href="transitions.md">Transitions</a>, ... ]</i>
     }
 }
 </pre>
@@ -43,51 +37,35 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::OssBucket
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
-    <a href="#creationdate" title="CreationDate">CreationDate</a>: <i>String</i>
-    <a href="#extranetendpoint" title="ExtranetEndpoint">ExtranetEndpoint</a>: <i>String</i>
     <a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>: <i>Boolean</i>
-    <a href="#intranetendpoint" title="IntranetEndpoint">IntranetEndpoint</a>: <i>String</i>
-    <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#loggingisenable" title="LoggingIsenable">LoggingIsenable</a>: <i>Boolean</i>
-    <a href="#owner" title="Owner">Owner</a>: <i>String</i>
     <a href="#policy" title="Policy">Policy</a>: <i>String</i>
     <a href="#storageclass" title="StorageClass">StorageClass</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#corsrule" title="CorsRule">CorsRule</a>: <i>
-      - &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;</i>
+      - <a href="corsrule.md">CorsRule</a></i>
     <a href="#lifecyclerule" title="LifecycleRule">LifecycleRule</a>: <i>
-      - &lt;a href=&#34;lifecyclerule.md&#34;&gt;LifecycleRule&lt;/a&gt;</i>
+      - <a href="lifecyclerule.md">LifecycleRule</a></i>
     <a href="#logging" title="Logging">Logging</a>: <i>
-      - &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;</i>
+      - <a href="logging.md">Logging</a></i>
     <a href="#refererconfig" title="RefererConfig">RefererConfig</a>: <i>
-      - &lt;a href=&#34;refererconfig.md&#34;&gt;RefererConfig&lt;/a&gt;</i>
+      - <a href="refererconfig.md">RefererConfig</a></i>
     <a href="#serversideencryptionrule" title="ServerSideEncryptionRule">ServerSideEncryptionRule</a>: <i>
-      - &lt;a href=&#34;serversideencryptionrule.md&#34;&gt;ServerSideEncryptionRule&lt;/a&gt;</i>
+      - <a href="serversideencryptionrule.md">ServerSideEncryptionRule</a></i>
     <a href="#versioning" title="Versioning">Versioning</a>: <i>
-      - &lt;a href=&#34;versioning.md&#34;&gt;Versioning&lt;/a&gt;</i>
+      - <a href="versioning.md">Versioning</a></i>
     <a href="#website" title="Website">Website</a>: <i>
-      - &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;</i>
+      - <a href="website.md">Website</a></i>
     <a href="#expiration" title="Expiration">Expiration</a>: <i>
-      - &lt;a href=&#34;expiration.md&#34;&gt;Expiration&lt;/a&gt;</i>
+      - <a href="expiration.md">Expiration</a></i>
     <a href="#transitions" title="Transitions">Transitions</a>: <i>
-      - &lt;a href=&#34;transitions.md&#34;&gt;Transitions&lt;/a&gt;</i>
+      - <a href="transitions.md">Transitions</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Acl
 
@@ -105,22 +83,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CreationDate
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExtranetEndpoint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ForceDestroy
 
 _Required_: No
@@ -129,35 +91,11 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### IntranetEndpoint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Location
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### LoggingIsenable
 
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Owner
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -181,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -189,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;
+_Type_: List of <a href="corsrule.md">CorsRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -197,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lifecyclerule.md&#34;&gt;LifecycleRule&lt;/a&gt;
+_Type_: List of <a href="lifecyclerule.md">LifecycleRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -205,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;
+_Type_: List of <a href="logging.md">Logging</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -213,7 +151,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;refererconfig.md&#34;&gt;RefererConfig&lt;/a&gt;
+_Type_: List of <a href="refererconfig.md">RefererConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,7 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serversideencryptionrule.md&#34;&gt;ServerSideEncryptionRule&lt;/a&gt;
+_Type_: List of <a href="serversideencryptionrule.md">ServerSideEncryptionRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -229,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;versioning.md&#34;&gt;Versioning&lt;/a&gt;
+_Type_: List of <a href="versioning.md">Versioning</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -237,7 +175,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;website.md&#34;&gt;Website&lt;/a&gt;
+_Type_: List of <a href="website.md">Website</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -245,7 +183,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;expiration.md&#34;&gt;Expiration&lt;/a&gt;
+_Type_: List of <a href="expiration.md">Expiration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -253,7 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;transitions.md&#34;&gt;Transitions&lt;/a&gt;
+_Type_: List of <a href="transitions.md">Transitions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -275,21 +213,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationDate
 
-Returns the &lt;code&gt;CreationDate&lt;/code&gt; value.
+Returns the <code>CreationDate</code> value.
 
 #### ExtranetEndpoint
 
-Returns the &lt;code&gt;ExtranetEndpoint&lt;/code&gt; value.
+Returns the <code>ExtranetEndpoint</code> value.
 
 #### IntranetEndpoint
 
-Returns the &lt;code&gt;IntranetEndpoint&lt;/code&gt; value.
+Returns the <code>IntranetEndpoint</code> value.
 
 #### Location
 
-Returns the &lt;code&gt;Location&lt;/code&gt; value.
+Returns the <code>Location</code> value.
 
 #### Owner
 
-Returns the &lt;code&gt;Owner&lt;/code&gt; value.
+Returns the <code>Owner</code> value.
 

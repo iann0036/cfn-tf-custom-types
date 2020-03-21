@@ -12,12 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Heroku::Space",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cidr" title="Cidr">Cidr</a>" : <i>String</i>,
         "<a href="#datacidr" title="DataCidr">DataCidr</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#organization" title="Organization">Organization</a>" : <i>String</i>,
-        "<a href="#outboundips" title="OutboundIps">OutboundIps</a>" : <i>[ String, ... ]</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#shield" title="Shield">Shield</a>" : <i>Boolean</i>,
         "<a href="#trustedipranges" title="TrustedIpRanges">TrustedIpRanges</a>" : <i>[ String, ... ]</i>
@@ -30,13 +28,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Heroku::Space
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cidr" title="Cidr">Cidr</a>: <i>String</i>
     <a href="#datacidr" title="DataCidr">DataCidr</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#organization" title="Organization">Organization</a>: <i>String</i>
-    <a href="#outboundips" title="OutboundIps">OutboundIps</a>: <i>
-      - String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#shield" title="Shield">Shield</a>: <i>Boolean</i>
     <a href="#trustedipranges" title="TrustedIpRanges">TrustedIpRanges</a>: <i>
@@ -44,16 +39,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cidr
 
@@ -84,14 +69,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### OutboundIps
-
-_Required_: No
-
-_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -137,5 +114,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OutboundIps
 
-Returns the &lt;code&gt;OutboundIps&lt;/code&gt; value.
+Returns the <code>OutboundIps</code> value.
 

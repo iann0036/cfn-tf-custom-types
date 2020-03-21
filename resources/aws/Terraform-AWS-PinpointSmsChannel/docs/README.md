@@ -12,13 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::PinpointSmsChannel",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#applicationid" title="ApplicationId">ApplicationId</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
-        "<a href="#promotionalmessagespersecond" title="PromotionalMessagesPerSecond">PromotionalMessagesPerSecond</a>" : <i>Double</i>,
         "<a href="#senderid" title="SenderId">SenderId</a>" : <i>String</i>,
         "<a href="#shortcode" title="ShortCode">ShortCode</a>" : <i>String</i>,
-        "<a href="#transactionalmessagespersecond" title="TransactionalMessagesPerSecond">TransactionalMessagesPerSecond</a>" : <i>Double</i>
     }
 }
 </pre>
@@ -28,26 +25,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::PinpointSmsChannel
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#applicationid" title="ApplicationId">ApplicationId</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
-    <a href="#promotionalmessagespersecond" title="PromotionalMessagesPerSecond">PromotionalMessagesPerSecond</a>: <i>Double</i>
     <a href="#senderid" title="SenderId">SenderId</a>: <i>String</i>
     <a href="#shortcode" title="ShortCode">ShortCode</a>: <i>String</i>
-    <a href="#transactionalmessagespersecond" title="TransactionalMessagesPerSecond">TransactionalMessagesPerSecond</a>: <i>Double</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplicationId
 
@@ -65,14 +49,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PromotionalMessagesPerSecond
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SenderId
 
 _Required_: No
@@ -86,14 +62,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TransactionalMessagesPerSecond
-
-_Required_: No
-
-_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PromotionalMessagesPerSecond
 
-Returns the &lt;code&gt;PromotionalMessagesPerSecond&lt;/code&gt; value.
+Returns the <code>PromotionalMessagesPerSecond</code> value.
 
 #### TransactionalMessagesPerSecond
 
-Returns the &lt;code&gt;TransactionalMessagesPerSecond&lt;/code&gt; value.
+Returns the <code>TransactionalMessagesPerSecond</code> value.
 

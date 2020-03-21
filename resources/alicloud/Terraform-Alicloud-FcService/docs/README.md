@@ -12,16 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::FcService",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#internetaccess" title="InternetAccess">InternetAccess</a>" : <i>Boolean</i>,
-        "<a href="#lastmodified" title="LastModified">LastModified</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
-        "<a href="#serviceid" title="ServiceId">ServiceId</a>" : <i>String</i>,
-        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#vpcconfig" title="VpcConfig">VpcConfig</a>" : <i>[ &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ <a href="logconfig.md">LogConfig</a>, ... ]</i>,
+        "<a href="#vpcconfig" title="VpcConfig">VpcConfig</a>" : <i>[ <a href="vpcconfig.md">VpcConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,31 +28,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::FcService
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#internetaccess" title="InternetAccess">InternetAccess</a>: <i>Boolean</i>
-    <a href="#lastmodified" title="LastModified">LastModified</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
-    <a href="#serviceid" title="ServiceId">ServiceId</a>: <i>String</i>
     <a href="#logconfig" title="LogConfig">LogConfig</a>: <i>
-      - &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;</i>
+      - <a href="logconfig.md">LogConfig</a></i>
     <a href="#vpcconfig" title="VpcConfig">VpcConfig</a>: <i>
-      - &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;</i>
+      - <a href="vpcconfig.md">VpcConfig</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -70,14 +54,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastModified
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,19 +81,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ServiceId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### LogConfig
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;
+_Type_: List of <a href="logconfig.md">LogConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -125,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;vpcconfig.md&#34;&gt;VpcConfig&lt;/a&gt;
+_Type_: List of <a href="vpcconfig.md">VpcConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,9 +115,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 
 #### ServiceId
 
-Returns the &lt;code&gt;ServiceId&lt;/code&gt; value.
+Returns the <code>ServiceId</code> value.
 

@@ -12,16 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DmsReplicationTask",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cdcstarttime" title="CdcStartTime">CdcStartTime</a>" : <i>String</i>,
         "<a href="#migrationtype" title="MigrationType">MigrationType</a>" : <i>String</i>,
         "<a href="#replicationinstancearn" title="ReplicationInstanceArn">ReplicationInstanceArn</a>" : <i>String</i>,
-        "<a href="#replicationtaskarn" title="ReplicationTaskArn">ReplicationTaskArn</a>" : <i>String</i>,
         "<a href="#replicationtaskid" title="ReplicationTaskId">ReplicationTaskId</a>" : <i>String</i>,
         "<a href="#replicationtasksettings" title="ReplicationTaskSettings">ReplicationTaskSettings</a>" : <i>String</i>,
         "<a href="#sourceendpointarn" title="SourceEndpointArn">SourceEndpointArn</a>" : <i>String</i>,
         "<a href="#tablemappings" title="TableMappings">TableMappings</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#targetendpointarn" title="TargetEndpointArn">TargetEndpointArn</a>" : <i>String</i>
     }
 }
@@ -32,31 +30,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DmsReplicationTask
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cdcstarttime" title="CdcStartTime">CdcStartTime</a>: <i>String</i>
     <a href="#migrationtype" title="MigrationType">MigrationType</a>: <i>String</i>
     <a href="#replicationinstancearn" title="ReplicationInstanceArn">ReplicationInstanceArn</a>: <i>String</i>
-    <a href="#replicationtaskarn" title="ReplicationTaskArn">ReplicationTaskArn</a>: <i>String</i>
     <a href="#replicationtaskid" title="ReplicationTaskId">ReplicationTaskId</a>: <i>String</i>
     <a href="#replicationtasksettings" title="ReplicationTaskSettings">ReplicationTaskSettings</a>: <i>String</i>
     <a href="#sourceendpointarn" title="SourceEndpointArn">SourceEndpointArn</a>: <i>String</i>
     <a href="#tablemappings" title="TableMappings">TableMappings</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#targetendpointarn" title="TargetEndpointArn">TargetEndpointArn</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CdcStartTime
 
@@ -77,14 +63,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ReplicationInstanceArn
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ReplicationTaskArn
-
-_Required_: No
 
 _Type_: String
 
@@ -126,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,5 +134,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ReplicationTaskArn
 
-Returns the &lt;code&gt;ReplicationTaskArn&lt;/code&gt; value.
+Returns the <code>ReplicationTaskArn</code> value.
 

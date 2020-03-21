@@ -12,11 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::WafCcattackprotectionRuleV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#actioncategory" title="ActionCategory">ActionCategory</a>" : <i>String</i>,
         "<a href="#blockcontent" title="BlockContent">BlockContent</a>" : <i>String</i>,
         "<a href="#blockcontenttype" title="BlockContentType">BlockContentType</a>" : <i>String</i>,
-        "<a href="#default" title="Default">Default</a>" : <i>Boolean</i>,
         "<a href="#limitnum" title="LimitNum">LimitNum</a>" : <i>Double</i>,
         "<a href="#limitperiod" title="LimitPeriod">LimitPeriod</a>" : <i>Double</i>,
         "<a href="#locktime" title="LockTime">LockTime</a>" : <i>Double</i>,
@@ -26,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#tagindex" title="TagIndex">TagIndex</a>" : <i>String</i>,
         "<a href="#tagtype" title="TagType">TagType</a>" : <i>String</i>,
         "<a href="#url" title="Url">Url</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -36,11 +34,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::WafCcattackprotectionRuleV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#actioncategory" title="ActionCategory">ActionCategory</a>: <i>String</i>
     <a href="#blockcontent" title="BlockContent">BlockContent</a>: <i>String</i>
     <a href="#blockcontenttype" title="BlockContentType">BlockContentType</a>: <i>String</i>
-    <a href="#default" title="Default">Default</a>: <i>Boolean</i>
     <a href="#limitnum" title="LimitNum">LimitNum</a>: <i>Double</i>
     <a href="#limitperiod" title="LimitPeriod">LimitPeriod</a>: <i>Double</i>
     <a href="#locktime" title="LockTime">LockTime</a>: <i>Double</i>
@@ -51,20 +47,10 @@ Properties:
     <a href="#tagindex" title="TagIndex">TagIndex</a>: <i>String</i>
     <a href="#tagtype" title="TagType">TagType</a>: <i>String</i>
     <a href="#url" title="Url">Url</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ActionCategory
 
@@ -87,14 +73,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Default
-
-_Required_: No
-
-_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,5 +174,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Default
 
-Returns the &lt;code&gt;Default&lt;/code&gt; value.
+Returns the <code>Default</code> value.
 

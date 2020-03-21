@@ -16,10 +16,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#mincount" title="MinCount">MinCount</a>" : <i>Double</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#nodecount" title="NodeCount">NodeCount</a>" : <i>Double</i>,
-    "<a href="#nodelabels" title="NodeLabels">NodeLabels</a>" : <i>[ &lt;a href=&#34;defaultnodepool-nodelabels.md&#34;&gt;NodeLabels&lt;/a&gt;, ... ]</i>,
+    "<a href="#nodelabels" title="NodeLabels">NodeLabels</a>" : <i>[ <a href="defaultnodepool-nodelabels.md">NodeLabels</a>, ... ]</i>,
     "<a href="#nodetaints" title="NodeTaints">NodeTaints</a>" : <i>[ String, ... ]</i>,
     "<a href="#osdisksizegb" title="OsDiskSizeGb">OsDiskSizeGb</a>" : <i>Double</i>,
-    "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;defaultnodepool-tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+    "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="defaultnodepool-tags.md">Tags</a>, ... ]</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
     "<a href="#vmsize" title="VmSize">VmSize</a>" : <i>String</i>,
     "<a href="#vnetsubnetid" title="VnetSubnetId">VnetSubnetId</a>" : <i>String</i>
@@ -39,12 +39,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#nodecount" title="NodeCount">NodeCount</a>: <i>Double</i>
 <a href="#nodelabels" title="NodeLabels">NodeLabels</a>: <i>
-      - &lt;a href=&#34;defaultnodepool-nodelabels.md&#34;&gt;NodeLabels&lt;/a&gt;</i>
+      - <a href="defaultnodepool-nodelabels.md">NodeLabels</a></i>
 <a href="#nodetaints" title="NodeTaints">NodeTaints</a>: <i>
       - String</i>
 <a href="#osdisksizegb" title="OsDiskSizeGb">OsDiskSizeGb</a>: <i>Double</i>
 <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;defaultnodepool-tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="defaultnodepool-tags.md">Tags</a></i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#vmsize" title="VmSize">VmSize</a>: <i>String</i>
 <a href="#vnetsubnetid" title="VnetSubnetId">VnetSubnetId</a>: <i>String</i>
@@ -55,6 +55,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AvailabilityZones
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EnableAutoScaling
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,6 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EnableNodePublicIp
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -76,6 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MaxCount
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -83,6 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MaxPods
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,6 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinCount
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -97,6 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -104,6 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NodeCount
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -111,13 +119,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NodeLabels
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;defaultnodepool-nodelabels.md&#34;&gt;NodeLabels&lt;/a&gt;
+
+_Type_: List of <a href="defaultnodepool-nodelabels.md">NodeLabels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeTaints
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -125,6 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OsDiskSizeGb
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -132,13 +143,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tags
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;defaultnodepool-tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Type_: List of <a href="defaultnodepool-tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -146,6 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VmSize
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -153,6 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VnetSubnetId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

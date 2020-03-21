@@ -12,29 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::OsmanagementSoftwareSource",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#archtype" title="ArchType">ArchType</a>" : <i>String</i>,
-        "<a href="#associatedmanagedinstances" title="AssociatedManagedInstances">AssociatedManagedInstances</a>" : <i>[ &lt;a href=&#34;associatedmanagedinstances.md&#34;&gt;AssociatedManagedInstances&lt;/a&gt;, ... ]</i>,
         "<a href="#checksumtype" title="ChecksumType">ChecksumType</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
-        "<a href="#gpgkeyfingerprint" title="GpgKeyFingerprint">GpgKeyFingerprint</a>" : <i>String</i>,
-        "<a href="#gpgkeyid" title="GpgKeyId">GpgKeyId</a>" : <i>String</i>,
-        "<a href="#gpgkeyurl" title="GpgKeyUrl">GpgKeyUrl</a>" : <i>String</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#maintaineremail" title="MaintainerEmail">MaintainerEmail</a>" : <i>String</i>,
         "<a href="#maintainername" title="MaintainerName">MaintainerName</a>" : <i>String</i>,
         "<a href="#maintainerphone" title="MaintainerPhone">MaintainerPhone</a>" : <i>String</i>,
-        "<a href="#packages" title="Packages">Packages</a>" : <i>Double</i>,
         "<a href="#parentid" title="ParentId">ParentId</a>" : <i>String</i>,
-        "<a href="#parentname" title="ParentName">ParentName</a>" : <i>String</i>,
-        "<a href="#repotype" title="RepoType">RepoType</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
-        "<a href="#url" title="Url">Url</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -44,59 +33,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::OsmanagementSoftwareSource
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#archtype" title="ArchType">ArchType</a>: <i>String</i>
-    <a href="#associatedmanagedinstances" title="AssociatedManagedInstances">AssociatedManagedInstances</a>: <i>
-      - &lt;a href=&#34;associatedmanagedinstances.md&#34;&gt;AssociatedManagedInstances&lt;/a&gt;</i>
     <a href="#checksumtype" title="ChecksumType">ChecksumType</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
-    <a href="#gpgkeyfingerprint" title="GpgKeyFingerprint">GpgKeyFingerprint</a>: <i>String</i>
-    <a href="#gpgkeyid" title="GpgKeyId">GpgKeyId</a>: <i>String</i>
-    <a href="#gpgkeyurl" title="GpgKeyUrl">GpgKeyUrl</a>: <i>String</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#maintaineremail" title="MaintainerEmail">MaintainerEmail</a>: <i>String</i>
     <a href="#maintainername" title="MaintainerName">MaintainerName</a>: <i>String</i>
     <a href="#maintainerphone" title="MaintainerPhone">MaintainerPhone</a>: <i>String</i>
-    <a href="#packages" title="Packages">Packages</a>: <i>Double</i>
     <a href="#parentid" title="ParentId">ParentId</a>: <i>String</i>
-    <a href="#parentname" title="ParentName">ParentName</a>: <i>String</i>
-    <a href="#repotype" title="RepoType">RepoType</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
-    <a href="#url" title="Url">Url</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ArchType
 
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AssociatedManagedInstances
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;associatedmanagedinstances.md&#34;&gt;AssociatedManagedInstances&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -120,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -144,31 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### GpgKeyFingerprint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### GpgKeyId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### GpgKeyUrl
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,55 +131,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Packages
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ParentId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ParentName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### RepoType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Url
 
 _Required_: No
 
@@ -256,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -278,41 +165,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AssociatedManagedInstances
 
-Returns the &lt;code&gt;AssociatedManagedInstances&lt;/code&gt; value.
+Returns the <code>AssociatedManagedInstances</code> value.
 
 #### GpgKeyFingerprint
 
-Returns the &lt;code&gt;GpgKeyFingerprint&lt;/code&gt; value.
+Returns the <code>GpgKeyFingerprint</code> value.
 
 #### GpgKeyId
 
-Returns the &lt;code&gt;GpgKeyId&lt;/code&gt; value.
+Returns the <code>GpgKeyId</code> value.
 
 #### GpgKeyUrl
 
-Returns the &lt;code&gt;GpgKeyUrl&lt;/code&gt; value.
+Returns the <code>GpgKeyUrl</code> value.
 
 #### Packages
 
-Returns the &lt;code&gt;Packages&lt;/code&gt; value.
+Returns the <code>Packages</code> value.
 
 #### ParentName
 
-Returns the &lt;code&gt;ParentName&lt;/code&gt; value.
+Returns the <code>ParentName</code> value.
 
 #### RepoType
 
-Returns the &lt;code&gt;RepoType&lt;/code&gt; value.
+Returns the <code>RepoType</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Url
 
-Returns the &lt;code&gt;Url&lt;/code&gt; value.
+Returns the <code>Url</code> value.
 

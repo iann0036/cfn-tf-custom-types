@@ -12,22 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ComputeSubnetwork",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#creationtimestamp" title="CreationTimestamp">CreationTimestamp</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enableflowlogs" title="EnableFlowLogs">EnableFlowLogs</a>" : <i>Boolean</i>,
-        "<a href="#fingerprint" title="Fingerprint">Fingerprint</a>" : <i>String</i>,
-        "<a href="#gatewayaddress" title="GatewayAddress">GatewayAddress</a>" : <i>String</i>,
         "<a href="#ipcidrrange" title="IpCidrRange">IpCidrRange</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#network" title="Network">Network</a>" : <i>String</i>,
         "<a href="#privateipgoogleaccess" title="PrivateIpGoogleAccess">PrivateIpGoogleAccess</a>" : <i>Boolean</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#secondaryiprange" title="SecondaryIpRange">SecondaryIpRange</a>" : <i>[ &lt;a href=&#34;secondaryiprange.md&#34;&gt;SecondaryIpRange&lt;/a&gt;, ... ]</i>,
-        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
-        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#secondaryiprange" title="SecondaryIpRange">SecondaryIpRange</a>" : <i>[ <a href="secondaryiprange.md">SecondaryIpRange</a>, ... ]</i>,
+        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ <a href="logconfig.md">LogConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -37,12 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ComputeSubnetwork
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#creationtimestamp" title="CreationTimestamp">CreationTimestamp</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enableflowlogs" title="EnableFlowLogs">EnableFlowLogs</a>: <i>Boolean</i>
-    <a href="#fingerprint" title="Fingerprint">Fingerprint</a>: <i>String</i>
-    <a href="#gatewayaddress" title="GatewayAddress">GatewayAddress</a>: <i>String</i>
     <a href="#ipcidrrange" title="IpCidrRange">IpCidrRange</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#network" title="Network">Network</a>: <i>String</i>
@@ -50,32 +41,13 @@ Properties:
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#secondaryiprange" title="SecondaryIpRange">SecondaryIpRange</a>: <i>
-      - &lt;a href=&#34;secondaryiprange.md&#34;&gt;SecondaryIpRange&lt;/a&gt;</i>
-    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
+      - <a href="secondaryiprange.md">SecondaryIpRange</a></i>
     <a href="#logconfig" title="LogConfig">LogConfig</a>: <i>
-      - &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="logconfig.md">LogConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreationTimestamp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -90,22 +62,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Fingerprint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### GatewayAddress
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,15 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secondaryiprange.md&#34;&gt;SecondaryIpRange&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SelfLink
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="secondaryiprange.md">SecondaryIpRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;
+_Type_: List of <a href="logconfig.md">LogConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -185,7 +133,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -207,17 +155,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreationTimestamp
 
-Returns the &lt;code&gt;CreationTimestamp&lt;/code&gt; value.
+Returns the <code>CreationTimestamp</code> value.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 
 #### GatewayAddress
 
-Returns the &lt;code&gt;GatewayAddress&lt;/code&gt; value.
+Returns the <code>GatewayAddress</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 

@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::MySQL::User",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#authplugin" title="AuthPlugin">AuthPlugin</a>" : <i>String</i>,
         "<a href="#host" title="Host">Host</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
@@ -28,7 +27,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::MySQL::User
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#authplugin" title="AuthPlugin">AuthPlugin</a>: <i>String</i>
     <a href="#host" title="Host">Host</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
@@ -38,16 +36,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthPlugin
 

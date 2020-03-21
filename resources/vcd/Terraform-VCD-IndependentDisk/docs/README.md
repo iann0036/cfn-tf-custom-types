@@ -12,16 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VCD::IndependentDisk",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bussubtype" title="BusSubType">BusSubType</a>" : <i>String</i>,
         "<a href="#bustype" title="BusType">BusType</a>" : <i>String</i>,
-        "<a href="#datastorename" title="DatastoreName">DatastoreName</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#iops" title="Iops">Iops</a>" : <i>Double</i>,
-        "<a href="#isattached" title="IsAttached">IsAttached</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#org" title="Org">Org</a>" : <i>String</i>,
-        "<a href="#ownername" title="OwnerName">OwnerName</a>" : <i>String</i>,
         "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
         "<a href="#storageprofile" title="StorageProfile">StorageProfile</a>" : <i>String</i>,
         "<a href="#vdc" title="Vdc">Vdc</a>" : <i>String</i>
@@ -34,32 +29,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VCD::IndependentDisk
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bussubtype" title="BusSubType">BusSubType</a>: <i>String</i>
     <a href="#bustype" title="BusType">BusType</a>: <i>String</i>
-    <a href="#datastorename" title="DatastoreName">DatastoreName</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#iops" title="Iops">Iops</a>: <i>Double</i>
-    <a href="#isattached" title="IsAttached">IsAttached</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#org" title="Org">Org</a>: <i>String</i>
-    <a href="#ownername" title="OwnerName">OwnerName</a>: <i>String</i>
     <a href="#size" title="Size">Size</a>: <i>Double</i>
     <a href="#storageprofile" title="StorageProfile">StorageProfile</a>: <i>String</i>
     <a href="#vdc" title="Vdc">Vdc</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BusSubType
 
@@ -77,35 +57,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### DatastoreName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Description
 
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Iops
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### IsAttached
-
-_Required_: No
-
-_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -118,14 +74,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Org
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### OwnerName
 
 _Required_: No
 
@@ -175,17 +123,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DatastoreName
 
-Returns the &lt;code&gt;DatastoreName&lt;/code&gt; value.
+Returns the <code>DatastoreName</code> value.
 
 #### Iops
 
-Returns the &lt;code&gt;Iops&lt;/code&gt; value.
+Returns the <code>Iops</code> value.
 
 #### IsAttached
 
-Returns the &lt;code&gt;IsAttached&lt;/code&gt; value.
+Returns the <code>IsAttached</code> value.
 
 #### OwnerName
 
-Returns the &lt;code&gt;OwnerName&lt;/code&gt; value.
+Returns the <code>OwnerName</code> value.
 

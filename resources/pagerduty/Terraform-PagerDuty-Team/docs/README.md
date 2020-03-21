@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::PagerDuty::Team",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#htmlurl" title="HtmlUrl">HtmlUrl</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>
     }
 }
@@ -25,33 +23,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::PagerDuty::Team
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#htmlurl" title="HtmlUrl">HtmlUrl</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HtmlUrl
 
 _Required_: No
 
@@ -85,5 +63,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HtmlUrl
 
-Returns the &lt;code&gt;HtmlUrl&lt;/code&gt; value.
+Returns the <code>HtmlUrl</code> value.
 

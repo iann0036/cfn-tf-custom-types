@@ -12,26 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::CoreVolumeAttachment",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#attachmenttype" title="AttachmentType">AttachmentType</a>" : <i>String</i>,
-        "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
-        "<a href="#chapsecret" title="ChapSecret">ChapSecret</a>" : <i>String</i>,
-        "<a href="#chapusername" title="ChapUsername">ChapUsername</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
         "<a href="#device" title="Device">Device</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
-        "<a href="#ipv4" title="Ipv4">Ipv4</a>" : <i>String</i>,
-        "<a href="#iqn" title="Iqn">Iqn</a>" : <i>String</i>,
         "<a href="#ispvencryptionintransitenabled" title="IsPvEncryptionInTransitEnabled">IsPvEncryptionInTransitEnabled</a>" : <i>Boolean</i>,
         "<a href="#isreadonly" title="IsReadOnly">IsReadOnly</a>" : <i>Boolean</i>,
         "<a href="#isshareable" title="IsShareable">IsShareable</a>" : <i>Boolean</i>,
-        "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
         "<a href="#usechap" title="UseChap">UseChap</a>" : <i>Boolean</i>,
         "<a href="#volumeid" title="VolumeId">VolumeId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -41,67 +32,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::CoreVolumeAttachment
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#attachmenttype" title="AttachmentType">AttachmentType</a>: <i>String</i>
-    <a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>: <i>String</i>
-    <a href="#chapsecret" title="ChapSecret">ChapSecret</a>: <i>String</i>
-    <a href="#chapusername" title="ChapUsername">ChapUsername</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#device" title="Device">Device</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
-    <a href="#ipv4" title="Ipv4">Ipv4</a>: <i>String</i>
-    <a href="#iqn" title="Iqn">Iqn</a>: <i>String</i>
     <a href="#ispvencryptionintransitenabled" title="IsPvEncryptionInTransitEnabled">IsPvEncryptionInTransitEnabled</a>: <i>Boolean</i>
     <a href="#isreadonly" title="IsReadOnly">IsReadOnly</a>: <i>Boolean</i>
     <a href="#isshareable" title="IsShareable">IsShareable</a>: <i>Boolean</i>
-    <a href="#port" title="Port">Port</a>: <i>Double</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#usechap" title="UseChap">UseChap</a>: <i>Boolean</i>
     <a href="#volumeid" title="VolumeId">VolumeId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AttachmentType
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AvailabilityDomain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ChapSecret
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ChapUsername
-
-_Required_: No
 
 _Type_: String
 
@@ -139,22 +87,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Ipv4
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Iqn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### IsPvEncryptionInTransitEnabled
 
 _Required_: No
@@ -179,30 +111,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Port
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeCreated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### UseChap
 
 _Required_: No
@@ -223,7 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -245,33 +153,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AvailabilityDomain
 
-Returns the &lt;code&gt;AvailabilityDomain&lt;/code&gt; value.
+Returns the <code>AvailabilityDomain</code> value.
 
 #### ChapSecret
 
-Returns the &lt;code&gt;ChapSecret&lt;/code&gt; value.
+Returns the <code>ChapSecret</code> value.
 
 #### ChapUsername
 
-Returns the &lt;code&gt;ChapUsername&lt;/code&gt; value.
+Returns the <code>ChapUsername</code> value.
 
 #### Ipv4
 
-Returns the &lt;code&gt;Ipv4&lt;/code&gt; value.
+Returns the <code>Ipv4</code> value.
 
 #### Iqn
 
-Returns the &lt;code&gt;Iqn&lt;/code&gt; value.
+Returns the <code>Iqn</code> value.
 
 #### Port
 
-Returns the &lt;code&gt;Port&lt;/code&gt; value.
+Returns the <code>Port</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

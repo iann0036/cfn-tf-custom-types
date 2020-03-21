@@ -12,16 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AppsyncResolver",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#apiid" title="ApiId">ApiId</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#datasource" title="DataSource">DataSource</a>" : <i>String</i>,
         "<a href="#field" title="Field">Field</a>" : <i>String</i>,
         "<a href="#kind" title="Kind">Kind</a>" : <i>String</i>,
         "<a href="#requesttemplate" title="RequestTemplate">RequestTemplate</a>" : <i>String</i>,
         "<a href="#responsetemplate" title="ResponseTemplate">ResponseTemplate</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#pipelineconfig" title="PipelineConfig">PipelineConfig</a>" : <i>[ &lt;a href=&#34;pipelineconfig.md&#34;&gt;PipelineConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#pipelineconfig" title="PipelineConfig">PipelineConfig</a>" : <i>[ <a href="pipelineconfig.md">PipelineConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -31,9 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AppsyncResolver
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#apiid" title="ApiId">ApiId</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#datasource" title="DataSource">DataSource</a>: <i>String</i>
     <a href="#field" title="Field">Field</a>: <i>String</i>
     <a href="#kind" title="Kind">Kind</a>: <i>String</i>
@@ -41,32 +37,14 @@ Properties:
     <a href="#responsetemplate" title="ResponseTemplate">ResponseTemplate</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#pipelineconfig" title="PipelineConfig">PipelineConfig</a>: <i>
-      - &lt;a href=&#34;pipelineconfig.md&#34;&gt;PipelineConfig&lt;/a&gt;</i>
+      - <a href="pipelineconfig.md">PipelineConfig</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ApiId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
 
 _Type_: String
 
@@ -124,7 +102,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;pipelineconfig.md&#34;&gt;PipelineConfig&lt;/a&gt;
+_Type_: List of <a href="pipelineconfig.md">PipelineConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,5 +124,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

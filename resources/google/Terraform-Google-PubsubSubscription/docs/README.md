@@ -12,19 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::PubsubSubscription",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#ackdeadlineseconds" title="AckDeadlineSeconds">AckDeadlineSeconds</a>" : <i>Double</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#messageretentionduration" title="MessageRetentionDuration">MessageRetentionDuration</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#path" title="Path">Path</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#retainackedmessages" title="RetainAckedMessages">RetainAckedMessages</a>" : <i>Boolean</i>,
         "<a href="#topic" title="Topic">Topic</a>" : <i>String</i>,
-        "<a href="#expirationpolicy" title="ExpirationPolicy">ExpirationPolicy</a>" : <i>[ &lt;a href=&#34;expirationpolicy.md&#34;&gt;ExpirationPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#pushconfig" title="PushConfig">PushConfig</a>" : <i>[ &lt;a href=&#34;pushconfig.md&#34;&gt;PushConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#oidctoken" title="OidcToken">OidcToken</a>" : <i>[ &lt;a href=&#34;oidctoken.md&#34;&gt;OidcToken&lt;/a&gt;, ... ]</i>
+        "<a href="#expirationpolicy" title="ExpirationPolicy">ExpirationPolicy</a>" : <i>[ <a href="expirationpolicy.md">ExpirationPolicy</a>, ... ]</i>,
+        "<a href="#pushconfig" title="PushConfig">PushConfig</a>" : <i>[ <a href="pushconfig.md">PushConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#oidctoken" title="OidcToken">OidcToken</a>" : <i>[ <a href="oidctoken.md">OidcToken</a>, ... ]</i>
     }
 }
 </pre>
@@ -34,36 +32,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::PubsubSubscription
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#ackdeadlineseconds" title="AckDeadlineSeconds">AckDeadlineSeconds</a>: <i>Double</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#messageretentionduration" title="MessageRetentionDuration">MessageRetentionDuration</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#path" title="Path">Path</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#retainackedmessages" title="RetainAckedMessages">RetainAckedMessages</a>: <i>Boolean</i>
     <a href="#topic" title="Topic">Topic</a>: <i>String</i>
     <a href="#expirationpolicy" title="ExpirationPolicy">ExpirationPolicy</a>: <i>
-      - &lt;a href=&#34;expirationpolicy.md&#34;&gt;ExpirationPolicy&lt;/a&gt;</i>
+      - <a href="expirationpolicy.md">ExpirationPolicy</a></i>
     <a href="#pushconfig" title="PushConfig">PushConfig</a>: <i>
-      - &lt;a href=&#34;pushconfig.md&#34;&gt;PushConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="pushconfig.md">PushConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#oidctoken" title="OidcToken">OidcToken</a>: <i>
-      - &lt;a href=&#34;oidctoken.md&#34;&gt;OidcToken&lt;/a&gt;</i>
+      - <a href="oidctoken.md">OidcToken</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AckDeadlineSeconds
 
@@ -77,7 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -92,14 +78,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Path
-
-_Required_: No
 
 _Type_: String
 
@@ -133,7 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;expirationpolicy.md&#34;&gt;ExpirationPolicy&lt;/a&gt;
+_Type_: List of <a href="expirationpolicy.md">ExpirationPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -141,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;pushconfig.md&#34;&gt;PushConfig&lt;/a&gt;
+_Type_: List of <a href="pushconfig.md">PushConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -149,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -157,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;oidctoken.md&#34;&gt;OidcToken&lt;/a&gt;
+_Type_: List of <a href="oidctoken.md">OidcToken</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,5 +157,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Path
 
-Returns the &lt;code&gt;Path&lt;/code&gt; value.
+Returns the <code>Path</code> value.
 

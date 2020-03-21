@@ -38,7 +38,6 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApiVersion: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     Name: Optional[str]
     SystemDefined: Optional[bool]
     Value: Optional[str]
@@ -54,7 +53,6 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApiVersion=json_data.get("ApiVersion"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SystemDefined=json_data.get("SystemDefined"),
             Value=json_data.get("Value"),

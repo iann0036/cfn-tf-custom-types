@@ -12,21 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Arukas::Container",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cmd" title="Cmd">Cmd</a>" : <i>String</i>,
         "<a href="#endpoint" title="Endpoint">Endpoint</a>" : <i>String</i>,
-        "<a href="#endpointfullhostname" title="EndpointFullHostname">EndpointFullHostname</a>" : <i>String</i>,
-        "<a href="#endpointfullurl" title="EndpointFullUrl">EndpointFullUrl</a>" : <i>String</i>,
         "<a href="#image" title="Image">Image</a>" : <i>String</i>,
         "<a href="#instances" title="Instances">Instances</a>" : <i>Double</i>,
         "<a href="#memory" title="Memory">Memory</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#plan" title="Plan">Plan</a>" : <i>String</i>,
-        "<a href="#portmappings" title="PortMappings">PortMappings</a>" : <i>[ &lt;a href=&#34;portmappings.md&#34;&gt;PortMappings&lt;/a&gt;, ... ]</i>,
-        "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#serviceid" title="ServiceId">ServiceId</a>" : <i>String</i>,
-        "<a href="#environments" title="Environments">Environments</a>" : <i>[ &lt;a href=&#34;environments.md&#34;&gt;Environments&lt;/a&gt;, ... ]</i>,
-        "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>
+        "<a href="#environments" title="Environments">Environments</a>" : <i>[ <a href="environments.md">Environments</a>, ... ]</i>,
+        "<a href="#ports" title="Ports">Ports</a>" : <i>[ <a href="ports.md">Ports</a>, ... ]</i>
     }
 }
 </pre>
@@ -36,37 +30,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Arukas::Container
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cmd" title="Cmd">Cmd</a>: <i>String</i>
     <a href="#endpoint" title="Endpoint">Endpoint</a>: <i>String</i>
-    <a href="#endpointfullhostname" title="EndpointFullHostname">EndpointFullHostname</a>: <i>String</i>
-    <a href="#endpointfullurl" title="EndpointFullUrl">EndpointFullUrl</a>: <i>String</i>
     <a href="#image" title="Image">Image</a>: <i>String</i>
     <a href="#instances" title="Instances">Instances</a>: <i>Double</i>
     <a href="#memory" title="Memory">Memory</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#plan" title="Plan">Plan</a>: <i>String</i>
-    <a href="#portmappings" title="PortMappings">PortMappings</a>: <i>
-      - &lt;a href=&#34;portmappings.md&#34;&gt;PortMappings&lt;/a&gt;</i>
-    <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#serviceid" title="ServiceId">ServiceId</a>: <i>String</i>
     <a href="#environments" title="Environments">Environments</a>: <i>
-      - &lt;a href=&#34;environments.md&#34;&gt;Environments&lt;/a&gt;</i>
+      - <a href="environments.md">Environments</a></i>
     <a href="#ports" title="Ports">Ports</a>: <i>
-      - &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;</i>
+      - <a href="ports.md">Ports</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cmd
 
@@ -77,22 +54,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Endpoint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### EndpointFullHostname
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### EndpointFullUrl
 
 _Required_: No
 
@@ -140,35 +101,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PortMappings
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;portmappings.md&#34;&gt;PortMappings&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Region
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ServiceId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Environments
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;environments.md&#34;&gt;Environments&lt;/a&gt;
+_Type_: List of <a href="environments.md">Environments</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +113,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;
+_Type_: List of <a href="ports.md">Ports</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,21 +135,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EndpointFullHostname
 
-Returns the &lt;code&gt;EndpointFullHostname&lt;/code&gt; value.
+Returns the <code>EndpointFullHostname</code> value.
 
 #### EndpointFullUrl
 
-Returns the &lt;code&gt;EndpointFullUrl&lt;/code&gt; value.
+Returns the <code>EndpointFullUrl</code> value.
 
 #### PortMappings
 
-Returns the &lt;code&gt;PortMappings&lt;/code&gt; value.
+Returns the <code>PortMappings</code> value.
 
 #### Region
 
-Returns the &lt;code&gt;Region&lt;/code&gt; value.
+Returns the <code>Region</code> value.
 
 #### ServiceId
 
-Returns the &lt;code&gt;ServiceId&lt;/code&gt; value.
+Returns the <code>ServiceId</code> value.
 

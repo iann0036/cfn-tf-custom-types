@@ -14,8 +14,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#jarfileuris" title="JarFileUris">JarFileUris</a>" : <i>[ String, ... ]</i>,
     "<a href="#mainclass" title="MainClass">MainClass</a>" : <i>String</i>,
     "<a href="#mainjarfileuri" title="MainJarFileUri">MainJarFileUri</a>" : <i>String</i>,
-    "<a href="#properties" title="Properties">Properties</a>" : <i>[ &lt;a href=&#34;hadoopconfig-properties.md&#34;&gt;Properties&lt;/a&gt;, ... ]</i>,
-    "<a href="#loggingconfig" title="LoggingConfig">LoggingConfig</a>" : <i>[ &lt;a href=&#34;hadoopconfig-loggingconfig.md&#34;&gt;LoggingConfig&lt;/a&gt;, ... ]</i>
+    "<a href="#properties" title="Properties">Properties</a>" : <i>[ <a href="hadoopconfig-properties.md">Properties</a>, ... ]</i>,
+    "<a href="#loggingconfig" title="LoggingConfig">LoggingConfig</a>" : <i>[ <a href="hadoopconfig-loggingconfig.md">LoggingConfig</a>, ... ]</i>
 }
 </pre>
 
@@ -33,9 +33,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#mainclass" title="MainClass">MainClass</a>: <i>String</i>
 <a href="#mainjarfileuri" title="MainJarFileUri">MainJarFileUri</a>: <i>String</i>
 <a href="#properties" title="Properties">Properties</a>: <i>
-      - &lt;a href=&#34;hadoopconfig-properties.md&#34;&gt;Properties&lt;/a&gt;</i>
+      - <a href="hadoopconfig-properties.md">Properties</a></i>
 <a href="#loggingconfig" title="LoggingConfig">LoggingConfig</a>: <i>
-      - &lt;a href=&#34;hadoopconfig-loggingconfig.md&#34;&gt;LoggingConfig&lt;/a&gt;</i>
+      - <a href="hadoopconfig-loggingconfig.md">LoggingConfig</a></i>
 </pre>
 
 ## Properties
@@ -43,6 +43,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ArchiveUris
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,6 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Args
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -57,6 +59,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FileUris
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,6 +67,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### JarFileUris
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -71,6 +75,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MainClass
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -78,6 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MainJarFileUri
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -85,14 +91,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Properties
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;hadoopconfig-properties.md&#34;&gt;Properties&lt;/a&gt;
+
+_Type_: List of <a href="hadoopconfig-properties.md">Properties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoggingConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;hadoopconfig-loggingconfig.md&#34;&gt;LoggingConfig&lt;/a&gt;
+
+_Type_: List of <a href="hadoopconfig-loggingconfig.md">LoggingConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

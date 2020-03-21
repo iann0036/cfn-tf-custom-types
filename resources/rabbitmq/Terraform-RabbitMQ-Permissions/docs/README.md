@@ -12,10 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::RabbitMQ::Permissions",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#user" title="User">User</a>" : <i>String</i>,
         "<a href="#vhost" title="Vhost">Vhost</a>" : <i>String</i>,
-        "<a href="#permissions" title="Permissions">Permissions</a>" : <i>[ &lt;a href=&#34;permissions.md&#34;&gt;Permissions&lt;/a&gt;, ... ]</i>
+        "<a href="#permissions" title="Permissions">Permissions</a>" : <i>[ <a href="permissions.md">Permissions</a>, ... ]</i>
     }
 }
 </pre>
@@ -25,24 +24,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::RabbitMQ::Permissions
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#user" title="User">User</a>: <i>String</i>
     <a href="#vhost" title="Vhost">Vhost</a>: <i>String</i>
     <a href="#permissions" title="Permissions">Permissions</a>: <i>
-      - &lt;a href=&#34;permissions.md&#34;&gt;Permissions&lt;/a&gt;</i>
+      - <a href="permissions.md">Permissions</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
 
@@ -64,7 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;permissions.md&#34;&gt;Permissions&lt;/a&gt;
+_Type_: List of <a href="permissions.md">Permissions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

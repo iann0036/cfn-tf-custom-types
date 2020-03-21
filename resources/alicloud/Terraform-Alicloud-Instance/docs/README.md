@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::Instance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allocatepublicip" title="AllocatePublicIp">AllocatePublicIp</a>" : <i>Boolean</i>,
         "<a href="#autoreleasetime" title="AutoReleaseTime">AutoReleaseTime</a>" : <i>String</i>,
         "<a href="#autorenewperiod" title="AutoRenewPeriod">AutoRenewPeriod</a>" : <i>Double</i>,
@@ -35,12 +34,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#isoutdated" title="IsOutdated">IsOutdated</a>" : <i>Boolean</i>,
         "<a href="#keyname" title="KeyName">KeyName</a>" : <i>String</i>,
         "<a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>" : <i>String</i>,
-        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;, ... ]</i>,
+        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>, ... ]</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
         "<a href="#periodunit" title="PeriodUnit">PeriodUnit</a>" : <i>String</i>,
         "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>String</i>,
-        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>String</i>,
         "<a href="#renewalstatus" title="RenewalStatus">RenewalStatus</a>" : <i>String</i>,
         "<a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>" : <i>String</i>,
         "<a href="#rolename" title="RoleName">RoleName</a>" : <i>String</i>,
@@ -48,17 +46,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#securitygroups" title="SecurityGroups">SecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#spotpricelimit" title="SpotPriceLimit">SpotPriceLimit</a>" : <i>Double</i>,
         "<a href="#spotstrategy" title="SpotStrategy">SpotStrategy</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#systemdiskautosnapshotpolicyid" title="SystemDiskAutoSnapshotPolicyId">SystemDiskAutoSnapshotPolicyId</a>" : <i>String</i>,
         "<a href="#systemdiskcategory" title="SystemDiskCategory">SystemDiskCategory</a>" : <i>String</i>,
         "<a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
-        "<a href="#volumetags" title="VolumeTags">VolumeTags</a>" : <i>[ &lt;a href=&#34;volumetags.md&#34;&gt;VolumeTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#volumetags" title="VolumeTags">VolumeTags</a>" : <i>[ <a href="volumetags.md">VolumeTags</a>, ... ]</i>,
         "<a href="#vswitchid" title="VswitchId">VswitchId</a>" : <i>String</i>,
-        "<a href="#datadisks" title="DataDisks">DataDisks</a>" : <i>[ &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#datadisks" title="DataDisks">DataDisks</a>" : <i>[ <a href="datadisks.md">DataDisks</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -68,7 +65,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::Instance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allocatepublicip" title="AllocatePublicIp">AllocatePublicIp</a>: <i>Boolean</i>
     <a href="#autoreleasetime" title="AutoReleaseTime">AutoReleaseTime</a>: <i>String</i>
     <a href="#autorenewperiod" title="AutoRenewPeriod">AutoRenewPeriod</a>: <i>Double</i>
@@ -92,12 +88,11 @@ Properties:
     <a href="#keyname" title="KeyName">KeyName</a>: <i>String</i>
     <a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>: <i>String</i>
     <a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>: <i>
-      - &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;</i>
+      - <a href="kmsencryptioncontext.md">KmsEncryptionContext</a></i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
     <a href="#periodunit" title="PeriodUnit">PeriodUnit</a>: <i>String</i>
     <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>String</i>
-    <a href="#publicip" title="PublicIp">PublicIp</a>: <i>String</i>
     <a href="#renewalstatus" title="RenewalStatus">RenewalStatus</a>: <i>String</i>
     <a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>: <i>String</i>
     <a href="#rolename" title="RoleName">RoleName</a>: <i>String</i>
@@ -106,33 +101,22 @@ Properties:
       - String</i>
     <a href="#spotpricelimit" title="SpotPriceLimit">SpotPriceLimit</a>: <i>Double</i>
     <a href="#spotstrategy" title="SpotStrategy">SpotStrategy</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#systemdiskautosnapshotpolicyid" title="SystemDiskAutoSnapshotPolicyId">SystemDiskAutoSnapshotPolicyId</a>: <i>String</i>
     <a href="#systemdiskcategory" title="SystemDiskCategory">SystemDiskCategory</a>: <i>String</i>
     <a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#volumetags" title="VolumeTags">VolumeTags</a>: <i>
-      - &lt;a href=&#34;volumetags.md&#34;&gt;VolumeTags&lt;/a&gt;</i>
+      - <a href="volumetags.md">VolumeTags</a></i>
     <a href="#vswitchid" title="VswitchId">VswitchId</a>: <i>String</i>
     <a href="#datadisks" title="DataDisks">DataDisks</a>: <i>
-      - &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="datadisks.md">DataDisks</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllocatePublicIp
 
@@ -314,7 +298,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;
+_Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -343,14 +327,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PublicIp
 
 _Required_: No
 
@@ -414,14 +390,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SubnetId
 
 _Required_: No
@@ -458,7 +426,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -474,7 +442,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volumetags.md&#34;&gt;VolumeTags&lt;/a&gt;
+_Type_: List of <a href="volumetags.md">VolumeTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -490,7 +458,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;datadisks.md&#34;&gt;DataDisks&lt;/a&gt;
+_Type_: List of <a href="datadisks.md">DataDisks</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -498,7 +466,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -520,9 +488,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PublicIp
 
-Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
+Returns the <code>PublicIp</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

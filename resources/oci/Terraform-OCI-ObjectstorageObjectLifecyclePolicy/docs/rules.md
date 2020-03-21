@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
     "<a href="#timeamount" title="TimeAmount">TimeAmount</a>" : <i>String</i>,
     "<a href="#timeunit" title="TimeUnit">TimeUnit</a>" : <i>String</i>,
-    "<a href="#objectnamefilter" title="ObjectNameFilter">ObjectNameFilter</a>" : <i>[ &lt;a href=&#34;rules-objectnamefilter.md&#34;&gt;ObjectNameFilter&lt;/a&gt;, ... ]</i>
+    "<a href="#objectnamefilter" title="ObjectNameFilter">ObjectNameFilter</a>" : <i>[ <a href="rules-objectnamefilter.md">ObjectNameFilter</a>, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#timeamount" title="TimeAmount">TimeAmount</a>: <i>String</i>
 <a href="#timeunit" title="TimeUnit">TimeUnit</a>: <i>String</i>
 <a href="#objectnamefilter" title="ObjectNameFilter">ObjectNameFilter</a>: <i>
-      - &lt;a href=&#34;rules-objectnamefilter.md&#34;&gt;ObjectNameFilter&lt;/a&gt;</i>
+      - <a href="rules-objectnamefilter.md">ObjectNameFilter</a></i>
 </pre>
 
 ## Properties
@@ -34,6 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Action
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -41,6 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsEnabled
 
 _Required_: Yes
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +50,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TimeAmount
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TimeUnit
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,7 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ObjectNameFilter
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rules-objectnamefilter.md&#34;&gt;ObjectNameFilter&lt;/a&gt;
+
+_Type_: List of <a href="rules-objectnamefilter.md">ObjectNameFilter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,9 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VSphere::VappEntity",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#containerid" title="ContainerId">ContainerId</a>" : <i>String</i>,
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
         "<a href="#startaction" title="StartAction">StartAction</a>" : <i>String</i>,
         "<a href="#startdelay" title="StartDelay">StartDelay</a>" : <i>Double</i>,
         "<a href="#startorder" title="StartOrder">StartOrder</a>" : <i>Double</i>,
@@ -32,10 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VSphere::VappEntity
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#containerid" title="ContainerId">ContainerId</a>: <i>String</i>
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+      - <a href="customattributes.md">CustomAttributes</a></i>
     <a href="#startaction" title="StartAction">StartAction</a>: <i>String</i>
     <a href="#startdelay" title="StartDelay">StartDelay</a>: <i>Double</i>
     <a href="#startorder" title="StartOrder">StartOrder</a>: <i>Double</i>
@@ -49,16 +47,6 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ContainerId
 
 _Required_: Yes
@@ -71,7 +59,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+_Type_: List of <a href="customattributes.md">CustomAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

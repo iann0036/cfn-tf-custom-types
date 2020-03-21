@@ -12,12 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Linode::Token",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#created" title="Created">Created</a>" : <i>String</i>,
         "<a href="#expiry" title="Expiry">Expiry</a>" : <i>String</i>,
         "<a href="#label" title="Label">Label</a>" : <i>String</i>,
         "<a href="#scopes" title="Scopes">Scopes</a>" : <i>String</i>,
-        "<a href="#token" title="Token">Token</a>" : <i>String</i>
     }
 }
 </pre>
@@ -27,33 +24,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Linode::Token
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#created" title="Created">Created</a>: <i>String</i>
     <a href="#expiry" title="Expiry">Expiry</a>: <i>String</i>
     <a href="#label" title="Label">Label</a>: <i>String</i>
     <a href="#scopes" title="Scopes">Scopes</a>: <i>String</i>
-    <a href="#token" title="Token">Token</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Created
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Expiry
 
@@ -79,14 +55,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Token
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -105,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Token
 
-Returns the &lt;code&gt;Token&lt;/code&gt; value.
+Returns the <code>Token</code> value.
 

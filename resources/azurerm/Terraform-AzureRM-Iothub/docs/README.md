@@ -12,27 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::Iothub",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#eventhubeventsendpoint" title="EventHubEventsEndpoint">EventHubEventsEndpoint</a>" : <i>String</i>,
-        "<a href="#eventhubeventspath" title="EventHubEventsPath">EventHubEventsPath</a>" : <i>String</i>,
-        "<a href="#eventhuboperationsendpoint" title="EventHubOperationsEndpoint">EventHubOperationsEndpoint</a>" : <i>String</i>,
-        "<a href="#eventhuboperationspath" title="EventHubOperationsPath">EventHubOperationsPath</a>" : <i>String</i>,
         "<a href="#eventhubpartitioncount" title="EventHubPartitionCount">EventHubPartitionCount</a>" : <i>Double</i>,
         "<a href="#eventhubretentionindays" title="EventHubRetentionInDays">EventHubRetentionInDays</a>" : <i>Double</i>,
-        "<a href="#hostname" title="Hostname">Hostname</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#sharedaccesspolicy" title="SharedAccessPolicy">SharedAccessPolicy</a>" : <i>[ &lt;a href=&#34;sharedaccesspolicy.md&#34;&gt;SharedAccessPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#endpoint" title="Endpoint">Endpoint</a>" : <i>[ &lt;a href=&#34;endpoint.md&#34;&gt;Endpoint&lt;/a&gt;, ... ]</i>,
-        "<a href="#fallbackroute" title="FallbackRoute">FallbackRoute</a>" : <i>[ &lt;a href=&#34;fallbackroute.md&#34;&gt;FallbackRoute&lt;/a&gt;, ... ]</i>,
-        "<a href="#fileupload" title="FileUpload">FileUpload</a>" : <i>[ &lt;a href=&#34;fileupload.md&#34;&gt;FileUpload&lt;/a&gt;, ... ]</i>,
-        "<a href="#ipfilterrule" title="IpFilterRule">IpFilterRule</a>" : <i>[ &lt;a href=&#34;ipfilterrule.md&#34;&gt;IpFilterRule&lt;/a&gt;, ... ]</i>,
-        "<a href="#route" title="Route">Route</a>" : <i>[ &lt;a href=&#34;route.md&#34;&gt;Route&lt;/a&gt;, ... ]</i>,
-        "<a href="#sku" title="Sku">Sku</a>" : <i>[ &lt;a href=&#34;sku.md&#34;&gt;Sku&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#endpoint" title="Endpoint">Endpoint</a>" : <i>[ <a href="endpoint.md">Endpoint</a>, ... ]</i>,
+        "<a href="#fallbackroute" title="FallbackRoute">FallbackRoute</a>" : <i>[ <a href="fallbackroute.md">FallbackRoute</a>, ... ]</i>,
+        "<a href="#fileupload" title="FileUpload">FileUpload</a>" : <i>[ <a href="fileupload.md">FileUpload</a>, ... ]</i>,
+        "<a href="#ipfilterrule" title="IpFilterRule">IpFilterRule</a>" : <i>[ <a href="ipfilterrule.md">IpFilterRule</a>, ... ]</i>,
+        "<a href="#route" title="Route">Route</a>" : <i>[ <a href="route.md">Route</a>, ... ]</i>,
+        "<a href="#sku" title="Sku">Sku</a>" : <i>[ <a href="sku.md">Sku</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -42,80 +34,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::Iothub
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#eventhubeventsendpoint" title="EventHubEventsEndpoint">EventHubEventsEndpoint</a>: <i>String</i>
-    <a href="#eventhubeventspath" title="EventHubEventsPath">EventHubEventsPath</a>: <i>String</i>
-    <a href="#eventhuboperationsendpoint" title="EventHubOperationsEndpoint">EventHubOperationsEndpoint</a>: <i>String</i>
-    <a href="#eventhuboperationspath" title="EventHubOperationsPath">EventHubOperationsPath</a>: <i>String</i>
     <a href="#eventhubpartitioncount" title="EventHubPartitionCount">EventHubPartitionCount</a>: <i>Double</i>
     <a href="#eventhubretentionindays" title="EventHubRetentionInDays">EventHubRetentionInDays</a>: <i>Double</i>
-    <a href="#hostname" title="Hostname">Hostname</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
-    <a href="#sharedaccesspolicy" title="SharedAccessPolicy">SharedAccessPolicy</a>: <i>
-      - &lt;a href=&#34;sharedaccesspolicy.md&#34;&gt;SharedAccessPolicy&lt;/a&gt;</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
-    <a href="#type" title="Type">Type</a>: <i>String</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#endpoint" title="Endpoint">Endpoint</a>: <i>
-      - &lt;a href=&#34;endpoint.md&#34;&gt;Endpoint&lt;/a&gt;</i>
+      - <a href="endpoint.md">Endpoint</a></i>
     <a href="#fallbackroute" title="FallbackRoute">FallbackRoute</a>: <i>
-      - &lt;a href=&#34;fallbackroute.md&#34;&gt;FallbackRoute&lt;/a&gt;</i>
+      - <a href="fallbackroute.md">FallbackRoute</a></i>
     <a href="#fileupload" title="FileUpload">FileUpload</a>: <i>
-      - &lt;a href=&#34;fileupload.md&#34;&gt;FileUpload&lt;/a&gt;</i>
+      - <a href="fileupload.md">FileUpload</a></i>
     <a href="#ipfilterrule" title="IpFilterRule">IpFilterRule</a>: <i>
-      - &lt;a href=&#34;ipfilterrule.md&#34;&gt;IpFilterRule&lt;/a&gt;</i>
+      - <a href="ipfilterrule.md">IpFilterRule</a></i>
     <a href="#route" title="Route">Route</a>: <i>
-      - &lt;a href=&#34;route.md&#34;&gt;Route&lt;/a&gt;</i>
+      - <a href="route.md">Route</a></i>
     <a href="#sku" title="Sku">Sku</a>: <i>
-      - &lt;a href=&#34;sku.md&#34;&gt;Sku&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="sku.md">Sku</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### EventHubEventsEndpoint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### EventHubEventsPath
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### EventHubOperationsEndpoint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### EventHubOperationsPath
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EventHubPartitionCount
 
@@ -130,14 +71,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Hostname
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,27 +98,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SharedAccessPolicy
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;sharedaccesspolicy.md&#34;&gt;SharedAccessPolicy&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Type
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -193,7 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;endpoint.md&#34;&gt;Endpoint&lt;/a&gt;
+_Type_: List of <a href="endpoint.md">Endpoint</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -201,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fallbackroute.md&#34;&gt;FallbackRoute&lt;/a&gt;
+_Type_: List of <a href="fallbackroute.md">FallbackRoute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -209,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;fileupload.md&#34;&gt;FileUpload&lt;/a&gt;
+_Type_: List of <a href="fileupload.md">FileUpload</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -217,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ipfilterrule.md&#34;&gt;IpFilterRule&lt;/a&gt;
+_Type_: List of <a href="ipfilterrule.md">IpFilterRule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;route.md&#34;&gt;Route&lt;/a&gt;
+_Type_: List of <a href="route.md">Route</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -233,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sku.md&#34;&gt;Sku&lt;/a&gt;
+_Type_: List of <a href="sku.md">Sku</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -241,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -263,29 +180,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### EventHubEventsEndpoint
 
-Returns the &lt;code&gt;EventHubEventsEndpoint&lt;/code&gt; value.
+Returns the <code>EventHubEventsEndpoint</code> value.
 
 #### EventHubEventsPath
 
-Returns the &lt;code&gt;EventHubEventsPath&lt;/code&gt; value.
+Returns the <code>EventHubEventsPath</code> value.
 
 #### EventHubOperationsEndpoint
 
-Returns the &lt;code&gt;EventHubOperationsEndpoint&lt;/code&gt; value.
+Returns the <code>EventHubOperationsEndpoint</code> value.
 
 #### EventHubOperationsPath
 
-Returns the &lt;code&gt;EventHubOperationsPath&lt;/code&gt; value.
+Returns the <code>EventHubOperationsPath</code> value.
 
 #### Hostname
 
-Returns the &lt;code&gt;Hostname&lt;/code&gt; value.
+Returns the <code>Hostname</code> value.
 
 #### SharedAccessPolicy
 
-Returns the &lt;code&gt;SharedAccessPolicy&lt;/code&gt; value.
+Returns the <code>SharedAccessPolicy</code> value.
 
 #### Type
 
-Returns the &lt;code&gt;Type&lt;/code&gt; value.
+Returns the <code>Type</code> value.
 

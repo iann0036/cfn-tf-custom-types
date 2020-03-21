@@ -12,24 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::CoreInstanceConfiguration",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#deferredfields" title="DeferredFields">DeferredFields</a>" : <i>[ String, ... ]</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
         "<a href="#source" title="Source">Source</a>" : <i>String</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
-        "<a href="#instancedetails" title="InstanceDetails">InstanceDetails</a>" : <i>[ &lt;a href=&#34;instancedetails.md&#34;&gt;InstanceDetails&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#blockvolumes" title="BlockVolumes">BlockVolumes</a>" : <i>[ &lt;a href=&#34;blockvolumes.md&#34;&gt;BlockVolumes&lt;/a&gt;, ... ]</i>,
-        "<a href="#launchdetails" title="LaunchDetails">LaunchDetails</a>" : <i>[ &lt;a href=&#34;launchdetails.md&#34;&gt;LaunchDetails&lt;/a&gt;, ... ]</i>,
-        "<a href="#secondaryvnics" title="SecondaryVnics">SecondaryVnics</a>" : <i>[ &lt;a href=&#34;secondaryvnics.md&#34;&gt;SecondaryVnics&lt;/a&gt;, ... ]</i>,
-        "<a href="#attachdetails" title="AttachDetails">AttachDetails</a>" : <i>[ &lt;a href=&#34;attachdetails.md&#34;&gt;AttachDetails&lt;/a&gt;, ... ]</i>,
-        "<a href="#createdetails" title="CreateDetails">CreateDetails</a>" : <i>[ &lt;a href=&#34;createdetails.md&#34;&gt;CreateDetails&lt;/a&gt;, ... ]</i>,
-        "<a href="#createvnicdetails" title="CreateVnicDetails">CreateVnicDetails</a>" : <i>[ &lt;a href=&#34;createvnicdetails.md&#34;&gt;CreateVnicDetails&lt;/a&gt;, ... ]</i>,
-        "<a href="#sourcedetails" title="SourceDetails">SourceDetails</a>" : <i>[ &lt;a href=&#34;sourcedetails.md&#34;&gt;SourceDetails&lt;/a&gt;, ... ]</i>
+        "<a href="#instancedetails" title="InstanceDetails">InstanceDetails</a>" : <i>[ <a href="instancedetails.md">InstanceDetails</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#blockvolumes" title="BlockVolumes">BlockVolumes</a>" : <i>[ <a href="blockvolumes.md">BlockVolumes</a>, ... ]</i>,
+        "<a href="#launchdetails" title="LaunchDetails">LaunchDetails</a>" : <i>[ <a href="launchdetails.md">LaunchDetails</a>, ... ]</i>,
+        "<a href="#secondaryvnics" title="SecondaryVnics">SecondaryVnics</a>" : <i>[ <a href="secondaryvnics.md">SecondaryVnics</a>, ... ]</i>,
+        "<a href="#attachdetails" title="AttachDetails">AttachDetails</a>" : <i>[ <a href="attachdetails.md">AttachDetails</a>, ... ]</i>,
+        "<a href="#createdetails" title="CreateDetails">CreateDetails</a>" : <i>[ <a href="createdetails.md">CreateDetails</a>, ... ]</i>,
+        "<a href="#createvnicdetails" title="CreateVnicDetails">CreateVnicDetails</a>" : <i>[ <a href="createvnicdetails.md">CreateVnicDetails</a>, ... ]</i>,
+        "<a href="#sourcedetails" title="SourceDetails">SourceDetails</a>" : <i>[ <a href="sourcedetails.md">SourceDetails</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,48 +36,34 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::CoreInstanceConfiguration
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
-    <a href="#deferredfields" title="DeferredFields">DeferredFields</a>: <i>
-      - String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#instancedetails" title="InstanceDetails">InstanceDetails</a>: <i>
-      - &lt;a href=&#34;instancedetails.md&#34;&gt;InstanceDetails&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="instancedetails.md">InstanceDetails</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#blockvolumes" title="BlockVolumes">BlockVolumes</a>: <i>
-      - &lt;a href=&#34;blockvolumes.md&#34;&gt;BlockVolumes&lt;/a&gt;</i>
+      - <a href="blockvolumes.md">BlockVolumes</a></i>
     <a href="#launchdetails" title="LaunchDetails">LaunchDetails</a>: <i>
-      - &lt;a href=&#34;launchdetails.md&#34;&gt;LaunchDetails&lt;/a&gt;</i>
+      - <a href="launchdetails.md">LaunchDetails</a></i>
     <a href="#secondaryvnics" title="SecondaryVnics">SecondaryVnics</a>: <i>
-      - &lt;a href=&#34;secondaryvnics.md&#34;&gt;SecondaryVnics&lt;/a&gt;</i>
+      - <a href="secondaryvnics.md">SecondaryVnics</a></i>
     <a href="#attachdetails" title="AttachDetails">AttachDetails</a>: <i>
-      - &lt;a href=&#34;attachdetails.md&#34;&gt;AttachDetails&lt;/a&gt;</i>
+      - <a href="attachdetails.md">AttachDetails</a></i>
     <a href="#createdetails" title="CreateDetails">CreateDetails</a>: <i>
-      - &lt;a href=&#34;createdetails.md&#34;&gt;CreateDetails&lt;/a&gt;</i>
+      - <a href="createdetails.md">CreateDetails</a></i>
     <a href="#createvnicdetails" title="CreateVnicDetails">CreateVnicDetails</a>: <i>
-      - &lt;a href=&#34;createvnicdetails.md&#34;&gt;CreateVnicDetails&lt;/a&gt;</i>
+      - <a href="createvnicdetails.md">CreateVnicDetails</a></i>
     <a href="#sourcedetails" title="SourceDetails">SourceDetails</a>: <i>
-      - &lt;a href=&#34;sourcedetails.md&#34;&gt;SourceDetails&lt;/a&gt;</i>
+      - <a href="sourcedetails.md">SourceDetails</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CompartmentId
 
@@ -90,19 +73,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### DeferredFields
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### DefinedTags
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -118,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,19 +113,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TimeCreated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InstanceDetails
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instancedetails.md&#34;&gt;InstanceDetails&lt;/a&gt;
+_Type_: List of <a href="instancedetails.md">InstanceDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +133,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;blockvolumes.md&#34;&gt;BlockVolumes&lt;/a&gt;
+_Type_: List of <a href="blockvolumes.md">BlockVolumes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +141,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;launchdetails.md&#34;&gt;LaunchDetails&lt;/a&gt;
+_Type_: List of <a href="launchdetails.md">LaunchDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +149,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secondaryvnics.md&#34;&gt;SecondaryVnics&lt;/a&gt;
+_Type_: List of <a href="secondaryvnics.md">SecondaryVnics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +157,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;attachdetails.md&#34;&gt;AttachDetails&lt;/a&gt;
+_Type_: List of <a href="attachdetails.md">AttachDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +165,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;createdetails.md&#34;&gt;CreateDetails&lt;/a&gt;
+_Type_: List of <a href="createdetails.md">CreateDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -206,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;createvnicdetails.md&#34;&gt;CreateVnicDetails&lt;/a&gt;
+_Type_: List of <a href="createvnicdetails.md">CreateVnicDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourcedetails.md&#34;&gt;SourceDetails&lt;/a&gt;
+_Type_: List of <a href="sourcedetails.md">SourceDetails</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -236,9 +203,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### DeferredFields
 
-Returns the &lt;code&gt;DeferredFields&lt;/code&gt; value.
+Returns the <code>DeferredFields</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 

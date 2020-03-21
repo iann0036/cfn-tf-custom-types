@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#requestheaderstoremove" title="RequestHeadersToRemove">RequestHeadersToRemove</a>" : <i>[ String, ... ]</i>,
     "<a href="#responseheaderstoremove" title="ResponseHeadersToRemove">ResponseHeadersToRemove</a>" : <i>[ String, ... ]</i>,
-    "<a href="#requestheaderstoadd" title="RequestHeadersToAdd">RequestHeadersToAdd</a>" : <i>[ &lt;a href=&#34;pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-requestheaderstoadd.md&#34;&gt;RequestHeadersToAdd&lt;/a&gt;, ... ]</i>,
-    "<a href="#responseheaderstoadd" title="ResponseHeadersToAdd">ResponseHeadersToAdd</a>" : <i>[ &lt;a href=&#34;pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-responseheaderstoadd.md&#34;&gt;ResponseHeadersToAdd&lt;/a&gt;, ... ]</i>
+    "<a href="#requestheaderstoadd" title="RequestHeadersToAdd">RequestHeadersToAdd</a>" : <i>[ <a href="pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-requestheaderstoadd.md">RequestHeadersToAdd</a>, ... ]</i>,
+    "<a href="#responseheaderstoadd" title="ResponseHeadersToAdd">ResponseHeadersToAdd</a>" : <i>[ <a href="pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-responseheaderstoadd.md">ResponseHeadersToAdd</a>, ... ]</i>
 }
 </pre>
 
@@ -23,9 +23,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#responseheaderstoremove" title="ResponseHeadersToRemove">ResponseHeadersToRemove</a>: <i>
       - String</i>
 <a href="#requestheaderstoadd" title="RequestHeadersToAdd">RequestHeadersToAdd</a>: <i>
-      - &lt;a href=&#34;pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-requestheaderstoadd.md&#34;&gt;RequestHeadersToAdd&lt;/a&gt;</i>
+      - <a href="pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-requestheaderstoadd.md">RequestHeadersToAdd</a></i>
 <a href="#responseheaderstoadd" title="ResponseHeadersToAdd">ResponseHeadersToAdd</a>: <i>
-      - &lt;a href=&#34;pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-responseheaderstoadd.md&#34;&gt;ResponseHeadersToAdd&lt;/a&gt;</i>
+      - <a href="pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-responseheaderstoadd.md">ResponseHeadersToAdd</a></i>
 </pre>
 
 ## Properties
@@ -33,6 +33,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### RequestHeadersToRemove
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -40,6 +41,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ResponseHeadersToRemove
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,14 +49,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RequestHeadersToAdd
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-requestheaderstoadd.md&#34;&gt;RequestHeadersToAdd&lt;/a&gt;
+
+_Type_: List of <a href="pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-requestheaderstoadd.md">RequestHeadersToAdd</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResponseHeadersToAdd
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-responseheaderstoadd.md&#34;&gt;ResponseHeadersToAdd&lt;/a&gt;
+
+_Type_: List of <a href="pathmatcher-pathrule-routeaction-weightedbackendservices-headeraction-responseheaderstoadd.md">ResponseHeadersToAdd</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

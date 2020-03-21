@@ -20,14 +20,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#orderdir" title="OrderDir">OrderDir</a>" : <i>String</i>,
     "<a href="#q" title="Q">Q</a>" : <i>String</i>,
     "<a href="#querytype" title="QueryType">QueryType</a>" : <i>String</i>,
-    "<a href="#style" title="Style">Style</a>" : <i>[ &lt;a href=&#34;tiledef-request-style.md&#34;&gt;Style&lt;/a&gt;, ... ]</i>,
+    "<a href="#style" title="Style">Style</a>" : <i>[ <a href="tiledef-request-style.md">Style</a>, ... ]</i>,
     "<a href="#tagfilters" title="TagFilters">TagFilters</a>" : <i>[ String, ... ]</i>,
     "<a href="#textfilter" title="TextFilter">TextFilter</a>" : <i>String</i>,
     "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-    "<a href="#apmquery" title="ApmQuery">ApmQuery</a>" : <i>[ &lt;a href=&#34;tiledef-request-apmquery.md&#34;&gt;ApmQuery&lt;/a&gt;, ... ]</i>,
-    "<a href="#conditionalformat" title="ConditionalFormat">ConditionalFormat</a>" : <i>[ &lt;a href=&#34;tiledef-request-conditionalformat.md&#34;&gt;ConditionalFormat&lt;/a&gt;, ... ]</i>,
-    "<a href="#logquery" title="LogQuery">LogQuery</a>" : <i>[ &lt;a href=&#34;tiledef-request-logquery.md&#34;&gt;LogQuery&lt;/a&gt;, ... ]</i>,
-    "<a href="#processquery" title="ProcessQuery">ProcessQuery</a>" : <i>[ &lt;a href=&#34;tiledef-request-processquery.md&#34;&gt;ProcessQuery&lt;/a&gt;, ... ]</i>
+    "<a href="#apmquery" title="ApmQuery">ApmQuery</a>" : <i>[ <a href="tiledef-request-apmquery.md">ApmQuery</a>, ... ]</i>,
+    "<a href="#conditionalformat" title="ConditionalFormat">ConditionalFormat</a>" : <i>[ <a href="tiledef-request-conditionalformat.md">ConditionalFormat</a>, ... ]</i>,
+    "<a href="#logquery" title="LogQuery">LogQuery</a>" : <i>[ <a href="tiledef-request-logquery.md">LogQuery</a>, ... ]</i>,
+    "<a href="#processquery" title="ProcessQuery">ProcessQuery</a>" : <i>[ <a href="tiledef-request-processquery.md">ProcessQuery</a>, ... ]</i>
 }
 </pre>
 
@@ -47,19 +47,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#q" title="Q">Q</a>: <i>String</i>
 <a href="#querytype" title="QueryType">QueryType</a>: <i>String</i>
 <a href="#style" title="Style">Style</a>: <i>
-      - &lt;a href=&#34;tiledef-request-style.md&#34;&gt;Style&lt;/a&gt;</i>
+      - <a href="tiledef-request-style.md">Style</a></i>
 <a href="#tagfilters" title="TagFilters">TagFilters</a>: <i>
       - String</i>
 <a href="#textfilter" title="TextFilter">TextFilter</a>: <i>String</i>
 <a href="#type" title="Type">Type</a>: <i>String</i>
 <a href="#apmquery" title="ApmQuery">ApmQuery</a>: <i>
-      - &lt;a href=&#34;tiledef-request-apmquery.md&#34;&gt;ApmQuery&lt;/a&gt;</i>
+      - <a href="tiledef-request-apmquery.md">ApmQuery</a></i>
 <a href="#conditionalformat" title="ConditionalFormat">ConditionalFormat</a>: <i>
-      - &lt;a href=&#34;tiledef-request-conditionalformat.md&#34;&gt;ConditionalFormat&lt;/a&gt;</i>
+      - <a href="tiledef-request-conditionalformat.md">ConditionalFormat</a></i>
 <a href="#logquery" title="LogQuery">LogQuery</a>: <i>
-      - &lt;a href=&#34;tiledef-request-logquery.md&#34;&gt;LogQuery&lt;/a&gt;</i>
+      - <a href="tiledef-request-logquery.md">LogQuery</a></i>
 <a href="#processquery" title="ProcessQuery">ProcessQuery</a>: <i>
-      - &lt;a href=&#34;tiledef-request-processquery.md&#34;&gt;ProcessQuery&lt;/a&gt;</i>
+      - <a href="tiledef-request-processquery.md">ProcessQuery</a></i>
 </pre>
 
 ## Properties
@@ -67,6 +67,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Aggregator
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,6 +75,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ChangeType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -81,6 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CompareTo
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -88,6 +91,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ExtraCol
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -95,6 +99,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IncreaseGood
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -102,6 +107,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Limit
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -109,6 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MetadataJson
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -116,6 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Metric
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -123,6 +131,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OrderBy
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -130,6 +139,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OrderDir
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -137,6 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Q
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -144,6 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### QueryType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -151,13 +163,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Style
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;tiledef-request-style.md&#34;&gt;Style&lt;/a&gt;
+
+_Type_: List of <a href="tiledef-request-style.md">Style</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TagFilters
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -165,6 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TextFilter
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -172,6 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Type
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -179,28 +195,32 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ApmQuery
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;tiledef-request-apmquery.md&#34;&gt;ApmQuery&lt;/a&gt;
+
+_Type_: List of <a href="tiledef-request-apmquery.md">ApmQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConditionalFormat
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;tiledef-request-conditionalformat.md&#34;&gt;ConditionalFormat&lt;/a&gt;
+
+_Type_: List of <a href="tiledef-request-conditionalformat.md">ConditionalFormat</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogQuery
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;tiledef-request-logquery.md&#34;&gt;LogQuery&lt;/a&gt;
+
+_Type_: List of <a href="tiledef-request-logquery.md">LogQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProcessQuery
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;tiledef-request-processquery.md&#34;&gt;ProcessQuery&lt;/a&gt;
+
+_Type_: List of <a href="tiledef-request-processquery.md">ProcessQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

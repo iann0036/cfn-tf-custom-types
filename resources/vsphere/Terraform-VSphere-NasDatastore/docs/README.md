@@ -12,26 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VSphere::NasDatastore",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#accessmode" title="AccessMode">AccessMode</a>" : <i>String</i>,
-        "<a href="#accessible" title="Accessible">Accessible</a>" : <i>Boolean</i>,
-        "<a href="#capacity" title="Capacity">Capacity</a>" : <i>Double</i>,
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
         "<a href="#datastoreclusterid" title="DatastoreClusterId">DatastoreClusterId</a>" : <i>String</i>,
         "<a href="#folder" title="Folder">Folder</a>" : <i>String</i>,
-        "<a href="#freespace" title="FreeSpace">FreeSpace</a>" : <i>Double</i>,
         "<a href="#hostsystemids" title="HostSystemIds">HostSystemIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#maintenancemode" title="MaintenanceMode">MaintenanceMode</a>" : <i>String</i>,
-        "<a href="#multiplehostaccess" title="MultipleHostAccess">MultipleHostAccess</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#protocolendpoint" title="ProtocolEndpoint">ProtocolEndpoint</a>" : <i>String</i>,
         "<a href="#remotehosts" title="RemoteHosts">RemoteHosts</a>" : <i>[ String, ... ]</i>,
         "<a href="#remotepath" title="RemotePath">RemotePath</a>" : <i>String</i>,
         "<a href="#securitytype" title="SecurityType">SecurityType</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#uncommittedspace" title="UncommittedSpace">UncommittedSpace</a>" : <i>Double</i>,
-        "<a href="#url" title="Url">Url</a>" : <i>String</i>
     }
 }
 </pre>
@@ -41,21 +32,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VSphere::NasDatastore
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#accessmode" title="AccessMode">AccessMode</a>: <i>String</i>
-    <a href="#accessible" title="Accessible">Accessible</a>: <i>Boolean</i>
-    <a href="#capacity" title="Capacity">Capacity</a>: <i>Double</i>
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+      - <a href="customattributes.md">CustomAttributes</a></i>
     <a href="#datastoreclusterid" title="DatastoreClusterId">DatastoreClusterId</a>: <i>String</i>
     <a href="#folder" title="Folder">Folder</a>: <i>String</i>
-    <a href="#freespace" title="FreeSpace">FreeSpace</a>: <i>Double</i>
     <a href="#hostsystemids" title="HostSystemIds">HostSystemIds</a>: <i>
       - String</i>
-    <a href="#maintenancemode" title="MaintenanceMode">MaintenanceMode</a>: <i>String</i>
-    <a href="#multiplehostaccess" title="MultipleHostAccess">MultipleHostAccess</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#protocolendpoint" title="ProtocolEndpoint">ProtocolEndpoint</a>: <i>String</i>
     <a href="#remotehosts" title="RemoteHosts">RemoteHosts</a>: <i>
       - String</i>
     <a href="#remotepath" title="RemotePath">RemotePath</a>: <i>String</i>
@@ -63,21 +47,9 @@ Properties:
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
-    <a href="#uncommittedspace" title="UncommittedSpace">UncommittedSpace</a>: <i>Double</i>
-    <a href="#url" title="Url">Url</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccessMode
 
@@ -87,27 +59,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Accessible
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Capacity
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CustomAttributes
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+_Type_: List of <a href="customattributes.md">CustomAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,14 +83,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### FreeSpace
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### HostSystemIds
 
 _Required_: Yes
@@ -143,33 +91,9 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### MaintenanceMode
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### MultipleHostAccess
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ProtocolEndpoint
-
-_Required_: No
 
 _Type_: String
 
@@ -215,22 +139,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### UncommittedSpace
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Url
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -249,33 +157,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessible
 
-Returns the &lt;code&gt;Accessible&lt;/code&gt; value.
+Returns the <code>Accessible</code> value.
 
 #### Capacity
 
-Returns the &lt;code&gt;Capacity&lt;/code&gt; value.
+Returns the <code>Capacity</code> value.
 
 #### FreeSpace
 
-Returns the &lt;code&gt;FreeSpace&lt;/code&gt; value.
+Returns the <code>FreeSpace</code> value.
 
 #### MaintenanceMode
 
-Returns the &lt;code&gt;MaintenanceMode&lt;/code&gt; value.
+Returns the <code>MaintenanceMode</code> value.
 
 #### MultipleHostAccess
 
-Returns the &lt;code&gt;MultipleHostAccess&lt;/code&gt; value.
+Returns the <code>MultipleHostAccess</code> value.
 
 #### ProtocolEndpoint
 
-Returns the &lt;code&gt;ProtocolEndpoint&lt;/code&gt; value.
+Returns the <code>ProtocolEndpoint</code> value.
 
 #### UncommittedSpace
 
-Returns the &lt;code&gt;UncommittedSpace&lt;/code&gt; value.
+Returns the <code>UncommittedSpace</code> value.
 
 #### Url
 
-Returns the &lt;code&gt;Url&lt;/code&gt; value.
+Returns the <code>Url</code> value.
 

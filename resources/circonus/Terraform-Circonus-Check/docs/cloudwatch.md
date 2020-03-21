@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#apikey" title="ApiKey">ApiKey</a>" : <i>String</i>,
     "<a href="#apisecret" title="ApiSecret">ApiSecret</a>" : <i>String</i>,
-    "<a href="#dimmensions" title="Dimmensions">Dimmensions</a>" : <i>[ &lt;a href=&#34;cloudwatch-dimmensions.md&#34;&gt;Dimmensions&lt;/a&gt;, ... ]</i>,
+    "<a href="#dimmensions" title="Dimmensions">Dimmensions</a>" : <i>[ <a href="cloudwatch-dimmensions.md">Dimmensions</a>, ... ]</i>,
     "<a href="#metric" title="Metric">Metric</a>" : <i>[ String, ... ]</i>,
     "<a href="#namespace" title="Namespace">Namespace</a>" : <i>String</i>,
     "<a href="#url" title="Url">Url</a>" : <i>String</i>,
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#apikey" title="ApiKey">ApiKey</a>: <i>String</i>
 <a href="#apisecret" title="ApiSecret">ApiSecret</a>: <i>String</i>
 <a href="#dimmensions" title="Dimmensions">Dimmensions</a>: <i>
-      - &lt;a href=&#34;cloudwatch-dimmensions.md&#34;&gt;Dimmensions&lt;/a&gt;</i>
+      - <a href="cloudwatch-dimmensions.md">Dimmensions</a></i>
 <a href="#metric" title="Metric">Metric</a>: <i>
       - String</i>
 <a href="#namespace" title="Namespace">Namespace</a>: <i>String</i>
@@ -37,6 +37,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ApiKey
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +45,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ApiSecret
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,13 +53,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Dimmensions
 
 _Required_: Yes
-_Type_: List of &lt;a href=&#34;cloudwatch-dimmensions.md&#34;&gt;Dimmensions&lt;/a&gt;
+
+_Type_: List of <a href="cloudwatch-dimmensions.md">Dimmensions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metric
 
 _Required_: Yes
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -65,6 +69,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Namespace
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,6 +77,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Url
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -79,6 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Version
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

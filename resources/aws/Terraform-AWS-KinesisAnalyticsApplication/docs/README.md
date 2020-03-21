@@ -12,32 +12,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::KinesisAnalyticsApplication",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#code" title="Code">Code</a>" : <i>String</i>,
-        "<a href="#createtimestamp" title="CreateTimestamp">CreateTimestamp</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#lastupdatetimestamp" title="LastUpdateTimestamp">LastUpdateTimestamp</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#version" title="Version">Version</a>" : <i>Double</i>,
-        "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ &lt;a href=&#34;cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#inputs" title="Inputs">Inputs</a>" : <i>[ &lt;a href=&#34;inputs.md&#34;&gt;Inputs&lt;/a&gt;, ... ]</i>,
-        "<a href="#outputs" title="Outputs">Outputs</a>" : <i>[ &lt;a href=&#34;outputs.md&#34;&gt;Outputs&lt;/a&gt;, ... ]</i>,
-        "<a href="#referencedatasources" title="ReferenceDataSources">ReferenceDataSources</a>" : <i>[ &lt;a href=&#34;referencedatasources.md&#34;&gt;ReferenceDataSources&lt;/a&gt;, ... ]</i>,
-        "<a href="#kinesisfirehose" title="KinesisFirehose">KinesisFirehose</a>" : <i>[ &lt;a href=&#34;kinesisfirehose.md&#34;&gt;KinesisFirehose&lt;/a&gt;, ... ]</i>,
-        "<a href="#kinesisstream" title="KinesisStream">KinesisStream</a>" : <i>[ &lt;a href=&#34;kinesisstream.md&#34;&gt;KinesisStream&lt;/a&gt;, ... ]</i>,
-        "<a href="#parallelism" title="Parallelism">Parallelism</a>" : <i>[ &lt;a href=&#34;parallelism.md&#34;&gt;Parallelism&lt;/a&gt;, ... ]</i>,
-        "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ &lt;a href=&#34;processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#schema" title="Schema">Schema</a>" : <i>[ &lt;a href=&#34;schema.md&#34;&gt;Schema&lt;/a&gt;, ... ]</i>,
-        "<a href="#lambda" title="Lambda">Lambda</a>" : <i>[ &lt;a href=&#34;lambda.md&#34;&gt;Lambda&lt;/a&gt;, ... ]</i>,
-        "<a href="#s3" title="S3">S3</a>" : <i>[ &lt;a href=&#34;s3.md&#34;&gt;S3&lt;/a&gt;, ... ]</i>,
-        "<a href="#recordcolumns" title="RecordColumns">RecordColumns</a>" : <i>[ &lt;a href=&#34;recordcolumns.md&#34;&gt;RecordColumns&lt;/a&gt;, ... ]</i>,
-        "<a href="#recordformat" title="RecordFormat">RecordFormat</a>" : <i>[ &lt;a href=&#34;recordformat.md&#34;&gt;RecordFormat&lt;/a&gt;, ... ]</i>,
-        "<a href="#mappingparameters" title="MappingParameters">MappingParameters</a>" : <i>[ &lt;a href=&#34;mappingparameters.md&#34;&gt;MappingParameters&lt;/a&gt;, ... ]</i>,
-        "<a href="#csv" title="Csv">Csv</a>" : <i>[ &lt;a href=&#34;csv.md&#34;&gt;Csv&lt;/a&gt;, ... ]</i>,
-        "<a href="#json" title="Json">Json</a>" : <i>[ &lt;a href=&#34;json.md&#34;&gt;Json&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>" : <i>[ <a href="cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>, ... ]</i>,
+        "<a href="#inputs" title="Inputs">Inputs</a>" : <i>[ <a href="inputs.md">Inputs</a>, ... ]</i>,
+        "<a href="#outputs" title="Outputs">Outputs</a>" : <i>[ <a href="outputs.md">Outputs</a>, ... ]</i>,
+        "<a href="#referencedatasources" title="ReferenceDataSources">ReferenceDataSources</a>" : <i>[ <a href="referencedatasources.md">ReferenceDataSources</a>, ... ]</i>,
+        "<a href="#kinesisfirehose" title="KinesisFirehose">KinesisFirehose</a>" : <i>[ <a href="kinesisfirehose.md">KinesisFirehose</a>, ... ]</i>,
+        "<a href="#kinesisstream" title="KinesisStream">KinesisStream</a>" : <i>[ <a href="kinesisstream.md">KinesisStream</a>, ... ]</i>,
+        "<a href="#parallelism" title="Parallelism">Parallelism</a>" : <i>[ <a href="parallelism.md">Parallelism</a>, ... ]</i>,
+        "<a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>" : <i>[ <a href="processingconfiguration.md">ProcessingConfiguration</a>, ... ]</i>,
+        "<a href="#schema" title="Schema">Schema</a>" : <i>[ <a href="schema.md">Schema</a>, ... ]</i>,
+        "<a href="#lambda" title="Lambda">Lambda</a>" : <i>[ <a href="lambda.md">Lambda</a>, ... ]</i>,
+        "<a href="#s3" title="S3">S3</a>" : <i>[ <a href="s3.md">S3</a>, ... ]</i>,
+        "<a href="#recordcolumns" title="RecordColumns">RecordColumns</a>" : <i>[ <a href="recordcolumns.md">RecordColumns</a>, ... ]</i>,
+        "<a href="#recordformat" title="RecordFormat">RecordFormat</a>" : <i>[ <a href="recordformat.md">RecordFormat</a>, ... ]</i>,
+        "<a href="#mappingparameters" title="MappingParameters">MappingParameters</a>" : <i>[ <a href="mappingparameters.md">MappingParameters</a>, ... ]</i>,
+        "<a href="#csv" title="Csv">Csv</a>" : <i>[ <a href="csv.md">Csv</a>, ... ]</i>,
+        "<a href="#json" title="Json">Json</a>" : <i>[ <a href="json.md">Json</a>, ... ]</i>
     }
 }
 </pre>
@@ -47,80 +41,48 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::KinesisAnalyticsApplication
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#code" title="Code">Code</a>: <i>String</i>
-    <a href="#createtimestamp" title="CreateTimestamp">CreateTimestamp</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#lastupdatetimestamp" title="LastUpdateTimestamp">LastUpdateTimestamp</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
-    <a href="#version" title="Version">Version</a>: <i>Double</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#cloudwatchloggingoptions" title="CloudwatchLoggingOptions">CloudwatchLoggingOptions</a>: <i>
-      - &lt;a href=&#34;cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;</i>
+      - <a href="cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a></i>
     <a href="#inputs" title="Inputs">Inputs</a>: <i>
-      - &lt;a href=&#34;inputs.md&#34;&gt;Inputs&lt;/a&gt;</i>
+      - <a href="inputs.md">Inputs</a></i>
     <a href="#outputs" title="Outputs">Outputs</a>: <i>
-      - &lt;a href=&#34;outputs.md&#34;&gt;Outputs&lt;/a&gt;</i>
+      - <a href="outputs.md">Outputs</a></i>
     <a href="#referencedatasources" title="ReferenceDataSources">ReferenceDataSources</a>: <i>
-      - &lt;a href=&#34;referencedatasources.md&#34;&gt;ReferenceDataSources&lt;/a&gt;</i>
+      - <a href="referencedatasources.md">ReferenceDataSources</a></i>
     <a href="#kinesisfirehose" title="KinesisFirehose">KinesisFirehose</a>: <i>
-      - &lt;a href=&#34;kinesisfirehose.md&#34;&gt;KinesisFirehose&lt;/a&gt;</i>
+      - <a href="kinesisfirehose.md">KinesisFirehose</a></i>
     <a href="#kinesisstream" title="KinesisStream">KinesisStream</a>: <i>
-      - &lt;a href=&#34;kinesisstream.md&#34;&gt;KinesisStream&lt;/a&gt;</i>
+      - <a href="kinesisstream.md">KinesisStream</a></i>
     <a href="#parallelism" title="Parallelism">Parallelism</a>: <i>
-      - &lt;a href=&#34;parallelism.md&#34;&gt;Parallelism&lt;/a&gt;</i>
+      - <a href="parallelism.md">Parallelism</a></i>
     <a href="#processingconfiguration" title="ProcessingConfiguration">ProcessingConfiguration</a>: <i>
-      - &lt;a href=&#34;processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;</i>
+      - <a href="processingconfiguration.md">ProcessingConfiguration</a></i>
     <a href="#schema" title="Schema">Schema</a>: <i>
-      - &lt;a href=&#34;schema.md&#34;&gt;Schema&lt;/a&gt;</i>
+      - <a href="schema.md">Schema</a></i>
     <a href="#lambda" title="Lambda">Lambda</a>: <i>
-      - &lt;a href=&#34;lambda.md&#34;&gt;Lambda&lt;/a&gt;</i>
+      - <a href="lambda.md">Lambda</a></i>
     <a href="#s3" title="S3">S3</a>: <i>
-      - &lt;a href=&#34;s3.md&#34;&gt;S3&lt;/a&gt;</i>
+      - <a href="s3.md">S3</a></i>
     <a href="#recordcolumns" title="RecordColumns">RecordColumns</a>: <i>
-      - &lt;a href=&#34;recordcolumns.md&#34;&gt;RecordColumns&lt;/a&gt;</i>
+      - <a href="recordcolumns.md">RecordColumns</a></i>
     <a href="#recordformat" title="RecordFormat">RecordFormat</a>: <i>
-      - &lt;a href=&#34;recordformat.md&#34;&gt;RecordFormat&lt;/a&gt;</i>
+      - <a href="recordformat.md">RecordFormat</a></i>
     <a href="#mappingparameters" title="MappingParameters">MappingParameters</a>: <i>
-      - &lt;a href=&#34;mappingparameters.md&#34;&gt;MappingParameters&lt;/a&gt;</i>
+      - <a href="mappingparameters.md">MappingParameters</a></i>
     <a href="#csv" title="Csv">Csv</a>: <i>
-      - &lt;a href=&#34;csv.md&#34;&gt;Csv&lt;/a&gt;</i>
+      - <a href="csv.md">Csv</a></i>
     <a href="#json" title="Json">Json</a>: <i>
-      - &lt;a href=&#34;json.md&#34;&gt;Json&lt;/a&gt;</i>
+      - <a href="json.md">Json</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Code
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreateTimestamp
 
 _Required_: No
 
@@ -136,25 +98,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### LastUpdateTimestamp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
 
 _Type_: String
 
@@ -164,15 +110,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Version
-
-_Required_: No
-
-_Type_: Double
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -180,7 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cloudwatchloggingoptions.md&#34;&gt;CloudwatchLoggingOptions&lt;/a&gt;
+_Type_: List of <a href="cloudwatchloggingoptions.md">CloudwatchLoggingOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,7 +126,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;inputs.md&#34;&gt;Inputs&lt;/a&gt;
+_Type_: List of <a href="inputs.md">Inputs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,7 +134,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;outputs.md&#34;&gt;Outputs&lt;/a&gt;
+_Type_: List of <a href="outputs.md">Outputs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -204,7 +142,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;referencedatasources.md&#34;&gt;ReferenceDataSources&lt;/a&gt;
+_Type_: List of <a href="referencedatasources.md">ReferenceDataSources</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -212,7 +150,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kinesisfirehose.md&#34;&gt;KinesisFirehose&lt;/a&gt;
+_Type_: List of <a href="kinesisfirehose.md">KinesisFirehose</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -220,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kinesisstream.md&#34;&gt;KinesisStream&lt;/a&gt;
+_Type_: List of <a href="kinesisstream.md">KinesisStream</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -228,7 +166,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parallelism.md&#34;&gt;Parallelism&lt;/a&gt;
+_Type_: List of <a href="parallelism.md">Parallelism</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -236,7 +174,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;processingconfiguration.md&#34;&gt;ProcessingConfiguration&lt;/a&gt;
+_Type_: List of <a href="processingconfiguration.md">ProcessingConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -244,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;schema.md&#34;&gt;Schema&lt;/a&gt;
+_Type_: List of <a href="schema.md">Schema</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -252,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lambda.md&#34;&gt;Lambda&lt;/a&gt;
+_Type_: List of <a href="lambda.md">Lambda</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -260,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;s3.md&#34;&gt;S3&lt;/a&gt;
+_Type_: List of <a href="s3.md">S3</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -268,7 +206,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;recordcolumns.md&#34;&gt;RecordColumns&lt;/a&gt;
+_Type_: List of <a href="recordcolumns.md">RecordColumns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -276,7 +214,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;recordformat.md&#34;&gt;RecordFormat&lt;/a&gt;
+_Type_: List of <a href="recordformat.md">RecordFormat</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -284,7 +222,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;mappingparameters.md&#34;&gt;MappingParameters&lt;/a&gt;
+_Type_: List of <a href="mappingparameters.md">MappingParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -292,7 +230,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;csv.md&#34;&gt;Csv&lt;/a&gt;
+_Type_: List of <a href="csv.md">Csv</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -300,7 +238,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;json.md&#34;&gt;Json&lt;/a&gt;
+_Type_: List of <a href="json.md">Json</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -322,21 +260,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CreateTimestamp
 
-Returns the &lt;code&gt;CreateTimestamp&lt;/code&gt; value.
+Returns the <code>CreateTimestamp</code> value.
 
 #### LastUpdateTimestamp
 
-Returns the &lt;code&gt;LastUpdateTimestamp&lt;/code&gt; value.
+Returns the <code>LastUpdateTimestamp</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### Version
 
-Returns the &lt;code&gt;Version&lt;/code&gt; value.
+Returns the <code>Version</code> value.
 

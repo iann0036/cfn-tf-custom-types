@@ -10,8 +10,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#description" title="Description">Description</a>" : <i>String</i>,
     "<a href="#statuscode" title="StatusCode">StatusCode</a>" : <i>Double</i>,
-    "<a href="#header" title="Header">Header</a>" : <i>[ &lt;a href=&#34;response-header.md&#34;&gt;Header&lt;/a&gt;, ... ]</i>,
-    "<a href="#representation" title="Representation">Representation</a>" : <i>[ &lt;a href=&#34;response-representation.md&#34;&gt;Representation&lt;/a&gt;, ... ]</i>
+    "<a href="#header" title="Header">Header</a>" : <i>[ <a href="response-header.md">Header</a>, ... ]</i>,
+    "<a href="#representation" title="Representation">Representation</a>" : <i>[ <a href="response-representation.md">Representation</a>, ... ]</i>
 }
 </pre>
 
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#description" title="Description">Description</a>: <i>String</i>
 <a href="#statuscode" title="StatusCode">StatusCode</a>: <i>Double</i>
 <a href="#header" title="Header">Header</a>: <i>
-      - &lt;a href=&#34;response-header.md&#34;&gt;Header&lt;/a&gt;</i>
+      - <a href="response-header.md">Header</a></i>
 <a href="#representation" title="Representation">Representation</a>: <i>
-      - &lt;a href=&#34;response-representation.md&#34;&gt;Representation&lt;/a&gt;</i>
+      - <a href="response-representation.md">Representation</a></i>
 </pre>
 
 ## Properties
@@ -31,6 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Description
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -38,6 +39,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StatusCode
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,14 +47,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Header
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;response-header.md&#34;&gt;Header&lt;/a&gt;
+
+_Type_: List of <a href="response-header.md">Header</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Representation
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;response-representation.md&#34;&gt;Representation&lt;/a&gt;
+
+_Type_: List of <a href="response-representation.md">Representation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

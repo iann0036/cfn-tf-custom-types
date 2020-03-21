@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#instancecount" title="InstanceCount">InstanceCount</a>" : <i>Double</i>,
     "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#ebsconfig" title="EbsConfig">EbsConfig</a>" : <i>[ &lt;a href=&#34;coreinstancegroup-ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;, ... ]</i>
+    "<a href="#ebsconfig" title="EbsConfig">EbsConfig</a>" : <i>[ <a href="coreinstancegroup-ebsconfig.md">EbsConfig</a>, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#ebsconfig" title="EbsConfig">EbsConfig</a>: <i>
-      - &lt;a href=&#34;coreinstancegroup-ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;</i>
+      - <a href="coreinstancegroup-ebsconfig.md">EbsConfig</a></i>
 </pre>
 
 ## Properties
@@ -34,6 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AutoscalingPolicy
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -41,6 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BidPrice
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +50,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceCount
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceType
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,7 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EbsConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;coreinstancegroup-ebsconfig.md&#34;&gt;EbsConfig&lt;/a&gt;
+
+_Type_: List of <a href="coreinstancegroup-ebsconfig.md">EbsConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

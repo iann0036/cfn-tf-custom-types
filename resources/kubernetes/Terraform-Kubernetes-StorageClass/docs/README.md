@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Kubernetes::StorageClass",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowvolumeexpansion" title="AllowVolumeExpansion">AllowVolumeExpansion</a>" : <i>Boolean</i>,
         "<a href="#mountoptions" title="MountOptions">MountOptions</a>" : <i>[ String, ... ]</i>,
-        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;, ... ]</i>,
+        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ <a href="parameters.md">Parameters</a>, ... ]</i>,
         "<a href="#reclaimpolicy" title="ReclaimPolicy">ReclaimPolicy</a>" : <i>String</i>,
         "<a href="#storageprovisioner" title="StorageProvisioner">StorageProvisioner</a>" : <i>String</i>,
         "<a href="#volumebindingmode" title="VolumeBindingMode">VolumeBindingMode</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,30 +28,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Kubernetes::StorageClass
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowvolumeexpansion" title="AllowVolumeExpansion">AllowVolumeExpansion</a>: <i>Boolean</i>
     <a href="#mountoptions" title="MountOptions">MountOptions</a>: <i>
       - String</i>
     <a href="#parameters" title="Parameters">Parameters</a>: <i>
-      - &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;</i>
+      - <a href="parameters.md">Parameters</a></i>
     <a href="#reclaimpolicy" title="ReclaimPolicy">ReclaimPolicy</a>: <i>String</i>
     <a href="#storageprovisioner" title="StorageProvisioner">StorageProvisioner</a>: <i>String</i>
     <a href="#volumebindingmode" title="VolumeBindingMode">VolumeBindingMode</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowVolumeExpansion
 
@@ -74,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;
+_Type_: List of <a href="parameters.md">Parameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

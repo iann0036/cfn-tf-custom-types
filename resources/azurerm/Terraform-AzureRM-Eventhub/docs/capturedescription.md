@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#intervalinseconds" title="IntervalInSeconds">IntervalInSeconds</a>" : <i>Double</i>,
     "<a href="#sizelimitinbytes" title="SizeLimitInBytes">SizeLimitInBytes</a>" : <i>Double</i>,
     "<a href="#skipemptyarchives" title="SkipEmptyArchives">SkipEmptyArchives</a>" : <i>Boolean</i>,
-    "<a href="#destination" title="Destination">Destination</a>" : <i>[ &lt;a href=&#34;capturedescription-destination.md&#34;&gt;Destination&lt;/a&gt;, ... ]</i>
+    "<a href="#destination" title="Destination">Destination</a>" : <i>[ <a href="capturedescription-destination.md">Destination</a>, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#sizelimitinbytes" title="SizeLimitInBytes">SizeLimitInBytes</a>: <i>Double</i>
 <a href="#skipemptyarchives" title="SkipEmptyArchives">SkipEmptyArchives</a>: <i>Boolean</i>
 <a href="#destination" title="Destination">Destination</a>: <i>
-      - &lt;a href=&#34;capturedescription-destination.md&#34;&gt;Destination&lt;/a&gt;</i>
+      - <a href="capturedescription-destination.md">Destination</a></i>
 </pre>
 
 ## Properties
@@ -34,6 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Enabled
 
 _Required_: Yes
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -41,6 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Encoding
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +50,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IntervalInSeconds
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SizeLimitInBytes
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SkipEmptyArchives
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,7 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Destination
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;capturedescription-destination.md&#34;&gt;Destination&lt;/a&gt;
+
+_Type_: List of <a href="capturedescription-destination.md">Destination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

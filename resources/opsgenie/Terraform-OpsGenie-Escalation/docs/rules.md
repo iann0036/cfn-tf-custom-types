@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#condition" title="Condition">Condition</a>" : <i>String</i>,
     "<a href="#delay" title="Delay">Delay</a>" : <i>Double</i>,
     "<a href="#notifytype" title="NotifyType">NotifyType</a>" : <i>String</i>,
-    "<a href="#recipient" title="Recipient">Recipient</a>" : <i>[ &lt;a href=&#34;rules-recipient.md&#34;&gt;Recipient&lt;/a&gt;, ... ]</i>
+    "<a href="#recipient" title="Recipient">Recipient</a>" : <i>[ <a href="rules-recipient.md">Recipient</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#delay" title="Delay">Delay</a>: <i>Double</i>
 <a href="#notifytype" title="NotifyType">NotifyType</a>: <i>String</i>
 <a href="#recipient" title="Recipient">Recipient</a>: <i>
-      - &lt;a href=&#34;rules-recipient.md&#34;&gt;Recipient&lt;/a&gt;</i>
+      - <a href="rules-recipient.md">Recipient</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Condition
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Delay
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NotifyType
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Recipient
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;rules-recipient.md&#34;&gt;Recipient&lt;/a&gt;
+
+_Type_: List of <a href="rules-recipient.md">Recipient</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,23 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::RdsInstanceV3",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>[ String, ... ]</i>,
-        "<a href="#created" title="Created">Created</a>" : <i>String</i>,
         "<a href="#flavor" title="Flavor">Flavor</a>" : <i>String</i>,
         "<a href="#hareplicationmode" title="HaReplicationMode">HaReplicationMode</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#nodes" title="Nodes">Nodes</a>" : <i>[ &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;, ... ]</i>,
         "<a href="#paramgroupid" title="ParamGroupId">ParamGroupId</a>" : <i>String</i>,
-        "<a href="#privateips" title="PrivateIps">PrivateIps</a>" : <i>[ String, ... ]</i>,
-        "<a href="#publicips" title="PublicIps">PublicIps</a>" : <i>[ String, ... ]</i>,
         "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#backupstrategy" title="BackupStrategy">BackupStrategy</a>" : <i>[ &lt;a href=&#34;backupstrategy.md&#34;&gt;BackupStrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#db" title="Db">Db</a>" : <i>[ &lt;a href=&#34;db.md&#34;&gt;Db&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>
+        "<a href="#backupstrategy" title="BackupStrategy">BackupStrategy</a>" : <i>[ <a href="backupstrategy.md">BackupStrategy</a>, ... ]</i>,
+        "<a href="#db" title="Db">Db</a>" : <i>[ <a href="db.md">Db</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="volume.md">Volume</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,57 +33,31 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::RdsInstanceV3
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>
       - String</i>
-    <a href="#created" title="Created">Created</a>: <i>String</i>
     <a href="#flavor" title="Flavor">Flavor</a>: <i>String</i>
     <a href="#hareplicationmode" title="HaReplicationMode">HaReplicationMode</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#nodes" title="Nodes">Nodes</a>: <i>
-      - &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;</i>
     <a href="#paramgroupid" title="ParamGroupId">ParamGroupId</a>: <i>String</i>
-    <a href="#privateips" title="PrivateIps">PrivateIps</a>: <i>
-      - String</i>
-    <a href="#publicips" title="PublicIps">PublicIps</a>: <i>
-      - String</i>
     <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#backupstrategy" title="BackupStrategy">BackupStrategy</a>: <i>
-      - &lt;a href=&#34;backupstrategy.md&#34;&gt;BackupStrategy&lt;/a&gt;</i>
+      - <a href="backupstrategy.md">BackupStrategy</a></i>
     <a href="#db" title="Db">Db</a>: <i>
-      - &lt;a href=&#34;db.md&#34;&gt;Db&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="db.md">Db</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#volume" title="Volume">Volume</a>: <i>
-      - &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;</i>
+      - <a href="volume.md">Volume</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
 
 _Required_: Yes
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Created
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,35 +85,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Nodes
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;nodes.md&#34;&gt;Nodes&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ParamGroupId
 
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrivateIps
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PublicIps
-
-_Required_: No
-
-_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backupstrategy.md&#34;&gt;BackupStrategy&lt;/a&gt;
+_Type_: List of <a href="backupstrategy.md">BackupStrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -184,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;db.md&#34;&gt;Db&lt;/a&gt;
+_Type_: List of <a href="db.md">Db</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -192,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -200,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;
+_Type_: List of <a href="volume.md">Volume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -222,17 +167,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Nodes
 
-Returns the &lt;code&gt;Nodes&lt;/code&gt; value.
+Returns the <code>Nodes</code> value.
 
 #### PrivateIps
 
-Returns the &lt;code&gt;PrivateIps&lt;/code&gt; value.
+Returns the <code>PrivateIps</code> value.
 
 #### PublicIps
 
-Returns the &lt;code&gt;PublicIps&lt;/code&gt; value.
+Returns the <code>PublicIps</code> value.
 

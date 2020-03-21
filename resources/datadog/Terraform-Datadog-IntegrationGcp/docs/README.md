@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Datadog::IntegrationGcp",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#clientemail" title="ClientEmail">ClientEmail</a>" : <i>String</i>,
         "<a href="#clientid" title="ClientId">ClientId</a>" : <i>String</i>,
         "<a href="#hostfilters" title="HostFilters">HostFilters</a>" : <i>String</i>,
@@ -28,7 +27,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Datadog::IntegrationGcp
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#clientemail" title="ClientEmail">ClientEmail</a>: <i>String</i>
     <a href="#clientid" title="ClientId">ClientId</a>: <i>String</i>
     <a href="#hostfilters" title="HostFilters">HostFilters</a>: <i>String</i>
@@ -38,16 +36,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClientEmail
 

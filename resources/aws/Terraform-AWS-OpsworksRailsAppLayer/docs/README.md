@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::OpsworksRailsAppLayer",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#appserver" title="AppServer">AppServer</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#autoassignelasticips" title="AutoAssignElasticIps">AutoAssignElasticIps</a>" : <i>Boolean</i>,
         "<a href="#autoassignpublicips" title="AutoAssignPublicIps">AutoAssignPublicIps</a>" : <i>Boolean</i>,
         "<a href="#autohealing" title="AutoHealing">AutoHealing</a>" : <i>Boolean</i>,
@@ -38,9 +36,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#rubygemsversion" title="RubygemsVersion">RubygemsVersion</a>" : <i>String</i>,
         "<a href="#stackid" title="StackId">StackId</a>" : <i>String</i>,
         "<a href="#systempackages" title="SystemPackages">SystemPackages</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#useebsoptimizedinstances" title="UseEbsOptimizedInstances">UseEbsOptimizedInstances</a>" : <i>Boolean</i>,
-        "<a href="#ebsvolume" title="EbsVolume">EbsVolume</a>" : <i>[ &lt;a href=&#34;ebsvolume.md&#34;&gt;EbsVolume&lt;/a&gt;, ... ]</i>
+        "<a href="#ebsvolume" title="EbsVolume">EbsVolume</a>" : <i>[ <a href="ebsvolume.md">EbsVolume</a>, ... ]</i>
     }
 }
 </pre>
@@ -50,9 +48,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::OpsworksRailsAppLayer
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#appserver" title="AppServer">AppServer</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#autoassignelasticips" title="AutoAssignElasticIps">AutoAssignElasticIps</a>: <i>Boolean</i>
     <a href="#autoassignpublicips" title="AutoAssignPublicIps">AutoAssignPublicIps</a>: <i>Boolean</i>
     <a href="#autohealing" title="AutoHealing">AutoHealing</a>: <i>Boolean</i>
@@ -84,33 +80,15 @@ Properties:
     <a href="#systempackages" title="SystemPackages">SystemPackages</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#useebsoptimizedinstances" title="UseEbsOptimizedInstances">UseEbsOptimizedInstances</a>: <i>Boolean</i>
     <a href="#ebsvolume" title="EbsVolume">EbsVolume</a>: <i>
-      - &lt;a href=&#34;ebsvolume.md&#34;&gt;EbsVolume&lt;/a&gt;</i>
+      - <a href="ebsvolume.md">EbsVolume</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AppServer
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
 
 _Required_: No
 
@@ -306,7 +284,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -322,7 +300,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ebsvolume.md&#34;&gt;EbsVolume&lt;/a&gt;
+_Type_: List of <a href="ebsvolume.md">EbsVolume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -344,5 +322,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

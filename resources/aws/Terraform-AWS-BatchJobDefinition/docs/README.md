@@ -12,15 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::BatchJobDefinition",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#containerproperties" title="ContainerProperties">ContainerProperties</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;, ... ]</i>,
-        "<a href="#revision" title="Revision">Revision</a>" : <i>Double</i>,
+        "<a href="#parameters" title="Parameters">Parameters</a>" : <i>[ <a href="parameters.md">Parameters</a>, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#retrystrategy" title="RetryStrategy">RetryStrategy</a>" : <i>[ &lt;a href=&#34;retrystrategy.md&#34;&gt;RetryStrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeout" title="Timeout">Timeout</a>" : <i>[ &lt;a href=&#34;timeout.md&#34;&gt;Timeout&lt;/a&gt;, ... ]</i>
+        "<a href="#retrystrategy" title="RetryStrategy">RetryStrategy</a>" : <i>[ <a href="retrystrategy.md">RetryStrategy</a>, ... ]</i>,
+        "<a href="#timeout" title="Timeout">Timeout</a>" : <i>[ <a href="timeout.md">Timeout</a>, ... ]</i>
     }
 }
 </pre>
@@ -30,39 +27,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::BatchJobDefinition
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#containerproperties" title="ContainerProperties">ContainerProperties</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#parameters" title="Parameters">Parameters</a>: <i>
-      - &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;</i>
-    <a href="#revision" title="Revision">Revision</a>: <i>Double</i>
+      - <a href="parameters.md">Parameters</a></i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#retrystrategy" title="RetryStrategy">RetryStrategy</a>: <i>
-      - &lt;a href=&#34;retrystrategy.md&#34;&gt;RetryStrategy&lt;/a&gt;</i>
+      - <a href="retrystrategy.md">RetryStrategy</a></i>
     <a href="#timeout" title="Timeout">Timeout</a>: <i>
-      - &lt;a href=&#34;timeout.md&#34;&gt;Timeout&lt;/a&gt;</i>
+      - <a href="timeout.md">Timeout</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContainerProperties
 
@@ -84,15 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;parameters.md&#34;&gt;Parameters&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Revision
-
-_Required_: No
-
-_Type_: Double
+_Type_: List of <a href="parameters.md">Parameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -108,7 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;retrystrategy.md&#34;&gt;RetryStrategy&lt;/a&gt;
+_Type_: List of <a href="retrystrategy.md">RetryStrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,7 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;timeout.md&#34;&gt;Timeout&lt;/a&gt;
+_Type_: List of <a href="timeout.md">Timeout</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,9 +106,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### Revision
 
-Returns the &lt;code&gt;Revision&lt;/code&gt; value.
+Returns the <code>Revision</code> value.
 

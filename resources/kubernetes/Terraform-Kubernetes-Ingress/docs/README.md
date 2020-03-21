@@ -12,15 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Kubernetes::Ingress",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#loadbalanceringress" title="LoadBalancerIngress">LoadBalancerIngress</a>" : <i>[ &lt;a href=&#34;loadbalanceringress.md&#34;&gt;LoadBalancerIngress&lt;/a&gt;, ... ]</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#spec" title="Spec">Spec</a>" : <i>[ &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;, ... ]</i>,
-        "<a href="#backend" title="Backend">Backend</a>" : <i>[ &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;, ... ]</i>,
-        "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>,
-        "<a href="#tls" title="Tls">Tls</a>" : <i>[ &lt;a href=&#34;tls.md&#34;&gt;Tls&lt;/a&gt;, ... ]</i>,
-        "<a href="#http" title="Http">Http</a>" : <i>[ &lt;a href=&#34;http.md&#34;&gt;Http&lt;/a&gt;, ... ]</i>,
-        "<a href="#path" title="Path">Path</a>" : <i>[ &lt;a href=&#34;path.md&#34;&gt;Path&lt;/a&gt;, ... ]</i>
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
+        "<a href="#spec" title="Spec">Spec</a>" : <i>[ <a href="spec.md">Spec</a>, ... ]</i>,
+        "<a href="#backend" title="Backend">Backend</a>" : <i>[ <a href="backend.md">Backend</a>, ... ]</i>,
+        "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="rule.md">Rule</a>, ... ]</i>,
+        "<a href="#tls" title="Tls">Tls</a>" : <i>[ <a href="tls.md">Tls</a>, ... ]</i>,
+        "<a href="#http" title="Http">Http</a>" : <i>[ <a href="http.md">Http</a>, ... ]</i>,
+        "<a href="#path" title="Path">Path</a>" : <i>[ <a href="path.md">Path</a>, ... ]</i>
     }
 }
 </pre>
@@ -30,50 +28,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Kubernetes::Ingress
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#loadbalanceringress" title="LoadBalancerIngress">LoadBalancerIngress</a>: <i>
-      - &lt;a href=&#34;loadbalanceringress.md&#34;&gt;LoadBalancerIngress&lt;/a&gt;</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#spec" title="Spec">Spec</a>: <i>
-      - &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;</i>
+      - <a href="spec.md">Spec</a></i>
     <a href="#backend" title="Backend">Backend</a>: <i>
-      - &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;</i>
+      - <a href="backend.md">Backend</a></i>
     <a href="#rule" title="Rule">Rule</a>: <i>
-      - &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;</i>
+      - <a href="rule.md">Rule</a></i>
     <a href="#tls" title="Tls">Tls</a>: <i>
-      - &lt;a href=&#34;tls.md&#34;&gt;Tls&lt;/a&gt;</i>
+      - <a href="tls.md">Tls</a></i>
     <a href="#http" title="Http">Http</a>: <i>
-      - &lt;a href=&#34;http.md&#34;&gt;Http&lt;/a&gt;</i>
+      - <a href="http.md">Http</a></i>
     <a href="#path" title="Path">Path</a>: <i>
-      - &lt;a href=&#34;path.md&#34;&gt;Path&lt;/a&gt;</i>
+      - <a href="path.md">Path</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LoadBalancerIngress
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;loadbalanceringress.md&#34;&gt;LoadBalancerIngress&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metadata
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -81,7 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;
+_Type_: List of <a href="spec.md">Spec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -89,7 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;
+_Type_: List of <a href="backend.md">Backend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -97,7 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;rule.md&#34;&gt;Rule&lt;/a&gt;
+_Type_: List of <a href="rule.md">Rule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tls.md&#34;&gt;Tls&lt;/a&gt;
+_Type_: List of <a href="tls.md">Tls</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -113,7 +90,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;http.md&#34;&gt;Http&lt;/a&gt;
+_Type_: List of <a href="http.md">Http</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -121,7 +98,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;path.md&#34;&gt;Path&lt;/a&gt;
+_Type_: List of <a href="path.md">Path</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -143,5 +120,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LoadBalancerIngress
 
-Returns the &lt;code&gt;LoadBalancerIngress&lt;/code&gt; value.
+Returns the <code>LoadBalancerIngress</code> value.
 

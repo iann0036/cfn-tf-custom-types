@@ -12,26 +12,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::LambdaEventSourceMapping",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#batchsize" title="BatchSize">BatchSize</a>" : <i>Double</i>,
         "<a href="#bisectbatchonfunctionerror" title="BisectBatchOnFunctionError">BisectBatchOnFunctionError</a>" : <i>Boolean</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#eventsourcearn" title="EventSourceArn">EventSourceArn</a>" : <i>String</i>,
-        "<a href="#functionarn" title="FunctionArn">FunctionArn</a>" : <i>String</i>,
         "<a href="#functionname" title="FunctionName">FunctionName</a>" : <i>String</i>,
-        "<a href="#lastmodified" title="LastModified">LastModified</a>" : <i>String</i>,
-        "<a href="#lastprocessingresult" title="LastProcessingResult">LastProcessingResult</a>" : <i>String</i>,
         "<a href="#maximumbatchingwindowinseconds" title="MaximumBatchingWindowInSeconds">MaximumBatchingWindowInSeconds</a>" : <i>Double</i>,
         "<a href="#maximumrecordageinseconds" title="MaximumRecordAgeInSeconds">MaximumRecordAgeInSeconds</a>" : <i>Double</i>,
         "<a href="#maximumretryattempts" title="MaximumRetryAttempts">MaximumRetryAttempts</a>" : <i>Double</i>,
         "<a href="#parallelizationfactor" title="ParallelizationFactor">ParallelizationFactor</a>" : <i>Double</i>,
         "<a href="#startingposition" title="StartingPosition">StartingPosition</a>" : <i>String</i>,
         "<a href="#startingpositiontimestamp" title="StartingPositionTimestamp">StartingPositionTimestamp</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#statetransitionreason" title="StateTransitionReason">StateTransitionReason</a>" : <i>String</i>,
-        "<a href="#uuid" title="Uuid">Uuid</a>" : <i>String</i>,
-        "<a href="#destinationconfig" title="DestinationConfig">DestinationConfig</a>" : <i>[ &lt;a href=&#34;destinationconfig.md&#34;&gt;DestinationConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#onfailure" title="OnFailure">OnFailure</a>" : <i>[ &lt;a href=&#34;onfailure.md&#34;&gt;OnFailure&lt;/a&gt;, ... ]</i>
+        "<a href="#destinationconfig" title="DestinationConfig">DestinationConfig</a>" : <i>[ <a href="destinationconfig.md">DestinationConfig</a>, ... ]</i>,
+        "<a href="#onfailure" title="OnFailure">OnFailure</a>" : <i>[ <a href="onfailure.md">OnFailure</a>, ... ]</i>
     }
 }
 </pre>
@@ -41,41 +34,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::LambdaEventSourceMapping
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#batchsize" title="BatchSize">BatchSize</a>: <i>Double</i>
     <a href="#bisectbatchonfunctionerror" title="BisectBatchOnFunctionError">BisectBatchOnFunctionError</a>: <i>Boolean</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#eventsourcearn" title="EventSourceArn">EventSourceArn</a>: <i>String</i>
-    <a href="#functionarn" title="FunctionArn">FunctionArn</a>: <i>String</i>
     <a href="#functionname" title="FunctionName">FunctionName</a>: <i>String</i>
-    <a href="#lastmodified" title="LastModified">LastModified</a>: <i>String</i>
-    <a href="#lastprocessingresult" title="LastProcessingResult">LastProcessingResult</a>: <i>String</i>
     <a href="#maximumbatchingwindowinseconds" title="MaximumBatchingWindowInSeconds">MaximumBatchingWindowInSeconds</a>: <i>Double</i>
     <a href="#maximumrecordageinseconds" title="MaximumRecordAgeInSeconds">MaximumRecordAgeInSeconds</a>: <i>Double</i>
     <a href="#maximumretryattempts" title="MaximumRetryAttempts">MaximumRetryAttempts</a>: <i>Double</i>
     <a href="#parallelizationfactor" title="ParallelizationFactor">ParallelizationFactor</a>: <i>Double</i>
     <a href="#startingposition" title="StartingPosition">StartingPosition</a>: <i>String</i>
     <a href="#startingpositiontimestamp" title="StartingPositionTimestamp">StartingPositionTimestamp</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#statetransitionreason" title="StateTransitionReason">StateTransitionReason</a>: <i>String</i>
-    <a href="#uuid" title="Uuid">Uuid</a>: <i>String</i>
     <a href="#destinationconfig" title="DestinationConfig">DestinationConfig</a>: <i>
-      - &lt;a href=&#34;destinationconfig.md&#34;&gt;DestinationConfig&lt;/a&gt;</i>
+      - <a href="destinationconfig.md">DestinationConfig</a></i>
     <a href="#onfailure" title="OnFailure">OnFailure</a>: <i>
-      - &lt;a href=&#34;onfailure.md&#34;&gt;OnFailure&lt;/a&gt;</i>
+      - <a href="onfailure.md">OnFailure</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BatchSize
 
@@ -109,33 +85,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### FunctionArn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### FunctionName
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastModified
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastProcessingResult
-
-_Required_: No
 
 _Type_: String
 
@@ -189,35 +141,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### StateTransitionReason
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uuid
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### DestinationConfig
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;destinationconfig.md&#34;&gt;DestinationConfig&lt;/a&gt;
+_Type_: List of <a href="destinationconfig.md">DestinationConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -225,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;onfailure.md&#34;&gt;OnFailure&lt;/a&gt;
+_Type_: List of <a href="onfailure.md">OnFailure</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -247,25 +175,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### FunctionArn
 
-Returns the &lt;code&gt;FunctionArn&lt;/code&gt; value.
+Returns the <code>FunctionArn</code> value.
 
 #### LastModified
 
-Returns the &lt;code&gt;LastModified&lt;/code&gt; value.
+Returns the <code>LastModified</code> value.
 
 #### LastProcessingResult
 
-Returns the &lt;code&gt;LastProcessingResult&lt;/code&gt; value.
+Returns the <code>LastProcessingResult</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### StateTransitionReason
 
-Returns the &lt;code&gt;StateTransitionReason&lt;/code&gt; value.
+Returns the <code>StateTransitionReason</code> value.
 
 #### Uuid
 
-Returns the &lt;code&gt;Uuid&lt;/code&gt; value.
+Returns the <code>Uuid</code> value.
 

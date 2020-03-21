@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AutoscalingPolicy",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adjustmenttype" title="AdjustmentType">AdjustmentType</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#autoscalinggroupname" title="AutoscalingGroupName">AutoscalingGroupName</a>" : <i>String</i>,
         "<a href="#cooldown" title="Cooldown">Cooldown</a>" : <i>Double</i>,
         "<a href="#estimatedinstancewarmup" title="EstimatedInstanceWarmup">EstimatedInstanceWarmup</a>" : <i>Double</i>,
@@ -24,11 +22,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#policytype" title="PolicyType">PolicyType</a>" : <i>String</i>,
         "<a href="#scalingadjustment" title="ScalingAdjustment">ScalingAdjustment</a>" : <i>Double</i>,
-        "<a href="#stepadjustment" title="StepAdjustment">StepAdjustment</a>" : <i>[ &lt;a href=&#34;stepadjustment.md&#34;&gt;StepAdjustment&lt;/a&gt;, ... ]</i>,
-        "<a href="#targettrackingconfiguration" title="TargetTrackingConfiguration">TargetTrackingConfiguration</a>" : <i>[ &lt;a href=&#34;targettrackingconfiguration.md&#34;&gt;TargetTrackingConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#customizedmetricspecification" title="CustomizedMetricSpecification">CustomizedMetricSpecification</a>" : <i>[ &lt;a href=&#34;customizedmetricspecification.md&#34;&gt;CustomizedMetricSpecification&lt;/a&gt;, ... ]</i>,
-        "<a href="#predefinedmetricspecification" title="PredefinedMetricSpecification">PredefinedMetricSpecification</a>" : <i>[ &lt;a href=&#34;predefinedmetricspecification.md&#34;&gt;PredefinedMetricSpecification&lt;/a&gt;, ... ]</i>,
-        "<a href="#metricdimension" title="MetricDimension">MetricDimension</a>" : <i>[ &lt;a href=&#34;metricdimension.md&#34;&gt;MetricDimension&lt;/a&gt;, ... ]</i>
+        "<a href="#stepadjustment" title="StepAdjustment">StepAdjustment</a>" : <i>[ <a href="stepadjustment.md">StepAdjustment</a>, ... ]</i>,
+        "<a href="#targettrackingconfiguration" title="TargetTrackingConfiguration">TargetTrackingConfiguration</a>" : <i>[ <a href="targettrackingconfiguration.md">TargetTrackingConfiguration</a>, ... ]</i>,
+        "<a href="#customizedmetricspecification" title="CustomizedMetricSpecification">CustomizedMetricSpecification</a>" : <i>[ <a href="customizedmetricspecification.md">CustomizedMetricSpecification</a>, ... ]</i>,
+        "<a href="#predefinedmetricspecification" title="PredefinedMetricSpecification">PredefinedMetricSpecification</a>" : <i>[ <a href="predefinedmetricspecification.md">PredefinedMetricSpecification</a>, ... ]</i>,
+        "<a href="#metricdimension" title="MetricDimension">MetricDimension</a>" : <i>[ <a href="metricdimension.md">MetricDimension</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,9 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AutoscalingPolicy
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adjustmenttype" title="AdjustmentType">AdjustmentType</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#autoscalinggroupname" title="AutoscalingGroupName">AutoscalingGroupName</a>: <i>String</i>
     <a href="#cooldown" title="Cooldown">Cooldown</a>: <i>Double</i>
     <a href="#estimatedinstancewarmup" title="EstimatedInstanceWarmup">EstimatedInstanceWarmup</a>: <i>Double</i>
@@ -51,38 +47,20 @@ Properties:
     <a href="#policytype" title="PolicyType">PolicyType</a>: <i>String</i>
     <a href="#scalingadjustment" title="ScalingAdjustment">ScalingAdjustment</a>: <i>Double</i>
     <a href="#stepadjustment" title="StepAdjustment">StepAdjustment</a>: <i>
-      - &lt;a href=&#34;stepadjustment.md&#34;&gt;StepAdjustment&lt;/a&gt;</i>
+      - <a href="stepadjustment.md">StepAdjustment</a></i>
     <a href="#targettrackingconfiguration" title="TargetTrackingConfiguration">TargetTrackingConfiguration</a>: <i>
-      - &lt;a href=&#34;targettrackingconfiguration.md&#34;&gt;TargetTrackingConfiguration&lt;/a&gt;</i>
+      - <a href="targettrackingconfiguration.md">TargetTrackingConfiguration</a></i>
     <a href="#customizedmetricspecification" title="CustomizedMetricSpecification">CustomizedMetricSpecification</a>: <i>
-      - &lt;a href=&#34;customizedmetricspecification.md&#34;&gt;CustomizedMetricSpecification&lt;/a&gt;</i>
+      - <a href="customizedmetricspecification.md">CustomizedMetricSpecification</a></i>
     <a href="#predefinedmetricspecification" title="PredefinedMetricSpecification">PredefinedMetricSpecification</a>: <i>
-      - &lt;a href=&#34;predefinedmetricspecification.md&#34;&gt;PredefinedMetricSpecification&lt;/a&gt;</i>
+      - <a href="predefinedmetricspecification.md">PredefinedMetricSpecification</a></i>
     <a href="#metricdimension" title="MetricDimension">MetricDimension</a>: <i>
-      - &lt;a href=&#34;metricdimension.md&#34;&gt;MetricDimension&lt;/a&gt;</i>
+      - <a href="metricdimension.md">MetricDimension</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### AdjustmentType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
 
 _Required_: No
 
@@ -166,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;stepadjustment.md&#34;&gt;StepAdjustment&lt;/a&gt;
+_Type_: List of <a href="stepadjustment.md">StepAdjustment</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;targettrackingconfiguration.md&#34;&gt;TargetTrackingConfiguration&lt;/a&gt;
+_Type_: List of <a href="targettrackingconfiguration.md">TargetTrackingConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customizedmetricspecification.md&#34;&gt;CustomizedMetricSpecification&lt;/a&gt;
+_Type_: List of <a href="customizedmetricspecification.md">CustomizedMetricSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;predefinedmetricspecification.md&#34;&gt;PredefinedMetricSpecification&lt;/a&gt;
+_Type_: List of <a href="predefinedmetricspecification.md">PredefinedMetricSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metricdimension.md&#34;&gt;MetricDimension&lt;/a&gt;
+_Type_: List of <a href="metricdimension.md">MetricDimension</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -220,5 +198,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

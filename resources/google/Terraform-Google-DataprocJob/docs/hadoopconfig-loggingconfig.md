@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#driverloglevels" title="DriverLogLevels">DriverLogLevels</a>" : <i>[ &lt;a href=&#34;hadoopconfig-loggingconfig-driverloglevels.md&#34;&gt;DriverLogLevels&lt;/a&gt;, ... ]</i>
+    "<a href="#driverloglevels" title="DriverLogLevels">DriverLogLevels</a>" : <i>[ <a href="hadoopconfig-loggingconfig-driverloglevels.md">DriverLogLevels</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#driverloglevels" title="DriverLogLevels">DriverLogLevels</a>: <i>
-      - &lt;a href=&#34;hadoopconfig-loggingconfig-driverloglevels.md&#34;&gt;DriverLogLevels&lt;/a&gt;</i>
+      - <a href="hadoopconfig-loggingconfig-driverloglevels.md">DriverLogLevels</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DriverLogLevels
 
 _Required_: Yes
-_Type_: List of &lt;a href=&#34;hadoopconfig-loggingconfig-driverloglevels.md&#34;&gt;DriverLogLevels&lt;/a&gt;
+
+_Type_: List of <a href="hadoopconfig-loggingconfig-driverloglevels.md">DriverLogLevels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

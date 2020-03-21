@@ -12,12 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ConfigDeliveryChannel",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#s3bucketname" title="S3BucketName">S3BucketName</a>" : <i>String</i>,
         "<a href="#s3keyprefix" title="S3KeyPrefix">S3KeyPrefix</a>" : <i>String</i>,
         "<a href="#snstopicarn" title="SnsTopicArn">SnsTopicArn</a>" : <i>String</i>,
-        "<a href="#snapshotdeliveryproperties" title="SnapshotDeliveryProperties">SnapshotDeliveryProperties</a>" : <i>[ &lt;a href=&#34;snapshotdeliveryproperties.md&#34;&gt;SnapshotDeliveryProperties&lt;/a&gt;, ... ]</i>
+        "<a href="#snapshotdeliveryproperties" title="SnapshotDeliveryProperties">SnapshotDeliveryProperties</a>" : <i>[ <a href="snapshotdeliveryproperties.md">SnapshotDeliveryProperties</a>, ... ]</i>
     }
 }
 </pre>
@@ -27,26 +26,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ConfigDeliveryChannel
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#s3bucketname" title="S3BucketName">S3BucketName</a>: <i>String</i>
     <a href="#s3keyprefix" title="S3KeyPrefix">S3KeyPrefix</a>: <i>String</i>
     <a href="#snstopicarn" title="SnsTopicArn">SnsTopicArn</a>: <i>String</i>
     <a href="#snapshotdeliveryproperties" title="SnapshotDeliveryProperties">SnapshotDeliveryProperties</a>: <i>
-      - &lt;a href=&#34;snapshotdeliveryproperties.md&#34;&gt;SnapshotDeliveryProperties&lt;/a&gt;</i>
+      - <a href="snapshotdeliveryproperties.md">SnapshotDeliveryProperties</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
@@ -84,7 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;snapshotdeliveryproperties.md&#34;&gt;SnapshotDeliveryProperties&lt;/a&gt;
+_Type_: List of <a href="snapshotdeliveryproperties.md">SnapshotDeliveryProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

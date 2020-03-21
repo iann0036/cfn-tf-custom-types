@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::MultaiRoutingRule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#balancerid" title="BalancerId">BalancerId</a>" : <i>String</i>,
         "<a href="#listenerid" title="ListenerId">ListenerId</a>" : <i>String</i>,
         "<a href="#middlewareids" title="MiddlewareIds">MiddlewareIds</a>" : <i>[ String, ... ]</i>,
@@ -20,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#route" title="Route">Route</a>" : <i>String</i>,
         "<a href="#strategy" title="Strategy">Strategy</a>" : <i>String</i>,
         "<a href="#targetsetids" title="TargetSetIds">TargetSetIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -30,7 +29,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::MultaiRoutingRule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#balancerid" title="BalancerId">BalancerId</a>: <i>String</i>
     <a href="#listenerid" title="ListenerId">ListenerId</a>: <i>String</i>
     <a href="#middlewareids" title="MiddlewareIds">MiddlewareIds</a>: <i>
@@ -41,20 +39,10 @@ Properties:
     <a href="#targetsetids" title="TargetSetIds">TargetSetIds</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BalancerId
 
@@ -116,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

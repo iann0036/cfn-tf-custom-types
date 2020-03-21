@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaGcpAccount",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#credentialfile" title="CredentialFile">CredentialFile</a>" : <i>String</i>,
-        "<a href="#credentialfileenc" title="CredentialFileEnc">CredentialFileEnc</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#projectid" title="ProjectId">ProjectId</a>" : <i>String</i>,
@@ -28,9 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaGcpAccount
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#credentialfile" title="CredentialFile">CredentialFile</a>: <i>String</i>
-    <a href="#credentialfileenc" title="CredentialFileEnc">CredentialFileEnc</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#projectid" title="ProjectId">ProjectId</a>: <i>String</i>
@@ -39,27 +35,9 @@ Properties:
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CredentialFile
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CredentialFileEnc
-
-_Required_: No
 
 _Type_: String
 
@@ -115,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CredentialFileEnc
 
-Returns the &lt;code&gt;CredentialFileEnc&lt;/code&gt; value.
+Returns the <code>CredentialFileEnc</code> value.
 

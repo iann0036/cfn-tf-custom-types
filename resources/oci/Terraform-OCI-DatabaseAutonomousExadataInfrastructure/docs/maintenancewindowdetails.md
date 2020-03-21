@@ -11,8 +11,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#hoursofday" title="HoursOfDay">HoursOfDay</a>" : <i>[ Double, ... ]</i>,
     "<a href="#preference" title="Preference">Preference</a>" : <i>String</i>,
     "<a href="#weeksofmonth" title="WeeksOfMonth">WeeksOfMonth</a>" : <i>[ Double, ... ]</i>,
-    "<a href="#daysofweek" title="DaysOfWeek">DaysOfWeek</a>" : <i>[ &lt;a href=&#34;maintenancewindowdetails-daysofweek.md&#34;&gt;DaysOfWeek&lt;/a&gt;, ... ]</i>,
-    "<a href="#months" title="Months">Months</a>" : <i>[ &lt;a href=&#34;maintenancewindowdetails-months.md&#34;&gt;Months&lt;/a&gt;, ... ]</i>
+    "<a href="#daysofweek" title="DaysOfWeek">DaysOfWeek</a>" : <i>[ <a href="maintenancewindowdetails-daysofweek.md">DaysOfWeek</a>, ... ]</i>,
+    "<a href="#months" title="Months">Months</a>" : <i>[ <a href="maintenancewindowdetails-months.md">Months</a>, ... ]</i>
 }
 </pre>
 
@@ -25,9 +25,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#weeksofmonth" title="WeeksOfMonth">WeeksOfMonth</a>: <i>
       - Double</i>
 <a href="#daysofweek" title="DaysOfWeek">DaysOfWeek</a>: <i>
-      - &lt;a href=&#34;maintenancewindowdetails-daysofweek.md&#34;&gt;DaysOfWeek&lt;/a&gt;</i>
+      - <a href="maintenancewindowdetails-daysofweek.md">DaysOfWeek</a></i>
 <a href="#months" title="Months">Months</a>: <i>
-      - &lt;a href=&#34;maintenancewindowdetails-months.md&#34;&gt;Months&lt;/a&gt;</i>
+      - <a href="maintenancewindowdetails-months.md">Months</a></i>
 </pre>
 
 ## Properties
@@ -35,6 +35,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### HoursOfDay
 
 _Required_: No
+
 _Type_: List of Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,6 +43,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Preference
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -49,6 +51,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### WeeksOfMonth
 
 _Required_: No
+
 _Type_: List of Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,14 +59,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DaysOfWeek
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;maintenancewindowdetails-daysofweek.md&#34;&gt;DaysOfWeek&lt;/a&gt;
+
+_Type_: List of <a href="maintenancewindowdetails-daysofweek.md">DaysOfWeek</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Months
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;maintenancewindowdetails-months.md&#34;&gt;Months&lt;/a&gt;
+
+_Type_: List of <a href="maintenancewindowdetails-months.md">Months</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

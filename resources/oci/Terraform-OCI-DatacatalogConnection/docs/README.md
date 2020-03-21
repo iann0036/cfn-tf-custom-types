@@ -12,25 +12,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::DatacatalogConnection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#catalogid" title="CatalogId">CatalogId</a>" : <i>String</i>,
-        "<a href="#createdbyid" title="CreatedById">CreatedById</a>" : <i>String</i>,
         "<a href="#dataassetkey" title="DataAssetKey">DataAssetKey</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-        "<a href="#encproperties" title="EncProperties">EncProperties</a>" : <i>[ &lt;a href=&#34;encproperties.md&#34;&gt;EncProperties&lt;/a&gt;, ... ]</i>,
-        "<a href="#externalkey" title="ExternalKey">ExternalKey</a>" : <i>String</i>,
+        "<a href="#encproperties" title="EncProperties">EncProperties</a>" : <i>[ <a href="encproperties.md">EncProperties</a>, ... ]</i>,
         "<a href="#isdefault" title="IsDefault">IsDefault</a>" : <i>Boolean</i>,
-        "<a href="#key" title="Key">Key</a>" : <i>String</i>,
-        "<a href="#properties" title="Properties">Properties</a>" : <i>[ &lt;a href=&#34;properties.md&#34;&gt;Properties&lt;/a&gt;, ... ]</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
-        "<a href="#timestatusupdated" title="TimeStatusUpdated">TimeStatusUpdated</a>" : <i>String</i>,
-        "<a href="#timeupdated" title="TimeUpdated">TimeUpdated</a>" : <i>String</i>,
+        "<a href="#properties" title="Properties">Properties</a>" : <i>[ <a href="properties.md">Properties</a>, ... ]</i>,
         "<a href="#typekey" title="TypeKey">TypeKey</a>" : <i>String</i>,
-        "<a href="#updatedbyid" title="UpdatedById">UpdatedById</a>" : <i>String</i>,
-        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -40,52 +30,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::DatacatalogConnection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#catalogid" title="CatalogId">CatalogId</a>: <i>String</i>
-    <a href="#createdbyid" title="CreatedById">CreatedById</a>: <i>String</i>
     <a href="#dataassetkey" title="DataAssetKey">DataAssetKey</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#encproperties" title="EncProperties">EncProperties</a>: <i>
-      - &lt;a href=&#34;encproperties.md&#34;&gt;EncProperties&lt;/a&gt;</i>
-    <a href="#externalkey" title="ExternalKey">ExternalKey</a>: <i>String</i>
+      - <a href="encproperties.md">EncProperties</a></i>
     <a href="#isdefault" title="IsDefault">IsDefault</a>: <i>Boolean</i>
-    <a href="#key" title="Key">Key</a>: <i>String</i>
     <a href="#properties" title="Properties">Properties</a>: <i>
-      - &lt;a href=&#34;properties.md&#34;&gt;Properties&lt;/a&gt;</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
-    <a href="#timestatusupdated" title="TimeStatusUpdated">TimeStatusUpdated</a>: <i>String</i>
-    <a href="#timeupdated" title="TimeUpdated">TimeUpdated</a>: <i>String</i>
+      - <a href="properties.md">Properties</a></i>
     <a href="#typekey" title="TypeKey">TypeKey</a>: <i>String</i>
-    <a href="#updatedbyid" title="UpdatedById">UpdatedById</a>: <i>String</i>
-    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CatalogId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedById
-
-_Required_: No
 
 _Type_: String
 
@@ -119,15 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;encproperties.md&#34;&gt;EncProperties&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ExternalKey
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="encproperties.md">EncProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,51 +93,11 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Key
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Properties
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;properties.md&#34;&gt;Properties&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeCreated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeStatusUpdated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeUpdated
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="properties.md">Properties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,27 +109,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### UpdatedById
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uri
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Timeouts
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -237,37 +135,37 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreatedById
 
-Returns the &lt;code&gt;CreatedById&lt;/code&gt; value.
+Returns the <code>CreatedById</code> value.
 
 #### ExternalKey
 
-Returns the &lt;code&gt;ExternalKey&lt;/code&gt; value.
+Returns the <code>ExternalKey</code> value.
 
 #### Key
 
-Returns the &lt;code&gt;Key&lt;/code&gt; value.
+Returns the <code>Key</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 
 #### TimeStatusUpdated
 
-Returns the &lt;code&gt;TimeStatusUpdated&lt;/code&gt; value.
+Returns the <code>TimeStatusUpdated</code> value.
 
 #### TimeUpdated
 
-Returns the &lt;code&gt;TimeUpdated&lt;/code&gt; value.
+Returns the <code>TimeUpdated</code> value.
 
 #### UpdatedById
 
-Returns the &lt;code&gt;UpdatedById&lt;/code&gt; value.
+Returns the <code>UpdatedById</code> value.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

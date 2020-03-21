@@ -12,10 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Datadog::LogsIndex",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#exclusionfilter" title="ExclusionFilter">ExclusionFilter</a>" : <i>[ &lt;a href=&#34;exclusionfilter.md&#34;&gt;ExclusionFilter&lt;/a&gt;, ... ]</i>,
-        "<a href="#filter" title="Filter">Filter</a>" : <i>[ &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;, ... ]</i>
+        "<a href="#exclusionfilter" title="ExclusionFilter">ExclusionFilter</a>" : <i>[ <a href="exclusionfilter.md">ExclusionFilter</a>, ... ]</i>,
+        "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="filter.md">Filter</a>, ... ]</i>
     }
 }
 </pre>
@@ -25,25 +24,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Datadog::LogsIndex
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#exclusionfilter" title="ExclusionFilter">ExclusionFilter</a>: <i>
-      - &lt;a href=&#34;exclusionfilter.md&#34;&gt;ExclusionFilter&lt;/a&gt;</i>
+      - <a href="exclusionfilter.md">ExclusionFilter</a></i>
     <a href="#filter" title="Filter">Filter</a>: <i>
-      - &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;</i>
+      - <a href="filter.md">Filter</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
@@ -57,7 +45,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;exclusionfilter.md&#34;&gt;ExclusionFilter&lt;/a&gt;
+_Type_: List of <a href="exclusionfilter.md">ExclusionFilter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -65,7 +53,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;
+_Type_: List of <a href="filter.md">Filter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

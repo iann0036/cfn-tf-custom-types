@@ -12,11 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::DbConnection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#connectionprefix" title="ConnectionPrefix">ConnectionPrefix</a>" : <i>String</i>,
-        "<a href="#connectionstring" title="ConnectionString">ConnectionString</a>" : <i>String</i>,
         "<a href="#instanceid" title="InstanceId">InstanceId</a>" : <i>String</i>,
-        "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>String</i>
     }
 }
@@ -27,35 +24,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::DbConnection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#connectionprefix" title="ConnectionPrefix">ConnectionPrefix</a>: <i>String</i>
-    <a href="#connectionstring" title="ConnectionString">ConnectionString</a>: <i>String</i>
     <a href="#instanceid" title="InstanceId">InstanceId</a>: <i>String</i>
-    <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ConnectionPrefix
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ConnectionString
 
 _Required_: No
 
@@ -66,14 +42,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### IpAddress
-
-_Required_: No
 
 _Type_: String
 
@@ -105,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ConnectionString
 
-Returns the &lt;code&gt;ConnectionString&lt;/code&gt; value.
+Returns the <code>ConnectionString</code> value.
 
 #### IpAddress
 
-Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
+Returns the <code>IpAddress</code> value.
 

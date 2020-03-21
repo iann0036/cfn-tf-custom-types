@@ -12,20 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::KeymanagerContainerV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#consumers" title="Consumers">Consumers</a>" : <i>[ &lt;a href=&#34;consumers.md&#34;&gt;Consumers&lt;/a&gt;, ... ]</i>,
-        "<a href="#containerref" title="ContainerRef">ContainerRef</a>" : <i>String</i>,
-        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
-        "<a href="#creatorid" title="CreatorId">CreatorId</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
-        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>,
-        "<a href="#acl" title="Acl">Acl</a>" : <i>[ &lt;a href=&#34;acl.md&#34;&gt;Acl&lt;/a&gt;, ... ]</i>,
-        "<a href="#secretrefs" title="SecretRefs">SecretRefs</a>" : <i>[ &lt;a href=&#34;secretrefs.md&#34;&gt;SecretRefs&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#read" title="Read">Read</a>" : <i>[ &lt;a href=&#34;read.md&#34;&gt;Read&lt;/a&gt;, ... ]</i>
+        "<a href="#acl" title="Acl">Acl</a>" : <i>[ <a href="acl.md">Acl</a>, ... ]</i>,
+        "<a href="#secretrefs" title="SecretRefs">SecretRefs</a>" : <i>[ <a href="secretrefs.md">SecretRefs</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#read" title="Read">Read</a>" : <i>[ <a href="read.md">Read</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,69 +28,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::KeymanagerContainerV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#consumers" title="Consumers">Consumers</a>: <i>
-      - &lt;a href=&#34;consumers.md&#34;&gt;Consumers&lt;/a&gt;</i>
-    <a href="#containerref" title="ContainerRef">ContainerRef</a>: <i>String</i>
-    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
-    <a href="#creatorid" title="CreatorId">CreatorId</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
-    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>
-      - &lt;a href=&#34;acl.md&#34;&gt;Acl&lt;/a&gt;</i>
+      - <a href="acl.md">Acl</a></i>
     <a href="#secretrefs" title="SecretRefs">SecretRefs</a>: <i>
-      - &lt;a href=&#34;secretrefs.md&#34;&gt;SecretRefs&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="secretrefs.md">SecretRefs</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#read" title="Read">Read</a>: <i>
-      - &lt;a href=&#34;read.md&#34;&gt;Read&lt;/a&gt;</i>
+      - <a href="read.md">Read</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Consumers
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;consumers.md&#34;&gt;Consumers&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ContainerRef
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatorId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
@@ -115,25 +58,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Type
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UpdatedAt
-
-_Required_: No
 
 _Type_: String
 
@@ -143,7 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;acl.md&#34;&gt;Acl&lt;/a&gt;
+_Type_: List of <a href="acl.md">Acl</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -151,7 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;secretrefs.md&#34;&gt;SecretRefs&lt;/a&gt;
+_Type_: List of <a href="secretrefs.md">SecretRefs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -159,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -167,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;read.md&#34;&gt;Read&lt;/a&gt;
+_Type_: List of <a href="read.md">Read</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -189,25 +116,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Consumers
 
-Returns the &lt;code&gt;Consumers&lt;/code&gt; value.
+Returns the <code>Consumers</code> value.
 
 #### ContainerRef
 
-Returns the &lt;code&gt;ContainerRef&lt;/code&gt; value.
+Returns the <code>ContainerRef</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### CreatorId
 
-Returns the &lt;code&gt;CreatorId&lt;/code&gt; value.
+Returns the <code>CreatorId</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

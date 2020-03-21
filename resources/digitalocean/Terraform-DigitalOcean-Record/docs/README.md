@@ -12,10 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::DigitalOcean::Record",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
         "<a href="#flags" title="Flags">Flags</a>" : <i>Double</i>,
-        "<a href="#fqdn" title="Fqdn">Fqdn</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
@@ -33,10 +31,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::DigitalOcean::Record
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#flags" title="Flags">Flags</a>: <i>Double</i>
-    <a href="#fqdn" title="Fqdn">Fqdn</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
@@ -48,16 +44,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
 
@@ -72,14 +58,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Fqdn
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -165,5 +143,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fqdn
 
-Returns the &lt;code&gt;Fqdn&lt;/code&gt; value.
+Returns the <code>Fqdn</code> value.
 

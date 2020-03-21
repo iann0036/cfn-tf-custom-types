@@ -12,9 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>,
     "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
     "<a href="#status" title="Status">Status</a>" : <i>String</i>,
-    "<a href="#destination" title="Destination">Destination</a>" : <i>[ &lt;a href=&#34;replicationconfiguration-rules-destination.md&#34;&gt;Destination&lt;/a&gt;, ... ]</i>,
-    "<a href="#filter" title="Filter">Filter</a>" : <i>[ &lt;a href=&#34;replicationconfiguration-rules-filter.md&#34;&gt;Filter&lt;/a&gt;, ... ]</i>,
-    "<a href="#sourceselectioncriteria" title="SourceSelectionCriteria">SourceSelectionCriteria</a>" : <i>[ &lt;a href=&#34;replicationconfiguration-rules-sourceselectioncriteria.md&#34;&gt;SourceSelectionCriteria&lt;/a&gt;, ... ]</i>
+    "<a href="#destination" title="Destination">Destination</a>" : <i>[ <a href="replicationconfiguration-rules-destination.md">Destination</a>, ... ]</i>,
+    "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="replicationconfiguration-rules-filter.md">Filter</a>, ... ]</i>,
+    "<a href="#sourceselectioncriteria" title="SourceSelectionCriteria">SourceSelectionCriteria</a>" : <i>[ <a href="replicationconfiguration-rules-sourceselectioncriteria.md">SourceSelectionCriteria</a>, ... ]</i>
 }
 </pre>
 
@@ -26,11 +26,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
 <a href="#status" title="Status">Status</a>: <i>String</i>
 <a href="#destination" title="Destination">Destination</a>: <i>
-      - &lt;a href=&#34;replicationconfiguration-rules-destination.md&#34;&gt;Destination&lt;/a&gt;</i>
+      - <a href="replicationconfiguration-rules-destination.md">Destination</a></i>
 <a href="#filter" title="Filter">Filter</a>: <i>
-      - &lt;a href=&#34;replicationconfiguration-rules-filter.md&#34;&gt;Filter&lt;/a&gt;</i>
+      - <a href="replicationconfiguration-rules-filter.md">Filter</a></i>
 <a href="#sourceselectioncriteria" title="SourceSelectionCriteria">SourceSelectionCriteria</a>: <i>
-      - &lt;a href=&#34;replicationconfiguration-rules-sourceselectioncriteria.md&#34;&gt;SourceSelectionCriteria&lt;/a&gt;</i>
+      - <a href="replicationconfiguration-rules-sourceselectioncriteria.md">SourceSelectionCriteria</a></i>
 </pre>
 
 ## Properties
@@ -38,6 +38,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Id
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Prefix
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -52,6 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Priority
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -59,6 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Status
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,21 +70,24 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Destination
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;replicationconfiguration-rules-destination.md&#34;&gt;Destination&lt;/a&gt;
+
+_Type_: List of <a href="replicationconfiguration-rules-destination.md">Destination</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Filter
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;replicationconfiguration-rules-filter.md&#34;&gt;Filter&lt;/a&gt;
+
+_Type_: List of <a href="replicationconfiguration-rules-filter.md">Filter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceSelectionCriteria
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;replicationconfiguration-rules-sourceselectioncriteria.md&#34;&gt;SourceSelectionCriteria&lt;/a&gt;
+
+_Type_: List of <a href="replicationconfiguration-rules-sourceselectioncriteria.md">SourceSelectionCriteria</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

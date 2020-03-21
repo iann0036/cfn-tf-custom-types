@@ -21,7 +21,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#dhcpoptions" title="DhcpOptions">DhcpOptions</a>" : <i>[ <a href="dhcpoptions.md">DhcpOptions</a>, ... ]</i>,
         "<a href="#dhcpserveraddress" title="DhcpServerAddress">DhcpServerAddress</a>" : <i>[ <a href="dhcpserveraddress.md">DhcpServerAddress</a>, ... ]</i>,
         "<a href="#dhcpserveraddressport" title="DhcpServerAddressPort">DhcpServerAddressPort</a>" : <i>Double</i>,
-        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#ipconfigpoollistranges" title="IpConfigPoolListRanges">IpConfigPoolListRanges</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#networkfunctionchainreference" title="NetworkFunctionChainReference">NetworkFunctionChainReference</a>" : <i>[ <a href="networkfunctionchainreference.md">NetworkFunctionChainReference</a>, ... ]</i>,
@@ -56,7 +55,6 @@ Properties:
     <a href="#dhcpserveraddress" title="DhcpServerAddress">DhcpServerAddress</a>: <i>
       - <a href="dhcpserveraddress.md">DhcpServerAddress</a></i>
     <a href="#dhcpserveraddressport" title="DhcpServerAddressPort">DhcpServerAddressPort</a>: <i>Double</i>
-    <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#ipconfigpoollistranges" title="IpConfigPoolListRanges">IpConfigPoolListRanges</a>: <i>
       - String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -146,14 +144,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Id
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,18 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Heroku::Build",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#app" title="App">App</a>" : <i>String</i>,
         "<a href="#buildpacks" title="Buildpacks">Buildpacks</a>" : <i>[ String, ... ]</i>,
-        "<a href="#localchecksum" title="LocalChecksum">LocalChecksum</a>" : <i>String</i>,
-        "<a href="#outputstreamurl" title="OutputStreamUrl">OutputStreamUrl</a>" : <i>String</i>,
-        "<a href="#releaseid" title="ReleaseId">ReleaseId</a>" : <i>String</i>,
-        "<a href="#slugid" title="SlugId">SlugId</a>" : <i>String</i>,
-        "<a href="#source" title="Source">Source</a>" : <i>[ &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;, ... ]</i>,
-        "<a href="#stack" title="Stack">Stack</a>" : <i>String</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
-        "<a href="#user" title="User">User</a>" : <i>[ &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;, ... ]</i>,
-        "<a href="#uuid" title="Uuid">Uuid</a>" : <i>String</i>
+        "<a href="#source" title="Source">Source</a>" : <i>[ <a href="source.md">Source</a>, ... ]</i>,
     }
 }
 </pre>
@@ -33,34 +24,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Heroku::Build
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#app" title="App">App</a>: <i>String</i>
     <a href="#buildpacks" title="Buildpacks">Buildpacks</a>: <i>
       - String</i>
-    <a href="#localchecksum" title="LocalChecksum">LocalChecksum</a>: <i>String</i>
-    <a href="#outputstreamurl" title="OutputStreamUrl">OutputStreamUrl</a>: <i>String</i>
-    <a href="#releaseid" title="ReleaseId">ReleaseId</a>: <i>String</i>
-    <a href="#slugid" title="SlugId">SlugId</a>: <i>String</i>
     <a href="#source" title="Source">Source</a>: <i>
-      - &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;</i>
-    <a href="#stack" title="Stack">Stack</a>: <i>String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
-    <a href="#user" title="User">User</a>: <i>
-      - &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;</i>
-    <a href="#uuid" title="Uuid">Uuid</a>: <i>String</i>
+      - <a href="source.md">Source</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### App
 
@@ -78,75 +49,11 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### LocalChecksum
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### OutputStreamUrl
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ReleaseId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SlugId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Source
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;source.md&#34;&gt;Source&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Stack
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### User
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;user.md&#34;&gt;User&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uuid
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="source.md">Source</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -168,33 +75,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LocalChecksum
 
-Returns the &lt;code&gt;LocalChecksum&lt;/code&gt; value.
+Returns the <code>LocalChecksum</code> value.
 
 #### OutputStreamUrl
 
-Returns the &lt;code&gt;OutputStreamUrl&lt;/code&gt; value.
+Returns the <code>OutputStreamUrl</code> value.
 
 #### ReleaseId
 
-Returns the &lt;code&gt;ReleaseId&lt;/code&gt; value.
+Returns the <code>ReleaseId</code> value.
 
 #### SlugId
 
-Returns the &lt;code&gt;SlugId&lt;/code&gt; value.
+Returns the <code>SlugId</code> value.
 
 #### Stack
 
-Returns the &lt;code&gt;Stack&lt;/code&gt; value.
+Returns the <code>Stack</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### User
 
-Returns the &lt;code&gt;User&lt;/code&gt; value.
+Returns the <code>User</code> value.
 
 #### Uuid
 
-Returns the &lt;code&gt;Uuid&lt;/code&gt; value.
+Returns the <code>Uuid</code> value.
 

@@ -12,13 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Netlify::Site",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#accountname" title="AccountName">AccountName</a>" : <i>String</i>,
         "<a href="#accountslug" title="AccountSlug">AccountSlug</a>" : <i>String</i>,
         "<a href="#customdomain" title="CustomDomain">CustomDomain</a>" : <i>String</i>,
-        "<a href="#deployurl" title="DeployUrl">DeployUrl</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#repo" title="Repo">Repo</a>" : <i>[ &lt;a href=&#34;repo.md&#34;&gt;Repo&lt;/a&gt;, ... ]</i>
+        "<a href="#repo" title="Repo">Repo</a>" : <i>[ <a href="repo.md">Repo</a>, ... ]</i>
     }
 }
 </pre>
@@ -28,35 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Netlify::Site
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#accountname" title="AccountName">AccountName</a>: <i>String</i>
     <a href="#accountslug" title="AccountSlug">AccountSlug</a>: <i>String</i>
     <a href="#customdomain" title="CustomDomain">CustomDomain</a>: <i>String</i>
-    <a href="#deployurl" title="DeployUrl">DeployUrl</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#repo" title="Repo">Repo</a>: <i>
-      - &lt;a href=&#34;repo.md&#34;&gt;Repo&lt;/a&gt;</i>
+      - <a href="repo.md">Repo</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AccountName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AccountSlug
 
@@ -67,14 +43,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomDomain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DeployUrl
 
 _Required_: No
 
@@ -94,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;repo.md&#34;&gt;Repo&lt;/a&gt;
+_Type_: List of <a href="repo.md">Repo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -116,9 +84,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AccountName
 
-Returns the &lt;code&gt;AccountName&lt;/code&gt; value.
+Returns the <code>AccountName</code> value.
 
 #### DeployUrl
 
-Returns the &lt;code&gt;DeployUrl&lt;/code&gt; value.
+Returns the <code>DeployUrl</code> value.
 

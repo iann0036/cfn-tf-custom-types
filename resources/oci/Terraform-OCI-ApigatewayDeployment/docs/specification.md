@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#loggingpolicies" title="LoggingPolicies">LoggingPolicies</a>" : <i>[ &lt;a href=&#34;specification-loggingpolicies.md&#34;&gt;LoggingPolicies&lt;/a&gt;, ... ]</i>,
-    "<a href="#requestpolicies" title="RequestPolicies">RequestPolicies</a>" : <i>[ &lt;a href=&#34;specification-requestpolicies.md&#34;&gt;RequestPolicies&lt;/a&gt;, ... ]</i>,
-    "<a href="#routes" title="Routes">Routes</a>" : <i>[ &lt;a href=&#34;specification-routes.md&#34;&gt;Routes&lt;/a&gt;, ... ]</i>
+    "<a href="#loggingpolicies" title="LoggingPolicies">LoggingPolicies</a>" : <i>[ <a href="specification-loggingpolicies.md">LoggingPolicies</a>, ... ]</i>,
+    "<a href="#requestpolicies" title="RequestPolicies">RequestPolicies</a>" : <i>[ <a href="specification-requestpolicies.md">RequestPolicies</a>, ... ]</i>,
+    "<a href="#routes" title="Routes">Routes</a>" : <i>[ <a href="specification-routes.md">Routes</a>, ... ]</i>
 }
 </pre>
 
@@ -18,11 +18,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#loggingpolicies" title="LoggingPolicies">LoggingPolicies</a>: <i>
-      - &lt;a href=&#34;specification-loggingpolicies.md&#34;&gt;LoggingPolicies&lt;/a&gt;</i>
+      - <a href="specification-loggingpolicies.md">LoggingPolicies</a></i>
 <a href="#requestpolicies" title="RequestPolicies">RequestPolicies</a>: <i>
-      - &lt;a href=&#34;specification-requestpolicies.md&#34;&gt;RequestPolicies&lt;/a&gt;</i>
+      - <a href="specification-requestpolicies.md">RequestPolicies</a></i>
 <a href="#routes" title="Routes">Routes</a>: <i>
-      - &lt;a href=&#34;specification-routes.md&#34;&gt;Routes&lt;/a&gt;</i>
+      - <a href="specification-routes.md">Routes</a></i>
 </pre>
 
 ## Properties
@@ -30,21 +30,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### LoggingPolicies
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;specification-loggingpolicies.md&#34;&gt;LoggingPolicies&lt;/a&gt;
+
+_Type_: List of <a href="specification-loggingpolicies.md">LoggingPolicies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestPolicies
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;specification-requestpolicies.md&#34;&gt;RequestPolicies&lt;/a&gt;
+
+_Type_: List of <a href="specification-requestpolicies.md">RequestPolicies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Routes
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;specification-routes.md&#34;&gt;Routes&lt;/a&gt;
+
+_Type_: List of <a href="specification-routes.md">Routes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

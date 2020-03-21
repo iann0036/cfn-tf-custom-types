@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#dbversion" title="DbVersion">DbVersion</a>" : <i>String</i>,
     "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
-    "<a href="#database" title="Database">Database</a>" : <i>[ &lt;a href=&#34;dbhome-database.md&#34;&gt;Database&lt;/a&gt;, ... ]</i>
+    "<a href="#database" title="Database">Database</a>" : <i>[ <a href="dbhome-database.md">Database</a>, ... ]</i>
 }
 </pre>
 
@@ -20,7 +20,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#dbversion" title="DbVersion">DbVersion</a>: <i>String</i>
 <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
 <a href="#database" title="Database">Database</a>: <i>
-      - &lt;a href=&#34;dbhome-database.md&#34;&gt;Database&lt;/a&gt;</i>
+      - <a href="dbhome-database.md">Database</a></i>
 </pre>
 
 ## Properties
@@ -28,6 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### DbVersion
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -35,6 +36,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DisplayName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,7 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Database
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;dbhome-database.md&#34;&gt;Database&lt;/a&gt;
+
+_Type_: List of <a href="dbhome-database.md">Database</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

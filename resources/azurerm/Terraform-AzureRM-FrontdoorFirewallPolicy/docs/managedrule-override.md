@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#rulegroupname" title="RuleGroupName">RuleGroupName</a>" : <i>String</i>,
-    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ &lt;a href=&#34;managedrule-override-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;, ... ]</i>,
-    "<a href="#rule" title="Rule">Rule</a>" : <i>[ &lt;a href=&#34;managedrule-override-rule.md&#34;&gt;Rule&lt;/a&gt;, ... ]</i>
+    "<a href="#exclusion" title="Exclusion">Exclusion</a>" : <i>[ <a href="managedrule-override-exclusion.md">Exclusion</a>, ... ]</i>,
+    "<a href="#rule" title="Rule">Rule</a>" : <i>[ <a href="managedrule-override-rule.md">Rule</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#rulegroupname" title="RuleGroupName">RuleGroupName</a>: <i>String</i>
 <a href="#exclusion" title="Exclusion">Exclusion</a>: <i>
-      - &lt;a href=&#34;managedrule-override-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;</i>
+      - <a href="managedrule-override-exclusion.md">Exclusion</a></i>
 <a href="#rule" title="Rule">Rule</a>: <i>
-      - &lt;a href=&#34;managedrule-override-rule.md&#34;&gt;Rule&lt;/a&gt;</i>
+      - <a href="managedrule-override-rule.md">Rule</a></i>
 </pre>
 
 ## Properties
@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### RuleGroupName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,14 +37,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Exclusion
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;managedrule-override-exclusion.md&#34;&gt;Exclusion&lt;/a&gt;
+
+_Type_: List of <a href="managedrule-override-exclusion.md">Exclusion</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Rule
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;managedrule-override-rule.md&#34;&gt;Rule&lt;/a&gt;
+
+_Type_: List of <a href="managedrule-override-rule.md">Rule</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

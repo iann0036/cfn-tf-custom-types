@@ -12,11 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::S3BucketNotification",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#bucket" title="Bucket">Bucket</a>" : <i>String</i>,
-        "<a href="#lambdafunction" title="LambdaFunction">LambdaFunction</a>" : <i>[ &lt;a href=&#34;lambdafunction.md&#34;&gt;LambdaFunction&lt;/a&gt;, ... ]</i>,
-        "<a href="#queue" title="Queue">Queue</a>" : <i>[ &lt;a href=&#34;queue.md&#34;&gt;Queue&lt;/a&gt;, ... ]</i>,
-        "<a href="#topic" title="Topic">Topic</a>" : <i>[ &lt;a href=&#34;topic.md&#34;&gt;Topic&lt;/a&gt;, ... ]</i>
+        "<a href="#lambdafunction" title="LambdaFunction">LambdaFunction</a>" : <i>[ <a href="lambdafunction.md">LambdaFunction</a>, ... ]</i>,
+        "<a href="#queue" title="Queue">Queue</a>" : <i>[ <a href="queue.md">Queue</a>, ... ]</i>,
+        "<a href="#topic" title="Topic">Topic</a>" : <i>[ <a href="topic.md">Topic</a>, ... ]</i>
     }
 }
 </pre>
@@ -26,27 +25,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::S3BucketNotification
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#bucket" title="Bucket">Bucket</a>: <i>String</i>
     <a href="#lambdafunction" title="LambdaFunction">LambdaFunction</a>: <i>
-      - &lt;a href=&#34;lambdafunction.md&#34;&gt;LambdaFunction&lt;/a&gt;</i>
+      - <a href="lambdafunction.md">LambdaFunction</a></i>
     <a href="#queue" title="Queue">Queue</a>: <i>
-      - &lt;a href=&#34;queue.md&#34;&gt;Queue&lt;/a&gt;</i>
+      - <a href="queue.md">Queue</a></i>
     <a href="#topic" title="Topic">Topic</a>: <i>
-      - &lt;a href=&#34;topic.md&#34;&gt;Topic&lt;/a&gt;</i>
+      - <a href="topic.md">Topic</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
 
@@ -60,7 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lambdafunction.md&#34;&gt;LambdaFunction&lt;/a&gt;
+_Type_: List of <a href="lambdafunction.md">LambdaFunction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -68,7 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;queue.md&#34;&gt;Queue&lt;/a&gt;
+_Type_: List of <a href="queue.md">Queue</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -76,7 +64,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;topic.md&#34;&gt;Topic&lt;/a&gt;
+_Type_: List of <a href="topic.md">Topic</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

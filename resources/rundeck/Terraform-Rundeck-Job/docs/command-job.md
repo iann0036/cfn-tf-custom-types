@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#args" title="Args">Args</a>" : <i>String</i>,
     "<a href="#groupname" title="GroupName">GroupName</a>" : <i>String</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#nodefilters" title="Nodefilters">Nodefilters</a>" : <i>[ &lt;a href=&#34;command-job-nodefilters.md&#34;&gt;Nodefilters&lt;/a&gt;, ... ]</i>,
+    "<a href="#nodefilters" title="Nodefilters">Nodefilters</a>" : <i>[ <a href="command-job-nodefilters.md">Nodefilters</a>, ... ]</i>,
     "<a href="#runforeachnode" title="RunForEachNode">RunForEachNode</a>" : <i>Boolean</i>
 }
 </pre>
@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#groupname" title="GroupName">GroupName</a>: <i>String</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#nodefilters" title="Nodefilters">Nodefilters</a>: <i>
-      - &lt;a href=&#34;command-job-nodefilters.md&#34;&gt;Nodefilters&lt;/a&gt;</i>
+      - <a href="command-job-nodefilters.md">Nodefilters</a></i>
 <a href="#runforeachnode" title="RunForEachNode">RunForEachNode</a>: <i>Boolean</i>
 </pre>
 
@@ -32,6 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Args
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -39,6 +40,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### GroupName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,13 +56,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Nodefilters
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;command-job-nodefilters.md&#34;&gt;Nodefilters&lt;/a&gt;
+
+_Type_: List of <a href="command-job-nodefilters.md">Nodefilters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RunForEachNode
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

@@ -8,10 +8,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#compute" title="Compute">Compute</a>" : <i>[ &lt;a href=&#34;widget-queryvaluedefinition-request-logquery-compute.md&#34;&gt;Compute&lt;/a&gt;, ... ]</i>,
+    "<a href="#compute" title="Compute">Compute</a>" : <i>[ <a href="widget-queryvaluedefinition-request-logquery-compute.md">Compute</a>, ... ]</i>,
     "<a href="#index" title="Index">Index</a>" : <i>String</i>,
-    "<a href="#search" title="Search">Search</a>" : <i>[ &lt;a href=&#34;widget-queryvaluedefinition-request-logquery-search.md&#34;&gt;Search&lt;/a&gt;, ... ]</i>,
-    "<a href="#groupby" title="GroupBy">GroupBy</a>" : <i>[ &lt;a href=&#34;widget-queryvaluedefinition-request-logquery-groupby.md&#34;&gt;GroupBy&lt;/a&gt;, ... ]</i>
+    "<a href="#search" title="Search">Search</a>" : <i>[ <a href="widget-queryvaluedefinition-request-logquery-search.md">Search</a>, ... ]</i>,
+    "<a href="#groupby" title="GroupBy">GroupBy</a>" : <i>[ <a href="widget-queryvaluedefinition-request-logquery-groupby.md">GroupBy</a>, ... ]</i>
 }
 </pre>
 
@@ -19,12 +19,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#compute" title="Compute">Compute</a>: <i>
-      - &lt;a href=&#34;widget-queryvaluedefinition-request-logquery-compute.md&#34;&gt;Compute&lt;/a&gt;</i>
+      - <a href="widget-queryvaluedefinition-request-logquery-compute.md">Compute</a></i>
 <a href="#index" title="Index">Index</a>: <i>String</i>
 <a href="#search" title="Search">Search</a>: <i>
-      - &lt;a href=&#34;widget-queryvaluedefinition-request-logquery-search.md&#34;&gt;Search&lt;/a&gt;</i>
+      - <a href="widget-queryvaluedefinition-request-logquery-search.md">Search</a></i>
 <a href="#groupby" title="GroupBy">GroupBy</a>: <i>
-      - &lt;a href=&#34;widget-queryvaluedefinition-request-logquery-groupby.md&#34;&gt;GroupBy&lt;/a&gt;</i>
+      - <a href="widget-queryvaluedefinition-request-logquery-groupby.md">GroupBy</a></i>
 </pre>
 
 ## Properties
@@ -32,13 +32,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Compute
 
 _Required_: Yes
-_Type_: List of &lt;a href=&#34;widget-queryvaluedefinition-request-logquery-compute.md&#34;&gt;Compute&lt;/a&gt;
+
+_Type_: List of <a href="widget-queryvaluedefinition-request-logquery-compute.md">Compute</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Index
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -46,14 +48,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Search
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;widget-queryvaluedefinition-request-logquery-search.md&#34;&gt;Search&lt;/a&gt;
+
+_Type_: List of <a href="widget-queryvaluedefinition-request-logquery-search.md">Search</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GroupBy
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;widget-queryvaluedefinition-request-logquery-groupby.md&#34;&gt;GroupBy&lt;/a&gt;
+
+_Type_: List of <a href="widget-queryvaluedefinition-request-logquery-groupby.md">GroupBy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

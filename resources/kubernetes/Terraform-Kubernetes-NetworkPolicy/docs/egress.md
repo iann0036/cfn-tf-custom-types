@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;egress-ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>,
-    "<a href="#to" title="To">To</a>" : <i>[ &lt;a href=&#34;egress-to.md&#34;&gt;To&lt;/a&gt;, ... ]</i>
+    "<a href="#ports" title="Ports">Ports</a>" : <i>[ <a href="egress-ports.md">Ports</a>, ... ]</i>,
+    "<a href="#to" title="To">To</a>" : <i>[ <a href="egress-to.md">To</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#ports" title="Ports">Ports</a>: <i>
-      - &lt;a href=&#34;egress-ports.md&#34;&gt;Ports&lt;/a&gt;</i>
+      - <a href="egress-ports.md">Ports</a></i>
 <a href="#to" title="To">To</a>: <i>
-      - &lt;a href=&#34;egress-to.md&#34;&gt;To&lt;/a&gt;</i>
+      - <a href="egress-to.md">To</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Ports
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;egress-ports.md&#34;&gt;Ports&lt;/a&gt;
+
+_Type_: List of <a href="egress-ports.md">Ports</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### To
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;egress-to.md&#34;&gt;To&lt;/a&gt;
+
+_Type_: List of <a href="egress-to.md">To</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

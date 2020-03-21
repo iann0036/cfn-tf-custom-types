@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#from" title="From">From</a>" : <i>[ &lt;a href=&#34;ingress-from.md&#34;&gt;From&lt;/a&gt;, ... ]</i>,
-    "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;ingress-ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>
+    "<a href="#from" title="From">From</a>" : <i>[ <a href="ingress-from.md">From</a>, ... ]</i>,
+    "<a href="#ports" title="Ports">Ports</a>" : <i>[ <a href="ingress-ports.md">Ports</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#from" title="From">From</a>: <i>
-      - &lt;a href=&#34;ingress-from.md&#34;&gt;From&lt;/a&gt;</i>
+      - <a href="ingress-from.md">From</a></i>
 <a href="#ports" title="Ports">Ports</a>: <i>
-      - &lt;a href=&#34;ingress-ports.md&#34;&gt;Ports&lt;/a&gt;</i>
+      - <a href="ingress-ports.md">Ports</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### From
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;ingress-from.md&#34;&gt;From&lt;/a&gt;
+
+_Type_: List of <a href="ingress-from.md">From</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ports
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;ingress-ports.md&#34;&gt;Ports&lt;/a&gt;
+
+_Type_: List of <a href="ingress-ports.md">Ports</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

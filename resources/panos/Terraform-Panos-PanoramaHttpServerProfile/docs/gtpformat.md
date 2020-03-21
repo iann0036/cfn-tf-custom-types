@@ -8,9 +8,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#headers" title="Headers">Headers</a>" : <i>[ &lt;a href=&#34;gtpformat-headers.md&#34;&gt;Headers&lt;/a&gt;, ... ]</i>,
+    "<a href="#headers" title="Headers">Headers</a>" : <i>[ <a href="gtpformat-headers.md">Headers</a>, ... ]</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#params" title="Params">Params</a>" : <i>[ &lt;a href=&#34;gtpformat-params.md&#34;&gt;Params&lt;/a&gt;, ... ]</i>,
+    "<a href="#params" title="Params">Params</a>" : <i>[ <a href="gtpformat-params.md">Params</a>, ... ]</i>,
     "<a href="#payload" title="Payload">Payload</a>" : <i>String</i>,
     "<a href="#uriformat" title="UriFormat">UriFormat</a>" : <i>String</i>
 }
@@ -20,10 +20,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#headers" title="Headers">Headers</a>: <i>
-      - &lt;a href=&#34;gtpformat-headers.md&#34;&gt;Headers&lt;/a&gt;</i>
+      - <a href="gtpformat-headers.md">Headers</a></i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#params" title="Params">Params</a>: <i>
-      - &lt;a href=&#34;gtpformat-params.md&#34;&gt;Params&lt;/a&gt;</i>
+      - <a href="gtpformat-params.md">Params</a></i>
 <a href="#payload" title="Payload">Payload</a>: <i>String</i>
 <a href="#uriformat" title="UriFormat">UriFormat</a>: <i>String</i>
 </pre>
@@ -33,13 +33,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Headers
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;gtpformat-headers.md&#34;&gt;Headers&lt;/a&gt;
+
+_Type_: List of <a href="gtpformat-headers.md">Headers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,13 +49,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Params
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;gtpformat-params.md&#34;&gt;Params&lt;/a&gt;
+
+_Type_: List of <a href="gtpformat-params.md">Params</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Payload
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,6 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UriFormat
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

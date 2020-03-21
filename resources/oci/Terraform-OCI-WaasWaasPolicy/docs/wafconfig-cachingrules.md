@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#isclientcachingenabled" title="IsClientCachingEnabled">IsClientCachingEnabled</a>" : <i>Boolean</i>,
     "<a href="#key" title="Key">Key</a>" : <i>String</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#criteria" title="Criteria">Criteria</a>" : <i>[ &lt;a href=&#34;wafconfig-cachingrules-criteria.md&#34;&gt;Criteria&lt;/a&gt;, ... ]</i>
+    "<a href="#criteria" title="Criteria">Criteria</a>" : <i>[ <a href="wafconfig-cachingrules-criteria.md">Criteria</a>, ... ]</i>
 }
 </pre>
 
@@ -28,7 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#key" title="Key">Key</a>: <i>String</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#criteria" title="Criteria">Criteria</a>: <i>
-      - &lt;a href=&#34;wafconfig-cachingrules-criteria.md&#34;&gt;Criteria&lt;/a&gt;</i>
+      - <a href="wafconfig-cachingrules-criteria.md">Criteria</a></i>
 </pre>
 
 ## Properties
@@ -36,6 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Action
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,6 +44,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CachingDuration
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,6 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClientCachingDuration
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -57,6 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IsClientCachingEnabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Key
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -71,6 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -78,7 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Criteria
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;wafconfig-cachingrules-criteria.md&#34;&gt;Criteria&lt;/a&gt;
+
+_Type_: List of <a href="wafconfig-cachingrules-criteria.md">Criteria</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

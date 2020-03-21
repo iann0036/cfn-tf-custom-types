@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#applicationreadable" title="ApplicationReadable">ApplicationReadable</a>" : <i>Boolean</i>,
     "<a href="#expiration" title="Expiration">Expiration</a>" : <i>String</i>,
-    "<a href="#httpheaders" title="HttpHeaders">HttpHeaders</a>" : <i>[ &lt;a href=&#34;handlers-staticfiles-httpheaders.md&#34;&gt;HttpHeaders&lt;/a&gt;, ... ]</i>,
+    "<a href="#httpheaders" title="HttpHeaders">HttpHeaders</a>" : <i>[ <a href="handlers-staticfiles-httpheaders.md">HttpHeaders</a>, ... ]</i>,
     "<a href="#mimetype" title="MimeType">MimeType</a>" : <i>String</i>,
     "<a href="#path" title="Path">Path</a>" : <i>String</i>,
     "<a href="#requirematchingfile" title="RequireMatchingFile">RequireMatchingFile</a>" : <i>Boolean</i>,
@@ -24,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#applicationreadable" title="ApplicationReadable">ApplicationReadable</a>: <i>Boolean</i>
 <a href="#expiration" title="Expiration">Expiration</a>: <i>String</i>
 <a href="#httpheaders" title="HttpHeaders">HttpHeaders</a>: <i>
-      - &lt;a href=&#34;handlers-staticfiles-httpheaders.md&#34;&gt;HttpHeaders&lt;/a&gt;</i>
+      - <a href="handlers-staticfiles-httpheaders.md">HttpHeaders</a></i>
 <a href="#mimetype" title="MimeType">MimeType</a>: <i>String</i>
 <a href="#path" title="Path">Path</a>: <i>String</i>
 <a href="#requirematchingfile" title="RequireMatchingFile">RequireMatchingFile</a>: <i>Boolean</i>
@@ -36,6 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ApplicationReadable
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,6 +44,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Expiration
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,13 +52,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HttpHeaders
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;handlers-staticfiles-httpheaders.md&#34;&gt;HttpHeaders&lt;/a&gt;
+
+_Type_: List of <a href="handlers-staticfiles-httpheaders.md">HttpHeaders</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MimeType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -64,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Path
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -71,6 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RequireMatchingFile
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -78,6 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UploadPathRegex
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

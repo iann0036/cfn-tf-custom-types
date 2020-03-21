@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
-    "<a href="#processors" title="Processors">Processors</a>" : <i>[ &lt;a href=&#34;redshiftconfiguration-processingconfiguration-processors.md&#34;&gt;Processors&lt;/a&gt;, ... ]</i>
+    "<a href="#processors" title="Processors">Processors</a>" : <i>[ <a href="redshiftconfiguration-processingconfiguration-processors.md">Processors</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
 <a href="#processors" title="Processors">Processors</a>: <i>
-      - &lt;a href=&#34;redshiftconfiguration-processingconfiguration-processors.md&#34;&gt;Processors&lt;/a&gt;</i>
+      - <a href="redshiftconfiguration-processingconfiguration-processors.md">Processors</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Enabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Processors
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;redshiftconfiguration-processingconfiguration-processors.md&#34;&gt;Processors&lt;/a&gt;
+
+_Type_: List of <a href="redshiftconfiguration-processingconfiguration-processors.md">Processors</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
     "<a href="#faultdomains" title="FaultDomains">FaultDomains</a>" : <i>[ String, ... ]</i>,
     "<a href="#primarysubnetid" title="PrimarySubnetId">PrimarySubnetId</a>" : <i>String</i>,
-    "<a href="#secondaryvnicsubnets" title="SecondaryVnicSubnets">SecondaryVnicSubnets</a>" : <i>[ &lt;a href=&#34;placementconfigurations-secondaryvnicsubnets.md&#34;&gt;SecondaryVnicSubnets&lt;/a&gt;, ... ]</i>
+    "<a href="#secondaryvnicsubnets" title="SecondaryVnicSubnets">SecondaryVnicSubnets</a>" : <i>[ <a href="placementconfigurations-secondaryvnicsubnets.md">SecondaryVnicSubnets</a>, ... ]</i>
 }
 </pre>
 
@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#primarysubnetid" title="PrimarySubnetId">PrimarySubnetId</a>: <i>String</i>
 <a href="#secondaryvnicsubnets" title="SecondaryVnicSubnets">SecondaryVnicSubnets</a>: <i>
-      - &lt;a href=&#34;placementconfigurations-secondaryvnicsubnets.md&#34;&gt;SecondaryVnicSubnets&lt;/a&gt;</i>
+      - <a href="placementconfigurations-secondaryvnicsubnets.md">SecondaryVnicSubnets</a></i>
 </pre>
 
 ## Properties
@@ -31,6 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AvailabilityDomain
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -38,6 +39,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FaultDomains
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,6 +47,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PrimarySubnetId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -52,7 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SecondaryVnicSubnets
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;placementconfigurations-secondaryvnicsubnets.md&#34;&gt;SecondaryVnicSubnets&lt;/a&gt;
+
+_Type_: List of <a href="placementconfigurations-secondaryvnicsubnets.md">SecondaryVnicSubnets</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

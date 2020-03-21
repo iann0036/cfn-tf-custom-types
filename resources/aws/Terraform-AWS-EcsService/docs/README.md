@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::EcsService",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cluster" title="Cluster">Cluster</a>" : <i>String</i>,
         "<a href="#deploymentmaximumpercent" title="DeploymentMaximumPercent">DeploymentMaximumPercent</a>" : <i>Double</i>,
         "<a href="#deploymentminimumhealthypercent" title="DeploymentMinimumHealthyPercent">DeploymentMinimumHealthyPercent</a>" : <i>Double</i>,
@@ -25,16 +24,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#platformversion" title="PlatformVersion">PlatformVersion</a>" : <i>String</i>,
         "<a href="#propagatetags" title="PropagateTags">PropagateTags</a>" : <i>String</i>,
         "<a href="#schedulingstrategy" title="SchedulingStrategy">SchedulingStrategy</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#taskdefinition" title="TaskDefinition">TaskDefinition</a>" : <i>String</i>,
-        "<a href="#capacityproviderstrategy" title="CapacityProviderStrategy">CapacityProviderStrategy</a>" : <i>[ &lt;a href=&#34;capacityproviderstrategy.md&#34;&gt;CapacityProviderStrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#deploymentcontroller" title="DeploymentController">DeploymentController</a>" : <i>[ &lt;a href=&#34;deploymentcontroller.md&#34;&gt;DeploymentController&lt;/a&gt;, ... ]</i>,
-        "<a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>" : <i>[ &lt;a href=&#34;loadbalancer.md&#34;&gt;LoadBalancer&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>" : <i>[ &lt;a href=&#34;networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;, ... ]</i>,
-        "<a href="#orderedplacementstrategy" title="OrderedPlacementStrategy">OrderedPlacementStrategy</a>" : <i>[ &lt;a href=&#34;orderedplacementstrategy.md&#34;&gt;OrderedPlacementStrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#placementconstraints" title="PlacementConstraints">PlacementConstraints</a>" : <i>[ &lt;a href=&#34;placementconstraints.md&#34;&gt;PlacementConstraints&lt;/a&gt;, ... ]</i>,
-        "<a href="#placementstrategy" title="PlacementStrategy">PlacementStrategy</a>" : <i>[ &lt;a href=&#34;placementstrategy.md&#34;&gt;PlacementStrategy&lt;/a&gt;, ... ]</i>,
-        "<a href="#serviceregistries" title="ServiceRegistries">ServiceRegistries</a>" : <i>[ &lt;a href=&#34;serviceregistries.md&#34;&gt;ServiceRegistries&lt;/a&gt;, ... ]</i>
+        "<a href="#capacityproviderstrategy" title="CapacityProviderStrategy">CapacityProviderStrategy</a>" : <i>[ <a href="capacityproviderstrategy.md">CapacityProviderStrategy</a>, ... ]</i>,
+        "<a href="#deploymentcontroller" title="DeploymentController">DeploymentController</a>" : <i>[ <a href="deploymentcontroller.md">DeploymentController</a>, ... ]</i>,
+        "<a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>" : <i>[ <a href="loadbalancer.md">LoadBalancer</a>, ... ]</i>,
+        "<a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>" : <i>[ <a href="networkconfiguration.md">NetworkConfiguration</a>, ... ]</i>,
+        "<a href="#orderedplacementstrategy" title="OrderedPlacementStrategy">OrderedPlacementStrategy</a>" : <i>[ <a href="orderedplacementstrategy.md">OrderedPlacementStrategy</a>, ... ]</i>,
+        "<a href="#placementconstraints" title="PlacementConstraints">PlacementConstraints</a>" : <i>[ <a href="placementconstraints.md">PlacementConstraints</a>, ... ]</i>,
+        "<a href="#placementstrategy" title="PlacementStrategy">PlacementStrategy</a>" : <i>[ <a href="placementstrategy.md">PlacementStrategy</a>, ... ]</i>,
+        "<a href="#serviceregistries" title="ServiceRegistries">ServiceRegistries</a>" : <i>[ <a href="serviceregistries.md">ServiceRegistries</a>, ... ]</i>
     }
 }
 </pre>
@@ -44,7 +43,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::EcsService
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cluster" title="Cluster">Cluster</a>: <i>String</i>
     <a href="#deploymentmaximumpercent" title="DeploymentMaximumPercent">DeploymentMaximumPercent</a>: <i>Double</i>
     <a href="#deploymentminimumhealthypercent" title="DeploymentMinimumHealthyPercent">DeploymentMinimumHealthyPercent</a>: <i>Double</i>
@@ -58,37 +56,27 @@ Properties:
     <a href="#propagatetags" title="PropagateTags">PropagateTags</a>: <i>String</i>
     <a href="#schedulingstrategy" title="SchedulingStrategy">SchedulingStrategy</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#taskdefinition" title="TaskDefinition">TaskDefinition</a>: <i>String</i>
     <a href="#capacityproviderstrategy" title="CapacityProviderStrategy">CapacityProviderStrategy</a>: <i>
-      - &lt;a href=&#34;capacityproviderstrategy.md&#34;&gt;CapacityProviderStrategy&lt;/a&gt;</i>
+      - <a href="capacityproviderstrategy.md">CapacityProviderStrategy</a></i>
     <a href="#deploymentcontroller" title="DeploymentController">DeploymentController</a>: <i>
-      - &lt;a href=&#34;deploymentcontroller.md&#34;&gt;DeploymentController&lt;/a&gt;</i>
+      - <a href="deploymentcontroller.md">DeploymentController</a></i>
     <a href="#loadbalancer" title="LoadBalancer">LoadBalancer</a>: <i>
-      - &lt;a href=&#34;loadbalancer.md&#34;&gt;LoadBalancer&lt;/a&gt;</i>
+      - <a href="loadbalancer.md">LoadBalancer</a></i>
     <a href="#networkconfiguration" title="NetworkConfiguration">NetworkConfiguration</a>: <i>
-      - &lt;a href=&#34;networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;</i>
+      - <a href="networkconfiguration.md">NetworkConfiguration</a></i>
     <a href="#orderedplacementstrategy" title="OrderedPlacementStrategy">OrderedPlacementStrategy</a>: <i>
-      - &lt;a href=&#34;orderedplacementstrategy.md&#34;&gt;OrderedPlacementStrategy&lt;/a&gt;</i>
+      - <a href="orderedplacementstrategy.md">OrderedPlacementStrategy</a></i>
     <a href="#placementconstraints" title="PlacementConstraints">PlacementConstraints</a>: <i>
-      - &lt;a href=&#34;placementconstraints.md&#34;&gt;PlacementConstraints&lt;/a&gt;</i>
+      - <a href="placementconstraints.md">PlacementConstraints</a></i>
     <a href="#placementstrategy" title="PlacementStrategy">PlacementStrategy</a>: <i>
-      - &lt;a href=&#34;placementstrategy.md&#34;&gt;PlacementStrategy&lt;/a&gt;</i>
+      - <a href="placementstrategy.md">PlacementStrategy</a></i>
     <a href="#serviceregistries" title="ServiceRegistries">ServiceRegistries</a>: <i>
-      - &lt;a href=&#34;serviceregistries.md&#34;&gt;ServiceRegistries&lt;/a&gt;</i>
+      - <a href="serviceregistries.md">ServiceRegistries</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cluster
 
@@ -190,7 +178,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -206,7 +194,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;capacityproviderstrategy.md&#34;&gt;CapacityProviderStrategy&lt;/a&gt;
+_Type_: List of <a href="capacityproviderstrategy.md">CapacityProviderStrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,7 +202,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;deploymentcontroller.md&#34;&gt;DeploymentController&lt;/a&gt;
+_Type_: List of <a href="deploymentcontroller.md">DeploymentController</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -222,7 +210,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;loadbalancer.md&#34;&gt;LoadBalancer&lt;/a&gt;
+_Type_: List of <a href="loadbalancer.md">LoadBalancer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -230,7 +218,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkconfiguration.md&#34;&gt;NetworkConfiguration&lt;/a&gt;
+_Type_: List of <a href="networkconfiguration.md">NetworkConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -238,7 +226,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;orderedplacementstrategy.md&#34;&gt;OrderedPlacementStrategy&lt;/a&gt;
+_Type_: List of <a href="orderedplacementstrategy.md">OrderedPlacementStrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -246,7 +234,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;placementconstraints.md&#34;&gt;PlacementConstraints&lt;/a&gt;
+_Type_: List of <a href="placementconstraints.md">PlacementConstraints</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -254,7 +242,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;placementstrategy.md&#34;&gt;PlacementStrategy&lt;/a&gt;
+_Type_: List of <a href="placementstrategy.md">PlacementStrategy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -262,7 +250,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serviceregistries.md&#34;&gt;ServiceRegistries&lt;/a&gt;
+_Type_: List of <a href="serviceregistries.md">ServiceRegistries</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

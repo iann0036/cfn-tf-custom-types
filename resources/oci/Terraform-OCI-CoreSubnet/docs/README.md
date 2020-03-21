@@ -12,28 +12,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::CoreSubnet",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>" : <i>String</i>,
         "<a href="#cidrblock" title="CidrBlock">CidrBlock</a>" : <i>String</i>,
         "<a href="#compartmentid" title="CompartmentId">CompartmentId</a>" : <i>String</i>,
-        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="definedtags.md">DefinedTags</a>, ... ]</i>,
         "<a href="#dhcpoptionsid" title="DhcpOptionsId">DhcpOptionsId</a>" : <i>String</i>,
         "<a href="#displayname" title="DisplayName">DisplayName</a>" : <i>String</i>,
         "<a href="#dnslabel" title="DnsLabel">DnsLabel</a>" : <i>String</i>,
-        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+        "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="freeformtags.md">FreeformTags</a>, ... ]</i>,
         "<a href="#ipv6cidrblock" title="Ipv6cidrBlock">Ipv6cidrBlock</a>" : <i>String</i>,
-        "<a href="#ipv6publiccidrblock" title="Ipv6publicCidrBlock">Ipv6publicCidrBlock</a>" : <i>String</i>,
-        "<a href="#ipv6virtualrouterip" title="Ipv6virtualRouterIp">Ipv6virtualRouterIp</a>" : <i>String</i>,
         "<a href="#prohibitpubliciponvnic" title="ProhibitPublicIpOnVnic">ProhibitPublicIpOnVnic</a>" : <i>Boolean</i>,
         "<a href="#routetableid" title="RouteTableId">RouteTableId</a>" : <i>String</i>,
         "<a href="#securitylistids" title="SecurityListIds">SecurityListIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#subnetdomainname" title="SubnetDomainName">SubnetDomainName</a>" : <i>String</i>,
-        "<a href="#timecreated" title="TimeCreated">TimeCreated</a>" : <i>String</i>,
         "<a href="#vcnid" title="VcnId">VcnId</a>" : <i>String</i>,
-        "<a href="#virtualrouterip" title="VirtualRouterIp">VirtualRouterIp</a>" : <i>String</i>,
-        "<a href="#virtualroutermac" title="VirtualRouterMac">VirtualRouterMac</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -43,44 +35,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::CoreSubnet
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilitydomain" title="AvailabilityDomain">AvailabilityDomain</a>: <i>String</i>
     <a href="#cidrblock" title="CidrBlock">CidrBlock</a>: <i>String</i>
     <a href="#compartmentid" title="CompartmentId">CompartmentId</a>: <i>String</i>
     <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="definedtags.md">DefinedTags</a></i>
     <a href="#dhcpoptionsid" title="DhcpOptionsId">DhcpOptionsId</a>: <i>String</i>
     <a href="#displayname" title="DisplayName">DisplayName</a>: <i>String</i>
     <a href="#dnslabel" title="DnsLabel">DnsLabel</a>: <i>String</i>
     <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="freeformtags.md">FreeformTags</a></i>
     <a href="#ipv6cidrblock" title="Ipv6cidrBlock">Ipv6cidrBlock</a>: <i>String</i>
-    <a href="#ipv6publiccidrblock" title="Ipv6publicCidrBlock">Ipv6publicCidrBlock</a>: <i>String</i>
-    <a href="#ipv6virtualrouterip" title="Ipv6virtualRouterIp">Ipv6virtualRouterIp</a>: <i>String</i>
     <a href="#prohibitpubliciponvnic" title="ProhibitPublicIpOnVnic">ProhibitPublicIpOnVnic</a>: <i>Boolean</i>
     <a href="#routetableid" title="RouteTableId">RouteTableId</a>: <i>String</i>
     <a href="#securitylistids" title="SecurityListIds">SecurityListIds</a>: <i>
       - String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
-    <a href="#subnetdomainname" title="SubnetDomainName">SubnetDomainName</a>: <i>String</i>
-    <a href="#timecreated" title="TimeCreated">TimeCreated</a>: <i>String</i>
     <a href="#vcnid" title="VcnId">VcnId</a>: <i>String</i>
-    <a href="#virtualrouterip" title="VirtualRouterIp">VirtualRouterIp</a>: <i>String</i>
-    <a href="#virtualroutermac" title="VirtualRouterMac">VirtualRouterMac</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityDomain
 
@@ -110,7 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+_Type_: List of <a href="definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -142,27 +116,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+_Type_: List of <a href="freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv6cidrBlock
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Ipv6publicCidrBlock
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Ipv6virtualRouterIp
 
 _Required_: No
 
@@ -194,49 +152,9 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### State
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SubnetDomainName
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TimeCreated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### VcnId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VirtualRouterIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VirtualRouterMac
-
-_Required_: No
 
 _Type_: String
 
@@ -246,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -268,29 +186,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Ipv6publicCidrBlock
 
-Returns the &lt;code&gt;Ipv6publicCidrBlock&lt;/code&gt; value.
+Returns the <code>Ipv6publicCidrBlock</code> value.
 
 #### Ipv6virtualRouterIp
 
-Returns the &lt;code&gt;Ipv6virtualRouterIp&lt;/code&gt; value.
+Returns the <code>Ipv6virtualRouterIp</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### SubnetDomainName
 
-Returns the &lt;code&gt;SubnetDomainName&lt;/code&gt; value.
+Returns the <code>SubnetDomainName</code> value.
 
 #### TimeCreated
 
-Returns the &lt;code&gt;TimeCreated&lt;/code&gt; value.
+Returns the <code>TimeCreated</code> value.
 
 #### VirtualRouterIp
 
-Returns the &lt;code&gt;VirtualRouterIp&lt;/code&gt; value.
+Returns the <code>VirtualRouterIp</code> value.
 
 #### VirtualRouterMac
 
-Returns the &lt;code&gt;VirtualRouterMac&lt;/code&gt; value.
+Returns the <code>VirtualRouterMac</code> value.
 

@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Circonus::RuleSet",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#check" title="Check">Check</a>" : <i>String</i>,
         "<a href="#link" title="Link">Link</a>" : <i>String</i>,
         "<a href="#metricfilter" title="MetricFilter">MetricFilter</a>" : <i>String</i>,
@@ -21,12 +20,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#metrictype" title="MetricType">MetricType</a>" : <i>String</i>,
         "<a href="#notes" title="Notes">Notes</a>" : <i>String</i>,
         "<a href="#parent" title="Parent">Parent</a>" : <i>String</i>,
-        "<a href="#rulesetid" title="RuleSetId">RuleSetId</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#if" title="If">If</a>" : <i>[ &lt;a href=&#34;if.md&#34;&gt;If&lt;/a&gt;, ... ]</i>,
-        "<a href="#then" title="Then">Then</a>" : <i>[ &lt;a href=&#34;then.md&#34;&gt;Then&lt;/a&gt;, ... ]</i>,
-        "<a href="#value" title="Value">Value</a>" : <i>[ &lt;a href=&#34;value.md&#34;&gt;Value&lt;/a&gt;, ... ]</i>,
-        "<a href="#over" title="Over">Over</a>" : <i>[ &lt;a href=&#34;over.md&#34;&gt;Over&lt;/a&gt;, ... ]</i>
+        "<a href="#if" title="If">If</a>" : <i>[ <a href="if.md">If</a>, ... ]</i>,
+        "<a href="#then" title="Then">Then</a>" : <i>[ <a href="then.md">Then</a>, ... ]</i>,
+        "<a href="#value" title="Value">Value</a>" : <i>[ <a href="value.md">Value</a>, ... ]</i>,
+        "<a href="#over" title="Over">Over</a>" : <i>[ <a href="over.md">Over</a>, ... ]</i>
     }
 }
 </pre>
@@ -36,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Circonus::RuleSet
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#check" title="Check">Check</a>: <i>String</i>
     <a href="#link" title="Link">Link</a>: <i>String</i>
     <a href="#metricfilter" title="MetricFilter">MetricFilter</a>: <i>String</i>
@@ -45,30 +42,19 @@ Properties:
     <a href="#metrictype" title="MetricType">MetricType</a>: <i>String</i>
     <a href="#notes" title="Notes">Notes</a>: <i>String</i>
     <a href="#parent" title="Parent">Parent</a>: <i>String</i>
-    <a href="#rulesetid" title="RuleSetId">RuleSetId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#if" title="If">If</a>: <i>
-      - &lt;a href=&#34;if.md&#34;&gt;If&lt;/a&gt;</i>
+      - <a href="if.md">If</a></i>
     <a href="#then" title="Then">Then</a>: <i>
-      - &lt;a href=&#34;then.md&#34;&gt;Then&lt;/a&gt;</i>
+      - <a href="then.md">Then</a></i>
     <a href="#value" title="Value">Value</a>: <i>
-      - &lt;a href=&#34;value.md&#34;&gt;Value&lt;/a&gt;</i>
+      - <a href="value.md">Value</a></i>
     <a href="#over" title="Over">Over</a>: <i>
-      - &lt;a href=&#34;over.md&#34;&gt;Over&lt;/a&gt;</i>
+      - <a href="over.md">Over</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Check
 
@@ -134,14 +120,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### RuleSetId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
@@ -154,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;if.md&#34;&gt;If&lt;/a&gt;
+_Type_: List of <a href="if.md">If</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -162,7 +140,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;then.md&#34;&gt;Then&lt;/a&gt;
+_Type_: List of <a href="then.md">Then</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;value.md&#34;&gt;Value&lt;/a&gt;
+_Type_: List of <a href="value.md">Value</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;over.md&#34;&gt;Over&lt;/a&gt;
+_Type_: List of <a href="over.md">Over</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -200,5 +178,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### RuleSetId
 
-Returns the &lt;code&gt;RuleSetId&lt;/code&gt; value.
+Returns the <code>RuleSetId</code> value.
 

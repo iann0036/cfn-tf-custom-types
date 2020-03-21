@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#metrictrigger" title="MetricTrigger">MetricTrigger</a>" : <i>[ &lt;a href=&#34;profile-rule-metrictrigger.md&#34;&gt;MetricTrigger&lt;/a&gt;, ... ]</i>,
-    "<a href="#scaleaction" title="ScaleAction">ScaleAction</a>" : <i>[ &lt;a href=&#34;profile-rule-scaleaction.md&#34;&gt;ScaleAction&lt;/a&gt;, ... ]</i>
+    "<a href="#metrictrigger" title="MetricTrigger">MetricTrigger</a>" : <i>[ <a href="profile-rule-metrictrigger.md">MetricTrigger</a>, ... ]</i>,
+    "<a href="#scaleaction" title="ScaleAction">ScaleAction</a>" : <i>[ <a href="profile-rule-scaleaction.md">ScaleAction</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#metrictrigger" title="MetricTrigger">MetricTrigger</a>: <i>
-      - &lt;a href=&#34;profile-rule-metrictrigger.md&#34;&gt;MetricTrigger&lt;/a&gt;</i>
+      - <a href="profile-rule-metrictrigger.md">MetricTrigger</a></i>
 <a href="#scaleaction" title="ScaleAction">ScaleAction</a>: <i>
-      - &lt;a href=&#34;profile-rule-scaleaction.md&#34;&gt;ScaleAction&lt;/a&gt;</i>
+      - <a href="profile-rule-scaleaction.md">ScaleAction</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### MetricTrigger
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;profile-rule-metrictrigger.md&#34;&gt;MetricTrigger&lt;/a&gt;
+
+_Type_: List of <a href="profile-rule-metrictrigger.md">MetricTrigger</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScaleAction
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;profile-rule-scaleaction.md&#34;&gt;ScaleAction&lt;/a&gt;
+
+_Type_: List of <a href="profile-rule-scaleaction.md">ScaleAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

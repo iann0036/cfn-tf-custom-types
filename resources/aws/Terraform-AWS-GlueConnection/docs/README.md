@@ -12,14 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::GlueConnection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#catalogid" title="CatalogId">CatalogId</a>" : <i>String</i>,
-        "<a href="#connectionproperties" title="ConnectionProperties">ConnectionProperties</a>" : <i>[ &lt;a href=&#34;connectionproperties.md&#34;&gt;ConnectionProperties&lt;/a&gt;, ... ]</i>,
+        "<a href="#connectionproperties" title="ConnectionProperties">ConnectionProperties</a>" : <i>[ <a href="connectionproperties.md">ConnectionProperties</a>, ... ]</i>,
         "<a href="#connectiontype" title="ConnectionType">ConnectionType</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#matchcriteria" title="MatchCriteria">MatchCriteria</a>" : <i>[ String, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#physicalconnectionrequirements" title="PhysicalConnectionRequirements">PhysicalConnectionRequirements</a>" : <i>[ &lt;a href=&#34;physicalconnectionrequirements.md&#34;&gt;PhysicalConnectionRequirements&lt;/a&gt;, ... ]</i>
+        "<a href="#physicalconnectionrequirements" title="PhysicalConnectionRequirements">PhysicalConnectionRequirements</a>" : <i>[ <a href="physicalconnectionrequirements.md">PhysicalConnectionRequirements</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,30 +28,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::GlueConnection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#catalogid" title="CatalogId">CatalogId</a>: <i>String</i>
     <a href="#connectionproperties" title="ConnectionProperties">ConnectionProperties</a>: <i>
-      - &lt;a href=&#34;connectionproperties.md&#34;&gt;ConnectionProperties&lt;/a&gt;</i>
+      - <a href="connectionproperties.md">ConnectionProperties</a></i>
     <a href="#connectiontype" title="ConnectionType">ConnectionType</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#matchcriteria" title="MatchCriteria">MatchCriteria</a>: <i>
       - String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#physicalconnectionrequirements" title="PhysicalConnectionRequirements">PhysicalConnectionRequirements</a>: <i>
-      - &lt;a href=&#34;physicalconnectionrequirements.md&#34;&gt;PhysicalConnectionRequirements&lt;/a&gt;</i>
+      - <a href="physicalconnectionrequirements.md">PhysicalConnectionRequirements</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CatalogId
 
@@ -66,7 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: Yes
 
-_Type_: List of &lt;a href=&#34;connectionproperties.md&#34;&gt;ConnectionProperties&lt;/a&gt;
+_Type_: List of <a href="connectionproperties.md">ConnectionProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -106,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;physicalconnectionrequirements.md&#34;&gt;PhysicalConnectionRequirements&lt;/a&gt;
+_Type_: List of <a href="physicalconnectionrequirements.md">PhysicalConnectionRequirements</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

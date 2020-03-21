@@ -12,12 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::ApiGatewayUsagePlanKey",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#keyid" title="KeyId">KeyId</a>" : <i>String</i>,
         "<a href="#keytype" title="KeyType">KeyType</a>" : <i>String</i>,
-        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#usageplanid" title="UsagePlanId">UsagePlanId</a>" : <i>String</i>,
-        "<a href="#value" title="Value">Value</a>" : <i>String</i>
     }
 }
 </pre>
@@ -27,25 +24,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::ApiGatewayUsagePlanKey
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#keyid" title="KeyId">KeyId</a>: <i>String</i>
     <a href="#keytype" title="KeyType">KeyType</a>: <i>String</i>
-    <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#usageplanid" title="UsagePlanId">UsagePlanId</a>: <i>String</i>
-    <a href="#value" title="Value">Value</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyId
 
@@ -63,25 +47,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Name
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### UsagePlanId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Value
-
-_Required_: No
 
 _Type_: String
 
@@ -105,9 +73,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Name
 
-Returns the &lt;code&gt;Name&lt;/code&gt; value.
+Returns the <code>Name</code> value.
 
 #### Value
 
-Returns the &lt;code&gt;Value&lt;/code&gt; value.
+Returns the <code>Value</code> value.
 

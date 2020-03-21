@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#constraints" title="Constraints">Constraints</a>" : <i>[ String, ... ]</i>,
     "<a href="#prefs" title="Prefs">Prefs</a>" : <i>[ String, ... ]</i>,
-    "<a href="#platforms" title="Platforms">Platforms</a>" : <i>[ &lt;a href=&#34;placement-platforms.md&#34;&gt;Platforms&lt;/a&gt;, ... ]</i>
+    "<a href="#platforms" title="Platforms">Platforms</a>" : <i>[ <a href="placement-platforms.md">Platforms</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#prefs" title="Prefs">Prefs</a>: <i>
       - String</i>
 <a href="#platforms" title="Platforms">Platforms</a>: <i>
-      - &lt;a href=&#34;placement-platforms.md&#34;&gt;Platforms&lt;/a&gt;</i>
+      - <a href="placement-platforms.md">Platforms</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Constraints
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Prefs
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,7 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Platforms
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;placement-platforms.md&#34;&gt;Platforms&lt;/a&gt;
+
+_Type_: List of <a href="placement-platforms.md">Platforms</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

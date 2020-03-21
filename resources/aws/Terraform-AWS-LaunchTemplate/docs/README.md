@@ -12,9 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::LaunchTemplate",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
-        "<a href="#defaultversion" title="DefaultVersion">DefaultVersion</a>" : <i>Double</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#disableapitermination" title="DisableApiTermination">DisableApiTermination</a>" : <i>Boolean</i>,
         "<a href="#ebsoptimized" title="EbsOptimized">EbsOptimized</a>" : <i>String</i>,
@@ -23,30 +20,29 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
         "<a href="#kernelid" title="KernelId">KernelId</a>" : <i>String</i>,
         "<a href="#keyname" title="KeyName">KeyName</a>" : <i>String</i>,
-        "<a href="#latestversion" title="LatestVersion">LatestVersion</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
         "<a href="#ramdiskid" title="RamDiskId">RamDiskId</a>" : <i>String</i>,
         "<a href="#securitygroupnames" title="SecurityGroupNames">SecurityGroupNames</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#blockdevicemappings" title="BlockDeviceMappings">BlockDeviceMappings</a>" : <i>[ &lt;a href=&#34;blockdevicemappings.md&#34;&gt;BlockDeviceMappings&lt;/a&gt;, ... ]</i>,
-        "<a href="#capacityreservationspecification" title="CapacityReservationSpecification">CapacityReservationSpecification</a>" : <i>[ &lt;a href=&#34;capacityreservationspecification.md&#34;&gt;CapacityReservationSpecification&lt;/a&gt;, ... ]</i>,
-        "<a href="#cpuoptions" title="CpuOptions">CpuOptions</a>" : <i>[ &lt;a href=&#34;cpuoptions.md&#34;&gt;CpuOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#creditspecification" title="CreditSpecification">CreditSpecification</a>" : <i>[ &lt;a href=&#34;creditspecification.md&#34;&gt;CreditSpecification&lt;/a&gt;, ... ]</i>,
-        "<a href="#elasticgpuspecifications" title="ElasticGpuSpecifications">ElasticGpuSpecifications</a>" : <i>[ &lt;a href=&#34;elasticgpuspecifications.md&#34;&gt;ElasticGpuSpecifications&lt;/a&gt;, ... ]</i>,
-        "<a href="#elasticinferenceaccelerator" title="ElasticInferenceAccelerator">ElasticInferenceAccelerator</a>" : <i>[ &lt;a href=&#34;elasticinferenceaccelerator.md&#34;&gt;ElasticInferenceAccelerator&lt;/a&gt;, ... ]</i>,
-        "<a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>" : <i>[ &lt;a href=&#34;iaminstanceprofile.md&#34;&gt;IamInstanceProfile&lt;/a&gt;, ... ]</i>,
-        "<a href="#instancemarketoptions" title="InstanceMarketOptions">InstanceMarketOptions</a>" : <i>[ &lt;a href=&#34;instancemarketoptions.md&#34;&gt;InstanceMarketOptions&lt;/a&gt;, ... ]</i>,
-        "<a href="#licensespecification" title="LicenseSpecification">LicenseSpecification</a>" : <i>[ &lt;a href=&#34;licensespecification.md&#34;&gt;LicenseSpecification&lt;/a&gt;, ... ]</i>,
-        "<a href="#monitoring" title="Monitoring">Monitoring</a>" : <i>[ &lt;a href=&#34;monitoring.md&#34;&gt;Monitoring&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkinterfaces" title="NetworkInterfaces">NetworkInterfaces</a>" : <i>[ &lt;a href=&#34;networkinterfaces.md&#34;&gt;NetworkInterfaces&lt;/a&gt;, ... ]</i>,
-        "<a href="#placement" title="Placement">Placement</a>" : <i>[ &lt;a href=&#34;placement.md&#34;&gt;Placement&lt;/a&gt;, ... ]</i>,
-        "<a href="#tagspecifications" title="TagSpecifications">TagSpecifications</a>" : <i>[ &lt;a href=&#34;tagspecifications.md&#34;&gt;TagSpecifications&lt;/a&gt;, ... ]</i>,
-        "<a href="#ebs" title="Ebs">Ebs</a>" : <i>[ &lt;a href=&#34;ebs.md&#34;&gt;Ebs&lt;/a&gt;, ... ]</i>,
-        "<a href="#capacityreservationtarget" title="CapacityReservationTarget">CapacityReservationTarget</a>" : <i>[ &lt;a href=&#34;capacityreservationtarget.md&#34;&gt;CapacityReservationTarget&lt;/a&gt;, ... ]</i>,
-        "<a href="#spotoptions" title="SpotOptions">SpotOptions</a>" : <i>[ &lt;a href=&#34;spotoptions.md&#34;&gt;SpotOptions&lt;/a&gt;, ... ]</i>
+        "<a href="#blockdevicemappings" title="BlockDeviceMappings">BlockDeviceMappings</a>" : <i>[ <a href="blockdevicemappings.md">BlockDeviceMappings</a>, ... ]</i>,
+        "<a href="#capacityreservationspecification" title="CapacityReservationSpecification">CapacityReservationSpecification</a>" : <i>[ <a href="capacityreservationspecification.md">CapacityReservationSpecification</a>, ... ]</i>,
+        "<a href="#cpuoptions" title="CpuOptions">CpuOptions</a>" : <i>[ <a href="cpuoptions.md">CpuOptions</a>, ... ]</i>,
+        "<a href="#creditspecification" title="CreditSpecification">CreditSpecification</a>" : <i>[ <a href="creditspecification.md">CreditSpecification</a>, ... ]</i>,
+        "<a href="#elasticgpuspecifications" title="ElasticGpuSpecifications">ElasticGpuSpecifications</a>" : <i>[ <a href="elasticgpuspecifications.md">ElasticGpuSpecifications</a>, ... ]</i>,
+        "<a href="#elasticinferenceaccelerator" title="ElasticInferenceAccelerator">ElasticInferenceAccelerator</a>" : <i>[ <a href="elasticinferenceaccelerator.md">ElasticInferenceAccelerator</a>, ... ]</i>,
+        "<a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>" : <i>[ <a href="iaminstanceprofile.md">IamInstanceProfile</a>, ... ]</i>,
+        "<a href="#instancemarketoptions" title="InstanceMarketOptions">InstanceMarketOptions</a>" : <i>[ <a href="instancemarketoptions.md">InstanceMarketOptions</a>, ... ]</i>,
+        "<a href="#licensespecification" title="LicenseSpecification">LicenseSpecification</a>" : <i>[ <a href="licensespecification.md">LicenseSpecification</a>, ... ]</i>,
+        "<a href="#monitoring" title="Monitoring">Monitoring</a>" : <i>[ <a href="monitoring.md">Monitoring</a>, ... ]</i>,
+        "<a href="#networkinterfaces" title="NetworkInterfaces">NetworkInterfaces</a>" : <i>[ <a href="networkinterfaces.md">NetworkInterfaces</a>, ... ]</i>,
+        "<a href="#placement" title="Placement">Placement</a>" : <i>[ <a href="placement.md">Placement</a>, ... ]</i>,
+        "<a href="#tagspecifications" title="TagSpecifications">TagSpecifications</a>" : <i>[ <a href="tagspecifications.md">TagSpecifications</a>, ... ]</i>,
+        "<a href="#ebs" title="Ebs">Ebs</a>" : <i>[ <a href="ebs.md">Ebs</a>, ... ]</i>,
+        "<a href="#capacityreservationtarget" title="CapacityReservationTarget">CapacityReservationTarget</a>" : <i>[ <a href="capacityreservationtarget.md">CapacityReservationTarget</a>, ... ]</i>,
+        "<a href="#spotoptions" title="SpotOptions">SpotOptions</a>" : <i>[ <a href="spotoptions.md">SpotOptions</a>, ... ]</i>
     }
 }
 </pre>
@@ -56,9 +52,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::LaunchTemplate
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
-    <a href="#defaultversion" title="DefaultVersion">DefaultVersion</a>: <i>Double</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#disableapitermination" title="DisableApiTermination">DisableApiTermination</a>: <i>Boolean</i>
     <a href="#ebsoptimized" title="EbsOptimized">EbsOptimized</a>: <i>String</i>
@@ -67,78 +60,51 @@ Properties:
     <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
     <a href="#kernelid" title="KernelId">KernelId</a>: <i>String</i>
     <a href="#keyname" title="KeyName">KeyName</a>: <i>String</i>
-    <a href="#latestversion" title="LatestVersion">LatestVersion</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
     <a href="#ramdiskid" title="RamDiskId">RamDiskId</a>: <i>String</i>
     <a href="#securitygroupnames" title="SecurityGroupNames">SecurityGroupNames</a>: <i>
       - String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#vpcsecuritygroupids" title="VpcSecurityGroupIds">VpcSecurityGroupIds</a>: <i>
       - String</i>
     <a href="#blockdevicemappings" title="BlockDeviceMappings">BlockDeviceMappings</a>: <i>
-      - &lt;a href=&#34;blockdevicemappings.md&#34;&gt;BlockDeviceMappings&lt;/a&gt;</i>
+      - <a href="blockdevicemappings.md">BlockDeviceMappings</a></i>
     <a href="#capacityreservationspecification" title="CapacityReservationSpecification">CapacityReservationSpecification</a>: <i>
-      - &lt;a href=&#34;capacityreservationspecification.md&#34;&gt;CapacityReservationSpecification&lt;/a&gt;</i>
+      - <a href="capacityreservationspecification.md">CapacityReservationSpecification</a></i>
     <a href="#cpuoptions" title="CpuOptions">CpuOptions</a>: <i>
-      - &lt;a href=&#34;cpuoptions.md&#34;&gt;CpuOptions&lt;/a&gt;</i>
+      - <a href="cpuoptions.md">CpuOptions</a></i>
     <a href="#creditspecification" title="CreditSpecification">CreditSpecification</a>: <i>
-      - &lt;a href=&#34;creditspecification.md&#34;&gt;CreditSpecification&lt;/a&gt;</i>
+      - <a href="creditspecification.md">CreditSpecification</a></i>
     <a href="#elasticgpuspecifications" title="ElasticGpuSpecifications">ElasticGpuSpecifications</a>: <i>
-      - &lt;a href=&#34;elasticgpuspecifications.md&#34;&gt;ElasticGpuSpecifications&lt;/a&gt;</i>
+      - <a href="elasticgpuspecifications.md">ElasticGpuSpecifications</a></i>
     <a href="#elasticinferenceaccelerator" title="ElasticInferenceAccelerator">ElasticInferenceAccelerator</a>: <i>
-      - &lt;a href=&#34;elasticinferenceaccelerator.md&#34;&gt;ElasticInferenceAccelerator&lt;/a&gt;</i>
+      - <a href="elasticinferenceaccelerator.md">ElasticInferenceAccelerator</a></i>
     <a href="#iaminstanceprofile" title="IamInstanceProfile">IamInstanceProfile</a>: <i>
-      - &lt;a href=&#34;iaminstanceprofile.md&#34;&gt;IamInstanceProfile&lt;/a&gt;</i>
+      - <a href="iaminstanceprofile.md">IamInstanceProfile</a></i>
     <a href="#instancemarketoptions" title="InstanceMarketOptions">InstanceMarketOptions</a>: <i>
-      - &lt;a href=&#34;instancemarketoptions.md&#34;&gt;InstanceMarketOptions&lt;/a&gt;</i>
+      - <a href="instancemarketoptions.md">InstanceMarketOptions</a></i>
     <a href="#licensespecification" title="LicenseSpecification">LicenseSpecification</a>: <i>
-      - &lt;a href=&#34;licensespecification.md&#34;&gt;LicenseSpecification&lt;/a&gt;</i>
+      - <a href="licensespecification.md">LicenseSpecification</a></i>
     <a href="#monitoring" title="Monitoring">Monitoring</a>: <i>
-      - &lt;a href=&#34;monitoring.md&#34;&gt;Monitoring&lt;/a&gt;</i>
+      - <a href="monitoring.md">Monitoring</a></i>
     <a href="#networkinterfaces" title="NetworkInterfaces">NetworkInterfaces</a>: <i>
-      - &lt;a href=&#34;networkinterfaces.md&#34;&gt;NetworkInterfaces&lt;/a&gt;</i>
+      - <a href="networkinterfaces.md">NetworkInterfaces</a></i>
     <a href="#placement" title="Placement">Placement</a>: <i>
-      - &lt;a href=&#34;placement.md&#34;&gt;Placement&lt;/a&gt;</i>
+      - <a href="placement.md">Placement</a></i>
     <a href="#tagspecifications" title="TagSpecifications">TagSpecifications</a>: <i>
-      - &lt;a href=&#34;tagspecifications.md&#34;&gt;TagSpecifications&lt;/a&gt;</i>
+      - <a href="tagspecifications.md">TagSpecifications</a></i>
     <a href="#ebs" title="Ebs">Ebs</a>: <i>
-      - &lt;a href=&#34;ebs.md&#34;&gt;Ebs&lt;/a&gt;</i>
+      - <a href="ebs.md">Ebs</a></i>
     <a href="#capacityreservationtarget" title="CapacityReservationTarget">CapacityReservationTarget</a>: <i>
-      - &lt;a href=&#34;capacityreservationtarget.md&#34;&gt;CapacityReservationTarget&lt;/a&gt;</i>
+      - <a href="capacityreservationtarget.md">CapacityReservationTarget</a></i>
     <a href="#spotoptions" title="SpotOptions">SpotOptions</a>: <i>
-      - &lt;a href=&#34;spotoptions.md&#34;&gt;SpotOptions&lt;/a&gt;</i>
+      - <a href="spotoptions.md">SpotOptions</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DefaultVersion
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -204,14 +170,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### LatestVersion
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: No
@@ -248,7 +206,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -272,7 +230,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;blockdevicemappings.md&#34;&gt;BlockDeviceMappings&lt;/a&gt;
+_Type_: List of <a href="blockdevicemappings.md">BlockDeviceMappings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -280,7 +238,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;capacityreservationspecification.md&#34;&gt;CapacityReservationSpecification&lt;/a&gt;
+_Type_: List of <a href="capacityreservationspecification.md">CapacityReservationSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -288,7 +246,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cpuoptions.md&#34;&gt;CpuOptions&lt;/a&gt;
+_Type_: List of <a href="cpuoptions.md">CpuOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -296,7 +254,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;creditspecification.md&#34;&gt;CreditSpecification&lt;/a&gt;
+_Type_: List of <a href="creditspecification.md">CreditSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -304,7 +262,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;elasticgpuspecifications.md&#34;&gt;ElasticGpuSpecifications&lt;/a&gt;
+_Type_: List of <a href="elasticgpuspecifications.md">ElasticGpuSpecifications</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -312,7 +270,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;elasticinferenceaccelerator.md&#34;&gt;ElasticInferenceAccelerator&lt;/a&gt;
+_Type_: List of <a href="elasticinferenceaccelerator.md">ElasticInferenceAccelerator</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -320,7 +278,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;iaminstanceprofile.md&#34;&gt;IamInstanceProfile&lt;/a&gt;
+_Type_: List of <a href="iaminstanceprofile.md">IamInstanceProfile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -328,7 +286,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instancemarketoptions.md&#34;&gt;InstanceMarketOptions&lt;/a&gt;
+_Type_: List of <a href="instancemarketoptions.md">InstanceMarketOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -336,7 +294,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;licensespecification.md&#34;&gt;LicenseSpecification&lt;/a&gt;
+_Type_: List of <a href="licensespecification.md">LicenseSpecification</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -344,7 +302,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;monitoring.md&#34;&gt;Monitoring&lt;/a&gt;
+_Type_: List of <a href="monitoring.md">Monitoring</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -352,7 +310,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinterfaces.md&#34;&gt;NetworkInterfaces&lt;/a&gt;
+_Type_: List of <a href="networkinterfaces.md">NetworkInterfaces</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -360,7 +318,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;placement.md&#34;&gt;Placement&lt;/a&gt;
+_Type_: List of <a href="placement.md">Placement</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -368,7 +326,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tagspecifications.md&#34;&gt;TagSpecifications&lt;/a&gt;
+_Type_: List of <a href="tagspecifications.md">TagSpecifications</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -376,7 +334,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ebs.md&#34;&gt;Ebs&lt;/a&gt;
+_Type_: List of <a href="ebs.md">Ebs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -384,7 +342,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;capacityreservationtarget.md&#34;&gt;CapacityReservationTarget&lt;/a&gt;
+_Type_: List of <a href="capacityreservationtarget.md">CapacityReservationTarget</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -392,7 +350,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;spotoptions.md&#34;&gt;SpotOptions&lt;/a&gt;
+_Type_: List of <a href="spotoptions.md">SpotOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -414,13 +372,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### DefaultVersion
 
-Returns the &lt;code&gt;DefaultVersion&lt;/code&gt; value.
+Returns the <code>DefaultVersion</code> value.
 
 #### LatestVersion
 
-Returns the &lt;code&gt;LatestVersion&lt;/code&gt; value.
+Returns the <code>LatestVersion</code> value.
 

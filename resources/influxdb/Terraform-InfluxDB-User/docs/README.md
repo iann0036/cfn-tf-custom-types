@@ -12,11 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::InfluxDB::User",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#admin" title="Admin">Admin</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
-        "<a href="#grant" title="Grant">Grant</a>" : <i>[ &lt;a href=&#34;grant.md&#34;&gt;Grant&lt;/a&gt;, ... ]</i>
+        "<a href="#grant" title="Grant">Grant</a>" : <i>[ <a href="grant.md">Grant</a>, ... ]</i>
     }
 }
 </pre>
@@ -26,25 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::InfluxDB::User
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#admin" title="Admin">Admin</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#grant" title="Grant">Grant</a>: <i>
-      - &lt;a href=&#34;grant.md&#34;&gt;Grant&lt;/a&gt;</i>
+      - <a href="grant.md">Grant</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Admin
 
@@ -74,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;grant.md&#34;&gt;Grant&lt;/a&gt;
+_Type_: List of <a href="grant.md">Grant</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

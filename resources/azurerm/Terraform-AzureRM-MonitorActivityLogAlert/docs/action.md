@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#actiongroupid" title="ActionGroupId">ActionGroupId</a>" : <i>String</i>,
-    "<a href="#webhookproperties" title="WebhookProperties">WebhookProperties</a>" : <i>[ &lt;a href=&#34;action-webhookproperties.md&#34;&gt;WebhookProperties&lt;/a&gt;, ... ]</i>
+    "<a href="#webhookproperties" title="WebhookProperties">WebhookProperties</a>" : <i>[ <a href="action-webhookproperties.md">WebhookProperties</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#actiongroupid" title="ActionGroupId">ActionGroupId</a>: <i>String</i>
 <a href="#webhookproperties" title="WebhookProperties">WebhookProperties</a>: <i>
-      - &lt;a href=&#34;action-webhookproperties.md&#34;&gt;WebhookProperties&lt;/a&gt;</i>
+      - <a href="action-webhookproperties.md">WebhookProperties</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ActionGroupId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### WebhookProperties
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;action-webhookproperties.md&#34;&gt;WebhookProperties&lt;/a&gt;
+
+_Type_: List of <a href="action-webhookproperties.md">WebhookProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,13 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Packet::PortVlanAttachment",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#deviceid" title="DeviceId">DeviceId</a>" : <i>String</i>,
         "<a href="#forcebond" title="ForceBond">ForceBond</a>" : <i>Boolean</i>,
         "<a href="#native" title="Native">Native</a>" : <i>Boolean</i>,
-        "<a href="#portid" title="PortId">PortId</a>" : <i>String</i>,
         "<a href="#portname" title="PortName">PortName</a>" : <i>String</i>,
-        "<a href="#vlanid" title="VlanId">VlanId</a>" : <i>String</i>,
         "<a href="#vlanvnid" title="VlanVnid">VlanVnid</a>" : <i>Double</i>
     }
 }
@@ -29,27 +26,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Packet::PortVlanAttachment
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#deviceid" title="DeviceId">DeviceId</a>: <i>String</i>
     <a href="#forcebond" title="ForceBond">ForceBond</a>: <i>Boolean</i>
     <a href="#native" title="Native">Native</a>: <i>Boolean</i>
-    <a href="#portid" title="PortId">PortId</a>: <i>String</i>
     <a href="#portname" title="PortName">PortName</a>: <i>String</i>
-    <a href="#vlanid" title="VlanId">VlanId</a>: <i>String</i>
     <a href="#vlanvnid" title="VlanVnid">VlanVnid</a>: <i>Double</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceId
 
@@ -75,25 +59,9 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PortId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### PortName
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VlanId
-
-_Required_: No
 
 _Type_: String
 
@@ -125,9 +93,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PortId
 
-Returns the &lt;code&gt;PortId&lt;/code&gt; value.
+Returns the <code>PortId</code> value.
 
 #### VlanId
 
-Returns the &lt;code&gt;VlanId&lt;/code&gt; value.
+Returns the <code>VlanId</code> value.
 

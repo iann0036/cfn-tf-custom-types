@@ -12,13 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::OtsTable",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#deviationcellversioninsec" title="DeviationCellVersionInSec">DeviationCellVersionInSec</a>" : <i>String</i>,
         "<a href="#instancename" title="InstanceName">InstanceName</a>" : <i>String</i>,
         "<a href="#maxversion" title="MaxVersion">MaxVersion</a>" : <i>Double</i>,
         "<a href="#tablename" title="TableName">TableName</a>" : <i>String</i>,
         "<a href="#timetolive" title="TimeToLive">TimeToLive</a>" : <i>Double</i>,
-        "<a href="#primarykey" title="PrimaryKey">PrimaryKey</a>" : <i>[ &lt;a href=&#34;primarykey.md&#34;&gt;PrimaryKey&lt;/a&gt;, ... ]</i>
+        "<a href="#primarykey" title="PrimaryKey">PrimaryKey</a>" : <i>[ <a href="primarykey.md">PrimaryKey</a>, ... ]</i>
     }
 }
 </pre>
@@ -28,27 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::OtsTable
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#deviationcellversioninsec" title="DeviationCellVersionInSec">DeviationCellVersionInSec</a>: <i>String</i>
     <a href="#instancename" title="InstanceName">InstanceName</a>: <i>String</i>
     <a href="#maxversion" title="MaxVersion">MaxVersion</a>: <i>Double</i>
     <a href="#tablename" title="TableName">TableName</a>: <i>String</i>
     <a href="#timetolive" title="TimeToLive">TimeToLive</a>: <i>Double</i>
     <a href="#primarykey" title="PrimaryKey">PrimaryKey</a>: <i>
-      - &lt;a href=&#34;primarykey.md&#34;&gt;PrimaryKey&lt;/a&gt;</i>
+      - <a href="primarykey.md">PrimaryKey</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviationCellVersionInSec
 
@@ -94,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;primarykey.md&#34;&gt;PrimaryKey&lt;/a&gt;
+_Type_: List of <a href="primarykey.md">PrimaryKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

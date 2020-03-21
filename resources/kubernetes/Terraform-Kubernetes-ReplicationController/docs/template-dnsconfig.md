@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#nameservers" title="Nameservers">Nameservers</a>" : <i>[ String, ... ]</i>,
     "<a href="#searches" title="Searches">Searches</a>" : <i>[ String, ... ]</i>,
-    "<a href="#option" title="Option">Option</a>" : <i>[ &lt;a href=&#34;template-dnsconfig-option.md&#34;&gt;Option&lt;/a&gt;, ... ]</i>
+    "<a href="#option" title="Option">Option</a>" : <i>[ <a href="template-dnsconfig-option.md">Option</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#searches" title="Searches">Searches</a>: <i>
       - String</i>
 <a href="#option" title="Option">Option</a>: <i>
-      - &lt;a href=&#34;template-dnsconfig-option.md&#34;&gt;Option&lt;/a&gt;</i>
+      - <a href="template-dnsconfig-option.md">Option</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Nameservers
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Searches
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,7 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Option
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;template-dnsconfig-option.md&#34;&gt;Option&lt;/a&gt;
+
+_Type_: List of <a href="template-dnsconfig-option.md">Option</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

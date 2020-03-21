@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#configurationname" title="ConfigurationName">ConfigurationName</a>" : <i>String</i>,
     "<a href="#enhancedmonitorservice" title="EnhancedMonitorService">EnhancedMonitorService</a>" : <i>Boolean</i>,
     "<a href="#enhancedsecurityservice" title="EnhancedSecurityService">EnhancedSecurityService</a>" : <i>Boolean</i>,
-    "<a href="#instancetags" title="InstanceTags">InstanceTags</a>" : <i>[ &lt;a href=&#34;autoscalingconfig-instancetags.md&#34;&gt;InstanceTags&lt;/a&gt;, ... ]</i>,
+    "<a href="#instancetags" title="InstanceTags">InstanceTags</a>" : <i>[ <a href="autoscalingconfig-instancetags.md">InstanceTags</a>, ... ]</i>,
     "<a href="#instancetype" title="InstanceType">InstanceType</a>" : <i>String</i>,
     "<a href="#internetchargetype" title="InternetChargeType">InternetChargeType</a>" : <i>String</i>,
     "<a href="#internetmaxbandwidthout" title="InternetMaxBandwidthOut">InternetMaxBandwidthOut</a>" : <i>Double</i>,
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#securitygroupids" title="SecurityGroupIds">SecurityGroupIds</a>" : <i>[ String, ... ]</i>,
     "<a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>" : <i>Double</i>,
     "<a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>" : <i>String</i>,
-    "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ &lt;a href=&#34;autoscalingconfig-datadisk.md&#34;&gt;DataDisk&lt;/a&gt;, ... ]</i>
+    "<a href="#datadisk" title="DataDisk">DataDisk</a>" : <i>[ <a href="autoscalingconfig-datadisk.md">DataDisk</a>, ... ]</i>
 }
 </pre>
 
@@ -33,7 +33,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#enhancedmonitorservice" title="EnhancedMonitorService">EnhancedMonitorService</a>: <i>Boolean</i>
 <a href="#enhancedsecurityservice" title="EnhancedSecurityService">EnhancedSecurityService</a>: <i>Boolean</i>
 <a href="#instancetags" title="InstanceTags">InstanceTags</a>: <i>
-      - &lt;a href=&#34;autoscalingconfig-instancetags.md&#34;&gt;InstanceTags&lt;/a&gt;</i>
+      - <a href="autoscalingconfig-instancetags.md">InstanceTags</a></i>
 <a href="#instancetype" title="InstanceType">InstanceType</a>: <i>String</i>
 <a href="#internetchargetype" title="InternetChargeType">InternetChargeType</a>: <i>String</i>
 <a href="#internetmaxbandwidthout" title="InternetMaxBandwidthOut">InternetMaxBandwidthOut</a>: <i>Double</i>
@@ -47,7 +47,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#systemdisksize" title="SystemDiskSize">SystemDiskSize</a>: <i>Double</i>
 <a href="#systemdisktype" title="SystemDiskType">SystemDiskType</a>: <i>String</i>
 <a href="#datadisk" title="DataDisk">DataDisk</a>: <i>
-      - &lt;a href=&#34;autoscalingconfig-datadisk.md&#34;&gt;DataDisk&lt;/a&gt;</i>
+      - <a href="autoscalingconfig-datadisk.md">DataDisk</a></i>
 </pre>
 
 ## Properties
@@ -55,6 +55,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ConfigurationName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EnhancedMonitorService
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,6 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EnhancedSecurityService
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -76,13 +79,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InstanceTags
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;autoscalingconfig-instancetags.md&#34;&gt;InstanceTags&lt;/a&gt;
+
+_Type_: List of <a href="autoscalingconfig-instancetags.md">InstanceTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceType
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,6 +95,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InternetChargeType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -97,6 +103,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### InternetMaxBandwidthOut
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -104,6 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### KeyIds
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -111,6 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Password
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -118,6 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ProjectId
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -125,6 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PublicIpAssigned
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -132,6 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SecurityGroupIds
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -139,6 +151,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SystemDiskSize
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -146,6 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SystemDiskType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -153,7 +167,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DataDisk
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;autoscalingconfig-datadisk.md&#34;&gt;DataDisk&lt;/a&gt;
+
+_Type_: List of <a href="autoscalingconfig-datadisk.md">DataDisk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

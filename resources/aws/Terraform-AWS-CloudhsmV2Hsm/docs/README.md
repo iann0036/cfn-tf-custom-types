@@ -12,15 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CloudhsmV2Hsm",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#clusterid" title="ClusterId">ClusterId</a>" : <i>String</i>,
-        "<a href="#hsmeniid" title="HsmEniId">HsmEniId</a>" : <i>String</i>,
-        "<a href="#hsmid" title="HsmId">HsmId</a>" : <i>String</i>,
-        "<a href="#hsmstate" title="HsmState">HsmState</a>" : <i>String</i>,
         "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -30,28 +26,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CloudhsmV2Hsm
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#clusterid" title="ClusterId">ClusterId</a>: <i>String</i>
-    <a href="#hsmeniid" title="HsmEniId">HsmEniId</a>: <i>String</i>
-    <a href="#hsmid" title="HsmId">HsmId</a>: <i>String</i>
-    <a href="#hsmstate" title="HsmState">HsmState</a>: <i>String</i>
     <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
 
@@ -64,30 +46,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClusterId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HsmEniId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HsmId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HsmState
-
-_Required_: No
 
 _Type_: String
 
@@ -113,7 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,13 +93,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HsmEniId
 
-Returns the &lt;code&gt;HsmEniId&lt;/code&gt; value.
+Returns the <code>HsmEniId</code> value.
 
 #### HsmId
 
-Returns the &lt;code&gt;HsmId&lt;/code&gt; value.
+Returns the <code>HsmId</code> value.
 
 #### HsmState
 
-Returns the &lt;code&gt;HsmState&lt;/code&gt; value.
+Returns the <code>HsmState</code> value.
 

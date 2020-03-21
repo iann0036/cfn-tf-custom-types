@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#metricnamespace" title="MetricNamespace">MetricNamespace</a>" : <i>String</i>,
     "<a href="#operator" title="Operator">Operator</a>" : <i>String</i>,
     "<a href="#threshold" title="Threshold">Threshold</a>" : <i>Double</i>,
-    "<a href="#dimension" title="Dimension">Dimension</a>" : <i>[ &lt;a href=&#34;criteria-dimension.md&#34;&gt;Dimension&lt;/a&gt;, ... ]</i>
+    "<a href="#dimension" title="Dimension">Dimension</a>" : <i>[ <a href="criteria-dimension.md">Dimension</a>, ... ]</i>
 }
 </pre>
 
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#operator" title="Operator">Operator</a>: <i>String</i>
 <a href="#threshold" title="Threshold">Threshold</a>: <i>Double</i>
 <a href="#dimension" title="Dimension">Dimension</a>: <i>
-      - &lt;a href=&#34;criteria-dimension.md&#34;&gt;Dimension&lt;/a&gt;</i>
+      - <a href="criteria-dimension.md">Dimension</a></i>
 </pre>
 
 ## Properties
@@ -34,6 +34,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Aggregation
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -41,6 +42,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MetricName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +50,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MetricNamespace
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Operator
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Threshold
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,7 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Dimension
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;criteria-dimension.md&#34;&gt;Dimension&lt;/a&gt;
+
+_Type_: List of <a href="criteria-dimension.md">Dimension</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

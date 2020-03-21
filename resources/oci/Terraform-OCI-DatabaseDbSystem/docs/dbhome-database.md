@@ -14,11 +14,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#characterset" title="CharacterSet">CharacterSet</a>" : <i>String</i>,
     "<a href="#dbname" title="DbName">DbName</a>" : <i>String</i>,
     "<a href="#dbworkload" title="DbWorkload">DbWorkload</a>" : <i>String</i>,
-    "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ &lt;a href=&#34;dbhome-database-definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;, ... ]</i>,
-    "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ &lt;a href=&#34;dbhome-database-freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;, ... ]</i>,
+    "<a href="#definedtags" title="DefinedTags">DefinedTags</a>" : <i>[ <a href="dbhome-database-definedtags.md">DefinedTags</a>, ... ]</i>,
+    "<a href="#freeformtags" title="FreeformTags">FreeformTags</a>" : <i>[ <a href="dbhome-database-freeformtags.md">FreeformTags</a>, ... ]</i>,
     "<a href="#ncharacterset" title="NcharacterSet">NcharacterSet</a>" : <i>String</i>,
     "<a href="#pdbname" title="PdbName">PdbName</a>" : <i>String</i>,
-    "<a href="#dbbackupconfig" title="DbBackupConfig">DbBackupConfig</a>" : <i>[ &lt;a href=&#34;dbhome-database-dbbackupconfig.md&#34;&gt;DbBackupConfig&lt;/a&gt;, ... ]</i>
+    "<a href="#dbbackupconfig" title="DbBackupConfig">DbBackupConfig</a>" : <i>[ <a href="dbhome-database-dbbackupconfig.md">DbBackupConfig</a>, ... ]</i>
 }
 </pre>
 
@@ -32,13 +32,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#dbname" title="DbName">DbName</a>: <i>String</i>
 <a href="#dbworkload" title="DbWorkload">DbWorkload</a>: <i>String</i>
 <a href="#definedtags" title="DefinedTags">DefinedTags</a>: <i>
-      - &lt;a href=&#34;dbhome-database-definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;</i>
+      - <a href="dbhome-database-definedtags.md">DefinedTags</a></i>
 <a href="#freeformtags" title="FreeformTags">FreeformTags</a>: <i>
-      - &lt;a href=&#34;dbhome-database-freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;</i>
+      - <a href="dbhome-database-freeformtags.md">FreeformTags</a></i>
 <a href="#ncharacterset" title="NcharacterSet">NcharacterSet</a>: <i>String</i>
 <a href="#pdbname" title="PdbName">PdbName</a>: <i>String</i>
 <a href="#dbbackupconfig" title="DbBackupConfig">DbBackupConfig</a>: <i>
-      - &lt;a href=&#34;dbhome-database-dbbackupconfig.md&#34;&gt;DbBackupConfig&lt;/a&gt;</i>
+      - <a href="dbhome-database-dbbackupconfig.md">DbBackupConfig</a></i>
 </pre>
 
 ## Properties
@@ -46,6 +46,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AdminPassword
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BackupId
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,6 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### BackupTdePassword
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -67,6 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CharacterSet
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,6 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DbName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -81,6 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DbWorkload
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -88,20 +94,23 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DefinedTags
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;dbhome-database-definedtags.md&#34;&gt;DefinedTags&lt;/a&gt;
+
+_Type_: List of <a href="dbhome-database-definedtags.md">DefinedTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FreeformTags
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;dbhome-database-freeformtags.md&#34;&gt;FreeformTags&lt;/a&gt;
+
+_Type_: List of <a href="dbhome-database-freeformtags.md">FreeformTags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NcharacterSet
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -109,6 +118,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PdbName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -116,7 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DbBackupConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;dbhome-database-dbbackupconfig.md&#34;&gt;DbBackupConfig&lt;/a&gt;
+
+_Type_: List of <a href="dbhome-database-dbbackupconfig.md">DbBackupConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#username" title="UserName">UserName</a>" : <i>String</i>,
-    "<a href="#autouser" title="AutoUser">AutoUser</a>" : <i>[ &lt;a href=&#34;useridentity-autouser.md&#34;&gt;AutoUser&lt;/a&gt;, ... ]</i>
+    "<a href="#autouser" title="AutoUser">AutoUser</a>" : <i>[ <a href="useridentity-autouser.md">AutoUser</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#username" title="UserName">UserName</a>: <i>String</i>
 <a href="#autouser" title="AutoUser">AutoUser</a>: <i>
-      - &lt;a href=&#34;useridentity-autouser.md&#34;&gt;AutoUser&lt;/a&gt;</i>
+      - <a href="useridentity-autouser.md">AutoUser</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### UserName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AutoUser
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;useridentity-autouser.md&#34;&gt;AutoUser&lt;/a&gt;
+
+_Type_: List of <a href="useridentity-autouser.md">AutoUser</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

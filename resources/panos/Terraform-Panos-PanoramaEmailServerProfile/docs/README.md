@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaEmailServerProfile",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#authformat" title="AuthFormat">AuthFormat</a>" : <i>String</i>,
         "<a href="#configformat" title="ConfigFormat">ConfigFormat</a>" : <i>String</i>,
         "<a href="#dataformat" title="DataFormat">DataFormat</a>" : <i>String</i>,
@@ -34,7 +33,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#useridformat" title="UserIdFormat">UserIdFormat</a>" : <i>String</i>,
         "<a href="#vsys" title="Vsys">Vsys</a>" : <i>String</i>,
         "<a href="#wildfireformat" title="WildfireFormat">WildfireFormat</a>" : <i>String</i>,
-        "<a href="#emailserver" title="EmailServer">EmailServer</a>" : <i>[ &lt;a href=&#34;emailserver.md&#34;&gt;EmailServer&lt;/a&gt;, ... ]</i>
+        "<a href="#emailserver" title="EmailServer">EmailServer</a>" : <i>[ <a href="emailserver.md">EmailServer</a>, ... ]</i>
     }
 }
 </pre>
@@ -44,7 +43,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaEmailServerProfile
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#authformat" title="AuthFormat">AuthFormat</a>: <i>String</i>
     <a href="#configformat" title="ConfigFormat">ConfigFormat</a>: <i>String</i>
     <a href="#dataformat" title="DataFormat">DataFormat</a>: <i>String</i>
@@ -67,20 +65,10 @@ Properties:
     <a href="#vsys" title="Vsys">Vsys</a>: <i>String</i>
     <a href="#wildfireformat" title="WildfireFormat">WildfireFormat</a>: <i>String</i>
     <a href="#emailserver" title="EmailServer">EmailServer</a>: <i>
-      - &lt;a href=&#34;emailserver.md&#34;&gt;EmailServer&lt;/a&gt;</i>
+      - <a href="emailserver.md">EmailServer</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthFormat
 
@@ -254,7 +242,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;emailserver.md&#34;&gt;EmailServer&lt;/a&gt;
+_Type_: List of <a href="emailserver.md">EmailServer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -9,11 +9,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#q" title="Q">Q</a>" : <i>String</i>,
-    "<a href="#apmquery" title="ApmQuery">ApmQuery</a>" : <i>[ &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-apmquery.md&#34;&gt;ApmQuery&lt;/a&gt;, ... ]</i>,
-    "<a href="#conditionalformats" title="ConditionalFormats">ConditionalFormats</a>" : <i>[ &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-conditionalformats.md&#34;&gt;ConditionalFormats&lt;/a&gt;, ... ]</i>,
-    "<a href="#logquery" title="LogQuery">LogQuery</a>" : <i>[ &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-logquery.md&#34;&gt;LogQuery&lt;/a&gt;, ... ]</i>,
-    "<a href="#processquery" title="ProcessQuery">ProcessQuery</a>" : <i>[ &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-processquery.md&#34;&gt;ProcessQuery&lt;/a&gt;, ... ]</i>,
-    "<a href="#style" title="Style">Style</a>" : <i>[ &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-style.md&#34;&gt;Style&lt;/a&gt;, ... ]</i>
+    "<a href="#apmquery" title="ApmQuery">ApmQuery</a>" : <i>[ <a href="groupdefinition-widget-timeseriesdefinition-request-apmquery.md">ApmQuery</a>, ... ]</i>,
+    "<a href="#conditionalformats" title="ConditionalFormats">ConditionalFormats</a>" : <i>[ <a href="groupdefinition-widget-timeseriesdefinition-request-conditionalformats.md">ConditionalFormats</a>, ... ]</i>,
+    "<a href="#logquery" title="LogQuery">LogQuery</a>" : <i>[ <a href="groupdefinition-widget-timeseriesdefinition-request-logquery.md">LogQuery</a>, ... ]</i>,
+    "<a href="#processquery" title="ProcessQuery">ProcessQuery</a>" : <i>[ <a href="groupdefinition-widget-timeseriesdefinition-request-processquery.md">ProcessQuery</a>, ... ]</i>,
+    "<a href="#style" title="Style">Style</a>" : <i>[ <a href="groupdefinition-widget-timeseriesdefinition-request-style.md">Style</a>, ... ]</i>
 }
 </pre>
 
@@ -22,15 +22,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#q" title="Q">Q</a>: <i>String</i>
 <a href="#apmquery" title="ApmQuery">ApmQuery</a>: <i>
-      - &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-apmquery.md&#34;&gt;ApmQuery&lt;/a&gt;</i>
+      - <a href="groupdefinition-widget-timeseriesdefinition-request-apmquery.md">ApmQuery</a></i>
 <a href="#conditionalformats" title="ConditionalFormats">ConditionalFormats</a>: <i>
-      - &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-conditionalformats.md&#34;&gt;ConditionalFormats&lt;/a&gt;</i>
+      - <a href="groupdefinition-widget-timeseriesdefinition-request-conditionalformats.md">ConditionalFormats</a></i>
 <a href="#logquery" title="LogQuery">LogQuery</a>: <i>
-      - &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-logquery.md&#34;&gt;LogQuery&lt;/a&gt;</i>
+      - <a href="groupdefinition-widget-timeseriesdefinition-request-logquery.md">LogQuery</a></i>
 <a href="#processquery" title="ProcessQuery">ProcessQuery</a>: <i>
-      - &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-processquery.md&#34;&gt;ProcessQuery&lt;/a&gt;</i>
+      - <a href="groupdefinition-widget-timeseriesdefinition-request-processquery.md">ProcessQuery</a></i>
 <a href="#style" title="Style">Style</a>: <i>
-      - &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-style.md&#34;&gt;Style&lt;/a&gt;</i>
+      - <a href="groupdefinition-widget-timeseriesdefinition-request-style.md">Style</a></i>
 </pre>
 
 ## Properties
@@ -38,6 +38,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Q
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,35 +46,40 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ApmQuery
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-apmquery.md&#34;&gt;ApmQuery&lt;/a&gt;
+
+_Type_: List of <a href="groupdefinition-widget-timeseriesdefinition-request-apmquery.md">ApmQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConditionalFormats
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-conditionalformats.md&#34;&gt;ConditionalFormats&lt;/a&gt;
+
+_Type_: List of <a href="groupdefinition-widget-timeseriesdefinition-request-conditionalformats.md">ConditionalFormats</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogQuery
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-logquery.md&#34;&gt;LogQuery&lt;/a&gt;
+
+_Type_: List of <a href="groupdefinition-widget-timeseriesdefinition-request-logquery.md">LogQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProcessQuery
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-processquery.md&#34;&gt;ProcessQuery&lt;/a&gt;
+
+_Type_: List of <a href="groupdefinition-widget-timeseriesdefinition-request-processquery.md">ProcessQuery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Style
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;groupdefinition-widget-timeseriesdefinition-request-style.md&#34;&gt;Style&lt;/a&gt;
+
+_Type_: List of <a href="groupdefinition-widget-timeseriesdefinition-request-style.md">Style</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

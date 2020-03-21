@@ -12,17 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::KmsExternalKey",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#deletionwindowindays" title="DeletionWindowInDays">DeletionWindowInDays</a>" : <i>Double</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
-        "<a href="#expirationmodel" title="ExpirationModel">ExpirationModel</a>" : <i>String</i>,
         "<a href="#keymaterialbase64" title="KeyMaterialBase64">KeyMaterialBase64</a>" : <i>String</i>,
-        "<a href="#keystate" title="KeyState">KeyState</a>" : <i>String</i>,
-        "<a href="#keyusage" title="KeyUsage">KeyUsage</a>" : <i>String</i>,
         "<a href="#policy" title="Policy">Policy</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#validto" title="ValidTo">ValidTo</a>" : <i>String</i>
     }
 }
@@ -33,40 +28,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::KmsExternalKey
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#deletionwindowindays" title="DeletionWindowInDays">DeletionWindowInDays</a>: <i>Double</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
-    <a href="#expirationmodel" title="ExpirationModel">ExpirationModel</a>: <i>String</i>
     <a href="#keymaterialbase64" title="KeyMaterialBase64">KeyMaterialBase64</a>: <i>String</i>
-    <a href="#keystate" title="KeyState">KeyState</a>: <i>String</i>
-    <a href="#keyusage" title="KeyUsage">KeyUsage</a>: <i>String</i>
     <a href="#policy" title="Policy">Policy</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#validto" title="ValidTo">ValidTo</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeletionWindowInDays
 
@@ -92,31 +64,7 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ExpirationModel
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### KeyMaterialBase64
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### KeyState
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### KeyUsage
 
 _Required_: No
 
@@ -136,7 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,17 +114,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### ExpirationModel
 
-Returns the &lt;code&gt;ExpirationModel&lt;/code&gt; value.
+Returns the <code>ExpirationModel</code> value.
 
 #### KeyState
 
-Returns the &lt;code&gt;KeyState&lt;/code&gt; value.
+Returns the <code>KeyState</code> value.
 
 #### KeyUsage
 
-Returns the &lt;code&gt;KeyUsage&lt;/code&gt; value.
+Returns the <code>KeyUsage</code> value.
 

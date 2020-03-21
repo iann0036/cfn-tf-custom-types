@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#automaticrestart" title="AutomaticRestart">AutomaticRestart</a>" : <i>Boolean</i>,
     "<a href="#onhostmaintenance" title="OnHostMaintenance">OnHostMaintenance</a>" : <i>String</i>,
     "<a href="#preemptible" title="Preemptible">Preemptible</a>" : <i>Boolean</i>,
-    "<a href="#nodeaffinities" title="NodeAffinities">NodeAffinities</a>" : <i>[ &lt;a href=&#34;scheduling-nodeaffinities.md&#34;&gt;NodeAffinities&lt;/a&gt;, ... ]</i>
+    "<a href="#nodeaffinities" title="NodeAffinities">NodeAffinities</a>" : <i>[ <a href="scheduling-nodeaffinities.md">NodeAffinities</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#onhostmaintenance" title="OnHostMaintenance">OnHostMaintenance</a>: <i>String</i>
 <a href="#preemptible" title="Preemptible">Preemptible</a>: <i>Boolean</i>
 <a href="#nodeaffinities" title="NodeAffinities">NodeAffinities</a>: <i>
-      - &lt;a href=&#34;scheduling-nodeaffinities.md&#34;&gt;NodeAffinities&lt;/a&gt;</i>
+      - <a href="scheduling-nodeaffinities.md">NodeAffinities</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AutomaticRestart
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OnHostMaintenance
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Preemptible
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NodeAffinities
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;scheduling-nodeaffinities.md&#34;&gt;NodeAffinities&lt;/a&gt;
+
+_Type_: List of <a href="scheduling-nodeaffinities.md">NodeAffinities</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,17 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::CloudiotRegistry",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#eventnotificationconfig" title="EventNotificationConfig">EventNotificationConfig</a>" : <i>[ &lt;a href=&#34;eventnotificationconfig.md&#34;&gt;EventNotificationConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpconfig" title="HttpConfig">HttpConfig</a>" : <i>[ &lt;a href=&#34;httpconfig.md&#34;&gt;HttpConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#eventnotificationconfig" title="EventNotificationConfig">EventNotificationConfig</a>" : <i>[ <a href="eventnotificationconfig.md">EventNotificationConfig</a>, ... ]</i>,
+        "<a href="#httpconfig" title="HttpConfig">HttpConfig</a>" : <i>[ <a href="httpconfig.md">HttpConfig</a>, ... ]</i>,
         "<a href="#loglevel" title="LogLevel">LogLevel</a>" : <i>String</i>,
-        "<a href="#mqttconfig" title="MqttConfig">MqttConfig</a>" : <i>[ &lt;a href=&#34;mqttconfig.md&#34;&gt;MqttConfig&lt;/a&gt;, ... ]</i>,
+        "<a href="#mqttconfig" title="MqttConfig">MqttConfig</a>" : <i>[ <a href="mqttconfig.md">MqttConfig</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#statenotificationconfig" title="StateNotificationConfig">StateNotificationConfig</a>" : <i>[ &lt;a href=&#34;statenotificationconfig.md&#34;&gt;StateNotificationConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#credentials" title="Credentials">Credentials</a>" : <i>[ &lt;a href=&#34;credentials.md&#34;&gt;Credentials&lt;/a&gt;, ... ]</i>,
-        "<a href="#eventnotificationconfigs" title="EventNotificationConfigs">EventNotificationConfigs</a>" : <i>[ &lt;a href=&#34;eventnotificationconfigs.md&#34;&gt;EventNotificationConfigs&lt;/a&gt;, ... ]</i>
+        "<a href="#statenotificationconfig" title="StateNotificationConfig">StateNotificationConfig</a>" : <i>[ <a href="statenotificationconfig.md">StateNotificationConfig</a>, ... ]</i>,
+        "<a href="#credentials" title="Credentials">Credentials</a>" : <i>[ <a href="credentials.md">Credentials</a>, ... ]</i>,
+        "<a href="#eventnotificationconfigs" title="EventNotificationConfigs">EventNotificationConfigs</a>" : <i>[ <a href="eventnotificationconfigs.md">EventNotificationConfigs</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,42 +31,31 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::CloudiotRegistry
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#eventnotificationconfig" title="EventNotificationConfig">EventNotificationConfig</a>: <i>
-      - &lt;a href=&#34;eventnotificationconfig.md&#34;&gt;EventNotificationConfig&lt;/a&gt;</i>
+      - <a href="eventnotificationconfig.md">EventNotificationConfig</a></i>
     <a href="#httpconfig" title="HttpConfig">HttpConfig</a>: <i>
-      - &lt;a href=&#34;httpconfig.md&#34;&gt;HttpConfig&lt;/a&gt;</i>
+      - <a href="httpconfig.md">HttpConfig</a></i>
     <a href="#loglevel" title="LogLevel">LogLevel</a>: <i>String</i>
     <a href="#mqttconfig" title="MqttConfig">MqttConfig</a>: <i>
-      - &lt;a href=&#34;mqttconfig.md&#34;&gt;MqttConfig&lt;/a&gt;</i>
+      - <a href="mqttconfig.md">MqttConfig</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#statenotificationconfig" title="StateNotificationConfig">StateNotificationConfig</a>: <i>
-      - &lt;a href=&#34;statenotificationconfig.md&#34;&gt;StateNotificationConfig&lt;/a&gt;</i>
+      - <a href="statenotificationconfig.md">StateNotificationConfig</a></i>
     <a href="#credentials" title="Credentials">Credentials</a>: <i>
-      - &lt;a href=&#34;credentials.md&#34;&gt;Credentials&lt;/a&gt;</i>
+      - <a href="credentials.md">Credentials</a></i>
     <a href="#eventnotificationconfigs" title="EventNotificationConfigs">EventNotificationConfigs</a>: <i>
-      - &lt;a href=&#34;eventnotificationconfigs.md&#34;&gt;EventNotificationConfigs&lt;/a&gt;</i>
+      - <a href="eventnotificationconfigs.md">EventNotificationConfigs</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EventNotificationConfig
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;eventnotificationconfig.md&#34;&gt;EventNotificationConfig&lt;/a&gt;
+_Type_: List of <a href="eventnotificationconfig.md">EventNotificationConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -75,7 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpconfig.md&#34;&gt;HttpConfig&lt;/a&gt;
+_Type_: List of <a href="httpconfig.md">HttpConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -91,7 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;mqttconfig.md&#34;&gt;MqttConfig&lt;/a&gt;
+_Type_: List of <a href="mqttconfig.md">MqttConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;statenotificationconfig.md&#34;&gt;StateNotificationConfig&lt;/a&gt;
+_Type_: List of <a href="statenotificationconfig.md">StateNotificationConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;credentials.md&#34;&gt;Credentials&lt;/a&gt;
+_Type_: List of <a href="credentials.md">Credentials</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;eventnotificationconfigs.md&#34;&gt;EventNotificationConfigs&lt;/a&gt;
+_Type_: List of <a href="eventnotificationconfigs.md">EventNotificationConfigs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

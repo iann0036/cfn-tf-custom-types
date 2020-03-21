@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::AzureAuthBackendRole",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
         "<a href="#boundgroupids" title="BoundGroupIds">BoundGroupIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#boundlocations" title="BoundLocations">BoundLocations</a>" : <i>[ String, ... ]</i>,
@@ -43,7 +42,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::AzureAuthBackendRole
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
     <a href="#boundgroupids" title="BoundGroupIds">BoundGroupIds</a>: <i>
       - String</i>
@@ -77,16 +75,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backend
 

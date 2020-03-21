@@ -15,8 +15,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#rootdevice" title="RootDevice">RootDevice</a>" : <i>String</i>,
     "<a href="#runlevel" title="RunLevel">RunLevel</a>" : <i>String</i>,
     "<a href="#virtmode" title="VirtMode">VirtMode</a>" : <i>String</i>,
-    "<a href="#devices" title="Devices">Devices</a>" : <i>[ &lt;a href=&#34;config-devices.md&#34;&gt;Devices&lt;/a&gt;, ... ]</i>,
-    "<a href="#helpers" title="Helpers">Helpers</a>" : <i>[ &lt;a href=&#34;config-helpers.md&#34;&gt;Helpers&lt;/a&gt;, ... ]</i>
+    "<a href="#devices" title="Devices">Devices</a>" : <i>[ <a href="config-devices.md">Devices</a>, ... ]</i>,
+    "<a href="#helpers" title="Helpers">Helpers</a>" : <i>[ <a href="config-helpers.md">Helpers</a>, ... ]</i>
 }
 </pre>
 
@@ -31,9 +31,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#runlevel" title="RunLevel">RunLevel</a>: <i>String</i>
 <a href="#virtmode" title="VirtMode">VirtMode</a>: <i>String</i>
 <a href="#devices" title="Devices">Devices</a>: <i>
-      - &lt;a href=&#34;config-devices.md&#34;&gt;Devices&lt;/a&gt;</i>
+      - <a href="config-devices.md">Devices</a></i>
 <a href="#helpers" title="Helpers">Helpers</a>: <i>
-      - &lt;a href=&#34;config-helpers.md&#34;&gt;Helpers&lt;/a&gt;</i>
+      - <a href="config-helpers.md">Helpers</a></i>
 </pre>
 
 ## Properties
@@ -41,6 +41,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Comments
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Kernel
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Label
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,6 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MemoryLimit
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -69,6 +73,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RootDevice
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -76,6 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RunLevel
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -83,6 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### VirtMode
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,14 +97,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Devices
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;config-devices.md&#34;&gt;Devices&lt;/a&gt;
+
+_Type_: List of <a href="config-devices.md">Devices</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Helpers
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;config-helpers.md&#34;&gt;Helpers&lt;/a&gt;
+
+_Type_: List of <a href="config-helpers.md">Helpers</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

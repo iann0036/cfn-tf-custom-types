@@ -12,13 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::CsManagedKubernetes",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#clientcert" title="ClientCert">ClientCert</a>" : <i>String</i>,
         "<a href="#clientkey" title="ClientKey">ClientKey</a>" : <i>String</i>,
         "<a href="#clustercacert" title="ClusterCaCert">ClusterCaCert</a>" : <i>String</i>,
         "<a href="#clusternetworktype" title="ClusterNetworkType">ClusterNetworkType</a>" : <i>String</i>,
-        "<a href="#connections" title="Connections">Connections</a>" : <i>[ &lt;a href=&#34;connections.md&#34;&gt;Connections&lt;/a&gt;, ... ]</i>,
         "<a href="#cpupolicy" title="CpuPolicy">CpuPolicy</a>" : <i>String</i>,
         "<a href="#enablessh" title="EnableSsh">EnableSsh</a>" : <i>Boolean</i>,
         "<a href="#forceupdate" title="ForceUpdate">ForceUpdate</a>" : <i>Boolean</i>,
@@ -26,26 +24,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#installcloudmonitor" title="InstallCloudMonitor">InstallCloudMonitor</a>" : <i>Boolean</i>,
         "<a href="#keyname" title="KeyName">KeyName</a>" : <i>String</i>,
         "<a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>" : <i>String</i>,
-        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;, ... ]</i>,
+        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>, ... ]</i>,
         "<a href="#kubeconfig" title="KubeConfig">KubeConfig</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
-        "<a href="#natgatewayid" title="NatGatewayId">NatGatewayId</a>" : <i>String</i>,
         "<a href="#newnatgateway" title="NewNatGateway">NewNatGateway</a>" : <i>Boolean</i>,
         "<a href="#nodecidrmask" title="NodeCidrMask">NodeCidrMask</a>" : <i>Double</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#podcidr" title="PodCidr">PodCidr</a>" : <i>String</i>,
         "<a href="#podvswitchids" title="PodVswitchIds">PodVswitchIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#proxymode" title="ProxyMode">ProxyMode</a>" : <i>String</i>,
-        "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
         "<a href="#servicecidr" title="ServiceCidr">ServiceCidr</a>" : <i>String</i>,
-        "<a href="#slbid" title="SlbId">SlbId</a>" : <i>String</i>,
-        "<a href="#slbinternet" title="SlbInternet">SlbInternet</a>" : <i>String</i>,
         "<a href="#slbinternetenabled" title="SlbInternetEnabled">SlbInternetEnabled</a>" : <i>Boolean</i>,
-        "<a href="#slbintranet" title="SlbIntranet">SlbIntranet</a>" : <i>String</i>,
         "<a href="#userca" title="UserCa">UserCa</a>" : <i>String</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#vswitchids" title="VswitchIds">VswitchIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#workerautorenew" title="WorkerAutoRenew">WorkerAutoRenew</a>" : <i>Boolean</i>,
         "<a href="#workerautorenewperiod" title="WorkerAutoRenewPeriod">WorkerAutoRenewPeriod</a>" : <i>Double</i>,
@@ -56,15 +48,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#workerinstancechargetype" title="WorkerInstanceChargeType">WorkerInstanceChargeType</a>" : <i>String</i>,
         "<a href="#workerinstancetype" title="WorkerInstanceType">WorkerInstanceType</a>" : <i>String</i>,
         "<a href="#workerinstancetypes" title="WorkerInstanceTypes">WorkerInstanceTypes</a>" : <i>[ String, ... ]</i>,
-        "<a href="#workernodes" title="WorkerNodes">WorkerNodes</a>" : <i>[ &lt;a href=&#34;workernodes.md&#34;&gt;WorkerNodes&lt;/a&gt;, ... ]</i>,
         "<a href="#workernumber" title="WorkerNumber">WorkerNumber</a>" : <i>Double</i>,
         "<a href="#workernumbers" title="WorkerNumbers">WorkerNumbers</a>" : <i>[ Double, ... ]</i>,
         "<a href="#workerperiod" title="WorkerPeriod">WorkerPeriod</a>" : <i>Double</i>,
         "<a href="#workerperiodunit" title="WorkerPeriodUnit">WorkerPeriodUnit</a>" : <i>String</i>,
         "<a href="#workervswitchids" title="WorkerVswitchIds">WorkerVswitchIds</a>" : <i>[ String, ... ]</i>,
-        "<a href="#addons" title="Addons">Addons</a>" : <i>[ &lt;a href=&#34;addons.md&#34;&gt;Addons&lt;/a&gt;, ... ]</i>,
-        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#addons" title="Addons">Addons</a>" : <i>[ <a href="addons.md">Addons</a>, ... ]</i>,
+        "<a href="#logconfig" title="LogConfig">LogConfig</a>" : <i>[ <a href="logconfig.md">LogConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -74,14 +65,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::CsManagedKubernetes
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#clientcert" title="ClientCert">ClientCert</a>: <i>String</i>
     <a href="#clientkey" title="ClientKey">ClientKey</a>: <i>String</i>
     <a href="#clustercacert" title="ClusterCaCert">ClusterCaCert</a>: <i>String</i>
     <a href="#clusternetworktype" title="ClusterNetworkType">ClusterNetworkType</a>: <i>String</i>
-    <a href="#connections" title="Connections">Connections</a>: <i>
-      - &lt;a href=&#34;connections.md&#34;&gt;Connections&lt;/a&gt;</i>
     <a href="#cpupolicy" title="CpuPolicy">CpuPolicy</a>: <i>String</i>
     <a href="#enablessh" title="EnableSsh">EnableSsh</a>: <i>Boolean</i>
     <a href="#forceupdate" title="ForceUpdate">ForceUpdate</a>: <i>Boolean</i>
@@ -90,11 +78,10 @@ Properties:
     <a href="#keyname" title="KeyName">KeyName</a>: <i>String</i>
     <a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>: <i>String</i>
     <a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>: <i>
-      - &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;</i>
+      - <a href="kmsencryptioncontext.md">KmsEncryptionContext</a></i>
     <a href="#kubeconfig" title="KubeConfig">KubeConfig</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
-    <a href="#natgatewayid" title="NatGatewayId">NatGatewayId</a>: <i>String</i>
     <a href="#newnatgateway" title="NewNatGateway">NewNatGateway</a>: <i>Boolean</i>
     <a href="#nodecidrmask" title="NodeCidrMask">NodeCidrMask</a>: <i>Double</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
@@ -102,15 +89,10 @@ Properties:
     <a href="#podvswitchids" title="PodVswitchIds">PodVswitchIds</a>: <i>
       - String</i>
     <a href="#proxymode" title="ProxyMode">ProxyMode</a>: <i>String</i>
-    <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
     <a href="#servicecidr" title="ServiceCidr">ServiceCidr</a>: <i>String</i>
-    <a href="#slbid" title="SlbId">SlbId</a>: <i>String</i>
-    <a href="#slbinternet" title="SlbInternet">SlbInternet</a>: <i>String</i>
     <a href="#slbinternetenabled" title="SlbInternetEnabled">SlbInternetEnabled</a>: <i>Boolean</i>
-    <a href="#slbintranet" title="SlbIntranet">SlbIntranet</a>: <i>String</i>
     <a href="#userca" title="UserCa">UserCa</a>: <i>String</i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
-    <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#vswitchids" title="VswitchIds">VswitchIds</a>: <i>
       - String</i>
     <a href="#workerautorenew" title="WorkerAutoRenew">WorkerAutoRenew</a>: <i>Boolean</i>
@@ -123,8 +105,6 @@ Properties:
     <a href="#workerinstancetype" title="WorkerInstanceType">WorkerInstanceType</a>: <i>String</i>
     <a href="#workerinstancetypes" title="WorkerInstanceTypes">WorkerInstanceTypes</a>: <i>
       - String</i>
-    <a href="#workernodes" title="WorkerNodes">WorkerNodes</a>: <i>
-      - &lt;a href=&#34;workernodes.md&#34;&gt;WorkerNodes&lt;/a&gt;</i>
     <a href="#workernumber" title="WorkerNumber">WorkerNumber</a>: <i>Double</i>
     <a href="#workernumbers" title="WorkerNumbers">WorkerNumbers</a>: <i>
       - Double</i>
@@ -133,23 +113,13 @@ Properties:
     <a href="#workervswitchids" title="WorkerVswitchIds">WorkerVswitchIds</a>: <i>
       - String</i>
     <a href="#addons" title="Addons">Addons</a>: <i>
-      - &lt;a href=&#34;addons.md&#34;&gt;Addons&lt;/a&gt;</i>
+      - <a href="addons.md">Addons</a></i>
     <a href="#logconfig" title="LogConfig">LogConfig</a>: <i>
-      - &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="logconfig.md">LogConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
 
@@ -188,14 +158,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Connections
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;connections.md&#34;&gt;Connections&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -259,7 +221,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;
+_Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -280,14 +242,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamePrefix
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### NatGatewayId
 
 _Required_: No
 
@@ -343,31 +297,7 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SecurityGroupId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ServiceCidr
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SlbId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SlbInternet
 
 _Required_: No
 
@@ -383,14 +313,6 @@ _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SlbIntranet
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### UserCa
 
 _Required_: No
@@ -400,14 +322,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VpcId
 
 _Required_: No
 
@@ -495,14 +409,6 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### WorkerNodes
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;workernodes.md&#34;&gt;WorkerNodes&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### WorkerNumber
 
 _Required_: Yes
@@ -547,7 +453,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;addons.md&#34;&gt;Addons&lt;/a&gt;
+_Type_: List of <a href="addons.md">Addons</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -555,7 +461,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logconfig.md&#34;&gt;LogConfig&lt;/a&gt;
+_Type_: List of <a href="logconfig.md">LogConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -563,7 +469,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -585,33 +491,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Connections
 
-Returns the &lt;code&gt;Connections&lt;/code&gt; value.
+Returns the <code>Connections</code> value.
 
 #### NatGatewayId
 
-Returns the &lt;code&gt;NatGatewayId&lt;/code&gt; value.
+Returns the <code>NatGatewayId</code> value.
 
 #### SecurityGroupId
 
-Returns the &lt;code&gt;SecurityGroupId&lt;/code&gt; value.
+Returns the <code>SecurityGroupId</code> value.
 
 #### SlbId
 
-Returns the &lt;code&gt;SlbId&lt;/code&gt; value.
+Returns the <code>SlbId</code> value.
 
 #### SlbInternet
 
-Returns the &lt;code&gt;SlbInternet&lt;/code&gt; value.
+Returns the <code>SlbInternet</code> value.
 
 #### SlbIntranet
 
-Returns the &lt;code&gt;SlbIntranet&lt;/code&gt; value.
+Returns the <code>SlbIntranet</code> value.
 
 #### VpcId
 
-Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
+Returns the <code>VpcId</code> value.
 
 #### WorkerNodes
 
-Returns the &lt;code&gt;WorkerNodes&lt;/code&gt; value.
+Returns the <code>WorkerNodes</code> value.
 

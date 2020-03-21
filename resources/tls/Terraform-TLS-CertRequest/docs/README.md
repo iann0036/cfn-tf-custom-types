@@ -12,14 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TLS::CertRequest",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#certrequestpem" title="CertRequestPem">CertRequestPem</a>" : <i>String</i>,
         "<a href="#dnsnames" title="DnsNames">DnsNames</a>" : <i>[ String, ... ]</i>,
         "<a href="#ipaddresses" title="IpAddresses">IpAddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#keyalgorithm" title="KeyAlgorithm">KeyAlgorithm</a>" : <i>String</i>,
         "<a href="#privatekeypem" title="PrivateKeyPem">PrivateKeyPem</a>" : <i>String</i>,
         "<a href="#uris" title="Uris">Uris</a>" : <i>[ String, ... ]</i>,
-        "<a href="#subject" title="Subject">Subject</a>" : <i>[ &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;, ... ]</i>
+        "<a href="#subject" title="Subject">Subject</a>" : <i>[ <a href="subject.md">Subject</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,8 +27,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TLS::CertRequest
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#certrequestpem" title="CertRequestPem">CertRequestPem</a>: <i>String</i>
     <a href="#dnsnames" title="DnsNames">DnsNames</a>: <i>
       - String</i>
     <a href="#ipaddresses" title="IpAddresses">IpAddresses</a>: <i>
@@ -40,28 +36,10 @@ Properties:
     <a href="#uris" title="Uris">Uris</a>: <i>
       - String</i>
     <a href="#subject" title="Subject">Subject</a>: <i>
-      - &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;</i>
+      - <a href="subject.md">Subject</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CertRequestPem
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsNames
 
@@ -107,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;
+_Type_: List of <a href="subject.md">Subject</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,5 +107,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CertRequestPem
 
-Returns the &lt;code&gt;CertRequestPem&lt;/code&gt; value.
+Returns the <code>CertRequestPem</code> value.
 

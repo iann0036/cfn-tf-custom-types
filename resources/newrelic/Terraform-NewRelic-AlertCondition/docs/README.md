@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NewRelic::AlertCondition",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#conditionscope" title="ConditionScope">ConditionScope</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#entities" title="Entities">Entities</a>" : <i>[ Double, ... ]</i>,
@@ -25,7 +24,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#userdefinedmetric" title="UserDefinedMetric">UserDefinedMetric</a>" : <i>String</i>,
         "<a href="#userdefinedvaluefunction" title="UserDefinedValueFunction">UserDefinedValueFunction</a>" : <i>String</i>,
         "<a href="#violationclosetimer" title="ViolationCloseTimer">ViolationCloseTimer</a>" : <i>Double</i>,
-        "<a href="#term" title="Term">Term</a>" : <i>[ &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;, ... ]</i>
+        "<a href="#term" title="Term">Term</a>" : <i>[ <a href="term.md">Term</a>, ... ]</i>
     }
 }
 </pre>
@@ -35,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NewRelic::AlertCondition
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#conditionscope" title="ConditionScope">ConditionScope</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#entities" title="Entities">Entities</a>: <i>
@@ -50,20 +48,10 @@ Properties:
     <a href="#userdefinedvaluefunction" title="UserDefinedValueFunction">UserDefinedValueFunction</a>: <i>String</i>
     <a href="#violationclosetimer" title="ViolationCloseTimer">ViolationCloseTimer</a>: <i>Double</i>
     <a href="#term" title="Term">Term</a>: <i>
-      - &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;</i>
+      - <a href="term.md">Term</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConditionScope
 
@@ -165,7 +153,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;term.md&#34;&gt;Term&lt;/a&gt;
+_Type_: List of <a href="term.md">Term</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

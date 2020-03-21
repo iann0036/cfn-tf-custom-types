@@ -12,10 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::VpnConnection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#createtime" title="CreateTime">CreateTime</a>" : <i>String</i>,
         "<a href="#customergatewayid" title="CustomerGatewayId">CustomerGatewayId</a>" : <i>String</i>,
-        "<a href="#encryptproto" title="EncryptProto">EncryptProto</a>" : <i>String</i>,
         "<a href="#ikedhgroupname" title="IkeDhGroupName">IkeDhGroupName</a>" : <i>String</i>,
         "<a href="#ikeexchangemode" title="IkeExchangeMode">IkeExchangeMode</a>" : <i>String</i>,
         "<a href="#ikelocaladdress" title="IkeLocalAddress">IkeLocalAddress</a>" : <i>String</i>,
@@ -34,15 +31,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ipsecsalifetimeseconds" title="IpsecSaLifetimeSeconds">IpsecSaLifetimeSeconds</a>" : <i>Double</i>,
         "<a href="#ipsecsalifetimetraffic" title="IpsecSaLifetimeTraffic">IpsecSaLifetimeTraffic</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#netstatus" title="NetStatus">NetStatus</a>" : <i>String</i>,
         "<a href="#presharekey" title="PreShareKey">PreShareKey</a>" : <i>String</i>,
-        "<a href="#routetype" title="RouteType">RouteType</a>" : <i>String</i>,
-        "<a href="#state" title="State">State</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#vpngatewayid" title="VpnGatewayId">VpnGatewayId</a>" : <i>String</i>,
-        "<a href="#vpnproto" title="VpnProto">VpnProto</a>" : <i>String</i>,
-        "<a href="#securitygrouppolicy" title="SecurityGroupPolicy">SecurityGroupPolicy</a>" : <i>[ &lt;a href=&#34;securitygrouppolicy.md&#34;&gt;SecurityGroupPolicy&lt;/a&gt;, ... ]</i>
+        "<a href="#securitygrouppolicy" title="SecurityGroupPolicy">SecurityGroupPolicy</a>" : <i>[ <a href="securitygrouppolicy.md">SecurityGroupPolicy</a>, ... ]</i>
     }
 }
 </pre>
@@ -52,10 +45,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::VpnConnection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#createtime" title="CreateTime">CreateTime</a>: <i>String</i>
     <a href="#customergatewayid" title="CustomerGatewayId">CustomerGatewayId</a>: <i>String</i>
-    <a href="#encryptproto" title="EncryptProto">EncryptProto</a>: <i>String</i>
     <a href="#ikedhgroupname" title="IkeDhGroupName">IkeDhGroupName</a>: <i>String</i>
     <a href="#ikeexchangemode" title="IkeExchangeMode">IkeExchangeMode</a>: <i>String</i>
     <a href="#ikelocaladdress" title="IkeLocalAddress">IkeLocalAddress</a>: <i>String</i>
@@ -74,50 +64,20 @@ Properties:
     <a href="#ipsecsalifetimeseconds" title="IpsecSaLifetimeSeconds">IpsecSaLifetimeSeconds</a>: <i>Double</i>
     <a href="#ipsecsalifetimetraffic" title="IpsecSaLifetimeTraffic">IpsecSaLifetimeTraffic</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#netstatus" title="NetStatus">NetStatus</a>: <i>String</i>
     <a href="#presharekey" title="PreShareKey">PreShareKey</a>: <i>String</i>
-    <a href="#routetype" title="RouteType">RouteType</a>: <i>String</i>
-    <a href="#state" title="State">State</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#vpngatewayid" title="VpnGatewayId">VpnGatewayId</a>: <i>String</i>
-    <a href="#vpnproto" title="VpnProto">VpnProto</a>: <i>String</i>
     <a href="#securitygrouppolicy" title="SecurityGroupPolicy">SecurityGroupPolicy</a>: <i>
-      - &lt;a href=&#34;securitygrouppolicy.md&#34;&gt;SecurityGroupPolicy&lt;/a&gt;</i>
+      - <a href="securitygrouppolicy.md">SecurityGroupPolicy</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreateTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CustomerGatewayId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### EncryptProto
-
-_Required_: No
 
 _Type_: String
 
@@ -267,33 +227,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### NetStatus
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### PreShareKey
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### RouteType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### State
-
-_Required_: No
 
 _Type_: String
 
@@ -303,7 +239,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -323,19 +259,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### VpnProto
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SecurityGroupPolicy
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;securitygrouppolicy.md&#34;&gt;SecurityGroupPolicy&lt;/a&gt;
+_Type_: List of <a href="securitygrouppolicy.md">SecurityGroupPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -357,25 +285,25 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CreateTime
 
-Returns the &lt;code&gt;CreateTime&lt;/code&gt; value.
+Returns the <code>CreateTime</code> value.
 
 #### EncryptProto
 
-Returns the &lt;code&gt;EncryptProto&lt;/code&gt; value.
+Returns the <code>EncryptProto</code> value.
 
 #### NetStatus
 
-Returns the &lt;code&gt;NetStatus&lt;/code&gt; value.
+Returns the <code>NetStatus</code> value.
 
 #### RouteType
 
-Returns the &lt;code&gt;RouteType&lt;/code&gt; value.
+Returns the <code>RouteType</code> value.
 
 #### State
 
-Returns the &lt;code&gt;State&lt;/code&gt; value.
+Returns the <code>State</code> value.
 
 #### VpnProto
 
-Returns the &lt;code&gt;VpnProto&lt;/code&gt; value.
+Returns the <code>VpnProto</code> value.
 

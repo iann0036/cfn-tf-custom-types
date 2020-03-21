@@ -11,9 +11,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#cooldownperiod" title="CooldownPeriod">CooldownPeriod</a>" : <i>Double</i>,
     "<a href="#maxreplicas" title="MaxReplicas">MaxReplicas</a>" : <i>Double</i>,
     "<a href="#minreplicas" title="MinReplicas">MinReplicas</a>" : <i>Double</i>,
-    "<a href="#cpuutilization" title="CpuUtilization">CpuUtilization</a>" : <i>[ &lt;a href=&#34;autoscalingpolicy-cpuutilization.md&#34;&gt;CpuUtilization&lt;/a&gt;, ... ]</i>,
-    "<a href="#loadbalancingutilization" title="LoadBalancingUtilization">LoadBalancingUtilization</a>" : <i>[ &lt;a href=&#34;autoscalingpolicy-loadbalancingutilization.md&#34;&gt;LoadBalancingUtilization&lt;/a&gt;, ... ]</i>,
-    "<a href="#metric" title="Metric">Metric</a>" : <i>[ &lt;a href=&#34;autoscalingpolicy-metric.md&#34;&gt;Metric&lt;/a&gt;, ... ]</i>
+    "<a href="#cpuutilization" title="CpuUtilization">CpuUtilization</a>" : <i>[ <a href="autoscalingpolicy-cpuutilization.md">CpuUtilization</a>, ... ]</i>,
+    "<a href="#loadbalancingutilization" title="LoadBalancingUtilization">LoadBalancingUtilization</a>" : <i>[ <a href="autoscalingpolicy-loadbalancingutilization.md">LoadBalancingUtilization</a>, ... ]</i>,
+    "<a href="#metric" title="Metric">Metric</a>" : <i>[ <a href="autoscalingpolicy-metric.md">Metric</a>, ... ]</i>
 }
 </pre>
 
@@ -24,11 +24,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#maxreplicas" title="MaxReplicas">MaxReplicas</a>: <i>Double</i>
 <a href="#minreplicas" title="MinReplicas">MinReplicas</a>: <i>Double</i>
 <a href="#cpuutilization" title="CpuUtilization">CpuUtilization</a>: <i>
-      - &lt;a href=&#34;autoscalingpolicy-cpuutilization.md&#34;&gt;CpuUtilization&lt;/a&gt;</i>
+      - <a href="autoscalingpolicy-cpuutilization.md">CpuUtilization</a></i>
 <a href="#loadbalancingutilization" title="LoadBalancingUtilization">LoadBalancingUtilization</a>: <i>
-      - &lt;a href=&#34;autoscalingpolicy-loadbalancingutilization.md&#34;&gt;LoadBalancingUtilization&lt;/a&gt;</i>
+      - <a href="autoscalingpolicy-loadbalancingutilization.md">LoadBalancingUtilization</a></i>
 <a href="#metric" title="Metric">Metric</a>: <i>
-      - &lt;a href=&#34;autoscalingpolicy-metric.md&#34;&gt;Metric&lt;/a&gt;</i>
+      - <a href="autoscalingpolicy-metric.md">Metric</a></i>
 </pre>
 
 ## Properties
@@ -36,6 +36,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CooldownPeriod
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,6 +44,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MaxReplicas
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -50,6 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinReplicas
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -57,21 +60,24 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CpuUtilization
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;autoscalingpolicy-cpuutilization.md&#34;&gt;CpuUtilization&lt;/a&gt;
+
+_Type_: List of <a href="autoscalingpolicy-cpuutilization.md">CpuUtilization</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancingUtilization
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;autoscalingpolicy-loadbalancingutilization.md&#34;&gt;LoadBalancingUtilization&lt;/a&gt;
+
+_Type_: List of <a href="autoscalingpolicy-loadbalancingutilization.md">LoadBalancingUtilization</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Metric
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;autoscalingpolicy-metric.md&#34;&gt;Metric&lt;/a&gt;
+
+_Type_: List of <a href="autoscalingpolicy-metric.md">Metric</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

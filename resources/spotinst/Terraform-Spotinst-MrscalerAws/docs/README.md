@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Spotinst::MrscalerAws",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#additionalinfo" title="AdditionalInfo">AdditionalInfo</a>" : <i>String</i>,
         "<a href="#additionalprimarysecuritygroups" title="AdditionalPrimarySecurityGroups">AdditionalPrimarySecurityGroups</a>" : <i>[ String, ... ]</i>,
         "<a href="#additionalreplicasecuritygroups" title="AdditionalReplicaSecurityGroups">AdditionalReplicaSecurityGroups</a>" : <i>[ String, ... ]</i>,
@@ -38,7 +37,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#masterinstancetypes" title="MasterInstanceTypes">MasterInstanceTypes</a>" : <i>[ String, ... ]</i>,
         "<a href="#masterlifecycle" title="MasterLifecycle">MasterLifecycle</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#outputclusterid" title="OutputClusterId">OutputClusterId</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#releaselabel" title="ReleaseLabel">ReleaseLabel</a>" : <i>String</i>,
         "<a href="#repoupgradeonboot" title="RepoUpgradeOnBoot">RepoUpgradeOnBoot</a>" : <i>String</i>,
@@ -55,21 +53,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#taskminsize" title="TaskMinSize">TaskMinSize</a>" : <i>Double</i>,
         "<a href="#terminationprotected" title="TerminationProtected">TerminationProtected</a>" : <i>Boolean</i>,
         "<a href="#visibletoallusers" title="VisibleToAllUsers">VisibleToAllUsers</a>" : <i>Boolean</i>,
-        "<a href="#applications" title="Applications">Applications</a>" : <i>[ &lt;a href=&#34;applications.md&#34;&gt;Applications&lt;/a&gt;, ... ]</i>,
-        "<a href="#bootstrapactionsfile" title="BootstrapActionsFile">BootstrapActionsFile</a>" : <i>[ &lt;a href=&#34;bootstrapactionsfile.md&#34;&gt;BootstrapActionsFile&lt;/a&gt;, ... ]</i>,
-        "<a href="#configurationsfile" title="ConfigurationsFile">ConfigurationsFile</a>" : <i>[ &lt;a href=&#34;configurationsfile.md&#34;&gt;ConfigurationsFile&lt;/a&gt;, ... ]</i>,
-        "<a href="#coreebsblockdevice" title="CoreEbsBlockDevice">CoreEbsBlockDevice</a>" : <i>[ &lt;a href=&#34;coreebsblockdevice.md&#34;&gt;CoreEbsBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#corescalingdownpolicy" title="CoreScalingDownPolicy">CoreScalingDownPolicy</a>" : <i>[ &lt;a href=&#34;corescalingdownpolicy.md&#34;&gt;CoreScalingDownPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#corescalinguppolicy" title="CoreScalingUpPolicy">CoreScalingUpPolicy</a>" : <i>[ &lt;a href=&#34;corescalinguppolicy.md&#34;&gt;CoreScalingUpPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#instanceweights" title="InstanceWeights">InstanceWeights</a>" : <i>[ &lt;a href=&#34;instanceweights.md&#34;&gt;InstanceWeights&lt;/a&gt;, ... ]</i>,
-        "<a href="#masterebsblockdevice" title="MasterEbsBlockDevice">MasterEbsBlockDevice</a>" : <i>[ &lt;a href=&#34;masterebsblockdevice.md&#34;&gt;MasterEbsBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#provisioningtimeout" title="ProvisioningTimeout">ProvisioningTimeout</a>" : <i>[ &lt;a href=&#34;provisioningtimeout.md&#34;&gt;ProvisioningTimeout&lt;/a&gt;, ... ]</i>,
-        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;, ... ]</i>,
-        "<a href="#stepsfile" title="StepsFile">StepsFile</a>" : <i>[ &lt;a href=&#34;stepsfile.md&#34;&gt;StepsFile&lt;/a&gt;, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#taskebsblockdevice" title="TaskEbsBlockDevice">TaskEbsBlockDevice</a>" : <i>[ &lt;a href=&#34;taskebsblockdevice.md&#34;&gt;TaskEbsBlockDevice&lt;/a&gt;, ... ]</i>,
-        "<a href="#taskscalingdownpolicy" title="TaskScalingDownPolicy">TaskScalingDownPolicy</a>" : <i>[ &lt;a href=&#34;taskscalingdownpolicy.md&#34;&gt;TaskScalingDownPolicy&lt;/a&gt;, ... ]</i>,
-        "<a href="#taskscalinguppolicy" title="TaskScalingUpPolicy">TaskScalingUpPolicy</a>" : <i>[ &lt;a href=&#34;taskscalinguppolicy.md&#34;&gt;TaskScalingUpPolicy&lt;/a&gt;, ... ]</i>
+        "<a href="#applications" title="Applications">Applications</a>" : <i>[ <a href="applications.md">Applications</a>, ... ]</i>,
+        "<a href="#bootstrapactionsfile" title="BootstrapActionsFile">BootstrapActionsFile</a>" : <i>[ <a href="bootstrapactionsfile.md">BootstrapActionsFile</a>, ... ]</i>,
+        "<a href="#configurationsfile" title="ConfigurationsFile">ConfigurationsFile</a>" : <i>[ <a href="configurationsfile.md">ConfigurationsFile</a>, ... ]</i>,
+        "<a href="#coreebsblockdevice" title="CoreEbsBlockDevice">CoreEbsBlockDevice</a>" : <i>[ <a href="coreebsblockdevice.md">CoreEbsBlockDevice</a>, ... ]</i>,
+        "<a href="#corescalingdownpolicy" title="CoreScalingDownPolicy">CoreScalingDownPolicy</a>" : <i>[ <a href="corescalingdownpolicy.md">CoreScalingDownPolicy</a>, ... ]</i>,
+        "<a href="#corescalinguppolicy" title="CoreScalingUpPolicy">CoreScalingUpPolicy</a>" : <i>[ <a href="corescalinguppolicy.md">CoreScalingUpPolicy</a>, ... ]</i>,
+        "<a href="#instanceweights" title="InstanceWeights">InstanceWeights</a>" : <i>[ <a href="instanceweights.md">InstanceWeights</a>, ... ]</i>,
+        "<a href="#masterebsblockdevice" title="MasterEbsBlockDevice">MasterEbsBlockDevice</a>" : <i>[ <a href="masterebsblockdevice.md">MasterEbsBlockDevice</a>, ... ]</i>,
+        "<a href="#provisioningtimeout" title="ProvisioningTimeout">ProvisioningTimeout</a>" : <i>[ <a href="provisioningtimeout.md">ProvisioningTimeout</a>, ... ]</i>,
+        "<a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>" : <i>[ <a href="scheduledtask.md">ScheduledTask</a>, ... ]</i>,
+        "<a href="#stepsfile" title="StepsFile">StepsFile</a>" : <i>[ <a href="stepsfile.md">StepsFile</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#taskebsblockdevice" title="TaskEbsBlockDevice">TaskEbsBlockDevice</a>" : <i>[ <a href="taskebsblockdevice.md">TaskEbsBlockDevice</a>, ... ]</i>,
+        "<a href="#taskscalingdownpolicy" title="TaskScalingDownPolicy">TaskScalingDownPolicy</a>" : <i>[ <a href="taskscalingdownpolicy.md">TaskScalingDownPolicy</a>, ... ]</i>,
+        "<a href="#taskscalinguppolicy" title="TaskScalingUpPolicy">TaskScalingUpPolicy</a>" : <i>[ <a href="taskscalinguppolicy.md">TaskScalingUpPolicy</a>, ... ]</i>
     }
 }
 </pre>
@@ -79,7 +77,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Spotinst::MrscalerAws
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#additionalinfo" title="AdditionalInfo">AdditionalInfo</a>: <i>String</i>
     <a href="#additionalprimarysecuritygroups" title="AdditionalPrimarySecurityGroups">AdditionalPrimarySecurityGroups</a>: <i>
       - String</i>
@@ -110,7 +107,6 @@ Properties:
       - String</i>
     <a href="#masterlifecycle" title="MasterLifecycle">MasterLifecycle</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#outputclusterid" title="OutputClusterId">OutputClusterId</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#releaselabel" title="ReleaseLabel">ReleaseLabel</a>: <i>String</i>
     <a href="#repoupgradeonboot" title="RepoUpgradeOnBoot">RepoUpgradeOnBoot</a>: <i>String</i>
@@ -129,48 +125,38 @@ Properties:
     <a href="#terminationprotected" title="TerminationProtected">TerminationProtected</a>: <i>Boolean</i>
     <a href="#visibletoallusers" title="VisibleToAllUsers">VisibleToAllUsers</a>: <i>Boolean</i>
     <a href="#applications" title="Applications">Applications</a>: <i>
-      - &lt;a href=&#34;applications.md&#34;&gt;Applications&lt;/a&gt;</i>
+      - <a href="applications.md">Applications</a></i>
     <a href="#bootstrapactionsfile" title="BootstrapActionsFile">BootstrapActionsFile</a>: <i>
-      - &lt;a href=&#34;bootstrapactionsfile.md&#34;&gt;BootstrapActionsFile&lt;/a&gt;</i>
+      - <a href="bootstrapactionsfile.md">BootstrapActionsFile</a></i>
     <a href="#configurationsfile" title="ConfigurationsFile">ConfigurationsFile</a>: <i>
-      - &lt;a href=&#34;configurationsfile.md&#34;&gt;ConfigurationsFile&lt;/a&gt;</i>
+      - <a href="configurationsfile.md">ConfigurationsFile</a></i>
     <a href="#coreebsblockdevice" title="CoreEbsBlockDevice">CoreEbsBlockDevice</a>: <i>
-      - &lt;a href=&#34;coreebsblockdevice.md&#34;&gt;CoreEbsBlockDevice&lt;/a&gt;</i>
+      - <a href="coreebsblockdevice.md">CoreEbsBlockDevice</a></i>
     <a href="#corescalingdownpolicy" title="CoreScalingDownPolicy">CoreScalingDownPolicy</a>: <i>
-      - &lt;a href=&#34;corescalingdownpolicy.md&#34;&gt;CoreScalingDownPolicy&lt;/a&gt;</i>
+      - <a href="corescalingdownpolicy.md">CoreScalingDownPolicy</a></i>
     <a href="#corescalinguppolicy" title="CoreScalingUpPolicy">CoreScalingUpPolicy</a>: <i>
-      - &lt;a href=&#34;corescalinguppolicy.md&#34;&gt;CoreScalingUpPolicy&lt;/a&gt;</i>
+      - <a href="corescalinguppolicy.md">CoreScalingUpPolicy</a></i>
     <a href="#instanceweights" title="InstanceWeights">InstanceWeights</a>: <i>
-      - &lt;a href=&#34;instanceweights.md&#34;&gt;InstanceWeights&lt;/a&gt;</i>
+      - <a href="instanceweights.md">InstanceWeights</a></i>
     <a href="#masterebsblockdevice" title="MasterEbsBlockDevice">MasterEbsBlockDevice</a>: <i>
-      - &lt;a href=&#34;masterebsblockdevice.md&#34;&gt;MasterEbsBlockDevice&lt;/a&gt;</i>
+      - <a href="masterebsblockdevice.md">MasterEbsBlockDevice</a></i>
     <a href="#provisioningtimeout" title="ProvisioningTimeout">ProvisioningTimeout</a>: <i>
-      - &lt;a href=&#34;provisioningtimeout.md&#34;&gt;ProvisioningTimeout&lt;/a&gt;</i>
+      - <a href="provisioningtimeout.md">ProvisioningTimeout</a></i>
     <a href="#scheduledtask" title="ScheduledTask">ScheduledTask</a>: <i>
-      - &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;</i>
+      - <a href="scheduledtask.md">ScheduledTask</a></i>
     <a href="#stepsfile" title="StepsFile">StepsFile</a>: <i>
-      - &lt;a href=&#34;stepsfile.md&#34;&gt;StepsFile&lt;/a&gt;</i>
+      - <a href="stepsfile.md">StepsFile</a></i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#taskebsblockdevice" title="TaskEbsBlockDevice">TaskEbsBlockDevice</a>: <i>
-      - &lt;a href=&#34;taskebsblockdevice.md&#34;&gt;TaskEbsBlockDevice&lt;/a&gt;</i>
+      - <a href="taskebsblockdevice.md">TaskEbsBlockDevice</a></i>
     <a href="#taskscalingdownpolicy" title="TaskScalingDownPolicy">TaskScalingDownPolicy</a>: <i>
-      - &lt;a href=&#34;taskscalingdownpolicy.md&#34;&gt;TaskScalingDownPolicy&lt;/a&gt;</i>
+      - <a href="taskscalingdownpolicy.md">TaskScalingDownPolicy</a></i>
     <a href="#taskscalinguppolicy" title="TaskScalingUpPolicy">TaskScalingUpPolicy</a>: <i>
-      - &lt;a href=&#34;taskscalinguppolicy.md&#34;&gt;TaskScalingUpPolicy&lt;/a&gt;</i>
+      - <a href="taskscalinguppolicy.md">TaskScalingUpPolicy</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdditionalInfo
 
@@ -372,14 +358,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### OutputClusterId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Region
 
 _Required_: No
@@ -512,7 +490,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;applications.md&#34;&gt;Applications&lt;/a&gt;
+_Type_: List of <a href="applications.md">Applications</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -520,7 +498,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;bootstrapactionsfile.md&#34;&gt;BootstrapActionsFile&lt;/a&gt;
+_Type_: List of <a href="bootstrapactionsfile.md">BootstrapActionsFile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -528,7 +506,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;configurationsfile.md&#34;&gt;ConfigurationsFile&lt;/a&gt;
+_Type_: List of <a href="configurationsfile.md">ConfigurationsFile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -536,7 +514,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;coreebsblockdevice.md&#34;&gt;CoreEbsBlockDevice&lt;/a&gt;
+_Type_: List of <a href="coreebsblockdevice.md">CoreEbsBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -544,7 +522,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;corescalingdownpolicy.md&#34;&gt;CoreScalingDownPolicy&lt;/a&gt;
+_Type_: List of <a href="corescalingdownpolicy.md">CoreScalingDownPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -552,7 +530,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;corescalinguppolicy.md&#34;&gt;CoreScalingUpPolicy&lt;/a&gt;
+_Type_: List of <a href="corescalinguppolicy.md">CoreScalingUpPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -560,7 +538,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instanceweights.md&#34;&gt;InstanceWeights&lt;/a&gt;
+_Type_: List of <a href="instanceweights.md">InstanceWeights</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -568,7 +546,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;masterebsblockdevice.md&#34;&gt;MasterEbsBlockDevice&lt;/a&gt;
+_Type_: List of <a href="masterebsblockdevice.md">MasterEbsBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -576,7 +554,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;provisioningtimeout.md&#34;&gt;ProvisioningTimeout&lt;/a&gt;
+_Type_: List of <a href="provisioningtimeout.md">ProvisioningTimeout</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -584,7 +562,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scheduledtask.md&#34;&gt;ScheduledTask&lt;/a&gt;
+_Type_: List of <a href="scheduledtask.md">ScheduledTask</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -592,7 +570,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;stepsfile.md&#34;&gt;StepsFile&lt;/a&gt;
+_Type_: List of <a href="stepsfile.md">StepsFile</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -600,7 +578,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -608,7 +586,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;taskebsblockdevice.md&#34;&gt;TaskEbsBlockDevice&lt;/a&gt;
+_Type_: List of <a href="taskebsblockdevice.md">TaskEbsBlockDevice</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -616,7 +594,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;taskscalingdownpolicy.md&#34;&gt;TaskScalingDownPolicy&lt;/a&gt;
+_Type_: List of <a href="taskscalingdownpolicy.md">TaskScalingDownPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -624,7 +602,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;taskscalinguppolicy.md&#34;&gt;TaskScalingUpPolicy&lt;/a&gt;
+_Type_: List of <a href="taskscalinguppolicy.md">TaskScalingUpPolicy</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -646,5 +624,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OutputClusterId
 
-Returns the &lt;code&gt;OutputClusterId&lt;/code&gt; value.
+Returns the <code>OutputClusterId</code> value.
 

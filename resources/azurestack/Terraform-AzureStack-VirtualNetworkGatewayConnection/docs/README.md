@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureStack::VirtualNetworkGatewayConnection",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#authorizationkey" title="AuthorizationKey">AuthorizationKey</a>" : <i>String</i>,
         "<a href="#enablebgp" title="EnableBgp">EnableBgp</a>" : <i>Boolean</i>,
         "<a href="#expressroutecircuitid" title="ExpressRouteCircuitId">ExpressRouteCircuitId</a>" : <i>String</i>,
@@ -23,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#routingweight" title="RoutingWeight">RoutingWeight</a>" : <i>Double</i>,
         "<a href="#sharedkey" title="SharedKey">SharedKey</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#virtualnetworkgatewayid" title="VirtualNetworkGatewayId">VirtualNetworkGatewayId</a>" : <i>String</i>
     }
@@ -35,7 +34,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureStack::VirtualNetworkGatewayConnection
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#authorizationkey" title="AuthorizationKey">AuthorizationKey</a>: <i>String</i>
     <a href="#enablebgp" title="EnableBgp">EnableBgp</a>: <i>Boolean</i>
     <a href="#expressroutecircuitid" title="ExpressRouteCircuitId">ExpressRouteCircuitId</a>: <i>String</i>
@@ -47,22 +45,12 @@ Properties:
     <a href="#routingweight" title="RoutingWeight">RoutingWeight</a>: <i>Double</i>
     <a href="#sharedkey" title="SharedKey">SharedKey</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#virtualnetworkgatewayid" title="VirtualNetworkGatewayId">VirtualNetworkGatewayId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthorizationKey
 
@@ -148,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

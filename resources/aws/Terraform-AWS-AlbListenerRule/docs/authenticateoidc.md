@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#authenticationrequestextraparams" title="AuthenticationRequestExtraParams">AuthenticationRequestExtraParams</a>" : <i>[ &lt;a href=&#34;authenticateoidc-authenticationrequestextraparams.md&#34;&gt;AuthenticationRequestExtraParams&lt;/a&gt;, ... ]</i>,
+    "<a href="#authenticationrequestextraparams" title="AuthenticationRequestExtraParams">AuthenticationRequestExtraParams</a>" : <i>[ <a href="authenticateoidc-authenticationrequestextraparams.md">AuthenticationRequestExtraParams</a>, ... ]</i>,
     "<a href="#authorizationendpoint" title="AuthorizationEndpoint">AuthorizationEndpoint</a>" : <i>String</i>,
     "<a href="#clientid" title="ClientId">ClientId</a>" : <i>String</i>,
     "<a href="#clientsecret" title="ClientSecret">ClientSecret</a>" : <i>String</i>,
@@ -26,7 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#authenticationrequestextraparams" title="AuthenticationRequestExtraParams">AuthenticationRequestExtraParams</a>: <i>
-      - &lt;a href=&#34;authenticateoidc-authenticationrequestextraparams.md&#34;&gt;AuthenticationRequestExtraParams&lt;/a&gt;</i>
+      - <a href="authenticateoidc-authenticationrequestextraparams.md">AuthenticationRequestExtraParams</a></i>
 <a href="#authorizationendpoint" title="AuthorizationEndpoint">AuthorizationEndpoint</a>: <i>String</i>
 <a href="#clientid" title="ClientId">ClientId</a>: <i>String</i>
 <a href="#clientsecret" title="ClientSecret">ClientSecret</a>: <i>String</i>
@@ -44,13 +44,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AuthenticationRequestExtraParams
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;authenticateoidc-authenticationrequestextraparams.md&#34;&gt;AuthenticationRequestExtraParams&lt;/a&gt;
+
+_Type_: List of <a href="authenticateoidc-authenticationrequestextraparams.md">AuthenticationRequestExtraParams</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthorizationEndpoint
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,6 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClientId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -65,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ClientSecret
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,6 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Issuer
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -79,6 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OnUnauthenticatedRequest
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -86,6 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Scope
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -93,6 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SessionCookieName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -100,6 +108,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SessionTimeout
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -107,6 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TokenEndpoint
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -114,6 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### UserInfoEndpoint
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

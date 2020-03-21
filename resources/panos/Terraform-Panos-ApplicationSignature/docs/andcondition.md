@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#orcondition" title="OrCondition">OrCondition</a>" : <i>[ &lt;a href=&#34;andcondition-orcondition.md&#34;&gt;OrCondition&lt;/a&gt;, ... ]</i>
+    "<a href="#orcondition" title="OrCondition">OrCondition</a>" : <i>[ <a href="andcondition-orcondition.md">OrCondition</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#orcondition" title="OrCondition">OrCondition</a>: <i>
-      - &lt;a href=&#34;andcondition-orcondition.md&#34;&gt;OrCondition&lt;/a&gt;</i>
+      - <a href="andcondition-orcondition.md">OrCondition</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### OrCondition
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;andcondition-orcondition.md&#34;&gt;OrCondition&lt;/a&gt;
+
+_Type_: List of <a href="andcondition-orcondition.md">OrCondition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

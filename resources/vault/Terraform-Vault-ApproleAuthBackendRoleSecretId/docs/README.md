@@ -12,15 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::ApproleAuthBackendRoleSecretId",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#accessor" title="Accessor">Accessor</a>" : <i>String</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
         "<a href="#cidrlist" title="CidrList">CidrList</a>" : <i>[ String, ... ]</i>,
         "<a href="#metadata" title="Metadata">Metadata</a>" : <i>String</i>,
         "<a href="#rolename" title="RoleName">RoleName</a>" : <i>String</i>,
         "<a href="#secretid" title="SecretId">SecretId</a>" : <i>String</i>,
-        "<a href="#wrappingaccessor" title="WrappingAccessor">WrappingAccessor</a>" : <i>String</i>,
-        "<a href="#wrappingtoken" title="WrappingToken">WrappingToken</a>" : <i>String</i>,
         "<a href="#wrappingttl" title="WrappingTtl">WrappingTtl</a>" : <i>String</i>
     }
 }
@@ -31,38 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::ApproleAuthBackendRoleSecretId
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#accessor" title="Accessor">Accessor</a>: <i>String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
     <a href="#cidrlist" title="CidrList">CidrList</a>: <i>
       - String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>String</i>
     <a href="#rolename" title="RoleName">RoleName</a>: <i>String</i>
     <a href="#secretid" title="SecretId">SecretId</a>: <i>String</i>
-    <a href="#wrappingaccessor" title="WrappingAccessor">WrappingAccessor</a>: <i>String</i>
-    <a href="#wrappingtoken" title="WrappingToken">WrappingToken</a>: <i>String</i>
     <a href="#wrappingttl" title="WrappingTtl">WrappingTtl</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Accessor
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Backend
 
@@ -104,22 +78,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### WrappingAccessor
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### WrappingToken
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### WrappingTtl
 
 _Required_: No
@@ -146,13 +104,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessor
 
-Returns the &lt;code&gt;Accessor&lt;/code&gt; value.
+Returns the <code>Accessor</code> value.
 
 #### WrappingAccessor
 
-Returns the &lt;code&gt;WrappingAccessor&lt;/code&gt; value.
+Returns the <code>WrappingAccessor</code> value.
 
 #### WrappingToken
 
-Returns the &lt;code&gt;WrappingToken&lt;/code&gt; value.
+Returns the <code>WrappingToken</code> value.
 

@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#servicedelegation" title="ServiceDelegation">ServiceDelegation</a>" : <i>[ &lt;a href=&#34;delegation-servicedelegation.md&#34;&gt;ServiceDelegation&lt;/a&gt;, ... ]</i>
+    "<a href="#servicedelegation" title="ServiceDelegation">ServiceDelegation</a>" : <i>[ <a href="delegation-servicedelegation.md">ServiceDelegation</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#servicedelegation" title="ServiceDelegation">ServiceDelegation</a>: <i>
-      - &lt;a href=&#34;delegation-servicedelegation.md&#34;&gt;ServiceDelegation&lt;/a&gt;</i>
+      - <a href="delegation-servicedelegation.md">ServiceDelegation</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ServiceDelegation
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;delegation-servicedelegation.md&#34;&gt;ServiceDelegation&lt;/a&gt;
+
+_Type_: List of <a href="delegation-servicedelegation.md">ServiceDelegation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

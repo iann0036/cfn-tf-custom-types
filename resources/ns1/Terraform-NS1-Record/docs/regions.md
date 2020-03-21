@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#meta" title="Meta">Meta</a>" : <i>[ &lt;a href=&#34;regions-meta.md&#34;&gt;Meta&lt;/a&gt;, ... ]</i>,
+    "<a href="#meta" title="Meta">Meta</a>" : <i>[ <a href="regions-meta.md">Meta</a>, ... ]</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>
 }
 </pre>
@@ -17,7 +17,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#meta" title="Meta">Meta</a>: <i>
-      - &lt;a href=&#34;regions-meta.md&#34;&gt;Meta&lt;/a&gt;</i>
+      - <a href="regions-meta.md">Meta</a></i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 </pre>
 
@@ -26,13 +26,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Meta
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;regions-meta.md&#34;&gt;Meta&lt;/a&gt;
+
+_Type_: List of <a href="regions-meta.md">Meta</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

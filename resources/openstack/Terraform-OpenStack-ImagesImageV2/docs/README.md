@@ -12,32 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenStack::ImagesImageV2",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#checksum" title="Checksum">Checksum</a>" : <i>String</i>,
         "<a href="#containerformat" title="ContainerFormat">ContainerFormat</a>" : <i>String</i>,
-        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#diskformat" title="DiskFormat">DiskFormat</a>" : <i>String</i>,
-        "<a href="#file" title="File">File</a>" : <i>String</i>,
         "<a href="#imagecachepath" title="ImageCachePath">ImageCachePath</a>" : <i>String</i>,
         "<a href="#imagesourceurl" title="ImageSourceUrl">ImageSourceUrl</a>" : <i>String</i>,
         "<a href="#localfilepath" title="LocalFilePath">LocalFilePath</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
         "<a href="#mindiskgb" title="MinDiskGb">MinDiskGb</a>" : <i>Double</i>,
         "<a href="#minrammb" title="MinRamMb">MinRamMb</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#owner" title="Owner">Owner</a>" : <i>String</i>,
-        "<a href="#properties" title="Properties">Properties</a>" : <i>[ &lt;a href=&#34;properties.md&#34;&gt;Properties&lt;/a&gt;, ... ]</i>,
+        "<a href="#properties" title="Properties">Properties</a>" : <i>[ <a href="properties.md">Properties</a>, ... ]</i>,
         "<a href="#protected" title="Protected">Protected</a>" : <i>Boolean</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#schema" title="Schema">Schema</a>" : <i>String</i>,
-        "<a href="#sizebytes" title="SizeBytes">SizeBytes</a>" : <i>Double</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#updateat" title="UpdateAt">UpdateAt</a>" : <i>String</i>,
-        "<a href="#updatedat" title="UpdatedAt">UpdatedAt</a>" : <i>String</i>,
         "<a href="#verifychecksum" title="VerifyChecksum">VerifyChecksum</a>" : <i>Boolean</i>,
         "<a href="#visibility" title="Visibility">Visibility</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -47,56 +36,26 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenStack::ImagesImageV2
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#checksum" title="Checksum">Checksum</a>: <i>String</i>
     <a href="#containerformat" title="ContainerFormat">ContainerFormat</a>: <i>String</i>
-    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#diskformat" title="DiskFormat">DiskFormat</a>: <i>String</i>
-    <a href="#file" title="File">File</a>: <i>String</i>
     <a href="#imagecachepath" title="ImageCachePath">ImageCachePath</a>: <i>String</i>
     <a href="#imagesourceurl" title="ImageSourceUrl">ImageSourceUrl</a>: <i>String</i>
     <a href="#localfilepath" title="LocalFilePath">LocalFilePath</a>: <i>String</i>
-    <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
     <a href="#mindiskgb" title="MinDiskGb">MinDiskGb</a>: <i>Double</i>
     <a href="#minrammb" title="MinRamMb">MinRamMb</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#owner" title="Owner">Owner</a>: <i>String</i>
     <a href="#properties" title="Properties">Properties</a>: <i>
-      - &lt;a href=&#34;properties.md&#34;&gt;Properties&lt;/a&gt;</i>
+      - <a href="properties.md">Properties</a></i>
     <a href="#protected" title="Protected">Protected</a>: <i>Boolean</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#schema" title="Schema">Schema</a>: <i>String</i>
-    <a href="#sizebytes" title="SizeBytes">SizeBytes</a>: <i>Double</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
-    <a href="#updateat" title="UpdateAt">UpdateAt</a>: <i>String</i>
-    <a href="#updatedat" title="UpdatedAt">UpdatedAt</a>: <i>String</i>
     <a href="#verifychecksum" title="VerifyChecksum">VerifyChecksum</a>: <i>Boolean</i>
     <a href="#visibility" title="Visibility">Visibility</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Checksum
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ContainerFormat
 
@@ -106,25 +65,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### CreatedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### DiskFormat
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### File
-
-_Required_: No
 
 _Type_: String
 
@@ -154,14 +97,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Metadata
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### MinDiskGb
 
 _Required_: No
@@ -186,19 +121,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Owner
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Properties
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;properties.md&#34;&gt;Properties&lt;/a&gt;
+_Type_: List of <a href="properties.md">Properties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -218,51 +145,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Schema
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SizeBytes
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UpdateAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### UpdatedAt
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -286,7 +173,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -308,41 +195,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Checksum
 
-Returns the &lt;code&gt;Checksum&lt;/code&gt; value.
+Returns the <code>Checksum</code> value.
 
 #### CreatedAt
 
-Returns the &lt;code&gt;CreatedAt&lt;/code&gt; value.
+Returns the <code>CreatedAt</code> value.
 
 #### File
 
-Returns the &lt;code&gt;File&lt;/code&gt; value.
+Returns the <code>File</code> value.
 
 #### Metadata
 
-Returns the &lt;code&gt;Metadata&lt;/code&gt; value.
+Returns the <code>Metadata</code> value.
 
 #### Owner
 
-Returns the &lt;code&gt;Owner&lt;/code&gt; value.
+Returns the <code>Owner</code> value.
 
 #### Schema
 
-Returns the &lt;code&gt;Schema&lt;/code&gt; value.
+Returns the <code>Schema</code> value.
 
 #### SizeBytes
 
-Returns the &lt;code&gt;SizeBytes&lt;/code&gt; value.
+Returns the <code>SizeBytes</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 
 #### UpdateAt
 
-Returns the &lt;code&gt;UpdateAt&lt;/code&gt; value.
+Returns the <code>UpdateAt</code> value.
 
 #### UpdatedAt
 
-Returns the &lt;code&gt;UpdatedAt&lt;/code&gt; value.
+Returns the <code>UpdatedAt</code> value.
 

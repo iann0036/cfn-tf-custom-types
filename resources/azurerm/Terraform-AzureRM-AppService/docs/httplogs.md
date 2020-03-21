@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#azureblobstorage" title="AzureBlobStorage">AzureBlobStorage</a>" : <i>[ &lt;a href=&#34;httplogs-azureblobstorage.md&#34;&gt;AzureBlobStorage&lt;/a&gt;, ... ]</i>,
-    "<a href="#filesystem" title="FileSystem">FileSystem</a>" : <i>[ &lt;a href=&#34;httplogs-filesystem.md&#34;&gt;FileSystem&lt;/a&gt;, ... ]</i>
+    "<a href="#azureblobstorage" title="AzureBlobStorage">AzureBlobStorage</a>" : <i>[ <a href="httplogs-azureblobstorage.md">AzureBlobStorage</a>, ... ]</i>,
+    "<a href="#filesystem" title="FileSystem">FileSystem</a>" : <i>[ <a href="httplogs-filesystem.md">FileSystem</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#azureblobstorage" title="AzureBlobStorage">AzureBlobStorage</a>: <i>
-      - &lt;a href=&#34;httplogs-azureblobstorage.md&#34;&gt;AzureBlobStorage&lt;/a&gt;</i>
+      - <a href="httplogs-azureblobstorage.md">AzureBlobStorage</a></i>
 <a href="#filesystem" title="FileSystem">FileSystem</a>: <i>
-      - &lt;a href=&#34;httplogs-filesystem.md&#34;&gt;FileSystem&lt;/a&gt;</i>
+      - <a href="httplogs-filesystem.md">FileSystem</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AzureBlobStorage
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;httplogs-azureblobstorage.md&#34;&gt;AzureBlobStorage&lt;/a&gt;
+
+_Type_: List of <a href="httplogs-azureblobstorage.md">AzureBlobStorage</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FileSystem
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;httplogs-filesystem.md&#34;&gt;FileSystem&lt;/a&gt;
+
+_Type_: List of <a href="httplogs-filesystem.md">FileSystem</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

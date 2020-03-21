@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#encryptionatrestkmskeyarn" title="EncryptionAtRestKmsKeyArn">EncryptionAtRestKmsKeyArn</a>" : <i>String</i>,
-    "<a href="#encryptionintransit" title="EncryptionInTransit">EncryptionInTransit</a>" : <i>[ &lt;a href=&#34;encryptioninfo-encryptionintransit.md&#34;&gt;EncryptionInTransit&lt;/a&gt;, ... ]</i>
+    "<a href="#encryptionintransit" title="EncryptionInTransit">EncryptionInTransit</a>" : <i>[ <a href="encryptioninfo-encryptionintransit.md">EncryptionInTransit</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#encryptionatrestkmskeyarn" title="EncryptionAtRestKmsKeyArn">EncryptionAtRestKmsKeyArn</a>: <i>String</i>
 <a href="#encryptionintransit" title="EncryptionInTransit">EncryptionInTransit</a>: <i>
-      - &lt;a href=&#34;encryptioninfo-encryptionintransit.md&#34;&gt;EncryptionInTransit&lt;/a&gt;</i>
+      - <a href="encryptioninfo-encryptionintransit.md">EncryptionInTransit</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### EncryptionAtRestKmsKeyArn
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EncryptionInTransit
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;encryptioninfo-encryptionintransit.md&#34;&gt;EncryptionInTransit&lt;/a&gt;
+
+_Type_: List of <a href="encryptioninfo-encryptionintransit.md">EncryptionInTransit</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

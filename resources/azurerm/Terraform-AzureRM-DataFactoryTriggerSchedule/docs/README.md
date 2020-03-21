@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::DataFactoryTriggerSchedule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#annotations" title="Annotations">Annotations</a>" : <i>[ String, ... ]</i>,
         "<a href="#datafactoryname" title="DataFactoryName">DataFactoryName</a>" : <i>String</i>,
         "<a href="#endtime" title="EndTime">EndTime</a>" : <i>String</i>,
@@ -20,10 +19,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#interval" title="Interval">Interval</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#pipelinename" title="PipelineName">PipelineName</a>" : <i>String</i>,
-        "<a href="#pipelineparameters" title="PipelineParameters">PipelineParameters</a>" : <i>[ &lt;a href=&#34;pipelineparameters.md&#34;&gt;PipelineParameters&lt;/a&gt;, ... ]</i>,
+        "<a href="#pipelineparameters" title="PipelineParameters">PipelineParameters</a>" : <i>[ <a href="pipelineparameters.md">PipelineParameters</a>, ... ]</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#starttime" title="StartTime">StartTime</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -33,7 +32,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::DataFactoryTriggerSchedule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#annotations" title="Annotations">Annotations</a>: <i>
       - String</i>
     <a href="#datafactoryname" title="DataFactoryName">DataFactoryName</a>: <i>String</i>
@@ -43,23 +41,13 @@ Properties:
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#pipelinename" title="PipelineName">PipelineName</a>: <i>String</i>
     <a href="#pipelineparameters" title="PipelineParameters">PipelineParameters</a>: <i>
-      - &lt;a href=&#34;pipelineparameters.md&#34;&gt;PipelineParameters&lt;/a&gt;</i>
+      - <a href="pipelineparameters.md">PipelineParameters</a></i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#starttime" title="StartTime">StartTime</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Annotations
 
@@ -121,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;pipelineparameters.md&#34;&gt;PipelineParameters&lt;/a&gt;
+_Type_: List of <a href="pipelineparameters.md">PipelineParameters</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +133,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

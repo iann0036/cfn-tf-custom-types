@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::CamUser",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#consolelogin" title="ConsoleLogin">ConsoleLogin</a>" : <i>Boolean</i>,
         "<a href="#countrycode" title="CountryCode">CountryCode</a>" : <i>String</i>,
         "<a href="#email" title="Email">Email</a>" : <i>String</i>,
@@ -21,10 +20,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#phonenum" title="PhoneNum">PhoneNum</a>" : <i>String</i>,
         "<a href="#remark" title="Remark">Remark</a>" : <i>String</i>,
-        "<a href="#secretid" title="SecretId">SecretId</a>" : <i>String</i>,
-        "<a href="#secretkey" title="SecretKey">SecretKey</a>" : <i>String</i>,
-        "<a href="#uid" title="Uid">Uid</a>" : <i>Double</i>,
-        "<a href="#uin" title="Uin">Uin</a>" : <i>Double</i>,
         "<a href="#useapi" title="UseApi">UseApi</a>" : <i>Boolean</i>
     }
 }
@@ -35,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::CamUser
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#consolelogin" title="ConsoleLogin">ConsoleLogin</a>: <i>Boolean</i>
     <a href="#countrycode" title="CountryCode">CountryCode</a>: <i>String</i>
     <a href="#email" title="Email">Email</a>: <i>String</i>
@@ -44,24 +38,10 @@ Properties:
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#phonenum" title="PhoneNum">PhoneNum</a>: <i>String</i>
     <a href="#remark" title="Remark">Remark</a>: <i>String</i>
-    <a href="#secretid" title="SecretId">SecretId</a>: <i>String</i>
-    <a href="#secretkey" title="SecretKey">SecretKey</a>: <i>String</i>
-    <a href="#uid" title="Uid">Uid</a>: <i>Double</i>
-    <a href="#uin" title="Uin">Uin</a>: <i>Double</i>
     <a href="#useapi" title="UseApi">UseApi</a>: <i>Boolean</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConsoleLogin
 
@@ -127,38 +107,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SecretId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SecretKey
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uid
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Uin
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### UseApi
 
 _Required_: No
@@ -185,17 +133,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### SecretId
 
-Returns the &lt;code&gt;SecretId&lt;/code&gt; value.
+Returns the <code>SecretId</code> value.
 
 #### SecretKey
 
-Returns the &lt;code&gt;SecretKey&lt;/code&gt; value.
+Returns the <code>SecretKey</code> value.
 
 #### Uid
 
-Returns the &lt;code&gt;Uid&lt;/code&gt; value.
+Returns the <code>Uid</code> value.
 
 #### Uin
 
-Returns the &lt;code&gt;Uin&lt;/code&gt; value.
+Returns the <code>Uin</code> value.
 

@@ -12,11 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::IamUserSshKey",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#encoding" title="Encoding">Encoding</a>" : <i>String</i>,
-        "<a href="#fingerprint" title="Fingerprint">Fingerprint</a>" : <i>String</i>,
         "<a href="#publickey" title="PublicKey">PublicKey</a>" : <i>String</i>,
-        "<a href="#sshpublickeyid" title="SshPublicKeyId">SshPublicKeyId</a>" : <i>String</i>,
         "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#username" title="Username">Username</a>" : <i>String</i>
     }
@@ -28,26 +25,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::IamUserSshKey
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#encoding" title="Encoding">Encoding</a>: <i>String</i>
-    <a href="#fingerprint" title="Fingerprint">Fingerprint</a>: <i>String</i>
     <a href="#publickey" title="PublicKey">PublicKey</a>: <i>String</i>
-    <a href="#sshpublickeyid" title="SshPublicKeyId">SshPublicKeyId</a>: <i>String</i>
     <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#username" title="Username">Username</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Encoding
 
@@ -57,25 +41,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Fingerprint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### PublicKey
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SshPublicKeyId
-
-_Required_: No
 
 _Type_: String
 
@@ -115,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fingerprint
 
-Returns the &lt;code&gt;Fingerprint&lt;/code&gt; value.
+Returns the <code>Fingerprint</code> value.
 
 #### SshPublicKeyId
 
-Returns the &lt;code&gt;SshPublicKeyId&lt;/code&gt; value.
+Returns the <code>SshPublicKeyId</code> value.
 

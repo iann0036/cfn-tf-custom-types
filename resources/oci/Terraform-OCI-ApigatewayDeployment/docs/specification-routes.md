@@ -10,9 +10,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#methods" title="Methods">Methods</a>" : <i>[ String, ... ]</i>,
     "<a href="#path" title="Path">Path</a>" : <i>String</i>,
-    "<a href="#backend" title="Backend">Backend</a>" : <i>[ &lt;a href=&#34;specification-routes-backend.md&#34;&gt;Backend&lt;/a&gt;, ... ]</i>,
-    "<a href="#loggingpolicies" title="LoggingPolicies">LoggingPolicies</a>" : <i>[ &lt;a href=&#34;specification-routes-loggingpolicies.md&#34;&gt;LoggingPolicies&lt;/a&gt;, ... ]</i>,
-    "<a href="#requestpolicies" title="RequestPolicies">RequestPolicies</a>" : <i>[ &lt;a href=&#34;specification-routes-requestpolicies.md&#34;&gt;RequestPolicies&lt;/a&gt;, ... ]</i>
+    "<a href="#backend" title="Backend">Backend</a>" : <i>[ <a href="specification-routes-backend.md">Backend</a>, ... ]</i>,
+    "<a href="#loggingpolicies" title="LoggingPolicies">LoggingPolicies</a>" : <i>[ <a href="specification-routes-loggingpolicies.md">LoggingPolicies</a>, ... ]</i>,
+    "<a href="#requestpolicies" title="RequestPolicies">RequestPolicies</a>" : <i>[ <a href="specification-routes-requestpolicies.md">RequestPolicies</a>, ... ]</i>
 }
 </pre>
 
@@ -23,11 +23,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#path" title="Path">Path</a>: <i>String</i>
 <a href="#backend" title="Backend">Backend</a>: <i>
-      - &lt;a href=&#34;specification-routes-backend.md&#34;&gt;Backend&lt;/a&gt;</i>
+      - <a href="specification-routes-backend.md">Backend</a></i>
 <a href="#loggingpolicies" title="LoggingPolicies">LoggingPolicies</a>: <i>
-      - &lt;a href=&#34;specification-routes-loggingpolicies.md&#34;&gt;LoggingPolicies&lt;/a&gt;</i>
+      - <a href="specification-routes-loggingpolicies.md">LoggingPolicies</a></i>
 <a href="#requestpolicies" title="RequestPolicies">RequestPolicies</a>: <i>
-      - &lt;a href=&#34;specification-routes-requestpolicies.md&#34;&gt;RequestPolicies&lt;/a&gt;</i>
+      - <a href="specification-routes-requestpolicies.md">RequestPolicies</a></i>
 </pre>
 
 ## Properties
@@ -35,6 +35,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Methods
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -42,6 +43,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Path
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -49,21 +51,24 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Backend
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;specification-routes-backend.md&#34;&gt;Backend&lt;/a&gt;
+
+_Type_: List of <a href="specification-routes-backend.md">Backend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoggingPolicies
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;specification-routes-loggingpolicies.md&#34;&gt;LoggingPolicies&lt;/a&gt;
+
+_Type_: List of <a href="specification-routes-loggingpolicies.md">LoggingPolicies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestPolicies
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;specification-routes-requestpolicies.md&#34;&gt;RequestPolicies&lt;/a&gt;
+
+_Type_: List of <a href="specification-routes-requestpolicies.md">RequestPolicies</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

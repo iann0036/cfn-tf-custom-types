@@ -12,23 +12,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Skytap::Vm",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#cpus" title="Cpus">Cpus</a>" : <i>Double</i>,
         "<a href="#environmentid" title="EnvironmentId">EnvironmentId</a>" : <i>String</i>,
-        "<a href="#maxcpus" title="MaxCpus">MaxCpus</a>" : <i>Double</i>,
-        "<a href="#maxram" title="MaxRam">MaxRam</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#osdisksize" title="OsDiskSize">OsDiskSize</a>" : <i>Double</i>,
         "<a href="#ram" title="Ram">Ram</a>" : <i>Double</i>,
-        "<a href="#serviceips" title="ServiceIps">ServiceIps</a>" : <i>[ &lt;a href=&#34;serviceips.md&#34;&gt;ServiceIps&lt;/a&gt;, ... ]</i>,
-        "<a href="#serviceports" title="ServicePorts">ServicePorts</a>" : <i>[ &lt;a href=&#34;serviceports.md&#34;&gt;ServicePorts&lt;/a&gt;, ... ]</i>,
         "<a href="#templateid" title="TemplateId">TemplateId</a>" : <i>String</i>,
         "<a href="#userdata" title="UserData">UserData</a>" : <i>String</i>,
         "<a href="#vmid" title="VmId">VmId</a>" : <i>String</i>,
-        "<a href="#disk" title="Disk">Disk</a>" : <i>[ &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;, ... ]</i>,
-        "<a href="#label" title="Label">Label</a>" : <i>[ &lt;a href=&#34;label.md&#34;&gt;Label&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
-        "<a href="#publishedservice" title="PublishedService">PublishedService</a>" : <i>[ &lt;a href=&#34;publishedservice.md&#34;&gt;PublishedService&lt;/a&gt;, ... ]</i>
+        "<a href="#disk" title="Disk">Disk</a>" : <i>[ <a href="disk.md">Disk</a>, ... ]</i>,
+        "<a href="#label" title="Label">Label</a>" : <i>[ <a href="label.md">Label</a>, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
+        "<a href="#publishedservice" title="PublishedService">PublishedService</a>" : <i>[ <a href="publishedservice.md">PublishedService</a>, ... ]</i>
     }
 }
 </pre>
@@ -38,42 +33,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Skytap::Vm
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#cpus" title="Cpus">Cpus</a>: <i>Double</i>
     <a href="#environmentid" title="EnvironmentId">EnvironmentId</a>: <i>String</i>
-    <a href="#maxcpus" title="MaxCpus">MaxCpus</a>: <i>Double</i>
-    <a href="#maxram" title="MaxRam">MaxRam</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#osdisksize" title="OsDiskSize">OsDiskSize</a>: <i>Double</i>
     <a href="#ram" title="Ram">Ram</a>: <i>Double</i>
-    <a href="#serviceips" title="ServiceIps">ServiceIps</a>: <i>
-      - &lt;a href=&#34;serviceips.md&#34;&gt;ServiceIps&lt;/a&gt;</i>
-    <a href="#serviceports" title="ServicePorts">ServicePorts</a>: <i>
-      - &lt;a href=&#34;serviceports.md&#34;&gt;ServicePorts&lt;/a&gt;</i>
     <a href="#templateid" title="TemplateId">TemplateId</a>: <i>String</i>
     <a href="#userdata" title="UserData">UserData</a>: <i>String</i>
     <a href="#vmid" title="VmId">VmId</a>: <i>String</i>
     <a href="#disk" title="Disk">Disk</a>: <i>
-      - &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;</i>
+      - <a href="disk.md">Disk</a></i>
     <a href="#label" title="Label">Label</a>: <i>
-      - &lt;a href=&#34;label.md&#34;&gt;Label&lt;/a&gt;</i>
+      - <a href="label.md">Label</a></i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
+      - <a href="networkinterface.md">NetworkInterface</a></i>
     <a href="#publishedservice" title="PublishedService">PublishedService</a>: <i>
-      - &lt;a href=&#34;publishedservice.md&#34;&gt;PublishedService&lt;/a&gt;</i>
+      - <a href="publishedservice.md">PublishedService</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cpus
 
@@ -88,22 +66,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### MaxCpus
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### MaxRam
-
-_Required_: No
-
-_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -128,22 +90,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ServiceIps
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;serviceips.md&#34;&gt;ServiceIps&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ServicePorts
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;serviceports.md&#34;&gt;ServicePorts&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -175,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;
+_Type_: List of <a href="disk.md">Disk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -183,7 +129,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;label.md&#34;&gt;Label&lt;/a&gt;
+_Type_: List of <a href="label.md">Label</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -191,7 +137,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
+_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,7 +145,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;publishedservice.md&#34;&gt;PublishedService&lt;/a&gt;
+_Type_: List of <a href="publishedservice.md">PublishedService</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -221,17 +167,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MaxCpus
 
-Returns the &lt;code&gt;MaxCpus&lt;/code&gt; value.
+Returns the <code>MaxCpus</code> value.
 
 #### MaxRam
 
-Returns the &lt;code&gt;MaxRam&lt;/code&gt; value.
+Returns the <code>MaxRam</code> value.
 
 #### ServiceIps
 
-Returns the &lt;code&gt;ServiceIps&lt;/code&gt; value.
+Returns the <code>ServiceIps</code> value.
 
 #### ServicePorts
 
-Returns the &lt;code&gt;ServicePorts&lt;/code&gt; value.
+Returns the <code>ServicePorts</code> value.
 

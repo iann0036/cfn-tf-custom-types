@@ -15,7 +15,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#protocol" title="Protocol">Protocol</a>" : <i>String</i>,
     "<a href="#requiresni" title="RequireSni">RequireSni</a>" : <i>Boolean</i>,
     "<a href="#sslcertificatename" title="SslCertificateName">SslCertificateName</a>" : <i>String</i>,
-    "<a href="#customerrorconfiguration" title="CustomErrorConfiguration">CustomErrorConfiguration</a>" : <i>[ &lt;a href=&#34;httplistener-customerrorconfiguration.md&#34;&gt;CustomErrorConfiguration&lt;/a&gt;, ... ]</i>
+    "<a href="#customerrorconfiguration" title="CustomErrorConfiguration">CustomErrorConfiguration</a>" : <i>[ <a href="httplistener-customerrorconfiguration.md">CustomErrorConfiguration</a>, ... ]</i>
 }
 </pre>
 
@@ -30,7 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#requiresni" title="RequireSni">RequireSni</a>: <i>Boolean</i>
 <a href="#sslcertificatename" title="SslCertificateName">SslCertificateName</a>: <i>String</i>
 <a href="#customerrorconfiguration" title="CustomErrorConfiguration">CustomErrorConfiguration</a>: <i>
-      - &lt;a href=&#34;httplistener-customerrorconfiguration.md&#34;&gt;CustomErrorConfiguration&lt;/a&gt;</i>
+      - <a href="httplistener-customerrorconfiguration.md">CustomErrorConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -38,6 +38,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### FrontendIpConfigurationName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FrontendPortName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -52,6 +54,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### HostName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -59,6 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -66,6 +70,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Protocol
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -73,6 +78,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RequireSni
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -80,6 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SslCertificateName
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -87,7 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### CustomErrorConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;httplistener-customerrorconfiguration.md&#34;&gt;CustomErrorConfiguration&lt;/a&gt;
+
+_Type_: List of <a href="httplistener-customerrorconfiguration.md">CustomErrorConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

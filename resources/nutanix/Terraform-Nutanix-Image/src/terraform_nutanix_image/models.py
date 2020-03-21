@@ -43,7 +43,6 @@ class ResourceModel(BaseResourceModel):
     ClusterName: Optional[str]
     ClusterUuid: Optional[str]
     Description: Optional[str]
-    Id: Optional[str]
     ImageType: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -73,7 +72,6 @@ class ResourceModel(BaseResourceModel):
             ClusterName=json_data.get("ClusterName"),
             ClusterUuid=json_data.get("ClusterUuid"),
             Description=json_data.get("Description"),
-            Id=json_data.get("Id"),
             ImageType=json_data.get("ImageType"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),

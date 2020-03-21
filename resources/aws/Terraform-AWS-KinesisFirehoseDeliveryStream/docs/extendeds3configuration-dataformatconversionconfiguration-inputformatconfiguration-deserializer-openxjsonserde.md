@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#caseinsensitive" title="CaseInsensitive">CaseInsensitive</a>" : <i>Boolean</i>,
-    "<a href="#columntojsonkeymappings" title="ColumnToJsonKeyMappings">ColumnToJsonKeyMappings</a>" : <i>[ &lt;a href=&#34;extendeds3configuration-dataformatconversionconfiguration-inputformatconfiguration-deserializer-openxjsonserde-columntojsonkeymappings.md&#34;&gt;ColumnToJsonKeyMappings&lt;/a&gt;, ... ]</i>,
+    "<a href="#columntojsonkeymappings" title="ColumnToJsonKeyMappings">ColumnToJsonKeyMappings</a>" : <i>[ <a href="extendeds3configuration-dataformatconversionconfiguration-inputformatconfiguration-deserializer-openxjsonserde-columntojsonkeymappings.md">ColumnToJsonKeyMappings</a>, ... ]</i>,
     "<a href="#convertdotsinjsonkeystounderscores" title="ConvertDotsInJsonKeysToUnderscores">ConvertDotsInJsonKeysToUnderscores</a>" : <i>Boolean</i>
 }
 </pre>
@@ -19,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#caseinsensitive" title="CaseInsensitive">CaseInsensitive</a>: <i>Boolean</i>
 <a href="#columntojsonkeymappings" title="ColumnToJsonKeyMappings">ColumnToJsonKeyMappings</a>: <i>
-      - &lt;a href=&#34;extendeds3configuration-dataformatconversionconfiguration-inputformatconfiguration-deserializer-openxjsonserde-columntojsonkeymappings.md&#34;&gt;ColumnToJsonKeyMappings&lt;/a&gt;</i>
+      - <a href="extendeds3configuration-dataformatconversionconfiguration-inputformatconfiguration-deserializer-openxjsonserde-columntojsonkeymappings.md">ColumnToJsonKeyMappings</a></i>
 <a href="#convertdotsinjsonkeystounderscores" title="ConvertDotsInJsonKeysToUnderscores">ConvertDotsInJsonKeysToUnderscores</a>: <i>Boolean</i>
 </pre>
 
@@ -28,6 +28,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### CaseInsensitive
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -35,13 +36,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ColumnToJsonKeyMappings
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;extendeds3configuration-dataformatconversionconfiguration-inputformatconfiguration-deserializer-openxjsonserde-columntojsonkeymappings.md&#34;&gt;ColumnToJsonKeyMappings&lt;/a&gt;
+
+_Type_: List of <a href="extendeds3configuration-dataformatconversionconfiguration-inputformatconfiguration-deserializer-openxjsonserde-columntojsonkeymappings.md">ColumnToJsonKeyMappings</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConvertDotsInJsonKeysToUnderscores
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

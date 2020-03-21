@@ -12,14 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::CodebuildWebhook",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#branchfilter" title="BranchFilter">BranchFilter</a>" : <i>String</i>,
-        "<a href="#payloadurl" title="PayloadUrl">PayloadUrl</a>" : <i>String</i>,
         "<a href="#projectname" title="ProjectName">ProjectName</a>" : <i>String</i>,
-        "<a href="#secret" title="Secret">Secret</a>" : <i>String</i>,
-        "<a href="#url" title="Url">Url</a>" : <i>String</i>,
-        "<a href="#filtergroup" title="FilterGroup">FilterGroup</a>" : <i>[ &lt;a href=&#34;filtergroup.md&#34;&gt;FilterGroup&lt;/a&gt;, ... ]</i>,
-        "<a href="#filter" title="Filter">Filter</a>" : <i>[ &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;, ... ]</i>
+        "<a href="#filtergroup" title="FilterGroup">FilterGroup</a>" : <i>[ <a href="filtergroup.md">FilterGroup</a>, ... ]</i>,
+        "<a href="#filter" title="Filter">Filter</a>" : <i>[ <a href="filter.md">Filter</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,39 +25,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::CodebuildWebhook
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#branchfilter" title="BranchFilter">BranchFilter</a>: <i>String</i>
-    <a href="#payloadurl" title="PayloadUrl">PayloadUrl</a>: <i>String</i>
     <a href="#projectname" title="ProjectName">ProjectName</a>: <i>String</i>
-    <a href="#secret" title="Secret">Secret</a>: <i>String</i>
-    <a href="#url" title="Url">Url</a>: <i>String</i>
     <a href="#filtergroup" title="FilterGroup">FilterGroup</a>: <i>
-      - &lt;a href=&#34;filtergroup.md&#34;&gt;FilterGroup&lt;/a&gt;</i>
+      - <a href="filtergroup.md">FilterGroup</a></i>
     <a href="#filter" title="Filter">Filter</a>: <i>
-      - &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;</i>
+      - <a href="filter.md">Filter</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### BranchFilter
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PayloadUrl
 
 _Required_: No
 
@@ -77,27 +51,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Secret
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Url
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### FilterGroup
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;filtergroup.md&#34;&gt;FilterGroup&lt;/a&gt;
+_Type_: List of <a href="filtergroup.md">FilterGroup</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;filter.md&#34;&gt;Filter&lt;/a&gt;
+_Type_: List of <a href="filter.md">Filter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,13 +85,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### PayloadUrl
 
-Returns the &lt;code&gt;PayloadUrl&lt;/code&gt; value.
+Returns the <code>PayloadUrl</code> value.
 
 #### Secret
 
-Returns the &lt;code&gt;Secret&lt;/code&gt; value.
+Returns the <code>Secret</code> value.
 
 #### Url
 
-Returns the &lt;code&gt;Url&lt;/code&gt; value.
+Returns the <code>Url</code> value.
 

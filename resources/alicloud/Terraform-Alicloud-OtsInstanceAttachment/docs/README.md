@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::OtsInstanceAttachment",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#instancename" title="InstanceName">InstanceName</a>" : <i>String</i>,
-        "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
         "<a href="#vpcname" title="VpcName">VpcName</a>" : <i>String</i>,
         "<a href="#vswitchid" title="VswitchId">VswitchId</a>" : <i>String</i>
     }
@@ -26,36 +24,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::OtsInstanceAttachment
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#instancename" title="InstanceName">InstanceName</a>: <i>String</i>
-    <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
     <a href="#vpcname" title="VpcName">VpcName</a>: <i>String</i>
     <a href="#vswitchid" title="VswitchId">VswitchId</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InstanceName
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VpcId
-
-_Required_: No
 
 _Type_: String
 
@@ -95,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VpcId
 
-Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
+Returns the <code>VpcId</code> value.
 

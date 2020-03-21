@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::MonitorScheduledQueryRulesAlert",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#authorizedresourceids" title="AuthorizedResourceIds">AuthorizedResourceIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#datasourceid" title="DataSourceId">DataSourceId</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
@@ -24,13 +23,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#querytype" title="QueryType">QueryType</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#severity" title="Severity">Severity</a>" : <i>Double</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#throttling" title="Throttling">Throttling</a>" : <i>Double</i>,
         "<a href="#timewindow" title="TimeWindow">TimeWindow</a>" : <i>Double</i>,
-        "<a href="#action" title="Action">Action</a>" : <i>[ &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#trigger" title="Trigger">Trigger</a>" : <i>[ &lt;a href=&#34;trigger.md&#34;&gt;Trigger&lt;/a&gt;, ... ]</i>,
-        "<a href="#metrictrigger" title="MetricTrigger">MetricTrigger</a>" : <i>[ &lt;a href=&#34;metrictrigger.md&#34;&gt;MetricTrigger&lt;/a&gt;, ... ]</i>
+        "<a href="#action" title="Action">Action</a>" : <i>[ <a href="action.md">Action</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#trigger" title="Trigger">Trigger</a>" : <i>[ <a href="trigger.md">Trigger</a>, ... ]</i>,
+        "<a href="#metrictrigger" title="MetricTrigger">MetricTrigger</a>" : <i>[ <a href="metrictrigger.md">MetricTrigger</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,7 +39,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::MonitorScheduledQueryRulesAlert
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#authorizedresourceids" title="AuthorizedResourceIds">AuthorizedResourceIds</a>: <i>
       - String</i>
     <a href="#datasourceid" title="DataSourceId">DataSourceId</a>: <i>String</i>
@@ -54,29 +52,19 @@ Properties:
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#severity" title="Severity">Severity</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#throttling" title="Throttling">Throttling</a>: <i>Double</i>
     <a href="#timewindow" title="TimeWindow">TimeWindow</a>: <i>Double</i>
     <a href="#action" title="Action">Action</a>: <i>
-      - &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="action.md">Action</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#trigger" title="Trigger">Trigger</a>: <i>
-      - &lt;a href=&#34;trigger.md&#34;&gt;Trigger&lt;/a&gt;</i>
+      - <a href="trigger.md">Trigger</a></i>
     <a href="#metrictrigger" title="MetricTrigger">MetricTrigger</a>: <i>
-      - &lt;a href=&#34;metrictrigger.md&#34;&gt;MetricTrigger&lt;/a&gt;</i>
+      - <a href="metrictrigger.md">MetricTrigger</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthorizedResourceIds
 
@@ -170,7 +158,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -194,7 +182,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;action.md&#34;&gt;Action&lt;/a&gt;
+_Type_: List of <a href="action.md">Action</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -202,7 +190,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -210,7 +198,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;trigger.md&#34;&gt;Trigger&lt;/a&gt;
+_Type_: List of <a href="trigger.md">Trigger</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -218,7 +206,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metrictrigger.md&#34;&gt;MetricTrigger&lt;/a&gt;
+_Type_: List of <a href="metrictrigger.md">MetricTrigger</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TencentCloud::CbsStorage",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#attached" title="Attached">Attached</a>" : <i>Boolean</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
         "<a href="#encrypt" title="Encrypt">Encrypt</a>" : <i>Boolean</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
@@ -21,9 +19,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#snapshotid" title="SnapshotId">SnapshotId</a>" : <i>String</i>,
         "<a href="#storagename" title="StorageName">StorageName</a>" : <i>String</i>,
         "<a href="#storagesize" title="StorageSize">StorageSize</a>" : <i>Double</i>,
-        "<a href="#storagestatus" title="StorageStatus">StorageStatus</a>" : <i>String</i>,
         "<a href="#storagetype" title="StorageType">StorageType</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,8 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TencentCloud::CbsStorage
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#attached" title="Attached">Attached</a>: <i>Boolean</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
     <a href="#encrypt" title="Encrypt">Encrypt</a>: <i>Boolean</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
@@ -42,31 +37,12 @@ Properties:
     <a href="#snapshotid" title="SnapshotId">SnapshotId</a>: <i>String</i>
     <a href="#storagename" title="StorageName">StorageName</a>: <i>String</i>
     <a href="#storagesize" title="StorageSize">StorageSize</a>: <i>Double</i>
-    <a href="#storagestatus" title="StorageStatus">StorageStatus</a>: <i>String</i>
     <a href="#storagetype" title="StorageType">StorageType</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Attached
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
 
@@ -124,14 +100,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### StorageStatus
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### StorageType
 
 _Required_: Yes
@@ -144,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,9 +134,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Attached
 
-Returns the &lt;code&gt;Attached&lt;/code&gt; value.
+Returns the <code>Attached</code> value.
 
 #### StorageStatus
 
-Returns the &lt;code&gt;StorageStatus&lt;/code&gt; value.
+Returns the <code>StorageStatus</code> value.
 

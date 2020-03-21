@@ -12,18 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Panos::PanoramaSnmptrapServerProfile",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#authpasswordenc" title="AuthPasswordEnc">AuthPasswordEnc</a>" : <i>[ &lt;a href=&#34;authpasswordenc.md&#34;&gt;AuthPasswordEnc&lt;/a&gt;, ... ]</i>,
-        "<a href="#authpasswordraw" title="AuthPasswordRaw">AuthPasswordRaw</a>" : <i>[ &lt;a href=&#34;authpasswordraw.md&#34;&gt;AuthPasswordRaw&lt;/a&gt;, ... ]</i>,
         "<a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#privpasswordenc" title="PrivPasswordEnc">PrivPasswordEnc</a>" : <i>[ &lt;a href=&#34;privpasswordenc.md&#34;&gt;PrivPasswordEnc&lt;/a&gt;, ... ]</i>,
-        "<a href="#privpasswordraw" title="PrivPasswordRaw">PrivPasswordRaw</a>" : <i>[ &lt;a href=&#34;privpasswordraw.md&#34;&gt;PrivPasswordRaw&lt;/a&gt;, ... ]</i>,
         "<a href="#template" title="Template">Template</a>" : <i>String</i>,
         "<a href="#templatestack" title="TemplateStack">TemplateStack</a>" : <i>String</i>,
         "<a href="#vsys" title="Vsys">Vsys</a>" : <i>String</i>,
-        "<a href="#v2cserver" title="V2cServer">V2cServer</a>" : <i>[ &lt;a href=&#34;v2cserver.md&#34;&gt;V2cServer&lt;/a&gt;, ... ]</i>,
-        "<a href="#v3server" title="V3Server">V3Server</a>" : <i>[ &lt;a href=&#34;v3server.md&#34;&gt;V3Server&lt;/a&gt;, ... ]</i>
+        "<a href="#v2cserver" title="V2cServer">V2cServer</a>" : <i>[ <a href="v2cserver.md">V2cServer</a>, ... ]</i>,
+        "<a href="#v3server" title="V3Server">V3Server</a>" : <i>[ <a href="v3server.md">V3Server</a>, ... ]</i>
     }
 }
 </pre>
@@ -33,53 +28,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Panos::PanoramaSnmptrapServerProfile
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#authpasswordenc" title="AuthPasswordEnc">AuthPasswordEnc</a>: <i>
-      - &lt;a href=&#34;authpasswordenc.md&#34;&gt;AuthPasswordEnc&lt;/a&gt;</i>
-    <a href="#authpasswordraw" title="AuthPasswordRaw">AuthPasswordRaw</a>: <i>
-      - &lt;a href=&#34;authpasswordraw.md&#34;&gt;AuthPasswordRaw&lt;/a&gt;</i>
     <a href="#devicegroup" title="DeviceGroup">DeviceGroup</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#privpasswordenc" title="PrivPasswordEnc">PrivPasswordEnc</a>: <i>
-      - &lt;a href=&#34;privpasswordenc.md&#34;&gt;PrivPasswordEnc&lt;/a&gt;</i>
-    <a href="#privpasswordraw" title="PrivPasswordRaw">PrivPasswordRaw</a>: <i>
-      - &lt;a href=&#34;privpasswordraw.md&#34;&gt;PrivPasswordRaw&lt;/a&gt;</i>
     <a href="#template" title="Template">Template</a>: <i>String</i>
     <a href="#templatestack" title="TemplateStack">TemplateStack</a>: <i>String</i>
     <a href="#vsys" title="Vsys">Vsys</a>: <i>String</i>
     <a href="#v2cserver" title="V2cServer">V2cServer</a>: <i>
-      - &lt;a href=&#34;v2cserver.md&#34;&gt;V2cServer&lt;/a&gt;</i>
+      - <a href="v2cserver.md">V2cServer</a></i>
     <a href="#v3server" title="V3Server">V3Server</a>: <i>
-      - &lt;a href=&#34;v3server.md&#34;&gt;V3Server&lt;/a&gt;</i>
+      - <a href="v3server.md">V3Server</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AuthPasswordEnc
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;authpasswordenc.md&#34;&gt;AuthPasswordEnc&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AuthPasswordRaw
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;authpasswordraw.md&#34;&gt;AuthPasswordRaw&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceGroup
 
@@ -94,22 +54,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrivPasswordEnc
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;privpasswordenc.md&#34;&gt;PrivPasswordEnc&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PrivPasswordRaw
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;privpasswordraw.md&#34;&gt;PrivPasswordRaw&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -141,7 +85,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;v2cserver.md&#34;&gt;V2cServer&lt;/a&gt;
+_Type_: List of <a href="v2cserver.md">V2cServer</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -149,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;v3server.md&#34;&gt;V3Server&lt;/a&gt;
+_Type_: List of <a href="v3server.md">V3Server</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,17 +115,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### AuthPasswordEnc
 
-Returns the &lt;code&gt;AuthPasswordEnc&lt;/code&gt; value.
+Returns the <code>AuthPasswordEnc</code> value.
 
 #### AuthPasswordRaw
 
-Returns the &lt;code&gt;AuthPasswordRaw&lt;/code&gt; value.
+Returns the <code>AuthPasswordRaw</code> value.
 
 #### PrivPasswordEnc
 
-Returns the &lt;code&gt;PrivPasswordEnc&lt;/code&gt; value.
+Returns the <code>PrivPasswordEnc</code> value.
 
 #### PrivPasswordRaw
 
-Returns the &lt;code&gt;PrivPasswordRaw&lt;/code&gt; value.
+Returns the <code>PrivPasswordRaw</code> value.
 

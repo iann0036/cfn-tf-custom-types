@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#outputlocation" title="OutputLocation">OutputLocation</a>" : <i>String</i>,
-    "<a href="#encryptionconfiguration" title="EncryptionConfiguration">EncryptionConfiguration</a>" : <i>[ &lt;a href=&#34;configuration-resultconfiguration-encryptionconfiguration.md&#34;&gt;EncryptionConfiguration&lt;/a&gt;, ... ]</i>
+    "<a href="#encryptionconfiguration" title="EncryptionConfiguration">EncryptionConfiguration</a>" : <i>[ <a href="configuration-resultconfiguration-encryptionconfiguration.md">EncryptionConfiguration</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#outputlocation" title="OutputLocation">OutputLocation</a>: <i>String</i>
 <a href="#encryptionconfiguration" title="EncryptionConfiguration">EncryptionConfiguration</a>: <i>
-      - &lt;a href=&#34;configuration-resultconfiguration-encryptionconfiguration.md&#34;&gt;EncryptionConfiguration&lt;/a&gt;</i>
+      - <a href="configuration-resultconfiguration-encryptionconfiguration.md">EncryptionConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### OutputLocation
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EncryptionConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;configuration-resultconfiguration-encryptionconfiguration.md&#34;&gt;EncryptionConfiguration&lt;/a&gt;
+
+_Type_: List of <a href="configuration-resultconfiguration-encryptionconfiguration.md">EncryptionConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

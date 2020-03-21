@@ -12,13 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Packet::Organization",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#created" title="Created">Created</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#logo" title="Logo">Logo</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#twitter" title="Twitter">Twitter</a>" : <i>String</i>,
-        "<a href="#updated" title="Updated">Updated</a>" : <i>String</i>,
         "<a href="#website" title="Website">Website</a>" : <i>String</i>
     }
 }
@@ -29,35 +26,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Packet::Organization
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#created" title="Created">Created</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#logo" title="Logo">Logo</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#twitter" title="Twitter">Twitter</a>: <i>String</i>
-    <a href="#updated" title="Updated">Updated</a>: <i>String</i>
     <a href="#website" title="Website">Website</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Created
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -91,14 +67,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Updated
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Website
 
 _Required_: No
@@ -125,9 +93,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### Updated
 
-Returns the &lt;code&gt;Updated&lt;/code&gt; value.
+Returns the <code>Updated</code> value.
 

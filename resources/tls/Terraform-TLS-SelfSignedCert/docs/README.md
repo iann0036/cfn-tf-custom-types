@@ -12,22 +12,17 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::TLS::SelfSignedCert",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#alloweduses" title="AllowedUses">AllowedUses</a>" : <i>[ String, ... ]</i>,
-        "<a href="#certpem" title="CertPem">CertPem</a>" : <i>String</i>,
         "<a href="#dnsnames" title="DnsNames">DnsNames</a>" : <i>[ String, ... ]</i>,
         "<a href="#earlyrenewalhours" title="EarlyRenewalHours">EarlyRenewalHours</a>" : <i>Double</i>,
         "<a href="#ipaddresses" title="IpAddresses">IpAddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#iscacertificate" title="IsCaCertificate">IsCaCertificate</a>" : <i>Boolean</i>,
         "<a href="#keyalgorithm" title="KeyAlgorithm">KeyAlgorithm</a>" : <i>String</i>,
         "<a href="#privatekeypem" title="PrivateKeyPem">PrivateKeyPem</a>" : <i>String</i>,
-        "<a href="#readyforrenewal" title="ReadyForRenewal">ReadyForRenewal</a>" : <i>Boolean</i>,
         "<a href="#setsubjectkeyid" title="SetSubjectKeyId">SetSubjectKeyId</a>" : <i>Boolean</i>,
         "<a href="#uris" title="Uris">Uris</a>" : <i>[ String, ... ]</i>,
-        "<a href="#validityendtime" title="ValidityEndTime">ValidityEndTime</a>" : <i>String</i>,
         "<a href="#validityperiodhours" title="ValidityPeriodHours">ValidityPeriodHours</a>" : <i>Double</i>,
-        "<a href="#validitystarttime" title="ValidityStartTime">ValidityStartTime</a>" : <i>String</i>,
-        "<a href="#subject" title="Subject">Subject</a>" : <i>[ &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;, ... ]</i>
+        "<a href="#subject" title="Subject">Subject</a>" : <i>[ <a href="subject.md">Subject</a>, ... ]</i>
     }
 }
 </pre>
@@ -37,10 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::TLS::SelfSignedCert
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#alloweduses" title="AllowedUses">AllowedUses</a>: <i>
       - String</i>
-    <a href="#certpem" title="CertPem">CertPem</a>: <i>String</i>
     <a href="#dnsnames" title="DnsNames">DnsNames</a>: <i>
       - String</i>
     <a href="#earlyrenewalhours" title="EarlyRenewalHours">EarlyRenewalHours</a>: <i>Double</i>
@@ -49,42 +42,21 @@ Properties:
     <a href="#iscacertificate" title="IsCaCertificate">IsCaCertificate</a>: <i>Boolean</i>
     <a href="#keyalgorithm" title="KeyAlgorithm">KeyAlgorithm</a>: <i>String</i>
     <a href="#privatekeypem" title="PrivateKeyPem">PrivateKeyPem</a>: <i>String</i>
-    <a href="#readyforrenewal" title="ReadyForRenewal">ReadyForRenewal</a>: <i>Boolean</i>
     <a href="#setsubjectkeyid" title="SetSubjectKeyId">SetSubjectKeyId</a>: <i>Boolean</i>
     <a href="#uris" title="Uris">Uris</a>: <i>
       - String</i>
-    <a href="#validityendtime" title="ValidityEndTime">ValidityEndTime</a>: <i>String</i>
     <a href="#validityperiodhours" title="ValidityPeriodHours">ValidityPeriodHours</a>: <i>Double</i>
-    <a href="#validitystarttime" title="ValidityStartTime">ValidityStartTime</a>: <i>String</i>
     <a href="#subject" title="Subject">Subject</a>: <i>
-      - &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;</i>
+      - <a href="subject.md">Subject</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedUses
 
 _Required_: Yes
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CertPem
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -136,14 +108,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ReadyForRenewal
-
-_Required_: No
-
-_Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SetSubjectKeyId
 
 _Required_: No
@@ -160,14 +124,6 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ValidityEndTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ValidityPeriodHours
 
 _Required_: Yes
@@ -176,19 +132,11 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ValidityStartTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Subject
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;subject.md&#34;&gt;Subject&lt;/a&gt;
+_Type_: List of <a href="subject.md">Subject</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -210,17 +158,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### CertPem
 
-Returns the &lt;code&gt;CertPem&lt;/code&gt; value.
+Returns the <code>CertPem</code> value.
 
 #### ReadyForRenewal
 
-Returns the &lt;code&gt;ReadyForRenewal&lt;/code&gt; value.
+Returns the <code>ReadyForRenewal</code> value.
 
 #### ValidityEndTime
 
-Returns the &lt;code&gt;ValidityEndTime&lt;/code&gt; value.
+Returns the <code>ValidityEndTime</code> value.
 
 #### ValidityStartTime
 
-Returns the &lt;code&gt;ValidityStartTime&lt;/code&gt; value.
+Returns the <code>ValidityStartTime</code> value.
 

@@ -12,10 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::ContainerGroup",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#dnsnamelabel" title="DnsNameLabel">DnsNameLabel</a>" : <i>String</i>,
-        "<a href="#fqdn" title="Fqdn">Fqdn</a>" : <i>String</i>,
-        "<a href="#ipaddress" title="IpAddress">IpAddress</a>" : <i>String</i>,
         "<a href="#ipaddresstype" title="IpAddressType">IpAddressType</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
@@ -23,19 +20,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#ostype" title="OsType">OsType</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
         "<a href="#restartpolicy" title="RestartPolicy">RestartPolicy</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#container" title="Container">Container</a>" : <i>[ &lt;a href=&#34;container.md&#34;&gt;Container&lt;/a&gt;, ... ]</i>,
-        "<a href="#diagnostics" title="Diagnostics">Diagnostics</a>" : <i>[ &lt;a href=&#34;diagnostics.md&#34;&gt;Diagnostics&lt;/a&gt;, ... ]</i>,
-        "<a href="#identity" title="Identity">Identity</a>" : <i>[ &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;, ... ]</i>,
-        "<a href="#imageregistrycredential" title="ImageRegistryCredential">ImageRegistryCredential</a>" : <i>[ &lt;a href=&#34;imageregistrycredential.md&#34;&gt;ImageRegistryCredential&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#gpu" title="Gpu">Gpu</a>" : <i>[ &lt;a href=&#34;gpu.md&#34;&gt;Gpu&lt;/a&gt;, ... ]</i>,
-        "<a href="#livenessprobe" title="LivenessProbe">LivenessProbe</a>" : <i>[ &lt;a href=&#34;livenessprobe.md&#34;&gt;LivenessProbe&lt;/a&gt;, ... ]</i>,
-        "<a href="#ports" title="Ports">Ports</a>" : <i>[ &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;, ... ]</i>,
-        "<a href="#readinessprobe" title="ReadinessProbe">ReadinessProbe</a>" : <i>[ &lt;a href=&#34;readinessprobe.md&#34;&gt;ReadinessProbe&lt;/a&gt;, ... ]</i>,
-        "<a href="#volume" title="Volume">Volume</a>" : <i>[ &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;, ... ]</i>,
-        "<a href="#loganalytics" title="LogAnalytics">LogAnalytics</a>" : <i>[ &lt;a href=&#34;loganalytics.md&#34;&gt;LogAnalytics&lt;/a&gt;, ... ]</i>,
-        "<a href="#httpget" title="HttpGet">HttpGet</a>" : <i>[ &lt;a href=&#34;httpget.md&#34;&gt;HttpGet&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#container" title="Container">Container</a>" : <i>[ <a href="container.md">Container</a>, ... ]</i>,
+        "<a href="#diagnostics" title="Diagnostics">Diagnostics</a>" : <i>[ <a href="diagnostics.md">Diagnostics</a>, ... ]</i>,
+        "<a href="#identity" title="Identity">Identity</a>" : <i>[ <a href="identity.md">Identity</a>, ... ]</i>,
+        "<a href="#imageregistrycredential" title="ImageRegistryCredential">ImageRegistryCredential</a>" : <i>[ <a href="imageregistrycredential.md">ImageRegistryCredential</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#gpu" title="Gpu">Gpu</a>" : <i>[ <a href="gpu.md">Gpu</a>, ... ]</i>,
+        "<a href="#livenessprobe" title="LivenessProbe">LivenessProbe</a>" : <i>[ <a href="livenessprobe.md">LivenessProbe</a>, ... ]</i>,
+        "<a href="#ports" title="Ports">Ports</a>" : <i>[ <a href="ports.md">Ports</a>, ... ]</i>,
+        "<a href="#readinessprobe" title="ReadinessProbe">ReadinessProbe</a>" : <i>[ <a href="readinessprobe.md">ReadinessProbe</a>, ... ]</i>,
+        "<a href="#volume" title="Volume">Volume</a>" : <i>[ <a href="volume.md">Volume</a>, ... ]</i>,
+        "<a href="#loganalytics" title="LogAnalytics">LogAnalytics</a>" : <i>[ <a href="loganalytics.md">LogAnalytics</a>, ... ]</i>,
+        "<a href="#httpget" title="HttpGet">HttpGet</a>" : <i>[ <a href="httpget.md">HttpGet</a>, ... ]</i>
     }
 }
 </pre>
@@ -45,10 +42,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::ContainerGroup
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#dnsnamelabel" title="DnsNameLabel">DnsNameLabel</a>: <i>String</i>
-    <a href="#fqdn" title="Fqdn">Fqdn</a>: <i>String</i>
-    <a href="#ipaddress" title="IpAddress">IpAddress</a>: <i>String</i>
     <a href="#ipaddresstype" title="IpAddressType">IpAddressType</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
@@ -57,61 +51,35 @@ Properties:
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
     <a href="#restartpolicy" title="RestartPolicy">RestartPolicy</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#container" title="Container">Container</a>: <i>
-      - &lt;a href=&#34;container.md&#34;&gt;Container&lt;/a&gt;</i>
+      - <a href="container.md">Container</a></i>
     <a href="#diagnostics" title="Diagnostics">Diagnostics</a>: <i>
-      - &lt;a href=&#34;diagnostics.md&#34;&gt;Diagnostics&lt;/a&gt;</i>
+      - <a href="diagnostics.md">Diagnostics</a></i>
     <a href="#identity" title="Identity">Identity</a>: <i>
-      - &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;</i>
+      - <a href="identity.md">Identity</a></i>
     <a href="#imageregistrycredential" title="ImageRegistryCredential">ImageRegistryCredential</a>: <i>
-      - &lt;a href=&#34;imageregistrycredential.md&#34;&gt;ImageRegistryCredential&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="imageregistrycredential.md">ImageRegistryCredential</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#gpu" title="Gpu">Gpu</a>: <i>
-      - &lt;a href=&#34;gpu.md&#34;&gt;Gpu&lt;/a&gt;</i>
+      - <a href="gpu.md">Gpu</a></i>
     <a href="#livenessprobe" title="LivenessProbe">LivenessProbe</a>: <i>
-      - &lt;a href=&#34;livenessprobe.md&#34;&gt;LivenessProbe&lt;/a&gt;</i>
+      - <a href="livenessprobe.md">LivenessProbe</a></i>
     <a href="#ports" title="Ports">Ports</a>: <i>
-      - &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;</i>
+      - <a href="ports.md">Ports</a></i>
     <a href="#readinessprobe" title="ReadinessProbe">ReadinessProbe</a>: <i>
-      - &lt;a href=&#34;readinessprobe.md&#34;&gt;ReadinessProbe&lt;/a&gt;</i>
+      - <a href="readinessprobe.md">ReadinessProbe</a></i>
     <a href="#volume" title="Volume">Volume</a>: <i>
-      - &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;</i>
+      - <a href="volume.md">Volume</a></i>
     <a href="#loganalytics" title="LogAnalytics">LogAnalytics</a>: <i>
-      - &lt;a href=&#34;loganalytics.md&#34;&gt;LogAnalytics&lt;/a&gt;</i>
+      - <a href="loganalytics.md">LogAnalytics</a></i>
     <a href="#httpget" title="HttpGet">HttpGet</a>: <i>
-      - &lt;a href=&#34;httpget.md&#34;&gt;HttpGet&lt;/a&gt;</i>
+      - <a href="httpget.md">HttpGet</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### DnsNameLabel
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Fqdn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### IpAddress
 
 _Required_: No
 
@@ -179,7 +147,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +155,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;container.md&#34;&gt;Container&lt;/a&gt;
+_Type_: List of <a href="container.md">Container</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +163,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;diagnostics.md&#34;&gt;Diagnostics&lt;/a&gt;
+_Type_: List of <a href="diagnostics.md">Diagnostics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,7 +171,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;identity.md&#34;&gt;Identity&lt;/a&gt;
+_Type_: List of <a href="identity.md">Identity</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -211,7 +179,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;imageregistrycredential.md&#34;&gt;ImageRegistryCredential&lt;/a&gt;
+_Type_: List of <a href="imageregistrycredential.md">ImageRegistryCredential</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -219,7 +187,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,7 +195,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;gpu.md&#34;&gt;Gpu&lt;/a&gt;
+_Type_: List of <a href="gpu.md">Gpu</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -235,7 +203,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;livenessprobe.md&#34;&gt;LivenessProbe&lt;/a&gt;
+_Type_: List of <a href="livenessprobe.md">LivenessProbe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -243,7 +211,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;ports.md&#34;&gt;Ports&lt;/a&gt;
+_Type_: List of <a href="ports.md">Ports</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -251,7 +219,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;readinessprobe.md&#34;&gt;ReadinessProbe&lt;/a&gt;
+_Type_: List of <a href="readinessprobe.md">ReadinessProbe</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -259,7 +227,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;volume.md&#34;&gt;Volume&lt;/a&gt;
+_Type_: List of <a href="volume.md">Volume</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -267,7 +235,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;loganalytics.md&#34;&gt;LogAnalytics&lt;/a&gt;
+_Type_: List of <a href="loganalytics.md">LogAnalytics</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -275,7 +243,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;httpget.md&#34;&gt;HttpGet&lt;/a&gt;
+_Type_: List of <a href="httpget.md">HttpGet</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -297,9 +265,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Fqdn
 
-Returns the &lt;code&gt;Fqdn&lt;/code&gt; value.
+Returns the <code>Fqdn</code> value.
 
 #### IpAddress
 
-Returns the &lt;code&gt;IpAddress&lt;/code&gt; value.
+Returns the <code>IpAddress</code> value.
 

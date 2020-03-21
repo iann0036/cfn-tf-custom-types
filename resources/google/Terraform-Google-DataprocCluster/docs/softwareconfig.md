@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#imageversion" title="ImageVersion">ImageVersion</a>" : <i>String</i>,
     "<a href="#optionalcomponents" title="OptionalComponents">OptionalComponents</a>" : <i>[ String, ... ]</i>,
-    "<a href="#overrideproperties" title="OverrideProperties">OverrideProperties</a>" : <i>[ &lt;a href=&#34;softwareconfig-overrideproperties.md&#34;&gt;OverrideProperties&lt;/a&gt;, ... ]</i>
+    "<a href="#overrideproperties" title="OverrideProperties">OverrideProperties</a>" : <i>[ <a href="softwareconfig-overrideproperties.md">OverrideProperties</a>, ... ]</i>
 }
 </pre>
 
@@ -21,7 +21,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#optionalcomponents" title="OptionalComponents">OptionalComponents</a>: <i>
       - String</i>
 <a href="#overrideproperties" title="OverrideProperties">OverrideProperties</a>: <i>
-      - &lt;a href=&#34;softwareconfig-overrideproperties.md&#34;&gt;OverrideProperties&lt;/a&gt;</i>
+      - <a href="softwareconfig-overrideproperties.md">OverrideProperties</a></i>
 </pre>
 
 ## Properties
@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ImageVersion
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,6 +37,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OptionalComponents
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,7 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### OverrideProperties
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;softwareconfig-overrideproperties.md&#34;&gt;OverrideProperties&lt;/a&gt;
+
+_Type_: List of <a href="softwareconfig-overrideproperties.md">OverrideProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

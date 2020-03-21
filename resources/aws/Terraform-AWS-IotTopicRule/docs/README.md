@@ -12,24 +12,22 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::IotTopicRule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#sql" title="Sql">Sql</a>" : <i>String</i>,
         "<a href="#sqlversion" title="SqlVersion">SqlVersion</a>" : <i>String</i>,
-        "<a href="#cloudwatchalarm" title="CloudwatchAlarm">CloudwatchAlarm</a>" : <i>[ &lt;a href=&#34;cloudwatchalarm.md&#34;&gt;CloudwatchAlarm&lt;/a&gt;, ... ]</i>,
-        "<a href="#cloudwatchmetric" title="CloudwatchMetric">CloudwatchMetric</a>" : <i>[ &lt;a href=&#34;cloudwatchmetric.md&#34;&gt;CloudwatchMetric&lt;/a&gt;, ... ]</i>,
-        "<a href="#dynamodb" title="Dynamodb">Dynamodb</a>" : <i>[ &lt;a href=&#34;dynamodb.md&#34;&gt;Dynamodb&lt;/a&gt;, ... ]</i>,
-        "<a href="#elasticsearch" title="Elasticsearch">Elasticsearch</a>" : <i>[ &lt;a href=&#34;elasticsearch.md&#34;&gt;Elasticsearch&lt;/a&gt;, ... ]</i>,
-        "<a href="#firehose" title="Firehose">Firehose</a>" : <i>[ &lt;a href=&#34;firehose.md&#34;&gt;Firehose&lt;/a&gt;, ... ]</i>,
-        "<a href="#kinesis" title="Kinesis">Kinesis</a>" : <i>[ &lt;a href=&#34;kinesis.md&#34;&gt;Kinesis&lt;/a&gt;, ... ]</i>,
-        "<a href="#lambda" title="Lambda">Lambda</a>" : <i>[ &lt;a href=&#34;lambda.md&#34;&gt;Lambda&lt;/a&gt;, ... ]</i>,
-        "<a href="#republish" title="Republish">Republish</a>" : <i>[ &lt;a href=&#34;republish.md&#34;&gt;Republish&lt;/a&gt;, ... ]</i>,
-        "<a href="#s3" title="S3">S3</a>" : <i>[ &lt;a href=&#34;s3.md&#34;&gt;S3&lt;/a&gt;, ... ]</i>,
-        "<a href="#sns" title="Sns">Sns</a>" : <i>[ &lt;a href=&#34;sns.md&#34;&gt;Sns&lt;/a&gt;, ... ]</i>,
-        "<a href="#sqs" title="Sqs">Sqs</a>" : <i>[ &lt;a href=&#34;sqs.md&#34;&gt;Sqs&lt;/a&gt;, ... ]</i>
+        "<a href="#cloudwatchalarm" title="CloudwatchAlarm">CloudwatchAlarm</a>" : <i>[ <a href="cloudwatchalarm.md">CloudwatchAlarm</a>, ... ]</i>,
+        "<a href="#cloudwatchmetric" title="CloudwatchMetric">CloudwatchMetric</a>" : <i>[ <a href="cloudwatchmetric.md">CloudwatchMetric</a>, ... ]</i>,
+        "<a href="#dynamodb" title="Dynamodb">Dynamodb</a>" : <i>[ <a href="dynamodb.md">Dynamodb</a>, ... ]</i>,
+        "<a href="#elasticsearch" title="Elasticsearch">Elasticsearch</a>" : <i>[ <a href="elasticsearch.md">Elasticsearch</a>, ... ]</i>,
+        "<a href="#firehose" title="Firehose">Firehose</a>" : <i>[ <a href="firehose.md">Firehose</a>, ... ]</i>,
+        "<a href="#kinesis" title="Kinesis">Kinesis</a>" : <i>[ <a href="kinesis.md">Kinesis</a>, ... ]</i>,
+        "<a href="#lambda" title="Lambda">Lambda</a>" : <i>[ <a href="lambda.md">Lambda</a>, ... ]</i>,
+        "<a href="#republish" title="Republish">Republish</a>" : <i>[ <a href="republish.md">Republish</a>, ... ]</i>,
+        "<a href="#s3" title="S3">S3</a>" : <i>[ <a href="s3.md">S3</a>, ... ]</i>,
+        "<a href="#sns" title="Sns">Sns</a>" : <i>[ <a href="sns.md">Sns</a>, ... ]</i>,
+        "<a href="#sqs" title="Sqs">Sqs</a>" : <i>[ <a href="sqs.md">Sqs</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,56 +37,36 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::IotTopicRule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enabled" title="Enabled">Enabled</a>: <i>Boolean</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#sql" title="Sql">Sql</a>: <i>String</i>
     <a href="#sqlversion" title="SqlVersion">SqlVersion</a>: <i>String</i>
     <a href="#cloudwatchalarm" title="CloudwatchAlarm">CloudwatchAlarm</a>: <i>
-      - &lt;a href=&#34;cloudwatchalarm.md&#34;&gt;CloudwatchAlarm&lt;/a&gt;</i>
+      - <a href="cloudwatchalarm.md">CloudwatchAlarm</a></i>
     <a href="#cloudwatchmetric" title="CloudwatchMetric">CloudwatchMetric</a>: <i>
-      - &lt;a href=&#34;cloudwatchmetric.md&#34;&gt;CloudwatchMetric&lt;/a&gt;</i>
+      - <a href="cloudwatchmetric.md">CloudwatchMetric</a></i>
     <a href="#dynamodb" title="Dynamodb">Dynamodb</a>: <i>
-      - &lt;a href=&#34;dynamodb.md&#34;&gt;Dynamodb&lt;/a&gt;</i>
+      - <a href="dynamodb.md">Dynamodb</a></i>
     <a href="#elasticsearch" title="Elasticsearch">Elasticsearch</a>: <i>
-      - &lt;a href=&#34;elasticsearch.md&#34;&gt;Elasticsearch&lt;/a&gt;</i>
+      - <a href="elasticsearch.md">Elasticsearch</a></i>
     <a href="#firehose" title="Firehose">Firehose</a>: <i>
-      - &lt;a href=&#34;firehose.md&#34;&gt;Firehose&lt;/a&gt;</i>
+      - <a href="firehose.md">Firehose</a></i>
     <a href="#kinesis" title="Kinesis">Kinesis</a>: <i>
-      - &lt;a href=&#34;kinesis.md&#34;&gt;Kinesis&lt;/a&gt;</i>
+      - <a href="kinesis.md">Kinesis</a></i>
     <a href="#lambda" title="Lambda">Lambda</a>: <i>
-      - &lt;a href=&#34;lambda.md&#34;&gt;Lambda&lt;/a&gt;</i>
+      - <a href="lambda.md">Lambda</a></i>
     <a href="#republish" title="Republish">Republish</a>: <i>
-      - &lt;a href=&#34;republish.md&#34;&gt;Republish&lt;/a&gt;</i>
+      - <a href="republish.md">Republish</a></i>
     <a href="#s3" title="S3">S3</a>: <i>
-      - &lt;a href=&#34;s3.md&#34;&gt;S3&lt;/a&gt;</i>
+      - <a href="s3.md">S3</a></i>
     <a href="#sns" title="Sns">Sns</a>: <i>
-      - &lt;a href=&#34;sns.md&#34;&gt;Sns&lt;/a&gt;</i>
+      - <a href="sns.md">Sns</a></i>
     <a href="#sqs" title="Sqs">Sqs</a>: <i>
-      - &lt;a href=&#34;sqs.md&#34;&gt;Sqs&lt;/a&gt;</i>
+      - <a href="sqs.md">Sqs</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -134,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cloudwatchalarm.md&#34;&gt;CloudwatchAlarm&lt;/a&gt;
+_Type_: List of <a href="cloudwatchalarm.md">CloudwatchAlarm</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -142,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;cloudwatchmetric.md&#34;&gt;CloudwatchMetric&lt;/a&gt;
+_Type_: List of <a href="cloudwatchmetric.md">CloudwatchMetric</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -150,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dynamodb.md&#34;&gt;Dynamodb&lt;/a&gt;
+_Type_: List of <a href="dynamodb.md">Dynamodb</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -158,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;elasticsearch.md&#34;&gt;Elasticsearch&lt;/a&gt;
+_Type_: List of <a href="elasticsearch.md">Elasticsearch</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -166,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;firehose.md&#34;&gt;Firehose&lt;/a&gt;
+_Type_: List of <a href="firehose.md">Firehose</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -174,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kinesis.md&#34;&gt;Kinesis&lt;/a&gt;
+_Type_: List of <a href="kinesis.md">Kinesis</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;lambda.md&#34;&gt;Lambda&lt;/a&gt;
+_Type_: List of <a href="lambda.md">Lambda</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -190,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;republish.md&#34;&gt;Republish&lt;/a&gt;
+_Type_: List of <a href="republish.md">Republish</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -198,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;s3.md&#34;&gt;S3&lt;/a&gt;
+_Type_: List of <a href="s3.md">S3</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -206,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sns.md&#34;&gt;Sns&lt;/a&gt;
+_Type_: List of <a href="sns.md">Sns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -214,7 +192,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sqs.md&#34;&gt;Sqs&lt;/a&gt;
+_Type_: List of <a href="sqs.md">Sqs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -236,5 +214,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 

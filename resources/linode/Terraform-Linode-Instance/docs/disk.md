@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#readonly" title="ReadOnly">ReadOnly</a>" : <i>Boolean</i>,
     "<a href="#rootpass" title="RootPass">RootPass</a>" : <i>String</i>,
     "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
-    "<a href="#stackscriptdata" title="StackscriptData">StackscriptData</a>" : <i>[ &lt;a href=&#34;disk-stackscriptdata.md&#34;&gt;StackscriptData&lt;/a&gt;, ... ]</i>,
+    "<a href="#stackscriptdata" title="StackscriptData">StackscriptData</a>" : <i>[ <a href="disk-stackscriptdata.md">StackscriptData</a>, ... ]</i>,
     "<a href="#stackscriptid" title="StackscriptId">StackscriptId</a>" : <i>Double</i>
 }
 </pre>
@@ -35,7 +35,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#rootpass" title="RootPass">RootPass</a>: <i>String</i>
 <a href="#size" title="Size">Size</a>: <i>Double</i>
 <a href="#stackscriptdata" title="StackscriptData">StackscriptData</a>: <i>
-      - &lt;a href=&#34;disk-stackscriptdata.md&#34;&gt;StackscriptData&lt;/a&gt;</i>
+      - <a href="disk-stackscriptdata.md">StackscriptData</a></i>
 <a href="#stackscriptid" title="StackscriptId">StackscriptId</a>: <i>Double</i>
 </pre>
 
@@ -44,6 +44,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AuthorizedKeys
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,6 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AuthorizedUsers
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,6 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Filesystem
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -65,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Image
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,6 +76,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Label
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -79,6 +84,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ReadOnly
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -86,6 +92,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### RootPass
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -93,6 +100,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Size
 
 _Required_: Yes
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -100,13 +108,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### StackscriptData
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;disk-stackscriptdata.md&#34;&gt;StackscriptData&lt;/a&gt;
+
+_Type_: List of <a href="disk-stackscriptdata.md">StackscriptData</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StackscriptId
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

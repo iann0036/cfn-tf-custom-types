@@ -12,24 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::HdinsightInteractiveQueryCluster",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#clusterversion" title="ClusterVersion">ClusterVersion</a>" : <i>String</i>,
-        "<a href="#httpsendpoint" title="HttpsEndpoint">HttpsEndpoint</a>" : <i>String</i>,
         "<a href="#location" title="Location">Location</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>" : <i>String</i>,
-        "<a href="#sshendpoint" title="SshEndpoint">SshEndpoint</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#tier" title="Tier">Tier</a>" : <i>String</i>,
-        "<a href="#componentversion" title="ComponentVersion">ComponentVersion</a>" : <i>[ &lt;a href=&#34;componentversion.md&#34;&gt;ComponentVersion&lt;/a&gt;, ... ]</i>,
-        "<a href="#gateway" title="Gateway">Gateway</a>" : <i>[ &lt;a href=&#34;gateway.md&#34;&gt;Gateway&lt;/a&gt;, ... ]</i>,
-        "<a href="#roles" title="Roles">Roles</a>" : <i>[ &lt;a href=&#34;roles.md&#34;&gt;Roles&lt;/a&gt;, ... ]</i>,
-        "<a href="#storageaccount" title="StorageAccount">StorageAccount</a>" : <i>[ &lt;a href=&#34;storageaccount.md&#34;&gt;StorageAccount&lt;/a&gt;, ... ]</i>,
-        "<a href="#storageaccountgen2" title="StorageAccountGen2">StorageAccountGen2</a>" : <i>[ &lt;a href=&#34;storageaccountgen2.md&#34;&gt;StorageAccountGen2&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#headnode" title="HeadNode">HeadNode</a>" : <i>[ &lt;a href=&#34;headnode.md&#34;&gt;HeadNode&lt;/a&gt;, ... ]</i>,
-        "<a href="#workernode" title="WorkerNode">WorkerNode</a>" : <i>[ &lt;a href=&#34;workernode.md&#34;&gt;WorkerNode&lt;/a&gt;, ... ]</i>,
-        "<a href="#zookeepernode" title="ZookeeperNode">ZookeeperNode</a>" : <i>[ &lt;a href=&#34;zookeepernode.md&#34;&gt;ZookeeperNode&lt;/a&gt;, ... ]</i>
+        "<a href="#componentversion" title="ComponentVersion">ComponentVersion</a>" : <i>[ <a href="componentversion.md">ComponentVersion</a>, ... ]</i>,
+        "<a href="#gateway" title="Gateway">Gateway</a>" : <i>[ <a href="gateway.md">Gateway</a>, ... ]</i>,
+        "<a href="#roles" title="Roles">Roles</a>" : <i>[ <a href="roles.md">Roles</a>, ... ]</i>,
+        "<a href="#storageaccount" title="StorageAccount">StorageAccount</a>" : <i>[ <a href="storageaccount.md">StorageAccount</a>, ... ]</i>,
+        "<a href="#storageaccountgen2" title="StorageAccountGen2">StorageAccountGen2</a>" : <i>[ <a href="storageaccountgen2.md">StorageAccountGen2</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#headnode" title="HeadNode">HeadNode</a>" : <i>[ <a href="headnode.md">HeadNode</a>, ... ]</i>,
+        "<a href="#workernode" title="WorkerNode">WorkerNode</a>" : <i>[ <a href="workernode.md">WorkerNode</a>, ... ]</i>,
+        "<a href="#zookeepernode" title="ZookeeperNode">ZookeeperNode</a>" : <i>[ <a href="zookeepernode.md">ZookeeperNode</a>, ... ]</i>
     }
 }
 </pre>
@@ -39,58 +36,37 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::HdinsightInteractiveQueryCluster
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#clusterversion" title="ClusterVersion">ClusterVersion</a>: <i>String</i>
-    <a href="#httpsendpoint" title="HttpsEndpoint">HttpsEndpoint</a>: <i>String</i>
     <a href="#location" title="Location">Location</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#resourcegroupname" title="ResourceGroupName">ResourceGroupName</a>: <i>String</i>
-    <a href="#sshendpoint" title="SshEndpoint">SshEndpoint</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#tier" title="Tier">Tier</a>: <i>String</i>
     <a href="#componentversion" title="ComponentVersion">ComponentVersion</a>: <i>
-      - &lt;a href=&#34;componentversion.md&#34;&gt;ComponentVersion&lt;/a&gt;</i>
+      - <a href="componentversion.md">ComponentVersion</a></i>
     <a href="#gateway" title="Gateway">Gateway</a>: <i>
-      - &lt;a href=&#34;gateway.md&#34;&gt;Gateway&lt;/a&gt;</i>
+      - <a href="gateway.md">Gateway</a></i>
     <a href="#roles" title="Roles">Roles</a>: <i>
-      - &lt;a href=&#34;roles.md&#34;&gt;Roles&lt;/a&gt;</i>
+      - <a href="roles.md">Roles</a></i>
     <a href="#storageaccount" title="StorageAccount">StorageAccount</a>: <i>
-      - &lt;a href=&#34;storageaccount.md&#34;&gt;StorageAccount&lt;/a&gt;</i>
+      - <a href="storageaccount.md">StorageAccount</a></i>
     <a href="#storageaccountgen2" title="StorageAccountGen2">StorageAccountGen2</a>: <i>
-      - &lt;a href=&#34;storageaccountgen2.md&#34;&gt;StorageAccountGen2&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="storageaccountgen2.md">StorageAccountGen2</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#headnode" title="HeadNode">HeadNode</a>: <i>
-      - &lt;a href=&#34;headnode.md&#34;&gt;HeadNode&lt;/a&gt;</i>
+      - <a href="headnode.md">HeadNode</a></i>
     <a href="#workernode" title="WorkerNode">WorkerNode</a>: <i>
-      - &lt;a href=&#34;workernode.md&#34;&gt;WorkerNode&lt;/a&gt;</i>
+      - <a href="workernode.md">WorkerNode</a></i>
     <a href="#zookeepernode" title="ZookeeperNode">ZookeeperNode</a>: <i>
-      - &lt;a href=&#34;zookeepernode.md&#34;&gt;ZookeeperNode&lt;/a&gt;</i>
+      - <a href="zookeepernode.md">ZookeeperNode</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### ClusterVersion
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HttpsEndpoint
-
-_Required_: No
 
 _Type_: String
 
@@ -120,19 +96,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SshEndpoint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -148,7 +116,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;componentversion.md&#34;&gt;ComponentVersion&lt;/a&gt;
+_Type_: List of <a href="componentversion.md">ComponentVersion</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,7 +124,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;gateway.md&#34;&gt;Gateway&lt;/a&gt;
+_Type_: List of <a href="gateway.md">Gateway</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -164,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;roles.md&#34;&gt;Roles&lt;/a&gt;
+_Type_: List of <a href="roles.md">Roles</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -172,7 +140,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storageaccount.md&#34;&gt;StorageAccount&lt;/a&gt;
+_Type_: List of <a href="storageaccount.md">StorageAccount</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -180,7 +148,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;storageaccountgen2.md&#34;&gt;StorageAccountGen2&lt;/a&gt;
+_Type_: List of <a href="storageaccountgen2.md">StorageAccountGen2</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -188,7 +156,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -196,7 +164,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;headnode.md&#34;&gt;HeadNode&lt;/a&gt;
+_Type_: List of <a href="headnode.md">HeadNode</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -204,7 +172,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;workernode.md&#34;&gt;WorkerNode&lt;/a&gt;
+_Type_: List of <a href="workernode.md">WorkerNode</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -212,7 +180,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;zookeepernode.md&#34;&gt;ZookeeperNode&lt;/a&gt;
+_Type_: List of <a href="zookeepernode.md">ZookeeperNode</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -234,9 +202,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HttpsEndpoint
 
-Returns the &lt;code&gt;HttpsEndpoint&lt;/code&gt; value.
+Returns the <code>HttpsEndpoint</code> value.
 
 #### SshEndpoint
 
-Returns the &lt;code&gt;SshEndpoint&lt;/code&gt; value.
+Returns the <code>SshEndpoint</code> value.
 

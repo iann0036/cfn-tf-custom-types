@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#ec2tagfilter" title="Ec2TagFilter">Ec2TagFilter</a>" : <i>[ &lt;a href=&#34;ec2tagset-ec2tagfilter.md&#34;&gt;Ec2TagFilter&lt;/a&gt;, ... ]</i>
+    "<a href="#ec2tagfilter" title="Ec2TagFilter">Ec2TagFilter</a>" : <i>[ <a href="ec2tagset-ec2tagfilter.md">Ec2TagFilter</a>, ... ]</i>
 }
 </pre>
 
@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#ec2tagfilter" title="Ec2TagFilter">Ec2TagFilter</a>: <i>
-      - &lt;a href=&#34;ec2tagset-ec2tagfilter.md&#34;&gt;Ec2TagFilter&lt;/a&gt;</i>
+      - <a href="ec2tagset-ec2tagfilter.md">Ec2TagFilter</a></i>
 </pre>
 
 ## Properties
@@ -24,7 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Ec2TagFilter
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;ec2tagset-ec2tagfilter.md&#34;&gt;Ec2TagFilter&lt;/a&gt;
+
+_Type_: List of <a href="ec2tagset-ec2tagfilter.md">Ec2TagFilter</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,11 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#enabled" title="Enabled">Enabled</a>" : <i>Boolean</i>,
     "<a href="#id" title="Id">Id</a>" : <i>String</i>,
     "<a href="#prefix" title="Prefix">Prefix</a>" : <i>String</i>,
-    "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;lifecyclerule-tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-    "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ &lt;a href=&#34;lifecyclerule-expiration.md&#34;&gt;Expiration&lt;/a&gt;, ... ]</i>,
-    "<a href="#noncurrentversionexpiration" title="NoncurrentVersionExpiration">NoncurrentVersionExpiration</a>" : <i>[ &lt;a href=&#34;lifecyclerule-noncurrentversionexpiration.md&#34;&gt;NoncurrentVersionExpiration&lt;/a&gt;, ... ]</i>,
-    "<a href="#noncurrentversiontransition" title="NoncurrentVersionTransition">NoncurrentVersionTransition</a>" : <i>[ &lt;a href=&#34;lifecyclerule-noncurrentversiontransition.md&#34;&gt;NoncurrentVersionTransition&lt;/a&gt;, ... ]</i>,
-    "<a href="#transition" title="Transition">Transition</a>" : <i>[ &lt;a href=&#34;lifecyclerule-transition.md&#34;&gt;Transition&lt;/a&gt;, ... ]</i>
+    "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="lifecyclerule-tags.md">Tags</a>, ... ]</i>,
+    "<a href="#expiration" title="Expiration">Expiration</a>" : <i>[ <a href="lifecyclerule-expiration.md">Expiration</a>, ... ]</i>,
+    "<a href="#noncurrentversionexpiration" title="NoncurrentVersionExpiration">NoncurrentVersionExpiration</a>" : <i>[ <a href="lifecyclerule-noncurrentversionexpiration.md">NoncurrentVersionExpiration</a>, ... ]</i>,
+    "<a href="#noncurrentversiontransition" title="NoncurrentVersionTransition">NoncurrentVersionTransition</a>" : <i>[ <a href="lifecyclerule-noncurrentversiontransition.md">NoncurrentVersionTransition</a>, ... ]</i>,
+    "<a href="#transition" title="Transition">Transition</a>" : <i>[ <a href="lifecyclerule-transition.md">Transition</a>, ... ]</i>
 }
 </pre>
 
@@ -28,15 +28,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#id" title="Id">Id</a>: <i>String</i>
 <a href="#prefix" title="Prefix">Prefix</a>: <i>String</i>
 <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;lifecyclerule-tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="lifecyclerule-tags.md">Tags</a></i>
 <a href="#expiration" title="Expiration">Expiration</a>: <i>
-      - &lt;a href=&#34;lifecyclerule-expiration.md&#34;&gt;Expiration&lt;/a&gt;</i>
+      - <a href="lifecyclerule-expiration.md">Expiration</a></i>
 <a href="#noncurrentversionexpiration" title="NoncurrentVersionExpiration">NoncurrentVersionExpiration</a>: <i>
-      - &lt;a href=&#34;lifecyclerule-noncurrentversionexpiration.md&#34;&gt;NoncurrentVersionExpiration&lt;/a&gt;</i>
+      - <a href="lifecyclerule-noncurrentversionexpiration.md">NoncurrentVersionExpiration</a></i>
 <a href="#noncurrentversiontransition" title="NoncurrentVersionTransition">NoncurrentVersionTransition</a>: <i>
-      - &lt;a href=&#34;lifecyclerule-noncurrentversiontransition.md&#34;&gt;NoncurrentVersionTransition&lt;/a&gt;</i>
+      - <a href="lifecyclerule-noncurrentversiontransition.md">NoncurrentVersionTransition</a></i>
 <a href="#transition" title="Transition">Transition</a>: <i>
-      - &lt;a href=&#34;lifecyclerule-transition.md&#34;&gt;Transition&lt;/a&gt;</i>
+      - <a href="lifecyclerule-transition.md">Transition</a></i>
 </pre>
 
 ## Properties
@@ -44,6 +44,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AbortIncompleteMultipartUploadDays
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,6 +52,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Enabled
 
 _Required_: Yes
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -58,6 +60,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Id
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -65,6 +68,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Prefix
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -72,35 +76,40 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Tags
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerule-tags.md&#34;&gt;Tags&lt;/a&gt;
+
+_Type_: List of <a href="lifecyclerule-tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Expiration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerule-expiration.md&#34;&gt;Expiration&lt;/a&gt;
+
+_Type_: List of <a href="lifecyclerule-expiration.md">Expiration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NoncurrentVersionExpiration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerule-noncurrentversionexpiration.md&#34;&gt;NoncurrentVersionExpiration&lt;/a&gt;
+
+_Type_: List of <a href="lifecyclerule-noncurrentversionexpiration.md">NoncurrentVersionExpiration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NoncurrentVersionTransition
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerule-noncurrentversiontransition.md&#34;&gt;NoncurrentVersionTransition&lt;/a&gt;
+
+_Type_: List of <a href="lifecyclerule-noncurrentversiontransition.md">NoncurrentVersionTransition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Transition
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;lifecyclerule-transition.md&#34;&gt;Transition&lt;/a&gt;
+
+_Type_: List of <a href="lifecyclerule-transition.md">Transition</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#columnnames" title="ColumnNames">ColumnNames</a>" : <i>[ String, ... ]</i>,
     "<a href="#encryptedcolumns" title="EncryptedColumns">EncryptedColumns</a>" : <i>String</i>,
     "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-    "<a href="#rows" title="Rows">Rows</a>" : <i>[ &lt;a href=&#34;tables-rows.md&#34;&gt;Rows&lt;/a&gt;, ... ]</i>
+    "<a href="#rows" title="Rows">Rows</a>" : <i>[ <a href="tables-rows.md">Rows</a>, ... ]</i>
 }
 </pre>
 
@@ -23,7 +23,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#encryptedcolumns" title="EncryptedColumns">EncryptedColumns</a>: <i>String</i>
 <a href="#name" title="Name">Name</a>: <i>String</i>
 <a href="#rows" title="Rows">Rows</a>: <i>
-      - &lt;a href=&#34;tables-rows.md&#34;&gt;Rows&lt;/a&gt;</i>
+      - <a href="tables-rows.md">Rows</a></i>
 </pre>
 
 ## Properties
@@ -31,6 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### ColumnNames
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -38,6 +39,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EncryptedColumns
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -45,6 +47,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -52,7 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Rows
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;tables-rows.md&#34;&gt;Rows&lt;/a&gt;
+
+_Type_: List of <a href="tables-rows.md">Rows</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

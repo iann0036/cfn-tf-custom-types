@@ -12,14 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::VpcDhcpOptions",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#domainname" title="DomainName">DomainName</a>" : <i>String</i>,
         "<a href="#domainnameservers" title="DomainNameServers">DomainNameServers</a>" : <i>[ String, ... ]</i>,
         "<a href="#netbiosnameservers" title="NetbiosNameServers">NetbiosNameServers</a>" : <i>[ String, ... ]</i>,
         "<a href="#netbiosnodetype" title="NetbiosNodeType">NetbiosNodeType</a>" : <i>String</i>,
         "<a href="#ntpservers" title="NtpServers">NtpServers</a>" : <i>[ String, ... ]</i>,
-        "<a href="#ownerid" title="OwnerId">OwnerId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,7 +27,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::VpcDhcpOptions
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#domainname" title="DomainName">DomainName</a>: <i>String</i>
     <a href="#domainnameservers" title="DomainNameServers">DomainNameServers</a>: <i>
       - String</i>
@@ -38,22 +35,11 @@ Properties:
     <a href="#netbiosnodetype" title="NetbiosNodeType">NetbiosNodeType</a>: <i>String</i>
     <a href="#ntpservers" title="NtpServers">NtpServers</a>: <i>
       - String</i>
-    <a href="#ownerid" title="OwnerId">OwnerId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainName
 
@@ -95,19 +81,11 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### OwnerId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -129,5 +107,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OwnerId
 
-Returns the &lt;code&gt;OwnerId&lt;/code&gt; value.
+Returns the <code>OwnerId</code> value.
 

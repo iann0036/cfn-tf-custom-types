@@ -12,13 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AzureRM::MarketplaceAgreement",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#licensetextlink" title="LicenseTextLink">LicenseTextLink</a>" : <i>String</i>,
         "<a href="#offer" title="Offer">Offer</a>" : <i>String</i>,
         "<a href="#plan" title="Plan">Plan</a>" : <i>String</i>,
-        "<a href="#privacypolicylink" title="PrivacyPolicyLink">PrivacyPolicyLink</a>" : <i>String</i>,
         "<a href="#publisher" title="Publisher">Publisher</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -28,34 +25,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AzureRM::MarketplaceAgreement
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#licensetextlink" title="LicenseTextLink">LicenseTextLink</a>: <i>String</i>
     <a href="#offer" title="Offer">Offer</a>: <i>String</i>
     <a href="#plan" title="Plan">Plan</a>: <i>String</i>
-    <a href="#privacypolicylink" title="PrivacyPolicyLink">PrivacyPolicyLink</a>: <i>String</i>
     <a href="#publisher" title="Publisher">Publisher</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LicenseTextLink
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Offer
 
@@ -73,14 +49,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrivacyPolicyLink
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Publisher
 
 _Required_: Yes
@@ -93,7 +61,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -115,9 +83,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### LicenseTextLink
 
-Returns the &lt;code&gt;LicenseTextLink&lt;/code&gt; value.
+Returns the <code>LicenseTextLink</code> value.
 
 #### PrivacyPolicyLink
 
-Returns the &lt;code&gt;PrivacyPolicyLink&lt;/code&gt; value.
+Returns the <code>PrivacyPolicyLink</code> value.
 

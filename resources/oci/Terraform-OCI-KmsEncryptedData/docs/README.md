@@ -12,14 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OCI::KmsEncryptedData",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#associateddata" title="AssociatedData">AssociatedData</a>" : <i>[ &lt;a href=&#34;associateddata.md&#34;&gt;AssociatedData&lt;/a&gt;, ... ]</i>,
-        "<a href="#ciphertext" title="Ciphertext">Ciphertext</a>" : <i>String</i>,
+        "<a href="#associateddata" title="AssociatedData">AssociatedData</a>" : <i>[ <a href="associateddata.md">AssociatedData</a>, ... ]</i>,
         "<a href="#cryptoendpoint" title="CryptoEndpoint">CryptoEndpoint</a>" : <i>String</i>,
         "<a href="#keyid" title="KeyId">KeyId</a>" : <i>String</i>,
-        "<a href="#loggingcontext" title="LoggingContext">LoggingContext</a>" : <i>[ &lt;a href=&#34;loggingcontext.md&#34;&gt;LoggingContext&lt;/a&gt;, ... ]</i>,
+        "<a href="#loggingcontext" title="LoggingContext">LoggingContext</a>" : <i>[ <a href="loggingcontext.md">LoggingContext</a>, ... ]</i>,
         "<a href="#plaintext" title="Plaintext">Plaintext</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -29,43 +27,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OCI::KmsEncryptedData
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#associateddata" title="AssociatedData">AssociatedData</a>: <i>
-      - &lt;a href=&#34;associateddata.md&#34;&gt;AssociatedData&lt;/a&gt;</i>
-    <a href="#ciphertext" title="Ciphertext">Ciphertext</a>: <i>String</i>
+      - <a href="associateddata.md">AssociatedData</a></i>
     <a href="#cryptoendpoint" title="CryptoEndpoint">CryptoEndpoint</a>: <i>String</i>
     <a href="#keyid" title="KeyId">KeyId</a>: <i>String</i>
     <a href="#loggingcontext" title="LoggingContext">LoggingContext</a>: <i>
-      - &lt;a href=&#34;loggingcontext.md&#34;&gt;LoggingContext&lt;/a&gt;</i>
+      - <a href="loggingcontext.md">LoggingContext</a></i>
     <a href="#plaintext" title="Plaintext">Plaintext</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AssociatedData
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;associateddata.md&#34;&gt;AssociatedData&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Ciphertext
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="associateddata.md">AssociatedData</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -89,7 +67,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;loggingcontext.md&#34;&gt;LoggingContext&lt;/a&gt;
+_Type_: List of <a href="loggingcontext.md">LoggingContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -105,7 +83,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -127,5 +105,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Ciphertext
 
-Returns the &lt;code&gt;Ciphertext&lt;/code&gt; value.
+Returns the <code>Ciphertext</code> value.
 

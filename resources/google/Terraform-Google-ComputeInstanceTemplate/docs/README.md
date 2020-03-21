@@ -12,34 +12,30 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ComputeInstanceTemplate",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#canipforward" title="CanIpForward">CanIpForward</a>" : <i>Boolean</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#enabledisplay" title="EnableDisplay">EnableDisplay</a>" : <i>Boolean</i>,
         "<a href="#instancedescription" title="InstanceDescription">InstanceDescription</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#machinetype" title="MachineType">MachineType</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
-        "<a href="#metadatafingerprint" title="MetadataFingerprint">MetadataFingerprint</a>" : <i>String</i>,
+        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ <a href="metadata.md">Metadata</a>, ... ]</i>,
         "<a href="#metadatastartupscript" title="MetadataStartupScript">MetadataStartupScript</a>" : <i>String</i>,
         "<a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#tagsfingerprint" title="TagsFingerprint">TagsFingerprint</a>" : <i>String</i>,
-        "<a href="#disk" title="Disk">Disk</a>" : <i>[ &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;, ... ]</i>,
-        "<a href="#guestaccelerator" title="GuestAccelerator">GuestAccelerator</a>" : <i>[ &lt;a href=&#34;guestaccelerator.md&#34;&gt;GuestAccelerator&lt;/a&gt;, ... ]</i>,
-        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;, ... ]</i>,
-        "<a href="#scheduling" title="Scheduling">Scheduling</a>" : <i>[ &lt;a href=&#34;scheduling.md&#34;&gt;Scheduling&lt;/a&gt;, ... ]</i>,
-        "<a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>" : <i>[ &lt;a href=&#34;serviceaccount.md&#34;&gt;ServiceAccount&lt;/a&gt;, ... ]</i>,
-        "<a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>" : <i>[ &lt;a href=&#34;shieldedinstanceconfig.md&#34;&gt;ShieldedInstanceConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ &lt;a href=&#34;diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;, ... ]</i>,
-        "<a href="#accessconfig" title="AccessConfig">AccessConfig</a>" : <i>[ &lt;a href=&#34;accessconfig.md&#34;&gt;AccessConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#aliasiprange" title="AliasIpRange">AliasIpRange</a>" : <i>[ &lt;a href=&#34;aliasiprange.md&#34;&gt;AliasIpRange&lt;/a&gt;, ... ]</i>,
-        "<a href="#nodeaffinities" title="NodeAffinities">NodeAffinities</a>" : <i>[ &lt;a href=&#34;nodeaffinities.md&#34;&gt;NodeAffinities&lt;/a&gt;, ... ]</i>
+        "<a href="#disk" title="Disk">Disk</a>" : <i>[ <a href="disk.md">Disk</a>, ... ]</i>,
+        "<a href="#guestaccelerator" title="GuestAccelerator">GuestAccelerator</a>" : <i>[ <a href="guestaccelerator.md">GuestAccelerator</a>, ... ]</i>,
+        "<a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>" : <i>[ <a href="networkinterface.md">NetworkInterface</a>, ... ]</i>,
+        "<a href="#scheduling" title="Scheduling">Scheduling</a>" : <i>[ <a href="scheduling.md">Scheduling</a>, ... ]</i>,
+        "<a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>" : <i>[ <a href="serviceaccount.md">ServiceAccount</a>, ... ]</i>,
+        "<a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>" : <i>[ <a href="shieldedinstanceconfig.md">ShieldedInstanceConfig</a>, ... ]</i>,
+        "<a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>" : <i>[ <a href="diskencryptionkey.md">DiskEncryptionKey</a>, ... ]</i>,
+        "<a href="#accessconfig" title="AccessConfig">AccessConfig</a>" : <i>[ <a href="accessconfig.md">AccessConfig</a>, ... ]</i>,
+        "<a href="#aliasiprange" title="AliasIpRange">AliasIpRange</a>" : <i>[ <a href="aliasiprange.md">AliasIpRange</a>, ... ]</i>,
+        "<a href="#nodeaffinities" title="NodeAffinities">NodeAffinities</a>" : <i>[ <a href="nodeaffinities.md">NodeAffinities</a>, ... ]</i>
     }
 }
 </pre>
@@ -49,60 +45,46 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ComputeInstanceTemplate
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#canipforward" title="CanIpForward">CanIpForward</a>: <i>Boolean</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#enabledisplay" title="EnableDisplay">EnableDisplay</a>: <i>Boolean</i>
     <a href="#instancedescription" title="InstanceDescription">InstanceDescription</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#machinetype" title="MachineType">MachineType</a>: <i>String</i>
     <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
-    <a href="#metadatafingerprint" title="MetadataFingerprint">MetadataFingerprint</a>: <i>String</i>
+      - <a href="metadata.md">Metadata</a></i>
     <a href="#metadatastartupscript" title="MetadataStartupScript">MetadataStartupScript</a>: <i>String</i>
     <a href="#mincpuplatform" title="MinCpuPlatform">MinCpuPlatform</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#nameprefix" title="NamePrefix">NamePrefix</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
-    <a href="#tagsfingerprint" title="TagsFingerprint">TagsFingerprint</a>: <i>String</i>
     <a href="#disk" title="Disk">Disk</a>: <i>
-      - &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;</i>
+      - <a href="disk.md">Disk</a></i>
     <a href="#guestaccelerator" title="GuestAccelerator">GuestAccelerator</a>: <i>
-      - &lt;a href=&#34;guestaccelerator.md&#34;&gt;GuestAccelerator&lt;/a&gt;</i>
+      - <a href="guestaccelerator.md">GuestAccelerator</a></i>
     <a href="#networkinterface" title="NetworkInterface">NetworkInterface</a>: <i>
-      - &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;</i>
+      - <a href="networkinterface.md">NetworkInterface</a></i>
     <a href="#scheduling" title="Scheduling">Scheduling</a>: <i>
-      - &lt;a href=&#34;scheduling.md&#34;&gt;Scheduling&lt;/a&gt;</i>
+      - <a href="scheduling.md">Scheduling</a></i>
     <a href="#serviceaccount" title="ServiceAccount">ServiceAccount</a>: <i>
-      - &lt;a href=&#34;serviceaccount.md&#34;&gt;ServiceAccount&lt;/a&gt;</i>
+      - <a href="serviceaccount.md">ServiceAccount</a></i>
     <a href="#shieldedinstanceconfig" title="ShieldedInstanceConfig">ShieldedInstanceConfig</a>: <i>
-      - &lt;a href=&#34;shieldedinstanceconfig.md&#34;&gt;ShieldedInstanceConfig&lt;/a&gt;</i>
+      - <a href="shieldedinstanceconfig.md">ShieldedInstanceConfig</a></i>
     <a href="#diskencryptionkey" title="DiskEncryptionKey">DiskEncryptionKey</a>: <i>
-      - &lt;a href=&#34;diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;</i>
+      - <a href="diskencryptionkey.md">DiskEncryptionKey</a></i>
     <a href="#accessconfig" title="AccessConfig">AccessConfig</a>: <i>
-      - &lt;a href=&#34;accessconfig.md&#34;&gt;AccessConfig&lt;/a&gt;</i>
+      - <a href="accessconfig.md">AccessConfig</a></i>
     <a href="#aliasiprange" title="AliasIpRange">AliasIpRange</a>: <i>
-      - &lt;a href=&#34;aliasiprange.md&#34;&gt;AliasIpRange&lt;/a&gt;</i>
+      - <a href="aliasiprange.md">AliasIpRange</a></i>
     <a href="#nodeaffinities" title="NodeAffinities">NodeAffinities</a>: <i>
-      - &lt;a href=&#34;nodeaffinities.md&#34;&gt;NodeAffinities&lt;/a&gt;</i>
+      - <a href="nodeaffinities.md">NodeAffinities</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CanIpForward
 
@@ -140,7 +122,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -156,15 +138,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### MetadataFingerprint
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="metadata.md">Metadata</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -216,14 +190,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SelfLink
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
@@ -232,19 +198,11 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TagsFingerprint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Disk
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;disk.md&#34;&gt;Disk&lt;/a&gt;
+_Type_: List of <a href="disk.md">Disk</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -252,7 +210,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;guestaccelerator.md&#34;&gt;GuestAccelerator&lt;/a&gt;
+_Type_: List of <a href="guestaccelerator.md">GuestAccelerator</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -260,7 +218,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;networkinterface.md&#34;&gt;NetworkInterface&lt;/a&gt;
+_Type_: List of <a href="networkinterface.md">NetworkInterface</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -268,7 +226,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;scheduling.md&#34;&gt;Scheduling&lt;/a&gt;
+_Type_: List of <a href="scheduling.md">Scheduling</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -276,7 +234,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;serviceaccount.md&#34;&gt;ServiceAccount&lt;/a&gt;
+_Type_: List of <a href="serviceaccount.md">ServiceAccount</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -284,7 +242,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;shieldedinstanceconfig.md&#34;&gt;ShieldedInstanceConfig&lt;/a&gt;
+_Type_: List of <a href="shieldedinstanceconfig.md">ShieldedInstanceConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -292,7 +250,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;diskencryptionkey.md&#34;&gt;DiskEncryptionKey&lt;/a&gt;
+_Type_: List of <a href="diskencryptionkey.md">DiskEncryptionKey</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -300,7 +258,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accessconfig.md&#34;&gt;AccessConfig&lt;/a&gt;
+_Type_: List of <a href="accessconfig.md">AccessConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -308,7 +266,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;aliasiprange.md&#34;&gt;AliasIpRange&lt;/a&gt;
+_Type_: List of <a href="aliasiprange.md">AliasIpRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -316,7 +274,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;nodeaffinities.md&#34;&gt;NodeAffinities&lt;/a&gt;
+_Type_: List of <a href="nodeaffinities.md">NodeAffinities</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -338,13 +296,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### MetadataFingerprint
 
-Returns the &lt;code&gt;MetadataFingerprint&lt;/code&gt; value.
+Returns the <code>MetadataFingerprint</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 
 #### TagsFingerprint
 
-Returns the &lt;code&gt;TagsFingerprint&lt;/code&gt; value.
+Returns the <code>TagsFingerprint</code> value.
 

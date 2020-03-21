@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#accessconfig" title="AccessConfig">AccessConfig</a>" : <i>[ &lt;a href=&#34;networkinterface-accessconfig.md&#34;&gt;AccessConfig&lt;/a&gt;, ... ]</i>,
-    "<a href="#aliasiprange" title="AliasIpRange">AliasIpRange</a>" : <i>[ &lt;a href=&#34;networkinterface-aliasiprange.md&#34;&gt;AliasIpRange&lt;/a&gt;, ... ]</i>,
+    "<a href="#accessconfig" title="AccessConfig">AccessConfig</a>" : <i>[ <a href="networkinterface-accessconfig.md">AccessConfig</a>, ... ]</i>,
+    "<a href="#aliasiprange" title="AliasIpRange">AliasIpRange</a>" : <i>[ <a href="networkinterface-aliasiprange.md">AliasIpRange</a>, ... ]</i>,
     "<a href="#network" title="Network">Network</a>" : <i>String</i>,
     "<a href="#networkip" title="NetworkIp">NetworkIp</a>" : <i>String</i>,
     "<a href="#subnetwork" title="Subnetwork">Subnetwork</a>" : <i>String</i>,
@@ -21,9 +21,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#accessconfig" title="AccessConfig">AccessConfig</a>: <i>
-      - &lt;a href=&#34;networkinterface-accessconfig.md&#34;&gt;AccessConfig&lt;/a&gt;</i>
+      - <a href="networkinterface-accessconfig.md">AccessConfig</a></i>
 <a href="#aliasiprange" title="AliasIpRange">AliasIpRange</a>: <i>
-      - &lt;a href=&#34;networkinterface-aliasiprange.md&#34;&gt;AliasIpRange&lt;/a&gt;</i>
+      - <a href="networkinterface-aliasiprange.md">AliasIpRange</a></i>
 <a href="#network" title="Network">Network</a>: <i>String</i>
 <a href="#networkip" title="NetworkIp">NetworkIp</a>: <i>String</i>
 <a href="#subnetwork" title="Subnetwork">Subnetwork</a>: <i>String</i>
@@ -35,20 +35,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AccessConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkinterface-accessconfig.md&#34;&gt;AccessConfig&lt;/a&gt;
+
+_Type_: List of <a href="networkinterface-accessconfig.md">AccessConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AliasIpRange
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkinterface-aliasiprange.md&#34;&gt;AliasIpRange&lt;/a&gt;
+
+_Type_: List of <a href="networkinterface-aliasiprange.md">AliasIpRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Network
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,6 +59,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NetworkIp
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -63,6 +67,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Subnetwork
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -70,6 +75,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SubnetworkProject
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

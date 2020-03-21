@@ -10,7 +10,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "<a href="#publicips" title="PublicIps">PublicIps</a>" : <i>[ String, ... ]</i>,
     "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-    "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ &lt;a href=&#34;networkconfiguration-endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;, ... ]</i>
+    "<a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>" : <i>[ <a href="networkconfiguration-endpointconfiguration.md">EndpointConfiguration</a>, ... ]</i>
 }
 </pre>
 
@@ -21,7 +21,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
       - String</i>
 <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
 <a href="#endpointconfiguration" title="EndpointConfiguration">EndpointConfiguration</a>: <i>
-      - &lt;a href=&#34;networkconfiguration-endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;</i>
+      - <a href="networkconfiguration-endpointconfiguration.md">EndpointConfiguration</a></i>
 </pre>
 
 ## Properties
@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### PublicIps
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,6 +37,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SubnetId
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -43,7 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### EndpointConfiguration
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkconfiguration-endpointconfiguration.md&#34;&gt;EndpointConfiguration&lt;/a&gt;
+
+_Type_: List of <a href="networkconfiguration-endpointconfiguration.md">EndpointConfiguration</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

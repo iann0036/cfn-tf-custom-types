@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::BIGIP::SysSnmp",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#allowedaddresses" title="Allowedaddresses">Allowedaddresses</a>" : <i>[ String, ... ]</i>,
         "<a href="#syscontact" title="SysContact">SysContact</a>" : <i>String</i>,
         "<a href="#syslocation" title="SysLocation">SysLocation</a>" : <i>String</i>
@@ -25,7 +24,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::BIGIP::SysSnmp
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#allowedaddresses" title="Allowedaddresses">Allowedaddresses</a>: <i>
       - String</i>
     <a href="#syscontact" title="SysContact">SysContact</a>: <i>String</i>
@@ -33,16 +31,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Allowedaddresses
 

@@ -12,12 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::PagerDuty::Extension",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#config" title="Config">Config</a>" : <i>String</i>,
         "<a href="#endpointurl" title="EndpointUrl">EndpointUrl</a>" : <i>String</i>,
         "<a href="#extensionobjects" title="ExtensionObjects">ExtensionObjects</a>" : <i>[ String, ... ]</i>,
         "<a href="#extensionschema" title="ExtensionSchema">ExtensionSchema</a>" : <i>String</i>,
-        "<a href="#htmlurl" title="HtmlUrl">HtmlUrl</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>
     }
@@ -29,28 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::PagerDuty::Extension
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#config" title="Config">Config</a>: <i>String</i>
     <a href="#endpointurl" title="EndpointUrl">EndpointUrl</a>: <i>String</i>
     <a href="#extensionobjects" title="ExtensionObjects">ExtensionObjects</a>: <i>
       - String</i>
     <a href="#extensionschema" title="ExtensionSchema">ExtensionSchema</a>: <i>String</i>
-    <a href="#htmlurl" title="HtmlUrl">HtmlUrl</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Config
 
@@ -79,14 +65,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ExtensionSchema
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### HtmlUrl
-
-_Required_: No
 
 _Type_: String
 
@@ -126,5 +104,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### HtmlUrl
 
-Returns the &lt;code&gt;HtmlUrl&lt;/code&gt; value.
+Returns the <code>HtmlUrl</code> value.
 

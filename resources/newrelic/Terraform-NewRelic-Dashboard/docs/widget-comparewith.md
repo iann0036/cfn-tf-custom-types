@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#offsetduration" title="OffsetDuration">OffsetDuration</a>" : <i>String</i>,
-    "<a href="#presentation" title="Presentation">Presentation</a>" : <i>[ &lt;a href=&#34;widget-comparewith-presentation.md&#34;&gt;Presentation&lt;/a&gt;, ... ]</i>
+    "<a href="#presentation" title="Presentation">Presentation</a>" : <i>[ <a href="widget-comparewith-presentation.md">Presentation</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#offsetduration" title="OffsetDuration">OffsetDuration</a>: <i>String</i>
 <a href="#presentation" title="Presentation">Presentation</a>: <i>
-      - &lt;a href=&#34;widget-comparewith-presentation.md&#34;&gt;Presentation&lt;/a&gt;</i>
+      - <a href="widget-comparewith-presentation.md">Presentation</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### OffsetDuration
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Presentation
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;widget-comparewith-presentation.md&#34;&gt;Presentation&lt;/a&gt;
+
+_Type_: List of <a href="widget-comparewith-presentation.md">Presentation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -12,9 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Heroku::Drain",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#app" title="App">App</a>" : <i>String</i>,
-        "<a href="#token" title="Token">Token</a>" : <i>String</i>,
         "<a href="#url" title="Url">Url</a>" : <i>String</i>
     }
 }
@@ -25,35 +23,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Heroku::Drain
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#app" title="App">App</a>: <i>String</i>
-    <a href="#token" title="Token">Token</a>: <i>String</i>
     <a href="#url" title="Url">Url</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### App
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Token
-
-_Required_: No
 
 _Type_: String
 
@@ -85,5 +63,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Token
 
-Returns the &lt;code&gt;Token&lt;/code&gt; value.
+Returns the <code>Token</code> value.
 

@@ -12,8 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::NewRelic::SyntheticsLabel",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#href" title="Href">Href</a>" : <i>String</i>,
         "<a href="#monitorid" title="MonitorId">MonitorId</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
         "<a href="#value" title="Value">Value</a>" : <i>String</i>
@@ -26,32 +24,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::NewRelic::SyntheticsLabel
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#href" title="Href">Href</a>: <i>String</i>
     <a href="#monitorid" title="MonitorId">MonitorId</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
     <a href="#value" title="Value">Value</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Href
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MonitorId
 
@@ -95,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Href
 
-Returns the &lt;code&gt;Href&lt;/code&gt; value.
+Returns the <code>Href</code> value.
 

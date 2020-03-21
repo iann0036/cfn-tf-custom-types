@@ -12,12 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::RuntimeconfigVariable",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#parent" title="Parent">Parent</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#text" title="Text">Text</a>" : <i>String</i>,
-        "<a href="#updatetime" title="UpdateTime">UpdateTime</a>" : <i>String</i>,
         "<a href="#value" title="Value">Value</a>" : <i>String</i>
     }
 }
@@ -28,26 +26,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::RuntimeconfigVariable
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#parent" title="Parent">Parent</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#text" title="Text">Text</a>: <i>String</i>
-    <a href="#updatetime" title="UpdateTime">UpdateTime</a>: <i>String</i>
     <a href="#value" title="Value">Value</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
 
@@ -81,14 +67,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### UpdateTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Value
 
 _Required_: No
@@ -115,5 +93,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### UpdateTime
 
-Returns the &lt;code&gt;UpdateTime&lt;/code&gt; value.
+Returns the <code>UpdateTime</code> value.
 

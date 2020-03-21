@@ -12,23 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::AwsAuthBackendLogin",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#accessor" title="Accessor">Accessor</a>" : <i>String</i>,
-        "<a href="#authtype" title="AuthType">AuthType</a>" : <i>String</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
-        "<a href="#clienttoken" title="ClientToken">ClientToken</a>" : <i>String</i>,
         "<a href="#iamhttprequestmethod" title="IamHttpRequestMethod">IamHttpRequestMethod</a>" : <i>String</i>,
         "<a href="#iamrequestbody" title="IamRequestBody">IamRequestBody</a>" : <i>String</i>,
         "<a href="#iamrequestheaders" title="IamRequestHeaders">IamRequestHeaders</a>" : <i>String</i>,
         "<a href="#iamrequesturl" title="IamRequestUrl">IamRequestUrl</a>" : <i>String</i>,
         "<a href="#identity" title="Identity">Identity</a>" : <i>String</i>,
-        "<a href="#leaseduration" title="LeaseDuration">LeaseDuration</a>" : <i>Double</i>,
-        "<a href="#leasestarttime" title="LeaseStartTime">LeaseStartTime</a>" : <i>String</i>,
-        "<a href="#metadata" title="Metadata">Metadata</a>" : <i>[ &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;, ... ]</i>,
         "<a href="#nonce" title="Nonce">Nonce</a>" : <i>String</i>,
         "<a href="#pkcs7" title="Pkcs7">Pkcs7</a>" : <i>String</i>,
-        "<a href="#policies" title="Policies">Policies</a>" : <i>[ String, ... ]</i>,
-        "<a href="#renewable" title="Renewable">Renewable</a>" : <i>Boolean</i>,
         "<a href="#role" title="Role">Role</a>" : <i>String</i>,
         "<a href="#signature" title="Signature">Signature</a>" : <i>String</i>
     }
@@ -40,66 +31,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::AwsAuthBackendLogin
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#accessor" title="Accessor">Accessor</a>: <i>String</i>
-    <a href="#authtype" title="AuthType">AuthType</a>: <i>String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
-    <a href="#clienttoken" title="ClientToken">ClientToken</a>: <i>String</i>
     <a href="#iamhttprequestmethod" title="IamHttpRequestMethod">IamHttpRequestMethod</a>: <i>String</i>
     <a href="#iamrequestbody" title="IamRequestBody">IamRequestBody</a>: <i>String</i>
     <a href="#iamrequestheaders" title="IamRequestHeaders">IamRequestHeaders</a>: <i>String</i>
     <a href="#iamrequesturl" title="IamRequestUrl">IamRequestUrl</a>: <i>String</i>
     <a href="#identity" title="Identity">Identity</a>: <i>String</i>
-    <a href="#leaseduration" title="LeaseDuration">LeaseDuration</a>: <i>Double</i>
-    <a href="#leasestarttime" title="LeaseStartTime">LeaseStartTime</a>: <i>String</i>
-    <a href="#metadata" title="Metadata">Metadata</a>: <i>
-      - &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;</i>
     <a href="#nonce" title="Nonce">Nonce</a>: <i>String</i>
     <a href="#pkcs7" title="Pkcs7">Pkcs7</a>: <i>String</i>
-    <a href="#policies" title="Policies">Policies</a>: <i>
-      - String</i>
-    <a href="#renewable" title="Renewable">Renewable</a>: <i>Boolean</i>
     <a href="#role" title="Role">Role</a>: <i>String</i>
     <a href="#signature" title="Signature">Signature</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Accessor
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### AuthType
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Backend
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### ClientToken
 
 _Required_: No
 
@@ -147,30 +93,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### LeaseDuration
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LeaseStartTime
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Metadata
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;metadata.md&#34;&gt;Metadata&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Nonce
 
 _Required_: No
@@ -184,22 +106,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Policies
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Renewable
-
-_Required_: No
-
-_Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -237,33 +143,33 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Accessor
 
-Returns the &lt;code&gt;Accessor&lt;/code&gt; value.
+Returns the <code>Accessor</code> value.
 
 #### AuthType
 
-Returns the &lt;code&gt;AuthType&lt;/code&gt; value.
+Returns the <code>AuthType</code> value.
 
 #### ClientToken
 
-Returns the &lt;code&gt;ClientToken&lt;/code&gt; value.
+Returns the <code>ClientToken</code> value.
 
 #### LeaseDuration
 
-Returns the &lt;code&gt;LeaseDuration&lt;/code&gt; value.
+Returns the <code>LeaseDuration</code> value.
 
 #### LeaseStartTime
 
-Returns the &lt;code&gt;LeaseStartTime&lt;/code&gt; value.
+Returns the <code>LeaseStartTime</code> value.
 
 #### Metadata
 
-Returns the &lt;code&gt;Metadata&lt;/code&gt; value.
+Returns the <code>Metadata</code> value.
 
 #### Policies
 
-Returns the &lt;code&gt;Policies&lt;/code&gt; value.
+Returns the <code>Policies</code> value.
 
 #### Renewable
 
-Returns the &lt;code&gt;Renewable&lt;/code&gt; value.
+Returns the <code>Renewable</code> value.
 

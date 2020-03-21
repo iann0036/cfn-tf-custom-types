@@ -12,31 +12,25 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::ElasticsearchInstance",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#datanodeamount" title="DataNodeAmount">DataNodeAmount</a>" : <i>Double</i>,
         "<a href="#datanodedisksize" title="DataNodeDiskSize">DataNodeDiskSize</a>" : <i>Double</i>,
         "<a href="#datanodedisktype" title="DataNodeDiskType">DataNodeDiskType</a>" : <i>String</i>,
         "<a href="#datanodespec" title="DataNodeSpec">DataNodeSpec</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#domain" title="Domain">Domain</a>" : <i>String</i>,
         "<a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>" : <i>String</i>,
-        "<a href="#kibanadomain" title="KibanaDomain">KibanaDomain</a>" : <i>String</i>,
-        "<a href="#kibanaport" title="KibanaPort">KibanaPort</a>" : <i>Double</i>,
         "<a href="#kibanawhitelist" title="KibanaWhitelist">KibanaWhitelist</a>" : <i>[ String, ... ]</i>,
         "<a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>" : <i>String</i>,
-        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;, ... ]</i>,
+        "<a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>" : <i>[ <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>, ... ]</i>,
         "<a href="#masternodespec" title="MasterNodeSpec">MasterNodeSpec</a>" : <i>String</i>,
         "<a href="#password" title="Password">Password</a>" : <i>String</i>,
         "<a href="#period" title="Period">Period</a>" : <i>Double</i>,
-        "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
         "<a href="#privatewhitelist" title="PrivateWhitelist">PrivateWhitelist</a>" : <i>[ String, ... ]</i>,
         "<a href="#publicwhitelist" title="PublicWhitelist">PublicWhitelist</a>" : <i>[ String, ... ]</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
         "<a href="#version" title="Version">Version</a>" : <i>String</i>,
         "<a href="#vswitchid" title="VswitchId">VswitchId</a>" : <i>String</i>,
         "<a href="#zonecount" title="ZoneCount">ZoneCount</a>" : <i>Double</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -46,49 +40,33 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::ElasticsearchInstance
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#datanodeamount" title="DataNodeAmount">DataNodeAmount</a>: <i>Double</i>
     <a href="#datanodedisksize" title="DataNodeDiskSize">DataNodeDiskSize</a>: <i>Double</i>
     <a href="#datanodedisktype" title="DataNodeDiskType">DataNodeDiskType</a>: <i>String</i>
     <a href="#datanodespec" title="DataNodeSpec">DataNodeSpec</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#domain" title="Domain">Domain</a>: <i>String</i>
     <a href="#instancechargetype" title="InstanceChargeType">InstanceChargeType</a>: <i>String</i>
-    <a href="#kibanadomain" title="KibanaDomain">KibanaDomain</a>: <i>String</i>
-    <a href="#kibanaport" title="KibanaPort">KibanaPort</a>: <i>Double</i>
     <a href="#kibanawhitelist" title="KibanaWhitelist">KibanaWhitelist</a>: <i>
       - String</i>
     <a href="#kmsencryptedpassword" title="KmsEncryptedPassword">KmsEncryptedPassword</a>: <i>String</i>
     <a href="#kmsencryptioncontext" title="KmsEncryptionContext">KmsEncryptionContext</a>: <i>
-      - &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;</i>
+      - <a href="kmsencryptioncontext.md">KmsEncryptionContext</a></i>
     <a href="#masternodespec" title="MasterNodeSpec">MasterNodeSpec</a>: <i>String</i>
     <a href="#password" title="Password">Password</a>: <i>String</i>
     <a href="#period" title="Period">Period</a>: <i>Double</i>
-    <a href="#port" title="Port">Port</a>: <i>Double</i>
     <a href="#privatewhitelist" title="PrivateWhitelist">PrivateWhitelist</a>: <i>
       - String</i>
     <a href="#publicwhitelist" title="PublicWhitelist">PublicWhitelist</a>: <i>
       - String</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#version" title="Version">Version</a>: <i>String</i>
     <a href="#vswitchid" title="VswitchId">VswitchId</a>: <i>String</i>
     <a href="#zonecount" title="ZoneCount">ZoneCount</a>: <i>Double</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataNodeAmount
 
@@ -130,35 +108,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Domain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### InstanceChargeType
 
 _Required_: No
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### KibanaDomain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### KibanaPort
-
-_Required_: No
-
-_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -182,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kmsencryptioncontext.md&#34;&gt;KmsEncryptionContext&lt;/a&gt;
+_Type_: List of <a href="kmsencryptioncontext.md">KmsEncryptionContext</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -210,14 +164,6 @@ _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Port
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### PrivateWhitelist
 
 _Required_: No
@@ -234,19 +180,11 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Status
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -278,7 +216,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -300,21 +238,21 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Domain
 
-Returns the &lt;code&gt;Domain&lt;/code&gt; value.
+Returns the <code>Domain</code> value.
 
 #### KibanaDomain
 
-Returns the &lt;code&gt;KibanaDomain&lt;/code&gt; value.
+Returns the <code>KibanaDomain</code> value.
 
 #### KibanaPort
 
-Returns the &lt;code&gt;KibanaPort&lt;/code&gt; value.
+Returns the <code>KibanaPort</code> value.
 
 #### Port
 
-Returns the &lt;code&gt;Port&lt;/code&gt; value.
+Returns the <code>Port</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

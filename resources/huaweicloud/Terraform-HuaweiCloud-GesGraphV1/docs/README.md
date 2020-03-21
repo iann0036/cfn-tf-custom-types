@@ -12,24 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::HuaweiCloud::GesGraphV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#autoassign" title="AutoAssign">AutoAssign</a>" : <i>Boolean</i>,
         "<a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>" : <i>String</i>,
-        "<a href="#created" title="Created">Created</a>" : <i>String</i>,
-        "<a href="#edgesetpath" title="EdgesetPath">EdgesetPath</a>" : <i>[ &lt;a href=&#34;edgesetpath.md&#34;&gt;EdgesetPath&lt;/a&gt;, ... ]</i>,
         "<a href="#eipid" title="EipId">EipId</a>" : <i>String</i>,
         "<a href="#graphsizetype" title="GraphSizeType">GraphSizeType</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#privateip" title="PrivateIp">PrivateIp</a>" : <i>String</i>,
-        "<a href="#publicip" title="PublicIp">PublicIp</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#schemapath" title="SchemaPath">SchemaPath</a>" : <i>[ &lt;a href=&#34;schemapath.md&#34;&gt;SchemaPath&lt;/a&gt;, ... ]</i>,
         "<a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>" : <i>String</i>,
         "<a href="#subnetid" title="SubnetId">SubnetId</a>" : <i>String</i>,
-        "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-        "<a href="#vertexsetpath" title="VertexsetPath">VertexsetPath</a>" : <i>[ &lt;a href=&#34;vertexsetpath.md&#34;&gt;VertexsetPath&lt;/a&gt;, ... ]</i>,
         "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -39,40 +31,19 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::HuaweiCloud::GesGraphV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#autoassign" title="AutoAssign">AutoAssign</a>: <i>Boolean</i>
     <a href="#availabilityzone" title="AvailabilityZone">AvailabilityZone</a>: <i>String</i>
-    <a href="#created" title="Created">Created</a>: <i>String</i>
-    <a href="#edgesetpath" title="EdgesetPath">EdgesetPath</a>: <i>
-      - &lt;a href=&#34;edgesetpath.md&#34;&gt;EdgesetPath&lt;/a&gt;</i>
     <a href="#eipid" title="EipId">EipId</a>: <i>String</i>
     <a href="#graphsizetype" title="GraphSizeType">GraphSizeType</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#privateip" title="PrivateIp">PrivateIp</a>: <i>String</i>
-    <a href="#publicip" title="PublicIp">PublicIp</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#schemapath" title="SchemaPath">SchemaPath</a>: <i>
-      - &lt;a href=&#34;schemapath.md&#34;&gt;SchemaPath&lt;/a&gt;</i>
     <a href="#securitygroupid" title="SecurityGroupId">SecurityGroupId</a>: <i>String</i>
     <a href="#subnetid" title="SubnetId">SubnetId</a>: <i>String</i>
-    <a href="#version" title="Version">Version</a>: <i>String</i>
-    <a href="#vertexsetpath" title="VertexsetPath">VertexsetPath</a>: <i>
-      - &lt;a href=&#34;vertexsetpath.md&#34;&gt;VertexsetPath&lt;/a&gt;</i>
     <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoAssign
 
@@ -87,22 +58,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Created
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### EdgesetPath
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;edgesetpath.md&#34;&gt;EdgesetPath&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -130,35 +85,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### PrivateIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### PublicIp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Region
 
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SchemaPath
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;schemapath.md&#34;&gt;SchemaPath&lt;/a&gt;
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,22 +109,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Version
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VertexsetPath
-
-_Required_: No
-
-_Type_: List of &lt;a href=&#34;vertexsetpath.md&#34;&gt;VertexsetPath&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### VpcId
 
 _Required_: Yes
@@ -206,7 +121,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -228,29 +143,29 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Created
 
-Returns the &lt;code&gt;Created&lt;/code&gt; value.
+Returns the <code>Created</code> value.
 
 #### EdgesetPath
 
-Returns the &lt;code&gt;EdgesetPath&lt;/code&gt; value.
+Returns the <code>EdgesetPath</code> value.
 
 #### PrivateIp
 
-Returns the &lt;code&gt;PrivateIp&lt;/code&gt; value.
+Returns the <code>PrivateIp</code> value.
 
 #### PublicIp
 
-Returns the &lt;code&gt;PublicIp&lt;/code&gt; value.
+Returns the <code>PublicIp</code> value.
 
 #### SchemaPath
 
-Returns the &lt;code&gt;SchemaPath&lt;/code&gt; value.
+Returns the <code>SchemaPath</code> value.
 
 #### Version
 
-Returns the &lt;code&gt;Version&lt;/code&gt; value.
+Returns the <code>Version</code> value.
 
 #### VertexsetPath
 
-Returns the &lt;code&gt;VertexsetPath&lt;/code&gt; value.
+Returns the <code>VertexsetPath</code> value.
 

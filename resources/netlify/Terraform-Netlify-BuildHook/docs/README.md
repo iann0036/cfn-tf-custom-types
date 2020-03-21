@@ -12,11 +12,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Netlify::BuildHook",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#branch" title="Branch">Branch</a>" : <i>String</i>,
         "<a href="#siteid" title="SiteId">SiteId</a>" : <i>String</i>,
         "<a href="#title" title="Title">Title</a>" : <i>String</i>,
-        "<a href="#url" title="Url">Url</a>" : <i>String</i>
     }
 }
 </pre>
@@ -26,24 +24,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Netlify::BuildHook
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#branch" title="Branch">Branch</a>: <i>String</i>
     <a href="#siteid" title="SiteId">SiteId</a>: <i>String</i>
     <a href="#title" title="Title">Title</a>: <i>String</i>
-    <a href="#url" title="Url">Url</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Branch
 
@@ -69,14 +55,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Url
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -95,5 +73,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Url
 
-Returns the &lt;code&gt;Url&lt;/code&gt; value.
+Returns the <code>Url</code> value.
 

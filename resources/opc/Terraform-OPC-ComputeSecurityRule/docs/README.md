@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OPC::ComputeSecurityRule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acl" title="Acl">Acl</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#dstipaddressprefixes" title="DstIpAddressPrefixes">DstIpAddressPrefixes</a>" : <i>[ String, ... ]</i>,
@@ -24,7 +23,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#srcipaddressprefixes" title="SrcIpAddressPrefixes">SrcIpAddressPrefixes</a>" : <i>[ String, ... ]</i>,
         "<a href="#srcvnicset" title="SrcVnicSet">SrcVnicSet</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#uri" title="Uri">Uri</a>" : <i>String</i>
     }
 }
 </pre>
@@ -34,7 +32,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OPC::ComputeSecurityRule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#dstipaddressprefixes" title="DstIpAddressPrefixes">DstIpAddressPrefixes</a>: <i>
@@ -50,20 +47,9 @@ Properties:
     <a href="#srcvnicset" title="SrcVnicSet">SrcVnicSet</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
-    <a href="#uri" title="Uri">Uri</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Acl
 
@@ -153,14 +139,6 @@ _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Uri
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 ## Return Values
 
 ### Ref
@@ -179,5 +157,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Uri
 
-Returns the &lt;code&gt;Uri&lt;/code&gt; value.
+Returns the <code>Uri</code> value.
 

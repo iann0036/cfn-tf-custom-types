@@ -8,7 +8,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#additionalproperties" title="AdditionalProperties">AdditionalProperties</a>" : <i>[ &lt;a href=&#34;schedulerhints-additionalproperties.md&#34;&gt;AdditionalProperties&lt;/a&gt;, ... ]</i>,
+    "<a href="#additionalproperties" title="AdditionalProperties">AdditionalProperties</a>" : <i>[ <a href="schedulerhints-additionalproperties.md">AdditionalProperties</a>, ... ]</i>,
     "<a href="#buildnearhostip" title="BuildNearHostIp">BuildNearHostIp</a>" : <i>String</i>,
     "<a href="#differenthost" title="DifferentHost">DifferentHost</a>" : <i>[ String, ... ]</i>,
     "<a href="#group" title="Group">Group</a>" : <i>String</i>,
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#additionalproperties" title="AdditionalProperties">AdditionalProperties</a>: <i>
-      - &lt;a href=&#34;schedulerhints-additionalproperties.md&#34;&gt;AdditionalProperties&lt;/a&gt;</i>
+      - <a href="schedulerhints-additionalproperties.md">AdditionalProperties</a></i>
 <a href="#buildnearhostip" title="BuildNearHostIp">BuildNearHostIp</a>: <i>String</i>
 <a href="#differenthost" title="DifferentHost">DifferentHost</a>: <i>
       - String</i>
@@ -39,13 +39,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AdditionalProperties
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;schedulerhints-additionalproperties.md&#34;&gt;AdditionalProperties&lt;/a&gt;
+
+_Type_: List of <a href="schedulerhints-additionalproperties.md">AdditionalProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BuildNearHostIp
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -53,6 +55,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### DifferentHost
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -60,6 +63,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Group
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -67,6 +71,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Query
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -74,6 +79,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### SameHost
 
 _Required_: No
+
 _Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -81,6 +87,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### TargetCell
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)

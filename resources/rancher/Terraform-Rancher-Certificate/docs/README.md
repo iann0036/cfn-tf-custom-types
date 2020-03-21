@@ -12,23 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Rancher::Certificate",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#algorithm" title="Algorithm">Algorithm</a>" : <i>String</i>,
         "<a href="#cert" title="Cert">Cert</a>" : <i>String</i>,
         "<a href="#certchain" title="CertChain">CertChain</a>" : <i>String</i>,
-        "<a href="#certfingerprint" title="CertFingerprint">CertFingerprint</a>" : <i>String</i>,
-        "<a href="#cn" title="Cn">Cn</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#environmentid" title="EnvironmentId">EnvironmentId</a>" : <i>String</i>,
-        "<a href="#expiresat" title="ExpiresAt">ExpiresAt</a>" : <i>String</i>,
-        "<a href="#issuedat" title="IssuedAt">IssuedAt</a>" : <i>String</i>,
-        "<a href="#issuer" title="Issuer">Issuer</a>" : <i>String</i>,
         "<a href="#key" title="Key">Key</a>" : <i>String</i>,
-        "<a href="#keysize" title="KeySize">KeySize</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#serialnumber" title="SerialNumber">SerialNumber</a>" : <i>String</i>,
-        "<a href="#subjectalternativenames" title="SubjectAlternativeNames">SubjectAlternativeNames</a>" : <i>[ String, ... ]</i>,
-        "<a href="#version" title="Version">Version</a>" : <i>String</i>
     }
 }
 </pre>
@@ -38,45 +27,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Rancher::Certificate
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#algorithm" title="Algorithm">Algorithm</a>: <i>String</i>
     <a href="#cert" title="Cert">Cert</a>: <i>String</i>
     <a href="#certchain" title="CertChain">CertChain</a>: <i>String</i>
-    <a href="#certfingerprint" title="CertFingerprint">CertFingerprint</a>: <i>String</i>
-    <a href="#cn" title="Cn">Cn</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#environmentid" title="EnvironmentId">EnvironmentId</a>: <i>String</i>
-    <a href="#expiresat" title="ExpiresAt">ExpiresAt</a>: <i>String</i>
-    <a href="#issuedat" title="IssuedAt">IssuedAt</a>: <i>String</i>
-    <a href="#issuer" title="Issuer">Issuer</a>: <i>String</i>
     <a href="#key" title="Key">Key</a>: <i>String</i>
-    <a href="#keysize" title="KeySize">KeySize</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#serialnumber" title="SerialNumber">SerialNumber</a>: <i>String</i>
-    <a href="#subjectalternativenames" title="SubjectAlternativeNames">SubjectAlternativeNames</a>: <i>
-      - String</i>
-    <a href="#version" title="Version">Version</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Algorithm
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cert
 
@@ -87,22 +46,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertChain
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CertFingerprint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Cn
 
 _Required_: No
 
@@ -126,30 +69,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ExpiresAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### IssuedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Issuer
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Key
 
 _Required_: Yes
@@ -158,41 +77,9 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### KeySize
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SerialNumber
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### SubjectAlternativeNames
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Version
-
-_Required_: No
 
 _Type_: String
 
@@ -216,41 +103,41 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Algorithm
 
-Returns the &lt;code&gt;Algorithm&lt;/code&gt; value.
+Returns the <code>Algorithm</code> value.
 
 #### CertFingerprint
 
-Returns the &lt;code&gt;CertFingerprint&lt;/code&gt; value.
+Returns the <code>CertFingerprint</code> value.
 
 #### Cn
 
-Returns the &lt;code&gt;Cn&lt;/code&gt; value.
+Returns the <code>Cn</code> value.
 
 #### ExpiresAt
 
-Returns the &lt;code&gt;ExpiresAt&lt;/code&gt; value.
+Returns the <code>ExpiresAt</code> value.
 
 #### IssuedAt
 
-Returns the &lt;code&gt;IssuedAt&lt;/code&gt; value.
+Returns the <code>IssuedAt</code> value.
 
 #### Issuer
 
-Returns the &lt;code&gt;Issuer&lt;/code&gt; value.
+Returns the <code>Issuer</code> value.
 
 #### KeySize
 
-Returns the &lt;code&gt;KeySize&lt;/code&gt; value.
+Returns the <code>KeySize</code> value.
 
 #### SerialNumber
 
-Returns the &lt;code&gt;SerialNumber&lt;/code&gt; value.
+Returns the <code>SerialNumber</code> value.
 
 #### SubjectAlternativeNames
 
-Returns the &lt;code&gt;SubjectAlternativeNames&lt;/code&gt; value.
+Returns the <code>SubjectAlternativeNames</code> value.
 
 #### Version
 
-Returns the &lt;code&gt;Version&lt;/code&gt; value.
+Returns the <code>Version</code> value.
 

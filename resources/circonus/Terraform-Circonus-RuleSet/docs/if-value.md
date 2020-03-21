@@ -16,7 +16,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#minvalue" title="MinValue">MinValue</a>" : <i>String</i>,
     "<a href="#notcontain" title="NotContain">NotContain</a>" : <i>String</i>,
     "<a href="#notmatch" title="NotMatch">NotMatch</a>" : <i>String</i>,
-    "<a href="#over" title="Over">Over</a>" : <i>[ &lt;a href=&#34;if-value-over.md&#34;&gt;Over&lt;/a&gt;, ... ]</i>
+    "<a href="#over" title="Over">Over</a>" : <i>[ <a href="if-value-over.md">Over</a>, ... ]</i>
 }
 </pre>
 
@@ -32,7 +32,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#notcontain" title="NotContain">NotContain</a>: <i>String</i>
 <a href="#notmatch" title="NotMatch">NotMatch</a>: <i>String</i>
 <a href="#over" title="Over">Over</a>: <i>
-      - &lt;a href=&#34;if-value-over.md&#34;&gt;Over&lt;/a&gt;</i>
+      - <a href="if-value-over.md">Over</a></i>
 </pre>
 
 ## Properties
@@ -40,6 +40,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Absent
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -47,6 +48,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Changed
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -54,6 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Contains
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -61,6 +64,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Match
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -68,6 +72,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MaxValue
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -75,6 +80,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinValue
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -82,6 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NotContain
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -89,6 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NotMatch
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -96,7 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Over
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;if-value-over.md&#34;&gt;Over&lt;/a&gt;
+
+_Type_: List of <a href="if-value-over.md">Over</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -9,8 +9,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#network" title="Network">Network</a>" : <i>String</i>,
-    "<a href="#accessconfigs" title="AccessConfigs">AccessConfigs</a>" : <i>[ &lt;a href=&#34;networkinterface-accessconfigs.md&#34;&gt;AccessConfigs&lt;/a&gt;, ... ]</i>,
-    "<a href="#aliasipranges" title="AliasIpRanges">AliasIpRanges</a>" : <i>[ &lt;a href=&#34;networkinterface-aliasipranges.md&#34;&gt;AliasIpRanges&lt;/a&gt;, ... ]</i>
+    "<a href="#accessconfigs" title="AccessConfigs">AccessConfigs</a>" : <i>[ <a href="networkinterface-accessconfigs.md">AccessConfigs</a>, ... ]</i>,
+    "<a href="#aliasipranges" title="AliasIpRanges">AliasIpRanges</a>" : <i>[ <a href="networkinterface-aliasipranges.md">AliasIpRanges</a>, ... ]</i>
 }
 </pre>
 
@@ -19,9 +19,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#network" title="Network">Network</a>: <i>String</i>
 <a href="#accessconfigs" title="AccessConfigs">AccessConfigs</a>: <i>
-      - &lt;a href=&#34;networkinterface-accessconfigs.md&#34;&gt;AccessConfigs&lt;/a&gt;</i>
+      - <a href="networkinterface-accessconfigs.md">AccessConfigs</a></i>
 <a href="#aliasipranges" title="AliasIpRanges">AliasIpRanges</a>: <i>
-      - &lt;a href=&#34;networkinterface-aliasipranges.md&#34;&gt;AliasIpRanges&lt;/a&gt;</i>
+      - <a href="networkinterface-aliasipranges.md">AliasIpRanges</a></i>
 </pre>
 
 ## Properties
@@ -29,6 +29,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### Network
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -36,14 +37,16 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### AccessConfigs
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkinterface-accessconfigs.md&#34;&gt;AccessConfigs&lt;/a&gt;
+
+_Type_: List of <a href="networkinterface-accessconfigs.md">AccessConfigs</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AliasIpRanges
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;networkinterface-aliasipranges.md&#34;&gt;AliasIpRanges&lt;/a&gt;
+
+_Type_: List of <a href="networkinterface-aliasipranges.md">AliasIpRanges</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

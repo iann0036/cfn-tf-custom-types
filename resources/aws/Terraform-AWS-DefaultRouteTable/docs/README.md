@@ -12,13 +12,10 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::DefaultRouteTable",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#defaultroutetableid" title="DefaultRouteTableId">DefaultRouteTableId</a>" : <i>String</i>,
-        "<a href="#ownerid" title="OwnerId">OwnerId</a>" : <i>String</i>,
         "<a href="#propagatingvgws" title="PropagatingVgws">PropagatingVgws</a>" : <i>[ String, ... ]</i>,
-        "<a href="#route" title="Route">Route</a>" : <i>[ &lt;a href=&#34;route.md&#34;&gt;Route&lt;/a&gt;, ... ]</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#vpcid" title="VpcId">VpcId</a>" : <i>String</i>
+        "<a href="#route" title="Route">Route</a>" : <i>[ <a href="route.md">Route</a>, ... ]</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
     }
 }
 </pre>
@@ -28,41 +25,20 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::DefaultRouteTable
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#defaultroutetableid" title="DefaultRouteTableId">DefaultRouteTableId</a>: <i>String</i>
-    <a href="#ownerid" title="OwnerId">OwnerId</a>: <i>String</i>
     <a href="#propagatingvgws" title="PropagatingVgws">PropagatingVgws</a>: <i>
       - String</i>
     <a href="#route" title="Route">Route</a>: <i>
-      - &lt;a href=&#34;route.md&#34;&gt;Route&lt;/a&gt;</i>
+      - <a href="route.md">Route</a></i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
-    <a href="#vpcid" title="VpcId">VpcId</a>: <i>String</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### DefaultRouteTableId
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### OwnerId
-
-_Required_: No
 
 _Type_: String
 
@@ -80,7 +56,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;route.md&#34;&gt;Route&lt;/a&gt;
+_Type_: List of <a href="route.md">Route</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -88,15 +64,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### VpcId
-
-_Required_: No
-
-_Type_: String
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -118,9 +86,9 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### OwnerId
 
-Returns the &lt;code&gt;OwnerId&lt;/code&gt; value.
+Returns the <code>OwnerId</code> value.
 
 #### VpcId
 
-Returns the &lt;code&gt;VpcId&lt;/code&gt; value.
+Returns the <code>VpcId</code> value.
 

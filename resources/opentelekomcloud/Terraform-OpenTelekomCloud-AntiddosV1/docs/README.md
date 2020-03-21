@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpenTelekomCloud::AntiddosV1",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#apptypeid" title="AppTypeId">AppTypeId</a>" : <i>Double</i>,
         "<a href="#cleaningaccessposid" title="CleaningAccessPosId">CleaningAccessPosId</a>" : <i>Double</i>,
         "<a href="#enablel7" title="EnableL7">EnableL7</a>" : <i>Boolean</i>,
@@ -20,7 +19,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#httprequestposid" title="HttpRequestPosId">HttpRequestPosId</a>" : <i>Double</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
         "<a href="#trafficposid" title="TrafficPosId">TrafficPosId</a>" : <i>Double</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -30,7 +29,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpenTelekomCloud::AntiddosV1
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#apptypeid" title="AppTypeId">AppTypeId</a>: <i>Double</i>
     <a href="#cleaningaccessposid" title="CleaningAccessPosId">CleaningAccessPosId</a>: <i>Double</i>
     <a href="#enablel7" title="EnableL7">EnableL7</a>: <i>Boolean</i>
@@ -38,20 +36,10 @@ Properties:
     <a href="#httprequestposid" title="HttpRequestPosId">HttpRequestPosId</a>: <i>Double</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#trafficposid" title="TrafficPosId">TrafficPosId</a>: <i>Double</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AppTypeId
 
@@ -113,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

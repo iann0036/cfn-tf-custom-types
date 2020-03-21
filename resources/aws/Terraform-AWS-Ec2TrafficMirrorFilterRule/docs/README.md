@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::Ec2TrafficMirrorFilterRule",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#destinationcidrblock" title="DestinationCidrBlock">DestinationCidrBlock</a>" : <i>String</i>,
         "<a href="#protocol" title="Protocol">Protocol</a>" : <i>Double</i>,
@@ -21,8 +20,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#sourcecidrblock" title="SourceCidrBlock">SourceCidrBlock</a>" : <i>String</i>,
         "<a href="#trafficdirection" title="TrafficDirection">TrafficDirection</a>" : <i>String</i>,
         "<a href="#trafficmirrorfilterid" title="TrafficMirrorFilterId">TrafficMirrorFilterId</a>" : <i>String</i>,
-        "<a href="#destinationportrange" title="DestinationPortRange">DestinationPortRange</a>" : <i>[ &lt;a href=&#34;destinationportrange.md&#34;&gt;DestinationPortRange&lt;/a&gt;, ... ]</i>,
-        "<a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>" : <i>[ &lt;a href=&#34;sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;, ... ]</i>
+        "<a href="#destinationportrange" title="DestinationPortRange">DestinationPortRange</a>" : <i>[ <a href="destinationportrange.md">DestinationPortRange</a>, ... ]</i>,
+        "<a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>" : <i>[ <a href="sourceportrange.md">SourcePortRange</a>, ... ]</i>
     }
 }
 </pre>
@@ -32,7 +31,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::Ec2TrafficMirrorFilterRule
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#destinationcidrblock" title="DestinationCidrBlock">DestinationCidrBlock</a>: <i>String</i>
     <a href="#protocol" title="Protocol">Protocol</a>: <i>Double</i>
@@ -42,22 +40,12 @@ Properties:
     <a href="#trafficdirection" title="TrafficDirection">TrafficDirection</a>: <i>String</i>
     <a href="#trafficmirrorfilterid" title="TrafficMirrorFilterId">TrafficMirrorFilterId</a>: <i>String</i>
     <a href="#destinationportrange" title="DestinationPortRange">DestinationPortRange</a>: <i>
-      - &lt;a href=&#34;destinationportrange.md&#34;&gt;DestinationPortRange&lt;/a&gt;</i>
+      - <a href="destinationportrange.md">DestinationPortRange</a></i>
     <a href="#sourceportrange" title="SourcePortRange">SourcePortRange</a>: <i>
-      - &lt;a href=&#34;sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;</i>
+      - <a href="sourceportrange.md">SourcePortRange</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -127,7 +115,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;destinationportrange.md&#34;&gt;DestinationPortRange&lt;/a&gt;
+_Type_: List of <a href="destinationportrange.md">DestinationPortRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -135,7 +123,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;sourceportrange.md&#34;&gt;SourcePortRange&lt;/a&gt;
+_Type_: List of <a href="sourceportrange.md">SourcePortRange</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

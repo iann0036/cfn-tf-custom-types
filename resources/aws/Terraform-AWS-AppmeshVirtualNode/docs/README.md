@@ -12,25 +12,21 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::AWS::AppmeshVirtualNode",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#arn" title="Arn">Arn</a>" : <i>String</i>,
-        "<a href="#createddate" title="CreatedDate">CreatedDate</a>" : <i>String</i>,
-        "<a href="#lastupdateddate" title="LastUpdatedDate">LastUpdatedDate</a>" : <i>String</i>,
         "<a href="#meshname" title="MeshName">MeshName</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>,
-        "<a href="#spec" title="Spec">Spec</a>" : <i>[ &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;, ... ]</i>,
-        "<a href="#backend" title="Backend">Backend</a>" : <i>[ &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;, ... ]</i>,
-        "<a href="#listener" title="Listener">Listener</a>" : <i>[ &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;, ... ]</i>,
-        "<a href="#logging" title="Logging">Logging</a>" : <i>[ &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;, ... ]</i>,
-        "<a href="#servicediscovery" title="ServiceDiscovery">ServiceDiscovery</a>" : <i>[ &lt;a href=&#34;servicediscovery.md&#34;&gt;ServiceDiscovery&lt;/a&gt;, ... ]</i>,
-        "<a href="#virtualservice" title="VirtualService">VirtualService</a>" : <i>[ &lt;a href=&#34;virtualservice.md&#34;&gt;VirtualService&lt;/a&gt;, ... ]</i>,
-        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;, ... ]</i>,
-        "<a href="#portmapping" title="PortMapping">PortMapping</a>" : <i>[ &lt;a href=&#34;portmapping.md&#34;&gt;PortMapping&lt;/a&gt;, ... ]</i>,
-        "<a href="#accesslog" title="AccessLog">AccessLog</a>" : <i>[ &lt;a href=&#34;accesslog.md&#34;&gt;AccessLog&lt;/a&gt;, ... ]</i>,
-        "<a href="#awscloudmap" title="AwsCloudMap">AwsCloudMap</a>" : <i>[ &lt;a href=&#34;awscloudmap.md&#34;&gt;AwsCloudMap&lt;/a&gt;, ... ]</i>,
-        "<a href="#dns" title="Dns">Dns</a>" : <i>[ &lt;a href=&#34;dns.md&#34;&gt;Dns&lt;/a&gt;, ... ]</i>,
-        "<a href="#file" title="File">File</a>" : <i>[ &lt;a href=&#34;file.md&#34;&gt;File&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>,
+        "<a href="#spec" title="Spec">Spec</a>" : <i>[ <a href="spec.md">Spec</a>, ... ]</i>,
+        "<a href="#backend" title="Backend">Backend</a>" : <i>[ <a href="backend.md">Backend</a>, ... ]</i>,
+        "<a href="#listener" title="Listener">Listener</a>" : <i>[ <a href="listener.md">Listener</a>, ... ]</i>,
+        "<a href="#logging" title="Logging">Logging</a>" : <i>[ <a href="logging.md">Logging</a>, ... ]</i>,
+        "<a href="#servicediscovery" title="ServiceDiscovery">ServiceDiscovery</a>" : <i>[ <a href="servicediscovery.md">ServiceDiscovery</a>, ... ]</i>,
+        "<a href="#virtualservice" title="VirtualService">VirtualService</a>" : <i>[ <a href="virtualservice.md">VirtualService</a>, ... ]</i>,
+        "<a href="#healthcheck" title="HealthCheck">HealthCheck</a>" : <i>[ <a href="healthcheck.md">HealthCheck</a>, ... ]</i>,
+        "<a href="#portmapping" title="PortMapping">PortMapping</a>" : <i>[ <a href="portmapping.md">PortMapping</a>, ... ]</i>,
+        "<a href="#accesslog" title="AccessLog">AccessLog</a>" : <i>[ <a href="accesslog.md">AccessLog</a>, ... ]</i>,
+        "<a href="#awscloudmap" title="AwsCloudMap">AwsCloudMap</a>" : <i>[ <a href="awscloudmap.md">AwsCloudMap</a>, ... ]</i>,
+        "<a href="#dns" title="Dns">Dns</a>" : <i>[ <a href="dns.md">Dns</a>, ... ]</i>,
+        "<a href="#file" title="File">File</a>" : <i>[ <a href="file.md">File</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,75 +36,37 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::AWS::AppmeshVirtualNode
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#arn" title="Arn">Arn</a>: <i>String</i>
-    <a href="#createddate" title="CreatedDate">CreatedDate</a>: <i>String</i>
-    <a href="#lastupdateddate" title="LastUpdatedDate">LastUpdatedDate</a>: <i>String</i>
     <a href="#meshname" title="MeshName">MeshName</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
     <a href="#spec" title="Spec">Spec</a>: <i>
-      - &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;</i>
+      - <a href="spec.md">Spec</a></i>
     <a href="#backend" title="Backend">Backend</a>: <i>
-      - &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;</i>
+      - <a href="backend.md">Backend</a></i>
     <a href="#listener" title="Listener">Listener</a>: <i>
-      - &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;</i>
+      - <a href="listener.md">Listener</a></i>
     <a href="#logging" title="Logging">Logging</a>: <i>
-      - &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;</i>
+      - <a href="logging.md">Logging</a></i>
     <a href="#servicediscovery" title="ServiceDiscovery">ServiceDiscovery</a>: <i>
-      - &lt;a href=&#34;servicediscovery.md&#34;&gt;ServiceDiscovery&lt;/a&gt;</i>
+      - <a href="servicediscovery.md">ServiceDiscovery</a></i>
     <a href="#virtualservice" title="VirtualService">VirtualService</a>: <i>
-      - &lt;a href=&#34;virtualservice.md&#34;&gt;VirtualService&lt;/a&gt;</i>
+      - <a href="virtualservice.md">VirtualService</a></i>
     <a href="#healthcheck" title="HealthCheck">HealthCheck</a>: <i>
-      - &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;</i>
+      - <a href="healthcheck.md">HealthCheck</a></i>
     <a href="#portmapping" title="PortMapping">PortMapping</a>: <i>
-      - &lt;a href=&#34;portmapping.md&#34;&gt;PortMapping&lt;/a&gt;</i>
+      - <a href="portmapping.md">PortMapping</a></i>
     <a href="#accesslog" title="AccessLog">AccessLog</a>: <i>
-      - &lt;a href=&#34;accesslog.md&#34;&gt;AccessLog&lt;/a&gt;</i>
+      - <a href="accesslog.md">AccessLog</a></i>
     <a href="#awscloudmap" title="AwsCloudMap">AwsCloudMap</a>: <i>
-      - &lt;a href=&#34;awscloudmap.md&#34;&gt;AwsCloudMap&lt;/a&gt;</i>
+      - <a href="awscloudmap.md">AwsCloudMap</a></i>
     <a href="#dns" title="Dns">Dns</a>: <i>
-      - &lt;a href=&#34;dns.md&#34;&gt;Dns&lt;/a&gt;</i>
+      - <a href="dns.md">Dns</a></i>
     <a href="#file" title="File">File</a>: <i>
-      - &lt;a href=&#34;file.md&#34;&gt;File&lt;/a&gt;</i>
+      - <a href="file.md">File</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Arn
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedDate
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### LastUpdatedDate
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MeshName
 
@@ -130,7 +88,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -138,7 +96,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;spec.md&#34;&gt;Spec&lt;/a&gt;
+_Type_: List of <a href="spec.md">Spec</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -146,7 +104,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;backend.md&#34;&gt;Backend&lt;/a&gt;
+_Type_: List of <a href="backend.md">Backend</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -154,7 +112,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;listener.md&#34;&gt;Listener&lt;/a&gt;
+_Type_: List of <a href="listener.md">Listener</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -162,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;logging.md&#34;&gt;Logging&lt;/a&gt;
+_Type_: List of <a href="logging.md">Logging</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -170,7 +128,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;servicediscovery.md&#34;&gt;ServiceDiscovery&lt;/a&gt;
+_Type_: List of <a href="servicediscovery.md">ServiceDiscovery</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -178,7 +136,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;virtualservice.md&#34;&gt;VirtualService&lt;/a&gt;
+_Type_: List of <a href="virtualservice.md">VirtualService</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -186,7 +144,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;healthcheck.md&#34;&gt;HealthCheck&lt;/a&gt;
+_Type_: List of <a href="healthcheck.md">HealthCheck</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -194,7 +152,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;portmapping.md&#34;&gt;PortMapping&lt;/a&gt;
+_Type_: List of <a href="portmapping.md">PortMapping</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -202,7 +160,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accesslog.md&#34;&gt;AccessLog&lt;/a&gt;
+_Type_: List of <a href="accesslog.md">AccessLog</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -210,7 +168,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;awscloudmap.md&#34;&gt;AwsCloudMap&lt;/a&gt;
+_Type_: List of <a href="awscloudmap.md">AwsCloudMap</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -218,7 +176,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;dns.md&#34;&gt;Dns&lt;/a&gt;
+_Type_: List of <a href="dns.md">Dns</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -226,7 +184,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;file.md&#34;&gt;File&lt;/a&gt;
+_Type_: List of <a href="file.md">File</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -248,13 +206,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Arn
 
-Returns the &lt;code&gt;Arn&lt;/code&gt; value.
+Returns the <code>Arn</code> value.
 
 #### CreatedDate
 
-Returns the &lt;code&gt;CreatedDate&lt;/code&gt; value.
+Returns the <code>CreatedDate</code> value.
 
 #### LastUpdatedDate
 
-Returns the &lt;code&gt;LastUpdatedDate&lt;/code&gt; value.
+Returns the <code>LastUpdatedDate</code> value.
 

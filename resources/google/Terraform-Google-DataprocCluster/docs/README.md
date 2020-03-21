@@ -12,25 +12,24 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::DataprocCluster",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#labels" title="Labels">Labels</a>" : <i>[ &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;, ... ]</i>,
+        "<a href="#labels" title="Labels">Labels</a>" : <i>[ <a href="labels.md">Labels</a>, ... ]</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#clusterconfig" title="ClusterConfig">ClusterConfig</a>" : <i>[ &lt;a href=&#34;clusterconfig.md&#34;&gt;ClusterConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#autoscalingconfig" title="AutoscalingConfig">AutoscalingConfig</a>" : <i>[ &lt;a href=&#34;autoscalingconfig.md&#34;&gt;AutoscalingConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#encryptionconfig" title="EncryptionConfig">EncryptionConfig</a>" : <i>[ &lt;a href=&#34;encryptionconfig.md&#34;&gt;EncryptionConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#gceclusterconfig" title="GceClusterConfig">GceClusterConfig</a>" : <i>[ &lt;a href=&#34;gceclusterconfig.md&#34;&gt;GceClusterConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#initializationaction" title="InitializationAction">InitializationAction</a>" : <i>[ &lt;a href=&#34;initializationaction.md&#34;&gt;InitializationAction&lt;/a&gt;, ... ]</i>,
-        "<a href="#masterconfig" title="MasterConfig">MasterConfig</a>" : <i>[ &lt;a href=&#34;masterconfig.md&#34;&gt;MasterConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#preemptibleworkerconfig" title="PreemptibleWorkerConfig">PreemptibleWorkerConfig</a>" : <i>[ &lt;a href=&#34;preemptibleworkerconfig.md&#34;&gt;PreemptibleWorkerConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#securityconfig" title="SecurityConfig">SecurityConfig</a>" : <i>[ &lt;a href=&#34;securityconfig.md&#34;&gt;SecurityConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#softwareconfig" title="SoftwareConfig">SoftwareConfig</a>" : <i>[ &lt;a href=&#34;softwareconfig.md&#34;&gt;SoftwareConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>" : <i>[ &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#accelerators" title="Accelerators">Accelerators</a>" : <i>[ &lt;a href=&#34;accelerators.md&#34;&gt;Accelerators&lt;/a&gt;, ... ]</i>,
-        "<a href="#diskconfig" title="DiskConfig">DiskConfig</a>" : <i>[ &lt;a href=&#34;diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;, ... ]</i>,
-        "<a href="#kerberosconfig" title="KerberosConfig">KerberosConfig</a>" : <i>[ &lt;a href=&#34;kerberosconfig.md&#34;&gt;KerberosConfig&lt;/a&gt;, ... ]</i>
+        "<a href="#clusterconfig" title="ClusterConfig">ClusterConfig</a>" : <i>[ <a href="clusterconfig.md">ClusterConfig</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#autoscalingconfig" title="AutoscalingConfig">AutoscalingConfig</a>" : <i>[ <a href="autoscalingconfig.md">AutoscalingConfig</a>, ... ]</i>,
+        "<a href="#encryptionconfig" title="EncryptionConfig">EncryptionConfig</a>" : <i>[ <a href="encryptionconfig.md">EncryptionConfig</a>, ... ]</i>,
+        "<a href="#gceclusterconfig" title="GceClusterConfig">GceClusterConfig</a>" : <i>[ <a href="gceclusterconfig.md">GceClusterConfig</a>, ... ]</i>,
+        "<a href="#initializationaction" title="InitializationAction">InitializationAction</a>" : <i>[ <a href="initializationaction.md">InitializationAction</a>, ... ]</i>,
+        "<a href="#masterconfig" title="MasterConfig">MasterConfig</a>" : <i>[ <a href="masterconfig.md">MasterConfig</a>, ... ]</i>,
+        "<a href="#preemptibleworkerconfig" title="PreemptibleWorkerConfig">PreemptibleWorkerConfig</a>" : <i>[ <a href="preemptibleworkerconfig.md">PreemptibleWorkerConfig</a>, ... ]</i>,
+        "<a href="#securityconfig" title="SecurityConfig">SecurityConfig</a>" : <i>[ <a href="securityconfig.md">SecurityConfig</a>, ... ]</i>,
+        "<a href="#softwareconfig" title="SoftwareConfig">SoftwareConfig</a>" : <i>[ <a href="softwareconfig.md">SoftwareConfig</a>, ... ]</i>,
+        "<a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>" : <i>[ <a href="workerconfig.md">WorkerConfig</a>, ... ]</i>,
+        "<a href="#accelerators" title="Accelerators">Accelerators</a>" : <i>[ <a href="accelerators.md">Accelerators</a>, ... ]</i>,
+        "<a href="#diskconfig" title="DiskConfig">DiskConfig</a>" : <i>[ <a href="diskconfig.md">DiskConfig</a>, ... ]</i>,
+        "<a href="#kerberosconfig" title="KerberosConfig">KerberosConfig</a>" : <i>[ <a href="kerberosconfig.md">KerberosConfig</a>, ... ]</i>
     }
 }
 </pre>
@@ -40,58 +39,47 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::DataprocCluster
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#labels" title="Labels">Labels</a>: <i>
-      - &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;</i>
+      - <a href="labels.md">Labels</a></i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
     <a href="#clusterconfig" title="ClusterConfig">ClusterConfig</a>: <i>
-      - &lt;a href=&#34;clusterconfig.md&#34;&gt;ClusterConfig&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="clusterconfig.md">ClusterConfig</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#autoscalingconfig" title="AutoscalingConfig">AutoscalingConfig</a>: <i>
-      - &lt;a href=&#34;autoscalingconfig.md&#34;&gt;AutoscalingConfig&lt;/a&gt;</i>
+      - <a href="autoscalingconfig.md">AutoscalingConfig</a></i>
     <a href="#encryptionconfig" title="EncryptionConfig">EncryptionConfig</a>: <i>
-      - &lt;a href=&#34;encryptionconfig.md&#34;&gt;EncryptionConfig&lt;/a&gt;</i>
+      - <a href="encryptionconfig.md">EncryptionConfig</a></i>
     <a href="#gceclusterconfig" title="GceClusterConfig">GceClusterConfig</a>: <i>
-      - &lt;a href=&#34;gceclusterconfig.md&#34;&gt;GceClusterConfig&lt;/a&gt;</i>
+      - <a href="gceclusterconfig.md">GceClusterConfig</a></i>
     <a href="#initializationaction" title="InitializationAction">InitializationAction</a>: <i>
-      - &lt;a href=&#34;initializationaction.md&#34;&gt;InitializationAction&lt;/a&gt;</i>
+      - <a href="initializationaction.md">InitializationAction</a></i>
     <a href="#masterconfig" title="MasterConfig">MasterConfig</a>: <i>
-      - &lt;a href=&#34;masterconfig.md&#34;&gt;MasterConfig&lt;/a&gt;</i>
+      - <a href="masterconfig.md">MasterConfig</a></i>
     <a href="#preemptibleworkerconfig" title="PreemptibleWorkerConfig">PreemptibleWorkerConfig</a>: <i>
-      - &lt;a href=&#34;preemptibleworkerconfig.md&#34;&gt;PreemptibleWorkerConfig&lt;/a&gt;</i>
+      - <a href="preemptibleworkerconfig.md">PreemptibleWorkerConfig</a></i>
     <a href="#securityconfig" title="SecurityConfig">SecurityConfig</a>: <i>
-      - &lt;a href=&#34;securityconfig.md&#34;&gt;SecurityConfig&lt;/a&gt;</i>
+      - <a href="securityconfig.md">SecurityConfig</a></i>
     <a href="#softwareconfig" title="SoftwareConfig">SoftwareConfig</a>: <i>
-      - &lt;a href=&#34;softwareconfig.md&#34;&gt;SoftwareConfig&lt;/a&gt;</i>
+      - <a href="softwareconfig.md">SoftwareConfig</a></i>
     <a href="#workerconfig" title="WorkerConfig">WorkerConfig</a>: <i>
-      - &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;</i>
+      - <a href="workerconfig.md">WorkerConfig</a></i>
     <a href="#accelerators" title="Accelerators">Accelerators</a>: <i>
-      - &lt;a href=&#34;accelerators.md&#34;&gt;Accelerators&lt;/a&gt;</i>
+      - <a href="accelerators.md">Accelerators</a></i>
     <a href="#diskconfig" title="DiskConfig">DiskConfig</a>: <i>
-      - &lt;a href=&#34;diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;</i>
+      - <a href="diskconfig.md">DiskConfig</a></i>
     <a href="#kerberosconfig" title="KerberosConfig">KerberosConfig</a>: <i>
-      - &lt;a href=&#34;kerberosconfig.md&#34;&gt;KerberosConfig&lt;/a&gt;</i>
+      - <a href="kerberosconfig.md">KerberosConfig</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Labels
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;labels.md&#34;&gt;Labels&lt;/a&gt;
+_Type_: List of <a href="labels.md">Labels</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -123,7 +111,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;clusterconfig.md&#34;&gt;ClusterConfig&lt;/a&gt;
+_Type_: List of <a href="clusterconfig.md">ClusterConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -131,7 +119,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -139,7 +127,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;autoscalingconfig.md&#34;&gt;AutoscalingConfig&lt;/a&gt;
+_Type_: List of <a href="autoscalingconfig.md">AutoscalingConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -147,7 +135,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;encryptionconfig.md&#34;&gt;EncryptionConfig&lt;/a&gt;
+_Type_: List of <a href="encryptionconfig.md">EncryptionConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -155,7 +143,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;gceclusterconfig.md&#34;&gt;GceClusterConfig&lt;/a&gt;
+_Type_: List of <a href="gceclusterconfig.md">GceClusterConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -163,7 +151,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;initializationaction.md&#34;&gt;InitializationAction&lt;/a&gt;
+_Type_: List of <a href="initializationaction.md">InitializationAction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -171,7 +159,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;masterconfig.md&#34;&gt;MasterConfig&lt;/a&gt;
+_Type_: List of <a href="masterconfig.md">MasterConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -179,7 +167,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;preemptibleworkerconfig.md&#34;&gt;PreemptibleWorkerConfig&lt;/a&gt;
+_Type_: List of <a href="preemptibleworkerconfig.md">PreemptibleWorkerConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -187,7 +175,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;securityconfig.md&#34;&gt;SecurityConfig&lt;/a&gt;
+_Type_: List of <a href="securityconfig.md">SecurityConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +183,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;softwareconfig.md&#34;&gt;SoftwareConfig&lt;/a&gt;
+_Type_: List of <a href="softwareconfig.md">SoftwareConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -203,7 +191,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;workerconfig.md&#34;&gt;WorkerConfig&lt;/a&gt;
+_Type_: List of <a href="workerconfig.md">WorkerConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -211,7 +199,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;accelerators.md&#34;&gt;Accelerators&lt;/a&gt;
+_Type_: List of <a href="accelerators.md">Accelerators</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -219,7 +207,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;diskconfig.md&#34;&gt;DiskConfig&lt;/a&gt;
+_Type_: List of <a href="diskconfig.md">DiskConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -227,7 +215,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;kerberosconfig.md&#34;&gt;KerberosConfig&lt;/a&gt;
+_Type_: List of <a href="kerberosconfig.md">KerberosConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

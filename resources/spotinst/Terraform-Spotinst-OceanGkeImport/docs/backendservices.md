@@ -11,7 +11,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#locationtype" title="LocationType">LocationType</a>" : <i>String</i>,
     "<a href="#scheme" title="Scheme">Scheme</a>" : <i>String</i>,
     "<a href="#servicename" title="ServiceName">ServiceName</a>" : <i>String</i>,
-    "<a href="#namedports" title="NamedPorts">NamedPorts</a>" : <i>[ &lt;a href=&#34;backendservices-namedports.md&#34;&gt;NamedPorts&lt;/a&gt;, ... ]</i>
+    "<a href="#namedports" title="NamedPorts">NamedPorts</a>" : <i>[ <a href="backendservices-namedports.md">NamedPorts</a>, ... ]</i>
 }
 </pre>
 
@@ -22,7 +22,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#scheme" title="Scheme">Scheme</a>: <i>String</i>
 <a href="#servicename" title="ServiceName">ServiceName</a>: <i>String</i>
 <a href="#namedports" title="NamedPorts">NamedPorts</a>: <i>
-      - &lt;a href=&#34;backendservices-namedports.md&#34;&gt;NamedPorts&lt;/a&gt;</i>
+      - <a href="backendservices-namedports.md">NamedPorts</a></i>
 </pre>
 
 ## Properties
@@ -30,6 +30,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### LocationType
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -37,6 +38,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Scheme
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -44,6 +46,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### ServiceName
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -51,7 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NamedPorts
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;backendservices-namedports.md&#34;&gt;NamedPorts&lt;/a&gt;
+
+_Type_: List of <a href="backendservices-namedports.md">NamedPorts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

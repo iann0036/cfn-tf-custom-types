@@ -12,21 +12,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Google::ComputeReservation",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#commitment" title="Commitment">Commitment</a>" : <i>String</i>,
-        "<a href="#creationtimestamp" title="CreationTimestamp">CreationTimestamp</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#project" title="Project">Project</a>" : <i>String</i>,
-        "<a href="#selflink" title="SelfLink">SelfLink</a>" : <i>String</i>,
         "<a href="#specificreservationrequired" title="SpecificReservationRequired">SpecificReservationRequired</a>" : <i>Boolean</i>,
-        "<a href="#status" title="Status">Status</a>" : <i>String</i>,
         "<a href="#zone" title="Zone">Zone</a>" : <i>String</i>,
-        "<a href="#specificreservation" title="SpecificReservation">SpecificReservation</a>" : <i>[ &lt;a href=&#34;specificreservation.md&#34;&gt;SpecificReservation&lt;/a&gt;, ... ]</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>,
-        "<a href="#instanceproperties" title="InstanceProperties">InstanceProperties</a>" : <i>[ &lt;a href=&#34;instanceproperties.md&#34;&gt;InstanceProperties&lt;/a&gt;, ... ]</i>,
-        "<a href="#guestaccelerators" title="GuestAccelerators">GuestAccelerators</a>" : <i>[ &lt;a href=&#34;guestaccelerators.md&#34;&gt;GuestAccelerators&lt;/a&gt;, ... ]</i>,
-        "<a href="#localssds" title="LocalSsds">LocalSsds</a>" : <i>[ &lt;a href=&#34;localssds.md&#34;&gt;LocalSsds&lt;/a&gt;, ... ]</i>
+        "<a href="#specificreservation" title="SpecificReservation">SpecificReservation</a>" : <i>[ <a href="specificreservation.md">SpecificReservation</a>, ... ]</i>,
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>,
+        "<a href="#instanceproperties" title="InstanceProperties">InstanceProperties</a>" : <i>[ <a href="instanceproperties.md">InstanceProperties</a>, ... ]</i>,
+        "<a href="#guestaccelerators" title="GuestAccelerators">GuestAccelerators</a>" : <i>[ <a href="guestaccelerators.md">GuestAccelerators</a>, ... ]</i>,
+        "<a href="#localssds" title="LocalSsds">LocalSsds</a>" : <i>[ <a href="localssds.md">LocalSsds</a>, ... ]</i>
     }
 }
 </pre>
@@ -36,54 +31,23 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Google::ComputeReservation
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#commitment" title="Commitment">Commitment</a>: <i>String</i>
-    <a href="#creationtimestamp" title="CreationTimestamp">CreationTimestamp</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#project" title="Project">Project</a>: <i>String</i>
-    <a href="#selflink" title="SelfLink">SelfLink</a>: <i>String</i>
     <a href="#specificreservationrequired" title="SpecificReservationRequired">SpecificReservationRequired</a>: <i>Boolean</i>
-    <a href="#status" title="Status">Status</a>: <i>String</i>
     <a href="#zone" title="Zone">Zone</a>: <i>String</i>
     <a href="#specificreservation" title="SpecificReservation">SpecificReservation</a>: <i>
-      - &lt;a href=&#34;specificreservation.md&#34;&gt;SpecificReservation&lt;/a&gt;</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+      - <a href="specificreservation.md">SpecificReservation</a></i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
     <a href="#instanceproperties" title="InstanceProperties">InstanceProperties</a>: <i>
-      - &lt;a href=&#34;instanceproperties.md&#34;&gt;InstanceProperties&lt;/a&gt;</i>
+      - <a href="instanceproperties.md">InstanceProperties</a></i>
     <a href="#guestaccelerators" title="GuestAccelerators">GuestAccelerators</a>: <i>
-      - &lt;a href=&#34;guestaccelerators.md&#34;&gt;GuestAccelerators&lt;/a&gt;</i>
+      - <a href="guestaccelerators.md">GuestAccelerators</a></i>
     <a href="#localssds" title="LocalSsds">LocalSsds</a>: <i>
-      - &lt;a href=&#34;localssds.md&#34;&gt;LocalSsds&lt;/a&gt;</i>
+      - <a href="localssds.md">LocalSsds</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Commitment
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreationTimestamp
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
 
@@ -109,27 +73,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### SelfLink
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### SpecificReservationRequired
 
 _Required_: No
 
 _Type_: Boolean
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Status
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -145,7 +93,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;specificreservation.md&#34;&gt;SpecificReservation&lt;/a&gt;
+_Type_: List of <a href="specificreservation.md">SpecificReservation</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -153,7 +101,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -161,7 +109,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;instanceproperties.md&#34;&gt;InstanceProperties&lt;/a&gt;
+_Type_: List of <a href="instanceproperties.md">InstanceProperties</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -169,7 +117,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;guestaccelerators.md&#34;&gt;GuestAccelerators&lt;/a&gt;
+_Type_: List of <a href="guestaccelerators.md">GuestAccelerators</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -177,7 +125,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;localssds.md&#34;&gt;LocalSsds&lt;/a&gt;
+_Type_: List of <a href="localssds.md">LocalSsds</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -199,17 +147,17 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Commitment
 
-Returns the &lt;code&gt;Commitment&lt;/code&gt; value.
+Returns the <code>Commitment</code> value.
 
 #### CreationTimestamp
 
-Returns the &lt;code&gt;CreationTimestamp&lt;/code&gt; value.
+Returns the <code>CreationTimestamp</code> value.
 
 #### SelfLink
 
-Returns the &lt;code&gt;SelfLink&lt;/code&gt; value.
+Returns the <code>SelfLink</code> value.
 
 #### Status
 
-Returns the &lt;code&gt;Status&lt;/code&gt; value.
+Returns the <code>Status</code> value.
 

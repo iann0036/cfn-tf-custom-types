@@ -12,16 +12,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Vault::PkiSecretBackendRootCert",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#altnames" title="AltNames">AltNames</a>" : <i>[ String, ... ]</i>,
         "<a href="#backend" title="Backend">Backend</a>" : <i>String</i>,
-        "<a href="#certificate" title="Certificate">Certificate</a>" : <i>String</i>,
         "<a href="#commonname" title="CommonName">CommonName</a>" : <i>String</i>,
         "<a href="#country" title="Country">Country</a>" : <i>String</i>,
         "<a href="#excludecnfromsans" title="ExcludeCnFromSans">ExcludeCnFromSans</a>" : <i>Boolean</i>,
         "<a href="#format" title="Format">Format</a>" : <i>String</i>,
         "<a href="#ipsans" title="IpSans">IpSans</a>" : <i>[ String, ... ]</i>,
-        "<a href="#issuingca" title="IssuingCa">IssuingCa</a>" : <i>String</i>,
         "<a href="#keybits" title="KeyBits">KeyBits</a>" : <i>Double</i>,
         "<a href="#keytype" title="KeyType">KeyType</a>" : <i>String</i>,
         "<a href="#locality" title="Locality">Locality</a>" : <i>String</i>,
@@ -33,7 +30,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#postalcode" title="PostalCode">PostalCode</a>" : <i>String</i>,
         "<a href="#privatekeyformat" title="PrivateKeyFormat">PrivateKeyFormat</a>" : <i>String</i>,
         "<a href="#province" title="Province">Province</a>" : <i>String</i>,
-        "<a href="#serial" title="Serial">Serial</a>" : <i>String</i>,
         "<a href="#streetaddress" title="StreetAddress">StreetAddress</a>" : <i>String</i>,
         "<a href="#ttl" title="Ttl">Ttl</a>" : <i>String</i>,
         "<a href="#type" title="Type">Type</a>" : <i>String</i>,
@@ -47,18 +43,15 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Vault::PkiSecretBackendRootCert
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#altnames" title="AltNames">AltNames</a>: <i>
       - String</i>
     <a href="#backend" title="Backend">Backend</a>: <i>String</i>
-    <a href="#certificate" title="Certificate">Certificate</a>: <i>String</i>
     <a href="#commonname" title="CommonName">CommonName</a>: <i>String</i>
     <a href="#country" title="Country">Country</a>: <i>String</i>
     <a href="#excludecnfromsans" title="ExcludeCnFromSans">ExcludeCnFromSans</a>: <i>Boolean</i>
     <a href="#format" title="Format">Format</a>: <i>String</i>
     <a href="#ipsans" title="IpSans">IpSans</a>: <i>
       - String</i>
-    <a href="#issuingca" title="IssuingCa">IssuingCa</a>: <i>String</i>
     <a href="#keybits" title="KeyBits">KeyBits</a>: <i>Double</i>
     <a href="#keytype" title="KeyType">KeyType</a>: <i>String</i>
     <a href="#locality" title="Locality">Locality</a>: <i>String</i>
@@ -72,7 +65,6 @@ Properties:
     <a href="#postalcode" title="PostalCode">PostalCode</a>: <i>String</i>
     <a href="#privatekeyformat" title="PrivateKeyFormat">PrivateKeyFormat</a>: <i>String</i>
     <a href="#province" title="Province">Province</a>: <i>String</i>
-    <a href="#serial" title="Serial">Serial</a>: <i>String</i>
     <a href="#streetaddress" title="StreetAddress">StreetAddress</a>: <i>String</i>
     <a href="#ttl" title="Ttl">Ttl</a>: <i>String</i>
     <a href="#type" title="Type">Type</a>: <i>String</i>
@@ -81,16 +73,6 @@ Properties:
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AltNames
 
@@ -103,14 +85,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Backend
 
 _Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Certificate
-
-_Required_: No
 
 _Type_: String
 
@@ -153,14 +127,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### IssuingCa
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -252,14 +218,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Serial
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### StreetAddress
 
 _Required_: No
@@ -310,13 +268,13 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### Certificate
 
-Returns the &lt;code&gt;Certificate&lt;/code&gt; value.
+Returns the <code>Certificate</code> value.
 
 #### IssuingCa
 
-Returns the &lt;code&gt;IssuingCa&lt;/code&gt; value.
+Returns the <code>IssuingCa</code> value.
 
 #### Serial
 
-Returns the &lt;code&gt;Serial&lt;/code&gt; value.
+Returns the <code>Serial</code> value.
 

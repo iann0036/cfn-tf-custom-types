@@ -8,8 +8,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#preferredduringschedulingignoredduringexecution" title="PreferredDuringSchedulingIgnoredDuringExecution">PreferredDuringSchedulingIgnoredDuringExecution</a>" : <i>[ &lt;a href=&#34;template-affinity-nodeaffinity-preferredduringschedulingignoredduringexecution.md&#34;&gt;PreferredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;, ... ]</i>,
-    "<a href="#requiredduringschedulingignoredduringexecution" title="RequiredDuringSchedulingIgnoredDuringExecution">RequiredDuringSchedulingIgnoredDuringExecution</a>" : <i>[ &lt;a href=&#34;template-affinity-nodeaffinity-requiredduringschedulingignoredduringexecution.md&#34;&gt;RequiredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;, ... ]</i>
+    "<a href="#preferredduringschedulingignoredduringexecution" title="PreferredDuringSchedulingIgnoredDuringExecution">PreferredDuringSchedulingIgnoredDuringExecution</a>" : <i>[ <a href="template-affinity-nodeaffinity-preferredduringschedulingignoredduringexecution.md">PreferredDuringSchedulingIgnoredDuringExecution</a>, ... ]</i>,
+    "<a href="#requiredduringschedulingignoredduringexecution" title="RequiredDuringSchedulingIgnoredDuringExecution">RequiredDuringSchedulingIgnoredDuringExecution</a>" : <i>[ <a href="template-affinity-nodeaffinity-requiredduringschedulingignoredduringexecution.md">RequiredDuringSchedulingIgnoredDuringExecution</a>, ... ]</i>
 }
 </pre>
 
@@ -17,9 +17,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 <a href="#preferredduringschedulingignoredduringexecution" title="PreferredDuringSchedulingIgnoredDuringExecution">PreferredDuringSchedulingIgnoredDuringExecution</a>: <i>
-      - &lt;a href=&#34;template-affinity-nodeaffinity-preferredduringschedulingignoredduringexecution.md&#34;&gt;PreferredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;</i>
+      - <a href="template-affinity-nodeaffinity-preferredduringschedulingignoredduringexecution.md">PreferredDuringSchedulingIgnoredDuringExecution</a></i>
 <a href="#requiredduringschedulingignoredduringexecution" title="RequiredDuringSchedulingIgnoredDuringExecution">RequiredDuringSchedulingIgnoredDuringExecution</a>: <i>
-      - &lt;a href=&#34;template-affinity-nodeaffinity-requiredduringschedulingignoredduringexecution.md&#34;&gt;RequiredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;</i>
+      - <a href="template-affinity-nodeaffinity-requiredduringschedulingignoredduringexecution.md">RequiredDuringSchedulingIgnoredDuringExecution</a></i>
 </pre>
 
 ## Properties
@@ -27,14 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### PreferredDuringSchedulingIgnoredDuringExecution
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;template-affinity-nodeaffinity-preferredduringschedulingignoredduringexecution.md&#34;&gt;PreferredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;
+
+_Type_: List of <a href="template-affinity-nodeaffinity-preferredduringschedulingignoredduringexecution.md">PreferredDuringSchedulingIgnoredDuringExecution</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequiredDuringSchedulingIgnoredDuringExecution
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;template-affinity-nodeaffinity-requiredduringschedulingignoredduringexecution.md&#34;&gt;RequiredDuringSchedulingIgnoredDuringExecution&lt;/a&gt;
+
+_Type_: List of <a href="template-affinity-nodeaffinity-requiredduringschedulingignoredduringexecution.md">RequiredDuringSchedulingIgnoredDuringExecution</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

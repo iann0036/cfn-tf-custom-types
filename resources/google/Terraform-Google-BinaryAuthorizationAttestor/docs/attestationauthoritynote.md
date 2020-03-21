@@ -9,7 +9,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 {
     "<a href="#notereference" title="NoteReference">NoteReference</a>" : <i>String</i>,
-    "<a href="#publickeys" title="PublicKeys">PublicKeys</a>" : <i>[ &lt;a href=&#34;attestationauthoritynote-publickeys.md&#34;&gt;PublicKeys&lt;/a&gt;, ... ]</i>
+    "<a href="#publickeys" title="PublicKeys">PublicKeys</a>" : <i>[ <a href="attestationauthoritynote-publickeys.md">PublicKeys</a>, ... ]</i>
 }
 </pre>
 
@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 <a href="#notereference" title="NoteReference">NoteReference</a>: <i>String</i>
 <a href="#publickeys" title="PublicKeys">PublicKeys</a>: <i>
-      - &lt;a href=&#34;attestationauthoritynote-publickeys.md&#34;&gt;PublicKeys&lt;/a&gt;</i>
+      - <a href="attestationauthoritynote-publickeys.md">PublicKeys</a></i>
 </pre>
 
 ## Properties
@@ -26,6 +26,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### NoteReference
 
 _Required_: Yes
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -33,7 +34,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### PublicKeys
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;attestationauthoritynote-publickeys.md&#34;&gt;PublicKeys&lt;/a&gt;
+
+_Type_: List of <a href="attestationauthoritynote-publickeys.md">PublicKeys</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

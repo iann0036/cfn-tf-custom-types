@@ -11,12 +11,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#alwayson" title="AlwaysOn">AlwaysOn</a>" : <i>Boolean</i>,
     "<a href="#ftpsstate" title="FtpsState">FtpsState</a>" : <i>String</i>,
     "<a href="#http2enabled" title="Http2Enabled">Http2Enabled</a>" : <i>Boolean</i>,
-    "<a href="#iprestriction" title="IpRestriction">IpRestriction</a>" : <i>[ &lt;a href=&#34;siteconfig-iprestriction.md&#34;&gt;IpRestriction&lt;/a&gt;, ... ]</i>,
+    "<a href="#iprestriction" title="IpRestriction">IpRestriction</a>" : <i>[ <a href="siteconfig-iprestriction.md">IpRestriction</a>, ... ]</i>,
     "<a href="#linuxfxversion" title="LinuxFxVersion">LinuxFxVersion</a>" : <i>String</i>,
     "<a href="#mintlsversion" title="MinTlsVersion">MinTlsVersion</a>" : <i>String</i>,
     "<a href="#use32bitworkerprocess" title="Use32BitWorkerProcess">Use32BitWorkerProcess</a>" : <i>Boolean</i>,
     "<a href="#websocketsenabled" title="WebsocketsEnabled">WebsocketsEnabled</a>" : <i>Boolean</i>,
-    "<a href="#cors" title="Cors">Cors</a>" : <i>[ &lt;a href=&#34;siteconfig-cors.md&#34;&gt;Cors&lt;/a&gt;, ... ]</i>
+    "<a href="#cors" title="Cors">Cors</a>" : <i>[ <a href="siteconfig-cors.md">Cors</a>, ... ]</i>
 }
 </pre>
 
@@ -27,13 +27,13 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#ftpsstate" title="FtpsState">FtpsState</a>: <i>String</i>
 <a href="#http2enabled" title="Http2Enabled">Http2Enabled</a>: <i>Boolean</i>
 <a href="#iprestriction" title="IpRestriction">IpRestriction</a>: <i>
-      - &lt;a href=&#34;siteconfig-iprestriction.md&#34;&gt;IpRestriction&lt;/a&gt;</i>
+      - <a href="siteconfig-iprestriction.md">IpRestriction</a></i>
 <a href="#linuxfxversion" title="LinuxFxVersion">LinuxFxVersion</a>: <i>String</i>
 <a href="#mintlsversion" title="MinTlsVersion">MinTlsVersion</a>: <i>String</i>
 <a href="#use32bitworkerprocess" title="Use32BitWorkerProcess">Use32BitWorkerProcess</a>: <i>Boolean</i>
 <a href="#websocketsenabled" title="WebsocketsEnabled">WebsocketsEnabled</a>: <i>Boolean</i>
 <a href="#cors" title="Cors">Cors</a>: <i>
-      - &lt;a href=&#34;siteconfig-cors.md&#34;&gt;Cors&lt;/a&gt;</i>
+      - <a href="siteconfig-cors.md">Cors</a></i>
 </pre>
 
 ## Properties
@@ -41,6 +41,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### AlwaysOn
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -48,6 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### FtpsState
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -55,6 +57,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Http2Enabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -62,13 +65,15 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### IpRestriction
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;siteconfig-iprestriction.md&#34;&gt;IpRestriction&lt;/a&gt;
+
+_Type_: List of <a href="siteconfig-iprestriction.md">IpRestriction</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LinuxFxVersion
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -76,6 +81,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MinTlsVersion
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -83,6 +89,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Use32BitWorkerProcess
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -90,6 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### WebsocketsEnabled
 
 _Required_: No
+
 _Type_: Boolean
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -97,7 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Cors
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;siteconfig-cors.md&#34;&gt;Cors&lt;/a&gt;
+
+_Type_: List of <a href="siteconfig-cors.md">Cors</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

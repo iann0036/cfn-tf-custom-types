@@ -12,13 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::VSphere::ComputeCluster",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ <a href="customattributes.md">CustomAttributes</a>, ... ]</i>,
         "<a href="#datacenterid" title="DatacenterId">DatacenterId</a>" : <i>String</i>,
         "<a href="#dpmautomationlevel" title="DpmAutomationLevel">DpmAutomationLevel</a>" : <i>String</i>,
         "<a href="#dpmenabled" title="DpmEnabled">DpmEnabled</a>" : <i>Boolean</i>,
         "<a href="#dpmthreshold" title="DpmThreshold">DpmThreshold</a>" : <i>Double</i>,
-        "<a href="#drsadvancedoptions" title="DrsAdvancedOptions">DrsAdvancedOptions</a>" : <i>[ &lt;a href=&#34;drsadvancedoptions.md&#34;&gt;DrsAdvancedOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#drsadvancedoptions" title="DrsAdvancedOptions">DrsAdvancedOptions</a>" : <i>[ <a href="drsadvancedoptions.md">DrsAdvancedOptions</a>, ... ]</i>,
         "<a href="#drsautomationlevel" title="DrsAutomationLevel">DrsAutomationLevel</a>" : <i>String</i>,
         "<a href="#drsenablepredictivedrs" title="DrsEnablePredictiveDrs">DrsEnablePredictiveDrs</a>" : <i>Boolean</i>,
         "<a href="#drsenablevmoverrides" title="DrsEnableVmOverrides">DrsEnableVmOverrides</a>" : <i>Boolean</i>,
@@ -36,7 +35,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#haadmissioncontrolslotpolicyexplicitcpu" title="HaAdmissionControlSlotPolicyExplicitCpu">HaAdmissionControlSlotPolicyExplicitCpu</a>" : <i>Double</i>,
         "<a href="#haadmissioncontrolslotpolicyexplicitmemory" title="HaAdmissionControlSlotPolicyExplicitMemory">HaAdmissionControlSlotPolicyExplicitMemory</a>" : <i>Double</i>,
         "<a href="#haadmissioncontrolslotpolicyuseexplicitsize" title="HaAdmissionControlSlotPolicyUseExplicitSize">HaAdmissionControlSlotPolicyUseExplicitSize</a>" : <i>Boolean</i>,
-        "<a href="#haadvancedoptions" title="HaAdvancedOptions">HaAdvancedOptions</a>" : <i>[ &lt;a href=&#34;haadvancedoptions.md&#34;&gt;HaAdvancedOptions&lt;/a&gt;, ... ]</i>,
+        "<a href="#haadvancedoptions" title="HaAdvancedOptions">HaAdvancedOptions</a>" : <i>[ <a href="haadvancedoptions.md">HaAdvancedOptions</a>, ... ]</i>,
         "<a href="#hadatastoreapdrecoveryaction" title="HaDatastoreApdRecoveryAction">HaDatastoreApdRecoveryAction</a>" : <i>String</i>,
         "<a href="#hadatastoreapdresponse" title="HaDatastoreApdResponse">HaDatastoreApdResponse</a>" : <i>String</i>,
         "<a href="#hadatastoreapdresponsedelay" title="HaDatastoreApdResponseDelay">HaDatastoreApdResponseDelay</a>" : <i>Double</i>,
@@ -64,7 +63,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#proactivehamoderateremediation" title="ProactiveHaModerateRemediation">ProactiveHaModerateRemediation</a>" : <i>String</i>,
         "<a href="#proactivehaproviderids" title="ProactiveHaProviderIds">ProactiveHaProviderIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#proactivehasevereremediation" title="ProactiveHaSevereRemediation">ProactiveHaSevereRemediation</a>" : <i>String</i>,
-        "<a href="#resourcepoolid" title="ResourcePoolId">ResourcePoolId</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>
     }
 }
@@ -75,15 +73,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::VSphere::ComputeCluster
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
-      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+      - <a href="customattributes.md">CustomAttributes</a></i>
     <a href="#datacenterid" title="DatacenterId">DatacenterId</a>: <i>String</i>
     <a href="#dpmautomationlevel" title="DpmAutomationLevel">DpmAutomationLevel</a>: <i>String</i>
     <a href="#dpmenabled" title="DpmEnabled">DpmEnabled</a>: <i>Boolean</i>
     <a href="#dpmthreshold" title="DpmThreshold">DpmThreshold</a>: <i>Double</i>
     <a href="#drsadvancedoptions" title="DrsAdvancedOptions">DrsAdvancedOptions</a>: <i>
-      - &lt;a href=&#34;drsadvancedoptions.md&#34;&gt;DrsAdvancedOptions&lt;/a&gt;</i>
+      - <a href="drsadvancedoptions.md">DrsAdvancedOptions</a></i>
     <a href="#drsautomationlevel" title="DrsAutomationLevel">DrsAutomationLevel</a>: <i>String</i>
     <a href="#drsenablepredictivedrs" title="DrsEnablePredictiveDrs">DrsEnablePredictiveDrs</a>: <i>Boolean</i>
     <a href="#drsenablevmoverrides" title="DrsEnableVmOverrides">DrsEnableVmOverrides</a>: <i>Boolean</i>
@@ -103,7 +100,7 @@ Properties:
     <a href="#haadmissioncontrolslotpolicyexplicitmemory" title="HaAdmissionControlSlotPolicyExplicitMemory">HaAdmissionControlSlotPolicyExplicitMemory</a>: <i>Double</i>
     <a href="#haadmissioncontrolslotpolicyuseexplicitsize" title="HaAdmissionControlSlotPolicyUseExplicitSize">HaAdmissionControlSlotPolicyUseExplicitSize</a>: <i>Boolean</i>
     <a href="#haadvancedoptions" title="HaAdvancedOptions">HaAdvancedOptions</a>: <i>
-      - &lt;a href=&#34;haadvancedoptions.md&#34;&gt;HaAdvancedOptions&lt;/a&gt;</i>
+      - <a href="haadvancedoptions.md">HaAdvancedOptions</a></i>
     <a href="#hadatastoreapdrecoveryaction" title="HaDatastoreApdRecoveryAction">HaDatastoreApdRecoveryAction</a>: <i>String</i>
     <a href="#hadatastoreapdresponse" title="HaDatastoreApdResponse">HaDatastoreApdResponse</a>: <i>String</i>
     <a href="#hadatastoreapdresponsedelay" title="HaDatastoreApdResponseDelay">HaDatastoreApdResponseDelay</a>: <i>Double</i>
@@ -134,28 +131,17 @@ Properties:
     <a href="#proactivehaproviderids" title="ProactiveHaProviderIds">ProactiveHaProviderIds</a>: <i>
       - String</i>
     <a href="#proactivehasevereremediation" title="ProactiveHaSevereRemediation">ProactiveHaSevereRemediation</a>: <i>String</i>
-    <a href="#resourcepoolid" title="ResourcePoolId">ResourcePoolId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### CustomAttributes
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+_Type_: List of <a href="customattributes.md">CustomAttributes</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -195,7 +181,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;drsadvancedoptions.md&#34;&gt;DrsAdvancedOptions&lt;/a&gt;
+_Type_: List of <a href="drsadvancedoptions.md">DrsAdvancedOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -339,7 +325,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;haadvancedoptions.md&#34;&gt;HaAdvancedOptions&lt;/a&gt;
+_Type_: List of <a href="haadvancedoptions.md">HaAdvancedOptions</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -559,14 +545,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### ResourcePoolId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Tags
 
 _Required_: No
@@ -593,5 +571,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### ResourcePoolId
 
-Returns the &lt;code&gt;ResourcePoolId&lt;/code&gt; value.
+Returns the <code>ResourcePoolId</code> value.
 

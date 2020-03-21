@@ -12,14 +12,12 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Alicloud::KeyPair",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#fingerprint" title="FingerPrint">FingerPrint</a>" : <i>String</i>,
         "<a href="#keyfile" title="KeyFile">KeyFile</a>" : <i>String</i>,
         "<a href="#keyname" title="KeyName">KeyName</a>" : <i>String</i>,
         "<a href="#keynameprefix" title="KeyNamePrefix">KeyNamePrefix</a>" : <i>String</i>,
         "<a href="#publickey" title="PublicKey">PublicKey</a>" : <i>String</i>,
         "<a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>" : <i>String</i>,
-        "<a href="#tags" title="Tags">Tags</a>" : <i>[ &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;, ... ]</i>
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ <a href="tags.md">Tags</a>, ... ]</i>
     }
 }
 </pre>
@@ -29,36 +27,16 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Alicloud::KeyPair
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#fingerprint" title="FingerPrint">FingerPrint</a>: <i>String</i>
     <a href="#keyfile" title="KeyFile">KeyFile</a>: <i>String</i>
     <a href="#keyname" title="KeyName">KeyName</a>: <i>String</i>
     <a href="#keynameprefix" title="KeyNamePrefix">KeyNamePrefix</a>: <i>String</i>
     <a href="#publickey" title="PublicKey">PublicKey</a>: <i>String</i>
     <a href="#resourcegroupid" title="ResourceGroupId">ResourceGroupId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
-      - &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;</i>
+      - <a href="tags.md">Tags</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### FingerPrint
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyFile
 
@@ -104,7 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: List of &lt;a href=&#34;tags.md&#34;&gt;Tags&lt;/a&gt;
+_Type_: List of <a href="tags.md">Tags</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -126,5 +104,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### FingerPrint
 
-Returns the &lt;code&gt;FingerPrint&lt;/code&gt; value.
+Returns the <code>FingerPrint</code> value.
 

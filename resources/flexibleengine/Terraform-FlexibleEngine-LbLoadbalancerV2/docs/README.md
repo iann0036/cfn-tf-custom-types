@@ -12,7 +12,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::FlexibleEngine::LbLoadbalancerV2",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#adminstateup" title="AdminStateUp">AdminStateUp</a>" : <i>Boolean</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
         "<a href="#flavor" title="Flavor">Flavor</a>" : <i>String</i>,
@@ -22,9 +21,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#securitygroupids" title="SecurityGroupIds">SecurityGroupIds</a>" : <i>[ String, ... ]</i>,
         "<a href="#tenantid" title="TenantId">TenantId</a>" : <i>String</i>,
         "<a href="#vipaddress" title="VipAddress">VipAddress</a>" : <i>String</i>,
-        "<a href="#vipportid" title="VipPortId">VipPortId</a>" : <i>String</i>,
         "<a href="#vipsubnetid" title="VipSubnetId">VipSubnetId</a>" : <i>String</i>,
-        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+        "<a href="#timeouts" title="Timeouts">Timeouts</a>" : <i><a href="timeouts.md">Timeouts</a></i>
     }
 }
 </pre>
@@ -34,7 +32,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::FlexibleEngine::LbLoadbalancerV2
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#adminstateup" title="AdminStateUp">AdminStateUp</a>: <i>Boolean</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
     <a href="#flavor" title="Flavor">Flavor</a>: <i>String</i>
@@ -45,22 +42,11 @@ Properties:
       - String</i>
     <a href="#tenantid" title="TenantId">TenantId</a>: <i>String</i>
     <a href="#vipaddress" title="VipAddress">VipAddress</a>: <i>String</i>
-    <a href="#vipportid" title="VipPortId">VipPortId</a>: <i>String</i>
     <a href="#vipsubnetid" title="VipSubnetId">VipSubnetId</a>: <i>String</i>
-    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i>&lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;</i>
+    <a href="#timeouts" title="Timeouts">Timeouts</a>: <i><a href="timeouts.md">Timeouts</a></i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdminStateUp
 
@@ -134,14 +120,6 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### VipPortId
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### VipSubnetId
 
 _Required_: Yes
@@ -154,7 +132,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;timeouts.md&#34;&gt;Timeouts&lt;/a&gt;
+_Type_: <a href="timeouts.md">Timeouts</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -176,5 +154,5 @@ Internal identifier for tracking resource changes. Do not use.
 
 #### VipPortId
 
-Returns the &lt;code&gt;VipPortId&lt;/code&gt; value.
+Returns the <code>VipPortId</code> value.
 

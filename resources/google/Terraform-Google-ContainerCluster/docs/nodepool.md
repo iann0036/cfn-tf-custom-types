@@ -14,9 +14,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "<a href="#nameprefix" title="NamePrefix">NamePrefix</a>" : <i>String</i>,
     "<a href="#nodecount" title="NodeCount">NodeCount</a>" : <i>Double</i>,
     "<a href="#version" title="Version">Version</a>" : <i>String</i>,
-    "<a href="#autoscaling" title="Autoscaling">Autoscaling</a>" : <i>[ &lt;a href=&#34;nodepool-autoscaling.md&#34;&gt;Autoscaling&lt;/a&gt;, ... ]</i>,
-    "<a href="#management" title="Management">Management</a>" : <i>[ &lt;a href=&#34;nodepool-management.md&#34;&gt;Management&lt;/a&gt;, ... ]</i>,
-    "<a href="#nodeconfig" title="NodeConfig">NodeConfig</a>" : <i>[ &lt;a href=&#34;nodepool-nodeconfig.md&#34;&gt;NodeConfig&lt;/a&gt;, ... ]</i>
+    "<a href="#autoscaling" title="Autoscaling">Autoscaling</a>" : <i>[ <a href="nodepool-autoscaling.md">Autoscaling</a>, ... ]</i>,
+    "<a href="#management" title="Management">Management</a>" : <i>[ <a href="nodepool-management.md">Management</a>, ... ]</i>,
+    "<a href="#nodeconfig" title="NodeConfig">NodeConfig</a>" : <i>[ <a href="nodepool-nodeconfig.md">NodeConfig</a>, ... ]</i>
 }
 </pre>
 
@@ -30,11 +30,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <a href="#nodecount" title="NodeCount">NodeCount</a>: <i>Double</i>
 <a href="#version" title="Version">Version</a>: <i>String</i>
 <a href="#autoscaling" title="Autoscaling">Autoscaling</a>: <i>
-      - &lt;a href=&#34;nodepool-autoscaling.md&#34;&gt;Autoscaling&lt;/a&gt;</i>
+      - <a href="nodepool-autoscaling.md">Autoscaling</a></i>
 <a href="#management" title="Management">Management</a>: <i>
-      - &lt;a href=&#34;nodepool-management.md&#34;&gt;Management&lt;/a&gt;</i>
+      - <a href="nodepool-management.md">Management</a></i>
 <a href="#nodeconfig" title="NodeConfig">NodeConfig</a>: <i>
-      - &lt;a href=&#34;nodepool-nodeconfig.md&#34;&gt;NodeConfig&lt;/a&gt;</i>
+      - <a href="nodepool-nodeconfig.md">NodeConfig</a></i>
 </pre>
 
 ## Properties
@@ -42,6 +42,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 #### InitialNodeCount
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -49,6 +50,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### MaxPodsPerNode
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -56,6 +58,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Name
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -63,6 +66,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NamePrefix
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -70,6 +74,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### NodeCount
 
 _Required_: No
+
 _Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -77,6 +82,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Version
 
 _Required_: No
+
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
@@ -84,21 +90,24 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 #### Autoscaling
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;nodepool-autoscaling.md&#34;&gt;Autoscaling&lt;/a&gt;
+
+_Type_: List of <a href="nodepool-autoscaling.md">Autoscaling</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Management
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;nodepool-management.md&#34;&gt;Management&lt;/a&gt;
+
+_Type_: List of <a href="nodepool-management.md">Management</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NodeConfig
 
 _Required_: No
-_Type_: List of &lt;a href=&#34;nodepool-nodeconfig.md&#34;&gt;NodeConfig&lt;/a&gt;
+
+_Type_: List of <a href="nodepool-nodeconfig.md">NodeConfig</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
