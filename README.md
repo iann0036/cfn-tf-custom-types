@@ -50,4 +50,6 @@ Note that resource submission will also generally take several minutes.
 
 ### Resource Usage
 
+Most providers will require you to store credentials and/or other provider-specific settings within AWS Secrets Manager in order to access their services, generally in the secret name format **terraform/_provider-name-lowercase_**. For the AWS provider only, the resources permissions will suffice, however you may choose to override those values in the secret.
+
 *TBC*
