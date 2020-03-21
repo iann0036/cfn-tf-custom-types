@@ -1,0 +1,9 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: "S3 Bucket for holding state data for Terraform->CloudFormation custom types"
+
+Resources:
+    S3Bucket:
+        Type: "AWS::S3::Bucket"
+        Properties:
+            BucketName: !Sub "cfntfstate-${AWS::Region}-${AWS::AccountId}"
