@@ -20,8 +20,8 @@ def check_call(args, cwd):
 
 
 resourcedir = Path("resources") / sys.argv[1].split("::")[1].lower() / sys.argv[1].replace("::","-")
-shutil.copyfile("cloudformation-cli-python-lib-0.0.1.tar.gz", (resourcedir / "cloudformation-cli-python-lib-0.0.1.tar.gz").absolute())
-shutil.copyfile("terraform", (resourcedir / "src" / sys.argv[1].replace("::","_").lower() / "terraform").absolute())
+shutil.copyfile("assets/cloudformation-cli-python-lib-0.0.1.tar.gz", (resourcedir / "cloudformation-cli-python-lib-0.0.1.tar.gz").absolute())
+shutil.copyfile("assets/terraform", (resourcedir / "src" / sys.argv[1].replace("::","_").lower() / "terraform").absolute())
 os.chmod((resourcedir / "src" / sys.argv[1].replace("::","_").lower() / "terraform").absolute(), 0o777)
 
 check_call(['cfn', 'submit', '--set-default'], resourcedir.absolute())
