@@ -215,6 +215,8 @@ def process_provider(provider_type):
     outstandingblocks = {}
     schema = {}
 
+    doc_resources = generate_docs(tempdir, provider_type, tfschema)
+
     for k,v in tfschema['provider_schemas'][provider_type]['resource_schemas'].items():
         endnaming = tf_to_cfn_str(k)
         if k.startswith(provider_type + "_"):
@@ -279,6 +281,9 @@ def process_provider(provider_type):
                 }
             }
 
+            if k in doc_resources and len(doc_resources[k]['description']) > 10:
+                schema['description'] = doc_resources[k]['description']
+
             if provider_type == "aws":
                 schema['handlers'] = {
                     "create": {"permissions": ["*"]},
@@ -314,6 +319,11 @@ def process_provider(provider_type):
                                 schema['readOnlyProperties'].append("/properties/" + cfnattrname)
 
                     schema['properties'][cfnattrname] = jsonschema_type(attrtype)
+
+                    if k in doc_resources:
+                        for docarg in doc_resources[k]['arguments']:
+                            if docarg['name'] == attrname and docarg['property_of'] is None:
+                                schema['properties'][cfnattrname]['description'] = docarg['description']
 
             if 'block_types' in v['block']:
                 outstandingblocks.update(v['block']['block_types'])
@@ -353,8 +363,14 @@ def process_provider(provider_type):
                                     continue # read-only props in subdefs are skipped from model
 
                         schema['definitions'][cfnblockname]['properties'][cfnattrname] = jsonschema_type(attrtype)
+
+                        if k in doc_resources:
+                            for docarg in doc_resources[k]['arguments']:
+                                if docarg['name'] == attrname and docarg['property_of'] == blockname:
+                                    schema['definitions'][cfnblockname]['properties'][cfnattrname]['description'] = docarg['description']
                 
                 if 'block_types' in block['block']:
+                    # TODO: Descriptions mapping for block types
                     outstandingblocks.update(block['block']['block_types'])
                     for subblockname,subblock in block['block']['block_types'].items():
                         cfnsubblockname = tf_to_cfn_str(subblockname)
@@ -438,8 +454,6 @@ def process_provider(provider_type):
             traceback.print_exc(file=sys.stdout)
             print("Failed to generate " + cfntypename)
 
-    generate_docs(tempdir, provider_type, tfschema)
-
 # Docs
 def process_resource_docs(provider_name, file_contents, provider_readme_items):
     section = ""
@@ -501,13 +515,24 @@ def process_resource_docs(provider_name, file_contents, provider_readme_items):
                         argument_description += "\n" + argument_lines[line_number+line_num_iterator].strip()
                         line_num_iterator += 1
 
-                    if argument_description[-1] != ".":
-                        argument_description += "."
+                    argument_attributes = []
+                    argument_description = argument_description.strip()
+                    if argument_description[0] == "(":
+                        endbracked_index = argument_description.find(')')
+                        argument_attributes = map(str.strip, argument_description[1:endbracked_index].split(","))
+                        argument_description = argument_description[endbracked_index+1:].strip()
+
+                    if argument_description and len(argument_description) > 2:
+                        if argument_description[-1] != ".":
+                            argument_description += "."
+                    else:
+                        argument_description = None
                     
                     arguments.append({
                         'name': argument_name,
                         'description': argument_description,
-                        'property_of': argument_block
+                        'property_of': argument_block,
+                        'attributes': argument_attributes
                     })
         if line.strip().endswith(":") and argument_lines[line_number+1].strip() == "":
             for argument_name in argument_names:
@@ -515,84 +540,27 @@ def process_resource_docs(provider_name, file_contents, provider_readme_items):
                     argument_block = argument_name
 
     if resource_type != "":
-        split_provider_name = resource_type.split("_")
-        split_provider_name.pop(0)
-        if provider_name in PROVIDERS_MAP:
-            cfn_type = tf_type_to_cfn_type(resource_type, provider_name)
-            provider_readme_items.append("* [{cfn_type}](../resources/{provider_name}/{type_stub}/docs/README.md)".format(
-                cfn_type=cfn_type,
-                provider_name=provider_name,
-                type_stub=tf_type_to_cfn_type(provider_name + "_" + "_".join(split_provider_name), provider_name).replace("::","-")
-            ))
-        else:
+        if provider_name not in PROVIDERS_MAP:
             return
         
         description = description.strip()
 
-        # properties
-        properties = ""
-        property_of_list = []
-        for arg in arguments:
-            if not arg['property_of']:
-                properties += "`{ret}` - {desc}\n\n".format(
-                    ret=tf_to_cfn_str(arg['name']),
-                    desc=arg['description']
-                )
-            else:
-                property_of_list.append(arg['property_of'])
-
-        used_property_of_list = []
-        for property_of in property_of_list:
-            if property_of not in used_property_of_list:
-                used_property_of_list.append(property_of)
-                properties += "### {} Properties\n\n".format(tf_to_cfn_str(property_of))
-                for arg in arguments:
-                    if arg['property_of'] == property_of:
-                        properties += "`{ret}` - {desc}\n\n".format(
-                            ret=tf_to_cfn_str(arg['name']),
-                            desc=arg['description']
-                        )
-
-        # return values
-        return_values = ""
-        if attributes:
-            return_values = "## Return Values\n\n### Fn::GetAtt\n\n"
-            for attr in attributes:
-                return_values += "`{ret}` - {desc}\n\n".format(
-                    ret=tf_to_cfn_str(attr),
-                    desc=attributes[attr]
-                )
-        return_values = return_values.replace("Argument Reference","Properties")
-
-        # output
-        output = "# {cfn_type}\n\n{description}\n\n## Properties\n\n{properties}\n{return_values}## See Also\n\n* [{provider_name}_{split_provider_name_joined}](https://www.terraform.io/docs/providers/{provider_name}/r/{split_provider_name_joined}.html) in the _Terraform Provider Documentation_".format(
-            properties=properties,
-            provider_name=provider_name,
-            split_provider_name_joined="_".join(split_provider_name),
-            cfn_type=cfn_type,
-            description=description,
-            return_values=return_values
-        )
-
-        for argument_name in argument_names:
-            output = output.replace("`" + argument_name + "`", "`{}`".format(tf_to_cfn_str(argument_name)))
-        
-        output = re.sub(r"(\`%s\_.+\`)" % provider_name, lambda x: "`" + tf_type_to_cfn_type(x.group(1), provider_name), output) # TODO - why only one backtick used?!?
-
-        '''
-        try:
-            os.makedirs("../docs/providers/{}/".format(provider_name))
-        except:
-            pass
-        with open("../docs/providers/{}/{}.md".format(provider_name, tf_to_cfn_str("_".join(split_provider_name))), 'w') as resource_readme:
-            resource_readme.write(output)
-        '''
+        return {
+            'resource_type': resource_type,
+            'description': description,
+            'example': example,
+            'arguments': arguments,
+            'attributes': attributes
+        }
+    
+    return None
 
 def generate_docs(tempdir, provider_type, tfschema):
     resources_path = (tempdir / provider_type / "website" / "docs" / "r").absolute()
     index_path = (tempdir / provider_type / "website" / "docs" / "index.html.markdown").absolute()
     provider_reference_path = (tempdir / provider_type / "website" / "docs" / "provider_reference.html.markdown").absolute()
     provider_readme_items = []
+    ret = {}
 
     if os.path.isdir(resources_path) and provider_type in PROVIDERS_MAP:
         
@@ -671,16 +639,16 @@ def generate_docs(tempdir, provider_type, tfschema):
             # iterate provider resources
             provider_readme.write("## Supported Resources\n\n")
             provider_readme_items = []
-
-            '''
             files = [f for f in os.listdir(resources_path) if os.path.isfile(os.path.join(resources_path, f))]
             for filename in files:
                 with open(os.path.join(resources_path, filename), 'r') as f:
                     #print(filename)
                     resource_file_contents = f.read()
-                    process_resource_docs(provider_type, resource_file_contents, provider_readme_items)
-            '''
+                    resource_properties = process_resource_docs(provider_type, resource_file_contents, provider_readme_items)
+                    if resource_properties:
+                        ret[resource_properties['resource_type']] = resource_properties
             
+            # provider index
             for k,v in tfschema['provider_schemas'][provider_type]['resource_schemas'].items():
                 split_provider_name = k.split("_")
                 split_provider_name.pop(0)
@@ -700,6 +668,8 @@ def generate_docs(tempdir, provider_type, tfschema):
             provider_readme_items = list(set(provider_readme_items))
             provider_readme_items.sort()
             provider_readme.write("\n".join(provider_readme_items))
+
+    return ret
 
 def main():
     if sys.argv[1] == "all":
