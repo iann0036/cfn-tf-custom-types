@@ -1,6 +1,8 @@
 # Terraform Custom Types
 
-> Deploy over 2,000 new resource types with CloudFormation custom types.
+[![Resource Count](https://img.shields.io/badge/resource%20count-3098-green.svg)](docs/README.md)
+
+> Deploy over 3,000 new resource types with CloudFormation custom types.
 
 <img src="https://github.com/iann0036/cfn-tf-custom-types/raw/master/assets/screen1.png" width="536" height="417">
 
