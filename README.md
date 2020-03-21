@@ -2,7 +2,7 @@
 
 > Deploy over 2,000 new resource types with CloudFormation custom types.
 
-<img src="https://github.com/iann0036/cfn-tf-custom-types/raw/master/assets/screen1.png" width="558" height="491">
+<img src="https://github.com/iann0036/cfn-tf-custom-types/raw/master/assets/screen1.png" width="536" height="417">
 
 :exclamation: **CAUTION:** This project is currently in beta stages. Some resources may not work as expected. Please [report these](https://github.com/iann0036/cfn-tf-custom-types/issues) if you find them.
 
