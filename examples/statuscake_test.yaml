@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: "Example that deploys a StatusCake test"
+
+Resources:
+
+    myTest:
+        Type: "Terraform::StatusCake::Test"
+        Properties:
+            WebsiteName: "google.com"
+            WebsiteUrl: "www.google.com"
+            TestType: "HTTP"
+            CheckRate: 300
+
+Outputs:
+
+    TestId:
+        Description: "The unique ID of the test"
+        Value: !GetAtt "myTest.TestId"

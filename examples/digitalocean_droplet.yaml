@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: "Example that deploys a DigitalOcean droplet"
+
+Resources:
+
+    myDroplet:
+        Type: "Terraform::DigitalOcean::Droplet"
+        Properties:
+            Image: "ubuntu-18-04-x64"
+            Name: "mydroplet1"
+            Region: "sgp1"
+            Size: "s-1vcpu-1gb"
+
+Outputs:
+
+    Ipv4Address:
+        Description: "The IP address of the droplet"
+        Value: !GetAtt "myDroplet.Ipv4Address"

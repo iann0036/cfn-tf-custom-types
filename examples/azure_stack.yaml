@@ -1,0 +1,71 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: "Example that deploys an Azure network and virtual machine"
+
+Resources:
+
+    myAzureResourceGroup:
+        Type: Terraform::AzureRM::ResourceGroup
+        Properties:
+            Name: demo
+            Location: westus
+
+    myAzureVNet:
+        DependsOn:
+          - myAzureResourceGroup
+        Type: Terraform::AzureRM::VirtualNetwork
+        Properties:
+            Name: myAzureVNet
+            ResourceGroupName: demo
+            AddressSpace:
+              - '10.0.0.0/16'
+            Location: westus
+
+    myAzureSubnet:
+        Type: Terraform::AzureRM::Subnet
+        Properties:
+            Name: myAzureSubnet
+            ResourceGroupName: demo
+            VirtualNetworkName: !GetAtt myAzureVNet.Name
+            AddressPrefix: '10.0.0.0/24'
+
+    myAzureNetworkInterface:
+        Type: Terraform::AzureRM::NetworkInterface
+        Properties:
+            Name: myAzureNIC
+            ResourceGroupName: demo
+            Location: westus
+            IpConfiguration:
+              - Name: myIpConfig
+                SubnetId: !GetAtt myAzureSubnet.Id
+                PrivateIpAddressAllocation: Dynamic
+
+    myAzureVm:
+        Type: Terraform::AzureRM::VirtualMachine
+        Properties:
+            Name: myVM
+            ResourceGroupName: demo
+            Location: westus
+            OsProfile:
+                ComputerName: my-box
+                AdminUsername: myadminusername
+                AdminPassword: Super$ecret!!
+            VmSize: Standard_DS1_v2
+            StorageImageReference:
+                Publisher: Canonical
+                Offer: UbuntuServer
+                Sku: 16.04.0-LTS
+                Version: latest
+            NetworkInterfaceIds:
+                - !GetAtt myAzureNetworkInterface.Id
+            StorageOsDisk:
+                Name: root
+                CreateOption: FromImage
+            OsProfileLinuxConfig:
+                DisablePasswordAuthentication: false
+
+Outputs:
+
+    Ipv4Address:
+        Description: The private IP address of the VM
+        Value: !GetAtt myAzureNetworkInterface.PrivateIpAddress
