@@ -1,0 +1,170 @@
+{
+    "typeName": "Terraform::AWS::DocdbClusterInstance",
+    "description": "CloudFormation equivalent of aws_docdb_cluster_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyImmediately": {
+            "type": "boolean"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoMinorVersionUpgrade": {
+            "type": "boolean"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "CaCertIdentifier": {
+            "type": "string"
+        },
+        "ClusterIdentifier": {
+            "type": "string"
+        },
+        "DbSubnetGroupName": {
+            "type": "string"
+        },
+        "DbiResourceId": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identifier": {
+            "type": "string"
+        },
+        "IdentifierPrefix": {
+            "type": "string"
+        },
+        "InstanceClass": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PreferredBackupWindow": {
+            "type": "string"
+        },
+        "PreferredMaintenanceWindow": {
+            "type": "string"
+        },
+        "PromotionTier": {
+            "type": "number"
+        },
+        "PubliclyAccessible": {
+            "type": "boolean"
+        },
+        "StorageEncrypted": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Writer": {
+            "type": "boolean"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterIdentifier",
+        "InstanceClass"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DbSubnetGroupName",
+        "/properties/DbiResourceId",
+        "/properties/Endpoint",
+        "/properties/EngineVersion",
+        "/properties/KmsKeyId",
+        "/properties/Port",
+        "/properties/PreferredBackupWindow",
+        "/properties/PubliclyAccessible",
+        "/properties/StorageEncrypted",
+        "/properties/Writer"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

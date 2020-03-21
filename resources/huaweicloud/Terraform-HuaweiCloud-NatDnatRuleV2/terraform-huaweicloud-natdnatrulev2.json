@@ -1,0 +1,94 @@
+{
+    "typeName": "Terraform::HuaweiCloud::NatDnatRuleV2",
+    "description": "CloudFormation equivalent of huaweicloud_nat_dnat_rule_v2",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "ExternalServicePort": {
+            "type": "number"
+        },
+        "FloatingIpAddress": {
+            "type": "string"
+        },
+        "FloatingIpId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalServicePort": {
+            "type": "number"
+        },
+        "NatGatewayId": {
+            "type": "string"
+        },
+        "PortId": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TenantId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExternalServicePort",
+        "FloatingIpId",
+        "InternalServicePort",
+        "NatGatewayId",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/FloatingIpAddress",
+        "/properties/Status",
+        "/properties/TenantId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

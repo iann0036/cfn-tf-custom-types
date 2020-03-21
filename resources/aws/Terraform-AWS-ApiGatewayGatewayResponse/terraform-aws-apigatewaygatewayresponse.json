@@ -1,0 +1,102 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayGatewayResponse",
+    "description": "CloudFormation equivalent of aws_api_gateway_gateway_response",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResponseParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ResponseTemplates": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ResponseType": {
+            "type": "string"
+        },
+        "RestApiId": {
+            "type": "string"
+        },
+        "StatusCode": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ResponseType",
+        "RestApiId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

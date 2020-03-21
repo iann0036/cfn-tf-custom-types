@@ -1,0 +1,146 @@
+{
+    "typeName": "Terraform::AWS::KmsGrant",
+    "description": "CloudFormation equivalent of aws_kms_grant",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Constraints": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EncryptionContextEquals": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "EncryptionContextSubset": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GrantCreationTokens": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "GrantId": {
+            "type": "string"
+        },
+        "GrantToken": {
+            "type": "string"
+        },
+        "GranteePrincipal": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Operations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RetireOnDelete": {
+            "type": "boolean"
+        },
+        "RetiringPrincipal": {
+            "type": "string"
+        },
+        "Constraints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Constraints"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GranteePrincipal",
+        "KeyId",
+        "Operations"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/GrantId",
+        "/properties/GrantToken"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

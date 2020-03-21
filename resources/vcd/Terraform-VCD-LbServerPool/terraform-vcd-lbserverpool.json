@@ -1,0 +1,128 @@
+{
+    "typeName": "Terraform::VCD::LbServerPool",
+    "description": "CloudFormation equivalent of vcd_lb_server_pool",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Member": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MaxConnections": {
+                    "type": "number"
+                },
+                "MinConnections": {
+                    "type": "number"
+                },
+                "MonitorPort": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Condition",
+                "IpAddress",
+                "MonitorPort",
+                "Name",
+                "Port",
+                "Weight"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Algorithm": {
+            "type": "string"
+        },
+        "AlgorithmParameters": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EdgeGateway": {
+            "type": "string"
+        },
+        "EnableTransparency": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MonitorId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "Vdc": {
+            "type": "string"
+        },
+        "Member": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Member"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Algorithm",
+        "EdgeGateway",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

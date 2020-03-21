@@ -1,0 +1,222 @@
+{
+    "typeName": "Terraform::NS1::Record",
+    "description": "CloudFormation equivalent of ns1_record",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Answers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Answer": {
+                    "type": "string"
+                },
+                "Meta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Filters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "Filter": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Filter"
+            ]
+        },
+        "Regions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Meta": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Link": {
+            "type": "string"
+        },
+        "Meta": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ShortAnswers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Ttl": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UseClientSubnet": {
+            "type": "boolean"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "Answers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Answers"
+            }
+        },
+        "Filters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Filters"
+            }
+        },
+        "Regions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Regions"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "Type",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

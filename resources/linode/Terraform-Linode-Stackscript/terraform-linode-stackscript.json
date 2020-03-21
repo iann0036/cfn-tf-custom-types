@@ -1,0 +1,130 @@
+{
+    "typeName": "Terraform::Linode::Stackscript",
+    "description": "CloudFormation equivalent of linode_stackscript",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "DeploymentsActive": {
+            "type": "number"
+        },
+        "DeploymentsTotal": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Images": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IsPublic": {
+            "type": "boolean"
+        },
+        "Label": {
+            "type": "string"
+        },
+        "RevNote": {
+            "type": "string"
+        },
+        "Script": {
+            "type": "string"
+        },
+        "Updated": {
+            "type": "string"
+        },
+        "UserDefinedFields": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Default": {
+                        "type": "string"
+                    },
+                    "Example": {
+                        "type": "string"
+                    },
+                    "Label": {
+                        "type": "string"
+                    },
+                    "ManyOf": {
+                        "type": "string"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "OneOf": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "UserGravatarId": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Images",
+        "Label",
+        "Script"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Created",
+        "/properties/DeploymentsActive",
+        "/properties/DeploymentsTotal",
+        "/properties/Updated",
+        "/properties/UserGravatarId",
+        "/properties/Username"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

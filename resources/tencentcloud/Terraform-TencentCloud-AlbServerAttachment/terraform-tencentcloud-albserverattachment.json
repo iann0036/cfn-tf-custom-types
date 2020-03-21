@@ -1,0 +1,96 @@
+{
+    "typeName": "Terraform::TencentCloud::AlbServerAttachment",
+    "description": "CloudFormation equivalent of tencentcloud_alb_server_attachment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Backends": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceId": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "InstanceId",
+                "Port"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerId": {
+            "type": "string"
+        },
+        "LoadbalancerId": {
+            "type": "string"
+        },
+        "LocationId": {
+            "type": "string"
+        },
+        "ProtocolType": {
+            "type": "string"
+        },
+        "Backends": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Backends"
+            },
+            "maxItems": 100,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ListenerId",
+        "LoadbalancerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ProtocolType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

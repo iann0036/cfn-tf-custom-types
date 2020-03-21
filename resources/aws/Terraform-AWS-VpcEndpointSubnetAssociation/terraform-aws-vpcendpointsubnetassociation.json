@@ -1,0 +1,76 @@
+{
+    "typeName": "Terraform::AWS::VpcEndpointSubnetAssociation",
+    "description": "CloudFormation equivalent of aws_vpc_endpoint_subnet_association",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "VpcEndpointId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SubnetId",
+        "VpcEndpointId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

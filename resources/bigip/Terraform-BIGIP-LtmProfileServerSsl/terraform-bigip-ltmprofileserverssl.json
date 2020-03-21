@@ -1,0 +1,177 @@
+{
+    "typeName": "Terraform::BIGIP::LtmProfileServerSsl",
+    "description": "CloudFormation equivalent of bigip_ltm_profile_server_ssl",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertTimeout": {
+            "type": "string"
+        },
+        "Authenticate": {
+            "type": "string"
+        },
+        "AuthenticateDepth": {
+            "type": "number"
+        },
+        "CaFile": {
+            "type": "string"
+        },
+        "CacheSize": {
+            "type": "number"
+        },
+        "CacheTimeout": {
+            "type": "number"
+        },
+        "Cert": {
+            "type": "string"
+        },
+        "Chain": {
+            "type": "string"
+        },
+        "Ciphers": {
+            "type": "string"
+        },
+        "DefaultsFrom": {
+            "type": "string"
+        },
+        "ExpireCertResponseControl": {
+            "type": "string"
+        },
+        "FullPath": {
+            "type": "string"
+        },
+        "Generation": {
+            "type": "number"
+        },
+        "GenericAlert": {
+            "type": "string"
+        },
+        "HandshakeTimeout": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "ModSslMethods": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Partition": {
+            "type": "string"
+        },
+        "Passphrase": {
+            "type": "string"
+        },
+        "PeerCertMode": {
+            "type": "string"
+        },
+        "ProxySsl": {
+            "type": "string"
+        },
+        "RenegotiatePeriod": {
+            "type": "string"
+        },
+        "RenegotiateSize": {
+            "type": "string"
+        },
+        "Renegotiation": {
+            "type": "string"
+        },
+        "RetainCertificate": {
+            "type": "string"
+        },
+        "SecureRenegotiation": {
+            "type": "string"
+        },
+        "ServerName": {
+            "type": "string"
+        },
+        "SessionMirroring": {
+            "type": "string"
+        },
+        "SessionTicket": {
+            "type": "string"
+        },
+        "SniDefault": {
+            "type": "string"
+        },
+        "SniRequire": {
+            "type": "string"
+        },
+        "SslForwardProxy": {
+            "type": "string"
+        },
+        "SslForwardProxyBypass": {
+            "type": "string"
+        },
+        "SslSignHash": {
+            "type": "string"
+        },
+        "StrictResume": {
+            "type": "string"
+        },
+        "TmOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UncleanShutdown": {
+            "type": "string"
+        },
+        "UntrustedCertResponseControl": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

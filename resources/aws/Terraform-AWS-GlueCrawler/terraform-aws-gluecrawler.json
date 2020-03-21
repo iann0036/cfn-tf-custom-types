@@ -1,0 +1,233 @@
+{
+    "typeName": "Terraform::AWS::GlueCrawler",
+    "description": "CloudFormation equivalent of aws_glue_crawler",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CatalogTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DatabaseName": {
+                    "type": "string"
+                },
+                "Tables": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "DatabaseName",
+                "Tables"
+            ]
+        },
+        "DynamodbTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "JdbcTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionName": {
+                    "type": "string"
+                },
+                "Exclusions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ConnectionName",
+                "Path"
+            ]
+        },
+        "S3Target": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exclusions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "SchemaChangePolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteBehavior": {
+                    "type": "string"
+                },
+                "UpdateBehavior": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Classifiers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Configuration": {
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "Schedule": {
+            "type": "string"
+        },
+        "SecurityConfiguration": {
+            "type": "string"
+        },
+        "TablePrefix": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "CatalogTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CatalogTarget"
+            }
+        },
+        "DynamodbTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DynamodbTarget"
+            }
+        },
+        "JdbcTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JdbcTarget"
+            }
+        },
+        "S3Target": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3Target"
+            }
+        },
+        "SchemaChangePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SchemaChangePolicy"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatabaseName",
+        "Name",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

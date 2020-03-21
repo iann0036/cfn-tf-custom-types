@@ -1,0 +1,107 @@
+{
+    "typeName": "Terraform::AWS::Ec2TransitGateway",
+    "description": "CloudFormation equivalent of aws_ec2_transit_gateway",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AmazonSideAsn": {
+            "type": "number"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AssociationDefaultRouteTableId": {
+            "type": "string"
+        },
+        "AutoAcceptSharedAttachments": {
+            "type": "string"
+        },
+        "DefaultRouteTableAssociation": {
+            "type": "string"
+        },
+        "DefaultRouteTablePropagation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DnsSupport": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "PropagationDefaultRouteTableId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "VpnEcmpSupport": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/AssociationDefaultRouteTableId",
+        "/properties/OwnerId",
+        "/properties/PropagationDefaultRouteTableId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

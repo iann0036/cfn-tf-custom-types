@@ -1,0 +1,141 @@
+{
+    "typeName": "Terraform::Panos::BgpPeer",
+    "description": "CloudFormation equivalent of panos_bgp_peer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressFamilyType": {
+            "type": "string"
+        },
+        "AllowIncomingConnections": {
+            "type": "boolean"
+        },
+        "AllowOutgoingConnections": {
+            "type": "boolean"
+        },
+        "AuthProfile": {
+            "type": "string"
+        },
+        "BfdProfile": {
+            "type": "string"
+        },
+        "BgpPeerGroup": {
+            "type": "string"
+        },
+        "Enable": {
+            "type": "boolean"
+        },
+        "EnableMpBgp": {
+            "type": "boolean"
+        },
+        "EnableSenderSideLoopDetection": {
+            "type": "boolean"
+        },
+        "HoldTime": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleHoldTime": {
+            "type": "number"
+        },
+        "IncomingConnectionsRemotePort": {
+            "type": "number"
+        },
+        "KeepAliveInterval": {
+            "type": "number"
+        },
+        "LocalAddressInterface": {
+            "type": "string"
+        },
+        "LocalAddressIp": {
+            "type": "string"
+        },
+        "MaxPrefixes": {
+            "type": "string"
+        },
+        "MinRouteAdvertisementInterval": {
+            "type": "number"
+        },
+        "MultiHop": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OpenDelayTime": {
+            "type": "number"
+        },
+        "OutgoingConnectionsLocalPort": {
+            "type": "number"
+        },
+        "PeerAddressIp": {
+            "type": "string"
+        },
+        "PeerAs": {
+            "type": "string"
+        },
+        "PeeringType": {
+            "type": "string"
+        },
+        "ReflectorClient": {
+            "type": "string"
+        },
+        "SubsequentAddressFamilyMulticast": {
+            "type": "boolean"
+        },
+        "SubsequentAddressFamilyUnicast": {
+            "type": "boolean"
+        },
+        "VirtualRouter": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BgpPeerGroup",
+        "LocalAddressInterface",
+        "Name",
+        "PeerAddressIp",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

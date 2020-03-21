@@ -1,0 +1,146 @@
+{
+    "typeName": "Terraform::AWS::WafregionalByteMatchSet",
+    "description": "CloudFormation equivalent of aws_wafregional_byte_match_set",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ByteMatchTuple": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PositionalConstraint": {
+                    "type": "string"
+                },
+                "TargetString": {
+                    "type": "string"
+                },
+                "TextTransformation": {
+                    "type": "string"
+                },
+                "FieldToMatch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FieldToMatch"
+                    }
+                }
+            },
+            "required": [
+                "PositionalConstraint",
+                "TextTransformation"
+            ]
+        },
+        "ByteMatchTuples": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PositionalConstraint": {
+                    "type": "string"
+                },
+                "TargetString": {
+                    "type": "string"
+                },
+                "TextTransformation": {
+                    "type": "string"
+                },
+                "FieldToMatch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FieldToMatch"
+                    }
+                }
+            },
+            "required": [
+                "PositionalConstraint",
+                "TextTransformation"
+            ]
+        },
+        "FieldToMatch": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Data": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ByteMatchTuple": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ByteMatchTuple"
+            }
+        },
+        "ByteMatchTuples": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ByteMatchTuples"
+            }
+        },
+        "FieldToMatch": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FieldToMatch"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

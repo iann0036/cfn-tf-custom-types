@@ -1,0 +1,110 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayMethodSettings",
+    "description": "CloudFormation equivalent of aws_api_gateway_method_settings",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Settings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheDataEncrypted": {
+                    "type": "boolean"
+                },
+                "CacheTtlInSeconds": {
+                    "type": "number"
+                },
+                "CachingEnabled": {
+                    "type": "boolean"
+                },
+                "DataTraceEnabled": {
+                    "type": "boolean"
+                },
+                "LoggingLevel": {
+                    "type": "string"
+                },
+                "MetricsEnabled": {
+                    "type": "boolean"
+                },
+                "RequireAuthorizationForCacheControl": {
+                    "type": "boolean"
+                },
+                "ThrottlingBurstLimit": {
+                    "type": "number"
+                },
+                "ThrottlingRateLimit": {
+                    "type": "number"
+                },
+                "UnauthorizedCacheControlHeaderStrategy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MethodPath": {
+            "type": "string"
+        },
+        "RestApiId": {
+            "type": "string"
+        },
+        "StageName": {
+            "type": "string"
+        },
+        "Settings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Settings"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MethodPath",
+        "RestApiId",
+        "StageName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "typeName": "Terraform::OVH::IploadbalancingHttpRouteRule",
+    "description": "CloudFormation equivalent of ovh_iploadbalancing_http_route_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Field": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Match": {
+            "type": "string"
+        },
+        "Negate": {
+            "type": "boolean"
+        },
+        "Pattern": {
+            "type": "string"
+        },
+        "RouteId": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "SubField": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Field",
+        "Match",
+        "RouteId",
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

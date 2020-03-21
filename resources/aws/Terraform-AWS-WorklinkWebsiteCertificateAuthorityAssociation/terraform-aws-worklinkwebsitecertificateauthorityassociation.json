@@ -1,0 +1,66 @@
+{
+    "typeName": "Terraform::AWS::WorklinkWebsiteCertificateAuthorityAssociation",
+    "description": "CloudFormation equivalent of aws_worklink_website_certificate_authority_association",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "FleetArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "WebsiteCaId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Certificate",
+        "FleetArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/WebsiteCaId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,174 @@
+{
+    "typeName": "Terraform::UCloud::VpnConnection",
+    "description": "CloudFormation equivalent of ucloud_vpn_connection",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "IkeConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationAlgorithm": {
+                    "type": "string"
+                },
+                "DhGroup": {
+                    "type": "string"
+                },
+                "EncryptionAlgorithm": {
+                    "type": "string"
+                },
+                "ExchangeMode": {
+                    "type": "string"
+                },
+                "IkeVersion": {
+                    "type": "string"
+                },
+                "LocalId": {
+                    "type": "string"
+                },
+                "PreSharedKey": {
+                    "type": "string"
+                },
+                "RemoteId": {
+                    "type": "string"
+                },
+                "SaLifeTime": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "PreSharedKey"
+            ]
+        },
+        "IpsecConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationAlgorithm": {
+                    "type": "string"
+                },
+                "EncryptionAlgorithm": {
+                    "type": "string"
+                },
+                "LocalSubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PfsDhGroup": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "RemoteSubnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SaLifeTime": {
+                    "type": "number"
+                },
+                "SaLifeTimeBytes": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "LocalSubnetIds",
+                "RemoteSubnets"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "CustomerGatewayId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Remark": {
+            "type": "string"
+        },
+        "Tag": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VpnGatewayId": {
+            "type": "string"
+        },
+        "IkeConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IkeConfig"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "IpsecConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpsecConfig"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CustomerGatewayId",
+        "VpcId",
+        "VpnGatewayId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

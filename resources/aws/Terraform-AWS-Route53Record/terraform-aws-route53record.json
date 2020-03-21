@@ -1,0 +1,197 @@
+{
+    "typeName": "Terraform::AWS::Route53Record",
+    "description": "CloudFormation equivalent of aws_route53_record",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Alias": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EvaluateTargetHealth": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ZoneId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EvaluateTargetHealth",
+                "Name",
+                "ZoneId"
+            ]
+        },
+        "FailoverRoutingPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "GeolocationRoutingPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Continent": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "Subdivision": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LatencyRoutingPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Region"
+            ]
+        },
+        "WeightedRoutingPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Weight"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowOverwrite": {
+            "type": "boolean"
+        },
+        "Fqdn": {
+            "type": "string"
+        },
+        "HealthCheckId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MultivalueAnswerRoutingPolicy": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Records": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SetIdentifier": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "Alias": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Alias"
+            }
+        },
+        "FailoverRoutingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FailoverRoutingPolicy"
+            }
+        },
+        "GeolocationRoutingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GeolocationRoutingPolicy"
+            }
+        },
+        "LatencyRoutingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LatencyRoutingPolicy"
+            }
+        },
+        "WeightedRoutingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WeightedRoutingPolicy"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fqdn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,206 @@
+{
+    "typeName": "Terraform::CloudScale::Server",
+    "description": "CloudFormation equivalent of cloudscale_server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Interfaces": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NetworkUuid": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowStoppingForUpdate": {
+            "type": "boolean"
+        },
+        "BulkVolumeSizeGb": {
+            "type": "number"
+        },
+        "FlavorSlug": {
+            "type": "string"
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageSlug": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PrivateIpv4Address": {
+            "type": "string"
+        },
+        "PublicIpv4Address": {
+            "type": "string"
+        },
+        "PublicIpv6Address": {
+            "type": "string"
+        },
+        "ServerGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ServerGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Href": {
+                        "type": "string"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Uuid": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "SshFingerprints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SshHostKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SshKeys": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "UseIpv6": {
+            "type": "boolean"
+        },
+        "UsePrivateNetwork": {
+            "type": "boolean"
+        },
+        "UsePublicNetwork": {
+            "type": "boolean"
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "VolumeSizeGb": {
+            "type": "number"
+        },
+        "Volumes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "DevicePath": {
+                        "type": "string"
+                    },
+                    "SizeGb": {
+                        "type": "number"
+                    },
+                    "Type": {
+                        "type": "string"
+                    },
+                    "Uuid": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "ZoneSlug": {
+            "type": "string"
+        },
+        "Interfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Interfaces"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FlavorSlug",
+        "ImageSlug",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Href",
+        "/properties/PrivateIpv4Address",
+        "/properties/PublicIpv4Address",
+        "/properties/PublicIpv6Address",
+        "/properties/ServerGroups",
+        "/properties/SshFingerprints",
+        "/properties/SshHostKeys",
+        "/properties/Volumes"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

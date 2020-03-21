@@ -1,0 +1,59 @@
+{
+    "typeName": "Terraform::AWS::Route53QueryLog",
+    "description": "CloudFormation equivalent of aws_route53_query_log",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloudwatchLogGroupArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CloudwatchLogGroupArn",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,95 @@
+{
+    "typeName": "Terraform::CloudStack::LoadbalancerRule",
+    "description": "CloudFormation equivalent of cloudstack_loadbalancer_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Algorithm": {
+            "type": "string"
+        },
+        "CertificateId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddressId": {
+            "type": "string"
+        },
+        "MemberIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkId": {
+            "type": "string"
+        },
+        "PrivatePort": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "PublicPort": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Algorithm",
+        "IpAddressId",
+        "MemberIds",
+        "Name",
+        "PrivatePort",
+        "PublicPort"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,243 @@
+{
+    "typeName": "Terraform::AWS::GameliftFleet",
+    "description": "CloudFormation equivalent of aws_gamelift_fleet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Ec2InboundPermission": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromPort": {
+                    "type": "number"
+                },
+                "IpRange": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "FromPort",
+                "IpRange",
+                "Protocol",
+                "ToPort"
+            ]
+        },
+        "ResourceCreationLimitPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NewGameSessionsPerCreator": {
+                    "type": "number"
+                },
+                "PolicyPeriodInMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RuntimeConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GameSessionActivationTimeoutSeconds": {
+                    "type": "number"
+                },
+                "MaxConcurrentGameSessionActivations": {
+                    "type": "number"
+                },
+                "ServerProcess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServerProcess"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ServerProcess": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConcurrentExecutions": {
+                    "type": "number"
+                },
+                "LaunchPath": {
+                    "type": "string"
+                },
+                "Parameters": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ConcurrentExecutions",
+                "LaunchPath"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BuildId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Ec2InstanceType": {
+            "type": "string"
+        },
+        "FleetType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceRoleArn": {
+            "type": "string"
+        },
+        "LogPaths": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MetricGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NewGameSessionProtectionPolicy": {
+            "type": "string"
+        },
+        "OperatingSystem": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Ec2InboundPermission": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ec2InboundPermission"
+            },
+            "maxItems": 50
+        },
+        "ResourceCreationLimitPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceCreationLimitPolicy"
+            },
+            "maxItems": 1
+        },
+        "RuntimeConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RuntimeConfiguration"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "ServerProcess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerProcess"
+            },
+            "maxItems": 50
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BuildId",
+        "Ec2InstanceType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/LogPaths",
+        "/properties/OperatingSystem"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,127 @@
+{
+    "typeName": "Terraform::AWS::DefaultRouteTable",
+    "description": "CloudFormation equivalent of aws_default_route_table",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultRouteTableId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "PropagatingVgws": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Route": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "CidrBlock": {
+                        "type": "string"
+                    },
+                    "EgressOnlyGatewayId": {
+                        "type": "string"
+                    },
+                    "GatewayId": {
+                        "type": "string"
+                    },
+                    "InstanceId": {
+                        "type": "string"
+                    },
+                    "Ipv6CidrBlock": {
+                        "type": "string"
+                    },
+                    "NatGatewayId": {
+                        "type": "string"
+                    },
+                    "NetworkInterfaceId": {
+                        "type": "string"
+                    },
+                    "TransitGatewayId": {
+                        "type": "string"
+                    },
+                    "VpcPeeringConnectionId": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultRouteTableId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/OwnerId",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

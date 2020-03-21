@@ -1,0 +1,156 @@
+{
+    "typeName": "Terraform::Google::ComputeGlobalForwardingRule",
+    "description": "CloudFormation equivalent of google_compute_global_forwarding_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "MetadataFilters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterMatchCriteria": {
+                    "type": "string"
+                },
+                "FilterLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterLabels"
+                    }
+                }
+            },
+            "required": [
+                "FilterMatchCriteria"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "FilterLabels": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "IpProtocol": {
+            "type": "string"
+        },
+        "IpVersion": {
+            "type": "string"
+        },
+        "LoadBalancingScheme": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PortRange": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Target": {
+            "type": "string"
+        },
+        "MetadataFilters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataFilters"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "FilterLabels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterLabels"
+            },
+            "maxItems": 64,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Target"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

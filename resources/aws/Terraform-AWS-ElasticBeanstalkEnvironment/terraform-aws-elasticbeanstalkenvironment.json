@@ -1,0 +1,220 @@
+{
+    "typeName": "Terraform::AWS::ElasticBeanstalkEnvironment",
+    "description": "CloudFormation equivalent of aws_elastic_beanstalk_environment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Setting": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Resource": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Namespace",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Namespace": {
+                        "type": "string"
+                    },
+                    "Resource": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Application": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoscalingGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Cname": {
+            "type": "string"
+        },
+        "CnamePrefix": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EndpointUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instances": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LaunchConfigurations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LoadBalancers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PlatformArn": {
+            "type": "string"
+        },
+        "PollInterval": {
+            "type": "string"
+        },
+        "Queues": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SolutionStackName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "Tier": {
+            "type": "string"
+        },
+        "Triggers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VersionLabel": {
+            "type": "string"
+        },
+        "WaitForReadyTimeout": {
+            "type": "string"
+        },
+        "Setting": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Setting"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Application",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllSettings",
+        "/properties/Arn",
+        "/properties/AutoscalingGroups",
+        "/properties/Cname",
+        "/properties/EndpointUrl",
+        "/properties/Instances",
+        "/properties/LaunchConfigurations",
+        "/properties/LoadBalancers",
+        "/properties/Queues",
+        "/properties/Triggers"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

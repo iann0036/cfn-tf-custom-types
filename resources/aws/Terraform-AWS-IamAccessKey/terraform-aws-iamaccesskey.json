@@ -1,0 +1,81 @@
+{
+    "typeName": "Terraform::AWS::IamAccessKey",
+    "description": "CloudFormation equivalent of aws_iam_access_key",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EncryptedSecret": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyFingerprint": {
+            "type": "string"
+        },
+        "PgpKey": {
+            "type": "string"
+        },
+        "Secret": {
+            "type": "string"
+        },
+        "SesSmtpPassword": {
+            "type": "string"
+        },
+        "SesSmtpPasswordV4": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "User": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "User"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EncryptedSecret",
+        "/properties/KeyFingerprint",
+        "/properties/Secret",
+        "/properties/SesSmtpPassword",
+        "/properties/SesSmtpPasswordV4"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

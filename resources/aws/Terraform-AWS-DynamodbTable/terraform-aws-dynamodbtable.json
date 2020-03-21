@@ -1,0 +1,296 @@
+{
+    "typeName": "Terraform::AWS::DynamodbTable",
+    "description": "CloudFormation equivalent of aws_dynamodb_table",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Attribute": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        },
+        "GlobalSecondaryIndex": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HashKey": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NonKeyAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ProjectionType": {
+                    "type": "string"
+                },
+                "RangeKey": {
+                    "type": "string"
+                },
+                "ReadCapacity": {
+                    "type": "number"
+                },
+                "WriteCapacity": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "HashKey",
+                "Name",
+                "ProjectionType"
+            ]
+        },
+        "LocalSecondaryIndex": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "NonKeyAttributes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ProjectionType": {
+                    "type": "string"
+                },
+                "RangeKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "ProjectionType",
+                "RangeKey"
+            ]
+        },
+        "PointInTimeRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "ServerSideEncryption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ttl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttributeName": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "AttributeName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BillingMode": {
+            "type": "string"
+        },
+        "HashKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RangeKey": {
+            "type": "string"
+        },
+        "ReadCapacity": {
+            "type": "number"
+        },
+        "StreamArn": {
+            "type": "string"
+        },
+        "StreamEnabled": {
+            "type": "boolean"
+        },
+        "StreamLabel": {
+            "type": "string"
+        },
+        "StreamViewType": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "WriteCapacity": {
+            "type": "number"
+        },
+        "Attribute": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Attribute"
+            },
+            "minItems": 1
+        },
+        "GlobalSecondaryIndex": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/GlobalSecondaryIndex"
+            }
+        },
+        "LocalSecondaryIndex": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LocalSecondaryIndex"
+            }
+        },
+        "PointInTimeRecovery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PointInTimeRecovery"
+            },
+            "maxItems": 1
+        },
+        "ServerSideEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerSideEncryption"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "Ttl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ttl"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HashKey",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/StreamArn",
+        "/properties/StreamLabel"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

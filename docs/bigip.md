@@ -1,0 +1,47 @@
+# F5 BIG-IP Provider
+
+## Configuration
+
+No configuration is required for this provider.
+
+## Supported Resources
+
+* [Terraform::BIGIP::As3](../resources/bigip/Terraform-BIGIP-As3/docs/README.md)
+* [Terraform::BIGIP::CmDevice](../resources/bigip/Terraform-BIGIP-CmDevice/docs/README.md)
+* [Terraform::BIGIP::CmDevicegroup](../resources/bigip/Terraform-BIGIP-CmDevicegroup/docs/README.md)
+* [Terraform::BIGIP::Do](../resources/bigip/Terraform-BIGIP-Do/docs/README.md)
+* [Terraform::BIGIP::LtmDatagroup](../resources/bigip/Terraform-BIGIP-LtmDatagroup/docs/README.md)
+* [Terraform::BIGIP::LtmIrule](../resources/bigip/Terraform-BIGIP-LtmIrule/docs/README.md)
+* [Terraform::BIGIP::LtmMonitor](../resources/bigip/Terraform-BIGIP-LtmMonitor/docs/README.md)
+* [Terraform::BIGIP::LtmNode](../resources/bigip/Terraform-BIGIP-LtmNode/docs/README.md)
+* [Terraform::BIGIP::LtmPersistenceProfileCookie](../resources/bigip/Terraform-BIGIP-LtmPersistenceProfileCookie/docs/README.md)
+* [Terraform::BIGIP::LtmPersistenceProfileDstaddr](../resources/bigip/Terraform-BIGIP-LtmPersistenceProfileDstaddr/docs/README.md)
+* [Terraform::BIGIP::LtmPersistenceProfileSrcaddr](../resources/bigip/Terraform-BIGIP-LtmPersistenceProfileSrcaddr/docs/README.md)
+* [Terraform::BIGIP::LtmPersistenceProfileSsl](../resources/bigip/Terraform-BIGIP-LtmPersistenceProfileSsl/docs/README.md)
+* [Terraform::BIGIP::LtmPolicy](../resources/bigip/Terraform-BIGIP-LtmPolicy/docs/README.md)
+* [Terraform::BIGIP::LtmPoolAttachment](../resources/bigip/Terraform-BIGIP-LtmPoolAttachment/docs/README.md)
+* [Terraform::BIGIP::LtmPool](../resources/bigip/Terraform-BIGIP-LtmPool/docs/README.md)
+* [Terraform::BIGIP::LtmProfileClientSsl](../resources/bigip/Terraform-BIGIP-LtmProfileClientSsl/docs/README.md)
+* [Terraform::BIGIP::LtmProfileFasthttp](../resources/bigip/Terraform-BIGIP-LtmProfileFasthttp/docs/README.md)
+* [Terraform::BIGIP::LtmProfileFastl4](../resources/bigip/Terraform-BIGIP-LtmProfileFastl4/docs/README.md)
+* [Terraform::BIGIP::LtmProfileHttp2](../resources/bigip/Terraform-BIGIP-LtmProfileHttp2/docs/README.md)
+* [Terraform::BIGIP::LtmProfileHttp](../resources/bigip/Terraform-BIGIP-LtmProfileHttp/docs/README.md)
+* [Terraform::BIGIP::LtmProfileHttpcompress](../resources/bigip/Terraform-BIGIP-LtmProfileHttpcompress/docs/README.md)
+* [Terraform::BIGIP::LtmProfileOneconnect](../resources/bigip/Terraform-BIGIP-LtmProfileOneconnect/docs/README.md)
+* [Terraform::BIGIP::LtmProfileServerSsl](../resources/bigip/Terraform-BIGIP-LtmProfileServerSsl/docs/README.md)
+* [Terraform::BIGIP::LtmProfileTcp](../resources/bigip/Terraform-BIGIP-LtmProfileTcp/docs/README.md)
+* [Terraform::BIGIP::LtmSnat](../resources/bigip/Terraform-BIGIP-LtmSnat/docs/README.md)
+* [Terraform::BIGIP::LtmSnatpool](../resources/bigip/Terraform-BIGIP-LtmSnatpool/docs/README.md)
+* [Terraform::BIGIP::LtmVirtualAddress](../resources/bigip/Terraform-BIGIP-LtmVirtualAddress/docs/README.md)
+* [Terraform::BIGIP::LtmVirtualServer](../resources/bigip/Terraform-BIGIP-LtmVirtualServer/docs/README.md)
+* [Terraform::BIGIP::NetRoute](../resources/bigip/Terraform-BIGIP-NetRoute/docs/README.md)
+* [Terraform::BIGIP::NetSelfip](../resources/bigip/Terraform-BIGIP-NetSelfip/docs/README.md)
+* [Terraform::BIGIP::NetVlan](../resources/bigip/Terraform-BIGIP-NetVlan/docs/README.md)
+* [Terraform::BIGIP::SslCertificate](../resources/bigip/Terraform-BIGIP-SslCertificate/docs/README.md)
+* [Terraform::BIGIP::SslKey](../resources/bigip/Terraform-BIGIP-SslKey/docs/README.md)
+* [Terraform::BIGIP::SysDns](../resources/bigip/Terraform-BIGIP-SysDns/docs/README.md)
+* [Terraform::BIGIP::SysIapp](../resources/bigip/Terraform-BIGIP-SysIapp/docs/README.md)
+* [Terraform::BIGIP::SysNtp](../resources/bigip/Terraform-BIGIP-SysNtp/docs/README.md)
+* [Terraform::BIGIP::SysProvision](../resources/bigip/Terraform-BIGIP-SysProvision/docs/README.md)
+* [Terraform::BIGIP::SysSnmpTraps](../resources/bigip/Terraform-BIGIP-SysSnmpTraps/docs/README.md)
+* [Terraform::BIGIP::SysSnmp](../resources/bigip/Terraform-BIGIP-SysSnmp/docs/README.md)

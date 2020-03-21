@@ -1,0 +1,95 @@
+{
+    "typeName": "Terraform::VCD::VmInternalDisk",
+    "description": "CloudFormation equivalent of vcd_vm_internal_disk",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowVmReboot": {
+            "type": "boolean"
+        },
+        "BusNumber": {
+            "type": "number"
+        },
+        "BusType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Iops": {
+            "type": "number"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "SizeInMb": {
+            "type": "number"
+        },
+        "StorageProfile": {
+            "type": "string"
+        },
+        "ThinProvisioned": {
+            "type": "boolean"
+        },
+        "UnitNumber": {
+            "type": "number"
+        },
+        "VappName": {
+            "type": "string"
+        },
+        "Vdc": {
+            "type": "string"
+        },
+        "VmName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BusNumber",
+        "BusType",
+        "SizeInMb",
+        "UnitNumber",
+        "VappName",
+        "VmName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ThinProvisioned"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

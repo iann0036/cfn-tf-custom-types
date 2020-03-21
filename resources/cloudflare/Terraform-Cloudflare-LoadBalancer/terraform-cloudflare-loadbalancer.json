@@ -1,0 +1,153 @@
+{
+    "typeName": "Terraform::Cloudflare::LoadBalancer",
+    "description": "CloudFormation equivalent of cloudflare_load_balancer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "PopPools": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PoolIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Pop": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PoolIds",
+                "Pop"
+            ]
+        },
+        "RegionPools": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PoolIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PoolIds",
+                "Region"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedOn": {
+            "type": "string"
+        },
+        "DefaultPoolIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "FallbackPoolId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ModifiedOn": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Proxied": {
+            "type": "boolean"
+        },
+        "SessionAffinity": {
+            "type": "string"
+        },
+        "SteeringPolicy": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "PopPools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PopPools"
+            }
+        },
+        "RegionPools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RegionPools"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultPoolIds",
+        "FallbackPoolId",
+        "Name",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOn",
+        "/properties/ModifiedOn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

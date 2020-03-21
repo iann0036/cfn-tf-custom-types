@@ -1,0 +1,214 @@
+{
+    "typeName": "Terraform::AWS::BatchComputeEnvironment",
+    "description": "CloudFormation equivalent of aws_batch_compute_environment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ComputeResources": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllocationStrategy": {
+                    "type": "string"
+                },
+                "BidPercentage": {
+                    "type": "number"
+                },
+                "DesiredVcpus": {
+                    "type": "number"
+                },
+                "Ec2KeyPair": {
+                    "type": "string"
+                },
+                "ImageId": {
+                    "type": "string"
+                },
+                "InstanceRole": {
+                    "type": "string"
+                },
+                "InstanceType": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxVcpus": {
+                    "type": "number"
+                },
+                "MinVcpus": {
+                    "type": "number"
+                },
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SpotIamFleetRole": {
+                    "type": "string"
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "LaunchTemplate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchTemplate"
+                    }
+                }
+            },
+            "required": [
+                "InstanceRole",
+                "InstanceType",
+                "MaxVcpus",
+                "MinVcpus",
+                "SecurityGroupIds",
+                "Subnets",
+                "Type"
+            ]
+        },
+        "LaunchTemplate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LaunchTemplateId": {
+                    "type": "string"
+                },
+                "LaunchTemplateName": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ComputeEnvironmentName": {
+            "type": "string"
+        },
+        "ComputeEnvironmentNamePrefix": {
+            "type": "string"
+        },
+        "EccClusterArn": {
+            "type": "string"
+        },
+        "EcsClusterArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServiceRole": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StatusReason": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "ComputeResources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ComputeResources"
+            },
+            "maxItems": 1
+        },
+        "LaunchTemplate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LaunchTemplate"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceRole",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/EccClusterArn",
+        "/properties/EcsClusterArn",
+        "/properties/Status",
+        "/properties/StatusReason"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

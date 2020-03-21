@@ -1,0 +1,268 @@
+{
+    "typeName": "Terraform::AWS::Ec2Fleet",
+    "description": "CloudFormation equivalent of aws_ec2_fleet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "LaunchTemplateConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LaunchTemplateSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchTemplateSpecification"
+                    }
+                },
+                "Override": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Override"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OnDemandOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllocationStrategy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SpotOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllocationStrategy": {
+                    "type": "string"
+                },
+                "InstanceInterruptionBehavior": {
+                    "type": "string"
+                },
+                "InstancePoolsToUseCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TargetCapacitySpecification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultTargetCapacityType": {
+                    "type": "string"
+                },
+                "OnDemandTargetCapacity": {
+                    "type": "number"
+                },
+                "SpotTargetCapacity": {
+                    "type": "number"
+                },
+                "TotalTargetCapacity": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DefaultTargetCapacityType",
+                "TotalTargetCapacity"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LaunchTemplateSpecification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LaunchTemplateId": {
+                    "type": "string"
+                },
+                "LaunchTemplateName": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Version"
+            ]
+        },
+        "Override": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "MaxPrice": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "WeightedCapacity": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ExcessCapacityTerminationPolicy": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ReplaceUnhealthyInstances": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TerminateInstances": {
+            "type": "boolean"
+        },
+        "TerminateInstancesWithExpiration": {
+            "type": "boolean"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "LaunchTemplateConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LaunchTemplateConfig"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "OnDemandOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OnDemandOptions"
+            },
+            "maxItems": 1
+        },
+        "SpotOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpotOptions"
+            },
+            "maxItems": 1
+        },
+        "TargetCapacitySpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetCapacitySpecification"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "LaunchTemplateSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LaunchTemplateSpecification"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Override": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Override"
+            },
+            "maxItems": 50
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

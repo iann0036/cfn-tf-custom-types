@@ -1,0 +1,194 @@
+{
+    "typeName": "Terraform::AWS::VpnConnection",
+    "description": "CloudFormation equivalent of aws_vpn_connection",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomerGatewayConfiguration": {
+            "type": "string"
+        },
+        "CustomerGatewayId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Routes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "DestinationCidrBlock": {
+                        "type": "string"
+                    },
+                    "Source": {
+                        "type": "string"
+                    },
+                    "State": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "StaticRoutesOnly": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TransitGatewayAttachmentId": {
+            "type": "string"
+        },
+        "TransitGatewayId": {
+            "type": "string"
+        },
+        "Tunnel1Address": {
+            "type": "string"
+        },
+        "Tunnel1BgpAsn": {
+            "type": "string"
+        },
+        "Tunnel1BgpHoldtime": {
+            "type": "number"
+        },
+        "Tunnel1CgwInsideAddress": {
+            "type": "string"
+        },
+        "Tunnel1InsideCidr": {
+            "type": "string"
+        },
+        "Tunnel1PresharedKey": {
+            "type": "string"
+        },
+        "Tunnel1VgwInsideAddress": {
+            "type": "string"
+        },
+        "Tunnel2Address": {
+            "type": "string"
+        },
+        "Tunnel2BgpAsn": {
+            "type": "string"
+        },
+        "Tunnel2BgpHoldtime": {
+            "type": "number"
+        },
+        "Tunnel2CgwInsideAddress": {
+            "type": "string"
+        },
+        "Tunnel2InsideCidr": {
+            "type": "string"
+        },
+        "Tunnel2PresharedKey": {
+            "type": "string"
+        },
+        "Tunnel2VgwInsideAddress": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "VgwTelemetry": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "AcceptedRouteCount": {
+                        "type": "number"
+                    },
+                    "LastStatusChange": {
+                        "type": "string"
+                    },
+                    "OutsideIpAddress": {
+                        "type": "string"
+                    },
+                    "Status": {
+                        "type": "string"
+                    },
+                    "StatusMessage": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "VpnGatewayId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CustomerGatewayId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CustomerGatewayConfiguration",
+        "/properties/Routes",
+        "/properties/TransitGatewayAttachmentId",
+        "/properties/Tunnel1Address",
+        "/properties/Tunnel1BgpAsn",
+        "/properties/Tunnel1BgpHoldtime",
+        "/properties/Tunnel1CgwInsideAddress",
+        "/properties/Tunnel1VgwInsideAddress",
+        "/properties/Tunnel2Address",
+        "/properties/Tunnel2BgpAsn",
+        "/properties/Tunnel2BgpHoldtime",
+        "/properties/Tunnel2CgwInsideAddress",
+        "/properties/Tunnel2VgwInsideAddress",
+        "/properties/VgwTelemetry"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

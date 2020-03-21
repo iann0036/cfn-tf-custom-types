@@ -1,0 +1,104 @@
+{
+    "typeName": "Terraform::AWS::AppsyncResolver",
+    "description": "CloudFormation equivalent of aws_appsync_resolver",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "PipelineConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Functions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DataSource": {
+            "type": "string"
+        },
+        "Field": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string"
+        },
+        "RequestTemplate": {
+            "type": "string"
+        },
+        "ResponseTemplate": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "PipelineConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PipelineConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "Field",
+        "RequestTemplate",
+        "ResponseTemplate",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

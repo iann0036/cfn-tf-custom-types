@@ -1,0 +1,118 @@
+{
+    "typeName": "Terraform::Panos::GeneralSettings",
+    "description": "CloudFormation equivalent of panos_general_settings",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsPrimary": {
+            "type": "string"
+        },
+        "DnsSecondary": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NtpPrimaryAddress": {
+            "type": "string"
+        },
+        "NtpPrimaryAlgorithm": {
+            "type": "string"
+        },
+        "NtpPrimaryAuthKey": {
+            "type": "string"
+        },
+        "NtpPrimaryAuthType": {
+            "type": "string"
+        },
+        "NtpPrimaryKeyId": {
+            "type": "number"
+        },
+        "NtpSecondaryAddress": {
+            "type": "string"
+        },
+        "NtpSecondaryAlgorithm": {
+            "type": "string"
+        },
+        "NtpSecondaryAuthKey": {
+            "type": "string"
+        },
+        "NtpSecondaryAuthType": {
+            "type": "string"
+        },
+        "NtpSecondaryKeyId": {
+            "type": "number"
+        },
+        "ProxyPassword": {
+            "type": "string"
+        },
+        "ProxyPasswordEnc": {
+            "type": "string"
+        },
+        "ProxyPort": {
+            "type": "number"
+        },
+        "ProxyServer": {
+            "type": "string"
+        },
+        "ProxyUser": {
+            "type": "string"
+        },
+        "Timezone": {
+            "type": "string"
+        },
+        "UpdateServer": {
+            "type": "string"
+        },
+        "VerifyUpdateServer": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ProxyPasswordEnc"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

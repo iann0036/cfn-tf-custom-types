@@ -1,0 +1,362 @@
+{
+    "typeName": "Terraform::OPC::LbaasPolicy",
+    "description": "CloudFormation equivalent of opc_lbaas_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ApplicationCookieStickinessPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CookieName"
+            ]
+        },
+        "CloudgatePolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudgateApplication": {
+                    "type": "string"
+                },
+                "CloudgatePolicyName": {
+                    "type": "string"
+                },
+                "IdentityServiceInstanceGuid": {
+                    "type": "string"
+                },
+                "VirtualHostnameForPolicyAttribution": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VirtualHostnameForPolicyAttribution"
+            ]
+        },
+        "LoadBalancerCookieStickinessPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieExpirationPeriod": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "CookieExpirationPeriod"
+            ]
+        },
+        "LoadBalancingMechanismPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LoadBalancingMechanism": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LoadBalancingMechanism"
+            ]
+        },
+        "RateLimitingRequestPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BurstSize": {
+                    "type": "number"
+                },
+                "DelayExcessiveRequests": {
+                    "type": "boolean"
+                },
+                "HttpErrorCode": {
+                    "type": "number"
+                },
+                "LoggingLevel": {
+                    "type": "string"
+                },
+                "RateLimitingCriteria": {
+                    "type": "string"
+                },
+                "RequestsPerSecond": {
+                    "type": "number"
+                },
+                "Zone": {
+                    "type": "string"
+                },
+                "ZoneMemorySize": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BurstSize",
+                "DelayExcessiveRequests",
+                "RequestsPerSecond",
+                "Zone"
+            ]
+        },
+        "RedirectPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RedirectUri": {
+                    "type": "string"
+                },
+                "ResponseCode": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "RedirectUri",
+                "ResponseCode"
+            ]
+        },
+        "ResourceAccessControlPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeniedClients": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Disposition": {
+                    "type": "string"
+                },
+                "PermittedClients": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Disposition"
+            ]
+        },
+        "SetRequestHeaderPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionWhenHeaderExists": {
+                    "type": "string"
+                },
+                "ActionWhenHeaderValueIs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ActionWhenHeaderValueIsNot": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "HeaderName": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HeaderName"
+            ]
+        },
+        "SslNegotiationPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "ServerOrderPreference": {
+                    "type": "string"
+                },
+                "SslCiphers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SslProtocol": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Port",
+                "SslProtocol"
+            ]
+        },
+        "TrustedCertificatePolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TrustedCertificate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TrustedCertificate"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancer": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "State": {
+            "type": "boolean"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "ApplicationCookieStickinessPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplicationCookieStickinessPolicy"
+            },
+            "maxItems": 1
+        },
+        "CloudgatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CloudgatePolicy"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancerCookieStickinessPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadBalancerCookieStickinessPolicy"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancingMechanismPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadBalancingMechanismPolicy"
+            },
+            "maxItems": 1
+        },
+        "RateLimitingRequestPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RateLimitingRequestPolicy"
+            },
+            "maxItems": 1
+        },
+        "RedirectPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedirectPolicy"
+            },
+            "maxItems": 1
+        },
+        "ResourceAccessControlPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceAccessControlPolicy"
+            },
+            "maxItems": 1
+        },
+        "SetRequestHeaderPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SetRequestHeaderPolicy"
+            },
+            "maxItems": 1
+        },
+        "SslNegotiationPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslNegotiationPolicy"
+            },
+            "maxItems": 1
+        },
+        "TrustedCertificatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrustedCertificatePolicy"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancer",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/State",
+        "/properties/Type",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,222 @@
+{
+    "typeName": "Terraform::VCD::Edgegateway",
+    "description": "CloudFormation equivalent of vcd_edgegateway",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ExternalNetwork": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableRateLimit": {
+                    "type": "boolean"
+                },
+                "IncomingRateLimit": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OutgoingRateLimit": {
+                    "type": "number"
+                },
+                "Subnet": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Subnet"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Subnet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Gateway": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "UseForDefaultRoute": {
+                    "type": "boolean"
+                },
+                "SuballocatePool": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SuballocatePool"
+                    }
+                }
+            },
+            "required": [
+                "Gateway",
+                "Netmask"
+            ]
+        },
+        "SuballocatePool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndAddress": {
+                    "type": "string"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndAddress",
+                "StartAddress"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Advanced": {
+            "type": "boolean"
+        },
+        "Configuration": {
+            "type": "string"
+        },
+        "DefaultExternalNetworkIp": {
+            "type": "string"
+        },
+        "DefaultGatewayNetwork": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DistributedRouting": {
+            "type": "boolean"
+        },
+        "ExternalNetworkIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ExternalNetworks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FipsModeEnabled": {
+            "type": "boolean"
+        },
+        "FwDefaultRuleAction": {
+            "type": "string"
+        },
+        "FwDefaultRuleLoggingEnabled": {
+            "type": "boolean"
+        },
+        "FwEnabled": {
+            "type": "boolean"
+        },
+        "HaEnabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LbAccelerationEnabled": {
+            "type": "boolean"
+        },
+        "LbEnabled": {
+            "type": "boolean"
+        },
+        "LbLoggingEnabled": {
+            "type": "boolean"
+        },
+        "LbLoglevel": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "UseDefaultRouteForDnsRelay": {
+            "type": "boolean"
+        },
+        "Vdc": {
+            "type": "string"
+        },
+        "ExternalNetwork": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ExternalNetwork"
+            }
+        },
+        "Subnet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Subnet"
+            }
+        },
+        "SuballocatePool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SuballocatePool"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Configuration",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultExternalNetworkIp",
+        "/properties/ExternalNetworkIps"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

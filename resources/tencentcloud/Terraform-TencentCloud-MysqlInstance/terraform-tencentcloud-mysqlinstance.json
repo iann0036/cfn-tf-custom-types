@@ -1,0 +1,185 @@
+{
+    "typeName": "Terraform::TencentCloud::MysqlInstance",
+    "description": "CloudFormation equivalent of tencentcloud_mysql_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoRenewFlag": {
+            "type": "number"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "FirstSlaveZone": {
+            "type": "string"
+        },
+        "Gtid": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "InternetHost": {
+            "type": "string"
+        },
+        "InternetPort": {
+            "type": "number"
+        },
+        "InternetService": {
+            "type": "number"
+        },
+        "IntranetIp": {
+            "type": "string"
+        },
+        "IntranetPort": {
+            "type": "number"
+        },
+        "Locked": {
+            "type": "number"
+        },
+        "MemSize": {
+            "type": "number"
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "PayType": {
+            "type": "number"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "ProjectId": {
+            "type": "number"
+        },
+        "RootPassword": {
+            "type": "string"
+        },
+        "SecondSlaveZone": {
+            "type": "string"
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SlaveDeployMode": {
+            "type": "number"
+        },
+        "SlaveSyncMode": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "number"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TaskStatus": {
+            "type": "number"
+        },
+        "VolumeSize": {
+            "type": "number"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceName",
+        "MemSize",
+        "RootPassword",
+        "VolumeSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Gtid",
+        "/properties/InternetHost",
+        "/properties/InternetPort",
+        "/properties/IntranetIp",
+        "/properties/Locked",
+        "/properties/Status",
+        "/properties/TaskStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

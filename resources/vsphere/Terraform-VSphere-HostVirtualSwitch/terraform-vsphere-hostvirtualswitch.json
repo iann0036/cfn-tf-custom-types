@@ -1,0 +1,132 @@
+{
+    "typeName": "Terraform::VSphere::HostVirtualSwitch",
+    "description": "CloudFormation equivalent of vsphere_host_virtual_switch",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveNics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AllowForgedTransmits": {
+            "type": "boolean"
+        },
+        "AllowMacChanges": {
+            "type": "boolean"
+        },
+        "AllowPromiscuous": {
+            "type": "boolean"
+        },
+        "BeaconInterval": {
+            "type": "number"
+        },
+        "CheckBeacon": {
+            "type": "boolean"
+        },
+        "Failback": {
+            "type": "boolean"
+        },
+        "HostSystemId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LinkDiscoveryOperation": {
+            "type": "string"
+        },
+        "LinkDiscoveryProtocol": {
+            "type": "string"
+        },
+        "Mtu": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkAdapters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NotifySwitches": {
+            "type": "boolean"
+        },
+        "NumberOfPorts": {
+            "type": "number"
+        },
+        "ShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "ShapingBurstSize": {
+            "type": "number"
+        },
+        "ShapingEnabled": {
+            "type": "boolean"
+        },
+        "ShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "StandbyNics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TeamingPolicy": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ActiveNics",
+        "HostSystemId",
+        "Name",
+        "NetworkAdapters",
+        "StandbyNics"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

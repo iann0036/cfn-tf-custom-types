@@ -1,0 +1,157 @@
+{
+    "typeName": "Terraform::Circonus::OverlaySet",
+    "description": "CloudFormation equivalent of circonus_overlay_set",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Overlays": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "DataOpts": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DataOpts"
+                    }
+                },
+                "UiSpecs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/UiSpecs"
+                    }
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "DataOpts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GraphTitle": {
+                    "type": "string"
+                },
+                "GraphUuid": {
+                    "type": "string"
+                },
+                "XShift": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "GraphTitle",
+                "GraphUuid",
+                "XShift"
+            ]
+        },
+        "UiSpecs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Decouple": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Z": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Label",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GraphCid": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "Overlays": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Overlays"
+            },
+            "minItems": 1
+        },
+        "DataOpts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DataOpts"
+            },
+            "minItems": 1
+        },
+        "UiSpecs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UiSpecs"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GraphCid",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

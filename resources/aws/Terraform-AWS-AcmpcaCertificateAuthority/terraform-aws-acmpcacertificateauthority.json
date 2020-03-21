@@ -1,0 +1,263 @@
+{
+    "typeName": "Terraform::AWS::AcmpcaCertificateAuthority",
+    "description": "CloudFormation equivalent of aws_acmpca_certificate_authority",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CertificateAuthorityConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyAlgorithm": {
+                    "type": "string"
+                },
+                "SigningAlgorithm": {
+                    "type": "string"
+                },
+                "Subject": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Subject"
+                    }
+                }
+            },
+            "required": [
+                "KeyAlgorithm",
+                "SigningAlgorithm"
+            ]
+        },
+        "RevocationConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CrlConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CrlConfiguration"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Subject": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CommonName": {
+                    "type": "string"
+                },
+                "Country": {
+                    "type": "string"
+                },
+                "DistinguishedNameQualifier": {
+                    "type": "string"
+                },
+                "GenerationQualifier": {
+                    "type": "string"
+                },
+                "GivenName": {
+                    "type": "string"
+                },
+                "Initials": {
+                    "type": "string"
+                },
+                "Locality": {
+                    "type": "string"
+                },
+                "Organization": {
+                    "type": "string"
+                },
+                "OrganizationalUnit": {
+                    "type": "string"
+                },
+                "Pseudonym": {
+                    "type": "string"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "Surname": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CrlConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomCname": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "ExpirationInDays": {
+                    "type": "number"
+                },
+                "S3BucketName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ExpirationInDays"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "CertificateChain": {
+            "type": "string"
+        },
+        "CertificateSigningRequest": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NotAfter": {
+            "type": "string"
+        },
+        "NotBefore": {
+            "type": "string"
+        },
+        "PermanentDeletionTimeInDays": {
+            "type": "number"
+        },
+        "Serial": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "CertificateAuthorityConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateAuthorityConfiguration"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "RevocationConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RevocationConfiguration"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "Subject": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Subject"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "CrlConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CrlConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Certificate",
+        "/properties/CertificateChain",
+        "/properties/CertificateSigningRequest",
+        "/properties/NotAfter",
+        "/properties/NotBefore",
+        "/properties/Serial",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

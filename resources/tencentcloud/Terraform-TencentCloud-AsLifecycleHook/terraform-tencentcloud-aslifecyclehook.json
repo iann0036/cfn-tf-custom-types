@@ -1,0 +1,82 @@
+{
+    "typeName": "Terraform::TencentCloud::AsLifecycleHook",
+    "description": "CloudFormation equivalent of tencentcloud_as_lifecycle_hook",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultResult": {
+            "type": "string"
+        },
+        "HeartbeatTimeout": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleHookName": {
+            "type": "string"
+        },
+        "LifecycleTransition": {
+            "type": "string"
+        },
+        "NotificationMetadata": {
+            "type": "string"
+        },
+        "NotificationQueueName": {
+            "type": "string"
+        },
+        "NotificationTargetType": {
+            "type": "string"
+        },
+        "NotificationTopicName": {
+            "type": "string"
+        },
+        "ScalingGroupId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LifecycleHookName",
+        "LifecycleTransition",
+        "ScalingGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

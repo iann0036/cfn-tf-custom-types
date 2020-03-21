@@ -1,0 +1,239 @@
+{
+    "typeName": "Terraform::AWS::Elb",
+    "description": "CloudFormation equivalent of aws_elb",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AccessLogs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "BucketPrefix": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Interval": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Bucket"
+            ]
+        },
+        "HealthCheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthyThreshold": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "UnhealthyThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "HealthyThreshold",
+                "Interval",
+                "Target",
+                "Timeout",
+                "UnhealthyThreshold"
+            ]
+        },
+        "Listener": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstancePort": {
+                    "type": "number"
+                },
+                "InstanceProtocol": {
+                    "type": "string"
+                },
+                "LbPort": {
+                    "type": "number"
+                },
+                "LbProtocol": {
+                    "type": "string"
+                },
+                "SslCertificateId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InstancePort",
+                "InstanceProtocol",
+                "LbPort",
+                "LbProtocol"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ConnectionDraining": {
+            "type": "boolean"
+        },
+        "ConnectionDrainingTimeout": {
+            "type": "number"
+        },
+        "CrossZoneLoadBalancing": {
+            "type": "boolean"
+        },
+        "DnsName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number"
+        },
+        "Instances": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Internal": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SourceSecurityGroup": {
+            "type": "string"
+        },
+        "SourceSecurityGroupId": {
+            "type": "string"
+        },
+        "Subnets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "AccessLogs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessLogs"
+            },
+            "maxItems": 1
+        },
+        "HealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheck"
+            },
+            "maxItems": 1
+        },
+        "Listener": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Listener"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DnsName",
+        "/properties/SourceSecurityGroupId",
+        "/properties/ZoneId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "typeName": "Terraform::AWS::VpcEndpointConnectionNotification",
+    "description": "CloudFormation equivalent of aws_vpc_endpoint_connection_notification",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectionEvents": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ConnectionNotificationArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "NotificationType": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "VpcEndpointId": {
+            "type": "string"
+        },
+        "VpcEndpointServiceId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConnectionEvents",
+        "ConnectionNotificationArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/NotificationType",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

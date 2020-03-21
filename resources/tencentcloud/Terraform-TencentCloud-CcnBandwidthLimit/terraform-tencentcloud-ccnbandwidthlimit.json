@@ -1,0 +1,63 @@
+{
+    "typeName": "Terraform::TencentCloud::CcnBandwidthLimit",
+    "description": "CloudFormation equivalent of tencentcloud_ccn_bandwidth_limit",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BandwidthLimit": {
+            "type": "number"
+        },
+        "CcnId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CcnId",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

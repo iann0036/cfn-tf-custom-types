@@ -1,0 +1,206 @@
+{
+    "typeName": "Terraform::Alicloud::SlbListener",
+    "description": "CloudFormation equivalent of alicloud_slb_listener",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "XForwardedFor": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RetriveSlbId": {
+                    "type": "boolean"
+                },
+                "RetriveSlbIp": {
+                    "type": "boolean"
+                },
+                "RetriveSlbProto": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AclId": {
+            "type": "string"
+        },
+        "AclStatus": {
+            "type": "string"
+        },
+        "AclType": {
+            "type": "string"
+        },
+        "BackendPort": {
+            "type": "number"
+        },
+        "Bandwidth": {
+            "type": "number"
+        },
+        "Cookie": {
+            "type": "string"
+        },
+        "CookieTimeout": {
+            "type": "number"
+        },
+        "DeleteProtectionValidation": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableHttp2": {
+            "type": "string"
+        },
+        "EstablishedTimeout": {
+            "type": "number"
+        },
+        "ForwardPort": {
+            "type": "number"
+        },
+        "FrontendPort": {
+            "type": "number"
+        },
+        "Gzip": {
+            "type": "boolean"
+        },
+        "HealthCheck": {
+            "type": "string"
+        },
+        "HealthCheckConnectPort": {
+            "type": "number"
+        },
+        "HealthCheckDomain": {
+            "type": "string"
+        },
+        "HealthCheckHttpCode": {
+            "type": "string"
+        },
+        "HealthCheckInterval": {
+            "type": "number"
+        },
+        "HealthCheckMethod": {
+            "type": "string"
+        },
+        "HealthCheckTimeout": {
+            "type": "number"
+        },
+        "HealthCheckType": {
+            "type": "string"
+        },
+        "HealthCheckUri": {
+            "type": "string"
+        },
+        "HealthyThreshold": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number"
+        },
+        "InstancePort": {
+            "type": "number"
+        },
+        "LbPort": {
+            "type": "number"
+        },
+        "LbProtocol": {
+            "type": "string"
+        },
+        "ListenerForward": {
+            "type": "string"
+        },
+        "LoadBalancerId": {
+            "type": "string"
+        },
+        "MasterSlaveServerGroupId": {
+            "type": "string"
+        },
+        "PersistenceTimeout": {
+            "type": "number"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "RequestTimeout": {
+            "type": "number"
+        },
+        "Scheduler": {
+            "type": "string"
+        },
+        "ServerCertificateId": {
+            "type": "string"
+        },
+        "ServerGroupId": {
+            "type": "string"
+        },
+        "SslCertificateId": {
+            "type": "string"
+        },
+        "StickySession": {
+            "type": "string"
+        },
+        "StickySessionType": {
+            "type": "string"
+        },
+        "TlsCipherPolicy": {
+            "type": "string"
+        },
+        "UnhealthyThreshold": {
+            "type": "number"
+        },
+        "XForwardedFor": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/XForwardedFor"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FrontendPort",
+        "LoadBalancerId",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

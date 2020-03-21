@@ -1,0 +1,155 @@
+{
+    "typeName": "Terraform::AWS::SsmAssociation",
+    "description": "CloudFormation equivalent of aws_ssm_association",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "OutputLocation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "S3BucketName": {
+                    "type": "string"
+                },
+                "S3KeyPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "S3BucketName"
+            ]
+        },
+        "Targets": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociationId": {
+            "type": "string"
+        },
+        "AssociationName": {
+            "type": "string"
+        },
+        "AutomationTargetParameterName": {
+            "type": "string"
+        },
+        "ComplianceSeverity": {
+            "type": "string"
+        },
+        "DocumentVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "MaxConcurrency": {
+            "type": "string"
+        },
+        "MaxErrors": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ScheduleExpression": {
+            "type": "string"
+        },
+        "OutputLocation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutputLocation"
+            },
+            "maxItems": 1
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Targets"
+            },
+            "maxItems": 5
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssociationId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

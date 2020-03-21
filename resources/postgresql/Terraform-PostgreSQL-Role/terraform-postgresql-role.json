@@ -1,0 +1,115 @@
+{
+    "typeName": "Terraform::PostgreSQL::Role",
+    "description": "CloudFormation equivalent of postgresql_role",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BypassRowLevelSecurity": {
+            "type": "boolean"
+        },
+        "ConnectionLimit": {
+            "type": "number"
+        },
+        "CreateDatabase": {
+            "type": "boolean"
+        },
+        "CreateRole": {
+            "type": "boolean"
+        },
+        "Encrypted": {
+            "type": "string"
+        },
+        "EncryptedPassword": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Inherit": {
+            "type": "boolean"
+        },
+        "Login": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Replication": {
+            "type": "boolean"
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SearchPath": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SkipDropRole": {
+            "type": "boolean"
+        },
+        "SkipReassignOwned": {
+            "type": "boolean"
+        },
+        "StatementTimeout": {
+            "type": "number"
+        },
+        "Superuser": {
+            "type": "boolean"
+        },
+        "ValidUntil": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

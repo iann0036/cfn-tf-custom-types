@@ -1,0 +1,95 @@
+{
+    "typeName": "Terraform::VCD::NetworkDirect",
+    "description": "CloudFormation equivalent of vcd_network_direct",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExternalNetwork": {
+            "type": "string"
+        },
+        "ExternalNetworkDns1": {
+            "type": "string"
+        },
+        "ExternalNetworkDns2": {
+            "type": "string"
+        },
+        "ExternalNetworkDnsSuffix": {
+            "type": "string"
+        },
+        "ExternalNetworkGateway": {
+            "type": "string"
+        },
+        "ExternalNetworkNetmask": {
+            "type": "string"
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "Shared": {
+            "type": "boolean"
+        },
+        "Vdc": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ExternalNetwork",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ExternalNetworkDns1",
+        "/properties/ExternalNetworkDns2",
+        "/properties/ExternalNetworkDnsSuffix",
+        "/properties/ExternalNetworkGateway",
+        "/properties/ExternalNetworkNetmask"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

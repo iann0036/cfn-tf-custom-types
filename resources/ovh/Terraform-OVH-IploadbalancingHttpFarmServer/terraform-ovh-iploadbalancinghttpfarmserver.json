@@ -1,0 +1,96 @@
+{
+    "typeName": "Terraform::OVH::IploadbalancingHttpFarmServer",
+    "description": "CloudFormation equivalent of ovh_iploadbalancing_http_farm_server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "Backup": {
+            "type": "boolean"
+        },
+        "Chain": {
+            "type": "string"
+        },
+        "Cookie": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "FarmId": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Probe": {
+            "type": "boolean"
+        },
+        "ProxyProtocolVersion": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "Ssl": {
+            "type": "boolean"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Weight": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "FarmId",
+        "ServiceName",
+        "Status"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cookie"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

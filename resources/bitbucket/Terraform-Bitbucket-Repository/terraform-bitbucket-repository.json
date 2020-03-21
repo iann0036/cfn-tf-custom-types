@@ -1,0 +1,101 @@
+{
+    "typeName": "Terraform::Bitbucket::Repository",
+    "description": "CloudFormation equivalent of bitbucket_repository",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CloneHttps": {
+            "type": "string"
+        },
+        "CloneSsh": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ForkPolicy": {
+            "type": "string"
+        },
+        "HasIssues": {
+            "type": "boolean"
+        },
+        "HasWiki": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsPrivate": {
+            "type": "boolean"
+        },
+        "Language": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "PipelinesEnabled": {
+            "type": "boolean"
+        },
+        "ProjectKey": {
+            "type": "string"
+        },
+        "Scm": {
+            "type": "string"
+        },
+        "Slug": {
+            "type": "string"
+        },
+        "Website": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Owner"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloneHttps",
+        "/properties/CloneSsh"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,318 @@
+{
+    "typeName": "Terraform::AWS::DbInstance",
+    "description": "CloudFormation equivalent of aws_db_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "S3Import": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "BucketPrefix": {
+                    "type": "string"
+                },
+                "IngestionRole": {
+                    "type": "string"
+                },
+                "SourceEngine": {
+                    "type": "string"
+                },
+                "SourceEngineVersion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "IngestionRole",
+                "SourceEngine",
+                "SourceEngineVersion"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "AllocatedStorage": {
+            "type": "number"
+        },
+        "AllowMajorVersionUpgrade": {
+            "type": "boolean"
+        },
+        "ApplyImmediately": {
+            "type": "boolean"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoMinorVersionUpgrade": {
+            "type": "boolean"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "BackupRetentionPeriod": {
+            "type": "number"
+        },
+        "BackupWindow": {
+            "type": "string"
+        },
+        "CaCertIdentifier": {
+            "type": "string"
+        },
+        "CharacterSetName": {
+            "type": "string"
+        },
+        "CopyTagsToSnapshot": {
+            "type": "boolean"
+        },
+        "DbSubnetGroupName": {
+            "type": "string"
+        },
+        "DeleteAutomatedBackups": {
+            "type": "boolean"
+        },
+        "DeletionProtection": {
+            "type": "boolean"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "DomainIamRoleName": {
+            "type": "string"
+        },
+        "EnabledCloudwatchLogsExports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "FinalSnapshotIdentifier": {
+            "type": "string"
+        },
+        "HostedZoneId": {
+            "type": "string"
+        },
+        "IamDatabaseAuthenticationEnabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identifier": {
+            "type": "string"
+        },
+        "IdentifierPrefix": {
+            "type": "string"
+        },
+        "InstanceClass": {
+            "type": "string"
+        },
+        "Iops": {
+            "type": "number"
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "LicenseModel": {
+            "type": "string"
+        },
+        "MaintenanceWindow": {
+            "type": "string"
+        },
+        "MaxAllocatedStorage": {
+            "type": "number"
+        },
+        "MonitoringInterval": {
+            "type": "number"
+        },
+        "MonitoringRoleArn": {
+            "type": "string"
+        },
+        "MultiAz": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OptionGroupName": {
+            "type": "string"
+        },
+        "ParameterGroupName": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PerformanceInsightsEnabled": {
+            "type": "boolean"
+        },
+        "PerformanceInsightsKmsKeyId": {
+            "type": "string"
+        },
+        "PerformanceInsightsRetentionPeriod": {
+            "type": "number"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PubliclyAccessible": {
+            "type": "boolean"
+        },
+        "Replicas": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ReplicateSourceDb": {
+            "type": "string"
+        },
+        "ResourceId": {
+            "type": "string"
+        },
+        "SecurityGroupNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SkipFinalSnapshot": {
+            "type": "boolean"
+        },
+        "SnapshotIdentifier": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageEncrypted": {
+            "type": "boolean"
+        },
+        "StorageType": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Timezone": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "VpcSecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "S3Import": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3Import"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceClass"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Address",
+        "/properties/Arn",
+        "/properties/Endpoint",
+        "/properties/HostedZoneId",
+        "/properties/Replicas",
+        "/properties/ResourceId",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

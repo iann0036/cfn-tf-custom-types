@@ -1,0 +1,469 @@
+{
+    "typeName": "Terraform::AzureRM::Frontdoor",
+    "description": "CloudFormation equivalent of azurerm_frontdoor",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BackendPool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthProbeName": {
+                    "type": "string"
+                },
+                "LoadBalancingName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Backend": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Backend"
+                    }
+                }
+            },
+            "required": [
+                "HealthProbeName",
+                "LoadBalancingName",
+                "Name"
+            ]
+        },
+        "BackendPoolHealthProbe": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IntervalInSeconds": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "ProbeMethod": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "BackendPoolLoadBalancing": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalLatencyMilliseconds": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SampleSize": {
+                    "type": "number"
+                },
+                "SuccessfulSamplesRequired": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "FrontendEndpoint": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomHttpsProvisioningEnabled": {
+                    "type": "boolean"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "SessionAffinityEnabled": {
+                    "type": "boolean"
+                },
+                "SessionAffinityTtlSeconds": {
+                    "type": "number"
+                },
+                "WebApplicationFirewallPolicyLinkId": {
+                    "type": "string"
+                },
+                "CustomHttpsConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomHttpsConfiguration"
+                    }
+                }
+            },
+            "required": [
+                "CustomHttpsProvisioningEnabled",
+                "HostName",
+                "Name"
+            ]
+        },
+        "RoutingRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceptedProtocols": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "FrontendEndpoints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PatternsToMatch": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ForwardingConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardingConfiguration"
+                    }
+                },
+                "RedirectConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RedirectConfiguration"
+                    }
+                }
+            },
+            "required": [
+                "AcceptedProtocols",
+                "FrontendEndpoints",
+                "Name",
+                "PatternsToMatch"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Backend": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "HostHeader": {
+                    "type": "string"
+                },
+                "HttpPort": {
+                    "type": "number"
+                },
+                "HttpsPort": {
+                    "type": "number"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Address",
+                "HostHeader",
+                "HttpPort",
+                "HttpsPort"
+            ]
+        },
+        "CustomHttpsConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzureKeyVaultCertificateSecretName": {
+                    "type": "string"
+                },
+                "AzureKeyVaultCertificateSecretVersion": {
+                    "type": "string"
+                },
+                "AzureKeyVaultCertificateVaultId": {
+                    "type": "string"
+                },
+                "CertificateSource": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ForwardingConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendPoolName": {
+                    "type": "string"
+                },
+                "CacheEnabled": {
+                    "type": "boolean"
+                },
+                "CacheQueryParameterStripDirective": {
+                    "type": "string"
+                },
+                "CacheUseDynamicCompression": {
+                    "type": "boolean"
+                },
+                "CustomForwardingPath": {
+                    "type": "string"
+                },
+                "ForwardingProtocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BackendPoolName"
+            ]
+        },
+        "RedirectConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomFragment": {
+                    "type": "string"
+                },
+                "CustomHost": {
+                    "type": "string"
+                },
+                "CustomPath": {
+                    "type": "string"
+                },
+                "CustomQueryString": {
+                    "type": "string"
+                },
+                "RedirectProtocol": {
+                    "type": "string"
+                },
+                "RedirectType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RedirectProtocol",
+                "RedirectType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cname": {
+            "type": "string"
+        },
+        "EnforceBackendPoolsCertificateNameCheck": {
+            "type": "boolean"
+        },
+        "FriendlyName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerEnabled": {
+            "type": "boolean"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "BackendPool": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendPool"
+            },
+            "maxItems": 50,
+            "minItems": 1
+        },
+        "BackendPoolHealthProbe": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendPoolHealthProbe"
+            },
+            "maxItems": 5000,
+            "minItems": 1
+        },
+        "BackendPoolLoadBalancing": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BackendPoolLoadBalancing"
+            },
+            "maxItems": 5000,
+            "minItems": 1
+        },
+        "FrontendEndpoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FrontendEndpoint"
+            },
+            "maxItems": 100,
+            "minItems": 1
+        },
+        "RoutingRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RoutingRule"
+            },
+            "maxItems": 100,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "Backend": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Backend"
+            },
+            "maxItems": 100,
+            "minItems": 1
+        },
+        "CustomHttpsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomHttpsConfiguration"
+            },
+            "maxItems": 1
+        },
+        "ForwardingConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForwardingConfiguration"
+            },
+            "maxItems": 1
+        },
+        "RedirectConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RedirectConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnforceBackendPoolsCertificateNameCheck",
+        "Name",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cname"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

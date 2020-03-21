@@ -1,0 +1,441 @@
+{
+    "typeName": "Terraform::AWS::AppmeshVirtualNode",
+    "description": "CloudFormation equivalent of aws_appmesh_virtual_node",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Backends": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Backend": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Backend"
+                    }
+                },
+                "Listener": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Listener"
+                    }
+                },
+                "Logging": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Logging"
+                    }
+                },
+                "ServiceDiscovery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceDiscovery"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Backend": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VirtualService": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualService"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Listener": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthCheck": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HealthCheck"
+                    }
+                },
+                "PortMapping": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PortMapping"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Logging": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessLog"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ServiceDiscovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsCloudMap": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsCloudMap"
+                    }
+                },
+                "Dns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Dns"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VirtualService": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VirtualServiceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VirtualServiceName"
+            ]
+        },
+        "HealthCheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthyThreshold": {
+                    "type": "number"
+                },
+                "IntervalMillis": {
+                    "type": "number"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "TimeoutMillis": {
+                    "type": "number"
+                },
+                "UnhealthyThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "HealthyThreshold",
+                "IntervalMillis",
+                "Protocol",
+                "TimeoutMillis",
+                "UnhealthyThreshold"
+            ]
+        },
+        "PortMapping": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Port",
+                "Protocol"
+            ]
+        },
+        "AccessLog": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "File": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/File"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AwsCloudMap": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attributes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "NamespaceName": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NamespaceName",
+                "ServiceName"
+            ]
+        },
+        "Dns": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostname": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hostname"
+            ]
+        },
+        "File": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedDate": {
+            "type": "string"
+        },
+        "MeshName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Spec"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Backend": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Backend"
+            },
+            "maxItems": 25
+        },
+        "Listener": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Listener"
+            },
+            "maxItems": 1
+        },
+        "Logging": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Logging"
+            },
+            "maxItems": 1
+        },
+        "ServiceDiscovery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceDiscovery"
+            },
+            "maxItems": 1
+        },
+        "VirtualService": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VirtualService"
+            },
+            "maxItems": 1
+        },
+        "HealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheck"
+            },
+            "maxItems": 1
+        },
+        "PortMapping": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PortMapping"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "AccessLog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessLog"
+            },
+            "maxItems": 1
+        },
+        "AwsCloudMap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsCloudMap"
+            },
+            "maxItems": 1
+        },
+        "Dns": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Dns"
+            },
+            "maxItems": 1
+        },
+        "File": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/File"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MeshName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedDate",
+        "/properties/LastUpdatedDate"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

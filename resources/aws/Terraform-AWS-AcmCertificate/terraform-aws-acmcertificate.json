@@ -1,0 +1,149 @@
+{
+    "typeName": "Terraform::AWS::AcmCertificate",
+    "description": "CloudFormation equivalent of aws_acm_certificate",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Options": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateTransparencyLoggingPreference": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificateAuthorityArn": {
+            "type": "string"
+        },
+        "CertificateBody": {
+            "type": "string"
+        },
+        "CertificateChain": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "DomainValidationOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "DomainName": {
+                        "type": "string"
+                    },
+                    "ResourceRecordName": {
+                        "type": "string"
+                    },
+                    "ResourceRecordType": {
+                        "type": "string"
+                    },
+                    "ResourceRecordValue": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PrivateKey": {
+            "type": "string"
+        },
+        "SubjectAlternativeNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ValidationEmails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ValidationMethod": {
+            "type": "string"
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Options"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DomainValidationOptions",
+        "/properties/ValidationEmails"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

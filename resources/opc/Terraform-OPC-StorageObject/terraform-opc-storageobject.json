@@ -1,0 +1,131 @@
+{
+    "typeName": "Terraform::OPC::StorageObject",
+    "description": "CloudFormation equivalent of opc_storage_object",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptRanges": {
+            "type": "string"
+        },
+        "Container": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string"
+        },
+        "ContentDisposition": {
+            "type": "string"
+        },
+        "ContentEncoding": {
+            "type": "string"
+        },
+        "ContentLength": {
+            "type": "number"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "CopyFrom": {
+            "type": "string"
+        },
+        "DeleteAt": {
+            "type": "number"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "File": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModified": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ObjectManifest": {
+            "type": "string"
+        },
+        "Timestamp": {
+            "type": "string"
+        },
+        "TransactionId": {
+            "type": "string"
+        },
+        "TransferEncoding": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Container",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AcceptRanges",
+        "/properties/ContentLength",
+        "/properties/LastModified",
+        "/properties/ObjectManifest",
+        "/properties/Timestamp",
+        "/properties/TransactionId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

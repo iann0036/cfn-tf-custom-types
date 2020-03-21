@@ -1,0 +1,145 @@
+{
+    "typeName": "Terraform::OpsGenie::Escalation",
+    "description": "CloudFormation equivalent of opsgenie_escalation",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Repeat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloseAlertAfterAll": {
+                    "type": "boolean"
+                },
+                "Count": {
+                    "type": "number"
+                },
+                "ResetRecipientStates": {
+                    "type": "boolean"
+                },
+                "WaitInterval": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Rules": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Condition": {
+                    "type": "string"
+                },
+                "Delay": {
+                    "type": "number"
+                },
+                "NotifyType": {
+                    "type": "string"
+                },
+                "Recipient": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Recipient"
+                    }
+                }
+            },
+            "required": [
+                "Condition",
+                "Delay",
+                "NotifyType"
+            ]
+        },
+        "Recipient": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OwnerTeamId": {
+            "type": "string"
+        },
+        "Repeat": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Repeat"
+            }
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Rules"
+            },
+            "minItems": 1
+        },
+        "Recipient": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Recipient"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

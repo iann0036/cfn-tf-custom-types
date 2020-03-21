@@ -1,0 +1,265 @@
+{
+    "typeName": "Terraform::Google::ComputeBackendService",
+    "description": "CloudFormation equivalent of google_compute_backend_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Backend": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BalancingMode": {
+                    "type": "string"
+                },
+                "CapacityScaler": {
+                    "type": "number"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Group": {
+                    "type": "string"
+                },
+                "MaxConnections": {
+                    "type": "number"
+                },
+                "MaxConnectionsPerEndpoint": {
+                    "type": "number"
+                },
+                "MaxConnectionsPerInstance": {
+                    "type": "number"
+                },
+                "MaxRate": {
+                    "type": "number"
+                },
+                "MaxRatePerEndpoint": {
+                    "type": "number"
+                },
+                "MaxRatePerInstance": {
+                    "type": "number"
+                },
+                "MaxUtilization": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Group"
+            ]
+        },
+        "CdnPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SignedUrlCacheMaxAgeSec": {
+                    "type": "number"
+                },
+                "CacheKeyPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CacheKeyPolicy"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Iap": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Oauth2ClientId": {
+                    "type": "string"
+                },
+                "Oauth2ClientSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Oauth2ClientId",
+                "Oauth2ClientSecret"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CacheKeyPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IncludeHost": {
+                    "type": "boolean"
+                },
+                "IncludeProtocol": {
+                    "type": "boolean"
+                },
+                "IncludeQueryString": {
+                    "type": "boolean"
+                },
+                "QueryStringBlacklist": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "QueryStringWhitelist": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AffinityCookieTtlSec": {
+            "type": "number"
+        },
+        "ConnectionDrainingTimeoutSec": {
+            "type": "number"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableCdn": {
+            "type": "boolean"
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "HealthChecks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancingScheme": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PortName": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "SecurityPolicy": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SessionAffinity": {
+            "type": "string"
+        },
+        "TimeoutSec": {
+            "type": "number"
+        },
+        "Backend": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Backend"
+            }
+        },
+        "CdnPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CdnPolicy"
+            },
+            "maxItems": 1
+        },
+        "Iap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Iap"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "CacheKeyPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CacheKeyPolicy"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HealthChecks",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/Fingerprint",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

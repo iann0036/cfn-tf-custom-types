@@ -1,0 +1,369 @@
+{
+    "typeName": "Terraform::NSXT::LbHttpForwardingRule",
+    "description": "CloudFormation equivalent of nsxt_lb_http_forwarding_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BodyCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Value"
+            ]
+        },
+        "CookieCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Name",
+                "Value"
+            ]
+        },
+        "HeaderCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Name",
+                "Value"
+            ]
+        },
+        "HttpRedirectAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RedirectStatus": {
+                    "type": "string"
+                },
+                "RedirectUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RedirectStatus",
+                "RedirectUrl"
+            ]
+        },
+        "HttpRejectAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ReplyMessage": {
+                    "type": "string"
+                },
+                "ReplyStatus": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ReplyMessage",
+                "ReplyStatus"
+            ]
+        },
+        "IpCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "SourceAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourceAddress"
+            ]
+        },
+        "MethodCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "Method": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method"
+            ]
+        },
+        "SelectPoolAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PoolId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PoolId"
+            ]
+        },
+        "Tag": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Scope",
+                "Tag"
+            ]
+        },
+        "TcpCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "SourcePort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourcePort"
+            ]
+        },
+        "UriCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Uri"
+            ]
+        },
+        "VersionCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Version"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MatchStrategy": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "BodyCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BodyCondition"
+            }
+        },
+        "CookieCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CookieCondition"
+            }
+        },
+        "HeaderCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HeaderCondition"
+            }
+        },
+        "HttpRedirectAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpRedirectAction"
+            },
+            "maxItems": 1
+        },
+        "HttpRejectAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpRejectAction"
+            },
+            "maxItems": 1
+        },
+        "IpCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpCondition"
+            }
+        },
+        "MethodCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MethodCondition"
+            }
+        },
+        "SelectPoolAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SelectPoolAction"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tag"
+            }
+        },
+        "TcpCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TcpCondition"
+            }
+        },
+        "UriCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UriCondition"
+            }
+        },
+        "VersionCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VersionCondition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

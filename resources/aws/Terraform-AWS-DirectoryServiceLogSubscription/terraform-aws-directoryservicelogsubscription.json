@@ -1,0 +1,59 @@
+{
+    "typeName": "Terraform::AWS::DirectoryServiceLogSubscription",
+    "description": "CloudFormation equivalent of aws_directory_service_log_subscription",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DirectoryId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogGroupName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DirectoryId",
+        "LogGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

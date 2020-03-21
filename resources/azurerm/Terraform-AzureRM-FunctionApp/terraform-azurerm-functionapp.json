@@ -1,0 +1,576 @@
+{
+    "typeName": "Terraform::AzureRM::FunctionApp",
+    "description": "CloudFormation equivalent of azurerm_function_app",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AuthSettings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalLoginParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "AllowedExternalRedirectUrls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultProvider": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Issuer": {
+                    "type": "string"
+                },
+                "RuntimeVersion": {
+                    "type": "string"
+                },
+                "TokenRefreshExtensionHours": {
+                    "type": "number"
+                },
+                "TokenStoreEnabled": {
+                    "type": "boolean"
+                },
+                "UnauthenticatedClientAction": {
+                    "type": "string"
+                },
+                "ActiveDirectory": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ActiveDirectory"
+                    }
+                },
+                "Facebook": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Facebook"
+                    }
+                },
+                "Google": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Google"
+                    }
+                },
+                "Microsoft": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Microsoft"
+                    }
+                },
+                "Twitter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Twitter"
+                    }
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "ConnectionString": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type",
+                "Value"
+            ]
+        },
+        "Identity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "SiteConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlwaysOn": {
+                    "type": "boolean"
+                },
+                "FtpsState": {
+                    "type": "string"
+                },
+                "Http2Enabled": {
+                    "type": "boolean"
+                },
+                "IpRestriction": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "IpAddress": {
+                                "type": "string"
+                            },
+                            "SubnetId": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "LinuxFxVersion": {
+                    "type": "string"
+                },
+                "MinTlsVersion": {
+                    "type": "string"
+                },
+                "Use32BitWorkerProcess": {
+                    "type": "boolean"
+                },
+                "WebsocketsEnabled": {
+                    "type": "boolean"
+                },
+                "Cors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Cors"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ActiveDirectory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedAudiences": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ClientId": {
+                    "type": "string"
+                },
+                "ClientSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClientId"
+            ]
+        },
+        "Facebook": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AppId": {
+                    "type": "string"
+                },
+                "AppSecret": {
+                    "type": "string"
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "AppId",
+                "AppSecret"
+            ]
+        },
+        "Google": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string"
+                },
+                "ClientSecret": {
+                    "type": "string"
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ClientId",
+                "ClientSecret"
+            ]
+        },
+        "Microsoft": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientId": {
+                    "type": "string"
+                },
+                "ClientSecret": {
+                    "type": "string"
+                },
+                "OauthScopes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ClientId",
+                "ClientSecret"
+            ]
+        },
+        "Twitter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsumerKey": {
+                    "type": "string"
+                },
+                "ConsumerSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ConsumerKey",
+                "ConsumerSecret"
+            ]
+        },
+        "Cors": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SupportCredentials": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "AllowedOrigins"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppServicePlanId": {
+            "type": "string"
+        },
+        "AppSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ClientAffinityEnabled": {
+            "type": "boolean"
+        },
+        "DailyMemoryTimeQuota": {
+            "type": "number"
+        },
+        "DefaultHostname": {
+            "type": "string"
+        },
+        "EnableBuiltinLogging": {
+            "type": "boolean"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "HttpsOnly": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Kind": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OsType": {
+            "type": "string"
+        },
+        "OutboundIpAddresses": {
+            "type": "string"
+        },
+        "PossibleOutboundIpAddresses": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "SiteCredential": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Password": {
+                        "type": "string"
+                    },
+                    "Username": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "StorageConnectionString": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Version": {
+            "type": "string"
+        },
+        "AuthSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthSettings"
+            },
+            "maxItems": 1
+        },
+        "ConnectionString": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConnectionString"
+            }
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Identity"
+            },
+            "maxItems": 1
+        },
+        "SiteConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SiteConfig"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "ActiveDirectory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ActiveDirectory"
+            },
+            "maxItems": 1
+        },
+        "Facebook": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Facebook"
+            },
+            "maxItems": 1
+        },
+        "Google": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Google"
+            },
+            "maxItems": 1
+        },
+        "Microsoft": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Microsoft"
+            },
+            "maxItems": 1
+        },
+        "Twitter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Twitter"
+            },
+            "maxItems": 1
+        },
+        "Cors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Cors"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppServicePlanId",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "StorageConnectionString"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DefaultHostname",
+        "/properties/Kind",
+        "/properties/OutboundIpAddresses",
+        "/properties/PossibleOutboundIpAddresses",
+        "/properties/SiteCredential"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

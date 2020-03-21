@@ -1,0 +1,266 @@
+{
+    "typeName": "Terraform::Google::ComputeRegionInstanceGroupManager",
+    "description": "CloudFormation equivalent of google_compute_region_instance_group_manager",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AutoHealingPolicies": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HealthCheck": {
+                    "type": "string"
+                },
+                "InitialDelaySec": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "HealthCheck",
+                "InitialDelaySec"
+            ]
+        },
+        "NamedPort": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name",
+                "Port"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "UpdatePolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceRedistributionType": {
+                    "type": "string"
+                },
+                "MaxSurgeFixed": {
+                    "type": "number"
+                },
+                "MaxSurgePercent": {
+                    "type": "number"
+                },
+                "MaxUnavailableFixed": {
+                    "type": "number"
+                },
+                "MaxUnavailablePercent": {
+                    "type": "number"
+                },
+                "MinReadySec": {
+                    "type": "number"
+                },
+                "MinimalAction": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MinimalAction",
+                "Type"
+            ]
+        },
+        "Version": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceTemplate": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "TargetSize": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetSize"
+                    }
+                }
+            },
+            "required": [
+                "InstanceTemplate"
+            ]
+        },
+        "TargetSize": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Fixed": {
+                    "type": "number"
+                },
+                "Percent": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BaseInstanceName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DistributionPolicyZones": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceGroup": {
+            "type": "string"
+        },
+        "InstanceTemplate": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "TargetPools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TargetSize": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetSize"
+            },
+            "maxItems": 1
+        },
+        "UpdateStrategy": {
+            "type": "string"
+        },
+        "WaitForInstances": {
+            "type": "boolean"
+        },
+        "AutoHealingPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoHealingPolicies"
+            },
+            "maxItems": 1
+        },
+        "NamedPort": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NamedPort"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "UpdatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpdatePolicy"
+            },
+            "maxItems": 1
+        },
+        "Version": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Version"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BaseInstanceName",
+        "Name",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Fingerprint",
+        "/properties/InstanceGroup",
+        "/properties/InstanceTemplate",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

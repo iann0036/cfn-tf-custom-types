@@ -1,0 +1,124 @@
+{
+    "typeName": "Terraform::VCD::CatalogMedia",
+    "description": "CloudFormation equivalent of vcd_catalog_media",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Catalog": {
+            "type": "string"
+        },
+        "CreationDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsIso": {
+            "type": "boolean"
+        },
+        "IsPublished": {
+            "type": "boolean"
+        },
+        "MediaPath": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "OwnerName": {
+            "type": "string"
+        },
+        "ShowUploadProgress": {
+            "type": "boolean"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageProfileName": {
+            "type": "string"
+        },
+        "UploadPieceSize": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Catalog",
+        "MediaPath",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationDate",
+        "/properties/IsIso",
+        "/properties/IsPublished",
+        "/properties/OwnerName",
+        "/properties/Size",
+        "/properties/Status",
+        "/properties/StorageProfileName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

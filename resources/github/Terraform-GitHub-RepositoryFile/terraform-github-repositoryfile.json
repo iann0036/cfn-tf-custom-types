@@ -1,0 +1,80 @@
+{
+    "typeName": "Terraform::GitHub::RepositoryFile",
+    "description": "CloudFormation equivalent of github_repository_file",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Branch": {
+            "type": "string"
+        },
+        "CommitAuthor": {
+            "type": "string"
+        },
+        "CommitEmail": {
+            "type": "string"
+        },
+        "CommitMessage": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string"
+        },
+        "File": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Repository": {
+            "type": "string"
+        },
+        "Sha": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Content",
+        "File",
+        "Repository"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Sha"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

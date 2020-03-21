@@ -1,0 +1,237 @@
+{
+    "typeName": "Terraform::Skytap::Vm",
+    "description": "CloudFormation equivalent of skytap_vm",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Disk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name",
+                "Size"
+            ]
+        },
+        "Label": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Category",
+                "Value"
+            ]
+        },
+        "NetworkInterface": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hostname": {
+                    "type": "string"
+                },
+                "InterfaceType": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "NetworkId": {
+                    "type": "string"
+                },
+                "PublishedService": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/PublishedService"
+                    }
+                }
+            },
+            "required": [
+                "Hostname",
+                "InterfaceType",
+                "Ip",
+                "NetworkId"
+            ]
+        },
+        "PublishedService": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InternalPort": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InternalPort",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cpus": {
+            "type": "number"
+        },
+        "EnvironmentId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxCpus": {
+            "type": "number"
+        },
+        "MaxRam": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OsDiskSize": {
+            "type": "number"
+        },
+        "Ram": {
+            "type": "number"
+        },
+        "ServiceIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ServicePorts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TemplateId": {
+            "type": "string"
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "VmId": {
+            "type": "string"
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Disk"
+            }
+        },
+        "Label": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Label"
+            }
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterface"
+            }
+        },
+        "PublishedService": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PublishedService"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnvironmentId",
+        "TemplateId",
+        "VmId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/MaxCpus",
+        "/properties/MaxRam",
+        "/properties/ServiceIps",
+        "/properties/ServicePorts"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

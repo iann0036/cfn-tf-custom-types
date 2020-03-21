@@ -1,0 +1,95 @@
+{
+    "typeName": "Terraform::AzureAD::User",
+    "description": "CloudFormation equivalent of azuread_user",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountEnabled": {
+            "type": "boolean"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "ForcePasswordChange": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImmutableId": {
+            "type": "string"
+        },
+        "Mail": {
+            "type": "string"
+        },
+        "MailNickname": {
+            "type": "string"
+        },
+        "ObjectId": {
+            "type": "string"
+        },
+        "OnpremisesSamAccountName": {
+            "type": "string"
+        },
+        "OnpremisesUserPrincipalName": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "UsageLocation": {
+            "type": "string"
+        },
+        "UserPrincipalName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DisplayName",
+        "Password",
+        "UserPrincipalName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Mail",
+        "/properties/ObjectId",
+        "/properties/OnpremisesSamAccountName",
+        "/properties/OnpremisesUserPrincipalName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "typeName": "Terraform::AWS::SnsTopicSubscription",
+    "description": "CloudFormation equivalent of aws_sns_topic_subscription",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ConfirmationTimeoutInMinutes": {
+            "type": "number"
+        },
+        "DeliveryPolicy": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "EndpointAutoConfirms": {
+            "type": "boolean"
+        },
+        "FilterPolicy": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "RawMessageDelivery": {
+            "type": "boolean"
+        },
+        "TopicArn": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Endpoint",
+        "Protocol",
+        "TopicArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

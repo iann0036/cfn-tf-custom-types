@@ -1,0 +1,195 @@
+{
+    "typeName": "Terraform::TencentCloud::KubernetesScaleWorker",
+    "description": "CloudFormation equivalent of tencentcloud_kubernetes_scale_worker",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "WorkerConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "Count": {
+                    "type": "number"
+                },
+                "EnhancedMonitorService": {
+                    "type": "boolean"
+                },
+                "EnhancedSecurityService": {
+                    "type": "boolean"
+                },
+                "InstanceChargeType": {
+                    "type": "string"
+                },
+                "InstanceChargeTypePrepaidPeriod": {
+                    "type": "number"
+                },
+                "InstanceChargeTypePrepaidRenewFlag": {
+                    "type": "string"
+                },
+                "InstanceName": {
+                    "type": "string"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "InternetChargeType": {
+                    "type": "string"
+                },
+                "InternetMaxBandwidthOut": {
+                    "type": "number"
+                },
+                "KeyIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "PublicIpAssigned": {
+                    "type": "boolean"
+                },
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "SystemDiskSize": {
+                    "type": "number"
+                },
+                "SystemDiskType": {
+                    "type": "string"
+                },
+                "UserData": {
+                    "type": "string"
+                },
+                "DataDisk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataDisk"
+                    }
+                }
+            },
+            "required": [
+                "InstanceType",
+                "SubnetId"
+            ]
+        },
+        "DataDisk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSize": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "WorkerInstancesList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "FailedReason": {
+                        "type": "string"
+                    },
+                    "InstanceId": {
+                        "type": "string"
+                    },
+                    "InstanceRole": {
+                        "type": "string"
+                    },
+                    "InstanceState": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "WorkerConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkerConfig"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "DataDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDisk"
+            },
+            "maxItems": 11
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/WorkerInstancesList"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

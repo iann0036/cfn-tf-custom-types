@@ -1,0 +1,123 @@
+{
+    "typeName": "Terraform::TencentCloud::GaapLayer4Listener",
+    "description": "CloudFormation equivalent of tencentcloud_gaap_layer4_listener",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "RealserverBindSet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Id",
+                "Ip",
+                "Port"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectTimeout": {
+            "type": "number"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "HealthCheck": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "ProxyId": {
+            "type": "string"
+        },
+        "RealserverType": {
+            "type": "string"
+        },
+        "Scheduler": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "number"
+        },
+        "RealserverBindSet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RealserverBindSet"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Port",
+        "Protocol",
+        "ProxyId",
+        "RealserverType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

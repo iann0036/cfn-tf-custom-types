@@ -1,0 +1,108 @@
+{
+    "typeName": "Terraform::AWS::CloudformationStackSetInstance",
+    "description": "CloudFormation equivalent of aws_cloudformation_stack_set_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ParameterOverrides": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RetainStack": {
+            "type": "boolean"
+        },
+        "StackId": {
+            "type": "string"
+        },
+        "StackSetName": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "StackSetName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/StackId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

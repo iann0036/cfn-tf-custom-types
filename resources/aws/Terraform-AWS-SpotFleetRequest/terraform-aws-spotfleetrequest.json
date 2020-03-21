@@ -1,0 +1,337 @@
+{
+    "typeName": "Terraform::AWS::SpotFleetRequest",
+    "description": "CloudFormation equivalent of aws_spot_fleet_request",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "LaunchSpecification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ami": {
+                    "type": "string"
+                },
+                "AssociatePublicIpAddress": {
+                    "type": "boolean"
+                },
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "EbsOptimized": {
+                    "type": "boolean"
+                },
+                "IamInstanceProfile": {
+                    "type": "string"
+                },
+                "IamInstanceProfileArn": {
+                    "type": "string"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "KeyName": {
+                    "type": "string"
+                },
+                "Monitoring": {
+                    "type": "boolean"
+                },
+                "PlacementGroup": {
+                    "type": "string"
+                },
+                "PlacementTenancy": {
+                    "type": "string"
+                },
+                "SpotPrice": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "UserData": {
+                    "type": "string"
+                },
+                "VpcSecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "WeightedCapacity": {
+                    "type": "string"
+                },
+                "EbsBlockDevice": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsBlockDevice"
+                    }
+                },
+                "EphemeralBlockDevice": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EphemeralBlockDevice"
+                    }
+                },
+                "RootBlockDevice": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RootBlockDevice"
+                    }
+                }
+            },
+            "required": [
+                "Ami",
+                "InstanceType"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EbsBlockDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "EphemeralBlockDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName",
+                "VirtualName"
+            ]
+        },
+        "RootBlockDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocationStrategy": {
+            "type": "string"
+        },
+        "ClientToken": {
+            "type": "string"
+        },
+        "ExcessCapacityTerminationPolicy": {
+            "type": "string"
+        },
+        "FleetType": {
+            "type": "string"
+        },
+        "IamFleetRole": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceInterruptionBehaviour": {
+            "type": "string"
+        },
+        "InstancePoolsToUseCount": {
+            "type": "number"
+        },
+        "LoadBalancers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ReplaceUnhealthyInstances": {
+            "type": "boolean"
+        },
+        "SpotPrice": {
+            "type": "string"
+        },
+        "SpotRequestState": {
+            "type": "string"
+        },
+        "TargetCapacity": {
+            "type": "number"
+        },
+        "TargetGroupArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TerminateInstancesWithExpiration": {
+            "type": "boolean"
+        },
+        "ValidFrom": {
+            "type": "string"
+        },
+        "ValidUntil": {
+            "type": "string"
+        },
+        "WaitForFulfillment": {
+            "type": "boolean"
+        },
+        "LaunchSpecification": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LaunchSpecification"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "EbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsBlockDevice"
+            }
+        },
+        "EphemeralBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EphemeralBlockDevice"
+            }
+        },
+        "RootBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RootBlockDevice"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IamFleetRole",
+        "TargetCapacity"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClientToken",
+        "/properties/SpotRequestState"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

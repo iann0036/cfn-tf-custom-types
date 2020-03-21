@@ -1,0 +1,98 @@
+{
+    "typeName": "Terraform::Panos::BgpRedistRule",
+    "description": "CloudFormation equivalent of panos_bgp_redist_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AddressFamily": {
+            "type": "string"
+        },
+        "Enable": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metric": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RouteTable": {
+            "type": "string"
+        },
+        "SetAsPathLimit": {
+            "type": "number"
+        },
+        "SetCommunities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SetExtendedCommunities": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SetLocalPreference": {
+            "type": "string"
+        },
+        "SetMed": {
+            "type": "string"
+        },
+        "SetOrigin": {
+            "type": "string"
+        },
+        "VirtualRouter": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

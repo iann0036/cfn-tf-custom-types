@@ -1,0 +1,75 @@
+{
+    "typeName": "Terraform::Panos::Telemetry",
+    "description": "CloudFormation equivalent of panos_telemetry",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationReports": {
+            "type": "boolean"
+        },
+        "FileTypeIdentificationReports": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PassiveDnsMonitoring": {
+            "type": "boolean"
+        },
+        "ProductUsageStats": {
+            "type": "boolean"
+        },
+        "ThreatPreventionData": {
+            "type": "boolean"
+        },
+        "ThreatPreventionPacketCaptures": {
+            "type": "boolean"
+        },
+        "ThreatPreventionReports": {
+            "type": "boolean"
+        },
+        "UrlReports": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,187 @@
+{
+    "typeName": "Terraform::AWS::DmsEndpoint",
+    "description": "CloudFormation equivalent of aws_dms_endpoint",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "MongodbSettings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthMechanism": {
+                    "type": "string"
+                },
+                "AuthSource": {
+                    "type": "string"
+                },
+                "AuthType": {
+                    "type": "string"
+                },
+                "DocsToInvestigate": {
+                    "type": "string"
+                },
+                "ExtractDocId": {
+                    "type": "string"
+                },
+                "NestingLevel": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "S3Settings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketFolder": {
+                    "type": "string"
+                },
+                "BucketName": {
+                    "type": "string"
+                },
+                "CompressionType": {
+                    "type": "string"
+                },
+                "CsvDelimiter": {
+                    "type": "string"
+                },
+                "CsvRowDelimiter": {
+                    "type": "string"
+                },
+                "ExternalTableDefinition": {
+                    "type": "string"
+                },
+                "ServiceAccessRoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateArn": {
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string"
+        },
+        "EndpointArn": {
+            "type": "string"
+        },
+        "EndpointId": {
+            "type": "string"
+        },
+        "EndpointType": {
+            "type": "string"
+        },
+        "EngineName": {
+            "type": "string"
+        },
+        "ExtraConnectionAttributes": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyArn": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "ServerName": {
+            "type": "string"
+        },
+        "ServiceAccessRole": {
+            "type": "string"
+        },
+        "SslMode": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Username": {
+            "type": "string"
+        },
+        "MongodbSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MongodbSettings"
+            },
+            "maxItems": 1
+        },
+        "S3Settings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3Settings"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EndpointId",
+        "EndpointType",
+        "EngineName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EndpointArn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,119 @@
+{
+    "typeName": "Terraform::OVH::IploadbalancingTcpFarm",
+    "description": "CloudFormation equivalent of ovh_iploadbalancing_tcp_farm",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Probe": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ForceSsl": {
+                    "type": "boolean"
+                },
+                "Interval": {
+                    "type": "number"
+                },
+                "Match": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Negate": {
+                    "type": "boolean"
+                },
+                "Pattern": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Balance": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "Stickiness": {
+            "type": "string"
+        },
+        "VrackNetworkId": {
+            "type": "number"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "Probe": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Probe"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceName",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

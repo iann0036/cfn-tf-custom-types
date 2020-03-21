@@ -1,0 +1,187 @@
+{
+    "typeName": "Terraform::AWS::OpsworksApplication",
+    "description": "CloudFormation equivalent of aws_opsworks_application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AppSource": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Revision": {
+                    "type": "string"
+                },
+                "SshKey": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Environment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Secure": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "SslConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "Chain": {
+                    "type": "string"
+                },
+                "PrivateKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Certificate",
+                "PrivateKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoBundleOnDeploy": {
+            "type": "string"
+        },
+        "AwsFlowRubySettings": {
+            "type": "string"
+        },
+        "DataSourceArn": {
+            "type": "string"
+        },
+        "DataSourceDatabaseName": {
+            "type": "string"
+        },
+        "DataSourceType": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DocumentRoot": {
+            "type": "string"
+        },
+        "Domains": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "EnableSsl": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RailsEnv": {
+            "type": "string"
+        },
+        "ShortName": {
+            "type": "string"
+        },
+        "StackId": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "AppSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppSource"
+            }
+        },
+        "Environment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Environment"
+            }
+        },
+        "SslConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslConfiguration"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "StackId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

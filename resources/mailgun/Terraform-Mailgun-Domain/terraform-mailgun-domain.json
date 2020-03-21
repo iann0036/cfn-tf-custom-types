@@ -1,0 +1,119 @@
+{
+    "typeName": "Terraform::Mailgun::Domain",
+    "description": "CloudFormation equivalent of mailgun_domain",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ReceivingRecords": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Priority": {
+                        "type": "string"
+                    },
+                    "RecordType": {
+                        "type": "string"
+                    },
+                    "Valid": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SendingRecords": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Name": {
+                        "type": "string"
+                    },
+                    "RecordType": {
+                        "type": "string"
+                    },
+                    "Valid": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "SmtpLogin": {
+            "type": "string"
+        },
+        "SmtpPassword": {
+            "type": "string"
+        },
+        "SpamAction": {
+            "type": "string"
+        },
+        "Wildcard": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ReceivingRecords",
+        "/properties/SendingRecords",
+        "/properties/SmtpLogin",
+        "/properties/SmtpPassword"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

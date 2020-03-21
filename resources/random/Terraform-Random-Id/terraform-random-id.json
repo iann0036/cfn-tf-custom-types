@@ -1,0 +1,99 @@
+{
+    "typeName": "Terraform::Random::Id",
+    "description": "CloudFormation equivalent of random_id",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "B64": {
+            "type": "string"
+        },
+        "B64Std": {
+            "type": "string"
+        },
+        "B64Url": {
+            "type": "string"
+        },
+        "ByteLength": {
+            "type": "number"
+        },
+        "Dec": {
+            "type": "string"
+        },
+        "Hex": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Keepers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Prefix": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ByteLength"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/B64",
+        "/properties/B64Std",
+        "/properties/B64Url",
+        "/properties/Dec",
+        "/properties/Hex"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

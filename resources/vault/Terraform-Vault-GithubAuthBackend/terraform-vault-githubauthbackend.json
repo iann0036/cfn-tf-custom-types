@@ -1,0 +1,160 @@
+{
+    "typeName": "Terraform::Vault::GithubAuthBackend",
+    "description": "CloudFormation equivalent of vault_github_auth_backend",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessor": {
+            "type": "string"
+        },
+        "BaseUrl": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxTtl": {
+            "type": "string"
+        },
+        "Organization": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string"
+        },
+        "TokenBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenExplicitMaxTtl": {
+            "type": "number"
+        },
+        "TokenMaxTtl": {
+            "type": "number"
+        },
+        "TokenNoDefaultPolicy": {
+            "type": "boolean"
+        },
+        "TokenNumUses": {
+            "type": "number"
+        },
+        "TokenPeriod": {
+            "type": "number"
+        },
+        "TokenPolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenType": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "string"
+        },
+        "Tune": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "AllowedResponseHeaders": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "AuditNonHmacRequestKeys": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "AuditNonHmacResponseKeys": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "DefaultLeaseTtl": {
+                        "type": "string"
+                    },
+                    "ListingVisibility": {
+                        "type": "string"
+                    },
+                    "MaxLeaseTtl": {
+                        "type": "string"
+                    },
+                    "PassthroughRequestHeaders": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "TokenType": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessor"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

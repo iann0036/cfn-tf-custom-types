@@ -1,0 +1,113 @@
+{
+    "typeName": "Terraform::Packet::ReservedIpBlock",
+    "description": "CloudFormation equivalent of packet_reserved_ip_block",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "AddressFamily": {
+            "type": "number"
+        },
+        "Cidr": {
+            "type": "number"
+        },
+        "CidrNotation": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Facility": {
+            "type": "string"
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Global": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Manageable": {
+            "type": "boolean"
+        },
+        "Management": {
+            "type": "boolean"
+        },
+        "Netmask": {
+            "type": "string"
+        },
+        "Network": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "Public": {
+            "type": "boolean"
+        },
+        "Quantity": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectId",
+        "Quantity"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Address",
+        "/properties/AddressFamily",
+        "/properties/Cidr",
+        "/properties/CidrNotation",
+        "/properties/Gateway",
+        "/properties/Global",
+        "/properties/Manageable",
+        "/properties/Management",
+        "/properties/Netmask",
+        "/properties/Network",
+        "/properties/Public"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

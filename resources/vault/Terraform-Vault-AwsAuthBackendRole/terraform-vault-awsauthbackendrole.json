@@ -1,0 +1,225 @@
+{
+    "typeName": "Terraform::Vault::AwsAuthBackendRole",
+    "description": "CloudFormation equivalent of vault_aws_auth_backend_role",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowInstanceMigration": {
+            "type": "boolean"
+        },
+        "AuthType": {
+            "type": "string"
+        },
+        "Backend": {
+            "type": "string"
+        },
+        "BoundAccountId": {
+            "type": "string"
+        },
+        "BoundAccountIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundAmiId": {
+            "type": "string"
+        },
+        "BoundAmiIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundEc2InstanceId": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundEc2InstanceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundIamInstanceProfileArn": {
+            "type": "string"
+        },
+        "BoundIamInstanceProfileArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundIamPrincipalArn": {
+            "type": "string"
+        },
+        "BoundIamPrincipalArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundIamRoleArn": {
+            "type": "string"
+        },
+        "BoundIamRoleArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundRegion": {
+            "type": "string"
+        },
+        "BoundRegions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundSubnetId": {
+            "type": "string"
+        },
+        "BoundSubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BoundVpcId": {
+            "type": "string"
+        },
+        "BoundVpcIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DisallowReauthentication": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InferredAwsRegion": {
+            "type": "string"
+        },
+        "InferredEntityType": {
+            "type": "string"
+        },
+        "MaxTtl": {
+            "type": "number"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ResolveAwsUniqueIds": {
+            "type": "boolean"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "RoleTag": {
+            "type": "string"
+        },
+        "TokenBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenExplicitMaxTtl": {
+            "type": "number"
+        },
+        "TokenMaxTtl": {
+            "type": "number"
+        },
+        "TokenNoDefaultPolicy": {
+            "type": "boolean"
+        },
+        "TokenNumUses": {
+            "type": "number"
+        },
+        "TokenPeriod": {
+            "type": "number"
+        },
+        "TokenPolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenType": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

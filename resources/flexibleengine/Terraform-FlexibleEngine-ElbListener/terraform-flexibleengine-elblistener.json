@@ -1,0 +1,135 @@
+{
+    "typeName": "Terraform::FlexibleEngine::ElbListener",
+    "description": "CloudFormation equivalent of flexibleengine_elb_listener",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackendPort": {
+            "type": "number"
+        },
+        "BackendProtocol": {
+            "type": "string"
+        },
+        "CertificateId": {
+            "type": "string"
+        },
+        "CookieTimeout": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LbAlgorithm": {
+            "type": "string"
+        },
+        "LoadbalancerId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "ProtocolPort": {
+            "type": "number"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SessionSticky": {
+            "type": "boolean"
+        },
+        "SessionStickyType": {
+            "type": "string"
+        },
+        "SslCiphers": {
+            "type": "string"
+        },
+        "SslProtocols": {
+            "type": "string"
+        },
+        "TcpDraining": {
+            "type": "boolean"
+        },
+        "TcpDrainingTimeout": {
+            "type": "number"
+        },
+        "TcpTimeout": {
+            "type": "number"
+        },
+        "UdpTimeout": {
+            "type": "number"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BackendPort",
+        "BackendProtocol",
+        "LbAlgorithm",
+        "LoadbalancerId",
+        "Protocol",
+        "ProtocolPort"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

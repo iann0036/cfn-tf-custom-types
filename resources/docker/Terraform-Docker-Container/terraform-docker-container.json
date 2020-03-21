@@ -1,0 +1,736 @@
+{
+    "typeName": "Terraform::Docker::Container",
+    "description": "CloudFormation equivalent of docker_container",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Capabilities": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Add": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Drop": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Devices": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerPath": {
+                    "type": "string"
+                },
+                "HostPath": {
+                    "type": "string"
+                },
+                "Permissions": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HostPath"
+            ]
+        },
+        "Healthcheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "string"
+                },
+                "Retries": {
+                    "type": "number"
+                },
+                "StartPeriod": {
+                    "type": "string"
+                },
+                "Test": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Timeout": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Test"
+            ]
+        },
+        "Host": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Host",
+                "Ip"
+            ]
+        },
+        "Labels": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Label",
+                "Value"
+            ]
+        },
+        "Mounts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "BindOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BindOptions"
+                    }
+                },
+                "TmpfsOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TmpfsOptions"
+                    }
+                },
+                "VolumeOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VolumeOptions"
+                    }
+                }
+            },
+            "required": [
+                "Target",
+                "Type"
+            ]
+        },
+        "NetworksAdvanced": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aliases": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ipv4Address": {
+                    "type": "string"
+                },
+                "Ipv6Address": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Ports": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "External": {
+                    "type": "number"
+                },
+                "Internal": {
+                    "type": "number"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Internal"
+            ]
+        },
+        "Ulimit": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hard": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Soft": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Hard",
+                "Name",
+                "Soft"
+            ]
+        },
+        "Upload": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "ContentBase64": {
+                    "type": "string"
+                },
+                "Executable": {
+                    "type": "boolean"
+                },
+                "File": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "SourceHash": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "File"
+            ]
+        },
+        "Volumes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerPath": {
+                    "type": "string"
+                },
+                "FromContainer": {
+                    "type": "string"
+                },
+                "HostPath": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "VolumeName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "BindOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Propagation": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TmpfsOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "number"
+                },
+                "SizeBytes": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "VolumeOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DriverName": {
+                    "type": "string"
+                },
+                "DriverOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "NoCopy": {
+                    "type": "boolean"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Labels"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attach": {
+            "type": "boolean"
+        },
+        "Bridge": {
+            "type": "string"
+        },
+        "Command": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ContainerLogs": {
+            "type": "string"
+        },
+        "CpuSet": {
+            "type": "string"
+        },
+        "CpuShares": {
+            "type": "number"
+        },
+        "DestroyGraceSeconds": {
+            "type": "number"
+        },
+        "Dns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DnsOpts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DnsSearch": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Domainname": {
+            "type": "string"
+        },
+        "Entrypoint": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Env": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ExitCode": {
+            "type": "number"
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "GroupAdd": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Image": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "IpPrefixLength": {
+            "type": "number"
+        },
+        "IpcMode": {
+            "type": "string"
+        },
+        "Links": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LogDriver": {
+            "type": "string"
+        },
+        "LogOpts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Logs": {
+            "type": "boolean"
+        },
+        "MaxRetryCount": {
+            "type": "number"
+        },
+        "Memory": {
+            "type": "number"
+        },
+        "MemorySwap": {
+            "type": "number"
+        },
+        "MustRun": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkAlias": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NetworkData": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Gateway": {
+                        "type": "string"
+                    },
+                    "IpAddress": {
+                        "type": "string"
+                    },
+                    "IpPrefixLength": {
+                        "type": "number"
+                    },
+                    "NetworkName": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "NetworkMode": {
+            "type": "string"
+        },
+        "Networks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PidMode": {
+            "type": "string"
+        },
+        "Privileged": {
+            "type": "boolean"
+        },
+        "PublishAllPorts": {
+            "type": "boolean"
+        },
+        "ReadOnly": {
+            "type": "boolean"
+        },
+        "Restart": {
+            "type": "string"
+        },
+        "Rm": {
+            "type": "boolean"
+        },
+        "ShmSize": {
+            "type": "number"
+        },
+        "Start": {
+            "type": "boolean"
+        },
+        "Sysctls": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Tmpfs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "User": {
+            "type": "string"
+        },
+        "UsernsMode": {
+            "type": "string"
+        },
+        "WorkingDir": {
+            "type": "string"
+        },
+        "Capabilities": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Capabilities"
+            },
+            "maxItems": 1
+        },
+        "Devices": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Devices"
+            }
+        },
+        "Healthcheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Healthcheck"
+            },
+            "maxItems": 1
+        },
+        "Host": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Host"
+            }
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Labels"
+            }
+        },
+        "Mounts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Mounts"
+            }
+        },
+        "NetworksAdvanced": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworksAdvanced"
+            }
+        },
+        "Ports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ports"
+            }
+        },
+        "Ulimit": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Ulimit"
+            }
+        },
+        "Upload": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Upload"
+            }
+        },
+        "Volumes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Volumes"
+            }
+        },
+        "BindOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BindOptions"
+            },
+            "maxItems": 1
+        },
+        "TmpfsOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TmpfsOptions"
+            },
+            "maxItems": 1
+        },
+        "VolumeOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VolumeOptions"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Image",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Bridge",
+        "/properties/ContainerLogs",
+        "/properties/ExitCode",
+        "/properties/Gateway",
+        "/properties/IpAddress",
+        "/properties/IpPrefixLength",
+        "/properties/NetworkData"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

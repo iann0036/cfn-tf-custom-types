@@ -1,0 +1,363 @@
+{
+    "typeName": "Terraform::VCD::VappVm",
+    "description": "CloudFormation equivalent of vcd_vapp_vm",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Customization": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "AllowLocalAdminPassword": {
+                    "type": "boolean"
+                },
+                "AutoGeneratePassword": {
+                    "type": "boolean"
+                },
+                "ChangeSid": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Force": {
+                    "type": "boolean"
+                },
+                "Initscript": {
+                    "type": "string"
+                },
+                "JoinDomain": {
+                    "type": "boolean"
+                },
+                "JoinDomainAccountOu": {
+                    "type": "string"
+                },
+                "JoinDomainName": {
+                    "type": "string"
+                },
+                "JoinDomainPassword": {
+                    "type": "string"
+                },
+                "JoinDomainUser": {
+                    "type": "string"
+                },
+                "JoinOrgDomain": {
+                    "type": "boolean"
+                },
+                "MustChangePasswordOnFirstLogin": {
+                    "type": "boolean"
+                },
+                "NumberOfAutoLogons": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Disk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BusNumber": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "UnitNumber": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BusNumber",
+                "Name",
+                "UnitNumber"
+            ]
+        },
+        "Network": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdapterType": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "IpAllocationMode": {
+                    "type": "string"
+                },
+                "IsPrimary": {
+                    "type": "boolean"
+                },
+                "Mac": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "OverrideTemplateDisk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BusNumber": {
+                    "type": "number"
+                },
+                "BusType": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "SizeInMb": {
+                    "type": "number"
+                },
+                "StorageProfile": {
+                    "type": "string"
+                },
+                "UnitNumber": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BusNumber",
+                "BusType",
+                "SizeInMb",
+                "UnitNumber"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptAllEulas": {
+            "type": "boolean"
+        },
+        "CatalogName": {
+            "type": "string"
+        },
+        "ComputerName": {
+            "type": "string"
+        },
+        "CpuCores": {
+            "type": "number"
+        },
+        "Cpus": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExposeHardwareVirtualization": {
+            "type": "boolean"
+        },
+        "GuestProperties": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Initscript": {
+            "type": "string"
+        },
+        "InternalDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "BusNumber": {
+                        "type": "number"
+                    },
+                    "BusType": {
+                        "type": "string"
+                    },
+                    "DiskId": {
+                        "type": "string"
+                    },
+                    "Iops": {
+                        "type": "number"
+                    },
+                    "SizeInMb": {
+                        "type": "number"
+                    },
+                    "StorageProfile": {
+                        "type": "string"
+                    },
+                    "ThinProvisioned": {
+                        "type": "boolean"
+                    },
+                    "UnitNumber": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "Mac": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "number"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkDhcpWaitSeconds": {
+            "type": "number"
+        },
+        "NetworkHref": {
+            "type": "string"
+        },
+        "NetworkName": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "PowerOn": {
+            "type": "boolean"
+        },
+        "StorageProfile": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "VappName": {
+            "type": "string"
+        },
+        "VappNetworkName": {
+            "type": "string"
+        },
+        "Vdc": {
+            "type": "string"
+        },
+        "Customization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Customization"
+            },
+            "maxItems": 1
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Disk"
+            }
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Network"
+            }
+        },
+        "OverrideTemplateDisk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OverrideTemplateDisk"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CatalogName",
+        "Name",
+        "TemplateName",
+        "VappName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Description",
+        "/properties/InternalDisk"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

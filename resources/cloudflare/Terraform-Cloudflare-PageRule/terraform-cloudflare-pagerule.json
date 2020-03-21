@@ -1,0 +1,247 @@
+{
+    "typeName": "Terraform::Cloudflare::PageRule",
+    "description": "CloudFormation equivalent of cloudflare_page_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Actions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlwaysOnline": {
+                    "type": "string"
+                },
+                "AlwaysUseHttps": {
+                    "type": "boolean"
+                },
+                "AutomaticHttpsRewrites": {
+                    "type": "string"
+                },
+                "BrowserCacheTtl": {
+                    "type": "string"
+                },
+                "BrowserCheck": {
+                    "type": "string"
+                },
+                "BypassCacheOnCookie": {
+                    "type": "string"
+                },
+                "CacheByDeviceType": {
+                    "type": "string"
+                },
+                "CacheDeceptionArmor": {
+                    "type": "string"
+                },
+                "CacheLevel": {
+                    "type": "string"
+                },
+                "CacheOnCookie": {
+                    "type": "string"
+                },
+                "DisableApps": {
+                    "type": "boolean"
+                },
+                "DisablePerformance": {
+                    "type": "boolean"
+                },
+                "DisableRailgun": {
+                    "type": "boolean"
+                },
+                "DisableSecurity": {
+                    "type": "boolean"
+                },
+                "EdgeCacheTtl": {
+                    "type": "number"
+                },
+                "EmailObfuscation": {
+                    "type": "string"
+                },
+                "ExplicitCacheControl": {
+                    "type": "string"
+                },
+                "HostHeaderOverride": {
+                    "type": "string"
+                },
+                "IpGeolocation": {
+                    "type": "string"
+                },
+                "Mirage": {
+                    "type": "string"
+                },
+                "OpportunisticEncryption": {
+                    "type": "string"
+                },
+                "OriginErrorPagePassThru": {
+                    "type": "string"
+                },
+                "Polish": {
+                    "type": "string"
+                },
+                "ResolveOverride": {
+                    "type": "string"
+                },
+                "RespectStrongEtag": {
+                    "type": "string"
+                },
+                "ResponseBuffering": {
+                    "type": "string"
+                },
+                "RocketLoader": {
+                    "type": "string"
+                },
+                "SecurityLevel": {
+                    "type": "string"
+                },
+                "ServerSideExclude": {
+                    "type": "string"
+                },
+                "SortQueryStringForCache": {
+                    "type": "string"
+                },
+                "Ssl": {
+                    "type": "string"
+                },
+                "TrueClientIpHeader": {
+                    "type": "string"
+                },
+                "Waf": {
+                    "type": "string"
+                },
+                "ForwardingUrl": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardingUrl"
+                    }
+                },
+                "Minify": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Minify"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ForwardingUrl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCode": {
+                    "type": "number"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StatusCode",
+                "Url"
+            ]
+        },
+        "Minify": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Css": {
+                    "type": "string"
+                },
+                "Html": {
+                    "type": "string"
+                },
+                "Js": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Css",
+                "Html",
+                "Js"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Target": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "Actions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Actions"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ForwardingUrl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForwardingUrl"
+            },
+            "maxItems": 1
+        },
+        "Minify": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Minify"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Target",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,118 @@
+{
+    "typeName": "Terraform::AWS::CodebuildWebhook",
+    "description": "CloudFormation equivalent of aws_codebuild_webhook",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "FilterGroup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Filter"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Filter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExcludeMatchedPattern": {
+                    "type": "boolean"
+                },
+                "Pattern": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Pattern",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BranchFilter": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PayloadUrl": {
+            "type": "string"
+        },
+        "ProjectName": {
+            "type": "string"
+        },
+        "Secret": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "FilterGroup": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FilterGroup"
+            }
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Filter"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ProjectName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/PayloadUrl",
+        "/properties/Secret",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

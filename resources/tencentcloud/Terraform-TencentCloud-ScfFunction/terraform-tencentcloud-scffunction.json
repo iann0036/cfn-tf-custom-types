@@ -1,0 +1,261 @@
+{
+    "typeName": "Terraform::TencentCloud::ScfFunction",
+    "description": "CloudFormation equivalent of tencentcloud_scf_function",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Triggers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CosRegion": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "TriggerDesc": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "TriggerDesc",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClsLogsetId": {
+            "type": "string"
+        },
+        "ClsTopicId": {
+            "type": "string"
+        },
+        "CodeError": {
+            "type": "string"
+        },
+        "CodeResult": {
+            "type": "string"
+        },
+        "CodeSize": {
+            "type": "number"
+        },
+        "CosBucketName": {
+            "type": "string"
+        },
+        "CosBucketRegion": {
+            "type": "string"
+        },
+        "CosObjectName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EipFixed": {
+            "type": "boolean"
+        },
+        "Eips": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Environment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ErrNo": {
+            "type": "number"
+        },
+        "Handler": {
+            "type": "string"
+        },
+        "Host": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstallDependency": {
+            "type": "boolean"
+        },
+        "L5Enable": {
+            "type": "boolean"
+        },
+        "MemSize": {
+            "type": "number"
+        },
+        "ModifyTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "Runtime": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StatusDesc": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Timeout": {
+            "type": "number"
+        },
+        "TriggerInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "CreateTime": {
+                        "type": "string"
+                    },
+                    "CustomArgument": {
+                        "type": "string"
+                    },
+                    "Enable": {
+                        "type": "boolean"
+                    },
+                    "ModifyTime": {
+                        "type": "string"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "TriggerDesc": {
+                        "type": "string"
+                    },
+                    "Type": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Vip": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "ZipFile": {
+            "type": "string"
+        },
+        "Triggers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Triggers"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Handler",
+        "Name",
+        "Runtime"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CodeError",
+        "/properties/CodeResult",
+        "/properties/CodeSize",
+        "/properties/EipFixed",
+        "/properties/Eips",
+        "/properties/ErrNo",
+        "/properties/Host",
+        "/properties/InstallDependency",
+        "/properties/ModifyTime",
+        "/properties/Status",
+        "/properties/StatusDesc",
+        "/properties/TriggerInfo",
+        "/properties/Vip"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

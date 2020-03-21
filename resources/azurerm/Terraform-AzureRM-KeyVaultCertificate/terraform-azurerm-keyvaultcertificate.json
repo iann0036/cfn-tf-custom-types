@@ -1,0 +1,418 @@
+{
+    "typeName": "Terraform::AzureRM::KeyVaultCertificate",
+    "description": "CloudFormation equivalent of azurerm_key_vault_certificate",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Certificate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Contents": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Contents"
+            ]
+        },
+        "CertificatePolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IssuerParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IssuerParameters"
+                    }
+                },
+                "KeyProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/KeyProperties"
+                    }
+                },
+                "LifetimeAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LifetimeAction"
+                    }
+                },
+                "SecretProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecretProperties"
+                    }
+                },
+                "X509CertificateProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/X509CertificateProperties"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IssuerParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "KeyProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exportable": {
+                    "type": "boolean"
+                },
+                "KeySize": {
+                    "type": "number"
+                },
+                "KeyType": {
+                    "type": "string"
+                },
+                "ReuseKey": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Exportable",
+                "KeySize",
+                "KeyType",
+                "ReuseKey"
+            ]
+        },
+        "LifetimeAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Action"
+                    }
+                },
+                "Trigger": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Trigger"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SecretProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContentType"
+            ]
+        },
+        "X509CertificateProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExtendedKeyUsage": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "KeyUsage": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subject": {
+                    "type": "string"
+                },
+                "ValidityInMonths": {
+                    "type": "number"
+                },
+                "SubjectAlternativeNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SubjectAlternativeNames"
+                    }
+                }
+            },
+            "required": [
+                "KeyUsage",
+                "Subject",
+                "ValidityInMonths"
+            ]
+        },
+        "Action": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ActionType"
+            ]
+        },
+        "Trigger": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysBeforeExpiry": {
+                    "type": "number"
+                },
+                "LifetimePercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SubjectAlternativeNames": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Emails": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Upns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateData": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyVaultId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SecretId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Thumbprint": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Certificate"
+            },
+            "maxItems": 1
+        },
+        "CertificatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificatePolicy"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "IssuerParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IssuerParameters"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "KeyProperties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KeyProperties"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "LifetimeAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LifetimeAction"
+            }
+        },
+        "SecretProperties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecretProperties"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "X509CertificateProperties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/X509CertificateProperties"
+            },
+            "maxItems": 1
+        },
+        "Action": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Action"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Trigger": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Trigger"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "SubjectAlternativeNames": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SubjectAlternativeNames"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KeyVaultId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CertificateData",
+        "/properties/SecretId",
+        "/properties/Thumbprint",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

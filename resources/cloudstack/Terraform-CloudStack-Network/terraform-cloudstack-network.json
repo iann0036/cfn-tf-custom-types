@@ -1,0 +1,102 @@
+{
+    "typeName": "Terraform::CloudStack::Network",
+    "description": "CloudFormation equivalent of cloudstack_network",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AclId": {
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "string"
+        },
+        "DisplayText": {
+            "type": "string"
+        },
+        "Endip": {
+            "type": "string"
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkDomain": {
+            "type": "string"
+        },
+        "NetworkOffering": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SourceNatIp": {
+            "type": "boolean"
+        },
+        "SourceNatIpId": {
+            "type": "string"
+        },
+        "Startip": {
+            "type": "string"
+        },
+        "Vlan": {
+            "type": "number"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cidr",
+        "Name",
+        "NetworkOffering",
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/SourceNatIpId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

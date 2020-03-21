@@ -1,0 +1,317 @@
+{
+    "typeName": "Terraform::AWS::EcsService",
+    "description": "CloudFormation equivalent of aws_ecs_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CapacityProviderStrategy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Base": {
+                    "type": "number"
+                },
+                "CapacityProvider": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "CapacityProvider"
+            ]
+        },
+        "DeploymentController": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LoadBalancer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerName": {
+                    "type": "string"
+                },
+                "ContainerPort": {
+                    "type": "number"
+                },
+                "ElbName": {
+                    "type": "string"
+                },
+                "TargetGroupArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContainerName",
+                "ContainerPort"
+            ]
+        },
+        "NetworkConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignPublicIp": {
+                    "type": "boolean"
+                },
+                "SecurityGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Subnets"
+            ]
+        },
+        "OrderedPlacementStrategy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Field": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "PlacementConstraints": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "PlacementStrategy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Field": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ServiceRegistries": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerName": {
+                    "type": "string"
+                },
+                "ContainerPort": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "RegistryArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RegistryArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cluster": {
+            "type": "string"
+        },
+        "DeploymentMaximumPercent": {
+            "type": "number"
+        },
+        "DeploymentMinimumHealthyPercent": {
+            "type": "number"
+        },
+        "DesiredCount": {
+            "type": "number"
+        },
+        "EnableEcsManagedTags": {
+            "type": "boolean"
+        },
+        "HealthCheckGracePeriodSeconds": {
+            "type": "number"
+        },
+        "IamRole": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LaunchType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PlatformVersion": {
+            "type": "string"
+        },
+        "PropagateTags": {
+            "type": "string"
+        },
+        "SchedulingStrategy": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TaskDefinition": {
+            "type": "string"
+        },
+        "CapacityProviderStrategy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CapacityProviderStrategy"
+            }
+        },
+        "DeploymentController": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeploymentController"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancer": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoadBalancer"
+            }
+        },
+        "NetworkConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkConfiguration"
+            },
+            "maxItems": 1
+        },
+        "OrderedPlacementStrategy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrderedPlacementStrategy"
+            },
+            "maxItems": 5
+        },
+        "PlacementConstraints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PlacementConstraints"
+            },
+            "maxItems": 10
+        },
+        "PlacementStrategy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PlacementStrategy"
+            },
+            "maxItems": 5
+        },
+        "ServiceRegistries": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServiceRegistries"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TaskDefinition"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

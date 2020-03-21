@@ -1,0 +1,124 @@
+{
+    "typeName": "Terraform::AWS::TransferServer",
+    "description": "CloudFormation equivalent of aws_transfer_server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EndpointDetails": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VpcEndpointId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VpcEndpointId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "EndpointType": {
+            "type": "string"
+        },
+        "ForceDestroy": {
+            "type": "boolean"
+        },
+        "HostKey": {
+            "type": "string"
+        },
+        "HostKeyFingerprint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentityProviderType": {
+            "type": "string"
+        },
+        "InvocationRole": {
+            "type": "string"
+        },
+        "LoggingRole": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Url": {
+            "type": "string"
+        },
+        "EndpointDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointDetails"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Endpoint",
+        "/properties/HostKeyFingerprint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

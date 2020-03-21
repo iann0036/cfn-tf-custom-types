@@ -1,0 +1,386 @@
+{
+    "typeName": "Terraform::Spotinst::ManagedInstanceAws",
+    "description": "CloudFormation equivalent of spotinst_managed_instance_aws",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "IntegrationRoute53": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domains": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Domains"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LoadBalancers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arn": {
+                    "type": "string"
+                },
+                "AutoWeight": {
+                    "type": "boolean"
+                },
+                "AzAwareness": {
+                    "type": "boolean"
+                },
+                "BalancerId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "TargetSetId": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "NetworkInterface": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssociateIpv6Address": {
+                    "type": "boolean"
+                },
+                "AssociatePublicIpAddress": {
+                    "type": "boolean"
+                },
+                "DeviceIndex": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceIndex"
+            ]
+        },
+        "RevertToSpot": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerformAt": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PerformAt"
+            ]
+        },
+        "ScheduledTask": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CronExpression": {
+                    "type": "string"
+                },
+                "Frequency": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TaskType"
+            ]
+        },
+        "Tags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Domains": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostedZoneId": {
+                    "type": "string"
+                },
+                "SpotinstAcctId": {
+                    "type": "string"
+                },
+                "RecordSets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/RecordSets"
+                    }
+                }
+            },
+            "required": [
+                "HostedZoneId"
+            ]
+        },
+        "RecordSets": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "UsePublicIp": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoHealing": {
+            "type": "boolean"
+        },
+        "BlockDevicesMode": {
+            "type": "string"
+        },
+        "CpuCredits": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DrainingTimeout": {
+            "type": "number"
+        },
+        "EbsOptimized": {
+            "type": "boolean"
+        },
+        "ElasticIp": {
+            "type": "string"
+        },
+        "EnableMonitoring": {
+            "type": "boolean"
+        },
+        "FallBackToOd": {
+            "type": "boolean"
+        },
+        "GracePeriod": {
+            "type": "number"
+        },
+        "HealthCheckType": {
+            "type": "string"
+        },
+        "IamInstanceProfile": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string"
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "KeyPair": {
+            "type": "string"
+        },
+        "LifeCycle": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OptimizationWindows": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Orientation": {
+            "type": "string"
+        },
+        "PersistBlockDevices": {
+            "type": "boolean"
+        },
+        "PersistPrivateIp": {
+            "type": "boolean"
+        },
+        "PersistRootDevice": {
+            "type": "boolean"
+        },
+        "PlacementTenancy": {
+            "type": "string"
+        },
+        "PreferredType": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "Product": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ShutdownScript": {
+            "type": "string"
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UnhealthyDuration": {
+            "type": "number"
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "UtilizeReservedInstances": {
+            "type": "boolean"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "IntegrationRoute53": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationRoute53"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoadBalancers"
+            }
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkInterface"
+            }
+        },
+        "RevertToSpot": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RevertToSpot"
+            },
+            "maxItems": 1
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTask"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tags"
+            }
+        },
+        "Domains": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Domains"
+            },
+            "minItems": 1
+        },
+        "RecordSets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RecordSets"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ImageId",
+        "InstanceTypes",
+        "Name",
+        "PersistBlockDevices",
+        "Product",
+        "SubnetIds",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

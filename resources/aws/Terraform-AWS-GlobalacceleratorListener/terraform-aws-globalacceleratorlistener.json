@@ -1,0 +1,85 @@
+{
+    "typeName": "Terraform::AWS::GlobalacceleratorListener",
+    "description": "CloudFormation equivalent of aws_globalaccelerator_listener",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "PortRange": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromPort": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceleratorArn": {
+            "type": "string"
+        },
+        "ClientAffinity": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "PortRange": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PortRange"
+            },
+            "maxItems": 10,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AcceleratorArn",
+        "Protocol"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

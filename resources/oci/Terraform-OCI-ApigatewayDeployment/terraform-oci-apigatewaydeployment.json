@@ -1,0 +1,534 @@
+{
+    "typeName": "Terraform::OCI::ApigatewayDeployment",
+    "description": "CloudFormation equivalent of oci_apigateway_deployment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Specification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LoggingPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingPolicies"
+                    }
+                },
+                "RequestPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestPolicies"
+                    }
+                },
+                "Routes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Routes"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LoggingPolicies": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessLog"
+                    }
+                },
+                "ExecutionLog": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ExecutionLog"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RequestPolicies": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Authorization": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Authorization"
+                    }
+                },
+                "Cors": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Cors"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Routes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Methods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Backend": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Backend"
+                    }
+                },
+                "LoggingPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LoggingPolicies"
+                    }
+                },
+                "RequestPolicies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestPolicies"
+                    }
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "AccessLog": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "ExecutionLog": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "LogLevel": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Authentication": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionId": {
+                    "type": "string"
+                },
+                "IsAnonymousAccessAllowed": {
+                    "type": "boolean"
+                },
+                "TokenHeader": {
+                    "type": "string"
+                },
+                "TokenQueryParam": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FunctionId",
+                "Type"
+            ]
+        },
+        "Cors": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExposedHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IsAllowCredentialsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxAgeInSeconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AllowedOrigins"
+            ]
+        },
+        "RateLimiting": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RateInRequestsPerSecond": {
+                    "type": "number"
+                },
+                "RateKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RateInRequestsPerSecond",
+                "RateKey"
+            ]
+        },
+        "Backend": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Body": {
+                    "type": "string"
+                },
+                "ConnectTimeoutInSeconds": {
+                    "type": "number"
+                },
+                "FunctionId": {
+                    "type": "string"
+                },
+                "IsSslVerifyDisabled": {
+                    "type": "boolean"
+                },
+                "ReadTimeoutInSeconds": {
+                    "type": "number"
+                },
+                "SendTimeoutInSeconds": {
+                    "type": "number"
+                },
+                "Status": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Headers"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Headers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Authorization": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedScope": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "GatewayId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "PathPrefix": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "Specification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Specification"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "LoggingPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggingPolicies"
+            },
+            "maxItems": 1
+        },
+        "RequestPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequestPolicies"
+            },
+            "maxItems": 1
+        },
+        "Routes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Routes"
+            },
+            "minItems": 1
+        },
+        "AccessLog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessLog"
+            },
+            "maxItems": 1
+        },
+        "ExecutionLog": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExecutionLog"
+            },
+            "maxItems": 1
+        },
+        "Authentication": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Authentication"
+            },
+            "maxItems": 1
+        },
+        "Cors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Cors"
+            },
+            "maxItems": 1
+        },
+        "RateLimiting": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RateLimiting"
+            },
+            "maxItems": 1
+        },
+        "Backend": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Backend"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Headers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Headers"
+            }
+        },
+        "Authorization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Authorization"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompartmentId",
+        "GatewayId",
+        "PathPrefix"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Endpoint",
+        "/properties/LifecycleDetails",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

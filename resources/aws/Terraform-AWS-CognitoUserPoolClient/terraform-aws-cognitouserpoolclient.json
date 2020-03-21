@@ -1,0 +1,166 @@
+{
+    "typeName": "Terraform::AWS::CognitoUserPoolClient",
+    "description": "CloudFormation equivalent of aws_cognito_user_pool_client",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AnalyticsConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationId": {
+                    "type": "string"
+                },
+                "ExternalId": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "UserDataShared": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "ApplicationId",
+                "ExternalId",
+                "RoleArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedOauthFlows": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AllowedOauthFlowsUserPoolClient": {
+            "type": "boolean"
+        },
+        "AllowedOauthScopes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CallbackUrls": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ClientSecret": {
+            "type": "string"
+        },
+        "DefaultRedirectUri": {
+            "type": "string"
+        },
+        "ExplicitAuthFlows": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "GenerateSecret": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogoutUrls": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PreventUserExistenceErrors": {
+            "type": "string"
+        },
+        "ReadAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RefreshTokenValidity": {
+            "type": "number"
+        },
+        "SupportedIdentityProviders": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UserPoolId": {
+            "type": "string"
+        },
+        "WriteAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AnalyticsConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AnalyticsConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "UserPoolId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClientSecret"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

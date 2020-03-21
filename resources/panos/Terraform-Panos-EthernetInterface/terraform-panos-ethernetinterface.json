@@ -1,0 +1,136 @@
+{
+    "typeName": "Terraform::Panos::EthernetInterface",
+    "description": "CloudFormation equivalent of panos_ethernet_interface",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjustTcpMss": {
+            "type": "boolean"
+        },
+        "AggregateGroup": {
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "CreateDhcpDefaultRoute": {
+            "type": "boolean"
+        },
+        "DecryptForward": {
+            "type": "boolean"
+        },
+        "DhcpDefaultRouteMetric": {
+            "type": "number"
+        },
+        "DhcpSendHostnameEnable": {
+            "type": "boolean"
+        },
+        "DhcpSendHostnameValue": {
+            "type": "string"
+        },
+        "EnableDhcp": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4MssAdjust": {
+            "type": "number"
+        },
+        "Ipv6Enabled": {
+            "type": "boolean"
+        },
+        "Ipv6MssAdjust": {
+            "type": "number"
+        },
+        "LinkDuplex": {
+            "type": "string"
+        },
+        "LinkSpeed": {
+            "type": "string"
+        },
+        "LinkState": {
+            "type": "string"
+        },
+        "LldpEnabled": {
+            "type": "boolean"
+        },
+        "LldpProfile": {
+            "type": "string"
+        },
+        "ManagementProfile": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Mtu": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetflowProfile": {
+            "type": "string"
+        },
+        "RxPolicingRate": {
+            "type": "number"
+        },
+        "StaticIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TxPolicingRate": {
+            "type": "number"
+        },
+        "Vsys": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Mode",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

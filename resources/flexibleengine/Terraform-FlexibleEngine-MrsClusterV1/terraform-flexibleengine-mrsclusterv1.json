@@ -1,0 +1,319 @@
+{
+    "typeName": "Terraform::FlexibleEngine::MrsClusterV1",
+    "description": "CloudFormation equivalent of flexibleengine_mrs_cluster_v1",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AddJobs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arguments": {
+                    "type": "string"
+                },
+                "FileAction": {
+                    "type": "string"
+                },
+                "HiveScriptPath": {
+                    "type": "string"
+                },
+                "Hql": {
+                    "type": "string"
+                },
+                "Input": {
+                    "type": "string"
+                },
+                "JarPath": {
+                    "type": "string"
+                },
+                "JobLog": {
+                    "type": "string"
+                },
+                "JobName": {
+                    "type": "string"
+                },
+                "JobType": {
+                    "type": "number"
+                },
+                "Output": {
+                    "type": "string"
+                },
+                "ShutdownCluster": {
+                    "type": "boolean"
+                },
+                "SubmitJobOnceClusterRun": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "JarPath",
+                "JobName",
+                "JobType",
+                "SubmitJobOnceClusterRun"
+            ]
+        },
+        "ComponentList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComponentName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ComponentName"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailableZoneId": {
+            "type": "string"
+        },
+        "AvailableZoneName": {
+            "type": "string"
+        },
+        "BillingType": {
+            "type": "number"
+        },
+        "ChargingStartTime": {
+            "type": "string"
+        },
+        "ClusterAdminSecret": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string"
+        },
+        "ClusterState": {
+            "type": "string"
+        },
+        "ClusterType": {
+            "type": "number"
+        },
+        "ClusterVersion": {
+            "type": "string"
+        },
+        "CoreNodeNum": {
+            "type": "number"
+        },
+        "CoreNodeProductId": {
+            "type": "string"
+        },
+        "CoreNodeSize": {
+            "type": "string"
+        },
+        "CoreNodeSpecId": {
+            "type": "string"
+        },
+        "CreateAt": {
+            "type": "string"
+        },
+        "DeploymentId": {
+            "type": "string"
+        },
+        "Duration": {
+            "type": "string"
+        },
+        "ErrorInfo": {
+            "type": "string"
+        },
+        "ExternalAlternateIp": {
+            "type": "string"
+        },
+        "ExternalIp": {
+            "type": "string"
+        },
+        "Fee": {
+            "type": "string"
+        },
+        "HadoopVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "InternalIp": {
+            "type": "string"
+        },
+        "LogCollection": {
+            "type": "number"
+        },
+        "MasterNodeIp": {
+            "type": "string"
+        },
+        "MasterNodeNum": {
+            "type": "number"
+        },
+        "MasterNodeProductId": {
+            "type": "string"
+        },
+        "MasterNodeSize": {
+            "type": "string"
+        },
+        "MasterNodeSpecId": {
+            "type": "string"
+        },
+        "NodePublicCertName": {
+            "type": "string"
+        },
+        "OrderId": {
+            "type": "string"
+        },
+        "PrivateIpFirst": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Remark": {
+            "type": "string"
+        },
+        "SafeMode": {
+            "type": "number"
+        },
+        "SecurityGroupsId": {
+            "type": "string"
+        },
+        "SlaveSecurityGroupsId": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "TenantId": {
+            "type": "string"
+        },
+        "UpdateAt": {
+            "type": "string"
+        },
+        "Vnc": {
+            "type": "string"
+        },
+        "VolumeSize": {
+            "type": "number"
+        },
+        "VolumeType": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "AddJobs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AddJobs"
+            }
+        },
+        "ComponentList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ComponentList"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailableZoneId",
+        "BillingType",
+        "ClusterName",
+        "CoreNodeNum",
+        "CoreNodeSize",
+        "MasterNodeNum",
+        "MasterNodeSize",
+        "NodePublicCertName",
+        "SafeMode",
+        "SubnetId",
+        "VolumeSize",
+        "VolumeType",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailableZoneName",
+        "/properties/ChargingStartTime",
+        "/properties/ClusterId",
+        "/properties/ClusterState",
+        "/properties/CoreNodeProductId",
+        "/properties/CoreNodeSpecId",
+        "/properties/CreateAt",
+        "/properties/DeploymentId",
+        "/properties/Duration",
+        "/properties/ErrorInfo",
+        "/properties/ExternalAlternateIp",
+        "/properties/ExternalIp",
+        "/properties/Fee",
+        "/properties/HadoopVersion",
+        "/properties/InstanceId",
+        "/properties/InternalIp",
+        "/properties/MasterNodeIp",
+        "/properties/MasterNodeProductId",
+        "/properties/MasterNodeSpecId",
+        "/properties/OrderId",
+        "/properties/PrivateIpFirst",
+        "/properties/Remark",
+        "/properties/SecurityGroupsId",
+        "/properties/SlaveSecurityGroupsId",
+        "/properties/TenantId",
+        "/properties/UpdateAt",
+        "/properties/Vnc"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

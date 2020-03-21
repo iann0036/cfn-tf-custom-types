@@ -1,0 +1,357 @@
+{
+    "typeName": "Terraform::AWS::MskCluster",
+    "description": "CloudFormation equivalent of aws_msk_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BrokerNodeGroupInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AzDistribution": {
+                    "type": "string"
+                },
+                "ClientSubnets": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EbsVolumeSize": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "SecurityGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ClientSubnets",
+                "EbsVolumeSize",
+                "InstanceType",
+                "SecurityGroups"
+            ]
+        },
+        "ClientAuthentication": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Tls": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Tls"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ConfigurationInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arn": {
+                    "type": "string"
+                },
+                "Revision": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Arn",
+                "Revision"
+            ]
+        },
+        "EncryptionInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EncryptionAtRestKmsKeyArn": {
+                    "type": "string"
+                },
+                "EncryptionInTransit": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EncryptionInTransit"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OpenMonitoring": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prometheus": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Prometheus"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Tls": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateAuthorityArns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EncryptionInTransit": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientBroker": {
+                    "type": "string"
+                },
+                "InCluster": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Prometheus": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JmxExporter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JmxExporter"
+                    }
+                },
+                "NodeExporter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeExporter"
+                    }
+                }
+            },
+            "required": []
+        },
+        "JmxExporter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnabledInBroker": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EnabledInBroker"
+            ]
+        },
+        "NodeExporter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnabledInBroker": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EnabledInBroker"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BootstrapBrokers": {
+            "type": "string"
+        },
+        "BootstrapBrokersTls": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string"
+        },
+        "CurrentVersion": {
+            "type": "string"
+        },
+        "EnhancedMonitoring": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KafkaVersion": {
+            "type": "string"
+        },
+        "NumberOfBrokerNodes": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ZookeeperConnectString": {
+            "type": "string"
+        },
+        "BrokerNodeGroupInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BrokerNodeGroupInfo"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ClientAuthentication": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientAuthentication"
+            },
+            "maxItems": 1
+        },
+        "ConfigurationInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConfigurationInfo"
+            },
+            "maxItems": 1
+        },
+        "EncryptionInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionInfo"
+            },
+            "maxItems": 1
+        },
+        "OpenMonitoring": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OpenMonitoring"
+            },
+            "maxItems": 1
+        },
+        "Tls": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Tls"
+            },
+            "maxItems": 1
+        },
+        "EncryptionInTransit": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionInTransit"
+            },
+            "maxItems": 1
+        },
+        "Prometheus": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Prometheus"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "JmxExporter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JmxExporter"
+            },
+            "maxItems": 1
+        },
+        "NodeExporter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeExporter"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "KafkaVersion",
+        "NumberOfBrokerNodes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/BootstrapBrokers",
+        "/properties/BootstrapBrokersTls",
+        "/properties/CurrentVersion",
+        "/properties/ZookeeperConnectString"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

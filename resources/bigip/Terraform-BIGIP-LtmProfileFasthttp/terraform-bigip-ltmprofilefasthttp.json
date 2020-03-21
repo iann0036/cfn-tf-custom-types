@@ -1,0 +1,86 @@
+{
+    "typeName": "Terraform::BIGIP::LtmProfileFasthttp",
+    "description": "CloudFormation equivalent of bigip_ltm_profile_fasthttp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnpoolMaxreuse": {
+            "type": "number"
+        },
+        "ConnpoolMaxsize": {
+            "type": "number"
+        },
+        "ConnpoolMinsize": {
+            "type": "number"
+        },
+        "ConnpoolReplenish": {
+            "type": "string"
+        },
+        "ConnpoolStep": {
+            "type": "number"
+        },
+        "ConnpoolidleTimeoutoverride": {
+            "type": "number"
+        },
+        "DefaultsFrom": {
+            "type": "string"
+        },
+        "Forcehttp10response": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdleTimeout": {
+            "type": "number"
+        },
+        "MaxheaderSize": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

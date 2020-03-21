@@ -1,0 +1,84 @@
+{
+    "typeName": "Terraform::Alicloud::KmsCiphertext",
+    "description": "CloudFormation equivalent of alicloud_kms_ciphertext",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CiphertextBlob": {
+            "type": "string"
+        },
+        "EncryptionContext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "string"
+        },
+        "Plaintext": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KeyId",
+        "Plaintext"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CiphertextBlob"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

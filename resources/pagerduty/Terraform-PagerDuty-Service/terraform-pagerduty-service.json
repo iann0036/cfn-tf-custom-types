@@ -1,0 +1,254 @@
+{
+    "typeName": "Terraform::PagerDuty::Service",
+    "description": "CloudFormation equivalent of pagerduty_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "IncidentUrgencyRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Urgency": {
+                    "type": "string"
+                },
+                "DuringSupportHours": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DuringSupportHours"
+                    }
+                },
+                "OutsideSupportHours": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OutsideSupportHours"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ScheduledActions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ToUrgency": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "At": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/At"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SupportHours": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysOfWeek": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "EndTime": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "TimeZone": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DuringSupportHours": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Urgency": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "OutsideSupportHours": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Urgency": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "At": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcknowledgementTimeout": {
+            "type": "string"
+        },
+        "AlertCreation": {
+            "type": "string"
+        },
+        "AlertGrouping": {
+            "type": "string"
+        },
+        "AlertGroupingTimeout": {
+            "type": "number"
+        },
+        "AutoResolveTimeout": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EscalationPolicy": {
+            "type": "string"
+        },
+        "HtmlUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastIncidentTimestamp": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "IncidentUrgencyRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IncidentUrgencyRule"
+            },
+            "maxItems": 1
+        },
+        "ScheduledActions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduledActions"
+            }
+        },
+        "SupportHours": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SupportHours"
+            },
+            "maxItems": 1
+        },
+        "DuringSupportHours": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DuringSupportHours"
+            },
+            "maxItems": 1
+        },
+        "OutsideSupportHours": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutsideSupportHours"
+            },
+            "maxItems": 1
+        },
+        "At": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/At"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EscalationPolicy"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/HtmlUrl",
+        "/properties/LastIncidentTimestamp",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,107 @@
+{
+    "typeName": "Terraform::TencentCloud::TcaplusTable",
+    "description": "CloudFormation equivalent of tencentcloud_tcaplus_table",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Error": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdlId": {
+            "type": "string"
+        },
+        "ReservedReadQps": {
+            "type": "number"
+        },
+        "ReservedVolume": {
+            "type": "number"
+        },
+        "ReservedWriteQps": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TableIdlType": {
+            "type": "string"
+        },
+        "TableName": {
+            "type": "string"
+        },
+        "TableSize": {
+            "type": "number"
+        },
+        "TableType": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "IdlId",
+        "ReservedReadQps",
+        "ReservedVolume",
+        "ReservedWriteQps",
+        "TableIdlType",
+        "TableName",
+        "TableType",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Error",
+        "/properties/Status",
+        "/properties/TableSize"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

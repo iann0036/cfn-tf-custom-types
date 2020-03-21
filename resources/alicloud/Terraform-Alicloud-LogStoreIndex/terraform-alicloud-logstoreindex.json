@@ -1,0 +1,157 @@
+{
+    "typeName": "Terraform::Alicloud::LogStoreIndex",
+    "description": "CloudFormation equivalent of alicloud_log_store_index",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "FieldSearch": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string"
+                },
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "EnableAnalytics": {
+                    "type": "boolean"
+                },
+                "IncludeChinese": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "JsonKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/JsonKeys"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "FullText": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "IncludeChinese": {
+                    "type": "boolean"
+                },
+                "Token": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "JsonKeys": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alias": {
+                    "type": "string"
+                },
+                "DocValue": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Logstore": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "FieldSearch": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FieldSearch"
+            }
+        },
+        "FullText": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FullText"
+            },
+            "maxItems": 1
+        },
+        "JsonKeys": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/JsonKeys"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Logstore",
+        "Project"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

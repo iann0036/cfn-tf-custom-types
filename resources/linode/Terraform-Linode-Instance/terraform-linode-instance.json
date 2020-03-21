@@ -1,0 +1,676 @@
+{
+    "typeName": "Terraform::Linode::Instance",
+    "description": "CloudFormation equivalent of linode_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Alerts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cpu": {
+                    "type": "number"
+                },
+                "Io": {
+                    "type": "number"
+                },
+                "NetworkIn": {
+                    "type": "number"
+                },
+                "NetworkOut": {
+                    "type": "number"
+                },
+                "TransferQuota": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Config": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comments": {
+                    "type": "string"
+                },
+                "Kernel": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "MemoryLimit": {
+                    "type": "number"
+                },
+                "RootDevice": {
+                    "type": "string"
+                },
+                "RunLevel": {
+                    "type": "string"
+                },
+                "VirtMode": {
+                    "type": "string"
+                },
+                "Devices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Devices"
+                    }
+                },
+                "Helpers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Helpers"
+                    }
+                }
+            },
+            "required": [
+                "Label"
+            ]
+        },
+        "Disk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthorizedKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AuthorizedUsers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Filesystem": {
+                    "type": "string"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "ReadOnly": {
+                    "type": "boolean"
+                },
+                "RootPass": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "StackscriptData": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "StackscriptId": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Label",
+                "Size"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Devices": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Sda": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Sda"
+                    }
+                },
+                "Sdb": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Sdb"
+                    }
+                },
+                "Sdc": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Sdc"
+                    }
+                },
+                "Sdd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Sdd"
+                    }
+                },
+                "Sde": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Sde"
+                    }
+                },
+                "Sdf": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Sdf"
+                    }
+                },
+                "Sdg": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Sdg"
+                    }
+                },
+                "Sdh": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Sdh"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Helpers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DevtmpfsAutomount": {
+                    "type": "boolean"
+                },
+                "Distro": {
+                    "type": "boolean"
+                },
+                "ModulesDep": {
+                    "type": "boolean"
+                },
+                "Network": {
+                    "type": "boolean"
+                },
+                "UpdatedbDisabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Sda": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Sdb": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Sdc": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Sdd": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Sde": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Sdf": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Sdg": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Sdh": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskId": {
+                    "type": "number"
+                },
+                "DiskLabel": {
+                    "type": "string"
+                },
+                "VolumeId": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorizedKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AuthorizedUsers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BackupId": {
+            "type": "number"
+        },
+        "Backups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Enabled": {
+                        "type": "boolean"
+                    },
+                    "Schedule": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Day": {
+                                    "type": "string"
+                                },
+                                "Window": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "BackupsEnabled": {
+            "type": "boolean"
+        },
+        "BootConfigLabel": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Image": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "Ipv4": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Ipv6": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "boolean"
+        },
+        "PrivateIpAddress": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RootPass": {
+            "type": "string"
+        },
+        "Specs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Disk": {
+                        "type": "number"
+                    },
+                    "Memory": {
+                        "type": "number"
+                    },
+                    "Transfer": {
+                        "type": "number"
+                    },
+                    "Vcpus": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "StackscriptData": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "StackscriptId": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SwapSize": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "WatchdogEnabled": {
+            "type": "boolean"
+        },
+        "Alerts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Alerts"
+            },
+            "maxItems": 1
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Config"
+            }
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Disk"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "Devices": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Devices"
+            },
+            "maxItems": 1
+        },
+        "Helpers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Helpers"
+            },
+            "maxItems": 1
+        },
+        "Sda": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sda"
+            },
+            "maxItems": 1
+        },
+        "Sdb": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sdb"
+            },
+            "maxItems": 1
+        },
+        "Sdc": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sdc"
+            },
+            "maxItems": 1
+        },
+        "Sdd": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sdd"
+            },
+            "maxItems": 1
+        },
+        "Sde": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sde"
+            },
+            "maxItems": 1
+        },
+        "Sdf": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sdf"
+            },
+            "maxItems": 1
+        },
+        "Sdg": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sdg"
+            },
+            "maxItems": 1
+        },
+        "Sdh": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sdh"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Backups",
+        "/properties/IpAddress",
+        "/properties/Ipv4",
+        "/properties/Ipv6",
+        "/properties/PrivateIpAddress",
+        "/properties/Specs",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

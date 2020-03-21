@@ -1,0 +1,212 @@
+{
+    "typeName": "Terraform::TencentCloud::Instance",
+    "description": "CloudFormation equivalent of tencentcloud_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DataDisks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataDiskId": {
+                    "type": "string"
+                },
+                "DataDiskSize": {
+                    "type": "number"
+                },
+                "DataDiskType": {
+                    "type": "string"
+                },
+                "DeleteWithInstance": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "DataDiskSize",
+                "DataDiskType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocatePublicIp": {
+            "type": "boolean"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "DisableMonitorService": {
+            "type": "boolean"
+        },
+        "DisableSecurityService": {
+            "type": "boolean"
+        },
+        "ExpiredTime": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string"
+        },
+        "InstanceChargeType": {
+            "type": "string"
+        },
+        "InstanceChargeTypePrepaidPeriod": {
+            "type": "number"
+        },
+        "InstanceChargeTypePrepaidRenewFlag": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "InstanceStatus": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "InternetChargeType": {
+            "type": "string"
+        },
+        "InternetMaxBandwidthOut": {
+            "type": "number"
+        },
+        "KeyName": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PlacementGroupId": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "number"
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "RunningFlag": {
+            "type": "boolean"
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SpotInstanceType": {
+            "type": "string"
+        },
+        "SpotMaxPrice": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "SystemDiskId": {
+            "type": "string"
+        },
+        "SystemDiskSize": {
+            "type": "number"
+        },
+        "SystemDiskType": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "UserDataRaw": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "DataDisks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDisks"
+            },
+            "maxItems": 10
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "ImageId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/ExpiredTime",
+        "/properties/InstanceStatus",
+        "/properties/PublicIp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "typeName": "Terraform::NS1::Monitoringjob",
+    "description": "CloudFormation equivalent of ns1_monitoringjob",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Rules": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Key",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean"
+        },
+        "Config": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Frequency": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JobType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Notes": {
+            "type": "string"
+        },
+        "NotifyDelay": {
+            "type": "number"
+        },
+        "NotifyFailback": {
+            "type": "boolean"
+        },
+        "NotifyList": {
+            "type": "string"
+        },
+        "NotifyRegional": {
+            "type": "boolean"
+        },
+        "NotifyRepeat": {
+            "type": "number"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "RapidRecheck": {
+            "type": "boolean"
+        },
+        "Regions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Rules"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Config",
+        "Frequency",
+        "JobType",
+        "Name",
+        "Regions"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

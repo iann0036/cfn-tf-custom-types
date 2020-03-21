@@ -1,0 +1,163 @@
+{
+    "typeName": "Terraform::AWS::S3BucketNotification",
+    "description": "CloudFormation equivalent of aws_s3_bucket_notification",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "LambdaFunction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Events": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FilterPrefix": {
+                    "type": "string"
+                },
+                "FilterSuffix": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "LambdaFunctionArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Events"
+            ]
+        },
+        "Queue": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Events": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FilterPrefix": {
+                    "type": "string"
+                },
+                "FilterSuffix": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "QueueArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Events",
+                "QueueArn"
+            ]
+        },
+        "Topic": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Events": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FilterPrefix": {
+                    "type": "string"
+                },
+                "FilterSuffix": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Events",
+                "TopicArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LambdaFunction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LambdaFunction"
+            }
+        },
+        "Queue": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Queue"
+            }
+        },
+        "Topic": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Topic"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

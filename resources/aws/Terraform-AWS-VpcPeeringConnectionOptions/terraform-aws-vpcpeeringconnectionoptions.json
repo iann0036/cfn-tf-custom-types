@@ -1,0 +1,104 @@
+{
+    "typeName": "Terraform::AWS::VpcPeeringConnectionOptions",
+    "description": "CloudFormation equivalent of aws_vpc_peering_connection_options",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Accepter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Requester": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "VpcPeeringConnectionId": {
+            "type": "string"
+        },
+        "Accepter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Accepter"
+            },
+            "maxItems": 1
+        },
+        "Requester": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Requester"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcPeeringConnectionId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

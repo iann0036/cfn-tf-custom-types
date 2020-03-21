@@ -1,0 +1,127 @@
+{
+    "typeName": "Terraform::Alicloud::FcService",
+    "description": "CloudFormation equivalent of alicloud_fc_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "LogConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Logstore": {
+                    "type": "string"
+                },
+                "Project": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Logstore",
+                "Project"
+            ]
+        },
+        "VpcConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupId": {
+                    "type": "string"
+                },
+                "VswitchIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "SecurityGroupId",
+                "VswitchIds"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternetAccess": {
+            "type": "boolean"
+        },
+        "LastModified": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "ServiceId": {
+            "type": "string"
+        },
+        "LogConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogConfig"
+            },
+            "maxItems": 1
+        },
+        "VpcConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/LastModified",
+        "/properties/ServiceId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

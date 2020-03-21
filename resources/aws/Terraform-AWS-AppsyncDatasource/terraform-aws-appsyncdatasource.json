@@ -1,0 +1,163 @@
+{
+    "typeName": "Terraform::AWS::AppsyncDatasource",
+    "description": "CloudFormation equivalent of aws_appsync_datasource",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DynamodbConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Region": {
+                    "type": "string"
+                },
+                "TableName": {
+                    "type": "string"
+                },
+                "UseCallerCredentials": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "TableName"
+            ]
+        },
+        "ElasticsearchConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint"
+            ]
+        },
+        "HttpConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Endpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint"
+            ]
+        },
+        "LambdaConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FunctionArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ServiceRoleArn": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "DynamodbConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DynamodbConfig"
+            },
+            "maxItems": 1
+        },
+        "ElasticsearchConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticsearchConfig"
+            },
+            "maxItems": 1
+        },
+        "HttpConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpConfig"
+            },
+            "maxItems": 1
+        },
+        "LambdaConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LambdaConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

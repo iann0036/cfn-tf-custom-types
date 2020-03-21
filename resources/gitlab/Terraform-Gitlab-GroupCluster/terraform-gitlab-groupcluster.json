@@ -1,0 +1,102 @@
+{
+    "typeName": "Terraform::Gitlab::GroupCluster",
+    "description": "CloudFormation equivalent of gitlab_group_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterType": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "EnvironmentScope": {
+            "type": "string"
+        },
+        "Group": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KubernetesApiUrl": {
+            "type": "string"
+        },
+        "KubernetesAuthorizationType": {
+            "type": "string"
+        },
+        "KubernetesCaCert": {
+            "type": "string"
+        },
+        "KubernetesToken": {
+            "type": "string"
+        },
+        "Managed": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PlatformType": {
+            "type": "string"
+        },
+        "ProviderType": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Group",
+        "KubernetesApiUrl",
+        "KubernetesToken",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClusterType",
+        "/properties/CreatedAt",
+        "/properties/PlatformType",
+        "/properties/ProviderType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

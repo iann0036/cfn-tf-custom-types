@@ -1,0 +1,83 @@
+{
+    "typeName": "Terraform::AWS::MacieS3BucketAssociation",
+    "description": "CloudFormation equivalent of aws_macie_s3_bucket_association",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ClassificationType": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Continuous": {
+                    "type": "string"
+                },
+                "OneTime": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BucketName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MemberAccountId": {
+            "type": "string"
+        },
+        "Prefix": {
+            "type": "string"
+        },
+        "ClassificationType": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClassificationType"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BucketName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

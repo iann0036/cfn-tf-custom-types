@@ -1,0 +1,217 @@
+{
+    "typeName": "Terraform::Panos::SecurityPolicy",
+    "description": "CloudFormation equivalent of panos_security_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Rule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Applications": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Categories": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DataFiltering": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DestinationZones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DisableServerResponseInspection": {
+                    "type": "boolean"
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "FileBlocking": {
+                    "type": "string"
+                },
+                "Group": {
+                    "type": "string"
+                },
+                "HipProfiles": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IcmpUnreachable": {
+                    "type": "boolean"
+                },
+                "LogEnd": {
+                    "type": "boolean"
+                },
+                "LogSetting": {
+                    "type": "string"
+                },
+                "LogStart": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NegateDestination": {
+                    "type": "boolean"
+                },
+                "NegateSource": {
+                    "type": "boolean"
+                },
+                "Schedule": {
+                    "type": "string"
+                },
+                "Services": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceAddresses": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceUsers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SourceZones": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Spyware": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UrlFiltering": {
+                    "type": "string"
+                },
+                "Virus": {
+                    "type": "string"
+                },
+                "Vulnerability": {
+                    "type": "string"
+                },
+                "WildfireAnalysis": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Applications",
+                "Categories",
+                "DestinationAddresses",
+                "DestinationZones",
+                "HipProfiles",
+                "Name",
+                "Services",
+                "SourceAddresses",
+                "SourceUsers",
+                "SourceZones"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Rulebase": {
+            "type": "string"
+        },
+        "Vsys": {
+            "type": "string"
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Rule"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

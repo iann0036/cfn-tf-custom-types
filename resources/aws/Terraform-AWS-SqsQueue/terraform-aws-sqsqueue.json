@@ -1,0 +1,113 @@
+{
+    "typeName": "Terraform::AWS::SqsQueue",
+    "description": "CloudFormation equivalent of aws_sqs_queue",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ContentBasedDeduplication": {
+            "type": "boolean"
+        },
+        "DelaySeconds": {
+            "type": "number"
+        },
+        "FifoQueue": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsDataKeyReusePeriodSeconds": {
+            "type": "number"
+        },
+        "KmsMasterKeyId": {
+            "type": "string"
+        },
+        "MaxMessageSize": {
+            "type": "number"
+        },
+        "MessageRetentionSeconds": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "ReceiveWaitTimeSeconds": {
+            "type": "number"
+        },
+        "RedrivePolicy": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "VisibilityTimeoutSeconds": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

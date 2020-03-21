@@ -1,0 +1,157 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayUsagePlan",
+    "description": "CloudFormation equivalent of aws_api_gateway_usage_plan",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ApiStages": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiId": {
+                    "type": "string"
+                },
+                "Stage": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ApiId",
+                "Stage"
+            ]
+        },
+        "QuotaSettings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Limit": {
+                    "type": "number"
+                },
+                "Offset": {
+                    "type": "number"
+                },
+                "Period": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Limit",
+                "Period"
+            ]
+        },
+        "ThrottleSettings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BurstLimit": {
+                    "type": "number"
+                },
+                "RateLimit": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProductCode": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ApiStages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApiStages"
+            }
+        },
+        "QuotaSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/QuotaSettings"
+            },
+            "maxItems": 1
+        },
+        "ThrottleSettings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ThrottleSettings"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

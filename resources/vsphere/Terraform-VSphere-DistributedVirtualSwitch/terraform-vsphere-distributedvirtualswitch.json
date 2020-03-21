@@ -1,0 +1,400 @@
+{
+    "typeName": "Terraform::VSphere::DistributedVirtualSwitch",
+    "description": "CloudFormation equivalent of vsphere_distributed_virtual_switch",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Host": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Devices": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "HostSystemId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Devices",
+                "HostSystemId"
+            ]
+        },
+        "VlanRange": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxVlan": {
+                    "type": "number"
+                },
+                "MinVlan": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxVlan",
+                "MinVlan"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveUplinks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AllowForgedTransmits": {
+            "type": "boolean"
+        },
+        "AllowMacChanges": {
+            "type": "boolean"
+        },
+        "AllowPromiscuous": {
+            "type": "boolean"
+        },
+        "BlockAllPorts": {
+            "type": "boolean"
+        },
+        "CheckBeacon": {
+            "type": "boolean"
+        },
+        "ConfigVersion": {
+            "type": "string"
+        },
+        "ContactDetail": {
+            "type": "string"
+        },
+        "ContactName": {
+            "type": "string"
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "DatacenterId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DirectpathGen2Allowed": {
+            "type": "boolean"
+        },
+        "EgressShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "EgressShapingBurstSize": {
+            "type": "number"
+        },
+        "EgressShapingEnabled": {
+            "type": "boolean"
+        },
+        "EgressShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "Failback": {
+            "type": "boolean"
+        },
+        "FaulttoleranceMaximumMbit": {
+            "type": "number"
+        },
+        "FaulttoleranceReservationMbit": {
+            "type": "number"
+        },
+        "FaulttoleranceShareCount": {
+            "type": "number"
+        },
+        "FaulttoleranceShareLevel": {
+            "type": "string"
+        },
+        "Folder": {
+            "type": "string"
+        },
+        "HbrMaximumMbit": {
+            "type": "number"
+        },
+        "HbrReservationMbit": {
+            "type": "number"
+        },
+        "HbrShareCount": {
+            "type": "number"
+        },
+        "HbrShareLevel": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IngressShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "IngressShapingBurstSize": {
+            "type": "number"
+        },
+        "IngressShapingEnabled": {
+            "type": "boolean"
+        },
+        "IngressShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "Ipv4Address": {
+            "type": "string"
+        },
+        "IscsiMaximumMbit": {
+            "type": "number"
+        },
+        "IscsiReservationMbit": {
+            "type": "number"
+        },
+        "IscsiShareCount": {
+            "type": "number"
+        },
+        "IscsiShareLevel": {
+            "type": "string"
+        },
+        "LacpApiVersion": {
+            "type": "string"
+        },
+        "LacpEnabled": {
+            "type": "boolean"
+        },
+        "LacpMode": {
+            "type": "string"
+        },
+        "LinkDiscoveryOperation": {
+            "type": "string"
+        },
+        "LinkDiscoveryProtocol": {
+            "type": "string"
+        },
+        "ManagementMaximumMbit": {
+            "type": "number"
+        },
+        "ManagementReservationMbit": {
+            "type": "number"
+        },
+        "ManagementShareCount": {
+            "type": "number"
+        },
+        "ManagementShareLevel": {
+            "type": "string"
+        },
+        "MaxMtu": {
+            "type": "number"
+        },
+        "MulticastFilteringMode": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetflowActiveFlowTimeout": {
+            "type": "number"
+        },
+        "NetflowCollectorIpAddress": {
+            "type": "string"
+        },
+        "NetflowCollectorPort": {
+            "type": "number"
+        },
+        "NetflowEnabled": {
+            "type": "boolean"
+        },
+        "NetflowIdleFlowTimeout": {
+            "type": "number"
+        },
+        "NetflowInternalFlowsOnly": {
+            "type": "boolean"
+        },
+        "NetflowObservationDomainId": {
+            "type": "number"
+        },
+        "NetflowSamplingRate": {
+            "type": "number"
+        },
+        "NetworkResourceControlEnabled": {
+            "type": "boolean"
+        },
+        "NetworkResourceControlVersion": {
+            "type": "string"
+        },
+        "NfsMaximumMbit": {
+            "type": "number"
+        },
+        "NfsReservationMbit": {
+            "type": "number"
+        },
+        "NfsShareCount": {
+            "type": "number"
+        },
+        "NfsShareLevel": {
+            "type": "string"
+        },
+        "NotifySwitches": {
+            "type": "boolean"
+        },
+        "PortPrivateSecondaryVlanId": {
+            "type": "number"
+        },
+        "StandbyUplinks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TeamingPolicy": {
+            "type": "string"
+        },
+        "TxUplink": {
+            "type": "boolean"
+        },
+        "Uplinks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VdpMaximumMbit": {
+            "type": "number"
+        },
+        "VdpReservationMbit": {
+            "type": "number"
+        },
+        "VdpShareCount": {
+            "type": "number"
+        },
+        "VdpShareLevel": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "VirtualmachineMaximumMbit": {
+            "type": "number"
+        },
+        "VirtualmachineReservationMbit": {
+            "type": "number"
+        },
+        "VirtualmachineShareCount": {
+            "type": "number"
+        },
+        "VirtualmachineShareLevel": {
+            "type": "string"
+        },
+        "VlanId": {
+            "type": "number"
+        },
+        "VmotionMaximumMbit": {
+            "type": "number"
+        },
+        "VmotionReservationMbit": {
+            "type": "number"
+        },
+        "VmotionShareCount": {
+            "type": "number"
+        },
+        "VmotionShareLevel": {
+            "type": "string"
+        },
+        "VsanMaximumMbit": {
+            "type": "number"
+        },
+        "VsanReservationMbit": {
+            "type": "number"
+        },
+        "VsanShareCount": {
+            "type": "number"
+        },
+        "VsanShareLevel": {
+            "type": "string"
+        },
+        "Host": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Host"
+            }
+        },
+        "VlanRange": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VlanRange"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatacenterId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConfigVersion"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

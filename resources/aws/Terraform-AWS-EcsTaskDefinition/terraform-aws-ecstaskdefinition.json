@@ -1,0 +1,305 @@
+{
+    "typeName": "Terraform::AWS::EcsTaskDefinition",
+    "description": "CloudFormation equivalent of aws_ecs_task_definition",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "PlacementConstraints": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ProxyConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContainerName": {
+                    "type": "string"
+                },
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContainerName"
+            ]
+        },
+        "Volume": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostPath": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "DockerVolumeConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DockerVolumeConfiguration"
+                    }
+                },
+                "EfsVolumeConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EfsVolumeConfiguration"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "DockerVolumeConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Autoprovision": {
+                    "type": "boolean"
+                },
+                "Driver": {
+                    "type": "string"
+                },
+                "DriverOpts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Scope": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EfsVolumeConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FileSystemId": {
+                    "type": "string"
+                },
+                "RootDirectory": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FileSystemId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ContainerDefinitions": {
+            "type": "string"
+        },
+        "Cpu": {
+            "type": "string"
+        },
+        "ExecutionRoleArn": {
+            "type": "string"
+        },
+        "Family": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpcMode": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "string"
+        },
+        "NetworkMode": {
+            "type": "string"
+        },
+        "PidMode": {
+            "type": "string"
+        },
+        "RequiresCompatibilities": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TaskRoleArn": {
+            "type": "string"
+        },
+        "PlacementConstraints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PlacementConstraints"
+            },
+            "maxItems": 10
+        },
+        "ProxyConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProxyConfiguration"
+            },
+            "maxItems": 1
+        },
+        "Volume": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Volume"
+            }
+        },
+        "DockerVolumeConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DockerVolumeConfiguration"
+            },
+            "maxItems": 1
+        },
+        "EfsVolumeConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EfsVolumeConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContainerDefinitions",
+        "Family"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

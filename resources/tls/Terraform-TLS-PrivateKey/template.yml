@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: AWS SAM template for the Terraform::TLS::PrivateKey resource type
+
+Globals:
+  Function:
+    Timeout: 60  # docker start-up times can be long for SAM CLI
+
+Resources:
+  TypeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: terraform_tls_privatekey.handlers.resource
+      Runtime: python3.7
+      CodeUri: build/
+
+  TestEntrypoint:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: terraform_tls_privatekey.handlers.test_entrypoint
+      Runtime: python3.7
+      CodeUri: build/
+

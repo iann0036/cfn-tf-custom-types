@@ -1,0 +1,179 @@
+{
+    "typeName": "Terraform::AWS::OpsworksStack",
+    "description": "CloudFormation equivalent of aws_opsworks_stack",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CustomCookbooksSource": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "Revision": {
+                    "type": "string"
+                },
+                "SshKey": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type",
+                "Url"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AgentVersion": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BerkshelfVersion": {
+            "type": "string"
+        },
+        "Color": {
+            "type": "string"
+        },
+        "ConfigurationManagerName": {
+            "type": "string"
+        },
+        "ConfigurationManagerVersion": {
+            "type": "string"
+        },
+        "CustomJson": {
+            "type": "string"
+        },
+        "DefaultAvailabilityZone": {
+            "type": "string"
+        },
+        "DefaultInstanceProfileArn": {
+            "type": "string"
+        },
+        "DefaultOs": {
+            "type": "string"
+        },
+        "DefaultRootDeviceType": {
+            "type": "string"
+        },
+        "DefaultSshKeyName": {
+            "type": "string"
+        },
+        "DefaultSubnetId": {
+            "type": "string"
+        },
+        "HostnameTheme": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ManageBerkshelf": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ServiceRoleArn": {
+            "type": "string"
+        },
+        "StackEndpoint": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "UseCustomCookbooks": {
+            "type": "boolean"
+        },
+        "UseOpsworksSecurityGroups": {
+            "type": "boolean"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "CustomCookbooksSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomCookbooksSource"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultInstanceProfileArn",
+        "Name",
+        "Region",
+        "ServiceRoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/StackEndpoint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

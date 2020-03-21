@@ -1,0 +1,123 @@
+{
+    "typeName": "Terraform::Cloudflare::LoadBalancerMonitor",
+    "description": "CloudFormation equivalent of cloudflare_load_balancer_monitor",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Header": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Header": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Header",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowInsecure": {
+            "type": "boolean"
+        },
+        "CreatedOn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExpectedBody": {
+            "type": "string"
+        },
+        "ExpectedCodes": {
+            "type": "string"
+        },
+        "FollowRedirects": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number"
+        },
+        "Method": {
+            "type": "string"
+        },
+        "ModifiedOn": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Retries": {
+            "type": "number"
+        },
+        "Timeout": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Header": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Header"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedOn",
+        "/properties/ModifiedOn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

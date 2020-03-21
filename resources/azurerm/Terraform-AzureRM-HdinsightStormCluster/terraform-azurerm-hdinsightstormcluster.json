@@ -1,0 +1,367 @@
+{
+    "typeName": "Terraform::AzureRM::HdinsightStormCluster",
+    "description": "CloudFormation equivalent of azurerm_hdinsight_storm_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ComponentVersion": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Storm": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Storm"
+            ]
+        },
+        "Gateway": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled",
+                "Password",
+                "Username"
+            ]
+        },
+        "Roles": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeadNode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeadNode"
+                    }
+                },
+                "WorkerNode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WorkerNode"
+                    }
+                },
+                "ZookeeperNode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZookeeperNode"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StorageAccount": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsDefault": {
+                    "type": "boolean"
+                },
+                "StorageAccountKey": {
+                    "type": "string"
+                },
+                "StorageContainerId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IsDefault",
+                "StorageAccountKey",
+                "StorageContainerId"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HeadNode": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "VirtualNetworkId": {
+                    "type": "string"
+                },
+                "VmSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Username",
+                "VmSize"
+            ]
+        },
+        "WorkerNode": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MinInstanceCount": {
+                    "type": "number"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "TargetInstanceCount": {
+                    "type": "number"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "VirtualNetworkId": {
+                    "type": "string"
+                },
+                "VmSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TargetInstanceCount",
+                "Username",
+                "VmSize"
+            ]
+        },
+        "ZookeeperNode": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                },
+                "VirtualNetworkId": {
+                    "type": "string"
+                },
+                "VmSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Username",
+                "VmSize"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClusterVersion": {
+            "type": "string"
+        },
+        "HttpsEndpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "SshEndpoint": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Tier": {
+            "type": "string"
+        },
+        "ComponentVersion": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ComponentVersion"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Gateway": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Gateway"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Roles"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "StorageAccount": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageAccount"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "HeadNode": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HeadNode"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "WorkerNode": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WorkerNode"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ZookeeperNode": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ZookeeperNode"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterVersion",
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "Tier"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/HttpsEndpoint",
+        "/properties/SshEndpoint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

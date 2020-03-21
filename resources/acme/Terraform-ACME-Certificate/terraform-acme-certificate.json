@@ -1,0 +1,153 @@
+{
+    "typeName": "Terraform::ACME::Certificate",
+    "description": "CloudFormation equivalent of acme_certificate",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DnsChallenge": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Provider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Provider"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountKeyPem": {
+            "type": "string"
+        },
+        "CertificateDomain": {
+            "type": "string"
+        },
+        "CertificateP12": {
+            "type": "string"
+        },
+        "CertificateP12Password": {
+            "type": "string"
+        },
+        "CertificatePem": {
+            "type": "string"
+        },
+        "CertificateRequestPem": {
+            "type": "string"
+        },
+        "CertificateUrl": {
+            "type": "string"
+        },
+        "CommonName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssuerPem": {
+            "type": "string"
+        },
+        "KeyType": {
+            "type": "string"
+        },
+        "MinDaysRemaining": {
+            "type": "number"
+        },
+        "MustStaple": {
+            "type": "boolean"
+        },
+        "PrivateKeyPem": {
+            "type": "string"
+        },
+        "RecursiveNameservers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SubjectAlternativeNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DnsChallenge": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsChallenge"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AccountKeyPem"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CertificateDomain",
+        "/properties/CertificateP12",
+        "/properties/CertificatePem",
+        "/properties/CertificateUrl",
+        "/properties/IssuerPem",
+        "/properties/PrivateKeyPem"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

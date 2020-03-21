@@ -1,0 +1,224 @@
+{
+    "typeName": "Terraform::Alicloud::LaunchTemplate",
+    "description": "CloudFormation equivalent of alicloud_launch_template",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DataDisks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string"
+                },
+                "DeleteWithInstance": {
+                    "type": "boolean"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkInterfaces": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PrimaryIp": {
+                    "type": "string"
+                },
+                "SecurityGroupId": {
+                    "type": "string"
+                },
+                "VswitchId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoReleaseTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "HostName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string"
+        },
+        "ImageOwnerAlias": {
+            "type": "string"
+        },
+        "InstanceChargeType": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "InternetChargeType": {
+            "type": "string"
+        },
+        "InternetMaxBandwidthIn": {
+            "type": "number"
+        },
+        "InternetMaxBandwidthOut": {
+            "type": "number"
+        },
+        "IoOptimized": {
+            "type": "string"
+        },
+        "KeyPairName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkType": {
+            "type": "string"
+        },
+        "RamRoleName": {
+            "type": "string"
+        },
+        "ResourceGroupId": {
+            "type": "string"
+        },
+        "SecurityEnhancementStrategy": {
+            "type": "string"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "SpotPriceLimit": {
+            "type": "number"
+        },
+        "SpotStrategy": {
+            "type": "string"
+        },
+        "SystemDiskCategory": {
+            "type": "string"
+        },
+        "SystemDiskDescription": {
+            "type": "string"
+        },
+        "SystemDiskName": {
+            "type": "string"
+        },
+        "SystemDiskSize": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Userdata": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VswitchId": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "DataDisks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDisks"
+            }
+        },
+        "NetworkInterfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaces"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

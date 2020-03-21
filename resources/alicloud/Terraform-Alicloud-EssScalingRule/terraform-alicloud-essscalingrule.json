@@ -1,0 +1,111 @@
+{
+    "typeName": "Terraform::Alicloud::EssScalingRule",
+    "description": "CloudFormation equivalent of alicloud_ess_scaling_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "StepAdjustment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricIntervalLowerBound": {
+                    "type": "string"
+                },
+                "MetricIntervalUpperBound": {
+                    "type": "string"
+                },
+                "ScalingAdjustment": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjustmentType": {
+            "type": "string"
+        },
+        "AdjustmentValue": {
+            "type": "number"
+        },
+        "Ari": {
+            "type": "string"
+        },
+        "Cooldown": {
+            "type": "number"
+        },
+        "DisableScaleIn": {
+            "type": "boolean"
+        },
+        "EstimatedInstanceWarmup": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetricName": {
+            "type": "string"
+        },
+        "ScalingGroupId": {
+            "type": "string"
+        },
+        "ScalingRuleName": {
+            "type": "string"
+        },
+        "ScalingRuleType": {
+            "type": "string"
+        },
+        "TargetValue": {
+            "type": "number"
+        },
+        "StepAdjustment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StepAdjustment"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ScalingGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Ari"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

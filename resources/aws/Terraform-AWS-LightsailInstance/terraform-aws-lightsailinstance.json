@@ -1,0 +1,129 @@
+{
+    "typeName": "Terraform::AWS::LightsailInstance",
+    "description": "CloudFormation equivalent of aws_lightsail_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "BlueprintId": {
+            "type": "string"
+        },
+        "BundleId": {
+            "type": "string"
+        },
+        "CpuCount": {
+            "type": "number"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6Address": {
+            "type": "string"
+        },
+        "IsStaticIp": {
+            "type": "boolean"
+        },
+        "KeyPairName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PrivateIpAddress": {
+            "type": "string"
+        },
+        "PublicIpAddress": {
+            "type": "string"
+        },
+        "RamSize": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "BlueprintId",
+        "BundleId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CpuCount",
+        "/properties/CreatedAt",
+        "/properties/Ipv6Address",
+        "/properties/IsStaticIp",
+        "/properties/PrivateIpAddress",
+        "/properties/PublicIpAddress",
+        "/properties/RamSize",
+        "/properties/Username"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

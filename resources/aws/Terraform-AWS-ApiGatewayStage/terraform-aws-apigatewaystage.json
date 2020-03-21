@@ -1,0 +1,158 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayStage",
+    "description": "CloudFormation equivalent of aws_api_gateway_stage",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AccessLogSettings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationArn": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DestinationArn",
+                "Format"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CacheClusterEnabled": {
+            "type": "boolean"
+        },
+        "CacheClusterSize": {
+            "type": "string"
+        },
+        "ClientCertificateId": {
+            "type": "string"
+        },
+        "DeploymentId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DocumentationVersion": {
+            "type": "string"
+        },
+        "ExecutionArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvokeUrl": {
+            "type": "string"
+        },
+        "RestApiId": {
+            "type": "string"
+        },
+        "StageName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Variables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "XrayTracingEnabled": {
+            "type": "boolean"
+        },
+        "AccessLogSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessLogSettings"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeploymentId",
+        "RestApiId",
+        "StageName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ExecutionArn",
+        "/properties/InvokeUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

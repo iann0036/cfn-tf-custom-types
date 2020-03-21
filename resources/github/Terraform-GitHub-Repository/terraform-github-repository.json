@@ -1,0 +1,161 @@
+{
+    "typeName": "Terraform::GitHub::Repository",
+    "description": "CloudFormation equivalent of github_repository",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Template": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Owner": {
+                    "type": "string"
+                },
+                "Repository": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Owner",
+                "Repository"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowMergeCommit": {
+            "type": "boolean"
+        },
+        "AllowRebaseMerge": {
+            "type": "boolean"
+        },
+        "AllowSquashMerge": {
+            "type": "boolean"
+        },
+        "Archived": {
+            "type": "boolean"
+        },
+        "AutoInit": {
+            "type": "boolean"
+        },
+        "DefaultBranch": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "FullName": {
+            "type": "string"
+        },
+        "GitCloneUrl": {
+            "type": "string"
+        },
+        "GitignoreTemplate": {
+            "type": "string"
+        },
+        "HasDownloads": {
+            "type": "boolean"
+        },
+        "HasIssues": {
+            "type": "boolean"
+        },
+        "HasProjects": {
+            "type": "boolean"
+        },
+        "HasWiki": {
+            "type": "boolean"
+        },
+        "HomepageUrl": {
+            "type": "string"
+        },
+        "HtmlUrl": {
+            "type": "string"
+        },
+        "HttpCloneUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LicenseTemplate": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Private": {
+            "type": "boolean"
+        },
+        "SshCloneUrl": {
+            "type": "string"
+        },
+        "SvnUrl": {
+            "type": "string"
+        },
+        "Topics": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Template": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Template"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Etag",
+        "/properties/FullName",
+        "/properties/GitCloneUrl",
+        "/properties/HtmlUrl",
+        "/properties/HttpCloneUrl",
+        "/properties/SshCloneUrl",
+        "/properties/SvnUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

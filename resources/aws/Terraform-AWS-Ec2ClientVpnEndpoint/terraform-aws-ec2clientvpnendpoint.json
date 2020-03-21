@@ -1,0 +1,158 @@
+{
+    "typeName": "Terraform::AWS::Ec2ClientVpnEndpoint",
+    "description": "CloudFormation equivalent of aws_ec2_client_vpn_endpoint",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AuthenticationOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActiveDirectoryId": {
+                    "type": "string"
+                },
+                "RootCertificateChainArn": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ConnectionLogOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchLogGroup": {
+                    "type": "string"
+                },
+                "CloudwatchLogStream": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientCidrBlock": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DnsName": {
+            "type": "string"
+        },
+        "DnsServers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServerCertificateArn": {
+            "type": "string"
+        },
+        "SplitTunnel": {
+            "type": "boolean"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TransportProtocol": {
+            "type": "string"
+        },
+        "AuthenticationOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticationOptions"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ConnectionLogOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConnectionLogOptions"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClientCidrBlock",
+        "ServerCertificateArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DnsName",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

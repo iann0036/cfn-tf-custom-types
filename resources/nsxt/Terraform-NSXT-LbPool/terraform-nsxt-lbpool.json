@@ -1,0 +1,217 @@
+{
+    "typeName": "Terraform::NSXT::LbPool",
+    "description": "CloudFormation equivalent of nsxt_lb_pool",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Member": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminState": {
+                    "type": "string"
+                },
+                "BackupMember": {
+                    "type": "boolean"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "MaxConcurrentConnections": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "IpAddress"
+            ]
+        },
+        "MemberGroup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpVersionFilter": {
+                    "type": "string"
+                },
+                "LimitIpListSize": {
+                    "type": "boolean"
+                },
+                "MaxIpListSize": {
+                    "type": "number"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "GroupingObject": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupingObject"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SnatTranslation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Tag": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Scope",
+                "Tag"
+            ]
+        },
+        "GroupingObject": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetId": {
+                    "type": "string"
+                },
+                "TargetType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveMonitorId": {
+            "type": "string"
+        },
+        "Algorithm": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinActiveMembers": {
+            "type": "number"
+        },
+        "PassiveMonitorId": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "TcpMultiplexingEnabled": {
+            "type": "boolean"
+        },
+        "TcpMultiplexingNumber": {
+            "type": "number"
+        },
+        "Member": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Member"
+            }
+        },
+        "MemberGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MemberGroup"
+            },
+            "maxItems": 1
+        },
+        "SnatTranslation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnatTranslation"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tag"
+            }
+        },
+        "GroupingObject": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupingObject"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

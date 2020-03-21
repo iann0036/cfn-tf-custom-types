@@ -1,0 +1,250 @@
+{
+    "typeName": "Terraform::VSphere::DistributedPortGroup",
+    "description": "CloudFormation equivalent of vsphere_distributed_port_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "VlanRange": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxVlan": {
+                    "type": "number"
+                },
+                "MinVlan": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "MaxVlan",
+                "MinVlan"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveUplinks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AllowForgedTransmits": {
+            "type": "boolean"
+        },
+        "AllowMacChanges": {
+            "type": "boolean"
+        },
+        "AllowPromiscuous": {
+            "type": "boolean"
+        },
+        "AutoExpand": {
+            "type": "boolean"
+        },
+        "BlockAllPorts": {
+            "type": "boolean"
+        },
+        "BlockOverrideAllowed": {
+            "type": "boolean"
+        },
+        "CheckBeacon": {
+            "type": "boolean"
+        },
+        "ConfigVersion": {
+            "type": "string"
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DirectpathGen2Allowed": {
+            "type": "boolean"
+        },
+        "DistributedVirtualSwitchUuid": {
+            "type": "string"
+        },
+        "EgressShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "EgressShapingBurstSize": {
+            "type": "number"
+        },
+        "EgressShapingEnabled": {
+            "type": "boolean"
+        },
+        "EgressShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "Failback": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IngressShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "IngressShapingBurstSize": {
+            "type": "number"
+        },
+        "IngressShapingEnabled": {
+            "type": "boolean"
+        },
+        "IngressShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "LacpEnabled": {
+            "type": "boolean"
+        },
+        "LacpMode": {
+            "type": "string"
+        },
+        "LivePortMovingAllowed": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetflowEnabled": {
+            "type": "boolean"
+        },
+        "NetflowOverrideAllowed": {
+            "type": "boolean"
+        },
+        "NetworkResourcePoolKey": {
+            "type": "string"
+        },
+        "NetworkResourcePoolOverrideAllowed": {
+            "type": "boolean"
+        },
+        "NotifySwitches": {
+            "type": "boolean"
+        },
+        "NumberOfPorts": {
+            "type": "number"
+        },
+        "PortConfigResetAtDisconnect": {
+            "type": "boolean"
+        },
+        "PortNameFormat": {
+            "type": "string"
+        },
+        "PortPrivateSecondaryVlanId": {
+            "type": "number"
+        },
+        "SecurityPolicyOverrideAllowed": {
+            "type": "boolean"
+        },
+        "ShapingOverrideAllowed": {
+            "type": "boolean"
+        },
+        "StandbyUplinks": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TeamingPolicy": {
+            "type": "string"
+        },
+        "TrafficFilterOverrideAllowed": {
+            "type": "boolean"
+        },
+        "TxUplink": {
+            "type": "boolean"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UplinkTeamingOverrideAllowed": {
+            "type": "boolean"
+        },
+        "VlanId": {
+            "type": "number"
+        },
+        "VlanOverrideAllowed": {
+            "type": "boolean"
+        },
+        "VlanRange": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VlanRange"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DistributedVirtualSwitchUuid",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConfigVersion",
+        "/properties/Key"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

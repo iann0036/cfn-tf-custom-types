@@ -1,0 +1,451 @@
+{
+    "typeName": "Terraform::Rundeck::Job",
+    "description": "CloudFormation equivalent of rundeck_job",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Command": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "InlineScript": {
+                    "type": "string"
+                },
+                "ScriptFile": {
+                    "type": "string"
+                },
+                "ScriptFileArgs": {
+                    "type": "string"
+                },
+                "ShellCommand": {
+                    "type": "string"
+                },
+                "Job": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Job"
+                    }
+                },
+                "NodeStepPlugin": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NodeStepPlugin"
+                    }
+                },
+                "StepPlugin": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StepPlugin"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Notification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "WebhookUrls": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Email": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Email"
+                    }
+                },
+                "Plugin": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Plugin"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Option": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowMultipleValues": {
+                    "type": "boolean"
+                },
+                "DefaultValue": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "ExposedToScripts": {
+                    "type": "boolean"
+                },
+                "MultiValueDelimiter": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ObscureInput": {
+                    "type": "boolean"
+                },
+                "RequirePredefinedChoice": {
+                    "type": "boolean"
+                },
+                "Required": {
+                    "type": "boolean"
+                },
+                "ValidationRegex": {
+                    "type": "string"
+                },
+                "ValueChoices": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ValueChoicesUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Job": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "string"
+                },
+                "GroupName": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Nodefilters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "RunForEachNode": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "NodeStepPlugin": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "StepPlugin": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Email": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AttachLog": {
+                    "type": "boolean"
+                },
+                "Recipients": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subject": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Recipients"
+            ]
+        },
+        "Plugin": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Config": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowConcurrentExecutions": {
+            "type": "boolean"
+        },
+        "CommandOrderingStrategy": {
+            "type": "string"
+        },
+        "ContinueOnError": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExecutionEnabled": {
+            "type": "boolean"
+        },
+        "GroupName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogLevel": {
+            "type": "string"
+        },
+        "MaxThreadCount": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NodeFilterExcludePrecedence": {
+            "type": "boolean"
+        },
+        "NodeFilterQuery": {
+            "type": "string"
+        },
+        "PreserveOptionsOrder": {
+            "type": "boolean"
+        },
+        "ProjectName": {
+            "type": "string"
+        },
+        "RankAttribute": {
+            "type": "string"
+        },
+        "RankOrder": {
+            "type": "string"
+        },
+        "Schedule": {
+            "type": "string"
+        },
+        "ScheduleEnabled": {
+            "type": "boolean"
+        },
+        "SuccessOnEmptyNodeFilter": {
+            "type": "boolean"
+        },
+        "Command": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Command"
+            },
+            "minItems": 1
+        },
+        "Notification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Notification"
+            }
+        },
+        "Option": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Option"
+            }
+        },
+        "Job": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Job"
+            }
+        },
+        "NodeStepPlugin": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeStepPlugin"
+            }
+        },
+        "StepPlugin": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StepPlugin"
+            }
+        },
+        "Email": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Email"
+            }
+        },
+        "Plugin": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Plugin"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Name",
+        "ProjectName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

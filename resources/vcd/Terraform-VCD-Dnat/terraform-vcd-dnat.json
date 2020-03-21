@@ -1,0 +1,91 @@
+{
+    "typeName": "Terraform::VCD::Dnat",
+    "description": "CloudFormation equivalent of vcd_dnat",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EdgeGateway": {
+            "type": "string"
+        },
+        "ExternalIp": {
+            "type": "string"
+        },
+        "IcmpSubType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalIp": {
+            "type": "string"
+        },
+        "NetworkName": {
+            "type": "string"
+        },
+        "NetworkType": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "TranslatedPort": {
+            "type": "number"
+        },
+        "Vdc": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EdgeGateway",
+        "ExternalIp",
+        "InternalIp"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

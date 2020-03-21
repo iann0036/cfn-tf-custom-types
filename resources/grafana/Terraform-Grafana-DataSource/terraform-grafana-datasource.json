@@ -1,0 +1,140 @@
+{
+    "typeName": "Terraform::Grafana::DataSource",
+    "description": "CloudFormation equivalent of grafana_data_source",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "JsonData": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssumeRoleArn": {
+                    "type": "string"
+                },
+                "AuthType": {
+                    "type": "string"
+                },
+                "CustomMetricsNamespaces": {
+                    "type": "string"
+                },
+                "DefaultRegion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AuthType",
+                "DefaultRegion"
+            ]
+        },
+        "SecureJsonData": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKey": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKey",
+                "SecretKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessMode": {
+            "type": "string"
+        },
+        "BasicAuthEnabled": {
+            "type": "boolean"
+        },
+        "BasicAuthPassword": {
+            "type": "string"
+        },
+        "BasicAuthUsername": {
+            "type": "string"
+        },
+        "DatabaseName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDefault": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "JsonData": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JsonData"
+            }
+        },
+        "SecureJsonData": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecureJsonData"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

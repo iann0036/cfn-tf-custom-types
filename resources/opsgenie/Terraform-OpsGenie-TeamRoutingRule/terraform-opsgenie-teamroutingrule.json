@@ -1,0 +1,259 @@
+{
+    "typeName": "Terraform::OpsGenie::TeamRoutingRule",
+    "description": "CloudFormation equivalent of opsgenie_team_routing_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Criteria": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Conditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Conditions"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Notify": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeRestriction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Restriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Restriction"
+                    }
+                },
+                "Restrictions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Restrictions"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Conditions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpectedValue": {
+                    "type": "string"
+                },
+                "Field": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Not": {
+                    "type": "boolean"
+                },
+                "Operation": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Field",
+                "Operation"
+            ]
+        },
+        "Restriction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndHour": {
+                    "type": "number"
+                },
+                "EndMin": {
+                    "type": "number"
+                },
+                "StartHour": {
+                    "type": "number"
+                },
+                "StartMin": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EndHour",
+                "EndMin",
+                "StartHour",
+                "StartMin"
+            ]
+        },
+        "Restrictions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndDay": {
+                    "type": "string"
+                },
+                "EndHour": {
+                    "type": "number"
+                },
+                "EndMin": {
+                    "type": "number"
+                },
+                "StartDay": {
+                    "type": "string"
+                },
+                "StartHour": {
+                    "type": "number"
+                },
+                "StartMin": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EndDay",
+                "EndHour",
+                "EndMin",
+                "StartDay",
+                "StartHour",
+                "StartMin"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Order": {
+            "type": "number"
+        },
+        "TeamId": {
+            "type": "string"
+        },
+        "Timezone": {
+            "type": "string"
+        },
+        "Criteria": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Criteria"
+            }
+        },
+        "Notify": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Notify"
+            },
+            "minItems": 1
+        },
+        "TimeRestriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeRestriction"
+            }
+        },
+        "Conditions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Conditions"
+            }
+        },
+        "Restriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Restriction"
+            }
+        },
+        "Restrictions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Restrictions"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Order",
+        "TeamId",
+        "Timezone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

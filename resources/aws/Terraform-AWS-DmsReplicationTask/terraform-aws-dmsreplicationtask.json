@@ -1,0 +1,105 @@
+{
+    "typeName": "Terraform::AWS::DmsReplicationTask",
+    "description": "CloudFormation equivalent of aws_dms_replication_task",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CdcStartTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MigrationType": {
+            "type": "string"
+        },
+        "ReplicationInstanceArn": {
+            "type": "string"
+        },
+        "ReplicationTaskArn": {
+            "type": "string"
+        },
+        "ReplicationTaskId": {
+            "type": "string"
+        },
+        "ReplicationTaskSettings": {
+            "type": "string"
+        },
+        "SourceEndpointArn": {
+            "type": "string"
+        },
+        "TableMappings": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TargetEndpointArn": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MigrationType",
+        "ReplicationInstanceArn",
+        "ReplicationTaskId",
+        "SourceEndpointArn",
+        "TableMappings",
+        "TargetEndpointArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ReplicationTaskArn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

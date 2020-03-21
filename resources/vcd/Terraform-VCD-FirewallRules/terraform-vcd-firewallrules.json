@@ -1,0 +1,113 @@
+{
+    "typeName": "Terraform::VCD::FirewallRules",
+    "description": "CloudFormation equivalent of vcd_firewall_rules",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Rule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "DestinationIp": {
+                    "type": "string"
+                },
+                "DestinationPort": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Policy": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "SourceIp": {
+                    "type": "string"
+                },
+                "SourcePort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Description",
+                "DestinationIp",
+                "DestinationPort",
+                "Policy",
+                "Protocol",
+                "SourceIp",
+                "SourcePort"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DefaultAction": {
+            "type": "string"
+        },
+        "EdgeGateway": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "Vdc": {
+            "type": "string"
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Rule"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultAction",
+        "EdgeGateway"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

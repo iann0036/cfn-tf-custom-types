@@ -1,0 +1,200 @@
+{
+    "typeName": "Terraform::OpsGenie::ScheduleRotation",
+    "description": "CloudFormation equivalent of opsgenie_schedule_rotation",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Participant": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "TimeRestriction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Restriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Restriction"
+                    }
+                },
+                "Restrictions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Restrictions"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Restriction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndHour": {
+                    "type": "number"
+                },
+                "EndMin": {
+                    "type": "number"
+                },
+                "StartHour": {
+                    "type": "number"
+                },
+                "StartMin": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EndHour",
+                "EndMin",
+                "StartHour",
+                "StartMin"
+            ]
+        },
+        "Restrictions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndDay": {
+                    "type": "string"
+                },
+                "EndHour": {
+                    "type": "number"
+                },
+                "EndMin": {
+                    "type": "number"
+                },
+                "StartDay": {
+                    "type": "string"
+                },
+                "StartHour": {
+                    "type": "number"
+                },
+                "StartMin": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "EndDay",
+                "EndHour",
+                "EndMin",
+                "StartDay",
+                "StartHour",
+                "StartMin"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EndDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Length": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ScheduleId": {
+            "type": "string"
+        },
+        "StartDate": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Participant": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Participant"
+            },
+            "minItems": 1
+        },
+        "TimeRestriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeRestriction"
+            }
+        },
+        "Restriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Restriction"
+            }
+        },
+        "Restrictions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Restrictions"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ScheduleId",
+        "StartDate",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

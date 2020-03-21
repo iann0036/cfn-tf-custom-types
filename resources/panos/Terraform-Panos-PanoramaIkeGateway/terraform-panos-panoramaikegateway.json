@@ -1,0 +1,175 @@
+{
+    "typeName": "Terraform::Panos::PanoramaIkeGateway",
+    "description": "CloudFormation equivalent of panos_panorama_ike_gateway",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthType": {
+            "type": "string"
+        },
+        "CertBaseUrl": {
+            "type": "string"
+        },
+        "CertEnableHashAndUrl": {
+            "type": "boolean"
+        },
+        "CertEnableStrictValidation": {
+            "type": "boolean"
+        },
+        "CertPermitPayloadMismatch": {
+            "type": "boolean"
+        },
+        "CertProfile": {
+            "type": "string"
+        },
+        "CertUseManagementAsSource": {
+            "type": "boolean"
+        },
+        "DeadPeerDetectionInterval": {
+            "type": "number"
+        },
+        "DeadPeerDetectionRetry": {
+            "type": "number"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "EnableDeadPeerDetection": {
+            "type": "boolean"
+        },
+        "EnableFragmentation": {
+            "type": "boolean"
+        },
+        "EnableIpv6": {
+            "type": "boolean"
+        },
+        "EnableLivenessCheck": {
+            "type": "boolean"
+        },
+        "EnableNatTraversal": {
+            "type": "boolean"
+        },
+        "EnablePassiveMode": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ikev1CryptoProfile": {
+            "type": "string"
+        },
+        "Ikev1ExchangeMode": {
+            "type": "string"
+        },
+        "Ikev2CookieValidation": {
+            "type": "boolean"
+        },
+        "Ikev2CryptoProfile": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string"
+        },
+        "LivenessCheckInterval": {
+            "type": "number"
+        },
+        "LocalCert": {
+            "type": "string"
+        },
+        "LocalIdType": {
+            "type": "string"
+        },
+        "LocalIdValue": {
+            "type": "string"
+        },
+        "LocalIpAddressType": {
+            "type": "string"
+        },
+        "LocalIpAddressValue": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NatTraversalEnableUdpChecksum": {
+            "type": "boolean"
+        },
+        "NatTraversalKeepAlive": {
+            "type": "number"
+        },
+        "PeerIdCheck": {
+            "type": "string"
+        },
+        "PeerIdType": {
+            "type": "string"
+        },
+        "PeerIdValue": {
+            "type": "string"
+        },
+        "PeerIpType": {
+            "type": "string"
+        },
+        "PeerIpValue": {
+            "type": "string"
+        },
+        "PreSharedKey": {
+            "type": "string"
+        },
+        "PreSharedKeyEnc": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "TemplateStack": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/PreSharedKeyEnc"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

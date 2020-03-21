@@ -1,0 +1,141 @@
+{
+    "typeName": "Terraform::Scaleway::InstanceSecurityGroup",
+    "description": "CloudFormation equivalent of scaleway_instance_security_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "InboundRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "IpRange": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortRange": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action"
+            ]
+        },
+        "OutboundRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "IpRange": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortRange": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExternalRules": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InboundDefaultPolicy": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OrganizationId": {
+            "type": "string"
+        },
+        "OutboundDefaultPolicy": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "InboundRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InboundRule"
+            }
+        },
+        "OutboundRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OutboundRule"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

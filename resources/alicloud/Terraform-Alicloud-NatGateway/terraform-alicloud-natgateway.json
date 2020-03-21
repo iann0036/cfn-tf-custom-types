@@ -1,0 +1,114 @@
+{
+    "typeName": "Terraform::Alicloud::NatGateway",
+    "description": "CloudFormation equivalent of alicloud_nat_gateway",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BandwidthPackages": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bandwidth": {
+                    "type": "number"
+                },
+                "IpCount": {
+                    "type": "number"
+                },
+                "Zone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bandwidth",
+                "IpCount"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BandwidthPackageIds": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ForwardTableIds": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceChargeType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "SnatTableIds": {
+            "type": "string"
+        },
+        "Spec": {
+            "type": "string"
+        },
+        "Specification": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "BandwidthPackages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BandwidthPackages"
+            },
+            "maxItems": 4
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BandwidthPackageIds",
+        "/properties/ForwardTableIds",
+        "/properties/SnatTableIds"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

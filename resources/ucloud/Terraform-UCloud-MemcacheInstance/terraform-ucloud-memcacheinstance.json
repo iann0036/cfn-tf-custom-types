@@ -1,0 +1,107 @@
+{
+    "typeName": "Terraform::UCloud::MemcacheInstance",
+    "description": "CloudFormation equivalent of ucloud_memcache_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "ChargeType": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Duration": {
+            "type": "number"
+        },
+        "ExpireTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "IpSet": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Ip": {
+                        "type": "string"
+                    },
+                    "Port": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "Tag": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailabilityZone",
+        "InstanceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/ExpireTime",
+        "/properties/IpSet",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

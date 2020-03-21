@@ -1,0 +1,460 @@
+{
+    "typeName": "Terraform::AWS::EmrCluster",
+    "description": "CloudFormation equivalent of aws_emr_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BootstrapAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Path"
+            ]
+        },
+        "CoreInstanceGroup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoscalingPolicy": {
+                    "type": "string"
+                },
+                "BidPrice": {
+                    "type": "string"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "EbsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsConfig"
+                    }
+                }
+            },
+            "required": [
+                "InstanceType"
+            ]
+        },
+        "Ec2Attributes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdditionalMasterSecurityGroups": {
+                    "type": "string"
+                },
+                "AdditionalSlaveSecurityGroups": {
+                    "type": "string"
+                },
+                "EmrManagedMasterSecurityGroup": {
+                    "type": "string"
+                },
+                "EmrManagedSlaveSecurityGroup": {
+                    "type": "string"
+                },
+                "InstanceProfile": {
+                    "type": "string"
+                },
+                "KeyName": {
+                    "type": "string"
+                },
+                "ServiceAccessSecurityGroup": {
+                    "type": "string"
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InstanceProfile"
+            ]
+        },
+        "InstanceGroup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoscalingPolicy": {
+                    "type": "string"
+                },
+                "BidPrice": {
+                    "type": "string"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceRole": {
+                    "type": "string"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "EbsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsConfig"
+                    }
+                }
+            },
+            "required": [
+                "InstanceRole",
+                "InstanceType"
+            ]
+        },
+        "KerberosAttributes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdDomainJoinPassword": {
+                    "type": "string"
+                },
+                "AdDomainJoinUser": {
+                    "type": "string"
+                },
+                "CrossRealmTrustPrincipalPassword": {
+                    "type": "string"
+                },
+                "KdcAdminPassword": {
+                    "type": "string"
+                },
+                "Realm": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KdcAdminPassword",
+                "Realm"
+            ]
+        },
+        "MasterInstanceGroup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BidPrice": {
+                    "type": "string"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "EbsConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/EbsConfig"
+                    }
+                }
+            },
+            "required": [
+                "InstanceType"
+            ]
+        },
+        "EbsConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iops": {
+                    "type": "number"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "VolumesPerInstance": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Size",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalInfo": {
+            "type": "string"
+        },
+        "Applications": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoscalingRole": {
+            "type": "string"
+        },
+        "ClusterState": {
+            "type": "string"
+        },
+        "Configurations": {
+            "type": "string"
+        },
+        "ConfigurationsJson": {
+            "type": "string"
+        },
+        "CoreInstanceCount": {
+            "type": "number"
+        },
+        "CoreInstanceType": {
+            "type": "string"
+        },
+        "CustomAmiId": {
+            "type": "string"
+        },
+        "EbsRootVolumeSize": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeepJobFlowAliveWhenNoSteps": {
+            "type": "boolean"
+        },
+        "LogUri": {
+            "type": "string"
+        },
+        "MasterInstanceType": {
+            "type": "string"
+        },
+        "MasterPublicDns": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ReleaseLabel": {
+            "type": "string"
+        },
+        "ScaleDownBehavior": {
+            "type": "string"
+        },
+        "SecurityConfiguration": {
+            "type": "string"
+        },
+        "ServiceRole": {
+            "type": "string"
+        },
+        "Step": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "ActionOnFailure": {
+                        "type": "string"
+                    },
+                    "HadoopJarStep": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Args": {
+                                    "type": "array",
+                                    "insertionOrder": false,
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "Jar": {
+                                    "type": "string"
+                                },
+                                "MainClass": {
+                                    "type": "string"
+                                },
+                                "Properties": {
+                                    "type": "array",
+                                    "insertionOrder": true,
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "Key": {
+                                                "type": "string"
+                                            },
+                                            "Value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "Key",
+                                            "Value"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "StepConcurrencyLevel": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TerminationProtection": {
+            "type": "boolean"
+        },
+        "VisibleToAllUsers": {
+            "type": "boolean"
+        },
+        "BootstrapAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BootstrapAction"
+            }
+        },
+        "CoreInstanceGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CoreInstanceGroup"
+            },
+            "maxItems": 1
+        },
+        "Ec2Attributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ec2Attributes"
+            },
+            "maxItems": 1
+        },
+        "InstanceGroup": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InstanceGroup"
+            }
+        },
+        "KerberosAttributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KerberosAttributes"
+            },
+            "maxItems": 1
+        },
+        "MasterInstanceGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MasterInstanceGroup"
+            },
+            "maxItems": 1
+        },
+        "EbsConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsConfig"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ReleaseLabel",
+        "ServiceRole"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/ClusterState",
+        "/properties/MasterPublicDns"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

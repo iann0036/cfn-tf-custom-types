@@ -1,0 +1,79 @@
+{
+    "typeName": "Terraform::TencentCloud::DcGateway",
+    "description": "CloudFormation equivalent of tencentcloud_dc_gateway",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CnnRouteType": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "EnableBgp": {
+            "type": "boolean"
+        },
+        "GatewayType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkInstanceId": {
+            "type": "string"
+        },
+        "NetworkType": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "NetworkInstanceId",
+        "NetworkType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CnnRouteType",
+        "/properties/CreateTime",
+        "/properties/EnableBgp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

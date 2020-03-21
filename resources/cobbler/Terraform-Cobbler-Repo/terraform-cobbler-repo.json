@@ -1,0 +1,113 @@
+{
+    "typeName": "Terraform::Cobbler::Repo",
+    "description": "CloudFormation equivalent of cobbler_repo",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AptComponents": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AptDists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Arch": {
+            "type": "string"
+        },
+        "Breed": {
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "CreaterepoFlags": {
+            "type": "string"
+        },
+        "Environment": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeepUpdated": {
+            "type": "boolean"
+        },
+        "Mirror": {
+            "type": "string"
+        },
+        "MirrorLocally": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Proxy": {
+            "type": "string"
+        },
+        "RpmList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Breed",
+        "Mirror",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,529 @@
+{
+    "typeName": "Terraform::Nutanix::NetworkSecurityRule",
+    "description": "CloudFormation equivalent of nutanix_network_security_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AppRuleInboundAllowList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpirationTime": {
+                    "type": "string"
+                },
+                "FilterKindList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FilterType": {
+                    "type": "string"
+                },
+                "IpSubnet": {
+                    "type": "string"
+                },
+                "IpSubnetPrefixLength": {
+                    "type": "string"
+                },
+                "NetworkFunctionChainReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "PeerSpecificationType": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "FilterParams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FilterParams"
+                    }
+                },
+                "IcmpTypeCodeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IcmpTypeCodeList"
+                    }
+                },
+                "TcpPortRangeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpPortRangeList"
+                    }
+                },
+                "UdpPortRangeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UdpPortRangeList"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AppRuleOutboundAllowList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpirationTime": {
+                    "type": "string"
+                },
+                "FilterKindList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "FilterType": {
+                    "type": "string"
+                },
+                "IpSubnet": {
+                    "type": "string"
+                },
+                "IpSubnetPrefixLength": {
+                    "type": "string"
+                },
+                "NetworkFunctionChainReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "PeerSpecificationType": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "FilterParams": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/FilterParams"
+                    }
+                },
+                "IcmpTypeCodeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IcmpTypeCodeList"
+                    }
+                },
+                "TcpPortRangeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TcpPortRangeList"
+                    }
+                },
+                "UdpPortRangeList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UdpPortRangeList"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AppRuleTargetGroupFilterParams": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        },
+        "Categories": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IsolationRuleFirstEntityFilterParams": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        },
+        "IsolationRuleSecondEntityFilterParams": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        },
+        "FilterParams": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        },
+        "IcmpTypeCodeList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TcpPortRangeList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndPort": {
+                    "type": "number"
+                },
+                "StartPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "UdpPortRangeList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndPort": {
+                    "type": "number"
+                },
+                "StartPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiVersion": {
+            "type": "string"
+        },
+        "AppRuleAction": {
+            "type": "string"
+        },
+        "AppRuleTargetGroupDefaultInternalPolicy": {
+            "type": "string"
+        },
+        "AppRuleTargetGroupFilterKindList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AppRuleTargetGroupFilterType": {
+            "type": "string"
+        },
+        "AppRuleTargetGroupPeerSpecificationType": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsolationRuleAction": {
+            "type": "string"
+        },
+        "IsolationRuleFirstEntityFilterKindList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IsolationRuleFirstEntityFilterType": {
+            "type": "string"
+        },
+        "IsolationRuleSecondEntityFilterKindList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IsolationRuleSecondEntityFilterType": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OwnerReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ProjectReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "AppRuleInboundAllowList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppRuleInboundAllowList"
+            }
+        },
+        "AppRuleOutboundAllowList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AppRuleOutboundAllowList"
+            }
+        },
+        "AppRuleTargetGroupFilterParams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AppRuleTargetGroupFilterParams"
+            }
+        },
+        "Categories": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Categories"
+            }
+        },
+        "IsolationRuleFirstEntityFilterParams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IsolationRuleFirstEntityFilterParams"
+            }
+        },
+        "IsolationRuleSecondEntityFilterParams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IsolationRuleSecondEntityFilterParams"
+            }
+        },
+        "FilterParams": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/FilterParams"
+            }
+        },
+        "IcmpTypeCodeList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IcmpTypeCodeList"
+            }
+        },
+        "TcpPortRangeList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TcpPortRangeList"
+            }
+        },
+        "UdpPortRangeList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UdpPortRangeList"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiVersion",
+        "/properties/Metadata"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,144 @@
+{
+    "typeName": "Terraform::AWS::WorklinkFleet",
+    "description": "CloudFormation equivalent of aws_worklink_fleet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "IdentityProvider": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SamlMetadata": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SamlMetadata",
+                "Type"
+            ]
+        },
+        "Network": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VpcId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SecurityGroupIds",
+                "SubnetIds",
+                "VpcId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AuditStreamArn": {
+            "type": "string"
+        },
+        "CompanyCode": {
+            "type": "string"
+        },
+        "CreatedTime": {
+            "type": "string"
+        },
+        "DeviceCaCertificate": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OptimizeForEndUserLocation": {
+            "type": "boolean"
+        },
+        "IdentityProvider": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IdentityProvider"
+            },
+            "maxItems": 1
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Network"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CompanyCode",
+        "/properties/CreatedTime",
+        "/properties/LastUpdatedTime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

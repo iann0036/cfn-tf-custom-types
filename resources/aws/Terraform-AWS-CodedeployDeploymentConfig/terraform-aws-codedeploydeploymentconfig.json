@@ -1,0 +1,158 @@
+{
+    "typeName": "Terraform::AWS::CodedeployDeploymentConfig",
+    "description": "CloudFormation equivalent of aws_codedeploy_deployment_config",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "MinimumHealthyHosts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TrafficRoutingConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "TimeBasedCanary": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeBasedCanary"
+                    }
+                },
+                "TimeBasedLinear": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeBasedLinear"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TimeBasedCanary": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "number"
+                },
+                "Percentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "TimeBasedLinear": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Interval": {
+                    "type": "number"
+                },
+                "Percentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ComputePlatform": {
+            "type": "string"
+        },
+        "DeploymentConfigId": {
+            "type": "string"
+        },
+        "DeploymentConfigName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MinimumHealthyHosts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MinimumHealthyHosts"
+            },
+            "maxItems": 1
+        },
+        "TrafficRoutingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TrafficRoutingConfig"
+            },
+            "maxItems": 1
+        },
+        "TimeBasedCanary": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeBasedCanary"
+            },
+            "maxItems": 1
+        },
+        "TimeBasedLinear": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeBasedLinear"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeploymentConfigName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DeploymentConfigId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

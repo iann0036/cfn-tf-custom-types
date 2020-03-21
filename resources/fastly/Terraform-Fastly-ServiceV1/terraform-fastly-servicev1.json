@@ -1,0 +1,1094 @@
+{
+    "typeName": "Terraform::Fastly::ServiceV1",
+    "description": "CloudFormation equivalent of fastly_service_v1",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Acl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Backend": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "AutoLoadbalance": {
+                    "type": "boolean"
+                },
+                "BetweenBytesTimeout": {
+                    "type": "number"
+                },
+                "ConnectTimeout": {
+                    "type": "number"
+                },
+                "ErrorThreshold": {
+                    "type": "number"
+                },
+                "FirstByteTimeout": {
+                    "type": "number"
+                },
+                "Healthcheck": {
+                    "type": "string"
+                },
+                "MaxConn": {
+                    "type": "number"
+                },
+                "MaxTlsVersion": {
+                    "type": "string"
+                },
+                "MinTlsVersion": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OverrideHost": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "RequestCondition": {
+                    "type": "string"
+                },
+                "Shield": {
+                    "type": "string"
+                },
+                "SslCaCert": {
+                    "type": "string"
+                },
+                "SslCertHostname": {
+                    "type": "string"
+                },
+                "SslCheckCert": {
+                    "type": "boolean"
+                },
+                "SslCiphers": {
+                    "type": "string"
+                },
+                "SslClientCert": {
+                    "type": "string"
+                },
+                "SslClientKey": {
+                    "type": "string"
+                },
+                "SslHostname": {
+                    "type": "string"
+                },
+                "SslSniHostname": {
+                    "type": "string"
+                },
+                "UseSsl": {
+                    "type": "boolean"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Address",
+                "Name"
+            ]
+        },
+        "Bigquerylogging": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dataset": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Placement": {
+                    "type": "string"
+                },
+                "ProjectId": {
+                    "type": "string"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "Table": {
+                    "type": "string"
+                },
+                "Template": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Dataset",
+                "Name",
+                "ProjectId",
+                "Table"
+            ]
+        },
+        "Blobstoragelogging": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountName": {
+                    "type": "string"
+                },
+                "Container": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "FormatVersion": {
+                    "type": "number"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "Placement": {
+                    "type": "string"
+                },
+                "PublicKey": {
+                    "type": "string"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                },
+                "SasToken": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccountName",
+                "Container",
+                "Name"
+            ]
+        },
+        "CacheSetting": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "CacheCondition": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "StaleTtl": {
+                    "type": "number"
+                },
+                "Ttl": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Condition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Statement": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Statement",
+                "Type"
+            ]
+        },
+        "Dictionary": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "WriteOnly": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Director": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Backends": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Capacity": {
+                    "type": "number"
+                },
+                "Comment": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Quorum": {
+                    "type": "number"
+                },
+                "Retries": {
+                    "type": "number"
+                },
+                "Shield": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Backends",
+                "Name"
+            ]
+        },
+        "Domain": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Dynamicsnippet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type"
+            ]
+        },
+        "Gcslogging": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "Placement": {
+                    "type": "string"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                },
+                "SecretKey": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Name"
+            ]
+        },
+        "Gzip": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheCondition": {
+                    "type": "string"
+                },
+                "ContentTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Extensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Header": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "CacheCondition": {
+                    "type": "string"
+                },
+                "Destination": {
+                    "type": "string"
+                },
+                "IgnoreIfSet": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Regex": {
+                    "type": "string"
+                },
+                "RequestCondition": {
+                    "type": "string"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Substitution": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Action",
+                "Destination",
+                "Name",
+                "Type"
+            ]
+        },
+        "Healthcheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CheckInterval": {
+                    "type": "number"
+                },
+                "ExpectedResponse": {
+                    "type": "number"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "HttpVersion": {
+                    "type": "string"
+                },
+                "Initial": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "Window": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Host",
+                "Name",
+                "Path"
+            ]
+        },
+        "Logentries": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Format": {
+                    "type": "string"
+                },
+                "FormatVersion": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Placement": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "UseTls": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name",
+                "Token"
+            ]
+        },
+        "Papertrail": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Placement": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Address",
+                "Name",
+                "Port"
+            ]
+        },
+        "RequestSetting": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "BypassBusyWait": {
+                    "type": "boolean"
+                },
+                "DefaultHost": {
+                    "type": "string"
+                },
+                "ForceMiss": {
+                    "type": "boolean"
+                },
+                "ForceSsl": {
+                    "type": "boolean"
+                },
+                "GeoHeaders": {
+                    "type": "boolean"
+                },
+                "HashKeys": {
+                    "type": "string"
+                },
+                "MaxStaleAge": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RequestCondition": {
+                    "type": "string"
+                },
+                "TimerSupport": {
+                    "type": "boolean"
+                },
+                "Xff": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "ResponseObject": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheCondition": {
+                    "type": "string"
+                },
+                "Content": {
+                    "type": "string"
+                },
+                "ContentType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RequestCondition": {
+                    "type": "string"
+                },
+                "Response": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "S3logging": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "Domain": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "FormatVersion": {
+                    "type": "number"
+                },
+                "GzipLevel": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "Placement": {
+                    "type": "string"
+                },
+                "Redundancy": {
+                    "type": "string"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                },
+                "S3AccessKey": {
+                    "type": "string"
+                },
+                "S3SecretKey": {
+                    "type": "string"
+                },
+                "TimestampFormat": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Name"
+            ]
+        },
+        "Snippet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content",
+                "Name",
+                "Type"
+            ]
+        },
+        "Splunk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Format": {
+                    "type": "string"
+                },
+                "FormatVersion": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Placement": {
+                    "type": "string"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Url"
+            ]
+        },
+        "Sumologic": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Format": {
+                    "type": "string"
+                },
+                "FormatVersion": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Placement": {
+                    "type": "string"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Url"
+            ]
+        },
+        "Syslog": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "FormatVersion": {
+                    "type": "number"
+                },
+                "MessageType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Placement": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "ResponseCondition": {
+                    "type": "string"
+                },
+                "TlsCaCert": {
+                    "type": "string"
+                },
+                "TlsClientCert": {
+                    "type": "string"
+                },
+                "TlsClientKey": {
+                    "type": "string"
+                },
+                "TlsHostname": {
+                    "type": "string"
+                },
+                "Token": {
+                    "type": "string"
+                },
+                "UseTls": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Address",
+                "Name"
+            ]
+        },
+        "Vcl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Main": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Activate": {
+            "type": "boolean"
+        },
+        "ActiveVersion": {
+            "type": "number"
+        },
+        "ClonedVersion": {
+            "type": "number"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "DefaultHost": {
+            "type": "string"
+        },
+        "DefaultTtl": {
+            "type": "number"
+        },
+        "ForceDestroy": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "VersionComment": {
+            "type": "string"
+        },
+        "Acl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Acl"
+            }
+        },
+        "Backend": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Backend"
+            }
+        },
+        "Bigquerylogging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Bigquerylogging"
+            }
+        },
+        "Blobstoragelogging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Blobstoragelogging"
+            }
+        },
+        "CacheSetting": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CacheSetting"
+            }
+        },
+        "Condition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Condition"
+            }
+        },
+        "Dictionary": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Dictionary"
+            }
+        },
+        "Director": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Director"
+            }
+        },
+        "Domain": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Domain"
+            },
+            "minItems": 1
+        },
+        "Dynamicsnippet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Dynamicsnippet"
+            }
+        },
+        "Gcslogging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Gcslogging"
+            }
+        },
+        "Gzip": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Gzip"
+            }
+        },
+        "Header": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Header"
+            }
+        },
+        "Healthcheck": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Healthcheck"
+            }
+        },
+        "Logentries": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Logentries"
+            }
+        },
+        "Papertrail": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Papertrail"
+            }
+        },
+        "RequestSetting": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RequestSetting"
+            }
+        },
+        "ResponseObject": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ResponseObject"
+            }
+        },
+        "S3logging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/S3logging"
+            }
+        },
+        "Snippet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Snippet"
+            }
+        },
+        "Splunk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Splunk"
+            }
+        },
+        "Sumologic": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Sumologic"
+            }
+        },
+        "Syslog": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Syslog"
+            }
+        },
+        "Vcl": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Vcl"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActiveVersion",
+        "/properties/ClonedVersion"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,180 @@
+{
+    "typeName": "Terraform::AWS::ConfigConfigRule",
+    "description": "CloudFormation equivalent of aws_config_config_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Scope": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComplianceResourceId": {
+                    "type": "string"
+                },
+                "ComplianceResourceTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TagKey": {
+                    "type": "string"
+                },
+                "TagValue": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Owner": {
+                    "type": "string"
+                },
+                "SourceIdentifier": {
+                    "type": "string"
+                },
+                "SourceDetail": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SourceDetail"
+                    }
+                }
+            },
+            "required": [
+                "Owner",
+                "SourceIdentifier"
+            ]
+        },
+        "SourceDetail": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventSource": {
+                    "type": "string"
+                },
+                "MaximumExecutionFrequency": {
+                    "type": "string"
+                },
+                "MessageType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InputParameters": {
+            "type": "string"
+        },
+        "MaximumExecutionFrequency": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RuleId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Scope": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Scope"
+            },
+            "maxItems": 1
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Source"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "SourceDetail": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SourceDetail"
+            },
+            "maxItems": 25
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/RuleId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

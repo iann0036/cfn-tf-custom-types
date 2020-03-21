@@ -1,0 +1,168 @@
+{
+    "typeName": "Terraform::Alicloud::MongodbShardingInstance",
+    "description": "CloudFormation equivalent of alicloud_mongodb_sharding_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "MongoList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeClass": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "NodeClass"
+            ]
+        },
+        "ShardList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NodeClass": {
+                    "type": "string"
+                },
+                "NodeStorage": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "NodeClass",
+                "NodeStorage"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountPassword": {
+            "type": "string"
+        },
+        "BackupPeriod": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BackupTime": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceChargeType": {
+            "type": "string"
+        },
+        "KmsEncryptedPassword": {
+            "type": "string"
+        },
+        "KmsEncryptionContext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "RetentionPeriod": {
+            "type": "number"
+        },
+        "SecurityIpList": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "StorageEngine": {
+            "type": "string"
+        },
+        "VswitchId": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "MongoList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MongoList"
+            },
+            "maxItems": 32,
+            "minItems": 2
+        },
+        "ShardList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ShardList"
+            },
+            "maxItems": 32,
+            "minItems": 2
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EngineVersion"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/RetentionPeriod"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,154 @@
+{
+    "typeName": "Terraform::Alicloud::VpnConnection",
+    "description": "CloudFormation equivalent of alicloud_vpn_connection",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "IkeConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IkeAuthAlg": {
+                    "type": "string"
+                },
+                "IkeEncAlg": {
+                    "type": "string"
+                },
+                "IkeLifetime": {
+                    "type": "number"
+                },
+                "IkeLocalId": {
+                    "type": "string"
+                },
+                "IkeMode": {
+                    "type": "string"
+                },
+                "IkePfs": {
+                    "type": "string"
+                },
+                "IkeRemoteId": {
+                    "type": "string"
+                },
+                "IkeVersion": {
+                    "type": "string"
+                },
+                "Psk": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "IpsecConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpsecAuthAlg": {
+                    "type": "string"
+                },
+                "IpsecEncAlg": {
+                    "type": "string"
+                },
+                "IpsecLifetime": {
+                    "type": "number"
+                },
+                "IpsecPfs": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomerGatewayId": {
+            "type": "string"
+        },
+        "EffectImmediately": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalSubnet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RemoteSubnet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "VpnGatewayId": {
+            "type": "string"
+        },
+        "IkeConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IkeConfig"
+            }
+        },
+        "IpsecConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpsecConfig"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CustomerGatewayId",
+        "LocalSubnet",
+        "RemoteSubnet",
+        "VpnGatewayId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,116 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayIntegrationResponse",
+    "description": "CloudFormation equivalent of aws_api_gateway_integration_response",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContentHandling": {
+            "type": "string"
+        },
+        "HttpMethod": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceId": {
+            "type": "string"
+        },
+        "ResponseParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ResponseParametersInJson": {
+            "type": "string"
+        },
+        "ResponseTemplates": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "RestApiId": {
+            "type": "string"
+        },
+        "SelectionPattern": {
+            "type": "string"
+        },
+        "StatusCode": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HttpMethod",
+        "ResourceId",
+        "RestApiId",
+        "StatusCode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

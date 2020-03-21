@@ -1,0 +1,514 @@
+{
+    "typeName": "Terraform::Circonus::Dashboard",
+    "description": "CloudFormation equivalent of circonus_dashboard",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Options": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FullScreenHideTitle": {
+                    "type": "boolean"
+                },
+                "HideGrid": {
+                    "type": "boolean"
+                },
+                "ScaleText": {
+                    "type": "boolean"
+                },
+                "TextSize": {
+                    "type": "number"
+                },
+                "AccessConfigs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/AccessConfigs"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Widget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "Height": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Origin": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "WidgetId": {
+                    "type": "string"
+                },
+                "Width": {
+                    "type": "number"
+                },
+                "Settings": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Settings"
+                    }
+                }
+            },
+            "required": [
+                "Height",
+                "Name",
+                "Origin",
+                "Type",
+                "WidgetId",
+                "Width"
+            ]
+        },
+        "AccessConfigs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlackDash": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "FullScreen": {
+                    "type": "boolean"
+                },
+                "FullScreenHideTitle": {
+                    "type": "boolean"
+                },
+                "NickName": {
+                    "type": "string"
+                },
+                "ScaleText": {
+                    "type": "boolean"
+                },
+                "SharedId": {
+                    "type": "string"
+                },
+                "TextSize": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Settings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "string"
+                },
+                "Acknowledged": {
+                    "type": "string"
+                },
+                "Algorithm": {
+                    "type": "string"
+                },
+                "Autoformat": {
+                    "type": "boolean"
+                },
+                "BodyFormat": {
+                    "type": "string"
+                },
+                "Caql": {
+                    "type": "string"
+                },
+                "ChartType": {
+                    "type": "string"
+                },
+                "CheckUuid": {
+                    "type": "string"
+                },
+                "Cleared": {
+                    "type": "string"
+                },
+                "ClusterId": {
+                    "type": "number"
+                },
+                "ClusterName": {
+                    "type": "string"
+                },
+                "ContentType": {
+                    "type": "string"
+                },
+                "DateWindow": {
+                    "type": "string"
+                },
+                "Dependents": {
+                    "type": "string"
+                },
+                "DisableAutoformat": {
+                    "type": "boolean"
+                },
+                "Display": {
+                    "type": "string"
+                },
+                "DisplayMarkup": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "Formula": {
+                    "type": "string"
+                },
+                "GoodColor": {
+                    "type": "string"
+                },
+                "GraphUuid": {
+                    "type": "string"
+                },
+                "HideXaxis": {
+                    "type": "boolean"
+                },
+                "HideYaxis": {
+                    "type": "boolean"
+                },
+                "KeyInline": {
+                    "type": "boolean"
+                },
+                "KeyLoc": {
+                    "type": "string"
+                },
+                "KeySize": {
+                    "type": "number"
+                },
+                "KeyWrap": {
+                    "type": "boolean"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Layout": {
+                    "type": "string"
+                },
+                "LayoutStyle": {
+                    "type": "string"
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "LinkUrl": {
+                    "type": "string"
+                },
+                "Maintenance": {
+                    "type": "string"
+                },
+                "Markup": {
+                    "type": "string"
+                },
+                "MetricDisplayName": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MinAge": {
+                    "type": "string"
+                },
+                "OverlaySetId": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "RangeHigh": {
+                    "type": "number"
+                },
+                "RangeLow": {
+                    "type": "number"
+                },
+                "RealTime": {
+                    "type": "boolean"
+                },
+                "ResourceLimit": {
+                    "type": "string"
+                },
+                "ResourceUsage": {
+                    "type": "string"
+                },
+                "Search": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "string"
+                },
+                "ShowFlags": {
+                    "type": "boolean"
+                },
+                "ShowValue": {
+                    "type": "boolean"
+                },
+                "Size": {
+                    "type": "string"
+                },
+                "TextAlign": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "TimeWindow": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleFormat": {
+                    "type": "string"
+                },
+                "Trend": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UseDefault": {
+                    "type": "boolean"
+                },
+                "ValueType": {
+                    "type": "string"
+                },
+                "BadRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/BadRules"
+                    }
+                },
+                "Datapoints": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Datapoints"
+                    }
+                },
+                "Thresholds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Thresholds"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BadRules": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "Criterion": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Color",
+                "Criterion",
+                "Value"
+            ]
+        },
+        "Datapoints": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "_checkId": {
+                    "type": "number"
+                },
+                "_metricType": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Metric": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "_checkId",
+                "_metricType",
+                "Label",
+                "Metric"
+            ]
+        },
+        "Thresholds": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Colors": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Flip": {
+                    "type": "boolean"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Colors",
+                "Flip",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountDefault": {
+            "type": "boolean"
+        },
+        "GridLayout": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Shared": {
+            "type": "boolean"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "Options": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Options"
+            },
+            "minItems": 1
+        },
+        "Widget": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Widget"
+            },
+            "minItems": 1
+        },
+        "AccessConfigs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AccessConfigs"
+            }
+        },
+        "Settings": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Settings"
+            },
+            "minItems": 1
+        },
+        "BadRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BadRules"
+            },
+            "maxItems": 1
+        },
+        "Datapoints": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Datapoints"
+            }
+        },
+        "Thresholds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Thresholds"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "GridLayout",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

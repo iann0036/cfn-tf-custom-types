@@ -1,0 +1,134 @@
+{
+    "typeName": "Terraform::AWS::LambdaFunctionEventInvokeConfig",
+    "description": "CloudFormation equivalent of aws_lambda_function_event_invoke_config",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DestinationConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnFailure": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnFailure"
+                    }
+                },
+                "OnSuccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnSuccess"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OnFailure": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        },
+        "OnSuccess": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Destination": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Destination"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "FunctionName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaximumEventAgeInSeconds": {
+            "type": "number"
+        },
+        "MaximumRetryAttempts": {
+            "type": "number"
+        },
+        "Qualifier": {
+            "type": "string"
+        },
+        "DestinationConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationConfig"
+            },
+            "maxItems": 1
+        },
+        "OnFailure": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OnFailure"
+            },
+            "maxItems": 1
+        },
+        "OnSuccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OnSuccess"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FunctionName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

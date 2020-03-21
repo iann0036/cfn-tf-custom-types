@@ -1,0 +1,217 @@
+{
+    "typeName": "Terraform::Alicloud::EssScalingConfiguration",
+    "description": "CloudFormation equivalent of alicloud_ess_scaling_configuration",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DataDisk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Category": {
+                    "type": "string"
+                },
+                "DeleteWithInstance": {
+                    "type": "boolean"
+                },
+                "Device": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean"
+        },
+        "Enable": {
+            "type": "boolean"
+        },
+        "ForceDelete": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string"
+        },
+        "InstanceIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "InternetChargeType": {
+            "type": "string"
+        },
+        "InternetMaxBandwidthIn": {
+            "type": "number"
+        },
+        "InternetMaxBandwidthOut": {
+            "type": "number"
+        },
+        "IoOptimized": {
+            "type": "string"
+        },
+        "IsOutdated": {
+            "type": "boolean"
+        },
+        "KeyName": {
+            "type": "string"
+        },
+        "KmsEncryptedPassword": {
+            "type": "string"
+        },
+        "KmsEncryptionContext": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Override": {
+            "type": "boolean"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PasswordInherit": {
+            "type": "boolean"
+        },
+        "RoleName": {
+            "type": "string"
+        },
+        "ScalingConfigurationName": {
+            "type": "string"
+        },
+        "ScalingGroupId": {
+            "type": "string"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Substitute": {
+            "type": "string"
+        },
+        "SystemDiskCategory": {
+            "type": "string"
+        },
+        "SystemDiskSize": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "DataDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDisk"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ImageId",
+        "ScalingGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

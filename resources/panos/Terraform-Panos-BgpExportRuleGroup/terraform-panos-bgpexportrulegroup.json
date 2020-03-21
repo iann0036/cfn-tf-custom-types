@@ -1,0 +1,187 @@
+{
+    "typeName": "Terraform::Panos::BgpExportRuleGroup",
+    "description": "CloudFormation equivalent of panos_bgp_export_rule_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Rule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "AsPathLimit": {
+                    "type": "number"
+                },
+                "AsPathType": {
+                    "type": "string"
+                },
+                "AsPathValue": {
+                    "type": "string"
+                },
+                "CommunityType": {
+                    "type": "string"
+                },
+                "CommunityValue": {
+                    "type": "string"
+                },
+                "Enable": {
+                    "type": "boolean"
+                },
+                "ExtendedCommunityType": {
+                    "type": "string"
+                },
+                "ExtendedCommunityValue": {
+                    "type": "string"
+                },
+                "LocalPreference": {
+                    "type": "string"
+                },
+                "MatchAsPathRegex": {
+                    "type": "string"
+                },
+                "MatchCommunityRegex": {
+                    "type": "string"
+                },
+                "MatchExtendedCommunityRegex": {
+                    "type": "string"
+                },
+                "MatchFromPeers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MatchMed": {
+                    "type": "string"
+                },
+                "MatchNextHops": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MatchRouteTable": {
+                    "type": "string"
+                },
+                "Med": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NextHop": {
+                    "type": "string"
+                },
+                "Origin": {
+                    "type": "string"
+                },
+                "UsedBy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MatchAddressPrefix": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/MatchAddressPrefix"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "MatchAddressPrefix": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Exact": {
+                    "type": "boolean"
+                },
+                "Prefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Prefix"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PositionKeyword": {
+            "type": "string"
+        },
+        "PositionReference": {
+            "type": "string"
+        },
+        "VirtualRouter": {
+            "type": "string"
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Rule"
+            },
+            "minItems": 1
+        },
+        "MatchAddressPrefix": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MatchAddressPrefix"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

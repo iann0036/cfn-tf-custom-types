@@ -1,0 +1,542 @@
+{
+    "typeName": "Terraform::AWS::CodedeployDeploymentGroup",
+    "description": "CloudFormation equivalent of aws_codedeploy_deployment_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AlarmConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Alarms": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IgnorePollAlarmFailure": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "AutoRollbackConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Events": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "BlueGreenDeploymentConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentReadyOption": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeploymentReadyOption"
+                    }
+                },
+                "GreenFleetProvisioningOption": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GreenFleetProvisioningOption"
+                    }
+                },
+                "TerminateBlueInstancesOnDeploymentSuccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TerminateBlueInstancesOnDeploymentSuccess"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DeploymentStyle": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentOption": {
+                    "type": "string"
+                },
+                "DeploymentType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ec2TagFilter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Ec2TagSet": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ec2TagFilter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Ec2TagFilter"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EcsService": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterName": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClusterName",
+                "ServiceName"
+            ]
+        },
+        "LoadBalancerInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ElbInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ElbInfo"
+                    }
+                },
+                "TargetGroupInfo": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/TargetGroupInfo"
+                    }
+                },
+                "TargetGroupPairInfo": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetGroupPairInfo"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OnPremisesInstanceTagFilter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TriggerConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TriggerEvents": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TriggerName": {
+                    "type": "string"
+                },
+                "TriggerTargetArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TriggerEvents",
+                "TriggerName",
+                "TriggerTargetArn"
+            ]
+        },
+        "DeploymentReadyOption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionOnTimeout": {
+                    "type": "string"
+                },
+                "WaitTimeInMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "GreenFleetProvisioningOption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TerminateBlueInstancesOnDeploymentSuccess": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "TerminationWaitTimeInMinutes": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ElbInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TargetGroupInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TargetGroupPairInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ProdTrafficRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProdTrafficRoute"
+                    }
+                },
+                "TargetGroup": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TargetGroup"
+                    }
+                },
+                "TestTrafficRoute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TestTrafficRoute"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ProdTrafficRoute": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListenerArns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ListenerArns"
+            ]
+        },
+        "TargetGroup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "TestTrafficRoute": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListenerArns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ListenerArns"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppName": {
+            "type": "string"
+        },
+        "AutoscalingGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DeploymentConfigName": {
+            "type": "string"
+        },
+        "DeploymentGroupName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ServiceRoleArn": {
+            "type": "string"
+        },
+        "AlarmConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlarmConfiguration"
+            },
+            "maxItems": 1
+        },
+        "AutoRollbackConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutoRollbackConfiguration"
+            },
+            "maxItems": 1
+        },
+        "BlueGreenDeploymentConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BlueGreenDeploymentConfig"
+            },
+            "maxItems": 1
+        },
+        "DeploymentStyle": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeploymentStyle"
+            },
+            "maxItems": 1
+        },
+        "Ec2TagFilter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Ec2TagFilter"
+            }
+        },
+        "Ec2TagSet": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Ec2TagSet"
+            }
+        },
+        "EcsService": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EcsService"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancerInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoadBalancerInfo"
+            },
+            "maxItems": 1
+        },
+        "OnPremisesInstanceTagFilter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OnPremisesInstanceTagFilter"
+            }
+        },
+        "TriggerConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TriggerConfiguration"
+            }
+        },
+        "DeploymentReadyOption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeploymentReadyOption"
+            },
+            "maxItems": 1
+        },
+        "GreenFleetProvisioningOption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GreenFleetProvisioningOption"
+            },
+            "maxItems": 1
+        },
+        "TerminateBlueInstancesOnDeploymentSuccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TerminateBlueInstancesOnDeploymentSuccess"
+            },
+            "maxItems": 1
+        },
+        "ElbInfo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ElbInfo"
+            }
+        },
+        "TargetGroupInfo": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TargetGroupInfo"
+            }
+        },
+        "TargetGroupPairInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetGroupPairInfo"
+            },
+            "maxItems": 1
+        },
+        "ProdTrafficRoute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProdTrafficRoute"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "TargetGroup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetGroup"
+            },
+            "maxItems": 2,
+            "minItems": 1
+        },
+        "TestTrafficRoute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TestTrafficRoute"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppName",
+        "DeploymentGroupName",
+        "ServiceRoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

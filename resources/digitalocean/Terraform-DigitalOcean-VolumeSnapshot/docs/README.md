@@ -12,13 +12,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::DigitalOcean::VolumeSnapshot",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
-        "<a href="#createdat" title="CreatedAt">CreatedAt</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
-        "<a href="#mindisksize" title="MinDiskSize">MinDiskSize</a>" : <i>Double</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#regions" title="Regions">Regions</a>" : <i>[ String, ... ]</i>,
-        "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
         "<a href="#volumeid" title="VolumeId">VolumeId</a>" : <i>String</i>
     }
@@ -30,38 +25,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::DigitalOcean::VolumeSnapshot
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
-    <a href="#createdat" title="CreatedAt">CreatedAt</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
-    <a href="#mindisksize" title="MinDiskSize">MinDiskSize</a>: <i>Double</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#regions" title="Regions">Regions</a>: <i>
-      - String</i>
-    <a href="#size" title="Size">Size</a>: <i>Double</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
     <a href="#volumeid" title="VolumeId">VolumeId</a>: <i>String</i>
 </pre>
 
 ## Properties
-
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### CreatedAt
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Id
 
@@ -71,35 +42,11 @@ _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### MinDiskSize
-
-_Required_: No
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Name
 
 _Required_: Yes
 
 _Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Regions
-
-_Required_: No
-
-_Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Size
-
-_Required_: No
-
-_Type_: Double
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -1,0 +1,112 @@
+{
+    "typeName": "Terraform::Alicloud::EssScalingGroup",
+    "description": "CloudFormation equivalent of alicloud_ess_scaling_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DbInstanceIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DefaultCooldown": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadbalancerIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MaxSize": {
+            "type": "number"
+        },
+        "MinSize": {
+            "type": "number"
+        },
+        "MultiAzPolicy": {
+            "type": "string"
+        },
+        "OnDemandBaseCapacity": {
+            "type": "number"
+        },
+        "OnDemandPercentageAboveBaseCapacity": {
+            "type": "number"
+        },
+        "RemovalPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ScalingGroupName": {
+            "type": "string"
+        },
+        "SpotInstancePools": {
+            "type": "number"
+        },
+        "SpotInstanceRemedy": {
+            "type": "boolean"
+        },
+        "VswitchId": {
+            "type": "string"
+        },
+        "VswitchIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MaxSize",
+        "MinSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "typeName": "Terraform::HuaweiCloud::DmsQueueV1",
+    "description": "CloudFormation equivalent of huaweicloud_dms_queue_v1",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "GroupCount": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxConsumeCount": {
+            "type": "number"
+        },
+        "MaxMsgSizeByte": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProducedMessages": {
+            "type": "number"
+        },
+        "QueueMode": {
+            "type": "string"
+        },
+        "RedrivePolicy": {
+            "type": "string"
+        },
+        "Reservation": {
+            "type": "number"
+        },
+        "RetentionHours": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Created",
+        "/properties/GroupCount",
+        "/properties/MaxMsgSizeByte",
+        "/properties/ProducedMessages",
+        "/properties/Reservation"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

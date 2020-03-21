@@ -1,0 +1,385 @@
+{
+    "typeName": "Terraform::AWS::SsmMaintenanceWindowTask",
+    "description": "CloudFormation equivalent of aws_ssm_maintenance_window_task",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "LoggingInfo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "S3BucketName": {
+                    "type": "string"
+                },
+                "S3BucketPrefix": {
+                    "type": "string"
+                },
+                "S3Region": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "S3BucketName",
+                "S3Region"
+            ]
+        },
+        "Targets": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "TaskInvocationParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomationParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AutomationParameters"
+                    }
+                },
+                "LambdaParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LambdaParameters"
+                    }
+                },
+                "RunCommandParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RunCommandParameters"
+                    }
+                },
+                "StepFunctionsParameters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StepFunctionsParameters"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TaskParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        },
+        "AutomationParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DocumentVersion": {
+                    "type": "string"
+                },
+                "Parameter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Parameter"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LambdaParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientContext": {
+                    "type": "string"
+                },
+                "Payload": {
+                    "type": "string"
+                },
+                "Qualifier": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RunCommandParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comment": {
+                    "type": "string"
+                },
+                "DocumentHash": {
+                    "type": "string"
+                },
+                "DocumentHashType": {
+                    "type": "string"
+                },
+                "OutputS3Bucket": {
+                    "type": "string"
+                },
+                "OutputS3KeyPrefix": {
+                    "type": "string"
+                },
+                "ServiceRoleArn": {
+                    "type": "string"
+                },
+                "TimeoutSeconds": {
+                    "type": "number"
+                },
+                "NotificationConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NotificationConfig"
+                    }
+                },
+                "Parameter": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Parameter"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StepFunctionsParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Input": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Parameter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Values"
+            ]
+        },
+        "NotificationConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotificationArn": {
+                    "type": "string"
+                },
+                "NotificationEvents": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NotificationType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxConcurrency": {
+            "type": "string"
+        },
+        "MaxErrors": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "ServiceRoleArn": {
+            "type": "string"
+        },
+        "TaskArn": {
+            "type": "string"
+        },
+        "TaskType": {
+            "type": "string"
+        },
+        "WindowId": {
+            "type": "string"
+        },
+        "LoggingInfo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggingInfo"
+            },
+            "maxItems": 1
+        },
+        "Targets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Targets"
+            },
+            "minItems": 1
+        },
+        "TaskInvocationParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TaskInvocationParameters"
+            },
+            "maxItems": 1
+        },
+        "TaskParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TaskParameters"
+            }
+        },
+        "AutomationParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutomationParameters"
+            },
+            "maxItems": 1
+        },
+        "LambdaParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LambdaParameters"
+            },
+            "maxItems": 1
+        },
+        "RunCommandParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RunCommandParameters"
+            },
+            "maxItems": 1
+        },
+        "StepFunctionsParameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StepFunctionsParameters"
+            },
+            "maxItems": 1
+        },
+        "Parameter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Parameter"
+            }
+        },
+        "NotificationConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MaxConcurrency",
+        "MaxErrors",
+        "ServiceRoleArn",
+        "TaskArn",
+        "TaskType",
+        "WindowId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

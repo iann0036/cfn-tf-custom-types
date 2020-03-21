@@ -1,0 +1,80 @@
+{
+    "typeName": "Terraform::OpenTelekomCloud::DmsGroupV1",
+    "description": "CloudFormation equivalent of opentelekomcloud_dms_group_v1",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailableDeadletters": {
+            "type": "number"
+        },
+        "AvailableMessages": {
+            "type": "number"
+        },
+        "ConsumedMessages": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProducedDeadletters": {
+            "type": "number"
+        },
+        "ProducedMessages": {
+            "type": "number"
+        },
+        "QueueId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "QueueId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailableDeadletters",
+        "/properties/AvailableMessages",
+        "/properties/ConsumedMessages",
+        "/properties/ProducedDeadletters",
+        "/properties/ProducedMessages"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

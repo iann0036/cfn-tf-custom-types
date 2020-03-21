@@ -1,0 +1,63 @@
+{
+    "typeName": "Terraform::UCloud::EipAssociation",
+    "description": "CloudFormation equivalent of ucloud_eip_association",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EipId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceId": {
+            "type": "string"
+        },
+        "ResourceType": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EipId",
+        "ResourceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

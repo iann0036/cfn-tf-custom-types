@@ -1,0 +1,434 @@
+{
+    "typeName": "Terraform::Google::StorageTransferJob",
+    "description": "CloudFormation equivalent of google_storage_transfer_job",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Schedule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ScheduleEndDate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScheduleEndDate"
+                    }
+                },
+                "ScheduleStartDate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScheduleStartDate"
+                    }
+                },
+                "StartTimeOfDay": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StartTimeOfDay"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TransferSpec": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AwsS3DataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsS3DataSource"
+                    }
+                },
+                "GcsDataSink": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcsDataSink"
+                    }
+                },
+                "GcsDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GcsDataSource"
+                    }
+                },
+                "HttpDataSource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HttpDataSource"
+                    }
+                },
+                "ObjectConditions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ObjectConditions"
+                    }
+                },
+                "TransferOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TransferOptions"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ScheduleEndDate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "number"
+                },
+                "Month": {
+                    "type": "number"
+                },
+                "Year": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Day",
+                "Month",
+                "Year"
+            ]
+        },
+        "ScheduleStartDate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "number"
+                },
+                "Month": {
+                    "type": "number"
+                },
+                "Year": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Day",
+                "Month",
+                "Year"
+            ]
+        },
+        "StartTimeOfDay": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Hours": {
+                    "type": "number"
+                },
+                "Minutes": {
+                    "type": "number"
+                },
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Hours",
+                "Minutes",
+                "Nanos",
+                "Seconds"
+            ]
+        },
+        "AwsS3DataSource": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "AwsAccessKey": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AwsAccessKey"
+                    }
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        },
+        "GcsDataSink": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        },
+        "GcsDataSource": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName"
+            ]
+        },
+        "HttpDataSource": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ListUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ListUrl"
+            ]
+        },
+        "ObjectConditions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExcludePrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IncludePrefixes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxTimeElapsedSinceLastModification": {
+                    "type": "string"
+                },
+                "MinTimeElapsedSinceLastModification": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TransferOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteObjectsFromSourceAfterTransfer": {
+                    "type": "boolean"
+                },
+                "DeleteObjectsUniqueInSink": {
+                    "type": "boolean"
+                },
+                "OverwriteObjectsAlreadyExistingInSink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "AwsAccessKey": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessKeyId": {
+                    "type": "string"
+                },
+                "SecretAccessKey": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AccessKeyId",
+                "SecretAccessKey"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTime": {
+            "type": "string"
+        },
+        "DeletionTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModificationTime": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Schedule"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "TransferSpec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TransferSpec"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ScheduleEndDate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleEndDate"
+            },
+            "maxItems": 1
+        },
+        "ScheduleStartDate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduleStartDate"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "StartTimeOfDay": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StartTimeOfDay"
+            },
+            "maxItems": 1
+        },
+        "AwsS3DataSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsS3DataSource"
+            },
+            "maxItems": 1
+        },
+        "GcsDataSink": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GcsDataSink"
+            },
+            "maxItems": 1
+        },
+        "GcsDataSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GcsDataSource"
+            },
+            "maxItems": 1
+        },
+        "HttpDataSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpDataSource"
+            },
+            "maxItems": 1
+        },
+        "ObjectConditions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ObjectConditions"
+            },
+            "maxItems": 1
+        },
+        "TransferOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TransferOptions"
+            },
+            "maxItems": 1
+        },
+        "AwsAccessKey": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AwsAccessKey"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTime",
+        "/properties/DeletionTime",
+        "/properties/LastModificationTime",
+        "/properties/Name"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

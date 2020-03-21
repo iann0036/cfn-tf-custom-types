@@ -1,0 +1,143 @@
+{
+    "typeName": "Terraform::VCD::Org",
+    "description": "CloudFormation equivalent of vcd_org",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "VappLease": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnStorageLeaseExpiration": {
+                    "type": "boolean"
+                },
+                "MaximumRuntimeLeaseInSec": {
+                    "type": "number"
+                },
+                "MaximumStorageLeaseInSec": {
+                    "type": "number"
+                },
+                "PowerOffOnRuntimeLeaseExpiration": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "DeleteOnStorageLeaseExpiration",
+                "MaximumRuntimeLeaseInSec",
+                "MaximumStorageLeaseInSec",
+                "PowerOffOnRuntimeLeaseExpiration"
+            ]
+        },
+        "VappTemplateLease": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnStorageLeaseExpiration": {
+                    "type": "boolean"
+                },
+                "MaximumStorageLeaseInSec": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DeleteOnStorageLeaseExpiration",
+                "MaximumStorageLeaseInSec"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CanPublishCatalogs": {
+            "type": "boolean"
+        },
+        "DelayAfterPowerOnSeconds": {
+            "type": "number"
+        },
+        "DeleteForce": {
+            "type": "boolean"
+        },
+        "DeleteRecursive": {
+            "type": "boolean"
+        },
+        "DeployedVmQuota": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "FullName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "StoredVmQuota": {
+            "type": "number"
+        },
+        "VappLease": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VappLease"
+            },
+            "maxItems": 1
+        },
+        "VappTemplateLease": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VappTemplateLease"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DeleteForce",
+        "DeleteRecursive",
+        "FullName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

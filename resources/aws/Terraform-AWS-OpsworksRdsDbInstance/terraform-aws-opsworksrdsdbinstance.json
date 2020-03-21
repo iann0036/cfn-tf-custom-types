@@ -1,0 +1,67 @@
+{
+    "typeName": "Terraform::AWS::OpsworksRdsDbInstance",
+    "description": "CloudFormation equivalent of aws_opsworks_rds_db_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DbPassword": {
+            "type": "string"
+        },
+        "DbUser": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RdsDbInstanceArn": {
+            "type": "string"
+        },
+        "StackId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DbPassword",
+        "DbUser",
+        "RdsDbInstanceArn",
+        "StackId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

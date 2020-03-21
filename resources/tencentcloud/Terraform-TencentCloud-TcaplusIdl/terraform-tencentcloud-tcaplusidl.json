@@ -1,0 +1,104 @@
+{
+    "typeName": "Terraform::TencentCloud::TcaplusIdl",
+    "description": "CloudFormation equivalent of tencentcloud_tcaplus_idl",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string"
+        },
+        "FileContent": {
+            "type": "string"
+        },
+        "FileExtType": {
+            "type": "string"
+        },
+        "FileName": {
+            "type": "string"
+        },
+        "FileType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "TableInfos": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Error": {
+                        "type": "string"
+                    },
+                    "IndexKeySet": {
+                        "type": "string"
+                    },
+                    "KeyFields": {
+                        "type": "string"
+                    },
+                    "SumKeyFieldSize": {
+                        "type": "number"
+                    },
+                    "SumValueFieldSize": {
+                        "type": "number"
+                    },
+                    "TableName": {
+                        "type": "string"
+                    },
+                    "ValueFields": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppId",
+        "FileContent",
+        "FileExtType",
+        "FileName",
+        "FileType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/TableInfos"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

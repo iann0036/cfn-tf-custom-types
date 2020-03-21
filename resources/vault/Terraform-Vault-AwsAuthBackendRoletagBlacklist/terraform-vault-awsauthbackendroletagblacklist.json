@@ -1,0 +1,62 @@
+{
+    "typeName": "Terraform::Vault::AwsAuthBackendRoletagBlacklist",
+    "description": "CloudFormation equivalent of vault_aws_auth_backend_roletag_blacklist",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Backend": {
+            "type": "string"
+        },
+        "DisablePeriodicTidy": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SafetyBuffer": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Backend"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

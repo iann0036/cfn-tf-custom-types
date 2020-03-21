@@ -1,0 +1,264 @@
+{
+    "typeName": "Terraform::FlexibleEngine::AsConfigurationV1",
+    "description": "CloudFormation equivalent of flexibleengine_as_configuration_v1",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "InstanceConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Flavor": {
+                    "type": "string"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "InstanceId": {
+                    "type": "string"
+                },
+                "KeyName": {
+                    "type": "string"
+                },
+                "Metadata": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "UserData": {
+                    "type": "string"
+                },
+                "Disk": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Disk"
+                    }
+                },
+                "Personality": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Personality"
+                    }
+                },
+                "PublicIp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicIp"
+                    }
+                }
+            },
+            "required": [
+                "KeyName"
+            ]
+        },
+        "Disk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskType": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DiskType",
+                "Size",
+                "VolumeType"
+            ]
+        },
+        "Personality": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Content": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content",
+                "Path"
+            ]
+        },
+        "PublicIp": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Eip": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Eip"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Eip": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IpType": {
+                    "type": "string"
+                },
+                "Bandwidth": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Bandwidth"
+                    }
+                }
+            },
+            "required": [
+                "IpType"
+            ]
+        },
+        "Bandwidth": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChargingMode": {
+                    "type": "string"
+                },
+                "ShareType": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ChargingMode",
+                "ShareType",
+                "Size"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ScalingConfigurationName": {
+            "type": "string"
+        },
+        "InstanceConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceConfig"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Disk"
+            }
+        },
+        "Personality": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Personality"
+            },
+            "maxItems": 5
+        },
+        "PublicIp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PublicIp"
+            },
+            "maxItems": 1
+        },
+        "Eip": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Eip"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Bandwidth": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Bandwidth"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ScalingConfigurationName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

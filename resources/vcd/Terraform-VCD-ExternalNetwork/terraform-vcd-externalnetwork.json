@@ -1,0 +1,154 @@
+{
+    "typeName": "Terraform::VCD::ExternalNetwork",
+    "description": "CloudFormation equivalent of vcd_external_network",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "IpScope": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dns1": {
+                    "type": "string"
+                },
+                "Dns2": {
+                    "type": "string"
+                },
+                "DnsSuffix": {
+                    "type": "string"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "StaticIpPool": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/StaticIpPool"
+                    }
+                }
+            },
+            "required": [
+                "Gateway",
+                "Netmask"
+            ]
+        },
+        "VsphereNetwork": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Vcenter": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Type",
+                "Vcenter"
+            ]
+        },
+        "StaticIpPool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndAddress": {
+                    "type": "string"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndAddress",
+                "StartAddress"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RetainNetInfoAcrossDeployments": {
+            "type": "boolean"
+        },
+        "IpScope": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpScope"
+            },
+            "minItems": 1
+        },
+        "VsphereNetwork": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VsphereNetwork"
+            },
+            "minItems": 1
+        },
+        "StaticIpPool": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StaticIpPool"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

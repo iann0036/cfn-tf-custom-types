@@ -1,0 +1,83 @@
+{
+    "typeName": "Terraform::PostgreSQL::Database",
+    "description": "CloudFormation equivalent of postgresql_database",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowConnections": {
+            "type": "boolean"
+        },
+        "ConnectionLimit": {
+            "type": "number"
+        },
+        "Encoding": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsTemplate": {
+            "type": "boolean"
+        },
+        "LcCollate": {
+            "type": "string"
+        },
+        "LcCtype": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "TablespaceName": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

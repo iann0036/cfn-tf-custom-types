@@ -1,0 +1,78 @@
+{
+    "typeName": "Terraform::Vault::MfaDuo",
+    "description": "CloudFormation equivalent of vault_mfa_duo",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiHostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationKey": {
+            "type": "string"
+        },
+        "MountAccessor": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PushInfo": {
+            "type": "string"
+        },
+        "SecretKey": {
+            "type": "string"
+        },
+        "UsernameFormat": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiHostname",
+        "IntegrationKey",
+        "MountAccessor",
+        "Name",
+        "SecretKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

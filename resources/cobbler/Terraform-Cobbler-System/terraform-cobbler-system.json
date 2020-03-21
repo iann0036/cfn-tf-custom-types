@@ -1,0 +1,292 @@
+{
+    "typeName": "Terraform::Cobbler::System",
+    "description": "CloudFormation equivalent of cobbler_system",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Interface": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BondingOpts": {
+                    "type": "string"
+                },
+                "BridgeOpts": {
+                    "type": "string"
+                },
+                "Cnames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DhcpTag": {
+                    "type": "string"
+                },
+                "DnsName": {
+                    "type": "string"
+                },
+                "Gateway": {
+                    "type": "string"
+                },
+                "InterfaceMaster": {
+                    "type": "string"
+                },
+                "InterfaceType": {
+                    "type": "string"
+                },
+                "IpAddress": {
+                    "type": "string"
+                },
+                "Ipv6Address": {
+                    "type": "string"
+                },
+                "Ipv6DefaultGateway": {
+                    "type": "string"
+                },
+                "Ipv6Mtu": {
+                    "type": "string"
+                },
+                "Ipv6Secondaries": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ipv6StaticRoutes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Management": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Netmask": {
+                    "type": "string"
+                },
+                "Static": {
+                    "type": "boolean"
+                },
+                "StaticRoutes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VirtBridge": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BootFiles": {
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "EnableGpxe": {
+            "type": "boolean"
+        },
+        "FetchableFiles": {
+            "type": "string"
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Image": {
+            "type": "string"
+        },
+        "Ipv6DefaultDevice": {
+            "type": "string"
+        },
+        "KernelOptions": {
+            "type": "string"
+        },
+        "KernelOptionsPost": {
+            "type": "string"
+        },
+        "Kickstart": {
+            "type": "string"
+        },
+        "KsMeta": {
+            "type": "string"
+        },
+        "LdapEnabled": {
+            "type": "boolean"
+        },
+        "LdapType": {
+            "type": "string"
+        },
+        "MgmtClasses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MgmtParameters": {
+            "type": "string"
+        },
+        "MonitEnabled": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NameServersSearch": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NetbootEnabled": {
+            "type": "boolean"
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PowerAddress": {
+            "type": "string"
+        },
+        "PowerId": {
+            "type": "string"
+        },
+        "PowerPass": {
+            "type": "string"
+        },
+        "PowerType": {
+            "type": "string"
+        },
+        "PowerUser": {
+            "type": "string"
+        },
+        "Profile": {
+            "type": "string"
+        },
+        "Proxy": {
+            "type": "string"
+        },
+        "RedhatManagementKey": {
+            "type": "string"
+        },
+        "RedhatManagementServer": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "TemplateFiles": {
+            "type": "string"
+        },
+        "TemplateRemoteKickstarts": {
+            "type": "number"
+        },
+        "VirtAutoBoot": {
+            "type": "string"
+        },
+        "VirtCpus": {
+            "type": "string"
+        },
+        "VirtDiskDriver": {
+            "type": "string"
+        },
+        "VirtFileSize": {
+            "type": "string"
+        },
+        "VirtPath": {
+            "type": "string"
+        },
+        "VirtPxeBoot": {
+            "type": "number"
+        },
+        "VirtRam": {
+            "type": "string"
+        },
+        "VirtType": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Interface"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Profile"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

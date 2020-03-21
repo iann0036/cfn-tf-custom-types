@@ -1,0 +1,350 @@
+{
+    "typeName": "Terraform::Alicloud::ApiGatewayApi",
+    "description": "CloudFormation equivalent of alicloud_api_gateway_api",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ConstantParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "In": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "In",
+                "Name",
+                "Value"
+            ]
+        },
+        "FcServiceConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArnRole": {
+                    "type": "string"
+                },
+                "FunctionName": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "ServiceName": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "FunctionName",
+                "Region",
+                "ServiceName",
+                "Timeout"
+            ]
+        },
+        "HttpServiceConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "AoneName": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Address",
+                "Method",
+                "Path",
+                "Timeout"
+            ]
+        },
+        "HttpVpcServiceConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AoneName": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Method",
+                "Name",
+                "Path",
+                "Timeout"
+            ]
+        },
+        "MockServiceConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AoneName": {
+                    "type": "string"
+                },
+                "Result": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Result"
+            ]
+        },
+        "RequestConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BodyFormat": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method",
+                "Mode",
+                "Path",
+                "Protocol"
+            ]
+        },
+        "RequestParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultValue": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "In": {
+                    "type": "string"
+                },
+                "InService": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NameService": {
+                    "type": "string"
+                },
+                "Required": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "In",
+                "InService",
+                "Name",
+                "NameService",
+                "Required",
+                "Type"
+            ]
+        },
+        "SystemParameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "In": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NameService": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "In",
+                "Name",
+                "NameService"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string"
+        },
+        "AuthType": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "GroupId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ServiceType": {
+            "type": "string"
+        },
+        "StageNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ConstantParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConstantParameters"
+            }
+        },
+        "FcServiceConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FcServiceConfig"
+            },
+            "maxItems": 1
+        },
+        "HttpServiceConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpServiceConfig"
+            },
+            "maxItems": 1
+        },
+        "HttpVpcServiceConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpVpcServiceConfig"
+            },
+            "maxItems": 1
+        },
+        "MockServiceConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MockServiceConfig"
+            },
+            "maxItems": 1
+        },
+        "RequestConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequestConfig"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "RequestParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RequestParameters"
+            }
+        },
+        "SystemParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SystemParameters"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AuthType",
+        "Description",
+        "GroupId",
+        "Name",
+        "ServiceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

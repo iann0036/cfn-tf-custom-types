@@ -1,0 +1,196 @@
+{
+    "typeName": "Terraform::AWS::ElastictranscoderPipeline",
+    "description": "CloudFormation equivalent of aws_elastictranscoder_pipeline",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ContentConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "StorageClass": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ContentConfigPermissions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Access": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Grantee": {
+                    "type": "string"
+                },
+                "GranteeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Notifications": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Completed": {
+                    "type": "string"
+                },
+                "Error": {
+                    "type": "string"
+                },
+                "Progressing": {
+                    "type": "string"
+                },
+                "Warning": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ThumbnailConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "StorageClass": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ThumbnailConfigPermissions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Access": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Grantee": {
+                    "type": "string"
+                },
+                "GranteeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AwsKmsKeyArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InputBucket": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OutputBucket": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "ContentConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContentConfig"
+            },
+            "maxItems": 1
+        },
+        "ContentConfigPermissions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ContentConfigPermissions"
+            }
+        },
+        "Notifications": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Notifications"
+            },
+            "maxItems": 1
+        },
+        "ThumbnailConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ThumbnailConfig"
+            },
+            "maxItems": 1
+        },
+        "ThumbnailConfigPermissions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ThumbnailConfigPermissions"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InputBucket",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

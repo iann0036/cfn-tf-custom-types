@@ -1,0 +1,153 @@
+{
+    "typeName": "Terraform::AWS::LambdaEventSourceMapping",
+    "description": "CloudFormation equivalent of aws_lambda_event_source_mapping",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DestinationConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnFailure": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/OnFailure"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OnFailure": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DestinationArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DestinationArn"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BatchSize": {
+            "type": "number"
+        },
+        "BisectBatchOnFunctionError": {
+            "type": "boolean"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "EventSourceArn": {
+            "type": "string"
+        },
+        "FunctionArn": {
+            "type": "string"
+        },
+        "FunctionName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModified": {
+            "type": "string"
+        },
+        "LastProcessingResult": {
+            "type": "string"
+        },
+        "MaximumBatchingWindowInSeconds": {
+            "type": "number"
+        },
+        "MaximumRecordAgeInSeconds": {
+            "type": "number"
+        },
+        "MaximumRetryAttempts": {
+            "type": "number"
+        },
+        "ParallelizationFactor": {
+            "type": "number"
+        },
+        "StartingPosition": {
+            "type": "string"
+        },
+        "StartingPositionTimestamp": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "StateTransitionReason": {
+            "type": "string"
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "DestinationConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationConfig"
+            },
+            "maxItems": 1
+        },
+        "OnFailure": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OnFailure"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EventSourceArn",
+        "FunctionName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/FunctionArn",
+        "/properties/LastModified",
+        "/properties/LastProcessingResult",
+        "/properties/State",
+        "/properties/StateTransitionReason",
+        "/properties/Uuid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

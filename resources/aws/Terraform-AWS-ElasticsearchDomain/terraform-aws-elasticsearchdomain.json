@@ -1,0 +1,377 @@
+{
+    "typeName": "Terraform::AWS::ElasticsearchDomain",
+    "description": "CloudFormation equivalent of aws_elasticsearch_domain",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ClusterConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DedicatedMasterCount": {
+                    "type": "number"
+                },
+                "DedicatedMasterEnabled": {
+                    "type": "boolean"
+                },
+                "DedicatedMasterType": {
+                    "type": "string"
+                },
+                "InstanceCount": {
+                    "type": "number"
+                },
+                "InstanceType": {
+                    "type": "string"
+                },
+                "ZoneAwarenessEnabled": {
+                    "type": "boolean"
+                },
+                "ZoneAwarenessConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ZoneAwarenessConfig"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CognitoOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IdentityPoolId": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "UserPoolId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "IdentityPoolId",
+                "RoleArn",
+                "UserPoolId"
+            ]
+        },
+        "DomainEndpointOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnforceHttps": {
+                    "type": "boolean"
+                },
+                "TlsSecurityPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EnforceHttps"
+            ]
+        },
+        "EbsOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EbsEnabled": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EbsEnabled"
+            ]
+        },
+        "EncryptAtRest": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "LogPublishingOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchLogGroupArn": {
+                    "type": "string"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "LogType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CloudwatchLogGroupArn",
+                "LogType"
+            ]
+        },
+        "NodeToNodeEncryption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "SnapshotOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomatedSnapshotStartHour": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AutomatedSnapshotStartHour"
+            ]
+        },
+        "VpcOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ZoneAwarenessConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityZoneCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessPolicies": {
+            "type": "string"
+        },
+        "AdvancedOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "ElasticsearchVersion": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KibanaEndpoint": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ClusterConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterConfig"
+            },
+            "maxItems": 1
+        },
+        "CognitoOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CognitoOptions"
+            },
+            "maxItems": 1
+        },
+        "DomainEndpointOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DomainEndpointOptions"
+            },
+            "maxItems": 1
+        },
+        "EbsOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EbsOptions"
+            },
+            "maxItems": 1
+        },
+        "EncryptAtRest": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptAtRest"
+            },
+            "maxItems": 1
+        },
+        "LogPublishingOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LogPublishingOptions"
+            }
+        },
+        "NodeToNodeEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NodeToNodeEncryption"
+            },
+            "maxItems": 1
+        },
+        "SnapshotOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotOptions"
+            },
+            "maxItems": 1
+        },
+        "VpcOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcOptions"
+            },
+            "maxItems": 1
+        },
+        "ZoneAwarenessConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ZoneAwarenessConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DomainId",
+        "/properties/Endpoint",
+        "/properties/KibanaEndpoint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

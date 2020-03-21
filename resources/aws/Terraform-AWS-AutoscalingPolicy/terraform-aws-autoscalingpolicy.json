@@ -1,0 +1,234 @@
+{
+    "typeName": "Terraform::AWS::AutoscalingPolicy",
+    "description": "CloudFormation equivalent of aws_autoscaling_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "StepAdjustment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricIntervalLowerBound": {
+                    "type": "string"
+                },
+                "MetricIntervalUpperBound": {
+                    "type": "string"
+                },
+                "ScalingAdjustment": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ScalingAdjustment"
+            ]
+        },
+        "TargetTrackingConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisableScaleIn": {
+                    "type": "boolean"
+                },
+                "TargetValue": {
+                    "type": "number"
+                },
+                "CustomizedMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomizedMetricSpecification"
+                    }
+                },
+                "PredefinedMetricSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PredefinedMetricSpecification"
+                    }
+                }
+            },
+            "required": [
+                "TargetValue"
+            ]
+        },
+        "CustomizedMetricSpecification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricName": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "MetricDimension": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricDimension"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "Statistic"
+            ]
+        },
+        "PredefinedMetricSpecification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PredefinedMetricType": {
+                    "type": "string"
+                },
+                "ResourceLabel": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "PredefinedMetricType"
+            ]
+        },
+        "MetricDimension": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdjustmentType": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AutoscalingGroupName": {
+            "type": "string"
+        },
+        "Cooldown": {
+            "type": "number"
+        },
+        "EstimatedInstanceWarmup": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MetricAggregationType": {
+            "type": "string"
+        },
+        "MinAdjustmentMagnitude": {
+            "type": "number"
+        },
+        "MinAdjustmentStep": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PolicyType": {
+            "type": "string"
+        },
+        "ScalingAdjustment": {
+            "type": "number"
+        },
+        "StepAdjustment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StepAdjustment"
+            }
+        },
+        "TargetTrackingConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TargetTrackingConfiguration"
+            },
+            "maxItems": 1
+        },
+        "CustomizedMetricSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomizedMetricSpecification"
+            },
+            "maxItems": 1
+        },
+        "PredefinedMetricSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PredefinedMetricSpecification"
+            },
+            "maxItems": 1
+        },
+        "MetricDimension": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricDimension"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AutoscalingGroupName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

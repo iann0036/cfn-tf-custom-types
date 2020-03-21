@@ -1,0 +1,113 @@
+{
+    "typeName": "Terraform::Cobbler::Distro",
+    "description": "CloudFormation equivalent of cobbler_distro",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arch": {
+            "type": "string"
+        },
+        "BootFiles": {
+            "type": "string"
+        },
+        "Breed": {
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "FetchableFiles": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Initrd": {
+            "type": "string"
+        },
+        "Kernel": {
+            "type": "string"
+        },
+        "KernelOptions": {
+            "type": "string"
+        },
+        "KernelOptionsPost": {
+            "type": "string"
+        },
+        "MgmtClasses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OsVersion": {
+            "type": "string"
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RedhatManagementKey": {
+            "type": "string"
+        },
+        "RedhatManagementServer": {
+            "type": "string"
+        },
+        "TemplateFiles": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Breed",
+        "Initrd",
+        "Kernel",
+        "Name",
+        "OsVersion"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

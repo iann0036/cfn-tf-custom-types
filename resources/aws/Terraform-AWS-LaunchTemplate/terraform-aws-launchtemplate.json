@@ -1,0 +1,565 @@
+{
+    "typeName": "Terraform::AWS::LaunchTemplate",
+    "description": "CloudFormation equivalent of aws_launch_template",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BlockDeviceMappings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "NoDevice": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                },
+                "Ebs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Ebs"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CapacityReservationSpecification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapacityReservationPreference": {
+                    "type": "string"
+                },
+                "CapacityReservationTarget": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CapacityReservationTarget"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CpuOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CoreCount": {
+                    "type": "number"
+                },
+                "ThreadsPerCore": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CreditSpecification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuCredits": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ElasticGpuSpecifications": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "ElasticInferenceAccelerator": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "IamInstanceProfile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Arn": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InstanceMarketOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MarketType": {
+                    "type": "string"
+                },
+                "SpotOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SpotOptions"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LicenseSpecification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LicenseConfigurationArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LicenseConfigurationArn"
+            ]
+        },
+        "Monitoring": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "NetworkInterfaces": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssociatePublicIpAddress": {
+                    "type": "string"
+                },
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DeviceIndex": {
+                    "type": "number"
+                },
+                "Ipv4AddressCount": {
+                    "type": "number"
+                },
+                "Ipv4Addresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ipv6AddressCount": {
+                    "type": "number"
+                },
+                "Ipv6Addresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NetworkInterfaceId": {
+                    "type": "string"
+                },
+                "PrivateIpAddress": {
+                    "type": "string"
+                },
+                "SecurityGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Placement": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Affinity": {
+                    "type": "string"
+                },
+                "AvailabilityZone": {
+                    "type": "string"
+                },
+                "GroupName": {
+                    "type": "string"
+                },
+                "HostId": {
+                    "type": "string"
+                },
+                "SpreadDomain": {
+                    "type": "string"
+                },
+                "Tenancy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TagSpecifications": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceType": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                }
+            },
+            "required": []
+        },
+        "Ebs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "string"
+                },
+                "Encrypted": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "KmsKeyId": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "CapacityReservationTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CapacityReservationId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SpotOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockDurationMinutes": {
+                    "type": "number"
+                },
+                "InstanceInterruptionBehavior": {
+                    "type": "string"
+                },
+                "MaxPrice": {
+                    "type": "string"
+                },
+                "SpotInstanceType": {
+                    "type": "string"
+                },
+                "ValidUntil": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DefaultVersion": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisableApiTermination": {
+            "type": "boolean"
+        },
+        "EbsOptimized": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string"
+        },
+        "InstanceInitiatedShutdownBehavior": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "KernelId": {
+            "type": "string"
+        },
+        "KeyName": {
+            "type": "string"
+        },
+        "LatestVersion": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "RamDiskId": {
+            "type": "string"
+        },
+        "SecurityGroupNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "VpcSecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BlockDeviceMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BlockDeviceMappings"
+            }
+        },
+        "CapacityReservationSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CapacityReservationSpecification"
+            },
+            "maxItems": 1
+        },
+        "CpuOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CpuOptions"
+            },
+            "maxItems": 1
+        },
+        "CreditSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CreditSpecification"
+            },
+            "maxItems": 1
+        },
+        "ElasticGpuSpecifications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticGpuSpecifications"
+            }
+        },
+        "ElasticInferenceAccelerator": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ElasticInferenceAccelerator"
+            },
+            "maxItems": 1
+        },
+        "IamInstanceProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IamInstanceProfile"
+            },
+            "maxItems": 1
+        },
+        "InstanceMarketOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstanceMarketOptions"
+            },
+            "maxItems": 1
+        },
+        "LicenseSpecification": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LicenseSpecification"
+            }
+        },
+        "Monitoring": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Monitoring"
+            },
+            "maxItems": 1
+        },
+        "NetworkInterfaces": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterfaces"
+            }
+        },
+        "Placement": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Placement"
+            },
+            "maxItems": 1
+        },
+        "TagSpecifications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TagSpecifications"
+            }
+        },
+        "Ebs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ebs"
+            },
+            "maxItems": 1
+        },
+        "CapacityReservationTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CapacityReservationTarget"
+            },
+            "maxItems": 1
+        },
+        "SpotOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SpotOptions"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DefaultVersion",
+        "/properties/LatestVersion"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

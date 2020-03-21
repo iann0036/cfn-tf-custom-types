@@ -1,0 +1,57 @@
+# Terraform::Alicloud::SlbServerGroup Servers
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "<a href="#port" title="Port">Port</a>" : <i>Double</i>,
+    "<a href="#serverids" title="ServerIds">ServerIds</a>" : <i>[ String, ... ]</i>,
+    "<a href="#type" title="Type">Type</a>" : <i>String</i>,
+    "<a href="#weight" title="Weight">Weight</a>" : <i>Double</i>
+}
+</pre>
+
+### YAML
+
+<pre>
+<a href="#port" title="Port">Port</a>: <i>Double</i>
+<a href="#serverids" title="ServerIds">ServerIds</a>: <i>
+      - String</i>
+<a href="#type" title="Type">Type</a>: <i>String</i>
+<a href="#weight" title="Weight">Weight</a>: <i>Double</i>
+</pre>
+
+## Properties
+
+#### Port
+
+_Required_: Yes
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ServerIds
+
+_Required_: Yes
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Type
+
+_Required_: No
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Weight
+
+_Required_: No
+_Type_: Double
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+

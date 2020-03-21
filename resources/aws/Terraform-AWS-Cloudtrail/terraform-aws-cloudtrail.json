@@ -1,0 +1,173 @@
+{
+    "typeName": "Terraform::AWS::Cloudtrail",
+    "description": "CloudFormation equivalent of aws_cloudtrail",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EventSelector": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IncludeManagementEvents": {
+                    "type": "boolean"
+                },
+                "ReadWriteType": {
+                    "type": "string"
+                },
+                "DataResource": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DataResource"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DataResource": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Type",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CloudWatchLogsGroupArn": {
+            "type": "string"
+        },
+        "CloudWatchLogsRoleArn": {
+            "type": "string"
+        },
+        "EnableLogFileValidation": {
+            "type": "boolean"
+        },
+        "EnableLogging": {
+            "type": "boolean"
+        },
+        "HomeRegion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeGlobalServiceEvents": {
+            "type": "boolean"
+        },
+        "IsMultiRegionTrail": {
+            "type": "boolean"
+        },
+        "IsOrganizationTrail": {
+            "type": "boolean"
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "S3BucketName": {
+            "type": "string"
+        },
+        "S3KeyPrefix": {
+            "type": "string"
+        },
+        "SnsTopicName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "EventSelector": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventSelector"
+            },
+            "maxItems": 5
+        },
+        "DataResource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataResource"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "S3BucketName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/HomeRegion"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

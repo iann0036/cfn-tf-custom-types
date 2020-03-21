@@ -1,0 +1,279 @@
+{
+    "typeName": "Terraform::AWS::CloudwatchEventTarget",
+    "description": "CloudFormation equivalent of aws_cloudwatch_event_target",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BatchTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArraySize": {
+                    "type": "number"
+                },
+                "JobAttempts": {
+                    "type": "number"
+                },
+                "JobDefinition": {
+                    "type": "string"
+                },
+                "JobName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "JobDefinition",
+                "JobName"
+            ]
+        },
+        "EcsTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Group": {
+                    "type": "string"
+                },
+                "LaunchType": {
+                    "type": "string"
+                },
+                "PlatformVersion": {
+                    "type": "string"
+                },
+                "TaskCount": {
+                    "type": "number"
+                },
+                "TaskDefinitionArn": {
+                    "type": "string"
+                },
+                "NetworkConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkConfiguration"
+                    }
+                }
+            },
+            "required": [
+                "TaskDefinitionArn"
+            ]
+        },
+        "InputTransformer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InputPaths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "InputTemplate": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "InputTemplate"
+            ]
+        },
+        "KinesisTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PartitionKeyPath": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RunCommandTargets": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        },
+        "SqsTarget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MessageGroupId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NetworkConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignPublicIp": {
+                    "type": "boolean"
+                },
+                "SecurityGroups": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Subnets"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Input": {
+            "type": "string"
+        },
+        "InputPath": {
+            "type": "string"
+        },
+        "RoleArn": {
+            "type": "string"
+        },
+        "Rule": {
+            "type": "string"
+        },
+        "TargetId": {
+            "type": "string"
+        },
+        "BatchTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BatchTarget"
+            },
+            "maxItems": 1
+        },
+        "EcsTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EcsTarget"
+            },
+            "maxItems": 1
+        },
+        "InputTransformer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InputTransformer"
+            },
+            "maxItems": 1
+        },
+        "KinesisTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/KinesisTarget"
+            },
+            "maxItems": 1
+        },
+        "RunCommandTargets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RunCommandTargets"
+            },
+            "maxItems": 5
+        },
+        "SqsTarget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SqsTarget"
+            },
+            "maxItems": 1
+        },
+        "NetworkConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Arn",
+        "Rule"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

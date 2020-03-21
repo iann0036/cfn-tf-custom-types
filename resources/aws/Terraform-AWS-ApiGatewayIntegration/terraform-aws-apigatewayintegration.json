@@ -1,0 +1,144 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayIntegration",
+    "description": "CloudFormation equivalent of aws_api_gateway_integration",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CacheKeyParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CacheNamespace": {
+            "type": "string"
+        },
+        "ConnectionId": {
+            "type": "string"
+        },
+        "ConnectionType": {
+            "type": "string"
+        },
+        "ContentHandling": {
+            "type": "string"
+        },
+        "Credentials": {
+            "type": "string"
+        },
+        "HttpMethod": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationHttpMethod": {
+            "type": "string"
+        },
+        "PassthroughBehavior": {
+            "type": "string"
+        },
+        "RequestParameters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "RequestParametersInJson": {
+            "type": "string"
+        },
+        "RequestTemplates": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ResourceId": {
+            "type": "string"
+        },
+        "RestApiId": {
+            "type": "string"
+        },
+        "TimeoutMilliseconds": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Uri": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HttpMethod",
+        "ResourceId",
+        "RestApiId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

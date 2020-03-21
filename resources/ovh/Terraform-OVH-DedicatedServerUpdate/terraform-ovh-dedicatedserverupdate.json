@@ -1,0 +1,65 @@
+{
+    "typeName": "Terraform::OVH::DedicatedServerUpdate",
+    "description": "CloudFormation equivalent of ovh_dedicated_server_update",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BootId": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Monitoring": {
+            "type": "boolean"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,159 @@
+{
+    "typeName": "Terraform::AWS::GlueSecurityConfiguration",
+    "description": "CloudFormation equivalent of aws_glue_security_configuration",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EncryptionConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchEncryption": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchEncryption"
+                    }
+                },
+                "JobBookmarksEncryption": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/JobBookmarksEncryption"
+                    }
+                },
+                "S3Encryption": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Encryption"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CloudwatchEncryption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchEncryptionMode": {
+                    "type": "string"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "JobBookmarksEncryption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JobBookmarksEncryptionMode": {
+                    "type": "string"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "S3Encryption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyArn": {
+                    "type": "string"
+                },
+                "S3EncryptionMode": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "EncryptionConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionConfiguration"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "CloudwatchEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CloudwatchEncryption"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "JobBookmarksEncryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JobBookmarksEncryption"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "S3Encryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3Encryption"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

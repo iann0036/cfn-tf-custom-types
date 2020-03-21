@@ -1,0 +1,129 @@
+{
+    "typeName": "Terraform::TencentCloud::GaapHttpRule",
+    "description": "CloudFormation equivalent of tencentcloud_gaap_http_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Realservers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Id",
+                "Ip",
+                "Port"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConnectTimeout": {
+            "type": "number"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "ForwardHost": {
+            "type": "string"
+        },
+        "HealthCheck": {
+            "type": "boolean"
+        },
+        "HealthCheckMethod": {
+            "type": "string"
+        },
+        "HealthCheckPath": {
+            "type": "string"
+        },
+        "HealthCheckStatusCodes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interval": {
+            "type": "number"
+        },
+        "ListenerId": {
+            "type": "string"
+        },
+        "Path": {
+            "type": "string"
+        },
+        "RealserverType": {
+            "type": "string"
+        },
+        "Scheduler": {
+            "type": "string"
+        },
+        "Realservers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Realservers"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Domain",
+        "HealthCheck",
+        "ListenerId",
+        "Path",
+        "RealserverType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

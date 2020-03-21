@@ -1,0 +1,342 @@
+{
+    "typeName": "Terraform::Google::StorageBucket",
+    "description": "CloudFormation equivalent of google_storage_bucket",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Cors": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxAgeSeconds": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Origin": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ResponseHeader": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Encryption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultKmsKeyName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DefaultKmsKeyName"
+            ]
+        },
+        "LifecycleRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Action"
+                    }
+                },
+                "Condition": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Condition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Logging": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LogBucket": {
+                    "type": "string"
+                },
+                "LogObjectPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LogBucket"
+            ]
+        },
+        "RetentionPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsLocked": {
+                    "type": "boolean"
+                },
+                "RetentionPeriod": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "RetentionPeriod"
+            ]
+        },
+        "Versioning": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "Website": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MainPageSuffix": {
+                    "type": "string"
+                },
+                "NotFoundPage": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Action": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StorageClass": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Condition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Age": {
+                    "type": "number"
+                },
+                "CreatedBefore": {
+                    "type": "string"
+                },
+                "IsLive": {
+                    "type": "boolean"
+                },
+                "MatchesStorageClass": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NumNewerVersions": {
+                    "type": "number"
+                },
+                "WithState": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BucketPolicyOnly": {
+            "type": "boolean"
+        },
+        "DefaultEventBasedHold": {
+            "type": "boolean"
+        },
+        "ForceDestroy": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "RequesterPays": {
+            "type": "boolean"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "StorageClass": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Cors": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Cors"
+            }
+        },
+        "Encryption": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Encryption"
+            },
+            "maxItems": 1
+        },
+        "LifecycleRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LifecycleRule"
+            },
+            "maxItems": 100
+        },
+        "Logging": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Logging"
+            },
+            "maxItems": 1
+        },
+        "RetentionPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetentionPolicy"
+            },
+            "maxItems": 1
+        },
+        "Versioning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Versioning"
+            },
+            "maxItems": 1
+        },
+        "Website": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Website"
+            },
+            "maxItems": 1
+        },
+        "Action": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Action"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Condition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Condition"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/SelfLink",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

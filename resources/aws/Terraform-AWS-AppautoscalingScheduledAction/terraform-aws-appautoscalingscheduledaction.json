@@ -1,0 +1,101 @@
+{
+    "typeName": "Terraform::AWS::AppautoscalingScheduledAction",
+    "description": "CloudFormation equivalent of aws_appautoscaling_scheduled_action",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ScalableTargetAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxCapacity": {
+                    "type": "number"
+                },
+                "MinCapacity": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "EndTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceId": {
+            "type": "string"
+        },
+        "ScalableDimension": {
+            "type": "string"
+        },
+        "Schedule": {
+            "type": "string"
+        },
+        "ServiceNamespace": {
+            "type": "string"
+        },
+        "StartTime": {
+            "type": "string"
+        },
+        "ScalableTargetAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScalableTargetAction"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceId",
+        "ServiceNamespace"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

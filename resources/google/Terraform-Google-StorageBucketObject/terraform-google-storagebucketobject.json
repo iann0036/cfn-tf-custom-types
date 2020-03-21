@@ -1,0 +1,123 @@
+{
+    "typeName": "Terraform::Google::StorageBucketObject",
+    "description": "CloudFormation equivalent of google_storage_bucket_object",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string"
+        },
+        "CacheControl": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string"
+        },
+        "ContentDisposition": {
+            "type": "string"
+        },
+        "ContentEncoding": {
+            "type": "string"
+        },
+        "ContentLanguage": {
+            "type": "string"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "Crc32c": {
+            "type": "string"
+        },
+        "DetectMd5hash": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Md5hash": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OutputName": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "StorageClass": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Crc32c",
+        "/properties/Md5hash",
+        "/properties/OutputName",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

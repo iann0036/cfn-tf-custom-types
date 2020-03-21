@@ -1,0 +1,322 @@
+{
+    "typeName": "Terraform::Google::BigqueryTable",
+    "description": "CloudFormation equivalent of google_bigquery_table",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EncryptionConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsKeyName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "KmsKeyName"
+            ]
+        },
+        "ExternalDataConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Autodetect": {
+                    "type": "boolean"
+                },
+                "Compression": {
+                    "type": "string"
+                },
+                "IgnoreUnknownValues": {
+                    "type": "boolean"
+                },
+                "MaxBadRecords": {
+                    "type": "number"
+                },
+                "SourceFormat": {
+                    "type": "string"
+                },
+                "SourceUris": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CsvOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CsvOptions"
+                    }
+                },
+                "GoogleSheetsOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GoogleSheetsOptions"
+                    }
+                }
+            },
+            "required": [
+                "Autodetect",
+                "SourceFormat",
+                "SourceUris"
+            ]
+        },
+        "TimePartitioning": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExpirationMs": {
+                    "type": "number"
+                },
+                "Field": {
+                    "type": "string"
+                },
+                "RequirePartitionFilter": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "View": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string"
+                },
+                "UseLegacySql": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "CsvOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowJaggedRows": {
+                    "type": "boolean"
+                },
+                "AllowQuotedNewlines": {
+                    "type": "boolean"
+                },
+                "Encoding": {
+                    "type": "string"
+                },
+                "FieldDelimiter": {
+                    "type": "string"
+                },
+                "Quote": {
+                    "type": "string"
+                },
+                "SkipLeadingRows": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Quote"
+            ]
+        },
+        "GoogleSheetsOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Range": {
+                    "type": "string"
+                },
+                "SkipLeadingRows": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Clustering": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CreationTime": {
+            "type": "number"
+        },
+        "DatasetId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "ExpirationTime": {
+            "type": "number"
+        },
+        "FriendlyName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "LastModifiedTime": {
+            "type": "number"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "NumBytes": {
+            "type": "number"
+        },
+        "NumLongTermBytes": {
+            "type": "number"
+        },
+        "NumRows": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Schema": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "TableId": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "EncryptionConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionConfiguration"
+            },
+            "maxItems": 1
+        },
+        "ExternalDataConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExternalDataConfiguration"
+            },
+            "maxItems": 1
+        },
+        "TimePartitioning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimePartitioning"
+            },
+            "maxItems": 1
+        },
+        "View": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/View"
+            },
+            "maxItems": 1
+        },
+        "CsvOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CsvOptions"
+            },
+            "maxItems": 1
+        },
+        "GoogleSheetsOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GoogleSheetsOptions"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatasetId",
+        "TableId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTime",
+        "/properties/Etag",
+        "/properties/LastModifiedTime",
+        "/properties/Location",
+        "/properties/NumBytes",
+        "/properties/NumLongTermBytes",
+        "/properties/NumRows",
+        "/properties/SelfLink",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

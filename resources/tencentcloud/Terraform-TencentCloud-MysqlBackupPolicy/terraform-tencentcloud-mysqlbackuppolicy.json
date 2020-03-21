@@ -1,0 +1,69 @@
+{
+    "typeName": "Terraform::TencentCloud::MysqlBackupPolicy",
+    "description": "CloudFormation equivalent of tencentcloud_mysql_backup_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackupModel": {
+            "type": "string"
+        },
+        "BackupTime": {
+            "type": "string"
+        },
+        "BinlogPeriod": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MysqlId": {
+            "type": "string"
+        },
+        "RetentionPeriod": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MysqlId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BinlogPeriod"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

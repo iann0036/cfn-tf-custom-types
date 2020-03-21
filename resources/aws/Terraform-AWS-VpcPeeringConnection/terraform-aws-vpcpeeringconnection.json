@@ -1,0 +1,160 @@
+{
+    "typeName": "Terraform::AWS::VpcPeeringConnection",
+    "description": "CloudFormation equivalent of aws_vpc_peering_connection",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Accepter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Requester": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowClassicLinkToRemoteVpc": {
+                    "type": "boolean"
+                },
+                "AllowRemoteVpcDnsResolution": {
+                    "type": "boolean"
+                },
+                "AllowVpcToRemoteClassicLink": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptStatus": {
+            "type": "string"
+        },
+        "AutoAccept": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PeerOwnerId": {
+            "type": "string"
+        },
+        "PeerRegion": {
+            "type": "string"
+        },
+        "PeerVpcId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Accepter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Accepter"
+            },
+            "maxItems": 1
+        },
+        "Requester": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Requester"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PeerVpcId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AcceptStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

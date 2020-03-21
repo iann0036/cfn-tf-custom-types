@@ -1,0 +1,129 @@
+{
+    "typeName": "Terraform::AWS::S3AccessPoint",
+    "description": "CloudFormation equivalent of aws_s3_access_point",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "PublicAccessBlockConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BlockPublicAcls": {
+                    "type": "boolean"
+                },
+                "BlockPublicPolicy": {
+                    "type": "boolean"
+                },
+                "IgnorePublicAcls": {
+                    "type": "boolean"
+                },
+                "RestrictPublicBuckets": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "VpcConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VpcId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VpcId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "HasPublicAccessPolicy": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkOrigin": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "PublicAccessBlockConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PublicAccessBlockConfiguration"
+            },
+            "maxItems": 1
+        },
+        "VpcConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/DomainName",
+        "/properties/HasPublicAccessPolicy",
+        "/properties/NetworkOrigin"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

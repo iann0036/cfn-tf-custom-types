@@ -1,0 +1,399 @@
+{
+    "typeName": "Terraform::AWS::IotTopicRule",
+    "description": "CloudFormation equivalent of aws_iot_topic_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CloudwatchAlarm": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlarmName": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "StateReason": {
+                    "type": "string"
+                },
+                "StateValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AlarmName",
+                "RoleArn",
+                "StateReason",
+                "StateValue"
+            ]
+        },
+        "CloudwatchMetric": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricName": {
+                    "type": "string"
+                },
+                "MetricNamespace": {
+                    "type": "string"
+                },
+                "MetricTimestamp": {
+                    "type": "string"
+                },
+                "MetricUnit": {
+                    "type": "string"
+                },
+                "MetricValue": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MetricName",
+                "MetricNamespace",
+                "MetricUnit",
+                "MetricValue",
+                "RoleArn"
+            ]
+        },
+        "Dynamodb": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HashKeyField": {
+                    "type": "string"
+                },
+                "HashKeyType": {
+                    "type": "string"
+                },
+                "HashKeyValue": {
+                    "type": "string"
+                },
+                "PayloadField": {
+                    "type": "string"
+                },
+                "RangeKeyField": {
+                    "type": "string"
+                },
+                "RangeKeyType": {
+                    "type": "string"
+                },
+                "RangeKeyValue": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "TableName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HashKeyField",
+                "HashKeyValue",
+                "RoleArn",
+                "TableName"
+            ]
+        },
+        "Elasticsearch": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Endpoint": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Index": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Endpoint",
+                "Id",
+                "Index",
+                "RoleArn",
+                "Type"
+            ]
+        },
+        "Firehose": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeliveryStreamName": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "Separator": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeliveryStreamName",
+                "RoleArn"
+            ]
+        },
+        "Kinesis": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PartitionKey": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "StreamName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RoleArn",
+                "StreamName"
+            ]
+        },
+        "Lambda": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FunctionArn"
+            ]
+        },
+        "Republish": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RoleArn": {
+                    "type": "string"
+                },
+                "Topic": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RoleArn",
+                "Topic"
+            ]
+        },
+        "S3": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Key",
+                "RoleArn"
+            ]
+        },
+        "Sns": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MessageFormat": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "TargetArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RoleArn",
+                "TargetArn"
+            ]
+        },
+        "Sqs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "QueueUrl": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "UseBase64": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "QueueUrl",
+                "RoleArn",
+                "UseBase64"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Sql": {
+            "type": "string"
+        },
+        "SqlVersion": {
+            "type": "string"
+        },
+        "CloudwatchAlarm": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CloudwatchAlarm"
+            }
+        },
+        "CloudwatchMetric": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CloudwatchMetric"
+            }
+        },
+        "Dynamodb": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Dynamodb"
+            }
+        },
+        "Elasticsearch": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Elasticsearch"
+            }
+        },
+        "Firehose": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Firehose"
+            }
+        },
+        "Kinesis": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Kinesis"
+            }
+        },
+        "Lambda": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Lambda"
+            }
+        },
+        "Republish": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Republish"
+            }
+        },
+        "S3": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/S3"
+            }
+        },
+        "Sns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Sns"
+            }
+        },
+        "Sqs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Sqs"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled",
+        "Name",
+        "Sql",
+        "SqlVersion"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

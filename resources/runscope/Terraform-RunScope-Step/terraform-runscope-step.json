@@ -1,0 +1,196 @@
+{
+    "typeName": "Terraform::RunScope::Step",
+    "description": "CloudFormation equivalent of runscope_step",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Assertions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparison": {
+                    "type": "string"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparison",
+                "Source"
+            ]
+        },
+        "Auth": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthType": {
+                    "type": "string"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AuthType",
+                "Password",
+                "Username"
+            ]
+        },
+        "Headers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Header": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Header",
+                "Value"
+            ]
+        },
+        "Variables": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Property": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Source"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BeforeScripts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Body": {
+            "type": "string"
+        },
+        "BucketId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Method": {
+            "type": "string"
+        },
+        "Note": {
+            "type": "string"
+        },
+        "Scripts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "StepType": {
+            "type": "string"
+        },
+        "TestId": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Assertions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Assertions"
+            }
+        },
+        "Auth": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Auth"
+            }
+        },
+        "Headers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Headers"
+            }
+        },
+        "Variables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Variables"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BucketId",
+        "StepType",
+        "TestId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

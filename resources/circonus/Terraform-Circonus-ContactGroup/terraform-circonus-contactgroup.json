@@ -1,0 +1,324 @@
+{
+    "typeName": "Terraform::Circonus::ContactGroup",
+    "description": "CloudFormation equivalent of circonus_contact_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AlertOption": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EscalateAfter": {
+                    "type": "string"
+                },
+                "EscalateTo": {
+                    "type": "string"
+                },
+                "Reminder": {
+                    "type": "string"
+                },
+                "Severity": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Severity"
+            ]
+        },
+        "Email": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Http": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "Method": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Address"
+            ]
+        },
+        "Irc": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "User"
+            ]
+        },
+        "PagerDuty": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContactGroupFallback": {
+                    "type": "string"
+                },
+                "ServiceKey": {
+                    "type": "string"
+                },
+                "WebhookUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ServiceKey",
+                "WebhookUrl"
+            ]
+        },
+        "Slack": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buttons": {
+                    "type": "boolean"
+                },
+                "Channel": {
+                    "type": "string"
+                },
+                "ContactGroupFallback": {
+                    "type": "string"
+                },
+                "Team": {
+                    "type": "string"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Channel",
+                "Team"
+            ]
+        },
+        "Sms": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Victorops": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApiKey": {
+                    "type": "string"
+                },
+                "ContactGroupFallback": {
+                    "type": "string"
+                },
+                "Critical": {
+                    "type": "number"
+                },
+                "Info": {
+                    "type": "number"
+                },
+                "Team": {
+                    "type": "string"
+                },
+                "Warning": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "ApiKey",
+                "Critical",
+                "Info",
+                "Team",
+                "Warning"
+            ]
+        },
+        "Xmpp": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "User": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AggregationWindow": {
+            "type": "string"
+        },
+        "AlwaysSendClear": {
+            "type": "boolean"
+        },
+        "GroupType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModified": {
+            "type": "number"
+        },
+        "LastModifiedBy": {
+            "type": "string"
+        },
+        "LongMessage": {
+            "type": "string"
+        },
+        "LongSubject": {
+            "type": "string"
+        },
+        "LongSummary": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ShortMessage": {
+            "type": "string"
+        },
+        "ShortSummary": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AlertOption": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AlertOption"
+            }
+        },
+        "Email": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Email"
+            }
+        },
+        "Http": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Http"
+            }
+        },
+        "Irc": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Irc"
+            }
+        },
+        "PagerDuty": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/PagerDuty"
+            }
+        },
+        "Slack": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Slack"
+            }
+        },
+        "Sms": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Sms"
+            }
+        },
+        "Victorops": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Victorops"
+            }
+        },
+        "Xmpp": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Xmpp"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/LastModified",
+        "/properties/LastModifiedBy"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

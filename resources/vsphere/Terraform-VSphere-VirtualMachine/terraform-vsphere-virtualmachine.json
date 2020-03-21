@@ -1,0 +1,662 @@
+{
+    "typeName": "Terraform::VSphere::VirtualMachine",
+    "description": "CloudFormation equivalent of vsphere_virtual_machine",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Cdrom": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClientDevice": {
+                    "type": "boolean"
+                },
+                "DatastoreId": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Clone": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LinkedClone": {
+                    "type": "boolean"
+                },
+                "TemplateUuid": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "Customize": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Customize"
+                    }
+                }
+            },
+            "required": [
+                "TemplateUuid"
+            ]
+        },
+        "Disk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Attach": {
+                    "type": "boolean"
+                },
+                "DatastoreId": {
+                    "type": "string"
+                },
+                "DiskMode": {
+                    "type": "string"
+                },
+                "DiskSharing": {
+                    "type": "string"
+                },
+                "EagerlyScrub": {
+                    "type": "boolean"
+                },
+                "IoLimit": {
+                    "type": "number"
+                },
+                "IoReservation": {
+                    "type": "number"
+                },
+                "IoShareCount": {
+                    "type": "number"
+                },
+                "IoShareLevel": {
+                    "type": "string"
+                },
+                "KeepOnRemove": {
+                    "type": "boolean"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "StoragePolicyId": {
+                    "type": "string"
+                },
+                "ThinProvisioned": {
+                    "type": "boolean"
+                },
+                "UnitNumber": {
+                    "type": "number"
+                },
+                "WriteThrough": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "NetworkInterface": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsDomain": {
+                    "type": "string"
+                },
+                "DnsServerList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ipv4Address": {
+                    "type": "string"
+                },
+                "Ipv4Netmask": {
+                    "type": "number"
+                },
+                "Ipv6Address": {
+                    "type": "string"
+                },
+                "Ipv6Netmask": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Vapp": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                }
+            },
+            "required": []
+        },
+        "Customize": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsServerList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DnsSuffixList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Ipv4Gateway": {
+                    "type": "string"
+                },
+                "Ipv6Gateway": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "WindowsSysprepText": {
+                    "type": "string"
+                },
+                "LinuxOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LinuxOptions"
+                    }
+                },
+                "NetworkInterface": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NetworkInterface"
+                    }
+                },
+                "WindowsOptions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WindowsOptions"
+                    }
+                }
+            },
+            "required": []
+        },
+        "LinuxOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Domain": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "HwClockUtc": {
+                    "type": "boolean"
+                },
+                "TimeZone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Domain",
+                "HostName"
+            ]
+        },
+        "WindowsOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "AutoLogon": {
+                    "type": "boolean"
+                },
+                "AutoLogonCount": {
+                    "type": "number"
+                },
+                "ComputerName": {
+                    "type": "string"
+                },
+                "DomainAdminPassword": {
+                    "type": "string"
+                },
+                "DomainAdminUser": {
+                    "type": "string"
+                },
+                "FullName": {
+                    "type": "string"
+                },
+                "JoinDomain": {
+                    "type": "string"
+                },
+                "OrganizationName": {
+                    "type": "string"
+                },
+                "ProductKey": {
+                    "type": "string"
+                },
+                "RunOnceCommandList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "TimeZone": {
+                    "type": "number"
+                },
+                "Workgroup": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ComputerName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlternateGuestName": {
+            "type": "string"
+        },
+        "Annotation": {
+            "type": "string"
+        },
+        "BootDelay": {
+            "type": "number"
+        },
+        "BootRetryDelay": {
+            "type": "number"
+        },
+        "BootRetryEnabled": {
+            "type": "boolean"
+        },
+        "ChangeVersion": {
+            "type": "string"
+        },
+        "CpuHotAddEnabled": {
+            "type": "boolean"
+        },
+        "CpuHotRemoveEnabled": {
+            "type": "boolean"
+        },
+        "CpuLimit": {
+            "type": "number"
+        },
+        "CpuPerformanceCountersEnabled": {
+            "type": "boolean"
+        },
+        "CpuReservation": {
+            "type": "number"
+        },
+        "CpuShareCount": {
+            "type": "number"
+        },
+        "CpuShareLevel": {
+            "type": "string"
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "DatastoreClusterId": {
+            "type": "string"
+        },
+        "DatastoreId": {
+            "type": "string"
+        },
+        "DefaultIpAddress": {
+            "type": "string"
+        },
+        "EfiSecureBootEnabled": {
+            "type": "boolean"
+        },
+        "EnableDiskUuid": {
+            "type": "boolean"
+        },
+        "EnableLogging": {
+            "type": "boolean"
+        },
+        "EptRviMode": {
+            "type": "string"
+        },
+        "ExtraConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Firmware": {
+            "type": "string"
+        },
+        "Folder": {
+            "type": "string"
+        },
+        "ForcePowerOff": {
+            "type": "boolean"
+        },
+        "GuestId": {
+            "type": "string"
+        },
+        "GuestIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HostSystemId": {
+            "type": "string"
+        },
+        "HvMode": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoredGuestIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Imported": {
+            "type": "boolean"
+        },
+        "LatencySensitivity": {
+            "type": "string"
+        },
+        "Memory": {
+            "type": "number"
+        },
+        "MemoryHotAddEnabled": {
+            "type": "boolean"
+        },
+        "MemoryLimit": {
+            "type": "number"
+        },
+        "MemoryReservation": {
+            "type": "number"
+        },
+        "MemoryShareCount": {
+            "type": "number"
+        },
+        "MemoryShareLevel": {
+            "type": "string"
+        },
+        "MigrateWaitTimeout": {
+            "type": "number"
+        },
+        "Moid": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NestedHvEnabled": {
+            "type": "boolean"
+        },
+        "NumCoresPerSocket": {
+            "type": "number"
+        },
+        "NumCpus": {
+            "type": "number"
+        },
+        "RebootRequired": {
+            "type": "boolean"
+        },
+        "ResourcePoolId": {
+            "type": "string"
+        },
+        "RunToolsScriptsAfterPowerOn": {
+            "type": "boolean"
+        },
+        "RunToolsScriptsAfterResume": {
+            "type": "boolean"
+        },
+        "RunToolsScriptsBeforeGuestReboot": {
+            "type": "boolean"
+        },
+        "RunToolsScriptsBeforeGuestShutdown": {
+            "type": "boolean"
+        },
+        "RunToolsScriptsBeforeGuestStandby": {
+            "type": "boolean"
+        },
+        "ScsiBusSharing": {
+            "type": "string"
+        },
+        "ScsiControllerCount": {
+            "type": "number"
+        },
+        "ScsiType": {
+            "type": "string"
+        },
+        "ShutdownWaitTimeout": {
+            "type": "number"
+        },
+        "StoragePolicyId": {
+            "type": "string"
+        },
+        "SwapPlacementPolicy": {
+            "type": "string"
+        },
+        "SyncTimeWithHost": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Uuid": {
+            "type": "string"
+        },
+        "VappTransport": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VmwareToolsStatus": {
+            "type": "string"
+        },
+        "VmxPath": {
+            "type": "string"
+        },
+        "WaitForGuestIpTimeout": {
+            "type": "number"
+        },
+        "WaitForGuestNetRoutable": {
+            "type": "boolean"
+        },
+        "WaitForGuestNetTimeout": {
+            "type": "number"
+        },
+        "Cdrom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Cdrom"
+            },
+            "maxItems": 1
+        },
+        "Clone": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Clone"
+            },
+            "maxItems": 1
+        },
+        "Disk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Disk"
+            },
+            "maxItems": 60
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterface"
+            }
+        },
+        "Vapp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Vapp"
+            },
+            "maxItems": 1
+        },
+        "Customize": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Customize"
+            },
+            "maxItems": 1
+        },
+        "LinuxOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LinuxOptions"
+            },
+            "maxItems": 1
+        },
+        "WindowsOptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WindowsOptions"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourcePoolId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ChangeVersion",
+        "/properties/DefaultIpAddress",
+        "/properties/GuestIpAddresses",
+        "/properties/Imported",
+        "/properties/Moid",
+        "/properties/RebootRequired",
+        "/properties/Uuid",
+        "/properties/VappTransport",
+        "/properties/VmwareToolsStatus",
+        "/properties/VmxPath"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,803 @@
+{
+    "typeName": "Terraform::AzureRM::VirtualMachineScaleSet",
+    "description": "CloudFormation equivalent of azurerm_virtual_machine_scale_set",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BootDiagnostics": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "StorageUri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StorageUri"
+            ]
+        },
+        "Extension": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoUpgradeMinorVersion": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ProtectedSettings": {
+                    "type": "string"
+                },
+                "ProvisionAfterExtensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Publisher": {
+                    "type": "string"
+                },
+                "Settings": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "TypeHandlerVersion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Publisher",
+                "Type",
+                "TypeHandlerVersion"
+            ]
+        },
+        "Identity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IdentityIds": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "NetworkProfile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcceleratedNetworking": {
+                    "type": "boolean"
+                },
+                "IpForwarding": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NetworkSecurityGroupId": {
+                    "type": "string"
+                },
+                "Primary": {
+                    "type": "boolean"
+                },
+                "DnsSettings": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DnsSettings"
+                    }
+                },
+                "IpConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpConfiguration"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Primary"
+            ]
+        },
+        "OsProfile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "AdminUsername": {
+                    "type": "string"
+                },
+                "ComputerNamePrefix": {
+                    "type": "string"
+                },
+                "CustomData": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AdminUsername",
+                "ComputerNamePrefix"
+            ]
+        },
+        "OsProfileLinuxConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisablePasswordAuthentication": {
+                    "type": "boolean"
+                },
+                "SshKeys": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SshKeys"
+                    }
+                }
+            },
+            "required": []
+        },
+        "OsProfileSecrets": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SourceVaultId": {
+                    "type": "string"
+                },
+                "VaultCertificates": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VaultCertificates"
+                    }
+                }
+            },
+            "required": [
+                "SourceVaultId"
+            ]
+        },
+        "OsProfileWindowsConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableAutomaticUpgrades": {
+                    "type": "boolean"
+                },
+                "ProvisionVmAgent": {
+                    "type": "boolean"
+                },
+                "AdditionalUnattendConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdditionalUnattendConfig"
+                    }
+                },
+                "Winrm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Winrm"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Plan": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Product": {
+                    "type": "string"
+                },
+                "Publisher": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Product",
+                "Publisher"
+            ]
+        },
+        "RollingUpgradePolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxBatchInstancePercent": {
+                    "type": "number"
+                },
+                "MaxUnhealthyInstancePercent": {
+                    "type": "number"
+                },
+                "MaxUnhealthyUpgradedInstancePercent": {
+                    "type": "number"
+                },
+                "PauseTimeBetweenBatches": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Sku": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Capacity": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Tier": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Capacity",
+                "Name"
+            ]
+        },
+        "StorageProfileDataDisk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caching": {
+                    "type": "string"
+                },
+                "CreateOption": {
+                    "type": "string"
+                },
+                "DiskSizeGb": {
+                    "type": "number"
+                },
+                "Lun": {
+                    "type": "number"
+                },
+                "ManagedDiskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CreateOption",
+                "Lun"
+            ]
+        },
+        "StorageProfileImageReference": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Offer": {
+                    "type": "string"
+                },
+                "Publisher": {
+                    "type": "string"
+                },
+                "Sku": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "StorageProfileOsDisk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Caching": {
+                    "type": "string"
+                },
+                "CreateOption": {
+                    "type": "string"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "ManagedDiskType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "OsType": {
+                    "type": "string"
+                },
+                "VhdContainers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "CreateOption"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DnsSettings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DnsServers": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "DnsServers"
+            ]
+        },
+        "IpConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplicationGatewayBackendAddressPoolIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ApplicationSecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoadBalancerBackendAddressPoolIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "LoadBalancerInboundNatRulesIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Primary": {
+                    "type": "boolean"
+                },
+                "SubnetId": {
+                    "type": "string"
+                },
+                "PublicIpAddressConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PublicIpAddressConfiguration"
+                    }
+                }
+            },
+            "required": [
+                "Name",
+                "Primary",
+                "SubnetId"
+            ]
+        },
+        "SshKeys": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KeyData": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Path"
+            ]
+        },
+        "VaultCertificates": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateStore": {
+                    "type": "string"
+                },
+                "CertificateUrl": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CertificateUrl"
+            ]
+        },
+        "AdditionalUnattendConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Component": {
+                    "type": "string"
+                },
+                "Content": {
+                    "type": "string"
+                },
+                "Pass": {
+                    "type": "string"
+                },
+                "SettingName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Component",
+                "Content",
+                "Pass",
+                "SettingName"
+            ]
+        },
+        "Winrm": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificateUrl": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Protocol"
+            ]
+        },
+        "PublicIpAddressConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainNameLabel": {
+                    "type": "string"
+                },
+                "IdleTimeout": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DomainNameLabel",
+                "IdleTimeout",
+                "Name"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutomaticOsUpgrade": {
+            "type": "boolean"
+        },
+        "EvictionPolicy": {
+            "type": "string"
+        },
+        "HealthProbeId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LicenseType": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Overprovision": {
+            "type": "boolean"
+        },
+        "Priority": {
+            "type": "string"
+        },
+        "ProximityPlacementGroupId": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "SinglePlacementGroup": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "UpgradePolicyMode": {
+            "type": "string"
+        },
+        "Zones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BootDiagnostics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BootDiagnostics"
+            },
+            "maxItems": 1
+        },
+        "Extension": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Extension"
+            }
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Identity"
+            },
+            "maxItems": 1
+        },
+        "NetworkProfile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NetworkProfile"
+            },
+            "minItems": 1
+        },
+        "OsProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OsProfile"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "OsProfileLinuxConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OsProfileLinuxConfig"
+            },
+            "maxItems": 1
+        },
+        "OsProfileSecrets": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OsProfileSecrets"
+            }
+        },
+        "OsProfileWindowsConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OsProfileWindowsConfig"
+            },
+            "maxItems": 1
+        },
+        "Plan": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Plan"
+            },
+            "maxItems": 1
+        },
+        "RollingUpgradePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RollingUpgradePolicy"
+            },
+            "maxItems": 1
+        },
+        "Sku": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sku"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "StorageProfileDataDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageProfileDataDisk"
+            }
+        },
+        "StorageProfileImageReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageProfileImageReference"
+            },
+            "maxItems": 1
+        },
+        "StorageProfileOsDisk": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StorageProfileOsDisk"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "DnsSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsSettings"
+            },
+            "maxItems": 1
+        },
+        "IpConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpConfiguration"
+            },
+            "minItems": 1
+        },
+        "SshKeys": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SshKeys"
+            }
+        },
+        "VaultCertificates": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VaultCertificates"
+            }
+        },
+        "AdditionalUnattendConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalUnattendConfig"
+            }
+        },
+        "Winrm": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Winrm"
+            }
+        },
+        "PublicIpAddressConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PublicIpAddressConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "UpgradePolicyMode"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

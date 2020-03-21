@@ -1,0 +1,82 @@
+{
+    "typeName": "Terraform::TencentCloud::AsSchedule",
+    "description": "CloudFormation equivalent of tencentcloud_as_schedule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DesiredCapacity": {
+            "type": "number"
+        },
+        "EndTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number"
+        },
+        "MinSize": {
+            "type": "number"
+        },
+        "Recurrence": {
+            "type": "string"
+        },
+        "ScalingGroupId": {
+            "type": "string"
+        },
+        "ScheduleActionName": {
+            "type": "string"
+        },
+        "StartTime": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DesiredCapacity",
+        "MaxSize",
+        "MinSize",
+        "ScalingGroupId",
+        "ScheduleActionName",
+        "StartTime"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "typeName": "Terraform::AWS::LambdaLayerVersion",
+    "description": "CloudFormation equivalent of aws_lambda_layer_version",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CompatibleRuntimes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Filename": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LayerArn": {
+            "type": "string"
+        },
+        "LayerName": {
+            "type": "string"
+        },
+        "LicenseInfo": {
+            "type": "string"
+        },
+        "S3Bucket": {
+            "type": "string"
+        },
+        "S3Key": {
+            "type": "string"
+        },
+        "S3ObjectVersion": {
+            "type": "string"
+        },
+        "SourceCodeHash": {
+            "type": "string"
+        },
+        "SourceCodeSize": {
+            "type": "number"
+        },
+        "Version": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LayerName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedDate",
+        "/properties/LayerArn",
+        "/properties/SourceCodeSize",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

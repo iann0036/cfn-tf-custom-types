@@ -1,0 +1,162 @@
+{
+    "typeName": "Terraform::AWS::ServiceDiscoveryService",
+    "description": "CloudFormation equivalent of aws_service_discovery_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DnsConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NamespaceId": {
+                    "type": "string"
+                },
+                "RoutingPolicy": {
+                    "type": "string"
+                },
+                "DnsRecords": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DnsRecords"
+                    }
+                }
+            },
+            "required": [
+                "NamespaceId"
+            ]
+        },
+        "HealthCheckConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailureThreshold": {
+                    "type": "number"
+                },
+                "ResourcePath": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HealthCheckCustomConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FailureThreshold": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "DnsRecords": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ttl": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Ttl",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamespaceId": {
+            "type": "string"
+        },
+        "DnsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsConfig"
+            },
+            "maxItems": 1
+        },
+        "HealthCheckConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckConfig"
+            },
+            "maxItems": 1
+        },
+        "HealthCheckCustomConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckCustomConfig"
+            },
+            "maxItems": 1
+        },
+        "DnsRecords": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DnsRecords"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

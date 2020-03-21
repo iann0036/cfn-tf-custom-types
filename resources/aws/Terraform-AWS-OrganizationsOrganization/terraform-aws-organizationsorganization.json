@@ -1,0 +1,171 @@
+{
+    "typeName": "Terraform::AWS::OrganizationsOrganization",
+    "description": "CloudFormation equivalent of aws_organizations_organization",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accounts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Arn": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string"
+                    },
+                    "Id": {
+                        "type": "string"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Status": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AwsServiceAccessPrincipals": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "EnabledPolicyTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FeatureSet": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MasterAccountArn": {
+            "type": "string"
+        },
+        "MasterAccountEmail": {
+            "type": "string"
+        },
+        "MasterAccountId": {
+            "type": "string"
+        },
+        "NonMasterAccounts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Arn": {
+                        "type": "string"
+                    },
+                    "Email": {
+                        "type": "string"
+                    },
+                    "Id": {
+                        "type": "string"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Status": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Roots": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Arn": {
+                        "type": "string"
+                    },
+                    "Id": {
+                        "type": "string"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "PolicyTypes": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Status": {
+                                    "type": "string"
+                                },
+                                "Type": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accounts",
+        "/properties/Arn",
+        "/properties/MasterAccountArn",
+        "/properties/MasterAccountEmail",
+        "/properties/MasterAccountId",
+        "/properties/NonMasterAccounts",
+        "/properties/Roots"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

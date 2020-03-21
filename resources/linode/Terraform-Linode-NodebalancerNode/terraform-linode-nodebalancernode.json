@@ -1,0 +1,78 @@
+{
+    "typeName": "Terraform::Linode::NodebalancerNode",
+    "description": "CloudFormation equivalent of linode_nodebalancer_node",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "ConfigId": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Label": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "NodebalancerId": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Weight": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "ConfigId",
+        "Label",
+        "NodebalancerId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

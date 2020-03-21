@@ -1,0 +1,712 @@
+{
+    "typeName": "Terraform::Nutanix::VirtualMachine",
+    "description": "CloudFormation equivalent of nutanix_virtual_machine",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Categories": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "DiskList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataSourceReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "DiskSizeBytes": {
+                    "type": "number"
+                },
+                "DiskSizeMib": {
+                    "type": "number"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "VolumeGroupReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "DeviceProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DeviceProperties"
+                    }
+                }
+            },
+            "required": []
+        },
+        "GpuList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceId": {
+                    "type": "number"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Vendor": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NicList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsConnected": {
+                    "type": "string"
+                },
+                "MacAddress": {
+                    "type": "string"
+                },
+                "Model": {
+                    "type": "string"
+                },
+                "NetworkFunctionChainReference": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "NetworkFunctionNicType": {
+                    "type": "string"
+                },
+                "NicType": {
+                    "type": "string"
+                },
+                "SubnetName": {
+                    "type": "string"
+                },
+                "SubnetUuid": {
+                    "type": "string"
+                },
+                "Uuid": {
+                    "type": "string"
+                },
+                "IpEndpointList": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpEndpointList"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SerialPortList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "number"
+                },
+                "IsConnected": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "DeviceProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceType": {
+                    "type": "string"
+                },
+                "DiskAddress": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                }
+            },
+            "required": []
+        },
+        "IpEndpointList": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiVersion": {
+            "type": "string"
+        },
+        "AvailabilityZoneReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "BootDeviceDiskAddress": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "BootDeviceMacAddress": {
+            "type": "string"
+        },
+        "BootDeviceOrderList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ClusterName": {
+            "type": "string"
+        },
+        "ClusterUuid": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnableScriptExec": {
+            "type": "boolean"
+        },
+        "GuestCustomizationCloudInitCustomKeyValues": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "GuestCustomizationCloudInitMetaData": {
+            "type": "string"
+        },
+        "GuestCustomizationCloudInitUserData": {
+            "type": "string"
+        },
+        "GuestCustomizationIsOverridable": {
+            "type": "boolean"
+        },
+        "GuestCustomizationSysprep": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "GuestCustomizationSysprepCustomKeyValues": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "GuestOsId": {
+            "type": "string"
+        },
+        "HardwareClockTimezone": {
+            "type": "string"
+        },
+        "HostReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "HypervisorType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MemorySizeMib": {
+            "type": "number"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NgtCredentials": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "NgtEnabledCapabilityList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NicListStatus": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "FloatingIp": {
+                        "type": "string"
+                    },
+                    "IpEndpointList": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Ip": {
+                                    "type": "string"
+                                },
+                                "Type": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "IsConnected": {
+                        "type": "string"
+                    },
+                    "MacAddress": {
+                        "type": "string"
+                    },
+                    "Model": {
+                        "type": "string"
+                    },
+                    "NetworkFunctionChainReference": {
+                        "type": "array",
+                        "insertionOrder": true,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Key": {
+                                    "type": "string"
+                                },
+                                "Value": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "Key",
+                                "Value"
+                            ]
+                        }
+                    },
+                    "NetworkFunctionNicType": {
+                        "type": "string"
+                    },
+                    "NicType": {
+                        "type": "string"
+                    },
+                    "SubnetName": {
+                        "type": "string"
+                    },
+                    "SubnetUuid": {
+                        "type": "string"
+                    },
+                    "Uuid": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "NumSockets": {
+            "type": "number"
+        },
+        "NumVcpusPerSocket": {
+            "type": "number"
+        },
+        "NumVnumaNodes": {
+            "type": "number"
+        },
+        "NutanixGuestTools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "OwnerReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ParentReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "PowerState": {
+            "type": "string"
+        },
+        "PowerStateMechanism": {
+            "type": "string"
+        },
+        "ProjectReference": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ShouldFailOnScriptFailure": {
+            "type": "boolean"
+        },
+        "State": {
+            "type": "string"
+        },
+        "VgaConsoleEnabled": {
+            "type": "boolean"
+        },
+        "Categories": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Categories"
+            }
+        },
+        "DiskList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DiskList"
+            }
+        },
+        "GpuList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GpuList"
+            }
+        },
+        "NicList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NicList"
+            }
+        },
+        "SerialPortList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SerialPortList"
+            }
+        },
+        "DeviceProperties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeviceProperties"
+            },
+            "maxItems": 1
+        },
+        "IpEndpointList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpEndpointList"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterUuid",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiVersion",
+        "/properties/ClusterName",
+        "/properties/HostReference",
+        "/properties/HypervisorType",
+        "/properties/Metadata",
+        "/properties/NicListStatus",
+        "/properties/PowerState",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

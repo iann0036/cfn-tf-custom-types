@@ -1,0 +1,135 @@
+{
+    "typeName": "Terraform::AWS::GlobalacceleratorAccelerator",
+    "description": "CloudFormation equivalent of aws_globalaccelerator_accelerator",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Attributes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FlowLogsEnabled": {
+                    "type": "boolean"
+                },
+                "FlowLogsS3Bucket": {
+                    "type": "string"
+                },
+                "FlowLogsS3Prefix": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DnsName": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "HostedZoneId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddressType": {
+            "type": "string"
+        },
+        "IpSets": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "IpAddresses": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "IpFamily": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Attributes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Attributes"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DnsName",
+        "/properties/HostedZoneId",
+        "/properties/IpSets"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

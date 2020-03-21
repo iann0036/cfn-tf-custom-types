@@ -1,0 +1,686 @@
+{
+    "typeName": "Terraform::Spotinst::ElastigroupAzure",
+    "description": "CloudFormation equivalent of spotinst_elastigroup_azure",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "HealthCheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoHealing": {
+                    "type": "boolean"
+                },
+                "GracePeriod": {
+                    "type": "number"
+                },
+                "HealthCheckType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HealthCheckType"
+            ]
+        },
+        "Image": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Custom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Custom"
+                    }
+                },
+                "Marketplace": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Marketplace"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IntegrationKubernetes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ClusterIdentifier": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ClusterIdentifier"
+            ]
+        },
+        "IntegrationMultaiRuntime": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeploymentId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeploymentId"
+            ]
+        },
+        "LoadBalancers": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoWeight": {
+                    "type": "boolean"
+                },
+                "BalancerId": {
+                    "type": "string"
+                },
+                "TargetSetId": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Login": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Password": {
+                    "type": "string"
+                },
+                "SshPublicKey": {
+                    "type": "string"
+                },
+                "UserName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "UserName"
+            ]
+        },
+        "ManagedServiceIdentities": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "ResourceGroupName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "ResourceGroupName"
+            ]
+        },
+        "Network": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AssignPublicIp": {
+                    "type": "boolean"
+                },
+                "ResourceGroupName": {
+                    "type": "string"
+                },
+                "SubnetName": {
+                    "type": "string"
+                },
+                "VirtualNetworkName": {
+                    "type": "string"
+                },
+                "AdditionalIpConfigs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AdditionalIpConfigs"
+                    }
+                }
+            },
+            "required": [
+                "ResourceGroupName",
+                "SubnetName",
+                "VirtualNetworkName"
+            ]
+        },
+        "ScalingDownPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "string"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "MaxTargetCapacity": {
+                    "type": "string"
+                },
+                "Maximum": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MinTargetCapacity": {
+                    "type": "string"
+                },
+                "Minimum": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Dimensions"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold"
+            ]
+        },
+        "ScalingUpPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "string"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "MaxTargetCapacity": {
+                    "type": "string"
+                },
+                "Maximum": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MinTargetCapacity": {
+                    "type": "string"
+                },
+                "Minimum": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Dimensions"
+                    }
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold"
+            ]
+        },
+        "ScheduledTask": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Adjustment": {
+                    "type": "string"
+                },
+                "AdjustmentPercentage": {
+                    "type": "string"
+                },
+                "BatchSizePercentage": {
+                    "type": "string"
+                },
+                "CronExpression": {
+                    "type": "string"
+                },
+                "GracePeriod": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "ScaleMaxCapacity": {
+                    "type": "string"
+                },
+                "ScaleMinCapacity": {
+                    "type": "string"
+                },
+                "ScaleTargetCapacity": {
+                    "type": "string"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CronExpression",
+                "TaskType"
+            ]
+        },
+        "Strategy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DrainingTimeout": {
+                    "type": "number"
+                },
+                "LowPriorityPercentage": {
+                    "type": "number"
+                },
+                "OdCount": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "UpdatePolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ShouldRoll": {
+                    "type": "boolean"
+                },
+                "RollConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RollConfig"
+                    }
+                }
+            },
+            "required": [
+                "ShouldRoll"
+            ]
+        },
+        "Custom": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ImageName": {
+                    "type": "string"
+                },
+                "ResourceGroupName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ImageName",
+                "ResourceGroupName"
+            ]
+        },
+        "Marketplace": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Offer": {
+                    "type": "string"
+                },
+                "Publisher": {
+                    "type": "string"
+                },
+                "Sku": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Offer",
+                "Publisher",
+                "Sku"
+            ]
+        },
+        "AdditionalIpConfigs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PrivateIpVersion": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Dimensions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "RollConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BatchSizePercentage": {
+                    "type": "number"
+                },
+                "GracePeriod": {
+                    "type": "number"
+                },
+                "HealthCheckType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BatchSizePercentage"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomData": {
+            "type": "string"
+        },
+        "DesiredCapacity": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LowPrioritySizes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MaxSize": {
+            "type": "number"
+        },
+        "MinSize": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OdSizes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Product": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "ShutdownScript": {
+            "type": "string"
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "HealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheck"
+            },
+            "maxItems": 1
+        },
+        "Image": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Image"
+            }
+        },
+        "IntegrationKubernetes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationKubernetes"
+            },
+            "maxItems": 1
+        },
+        "IntegrationMultaiRuntime": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IntegrationMultaiRuntime"
+            },
+            "maxItems": 1
+        },
+        "LoadBalancers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LoadBalancers"
+            }
+        },
+        "Login": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Login"
+            },
+            "maxItems": 1
+        },
+        "ManagedServiceIdentities": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ManagedServiceIdentities"
+            }
+        },
+        "Network": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Network"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ScalingDownPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScalingDownPolicy"
+            }
+        },
+        "ScalingUpPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScalingUpPolicy"
+            }
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTask"
+            }
+        },
+        "Strategy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Strategy"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "UpdatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpdatePolicy"
+            },
+            "maxItems": 1
+        },
+        "Custom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Custom"
+            }
+        },
+        "Marketplace": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Marketplace"
+            }
+        },
+        "AdditionalIpConfigs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalIpConfigs"
+            }
+        },
+        "Dimensions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Dimensions"
+            }
+        },
+        "RollConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RollConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LowPrioritySizes",
+        "Name",
+        "OdSizes",
+        "Product",
+        "Region",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

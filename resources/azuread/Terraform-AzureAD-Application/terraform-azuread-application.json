@@ -1,0 +1,194 @@
+{
+    "typeName": "Terraform::AzureAD::Application",
+    "description": "CloudFormation equivalent of azuread_application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AppRole": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedMemberTypes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AllowedMemberTypes",
+                "Description",
+                "DisplayName"
+            ]
+        },
+        "RequiredResourceAccess": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ResourceAppId": {
+                    "type": "string"
+                },
+                "ResourceAccess": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourceAccess"
+                    }
+                }
+            },
+            "required": [
+                "ResourceAppId"
+            ]
+        },
+        "ResourceAccess": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Id",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationId": {
+            "type": "string"
+        },
+        "AvailableToOtherTenants": {
+            "type": "boolean"
+        },
+        "GroupMembershipClaims": {
+            "type": "string"
+        },
+        "Homepage": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentifierUris": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "LogoutUrl": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Oauth2AllowImplicitFlow": {
+            "type": "boolean"
+        },
+        "ObjectId": {
+            "type": "string"
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PublicClient": {
+            "type": "boolean"
+        },
+        "ReplyUrls": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Type": {
+            "type": "string"
+        },
+        "AppRole": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AppRole"
+            }
+        },
+        "RequiredResourceAccess": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RequiredResourceAccess"
+            }
+        },
+        "ResourceAccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceAccess"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApplicationId",
+        "/properties/ObjectId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

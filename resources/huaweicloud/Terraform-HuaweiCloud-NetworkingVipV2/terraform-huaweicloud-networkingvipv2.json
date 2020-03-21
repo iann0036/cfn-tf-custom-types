@@ -1,0 +1,78 @@
+{
+    "typeName": "Terraform::HuaweiCloud::NetworkingVipV2",
+    "description": "CloudFormation equivalent of huaweicloud_networking_vip_v2",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeviceOwner": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkId": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "TenantId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NetworkId",
+        "SubnetId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DeviceOwner",
+        "/properties/Status",
+        "/properties/TenantId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

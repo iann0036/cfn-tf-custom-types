@@ -1,0 +1,469 @@
+{
+    "typeName": "Terraform::AzureRM::MonitorAutoscaleSetting",
+    "description": "CloudFormation equivalent of azurerm_monitor_autoscale_setting",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Notification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Email": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Email"
+                    }
+                },
+                "Webhook": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Webhook"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Profile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Capacity": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Capacity"
+                    }
+                },
+                "FixedDate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FixedDate"
+                    }
+                },
+                "Recurrence": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Recurrence"
+                    }
+                },
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Rule"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Email": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomEmails": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SendToSubscriptionAdministrator": {
+                    "type": "boolean"
+                },
+                "SendToSubscriptionCoAdministrator": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Webhook": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Properties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "ServiceUri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ServiceUri"
+            ]
+        },
+        "Capacity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "number"
+                },
+                "Maximum": {
+                    "type": "number"
+                },
+                "Minimum": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Default",
+                "Maximum",
+                "Minimum"
+            ]
+        },
+        "FixedDate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "Timezone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "End",
+                "Start"
+            ]
+        },
+        "Recurrence": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Hours": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Minutes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Timezone": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Days",
+                "Hours",
+                "Minutes"
+            ]
+        },
+        "Rule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricTrigger": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetricTrigger"
+                    }
+                },
+                "ScaleAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScaleAction"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MetricTrigger": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MetricName": {
+                    "type": "string"
+                },
+                "MetricResourceId": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "TimeAggregation": {
+                    "type": "string"
+                },
+                "TimeGrain": {
+                    "type": "string"
+                },
+                "TimeWindow": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MetricName",
+                "MetricResourceId",
+                "Operator",
+                "Statistic",
+                "Threshold",
+                "TimeAggregation",
+                "TimeGrain",
+                "TimeWindow"
+            ]
+        },
+        "ScaleAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cooldown": {
+                    "type": "string"
+                },
+                "Direction": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Cooldown",
+                "Direction",
+                "Type",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TargetResourceId": {
+            "type": "string"
+        },
+        "Notification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Notification"
+            },
+            "maxItems": 1
+        },
+        "Profile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Profile"
+            },
+            "maxItems": 20,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "Email": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Email"
+            },
+            "maxItems": 1
+        },
+        "Webhook": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Webhook"
+            }
+        },
+        "Capacity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Capacity"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "FixedDate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FixedDate"
+            },
+            "maxItems": 1
+        },
+        "Recurrence": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Recurrence"
+            },
+            "maxItems": 1
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Rule"
+            },
+            "maxItems": 10
+        },
+        "MetricTrigger": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetricTrigger"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ScaleAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScaleAction"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "TargetResourceId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

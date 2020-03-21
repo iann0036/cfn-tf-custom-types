@@ -1,0 +1,252 @@
+{
+    "typeName": "Terraform::Spotinst::ElastigroupAwsBeanstalk",
+    "description": "CloudFormation equivalent of spotinst_elastigroup_aws_beanstalk",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DeploymentPreferences": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomaticRoll": {
+                    "type": "boolean"
+                },
+                "BatchSizePercentage": {
+                    "type": "number"
+                },
+                "GracePeriod": {
+                    "type": "number"
+                },
+                "Strategy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Strategy"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ManagedActions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PlatformUpdate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PlatformUpdate"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ScheduledTask": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Adjustment": {
+                    "type": "string"
+                },
+                "AdjustmentPercentage": {
+                    "type": "string"
+                },
+                "BatchSizePercentage": {
+                    "type": "string"
+                },
+                "CronExpression": {
+                    "type": "string"
+                },
+                "Frequency": {
+                    "type": "string"
+                },
+                "GracePeriod": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxCapacity": {
+                    "type": "string"
+                },
+                "MinCapacity": {
+                    "type": "string"
+                },
+                "ScaleMaxCapacity": {
+                    "type": "string"
+                },
+                "ScaleMinCapacity": {
+                    "type": "string"
+                },
+                "ScaleTargetCapacity": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                },
+                "TargetCapacity": {
+                    "type": "string"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TaskType"
+            ]
+        },
+        "Strategy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "type": "string"
+                },
+                "ShouldDrainInstances": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "PlatformUpdate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PerformAt": {
+                    "type": "string"
+                },
+                "TimeWindow": {
+                    "type": "string"
+                },
+                "UpdateLevel": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BeanstalkEnvironmentId": {
+            "type": "string"
+        },
+        "BeanstalkEnvironmentName": {
+            "type": "string"
+        },
+        "DesiredCapacity": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceTypesSpot": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Maintenance": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number"
+        },
+        "MinSize": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Product": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "DeploymentPreferences": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeploymentPreferences"
+            },
+            "maxItems": 1
+        },
+        "ManagedActions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManagedActions"
+            },
+            "maxItems": 1
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTask"
+            }
+        },
+        "Strategy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Strategy"
+            }
+        },
+        "PlatformUpdate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PlatformUpdate"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DesiredCapacity",
+        "InstanceTypesSpot",
+        "MaxSize",
+        "MinSize",
+        "Name",
+        "Product",
+        "Region"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

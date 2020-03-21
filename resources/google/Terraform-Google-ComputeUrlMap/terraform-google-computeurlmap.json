@@ -1,0 +1,993 @@
+{
+    "typeName": "Terraform::Google::ComputeUrlMap",
+    "description": "CloudFormation equivalent of google_compute_url_map",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "HeaderAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RequestHeadersToRemove": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ResponseHeadersToRemove": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RequestHeadersToAdd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestHeadersToAdd"
+                    }
+                },
+                "ResponseHeadersToAdd": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResponseHeadersToAdd"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HostRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Hosts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PathMatcher": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Hosts",
+                "PathMatcher"
+            ]
+        },
+        "PathMatcher": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultService": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "HeaderAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderAction"
+                    }
+                },
+                "PathRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PathRule"
+                    }
+                },
+                "RouteRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouteRules"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Test": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Host": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Service": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Host",
+                "Path",
+                "Service"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RequestHeadersToAdd": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderName": {
+                    "type": "string"
+                },
+                "HeaderValue": {
+                    "type": "string"
+                },
+                "Replace": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HeaderName",
+                "HeaderValue",
+                "Replace"
+            ]
+        },
+        "ResponseHeadersToAdd": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderName": {
+                    "type": "string"
+                },
+                "HeaderValue": {
+                    "type": "string"
+                },
+                "Replace": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HeaderName",
+                "HeaderValue",
+                "Replace"
+            ]
+        },
+        "PathRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Paths": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Service": {
+                    "type": "string"
+                },
+                "RouteAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouteAction"
+                    }
+                },
+                "UrlRedirect": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlRedirect"
+                    }
+                }
+            },
+            "required": [
+                "Paths"
+            ]
+        },
+        "RouteRules": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Priority": {
+                    "type": "number"
+                },
+                "Service": {
+                    "type": "string"
+                },
+                "HeaderAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderAction"
+                    }
+                },
+                "MatchRules": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MatchRules"
+                    }
+                },
+                "RouteAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RouteAction"
+                    }
+                },
+                "UrlRedirect": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlRedirect"
+                    }
+                }
+            },
+            "required": [
+                "Priority"
+            ]
+        },
+        "RouteAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CorsPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CorsPolicy"
+                    }
+                },
+                "FaultInjectionPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FaultInjectionPolicy"
+                    }
+                },
+                "RequestMirrorPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RequestMirrorPolicy"
+                    }
+                },
+                "RetryPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RetryPolicy"
+                    }
+                },
+                "Timeout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Timeout"
+                    }
+                },
+                "UrlRewrite": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/UrlRewrite"
+                    }
+                },
+                "WeightedBackendServices": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WeightedBackendServices"
+                    }
+                }
+            },
+            "required": []
+        },
+        "UrlRedirect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostRedirect": {
+                    "type": "string"
+                },
+                "HttpsRedirect": {
+                    "type": "boolean"
+                },
+                "PathRedirect": {
+                    "type": "string"
+                },
+                "PrefixRedirect": {
+                    "type": "string"
+                },
+                "RedirectResponseCode": {
+                    "type": "string"
+                },
+                "StripQuery": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "MatchRules": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FullPathMatch": {
+                    "type": "string"
+                },
+                "IgnoreCase": {
+                    "type": "boolean"
+                },
+                "PrefixMatch": {
+                    "type": "string"
+                },
+                "RegexMatch": {
+                    "type": "string"
+                },
+                "HeaderMatches": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderMatches"
+                    }
+                },
+                "MetadataFilters": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MetadataFilters"
+                    }
+                },
+                "QueryParameterMatches": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryParameterMatches"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CorsPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowCredentials": {
+                    "type": "boolean"
+                },
+                "AllowHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowOriginRegexes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowOrigins": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Disabled": {
+                    "type": "boolean"
+                },
+                "ExposeHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxAge": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "FaultInjectionPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Abort": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Abort"
+                    }
+                },
+                "Delay": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Delay"
+                    }
+                }
+            },
+            "required": []
+        },
+        "RequestMirrorPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendService": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BackendService"
+            ]
+        },
+        "RetryPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumRetries": {
+                    "type": "number"
+                },
+                "RetryConditions": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "PerTryTimeout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/PerTryTimeout"
+                    }
+                }
+            },
+            "required": [
+                "NumRetries"
+            ]
+        },
+        "Timeout": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Seconds"
+            ]
+        },
+        "UrlRewrite": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HostRewrite": {
+                    "type": "string"
+                },
+                "PathPrefixRewrite": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "WeightedBackendServices": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackendService": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                },
+                "HeaderAction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeaderAction"
+                    }
+                }
+            },
+            "required": [
+                "BackendService",
+                "Weight"
+            ]
+        },
+        "HeaderMatches": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactMatch": {
+                    "type": "string"
+                },
+                "HeaderName": {
+                    "type": "string"
+                },
+                "InvertMatch": {
+                    "type": "boolean"
+                },
+                "PrefixMatch": {
+                    "type": "string"
+                },
+                "PresentMatch": {
+                    "type": "boolean"
+                },
+                "RegexMatch": {
+                    "type": "string"
+                },
+                "SuffixMatch": {
+                    "type": "string"
+                },
+                "RangeMatch": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RangeMatch"
+                    }
+                }
+            },
+            "required": [
+                "HeaderName"
+            ]
+        },
+        "MetadataFilters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterMatchCriteria": {
+                    "type": "string"
+                },
+                "FilterLabels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FilterLabels"
+                    }
+                }
+            },
+            "required": [
+                "FilterMatchCriteria"
+            ]
+        },
+        "QueryParameterMatches": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExactMatch": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PresentMatch": {
+                    "type": "boolean"
+                },
+                "RegexMatch": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Abort": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpStatus": {
+                    "type": "number"
+                },
+                "Percentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Delay": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Percentage": {
+                    "type": "number"
+                },
+                "FixedDelay": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FixedDelay"
+                    }
+                }
+            },
+            "required": []
+        },
+        "PerTryTimeout": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Seconds"
+            ]
+        },
+        "RangeMatch": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RangeEnd": {
+                    "type": "number"
+                },
+                "RangeStart": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "RangeEnd",
+                "RangeStart"
+            ]
+        },
+        "FilterLabels": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "FixedDelay": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Nanos": {
+                    "type": "number"
+                },
+                "Seconds": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Seconds"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "DefaultService": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MapId": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "HeaderAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HeaderAction"
+            },
+            "maxItems": 1
+        },
+        "HostRule": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HostRule"
+            }
+        },
+        "PathMatcher": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PathMatcher"
+            }
+        },
+        "Test": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Test"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "RequestHeadersToAdd": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequestHeadersToAdd"
+            }
+        },
+        "ResponseHeadersToAdd": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResponseHeadersToAdd"
+            }
+        },
+        "PathRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PathRule"
+            }
+        },
+        "RouteRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteRules"
+            }
+        },
+        "RouteAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RouteAction"
+            },
+            "maxItems": 1
+        },
+        "UrlRedirect": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UrlRedirect"
+            },
+            "maxItems": 1
+        },
+        "MatchRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MatchRules"
+            }
+        },
+        "CorsPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorsPolicy"
+            },
+            "maxItems": 1
+        },
+        "FaultInjectionPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FaultInjectionPolicy"
+            },
+            "maxItems": 1
+        },
+        "RequestMirrorPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RequestMirrorPolicy"
+            },
+            "maxItems": 1
+        },
+        "RetryPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetryPolicy"
+            },
+            "maxItems": 1
+        },
+        "Timeout": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Timeout"
+            },
+            "maxItems": 1
+        },
+        "UrlRewrite": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UrlRewrite"
+            },
+            "maxItems": 1
+        },
+        "WeightedBackendServices": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WeightedBackendServices"
+            }
+        },
+        "HeaderMatches": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HeaderMatches"
+            }
+        },
+        "MetadataFilters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MetadataFilters"
+            }
+        },
+        "QueryParameterMatches": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/QueryParameterMatches"
+            }
+        },
+        "Abort": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Abort"
+            },
+            "maxItems": 1
+        },
+        "Delay": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Delay"
+            },
+            "maxItems": 1
+        },
+        "PerTryTimeout": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/PerTryTimeout"
+            },
+            "maxItems": 1
+        },
+        "RangeMatch": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RangeMatch"
+            },
+            "maxItems": 1
+        },
+        "FilterLabels": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FilterLabels"
+            },
+            "maxItems": 64,
+            "minItems": 1
+        },
+        "FixedDelay": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FixedDelay"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/Fingerprint",
+        "/properties/MapId",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,160 @@
+{
+    "typeName": "Terraform::NS1::Apikey",
+    "description": "CloudFormation equivalent of ns1_apikey",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountManageAccountSettings": {
+            "type": "boolean"
+        },
+        "AccountManageApikeys": {
+            "type": "boolean"
+        },
+        "AccountManagePaymentMethods": {
+            "type": "boolean"
+        },
+        "AccountManagePlan": {
+            "type": "boolean"
+        },
+        "AccountManageTeams": {
+            "type": "boolean"
+        },
+        "AccountManageUsers": {
+            "type": "boolean"
+        },
+        "AccountViewActivityLog": {
+            "type": "boolean"
+        },
+        "AccountViewInvoices": {
+            "type": "boolean"
+        },
+        "DataManageDatafeeds": {
+            "type": "boolean"
+        },
+        "DataManageDatasources": {
+            "type": "boolean"
+        },
+        "DataPushToDatafeeds": {
+            "type": "boolean"
+        },
+        "DhcpManageDhcp": {
+            "type": "boolean"
+        },
+        "DhcpViewDhcp": {
+            "type": "boolean"
+        },
+        "DnsManageZones": {
+            "type": "boolean"
+        },
+        "DnsViewZones": {
+            "type": "boolean"
+        },
+        "DnsZonesAllow": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DnsZonesAllowByDefault": {
+            "type": "boolean"
+        },
+        "DnsZonesDeny": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpWhitelist": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "IpWhitelistStrict": {
+            "type": "boolean"
+        },
+        "IpamManageIpam": {
+            "type": "boolean"
+        },
+        "IpamViewIpam": {
+            "type": "boolean"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "MonitoringManageJobs": {
+            "type": "boolean"
+        },
+        "MonitoringManageLists": {
+            "type": "boolean"
+        },
+        "MonitoringViewJobs": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SecurityManageActiveDirectory": {
+            "type": "boolean"
+        },
+        "SecurityManageGlobal2fa": {
+            "type": "boolean"
+        },
+        "Teams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Key"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,404 @@
+{
+    "typeName": "Terraform::OraclePaaS::DatabaseServiceInstance",
+    "description": "CloudFormation equivalent of oraclepaas_database_service_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Backups": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudStorageContainer": {
+                    "type": "string"
+                },
+                "CloudStoragePassword": {
+                    "type": "string"
+                },
+                "CloudStorageUsername": {
+                    "type": "string"
+                },
+                "CreateIfMissing": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CloudStorageContainer"
+            ]
+        },
+        "DatabaseConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdminPassword": {
+                    "type": "string"
+                },
+                "BackupDestination": {
+                    "type": "string"
+                },
+                "BackupStorageVolumeSize": {
+                    "type": "number"
+                },
+                "CharacterSet": {
+                    "type": "string"
+                },
+                "DataStorageVolumeSize": {
+                    "type": "number"
+                },
+                "DbDemo": {
+                    "type": "string"
+                },
+                "DisasterRecovery": {
+                    "type": "boolean"
+                },
+                "FailoverDatabase": {
+                    "type": "boolean"
+                },
+                "GoldenGate": {
+                    "type": "boolean"
+                },
+                "IsRac": {
+                    "type": "boolean"
+                },
+                "NationalCharacterSet": {
+                    "type": "string"
+                },
+                "PdbName": {
+                    "type": "string"
+                },
+                "Sid": {
+                    "type": "string"
+                },
+                "SnapshotName": {
+                    "type": "string"
+                },
+                "SourceServiceName": {
+                    "type": "string"
+                },
+                "Timezone": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "UsableStorage": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AdminPassword",
+                "UsableStorage"
+            ]
+        },
+        "DefaultAccessRules": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableDbConsole": {
+                    "type": "boolean"
+                },
+                "EnableDbExpress": {
+                    "type": "boolean"
+                },
+                "EnableDbListener": {
+                    "type": "boolean"
+                },
+                "EnableEmConsole": {
+                    "type": "boolean"
+                },
+                "EnableHttp": {
+                    "type": "boolean"
+                },
+                "EnableHttpSsl": {
+                    "type": "boolean"
+                },
+                "EnableRacDbListener": {
+                    "type": "boolean"
+                },
+                "EnableRacOns": {
+                    "type": "boolean"
+                },
+                "EnableScanListener": {
+                    "type": "boolean"
+                },
+                "EnableSsh": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "HybridDisasterRecovery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudStorageContainer": {
+                    "type": "string"
+                },
+                "CloudStoragePassword": {
+                    "type": "string"
+                },
+                "CloudStorageUsername": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CloudStorageContainer"
+            ]
+        },
+        "InstantiateFromBackup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudStorageContainer": {
+                    "type": "string"
+                },
+                "CloudStoragePassword": {
+                    "type": "string"
+                },
+                "CloudStorageUsername": {
+                    "type": "string"
+                },
+                "DatabaseId": {
+                    "type": "string"
+                },
+                "DecryptionKey": {
+                    "type": "string"
+                },
+                "OnPremise": {
+                    "type": "boolean"
+                },
+                "ServiceId": {
+                    "type": "string"
+                },
+                "WalletFileContent": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CloudStorageContainer",
+                "DatabaseId"
+            ]
+        },
+        "Standby": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AvailabilityDomain": {
+                    "type": "string"
+                },
+                "Subnet": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AvailabilityDomain",
+                "Subnet"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "BringYourOwnLicense": {
+            "type": "boolean"
+        },
+        "CloudStorageContainer": {
+            "type": "string"
+        },
+        "ComputeSiteName": {
+            "type": "string"
+        },
+        "DbaasMonitorUrl": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DesiredState": {
+            "type": "string"
+        },
+        "Edition": {
+            "type": "string"
+        },
+        "EmUrl": {
+            "type": "string"
+        },
+        "GlassfishUrl": {
+            "type": "string"
+        },
+        "HighPerformanceStorage": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentityDomain": {
+            "type": "string"
+        },
+        "IpNetwork": {
+            "type": "string"
+        },
+        "IpReservations": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Level": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotificationEmail": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Shape": {
+            "type": "string"
+        },
+        "SshPublicKey": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Subnet": {
+            "type": "string"
+        },
+        "SubscriptionType": {
+            "type": "string"
+        },
+        "Uri": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "Backups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Backups"
+            },
+            "maxItems": 1
+        },
+        "DatabaseConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DatabaseConfiguration"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "DefaultAccessRules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultAccessRules"
+            },
+            "maxItems": 1
+        },
+        "HybridDisasterRecovery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HybridDisasterRecovery"
+            },
+            "maxItems": 1
+        },
+        "InstantiateFromBackup": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstantiateFromBackup"
+            },
+            "maxItems": 1
+        },
+        "Standby": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Standby"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Edition",
+        "Name",
+        "Shape",
+        "SshPublicKey",
+        "SubscriptionType",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CloudStorageContainer",
+        "/properties/ComputeSiteName",
+        "/properties/DbaasMonitorUrl",
+        "/properties/EmUrl",
+        "/properties/GlassfishUrl",
+        "/properties/IdentityDomain",
+        "/properties/Status",
+        "/properties/Uri"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

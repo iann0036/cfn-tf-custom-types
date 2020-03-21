@@ -1,0 +1,91 @@
+{
+    "typeName": "Terraform::AzureStack::LbNatRule",
+    "description": "CloudFormation equivalent of azurestack_lb_nat_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BackendIpConfigurationId": {
+            "type": "string"
+        },
+        "BackendPort": {
+            "type": "number"
+        },
+        "EnableFloatingIp": {
+            "type": "boolean"
+        },
+        "FrontendIpConfigurationId": {
+            "type": "string"
+        },
+        "FrontendIpConfigurationName": {
+            "type": "string"
+        },
+        "FrontendPort": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadbalancerId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BackendPort",
+        "FrontendIpConfigurationName",
+        "FrontendPort",
+        "LoadbalancerId",
+        "Name",
+        "Protocol",
+        "ResourceGroupName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BackendIpConfigurationId",
+        "/properties/FrontendIpConfigurationId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

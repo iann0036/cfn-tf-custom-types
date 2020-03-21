@@ -1,0 +1,104 @@
+{
+    "typeName": "Terraform::VCD::NsxvDnat",
+    "description": "CloudFormation equivalent of vcd_nsxv_dnat",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EdgeGateway": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "IcmpType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoggingEnabled": {
+            "type": "boolean"
+        },
+        "NetworkName": {
+            "type": "string"
+        },
+        "NetworkType": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "OriginalAddress": {
+            "type": "string"
+        },
+        "OriginalPort": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "RuleTag": {
+            "type": "number"
+        },
+        "RuleType": {
+            "type": "string"
+        },
+        "TranslatedAddress": {
+            "type": "string"
+        },
+        "TranslatedPort": {
+            "type": "string"
+        },
+        "Vdc": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EdgeGateway",
+        "NetworkName",
+        "NetworkType",
+        "OriginalAddress"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

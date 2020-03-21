@@ -1,0 +1,106 @@
+{
+    "typeName": "Terraform::AWS::DxGatewayAssociation",
+    "description": "CloudFormation equivalent of aws_dx_gateway_association",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedPrefixes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AssociatedGatewayId": {
+            "type": "string"
+        },
+        "AssociatedGatewayOwnerAccountId": {
+            "type": "string"
+        },
+        "AssociatedGatewayType": {
+            "type": "string"
+        },
+        "DxGatewayAssociationId": {
+            "type": "string"
+        },
+        "DxGatewayId": {
+            "type": "string"
+        },
+        "DxGatewayOwnerAccountId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ProposalId": {
+            "type": "string"
+        },
+        "VpnGatewayId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DxGatewayId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssociatedGatewayType",
+        "/properties/DxGatewayAssociationId",
+        "/properties/DxGatewayOwnerAccountId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

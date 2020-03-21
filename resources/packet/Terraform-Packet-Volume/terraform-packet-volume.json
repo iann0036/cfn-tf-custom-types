@@ -1,0 +1,131 @@
+{
+    "typeName": "Terraform::Packet::Volume",
+    "description": "CloudFormation equivalent of packet_volume",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "SnapshotPolicies": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SnapshotCount": {
+                    "type": "number"
+                },
+                "SnapshotFrequency": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SnapshotCount",
+                "SnapshotFrequency"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Attachments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Href": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "BillingCycle": {
+            "type": "string"
+        },
+        "Created": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Facility": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locked": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Plan": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Updated": {
+            "type": "string"
+        },
+        "SnapshotPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotPolicies"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Facility",
+        "Plan",
+        "ProjectId",
+        "Size"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Attachments",
+        "/properties/Created",
+        "/properties/Name",
+        "/properties/State",
+        "/properties/Updated"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,291 @@
+{
+    "typeName": "Terraform::AWS::OpsworksInstance",
+    "description": "CloudFormation equivalent of aws_opsworks_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EbsBlockDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName"
+            ]
+        },
+        "EphemeralBlockDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeviceName": {
+                    "type": "string"
+                },
+                "VirtualName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DeviceName",
+                "VirtualName"
+            ]
+        },
+        "RootBlockDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DeleteOnTermination": {
+                    "type": "boolean"
+                },
+                "Iops": {
+                    "type": "number"
+                },
+                "VolumeSize": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AgentVersion": {
+            "type": "string"
+        },
+        "AmiId": {
+            "type": "string"
+        },
+        "Architecture": {
+            "type": "string"
+        },
+        "AutoScalingType": {
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "string"
+        },
+        "DeleteEbs": {
+            "type": "boolean"
+        },
+        "DeleteEip": {
+            "type": "boolean"
+        },
+        "EbsOptimized": {
+            "type": "boolean"
+        },
+        "Ec2InstanceId": {
+            "type": "string"
+        },
+        "EcsClusterArn": {
+            "type": "string"
+        },
+        "ElasticIp": {
+            "type": "string"
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InfrastructureClass": {
+            "type": "string"
+        },
+        "InstallUpdatesOnBoot": {
+            "type": "boolean"
+        },
+        "InstanceProfileArn": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "LastServiceErrorId": {
+            "type": "string"
+        },
+        "LayerIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Os": {
+            "type": "string"
+        },
+        "Platform": {
+            "type": "string"
+        },
+        "PrivateDns": {
+            "type": "string"
+        },
+        "PrivateIp": {
+            "type": "string"
+        },
+        "PublicDns": {
+            "type": "string"
+        },
+        "PublicIp": {
+            "type": "string"
+        },
+        "RegisteredBy": {
+            "type": "string"
+        },
+        "ReportedAgentVersion": {
+            "type": "string"
+        },
+        "ReportedOsFamily": {
+            "type": "string"
+        },
+        "ReportedOsName": {
+            "type": "string"
+        },
+        "ReportedOsVersion": {
+            "type": "string"
+        },
+        "RootDeviceType": {
+            "type": "string"
+        },
+        "RootDeviceVolumeId": {
+            "type": "string"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SshHostDsaKeyFingerprint": {
+            "type": "string"
+        },
+        "SshHostRsaKeyFingerprint": {
+            "type": "string"
+        },
+        "SshKeyName": {
+            "type": "string"
+        },
+        "StackId": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "Tenancy": {
+            "type": "string"
+        },
+        "VirtualizationType": {
+            "type": "string"
+        },
+        "EbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsBlockDevice"
+            }
+        },
+        "EphemeralBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EphemeralBlockDevice"
+            }
+        },
+        "RootBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RootBlockDevice"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LayerIds",
+        "StackId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Ec2InstanceId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

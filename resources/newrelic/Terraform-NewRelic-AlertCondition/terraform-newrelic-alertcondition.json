@@ -1,0 +1,132 @@
+{
+    "typeName": "Terraform::NewRelic::AlertCondition",
+    "description": "CloudFormation equivalent of newrelic_alert_condition",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Term": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "TimeFunction": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Duration",
+                "Threshold",
+                "TimeFunction"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConditionScope": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Entities": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            }
+        },
+        "GcMetric": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metric": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PolicyId": {
+            "type": "number"
+        },
+        "RunbookUrl": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UserDefinedMetric": {
+            "type": "string"
+        },
+        "UserDefinedValueFunction": {
+            "type": "string"
+        },
+        "ViolationCloseTimer": {
+            "type": "number"
+        },
+        "Term": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Term"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Entities",
+        "Metric",
+        "Name",
+        "PolicyId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

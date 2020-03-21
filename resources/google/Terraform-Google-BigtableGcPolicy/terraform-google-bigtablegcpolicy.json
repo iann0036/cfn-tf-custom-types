@@ -1,0 +1,109 @@
+{
+    "typeName": "Terraform::Google::BigtableGcPolicy",
+    "description": "CloudFormation equivalent of google_bigtable_gc_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "MaxAge": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Days"
+            ]
+        },
+        "MaxVersion": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Number": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Number"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ColumnFamily": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Table": {
+            "type": "string"
+        },
+        "MaxAge": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaxAge"
+            }
+        },
+        "MaxVersion": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MaxVersion"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ColumnFamily",
+        "InstanceName",
+        "Table"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

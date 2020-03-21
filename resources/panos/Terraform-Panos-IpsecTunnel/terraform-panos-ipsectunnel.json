@@ -1,0 +1,177 @@
+{
+    "typeName": "Terraform::Panos::IpsecTunnel",
+    "description": "CloudFormation equivalent of panos_ipsec_tunnel",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AkIkeGateway": {
+            "type": "string"
+        },
+        "AkIpsecCryptoProfile": {
+            "type": "string"
+        },
+        "AntiReplay": {
+            "type": "boolean"
+        },
+        "CopyFlowLabel": {
+            "type": "boolean"
+        },
+        "CopyTos": {
+            "type": "boolean"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "EnableIpv6": {
+            "type": "boolean"
+        },
+        "EnableTunnelMonitor": {
+            "type": "boolean"
+        },
+        "GpsCertificateProfile": {
+            "type": "string"
+        },
+        "GpsInterface": {
+            "type": "string"
+        },
+        "GpsInterfaceFloatingIpIpv4": {
+            "type": "string"
+        },
+        "GpsInterfaceFloatingIpIpv6": {
+            "type": "string"
+        },
+        "GpsInterfaceIpIpv4": {
+            "type": "string"
+        },
+        "GpsInterfaceIpIpv6": {
+            "type": "string"
+        },
+        "GpsLocalCertificate": {
+            "type": "string"
+        },
+        "GpsPortalAddress": {
+            "type": "string"
+        },
+        "GpsPreferIpv6": {
+            "type": "boolean"
+        },
+        "GpsPublishConnectedRoutes": {
+            "type": "boolean"
+        },
+        "GpsPublishRoutes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MkAuthKey": {
+            "type": "string"
+        },
+        "MkAuthKeyEnc": {
+            "type": "string"
+        },
+        "MkAuthType": {
+            "type": "string"
+        },
+        "MkEspEncryptionKey": {
+            "type": "string"
+        },
+        "MkEspEncryptionKeyEnc": {
+            "type": "string"
+        },
+        "MkEspEncryptionType": {
+            "type": "string"
+        },
+        "MkInterface": {
+            "type": "string"
+        },
+        "MkLocalAddressFloatingIp": {
+            "type": "string"
+        },
+        "MkLocalAddressIp": {
+            "type": "string"
+        },
+        "MkLocalSpi": {
+            "type": "string"
+        },
+        "MkProtocol": {
+            "type": "string"
+        },
+        "MkRemoteAddress": {
+            "type": "string"
+        },
+        "MkRemoteSpi": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "TunnelInterface": {
+            "type": "string"
+        },
+        "TunnelMonitorDestinationIp": {
+            "type": "string"
+        },
+        "TunnelMonitorProfile": {
+            "type": "string"
+        },
+        "TunnelMonitorProxyId": {
+            "type": "string"
+        },
+        "TunnelMonitorSourceIp": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "TunnelInterface"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/MkAuthKeyEnc",
+        "/properties/MkEspEncryptionKeyEnc"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

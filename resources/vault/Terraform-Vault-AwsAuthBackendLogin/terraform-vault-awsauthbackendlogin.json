@@ -1,0 +1,134 @@
+{
+    "typeName": "Terraform::Vault::AwsAuthBackendLogin",
+    "description": "CloudFormation equivalent of vault_aws_auth_backend_login",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessor": {
+            "type": "string"
+        },
+        "AuthType": {
+            "type": "string"
+        },
+        "Backend": {
+            "type": "string"
+        },
+        "ClientToken": {
+            "type": "string"
+        },
+        "IamHttpRequestMethod": {
+            "type": "string"
+        },
+        "IamRequestBody": {
+            "type": "string"
+        },
+        "IamRequestHeaders": {
+            "type": "string"
+        },
+        "IamRequestUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Identity": {
+            "type": "string"
+        },
+        "LeaseDuration": {
+            "type": "number"
+        },
+        "LeaseStartTime": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Nonce": {
+            "type": "string"
+        },
+        "Pkcs7": {
+            "type": "string"
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Renewable": {
+            "type": "boolean"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "Signature": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessor",
+        "/properties/AuthType",
+        "/properties/ClientToken",
+        "/properties/LeaseDuration",
+        "/properties/LeaseStartTime",
+        "/properties/Metadata",
+        "/properties/Policies",
+        "/properties/Renewable"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

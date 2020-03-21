@@ -1,0 +1,129 @@
+{
+    "typeName": "Terraform::TencentCloud::MysqlReadonlyInstance",
+    "description": "CloudFormation equivalent of tencentcloud_mysql_readonly_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoRenewFlag": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "IntranetIp": {
+            "type": "string"
+        },
+        "IntranetPort": {
+            "type": "number"
+        },
+        "Locked": {
+            "type": "number"
+        },
+        "MasterInstanceId": {
+            "type": "string"
+        },
+        "MemSize": {
+            "type": "number"
+        },
+        "PayType": {
+            "type": "number"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Status": {
+            "type": "number"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TaskStatus": {
+            "type": "number"
+        },
+        "VolumeSize": {
+            "type": "number"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "InstanceName",
+        "MasterInstanceId",
+        "MemSize",
+        "VolumeSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/IntranetIp",
+        "/properties/Locked",
+        "/properties/Status",
+        "/properties/TaskStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

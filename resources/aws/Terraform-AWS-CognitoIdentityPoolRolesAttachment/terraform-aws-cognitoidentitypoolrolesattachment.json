@@ -1,0 +1,142 @@
+{
+    "typeName": "Terraform::AWS::CognitoIdentityPoolRolesAttachment",
+    "description": "CloudFormation equivalent of aws_cognito_identity_pool_roles_attachment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "RoleMapping": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AmbiguousRoleResolution": {
+                    "type": "string"
+                },
+                "IdentityProvider": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "MappingRule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MappingRule"
+                    }
+                }
+            },
+            "required": [
+                "IdentityProvider",
+                "Type"
+            ]
+        },
+        "MappingRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Claim": {
+                    "type": "string"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Claim",
+                "MatchType",
+                "RoleArn",
+                "Value"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentityPoolId": {
+            "type": "string"
+        },
+        "Roles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "RoleMapping": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/RoleMapping"
+            }
+        },
+        "MappingRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MappingRule"
+            },
+            "maxItems": 25
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "IdentityPoolId",
+        "Roles"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

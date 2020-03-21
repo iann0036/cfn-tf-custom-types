@@ -1,0 +1,184 @@
+{
+    "typeName": "Terraform::AWS::AppmeshVirtualService",
+    "description": "CloudFormation equivalent of aws_appmesh_virtual_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Spec": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Provider": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Provider"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Provider": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VirtualNode": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualNode"
+                    }
+                },
+                "VirtualRouter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/VirtualRouter"
+                    }
+                }
+            },
+            "required": []
+        },
+        "VirtualNode": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VirtualNodeName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VirtualNodeName"
+            ]
+        },
+        "VirtualRouter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "VirtualRouterName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "VirtualRouterName"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastUpdatedDate": {
+            "type": "string"
+        },
+        "MeshName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Spec": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Spec"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Provider": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Provider"
+            },
+            "maxItems": 1
+        },
+        "VirtualNode": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VirtualNode"
+            },
+            "maxItems": 1
+        },
+        "VirtualRouter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VirtualRouter"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MeshName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedDate",
+        "/properties/LastUpdatedDate"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "typeName": "Terraform::TencentCloud::TcaplusApplication",
+    "description": "CloudFormation equivalent of tencentcloud_tcaplus_application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiAccessId": {
+            "type": "string"
+        },
+        "ApiAccessIp": {
+            "type": "string"
+        },
+        "ApiAccessPort": {
+            "type": "number"
+        },
+        "AppName": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdlType": {
+            "type": "string"
+        },
+        "NetworkType": {
+            "type": "string"
+        },
+        "OldPasswordExpireLast": {
+            "type": "number"
+        },
+        "OldPasswordExpireTime": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PasswordStatus": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AppName",
+        "IdlType",
+        "Password",
+        "SubnetId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ApiAccessId",
+        "/properties/ApiAccessIp",
+        "/properties/ApiAccessPort",
+        "/properties/CreateTime",
+        "/properties/NetworkType",
+        "/properties/OldPasswordExpireTime",
+        "/properties/PasswordStatus"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

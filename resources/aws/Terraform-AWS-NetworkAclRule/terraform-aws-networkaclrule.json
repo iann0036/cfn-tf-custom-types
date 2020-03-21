@@ -1,0 +1,88 @@
+{
+    "typeName": "Terraform::AWS::NetworkAclRule",
+    "description": "CloudFormation equivalent of aws_network_acl_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CidrBlock": {
+            "type": "string"
+        },
+        "Egress": {
+            "type": "boolean"
+        },
+        "FromPort": {
+            "type": "number"
+        },
+        "IcmpCode": {
+            "type": "string"
+        },
+        "IcmpType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv6CidrBlock": {
+            "type": "string"
+        },
+        "NetworkAclId": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "RuleAction": {
+            "type": "string"
+        },
+        "RuleNumber": {
+            "type": "number"
+        },
+        "ToPort": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "NetworkAclId",
+        "Protocol",
+        "RuleAction",
+        "RuleNumber"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

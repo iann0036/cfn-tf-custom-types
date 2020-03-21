@@ -1,0 +1,93 @@
+{
+    "typeName": "Terraform::AWS::CurReportDefinition",
+    "description": "CloudFormation equivalent of aws_cur_report_definition",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalArtifacts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AdditionalSchemaElements": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Compression": {
+            "type": "string"
+        },
+        "Format": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ReportName": {
+            "type": "string"
+        },
+        "S3Bucket": {
+            "type": "string"
+        },
+        "S3Prefix": {
+            "type": "string"
+        },
+        "S3Region": {
+            "type": "string"
+        },
+        "TimeUnit": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AdditionalSchemaElements",
+        "Compression",
+        "Format",
+        "ReportName",
+        "S3Bucket",
+        "S3Region",
+        "TimeUnit"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

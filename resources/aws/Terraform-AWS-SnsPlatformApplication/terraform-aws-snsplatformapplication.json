@@ -1,0 +1,91 @@
+{
+    "typeName": "Terraform::AWS::SnsPlatformApplication",
+    "description": "CloudFormation equivalent of aws_sns_platform_application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "EventDeliveryFailureTopicArn": {
+            "type": "string"
+        },
+        "EventEndpointCreatedTopicArn": {
+            "type": "string"
+        },
+        "EventEndpointDeletedTopicArn": {
+            "type": "string"
+        },
+        "EventEndpointUpdatedTopicArn": {
+            "type": "string"
+        },
+        "FailureFeedbackRoleArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Platform": {
+            "type": "string"
+        },
+        "PlatformCredential": {
+            "type": "string"
+        },
+        "PlatformPrincipal": {
+            "type": "string"
+        },
+        "SuccessFeedbackRoleArn": {
+            "type": "string"
+        },
+        "SuccessFeedbackSampleRate": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Platform",
+        "PlatformCredential"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

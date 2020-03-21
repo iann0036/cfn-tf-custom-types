@@ -1,0 +1,279 @@
+{
+    "typeName": "Terraform::AWS::SesReceiptRule",
+    "description": "CloudFormation equivalent of aws_ses_receipt_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AddHeaderAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderName": {
+                    "type": "string"
+                },
+                "HeaderValue": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "HeaderName",
+                "HeaderValue",
+                "Position"
+            ]
+        },
+        "BounceAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Message": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                },
+                "Sender": {
+                    "type": "string"
+                },
+                "SmtpReplyCode": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Message",
+                "Position",
+                "Sender",
+                "SmtpReplyCode"
+            ]
+        },
+        "LambdaAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionArn": {
+                    "type": "string"
+                },
+                "InvocationType": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "FunctionArn",
+                "Position"
+            ]
+        },
+        "S3Action": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BucketName": {
+                    "type": "string"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                },
+                "ObjectKeyPrefix": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "BucketName",
+                "Position"
+            ]
+        },
+        "SnsAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Position": {
+                    "type": "number"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Position",
+                "TopicArn"
+            ]
+        },
+        "StopAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Position": {
+                    "type": "number"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Position",
+                "Scope"
+            ]
+        },
+        "WorkmailAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OrganizationArn": {
+                    "type": "string"
+                },
+                "Position": {
+                    "type": "number"
+                },
+                "TopicArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OrganizationArn",
+                "Position"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "After": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Recipients": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RuleSetName": {
+            "type": "string"
+        },
+        "ScanEnabled": {
+            "type": "boolean"
+        },
+        "TlsPolicy": {
+            "type": "string"
+        },
+        "AddHeaderAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AddHeaderAction"
+            }
+        },
+        "BounceAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BounceAction"
+            }
+        },
+        "LambdaAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LambdaAction"
+            }
+        },
+        "S3Action": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/S3Action"
+            }
+        },
+        "SnsAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SnsAction"
+            }
+        },
+        "StopAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StopAction"
+            }
+        },
+        "WorkmailAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/WorkmailAction"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RuleSetName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,132 @@
+{
+    "typeName": "Terraform::NSXT::LbCookiePersistenceProfile",
+    "description": "CloudFormation equivalent of nsxt_lb_cookie_persistence_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "InsertModeParams": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CookieDomain": {
+                    "type": "string"
+                },
+                "CookieExpiryType": {
+                    "type": "string"
+                },
+                "CookiePath": {
+                    "type": "string"
+                },
+                "MaxIdleTime": {
+                    "type": "number"
+                },
+                "MaxLifeTime": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Tag": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Scope",
+                "Tag"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CookieFallback": {
+            "type": "boolean"
+        },
+        "CookieGarble": {
+            "type": "boolean"
+        },
+        "CookieMode": {
+            "type": "string"
+        },
+        "CookieName": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PersistenceShared": {
+            "type": "boolean"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "InsertModeParams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InsertModeParams"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tag"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CookieName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

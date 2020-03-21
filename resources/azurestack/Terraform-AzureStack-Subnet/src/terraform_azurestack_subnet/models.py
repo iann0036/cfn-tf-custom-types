@@ -1,0 +1,71 @@
+# DO NOT modify this file by hand, changes will be overwritten
+from dataclasses import dataclass
+from typing import (
+    AbstractSet,
+    Any,
+    Generic,
+    Mapping,
+    MutableMapping,
+    Optional,
+    Sequence,
+    Type,
+    TypeVar,
+)
+
+from cloudformation_cli_python_lib.interface import (
+    BaseResourceHandlerRequest,
+    BaseResourceModel,
+)
+
+T = TypeVar("T")
+
+
+def set_or_none(value: Optional[Sequence[T]]) -> Optional[AbstractSet[T]]:
+    if value:
+        return set(value)
+    return None
+
+
+@dataclass
+class ResourceHandlerRequest(BaseResourceHandlerRequest):
+    # pylint: disable=invalid-name
+    desiredResourceState: Optional["ResourceModel"]
+    previousResourceState: Optional["ResourceModel"]
+
+
+@dataclass
+class ResourceModel(BaseResourceModel):
+    tfcfnid: Optional[str]
+    AddressPrefix: Optional[str]
+    Id: Optional[str]
+    IpConfigurations: Optional[Sequence[str]]
+    Name: Optional[str]
+    NetworkSecurityGroupId: Optional[str]
+    ResourceGroupName: Optional[str]
+    RouteTableId: Optional[str]
+    VirtualNetworkName: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_ResourceModel"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_ResourceModel"]:
+        if not json_data:
+            return None
+        return cls(
+            tfcfnid=json_data.get("tfcfnid"),
+            AddressPrefix=json_data.get("AddressPrefix"),
+            Id=json_data.get("Id"),
+            IpConfigurations=json_data.get("IpConfigurations"),
+            Name=json_data.get("Name"),
+            NetworkSecurityGroupId=json_data.get("NetworkSecurityGroupId"),
+            ResourceGroupName=json_data.get("ResourceGroupName"),
+            RouteTableId=json_data.get("RouteTableId"),
+            VirtualNetworkName=json_data.get("VirtualNetworkName"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_ResourceModel = ResourceModel
+
+

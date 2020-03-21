@@ -1,0 +1,73 @@
+{
+    "typeName": "Terraform::AWS::CloudwatchLogSubscriptionFilter",
+    "description": "CloudFormation equivalent of aws_cloudwatch_log_subscription_filter",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DestinationArn": {
+            "type": "string"
+        },
+        "Distribution": {
+            "type": "string"
+        },
+        "FilterPattern": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogGroupName": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RoleArn": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationArn",
+        "FilterPattern",
+        "LogGroupName",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

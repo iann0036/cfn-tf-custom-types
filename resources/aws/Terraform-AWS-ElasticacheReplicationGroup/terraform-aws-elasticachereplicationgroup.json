@@ -1,0 +1,224 @@
+{
+    "typeName": "Terraform::AWS::ElasticacheReplicationGroup",
+    "description": "CloudFormation equivalent of aws_elasticache_replication_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ClusterMode": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NumNodeGroups": {
+                    "type": "number"
+                },
+                "ReplicasPerNodeGroup": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "NumNodeGroups",
+                "ReplicasPerNodeGroup"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyImmediately": {
+            "type": "boolean"
+        },
+        "AtRestEncryptionEnabled": {
+            "type": "boolean"
+        },
+        "AuthToken": {
+            "type": "string"
+        },
+        "AutoMinorVersionUpgrade": {
+            "type": "boolean"
+        },
+        "AutomaticFailoverEnabled": {
+            "type": "boolean"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ConfigurationEndpointAddress": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "MaintenanceWindow": {
+            "type": "string"
+        },
+        "MemberClusters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NodeType": {
+            "type": "string"
+        },
+        "NotificationTopicArn": {
+            "type": "string"
+        },
+        "NumberCacheClusters": {
+            "type": "number"
+        },
+        "ParameterGroupName": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PrimaryEndpointAddress": {
+            "type": "string"
+        },
+        "ReplicationGroupDescription": {
+            "type": "string"
+        },
+        "ReplicationGroupId": {
+            "type": "string"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SecurityGroupNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SnapshotArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SnapshotName": {
+            "type": "string"
+        },
+        "SnapshotRetentionLimit": {
+            "type": "number"
+        },
+        "SnapshotWindow": {
+            "type": "string"
+        },
+        "SubnetGroupName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TransitEncryptionEnabled": {
+            "type": "boolean"
+        },
+        "ClusterMode": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClusterMode"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ReplicationGroupDescription",
+        "ReplicationGroupId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ConfigurationEndpointAddress",
+        "/properties/MemberClusters",
+        "/properties/PrimaryEndpointAddress"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

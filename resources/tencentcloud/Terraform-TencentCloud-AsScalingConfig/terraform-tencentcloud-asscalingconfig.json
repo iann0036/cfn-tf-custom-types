@@ -1,0 +1,168 @@
+{
+    "typeName": "Terraform::TencentCloud::AsScalingConfig",
+    "description": "CloudFormation equivalent of tencentcloud_as_scaling_config",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DataDisk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DiskSize": {
+                    "type": "number"
+                },
+                "DiskType": {
+                    "type": "string"
+                },
+                "SnapshotId": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfigurationName": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "EnhancedMonitorService": {
+            "type": "boolean"
+        },
+        "EnhancedSecurityService": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string"
+        },
+        "InstanceTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "InternetChargeType": {
+            "type": "string"
+        },
+        "InternetMaxBandwidthOut": {
+            "type": "number"
+        },
+        "KeepImageLogin": {
+            "type": "boolean"
+        },
+        "KeyIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Password": {
+            "type": "string"
+        },
+        "ProjectId": {
+            "type": "number"
+        },
+        "PublicIpAssigned": {
+            "type": "boolean"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SystemDiskSize": {
+            "type": "number"
+        },
+        "SystemDiskType": {
+            "type": "string"
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "DataDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DataDisk"
+            },
+            "maxItems": 11
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ConfigurationName",
+        "ImageId",
+        "InstanceTypes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

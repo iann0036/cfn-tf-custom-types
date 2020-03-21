@@ -1,0 +1,319 @@
+{
+    "typeName": "Terraform::Google::ComputeResourcePolicy",
+    "description": "CloudFormation equivalent of google_compute_resource_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "SnapshotSchedulePolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RetentionPolicy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RetentionPolicy"
+                    }
+                },
+                "Schedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Schedule"
+                    }
+                },
+                "SnapshotProperties": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SnapshotProperties"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "RetentionPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxRetentionDays": {
+                    "type": "number"
+                },
+                "OnSourceDiskDelete": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MaxRetentionDays"
+            ]
+        },
+        "Schedule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DailySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DailySchedule"
+                    }
+                },
+                "HourlySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HourlySchedule"
+                    }
+                },
+                "WeeklySchedule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/WeeklySchedule"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SnapshotProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GuestFlush": {
+                    "type": "boolean"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "StorageLocations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DailySchedule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DaysInCycle": {
+                    "type": "number"
+                },
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DaysInCycle",
+                "StartTime"
+            ]
+        },
+        "HourlySchedule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HoursInCycle": {
+                    "type": "number"
+                },
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HoursInCycle",
+                "StartTime"
+            ]
+        },
+        "WeeklySchedule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DayOfWeeks": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/DayOfWeeks"
+                    }
+                }
+            },
+            "required": []
+        },
+        "DayOfWeeks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Day": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Day",
+                "StartTime"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "SnapshotSchedulePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotSchedulePolicy"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "RetentionPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RetentionPolicy"
+            },
+            "maxItems": 1
+        },
+        "Schedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Schedule"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "SnapshotProperties": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SnapshotProperties"
+            },
+            "maxItems": 1
+        },
+        "DailySchedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DailySchedule"
+            },
+            "maxItems": 1
+        },
+        "HourlySchedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HourlySchedule"
+            },
+            "maxItems": 1
+        },
+        "WeeklySchedule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WeeklySchedule"
+            },
+            "maxItems": 1
+        },
+        "DayOfWeeks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DayOfWeeks"
+            },
+            "maxItems": 7,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/SelfLink"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

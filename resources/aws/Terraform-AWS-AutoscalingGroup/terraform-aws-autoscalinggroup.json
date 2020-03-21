@@ -1,0 +1,400 @@
+{
+    "typeName": "Terraform::AWS::AutoscalingGroup",
+    "description": "CloudFormation equivalent of aws_autoscaling_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "InitialLifecycleHook": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultResult": {
+                    "type": "string"
+                },
+                "HeartbeatTimeout": {
+                    "type": "number"
+                },
+                "LifecycleTransition": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NotificationMetadata": {
+                    "type": "string"
+                },
+                "NotificationTargetArn": {
+                    "type": "string"
+                },
+                "RoleArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LifecycleTransition",
+                "Name"
+            ]
+        },
+        "LaunchTemplate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LaunchTemplateSpecification": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchTemplateSpecification"
+                    }
+                },
+                "Override": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Override"
+                    }
+                }
+            },
+            "required": []
+        },
+        "MixedInstancesPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstancesDistribution": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InstancesDistribution"
+                    }
+                },
+                "LaunchTemplate": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LaunchTemplate"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Tag": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "PropagateAtLaunch": {
+                    "type": "boolean"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "PropagateAtLaunch",
+                "Value"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InstancesDistribution": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OnDemandAllocationStrategy": {
+                    "type": "string"
+                },
+                "OnDemandBaseCapacity": {
+                    "type": "number"
+                },
+                "OnDemandPercentageAboveBaseCapacity": {
+                    "type": "number"
+                },
+                "SpotAllocationStrategy": {
+                    "type": "string"
+                },
+                "SpotInstancePools": {
+                    "type": "number"
+                },
+                "SpotMaxPrice": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "LaunchTemplateSpecification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LaunchTemplateId": {
+                    "type": "string"
+                },
+                "LaunchTemplateName": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Override": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceType": {
+                    "type": "string"
+                },
+                "WeightedCapacity": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DefaultCooldown": {
+            "type": "number"
+        },
+        "DesiredCapacity": {
+            "type": "number"
+        },
+        "EnabledMetrics": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ForceDelete": {
+            "type": "boolean"
+        },
+        "HealthCheckGracePeriod": {
+            "type": "number"
+        },
+        "HealthCheckType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LaunchConfiguration": {
+            "type": "string"
+        },
+        "LoadBalancers": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MaxInstanceLifetime": {
+            "type": "number"
+        },
+        "MaxSize": {
+            "type": "number"
+        },
+        "MetricsGranularity": {
+            "type": "string"
+        },
+        "MinElbCapacity": {
+            "type": "number"
+        },
+        "MinSize": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "PlacementGroup": {
+            "type": "string"
+        },
+        "ProtectFromScaleIn": {
+            "type": "boolean"
+        },
+        "ServiceLinkedRoleArn": {
+            "type": "string"
+        },
+        "SuspendedProcesses": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "array",
+                "insertionOrder": true,
+                "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "Key": {
+                            "type": "string"
+                        },
+                        "Value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "Key",
+                        "Value"
+                    ]
+                }
+            }
+        },
+        "TargetGroupArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TerminationPolicies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VpcZoneIdentifier": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "WaitForCapacityTimeout": {
+            "type": "string"
+        },
+        "WaitForElbCapacity": {
+            "type": "number"
+        },
+        "InitialLifecycleHook": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InitialLifecycleHook"
+            }
+        },
+        "LaunchTemplate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LaunchTemplate"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "MixedInstancesPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MixedInstancesPolicy"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tag"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "InstancesDistribution": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InstancesDistribution"
+            },
+            "maxItems": 1
+        },
+        "LaunchTemplateSpecification": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LaunchTemplateSpecification"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Override": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Override"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "MaxSize",
+        "MinSize"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

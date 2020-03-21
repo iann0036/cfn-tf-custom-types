@@ -1,0 +1,140 @@
+{
+    "typeName": "Terraform::Alicloud::CsSwarm",
+    "description": "CloudFormation equivalent of alicloud_cs_swarm",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AgentVersion": {
+            "type": "string"
+        },
+        "CidrBlock": {
+            "type": "string"
+        },
+        "DiskCategory": {
+            "type": "string"
+        },
+        "DiskSize": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "IsOutdated": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "NeedSlb": {
+            "type": "boolean"
+        },
+        "NodeNumber": {
+            "type": "number"
+        },
+        "Nodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Eip": {
+                        "type": "string"
+                    },
+                    "Id": {
+                        "type": "string"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "PrivateIp": {
+                        "type": "string"
+                    },
+                    "Status": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Password": {
+            "type": "string"
+        },
+        "ReleaseEip": {
+            "type": "boolean"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "SlbId": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VswitchId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CidrBlock",
+        "InstanceType",
+        "Password",
+        "VswitchId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AgentVersion",
+        "/properties/Nodes",
+        "/properties/SecurityGroupId",
+        "/properties/SlbId",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

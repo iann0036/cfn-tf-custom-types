@@ -1,0 +1,152 @@
+{
+    "typeName": "Terraform::TencentCloud::ContainerClusterInstance",
+    "description": "CloudFormation equivalent of tencentcloud_container_cluster_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AbnormalReason": {
+            "type": "string"
+        },
+        "Bandwidth": {
+            "type": "number"
+        },
+        "BandwidthType": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "Cpu": {
+            "type": "number"
+        },
+        "CvmType": {
+            "type": "string"
+        },
+        "DockerGraphPath": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "InstanceName": {
+            "type": "string"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "IsNormal": {
+            "type": "number"
+        },
+        "IsVpcGateway": {
+            "type": "number"
+        },
+        "KeyId": {
+            "type": "string"
+        },
+        "LanIp": {
+            "type": "string"
+        },
+        "Mem": {
+            "type": "number"
+        },
+        "MountTarget": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "RequireWanIp": {
+            "type": "number"
+        },
+        "RootSize": {
+            "type": "number"
+        },
+        "RootType": {
+            "type": "string"
+        },
+        "SgId": {
+            "type": "string"
+        },
+        "StorageSize": {
+            "type": "number"
+        },
+        "StorageType": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "Unschedulable": {
+            "type": "number"
+        },
+        "UserScript": {
+            "type": "string"
+        },
+        "WanIp": {
+            "type": "string"
+        },
+        "ZoneId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bandwidth",
+        "BandwidthType",
+        "ClusterId",
+        "IsVpcGateway",
+        "RootSize",
+        "StorageSize",
+        "SubnetId",
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AbnormalReason",
+        "/properties/InstanceId",
+        "/properties/IsNormal",
+        "/properties/LanIp",
+        "/properties/WanIp"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,106 @@
+{
+    "typeName": "Terraform::Netlify::Site",
+    "description": "CloudFormation equivalent of netlify_site",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Repo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Command": {
+                    "type": "string"
+                },
+                "DeployKeyId": {
+                    "type": "string"
+                },
+                "Dir": {
+                    "type": "string"
+                },
+                "Provider": {
+                    "type": "string"
+                },
+                "RepoBranch": {
+                    "type": "string"
+                },
+                "RepoPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Provider",
+                "RepoBranch",
+                "RepoPath"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountName": {
+            "type": "string"
+        },
+        "AccountSlug": {
+            "type": "string"
+        },
+        "CustomDomain": {
+            "type": "string"
+        },
+        "DeployUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Repo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Repo"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AccountName",
+        "/properties/DeployUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,223 @@
+{
+    "typeName": "Terraform::NSXT::LbHttpVirtualServer",
+    "description": "CloudFormation equivalent of nsxt_lb_http_virtual_server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ClientSsl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CertificateChainDepth": {
+                    "type": "number"
+                },
+                "ClientAuth": {
+                    "type": "boolean"
+                },
+                "ClientSslProfileId": {
+                    "type": "string"
+                },
+                "CrlIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "DefaultCertificateId": {
+                    "type": "string"
+                },
+                "SniCertificateIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "ClientSslProfileId",
+                "DefaultCertificateId"
+            ]
+        },
+        "ServerSsl": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CertificateChainDepth": {
+                    "type": "number"
+                },
+                "ClientCertificateId": {
+                    "type": "string"
+                },
+                "CrlIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ServerAuth": {
+                    "type": "boolean"
+                },
+                "ServerSslProfileId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ServerSslProfileId"
+            ]
+        },
+        "Tag": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Scope",
+                "Tag"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessLogEnabled": {
+            "type": "boolean"
+        },
+        "ApplicationProfileId": {
+            "type": "string"
+        },
+        "DefaultPoolMemberPort": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpAddress": {
+            "type": "string"
+        },
+        "MaxConcurrentConnections": {
+            "type": "number"
+        },
+        "MaxNewConnectionRate": {
+            "type": "number"
+        },
+        "PersistenceProfileId": {
+            "type": "string"
+        },
+        "PoolId": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "RuleIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SorryPoolId": {
+            "type": "string"
+        },
+        "ClientSsl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ClientSsl"
+            },
+            "maxItems": 1
+        },
+        "ServerSsl": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerSsl"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tag"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationProfileId",
+        "IpAddress",
+        "Port"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

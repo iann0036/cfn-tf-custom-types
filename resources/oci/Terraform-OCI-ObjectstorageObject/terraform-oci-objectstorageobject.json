@@ -1,0 +1,182 @@
+{
+    "typeName": "Terraform::OCI::ObjectstorageObject",
+    "description": "CloudFormation equivalent of oci_objectstorage_object",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "SourceUriDetails": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "DestinationObjectIfMatchEtag": {
+                    "type": "string"
+                },
+                "DestinationObjectIfNoneMatchEtag": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Object": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "SourceObjectIfMatchEtag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket",
+                "Namespace",
+                "Object",
+                "Region"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string"
+        },
+        "CacheControl": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string"
+        },
+        "ContentDisposition": {
+            "type": "string"
+        },
+        "ContentEncoding": {
+            "type": "string"
+        },
+        "ContentLanguage": {
+            "type": "string"
+        },
+        "ContentLength": {
+            "type": "string"
+        },
+        "ContentMd5": {
+            "type": "string"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "Object": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "WorkRequestId": {
+            "type": "string"
+        },
+        "SourceUriDetails": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourceUriDetails"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "Namespace",
+        "Object"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ContentLength",
+        "/properties/ContentMd5",
+        "/properties/State",
+        "/properties/WorkRequestId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

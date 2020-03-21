@@ -1,0 +1,333 @@
+{
+    "typeName": "Terraform::AWS::AlbListener",
+    "description": "CloudFormation equivalent of aws_alb_listener",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DefaultAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Order": {
+                    "type": "number"
+                },
+                "TargetGroupArn": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "AuthenticateCognito": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticateCognito"
+                    }
+                },
+                "AuthenticateOidc": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AuthenticateOidc"
+                    }
+                },
+                "FixedResponse": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FixedResponse"
+                    }
+                },
+                "Redirect": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Redirect"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Read": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AuthenticateCognito": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationRequestExtraParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "OnUnauthenticatedRequest": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "SessionCookieName": {
+                    "type": "string"
+                },
+                "SessionTimeout": {
+                    "type": "number"
+                },
+                "UserPoolArn": {
+                    "type": "string"
+                },
+                "UserPoolClientId": {
+                    "type": "string"
+                },
+                "UserPoolDomain": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "UserPoolArn",
+                "UserPoolClientId",
+                "UserPoolDomain"
+            ]
+        },
+        "AuthenticateOidc": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthenticationRequestExtraParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "AuthorizationEndpoint": {
+                    "type": "string"
+                },
+                "ClientId": {
+                    "type": "string"
+                },
+                "ClientSecret": {
+                    "type": "string"
+                },
+                "Issuer": {
+                    "type": "string"
+                },
+                "OnUnauthenticatedRequest": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "string"
+                },
+                "SessionCookieName": {
+                    "type": "string"
+                },
+                "SessionTimeout": {
+                    "type": "number"
+                },
+                "TokenEndpoint": {
+                    "type": "string"
+                },
+                "UserInfoEndpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AuthorizationEndpoint",
+                "ClientId",
+                "ClientSecret",
+                "Issuer",
+                "TokenEndpoint",
+                "UserInfoEndpoint"
+            ]
+        },
+        "FixedResponse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ContentType": {
+                    "type": "string"
+                },
+                "MessageBody": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ContentType"
+            ]
+        },
+        "Redirect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "string"
+                },
+                "Protocol": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "StatusCode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StatusCode"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificateArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LoadBalancerArn": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "SslPolicy": {
+            "type": "string"
+        },
+        "DefaultAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultAction"
+            },
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "AuthenticateCognito": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticateCognito"
+            },
+            "maxItems": 1
+        },
+        "AuthenticateOidc": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticateOidc"
+            },
+            "maxItems": 1
+        },
+        "FixedResponse": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FixedResponse"
+            },
+            "maxItems": 1
+        },
+        "Redirect": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Redirect"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LoadBalancerArn",
+        "Port"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

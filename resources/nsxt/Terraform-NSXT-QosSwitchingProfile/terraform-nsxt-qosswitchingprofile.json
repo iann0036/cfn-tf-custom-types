@@ -1,0 +1,175 @@
+{
+    "typeName": "Terraform::NSXT::QosSwitchingProfile",
+    "description": "CloudFormation equivalent of nsxt_qos_switching_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EgressRateShaper": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AverageBwMbps": {
+                    "type": "number"
+                },
+                "BurstSize": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "PeakBwMbps": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IngressBroadcastRateShaper": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AverageBwKbps": {
+                    "type": "number"
+                },
+                "BurstSize": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "PeakBwKbps": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "IngressRateShaper": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AverageBwMbps": {
+                    "type": "number"
+                },
+                "BurstSize": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "PeakBwMbps": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Tag": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Scope",
+                "Tag"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClassOfService": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "DscpPriority": {
+            "type": "number"
+        },
+        "DscpTrusted": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "EgressRateShaper": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EgressRateShaper"
+            },
+            "maxItems": 1
+        },
+        "IngressBroadcastRateShaper": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IngressBroadcastRateShaper"
+            },
+            "maxItems": 1
+        },
+        "IngressRateShaper": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IngressRateShaper"
+            },
+            "maxItems": 1
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tag"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

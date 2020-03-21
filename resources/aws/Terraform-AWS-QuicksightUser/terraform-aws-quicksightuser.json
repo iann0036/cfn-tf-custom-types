@@ -1,0 +1,82 @@
+{
+    "typeName": "Terraform::AWS::QuicksightUser",
+    "description": "CloudFormation equivalent of aws_quicksight_user",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AwsAccountId": {
+            "type": "string"
+        },
+        "Email": {
+            "type": "string"
+        },
+        "IamArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentityType": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "SessionName": {
+            "type": "string"
+        },
+        "UserName": {
+            "type": "string"
+        },
+        "UserRole": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Email",
+        "IdentityType",
+        "UserRole"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

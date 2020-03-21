@@ -1,0 +1,105 @@
+{
+    "typeName": "Terraform::Alicloud::OssBucketObject",
+    "description": "CloudFormation equivalent of alicloud_oss_bucket_object",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Acl": {
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string"
+        },
+        "CacheControl": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string"
+        },
+        "ContentDisposition": {
+            "type": "string"
+        },
+        "ContentEncoding": {
+            "type": "string"
+        },
+        "ContentLength": {
+            "type": "string"
+        },
+        "ContentMd5": {
+            "type": "string"
+        },
+        "ContentType": {
+            "type": "string"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "Expires": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "ServerSideEncryption": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "VersionId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Bucket",
+        "Key"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ContentLength",
+        "/properties/Etag",
+        "/properties/VersionId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

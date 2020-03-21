@@ -1,0 +1,582 @@
+{
+    "typeName": "Terraform::AWS::CodebuildProject",
+    "description": "CloudFormation equivalent of aws_codebuild_project",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Artifacts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArtifactIdentifier": {
+                    "type": "string"
+                },
+                "EncryptionDisabled": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NamespaceType": {
+                    "type": "string"
+                },
+                "OverrideArtifactName": {
+                    "type": "boolean"
+                },
+                "Packaging": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Cache": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string"
+                },
+                "Modes": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Environment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "ComputeType": {
+                    "type": "string"
+                },
+                "Image": {
+                    "type": "string"
+                },
+                "ImagePullCredentialsType": {
+                    "type": "string"
+                },
+                "PrivilegedMode": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "EnvironmentVariable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnvironmentVariable"
+                    }
+                },
+                "RegistryCredential": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RegistryCredential"
+                    }
+                }
+            },
+            "required": [
+                "ComputeType",
+                "Image",
+                "Type"
+            ]
+        },
+        "LogsConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudwatchLogs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CloudwatchLogs"
+                    }
+                },
+                "S3Logs": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3Logs"
+                    }
+                }
+            },
+            "required": []
+        },
+        "SecondaryArtifacts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ArtifactIdentifier": {
+                    "type": "string"
+                },
+                "EncryptionDisabled": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "NamespaceType": {
+                    "type": "string"
+                },
+                "OverrideArtifactName": {
+                    "type": "boolean"
+                },
+                "Packaging": {
+                    "type": "string"
+                },
+                "Path": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ArtifactIdentifier",
+                "Type"
+            ]
+        },
+        "SecondarySources": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buildspec": {
+                    "type": "string"
+                },
+                "GitCloneDepth": {
+                    "type": "number"
+                },
+                "InsecureSsl": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "ReportBuildStatus": {
+                    "type": "boolean"
+                },
+                "SourceIdentifier": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Auth": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Auth"
+                    }
+                },
+                "GitSubmodulesConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitSubmodulesConfig"
+                    }
+                }
+            },
+            "required": [
+                "SourceIdentifier",
+                "Type"
+            ]
+        },
+        "Source": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Buildspec": {
+                    "type": "string"
+                },
+                "GitCloneDepth": {
+                    "type": "number"
+                },
+                "InsecureSsl": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "ReportBuildStatus": {
+                    "type": "boolean"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Auth": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Auth"
+                    }
+                },
+                "GitSubmodulesConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GitSubmodulesConfig"
+                    }
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "VpcConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Subnets": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "VpcId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SecurityGroupIds",
+                "Subnets",
+                "VpcId"
+            ]
+        },
+        "EnvironmentVariable": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "RegistryCredential": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Credential": {
+                    "type": "string"
+                },
+                "CredentialProvider": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Credential",
+                "CredentialProvider"
+            ]
+        },
+        "CloudwatchLogs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GroupName": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "StreamName": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "S3Logs": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EncryptionDisabled": {
+                    "type": "boolean"
+                },
+                "Location": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Auth": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Resource": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "GitSubmodulesConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FetchSubmodules": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "FetchSubmodules"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "BadgeEnabled": {
+            "type": "boolean"
+        },
+        "BadgeUrl": {
+            "type": "string"
+        },
+        "BuildTimeout": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EncryptionKey": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "QueuedTimeout": {
+            "type": "number"
+        },
+        "ServiceRole": {
+            "type": "string"
+        },
+        "SourceVersion": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Artifacts": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Artifacts"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Cache": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Cache"
+            },
+            "maxItems": 1
+        },
+        "Environment": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Environment"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "LogsConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogsConfig"
+            },
+            "maxItems": 1
+        },
+        "SecondaryArtifacts": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SecondaryArtifacts"
+            }
+        },
+        "SecondarySources": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SecondarySources"
+            }
+        },
+        "Source": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Source"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "VpcConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfig"
+            },
+            "maxItems": 1
+        },
+        "EnvironmentVariable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnvironmentVariable"
+            }
+        },
+        "RegistryCredential": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RegistryCredential"
+            },
+            "maxItems": 1
+        },
+        "CloudwatchLogs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CloudwatchLogs"
+            },
+            "maxItems": 1
+        },
+        "S3Logs": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3Logs"
+            },
+            "maxItems": 1
+        },
+        "Auth": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Auth"
+            }
+        },
+        "GitSubmodulesConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GitSubmodulesConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ServiceRole"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/BadgeUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

@@ -1,0 +1,127 @@
+{
+    "typeName": "Terraform::OpenTelekomCloud::AsPolicyV1",
+    "description": "CloudFormation equivalent of opentelekomcloud_as_policy_v1",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ScalingPolicyAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceNumber": {
+                    "type": "number"
+                },
+                "Operation": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ScheduledPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndTime": {
+                    "type": "string"
+                },
+                "LaunchTime": {
+                    "type": "string"
+                },
+                "RecurrenceType": {
+                    "type": "string"
+                },
+                "RecurrenceValue": {
+                    "type": "string"
+                },
+                "StartTime": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "LaunchTime"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlarmId": {
+            "type": "string"
+        },
+        "CoolDownTime": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ScalingGroupId": {
+            "type": "string"
+        },
+        "ScalingPolicyName": {
+            "type": "string"
+        },
+        "ScalingPolicyType": {
+            "type": "string"
+        },
+        "ScalingPolicyAction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScalingPolicyAction"
+            },
+            "maxItems": 1
+        },
+        "ScheduledPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScheduledPolicy"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ScalingGroupId",
+        "ScalingPolicyName",
+        "ScalingPolicyType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

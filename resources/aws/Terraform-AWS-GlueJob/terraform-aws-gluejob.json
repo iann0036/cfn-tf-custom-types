@@ -1,0 +1,201 @@
+{
+    "typeName": "Terraform::AWS::GlueJob",
+    "description": "CloudFormation equivalent of aws_glue_job",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Command": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PythonVersion": {
+                    "type": "string"
+                },
+                "ScriptLocation": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ScriptLocation"
+            ]
+        },
+        "ExecutionProperty": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxConcurrentRuns": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NotificationProperty": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "NotifyDelayAfter": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocatedCapacity": {
+            "type": "number"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Connections": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DefaultArguments": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Description": {
+            "type": "string"
+        },
+        "GlueVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxCapacity": {
+            "type": "number"
+        },
+        "MaxRetries": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NumberOfWorkers": {
+            "type": "number"
+        },
+        "RoleArn": {
+            "type": "string"
+        },
+        "SecurityConfiguration": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Timeout": {
+            "type": "number"
+        },
+        "WorkerType": {
+            "type": "string"
+        },
+        "Command": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Command"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ExecutionProperty": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExecutionProperty"
+            },
+            "maxItems": 1
+        },
+        "NotificationProperty": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NotificationProperty"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RoleArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

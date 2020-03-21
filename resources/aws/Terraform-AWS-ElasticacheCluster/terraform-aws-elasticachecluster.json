@@ -1,0 +1,193 @@
+{
+    "typeName": "Terraform::AWS::ElasticacheCluster",
+    "description": "CloudFormation equivalent of aws_elasticache_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplyImmediately": {
+            "type": "boolean"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AzMode": {
+            "type": "string"
+        },
+        "CacheNodes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Address": {
+                        "type": "string"
+                    },
+                    "AvailabilityZone": {
+                        "type": "string"
+                    },
+                    "Id": {
+                        "type": "string"
+                    },
+                    "Port": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "ClusterAddress": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "ConfigurationEndpoint": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaintenanceWindow": {
+            "type": "string"
+        },
+        "NodeType": {
+            "type": "string"
+        },
+        "NotificationTopicArn": {
+            "type": "string"
+        },
+        "NumCacheNodes": {
+            "type": "number"
+        },
+        "ParameterGroupName": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PreferredAvailabilityZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ReplicationGroupId": {
+            "type": "string"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SecurityGroupNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SnapshotArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SnapshotName": {
+            "type": "string"
+        },
+        "SnapshotRetentionLimit": {
+            "type": "number"
+        },
+        "SnapshotWindow": {
+            "type": "string"
+        },
+        "SubnetGroupName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CacheNodes",
+        "/properties/ClusterAddress",
+        "/properties/ConfigurationEndpoint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

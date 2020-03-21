@@ -1,0 +1,122 @@
+{
+    "typeName": "Terraform::Panos::PanoramaBgp",
+    "description": "CloudFormation equivalent of panos_panorama_bgp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AggregateMed": {
+            "type": "boolean"
+        },
+        "AllowRedistributeDefaultRoute": {
+            "type": "boolean"
+        },
+        "AlwaysCompareMed": {
+            "type": "boolean"
+        },
+        "AsFormat": {
+            "type": "string"
+        },
+        "AsNumber": {
+            "type": "string"
+        },
+        "BfdProfile": {
+            "type": "string"
+        },
+        "ConfederationMemberAs": {
+            "type": "string"
+        },
+        "DefaultLocalPreference": {
+            "type": "string"
+        },
+        "DeterministicMedComparison": {
+            "type": "boolean"
+        },
+        "EcmpMultiAs": {
+            "type": "boolean"
+        },
+        "Enable": {
+            "type": "boolean"
+        },
+        "EnableGracefulRestart": {
+            "type": "boolean"
+        },
+        "EnforceFirstAs": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstallRoute": {
+            "type": "boolean"
+        },
+        "LocalRestartTime": {
+            "type": "number"
+        },
+        "MaxPeerRestartTime": {
+            "type": "number"
+        },
+        "ReflectorClusterId": {
+            "type": "string"
+        },
+        "RejectDefaultRoute": {
+            "type": "boolean"
+        },
+        "RouterId": {
+            "type": "string"
+        },
+        "StaleRouteTime": {
+            "type": "number"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "TemplateStack": {
+            "type": "string"
+        },
+        "VirtualRouter": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

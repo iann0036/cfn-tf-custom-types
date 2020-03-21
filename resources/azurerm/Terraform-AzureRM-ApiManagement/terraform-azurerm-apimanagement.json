@@ -1,0 +1,532 @@
+{
+    "typeName": "Terraform::AzureRM::ApiManagement",
+    "description": "CloudFormation equivalent of azurerm_api_management",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AdditionalLocation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Location": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Location"
+            ]
+        },
+        "Certificate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "EncodedCertificate": {
+                    "type": "string"
+                },
+                "StoreName": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CertificatePassword",
+                "EncodedCertificate",
+                "StoreName"
+            ]
+        },
+        "HostnameConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Management": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Management"
+                    }
+                },
+                "Portal": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Portal"
+                    }
+                },
+                "Proxy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Proxy"
+                    }
+                },
+                "Scm": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Scm"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Identity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Protocols": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableHttp2": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Security": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableBackendSsl30": {
+                    "type": "boolean"
+                },
+                "EnableBackendTls10": {
+                    "type": "boolean"
+                },
+                "EnableBackendTls11": {
+                    "type": "boolean"
+                },
+                "EnableFrontendSsl30": {
+                    "type": "boolean"
+                },
+                "EnableFrontendTls10": {
+                    "type": "boolean"
+                },
+                "EnableFrontendTls11": {
+                    "type": "boolean"
+                },
+                "EnableTripleDesCiphers": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "SignIn": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "SignUp": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "TermsOfService": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TermsOfService"
+                    }
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Management": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "Portal": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "Proxy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "DefaultSslBinding": {
+                    "type": "boolean"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "Scm": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Certificate": {
+                    "type": "string"
+                },
+                "CertificatePassword": {
+                    "type": "string"
+                },
+                "HostName": {
+                    "type": "string"
+                },
+                "KeyVaultId": {
+                    "type": "string"
+                },
+                "NegotiateClientCertificate": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "HostName"
+            ]
+        },
+        "TermsOfService": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConsentRequired": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Text": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ConsentRequired",
+                "Enabled"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "GatewayRegionalUrl": {
+            "type": "string"
+        },
+        "GatewayUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "ManagementApiUrl": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotificationSenderEmail": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "XmlContent": {
+                        "type": "string"
+                    },
+                    "XmlLink": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "PortalUrl": {
+            "type": "string"
+        },
+        "PublicIpAddresses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "PublisherEmail": {
+            "type": "string"
+        },
+        "PublisherName": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "ScmUrl": {
+            "type": "string"
+        },
+        "SkuName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "AdditionalLocation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AdditionalLocation"
+            }
+        },
+        "Certificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Certificate"
+            },
+            "maxItems": 10
+        },
+        "HostnameConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostnameConfiguration"
+            },
+            "maxItems": 1
+        },
+        "Identity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Identity"
+            },
+            "maxItems": 1
+        },
+        "Protocols": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Protocols"
+            },
+            "maxItems": 1
+        },
+        "Security": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Security"
+            },
+            "maxItems": 1
+        },
+        "SignIn": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SignIn"
+            },
+            "maxItems": 1
+        },
+        "SignUp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SignUp"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "Management": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Management"
+            }
+        },
+        "Portal": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Portal"
+            }
+        },
+        "Proxy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Proxy"
+            }
+        },
+        "Scm": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Scm"
+            }
+        },
+        "TermsOfService": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TermsOfService"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "PublisherEmail",
+        "PublisherName",
+        "ResourceGroupName",
+        "SkuName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/GatewayRegionalUrl",
+        "/properties/GatewayUrl",
+        "/properties/ManagementApiUrl",
+        "/properties/PortalUrl",
+        "/properties/PublicIpAddresses",
+        "/properties/ScmUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

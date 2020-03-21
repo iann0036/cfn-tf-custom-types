@@ -1,0 +1,100 @@
+{
+    "typeName": "Terraform::Panos::PanoramaGreTunnel",
+    "description": "CloudFormation equivalent of panos_panorama_gre_tunnel",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CopyTos": {
+            "type": "boolean"
+        },
+        "Disabled": {
+            "type": "boolean"
+        },
+        "EnableKeepAlive": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Interface": {
+            "type": "string"
+        },
+        "KeepAliveHoldTimer": {
+            "type": "number"
+        },
+        "KeepAliveInterval": {
+            "type": "number"
+        },
+        "KeepAliveRetry": {
+            "type": "number"
+        },
+        "LocalAddressType": {
+            "type": "string"
+        },
+        "LocalAddressValue": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PeerAddress": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        },
+        "TunnelInterface": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Interface",
+        "LocalAddressValue",
+        "Name",
+        "PeerAddress",
+        "Template",
+        "TunnelInterface"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

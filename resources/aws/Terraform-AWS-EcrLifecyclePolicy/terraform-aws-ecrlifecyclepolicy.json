@@ -1,0 +1,63 @@
+{
+    "typeName": "Terraform::AWS::EcrLifecyclePolicy",
+    "description": "CloudFormation equivalent of aws_ecr_lifecycle_policy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "RegistryId": {
+            "type": "string"
+        },
+        "Repository": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Policy",
+        "Repository"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/RegistryId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

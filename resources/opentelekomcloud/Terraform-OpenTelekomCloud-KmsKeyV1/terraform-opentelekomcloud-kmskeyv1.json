@@ -1,0 +1,92 @@
+{
+    "typeName": "Terraform::OpenTelekomCloud::KmsKeyV1",
+    "description": "CloudFormation equivalent of opentelekomcloud_kms_key_v1",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreationDate": {
+            "type": "string"
+        },
+        "DefaultKeyFlag": {
+            "type": "string"
+        },
+        "DomainId": {
+            "type": "string"
+        },
+        "ExpirationTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsEnabled": {
+            "type": "boolean"
+        },
+        "KeyAlias": {
+            "type": "string"
+        },
+        "KeyDescription": {
+            "type": "string"
+        },
+        "Origin": {
+            "type": "string"
+        },
+        "PendingDays": {
+            "type": "string"
+        },
+        "Realm": {
+            "type": "string"
+        },
+        "ScheduledDeletionDate": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KeyAlias"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationDate",
+        "/properties/DefaultKeyFlag",
+        "/properties/DomainId",
+        "/properties/ExpirationTime",
+        "/properties/Origin",
+        "/properties/ScheduledDeletionDate"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

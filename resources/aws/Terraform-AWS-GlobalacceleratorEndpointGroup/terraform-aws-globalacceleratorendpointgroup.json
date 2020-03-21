@@ -1,0 +1,98 @@
+{
+    "typeName": "Terraform::AWS::GlobalacceleratorEndpointGroup",
+    "description": "CloudFormation equivalent of aws_globalaccelerator_endpoint_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EndpointConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndpointId": {
+                    "type": "string"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EndpointGroupRegion": {
+            "type": "string"
+        },
+        "HealthCheckIntervalSeconds": {
+            "type": "number"
+        },
+        "HealthCheckPath": {
+            "type": "string"
+        },
+        "HealthCheckPort": {
+            "type": "number"
+        },
+        "HealthCheckProtocol": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerArn": {
+            "type": "string"
+        },
+        "ThresholdCount": {
+            "type": "number"
+        },
+        "TrafficDialPercentage": {
+            "type": "number"
+        },
+        "EndpointConfiguration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EndpointConfiguration"
+            },
+            "maxItems": 10
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ListenerArn"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

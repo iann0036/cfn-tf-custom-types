@@ -1,0 +1,128 @@
+{
+    "typeName": "Terraform::OpenTelekomCloud::VbsBackupShareV2",
+    "description": "CloudFormation equivalent of opentelekomcloud_vbs_backup_share_v2",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityZone": {
+            "type": "string"
+        },
+        "BackupId": {
+            "type": "string"
+        },
+        "BackupName": {
+            "type": "string"
+        },
+        "BackupStatus": {
+            "type": "string"
+        },
+        "Container": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ServiceMetadata": {
+            "type": "string"
+        },
+        "ShareIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Size": {
+            "type": "number"
+        },
+        "SnapshotId": {
+            "type": "string"
+        },
+        "ToProjectIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VolumeId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BackupId",
+        "ToProjectIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailabilityZone",
+        "/properties/BackupName",
+        "/properties/BackupStatus",
+        "/properties/Container",
+        "/properties/Description",
+        "/properties/ServiceMetadata",
+        "/properties/ShareIds",
+        "/properties/Size",
+        "/properties/SnapshotId",
+        "/properties/VolumeId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "typeName": "Terraform::AWS::AppsyncFunction",
+    "description": "CloudFormation equivalent of aws_appsync_function",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApiId": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DataSource": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "FunctionId": {
+            "type": "string"
+        },
+        "FunctionVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RequestMappingTemplate": {
+            "type": "string"
+        },
+        "ResponseMappingTemplate": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApiId",
+        "DataSource",
+        "Name",
+        "RequestMappingTemplate",
+        "ResponseMappingTemplate"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/FunctionId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

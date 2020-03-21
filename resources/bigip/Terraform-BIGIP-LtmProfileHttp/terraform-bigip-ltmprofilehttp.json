@@ -1,0 +1,148 @@
+{
+    "typeName": "Terraform::BIGIP::LtmProfileHttp",
+    "description": "CloudFormation equivalent of bigip_ltm_profile_http",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AcceptXff": {
+            "type": "string"
+        },
+        "AppService": {
+            "type": "string"
+        },
+        "BasicAuthRealm": {
+            "type": "string"
+        },
+        "DefaultsFrom": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EncryptCookieSecret": {
+            "type": "string"
+        },
+        "EncryptCookies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "FallbackHost": {
+            "type": "string"
+        },
+        "FallbackStatusCodes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HeadErase": {
+            "type": "string"
+        },
+        "HeadInsert": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsertXforwardedFor": {
+            "type": "string"
+        },
+        "LwsSeparator": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OneconnectTransformations": {
+            "type": "string"
+        },
+        "ProxyType": {
+            "type": "string"
+        },
+        "RedirectRewrite": {
+            "type": "string"
+        },
+        "RequestChunking": {
+            "type": "string"
+        },
+        "ResponseChunking": {
+            "type": "string"
+        },
+        "ResponseHeadersPermitted": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ServerAgentName": {
+            "type": "string"
+        },
+        "TmPartition": {
+            "type": "string"
+        },
+        "ViaHostName": {
+            "type": "string"
+        },
+        "ViaRequest": {
+            "type": "string"
+        },
+        "ViaResponse": {
+            "type": "string"
+        },
+        "XffAlternativeNames": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DefaultsFrom",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

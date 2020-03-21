@@ -1,0 +1,252 @@
+{
+    "typeName": "Terraform::OCI::DataflowInvokeRun",
+    "description": "CloudFormation equivalent of oci_dataflow_invoke_run",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Parameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationId": {
+            "type": "string"
+        },
+        "Arguments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Asynchronous": {
+            "type": "boolean"
+        },
+        "ClassName": {
+            "type": "string"
+        },
+        "CompartmentId": {
+            "type": "string"
+        },
+        "Configuration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "DataReadInBytes": {
+            "type": "string"
+        },
+        "DataWrittenInBytes": {
+            "type": "string"
+        },
+        "DefinedTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "DriverShape": {
+            "type": "string"
+        },
+        "ExecutorShape": {
+            "type": "string"
+        },
+        "FileUri": {
+            "type": "string"
+        },
+        "FreeformTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Language": {
+            "type": "string"
+        },
+        "LifecycleDetails": {
+            "type": "string"
+        },
+        "LogsBucketUri": {
+            "type": "string"
+        },
+        "NumExecutors": {
+            "type": "number"
+        },
+        "OpcRequestId": {
+            "type": "string"
+        },
+        "OwnerPrincipalId": {
+            "type": "string"
+        },
+        "OwnerUserName": {
+            "type": "string"
+        },
+        "RunDurationInMilliseconds": {
+            "type": "string"
+        },
+        "SparkVersion": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TimeCreated": {
+            "type": "string"
+        },
+        "TimeUpdated": {
+            "type": "string"
+        },
+        "TotalOcpu": {
+            "type": "number"
+        },
+        "WarehouseBucketUri": {
+            "type": "string"
+        },
+        "Parameters": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Parameters"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ApplicationId",
+        "CompartmentId",
+        "DisplayName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ClassName",
+        "/properties/DataReadInBytes",
+        "/properties/DataWrittenInBytes",
+        "/properties/FileUri",
+        "/properties/Language",
+        "/properties/LifecycleDetails",
+        "/properties/OpcRequestId",
+        "/properties/OwnerPrincipalId",
+        "/properties/OwnerUserName",
+        "/properties/RunDurationInMilliseconds",
+        "/properties/SparkVersion",
+        "/properties/State",
+        "/properties/TimeCreated",
+        "/properties/TimeUpdated",
+        "/properties/TotalOcpu"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

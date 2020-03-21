@@ -1,0 +1,229 @@
+{
+    "typeName": "Terraform::Nomad::Job",
+    "description": "CloudFormation equivalent of nomad_job",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocationIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Datacenters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DeploymentId": {
+            "type": "string"
+        },
+        "DeploymentStatus": {
+            "type": "string"
+        },
+        "DeregisterOnDestroy": {
+            "type": "boolean"
+        },
+        "DeregisterOnIdChange": {
+            "type": "boolean"
+        },
+        "Detach": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Jobspec": {
+            "type": "string"
+        },
+        "Json": {
+            "type": "boolean"
+        },
+        "ModifyIndex": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "PolicyOverride": {
+            "type": "boolean"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "TaskGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Count": {
+                        "type": "number"
+                    },
+                    "Meta": {
+                        "type": "array",
+                        "insertionOrder": true,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Key": {
+                                    "type": "string"
+                                },
+                                "Value": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "Key",
+                                "Value"
+                            ]
+                        }
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Task": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Driver": {
+                                    "type": "string"
+                                },
+                                "Meta": {
+                                    "type": "array",
+                                    "insertionOrder": true,
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "Key": {
+                                                "type": "string"
+                                            },
+                                            "Value": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "Key",
+                                            "Value"
+                                        ]
+                                    }
+                                },
+                                "Name": {
+                                    "type": "string"
+                                },
+                                "VolumeMounts": {
+                                    "type": "array",
+                                    "insertionOrder": false,
+                                    "items": {
+                                        "type": "object",
+                                        "additionalProperties": false,
+                                        "properties": {
+                                            "Destination": {
+                                                "type": "string"
+                                            },
+                                            "ReadOnly": {
+                                                "type": "boolean"
+                                            },
+                                            "Volume": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "Volumes": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Name": {
+                                    "type": "string"
+                                },
+                                "ReadOnly": {
+                                    "type": "boolean"
+                                },
+                                "Source": {
+                                    "type": "string"
+                                },
+                                "Type": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Jobspec"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllocationIds",
+        "/properties/Datacenters",
+        "/properties/DeploymentId",
+        "/properties/DeploymentStatus",
+        "/properties/ModifyIndex",
+        "/properties/Name",
+        "/properties/Namespace",
+        "/properties/Region",
+        "/properties/TaskGroups",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

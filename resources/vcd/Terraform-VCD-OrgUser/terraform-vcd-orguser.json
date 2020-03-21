@@ -1,0 +1,105 @@
+{
+    "typeName": "Terraform::VCD::OrgUser",
+    "description": "CloudFormation equivalent of vcd_org_user",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DeployedVmQuota": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EmailAddress": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "FullName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstantMessaging": {
+            "type": "string"
+        },
+        "IsGroupRole": {
+            "type": "boolean"
+        },
+        "IsLocked": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PasswordFile": {
+            "type": "string"
+        },
+        "ProviderType": {
+            "type": "string"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "StoredVmQuota": {
+            "type": "number"
+        },
+        "TakeOwnership": {
+            "type": "boolean"
+        },
+        "Telephone": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Role"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

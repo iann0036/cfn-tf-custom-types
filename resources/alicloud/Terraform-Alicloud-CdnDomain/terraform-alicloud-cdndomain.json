@@ -1,0 +1,277 @@
+{
+    "typeName": "Terraform::Alicloud::CdnDomain",
+    "description": "CloudFormation equivalent of alicloud_cdn_domain",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AuthConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AuthType": {
+                    "type": "string"
+                },
+                "MasterKey": {
+                    "type": "string"
+                },
+                "SlaveKey": {
+                    "type": "string"
+                },
+                "Timeout": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "CacheConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CacheContent": {
+                    "type": "string"
+                },
+                "CacheType": {
+                    "type": "string"
+                },
+                "Ttl": {
+                    "type": "number"
+                },
+                "Weight": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "CacheContent",
+                "CacheType",
+                "Ttl"
+            ]
+        },
+        "CertificateConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "PrivateKey": {
+                    "type": "string"
+                },
+                "ServerCertificate": {
+                    "type": "string"
+                },
+                "ServerCertificateStatus": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HttpHeaderConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HeaderKey": {
+                    "type": "string"
+                },
+                "HeaderValue": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "HeaderKey",
+                "HeaderValue"
+            ]
+        },
+        "Page404Config": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CustomPageUrl": {
+                    "type": "string"
+                },
+                "PageType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ParameterFilterConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enable": {
+                    "type": "string"
+                },
+                "HashKeyArgs": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ReferConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowEmpty": {
+                    "type": "string"
+                },
+                "ReferList": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ReferType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ReferList"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BlockIps": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CdnType": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OptimizeEnable": {
+            "type": "string"
+        },
+        "PageCompressEnable": {
+            "type": "string"
+        },
+        "RangeEnable": {
+            "type": "string"
+        },
+        "Scope": {
+            "type": "string"
+        },
+        "SourcePort": {
+            "type": "number"
+        },
+        "SourceType": {
+            "type": "string"
+        },
+        "Sources": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VideoSeekEnable": {
+            "type": "string"
+        },
+        "AuthConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AuthConfig"
+            },
+            "maxItems": 1
+        },
+        "CacheConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CacheConfig"
+            }
+        },
+        "CertificateConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertificateConfig"
+            },
+            "maxItems": 1
+        },
+        "HttpHeaderConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HttpHeaderConfig"
+            },
+            "maxItems": 10
+        },
+        "Page404Config": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Page404Config"
+            },
+            "maxItems": 1
+        },
+        "ParameterFilterConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ParameterFilterConfig"
+            },
+            "maxItems": 1
+        },
+        "ReferConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ReferConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CdnType",
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

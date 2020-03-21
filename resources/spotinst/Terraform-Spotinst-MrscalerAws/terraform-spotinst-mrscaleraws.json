@@ -1,0 +1,864 @@
+{
+    "typeName": "Terraform::Spotinst::MrscalerAws",
+    "description": "CloudFormation equivalent of spotinst_mrscaler_aws",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Applications": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Args": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "BootstrapActionsFile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket",
+                "Key"
+            ]
+        },
+        "ConfigurationsFile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket",
+                "Key"
+            ]
+        },
+        "CoreEbsBlockDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iops": {
+                    "type": "number"
+                },
+                "SizeInGb": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                },
+                "VolumesPerInstance": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "SizeInGb",
+                "VolumeType"
+            ]
+        },
+        "CoreScalingDownPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "string"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "MaxTargetCapacity": {
+                    "type": "string"
+                },
+                "Maximum": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MinTargetCapacity": {
+                    "type": "string"
+                },
+                "Minimum": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold",
+                "Unit"
+            ]
+        },
+        "CoreScalingUpPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "string"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "MaxTargetCapacity": {
+                    "type": "string"
+                },
+                "Maximum": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MinTargetCapacity": {
+                    "type": "string"
+                },
+                "Minimum": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold",
+                "Unit"
+            ]
+        },
+        "InstanceWeights": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "InstanceType": {
+                    "type": "string"
+                },
+                "WeightedCapacity": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "InstanceType",
+                "WeightedCapacity"
+            ]
+        },
+        "MasterEbsBlockDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iops": {
+                    "type": "number"
+                },
+                "SizeInGb": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                },
+                "VolumesPerInstance": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "SizeInGb",
+                "VolumeType"
+            ]
+        },
+        "ProvisioningTimeout": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Timeout": {
+                    "type": "number"
+                },
+                "TimeoutAction": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Timeout",
+                "TimeoutAction"
+            ]
+        },
+        "ScheduledTask": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cron": {
+                    "type": "string"
+                },
+                "DesiredCapacity": {
+                    "type": "string"
+                },
+                "InstanceGroupType": {
+                    "type": "string"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "MaxCapacity": {
+                    "type": "string"
+                },
+                "MinCapacity": {
+                    "type": "string"
+                },
+                "TaskType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Cron",
+                "InstanceGroupType",
+                "TaskType"
+            ]
+        },
+        "StepsFile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket",
+                "Key"
+            ]
+        },
+        "Tags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "TaskEbsBlockDevice": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iops": {
+                    "type": "number"
+                },
+                "SizeInGb": {
+                    "type": "number"
+                },
+                "VolumeType": {
+                    "type": "string"
+                },
+                "VolumesPerInstance": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "SizeInGb",
+                "VolumeType"
+            ]
+        },
+        "TaskScalingDownPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "string"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "MaxTargetCapacity": {
+                    "type": "string"
+                },
+                "Maximum": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MinTargetCapacity": {
+                    "type": "string"
+                },
+                "Minimum": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold",
+                "Unit"
+            ]
+        },
+        "TaskScalingUpPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ActionType": {
+                    "type": "string"
+                },
+                "Adjustment": {
+                    "type": "string"
+                },
+                "Cooldown": {
+                    "type": "number"
+                },
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "EvaluationPeriods": {
+                    "type": "number"
+                },
+                "MaxTargetCapacity": {
+                    "type": "string"
+                },
+                "Maximum": {
+                    "type": "string"
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "MinTargetCapacity": {
+                    "type": "string"
+                },
+                "Minimum": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "PolicyName": {
+                    "type": "string"
+                },
+                "Statistic": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MetricName",
+                "Namespace",
+                "PolicyName",
+                "Threshold",
+                "Unit"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalInfo": {
+            "type": "string"
+        },
+        "AdditionalPrimarySecurityGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AdditionalReplicaSecurityGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "CoreDesiredCapacity": {
+            "type": "number"
+        },
+        "CoreEbsOptimized": {
+            "type": "boolean"
+        },
+        "CoreInstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CoreLifecycle": {
+            "type": "string"
+        },
+        "CoreMaxSize": {
+            "type": "number"
+        },
+        "CoreMinSize": {
+            "type": "number"
+        },
+        "CustomAmiId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EbsRootVolumeSize": {
+            "type": "number"
+        },
+        "Ec2KeyName": {
+            "type": "string"
+        },
+        "ExposeClusterId": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "JobFlowRole": {
+            "type": "string"
+        },
+        "KeepJobFlowAlive": {
+            "type": "boolean"
+        },
+        "LogUri": {
+            "type": "string"
+        },
+        "ManagedPrimarySecurityGroup": {
+            "type": "string"
+        },
+        "ManagedReplicaSecurityGroup": {
+            "type": "string"
+        },
+        "MasterEbsOptimized": {
+            "type": "boolean"
+        },
+        "MasterInstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MasterLifecycle": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OutputClusterId": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ReleaseLabel": {
+            "type": "string"
+        },
+        "RepoUpgradeOnBoot": {
+            "type": "string"
+        },
+        "Retries": {
+            "type": "number"
+        },
+        "SecurityConfig": {
+            "type": "string"
+        },
+        "ServiceAccessSecurityGroup": {
+            "type": "string"
+        },
+        "ServiceRole": {
+            "type": "string"
+        },
+        "Strategy": {
+            "type": "string"
+        },
+        "TaskDesiredCapacity": {
+            "type": "number"
+        },
+        "TaskEbsOptimized": {
+            "type": "boolean"
+        },
+        "TaskInstanceTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TaskLifecycle": {
+            "type": "string"
+        },
+        "TaskMaxSize": {
+            "type": "number"
+        },
+        "TaskMinSize": {
+            "type": "number"
+        },
+        "TerminationProtected": {
+            "type": "boolean"
+        },
+        "VisibleToAllUsers": {
+            "type": "boolean"
+        },
+        "Applications": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Applications"
+            }
+        },
+        "BootstrapActionsFile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BootstrapActionsFile"
+            }
+        },
+        "ConfigurationsFile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ConfigurationsFile"
+            }
+        },
+        "CoreEbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CoreEbsBlockDevice"
+            }
+        },
+        "CoreScalingDownPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CoreScalingDownPolicy"
+            }
+        },
+        "CoreScalingUpPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CoreScalingUpPolicy"
+            }
+        },
+        "InstanceWeights": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/InstanceWeights"
+            }
+        },
+        "MasterEbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MasterEbsBlockDevice"
+            }
+        },
+        "ProvisioningTimeout": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProvisioningTimeout"
+            },
+            "maxItems": 1
+        },
+        "ScheduledTask": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ScheduledTask"
+            }
+        },
+        "StepsFile": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StepsFile"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tags"
+            }
+        },
+        "TaskEbsBlockDevice": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TaskEbsBlockDevice"
+            }
+        },
+        "TaskScalingDownPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TaskScalingDownPolicy"
+            }
+        },
+        "TaskScalingUpPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TaskScalingUpPolicy"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Strategy"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/OutputClusterId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

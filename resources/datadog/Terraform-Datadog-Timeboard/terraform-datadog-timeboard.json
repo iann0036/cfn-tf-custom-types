@@ -1,0 +1,580 @@
+{
+    "typeName": "Terraform::Datadog::Timeboard",
+    "description": "CloudFormation equivalent of datadog_timeboard",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Graph": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Autoscale": {
+                    "type": "boolean"
+                },
+                "CustomUnit": {
+                    "type": "string"
+                },
+                "Events": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Group": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "IncludeNoMetricHosts": {
+                    "type": "boolean"
+                },
+                "IncludeUngroupedHosts": {
+                    "type": "boolean"
+                },
+                "NodeType": {
+                    "type": "string"
+                },
+                "Precision": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Style": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "TextAlign": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Viz": {
+                    "type": "string"
+                },
+                "Yaxis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Marker": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Marker"
+                    }
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                }
+            },
+            "required": [
+                "Title",
+                "Viz"
+            ]
+        },
+        "TemplateVariable": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Prefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Marker": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Label": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Type",
+                "Value"
+            ]
+        },
+        "Request": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregator": {
+                    "type": "string"
+                },
+                "ChangeType": {
+                    "type": "string"
+                },
+                "CompareTo": {
+                    "type": "string"
+                },
+                "ExtraCol": {
+                    "type": "string"
+                },
+                "IncreaseGood": {
+                    "type": "boolean"
+                },
+                "MetadataJson": {
+                    "type": "string"
+                },
+                "OrderBy": {
+                    "type": "string"
+                },
+                "OrderDirection": {
+                    "type": "string"
+                },
+                "Q": {
+                    "type": "string"
+                },
+                "Stacked": {
+                    "type": "boolean"
+                },
+                "Style": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "ApmQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApmQuery"
+                    }
+                },
+                "ConditionalFormat": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionalFormat"
+                    }
+                },
+                "LogQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LogQuery"
+                    }
+                },
+                "ProcessQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessQuery"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ApmQuery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "string"
+                },
+                "Compute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Compute"
+                    }
+                },
+                "GroupBy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupBy"
+                    }
+                },
+                "Search": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Search"
+                    }
+                }
+            },
+            "required": [
+                "Index"
+            ]
+        },
+        "ConditionalFormat": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparator": {
+                    "type": "string"
+                },
+                "CustomBgColor": {
+                    "type": "string"
+                },
+                "CustomFgColor": {
+                    "type": "string"
+                },
+                "Palette": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Comparator"
+            ]
+        },
+        "LogQuery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Index": {
+                    "type": "string"
+                },
+                "Compute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Compute"
+                    }
+                },
+                "GroupBy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupBy"
+                    }
+                },
+                "Search": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Search"
+                    }
+                }
+            },
+            "required": [
+                "Index"
+            ]
+        },
+        "ProcessQuery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterBy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "Metric": {
+                    "type": "string"
+                },
+                "SearchBy": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Metric"
+            ]
+        },
+        "Compute": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregation": {
+                    "type": "string"
+                },
+                "Facet": {
+                    "type": "string"
+                },
+                "Interval": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Aggregation"
+            ]
+        },
+        "GroupBy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Facet": {
+                    "type": "string"
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "Sort": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Sort"
+                    }
+                }
+            },
+            "required": [
+                "Facet"
+            ]
+        },
+        "Search": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "Sort": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Aggregation": {
+                    "type": "string"
+                },
+                "Facet": {
+                    "type": "string"
+                },
+                "Order": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Aggregation",
+                "Order"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ReadOnly": {
+            "type": "boolean"
+        },
+        "Title": {
+            "type": "string"
+        },
+        "Graph": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Graph"
+            },
+            "minItems": 1
+        },
+        "TemplateVariable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplateVariable"
+            }
+        },
+        "Marker": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Marker"
+            }
+        },
+        "Request": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Request"
+            },
+            "minItems": 1
+        },
+        "ApmQuery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApmQuery"
+            },
+            "maxItems": 1
+        },
+        "ConditionalFormat": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConditionalFormat"
+            }
+        },
+        "LogQuery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogQuery"
+            },
+            "maxItems": 1
+        },
+        "ProcessQuery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProcessQuery"
+            },
+            "maxItems": 1
+        },
+        "Compute": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Compute"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "GroupBy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupBy"
+            }
+        },
+        "Search": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Search"
+            },
+            "maxItems": 1
+        },
+        "Sort": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Sort"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Description",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,102 @@
+{
+    "typeName": "Terraform::Rancher::RegistrationToken",
+    "description": "CloudFormation equivalent of rancher_registration_token",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AgentIp": {
+            "type": "string"
+        },
+        "Command": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EnvironmentId": {
+            "type": "string"
+        },
+        "HostLabels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Image": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RegistrationUrl": {
+            "type": "string"
+        },
+        "Token": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "EnvironmentId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Command",
+        "/properties/Image",
+        "/properties/RegistrationUrl",
+        "/properties/Token"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

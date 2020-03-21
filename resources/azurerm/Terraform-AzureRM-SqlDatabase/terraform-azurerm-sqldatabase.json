@@ -1,0 +1,282 @@
+{
+    "typeName": "Terraform::AzureRM::SqlDatabase",
+    "description": "CloudFormation equivalent of azurerm_sql_database",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ExtendedAuditingPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "RetentionInDays": {
+                    "type": "number"
+                },
+                "StorageAccountAccessKey": {
+                    "type": "string"
+                },
+                "StorageAccountAccessKeyIsSecondary": {
+                    "type": "boolean"
+                },
+                "StorageEndpoint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StorageAccountAccessKey",
+                "StorageEndpoint"
+            ]
+        },
+        "Import": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AdministratorLogin": {
+                    "type": "string"
+                },
+                "AdministratorLoginPassword": {
+                    "type": "string"
+                },
+                "AuthenticationType": {
+                    "type": "string"
+                },
+                "OperationMode": {
+                    "type": "string"
+                },
+                "StorageKey": {
+                    "type": "string"
+                },
+                "StorageKeyType": {
+                    "type": "string"
+                },
+                "StorageUri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AdministratorLogin",
+                "AdministratorLoginPassword",
+                "AuthenticationType",
+                "StorageKey",
+                "StorageKeyType",
+                "StorageUri"
+            ]
+        },
+        "ThreatDetectionPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisabledAlerts": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EmailAccountAdmins": {
+                    "type": "string"
+                },
+                "EmailAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RetentionDays": {
+                    "type": "number"
+                },
+                "State": {
+                    "type": "string"
+                },
+                "StorageAccountAccessKey": {
+                    "type": "string"
+                },
+                "StorageEndpoint": {
+                    "type": "string"
+                },
+                "UseServerDefault": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Collation": {
+            "type": "string"
+        },
+        "CreateMode": {
+            "type": "string"
+        },
+        "CreationDate": {
+            "type": "string"
+        },
+        "DefaultSecondaryLocation": {
+            "type": "string"
+        },
+        "Edition": {
+            "type": "string"
+        },
+        "ElasticPoolName": {
+            "type": "string"
+        },
+        "Encryption": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "MaxSizeBytes": {
+            "type": "string"
+        },
+        "MaxSizeGb": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ReadScale": {
+            "type": "boolean"
+        },
+        "RequestedServiceObjectiveId": {
+            "type": "string"
+        },
+        "RequestedServiceObjectiveName": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "RestorePointInTime": {
+            "type": "string"
+        },
+        "ServerName": {
+            "type": "string"
+        },
+        "SourceDatabaseDeletionDate": {
+            "type": "string"
+        },
+        "SourceDatabaseId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ZoneRedundant": {
+            "type": "boolean"
+        },
+        "ExtendedAuditingPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ExtendedAuditingPolicy"
+            },
+            "maxItems": 1
+        },
+        "Import": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Import"
+            },
+            "maxItems": 1
+        },
+        "ThreatDetectionPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ThreatDetectionPolicy"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "ServerName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationDate",
+        "/properties/DefaultSecondaryLocation",
+        "/properties/Encryption"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

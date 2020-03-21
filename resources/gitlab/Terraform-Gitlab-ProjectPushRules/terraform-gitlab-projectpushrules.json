@@ -1,0 +1,80 @@
+{
+    "typeName": "Terraform::Gitlab::ProjectPushRules",
+    "description": "CloudFormation equivalent of gitlab_project_push_rules",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorEmailRegex": {
+            "type": "string"
+        },
+        "BranchNameRegex": {
+            "type": "string"
+        },
+        "CommitMessageRegex": {
+            "type": "string"
+        },
+        "DenyDeleteTag": {
+            "type": "boolean"
+        },
+        "FileNameRegex": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxFileSize": {
+            "type": "number"
+        },
+        "MemberCheck": {
+            "type": "boolean"
+        },
+        "PreventSecrets": {
+            "type": "boolean"
+        },
+        "Project": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

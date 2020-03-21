@@ -1,0 +1,495 @@
+{
+    "typeName": "Terraform::Google::ComputeInstanceFromTemplate",
+    "description": "CloudFormation equivalent of google_compute_instance_from_template",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BootDisk": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutoDelete": {
+                    "type": "boolean"
+                },
+                "DeviceName": {
+                    "type": "string"
+                },
+                "DiskEncryptionKeyRaw": {
+                    "type": "string"
+                },
+                "KmsKeySelfLink": {
+                    "type": "string"
+                },
+                "Mode": {
+                    "type": "string"
+                },
+                "Source": {
+                    "type": "string"
+                },
+                "InitializeParams": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/InitializeParams"
+                    }
+                }
+            },
+            "required": []
+        },
+        "NetworkInterface": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccessConfig": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "NatIp": {
+                                "type": "string"
+                            },
+                            "NetworkTier": {
+                                "type": "string"
+                            },
+                            "PublicPtrDomainName": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "AliasIpRange": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "IpCidrRange": {
+                                "type": "string"
+                            },
+                            "SubnetworkRangeName": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "Network": {
+                    "type": "string"
+                },
+                "NetworkIp": {
+                    "type": "string"
+                },
+                "Subnetwork": {
+                    "type": "string"
+                },
+                "SubnetworkProject": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Scheduling": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomaticRestart": {
+                    "type": "boolean"
+                },
+                "OnHostMaintenance": {
+                    "type": "string"
+                },
+                "Preemptible": {
+                    "type": "boolean"
+                },
+                "NodeAffinities": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NodeAffinities"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ShieldedInstanceConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EnableIntegrityMonitoring": {
+                    "type": "boolean"
+                },
+                "EnableSecureBoot": {
+                    "type": "boolean"
+                },
+                "EnableVtpm": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "InitializeParams": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Image": {
+                    "type": "string"
+                },
+                "Labels": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "NodeAffinities": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Operator": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Operator",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowStoppingForUpdate": {
+            "type": "boolean"
+        },
+        "AttachedDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "DeviceName": {
+                        "type": "string"
+                    },
+                    "DiskEncryptionKeyRaw": {
+                        "type": "string"
+                    },
+                    "DiskEncryptionKeySha256": {
+                        "type": "string"
+                    },
+                    "KmsKeySelfLink": {
+                        "type": "string"
+                    },
+                    "Mode": {
+                        "type": "string"
+                    },
+                    "Source": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "CanIpForward": {
+            "type": "boolean"
+        },
+        "CpuPlatform": {
+            "type": "string"
+        },
+        "DeletionProtection": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DesiredStatus": {
+            "type": "string"
+        },
+        "EnableDisplay": {
+            "type": "boolean"
+        },
+        "GuestAccelerator": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Count": {
+                        "type": "number"
+                    },
+                    "Type": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Hostname": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceId": {
+            "type": "string"
+        },
+        "LabelFingerprint": {
+            "type": "string"
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "MachineType": {
+            "type": "string"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "MetadataFingerprint": {
+            "type": "string"
+        },
+        "MetadataStartupScript": {
+            "type": "string"
+        },
+        "MinCpuPlatform": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ScratchDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Interface": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "ServiceAccount": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Email": {
+                        "type": "string"
+                    },
+                    "Scopes": {
+                        "type": "array",
+                        "insertionOrder": true,
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "SourceInstanceTemplate": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TagsFingerprint": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "BootDisk": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/BootDisk"
+            },
+            "maxItems": 1
+        },
+        "NetworkInterface": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NetworkInterface"
+            }
+        },
+        "Scheduling": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Scheduling"
+            },
+            "maxItems": 1
+        },
+        "ShieldedInstanceConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ShieldedInstanceConfig"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "InitializeParams": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/InitializeParams"
+            },
+            "maxItems": 1
+        },
+        "NodeAffinities": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NodeAffinities"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SourceInstanceTemplate"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CpuPlatform",
+        "/properties/InstanceId",
+        "/properties/LabelFingerprint",
+        "/properties/MetadataFingerprint",
+        "/properties/SelfLink",
+        "/properties/TagsFingerprint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

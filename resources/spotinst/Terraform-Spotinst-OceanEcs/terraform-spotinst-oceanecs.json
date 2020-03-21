@@ -1,0 +1,302 @@
+{
+    "typeName": "Terraform::Spotinst::OceanEcs",
+    "description": "CloudFormation equivalent of spotinst_ocean_ecs",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Autoscaler": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cooldown": {
+                    "type": "number"
+                },
+                "IsAutoConfig": {
+                    "type": "boolean"
+                },
+                "IsEnabled": {
+                    "type": "boolean"
+                },
+                "Down": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Down"
+                    }
+                },
+                "Headroom": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Headroom"
+                    }
+                },
+                "ResourceLimits": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResourceLimits"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Tags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "UpdatePolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ShouldRoll": {
+                    "type": "boolean"
+                },
+                "RollConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/RollConfig"
+                    }
+                }
+            },
+            "required": [
+                "ShouldRoll"
+            ]
+        },
+        "Down": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxScaleDownPercentage": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Headroom": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CpuPerUnit": {
+                    "type": "number"
+                },
+                "MemoryPerUnit": {
+                    "type": "number"
+                },
+                "NumOfUnits": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "ResourceLimits": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MaxMemoryGib": {
+                    "type": "number"
+                },
+                "MaxVcpu": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "RollConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BatchSizePercentage": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "BatchSizePercentage"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AssociatePublicIpAddress": {
+            "type": "boolean"
+        },
+        "ClusterName": {
+            "type": "string"
+        },
+        "DesiredCapacity": {
+            "type": "number"
+        },
+        "DrainingTimeout": {
+            "type": "number"
+        },
+        "EbsOptimized": {
+            "type": "boolean"
+        },
+        "IamInstanceProfile": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ImageId": {
+            "type": "string"
+        },
+        "KeyPair": {
+            "type": "string"
+        },
+        "MaxSize": {
+            "type": "number"
+        },
+        "MinSize": {
+            "type": "number"
+        },
+        "Monitoring": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "SecurityGroupIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UserData": {
+            "type": "string"
+        },
+        "UtilizeReservedInstances": {
+            "type": "boolean"
+        },
+        "Whitelist": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Autoscaler": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Autoscaler"
+            },
+            "maxItems": 1
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tags"
+            }
+        },
+        "UpdatePolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/UpdatePolicy"
+            },
+            "maxItems": 1
+        },
+        "Down": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Down"
+            },
+            "maxItems": 1
+        },
+        "Headroom": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Headroom"
+            },
+            "maxItems": 1
+        },
+        "ResourceLimits": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResourceLimits"
+            },
+            "maxItems": 1
+        },
+        "RollConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RollConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "Name",
+        "Region",
+        "SecurityGroupIds",
+        "SubnetIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

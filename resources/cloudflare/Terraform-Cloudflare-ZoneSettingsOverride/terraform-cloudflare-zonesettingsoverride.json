@@ -1,0 +1,531 @@
+{
+    "typeName": "Terraform::Cloudflare::ZoneSettingsOverride",
+    "description": "CloudFormation equivalent of cloudflare_zone_settings_override",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Settings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlwaysOnline": {
+                    "type": "string"
+                },
+                "AlwaysUseHttps": {
+                    "type": "string"
+                },
+                "AutomaticHttpsRewrites": {
+                    "type": "string"
+                },
+                "Brotli": {
+                    "type": "string"
+                },
+                "BrowserCacheTtl": {
+                    "type": "number"
+                },
+                "BrowserCheck": {
+                    "type": "string"
+                },
+                "CacheLevel": {
+                    "type": "string"
+                },
+                "ChallengeTtl": {
+                    "type": "number"
+                },
+                "CnameFlattening": {
+                    "type": "string"
+                },
+                "DevelopmentMode": {
+                    "type": "string"
+                },
+                "EdgeCacheTtl": {
+                    "type": "number"
+                },
+                "EmailObfuscation": {
+                    "type": "string"
+                },
+                "H2Prioritization": {
+                    "type": "string"
+                },
+                "HotlinkProtection": {
+                    "type": "string"
+                },
+                "Http2": {
+                    "type": "string"
+                },
+                "Http3": {
+                    "type": "string"
+                },
+                "ImageResizing": {
+                    "type": "string"
+                },
+                "IpGeolocation": {
+                    "type": "string"
+                },
+                "Ipv6": {
+                    "type": "string"
+                },
+                "MaxUpload": {
+                    "type": "number"
+                },
+                "MinTlsVersion": {
+                    "type": "string"
+                },
+                "Mirage": {
+                    "type": "string"
+                },
+                "OpportunisticEncryption": {
+                    "type": "string"
+                },
+                "OpportunisticOnion": {
+                    "type": "string"
+                },
+                "OriginErrorPagePassThru": {
+                    "type": "string"
+                },
+                "Polish": {
+                    "type": "string"
+                },
+                "PrefetchPreload": {
+                    "type": "string"
+                },
+                "PrivacyPass": {
+                    "type": "string"
+                },
+                "PseudoIpv4": {
+                    "type": "string"
+                },
+                "ResponseBuffering": {
+                    "type": "string"
+                },
+                "RocketLoader": {
+                    "type": "string"
+                },
+                "SecurityLevel": {
+                    "type": "string"
+                },
+                "ServerSideExclude": {
+                    "type": "string"
+                },
+                "SortQueryStringForCache": {
+                    "type": "string"
+                },
+                "Ssl": {
+                    "type": "string"
+                },
+                "Tls12Only": {
+                    "type": "string"
+                },
+                "Tls13": {
+                    "type": "string"
+                },
+                "TlsClientAuth": {
+                    "type": "string"
+                },
+                "TrueClientIpHeader": {
+                    "type": "string"
+                },
+                "Waf": {
+                    "type": "string"
+                },
+                "Webp": {
+                    "type": "string"
+                },
+                "Websockets": {
+                    "type": "string"
+                },
+                "ZeroRtt": {
+                    "type": "string"
+                },
+                "Minify": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Minify"
+                    }
+                },
+                "MobileRedirect": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/MobileRedirect"
+                    }
+                },
+                "SecurityHeader": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/SecurityHeader"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Minify": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Css": {
+                    "type": "string"
+                },
+                "Html": {
+                    "type": "string"
+                },
+                "Js": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Css",
+                "Html",
+                "Js"
+            ]
+        },
+        "MobileRedirect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "MobileSubdomain": {
+                    "type": "string"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "StripUri": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "MobileSubdomain",
+                "Status",
+                "StripUri"
+            ]
+        },
+        "SecurityHeader": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "IncludeSubdomains": {
+                    "type": "boolean"
+                },
+                "MaxAge": {
+                    "type": "number"
+                },
+                "Nosniff": {
+                    "type": "boolean"
+                },
+                "Preload": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InitialSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "AlwaysOnline": {
+                        "type": "string"
+                    },
+                    "AlwaysUseHttps": {
+                        "type": "string"
+                    },
+                    "AutomaticHttpsRewrites": {
+                        "type": "string"
+                    },
+                    "Brotli": {
+                        "type": "string"
+                    },
+                    "BrowserCacheTtl": {
+                        "type": "number"
+                    },
+                    "BrowserCheck": {
+                        "type": "string"
+                    },
+                    "CacheLevel": {
+                        "type": "string"
+                    },
+                    "ChallengeTtl": {
+                        "type": "number"
+                    },
+                    "CnameFlattening": {
+                        "type": "string"
+                    },
+                    "DevelopmentMode": {
+                        "type": "string"
+                    },
+                    "EdgeCacheTtl": {
+                        "type": "number"
+                    },
+                    "EmailObfuscation": {
+                        "type": "string"
+                    },
+                    "H2Prioritization": {
+                        "type": "string"
+                    },
+                    "HotlinkProtection": {
+                        "type": "string"
+                    },
+                    "Http2": {
+                        "type": "string"
+                    },
+                    "Http3": {
+                        "type": "string"
+                    },
+                    "ImageResizing": {
+                        "type": "string"
+                    },
+                    "IpGeolocation": {
+                        "type": "string"
+                    },
+                    "Ipv6": {
+                        "type": "string"
+                    },
+                    "MaxUpload": {
+                        "type": "number"
+                    },
+                    "MinTlsVersion": {
+                        "type": "string"
+                    },
+                    "Minify": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Css": {
+                                    "type": "string"
+                                },
+                                "Html": {
+                                    "type": "string"
+                                },
+                                "Js": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "Mirage": {
+                        "type": "string"
+                    },
+                    "MobileRedirect": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "MobileSubdomain": {
+                                    "type": "string"
+                                },
+                                "Status": {
+                                    "type": "string"
+                                },
+                                "StripUri": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    },
+                    "OpportunisticEncryption": {
+                        "type": "string"
+                    },
+                    "OpportunisticOnion": {
+                        "type": "string"
+                    },
+                    "OriginErrorPagePassThru": {
+                        "type": "string"
+                    },
+                    "Polish": {
+                        "type": "string"
+                    },
+                    "PrefetchPreload": {
+                        "type": "string"
+                    },
+                    "PrivacyPass": {
+                        "type": "string"
+                    },
+                    "PseudoIpv4": {
+                        "type": "string"
+                    },
+                    "ResponseBuffering": {
+                        "type": "string"
+                    },
+                    "RocketLoader": {
+                        "type": "string"
+                    },
+                    "SecurityHeader": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Enabled": {
+                                    "type": "boolean"
+                                },
+                                "IncludeSubdomains": {
+                                    "type": "boolean"
+                                },
+                                "MaxAge": {
+                                    "type": "number"
+                                },
+                                "Nosniff": {
+                                    "type": "boolean"
+                                },
+                                "Preload": {
+                                    "type": "boolean"
+                                }
+                            }
+                        }
+                    },
+                    "SecurityLevel": {
+                        "type": "string"
+                    },
+                    "ServerSideExclude": {
+                        "type": "string"
+                    },
+                    "SortQueryStringForCache": {
+                        "type": "string"
+                    },
+                    "Ssl": {
+                        "type": "string"
+                    },
+                    "Tls12Only": {
+                        "type": "string"
+                    },
+                    "Tls13": {
+                        "type": "string"
+                    },
+                    "TlsClientAuth": {
+                        "type": "string"
+                    },
+                    "TrueClientIpHeader": {
+                        "type": "string"
+                    },
+                    "Waf": {
+                        "type": "string"
+                    },
+                    "Webp": {
+                        "type": "string"
+                    },
+                    "Websockets": {
+                        "type": "string"
+                    },
+                    "ZeroRtt": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "InitialSettingsReadAt": {
+            "type": "string"
+        },
+        "ReadonlySettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ZoneId": {
+            "type": "string"
+        },
+        "ZoneStatus": {
+            "type": "string"
+        },
+        "ZoneType": {
+            "type": "string"
+        },
+        "Settings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Settings"
+            },
+            "maxItems": 1
+        },
+        "Minify": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Minify"
+            },
+            "maxItems": 1
+        },
+        "MobileRedirect": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MobileRedirect"
+            },
+            "maxItems": 1
+        },
+        "SecurityHeader": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SecurityHeader"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ZoneId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/InitialSettings",
+        "/properties/InitialSettingsReadAt",
+        "/properties/ReadonlySettings",
+        "/properties/ZoneStatus",
+        "/properties/ZoneType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

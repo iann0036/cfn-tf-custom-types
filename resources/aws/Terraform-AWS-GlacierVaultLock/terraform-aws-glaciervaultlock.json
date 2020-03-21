@@ -1,0 +1,66 @@
+{
+    "typeName": "Terraform::AWS::GlacierVaultLock",
+    "description": "CloudFormation equivalent of aws_glacier_vault_lock",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CompleteLock": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IgnoreDeletionError": {
+            "type": "boolean"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "VaultName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CompleteLock",
+        "Policy",
+        "VaultName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

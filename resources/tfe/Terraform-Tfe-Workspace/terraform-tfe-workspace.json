@@ -1,0 +1,123 @@
+{
+    "typeName": "Terraform::Tfe::Workspace",
+    "description": "CloudFormation equivalent of tfe_workspace",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "VcsRepo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Branch": {
+                    "type": "string"
+                },
+                "Identifier": {
+                    "type": "string"
+                },
+                "IngressSubmodules": {
+                    "type": "boolean"
+                },
+                "OauthTokenId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Identifier",
+                "OauthTokenId"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoApply": {
+            "type": "boolean"
+        },
+        "ExternalId": {
+            "type": "string"
+        },
+        "FileTriggersEnabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Operations": {
+            "type": "boolean"
+        },
+        "Organization": {
+            "type": "string"
+        },
+        "QueueAllRuns": {
+            "type": "boolean"
+        },
+        "SshKeyId": {
+            "type": "string"
+        },
+        "TerraformVersion": {
+            "type": "string"
+        },
+        "TriggerPrefixes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "WorkingDirectory": {
+            "type": "string"
+        },
+        "VcsRepo": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VcsRepo"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Organization"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ExternalId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

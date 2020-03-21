@@ -1,0 +1,173 @@
+{
+    "typeName": "Terraform::FlexibleEngine::DcsInstanceV1",
+    "description": "CloudFormation equivalent of flexibleengine_dcs_instance_v1",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccessUser": {
+            "type": "string"
+        },
+        "AvailableZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BackupAt": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "number"
+            }
+        },
+        "BackupType": {
+            "type": "string"
+        },
+        "BeginAt": {
+            "type": "string"
+        },
+        "Capacity": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InternalVersion": {
+            "type": "string"
+        },
+        "Ip": {
+            "type": "string"
+        },
+        "MaintainBegin": {
+            "type": "string"
+        },
+        "MaintainEnd": {
+            "type": "string"
+        },
+        "MaxMemory": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkId": {
+            "type": "string"
+        },
+        "OrderId": {
+            "type": "string"
+        },
+        "Password": {
+            "type": "string"
+        },
+        "PeriodType": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "ProductId": {
+            "type": "string"
+        },
+        "ResourceSpecCode": {
+            "type": "string"
+        },
+        "SaveDays": {
+            "type": "number"
+        },
+        "SecurityGroupId": {
+            "type": "string"
+        },
+        "SecurityGroupName": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "SubnetName": {
+            "type": "string"
+        },
+        "UsedMemory": {
+            "type": "number"
+        },
+        "UserId": {
+            "type": "string"
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "VpcName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AvailableZones",
+        "Capacity",
+        "Engine",
+        "EngineVersion",
+        "Name",
+        "Password",
+        "ProductId",
+        "SecurityGroupId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/InternalVersion",
+        "/properties/Ip",
+        "/properties/MaxMemory",
+        "/properties/OrderId",
+        "/properties/Port",
+        "/properties/ResourceSpecCode",
+        "/properties/SecurityGroupName",
+        "/properties/SubnetName",
+        "/properties/UsedMemory",
+        "/properties/UserId",
+        "/properties/VpcName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,163 @@
+{
+    "typeName": "Terraform::AWS::AthenaWorkgroup",
+    "description": "CloudFormation equivalent of aws_athena_workgroup",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Configuration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BytesScannedCutoffPerQuery": {
+                    "type": "number"
+                },
+                "EnforceWorkgroupConfiguration": {
+                    "type": "boolean"
+                },
+                "PublishCloudwatchMetricsEnabled": {
+                    "type": "boolean"
+                },
+                "ResultConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ResultConfiguration"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ResultConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OutputLocation": {
+                    "type": "string"
+                },
+                "EncryptionConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EncryptionConfiguration"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EncryptionConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EncryptionOption": {
+                    "type": "string"
+                },
+                "KmsKeyArn": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Configuration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Configuration"
+            },
+            "maxItems": 1
+        },
+        "ResultConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ResultConfiguration"
+            },
+            "maxItems": 1
+        },
+        "EncryptionConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EncryptionConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

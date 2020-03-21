@@ -1,0 +1,175 @@
+{
+    "typeName": "Terraform::StatusCake::Test",
+    "description": "CloudFormation equivalent of statuscake_test",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BasicPass": {
+            "type": "string"
+        },
+        "BasicUser": {
+            "type": "string"
+        },
+        "Branding": {
+            "type": "number"
+        },
+        "CheckRate": {
+            "type": "number"
+        },
+        "Confirmations": {
+            "type": "number"
+        },
+        "ContactGroup": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ContactId": {
+            "type": "number"
+        },
+        "CustomHeader": {
+            "type": "string"
+        },
+        "DoNotFind": {
+            "type": "boolean"
+        },
+        "EnableSslAlert": {
+            "type": "boolean"
+        },
+        "FinalEndpoint": {
+            "type": "string"
+        },
+        "FindString": {
+            "type": "string"
+        },
+        "FollowRedirect": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LogoImage": {
+            "type": "string"
+        },
+        "NodeLocations": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Paused": {
+            "type": "boolean"
+        },
+        "PingUrl": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "PostRaw": {
+            "type": "string"
+        },
+        "Public": {
+            "type": "number"
+        },
+        "RealBrowser": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StatusCodes": {
+            "type": "string"
+        },
+        "TestId": {
+            "type": "string"
+        },
+        "TestTags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TestType": {
+            "type": "string"
+        },
+        "Timeout": {
+            "type": "number"
+        },
+        "TriggerRate": {
+            "type": "number"
+        },
+        "Uptime": {
+            "type": "number"
+        },
+        "UseJar": {
+            "type": "number"
+        },
+        "UserAgent": {
+            "type": "string"
+        },
+        "Virus": {
+            "type": "number"
+        },
+        "WebsiteHost": {
+            "type": "string"
+        },
+        "WebsiteName": {
+            "type": "string"
+        },
+        "WebsiteUrl": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TestType",
+        "WebsiteName",
+        "WebsiteUrl"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Status",
+        "/properties/TestId",
+        "/properties/Uptime"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

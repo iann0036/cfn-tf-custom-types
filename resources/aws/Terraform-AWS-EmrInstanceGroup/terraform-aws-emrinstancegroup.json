@@ -1,0 +1,115 @@
+{
+    "typeName": "Terraform::AWS::EmrInstanceGroup",
+    "description": "CloudFormation equivalent of aws_emr_instance_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EbsConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Iops": {
+                    "type": "number"
+                },
+                "Size": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "VolumesPerInstance": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Size",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoscalingPolicy": {
+            "type": "string"
+        },
+        "BidPrice": {
+            "type": "string"
+        },
+        "ClusterId": {
+            "type": "string"
+        },
+        "ConfigurationsJson": {
+            "type": "string"
+        },
+        "EbsOptimized": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceCount": {
+            "type": "number"
+        },
+        "InstanceType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RunningInstanceCount": {
+            "type": "number"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "EbsConfig": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/EbsConfig"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterId",
+        "InstanceType"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/RunningInstanceCount",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

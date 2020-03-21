@@ -1,0 +1,181 @@
+{
+    "typeName": "Terraform::Scaleway::LbBackendBeta",
+    "description": "CloudFormation equivalent of scaleway_lb_backend_beta",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "HealthCheckHttp": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uri"
+            ]
+        },
+        "HealthCheckHttps": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Method": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uri"
+            ]
+        },
+        "HealthCheckTcp": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IsPropertyDefined": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ForwardPort": {
+            "type": "number"
+        },
+        "ForwardPortAlgorithm": {
+            "type": "string"
+        },
+        "ForwardProtocol": {
+            "type": "string"
+        },
+        "HealthCheckDelay": {
+            "type": "string"
+        },
+        "HealthCheckMaxRetries": {
+            "type": "number"
+        },
+        "HealthCheckPort": {
+            "type": "number"
+        },
+        "HealthCheckTimeout": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LbId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OnMarkedDownAction": {
+            "type": "string"
+        },
+        "SendProxyV2": {
+            "type": "boolean"
+        },
+        "ServerIps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "StickySessions": {
+            "type": "string"
+        },
+        "StickySessionsCookieName": {
+            "type": "string"
+        },
+        "TimeoutConnect": {
+            "type": "string"
+        },
+        "TimeoutServer": {
+            "type": "string"
+        },
+        "TimeoutTunnel": {
+            "type": "string"
+        },
+        "HealthCheckHttp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckHttp"
+            },
+            "maxItems": 1
+        },
+        "HealthCheckHttps": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckHttps"
+            },
+            "maxItems": 1
+        },
+        "HealthCheckTcp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HealthCheckTcp"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ForwardPort",
+        "ForwardProtocol",
+        "LbId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

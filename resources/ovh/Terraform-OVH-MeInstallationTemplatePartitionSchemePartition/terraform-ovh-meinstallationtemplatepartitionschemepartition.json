@@ -1,0 +1,86 @@
+{
+    "typeName": "Terraform::OVH::MeInstallationTemplatePartitionSchemePartition",
+    "description": "CloudFormation equivalent of ovh_me_installation_template_partition_scheme_partition",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Filesystem": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Mountpoint": {
+            "type": "string"
+        },
+        "Order": {
+            "type": "number"
+        },
+        "Raid": {
+            "type": "string"
+        },
+        "SchemeName": {
+            "type": "string"
+        },
+        "Size": {
+            "type": "number"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "VolumeName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Filesystem",
+        "Mountpoint",
+        "Order",
+        "SchemeName",
+        "Size",
+        "TemplateName",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

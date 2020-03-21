@@ -1,0 +1,107 @@
+{
+    "typeName": "Terraform::TencentCloud::ClbListenerRule",
+    "description": "CloudFormation equivalent of tencentcloud_clb_listener_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CertificateCaId": {
+            "type": "string"
+        },
+        "CertificateId": {
+            "type": "string"
+        },
+        "CertificateSslMode": {
+            "type": "string"
+        },
+        "ClbId": {
+            "type": "string"
+        },
+        "Domain": {
+            "type": "string"
+        },
+        "HealthCheckHealthNum": {
+            "type": "number"
+        },
+        "HealthCheckHttpCode": {
+            "type": "number"
+        },
+        "HealthCheckHttpDomain": {
+            "type": "string"
+        },
+        "HealthCheckHttpMethod": {
+            "type": "string"
+        },
+        "HealthCheckHttpPath": {
+            "type": "string"
+        },
+        "HealthCheckIntervalTime": {
+            "type": "number"
+        },
+        "HealthCheckSwitch": {
+            "type": "boolean"
+        },
+        "HealthCheckUnhealthNum": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ListenerId": {
+            "type": "string"
+        },
+        "Scheduler": {
+            "type": "string"
+        },
+        "SessionExpireTime": {
+            "type": "number"
+        },
+        "Url": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClbId",
+        "Domain",
+        "ListenerId",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

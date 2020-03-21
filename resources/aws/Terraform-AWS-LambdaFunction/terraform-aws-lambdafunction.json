@@ -1,0 +1,272 @@
+{
+    "typeName": "Terraform::AWS::LambdaFunction",
+    "description": "CloudFormation equivalent of aws_lambda_function",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DeadLetterConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TargetArn"
+            ]
+        },
+        "Environment": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Variables": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TracingConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Mode": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Mode"
+            ]
+        },
+        "VpcConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubnetIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "SecurityGroupIds",
+                "SubnetIds"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Filename": {
+            "type": "string"
+        },
+        "FunctionName": {
+            "type": "string"
+        },
+        "Handler": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvokeArn": {
+            "type": "string"
+        },
+        "KmsKeyArn": {
+            "type": "string"
+        },
+        "LastModified": {
+            "type": "string"
+        },
+        "Layers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MemorySize": {
+            "type": "number"
+        },
+        "Publish": {
+            "type": "boolean"
+        },
+        "QualifiedArn": {
+            "type": "string"
+        },
+        "ReservedConcurrentExecutions": {
+            "type": "number"
+        },
+        "Role": {
+            "type": "string"
+        },
+        "Runtime": {
+            "type": "string"
+        },
+        "S3Bucket": {
+            "type": "string"
+        },
+        "S3Key": {
+            "type": "string"
+        },
+        "S3ObjectVersion": {
+            "type": "string"
+        },
+        "SourceCodeHash": {
+            "type": "string"
+        },
+        "SourceCodeSize": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Timeout": {
+            "type": "number"
+        },
+        "Version": {
+            "type": "string"
+        },
+        "DeadLetterConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DeadLetterConfig"
+            },
+            "maxItems": 1
+        },
+        "Environment": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Environment"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "TracingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TracingConfig"
+            },
+            "maxItems": 1
+        },
+        "VpcConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VpcConfig"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FunctionName",
+        "Handler",
+        "Role",
+        "Runtime"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/InvokeArn",
+        "/properties/LastModified",
+        "/properties/QualifiedArn",
+        "/properties/SourceCodeSize",
+        "/properties/Version"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

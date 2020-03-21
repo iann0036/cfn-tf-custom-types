@@ -1,0 +1,1920 @@
+{
+    "typeName": "Terraform::Datadog::Dashboard",
+    "description": "CloudFormation equivalent of datadog_dashboard",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "TemplateVariable": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "TemplateVariablePreset": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "TemplateVariable": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TemplateVariable"
+                    }
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "Widget": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Layout": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "AlertGraphDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AlertGraphDefinition"
+                    }
+                },
+                "AlertValueDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AlertValueDefinition"
+                    }
+                },
+                "ChangeDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ChangeDefinition"
+                    }
+                },
+                "CheckStatusDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CheckStatusDefinition"
+                    }
+                },
+                "DistributionDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/DistributionDefinition"
+                    }
+                },
+                "EventStreamDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EventStreamDefinition"
+                    }
+                },
+                "EventTimelineDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EventTimelineDefinition"
+                    }
+                },
+                "FreeTextDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FreeTextDefinition"
+                    }
+                },
+                "HeatmapDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HeatmapDefinition"
+                    }
+                },
+                "HostmapDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/HostmapDefinition"
+                    }
+                },
+                "IframeDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IframeDefinition"
+                    }
+                },
+                "ImageDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ImageDefinition"
+                    }
+                },
+                "LogStreamDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LogStreamDefinition"
+                    }
+                },
+                "ManageStatusDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ManageStatusDefinition"
+                    }
+                },
+                "NoteDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/NoteDefinition"
+                    }
+                },
+                "QueryTableDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryTableDefinition"
+                    }
+                },
+                "QueryValueDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/QueryValueDefinition"
+                    }
+                },
+                "ScatterplotDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ScatterplotDefinition"
+                    }
+                },
+                "ServiceLevelObjectiveDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ServiceLevelObjectiveDefinition"
+                    }
+                },
+                "TimeseriesDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TimeseriesDefinition"
+                    }
+                },
+                "ToplistDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ToplistDefinition"
+                    }
+                },
+                "TraceServiceDefinition": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/TraceServiceDefinition"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AlertGraphDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlertId": {
+                    "type": "string"
+                },
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "VizType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AlertId",
+                "VizType"
+            ]
+        },
+        "AlertValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlertId": {
+                    "type": "string"
+                },
+                "Precision": {
+                    "type": "number"
+                },
+                "TextAlign": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AlertId"
+            ]
+        },
+        "ChangeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                }
+            },
+            "required": []
+        },
+        "CheckStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Check": {
+                    "type": "string"
+                },
+                "Group": {
+                    "type": "string"
+                },
+                "GroupBy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Grouping": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Check",
+                "Grouping"
+            ]
+        },
+        "DistributionDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                }
+            },
+            "required": []
+        },
+        "EventStreamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventSize": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "EventTimelineDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Query": {
+                    "type": "string"
+                },
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "FreeTextDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Color": {
+                    "type": "string"
+                },
+                "FontSize": {
+                    "type": "string"
+                },
+                "Text": {
+                    "type": "string"
+                },
+                "TextAlign": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Text"
+            ]
+        },
+        "GroupDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LayoutType": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "Widget": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Widget"
+                    }
+                }
+            },
+            "required": [
+                "LayoutType"
+            ]
+        },
+        "HeatmapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                },
+                "Yaxis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Yaxis"
+                    }
+                }
+            },
+            "required": []
+        },
+        "HostmapDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Group": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "NoGroupHosts": {
+                    "type": "boolean"
+                },
+                "NoMetricHosts": {
+                    "type": "boolean"
+                },
+                "NodeType": {
+                    "type": "string"
+                },
+                "Scope": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                },
+                "Style": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Style"
+                    }
+                }
+            },
+            "required": []
+        },
+        "IframeDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "ImageDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Margin": {
+                    "type": "string"
+                },
+                "Sizing": {
+                    "type": "string"
+                },
+                "Url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Url"
+            ]
+        },
+        "LogStreamDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Columns": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Logset": {
+                    "type": "string"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Logset"
+            ]
+        },
+        "ManageStatusDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ColorPreference": {
+                    "type": "string"
+                },
+                "Count": {
+                    "type": "number"
+                },
+                "DisplayFormat": {
+                    "type": "string"
+                },
+                "HideZeroCounts": {
+                    "type": "boolean"
+                },
+                "Query": {
+                    "type": "string"
+                },
+                "ShowLastTriggered": {
+                    "type": "boolean"
+                },
+                "Sort": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "number"
+                },
+                "SummaryType": {
+                    "type": "string"
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Query"
+            ]
+        },
+        "NoteDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BackgroundColor": {
+                    "type": "string"
+                },
+                "Content": {
+                    "type": "string"
+                },
+                "FontSize": {
+                    "type": "string"
+                },
+                "ShowTick": {
+                    "type": "boolean"
+                },
+                "TextAlign": {
+                    "type": "string"
+                },
+                "TickEdge": {
+                    "type": "string"
+                },
+                "TickPos": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Content"
+            ]
+        },
+        "QueryTableDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                }
+            },
+            "required": []
+        },
+        "QueryValueDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Autoscale": {
+                    "type": "boolean"
+                },
+                "CustomUnit": {
+                    "type": "string"
+                },
+                "Precision": {
+                    "type": "number"
+                },
+                "TextAlign": {
+                    "type": "string"
+                },
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ScatterplotDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ColorByGroups": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                },
+                "Xaxis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Xaxis"
+                    }
+                },
+                "Yaxis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Yaxis"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ServiceLevelObjectiveDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ShowErrorBudget": {
+                    "type": "boolean"
+                },
+                "SloId": {
+                    "type": "string"
+                },
+                "TimeWindows": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "ViewMode": {
+                    "type": "string"
+                },
+                "ViewType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SloId",
+                "TimeWindows",
+                "ViewMode",
+                "ViewType"
+            ]
+        },
+        "TimeseriesDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "LegendSize": {
+                    "type": "string"
+                },
+                "ShowLegend": {
+                    "type": "boolean"
+                },
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Event": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Event"
+                    }
+                },
+                "Marker": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Marker"
+                    }
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                },
+                "Yaxis": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Yaxis"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ToplistDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Request"
+                    }
+                }
+            },
+            "required": []
+        },
+        "TraceServiceDefinition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayFormat": {
+                    "type": "string"
+                },
+                "Env": {
+                    "type": "string"
+                },
+                "Service": {
+                    "type": "string"
+                },
+                "ShowBreakdown": {
+                    "type": "boolean"
+                },
+                "ShowDistribution": {
+                    "type": "boolean"
+                },
+                "ShowErrors": {
+                    "type": "boolean"
+                },
+                "ShowHits": {
+                    "type": "boolean"
+                },
+                "ShowLatency": {
+                    "type": "boolean"
+                },
+                "ShowResourceList": {
+                    "type": "boolean"
+                },
+                "SizeFormat": {
+                    "type": "string"
+                },
+                "SpanName": {
+                    "type": "string"
+                },
+                "Time": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Title": {
+                    "type": "string"
+                },
+                "TitleAlign": {
+                    "type": "string"
+                },
+                "TitleSize": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Env",
+                "Service",
+                "SpanName"
+            ]
+        },
+        "Request": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Q": {
+                    "type": "string"
+                },
+                "ApmQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApmQuery"
+                    }
+                },
+                "ConditionalFormats": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ConditionalFormats"
+                    }
+                },
+                "LogQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/LogQuery"
+                    }
+                },
+                "ProcessQuery": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ProcessQuery"
+                    }
+                },
+                "Style": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Style"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Yaxis": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IncludeZero": {
+                    "type": "boolean"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Max": {
+                    "type": "string"
+                },
+                "Min": {
+                    "type": "string"
+                },
+                "Scale": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Style": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Palette": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Xaxis": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IncludeZero": {
+                    "type": "boolean"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Max": {
+                    "type": "string"
+                },
+                "Min": {
+                    "type": "string"
+                },
+                "Scale": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Event": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Q": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Q"
+            ]
+        },
+        "Marker": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DisplayType": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "ApmQuery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Compute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Index": {
+                    "type": "string"
+                },
+                "Search": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "GroupBy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupBy"
+                    }
+                }
+            },
+            "required": [
+                "Compute",
+                "Index"
+            ]
+        },
+        "ConditionalFormats": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Comparator": {
+                    "type": "string"
+                },
+                "CustomBgColor": {
+                    "type": "string"
+                },
+                "CustomFgColor": {
+                    "type": "string"
+                },
+                "HideValue": {
+                    "type": "boolean"
+                },
+                "ImageUrl": {
+                    "type": "string"
+                },
+                "Palette": {
+                    "type": "string"
+                },
+                "Timeframe": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Comparator",
+                "Palette",
+                "Value"
+            ]
+        },
+        "LogQuery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Compute": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Index": {
+                    "type": "string"
+                },
+                "Search": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "GroupBy": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GroupBy"
+                    }
+                }
+            },
+            "required": [
+                "Compute",
+                "Index"
+            ]
+        },
+        "ProcessQuery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FilterBy": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "Metric": {
+                    "type": "string"
+                },
+                "SearchBy": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Metric"
+            ]
+        },
+        "GroupBy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Facet": {
+                    "type": "string"
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "Sort": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsReadOnly": {
+            "type": "boolean"
+        },
+        "LayoutType": {
+            "type": "string"
+        },
+        "NotifyList": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Title": {
+            "type": "string"
+        },
+        "TemplateVariable": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplateVariable"
+            },
+            "minItems": 1
+        },
+        "TemplateVariablePreset": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TemplateVariablePreset"
+            }
+        },
+        "Widget": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Widget"
+            },
+            "minItems": 1
+        },
+        "AlertGraphDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlertGraphDefinition"
+            },
+            "maxItems": 1
+        },
+        "AlertValueDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AlertValueDefinition"
+            },
+            "maxItems": 1
+        },
+        "ChangeDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ChangeDefinition"
+            },
+            "maxItems": 1
+        },
+        "CheckStatusDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CheckStatusDefinition"
+            },
+            "maxItems": 1
+        },
+        "DistributionDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DistributionDefinition"
+            },
+            "maxItems": 1
+        },
+        "EventStreamDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventStreamDefinition"
+            },
+            "maxItems": 1
+        },
+        "EventTimelineDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EventTimelineDefinition"
+            },
+            "maxItems": 1
+        },
+        "FreeTextDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FreeTextDefinition"
+            },
+            "maxItems": 1
+        },
+        "GroupDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupDefinition"
+            },
+            "maxItems": 1
+        },
+        "HeatmapDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HeatmapDefinition"
+            },
+            "maxItems": 1
+        },
+        "HostmapDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HostmapDefinition"
+            },
+            "maxItems": 1
+        },
+        "IframeDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IframeDefinition"
+            },
+            "maxItems": 1
+        },
+        "ImageDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ImageDefinition"
+            },
+            "maxItems": 1
+        },
+        "LogStreamDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogStreamDefinition"
+            },
+            "maxItems": 1
+        },
+        "ManageStatusDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ManageStatusDefinition"
+            },
+            "maxItems": 1
+        },
+        "NoteDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/NoteDefinition"
+            },
+            "maxItems": 1
+        },
+        "QueryTableDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/QueryTableDefinition"
+            },
+            "maxItems": 1
+        },
+        "QueryValueDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/QueryValueDefinition"
+            },
+            "maxItems": 1
+        },
+        "ScatterplotDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScatterplotDefinition"
+            },
+            "maxItems": 1
+        },
+        "ServiceLevelObjectiveDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServiceLevelObjectiveDefinition"
+            },
+            "maxItems": 1
+        },
+        "TimeseriesDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeseriesDefinition"
+            },
+            "maxItems": 1
+        },
+        "ToplistDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ToplistDefinition"
+            },
+            "maxItems": 1
+        },
+        "TraceServiceDefinition": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TraceServiceDefinition"
+            },
+            "maxItems": 1
+        },
+        "Request": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Request"
+            }
+        },
+        "Yaxis": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Yaxis"
+            },
+            "maxItems": 1
+        },
+        "Style": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Style"
+            },
+            "maxItems": 1
+        },
+        "Xaxis": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Xaxis"
+            },
+            "maxItems": 1
+        },
+        "Event": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Event"
+            }
+        },
+        "Marker": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Marker"
+            }
+        },
+        "ApmQuery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApmQuery"
+            },
+            "maxItems": 1
+        },
+        "ConditionalFormats": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ConditionalFormats"
+            }
+        },
+        "LogQuery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogQuery"
+            },
+            "maxItems": 1
+        },
+        "ProcessQuery": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ProcessQuery"
+            },
+            "maxItems": 1
+        },
+        "GroupBy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GroupBy"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LayoutType",
+        "Title"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

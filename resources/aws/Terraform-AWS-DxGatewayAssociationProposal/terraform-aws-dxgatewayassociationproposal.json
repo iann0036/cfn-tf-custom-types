@@ -1,0 +1,80 @@
+{
+    "typeName": "Terraform::AWS::DxGatewayAssociationProposal",
+    "description": "CloudFormation equivalent of aws_dx_gateway_association_proposal",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowedPrefixes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AssociatedGatewayId": {
+            "type": "string"
+        },
+        "AssociatedGatewayOwnerAccountId": {
+            "type": "string"
+        },
+        "AssociatedGatewayType": {
+            "type": "string"
+        },
+        "DxGatewayId": {
+            "type": "string"
+        },
+        "DxGatewayOwnerAccountId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "VpnGatewayId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DxGatewayId",
+        "DxGatewayOwnerAccountId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AssociatedGatewayOwnerAccountId",
+        "/properties/AssociatedGatewayType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

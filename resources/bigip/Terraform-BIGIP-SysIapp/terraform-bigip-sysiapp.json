@@ -1,0 +1,209 @@
+{
+    "typeName": "Terraform::BIGIP::SysIapp",
+    "description": "CloudFormation equivalent of bigip_sys_iapp",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Lists": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encrypted": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Metadata": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Persists": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Tables": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ColumnNames": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "EncryptedColumns": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Rows": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Rows"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Variables": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Encrypted": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Rows": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Row": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Devicegroup": {
+            "type": "string"
+        },
+        "ExecuteAction": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InheritedDevicegroup": {
+            "type": "string"
+        },
+        "InheritedTrafficGroup": {
+            "type": "string"
+        },
+        "Jsonfile": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Partition": {
+            "type": "string"
+        },
+        "StrictUpdates": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "TemplateModified": {
+            "type": "string"
+        },
+        "TemplatePrerequisiteErrors": {
+            "type": "string"
+        },
+        "TrafficGroup": {
+            "type": "string"
+        },
+        "Lists": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Lists"
+            }
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Metadata"
+            }
+        },
+        "Tables": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Tables"
+            }
+        },
+        "Variables": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Variables"
+            }
+        },
+        "Rows": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Rows"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -12,10 +12,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::DigitalOcean::Volume",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#dropletids" title="DropletIds">DropletIds</a>" : <i>[ Double, ... ]</i>,
-        "<a href="#filesystemlabel" title="FilesystemLabel">FilesystemLabel</a>" : <i>String</i>,
         "<a href="#filesystemtype" title="FilesystemType">FilesystemType</a>" : <i>String</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#initialfilesystemlabel" title="InitialFilesystemLabel">InitialFilesystemLabel</a>" : <i>String</i>,
@@ -25,7 +22,6 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#size" title="Size">Size</a>" : <i>Double</i>,
         "<a href="#snapshotid" title="SnapshotId">SnapshotId</a>" : <i>String</i>,
         "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
-        "<a href="#urn" title="Urn">Urn</a>" : <i>String</i>
     }
 }
 </pre>
@@ -35,11 +31,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::DigitalOcean::Volume
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#dropletids" title="DropletIds">DropletIds</a>: <i>
-      - Double</i>
-    <a href="#filesystemlabel" title="FilesystemLabel">FilesystemLabel</a>: <i>String</i>
     <a href="#filesystemtype" title="FilesystemType">FilesystemType</a>: <i>String</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#initialfilesystemlabel" title="InitialFilesystemLabel">InitialFilesystemLabel</a>: <i>String</i>
@@ -50,38 +42,11 @@ Properties:
     <a href="#snapshotid" title="SnapshotId">SnapshotId</a>: <i>String</i>
     <a href="#tags" title="Tags">Tags</a>: <i>
       - String</i>
-    <a href="#urn" title="Urn">Urn</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Description
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### DropletIds
-
-_Required_: No
-
-_Type_: List of Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### FilesystemLabel
 
 _Required_: No
 
@@ -158,14 +123,6 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 _Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Urn
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

@@ -1,0 +1,137 @@
+{
+    "typeName": "Terraform::AWS::CodepipelineWebhook",
+    "description": "CloudFormation equivalent of aws_codepipeline_webhook",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AuthenticationConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedIpRange": {
+                    "type": "string"
+                },
+                "SecretToken": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Filter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JsonPath": {
+                    "type": "string"
+                },
+                "MatchEquals": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "JsonPath",
+                "MatchEquals"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Authentication": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TargetAction": {
+            "type": "string"
+        },
+        "TargetPipeline": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "AuthenticationConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AuthenticationConfiguration"
+            },
+            "maxItems": 1
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Filter"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Authentication",
+        "Name",
+        "TargetAction",
+        "TargetPipeline"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Url"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

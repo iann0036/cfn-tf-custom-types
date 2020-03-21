@@ -1,0 +1,161 @@
+{
+    "typeName": "Terraform::TencentCloud::Eni",
+    "description": "CloudFormation equivalent of tencentcloud_eni",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Ipv4s": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "string"
+                },
+                "Ip": {
+                    "type": "string"
+                },
+                "Primary": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Ip",
+                "Primary"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Ipv4Count": {
+            "type": "number"
+        },
+        "Ipv4Info": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Description": {
+                        "type": "string"
+                    },
+                    "Ip": {
+                        "type": "string"
+                    },
+                    "Primary": {
+                        "type": "boolean"
+                    }
+                }
+            }
+        },
+        "Mac": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Primary": {
+            "type": "boolean"
+        },
+        "SecurityGroups": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "State": {
+            "type": "string"
+        },
+        "SubnetId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Ipv4s": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Ipv4s"
+            },
+            "maxItems": 30
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "SubnetId",
+        "VpcId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreateTime",
+        "/properties/Ipv4Info",
+        "/properties/Mac",
+        "/properties/Primary",
+        "/properties/State"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

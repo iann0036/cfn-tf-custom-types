@@ -1,0 +1,199 @@
+# Terraform::VSphere::NasDatastore
+
+CloudFormation equivalent of vsphere_nas_datastore
+
+## Syntax
+
+To declare this entity in your AWS CloudFormation template, use the following syntax:
+
+### JSON
+
+<pre>
+{
+    "Type" : "Terraform::VSphere::NasDatastore",
+    "Properties" : {
+        "<a href="#accessmode" title="AccessMode">AccessMode</a>" : <i>String</i>,
+        "<a href="#customattributes" title="CustomAttributes">CustomAttributes</a>" : <i>[ &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;, ... ]</i>,
+        "<a href="#datastoreclusterid" title="DatastoreClusterId">DatastoreClusterId</a>" : <i>String</i>,
+        "<a href="#folder" title="Folder">Folder</a>" : <i>String</i>,
+        "<a href="#hostsystemids" title="HostSystemIds">HostSystemIds</a>" : <i>[ String, ... ]</i>,
+        "<a href="#id" title="Id">Id</a>" : <i>String</i>,
+        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
+        "<a href="#remotehosts" title="RemoteHosts">RemoteHosts</a>" : <i>[ String, ... ]</i>,
+        "<a href="#remotepath" title="RemotePath">RemotePath</a>" : <i>String</i>,
+        "<a href="#securitytype" title="SecurityType">SecurityType</a>" : <i>String</i>,
+        "<a href="#tags" title="Tags">Tags</a>" : <i>[ String, ... ]</i>,
+        "<a href="#type" title="Type">Type</a>" : <i>String</i>,
+    }
+}
+</pre>
+
+### YAML
+
+<pre>
+Type: Terraform::VSphere::NasDatastore
+Properties:
+    <a href="#accessmode" title="AccessMode">AccessMode</a>: <i>String</i>
+    <a href="#customattributes" title="CustomAttributes">CustomAttributes</a>: <i>
+      - &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;</i>
+    <a href="#datastoreclusterid" title="DatastoreClusterId">DatastoreClusterId</a>: <i>String</i>
+    <a href="#folder" title="Folder">Folder</a>: <i>String</i>
+    <a href="#hostsystemids" title="HostSystemIds">HostSystemIds</a>: <i>
+      - String</i>
+    <a href="#id" title="Id">Id</a>: <i>String</i>
+    <a href="#name" title="Name">Name</a>: <i>String</i>
+    <a href="#remotehosts" title="RemoteHosts">RemoteHosts</a>: <i>
+      - String</i>
+    <a href="#remotepath" title="RemotePath">RemotePath</a>: <i>String</i>
+    <a href="#securitytype" title="SecurityType">SecurityType</a>: <i>String</i>
+    <a href="#tags" title="Tags">Tags</a>: <i>
+      - String</i>
+    <a href="#type" title="Type">Type</a>: <i>String</i>
+</pre>
+
+## Properties
+
+#### AccessMode
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CustomAttributes
+
+_Required_: No
+
+_Type_: List of &lt;a href=&#34;customattributes.md&#34;&gt;CustomAttributes&lt;/a&gt;
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DatastoreClusterId
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Folder
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### HostSystemIds
+
+_Required_: Yes
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Id
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Name
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RemoteHosts
+
+_Required_: Yes
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### RemotePath
+
+_Required_: Yes
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SecurityType
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Tags
+
+_Required_: No
+
+_Type_: List of String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Type
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+## Return Values
+
+### Ref
+
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+
+### Fn::GetAtt
+
+The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of this type. The following are the available attributes and sample return values.
+
+For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
+
+#### tfcfnid
+
+Internal identifier for tracking resource changes. Do not use.
+
+#### Accessible
+
+Returns the &lt;code&gt;Accessible&lt;/code&gt; value.
+
+#### Capacity
+
+Returns the &lt;code&gt;Capacity&lt;/code&gt; value.
+
+#### FreeSpace
+
+Returns the &lt;code&gt;FreeSpace&lt;/code&gt; value.
+
+#### MaintenanceMode
+
+Returns the &lt;code&gt;MaintenanceMode&lt;/code&gt; value.
+
+#### MultipleHostAccess
+
+Returns the &lt;code&gt;MultipleHostAccess&lt;/code&gt; value.
+
+#### ProtocolEndpoint
+
+Returns the &lt;code&gt;ProtocolEndpoint&lt;/code&gt; value.
+
+#### UncommittedSpace
+
+Returns the &lt;code&gt;UncommittedSpace&lt;/code&gt; value.
+
+#### Url
+
+Returns the &lt;code&gt;Url&lt;/code&gt; value.
+

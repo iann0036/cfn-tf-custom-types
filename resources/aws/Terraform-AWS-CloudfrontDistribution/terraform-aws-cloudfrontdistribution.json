@@ -1,0 +1,849 @@
+{
+    "typeName": "Terraform::AWS::CloudfrontDistribution",
+    "description": "CloudFormation equivalent of aws_cloudfront_distribution",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CacheBehavior": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CachedMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Compress": {
+                    "type": "boolean"
+                },
+                "DefaultTtl": {
+                    "type": "number"
+                },
+                "FieldLevelEncryptionId": {
+                    "type": "string"
+                },
+                "MaxTtl": {
+                    "type": "number"
+                },
+                "MinTtl": {
+                    "type": "number"
+                },
+                "PathPattern": {
+                    "type": "string"
+                },
+                "SmoothStreaming": {
+                    "type": "boolean"
+                },
+                "TargetOriginId": {
+                    "type": "string"
+                },
+                "TrustedSigners": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ViewerProtocolPolicy": {
+                    "type": "string"
+                },
+                "ForwardedValues": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ForwardedValues"
+                    }
+                },
+                "LambdaFunctionAssociation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LambdaFunctionAssociation"
+                    }
+                }
+            },
+            "required": [
+                "AllowedMethods",
+                "CachedMethods",
+                "PathPattern",
+                "TargetOriginId",
+                "ViewerProtocolPolicy"
+            ]
+        },
+        "CustomErrorResponse": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ErrorCachingMinTtl": {
+                    "type": "number"
+                },
+                "ErrorCode": {
+                    "type": "number"
+                },
+                "ResponseCode": {
+                    "type": "number"
+                },
+                "ResponsePagePath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ErrorCode"
+            ]
+        },
+        "DefaultCacheBehavior": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CachedMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Compress": {
+                    "type": "boolean"
+                },
+                "DefaultTtl": {
+                    "type": "number"
+                },
+                "FieldLevelEncryptionId": {
+                    "type": "string"
+                },
+                "MaxTtl": {
+                    "type": "number"
+                },
+                "MinTtl": {
+                    "type": "number"
+                },
+                "SmoothStreaming": {
+                    "type": "boolean"
+                },
+                "TargetOriginId": {
+                    "type": "string"
+                },
+                "TrustedSigners": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ViewerProtocolPolicy": {
+                    "type": "string"
+                },
+                "ForwardedValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardedValues"
+                    }
+                },
+                "LambdaFunctionAssociation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LambdaFunctionAssociation"
+                    }
+                }
+            },
+            "required": [
+                "AllowedMethods",
+                "CachedMethods",
+                "TargetOriginId",
+                "ViewerProtocolPolicy"
+            ]
+        },
+        "LoggingConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Bucket": {
+                    "type": "string"
+                },
+                "IncludeCookies": {
+                    "type": "boolean"
+                },
+                "Prefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Bucket"
+            ]
+        },
+        "OrderedCacheBehavior": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "CachedMethods": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Compress": {
+                    "type": "boolean"
+                },
+                "DefaultTtl": {
+                    "type": "number"
+                },
+                "FieldLevelEncryptionId": {
+                    "type": "string"
+                },
+                "MaxTtl": {
+                    "type": "number"
+                },
+                "MinTtl": {
+                    "type": "number"
+                },
+                "PathPattern": {
+                    "type": "string"
+                },
+                "SmoothStreaming": {
+                    "type": "boolean"
+                },
+                "TargetOriginId": {
+                    "type": "string"
+                },
+                "TrustedSigners": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ViewerProtocolPolicy": {
+                    "type": "string"
+                },
+                "ForwardedValues": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ForwardedValues"
+                    }
+                },
+                "LambdaFunctionAssociation": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/LambdaFunctionAssociation"
+                    }
+                }
+            },
+            "required": [
+                "AllowedMethods",
+                "CachedMethods",
+                "PathPattern",
+                "TargetOriginId",
+                "ViewerProtocolPolicy"
+            ]
+        },
+        "Origin": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DomainName": {
+                    "type": "string"
+                },
+                "OriginId": {
+                    "type": "string"
+                },
+                "OriginPath": {
+                    "type": "string"
+                },
+                "CustomHeader": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/CustomHeader"
+                    }
+                },
+                "CustomOriginConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/CustomOriginConfig"
+                    }
+                },
+                "S3OriginConfig": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/S3OriginConfig"
+                    }
+                }
+            },
+            "required": [
+                "DomainName",
+                "OriginId"
+            ]
+        },
+        "OriginGroup": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OriginId": {
+                    "type": "string"
+                },
+                "FailoverCriteria": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/FailoverCriteria"
+                    }
+                },
+                "Member": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Member"
+                    }
+                }
+            },
+            "required": [
+                "OriginId"
+            ]
+        },
+        "Restrictions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "GeoRestriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/GeoRestriction"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ViewerCertificate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AcmCertificateArn": {
+                    "type": "string"
+                },
+                "CloudfrontDefaultCertificate": {
+                    "type": "boolean"
+                },
+                "IamCertificateId": {
+                    "type": "string"
+                },
+                "MinimumProtocolVersion": {
+                    "type": "string"
+                },
+                "SslSupportMethod": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ForwardedValues": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Headers": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "QueryString": {
+                    "type": "boolean"
+                },
+                "QueryStringCacheKeys": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Cookies": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Cookies"
+                    }
+                }
+            },
+            "required": [
+                "QueryString"
+            ]
+        },
+        "LambdaFunctionAssociation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EventType": {
+                    "type": "string"
+                },
+                "IncludeBody": {
+                    "type": "boolean"
+                },
+                "LambdaArn": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EventType",
+                "LambdaArn"
+            ]
+        },
+        "CustomHeader": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Value"
+            ]
+        },
+        "CustomOriginConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HttpPort": {
+                    "type": "number"
+                },
+                "HttpsPort": {
+                    "type": "number"
+                },
+                "OriginKeepaliveTimeout": {
+                    "type": "number"
+                },
+                "OriginProtocolPolicy": {
+                    "type": "string"
+                },
+                "OriginReadTimeout": {
+                    "type": "number"
+                },
+                "OriginSslProtocols": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "HttpPort",
+                "HttpsPort",
+                "OriginProtocolPolicy",
+                "OriginSslProtocols"
+            ]
+        },
+        "S3OriginConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OriginAccessIdentity": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OriginAccessIdentity"
+            ]
+        },
+        "FailoverCriteria": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "StatusCodes": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "number"
+                    }
+                }
+            },
+            "required": [
+                "StatusCodes"
+            ]
+        },
+        "Member": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "OriginId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "OriginId"
+            ]
+        },
+        "GeoRestriction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Locations": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "RestrictionType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "RestrictionType"
+            ]
+        },
+        "Cookies": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Forward": {
+                    "type": "string"
+                },
+                "WhitelistedNames": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Forward"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveTrustedSigners": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Aliases": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CallerReference": {
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "DefaultRootObject": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Etag": {
+            "type": "string"
+        },
+        "HostedZoneId": {
+            "type": "string"
+        },
+        "HttpVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InProgressValidationBatches": {
+            "type": "number"
+        },
+        "IsIpv6Enabled": {
+            "type": "boolean"
+        },
+        "LastModifiedTime": {
+            "type": "string"
+        },
+        "PriceClass": {
+            "type": "string"
+        },
+        "RetainOnDelete": {
+            "type": "boolean"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "WaitForDeployment": {
+            "type": "boolean"
+        },
+        "WebAclId": {
+            "type": "string"
+        },
+        "CacheBehavior": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CacheBehavior"
+            }
+        },
+        "CustomErrorResponse": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomErrorResponse"
+            }
+        },
+        "DefaultCacheBehavior": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DefaultCacheBehavior"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "LoggingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LoggingConfig"
+            },
+            "maxItems": 1
+        },
+        "OrderedCacheBehavior": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/OrderedCacheBehavior"
+            }
+        },
+        "Origin": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Origin"
+            },
+            "minItems": 1
+        },
+        "OriginGroup": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/OriginGroup"
+            }
+        },
+        "Restrictions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Restrictions"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ViewerCertificate": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ViewerCertificate"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "ForwardedValues": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ForwardedValues"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "LambdaFunctionAssociation": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/LambdaFunctionAssociation"
+            },
+            "maxItems": 4
+        },
+        "CustomHeader": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CustomHeader"
+            }
+        },
+        "CustomOriginConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CustomOriginConfig"
+            },
+            "maxItems": 1
+        },
+        "S3OriginConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/S3OriginConfig"
+            },
+            "maxItems": 1
+        },
+        "FailoverCriteria": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FailoverCriteria"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Member": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Member"
+            },
+            "maxItems": 2,
+            "minItems": 2
+        },
+        "GeoRestriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GeoRestriction"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Cookies": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Cookies"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Enabled"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ActiveTrustedSigners",
+        "/properties/Arn",
+        "/properties/CallerReference",
+        "/properties/DomainName",
+        "/properties/Etag",
+        "/properties/HostedZoneId",
+        "/properties/InProgressValidationBatches",
+        "/properties/LastModifiedTime",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

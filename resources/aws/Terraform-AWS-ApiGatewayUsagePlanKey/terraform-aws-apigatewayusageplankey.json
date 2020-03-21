@@ -1,0 +1,71 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayUsagePlanKey",
+    "description": "CloudFormation equivalent of aws_api_gateway_usage_plan_key",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KeyId": {
+            "type": "string"
+        },
+        "KeyType": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "UsagePlanId": {
+            "type": "string"
+        },
+        "Value": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "KeyId",
+        "KeyType",
+        "UsagePlanId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Name",
+        "/properties/Value"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

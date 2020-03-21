@@ -1,0 +1,246 @@
+{
+    "typeName": "Terraform::VCD::OrgVdc",
+    "description": "CloudFormation equivalent of vcd_org_vdc",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ComputeCapacity": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cpu": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Cpu"
+                    }
+                },
+                "Memory": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Memory"
+                    }
+                }
+            },
+            "required": []
+        },
+        "StorageProfile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Default": {
+                    "type": "boolean"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Limit": {
+                    "type": "number"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Default",
+                "Limit",
+                "Name"
+            ]
+        },
+        "Cpu": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Allocated": {
+                    "type": "number"
+                },
+                "Limit": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Memory": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Allocated": {
+                    "type": "number"
+                },
+                "Limit": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocationModel": {
+            "type": "string"
+        },
+        "AllowOverCommit": {
+            "type": "boolean"
+        },
+        "CpuGuaranteed": {
+            "type": "number"
+        },
+        "CpuSpeed": {
+            "type": "number"
+        },
+        "DeleteForce": {
+            "type": "boolean"
+        },
+        "DeleteRecursive": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Elasticity": {
+            "type": "boolean"
+        },
+        "EnableFastProvisioning": {
+            "type": "boolean"
+        },
+        "EnableThinProvisioning": {
+            "type": "boolean"
+        },
+        "EnableVmDiscovery": {
+            "type": "boolean"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeVmMemoryOverhead": {
+            "type": "boolean"
+        },
+        "MemoryGuaranteed": {
+            "type": "number"
+        },
+        "Metadata": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NetworkPoolName": {
+            "type": "string"
+        },
+        "NetworkQuota": {
+            "type": "number"
+        },
+        "NicQuota": {
+            "type": "number"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "ProviderVdcName": {
+            "type": "string"
+        },
+        "VmQuota": {
+            "type": "number"
+        },
+        "ComputeCapacity": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ComputeCapacity"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "StorageProfile": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/StorageProfile"
+            },
+            "minItems": 1
+        },
+        "Cpu": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Cpu"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Memory": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Memory"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AllocationModel",
+        "DeleteForce",
+        "DeleteRecursive",
+        "Name",
+        "ProviderVdcName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

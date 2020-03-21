@@ -1,0 +1,176 @@
+{
+    "typeName": "Terraform::OVH::MeInstallationTemplate",
+    "description": "CloudFormation equivalent of ovh_me_installation_template",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Customization": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ChangeLog": {
+                    "type": "string"
+                },
+                "CustomHostname": {
+                    "type": "string"
+                },
+                "PostInstallationScriptLink": {
+                    "type": "string"
+                },
+                "PostInstallationScriptReturn": {
+                    "type": "string"
+                },
+                "Rating": {
+                    "type": "number"
+                },
+                "SshKeyName": {
+                    "type": "string"
+                },
+                "UseDistributionKernel": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailableLanguages": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "BaseTemplateName": {
+            "type": "string"
+        },
+        "Beta": {
+            "type": "boolean"
+        },
+        "BitFormat": {
+            "type": "number"
+        },
+        "Category": {
+            "type": "number"
+        },
+        "DefaultLanguage": {
+            "type": "string"
+        },
+        "Deprecated": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Distribution": {
+            "type": "string"
+        },
+        "Family": {
+            "type": "string"
+        },
+        "Filesystems": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "HardRaidConfiguration": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LastModification": {
+            "type": "string"
+        },
+        "RemoveDefaultPartitionSchemes": {
+            "type": "boolean"
+        },
+        "SupportsDistributionKernel": {
+            "type": "boolean"
+        },
+        "SupportsGptLabel": {
+            "type": "boolean"
+        },
+        "SupportsRtm": {
+            "type": "boolean"
+        },
+        "SupportsSqlServer": {
+            "type": "boolean"
+        },
+        "SupportsUefi": {
+            "type": "string"
+        },
+        "TemplateName": {
+            "type": "string"
+        },
+        "Customization": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Customization"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BaseTemplateName",
+        "DefaultLanguage",
+        "TemplateName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AvailableLanguages",
+        "/properties/Beta",
+        "/properties/BitFormat",
+        "/properties/Category",
+        "/properties/Deprecated",
+        "/properties/Description",
+        "/properties/Distribution",
+        "/properties/Family",
+        "/properties/Filesystems",
+        "/properties/HardRaidConfiguration",
+        "/properties/LastModification",
+        "/properties/SupportsDistributionKernel",
+        "/properties/SupportsGptLabel",
+        "/properties/SupportsRtm",
+        "/properties/SupportsSqlServer",
+        "/properties/SupportsUefi"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

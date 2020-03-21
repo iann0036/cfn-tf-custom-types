@@ -1,0 +1,741 @@
+{
+    "typeName": "Terraform::AWS::S3Bucket",
+    "description": "CloudFormation equivalent of aws_s3_bucket",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CorsRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowedHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedMethods": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "AllowedOrigins": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "ExposeHeaders": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "MaxAgeSeconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "AllowedMethods",
+                "AllowedOrigins"
+            ]
+        },
+        "Grant": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Permissions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Type": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Permissions",
+                "Type"
+            ]
+        },
+        "LifecycleRule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AbortIncompleteMultipartUploadDays": {
+                    "type": "number"
+                },
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Prefix": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "Expiration": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Expiration"
+                    }
+                },
+                "NoncurrentVersionExpiration": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NoncurrentVersionExpiration"
+                    }
+                },
+                "NoncurrentVersionTransition": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/NoncurrentVersionTransition"
+                    }
+                },
+                "Transition": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Transition"
+                    }
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        },
+        "Logging": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetBucket": {
+                    "type": "string"
+                },
+                "TargetPrefix": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "TargetBucket"
+            ]
+        },
+        "ObjectLockConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ObjectLockEnabled": {
+                    "type": "string"
+                },
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Rule"
+                    }
+                }
+            },
+            "required": [
+                "ObjectLockEnabled"
+            ]
+        },
+        "ReplicationConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Role": {
+                    "type": "string"
+                },
+                "Rules": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Rules"
+                    }
+                }
+            },
+            "required": [
+                "Role"
+            ]
+        },
+        "ServerSideEncryptionConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Rule": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Rule"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Versioning": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                },
+                "MfaDelete": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Website": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ErrorDocument": {
+                    "type": "string"
+                },
+                "IndexDocument": {
+                    "type": "string"
+                },
+                "RedirectAllRequestsTo": {
+                    "type": "string"
+                },
+                "RoutingRules": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Expiration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Date": {
+                    "type": "string"
+                },
+                "Days": {
+                    "type": "number"
+                },
+                "ExpiredObjectDeleteMarker": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "NoncurrentVersionExpiration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "NoncurrentVersionTransition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Days": {
+                    "type": "number"
+                },
+                "StorageClass": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StorageClass"
+            ]
+        },
+        "Transition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Date": {
+                    "type": "string"
+                },
+                "Days": {
+                    "type": "number"
+                },
+                "StorageClass": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "StorageClass"
+            ]
+        },
+        "Rule": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ApplyServerSideEncryptionByDefault": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/ApplyServerSideEncryptionByDefault"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Rules": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Id": {
+                    "type": "string"
+                },
+                "Prefix": {
+                    "type": "string"
+                },
+                "Priority": {
+                    "type": "number"
+                },
+                "Status": {
+                    "type": "string"
+                },
+                "Destination": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/Destination"
+                    }
+                },
+                "Filter": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Filter"
+                    }
+                },
+                "SourceSelectionCriteria": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SourceSelectionCriteria"
+                    }
+                }
+            },
+            "required": [
+                "Status"
+            ]
+        },
+        "ApplyServerSideEncryptionByDefault": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "KmsMasterKeyId": {
+                    "type": "string"
+                },
+                "SseAlgorithm": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SseAlgorithm"
+            ]
+        },
+        "Destination": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AccountId": {
+                    "type": "string"
+                },
+                "Bucket": {
+                    "type": "string"
+                },
+                "ReplicaKmsKeyId": {
+                    "type": "string"
+                },
+                "StorageClass": {
+                    "type": "string"
+                },
+                "AccessControlTranslation": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/AccessControlTranslation"
+                    }
+                }
+            },
+            "required": [
+                "Bucket"
+            ]
+        },
+        "Filter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Prefix": {
+                    "type": "string"
+                },
+                "Tags": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                }
+            },
+            "required": []
+        },
+        "SourceSelectionCriteria": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SseKmsEncryptedObjects": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/SseKmsEncryptedObjects"
+                    }
+                }
+            },
+            "required": []
+        },
+        "AccessControlTranslation": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Owner": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Owner"
+            ]
+        },
+        "SseKmsEncryptedObjects": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Enabled": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Enabled"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccelerationStatus": {
+            "type": "string"
+        },
+        "Acl": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Bucket": {
+            "type": "string"
+        },
+        "BucketDomainName": {
+            "type": "string"
+        },
+        "BucketPrefix": {
+            "type": "string"
+        },
+        "BucketRegionalDomainName": {
+            "type": "string"
+        },
+        "ForceDestroy": {
+            "type": "boolean"
+        },
+        "HostedZoneId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "RequestPayer": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "WebsiteDomain": {
+            "type": "string"
+        },
+        "WebsiteEndpoint": {
+            "type": "string"
+        },
+        "CorsRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CorsRule"
+            }
+        },
+        "Grant": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Grant"
+            }
+        },
+        "LifecycleRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LifecycleRule"
+            }
+        },
+        "Logging": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Logging"
+            }
+        },
+        "ObjectLockConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ObjectLockConfiguration"
+            },
+            "maxItems": 1
+        },
+        "ReplicationConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ReplicationConfiguration"
+            },
+            "maxItems": 1
+        },
+        "ServerSideEncryptionConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ServerSideEncryptionConfiguration"
+            },
+            "maxItems": 1
+        },
+        "Versioning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Versioning"
+            },
+            "maxItems": 1
+        },
+        "Website": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Website"
+            },
+            "maxItems": 1
+        },
+        "Expiration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Expiration"
+            },
+            "maxItems": 1
+        },
+        "NoncurrentVersionExpiration": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NoncurrentVersionExpiration"
+            },
+            "maxItems": 1
+        },
+        "NoncurrentVersionTransition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/NoncurrentVersionTransition"
+            }
+        },
+        "Transition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Transition"
+            }
+        },
+        "Rule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Rule"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Rules": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Rules"
+            },
+            "minItems": 1
+        },
+        "ApplyServerSideEncryptionByDefault": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ApplyServerSideEncryptionByDefault"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Destination": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Destination"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Filter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Filter"
+            },
+            "maxItems": 1
+        },
+        "SourceSelectionCriteria": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SourceSelectionCriteria"
+            },
+            "maxItems": 1
+        },
+        "AccessControlTranslation": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AccessControlTranslation"
+            },
+            "maxItems": 1
+        },
+        "SseKmsEncryptedObjects": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/SseKmsEncryptedObjects"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BucketDomainName",
+        "/properties/BucketRegionalDomainName"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

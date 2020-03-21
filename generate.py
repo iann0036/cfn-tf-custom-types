@@ -7,10 +7,13 @@ import re
 import tempfile
 import time
 import sys, traceback
+import multiprocessing
 from pathlib import Path
 
 
-CASE_MAP = {
+PROVIDERS_MAP = {
+    'random': ['Random','Random'],
+    'digitalocean': ['DigitalOcean','DigitalOcean'],
     'oci': ['OCI','Oracle Cloud Infrastructure'],
     'aws': ['AWS','AWS'],
     'opsgenie': ['OpsGenie','OpsGenie'],
@@ -44,7 +47,6 @@ CASE_MAP = {
     'rundeck': ['Rundeck','Rundeck'],
     'grafana': ['Grafana','Grafana'],
     'rabbitmq': ['RabbitMQ','RabbitMQ'],
-    'digitalocean': ['DigitalOcean','DigitalOcean'],
     'arukas': ['Arukas','Arukas'],
     'vcd': ['VCD','VMware vCloud Director'],
     'powerdns': ['PowerDNS','PowerDNS'],
@@ -68,7 +70,6 @@ CASE_MAP = {
     'vault': ['Vault','Vault'],
     'gitlab': ['Gitlab','Gitlab'],
     'statuscake': ['StatusCake','StatusCake'],
-    'random': ['Random','Random'],
     'local': ['Local','Local'],
     'ns1': ['NS1','NS1'],
     'fastly': ['Fastly','Fastly'],
@@ -102,7 +103,6 @@ CASE_MAP = {
     'azuread': ['AzureAD','Azure Active Directory']
 }
 
-PROVIDER_TYPE = sys.argv[1]
 
 def tf_to_cfn_str(obj):
     return re.sub(r'(?:^|_)(\w)', lambda x: x.group(1).upper(), obj)
@@ -110,7 +110,7 @@ def tf_to_cfn_str(obj):
 def tf_type_to_cfn_type(tf_name, provider_name):
     split_provider_name = tf_name.split("_")
     split_provider_name.pop(0)
-    cfn_provider_name = CASE_MAP[provider_name][0]
+    cfn_provider_name = PROVIDERS_MAP[provider_name][0]
     return "Terraform::" + cfn_provider_name + "::" + tf_to_cfn_str("_".join(split_provider_name))
 
 def check_call(args, cwd, inputstr):
@@ -197,137 +197,99 @@ def checkout(url, provider_name):
     except:
         check_call(['git', 'pull', url], '/tmp/' + provider_name, None)
 
-tmpdir = tempfile.TemporaryDirectory()
-tempdir = Path(tmpdir.name)
+def process_provider(provider_type):
+    tmpdir = tempfile.TemporaryDirectory()
+    tempdir = Path(tmpdir.name)
 
-with open(tempdir / "base.tf", "w") as f:
-    f.write('''
-provider "{provider}" {{}}
-    '''.format(provider=PROVIDER_TYPE))
+    with open(tempdir / "base.tf", "w") as f:
+        f.write('''
+    provider "{provider}" {{}}
+        '''.format(provider=provider_type))
 
-print("Downloading latest provider version...")
-check_call(['terraform', 'init'], tempdir.absolute(), None)
-tfschema = json.loads(check_call(['terraform', 'providers', 'schema', '-json'], tempdir.absolute(), None))
+    print("Downloading latest provider version...")
+    check_call(['terraform', 'init'], tempdir.absolute(), None)
+    tfschema = json.loads(check_call(['terraform', 'providers', 'schema', '-json'], tempdir.absolute(), None))
 
-check_call(['git', 'clone', 'https://github.com/terraform-providers/terraform-provider-{}.git'.format(PROVIDER_TYPE), PROVIDER_TYPE], tempdir.absolute(), None)
+    check_call(['git', 'clone', 'https://github.com/terraform-providers/terraform-provider-{}.git'.format(provider_type), provider_type], tempdir.absolute(), None)
 
-outstandingblocks = {}
-schema = {}
+    outstandingblocks = {}
+    schema = {}
 
-for k,v in tfschema['provider_schemas'][PROVIDER_TYPE]['resource_schemas'].items():
-    endnaming = tf_to_cfn_str(k)
-    if k.startswith(PROVIDER_TYPE + "_"):
-        endnaming = tf_to_cfn_str(k[(len(PROVIDER_TYPE)+1):])
-    
-    cfntypename = "Terraform::" + CASE_MAP[PROVIDER_TYPE][0] + "::" + endnaming
-    cfndirname = "Terraform-" + CASE_MAP[PROVIDER_TYPE][0] + "-" + endnaming
-
-    try:
-        providerdir = Path('.') / 'resources' / PROVIDER_TYPE / cfndirname
-
-        if not providerdir.exists():
-            providerdir.mkdir(parents=True, exist_ok=True)
-            check_call(['cfn', 'init'], providerdir.absolute(), "{}\n4\nY\n".format(cfntypename).encode('utf-8'))
-
-        schema = {
-            "typeName": cfntypename,
-            "description": "CloudFormation equivalent of {}".format(k),
-            "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
-            "definitions": {},
-            "properties": {
-                "tfcfnid": {
-                    "description": "Internal identifier for tracking resource changes. Do not use.",
-                    "type": "string"
-                }
-            },
-            "additionalProperties": False,
-            "required": [],
-            "readOnlyProperties": [
-                "/properties/tfcfnid"
-            ],
-            "primaryIdentifier": [
-                "/properties/tfcfnid"
-            ],
-            "handlers": {
-                "create": {
-                    "permissions": [
-                        "s3:PutObject",
-                        "secretsmanager:GetSecretValue"
-                    ]
-                },
-                "read": {
-                    "permissions": []
-                },
-                "update": {
-                    "permissions": [
-                        "s3:GetObject",
-                        "s3:PutObject",
-                        "secretsmanager:GetSecretValue"
-                    ]
-                },
-                "delete": {
-                    "permissions": [
-                        "s3:GetObject",
-                        "s3:DeleteObject",
-                        "secretsmanager:GetSecretValue"
-                    ]
-                },
-                "list": {
-                    "permissions": []
-                }
-            }
-        }
-
-        if PROVIDER_TYPE == "aws":
-            schema['handlers'] = {
-                "create": {"permissions": ["*"]},
-                "read": {"permissions": ["*"]},
-                "update": {"permissions": ["*"]},
-                "delete": {"permissions": ["*"]},
-                "list": {"permissions": ["*"]}
-            }
-
-        if 'attributes' in v['block']:
-            for attrname,attr in v['block']['attributes'].items():
-                cfnattrname = tf_to_cfn_str(attrname)
-                attrtype = attr['type']
-
-                computed = False
-                optional = None
-                if 'optional' in attr:
-                    if not attr['optional']:
-                        schema['required'].append(cfnattrname)
-                        optional = False
-                    else:
-                        optional = True
-                elif 'required' in attr:
-                    if attr['required']:
-                        schema['required'].append(cfnattrname)
-                if 'computed' in attr:
-                    if attr['computed']:
-                        computed = True
-                        if not optional:
-                            schema['readOnlyProperties'].append("/properties/" + cfnattrname)
-
-                schema['properties'][cfnattrname] = jsonschema_type(attrtype)
-
-        if 'block_types' in v['block']:
-            outstandingblocks.update(v['block']['block_types'])
+    for k,v in tfschema['provider_schemas'][provider_type]['resource_schemas'].items():
+        endnaming = tf_to_cfn_str(k)
+        if k.startswith(provider_type + "_"):
+            endnaming = tf_to_cfn_str(k[(len(provider_type)+1):])
         
-        while len(outstandingblocks):
-            blockname = next(iter(outstandingblocks))
-            block = outstandingblocks.pop(blockname)
-            cfnblockname = tf_to_cfn_str(blockname)
+        cfntypename = "Terraform::" + PROVIDERS_MAP[provider_type][0] + "::" + endnaming
+        cfndirname = "Terraform-" + PROVIDERS_MAP[provider_type][0] + "-" + endnaming
 
-            schema['definitions'][cfnblockname] = {
-                'type': 'object',
-                'additionalProperties': False,
-                'properties': {},
-                'required': []
+        try:
+            providerdir = Path('.') / 'resources' / provider_type / cfndirname
+
+            if not providerdir.exists():
+                providerdir.mkdir(parents=True, exist_ok=True)
+                check_call(['cfn', 'init'], providerdir.absolute(), "{}\n4\nY\n".format(cfntypename).encode('utf-8'))
+
+            schema = {
+                "typeName": cfntypename,
+                "description": "CloudFormation equivalent of {}".format(k),
+                "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+                "definitions": {},
+                "properties": {
+                    "tfcfnid": {
+                        "description": "Internal identifier for tracking resource changes. Do not use.",
+                        "type": "string"
+                    }
+                },
+                "additionalProperties": False,
+                "required": [],
+                "readOnlyProperties": [
+                    "/properties/tfcfnid"
+                ],
+                "primaryIdentifier": [
+                    "/properties/tfcfnid"
+                ],
+                "handlers": {
+                    "create": {
+                        "permissions": [
+                            "s3:PutObject",
+                            "secretsmanager:GetSecretValue"
+                        ]
+                    },
+                    "read": {
+                        "permissions": []
+                    },
+                    "update": {
+                        "permissions": [
+                            "s3:GetObject",
+                            "s3:PutObject",
+                            "secretsmanager:GetSecretValue"
+                        ]
+                    },
+                    "delete": {
+                        "permissions": [
+                            "s3:GetObject",
+                            "s3:DeleteObject",
+                            "secretsmanager:GetSecretValue"
+                        ]
+                    },
+                    "list": {
+                        "permissions": []
+                    }
+                }
             }
 
-            if 'attributes' in block['block']:
-                for attrname,attr in block['block']['attributes'].items():
+            if provider_type == "aws":
+                schema['handlers'] = {
+                    "create": {"permissions": ["*"]},
+                    "read": {"permissions": ["*"]},
+                    "update": {"permissions": ["*"]},
+                    "delete": {"permissions": ["*"]},
+                    "list": {"permissions": ["*"]}
+                }
+
+            if 'attributes' in v['block']:
+                for attrname,attr in v['block']['attributes'].items():
                     cfnattrname = tf_to_cfn_str(attrname)
                     attrtype = attr['type']
 
@@ -335,107 +297,148 @@ for k,v in tfschema['provider_schemas'][PROVIDER_TYPE]['resource_schemas'].items
                     optional = None
                     if 'optional' in attr:
                         if not attr['optional']:
-                            schema['definitions'][cfnblockname]['required'].append(cfnattrname)
+                            schema['required'].append(cfnattrname)
                             optional = False
                         else:
                             optional = True
                     elif 'required' in attr:
                         if attr['required']:
-                            schema['definitions'][cfnblockname]['required'].append(cfnattrname)
+                            schema['required'].append(cfnattrname)
                     if 'computed' in attr:
                         if attr['computed']:
                             computed = True
                             if not optional:
-                                continue # read-only props in subdefs are skipped from model
+                                schema['readOnlyProperties'].append("/properties/" + cfnattrname)
 
-                    schema['definitions'][cfnblockname]['properties'][cfnattrname] = jsonschema_type(attrtype)
+                    schema['properties'][cfnattrname] = jsonschema_type(attrtype)
+
+            if 'block_types' in v['block']:
+                outstandingblocks.update(v['block']['block_types'])
             
-            if 'block_types' in block['block']:
-                outstandingblocks.update(block['block']['block_types'])
-                for subblockname,subblock in block['block']['block_types'].items():
-                    cfnsubblockname = tf_to_cfn_str(subblockname)
-                    if subblock['nesting_mode'] == "list":
-                        schema['definitions'][cfnblockname]['properties'][cfnsubblockname] = {
-                            'type': 'array',
-                            'insertionOrder': True,
-                            'items': {
+            while len(outstandingblocks):
+                blockname = next(iter(outstandingblocks))
+                block = outstandingblocks.pop(blockname)
+                cfnblockname = tf_to_cfn_str(blockname)
+
+                schema['definitions'][cfnblockname] = {
+                    'type': 'object',
+                    'additionalProperties': False,
+                    'properties': {},
+                    'required': []
+                }
+
+                if 'attributes' in block['block']:
+                    for attrname,attr in block['block']['attributes'].items():
+                        cfnattrname = tf_to_cfn_str(attrname)
+                        attrtype = attr['type']
+
+                        computed = False
+                        optional = None
+                        if 'optional' in attr:
+                            if not attr['optional']:
+                                schema['definitions'][cfnblockname]['required'].append(cfnattrname)
+                                optional = False
+                            else:
+                                optional = True
+                        elif 'required' in attr:
+                            if attr['required']:
+                                schema['definitions'][cfnblockname]['required'].append(cfnattrname)
+                        if 'computed' in attr:
+                            if attr['computed']:
+                                computed = True
+                                if not optional:
+                                    continue # read-only props in subdefs are skipped from model
+
+                        schema['definitions'][cfnblockname]['properties'][cfnattrname] = jsonschema_type(attrtype)
+                
+                if 'block_types' in block['block']:
+                    outstandingblocks.update(block['block']['block_types'])
+                    for subblockname,subblock in block['block']['block_types'].items():
+                        cfnsubblockname = tf_to_cfn_str(subblockname)
+                        if subblock['nesting_mode'] == "list":
+                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname] = {
+                                'type': 'array',
+                                'insertionOrder': True,
+                                'items': {
+                                    '$ref': '#/definitions/' + cfnsubblockname
+                                }
+                            }
+                        elif subblock['nesting_mode'] == "set":
+                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname] = {
+                                'type': 'array',
+                                'insertionOrder': False,
+                                'items': {
+                                    '$ref': '#/definitions/' + cfnsubblockname
+                                }
+                            }
+                        elif subblock['nesting_mode'] == "single":
+                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname] = {
                                 '$ref': '#/definitions/' + cfnsubblockname
                             }
-                        }
-                    elif subblock['nesting_mode'] == "set":
-                        schema['definitions'][cfnblockname]['properties'][cfnsubblockname] = {
-                            'type': 'array',
-                            'insertionOrder': False,
-                            'items': {
-                                '$ref': '#/definitions/' + cfnsubblockname
-                            }
-                        }
-                    elif subblock['nesting_mode'] == "single":
-                        schema['definitions'][cfnblockname]['properties'][cfnsubblockname] = {
-                            '$ref': '#/definitions/' + cfnsubblockname
-                        }
+                        else:
+                            print("Unknown subblock nesting_mode: " + subblock['nesting_mode'])
+
+                if not bool(schema['definitions'][cfnblockname]['properties']):
+                    if bool(block['block']):
+                        del schema['definitions'][cfnblockname] # no properties found
+                        print("Skipped propertyless block: " + cfnblockname)
+                        continue
                     else:
-                        print("Unknown subblock nesting_mode: " + subblock['nesting_mode'])
+                        schema['definitions'][cfnblockname]['properties']['IsPropertyDefined'] = {
+                            'type': 'boolean'
+                        }
+                        print("Retained propertyless block: " + cfnblockname)
 
-            if not bool(schema['definitions'][cfnblockname]['properties']):
-                if bool(block['block']):
-                    del schema['definitions'][cfnblockname] # no properties found
-                    print("Skipped propertyless block: " + cfnblockname)
-                    continue
+                if block['nesting_mode'] == "list":
+                    schema['properties'][cfnblockname] = {
+                        'type': 'array',
+                        'insertionOrder': False,
+                        'items': {
+                            '$ref': '#/definitions/' + cfnblockname
+                        }
+                    }
+                elif block['nesting_mode'] == "set":
+                    schema['properties'][cfnblockname] = {
+                        'type': 'array',
+                        'insertionOrder': True,
+                        'items': {
+                            '$ref': '#/definitions/' + cfnblockname
+                        }
+                    }
+                elif block['nesting_mode'] == "single":
+                    schema['properties'][cfnblockname] = {
+                        '$ref': '#/definitions/' + cfnblockname
+                    }
                 else:
-                    schema['definitions'][cfnblockname]['properties']['IsPropertyDefined'] = {
-                        'type': 'boolean'
-                    }
-                    print("Retained propertyless block: " + cfnblockname)
+                    print("Unknown nesting_mode: " + block['nesting_mode'])
 
-            if block['nesting_mode'] == "list":
-                schema['properties'][cfnblockname] = {
-                    'type': 'array',
-                    'insertionOrder': False,
-                    'items': {
-                        '$ref': '#/definitions/' + cfnblockname
-                    }
-                }
-            elif block['nesting_mode'] == "set":
-                schema['properties'][cfnblockname] = {
-                    'type': 'array',
-                    'insertionOrder': True,
-                    'items': {
-                        '$ref': '#/definitions/' + cfnblockname
-                    }
-                }
-            elif block['nesting_mode'] == "single":
-                schema['properties'][cfnblockname] = {
-                    '$ref': '#/definitions/' + cfnblockname
-                }
-            else:
-                print("Unknown nesting_mode: " + block['nesting_mode'])
+                if 'max_items' in block:
+                    schema['properties'][cfnblockname]['maxItems'] = block['max_items']
+                if 'min_items' in block:
+                    schema['properties'][cfnblockname]['minItems'] = block['min_items']
 
-            if 'max_items' in block:
-                schema['properties'][cfnblockname]['maxItems'] = block['max_items']
-            if 'min_items' in block:
-                schema['properties'][cfnblockname]['minItems'] = block['min_items']
+            with open(providerdir / (cfndirname.lower() + ".json"), "w") as f:
+                f.write(json.dumps(schema, indent=4))
+            
+            check_call(['cfn', 'generate'], providerdir.absolute(), None)
 
-        with open(providerdir / (cfndirname.lower() + ".json"), "w") as f:
-            f.write(json.dumps(schema, indent=4))
-        
-        check_call(['cfn', 'generate'], providerdir.absolute(), None)
+            # update handlers.py
+            with open("handlers.py.template", "r") as handlerstemplate:
+                with open(providerdir / "src" / cfndirname.lower().replace("-","_") / "handlers.py", "w") as f:
+                    template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERTYPENAME###",provider_type)
+                    f.write(template)
 
-        # update handlers.py
-        with open("handlers.py.template", "r") as handlerstemplate:
-            with open(providerdir / "src" / cfndirname.lower().replace("-","_") / "handlers.py", "w") as f:
-                template = handlerstemplate.read().replace("###CFNTYPENAME###",cfntypename).replace("###TFTYPENAME###",k).replace("###PROVIDERTYPENAME###",PROVIDER_TYPE)
-                f.write(template)
+            print("Generated " + cfntypename)
+        except KeyboardInterrupt:
+            quit()
+        except:
+            traceback.print_exc(file=sys.stdout)
+            print("Failed to generate " + cfntypename)
 
-        print("Generated " + cfntypename)
-    except KeyboardInterrupt:
-        quit()
-    except:
-        traceback.print_exc(file=sys.stdout)
-        print("Failed to generate " + cfntypename)
+    generate_docs(tempdir, provider_type)
 
 # Docs
-def process_file(provider_name, file_contents, provider_readme_items):
+def process_resource_docs(provider_name, file_contents, provider_readme_items):
     section = ""
 
     resource_type = ""
@@ -511,7 +514,7 @@ def process_file(provider_name, file_contents, provider_readme_items):
     if resource_type != "":
         split_provider_name = resource_type.split("_")
         split_provider_name.pop(0)
-        if provider_name in CASE_MAP:
+        if provider_name in PROVIDERS_MAP:
             cfn_type = tf_type_to_cfn_type(resource_type, provider_name)
             provider_readme_items.append("* [{cfn_type}](../resources/{provider_name}/{type_stub}/docs/README.md)".format(
                 cfn_type=cfn_type,
@@ -582,95 +585,107 @@ def process_file(provider_name, file_contents, provider_readme_items):
             resource_readme.write(output)
         '''
 
-resources_path = (tempdir / PROVIDER_TYPE / "website" / "docs" / "r").absolute()
-index_path = (tempdir / PROVIDER_TYPE / "website" / "docs" / "index.html.markdown").absolute()
-provider_reference_path = (tempdir / PROVIDER_TYPE / "website" / "docs" / "provider_reference.html.markdown").absolute()
-provider_readme_items = []
+def generate_docs(tempdir, provider_type):
+    resources_path = (tempdir / provider_type / "website" / "docs" / "r").absolute()
+    index_path = (tempdir / provider_type / "website" / "docs" / "index.html.markdown").absolute()
+    provider_reference_path = (tempdir / provider_type / "website" / "docs" / "provider_reference.html.markdown").absolute()
+    provider_readme_items = []
 
-if os.path.isdir(resources_path) and PROVIDER_TYPE in CASE_MAP:
-    
-    with open(Path("docs") / "{}.md".format(PROVIDER_TYPE), 'w') as provider_readme:
-        readable_provider_name = CASE_MAP[PROVIDER_TYPE][1]
+    if os.path.isdir(resources_path) and provider_type in PROVIDERS_MAP:
         
-        # provider info
-        with open(index_path, 'r') as f:
-            section = ""
-            first_argument_found = False
-            arguments = []
-            index_file_contents = f.read()
-            lines = index_file_contents.split("\n")
-            for line in lines:
-                if line.startswith("*") and section == "arguments":
-                    first_argument_found = True
-                if line.startswith("## Argument Reference") or line.startswith("## Arguments Reference") or line.startswith("## Configuration Reference") or "the following arguments:" in line or "provide the following credentials:" in line:
-                    section = "arguments"
-                elif line.startswith("#"):
-                    section = ""
-                elif section == "arguments" and first_argument_found:
-                    arguments.append(line)
-        
-        # try provider reference (eg. google)
-        if len(arguments) == 0:
-            try:
-                with open(provider_reference_path, 'r') as f:
-                    section = ""
-                    first_argument_found = False
-                    arguments = []
-                    index_file_contents = f.read()
-                    lines = index_file_contents.split("\n")
-                    for line in lines:
-                        if (line.startswith("*") or line.startswith("-")) and section == "arguments":
-                            first_argument_found = True
-                        if line.startswith("## Argument Reference") or line.startswith("## Arguments Reference") or line.startswith("## Configuration Reference") or "the following arguments:" in line or "provide the following credentials:" in line:
-                            section = "arguments"
-                        elif line.startswith("#"):
-                            section = ""
-                        elif section == "arguments" and first_argument_found and not "navigation to the left" in line:
-                            if line.startswith("-"):
-                                line[0] = "*"
-                            arguments.append(line)
-            except:
-                pass
-        
-        # remove environmental variable references
-        argument_text = "\n".join(arguments)
-        if PROVIDER_TYPE not in ['digitalocean', 'fastly', 'flexibleengine', 'google', 'oneandone', 'profitbricks']:
-            sentences = argument_text.split(".")
-            i = 0
-            while len(sentences) > i:
-                if ("environment variable" in sentences[i] or "environmental variable" in sentences[i] or "Can be sourced from" in sentences[i]):
-                    del sentences[i]
-                else:
-                    i+=1
-            argument_text = ".".join(sentences)
-        
-        # replace tf references
-        if PROVIDER_TYPE in ['aws']:
-            argument_text = re.sub(r"(\`%s\_.+\`)" % PROVIDER_TYPE, lambda x: "`" + tf_type_to_cfn_type(x.group(1), PROVIDER_TYPE), argument_text) # TODO - why only one backtick used?!?
+        with open(Path("docs") / "{}.md".format(provider_type), 'w') as provider_readme:
+            readable_provider_name = PROVIDERS_MAP[provider_type][1]
+            
+            # provider info
+            with open(index_path, 'r') as f:
+                section = ""
+                first_argument_found = False
+                arguments = []
+                index_file_contents = f.read()
+                lines = index_file_contents.split("\n")
+                for line in lines:
+                    if line.startswith("*") and section == "arguments":
+                        first_argument_found = True
+                    if line.startswith("## Argument Reference") or line.startswith("## Arguments Reference") or line.startswith("## Configuration Reference") or "the following arguments:" in line or "provide the following credentials:" in line:
+                        section = "arguments"
+                    elif line.startswith("#"):
+                        section = ""
+                    elif section == "arguments" and first_argument_found:
+                        arguments.append(line)
+            
+            # try provider reference (eg. google)
+            if len(arguments) == 0:
+                try:
+                    with open(provider_reference_path, 'r') as f:
+                        section = ""
+                        first_argument_found = False
+                        arguments = []
+                        index_file_contents = f.read()
+                        lines = index_file_contents.split("\n")
+                        for line in lines:
+                            if (line.startswith("*") or line.startswith("-")) and section == "arguments":
+                                first_argument_found = True
+                            if line.startswith("## Argument Reference") or line.startswith("## Arguments Reference") or line.startswith("## Configuration Reference") or "the following arguments:" in line or "provide the following credentials:" in line:
+                                section = "arguments"
+                            elif line.startswith("#"):
+                                section = ""
+                            elif section == "arguments" and first_argument_found and not "navigation to the left" in line:
+                                if line.startswith("-"):
+                                    line[0] = "*"
+                                arguments.append(line)
+                except:
+                    pass
+            
+            # remove environmental variable references
+            argument_text = "\n".join(arguments)
+            if provider_type not in ['digitalocean', 'fastly', 'flexibleengine', 'google', 'oneandone', 'profitbricks']:
+                sentences = argument_text.split(".")
+                i = 0
+                while len(sentences) > i:
+                    if ("environment variable" in sentences[i] or "environmental variable" in sentences[i] or "Can be sourced from" in sentences[i]):
+                        del sentences[i]
+                    else:
+                        i+=1
+                argument_text = ".".join(sentences)
+            
+            # replace tf references
+            if provider_type in ['aws']:
+                argument_text = re.sub(r"(\`%s\_.+\`)" % provider_type, lambda x: "`" + tf_type_to_cfn_type(x.group(1), provider_type), argument_text) # TODO - why only one backtick used?!?
 
-        has_required_arguments = False
-        if "required" in argument_text.lower():
-            has_required_arguments = True
-        provider_readme.write("# {} Provider\n\n## Configuration\n\n".format(readable_provider_name))
-        if len(arguments) == 0:
-            provider_readme.write("No configuration is required for this provider.\n\n")
-        elif not has_required_arguments:
-            provider_readme.write("To configure this resource, you may optionally create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:\n\n".format(PROVIDER_TYPE))
-            provider_readme.write(argument_text + "\n\n")
-        else:
-            provider_readme.write("To configure this resource, you must create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:\n\n".format(PROVIDER_TYPE))
-            provider_readme.write(argument_text + "\n\n")
+            has_required_arguments = False
+            if "required" in argument_text.lower():
+                has_required_arguments = True
+            provider_readme.write("# {} Provider\n\n## Configuration\n\n".format(readable_provider_name))
+            if len(arguments) == 0:
+                provider_readme.write("No configuration is required for this provider.\n\n")
+            elif not has_required_arguments:
+                provider_readme.write("To configure this resource, you may optionally create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:\n\n".format(provider_type))
+                provider_readme.write(argument_text + "\n\n")
+            else:
+                provider_readme.write("To configure this resource, you must create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:\n\n".format(provider_type))
+                provider_readme.write(argument_text + "\n\n")
 
-        # iterate provider resources
-        provider_readme.write("## Supported Resources\n\n")
-        provider_readme_items = []
-        files = [f for f in os.listdir(resources_path) if os.path.isfile(os.path.join(resources_path, f))]
-        for filename in files:
-            with open(os.path.join(resources_path, filename), 'r') as f:
-                #print(filename)
-                resource_file_contents = f.read()
-                process_file(PROVIDER_TYPE, resource_file_contents, provider_readme_items)
-        
-        provider_readme_items = list(set(provider_readme_items))
-        provider_readme_items.sort()
-        provider_readme.write("\n".join(provider_readme_items))
+            # iterate provider resources
+            provider_readme.write("## Supported Resources\n\n")
+            provider_readme_items = []
+            files = [f for f in os.listdir(resources_path) if os.path.isfile(os.path.join(resources_path, f))]
+            for filename in files:
+                with open(os.path.join(resources_path, filename), 'r') as f:
+                    #print(filename)
+                    resource_file_contents = f.read()
+                    process_resource_docs(provider_type, resource_file_contents, provider_readme_items)
+            
+            provider_readme_items = list(set(provider_readme_items))
+            provider_readme_items.sort()
+            provider_readme.write("\n".join(provider_readme_items))
+
+def main():
+    if sys.argv[1] == "all":
+        provider_list = PROVIDERS_MAP.keys()
+        with multiprocessing.Pool(multiprocessing.cpu_count()) as p: # CPU warmer :S
+            list(p.imap_unordered(process_provider, provider_list))
+    else:
+        process_provider(sys.argv[1])
+
+if __name__ == "__main__":
+    main()

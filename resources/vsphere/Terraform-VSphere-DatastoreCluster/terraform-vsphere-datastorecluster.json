@@ -1,0 +1,167 @@
+{
+    "typeName": "Terraform::VSphere::DatastoreCluster",
+    "description": "CloudFormation equivalent of vsphere_datastore_cluster",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CustomAttributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "DatacenterId": {
+            "type": "string"
+        },
+        "Folder": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SdrsAdvancedOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "SdrsAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsDefaultIntraVmAffinity": {
+            "type": "boolean"
+        },
+        "SdrsEnabled": {
+            "type": "boolean"
+        },
+        "SdrsFreeSpaceThreshold": {
+            "type": "number"
+        },
+        "SdrsFreeSpaceThresholdMode": {
+            "type": "string"
+        },
+        "SdrsFreeSpaceUtilizationDifference": {
+            "type": "number"
+        },
+        "SdrsIoBalanceAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsIoLatencyThreshold": {
+            "type": "number"
+        },
+        "SdrsIoLoadBalanceEnabled": {
+            "type": "boolean"
+        },
+        "SdrsIoLoadImbalanceThreshold": {
+            "type": "number"
+        },
+        "SdrsIoReservableIopsThreshold": {
+            "type": "number"
+        },
+        "SdrsIoReservablePercentThreshold": {
+            "type": "number"
+        },
+        "SdrsIoReservableThresholdMode": {
+            "type": "string"
+        },
+        "SdrsLoadBalanceInterval": {
+            "type": "number"
+        },
+        "SdrsPolicyEnforcementAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsRuleEnforcementAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsSpaceBalanceAutomationLevel": {
+            "type": "string"
+        },
+        "SdrsSpaceUtilizationThreshold": {
+            "type": "number"
+        },
+        "SdrsVmEvacuationAutomationLevel": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DatacenterId",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

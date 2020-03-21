@@ -1,0 +1,105 @@
+{
+    "typeName": "Terraform::AWS::SsmMaintenanceWindow",
+    "description": "CloudFormation equivalent of aws_ssm_maintenance_window",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllowUnassociatedTargets": {
+            "type": "boolean"
+        },
+        "Cutoff": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Duration": {
+            "type": "number"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "EndDate": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Schedule": {
+            "type": "string"
+        },
+        "ScheduleTimezone": {
+            "type": "string"
+        },
+        "StartDate": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Cutoff",
+        "Duration",
+        "Name",
+        "Schedule"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

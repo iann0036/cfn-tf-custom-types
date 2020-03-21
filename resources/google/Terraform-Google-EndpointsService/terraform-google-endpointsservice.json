@@ -1,0 +1,135 @@
+{
+    "typeName": "Terraform::Google::EndpointsService",
+    "description": "CloudFormation equivalent of google_endpoints_service",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Apis": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Methods": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Name": {
+                                    "type": "string"
+                                },
+                                "RequestType": {
+                                    "type": "string"
+                                },
+                                "ResponseType": {
+                                    "type": "string"
+                                },
+                                "Syntax": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Syntax": {
+                        "type": "string"
+                    },
+                    "Version": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "ConfigId": {
+            "type": "string"
+        },
+        "DnsAddress": {
+            "type": "string"
+        },
+        "Endpoints": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Address": {
+                        "type": "string"
+                    },
+                    "Name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "GrpcConfig": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "OpenapiConfig": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ProtocOutputBase64": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ServiceName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Apis",
+        "/properties/ConfigId",
+        "/properties/DnsAddress",
+        "/properties/Endpoints"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

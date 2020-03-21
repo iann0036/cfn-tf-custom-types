@@ -1,0 +1,233 @@
+{
+    "typeName": "Terraform::OraclePaaS::MysqlServiceInstance",
+    "description": "CloudFormation equivalent of oraclepaas_mysql_service_instance",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Backups": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CloudStorageContainer": {
+                    "type": "string"
+                },
+                "CloudStoragePassword": {
+                    "type": "string"
+                },
+                "CloudStorageUsername": {
+                    "type": "string"
+                },
+                "CreateIfMissing": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CloudStorageContainer"
+            ]
+        },
+        "MysqlConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DbName": {
+                    "type": "string"
+                },
+                "DbStorage": {
+                    "type": "number"
+                },
+                "MysqlCharset": {
+                    "type": "string"
+                },
+                "MysqlCollation": {
+                    "type": "string"
+                },
+                "MysqlPassword": {
+                    "type": "string"
+                },
+                "MysqlPort": {
+                    "type": "number"
+                },
+                "MysqlUsername": {
+                    "type": "string"
+                },
+                "SnapshotName": {
+                    "type": "string"
+                },
+                "SourceServiceName": {
+                    "type": "string"
+                },
+                "EnterpriseMonitorConfiguration": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/EnterpriseMonitorConfiguration"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "EnterpriseMonitorConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EmAgentPassword": {
+                    "type": "string"
+                },
+                "EmAgentUsername": {
+                    "type": "string"
+                },
+                "EmPassword": {
+                    "type": "string"
+                },
+                "EmPort": {
+                    "type": "number"
+                },
+                "EmUsername": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AvailabilityDomain": {
+            "type": "string"
+        },
+        "BackupDestination": {
+            "type": "string"
+        },
+        "BaseReleaseVersion": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EmUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpNetwork": {
+            "type": "string"
+        },
+        "MeteringFrequency": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotificationEmail": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ReleaseVersion": {
+            "type": "string"
+        },
+        "ServiceVersion": {
+            "type": "string"
+        },
+        "Shape": {
+            "type": "string"
+        },
+        "SshPublicKey": {
+            "type": "string"
+        },
+        "Subnet": {
+            "type": "string"
+        },
+        "VmUser": {
+            "type": "string"
+        },
+        "Backups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Backups"
+            },
+            "maxItems": 1
+        },
+        "MysqlConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/MysqlConfiguration"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "EnterpriseMonitorConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EnterpriseMonitorConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Shape",
+        "SshPublicKey"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/BaseReleaseVersion",
+        "/properties/EmUrl",
+        "/properties/ReleaseVersion",
+        "/properties/ServiceVersion"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

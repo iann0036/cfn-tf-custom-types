@@ -1,0 +1,211 @@
+{
+    "typeName": "Terraform::AWS::SsmDocument",
+    "description": "CloudFormation equivalent of aws_ssm_document",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AttachmentsSource": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Values": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Key",
+                "Values"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Content": {
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "DefaultVersion": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DocumentFormat": {
+            "type": "string"
+        },
+        "DocumentType": {
+            "type": "string"
+        },
+        "Hash": {
+            "type": "string"
+        },
+        "HashType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LatestVersion": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Owner": {
+            "type": "string"
+        },
+        "Parameter": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "DefaultValue": {
+                        "type": "string"
+                    },
+                    "Description": {
+                        "type": "string"
+                    },
+                    "Name": {
+                        "type": "string"
+                    },
+                    "Type": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Permissions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "PlatformTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "SchemaVersion": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TargetType": {
+            "type": "string"
+        },
+        "AttachmentsSource": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AttachmentsSource"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Content",
+        "DocumentType",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CreatedDate",
+        "/properties/DefaultVersion",
+        "/properties/Description",
+        "/properties/Hash",
+        "/properties/HashType",
+        "/properties/LatestVersion",
+        "/properties/Owner",
+        "/properties/Parameter",
+        "/properties/PlatformTypes",
+        "/properties/SchemaVersion",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

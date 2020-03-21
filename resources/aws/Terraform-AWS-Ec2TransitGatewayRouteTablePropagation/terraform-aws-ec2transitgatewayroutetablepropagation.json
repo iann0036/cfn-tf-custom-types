@@ -1,0 +1,67 @@
+{
+    "typeName": "Terraform::AWS::Ec2TransitGatewayRouteTablePropagation",
+    "description": "CloudFormation equivalent of aws_ec2_transit_gateway_route_table_propagation",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "ResourceId": {
+            "type": "string"
+        },
+        "ResourceType": {
+            "type": "string"
+        },
+        "TransitGatewayAttachmentId": {
+            "type": "string"
+        },
+        "TransitGatewayRouteTableId": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TransitGatewayAttachmentId",
+        "TransitGatewayRouteTableId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ResourceId",
+        "/properties/ResourceType"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

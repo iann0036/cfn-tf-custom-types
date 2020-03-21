@@ -1,0 +1,257 @@
+{
+    "typeName": "Terraform::AWS::CloudwatchMetricAlarm",
+    "description": "CloudFormation equivalent of aws_cloudwatch_metric_alarm",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "MetricQuery": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Expression": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "Label": {
+                    "type": "string"
+                },
+                "ReturnData": {
+                    "type": "boolean"
+                },
+                "Metric": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Metric"
+                    }
+                }
+            },
+            "required": [
+                "Id"
+            ]
+        },
+        "Metric": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Dimensions": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "Key": {
+                                "type": "string"
+                            },
+                            "Value": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Value"
+                        ]
+                    }
+                },
+                "MetricName": {
+                    "type": "string"
+                },
+                "Namespace": {
+                    "type": "string"
+                },
+                "Period": {
+                    "type": "number"
+                },
+                "Stat": {
+                    "type": "string"
+                },
+                "Unit": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MetricName",
+                "Period",
+                "Stat"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActionsEnabled": {
+            "type": "boolean"
+        },
+        "AlarmActions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AlarmDescription": {
+            "type": "string"
+        },
+        "AlarmName": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ComparisonOperator": {
+            "type": "string"
+        },
+        "DatapointsToAlarm": {
+            "type": "number"
+        },
+        "Dimensions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "EvaluateLowSampleCountPercentiles": {
+            "type": "string"
+        },
+        "EvaluationPeriods": {
+            "type": "number"
+        },
+        "ExtendedStatistic": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsufficientDataActions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MetricName": {
+            "type": "string"
+        },
+        "Namespace": {
+            "type": "string"
+        },
+        "OkActions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Period": {
+            "type": "number"
+        },
+        "Statistic": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Threshold": {
+            "type": "number"
+        },
+        "ThresholdMetricId": {
+            "type": "string"
+        },
+        "TreatMissingData": {
+            "type": "string"
+        },
+        "Unit": {
+            "type": "string"
+        },
+        "MetricQuery": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MetricQuery"
+            }
+        },
+        "Metric": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Metric"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "AlarmName",
+        "ComparisonOperator",
+        "EvaluationPeriods"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

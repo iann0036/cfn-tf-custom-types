@@ -1,0 +1,406 @@
+{
+    "typeName": "Terraform::AzureRM::MonitorActionGroup",
+    "description": "CloudFormation equivalent of azurerm_monitor_action_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "ArmRoleReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "RoleId": {
+                    "type": "string"
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name",
+                "RoleId"
+            ]
+        },
+        "AutomationRunbookReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AutomationAccountId": {
+                    "type": "string"
+                },
+                "IsGlobalRunbook": {
+                    "type": "boolean"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RunbookName": {
+                    "type": "string"
+                },
+                "ServiceUri": {
+                    "type": "string"
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean"
+                },
+                "WebhookResourceId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "AutomationAccountId",
+                "IsGlobalRunbook",
+                "Name",
+                "RunbookName",
+                "ServiceUri",
+                "WebhookResourceId"
+            ]
+        },
+        "AzureAppPushReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EmailAddress": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EmailAddress",
+                "Name"
+            ]
+        },
+        "AzureFunctionReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FunctionAppResourceId": {
+                    "type": "string"
+                },
+                "FunctionName": {
+                    "type": "string"
+                },
+                "HttpTriggerUrl": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "FunctionAppResourceId",
+                "FunctionName",
+                "HttpTriggerUrl",
+                "Name"
+            ]
+        },
+        "EmailReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EmailAddress": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "EmailAddress",
+                "Name"
+            ]
+        },
+        "ItsmReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ConnectionId": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Region": {
+                    "type": "string"
+                },
+                "TicketConfiguration": {
+                    "type": "string"
+                },
+                "WorkspaceId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ConnectionId",
+                "Name",
+                "Region",
+                "TicketConfiguration",
+                "WorkspaceId"
+            ]
+        },
+        "LogicAppReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CallbackUrl": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ResourceId": {
+                    "type": "string"
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "CallbackUrl",
+                "Name",
+                "ResourceId"
+            ]
+        },
+        "SmsReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CountryCode": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhoneNumber": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CountryCode",
+                "Name",
+                "PhoneNumber"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VoiceReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CountryCode": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "PhoneNumber": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "CountryCode",
+                "Name",
+                "PhoneNumber"
+            ]
+        },
+        "WebhookReceiver": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "ServiceUri": {
+                    "type": "string"
+                },
+                "UseCommonAlertSchema": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Name",
+                "ServiceUri"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "ShortName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "ArmRoleReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ArmRoleReceiver"
+            }
+        },
+        "AutomationRunbookReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AutomationRunbookReceiver"
+            }
+        },
+        "AzureAppPushReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureAppPushReceiver"
+            }
+        },
+        "AzureFunctionReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureFunctionReceiver"
+            }
+        },
+        "EmailReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailReceiver"
+            }
+        },
+        "ItsmReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ItsmReceiver"
+            }
+        },
+        "LogicAppReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/LogicAppReceiver"
+            }
+        },
+        "SmsReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SmsReceiver"
+            }
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "VoiceReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/VoiceReceiver"
+            }
+        },
+        "WebhookReceiver": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/WebhookReceiver"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "ResourceGroupName",
+        "ShortName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "typeName": "Terraform::Alicloud::DnsRecord",
+    "description": "CloudFormation equivalent of alicloud_dns_record",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "HostRecord": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Locked": {
+            "type": "boolean"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "Routing": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Ttl": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "Value": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HostRecord",
+        "Name",
+        "Type",
+        "Value"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Locked",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

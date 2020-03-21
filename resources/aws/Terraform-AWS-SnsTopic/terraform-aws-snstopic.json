@@ -1,0 +1,128 @@
+{
+    "typeName": "Terraform::AWS::SnsTopic",
+    "description": "CloudFormation equivalent of aws_sns_topic",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ApplicationFailureFeedbackRoleArn": {
+            "type": "string"
+        },
+        "ApplicationSuccessFeedbackRoleArn": {
+            "type": "string"
+        },
+        "ApplicationSuccessFeedbackSampleRate": {
+            "type": "number"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "DeliveryPolicy": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "HttpFailureFeedbackRoleArn": {
+            "type": "string"
+        },
+        "HttpSuccessFeedbackRoleArn": {
+            "type": "string"
+        },
+        "HttpSuccessFeedbackSampleRate": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsMasterKeyId": {
+            "type": "string"
+        },
+        "LambdaFailureFeedbackRoleArn": {
+            "type": "string"
+        },
+        "LambdaSuccessFeedbackRoleArn": {
+            "type": "string"
+        },
+        "LambdaSuccessFeedbackSampleRate": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "Policy": {
+            "type": "string"
+        },
+        "SqsFailureFeedbackRoleArn": {
+            "type": "string"
+        },
+        "SqsSuccessFeedbackRoleArn": {
+            "type": "string"
+        },
+        "SqsSuccessFeedbackSampleRate": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

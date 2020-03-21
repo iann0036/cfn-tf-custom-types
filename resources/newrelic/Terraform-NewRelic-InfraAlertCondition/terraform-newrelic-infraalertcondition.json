@@ -1,0 +1,152 @@
+{
+    "typeName": "Terraform::NewRelic::InfraAlertCondition",
+    "description": "CloudFormation equivalent of newrelic_infra_alert_condition",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Critical": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "TimeFunction": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Duration"
+            ]
+        },
+        "Warning": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Duration": {
+                    "type": "number"
+                },
+                "TimeFunction": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Duration"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Comparison": {
+            "type": "string"
+        },
+        "CreatedAt": {
+            "type": "number"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "Event": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IntegrationProvider": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PolicyId": {
+            "type": "number"
+        },
+        "ProcessWhere": {
+            "type": "string"
+        },
+        "RunbookUrl": {
+            "type": "string"
+        },
+        "Select": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UpdatedAt": {
+            "type": "number"
+        },
+        "ViolationCloseTimer": {
+            "type": "number"
+        },
+        "Where": {
+            "type": "string"
+        },
+        "Critical": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Critical"
+            },
+            "maxItems": 1
+        },
+        "Warning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Warning"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "PolicyId",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedAt",
+        "/properties/UpdatedAt"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

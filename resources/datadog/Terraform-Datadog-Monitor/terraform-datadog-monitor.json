@@ -1,0 +1,171 @@
+{
+    "typeName": "Terraform::Datadog::Monitor",
+    "description": "CloudFormation equivalent of datadog_monitor",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "EnableLogsSample": {
+            "type": "boolean"
+        },
+        "EscalationMessage": {
+            "type": "string"
+        },
+        "EvaluationDelay": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IncludeTags": {
+            "type": "boolean"
+        },
+        "Locked": {
+            "type": "boolean"
+        },
+        "Message": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NewHostDelay": {
+            "type": "number"
+        },
+        "NoDataTimeframe": {
+            "type": "number"
+        },
+        "NotifyAudit": {
+            "type": "boolean"
+        },
+        "NotifyNoData": {
+            "type": "boolean"
+        },
+        "Query": {
+            "type": "string"
+        },
+        "RenotifyInterval": {
+            "type": "number"
+        },
+        "RequireFullWindow": {
+            "type": "boolean"
+        },
+        "Silenced": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "number"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ThresholdWindows": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Thresholds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "TimeoutH": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Message",
+        "Name",
+        "Query",
+        "Type"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

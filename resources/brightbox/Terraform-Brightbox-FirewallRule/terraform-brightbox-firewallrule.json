@@ -1,0 +1,77 @@
+{
+    "typeName": "Terraform::Brightbox::FirewallRule",
+    "description": "CloudFormation equivalent of brightbox_firewall_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Destination": {
+            "type": "string"
+        },
+        "DestinationPort": {
+            "type": "string"
+        },
+        "FirewallPolicy": {
+            "type": "string"
+        },
+        "IcmpTypeName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "SourcePort": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FirewallPolicy"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

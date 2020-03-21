@@ -1,0 +1,118 @@
+{
+    "typeName": "Terraform::AWS::XraySamplingRule",
+    "description": "CloudFormation equivalent of aws_xray_sampling_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Attributes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "FixedRate": {
+            "type": "number"
+        },
+        "Host": {
+            "type": "string"
+        },
+        "HttpMethod": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Priority": {
+            "type": "number"
+        },
+        "ReservoirSize": {
+            "type": "number"
+        },
+        "ResourceArn": {
+            "type": "string"
+        },
+        "RuleName": {
+            "type": "string"
+        },
+        "ServiceName": {
+            "type": "string"
+        },
+        "ServiceType": {
+            "type": "string"
+        },
+        "UrlPath": {
+            "type": "string"
+        },
+        "Version": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "FixedRate",
+        "Host",
+        "HttpMethod",
+        "Priority",
+        "ReservoirSize",
+        "ResourceArn",
+        "ServiceName",
+        "ServiceType",
+        "UrlPath",
+        "Version"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

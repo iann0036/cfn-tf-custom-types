@@ -1,0 +1,164 @@
+{
+    "typeName": "Terraform::AWS::GlueClassifier",
+    "description": "CloudFormation equivalent of aws_glue_classifier",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CsvClassifier": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AllowSingleColumn": {
+                    "type": "boolean"
+                },
+                "ContainsHeader": {
+                    "type": "string"
+                },
+                "Delimiter": {
+                    "type": "string"
+                },
+                "DisableValueTrimming": {
+                    "type": "boolean"
+                },
+                "Header": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "QuoteSymbol": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "GrokClassifier": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Classification": {
+                    "type": "string"
+                },
+                "CustomPatterns": {
+                    "type": "string"
+                },
+                "GrokPattern": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Classification",
+                "GrokPattern"
+            ]
+        },
+        "JsonClassifier": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "JsonPath": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "JsonPath"
+            ]
+        },
+        "XmlClassifier": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Classification": {
+                    "type": "string"
+                },
+                "RowTag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Classification",
+                "RowTag"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "CsvClassifier": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CsvClassifier"
+            },
+            "maxItems": 1
+        },
+        "GrokClassifier": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/GrokClassifier"
+            },
+            "maxItems": 1
+        },
+        "JsonClassifier": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/JsonClassifier"
+            },
+            "maxItems": 1
+        },
+        "XmlClassifier": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/XmlClassifier"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

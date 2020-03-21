@@ -1,0 +1,305 @@
+{
+    "typeName": "Terraform::AzureRM::VpnServerConfiguration",
+    "description": "CloudFormation equivalent of azurerm_vpn_server_configuration",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "AzureActiveDirectoryAuthentication": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Audience": {
+                    "type": "string"
+                },
+                "Issuer": {
+                    "type": "string"
+                },
+                "Tenant": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Audience",
+                "Issuer",
+                "Tenant"
+            ]
+        },
+        "ClientRevokedCertificate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Thumbprint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Thumbprint"
+            ]
+        },
+        "ClientRootCertificate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Thumbprint": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "Thumbprint"
+            ]
+        },
+        "IpsecPolicy": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DhGroup": {
+                    "type": "string"
+                },
+                "IkeEncryption": {
+                    "type": "string"
+                },
+                "IkeIntegrity": {
+                    "type": "string"
+                },
+                "IpsecEncryption": {
+                    "type": "string"
+                },
+                "IpsecIntegrity": {
+                    "type": "string"
+                },
+                "PfsGroup": {
+                    "type": "string"
+                },
+                "SaDataSizeKilobytes": {
+                    "type": "number"
+                },
+                "SaLifetimeSeconds": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DhGroup",
+                "IkeEncryption",
+                "IkeIntegrity",
+                "IpsecEncryption",
+                "IpsecIntegrity",
+                "PfsGroup",
+                "SaDataSizeKilobytes",
+                "SaLifetimeSeconds"
+            ]
+        },
+        "RadiusServer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Address": {
+                    "type": "string"
+                },
+                "Secret": {
+                    "type": "string"
+                },
+                "ClientRootCertificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ClientRootCertificate"
+                    }
+                },
+                "ServerRootCertificate": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "$ref": "#/definitions/ServerRootCertificate"
+                    }
+                }
+            },
+            "required": [
+                "Address",
+                "Secret"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Read": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "ServerRootCertificate": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "PublicCertData": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name",
+                "PublicCertData"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Location": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ResourceGroupName": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "VpnAuthenticationTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VpnProtocols": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AzureActiveDirectoryAuthentication": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/AzureActiveDirectoryAuthentication"
+            }
+        },
+        "ClientRevokedCertificate": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClientRevokedCertificate"
+            }
+        },
+        "ClientRootCertificate": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ClientRootCertificate"
+            }
+        },
+        "IpsecPolicy": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpsecPolicy"
+            },
+            "maxItems": 1
+        },
+        "RadiusServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RadiusServer"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        },
+        "ServerRootCertificate": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/ServerRootCertificate"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Location",
+        "Name",
+        "ResourceGroupName",
+        "VpnAuthenticationTypes"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

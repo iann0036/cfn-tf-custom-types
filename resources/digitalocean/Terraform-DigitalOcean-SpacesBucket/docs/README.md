@@ -12,14 +12,11 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::DigitalOcean::SpacesBucket",
     "Properties" : {
-        "<a href="#tfcfnid" title="tfcfnid">tfcfnid</a>" : <i>String</i>,
         "<a href="#acl" title="Acl">Acl</a>" : <i>String</i>,
-        "<a href="#bucketdomainname" title="BucketDomainName">BucketDomainName</a>" : <i>String</i>,
         "<a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>" : <i>Boolean</i>,
         "<a href="#id" title="Id">Id</a>" : <i>String</i>,
         "<a href="#name" title="Name">Name</a>" : <i>String</i>,
         "<a href="#region" title="Region">Region</a>" : <i>String</i>,
-        "<a href="#urn" title="Urn">Urn</a>" : <i>String</i>,
         "<a href="#corsrule" title="CorsRule">CorsRule</a>" : <i>[ &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;, ... ]</i>
     }
 }
@@ -30,39 +27,18 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::DigitalOcean::SpacesBucket
 Properties:
-    <a href="#tfcfnid" title="tfcfnid">tfcfnid</a>: <i>String</i>
     <a href="#acl" title="Acl">Acl</a>: <i>String</i>
-    <a href="#bucketdomainname" title="BucketDomainName">BucketDomainName</a>: <i>String</i>
     <a href="#forcedestroy" title="ForceDestroy">ForceDestroy</a>: <i>Boolean</i>
     <a href="#id" title="Id">Id</a>: <i>String</i>
     <a href="#name" title="Name">Name</a>: <i>String</i>
     <a href="#region" title="Region">Region</a>: <i>String</i>
-    <a href="#urn" title="Urn">Urn</a>: <i>String</i>
     <a href="#corsrule" title="CorsRule">CorsRule</a>: <i>
       - &lt;a href=&#34;corsrule.md&#34;&gt;CorsRule&lt;/a&gt;</i>
 </pre>
 
 ## Properties
 
-#### tfcfnid
-
-Internal identifier for tracking resource changes. Do not use.
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
 #### Acl
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### BucketDomainName
 
 _Required_: No
 
@@ -95,14 +71,6 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Urn
 
 _Required_: No
 

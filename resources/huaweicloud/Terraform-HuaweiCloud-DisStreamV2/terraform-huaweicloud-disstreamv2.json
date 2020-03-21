@@ -1,0 +1,117 @@
+{
+    "typeName": "Terraform::HuaweiCloud::DisStreamV2",
+    "description": "CloudFormation equivalent of huaweicloud_dis_stream_v2",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Tags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AutoScaleMaxPartitionCount": {
+            "type": "number"
+        },
+        "AutoScaleMinPartitionCount": {
+            "type": "number"
+        },
+        "CompressionFormat": {
+            "type": "string"
+        },
+        "Created": {
+            "type": "number"
+        },
+        "CsvDelimiter": {
+            "type": "string"
+        },
+        "DataSchema": {
+            "type": "string"
+        },
+        "DataType": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PartitionCount": {
+            "type": "number"
+        },
+        "ReadablePartitionCount": {
+            "type": "number"
+        },
+        "RetentionPeriod": {
+            "type": "number"
+        },
+        "StreamName": {
+            "type": "string"
+        },
+        "StreamType": {
+            "type": "string"
+        },
+        "WritablePartitionCount": {
+            "type": "number"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Tags"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "PartitionCount",
+        "StreamName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Created",
+        "/properties/ReadablePartitionCount",
+        "/properties/WritablePartitionCount"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

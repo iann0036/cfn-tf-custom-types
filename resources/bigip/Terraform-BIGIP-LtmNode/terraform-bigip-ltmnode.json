@@ -1,0 +1,112 @@
+{
+    "typeName": "Terraform::BIGIP::LtmNode",
+    "description": "CloudFormation equivalent of bigip_ltm_node",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Fqdn": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AddressFamily": {
+                    "type": "string"
+                },
+                "Autopopulate": {
+                    "type": "string"
+                },
+                "Downinterval": {
+                    "type": "number"
+                },
+                "Interval": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Address": {
+            "type": "string"
+        },
+        "ConnectionLimit": {
+            "type": "number"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DynamicRatio": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Monitor": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "RateLimit": {
+            "type": "string"
+        },
+        "Ratio": {
+            "type": "number"
+        },
+        "State": {
+            "type": "string"
+        },
+        "Fqdn": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Fqdn"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Address",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

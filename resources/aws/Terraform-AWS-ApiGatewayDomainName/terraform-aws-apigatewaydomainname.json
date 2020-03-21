@@ -1,0 +1,148 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayDomainName",
+    "description": "CloudFormation equivalent of aws_api_gateway_domain_name",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EndpointConfiguration": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Types": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Types"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificateArn": {
+            "type": "string"
+        },
+        "CertificateBody": {
+            "type": "string"
+        },
+        "CertificateChain": {
+            "type": "string"
+        },
+        "CertificateName": {
+            "type": "string"
+        },
+        "CertificatePrivateKey": {
+            "type": "string"
+        },
+        "CertificateUploadDate": {
+            "type": "string"
+        },
+        "CloudfrontDomainName": {
+            "type": "string"
+        },
+        "CloudfrontZoneId": {
+            "type": "string"
+        },
+        "DomainName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "RegionalCertificateArn": {
+            "type": "string"
+        },
+        "RegionalCertificateName": {
+            "type": "string"
+        },
+        "RegionalDomainName": {
+            "type": "string"
+        },
+        "RegionalZoneId": {
+            "type": "string"
+        },
+        "SecurityPolicy": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "EndpointConfiguration": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EndpointConfiguration"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DomainName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CertificateUploadDate",
+        "/properties/CloudfrontDomainName",
+        "/properties/CloudfrontZoneId",
+        "/properties/RegionalDomainName",
+        "/properties/RegionalZoneId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

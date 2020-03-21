@@ -1,0 +1,145 @@
+{
+    "typeName": "Terraform::PagerDuty::Schedule",
+    "description": "CloudFormation equivalent of pagerduty_schedule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Layer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "End": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "RotationTurnLengthSeconds": {
+                    "type": "number"
+                },
+                "RotationVirtualStart": {
+                    "type": "string"
+                },
+                "Start": {
+                    "type": "string"
+                },
+                "Users": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Restriction": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Restriction"
+                    }
+                }
+            },
+            "required": [
+                "RotationTurnLengthSeconds",
+                "RotationVirtualStart",
+                "Start",
+                "Users"
+            ]
+        },
+        "Restriction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DurationSeconds": {
+                    "type": "number"
+                },
+                "StartDayOfWeek": {
+                    "type": "number"
+                },
+                "StartTimeOfDay": {
+                    "type": "string"
+                },
+                "Type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "DurationSeconds",
+                "StartTimeOfDay",
+                "Type"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Overflow": {
+            "type": "boolean"
+        },
+        "TimeZone": {
+            "type": "string"
+        },
+        "Layer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Layer"
+            },
+            "minItems": 1
+        },
+        "Restriction": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Restriction"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "TimeZone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

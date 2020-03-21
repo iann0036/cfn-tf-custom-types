@@ -1,0 +1,76 @@
+{
+    "typeName": "Terraform::VSphere::File",
+    "description": "CloudFormation equivalent of vsphere_file",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreateDirectories": {
+            "type": "boolean"
+        },
+        "Datacenter": {
+            "type": "string"
+        },
+        "Datastore": {
+            "type": "string"
+        },
+        "DestinationFile": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SourceDatacenter": {
+            "type": "string"
+        },
+        "SourceDatastore": {
+            "type": "string"
+        },
+        "SourceFile": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Datastore",
+        "DestinationFile",
+        "SourceFile"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

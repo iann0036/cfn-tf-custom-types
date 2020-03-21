@@ -1,0 +1,108 @@
+{
+    "typeName": "Terraform::AWS::EbsSnapshotCopy",
+    "description": "CloudFormation equivalent of aws_ebs_snapshot_copy",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DataEncryptionKeyId": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Encrypted": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "OwnerAlias": {
+            "type": "string"
+        },
+        "OwnerId": {
+            "type": "string"
+        },
+        "SourceRegion": {
+            "type": "string"
+        },
+        "SourceSnapshotId": {
+            "type": "string"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "VolumeId": {
+            "type": "string"
+        },
+        "VolumeSize": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "SourceRegion",
+        "SourceSnapshotId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DataEncryptionKeyId",
+        "/properties/OwnerAlias",
+        "/properties/OwnerId",
+        "/properties/VolumeId",
+        "/properties/VolumeSize"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

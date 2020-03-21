@@ -1,0 +1,301 @@
+{
+    "typeName": "Terraform::Panos::ApplicationObject",
+    "description": "CloudFormation equivalent of panos_application_object",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Defaults": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Icmp": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Icmp"
+                    }
+                },
+                "Icmp6": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Icmp6"
+                    }
+                },
+                "IpProtocol": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/IpProtocol"
+                    }
+                },
+                "Port": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "$ref": "#/definitions/Port"
+                    }
+                }
+            },
+            "required": []
+        },
+        "Scanning": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DataPatterns": {
+                    "type": "boolean"
+                },
+                "FileTypes": {
+                    "type": "boolean"
+                },
+                "Viruses": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "TimeoutSettings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TcpHalfClosed": {
+                    "type": "number"
+                },
+                "TcpTimeWait": {
+                    "type": "number"
+                },
+                "TcpTimeout": {
+                    "type": "number"
+                },
+                "Timeout": {
+                    "type": "number"
+                },
+                "UdpTimeout": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "Icmp": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "Icmp6": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Code": {
+                    "type": "number"
+                },
+                "Type": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Type"
+            ]
+        },
+        "IpProtocol": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Value"
+            ]
+        },
+        "Port": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ports": {
+                    "type": "array",
+                    "insertionOrder": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "Ports"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AbleToFileTransfer": {
+            "type": "boolean"
+        },
+        "AlgDisableCapability": {
+            "type": "string"
+        },
+        "Category": {
+            "type": "string"
+        },
+        "ContinueScanningForOtherApplications": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "EvasiveBehavior": {
+            "type": "boolean"
+        },
+        "ExcessiveBandwidth": {
+            "type": "boolean"
+        },
+        "HasKnownVulnerability": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NoAppIdCaching": {
+            "type": "boolean"
+        },
+        "ParentApp": {
+            "type": "string"
+        },
+        "PervasiveUse": {
+            "type": "boolean"
+        },
+        "ProneToMisuse": {
+            "type": "boolean"
+        },
+        "Risk": {
+            "type": "number"
+        },
+        "Subcategory": {
+            "type": "string"
+        },
+        "Technology": {
+            "type": "string"
+        },
+        "TunnelsOtherApplications": {
+            "type": "boolean"
+        },
+        "UsedByMalware": {
+            "type": "boolean"
+        },
+        "Vsys": {
+            "type": "string"
+        },
+        "Defaults": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Defaults"
+            },
+            "maxItems": 1
+        },
+        "Scanning": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Scanning"
+            },
+            "maxItems": 1
+        },
+        "TimeoutSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TimeoutSettings"
+            },
+            "maxItems": 1
+        },
+        "Icmp": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Icmp"
+            },
+            "maxItems": 1
+        },
+        "Icmp6": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Icmp6"
+            },
+            "maxItems": 1
+        },
+        "IpProtocol": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/IpProtocol"
+            },
+            "maxItems": 1
+        },
+        "Port": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Port"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Category",
+        "Name",
+        "Subcategory",
+        "Technology"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,154 @@
+{
+    "typeName": "Terraform::Google::AppEngineApplication",
+    "description": "CloudFormation equivalent of google_app_engine_application",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "FeatureSettings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "SplitHealthChecks": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "SplitHealthChecks"
+            ]
+        },
+        "Iap": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Oauth2ClientId": {
+                    "type": "string"
+                },
+                "Oauth2ClientSecret": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Oauth2ClientId",
+                "Oauth2ClientSecret"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppId": {
+            "type": "string"
+        },
+        "AuthDomain": {
+            "type": "string"
+        },
+        "CodeBucket": {
+            "type": "string"
+        },
+        "DefaultBucket": {
+            "type": "string"
+        },
+        "DefaultHostname": {
+            "type": "string"
+        },
+        "GcrDomain": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocationId": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ServingStatus": {
+            "type": "string"
+        },
+        "UrlDispatchRule": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Domain": {
+                        "type": "string"
+                    },
+                    "Path": {
+                        "type": "string"
+                    },
+                    "Service": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "FeatureSettings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FeatureSettings"
+            },
+            "maxItems": 1
+        },
+        "Iap": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Iap"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "LocationId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AppId",
+        "/properties/CodeBucket",
+        "/properties/DefaultBucket",
+        "/properties/DefaultHostname",
+        "/properties/GcrDomain",
+        "/properties/Name",
+        "/properties/UrlDispatchRule"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,124 @@
+{
+    "typeName": "Terraform::Gitlab::ServiceSlack",
+    "description": "CloudFormation equivalent of gitlab_service_slack",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ConfidentialIssueChannel": {
+            "type": "string"
+        },
+        "ConfidentialIssuesEvents": {
+            "type": "boolean"
+        },
+        "ConfidentialNoteEvents": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IssueChannel": {
+            "type": "string"
+        },
+        "IssuesEvents": {
+            "type": "boolean"
+        },
+        "JobEvents": {
+            "type": "boolean"
+        },
+        "MergeRequestChannel": {
+            "type": "string"
+        },
+        "MergeRequestsEvents": {
+            "type": "boolean"
+        },
+        "NoteChannel": {
+            "type": "string"
+        },
+        "NoteEvents": {
+            "type": "boolean"
+        },
+        "NotifyOnlyBrokenPipelines": {
+            "type": "boolean"
+        },
+        "NotifyOnlyDefaultBranch": {
+            "type": "boolean"
+        },
+        "PipelineChannel": {
+            "type": "string"
+        },
+        "PipelineEvents": {
+            "type": "boolean"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "PushChannel": {
+            "type": "string"
+        },
+        "PushEvents": {
+            "type": "boolean"
+        },
+        "TagPushChannel": {
+            "type": "string"
+        },
+        "TagPushEvents": {
+            "type": "boolean"
+        },
+        "Username": {
+            "type": "string"
+        },
+        "Webhook": {
+            "type": "string"
+        },
+        "WikiPageChannel": {
+            "type": "string"
+        },
+        "WikiPageEvents": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Project",
+        "Webhook"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/JobEvents"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,140 @@
+{
+    "typeName": "Terraform::VCD::NetworkIsolated",
+    "description": "CloudFormation equivalent of vcd_network_isolated",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DhcpPool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DefaultLeaseTime": {
+                    "type": "number"
+                },
+                "EndAddress": {
+                    "type": "string"
+                },
+                "MaxLeaseTime": {
+                    "type": "number"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndAddress",
+                "StartAddress"
+            ]
+        },
+        "StaticIpPool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "EndAddress": {
+                    "type": "string"
+                },
+                "StartAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EndAddress",
+                "StartAddress"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Dns1": {
+            "type": "string"
+        },
+        "Dns2": {
+            "type": "string"
+        },
+        "DnsSuffix": {
+            "type": "string"
+        },
+        "Gateway": {
+            "type": "string"
+        },
+        "Href": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Netmask": {
+            "type": "string"
+        },
+        "Org": {
+            "type": "string"
+        },
+        "Shared": {
+            "type": "boolean"
+        },
+        "Vdc": {
+            "type": "string"
+        },
+        "DhcpPool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/DhcpPool"
+            }
+        },
+        "StaticIpPool": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/StaticIpPool"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Href"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,149 @@
+{
+    "typeName": "Terraform::Vault::LdapAuthBackend",
+    "description": "CloudFormation equivalent of vault_ldap_auth_backend",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Accessor": {
+            "type": "string"
+        },
+        "Binddn": {
+            "type": "string"
+        },
+        "Bindpass": {
+            "type": "string"
+        },
+        "Certificate": {
+            "type": "string"
+        },
+        "DenyNullBind": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Discoverdn": {
+            "type": "boolean"
+        },
+        "Groupattr": {
+            "type": "string"
+        },
+        "Groupdn": {
+            "type": "string"
+        },
+        "Groupfilter": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InsecureTls": {
+            "type": "boolean"
+        },
+        "Path": {
+            "type": "string"
+        },
+        "Starttls": {
+            "type": "boolean"
+        },
+        "TlsMaxVersion": {
+            "type": "string"
+        },
+        "TlsMinVersion": {
+            "type": "string"
+        },
+        "TokenBoundCidrs": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenExplicitMaxTtl": {
+            "type": "number"
+        },
+        "TokenMaxTtl": {
+            "type": "number"
+        },
+        "TokenNoDefaultPolicy": {
+            "type": "boolean"
+        },
+        "TokenNumUses": {
+            "type": "number"
+        },
+        "TokenPeriod": {
+            "type": "number"
+        },
+        "TokenPolicies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TokenTtl": {
+            "type": "number"
+        },
+        "TokenType": {
+            "type": "string"
+        },
+        "Upndomain": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "UseTokenGroups": {
+            "type": "boolean"
+        },
+        "Userattr": {
+            "type": "string"
+        },
+        "Userdn": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Accessor"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

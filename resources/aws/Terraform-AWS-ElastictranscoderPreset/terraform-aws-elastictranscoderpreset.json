@@ -1,0 +1,283 @@
+{
+    "typeName": "Terraform::AWS::ElastictranscoderPreset",
+    "description": "CloudFormation equivalent of aws_elastictranscoder_preset",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Audio": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AudioPackingMode": {
+                    "type": "string"
+                },
+                "BitRate": {
+                    "type": "string"
+                },
+                "Channels": {
+                    "type": "string"
+                },
+                "Codec": {
+                    "type": "string"
+                },
+                "SampleRate": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "AudioCodecOptions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "BitDepth": {
+                    "type": "string"
+                },
+                "BitOrder": {
+                    "type": "string"
+                },
+                "Profile": {
+                    "type": "string"
+                },
+                "Signed": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Thumbnails": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AspectRatio": {
+                    "type": "string"
+                },
+                "Format": {
+                    "type": "string"
+                },
+                "Interval": {
+                    "type": "string"
+                },
+                "MaxHeight": {
+                    "type": "string"
+                },
+                "MaxWidth": {
+                    "type": "string"
+                },
+                "PaddingPolicy": {
+                    "type": "string"
+                },
+                "Resolution": {
+                    "type": "string"
+                },
+                "SizingPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Video": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AspectRatio": {
+                    "type": "string"
+                },
+                "BitRate": {
+                    "type": "string"
+                },
+                "Codec": {
+                    "type": "string"
+                },
+                "DisplayAspectRatio": {
+                    "type": "string"
+                },
+                "FixedGop": {
+                    "type": "string"
+                },
+                "FrameRate": {
+                    "type": "string"
+                },
+                "KeyframesMaxDist": {
+                    "type": "string"
+                },
+                "MaxFrameRate": {
+                    "type": "string"
+                },
+                "MaxHeight": {
+                    "type": "string"
+                },
+                "MaxWidth": {
+                    "type": "string"
+                },
+                "PaddingPolicy": {
+                    "type": "string"
+                },
+                "Resolution": {
+                    "type": "string"
+                },
+                "SizingPolicy": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "VideoWatermarks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "HorizontalAlign": {
+                    "type": "string"
+                },
+                "HorizontalOffset": {
+                    "type": "string"
+                },
+                "Id": {
+                    "type": "string"
+                },
+                "MaxHeight": {
+                    "type": "string"
+                },
+                "MaxWidth": {
+                    "type": "string"
+                },
+                "Opacity": {
+                    "type": "string"
+                },
+                "SizingPolicy": {
+                    "type": "string"
+                },
+                "Target": {
+                    "type": "string"
+                },
+                "VerticalAlign": {
+                    "type": "string"
+                },
+                "VerticalOffset": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "Container": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "VideoCodecOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Audio": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Audio"
+            },
+            "maxItems": 1
+        },
+        "AudioCodecOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/AudioCodecOptions"
+            },
+            "maxItems": 1
+        },
+        "Thumbnails": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Thumbnails"
+            },
+            "maxItems": 1
+        },
+        "Video": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Video"
+            },
+            "maxItems": 1
+        },
+        "VideoWatermarks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VideoWatermarks"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Container"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

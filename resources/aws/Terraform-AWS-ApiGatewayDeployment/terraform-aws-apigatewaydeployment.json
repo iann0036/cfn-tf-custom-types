@@ -1,0 +1,96 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayDeployment",
+    "description": "CloudFormation equivalent of aws_api_gateway_deployment",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CreatedDate": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "ExecutionArn": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InvokeUrl": {
+            "type": "string"
+        },
+        "RestApiId": {
+            "type": "string"
+        },
+        "StageDescription": {
+            "type": "string"
+        },
+        "StageName": {
+            "type": "string"
+        },
+        "Variables": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "RestApiId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreatedDate",
+        "/properties/ExecutionArn",
+        "/properties/InvokeUrl"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

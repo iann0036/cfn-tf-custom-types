@@ -1,0 +1,376 @@
+{
+    "typeName": "Terraform::NSXT::LbHttpRequestRewriteRule",
+    "description": "CloudFormation equivalent of nsxt_lb_http_request_rewrite_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "BodyCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Value"
+            ]
+        },
+        "CookieCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Name",
+                "Value"
+            ]
+        },
+        "HeaderCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Name",
+                "Value"
+            ]
+        },
+        "HeaderRewriteAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Name": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Name"
+            ]
+        },
+        "IpCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "SourceAddress": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourceAddress"
+            ]
+        },
+        "MethodCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "Method": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Method"
+            ]
+        },
+        "Tag": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Scope",
+                "Tag"
+            ]
+        },
+        "TcpCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "SourcePort": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "SourcePort"
+            ]
+        },
+        "UriArgumentsCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "UriArguments": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "UriArguments"
+            ]
+        },
+        "UriCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CaseSensitive": {
+                    "type": "boolean"
+                },
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "MatchType": {
+                    "type": "string"
+                },
+                "Uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MatchType",
+                "Uri"
+            ]
+        },
+        "UriRewriteAction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Uri": {
+                    "type": "string"
+                },
+                "UriArguments": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Uri"
+            ]
+        },
+        "VersionCondition": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Inverse": {
+                    "type": "boolean"
+                },
+                "Version": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Version"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MatchStrategy": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "BodyCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/BodyCondition"
+            }
+        },
+        "CookieCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/CookieCondition"
+            }
+        },
+        "HeaderCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HeaderCondition"
+            }
+        },
+        "HeaderRewriteAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/HeaderRewriteAction"
+            },
+            "maxItems": 1
+        },
+        "IpCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/IpCondition"
+            }
+        },
+        "MethodCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/MethodCondition"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tag"
+            }
+        },
+        "TcpCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/TcpCondition"
+            }
+        },
+        "UriArgumentsCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UriArgumentsCondition"
+            }
+        },
+        "UriCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UriCondition"
+            }
+        },
+        "UriRewriteAction": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/UriRewriteAction"
+            },
+            "maxItems": 1
+        },
+        "VersionCondition": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/VersionCondition"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

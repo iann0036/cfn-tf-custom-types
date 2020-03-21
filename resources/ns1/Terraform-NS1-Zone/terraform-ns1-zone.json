@@ -1,0 +1,131 @@
+{
+    "typeName": "Terraform::NS1::Zone",
+    "description": "CloudFormation equivalent of ns1_zone",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Secondaries": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ip": {
+                    "type": "string"
+                },
+                "Notify": {
+                    "type": "boolean"
+                },
+                "Port": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "Ip"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdditionalPrimaries": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AutogenerateNsRecord": {
+            "type": "boolean"
+        },
+        "DnsServers": {
+            "type": "string"
+        },
+        "Dnssec": {
+            "type": "boolean"
+        },
+        "Expiry": {
+            "type": "number"
+        },
+        "Hostmaster": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Link": {
+            "type": "string"
+        },
+        "Networks": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "number"
+            }
+        },
+        "NxTtl": {
+            "type": "number"
+        },
+        "Primary": {
+            "type": "string"
+        },
+        "Refresh": {
+            "type": "number"
+        },
+        "Retry": {
+            "type": "number"
+        },
+        "Ttl": {
+            "type": "number"
+        },
+        "Zone": {
+            "type": "string"
+        },
+        "Secondaries": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Secondaries"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Zone"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/DnsServers",
+        "/properties/Hostmaster"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

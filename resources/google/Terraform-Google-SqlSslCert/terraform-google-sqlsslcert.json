@@ -1,0 +1,91 @@
+{
+    "typeName": "Terraform::Google::SqlSslCert",
+    "description": "CloudFormation equivalent of google_sql_ssl_cert",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cert": {
+            "type": "string"
+        },
+        "CertSerialNumber": {
+            "type": "string"
+        },
+        "CommonName": {
+            "type": "string"
+        },
+        "CreateTime": {
+            "type": "string"
+        },
+        "ExpirationTime": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Instance": {
+            "type": "string"
+        },
+        "PrivateKey": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "ServerCaCert": {
+            "type": "string"
+        },
+        "Sha1Fingerprint": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CommonName",
+        "Instance"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cert",
+        "/properties/CertSerialNumber",
+        "/properties/CreateTime",
+        "/properties/ExpirationTime",
+        "/properties/PrivateKey",
+        "/properties/ServerCaCert",
+        "/properties/Sha1Fingerprint"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

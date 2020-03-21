@@ -1,0 +1,84 @@
+{
+    "typeName": "Terraform::AWS::ApiGatewayAuthorizer",
+    "description": "CloudFormation equivalent of aws_api_gateway_authorizer",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthorizerCredentials": {
+            "type": "string"
+        },
+        "AuthorizerResultTtlInSeconds": {
+            "type": "number"
+        },
+        "AuthorizerUri": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IdentitySource": {
+            "type": "string"
+        },
+        "IdentityValidationExpression": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "ProviderArns": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "RestApiId": {
+            "type": "string"
+        },
+        "Type": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "RestApiId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

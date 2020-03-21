@@ -1,0 +1,280 @@
+{
+    "typeName": "Terraform::Google::ComputeHealthCheck",
+    "description": "CloudFormation equivalent of google_compute_health_check",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Http2HealthCheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortName": {
+                    "type": "string"
+                },
+                "PortSpecification": {
+                    "type": "string"
+                },
+                "ProxyHeader": {
+                    "type": "string"
+                },
+                "RequestPath": {
+                    "type": "string"
+                },
+                "Response": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HttpHealthCheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortName": {
+                    "type": "string"
+                },
+                "PortSpecification": {
+                    "type": "string"
+                },
+                "ProxyHeader": {
+                    "type": "string"
+                },
+                "RequestPath": {
+                    "type": "string"
+                },
+                "Response": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "HttpsHealthCheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Host": {
+                    "type": "string"
+                },
+                "Port": {
+                    "type": "number"
+                },
+                "PortName": {
+                    "type": "string"
+                },
+                "PortSpecification": {
+                    "type": "string"
+                },
+                "ProxyHeader": {
+                    "type": "string"
+                },
+                "RequestPath": {
+                    "type": "string"
+                },
+                "Response": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "SslHealthCheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "PortName": {
+                    "type": "string"
+                },
+                "PortSpecification": {
+                    "type": "string"
+                },
+                "ProxyHeader": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "string"
+                },
+                "Response": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "TcpHealthCheck": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Port": {
+                    "type": "number"
+                },
+                "PortName": {
+                    "type": "string"
+                },
+                "PortSpecification": {
+                    "type": "string"
+                },
+                "ProxyHeader": {
+                    "type": "string"
+                },
+                "Request": {
+                    "type": "string"
+                },
+                "Response": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CheckIntervalSec": {
+            "type": "number"
+        },
+        "CreationTimestamp": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "HealthyThreshold": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SelfLink": {
+            "type": "string"
+        },
+        "TimeoutSec": {
+            "type": "number"
+        },
+        "Type": {
+            "type": "string"
+        },
+        "UnhealthyThreshold": {
+            "type": "number"
+        },
+        "Http2HealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Http2HealthCheck"
+            },
+            "maxItems": 1
+        },
+        "HttpHealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpHealthCheck"
+            },
+            "maxItems": 1
+        },
+        "HttpsHealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/HttpsHealthCheck"
+            },
+            "maxItems": 1
+        },
+        "SslHealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SslHealthCheck"
+            },
+            "maxItems": 1
+        },
+        "TcpHealthCheck": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/TcpHealthCheck"
+            },
+            "maxItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/CreationTimestamp",
+        "/properties/SelfLink",
+        "/properties/Type"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

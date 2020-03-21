@@ -1,0 +1,103 @@
+{
+    "typeName": "Terraform::CloudStack::Template",
+    "description": "CloudFormation equivalent of cloudstack_template",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "DisplayText": {
+            "type": "string"
+        },
+        "Format": {
+            "type": "string"
+        },
+        "Hypervisor": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IsDynamicallyScalable": {
+            "type": "boolean"
+        },
+        "IsExtractable": {
+            "type": "boolean"
+        },
+        "IsFeatured": {
+            "type": "boolean"
+        },
+        "IsPublic": {
+            "type": "boolean"
+        },
+        "IsReady": {
+            "type": "boolean"
+        },
+        "IsReadyTimeout": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "OsType": {
+            "type": "string"
+        },
+        "PasswordEnabled": {
+            "type": "boolean"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "Url": {
+            "type": "string"
+        },
+        "Zone": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Format",
+        "Hypervisor",
+        "Name",
+        "OsType",
+        "Url"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/IsReady"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

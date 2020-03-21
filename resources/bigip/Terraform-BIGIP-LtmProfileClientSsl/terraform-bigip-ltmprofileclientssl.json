@@ -1,0 +1,241 @@
+{
+    "typeName": "Terraform::BIGIP::LtmProfileClientSsl",
+    "description": "CloudFormation equivalent of bigip_ltm_profile_client_ssl",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CertKeyChain": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Cert": {
+                    "type": "string"
+                },
+                "Chain": {
+                    "type": "string"
+                },
+                "Key": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Passphrase": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AlertTimeout": {
+            "type": "string"
+        },
+        "AllowNonSsl": {
+            "type": "string"
+        },
+        "Authenticate": {
+            "type": "string"
+        },
+        "AuthenticateDepth": {
+            "type": "number"
+        },
+        "CaFile": {
+            "type": "string"
+        },
+        "CacheSize": {
+            "type": "number"
+        },
+        "CacheTimeout": {
+            "type": "number"
+        },
+        "Cert": {
+            "type": "string"
+        },
+        "CertExtensionIncludes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "CertLifeSpan": {
+            "type": "number"
+        },
+        "CertLookupByIpaddrPort": {
+            "type": "string"
+        },
+        "Chain": {
+            "type": "string"
+        },
+        "Ciphers": {
+            "type": "string"
+        },
+        "ClientCertCa": {
+            "type": "string"
+        },
+        "CrlFile": {
+            "type": "string"
+        },
+        "DefaultsFrom": {
+            "type": "string"
+        },
+        "ForwardProxyBypassDefaultAction": {
+            "type": "string"
+        },
+        "FullPath": {
+            "type": "string"
+        },
+        "Generation": {
+            "type": "number"
+        },
+        "GenericAlert": {
+            "type": "string"
+        },
+        "HandshakeTimeout": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InheritCertKeychain": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "ModSslMethods": {
+            "type": "string"
+        },
+        "Mode": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Partition": {
+            "type": "string"
+        },
+        "Passphrase": {
+            "type": "string"
+        },
+        "PeerCertMode": {
+            "type": "string"
+        },
+        "ProxyCaCert": {
+            "type": "string"
+        },
+        "ProxyCaKey": {
+            "type": "string"
+        },
+        "ProxyCaPassphrase": {
+            "type": "string"
+        },
+        "ProxySsl": {
+            "type": "string"
+        },
+        "ProxySslPassthrough": {
+            "type": "string"
+        },
+        "RenegotiatePeriod": {
+            "type": "string"
+        },
+        "RenegotiateSize": {
+            "type": "string"
+        },
+        "Renegotiation": {
+            "type": "string"
+        },
+        "RetainCertificate": {
+            "type": "string"
+        },
+        "SecureRenegotiation": {
+            "type": "string"
+        },
+        "ServerName": {
+            "type": "string"
+        },
+        "SessionMirroring": {
+            "type": "string"
+        },
+        "SessionTicket": {
+            "type": "string"
+        },
+        "SniDefault": {
+            "type": "string"
+        },
+        "SniRequire": {
+            "type": "string"
+        },
+        "SslForwardProxy": {
+            "type": "string"
+        },
+        "SslForwardProxyBypass": {
+            "type": "string"
+        },
+        "SslSignHash": {
+            "type": "string"
+        },
+        "StrictResume": {
+            "type": "string"
+        },
+        "TmOptions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "UncleanShutdown": {
+            "type": "string"
+        },
+        "CertKeyChain": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CertKeyChain"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

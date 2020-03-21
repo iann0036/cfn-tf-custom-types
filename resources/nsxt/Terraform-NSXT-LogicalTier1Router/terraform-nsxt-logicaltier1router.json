@@ -1,0 +1,133 @@
+{
+    "typeName": "Terraform::NSXT::LogicalTier1Router",
+    "description": "CloudFormation equivalent of nsxt_logical_tier1_router",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "FirewallSections": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "TargetId": {
+                    "type": "string"
+                },
+                "TargetType": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        },
+        "Tag": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Scope": {
+                    "type": "string"
+                },
+                "Tag": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Scope",
+                "Tag"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AdvertiseConfigRevision": {
+            "type": "number"
+        },
+        "AdvertiseConnectedRoutes": {
+            "type": "boolean"
+        },
+        "AdvertiseLbSnatIpRoutes": {
+            "type": "boolean"
+        },
+        "AdvertiseLbVipRoutes": {
+            "type": "boolean"
+        },
+        "AdvertiseNatRoutes": {
+            "type": "boolean"
+        },
+        "AdvertiseStaticRoutes": {
+            "type": "boolean"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DisplayName": {
+            "type": "string"
+        },
+        "EdgeClusterId": {
+            "type": "string"
+        },
+        "EnableRouterAdvertisement": {
+            "type": "boolean"
+        },
+        "FailoverMode": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Revision": {
+            "type": "number"
+        },
+        "FirewallSections": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/FirewallSections"
+            }
+        },
+        "Tag": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Tag"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AdvertiseConfigRevision",
+        "/properties/Revision"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

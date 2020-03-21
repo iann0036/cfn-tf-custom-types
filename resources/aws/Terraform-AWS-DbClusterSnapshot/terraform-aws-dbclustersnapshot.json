@@ -1,0 +1,149 @@
+{
+    "typeName": "Terraform::AWS::DbClusterSnapshot",
+    "description": "CloudFormation equivalent of aws_db_cluster_snapshot",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AllocatedStorage": {
+            "type": "number"
+        },
+        "AvailabilityZones": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DbClusterIdentifier": {
+            "type": "string"
+        },
+        "DbClusterSnapshotArn": {
+            "type": "string"
+        },
+        "DbClusterSnapshotIdentifier": {
+            "type": "string"
+        },
+        "Engine": {
+            "type": "string"
+        },
+        "EngineVersion": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KmsKeyId": {
+            "type": "string"
+        },
+        "LicenseModel": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "SnapshotType": {
+            "type": "string"
+        },
+        "SourceDbClusterSnapshotArn": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "StorageEncrypted": {
+            "type": "boolean"
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "VpcId": {
+            "type": "string"
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DbClusterIdentifier",
+        "DbClusterSnapshotIdentifier"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/AllocatedStorage",
+        "/properties/AvailabilityZones",
+        "/properties/DbClusterSnapshotArn",
+        "/properties/Engine",
+        "/properties/EngineVersion",
+        "/properties/KmsKeyId",
+        "/properties/LicenseModel",
+        "/properties/Port",
+        "/properties/SnapshotType",
+        "/properties/SourceDbClusterSnapshotArn",
+        "/properties/Status",
+        "/properties/StorageEncrypted",
+        "/properties/VpcId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

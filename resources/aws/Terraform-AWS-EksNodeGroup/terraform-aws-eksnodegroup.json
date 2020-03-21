@@ -1,0 +1,239 @@
+{
+    "typeName": "Terraform::AWS::EksNodeGroup",
+    "description": "CloudFormation equivalent of aws_eks_node_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "RemoteAccess": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Ec2SshKey": {
+                    "type": "string"
+                },
+                "SourceSecurityGroupIds": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": []
+        },
+        "ScalingConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "DesiredSize": {
+                    "type": "number"
+                },
+                "MaxSize": {
+                    "type": "number"
+                },
+                "MinSize": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "DesiredSize",
+                "MaxSize",
+                "MinSize"
+            ]
+        },
+        "Timeouts": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Create": {
+                    "type": "string"
+                },
+                "Delete": {
+                    "type": "string"
+                },
+                "Update": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AmiType": {
+            "type": "string"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "ClusterName": {
+            "type": "string"
+        },
+        "DiskSize": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "InstanceTypes": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Labels": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "NodeGroupName": {
+            "type": "string"
+        },
+        "NodeRoleArn": {
+            "type": "string"
+        },
+        "ReleaseVersion": {
+            "type": "string"
+        },
+        "Resources": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "AutoscalingGroups": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "Name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "RemoteAccessSecurityGroupId": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Status": {
+            "type": "string"
+        },
+        "SubnetIds": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Tags": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Version": {
+            "type": "string"
+        },
+        "RemoteAccess": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/RemoteAccess"
+            },
+            "maxItems": 1
+        },
+        "ScalingConfig": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/ScalingConfig"
+            },
+            "maxItems": 1,
+            "minItems": 1
+        },
+        "Timeouts": {
+            "$ref": "#/definitions/Timeouts"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ClusterName",
+        "NodeGroupName",
+        "NodeRoleArn",
+        "SubnetIds"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/Resources",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

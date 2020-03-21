@@ -1,0 +1,115 @@
+{
+    "typeName": "Terraform::Panos::PanoramaBgpAggregate",
+    "description": "CloudFormation equivalent of panos_panorama_bgp_aggregate",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AsPathLimit": {
+            "type": "number"
+        },
+        "AsPathType": {
+            "type": "string"
+        },
+        "AsPathValue": {
+            "type": "string"
+        },
+        "AsSet": {
+            "type": "boolean"
+        },
+        "CommunityType": {
+            "type": "string"
+        },
+        "CommunityValue": {
+            "type": "string"
+        },
+        "Enable": {
+            "type": "boolean"
+        },
+        "ExtendedCommunityType": {
+            "type": "string"
+        },
+        "ExtendedCommunityValue": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LocalPreference": {
+            "type": "string"
+        },
+        "Med": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NextHop": {
+            "type": "string"
+        },
+        "Origin": {
+            "type": "string"
+        },
+        "Prefix": {
+            "type": "string"
+        },
+        "Summary": {
+            "type": "boolean"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "TemplateStack": {
+            "type": "string"
+        },
+        "VirtualRouter": {
+            "type": "string"
+        },
+        "Weight": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Prefix",
+        "VirtualRouter"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

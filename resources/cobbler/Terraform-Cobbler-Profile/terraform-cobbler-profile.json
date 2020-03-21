@@ -1,0 +1,170 @@
+{
+    "typeName": "Terraform::Cobbler::Profile",
+    "description": "CloudFormation equivalent of cobbler_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "BootFiles": {
+            "type": "string"
+        },
+        "Comment": {
+            "type": "string"
+        },
+        "Distro": {
+            "type": "string"
+        },
+        "EnableGpxe": {
+            "type": "boolean"
+        },
+        "EnableMenu": {
+            "type": "boolean"
+        },
+        "FetchableFiles": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "KernelOptions": {
+            "type": "string"
+        },
+        "KernelOptionsPost": {
+            "type": "string"
+        },
+        "Kickstart": {
+            "type": "string"
+        },
+        "KsMeta": {
+            "type": "string"
+        },
+        "MgmtClasses": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "MgmtParameters": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NameServers": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "NameServersSearch": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Owners": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Parent": {
+            "type": "string"
+        },
+        "Proxy": {
+            "type": "string"
+        },
+        "RedhatManagementKey": {
+            "type": "string"
+        },
+        "RedhatManagementServer": {
+            "type": "string"
+        },
+        "Repos": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Server": {
+            "type": "string"
+        },
+        "TemplateFiles": {
+            "type": "string"
+        },
+        "TemplateRemoteKickstarts": {
+            "type": "number"
+        },
+        "VirtAutoBoot": {
+            "type": "string"
+        },
+        "VirtBridge": {
+            "type": "string"
+        },
+        "VirtCpus": {
+            "type": "string"
+        },
+        "VirtDiskDriver": {
+            "type": "string"
+        },
+        "VirtFileSize": {
+            "type": "string"
+        },
+        "VirtPath": {
+            "type": "string"
+        },
+        "VirtRam": {
+            "type": "string"
+        },
+        "VirtType": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Distro",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

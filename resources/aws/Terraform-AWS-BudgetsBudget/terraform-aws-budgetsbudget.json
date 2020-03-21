@@ -1,0 +1,197 @@
+{
+    "typeName": "Terraform::AWS::BudgetsBudget",
+    "description": "CloudFormation equivalent of aws_budgets_budget",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "CostTypes": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "IncludeCredit": {
+                    "type": "boolean"
+                },
+                "IncludeDiscount": {
+                    "type": "boolean"
+                },
+                "IncludeOtherSubscription": {
+                    "type": "boolean"
+                },
+                "IncludeRecurring": {
+                    "type": "boolean"
+                },
+                "IncludeRefund": {
+                    "type": "boolean"
+                },
+                "IncludeSubscription": {
+                    "type": "boolean"
+                },
+                "IncludeSupport": {
+                    "type": "boolean"
+                },
+                "IncludeTax": {
+                    "type": "boolean"
+                },
+                "IncludeUpfront": {
+                    "type": "boolean"
+                },
+                "UseAmortized": {
+                    "type": "boolean"
+                },
+                "UseBlended": {
+                    "type": "boolean"
+                }
+            },
+            "required": []
+        },
+        "Notification": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ComparisonOperator": {
+                    "type": "string"
+                },
+                "NotificationType": {
+                    "type": "string"
+                },
+                "SubscriberEmailAddresses": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "SubscriberSnsTopicArns": {
+                    "type": "array",
+                    "insertionOrder": true,
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Threshold": {
+                    "type": "number"
+                },
+                "ThresholdType": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "ComparisonOperator",
+                "NotificationType",
+                "Threshold",
+                "ThresholdType"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AccountId": {
+            "type": "string"
+        },
+        "BudgetType": {
+            "type": "string"
+        },
+        "CostFilters": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LimitAmount": {
+            "type": "string"
+        },
+        "LimitUnit": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NamePrefix": {
+            "type": "string"
+        },
+        "TimePeriodEnd": {
+            "type": "string"
+        },
+        "TimePeriodStart": {
+            "type": "string"
+        },
+        "TimeUnit": {
+            "type": "string"
+        },
+        "CostTypes": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/CostTypes"
+            },
+            "maxItems": 1
+        },
+        "Notification": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "$ref": "#/definitions/Notification"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "BudgetType",
+        "LimitAmount",
+        "LimitUnit",
+        "TimePeriodStart",
+        "TimeUnit"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

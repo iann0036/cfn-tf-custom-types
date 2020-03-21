@@ -1,0 +1,64 @@
+{
+    "typeName": "Terraform::Alicloud::SagSnatEntry",
+    "description": "CloudFormation equivalent of alicloud_sag_snat_entry",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "CidrBlock": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "SagId": {
+            "type": "string"
+        },
+        "SnatIp": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "CidrBlock",
+        "SagId",
+        "SnatIp"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

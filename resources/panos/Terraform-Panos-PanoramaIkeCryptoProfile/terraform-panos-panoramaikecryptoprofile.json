@@ -1,0 +1,95 @@
+{
+    "typeName": "Terraform::Panos::PanoramaIkeCryptoProfile",
+    "description": "CloudFormation equivalent of panos_panorama_ike_crypto_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthenticationMultiple": {
+            "type": "number"
+        },
+        "Authentications": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DhGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Encryptions": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Id": {
+            "type": "string"
+        },
+        "LifetimeType": {
+            "type": "string"
+        },
+        "LifetimeValue": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Template": {
+            "type": "string"
+        },
+        "TemplateStack": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Authentications",
+        "DhGroups",
+        "Encryptions",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

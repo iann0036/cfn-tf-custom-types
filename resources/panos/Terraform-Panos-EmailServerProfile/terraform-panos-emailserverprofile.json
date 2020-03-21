@@ -1,0 +1,146 @@
+{
+    "typeName": "Terraform::Panos::EmailServerProfile",
+    "description": "CloudFormation equivalent of panos_email_server_profile",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "EmailServer": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "AlsoToEmail": {
+                    "type": "string"
+                },
+                "DisplayName": {
+                    "type": "string"
+                },
+                "EmailGateway": {
+                    "type": "string"
+                },
+                "FromEmail": {
+                    "type": "string"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "ToEmail": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EmailGateway",
+                "FromEmail",
+                "Name",
+                "ToEmail"
+            ]
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AuthFormat": {
+            "type": "string"
+        },
+        "ConfigFormat": {
+            "type": "string"
+        },
+        "DataFormat": {
+            "type": "string"
+        },
+        "EscapeCharacter": {
+            "type": "string"
+        },
+        "EscapedCharacters": {
+            "type": "string"
+        },
+        "GtpFormat": {
+            "type": "string"
+        },
+        "HipMatchFormat": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IptagFormat": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "SctpFormat": {
+            "type": "string"
+        },
+        "SystemFormat": {
+            "type": "string"
+        },
+        "ThreatFormat": {
+            "type": "string"
+        },
+        "TrafficFormat": {
+            "type": "string"
+        },
+        "TunnelFormat": {
+            "type": "string"
+        },
+        "UrlFormat": {
+            "type": "string"
+        },
+        "UserIdFormat": {
+            "type": "string"
+        },
+        "Vsys": {
+            "type": "string"
+        },
+        "WildfireFormat": {
+            "type": "string"
+        },
+        "EmailServer": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/EmailServer"
+            },
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

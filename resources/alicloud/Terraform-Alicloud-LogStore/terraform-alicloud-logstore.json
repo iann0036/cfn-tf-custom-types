@@ -1,0 +1,101 @@
+{
+    "typeName": "Terraform::Alicloud::LogStore",
+    "description": "CloudFormation equivalent of alicloud_log_store",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "AppendMeta": {
+            "type": "boolean"
+        },
+        "AutoSplit": {
+            "type": "boolean"
+        },
+        "EnableWebTracking": {
+            "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "MaxSplitShardCount": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "RetentionPeriod": {
+            "type": "number"
+        },
+        "ShardCount": {
+            "type": "number"
+        },
+        "Shards": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "BeginKey": {
+                        "type": "string"
+                    },
+                    "EndKey": {
+                        "type": "string"
+                    },
+                    "Id": {
+                        "type": "number"
+                    },
+                    "Status": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Name",
+        "Project"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Shards"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

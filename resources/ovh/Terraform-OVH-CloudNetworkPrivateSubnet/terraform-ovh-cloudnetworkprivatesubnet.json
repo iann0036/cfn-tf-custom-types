@@ -1,0 +1,115 @@
+{
+    "typeName": "Terraform::OVH::CloudNetworkPrivateSubnet",
+    "description": "CloudFormation equivalent of ovh_cloud_network_private_subnet",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cidr": {
+            "type": "string"
+        },
+        "Dhcp": {
+            "type": "boolean"
+        },
+        "End": {
+            "type": "string"
+        },
+        "GatewayIp": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpPools": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Dhcp": {
+                        "type": "boolean"
+                    },
+                    "End": {
+                        "type": "string"
+                    },
+                    "Network": {
+                        "type": "string"
+                    },
+                    "Region": {
+                        "type": "string"
+                    },
+                    "Start": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "Network": {
+            "type": "string"
+        },
+        "NetworkId": {
+            "type": "string"
+        },
+        "NoGateway": {
+            "type": "boolean"
+        },
+        "ProjectId": {
+            "type": "string"
+        },
+        "Region": {
+            "type": "string"
+        },
+        "Start": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "End",
+        "Network",
+        "NetworkId",
+        "Region",
+        "Start"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Cidr",
+        "/properties/GatewayIp",
+        "/properties/IpPools"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

@@ -1,0 +1,152 @@
+{
+    "typeName": "Terraform::BIGIP::LtmVirtualServer",
+    "description": "CloudFormation equivalent of bigip_ltm_virtual_server",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ClientProfiles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "DefaultPersistenceProfile": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Destination": {
+            "type": "string"
+        },
+        "FallbackPersistenceProfile": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "IpProtocol": {
+            "type": "string"
+        },
+        "Irules": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Mask": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "PersistenceProfiles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Policies": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Pool": {
+            "type": "string"
+        },
+        "Port": {
+            "type": "number"
+        },
+        "Profiles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "ServerProfiles": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Snatpool": {
+            "type": "string"
+        },
+        "Source": {
+            "type": "string"
+        },
+        "SourceAddressTranslation": {
+            "type": "string"
+        },
+        "State": {
+            "type": "string"
+        },
+        "TranslateAddress": {
+            "type": "string"
+        },
+        "TranslatePort": {
+            "type": "string"
+        },
+        "Vlans": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "string"
+            }
+        },
+        "VlansEnabled": {
+            "type": "boolean"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Destination",
+        "Name",
+        "Port"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

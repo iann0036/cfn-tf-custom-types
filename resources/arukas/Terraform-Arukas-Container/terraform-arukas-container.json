@@ -1,0 +1,161 @@
+{
+    "typeName": "Terraform::Arukas::Container",
+    "description": "CloudFormation equivalent of arukas_container",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "Environments": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Key": {
+                    "type": "string"
+                },
+                "Value": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Key",
+                "Value"
+            ]
+        },
+        "Ports": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "Number": {
+                    "type": "number"
+                },
+                "Protocol": {
+                    "type": "string"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Cmd": {
+            "type": "string"
+        },
+        "Endpoint": {
+            "type": "string"
+        },
+        "EndpointFullHostname": {
+            "type": "string"
+        },
+        "EndpointFullUrl": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Image": {
+            "type": "string"
+        },
+        "Instances": {
+            "type": "number"
+        },
+        "Memory": {
+            "type": "number"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Plan": {
+            "type": "string"
+        },
+        "PortMappings": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "ContainerPort": {
+                        "type": "number"
+                    },
+                    "Host": {
+                        "type": "string"
+                    },
+                    "Ipaddress": {
+                        "type": "string"
+                    },
+                    "ServicePort": {
+                        "type": "number"
+                    }
+                }
+            }
+        },
+        "Region": {
+            "type": "string"
+        },
+        "ServiceId": {
+            "type": "string"
+        },
+        "Environments": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Environments"
+            },
+            "maxItems": 20
+        },
+        "Ports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/Ports"
+            },
+            "maxItems": 20,
+            "minItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Image",
+        "Name"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/EndpointFullHostname",
+        "/properties/EndpointFullUrl",
+        "/properties/PortMappings",
+        "/properties/Region",
+        "/properties/ServiceId"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

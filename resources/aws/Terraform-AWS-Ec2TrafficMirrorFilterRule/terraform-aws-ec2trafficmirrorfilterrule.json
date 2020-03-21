@@ -1,0 +1,124 @@
+{
+    "typeName": "Terraform::AWS::Ec2TrafficMirrorFilterRule",
+    "description": "CloudFormation equivalent of aws_ec2_traffic_mirror_filter_rule",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {
+        "DestinationPortRange": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromPort": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        },
+        "SourcePortRange": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "FromPort": {
+                    "type": "number"
+                },
+                "ToPort": {
+                    "type": "number"
+                }
+            },
+            "required": []
+        }
+    },
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "DestinationCidrBlock": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Protocol": {
+            "type": "number"
+        },
+        "RuleAction": {
+            "type": "string"
+        },
+        "RuleNumber": {
+            "type": "number"
+        },
+        "SourceCidrBlock": {
+            "type": "string"
+        },
+        "TrafficDirection": {
+            "type": "string"
+        },
+        "TrafficMirrorFilterId": {
+            "type": "string"
+        },
+        "DestinationPortRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/DestinationPortRange"
+            },
+            "maxItems": 1
+        },
+        "SourcePortRange": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "$ref": "#/definitions/SourcePortRange"
+            },
+            "maxItems": 1
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "DestinationCidrBlock",
+        "RuleAction",
+        "RuleNumber",
+        "SourceCidrBlock",
+        "TrafficDirection",
+        "TrafficMirrorFilterId"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

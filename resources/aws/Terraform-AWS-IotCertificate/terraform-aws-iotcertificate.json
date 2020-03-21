@@ -1,0 +1,74 @@
+{
+    "typeName": "Terraform::AWS::IotCertificate",
+    "description": "CloudFormation equivalent of aws_iot_certificate",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Active": {
+            "type": "boolean"
+        },
+        "Arn": {
+            "type": "string"
+        },
+        "CertificatePem": {
+            "type": "string"
+        },
+        "Csr": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "PrivateKey": {
+            "type": "string"
+        },
+        "PublicKey": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "Active"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Arn",
+        "/properties/CertificatePem",
+        "/properties/PrivateKey",
+        "/properties/PublicKey"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "read": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "update": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "*"
+            ]
+        },
+        "list": {
+            "permissions": [
+                "*"
+            ]
+        }
+    }
+}

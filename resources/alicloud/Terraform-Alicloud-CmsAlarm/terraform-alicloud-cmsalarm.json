@@ -1,0 +1,134 @@
+{
+    "typeName": "Terraform::Alicloud::CmsAlarm",
+    "description": "CloudFormation equivalent of alicloud_cms_alarm",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ContactGroups": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "Dimensions": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "EffectiveInterval": {
+            "type": "string"
+        },
+        "Enabled": {
+            "type": "boolean"
+        },
+        "EndTime": {
+            "type": "number"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Metric": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotifyType": {
+            "type": "number"
+        },
+        "Operator": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "number"
+        },
+        "Project": {
+            "type": "string"
+        },
+        "SilenceTime": {
+            "type": "number"
+        },
+        "StartTime": {
+            "type": "number"
+        },
+        "Statistics": {
+            "type": "string"
+        },
+        "Status": {
+            "type": "string"
+        },
+        "Threshold": {
+            "type": "string"
+        },
+        "TriggeredCount": {
+            "type": "number"
+        },
+        "Webhook": {
+            "type": "string"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "ContactGroups",
+        "Dimensions",
+        "Metric",
+        "Name",
+        "Project",
+        "Threshold"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/Status"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}

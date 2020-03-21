@@ -1,0 +1,163 @@
+{
+    "typeName": "Terraform::VSphere::HostPortGroup",
+    "description": "CloudFormation equivalent of vsphere_host_port_group",
+    "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
+    "definitions": {},
+    "properties": {
+        "tfcfnid": {
+            "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "ActiveNics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "AllowForgedTransmits": {
+            "type": "boolean"
+        },
+        "AllowMacChanges": {
+            "type": "boolean"
+        },
+        "AllowPromiscuous": {
+            "type": "boolean"
+        },
+        "CheckBeacon": {
+            "type": "boolean"
+        },
+        "ComputedPolicy": {
+            "type": "array",
+            "insertionOrder": true,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "Key",
+                    "Value"
+                ]
+            }
+        },
+        "Failback": {
+            "type": "boolean"
+        },
+        "HostSystemId": {
+            "type": "string"
+        },
+        "Id": {
+            "type": "string"
+        },
+        "Key": {
+            "type": "string"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "NotifySwitches": {
+            "type": "boolean"
+        },
+        "Ports": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "MacAddresses": {
+                        "type": "array",
+                        "insertionOrder": false,
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "Type": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "ShapingAverageBandwidth": {
+            "type": "number"
+        },
+        "ShapingBurstSize": {
+            "type": "number"
+        },
+        "ShapingEnabled": {
+            "type": "boolean"
+        },
+        "ShapingPeakBandwidth": {
+            "type": "number"
+        },
+        "StandbyNics": {
+            "type": "array",
+            "insertionOrder": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "TeamingPolicy": {
+            "type": "string"
+        },
+        "VirtualSwitchName": {
+            "type": "string"
+        },
+        "VlanId": {
+            "type": "number"
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "HostSystemId",
+        "Name",
+        "VirtualSwitchName"
+    ],
+    "readOnlyProperties": [
+        "/properties/tfcfnid",
+        "/properties/ComputedPolicy",
+        "/properties/Key",
+        "/properties/Ports"
+    ],
+    "primaryIdentifier": [
+        "/properties/tfcfnid"
+    ],
+    "handlers": {
+        "create": {
+            "permissions": [
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "read": {
+            "permissions": []
+        },
+        "update": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "delete": {
+            "permissions": [
+                "s3:GetObject",
+                "s3:DeleteObject",
+                "secretsmanager:GetSecretValue"
+            ]
+        },
+        "list": {
+            "permissions": []
+        }
+    }
+}
