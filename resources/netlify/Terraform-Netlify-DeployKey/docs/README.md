@@ -29,7 +29,7 @@ Properties:
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the Id.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
 
 ### Fn::GetAtt
 
