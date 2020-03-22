@@ -308,7 +308,7 @@ def process_provider(provider_type):
 
                     if attrname == "id":
                         computed = True
-                        schema['primaryIdentifier'] = ["/properties/Id"]
+                        #schema['primaryIdentifier'] = ["/properties/Id"]
                         schema['readOnlyProperties'].append("/properties/Id")
                     else:
                         if 'optional' in attr:
