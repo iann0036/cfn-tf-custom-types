@@ -26,6 +26,9 @@
         "ExpireTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "PeerRegion": {
             "type": "string",
             "description": "The correspondent region of dedicated connection, please refer to the region and [availability zone list](https://docs.ucloud.cn/api/summary/regionlist) and [UDPN price list](https://docs.ucloud.cn/network/udpn/udpn_price)."
@@ -38,10 +41,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
-        "/properties/ExpireTime"
+        "/properties/ExpireTime",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

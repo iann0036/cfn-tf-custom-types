@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The description of the api gateway group. Defaults to null."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the api gateway group. Defaults to null."
@@ -30,11 +33,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SubDomain",
         "/properties/VpcDomain"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

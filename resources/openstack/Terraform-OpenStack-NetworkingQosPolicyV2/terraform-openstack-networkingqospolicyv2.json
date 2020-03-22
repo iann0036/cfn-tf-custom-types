@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The human-readable description for the QoS policy.\nChanging this updates the description of the existing QoS policy."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsDefault": {
             "type": "boolean",
             "description": "Indicates whether the QoS policy is default\nQoS policy or not. Changing this updates the default status of the existing\nQoS policy."
@@ -77,16 +80,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -101,11 +104,12 @@
         "/properties/tfcfnid",
         "/properties/AllTags",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/RevisionNumber",
         "/properties/UpdatedAt"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

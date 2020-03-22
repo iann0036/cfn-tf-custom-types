@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DnsServer: Optional[Sequence[str]]
     DomainId: Optional[str]
     GroupId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupId: Optional[str]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             DnsServer=json_data.get("DnsServer"),
             DomainId=json_data.get("DomainId"),
             GroupId=json_data.get("GroupId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupId=json_data.get("ResourceGroupId"),
         )

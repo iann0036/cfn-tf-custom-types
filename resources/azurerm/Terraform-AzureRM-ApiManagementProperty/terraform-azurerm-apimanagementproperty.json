@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The display name of this API Management Property."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the API Management Property. Changing this forces a new resource to be created."
@@ -73,10 +76,11 @@
         "Value"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

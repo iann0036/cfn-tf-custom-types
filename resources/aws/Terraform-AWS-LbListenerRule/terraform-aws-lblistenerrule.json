@@ -21,28 +21,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AuthenticateCognito"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AuthenticateOidc": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AuthenticateOidc"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "FixedResponse": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FixedResponse"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Redirect": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Redirect"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -68,28 +72,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HostHeader"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpHeader": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpHeader"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpRequestMethod": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpRequestMethod"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PathPattern": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PathPattern"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "QueryString": {
                     "type": "array",
@@ -103,7 +111,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SourceIp"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -119,16 +128,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -171,16 +180,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -373,6 +382,9 @@
         "Arn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ListenerArn": {
             "type": "string"
         },
@@ -481,10 +493,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Arn"
+        "/properties/Arn",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

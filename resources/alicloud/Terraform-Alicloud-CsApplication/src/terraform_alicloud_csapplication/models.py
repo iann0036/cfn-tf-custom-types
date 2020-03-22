@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DefaultDomain: Optional[str]
     Description: Optional[str]
     Environment: Optional[Sequence["_Environment"]]
+    Id: Optional[str]
     LatestImage: Optional[bool]
     Name: Optional[str]
     Services: Optional[Sequence["_Services"]]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             DefaultDomain=json_data.get("DefaultDomain"),
             Description=json_data.get("Description"),
             Environment=json_data.get("Environment"),
+            Id=json_data.get("Id"),
             LatestImage=json_data.get("LatestImage"),
             Name=json_data.get("Name"),
             Services=json_data.get("Services"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Environment:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Environment:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

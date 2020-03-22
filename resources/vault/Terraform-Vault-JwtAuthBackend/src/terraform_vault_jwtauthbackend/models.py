@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     BoundIssuer: Optional[str]
     DefaultRole: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     JwksCaPem: Optional[str]
     JwksUrl: Optional[str]
     JwtSupportedAlgs: Optional[Sequence[str]]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             BoundIssuer=json_data.get("BoundIssuer"),
             DefaultRole=json_data.get("DefaultRole"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             JwksCaPem=json_data.get("JwksCaPem"),
             JwksUrl=json_data.get("JwksUrl"),
             JwtSupportedAlgs=json_data.get("JwtSupportedAlgs"),

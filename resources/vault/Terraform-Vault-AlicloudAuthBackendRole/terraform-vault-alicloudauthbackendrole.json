@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Path to the mounted AliCloud auth backend.\nDefaults to `alicloud`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Role": {
             "type": "string",
             "description": "Name of the role. Must correspond with the name of\nthe role reflected in the arn."
@@ -62,10 +65,11 @@
         "Role"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

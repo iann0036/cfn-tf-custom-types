@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AppRoleAssignmentRequired: Optional[bool]
     ApplicationId: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     ObjectId: Optional[str]
     Tags: Optional[Sequence[str]]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             AppRoleAssignmentRequired=json_data.get("AppRoleAssignmentRequired"),
             ApplicationId=json_data.get("ApplicationId"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             ObjectId=json_data.get("ObjectId"),
             Tags=json_data.get("Tags"),
         )

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     EnableLogFileValidation: Optional[bool]
     EnableLogging: Optional[bool]
     HomeRegion: Optional[str]
+    Id: Optional[str]
     IncludeGlobalServiceEvents: Optional[bool]
     IsMultiRegionTrail: Optional[bool]
     IsOrganizationTrail: Optional[bool]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             EnableLogFileValidation=json_data.get("EnableLogFileValidation"),
             EnableLogging=json_data.get("EnableLogging"),
             HomeRegion=json_data.get("HomeRegion"),
+            Id=json_data.get("Id"),
             IncludeGlobalServiceEvents=json_data.get("IncludeGlobalServiceEvents"),
             IsMultiRegionTrail=json_data.get("IsMultiRegionTrail"),
             IsOrganizationTrail=json_data.get("IsOrganizationTrail"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

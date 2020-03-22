@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Datacenter: Optional[str]
+    Id: Optional[str]
     Token: Optional[str]
     Var: Optional[Sequence["_Var"]]
     Key: Optional[Sequence["_Key"]]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Datacenter=json_data.get("Datacenter"),
+            Id=json_data.get("Id"),
             Token=json_data.get("Token"),
             Var=json_data.get("Var"),
             Key=json_data.get("Key"),
@@ -63,8 +65,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Var:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -74,8 +76,8 @@ class Var:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

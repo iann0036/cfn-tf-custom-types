@@ -23,6 +23,9 @@
             "type": "string",
             "description": "The ICMP type to enable for this application, if the `protocol` is `icmp`. Must be one of\n`echo`, `reply`, `ttl`, `traceroute`, `unreachable`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The unique (within the identity domain) name of the application."
@@ -38,10 +41,11 @@
         "Protocol"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

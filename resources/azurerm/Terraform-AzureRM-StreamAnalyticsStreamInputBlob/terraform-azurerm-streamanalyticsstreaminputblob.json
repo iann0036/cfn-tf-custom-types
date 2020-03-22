@@ -53,6 +53,9 @@
             "type": "string",
             "description": "The date format. Wherever `{date}` appears in `path_pattern`, the value of this property is used as the date format instead."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the Stream Input Blob. Changing this forces a new resource to be created."
@@ -111,10 +114,11 @@
         "TimeFormat"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     EnableNetworkIsolation: Optional[bool]
     ExecutionRoleArn: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     Container: Optional[Sequence["_Container"]]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             EnableNetworkIsolation=json_data.get("EnableNetworkIsolation"),
             ExecutionRoleArn=json_data.get("ExecutionRoleArn"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             Container=json_data.get("Container"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -119,8 +121,8 @@ _Container = Container
 
 @dataclass
 class Environment:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -130,8 +132,8 @@ class Environment:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -167,8 +169,8 @@ _PrimaryContainer = PrimaryContainer
 
 @dataclass
 class Environment2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -178,8 +180,8 @@ class Environment2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Endpoints: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     TenantId: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Endpoints=json_data.get("Endpoints"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             TenantId=json_data.get("TenantId"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "The service status. Defaults to `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The service name."
@@ -35,10 +38,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

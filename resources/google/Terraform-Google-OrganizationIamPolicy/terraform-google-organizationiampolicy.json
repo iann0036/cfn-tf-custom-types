@@ -11,6 +11,9 @@
         "Etag": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "OrgId": {
             "type": "string",
             "description": "The numeric ID of the organization in which you want to create a custom role."
@@ -27,10 +30,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Etag"
+        "/properties/Etag",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

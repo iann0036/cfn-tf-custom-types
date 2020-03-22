@@ -122,7 +122,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Presentation"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -185,6 +187,9 @@
         "Icon": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Title": {
             "type": "string"
         },
@@ -237,10 +242,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/DashboardUrl"
+        "/properties/DashboardUrl",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

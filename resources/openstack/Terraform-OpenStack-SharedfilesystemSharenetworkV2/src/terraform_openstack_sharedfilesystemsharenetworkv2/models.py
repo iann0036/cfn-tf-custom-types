@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Cidr: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     IpVersion: Optional[float]
     Name: Optional[str]
     NetworkType: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Cidr=json_data.get("Cidr"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IpVersion=json_data.get("IpVersion"),
             Name=json_data.get("Name"),
             NetworkType=json_data.get("NetworkType"),

@@ -19,6 +19,9 @@
             "type": "string",
             "description": "Optional gateway IP."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternetNat": {
             "type": "boolean",
             "description": "If a NAT zone is provisioned at Gateway IP address. Default is `true`."
@@ -53,16 +56,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of CIDR block to Gateway IP address."
@@ -87,10 +90,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Fabric",
+        "/properties/Id",
         "/properties/Public"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

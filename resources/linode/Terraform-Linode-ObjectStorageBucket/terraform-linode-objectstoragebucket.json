@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The cluster of the Linode Object Storage Bucket."
         },
+        "Id": {
+            "type": "string"
+        },
         "Label": {
             "type": "string",
             "description": "The label of the Linode Object Storage Bucket."
@@ -23,10 +26,11 @@
         "Label"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

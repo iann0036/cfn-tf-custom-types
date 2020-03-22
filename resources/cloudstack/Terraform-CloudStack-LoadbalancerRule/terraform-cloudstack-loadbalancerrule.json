@@ -19,6 +19,9 @@
             "type": "string",
             "description": "The description of the load balancer rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddressId": {
             "type": "string",
             "description": "Public IP address ID from where the network\ntraffic will be load balanced from. Changing this forces a new resource\nto be created."
@@ -66,10 +69,11 @@
         "PublicPort"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

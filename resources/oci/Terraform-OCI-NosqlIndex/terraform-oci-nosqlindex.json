@@ -47,6 +47,9 @@
             "type": "string",
             "description": "The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsIfNotExists": {
             "type": "boolean",
             "description": "If true, the operation completes successfully even when the index exists.  Otherwise, an attempt to create an index that already exists will return an error."
@@ -90,13 +93,14 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/LifecycleDetails",
         "/properties/State",
         "/properties/TableId",
         "/properties/TableName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

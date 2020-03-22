@@ -42,7 +42,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PublicIp"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -92,6 +94,9 @@
             "type": "string"
         },
         "Flavor": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "InnerEndpoint": {
@@ -156,13 +161,14 @@
         "/properties/tfcfnid",
         "/properties/Created",
         "/properties/CurrentTask",
+        "/properties/Id",
         "/properties/InnerEndpoint",
         "/properties/PublicEndpoint",
         "/properties/Status",
         "/properties/Updated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

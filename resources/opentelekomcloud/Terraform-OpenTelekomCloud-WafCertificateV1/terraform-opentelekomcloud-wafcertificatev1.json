@@ -26,6 +26,9 @@
             "type": "string",
             "description": "The certificate content. Changing this creates a new certificate."
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "The private key. Changing this creates a new certificate."
@@ -48,10 +51,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

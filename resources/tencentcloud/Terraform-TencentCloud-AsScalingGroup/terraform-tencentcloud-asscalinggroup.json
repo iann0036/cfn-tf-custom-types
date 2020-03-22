@@ -24,7 +24,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TargetAttribute"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -70,6 +71,9 @@
         "DesiredCapacity": {
             "type": "number",
             "description": "Desired volume of CVM instances, which is between max_size and min_size."
+        },
+        "Id": {
+            "type": "string"
         },
         "InstanceCount": {
             "type": "number"
@@ -120,16 +124,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Tags of a scaling group."
@@ -181,11 +185,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/InstanceCount",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

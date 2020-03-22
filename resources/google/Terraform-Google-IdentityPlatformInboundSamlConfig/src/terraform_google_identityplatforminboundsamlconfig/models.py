@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DisplayName: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     IdpConfig: Optional[Sequence["_IdpConfig"]]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DisplayName=json_data.get("DisplayName"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             IdpConfig=json_data.get("IdpConfig"),

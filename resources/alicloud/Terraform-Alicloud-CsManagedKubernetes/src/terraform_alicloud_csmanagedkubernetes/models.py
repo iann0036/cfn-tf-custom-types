@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     CpuPolicy: Optional[str]
     EnableSsh: Optional[bool]
     ForceUpdate: Optional[bool]
+    Id: Optional[str]
     ImageId: Optional[str]
     InstallCloudMonitor: Optional[bool]
     KeyName: Optional[str]
@@ -107,6 +108,7 @@ class ResourceModel(BaseResourceModel):
             CpuPolicy=json_data.get("CpuPolicy"),
             EnableSsh=json_data.get("EnableSsh"),
             ForceUpdate=json_data.get("ForceUpdate"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstallCloudMonitor=json_data.get("InstallCloudMonitor"),
             KeyName=json_data.get("KeyName"),
@@ -159,8 +161,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Connections:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -170,8 +172,8 @@ class Connections:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -181,8 +183,8 @@ _Connections = Connections
 
 @dataclass
 class KmsEncryptionContext:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -192,8 +194,8 @@ class KmsEncryptionContext:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

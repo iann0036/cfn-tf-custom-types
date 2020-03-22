@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     HttpMethod: Optional[str]
+    Id: Optional[str]
     ResourceId: Optional[str]
     ResponseModels: Optional[Sequence["_ResponseModels"]]
     ResponseParameters: Optional[Sequence["_ResponseParameters"]]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             HttpMethod=json_data.get("HttpMethod"),
+            Id=json_data.get("Id"),
             ResourceId=json_data.get("ResourceId"),
             ResponseModels=json_data.get("ResponseModels"),
             ResponseParameters=json_data.get("ResponseParameters"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ResponseModels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class ResponseModels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -91,8 +93,8 @@ _ResponseModels = ResponseModels
 
 @dataclass
 class ResponseParameters:
-    Key: Optional[str]
-    Value: Optional[bool]
+    MapKey: Optional[str]
+    MapValue: Optional[bool]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class ResponseParameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

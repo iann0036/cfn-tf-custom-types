@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     ForkPolicy: Optional[str]
     HasIssues: Optional[bool]
     HasWiki: Optional[bool]
+    Id: Optional[str]
     IsPrivate: Optional[bool]
     Language: Optional[str]
     Name: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             ForkPolicy=json_data.get("ForkPolicy"),
             HasIssues=json_data.get("HasIssues"),
             HasWiki=json_data.get("HasWiki"),
+            Id=json_data.get("Id"),
             IsPrivate=json_data.get("IsPrivate"),
             Language=json_data.get("Language"),
             Name=json_data.get("Name"),

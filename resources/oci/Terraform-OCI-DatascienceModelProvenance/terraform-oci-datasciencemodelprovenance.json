@@ -33,6 +33,9 @@
             "type": "string",
             "description": "(Updatable) For model reproducibility purposes. Commit ID of the git repository associated with model training."
         },
+        "Id": {
+            "type": "string"
+        },
         "ModelId": {
             "type": "string",
             "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/identifiers.htm) of the model."
@@ -58,10 +61,11 @@
         "ModelId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

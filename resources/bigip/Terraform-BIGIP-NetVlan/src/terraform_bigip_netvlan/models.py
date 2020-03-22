@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Tag: Optional[float]
     Interfaces: Optional[Sequence["_Interfaces"]]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tag=json_data.get("Tag"),
             Interfaces=json_data.get("Interfaces"),

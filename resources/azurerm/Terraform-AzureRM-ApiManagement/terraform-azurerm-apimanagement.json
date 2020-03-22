@@ -159,7 +159,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TermsOfService"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -329,6 +331,9 @@
         "GatewayUrl": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "The Azure location where the API Management Service exists. Changing this forces a new resource to be created."
@@ -397,16 +402,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags assigned to the resource."
@@ -528,13 +533,14 @@
         "/properties/tfcfnid",
         "/properties/GatewayRegionalUrl",
         "/properties/GatewayUrl",
+        "/properties/Id",
         "/properties/ManagementApiUrl",
         "/properties/PortalUrl",
         "/properties/PublicIpAddresses",
         "/properties/ScmUrl"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

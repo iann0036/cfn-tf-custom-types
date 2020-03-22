@@ -127,6 +127,9 @@
             "type": "boolean",
             "description": "Whether the virtual server is enabled. Default is true."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "Virtual server IP address."
@@ -198,10 +201,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

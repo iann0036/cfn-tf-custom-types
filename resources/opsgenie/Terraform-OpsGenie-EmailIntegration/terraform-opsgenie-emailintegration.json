@@ -30,6 +30,9 @@
             "type": "boolean",
             "description": "A Member block as documented below."
         },
+        "Id": {
+            "type": "string"
+        },
         "IgnoreRespondersFromPayload": {
             "type": "boolean",
             "description": "If enabled, the integration will ignore recipients sent in request payloads. Defaults to false."
@@ -60,10 +63,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

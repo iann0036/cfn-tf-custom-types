@@ -48,6 +48,7 @@ class ResourceModel(BaseResourceModel):
     EnableThinProvisioning: Optional[bool]
     EnableVmDiscovery: Optional[bool]
     Enabled: Optional[bool]
+    Id: Optional[str]
     IncludeVmMemoryOverhead: Optional[bool]
     MemoryGuaranteed: Optional[float]
     Metadata: Optional[Sequence["_Metadata"]]
@@ -84,6 +85,7 @@ class ResourceModel(BaseResourceModel):
             EnableThinProvisioning=json_data.get("EnableThinProvisioning"),
             EnableVmDiscovery=json_data.get("EnableVmDiscovery"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             IncludeVmMemoryOverhead=json_data.get("IncludeVmMemoryOverhead"),
             MemoryGuaranteed=json_data.get("MemoryGuaranteed"),
             Metadata=json_data.get("Metadata"),
@@ -107,8 +109,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -118,8 +120,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -34,6 +34,9 @@
         "CreateTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the security group which contains 1-63 characters and only support Chinese, English, numbers, '-', '_' and '.'. If not specified, terraform will auto-generate a name beginning with `tf-security-group`."
@@ -59,10 +62,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CreateTime"
+        "/properties/CreateTime",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

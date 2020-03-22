@@ -27,6 +27,9 @@
         "Gtid": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceName": {
             "type": "string",
             "description": "The name of a mysql instance."
@@ -62,16 +65,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "List of parameters to use."
@@ -126,16 +129,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Instance tags."
@@ -162,6 +165,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Gtid",
+        "/properties/Id",
         "/properties/InternetHost",
         "/properties/InternetPort",
         "/properties/IntranetIp",
@@ -170,7 +174,7 @@
         "/properties/TaskStatus"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

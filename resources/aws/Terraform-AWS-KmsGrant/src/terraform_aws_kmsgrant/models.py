@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     GrantId: Optional[str]
     GrantToken: Optional[str]
     GranteePrincipal: Optional[str]
+    Id: Optional[str]
     KeyId: Optional[str]
     Name: Optional[str]
     Operations: Optional[Sequence[str]]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             GrantId=json_data.get("GrantId"),
             GrantToken=json_data.get("GrantToken"),
             GranteePrincipal=json_data.get("GranteePrincipal"),
+            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
             Name=json_data.get("Name"),
             Operations=json_data.get("Operations"),
@@ -97,8 +99,8 @@ _Constraints = Constraints
 
 @dataclass
 class EncryptionContextEquals:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -108,8 +110,8 @@ class EncryptionContextEquals:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -119,8 +121,8 @@ _EncryptionContextEquals = EncryptionContextEquals
 
 @dataclass
 class EncryptionContextSubset:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -130,8 +132,8 @@ class EncryptionContextSubset:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

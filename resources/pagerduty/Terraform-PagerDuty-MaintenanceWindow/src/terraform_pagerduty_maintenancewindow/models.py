@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     EndTime: Optional[str]
+    Id: Optional[str]
     Services: Optional[Sequence[str]]
     StartTime: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             EndTime=json_data.get("EndTime"),
+            Id=json_data.get("Id"),
             Services=json_data.get("Services"),
             StartTime=json_data.get("StartTime"),
         )

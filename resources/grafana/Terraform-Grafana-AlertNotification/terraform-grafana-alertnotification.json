@@ -8,6 +8,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsDefault": {
             "type": "boolean",
             "description": "Is this the default channel for all your alerts."
@@ -23,16 +26,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Additional settings, for full reference lookup [Grafana HTTP API documentation](http://docs.grafana.org/http_api/alerting)."
@@ -48,10 +51,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

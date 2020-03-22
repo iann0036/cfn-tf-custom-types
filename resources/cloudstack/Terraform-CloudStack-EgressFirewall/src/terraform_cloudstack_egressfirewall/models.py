@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Managed: Optional[bool]
     NetworkId: Optional[str]
     Parallelism: Optional[float]
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Managed=json_data.get("Managed"),
             NetworkId=json_data.get("NetworkId"),
             Parallelism=json_data.get("Parallelism"),

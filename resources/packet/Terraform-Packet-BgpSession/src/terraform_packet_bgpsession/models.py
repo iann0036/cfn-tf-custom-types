@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AddressFamily: Optional[str]
     DefaultRoute: Optional[bool]
     DeviceId: Optional[str]
+    Id: Optional[str]
     Status: Optional[str]
 
     @classmethod
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             AddressFamily=json_data.get("AddressFamily"),
             DefaultRoute=json_data.get("DefaultRoute"),
             DeviceId=json_data.get("DeviceId"),
+            Id=json_data.get("Id"),
             Status=json_data.get("Status"),
         )
 

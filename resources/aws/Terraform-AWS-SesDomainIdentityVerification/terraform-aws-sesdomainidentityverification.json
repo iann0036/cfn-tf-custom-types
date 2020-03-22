@@ -25,6 +25,9 @@
         "Domain": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"
         }
@@ -35,10 +38,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Arn"
+        "/properties/Arn",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

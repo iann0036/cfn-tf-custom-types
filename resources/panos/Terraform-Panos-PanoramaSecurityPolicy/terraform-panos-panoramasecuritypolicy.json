@@ -227,6 +227,9 @@
             "type": "string",
             "description": "The device group to put the security policy into\n(default: `shared`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Rulebase": {
             "type": "string",
             "description": "The rulebase.  This can be `pre-rulebase` (default),\n`post-rulebase`, or `rulebase`."
@@ -250,10 +253,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

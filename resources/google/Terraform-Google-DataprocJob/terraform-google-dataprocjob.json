@@ -48,16 +48,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -66,7 +66,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LoggingConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -92,16 +93,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -122,16 +123,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -159,16 +160,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -189,16 +190,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -207,7 +208,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LoggingConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -266,16 +268,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -291,7 +293,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LoggingConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -365,16 +368,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -383,7 +386,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LoggingConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -406,16 +410,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -436,16 +440,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -454,7 +458,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LoggingConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -483,16 +488,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -517,6 +522,9 @@
             "type": "boolean",
             "description": "By default, you can only delete inactive jobs within\nDataproc. Setting this to true, and calling destroy, will ensure that the\njob is first cancelled before issuing the delete."
         },
+        "Id": {
+            "type": "string"
+        },
         "Labels": {
             "type": "array",
             "insertionOrder": true,
@@ -524,16 +532,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The list of labels (key/value pairs) to add to the job."
@@ -659,10 +667,11 @@
         "/properties/tfcfnid",
         "/properties/DriverControlsFilesUri",
         "/properties/DriverOutputResourceUri",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

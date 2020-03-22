@@ -18,6 +18,9 @@
         "Hostname": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Ipv4": {
             "type": "string"
         },
@@ -47,16 +50,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -72,13 +75,14 @@
         "/properties/tfcfnid",
         "/properties/Created",
         "/properties/Hostname",
+        "/properties/Id",
         "/properties/Ipv4",
         "/properties/Ipv6",
         "/properties/Transfer",
         "/properties/Updated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

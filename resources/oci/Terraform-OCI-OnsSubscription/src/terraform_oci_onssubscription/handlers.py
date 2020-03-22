@@ -1,5 +1,6 @@
 import logging
-import os, subprocess, json, re
+import json
+import os
 from uuid import uuid4
 from typing import Any, MutableMapping, Optional
 
@@ -22,31 +23,34 @@ TYPE_NAME = "Terraform::OCI::OnsSubscription"
 resource = Resource(TYPE_NAME, ResourceModel)
 test_entrypoint = resource.test_entrypoint
 
-def check_call(args, cwd):
-    proc = subprocess.Popen(args,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        cwd=cwd)
-    stdout, stderr = proc.communicate()
-    LOG.warn(stdout.decode('utf-8'))
-    LOG.warn(stderr.decode('utf-8'))
-    if proc.returncode != 0:
-        raise exceptions.InternalFailure(f"{stderr.decode('utf-8')}")
+
+def check_progress(operationid, trackingid, progress, session):
+    LOG.warn("Retrieving existing operation status")
+
+    s3client = session.client('s3')
+    stsclient = session.client('sts')
     
-    return stdout
+    callerid = stsclient.get_caller_identity()
+    statebucketname = "cfntf-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
 
-def cfn_to_tf_str(obj):
-    return re.sub('([A-Z]{1})', r'_\1', obj).lower()[1:]
+    try:
+        result = json.loads(s3client.get_object(Bucket=statebucketname, Key="status/{}.json".format(operationid))['Body'].read())
+        if result['status'] == 'completed':
+            progress.status = OperationStatus.SUCCESS
+        else:
+            progress.status = OperationStatus.FAILED
+            if 'error' in result:
+                progress.message = result['error']
+        s3client.delete_object(Bucket=statebucketname, Key="status/{}.json".format(operationid))
+    except:
+        progress.callbackDelaySeconds = 20
+        progress.callbackContext = {
+            'trackingid': trackingid,
+            'operationid': operationid,
+        }
+    
+    return progress
 
-def parse_obj(obj):
-    if isinstance(obj, dict):
-        ret = {}
-        for prop, value in obj.items():
-            ret[cfn_to_tf_str(prop)] = parse_obj(value)
-
-        return ret
-
-    return obj
 
 @resource.handler(Action.CREATE)
 def create_handler(
@@ -60,63 +64,43 @@ def create_handler(
         resourceModel=model,
     )
 
+    if callback_context.get('operationid'):
+        return check_progress(callback_context.get('operationid'), callback_context.get('trackingid'), progress, session)
+
     LOG.warn("Starting create action")
     
     try:
-        s3client = session.client("s3")
-        stsclient = session.client("sts")
-        secretsmanagerclient = session.client("secretsmanager")
+        lambdaclient = session.client("lambda")
 
         trackingid = str(uuid4())
-        callerid = stsclient.get_caller_identity()
-        statebucketname = "cfntfstate-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
+        operationid = str(uuid4())
 
-        tf = {
-            "provider": {
-                "oci": {}
-            },
-            "resource": {
-                "oci_ons_subscription": {}
-            }
+        resolved_model = None
+        if model: # potentially no properties set
+            resolved_model = {}
+            for prop, value in vars(model).items():
+                resolved_model[prop] = value
+        
+        lambdaclient.invoke(
+            FunctionName="cfntf-executor",
+            InvocationType="Event",
+            Payload=json.dumps({
+                'action': 'CREATE',
+                'trackingId': trackingid,
+                'operationId': operationid,
+                'model': resolved_model,
+                'logicalId': request.logicalResourceIdentifier,
+                'providerTypeName': 'oci',
+                'terraformTypeName': 'oci_ons_subscription',
+            }).encode(),
+        )
+
+        progress.resourceModel.tfcfnid = trackingid
+        progress.callbackDelaySeconds = 20
+        progress.callbackContext = {
+            'trackingid': trackingid,
+            'operationid': operationid,
         }
-        tf['resource']['oci_ons_subscription'][request.logicalResourceIdentifier] = {}
-
-        if "oci" == "aws":
-            creds = session.credentials
-            tf["provider"]["oci"] = {
-                "access_key": creds.access_key,
-                "secret_key": creds.secret_key,
-                "token": creds.token
-            }
-
-        try:
-            secretstr = secretsmanagerclient.get_secret_value(SecretId="terraform/{}".format("oci"))['SecretString']
-            tf["provider"]["oci"].update(json.loads(secretstr))
-        except:
-            pass
-
-        for prop, value in vars(model).items():
-            if value is not None and prop != "tfcfnid":
-                tf['resource']['oci_ons_subscription'][request.logicalResourceIdentifier][cfn_to_tf_str(prop)] = parse_obj(value)
-
-        with open("/tmp/main.tf.json", "w") as f:
-            f.write(json.dumps(tf, indent=2))
-
-        LOG.warn("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
-        LOG.warn("Executing create")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
-
-        LOG.warn("Storing result")
-        with open("/tmp/terraform.tfstate", "rb") as f:
-            s3client.upload_fileobj(f, statebucketname, "{}.tfstate".format(trackingid))
-
-        os.remove("/tmp/main.tf.json")
-        os.remove("/tmp/terraform.tfstate")
-
-        model.tfcfnid = trackingid
-
-        progress.status = OperationStatus.SUCCESS
     except Exception as e:
         progress.message = str(e)
         progress.status = OperationStatus.FAILED
@@ -135,60 +119,43 @@ def update_handler(
         resourceModel=model,
     )
 
+    if callback_context.get('operationid'):
+        return check_progress(callback_context.get('operationid'), callback_context.get('trackingid'), progress, session)
+
     LOG.warn("Starting update action")
     
     try:
-        s3client = session.client("s3")
-        stsclient = session.client("sts")
-        secretsmanagerclient = session.client("secretsmanager")
+        lambdaclient = session.client("lambda")
 
         trackingid = model.tfcfnid
-        callerid = stsclient.get_caller_identity()
-        statebucketname = "cfntfstate-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
-
-        tf = {
-            "provider": {
-                "oci": {}
-            },
-            "resource": {
-                "oci_ons_subscription": {}
-            }
-        }
-        tf['resource']['oci_ons_subscription'][request.logicalResourceIdentifier] = {}
-
-        if "oci" == "aws":
-            creds = session.credentials
-            tf["provider"]["oci"] = {
-                "access_key": creds.access_key,
-                "secret_key": creds.secret_key,
-                "token": creds.token
-            }
-
-        try:
-            secretstr = secretsmanagerclient.get_secret_value(SecretId="terraform/{}".format("oci"))['SecretString']
-            tf["provider"]["oci"].update(json.loads(secretstr))
-        except:
-            pass
-
-        for prop, value in vars(model).items():
-            if value is not None and prop != "tfcfnid":
-                tf['resource']['oci_ons_subscription'][request.logicalResourceIdentifier][cfn_to_tf_str(prop)] = parse_obj(value)
+        operationid = str(uuid4())
         
-        LOG.warn(json.dumps(tf))
+        resolved_model = None
+        if model: # potentially no properties set
+            resolved_model = {}
+            for prop, value in vars(model).items():
+                resolved_model[prop] = value
+        
+        lambdaclient.invoke(
+            FunctionName="cfntf-executor",
+            InvocationType="Event",
+            Payload=json.dumps({
+                'action': 'UPDATE',
+                'trackingId': trackingid,
+                'operationId': operationid,
+                'model': resolved_model,
+                'logicalId': request.logicalResourceIdentifier,
+                'providerTypeName': 'oci',
+                'terraformTypeName': 'oci_ons_subscription',
+            }).encode(),
+        )
 
-        with open("/tmp/main.tf.json", "w") as f:
-            f.write(json.dumps(tf, indent=2))
-
-        LOG.warn("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
-        LOG.warn("Executing update")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
-
-        LOG.warn("Storing result")
-        with open("/tmp/terraform.tfstate", "rb") as f:
-            s3client.upload_fileobj(f, statebucketname, "{}.tfstate".format(trackingid))
-
-        progress.status = OperationStatus.SUCCESS
+        progress.resourceModel.tfcfnid = trackingid
+        progress.callbackDelaySeconds = 20
+        progress.callbackContext = {
+            'trackingid': trackingid,
+            'operationid': operationid,
+        }
     except Exception as e:
         progress.message = str(e)
         progress.status = OperationStatus.FAILED
@@ -207,65 +174,43 @@ def delete_handler(
         resourceModel=model,
     )
 
+    if callback_context.get('operationid'):
+        return check_progress(callback_context.get('operationid'), callback_context.get('trackingid'), progress, session)
+
     LOG.warn("Starting delete action")
     
     try:
-        s3client = session.client("s3")
-        stsclient = session.client("sts")
-        secretsmanagerclient = session.client("secretsmanager")
+        lambdaclient = session.client("lambda")
 
         trackingid = model.tfcfnid
-        callerid = stsclient.get_caller_identity()
-        statebucketname = "cfntfstate-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
-
-        with open('/tmp/terraform.tfstate', 'wb') as f:
-            s3client.download_fileobj(statebucketname, '{}.tfstate'.format(trackingid), f)
-
-        tf = {
-            "provider": {
-                "oci": {}
-            },
-            "resource": {
-                "oci_ons_subscription": {}
-            }
-        }
-        tf['resource']['oci_ons_subscription'][request.logicalResourceIdentifier] = {}
-
-        if "oci" == "aws":
-            creds = session.credentials
-            tf["provider"]["oci"] = {
-                "access_key": creds.access_key,
-                "secret_key": creds.secret_key,
-                "token": creds.token
-            }
-
-        try:
-            secretstr = secretsmanagerclient.get_secret_value(SecretId="terraform/{}".format("oci"))['SecretString']
-            tf["provider"]["oci"].update(json.loads(secretstr))
-        except:
-            pass
-
-        for prop, value in vars(model).items():
-            if value is not None and prop != "tfcfnid":
-                tf['resource']['oci_ons_subscription'][request.logicalResourceIdentifier][cfn_to_tf_str(prop)] = parse_obj(value)
+        operationid = str(uuid4())
         
-        LOG.warn(json.dumps(tf))
-
-        with open("/tmp/main.tf.json", "w") as f:
-            f.write(json.dumps(tf, indent=2))
+        resolved_model = None
+        if model: # potentially no properties set
+            resolved_model = {}
+            for prop, value in vars(model).items():
+                resolved_model[prop] = value
         
-        LOG.warn("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
-        LOG.warn("Executing delete")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-auto-approve', '-no-color'], "/tmp/")
-
-        LOG.warn("Deleting state S3 object")
-        s3client.delete_object(
-            Bucket=statebucketname,
-            Key="{}.tfstate".format(trackingid)
+        lambdaclient.invoke(
+            FunctionName="cfntf-executor",
+            InvocationType="Event",
+            Payload=json.dumps({
+                'action': 'DELETE',
+                'trackingId': trackingid,
+                'operationId': operationid,
+                'model': resolved_model,
+                'logicalId': request.logicalResourceIdentifier,
+                'providerTypeName': 'oci',
+                'terraformTypeName': 'oci_ons_subscription',
+            }).encode(),
         )
 
-        progress.status = OperationStatus.SUCCESS
+        progress.resourceModel.tfcfnid = trackingid
+        progress.callbackDelaySeconds = 20
+        progress.callbackContext = {
+            'trackingid': trackingid,
+            'operationid': operationid,
+        }
     except Exception as e:
         progress.message = str(e)
         progress.status = OperationStatus.FAILED

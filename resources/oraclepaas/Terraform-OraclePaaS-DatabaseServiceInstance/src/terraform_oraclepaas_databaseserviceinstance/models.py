@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     EmUrl: Optional[str]
     GlassfishUrl: Optional[str]
     HighPerformanceStorage: Optional[bool]
+    Id: Optional[str]
     IdentityDomain: Optional[str]
     IpNetwork: Optional[str]
     IpReservations: Optional[Sequence[str]]
@@ -89,6 +90,7 @@ class ResourceModel(BaseResourceModel):
             EmUrl=json_data.get("EmUrl"),
             GlassfishUrl=json_data.get("GlassfishUrl"),
             HighPerformanceStorage=json_data.get("HighPerformanceStorage"),
+            Id=json_data.get("Id"),
             IdentityDomain=json_data.get("IdentityDomain"),
             IpNetwork=json_data.get("IpNetwork"),
             IpReservations=json_data.get("IpReservations"),

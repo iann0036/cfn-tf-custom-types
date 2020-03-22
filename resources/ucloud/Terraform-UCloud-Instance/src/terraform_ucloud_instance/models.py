@@ -49,6 +49,7 @@ class ResourceModel(BaseResourceModel):
     DiskSet: Optional[Sequence["_DiskSet"]]
     Duration: Optional[float]
     ExpireTime: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     InstanceType: Optional[str]
     IpSet: Optional[Sequence["_IpSet"]]
@@ -87,6 +88,7 @@ class ResourceModel(BaseResourceModel):
             DiskSet=json_data.get("DiskSet"),
             Duration=json_data.get("Duration"),
             ExpireTime=json_data.get("ExpireTime"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceType=json_data.get("InstanceType"),
             IpSet=json_data.get("IpSet"),

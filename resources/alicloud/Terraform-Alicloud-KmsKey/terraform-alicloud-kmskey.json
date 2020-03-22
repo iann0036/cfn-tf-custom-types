@@ -19,6 +19,9 @@
             "type": "string",
             "description": "The description of the key as viewed in Alicloud console. Default to \"From Terraform\"."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsEnabled": {
             "type": "boolean",
             "description": "Specifies whether the key is enabled. Defaults to true."
@@ -32,10 +35,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Arn"
+        "/properties/Arn",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

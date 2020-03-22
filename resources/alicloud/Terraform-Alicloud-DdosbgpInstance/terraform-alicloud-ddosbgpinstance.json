@@ -16,6 +16,9 @@
             "type": "number",
             "description": "Base defend bandwidth of the instance. Valid values: 20. The unit is Gbps. Default to `20`."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpCount": {
             "type": "number",
             "description": "IP count of the instance. Valid values: 100."
@@ -44,10 +47,11 @@
         "IpType"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

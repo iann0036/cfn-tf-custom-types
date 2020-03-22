@@ -1044,6 +1044,9 @@
             "type": "boolean",
             "description": "Services that are active cannot be destroyed. In\norder to destroy the Service, set `force_destroy` to `true`. Default `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The unique name for the Service to create."
@@ -1229,10 +1232,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ActiveVersion",
-        "/properties/ClonedVersion"
+        "/properties/ClonedVersion",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

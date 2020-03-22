@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Body: Optional[str]
+    Id: Optional[str]
     LogicAppId: Optional[str]
     Name: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Body=json_data.get("Body"),
+            Id=json_data.get("Id"),
             LogicAppId=json_data.get("LogicAppId"),
             Name=json_data.get("Name"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     NetworkAclId: Optional[str]
     Resources: Optional[Sequence["_Resources"]]
 
@@ -48,6 +49,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             NetworkAclId=json_data.get("NetworkAclId"),
             Resources=json_data.get("Resources"),
         )

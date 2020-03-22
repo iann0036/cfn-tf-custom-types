@@ -55,6 +55,9 @@
         "DomainName": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "RegionalCertificateArn": {
             "type": "string"
         },
@@ -77,16 +80,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -109,11 +112,12 @@
         "/properties/CertificateUploadDate",
         "/properties/CloudfrontDomainName",
         "/properties/CloudfrontZoneId",
+        "/properties/Id",
         "/properties/RegionalDomainName",
         "/properties/RegionalZoneId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

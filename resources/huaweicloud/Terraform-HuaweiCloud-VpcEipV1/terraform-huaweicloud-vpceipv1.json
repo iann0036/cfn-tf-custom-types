@@ -72,6 +72,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Region": {
             "type": "string",
             "description": "The region in which to create the eip. If omitted,\nthe `region` argument of the provider is used. Changing this creates a new eip."
@@ -83,16 +86,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -119,10 +122,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

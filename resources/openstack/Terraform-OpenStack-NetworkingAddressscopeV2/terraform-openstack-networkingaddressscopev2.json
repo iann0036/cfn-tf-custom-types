@@ -22,6 +22,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpVersion": {
             "type": "number",
             "description": "IP version, either 4 (default) or 6. Changing this\ncreates a new address-scope."
@@ -51,10 +54,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

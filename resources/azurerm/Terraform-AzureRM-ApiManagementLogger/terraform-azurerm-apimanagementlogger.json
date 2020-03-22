@@ -71,6 +71,9 @@
             "type": "string",
             "description": "A description of this Logger."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of this Logger, which must be unique within the API Management Service. Changing this forces a new resource to be created."
@@ -106,10 +109,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

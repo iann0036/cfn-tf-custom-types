@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AssignableScopes: Optional[Sequence[str]]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     RoleDefinitionId: Optional[str]
     Scope: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AssignableScopes=json_data.get("AssignableScopes"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RoleDefinitionId=json_data.get("RoleDefinitionId"),
             Scope=json_data.get("Scope"),

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
     Direction: Optional[str]
+    Id: Optional[str]
     IpRange: Optional[str]
     Port: Optional[float]
     Protocol: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
             Direction=json_data.get("Direction"),
+            Id=json_data.get("Id"),
             IpRange=json_data.get("IpRange"),
             Port=json_data.get("Port"),
             Protocol=json_data.get("Protocol"),

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Type: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Type=json_data.get("Type"),

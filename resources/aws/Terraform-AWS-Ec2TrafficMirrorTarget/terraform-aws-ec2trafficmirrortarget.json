@@ -11,6 +11,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "NetworkInterfaceId": {
             "type": "string"
         },
@@ -24,16 +27,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         }
@@ -41,10 +44,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

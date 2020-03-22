@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DstPorts: Optional[Sequence[str]]
+    Id: Optional[str]
     IpProtocol: Optional[str]
     Name: Optional[str]
     SrcPorts: Optional[Sequence[str]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DstPorts=json_data.get("DstPorts"),
+            Id=json_data.get("Id"),
             IpProtocol=json_data.get("IpProtocol"),
             Name=json_data.get("Name"),
             SrcPorts=json_data.get("SrcPorts"),

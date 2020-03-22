@@ -8,6 +8,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Members": {
             "type": "array",
             "insertionOrder": false,
@@ -38,16 +41,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -59,10 +62,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Members"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

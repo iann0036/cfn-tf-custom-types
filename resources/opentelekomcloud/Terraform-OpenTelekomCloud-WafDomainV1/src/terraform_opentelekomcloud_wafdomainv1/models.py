@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     CertificateId: Optional[str]
     Cname: Optional[str]
     Hostname: Optional[str]
+    Id: Optional[str]
     PolicyId: Optional[str]
     ProtectStatus: Optional[float]
     Protocol: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             CertificateId=json_data.get("CertificateId"),
             Cname=json_data.get("Cname"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             PolicyId=json_data.get("PolicyId"),
             ProtectStatus=json_data.get("ProtectStatus"),
             Protocol=json_data.get("Protocol"),

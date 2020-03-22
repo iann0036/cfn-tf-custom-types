@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The hostname the notification applies to."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interval": {
             "type": "number"
         },
@@ -45,16 +48,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         }
@@ -65,10 +68,11 @@
         "Hostname"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

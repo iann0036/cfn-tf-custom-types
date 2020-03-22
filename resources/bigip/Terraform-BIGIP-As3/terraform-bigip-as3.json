@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Path/Filename of Declarative AS3 JSON which can be a template/json file used with builtin ```templatefile``` function (or) ```file``` function."
         },
+        "Id": {
+            "type": "string"
+        },
         "TenantName": {
             "type": "string",
             "description": "Tenant name used to set the terraform state changes for as3 resource."
@@ -23,10 +26,11 @@
         "TenantName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

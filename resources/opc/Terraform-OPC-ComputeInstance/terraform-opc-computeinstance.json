@@ -147,6 +147,9 @@
             "type": "string",
             "description": "The host name assigned to the instance. On an Oracle Linux instance, this host name is displayed in response to the hostname command. Only relative DNS is supported. The domain name is suffixed to the host name that you specify. The host name must not end with a period. If you don't specify a host name, then a name is generated automatically."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageFormat": {
             "type": "string"
         },
@@ -272,6 +275,7 @@
         "/properties/Entry",
         "/properties/Fingerprint",
         "/properties/Fqdn",
+        "/properties/Id",
         "/properties/ImageFormat",
         "/properties/IpAddress",
         "/properties/PlacementRequirements",
@@ -288,7 +292,7 @@
         "/properties/VncAddress"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

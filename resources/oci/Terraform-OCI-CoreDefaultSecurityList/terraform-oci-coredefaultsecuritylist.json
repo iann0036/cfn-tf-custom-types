@@ -27,21 +27,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/IcmpOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TcpOptions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TcpOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "UdpOptions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/UdpOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -73,21 +76,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/IcmpOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TcpOptions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TcpOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "UdpOptions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/UdpOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -141,7 +147,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SourcePortRange"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -161,7 +168,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SourcePortRange"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -195,16 +203,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -218,18 +226,21 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
+        },
+        "Id": {
+            "type": "string"
         },
         "ManageDefaultResourceId": {
             "type": "string"
@@ -296,11 +307,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/State",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

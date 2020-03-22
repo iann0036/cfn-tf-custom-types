@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The description of the security ip list."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpEntries": {
             "type": "array",
             "insertionOrder": false,
@@ -31,10 +34,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

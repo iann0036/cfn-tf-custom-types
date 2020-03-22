@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     Revision: Optional[float]
     Member: Optional[Sequence["_Member"]]
     MembershipCriteria: Optional[Sequence["_MembershipCriteria"]]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             Member=json_data.get("Member"),
             MembershipCriteria=json_data.get("MembershipCriteria"),

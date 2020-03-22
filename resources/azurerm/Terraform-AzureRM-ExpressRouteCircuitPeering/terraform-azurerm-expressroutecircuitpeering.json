@@ -52,6 +52,9 @@
             "type": "string",
             "description": "The name of the ExpressRoute Circuit in which to create the Peering."
         },
+        "Id": {
+            "type": "string"
+        },
         "PeerAsn": {
             "type": "number",
             "description": "The Either a 16-bit or a 32-bit ASN. Can either be public or private.."
@@ -110,11 +113,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AzureAsn",
+        "/properties/Id",
         "/properties/PrimaryAzurePort",
         "/properties/SecondaryAzurePort"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

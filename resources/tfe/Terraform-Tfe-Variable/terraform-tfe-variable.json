@@ -20,6 +20,9 @@
             "type": "boolean",
             "description": "Whether to evaluate the value of the variable as a string\nof HCL code. Has no effect for environment variables. Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "Name of the variable."
@@ -44,10 +47,11 @@
         "WorkspaceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

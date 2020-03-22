@@ -36,21 +36,24 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A dictionary of HTTP request headers."
         },
         "HomeRegion": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Method": {
@@ -108,11 +111,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/HomeRegion",
+        "/properties/Id",
         "/properties/ResultsUrl",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

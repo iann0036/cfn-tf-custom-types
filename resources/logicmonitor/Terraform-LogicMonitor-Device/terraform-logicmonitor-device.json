@@ -27,6 +27,9 @@
             "type": "string",
             "description": "The host group id that specifies which group the device belongs to (multiple host group ids can be added, represented by a comma separated string)."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddr": {
             "type": "string",
             "description": "Ip Address/Hostname of device."
@@ -38,16 +41,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The properties associated with this device group. Any string value pair will work (see example)."
@@ -59,10 +62,11 @@
         "IpAddr"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

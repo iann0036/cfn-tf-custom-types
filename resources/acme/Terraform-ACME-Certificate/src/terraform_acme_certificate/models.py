@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     CertificateRequestPem: Optional[str]
     CertificateUrl: Optional[str]
     CommonName: Optional[str]
+    Id: Optional[str]
     IssuerPem: Optional[str]
     KeyType: Optional[str]
     MinDaysRemaining: Optional[float]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             CertificateRequestPem=json_data.get("CertificateRequestPem"),
             CertificateUrl=json_data.get("CertificateUrl"),
             CommonName=json_data.get("CommonName"),
+            Id=json_data.get("Id"),
             IssuerPem=json_data.get("IssuerPem"),
             KeyType=json_data.get("KeyType"),
             MinDaysRemaining=json_data.get("MinDaysRemaining"),
@@ -109,8 +111,8 @@ _DnsChallenge = DnsChallenge
 
 @dataclass
 class Config:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -120,8 +122,8 @@ class Config:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

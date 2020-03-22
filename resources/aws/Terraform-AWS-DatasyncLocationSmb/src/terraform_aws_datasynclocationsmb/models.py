@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AgentArns: Optional[Sequence[str]]
     Arn: Optional[str]
     Domain: Optional[str]
+    Id: Optional[str]
     Password: Optional[str]
     ServerHostname: Optional[str]
     Subdirectory: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AgentArns=json_data.get("AgentArns"),
             Arn=json_data.get("Arn"),
             Domain=json_data.get("Domain"),
+            Id=json_data.get("Id"),
             Password=json_data.get("Password"),
             ServerHostname=json_data.get("ServerHostname"),
             Subdirectory=json_data.get("Subdirectory"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

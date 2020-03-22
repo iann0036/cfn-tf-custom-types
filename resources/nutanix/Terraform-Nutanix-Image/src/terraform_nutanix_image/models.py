@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     ClusterName: Optional[str]
     ClusterUuid: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     ImageType: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             ClusterName=json_data.get("ClusterName"),
             ClusterUuid=json_data.get("ClusterUuid"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             ImageType=json_data.get("ImageType"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
@@ -93,8 +95,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AvailabilityZoneReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class AvailabilityZoneReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -115,8 +117,8 @@ _AvailabilityZoneReference = AvailabilityZoneReference
 
 @dataclass
 class Checksum:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class Checksum:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -137,8 +139,8 @@ _Checksum = Checksum
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -148,8 +150,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -159,8 +161,8 @@ _Metadata = Metadata
 
 @dataclass
 class OwnerReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -170,8 +172,8 @@ class OwnerReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -181,8 +183,8 @@ _OwnerReference = OwnerReference
 
 @dataclass
 class ProjectReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -192,8 +194,8 @@ class ProjectReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -203,8 +205,8 @@ _ProjectReference = ProjectReference
 
 @dataclass
 class Version:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -214,8 +216,8 @@ class Version:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

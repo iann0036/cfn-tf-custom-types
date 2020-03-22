@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DisplayLayer: Optional[str]
     DisplayName: Optional[str]
     DomainId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Statement: Optional[Sequence["_Statement"]]
 
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             DisplayLayer=json_data.get("DisplayLayer"),
             DisplayName=json_data.get("DisplayName"),
             DomainId=json_data.get("DomainId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Statement=json_data.get("Statement"),
         )

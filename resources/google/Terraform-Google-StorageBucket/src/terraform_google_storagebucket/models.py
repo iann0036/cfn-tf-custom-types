@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BucketPolicyOnly: Optional[bool]
     DefaultEventBasedHold: Optional[bool]
     ForceDestroy: Optional[bool]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Location: Optional[str]
     Name: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             BucketPolicyOnly=json_data.get("BucketPolicyOnly"),
             DefaultEventBasedHold=json_data.get("DefaultEventBasedHold"),
             ForceDestroy=json_data.get("ForceDestroy"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

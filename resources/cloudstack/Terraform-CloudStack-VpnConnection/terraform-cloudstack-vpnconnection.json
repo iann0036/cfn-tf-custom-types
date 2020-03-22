@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The Customer Gateway ID to connect.\nChanging this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "VpnGatewayId": {
             "type": "string",
             "description": "The VPN Gateway ID to connect. Changing\nthis forces a new resource to be created."
@@ -23,10 +26,11 @@
         "VpnGatewayId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

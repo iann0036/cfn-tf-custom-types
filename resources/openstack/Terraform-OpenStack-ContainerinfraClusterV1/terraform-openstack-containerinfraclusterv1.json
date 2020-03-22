@@ -58,6 +58,9 @@
         "Flavor": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Keypair": {
             "type": "string"
         },
@@ -68,16 +71,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -128,6 +131,7 @@
         "/properties/CoeVersion",
         "/properties/ContainerVersion",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/MasterAddresses",
         "/properties/NodeAddresses",
         "/properties/ProjectId",
@@ -136,7 +140,7 @@
         "/properties/UserId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

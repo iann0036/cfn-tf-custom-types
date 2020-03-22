@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllowedRoles: Optional[Sequence[str]]
     Backend: Optional[str]
     Data: Optional[Sequence["_Data"]]
+    Id: Optional[str]
     Name: Optional[str]
     RootRotationStatements: Optional[Sequence[str]]
     VerifyConnection: Optional[bool]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             AllowedRoles=json_data.get("AllowedRoles"),
             Backend=json_data.get("Backend"),
             Data=json_data.get("Data"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RootRotationStatements=json_data.get("RootRotationStatements"),
             VerifyConnection=json_data.get("VerifyConnection"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Data:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Data:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

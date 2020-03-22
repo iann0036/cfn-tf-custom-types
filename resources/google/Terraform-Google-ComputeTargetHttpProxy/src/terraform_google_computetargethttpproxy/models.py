@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreationTimestamp: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     ProxyId: Optional[float]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             ProxyId=json_data.get("ProxyId"),

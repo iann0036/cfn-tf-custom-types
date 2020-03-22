@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Config: Optional[Sequence["_Config"]]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Type: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Config=json_data.get("Config"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Type=json_data.get("Type"),
         )
@@ -63,8 +65,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Config:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -74,8 +76,8 @@ class Config:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

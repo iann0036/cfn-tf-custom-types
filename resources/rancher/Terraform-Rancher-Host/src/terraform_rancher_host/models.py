@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EnvironmentId: Optional[str]
     Hostname: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Name: Optional[str]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EnvironmentId=json_data.get("EnvironmentId"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Name=json_data.get("Name"),
         )
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

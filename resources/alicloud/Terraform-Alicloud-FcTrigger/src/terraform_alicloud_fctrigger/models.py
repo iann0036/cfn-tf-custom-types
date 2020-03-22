@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Config: Optional[str]
     ConfigMns: Optional[str]
     Function: Optional[str]
+    Id: Optional[str]
     LastModified: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Config=json_data.get("Config"),
             ConfigMns=json_data.get("ConfigMns"),
             Function=json_data.get("Function"),
+            Id=json_data.get("Id"),
             LastModified=json_data.get("LastModified"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),

@@ -26,6 +26,9 @@
             "type": "string",
             "description": "ID of the floating ip this snat rule connets to.\nChanging this creates a new snat rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "NatGatewayId": {
             "type": "string",
             "description": "ID of the nat gateway this snat rule belongs to.\nChanging this creates a new snat rule."
@@ -49,10 +52,11 @@
         "NetworkId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

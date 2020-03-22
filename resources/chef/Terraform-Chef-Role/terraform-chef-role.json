@@ -16,6 +16,9 @@
             "type": "string",
             "description": "A human-friendly description of the role.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The unique name to assign to the role."
@@ -38,10 +41,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

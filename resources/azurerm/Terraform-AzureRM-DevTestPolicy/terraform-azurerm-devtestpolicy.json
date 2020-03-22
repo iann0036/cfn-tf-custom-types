@@ -40,6 +40,9 @@
             "type": "string",
             "description": "The Fact Data for this Policy."
         },
+        "Id": {
+            "type": "string"
+        },
         "LabName": {
             "type": "string",
             "description": "Specifies the name of the Dev Test Lab in which the Policy should be created. Changing this forces a new resource to be created."
@@ -63,16 +66,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -95,10 +98,11 @@
         "Threshold"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

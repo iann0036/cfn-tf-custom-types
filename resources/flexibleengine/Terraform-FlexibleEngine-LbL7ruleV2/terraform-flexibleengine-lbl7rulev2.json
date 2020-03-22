@@ -33,6 +33,9 @@
             "type": "string",
             "description": "The comparison type for the L7 rule - can either be\nSTARTS\\_WITH, EQUAL_TO or REGEX."
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "The key to use for the comparison. For example, the name of the cookie to\nevaluate. Valid when `type` is set to COOKIE or HEADER. Changing this creates a new L7 Rule."
@@ -73,10 +76,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/ListenerId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

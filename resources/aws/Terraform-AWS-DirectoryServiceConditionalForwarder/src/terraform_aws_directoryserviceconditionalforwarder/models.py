@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DirectoryId: Optional[str]
     DnsIps: Optional[Sequence[str]]
+    Id: Optional[str]
     RemoteDomainName: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DirectoryId=json_data.get("DirectoryId"),
             DnsIps=json_data.get("DnsIps"),
+            Id=json_data.get("Id"),
             RemoteDomainName=json_data.get("RemoteDomainName"),
         )
 

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     LaunchExpirationTime: Optional[float]
     LaunchTime: Optional[str]
     RecurrenceEndTime: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             LaunchExpirationTime=json_data.get("LaunchExpirationTime"),
             LaunchTime=json_data.get("LaunchTime"),
             RecurrenceEndTime=json_data.get("RecurrenceEndTime"),

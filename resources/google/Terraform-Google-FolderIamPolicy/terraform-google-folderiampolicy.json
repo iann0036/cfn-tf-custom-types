@@ -15,6 +15,9 @@
             "type": "string",
             "description": "The resource name of the folder the policy is attached to. Its format is folders/{folder_id}."
         },
+        "Id": {
+            "type": "string"
+        },
         "PolicyData": {
             "type": "string",
             "description": "The `google_iam_policy` data source that represents\nthe IAM policy that will be applied to the folder. This policy overrides any existing\npolicy applied to the folder."
@@ -27,10 +30,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Etag"
+        "/properties/Etag",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

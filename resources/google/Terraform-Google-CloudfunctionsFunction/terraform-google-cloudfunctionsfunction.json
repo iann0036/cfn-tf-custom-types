@@ -20,7 +20,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FailurePolicy"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -98,21 +99,24 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A set of key/value environment variable pairs to assign to the function."
         },
         "HttpsTriggerUrl": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Labels": {
@@ -122,16 +126,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A set of key/value label pairs to assign to the function."
@@ -212,10 +216,11 @@
         "Runtime"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

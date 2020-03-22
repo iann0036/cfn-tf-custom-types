@@ -19,6 +19,9 @@
         },
         "CertificateWallet": {
             "type": "string"
+        },
+        "Id": {
+            "type": "string"
         }
     },
     "additionalProperties": false,
@@ -27,10 +30,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CertificateArn"
+        "/properties/CertificateArn",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

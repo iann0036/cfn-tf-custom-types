@@ -19,14 +19,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AddOns"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "KubernetesNetworkConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KubernetesNetworkConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -102,6 +104,9 @@
                     }
                 }
             }
+        },
+        "Id": {
+            "type": "string"
         },
         "KmsKeyId": {
             "type": "string",
@@ -201,12 +206,13 @@
         "/properties/tfcfnid",
         "/properties/AvailableKubernetesUpgrades",
         "/properties/Endpoints",
+        "/properties/Id",
         "/properties/LifecycleDetails",
         "/properties/Metadata",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

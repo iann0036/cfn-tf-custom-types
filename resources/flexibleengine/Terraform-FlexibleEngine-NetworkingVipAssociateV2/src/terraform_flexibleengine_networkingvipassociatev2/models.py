@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     PortIds: Optional[Sequence[str]]
     VipId: Optional[str]
     VipIpAddress: Optional[str]
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             PortIds=json_data.get("PortIds"),
             VipId=json_data.get("VipId"),
             VipIpAddress=json_data.get("VipIpAddress"),

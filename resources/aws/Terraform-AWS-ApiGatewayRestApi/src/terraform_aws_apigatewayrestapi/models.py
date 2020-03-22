@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     CreatedDate: Optional[str]
     Description: Optional[str]
     ExecutionArn: Optional[str]
+    Id: Optional[str]
     MinimumCompressionSize: Optional[float]
     Name: Optional[str]
     Policy: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             CreatedDate=json_data.get("CreatedDate"),
             Description=json_data.get("Description"),
             ExecutionArn=json_data.get("ExecutionArn"),
+            Id=json_data.get("Id"),
             MinimumCompressionSize=json_data.get("MinimumCompressionSize"),
             Name=json_data.get("Name"),
             Policy=json_data.get("Policy"),
@@ -81,8 +83,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -92,8 +94,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

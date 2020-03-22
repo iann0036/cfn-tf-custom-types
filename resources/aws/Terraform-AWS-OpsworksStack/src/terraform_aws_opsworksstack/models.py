@@ -50,6 +50,7 @@ class ResourceModel(BaseResourceModel):
     DefaultSshKeyName: Optional[str]
     DefaultSubnetId: Optional[str]
     HostnameTheme: Optional[str]
+    Id: Optional[str]
     ManageBerkshelf: Optional[bool]
     Name: Optional[str]
     Region: Optional[str]
@@ -84,6 +85,7 @@ class ResourceModel(BaseResourceModel):
             DefaultSshKeyName=json_data.get("DefaultSshKeyName"),
             DefaultSubnetId=json_data.get("DefaultSubnetId"),
             HostnameTheme=json_data.get("HostnameTheme"),
+            Id=json_data.get("Id"),
             ManageBerkshelf=json_data.get("ManageBerkshelf"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
@@ -103,8 +105,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BinaryData: Optional[Sequence["_BinaryData"]]
     Data: Optional[Sequence["_Data"]]
+    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BinaryData=json_data.get("BinaryData"),
             Data=json_data.get("Data"),
+            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
         )
 
@@ -61,8 +63,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class BinaryData:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -72,8 +74,8 @@ class BinaryData:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -83,8 +85,8 @@ _BinaryData = BinaryData
 
 @dataclass
 class Data:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class Data:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -133,8 +135,8 @@ _Metadata = Metadata
 
 @dataclass
 class Annotations:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -144,8 +146,8 @@ class Annotations:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -155,8 +157,8 @@ _Annotations = Annotations
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -166,8 +168,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

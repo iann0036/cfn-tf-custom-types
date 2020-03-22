@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     App: Optional[str]
     Buildpacks: Optional[Sequence[str]]
+    Id: Optional[str]
     LocalChecksum: Optional[str]
     OutputStreamUrl: Optional[str]
     ReleaseId: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             App=json_data.get("App"),
             Buildpacks=json_data.get("Buildpacks"),
+            Id=json_data.get("Id"),
             LocalChecksum=json_data.get("LocalChecksum"),
             OutputStreamUrl=json_data.get("OutputStreamUrl"),
             ReleaseId=json_data.get("ReleaseId"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Source:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Source:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -99,8 +101,8 @@ _Source = Source
 
 @dataclass
 class User:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -110,8 +112,8 @@ class User:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The ID of the Heroku App to attach to."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "A friendly name for the Heroku Addon Attachment."
@@ -27,10 +30,11 @@
         "AppId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

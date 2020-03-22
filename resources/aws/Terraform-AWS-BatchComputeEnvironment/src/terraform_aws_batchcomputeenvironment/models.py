@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ComputeEnvironmentNamePrefix: Optional[str]
     EccClusterArn: Optional[str]
     EcsClusterArn: Optional[str]
+    Id: Optional[str]
     ServiceRole: Optional[str]
     State: Optional[str]
     Status: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             ComputeEnvironmentNamePrefix=json_data.get("ComputeEnvironmentNamePrefix"),
             EccClusterArn=json_data.get("EccClusterArn"),
             EcsClusterArn=json_data.get("EcsClusterArn"),
+            Id=json_data.get("Id"),
             ServiceRole=json_data.get("ServiceRole"),
             State=json_data.get("State"),
             Status=json_data.get("Status"),
@@ -127,8 +129,8 @@ _ComputeResources = ComputeResources
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -138,8 +140,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

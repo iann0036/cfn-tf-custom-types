@@ -46,6 +46,7 @@ class ResourceModel(BaseResourceModel):
     DryRun: Optional[bool]
     ForceDelete: Optional[bool]
     HostName: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     IncludeDataDisks: Optional[bool]
     InstanceChargeType: Optional[str]
@@ -102,6 +103,7 @@ class ResourceModel(BaseResourceModel):
             DryRun=json_data.get("DryRun"),
             ForceDelete=json_data.get("ForceDelete"),
             HostName=json_data.get("HostName"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             IncludeDataDisks=json_data.get("IncludeDataDisks"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
@@ -147,8 +149,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class KmsEncryptionContext:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -158,8 +160,8 @@ class KmsEncryptionContext:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -169,8 +171,8 @@ _KmsEncryptionContext = KmsEncryptionContext
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -180,8 +182,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -191,8 +193,8 @@ _Tags = Tags
 
 @dataclass
 class VolumeTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -202,8 +204,8 @@ class VolumeTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

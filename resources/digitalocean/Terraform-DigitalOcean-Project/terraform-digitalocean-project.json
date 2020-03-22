@@ -19,6 +19,9 @@
             "type": "string",
             "description": "the environment of the project's resources. The possible values are: `Development`, `Staging`, `Production`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsDefault": {
             "type": "boolean"
         },
@@ -55,13 +58,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/IsDefault",
         "/properties/OwnerId",
         "/properties/OwnerUuid",
         "/properties/UpdatedAt"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

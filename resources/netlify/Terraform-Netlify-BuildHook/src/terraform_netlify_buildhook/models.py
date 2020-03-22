@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Branch: Optional[str]
+    Id: Optional[str]
     SiteId: Optional[str]
     Title: Optional[str]
     Url: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Branch=json_data.get("Branch"),
+            Id=json_data.get("Id"),
             SiteId=json_data.get("SiteId"),
             Title=json_data.get("Title"),
             Url=json_data.get("Url"),

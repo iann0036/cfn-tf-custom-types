@@ -20,6 +20,9 @@
             "type": "string",
             "description": "Character set encoding to use in the database.\nSpecify a string constant (e.g. `UTF8` or `SQL_ASCII`), or an integer encoding\nnumber.  If unset or set to an empty string the default encoding is set to\n`UTF8`.  If set to `DEFAULT` Terraform will use the same encoding as the\ntemplate database.  Changing this value will force the creation of a new\nresource as this value can only be changed when a database is created."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsTemplate": {
             "type": "boolean",
             "description": "If `true`, then this database can be cloned by any\nuser with `CREATEDB` privileges; if `false` (the default), then only\nsuperusers or the owner of the database can clone it."
@@ -54,10 +57,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

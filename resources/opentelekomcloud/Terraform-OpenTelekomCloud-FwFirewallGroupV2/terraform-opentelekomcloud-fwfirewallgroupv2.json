@@ -37,6 +37,9 @@
             "type": "string",
             "description": "The egress policy resource id for the firewall group. Changing\nthis updates the `egress_policy_id` of an existing firewall group."
         },
+        "Id": {
+            "type": "string"
+        },
         "IngressPolicyId": {
             "type": "string",
             "description": "The ingress policy resource id for the firewall group. Changing\nthis updates the `ingress_policy_id` of an existing firewall group."
@@ -67,16 +70,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -88,10 +91,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Bootable: Optional[bool]
     Description: Optional[str]
     Hypervisor: Optional[str]
+    Id: Optional[str]
     ImageList: Optional[str]
     ImageListEntry: Optional[float]
     MachineImage: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             Bootable=json_data.get("Bootable"),
             Description=json_data.get("Description"),
             Hypervisor=json_data.get("Hypervisor"),
+            Id=json_data.get("Id"),
             ImageList=json_data.get("ImageList"),
             ImageListEntry=json_data.get("ImageListEntry"),
             MachineImage=json_data.get("MachineImage"),

@@ -144,16 +144,16 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "Key": {
+                        "MapKey": {
                             "type": "string"
                         },
-                        "Value": {
+                        "MapValue": {
                             "type": "string"
                         }
                     },
                     "required": [
-                        "Key",
-                        "Value"
+                        "MapKey",
+                        "MapValue"
                     ]
                 }
             }
@@ -161,6 +161,9 @@
         "DnsName": {
             "type": "string",
             "description": "The port DNS name. Available, when Neutron DNS extension\nis enabled."
+        },
+        "Id": {
+            "type": "string"
         },
         "MacAddress": {
             "type": "string",
@@ -221,16 +224,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -277,10 +280,11 @@
         "/properties/AllFixedIps",
         "/properties/AllSecurityGroupIds",
         "/properties/AllTags",
-        "/properties/DnsAssignment"
+        "/properties/DnsAssignment",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

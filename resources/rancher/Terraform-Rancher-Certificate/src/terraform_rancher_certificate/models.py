@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EnvironmentId: Optional[str]
     ExpiresAt: Optional[str]
+    Id: Optional[str]
     IssuedAt: Optional[str]
     Issuer: Optional[str]
     Key: Optional[str]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EnvironmentId=json_data.get("EnvironmentId"),
             ExpiresAt=json_data.get("ExpiresAt"),
+            Id=json_data.get("Id"),
             IssuedAt=json_data.get("IssuedAt"),
             Issuer=json_data.get("Issuer"),
             Key=json_data.get("Key"),

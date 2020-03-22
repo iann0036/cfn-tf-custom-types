@@ -35,15 +35,15 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 
 @dataclass
 class ResourceModel(BaseResourceModel):
-    tfcfnid: Optional[str]
-    Architecture: Optional[str]
-    Description: Optional[str]
-    ImageName: Optional[str]
-    LicenseType: Optional[str]
-    OsType: Optional[str]
-    Platform: Optional[str]
-    DiskDeviceMapping: Optional[Sequence["_DiskDeviceMapping"]]
-    Timeouts: Optional["_Timeouts"]
+    TPSCode: Optional[str]
+    Title: Optional[str]
+    CoverSheetIncluded: Optional[bool]
+    DueDate: Optional[str]
+    ApprovalDate: Optional[str]
+    Memo: Optional["_Memo"]
+    SecondCopyOfMemo: Optional["_Memo"]
+    TestCode: Optional[str]
+    Authors: Optional[Sequence[str]]
 
     @classmethod
     def _deserialize(
@@ -53,15 +53,15 @@ class ResourceModel(BaseResourceModel):
         if not json_data:
             return None
         return cls(
-            tfcfnid=json_data.get("tfcfnid"),
-            Architecture=json_data.get("Architecture"),
-            Description=json_data.get("Description"),
-            ImageName=json_data.get("ImageName"),
-            LicenseType=json_data.get("LicenseType"),
-            OsType=json_data.get("OsType"),
-            Platform=json_data.get("Platform"),
-            DiskDeviceMapping=json_data.get("DiskDeviceMapping"),
-            Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
+            TPSCode=json_data.get("TPSCode"),
+            Title=json_data.get("Title"),
+            CoverSheetIncluded=json_data.get("CoverSheetIncluded"),
+            DueDate=json_data.get("DueDate"),
+            ApprovalDate=json_data.get("ApprovalDate"),
+            Memo=Memo._deserialize(json_data.get("Memo")),
+            SecondCopyOfMemo=Memo._deserialize(json_data.get("SecondCopyOfMemo")),
+            TestCode=json_data.get("TestCode"),
+            Authors=json_data.get("Authors"),
         )
 
 
@@ -70,52 +70,24 @@ _ResourceModel = ResourceModel
 
 
 @dataclass
-class DiskDeviceMapping:
-    Device: Optional[str]
-    DiskImageSize: Optional[float]
-    Format: Optional[str]
-    OssBucket: Optional[str]
-    OssObject: Optional[str]
+class Memo:
+    Heading: Optional[str]
+    Body: Optional[str]
 
     @classmethod
     def _deserialize(
-        cls: Type["_DiskDeviceMapping"],
+        cls: Type["_Memo"],
         json_data: Optional[Mapping[str, Any]],
-    ) -> Optional["_DiskDeviceMapping"]:
+    ) -> Optional["_Memo"]:
         if not json_data:
             return None
         return cls(
-            Device=json_data.get("Device"),
-            DiskImageSize=json_data.get("DiskImageSize"),
-            Format=json_data.get("Format"),
-            OssBucket=json_data.get("OssBucket"),
-            OssObject=json_data.get("OssObject"),
+            Heading=json_data.get("Heading"),
+            Body=json_data.get("Body"),
         )
 
 
 # work around possible type aliasing issues when variable has same name as a model
-_DiskDeviceMapping = DiskDeviceMapping
-
-
-@dataclass
-class Timeouts:
-    Create: Optional[str]
-    Delete: Optional[str]
-
-    @classmethod
-    def _deserialize(
-        cls: Type["_Timeouts"],
-        json_data: Optional[Mapping[str, Any]],
-    ) -> Optional["_Timeouts"]:
-        if not json_data:
-            return None
-        return cls(
-            Create=json_data.get("Create"),
-            Delete=json_data.get("Delete"),
-        )
-
-
-# work around possible type aliasing issues when variable has same name as a model
-_Timeouts = Timeouts
+_Memo = Memo
 
 

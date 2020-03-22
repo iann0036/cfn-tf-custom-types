@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     S3Destination: Optional[Sequence["_S3Destination"]]
 
@@ -48,6 +49,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             S3Destination=json_data.get("S3Destination"),
         )

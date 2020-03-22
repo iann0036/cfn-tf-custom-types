@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Specifies the ID of a created log group.\nChanging this parameter will create a new resource."
         },
+        "Id": {
+            "type": "string"
+        },
         "IndexEnabled": {
             "type": "boolean"
         },
@@ -27,10 +30,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/IndexEnabled"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

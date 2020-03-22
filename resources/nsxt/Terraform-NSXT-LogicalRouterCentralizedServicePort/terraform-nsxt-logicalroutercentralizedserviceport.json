@@ -33,6 +33,9 @@
             "type": "string",
             "description": "Display name, defaults to ID if not set."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "Logical router port subnet (ip_address / prefix length)."
@@ -68,10 +71,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

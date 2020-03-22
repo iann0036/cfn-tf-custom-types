@@ -26,6 +26,9 @@
             "type": "number",
             "description": "The value of DSCP mark. Changing this updates the DSCP mark value existing\nQoS DSCP marking rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "QosPolicyId": {
             "type": "string",
             "description": "The QoS policy reference. Changing this creates a new QoS DSCP marking rule."
@@ -44,10 +47,11 @@
         "QosPolicyId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

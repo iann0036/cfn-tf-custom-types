@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DestinationPort: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     OverrideHalfClosedTimeout: Optional[float]
     OverrideSessionTimeout: Optional[bool]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DestinationPort=json_data.get("DestinationPort"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OverrideHalfClosedTimeout=json_data.get("OverrideHalfClosedTimeout"),
             OverrideSessionTimeout=json_data.get("OverrideSessionTimeout"),

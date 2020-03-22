@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Controls: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     PublishedCopy: Optional[str]
     Requires: Optional[Sequence[str]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Controls=json_data.get("Controls"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PublishedCopy=json_data.get("PublishedCopy"),
             Requires=json_data.get("Requires"),

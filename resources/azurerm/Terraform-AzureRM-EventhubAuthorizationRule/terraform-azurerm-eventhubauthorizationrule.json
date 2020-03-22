@@ -32,6 +32,9 @@
             "type": "string",
             "description": "Specifies the name of the EventHub. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Listen": {
             "type": "boolean",
             "description": "Does this Authorization Rule have permissions to Listen to the Event Hub? Defaults to `false`."
@@ -81,13 +84,14 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PrimaryConnectionString",
         "/properties/PrimaryKey",
         "/properties/SecondaryConnectionString",
         "/properties/SecondaryKey"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

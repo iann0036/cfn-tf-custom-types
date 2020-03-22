@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Actions: Optional[Sequence[str]]
     CustomHeaders: Optional[Sequence["_CustomHeaders"]]
+    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     RegistryName: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Actions=json_data.get("Actions"),
             CustomHeaders=json_data.get("CustomHeaders"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             RegistryName=json_data.get("RegistryName"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomHeaders:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class CustomHeaders:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -99,8 +101,8 @@ _CustomHeaders = CustomHeaders
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -110,8 +112,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

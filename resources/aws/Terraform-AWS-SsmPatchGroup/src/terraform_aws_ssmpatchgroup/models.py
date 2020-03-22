@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BaselineId: Optional[str]
+    Id: Optional[str]
     PatchGroup: Optional[str]
 
     @classmethod
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BaselineId=json_data.get("BaselineId"),
+            Id=json_data.get("Id"),
             PatchGroup=json_data.get("PatchGroup"),
         )
 

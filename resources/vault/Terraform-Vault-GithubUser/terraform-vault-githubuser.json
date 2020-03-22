@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Path where the github auth backend is mounted. Defaults to `github`\nif not specified."
         },
+        "Id": {
+            "type": "string"
+        },
         "Policies": {
             "type": "array",
             "insertionOrder": false,
@@ -65,10 +68,11 @@
         "User"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

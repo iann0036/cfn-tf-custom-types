@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::TencentCloud::DcGatewayCcnRoute",
     "Properties" : {
         "<a href="#cidrblock" title="CidrBlock">CidrBlock</a>" : <i>String</i>,
-        "<a href="#dcgid" title="DcgId">DcgId</a>" : <i>String</i>
+        "<a href="#dcgid" title="DcgId">DcgId</a>" : <i>String</i>,
     }
 }
 </pre>
@@ -53,7 +53,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the Id.
 
 ### Fn::GetAtt
 
@@ -68,4 +68,8 @@ Internal identifier for tracking resource changes. Do not use.
 #### AsPath
 
 Returns the <code>AsPath</code> value.
+
+#### Id
+
+Returns the <code>Id</code> value.
 

@@ -34,19 +34,22 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A key/value map used to replace the variable parameter in the Compose template."
+        },
+        "Id": {
+            "type": "string"
         },
         "LatestImage": {
             "type": "boolean",
@@ -96,10 +99,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DefaultDomain",
+        "/properties/Id",
         "/properties/Services"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

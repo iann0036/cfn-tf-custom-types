@@ -11,6 +11,9 @@
         "Fingerprint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the SSH key pair. This is a unique value\nwithin a CloudStack account. Changing this forces a new resource to be\ncreated."
@@ -34,10 +37,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Fingerprint",
+        "/properties/Id",
         "/properties/PrivateKey"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

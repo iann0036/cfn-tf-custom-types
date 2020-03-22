@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Backend: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[str]
     Vhost: Optional[Sequence["_Vhost"]]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Backend=json_data.get("Backend"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             Vhost=json_data.get("Vhost"),

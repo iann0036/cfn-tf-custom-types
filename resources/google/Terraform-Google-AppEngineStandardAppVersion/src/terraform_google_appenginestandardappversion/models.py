@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeleteServiceOnDestroy: Optional[bool]
     EnvVariables: Optional[Sequence["_EnvVariables"]]
+    Id: Optional[str]
     InstanceClass: Optional[str]
     Name: Optional[str]
     NoopOnDestroy: Optional[bool]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DeleteServiceOnDestroy=json_data.get("DeleteServiceOnDestroy"),
             EnvVariables=json_data.get("EnvVariables"),
+            Id=json_data.get("Id"),
             InstanceClass=json_data.get("InstanceClass"),
             Name=json_data.get("Name"),
             NoopOnDestroy=json_data.get("NoopOnDestroy"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class EnvVariables:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class EnvVariables:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -289,8 +291,8 @@ _StaticFiles = StaticFiles
 
 @dataclass
 class HttpHeaders:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -300,8 +302,8 @@ class HttpHeaders:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

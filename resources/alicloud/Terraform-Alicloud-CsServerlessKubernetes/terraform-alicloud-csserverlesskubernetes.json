@@ -46,6 +46,9 @@
             "type": "boolean",
             "description": "Default false, when you want to change `vpc_id` and `vswitch_id`, you have to set this field to true, then the cluster will be recreated."
         },
+        "Id": {
+            "type": "string"
+        },
         "KubeConfig": {
             "type": "string",
             "description": "The path of kube config, like `~/.kube/config`."
@@ -73,16 +76,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Default nil, A map of tags assigned to the kubernetes cluster ."
@@ -105,10 +108,11 @@
         "VswitchId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

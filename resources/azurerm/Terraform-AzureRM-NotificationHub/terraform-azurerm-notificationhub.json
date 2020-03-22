@@ -74,6 +74,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "The Azure Region in which this Notification Hub Namespace exists. Changing this forces a new resource to be created."
@@ -118,10 +121,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

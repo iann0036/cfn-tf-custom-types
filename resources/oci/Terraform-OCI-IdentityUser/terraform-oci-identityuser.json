@@ -63,16 +63,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -92,18 +92,21 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
+        },
+        "Id": {
+            "type": "string"
         },
         "IdentityProviderId": {
             "type": "string"
@@ -133,13 +136,14 @@
         "/properties/tfcfnid",
         "/properties/Capabilities",
         "/properties/ExternalIdentifier",
+        "/properties/Id",
         "/properties/IdentityProviderId",
         "/properties/InactiveState",
         "/properties/State",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

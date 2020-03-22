@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Favourite: Optional[bool]
     Graphs: Optional[Sequence[str]]
+    Id: Optional[str]
     Notes: Optional[str]
     Tags: Optional[Sequence[str]]
     Title: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Favourite=json_data.get("Favourite"),
             Graphs=json_data.get("Graphs"),
+            Id=json_data.get("Id"),
             Notes=json_data.get("Notes"),
             Tags=json_data.get("Tags"),
             Title=json_data.get("Title"),

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     EdgeClusterId: Optional[str]
     EdgeClusterMemberIndexes: Optional[Sequence[float]]
+    Id: Optional[str]
     Revision: Optional[float]
     Tag: Optional[Sequence["_Tag"]]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             EdgeClusterId=json_data.get("EdgeClusterId"),
             EdgeClusterMemberIndexes=json_data.get("EdgeClusterMemberIndexes"),
+            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             Tag=json_data.get("Tag"),
         )

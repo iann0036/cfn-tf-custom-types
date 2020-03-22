@@ -50,6 +50,9 @@
             "type": "string",
             "description": "File path for the content to use for data."
         },
+        "Id": {
+            "type": "string"
+        },
         "LastModified": {
             "type": "string"
         },
@@ -60,16 +63,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Additional object metadata headers. See [Object Metadata ](#object-metadata) below for more information."
@@ -101,13 +104,14 @@
         "/properties/tfcfnid",
         "/properties/AcceptRanges",
         "/properties/ContentLength",
+        "/properties/Id",
         "/properties/LastModified",
         "/properties/ObjectManifest",
         "/properties/Timestamp",
         "/properties/TransactionId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Action: Optional[str]
     EdgeGateway: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     LoggingEnabled: Optional[bool]
     Name: Optional[str]
     Org: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             Action=json_data.get("Action"),
             EdgeGateway=json_data.get("EdgeGateway"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             LoggingEnabled=json_data.get("LoggingEnabled"),
             Name=json_data.get("Name"),
             Org=json_data.get("Org"),

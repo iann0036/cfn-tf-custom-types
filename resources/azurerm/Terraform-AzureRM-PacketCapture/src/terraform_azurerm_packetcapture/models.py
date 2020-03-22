@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     MaximumBytesPerPacket: Optional[float]
     MaximumBytesPerSession: Optional[float]
     MaximumCaptureDuration: Optional[float]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             MaximumBytesPerPacket=json_data.get("MaximumBytesPerPacket"),
             MaximumBytesPerSession=json_data.get("MaximumBytesPerSession"),
             MaximumCaptureDuration=json_data.get("MaximumCaptureDuration"),

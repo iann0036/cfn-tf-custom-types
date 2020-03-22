@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     QueueName: Optional[str]
     ResourceGroupName: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             QueueName=json_data.get("QueueName"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

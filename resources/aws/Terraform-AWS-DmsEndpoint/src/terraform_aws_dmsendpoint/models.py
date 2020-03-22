@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     EndpointType: Optional[str]
     EngineName: Optional[str]
     ExtraConnectionAttributes: Optional[str]
+    Id: Optional[str]
     KmsKeyArn: Optional[str]
     Password: Optional[str]
     Port: Optional[float]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             EndpointType=json_data.get("EndpointType"),
             EngineName=json_data.get("EngineName"),
             ExtraConnectionAttributes=json_data.get("ExtraConnectionAttributes"),
+            Id=json_data.get("Id"),
             KmsKeyArn=json_data.get("KmsKeyArn"),
             Password=json_data.get("Password"),
             Port=json_data.get("Port"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

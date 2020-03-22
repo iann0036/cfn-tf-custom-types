@@ -14,16 +14,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "Configuration details for the given notifier type."
@@ -44,6 +44,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The free-form display name for the notify list."
@@ -61,10 +64,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

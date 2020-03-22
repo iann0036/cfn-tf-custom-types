@@ -81,6 +81,7 @@ class ResourceModel(BaseResourceModel):
     HaVmRestartTimeout: Optional[float]
     HostClusterExitTimeout: Optional[float]
     HostSystemIds: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     ProactiveHaAutomationLevel: Optional[str]
     ProactiveHaEnabled: Optional[bool]
@@ -144,6 +145,7 @@ class ResourceModel(BaseResourceModel):
             HaVmRestartTimeout=json_data.get("HaVmRestartTimeout"),
             HostClusterExitTimeout=json_data.get("HostClusterExitTimeout"),
             HostSystemIds=json_data.get("HostSystemIds"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProactiveHaAutomationLevel=json_data.get("ProactiveHaAutomationLevel"),
             ProactiveHaEnabled=json_data.get("ProactiveHaEnabled"),
@@ -161,8 +163,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomAttributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -172,8 +174,8 @@ class CustomAttributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -183,8 +185,8 @@ _CustomAttributes = CustomAttributes
 
 @dataclass
 class DrsAdvancedOptions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -194,8 +196,8 @@ class DrsAdvancedOptions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -205,8 +207,8 @@ _DrsAdvancedOptions = DrsAdvancedOptions
 
 @dataclass
 class HaAdvancedOptions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -216,8 +218,8 @@ class HaAdvancedOptions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

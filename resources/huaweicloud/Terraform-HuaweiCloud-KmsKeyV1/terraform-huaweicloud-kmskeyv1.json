@@ -20,6 +20,9 @@
         "ExpirationTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsEnabled": {
             "type": "boolean",
             "description": "Specifies whether the key is enabled. Defaults to true.\nChanging this updates the state of existing key."
@@ -57,11 +60,12 @@
         "/properties/DefaultKeyFlag",
         "/properties/DomainId",
         "/properties/ExpirationTime",
+        "/properties/Id",
         "/properties/KeyId",
         "/properties/ScheduledDeletionDate"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EspLifetime: Optional[float]
     EspPolicy: Optional[str]
     Gateway: Optional[str]
+    Id: Optional[str]
     IkeLifetime: Optional[float]
     IkePolicy: Optional[str]
     IpsecPsk: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             EspLifetime=json_data.get("EspLifetime"),
             EspPolicy=json_data.get("EspPolicy"),
             Gateway=json_data.get("Gateway"),
+            Id=json_data.get("Id"),
             IkeLifetime=json_data.get("IkeLifetime"),
             IkePolicy=json_data.get("IkePolicy"),
             IpsecPsk=json_data.get("IpsecPsk"),

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     HomeRegion: Optional[str]
+    Id: Optional[str]
     IntervalInSeconds: Optional[float]
     IsEnabled: Optional[bool]
     Port: Optional[float]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
             HomeRegion=json_data.get("HomeRegion"),
+            Id=json_data.get("Id"),
             IntervalInSeconds=json_data.get("IntervalInSeconds"),
             IsEnabled=json_data.get("IsEnabled"),
             Port=json_data.get("Port"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -107,8 +109,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -118,8 +120,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

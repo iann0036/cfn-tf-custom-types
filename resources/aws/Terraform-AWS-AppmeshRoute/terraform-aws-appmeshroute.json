@@ -15,14 +15,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpRoute"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TcpRoute": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TcpRoute"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -36,14 +38,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Action"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Match": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Match"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -57,7 +63,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Action"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -71,7 +79,9 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/WeightedTarget"
-                    }
+                    },
+                    "maxItems": 10,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -97,7 +107,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Range"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -133,7 +144,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Match"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -168,6 +180,9 @@
         "CreatedDate": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LastUpdatedDate": {
             "type": "string"
         },
@@ -184,16 +199,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -278,10 +293,11 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/CreatedDate",
+        "/properties/Id",
         "/properties/LastUpdatedDate"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

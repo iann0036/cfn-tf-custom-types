@@ -41,6 +41,9 @@
             "type": "string",
             "description": "Human-readable description for the Listener."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadbalancerId": {
             "type": "string",
             "description": "The load balancer on which to provision this\nListener. Changing this creates a new Listener."
@@ -83,10 +86,11 @@
         "ProtocolPort"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Body: Optional[str]
     Headers: Optional[Sequence["_Headers"]]
+    Id: Optional[str]
     LogicAppId: Optional[str]
     Method: Optional[str]
     Name: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Body=json_data.get("Body"),
             Headers=json_data.get("Headers"),
+            Id=json_data.get("Id"),
             LogicAppId=json_data.get("LogicAppId"),
             Method=json_data.get("Method"),
             Name=json_data.get("Name"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Headers:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class Headers:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

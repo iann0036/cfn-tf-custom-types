@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     AuthType: Optional[str]
+    Id: Optional[str]
     ServerType: Optional[str]
     Token: Optional[str]
     UserName: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             AuthType=json_data.get("AuthType"),
+            Id=json_data.get("Id"),
             ServerType=json_data.get("ServerType"),
             Token=json_data.get("Token"),
             UserName=json_data.get("UserName"),

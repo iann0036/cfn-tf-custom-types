@@ -39,6 +39,9 @@
             "type": "string",
             "description": "The user-friendly name for the backup. The name does not have to be unique."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsAutomatic": {
             "type": "boolean"
         },
@@ -73,6 +76,7 @@
         "/properties/tfcfnid",
         "/properties/CompartmentId",
         "/properties/DatabaseSizeInTbs",
+        "/properties/Id",
         "/properties/IsAutomatic",
         "/properties/IsRestorable",
         "/properties/LifecycleDetails",
@@ -82,7 +86,7 @@
         "/properties/Type"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

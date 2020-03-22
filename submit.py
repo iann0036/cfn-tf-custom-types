@@ -4,6 +4,7 @@ import subprocess
 import os
 from pathlib import Path
 
+
 def check_call(args, cwd):
     proc = subprocess.Popen(args,
         stdout=subprocess.PIPE,
@@ -18,16 +19,14 @@ def check_call(args, cwd):
     
     return stdout
 
+
 print("Preparing package...")
 resourcedir = Path("resources") / sys.argv[1].split("::")[1].lower() / sys.argv[1].replace("::","-")
 shutil.copyfile("assets/cloudformation-cli-python-lib-0.0.1.tar.gz", (resourcedir / "cloudformation-cli-python-lib-0.0.1.tar.gz").absolute())
-shutil.copyfile("assets/terraform", (resourcedir / "src" / sys.argv[1].replace("::","_").lower() / "terraform").absolute())
-os.chmod((resourcedir / "src" / sys.argv[1].replace("::","_").lower() / "terraform").absolute(), 0o777)
 
 print("Submitting...")
 check_call(['cfn', 'submit', '--set-default'], resourcedir.absolute())
 
 print("Cleaning up...")
 os.remove((resourcedir / "cloudformation-cli-python-lib-0.0.1.tar.gz").absolute())
-os.remove((resourcedir / "src" / sys.argv[1].replace("::","_").lower() / "terraform").absolute())
 shutil.rmtree((resourcedir / "build").absolute())

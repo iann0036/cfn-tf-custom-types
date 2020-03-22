@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CreationTime: Optional[str]
     DataRetentionInHours: Optional[float]
     DeviceName: Optional[str]
+    Id: Optional[str]
     KmsKeyId: Optional[str]
     MediaType: Optional[str]
     Name: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             CreationTime=json_data.get("CreationTime"),
             DataRetentionInHours=json_data.get("DataRetentionInHours"),
             DeviceName=json_data.get("DeviceName"),
+            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             MediaType=json_data.get("MediaType"),
             Name=json_data.get("Name"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

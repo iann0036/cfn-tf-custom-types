@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     GatewayId: Optional[str]
+    Id: Optional[str]
     RouteTableId: Optional[str]
     SubnetId: Optional[str]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             GatewayId=json_data.get("GatewayId"),
+            Id=json_data.get("Id"),
             RouteTableId=json_data.get("RouteTableId"),
             SubnetId=json_data.get("SubnetId"),
         )

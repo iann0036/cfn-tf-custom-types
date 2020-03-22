@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Input: Optional[Sequence[str]]
     Keepers: Optional[Sequence["_Keepers"]]
     Result: Optional[Sequence[str]]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Input=json_data.get("Input"),
             Keepers=json_data.get("Keepers"),
             Result=json_data.get("Result"),
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Keepers:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class Keepers:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

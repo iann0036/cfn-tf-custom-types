@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Bandwidth: Optional[str]
     BaseBandwidth: Optional[str]
     DomainCount: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Period: Optional[float]
     PortCount: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Bandwidth=json_data.get("Bandwidth"),
             BaseBandwidth=json_data.get("BaseBandwidth"),
             DomainCount=json_data.get("DomainCount"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Period=json_data.get("Period"),
             PortCount=json_data.get("PortCount"),

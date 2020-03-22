@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BranchFilter: Optional[str]
+    Id: Optional[str]
     PayloadUrl: Optional[str]
     ProjectName: Optional[str]
     Secret: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BranchFilter=json_data.get("BranchFilter"),
+            Id=json_data.get("Id"),
             PayloadUrl=json_data.get("PayloadUrl"),
             ProjectName=json_data.get("ProjectName"),
             Secret=json_data.get("Secret"),

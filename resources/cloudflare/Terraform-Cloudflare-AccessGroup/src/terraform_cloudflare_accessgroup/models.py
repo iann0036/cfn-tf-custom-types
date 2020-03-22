@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Exclude: Optional[Sequence["_Exclude"]]
     Include: Optional[Sequence["_Include"]]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AccountId=json_data.get("AccountId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Exclude=json_data.get("Exclude"),
             Include=json_data.get("Include"),

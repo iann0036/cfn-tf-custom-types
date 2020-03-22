@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     InvitationArn: Optional[str]
     ReceiverAccountId: Optional[str]
     Resources: Optional[Sequence[str]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             InvitationArn=json_data.get("InvitationArn"),
             ReceiverAccountId=json_data.get("ReceiverAccountId"),
             Resources=json_data.get("Resources"),

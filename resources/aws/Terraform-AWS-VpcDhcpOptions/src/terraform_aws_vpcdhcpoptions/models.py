@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DomainName: Optional[str]
     DomainNameServers: Optional[Sequence[str]]
+    Id: Optional[str]
     NetbiosNameServers: Optional[Sequence[str]]
     NetbiosNodeType: Optional[str]
     NtpServers: Optional[Sequence[str]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DomainName=json_data.get("DomainName"),
             DomainNameServers=json_data.get("DomainNameServers"),
+            Id=json_data.get("Id"),
             NetbiosNameServers=json_data.get("NetbiosNameServers"),
             NetbiosNodeType=json_data.get("NetbiosNodeType"),
             NtpServers=json_data.get("NtpServers"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

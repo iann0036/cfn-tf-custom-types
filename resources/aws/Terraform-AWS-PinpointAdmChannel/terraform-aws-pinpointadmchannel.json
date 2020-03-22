@@ -19,6 +19,9 @@
         },
         "Enabled": {
             "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
         }
     },
     "additionalProperties": false,
@@ -28,10 +31,11 @@
         "ClientSecret"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

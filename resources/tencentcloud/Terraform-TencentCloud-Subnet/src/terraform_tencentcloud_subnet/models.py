@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     AvailableIpCount: Optional[float]
     CidrBlock: Optional[str]
     CreateTime: Optional[str]
+    Id: Optional[str]
     IsDefault: Optional[bool]
     IsMulticast: Optional[bool]
     Name: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             AvailableIpCount=json_data.get("AvailableIpCount"),
             CidrBlock=json_data.get("CidrBlock"),
             CreateTime=json_data.get("CreateTime"),
+            Id=json_data.get("Id"),
             IsDefault=json_data.get("IsDefault"),
             IsMulticast=json_data.get("IsMulticast"),
             Name=json_data.get("Name"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

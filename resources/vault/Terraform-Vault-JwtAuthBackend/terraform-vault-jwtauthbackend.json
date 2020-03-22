@@ -23,6 +23,9 @@
             "type": "string",
             "description": "The description of the auth backend."
         },
+        "Id": {
+            "type": "string"
+        },
         "JwksCaPem": {
             "type": "string",
             "description": "The CA certificate or chain of certificates, in PEM format, to use to validate connections to the JWKS URL. If not set, system certificates are used."
@@ -126,10 +129,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Accessor"
+        "/properties/Accessor",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ForceRegenerate: Optional[bool]
+    Id: Optional[str]
     Organization: Optional[str]
     Token: Optional[str]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ForceRegenerate=json_data.get("ForceRegenerate"),
+            Id=json_data.get("Id"),
             Organization=json_data.get("Organization"),
             Token=json_data.get("Token"),
         )

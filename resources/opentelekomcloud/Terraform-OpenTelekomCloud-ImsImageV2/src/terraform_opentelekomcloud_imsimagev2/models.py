@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DataOrigin: Optional[str]
     Description: Optional[str]
     DiskFormat: Optional[str]
+    Id: Optional[str]
     ImageSize: Optional[str]
     ImageUrl: Optional[str]
     InstanceId: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             DataOrigin=json_data.get("DataOrigin"),
             Description=json_data.get("Description"),
             DiskFormat=json_data.get("DiskFormat"),
+            Id=json_data.get("Id"),
             ImageSize=json_data.get("ImageSize"),
             ImageUrl=json_data.get("ImageUrl"),
             InstanceId=json_data.get("InstanceId"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

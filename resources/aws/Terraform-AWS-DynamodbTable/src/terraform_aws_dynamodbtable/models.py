@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     BillingMode: Optional[str]
     HashKey: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     RangeKey: Optional[str]
     ReadCapacity: Optional[float]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             BillingMode=json_data.get("BillingMode"),
             HashKey=json_data.get("HashKey"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RangeKey=json_data.get("RangeKey"),
             ReadCapacity=json_data.get("ReadCapacity"),
@@ -93,8 +95,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

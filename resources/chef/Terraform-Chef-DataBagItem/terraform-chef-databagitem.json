@@ -15,6 +15,9 @@
         "DataBagName": {
             "type": "string",
             "description": "The name of the data bag into which this item\nwill be placed."
+        },
+        "Id": {
+            "type": "string"
         }
     },
     "additionalProperties": false,
@@ -23,10 +26,11 @@
         "DataBagName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

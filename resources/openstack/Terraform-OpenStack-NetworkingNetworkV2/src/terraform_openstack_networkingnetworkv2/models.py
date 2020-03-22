@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DnsDomain: Optional[str]
     External: Optional[bool]
+    Id: Optional[str]
     Mtu: Optional[float]
     Name: Optional[str]
     PortSecurityEnabled: Optional[bool]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DnsDomain=json_data.get("DnsDomain"),
             External=json_data.get("External"),
+            Id=json_data.get("Id"),
             Mtu=json_data.get("Mtu"),
             Name=json_data.get("Name"),
             PortSecurityEnabled=json_data.get("PortSecurityEnabled"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

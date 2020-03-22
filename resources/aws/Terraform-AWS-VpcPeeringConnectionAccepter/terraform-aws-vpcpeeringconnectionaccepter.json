@@ -47,6 +47,9 @@
         "AutoAccept": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "PeerOwnerId": {
             "type": "string"
         },
@@ -63,16 +66,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -106,13 +109,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AcceptStatus",
+        "/properties/Id",
         "/properties/PeerOwnerId",
         "/properties/PeerRegion",
         "/properties/PeerVpcId",
         "/properties/VpcId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

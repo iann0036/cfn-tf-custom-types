@@ -21,14 +21,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Action"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Match": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Match"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -84,6 +88,9 @@
         "CertificateId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InboundPort": {
             "type": "number"
         },
@@ -129,10 +136,11 @@
         "LbId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

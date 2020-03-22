@@ -18,6 +18,9 @@
             "type": "string",
             "description": "Human-readable description of the new test.\nis being created for."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of this test."
@@ -31,10 +34,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/DefaultEnvironmentId"
+        "/properties/DefaultEnvironmentId",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

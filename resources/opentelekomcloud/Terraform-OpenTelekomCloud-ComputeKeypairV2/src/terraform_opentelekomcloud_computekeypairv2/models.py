@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PublicKey: Optional[str]
     Region: Optional[str]
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PublicKey=json_data.get("PublicKey"),
             Region=json_data.get("Region"),
@@ -63,8 +65,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -74,8 +76,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

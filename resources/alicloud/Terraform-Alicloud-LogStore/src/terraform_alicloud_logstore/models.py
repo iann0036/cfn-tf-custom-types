@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AppendMeta: Optional[bool]
     AutoSplit: Optional[bool]
     EnableWebTracking: Optional[bool]
+    Id: Optional[str]
     MaxSplitShardCount: Optional[float]
     Name: Optional[str]
     Project: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             AppendMeta=json_data.get("AppendMeta"),
             AutoSplit=json_data.get("AutoSplit"),
             EnableWebTracking=json_data.get("EnableWebTracking"),
+            Id=json_data.get("Id"),
             MaxSplitShardCount=json_data.get("MaxSplitShardCount"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),

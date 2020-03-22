@@ -32,6 +32,9 @@
         "HomeRegion": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Port": {
             "type": "number",
             "description": "The port on which to probe endpoints. If unspecified, probes will use the default port of their protocol."
@@ -79,11 +82,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/HomeRegion",
+        "/properties/Id",
         "/properties/ResultsUrl",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

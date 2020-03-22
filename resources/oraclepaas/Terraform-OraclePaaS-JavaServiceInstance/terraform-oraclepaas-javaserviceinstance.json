@@ -69,14 +69,17 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Admin"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Listener": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Listener"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -133,7 +136,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Admin"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "ApplicationDatabase": {
                     "type": "array",
@@ -154,35 +159,41 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Database"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Domain": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Domain"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ManagedServers": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ManagedServers"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "NodeManager": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NodeManager"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Ports": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Ports"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -431,6 +442,9 @@
             "type": "boolean",
             "description": "Flag that specifies whether you want to force the removal of the service instance even if the database\ninstance cannot be reached to delete the database schemas. Default value is `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpNetwork": {
             "type": "string",
             "description": "The three-part name of a custom IP network to attach this service instance to. For example: `/Compute-identity_domain/user/object`."
@@ -599,10 +613,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

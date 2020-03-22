@@ -54,6 +54,7 @@ class ResourceModel(BaseResourceModel):
     DnsZonesAllow: Optional[Sequence[str]]
     DnsZonesAllowByDefault: Optional[bool]
     DnsZonesDeny: Optional[Sequence[str]]
+    Id: Optional[str]
     IpWhitelist: Optional[Sequence[str]]
     IpWhitelistStrict: Optional[bool]
     IpamManageIpam: Optional[bool]
@@ -94,6 +95,7 @@ class ResourceModel(BaseResourceModel):
             DnsZonesAllow=json_data.get("DnsZonesAllow"),
             DnsZonesAllowByDefault=json_data.get("DnsZonesAllowByDefault"),
             DnsZonesDeny=json_data.get("DnsZonesDeny"),
+            Id=json_data.get("Id"),
             IpWhitelist=json_data.get("IpWhitelist"),
             IpWhitelistStrict=json_data.get("IpWhitelistStrict"),
             IpamManageIpam=json_data.get("IpamManageIpam"),

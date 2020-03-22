@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The destination CIDR block of the route entry to publish."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "The ID of the CEN."
@@ -28,10 +31,11 @@
         "RouteTableId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

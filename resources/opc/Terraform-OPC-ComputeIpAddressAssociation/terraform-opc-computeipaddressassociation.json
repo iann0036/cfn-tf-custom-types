@@ -12,6 +12,9 @@
             "type": "string",
             "description": "A description of the ip address association."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddressReservation": {
             "type": "string",
             "description": "The name of the NAT IP address reservation."
@@ -43,10 +46,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     DedicatedHostId: Optional[str]
     DisablePasswordAuthentication: Optional[bool]
     EvictionPolicy: Optional[str]
+    Id: Optional[str]
     Location: Optional[str]
     MaxBidPrice: Optional[float]
     Name: Optional[str]
@@ -92,6 +93,7 @@ class ResourceModel(BaseResourceModel):
             DedicatedHostId=json_data.get("DedicatedHostId"),
             DisablePasswordAuthentication=json_data.get("DisablePasswordAuthentication"),
             EvictionPolicy=json_data.get("EvictionPolicy"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MaxBidPrice=json_data.get("MaxBidPrice"),
             Name=json_data.get("Name"),
@@ -129,8 +131,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -140,8 +142,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

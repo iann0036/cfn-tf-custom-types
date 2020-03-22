@@ -18,16 +18,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "The map of custom string properties to include with the post operation. These data are appended to the webhook payload."
@@ -145,6 +145,9 @@
             "type": "string",
             "description": "The evaluation frequency of this Metric Alert, represented in ISO 8601 duration format. Possible values are `PT1M`, `PT5M`, `PT15M`, `PT30M` and `PT1H`. Defaults to `PT1M`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the Metric Alert. Changing this forces a new resource to be created."
@@ -172,16 +175,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -223,10 +226,11 @@
         "Scopes"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

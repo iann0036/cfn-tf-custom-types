@@ -14,16 +14,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -67,6 +67,9 @@
         "CommonName": {
             "type": "string",
             "description": "The certificate's common name, the primary domain that the\ncertificate will be recognized for. Required when not specifying a CSR."
+        },
+        "Id": {
+            "type": "string"
         },
         "IssuerPem": {
             "type": "string"
@@ -118,11 +121,12 @@
         "/properties/CertificateP12",
         "/properties/CertificatePem",
         "/properties/CertificateUrl",
+        "/properties/Id",
         "/properties/IssuerPem",
         "/properties/PrivateKeyPem"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

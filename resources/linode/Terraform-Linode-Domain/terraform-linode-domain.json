@@ -32,6 +32,9 @@
             "type": "string",
             "description": "The group this Domain belongs to. This is for display purposes only."
         },
+        "Id": {
+            "type": "string"
+        },
         "MasterIps": {
             "type": "array",
             "insertionOrder": true,
@@ -79,10 +82,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

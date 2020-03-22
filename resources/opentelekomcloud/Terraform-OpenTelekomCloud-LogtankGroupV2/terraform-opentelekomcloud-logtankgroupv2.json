@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Specifies the log group name.\nChanging this parameter will create a new resource."
         },
+        "Id": {
+            "type": "string"
+        },
         "TtlInDays": {
             "type": "number"
         }
@@ -22,10 +25,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/TtlInDays"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -30,7 +30,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/InitializeParams"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -158,16 +159,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -278,6 +279,9 @@
         "Hostname": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string"
         },
@@ -291,16 +295,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -314,16 +318,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -455,6 +459,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CpuPlatform",
+        "/properties/Id",
         "/properties/InstanceId",
         "/properties/LabelFingerprint",
         "/properties/MetadataFingerprint",
@@ -462,7 +467,7 @@
         "/properties/TagsFingerprint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

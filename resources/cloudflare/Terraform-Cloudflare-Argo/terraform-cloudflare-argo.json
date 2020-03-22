@@ -8,6 +8,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "SmartRouting": {
             "type": "string",
             "description": "Whether smart routing is enabled. Valid values: `on` or `off`. Defaults to `off`."
@@ -26,10 +29,11 @@
         "ZoneId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

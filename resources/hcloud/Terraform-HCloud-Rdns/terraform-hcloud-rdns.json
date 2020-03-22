@@ -16,6 +16,9 @@
             "type": "number",
             "description": "The Floating IP the `ip_address` belongs to."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "The IP address that should point to `dns_ptr`.\n- `server_id` - (Required, int) The server the `ip_address` belongs to.\n- `floating_ip_id` - (Required, int) The Floating IP the `ip_address` belongs to."
@@ -31,10 +34,11 @@
         "IpAddress"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

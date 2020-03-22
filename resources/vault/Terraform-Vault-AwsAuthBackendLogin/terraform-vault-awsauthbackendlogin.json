@@ -37,6 +37,9 @@
             "type": "string",
             "description": "The base64-encoded HTTP URL used in the signed\nrequest."
         },
+        "Id": {
+            "type": "string"
+        },
         "Identity": {
             "type": "string",
             "description": "The base64-encoded EC2 instance identity document to\nauthenticate with. Can be retrieved from the EC2 metadata server."
@@ -54,16 +57,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -101,6 +104,7 @@
         "/properties/Accessor",
         "/properties/AuthType",
         "/properties/ClientToken",
+        "/properties/Id",
         "/properties/LeaseDuration",
         "/properties/LeaseStartTime",
         "/properties/Metadata",
@@ -108,7 +112,7 @@
         "/properties/Renewable"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

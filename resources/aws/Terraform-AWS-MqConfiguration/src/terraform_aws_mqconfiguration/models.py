@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EngineType: Optional[str]
     EngineVersion: Optional[str]
+    Id: Optional[str]
     LatestRevision: Optional[float]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EngineType=json_data.get("EngineType"),
             EngineVersion=json_data.get("EngineVersion"),
+            Id=json_data.get("Id"),
             LatestRevision=json_data.get("LatestRevision"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

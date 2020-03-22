@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Address: Optional[str]
+    Id: Optional[str]
     OrganizationId: Optional[str]
     Reverse: Optional[str]
     ServerId: Optional[str]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Address=json_data.get("Address"),
+            Id=json_data.get("Id"),
             OrganizationId=json_data.get("OrganizationId"),
             Reverse=json_data.get("Reverse"),
             ServerId=json_data.get("ServerId"),

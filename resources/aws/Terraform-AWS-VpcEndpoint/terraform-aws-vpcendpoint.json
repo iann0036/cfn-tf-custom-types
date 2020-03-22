@@ -51,6 +51,9 @@
                 }
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "NetworkInterfaceIds": {
             "type": "array",
             "insertionOrder": true,
@@ -107,16 +110,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -139,6 +142,7 @@
         "/properties/tfcfnid",
         "/properties/CidrBlocks",
         "/properties/DnsEntry",
+        "/properties/Id",
         "/properties/NetworkInterfaceIds",
         "/properties/OwnerId",
         "/properties/PrefixListId",
@@ -146,7 +150,7 @@
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

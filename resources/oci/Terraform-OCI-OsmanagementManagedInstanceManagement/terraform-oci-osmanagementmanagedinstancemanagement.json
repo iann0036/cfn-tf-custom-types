@@ -74,6 +74,10 @@
             "type": "string",
             "description": "User friendly name\n* `id` - unique identifier that is immutable on creation."
         },
+        "Id": {
+            "type": "string",
+            "description": "software source identifier\n* `name` - software source name."
+        },
         "LastBoot": {
             "type": "string"
         },
@@ -134,6 +138,7 @@
         "/properties/CompartmentId",
         "/properties/Description",
         "/properties/DisplayName",
+        "/properties/Id",
         "/properties/LastBoot",
         "/properties/LastCheckin",
         "/properties/OsKernelVersion",
@@ -143,7 +148,7 @@
         "/properties/UpdatesAvailable"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

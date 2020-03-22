@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DestinationConf: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     LogpullOptions: Optional[str]
     Name: Optional[str]
     OwnershipChallenge: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DestinationConf=json_data.get("DestinationConf"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             LogpullOptions=json_data.get("LogpullOptions"),
             Name=json_data.get("Name"),
             OwnershipChallenge=json_data.get("OwnershipChallenge"),

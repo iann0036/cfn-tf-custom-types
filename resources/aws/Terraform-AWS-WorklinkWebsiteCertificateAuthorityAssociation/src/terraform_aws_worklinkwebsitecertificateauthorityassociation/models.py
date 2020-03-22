@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Certificate: Optional[str]
     DisplayName: Optional[str]
     FleetArn: Optional[str]
+    Id: Optional[str]
     WebsiteCaId: Optional[str]
 
     @classmethod
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             Certificate=json_data.get("Certificate"),
             DisplayName=json_data.get("DisplayName"),
             FleetArn=json_data.get("FleetArn"),
+            Id=json_data.get("Id"),
             WebsiteCaId=json_data.get("WebsiteCaId"),
         )
 

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     ExpiredTime: Optional[str]
     GeographicRegionIds: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     Period: Optional[float]
     Status: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             ExpiredTime=json_data.get("ExpiredTime"),
             GeographicRegionIds=json_data.get("GeographicRegionIds"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Period=json_data.get("Period"),
             Status=json_data.get("Status"),

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Enabled: Optional[bool]
     Frequency: Optional[float]
     GeoLocations: Optional[Sequence[str]]
+    Id: Optional[str]
     Kind: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Enabled=json_data.get("Enabled"),
             Frequency=json_data.get("Frequency"),
             GeoLocations=json_data.get("GeoLocations"),
+            Id=json_data.get("Id"),
             Kind=json_data.get("Kind"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

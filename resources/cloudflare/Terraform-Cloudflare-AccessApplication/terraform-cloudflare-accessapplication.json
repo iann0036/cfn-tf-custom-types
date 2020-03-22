@@ -15,6 +15,9 @@
             "type": "string",
             "description": "The complete URL of the asset you wish to put\nCloudflare Access in front of. Can include subdomains or paths. Or both."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Friendly name of the Access Application."
@@ -36,10 +39,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Aud"
+        "/properties/Aud",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

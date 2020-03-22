@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClbName: Optional[str]
     ClbVips: Optional[Sequence[str]]
+    Id: Optional[str]
     NetworkType: Optional[str]
     ProjectId: Optional[float]
     SecurityGroups: Optional[Sequence[str]]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ClbName=json_data.get("ClbName"),
             ClbVips=json_data.get("ClbVips"),
+            Id=json_data.get("Id"),
             NetworkType=json_data.get("NetworkType"),
             ProjectId=json_data.get("ProjectId"),
             SecurityGroups=json_data.get("SecurityGroups"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

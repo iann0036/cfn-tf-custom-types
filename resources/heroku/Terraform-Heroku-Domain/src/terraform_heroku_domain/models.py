@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     App: Optional[str]
     Cname: Optional[str]
     Hostname: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             App=json_data.get("App"),
             Cname=json_data.get("Cname"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
         )
 
 

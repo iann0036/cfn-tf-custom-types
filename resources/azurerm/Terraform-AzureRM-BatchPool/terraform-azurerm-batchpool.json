@@ -143,16 +143,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "A map of strings (key,value) that represents the environment variables to set in the start task."
@@ -177,7 +177,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/UserIdentity"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -309,7 +311,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoUser"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -366,6 +369,9 @@
             "type": "string",
             "description": "Specifies the display name of the Batch pool."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxTasksPerNode": {
             "type": "number",
             "description": "Specifies the maximum number of tasks that can run concurrently on a single compute node in the pool. Defaults to `1`. Changing this forces a new resource to be created."
@@ -377,16 +383,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of custom batch pool metadata."
@@ -517,10 +523,11 @@
         "VmSize"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

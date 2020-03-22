@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ClientSecret: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     MetadataEndpoint: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             ClientSecret=json_data.get("ClientSecret"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             MetadataEndpoint=json_data.get("MetadataEndpoint"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

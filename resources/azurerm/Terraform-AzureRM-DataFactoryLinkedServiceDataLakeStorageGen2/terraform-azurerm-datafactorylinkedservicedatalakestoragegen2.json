@@ -35,16 +35,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of additional properties to associate with the Data Factory Linked Service MySQL."
@@ -65,6 +65,9 @@
             "type": "string",
             "description": "The description for the Data Factory Linked Service MySQL."
         },
+        "Id": {
+            "type": "string"
+        },
         "IntegrationRuntimeName": {
             "type": "string",
             "description": "The integration runtime reference to associate with the Data Factory Linked Service MySQL."
@@ -80,16 +83,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of parameters to associate with the Data Factory Linked Service MySQL."
@@ -129,10 +132,11 @@
         "Url"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

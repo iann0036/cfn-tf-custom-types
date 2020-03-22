@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Config: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Name: Optional[str]
     NumNodes: Optional[float]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Config=json_data.get("Config"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Name=json_data.get("Name"),
             NumNodes=json_data.get("NumNodes"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

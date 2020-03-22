@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     FlavorId: Optional[str]
+    Id: Optional[str]
     Region: Optional[str]
     TenantId: Optional[str]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             FlavorId=json_data.get("FlavorId"),
+            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             TenantId=json_data.get("TenantId"),
         )

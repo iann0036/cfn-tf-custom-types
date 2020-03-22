@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     DatabaseType: Optional[str]
     DatabaseVersion: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Locked: Optional[bool]
     MaintenanceHour: Optional[float]
     MaintenanceWeekday: Optional[float]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             DatabaseType=json_data.get("DatabaseType"),
             DatabaseVersion=json_data.get("DatabaseVersion"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Locked=json_data.get("Locked"),
             MaintenanceHour=json_data.get("MaintenanceHour"),
             MaintenanceWeekday=json_data.get("MaintenanceWeekday"),

@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The UUID for this Management Group, which needs to be unique across your tenant - which will be generated if not provided. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "ParentManagementGroupId": {
             "type": "string",
             "description": "The ID of the Parent Management Group. Changing this forces a new resource to be created."
@@ -55,10 +58,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

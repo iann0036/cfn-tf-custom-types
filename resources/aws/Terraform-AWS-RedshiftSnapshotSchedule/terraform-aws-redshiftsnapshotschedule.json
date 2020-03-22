@@ -24,6 +24,9 @@
         "ForceDestroy": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "Identifier": {
             "type": "string"
         },
@@ -37,16 +40,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         }
@@ -57,10 +60,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Arn"
+        "/properties/Arn",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

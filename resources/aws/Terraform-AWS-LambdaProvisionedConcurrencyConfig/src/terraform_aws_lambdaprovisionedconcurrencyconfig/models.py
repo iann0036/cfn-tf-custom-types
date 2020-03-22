@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     FunctionName: Optional[str]
+    Id: Optional[str]
     ProvisionedConcurrentExecutions: Optional[float]
     Qualifier: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             FunctionName=json_data.get("FunctionName"),
+            Id=json_data.get("Id"),
             ProvisionedConcurrentExecutions=json_data.get("ProvisionedConcurrentExecutions"),
             Qualifier=json_data.get("Qualifier"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

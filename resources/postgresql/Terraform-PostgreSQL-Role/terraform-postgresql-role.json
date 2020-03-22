@@ -31,6 +31,9 @@
             "type": "boolean",
             "description": "Defines whether the password is stored\nencrypted in the system catalogs.  Default value is `true`.  NOTE: this value\nis always set (to the conservative and safe value), but may interfere with the\nbehavior of\n[PostgreSQL's `password_encryption` setting](https://www.postgresql.org/docs/current/static/runtime-config-connection.html#GUC-PASSWORD-ENCRYPTION)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Inherit": {
             "type": "boolean",
             "description": "Defines whether a role \"inherits\" the privileges of\nroles it is a member of.  Default value is `true`."
@@ -93,10 +96,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

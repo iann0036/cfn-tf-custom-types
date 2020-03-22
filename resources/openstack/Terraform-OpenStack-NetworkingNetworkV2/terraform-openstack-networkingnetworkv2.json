@@ -72,6 +72,9 @@
             "type": "boolean",
             "description": "Specifies whether the network resource has the\nexternal routing facility. Valid values are true and false. Defaults to\nfalse. Changing this updates the external attribute of the existing network."
         },
+        "Id": {
+            "type": "string"
+        },
         "Mtu": {
             "type": "number",
             "description": "The network MTU. Available for read-only, when Neutron\n`net-mtu` extension is enabled. Available for the modification, when\nNeutron `net-mtu-writable` extension is enabled."
@@ -119,16 +122,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -148,10 +151,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/AllTags"
+        "/properties/AllTags",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

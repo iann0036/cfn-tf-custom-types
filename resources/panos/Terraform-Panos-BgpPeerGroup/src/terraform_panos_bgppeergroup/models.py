@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AggregatedConfedAsPath: Optional[bool]
     Enable: Optional[bool]
     ExportNextHop: Optional[str]
+    Id: Optional[str]
     ImportNextHop: Optional[str]
     Name: Optional[str]
     RemovePrivateAs: Optional[bool]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             AggregatedConfedAsPath=json_data.get("AggregatedConfedAsPath"),
             Enable=json_data.get("Enable"),
             ExportNextHop=json_data.get("ExportNextHop"),
+            Id=json_data.get("Id"),
             ImportNextHop=json_data.get("ImportNextHop"),
             Name=json_data.get("Name"),
             RemovePrivateAs=json_data.get("RemovePrivateAs"),

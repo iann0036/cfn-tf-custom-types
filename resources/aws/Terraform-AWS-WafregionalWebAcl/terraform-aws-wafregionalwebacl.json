@@ -27,7 +27,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RedactedFields"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -52,14 +53,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Action"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "OverrideAction": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OverrideAction"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -76,7 +79,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/FieldToMatch"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": []
@@ -129,6 +133,9 @@
         "Arn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "MetricName": {
             "type": "string"
         },
@@ -142,16 +149,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -219,10 +226,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Arn"
+        "/properties/Arn",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

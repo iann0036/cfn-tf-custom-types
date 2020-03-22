@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DestinationType: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Token: Optional[str]
     Triggers: Optional[Sequence[str]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DestinationType=json_data.get("DestinationType"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Token=json_data.get("Token"),
             Triggers=json_data.get("Triggers"),

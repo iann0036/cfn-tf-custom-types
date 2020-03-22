@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Comment: Optional[str]
+    Id: Optional[str]
     InterfaceType: Optional[str]
     Name: Optional[str]
     NetflowProfile: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Comment=json_data.get("Comment"),
+            Id=json_data.get("Id"),
             InterfaceType=json_data.get("InterfaceType"),
             Name=json_data.get("Name"),
             NetflowProfile=json_data.get("NetflowProfile"),

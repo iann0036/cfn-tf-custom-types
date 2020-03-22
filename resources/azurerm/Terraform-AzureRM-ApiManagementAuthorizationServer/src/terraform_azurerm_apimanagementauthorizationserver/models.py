@@ -48,6 +48,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     GrantTypes: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     ResourceOwnerPassword: Optional[str]
@@ -78,6 +79,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             GrantTypes=json_data.get("GrantTypes"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             ResourceOwnerPassword=json_data.get("ResourceOwnerPassword"),

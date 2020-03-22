@@ -43,16 +43,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A configuration dictionary with keys and values depending on the jobs' type."
@@ -60,6 +60,9 @@
         "Frequency": {
             "type": "number",
             "description": "The frequency, in seconds, at which to run the monitoring job in each region."
+        },
+        "Id": {
+            "type": "string"
         },
         "JobType": {
             "type": "string",
@@ -126,10 +129,11 @@
         "Regions"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

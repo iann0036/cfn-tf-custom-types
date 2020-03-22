@@ -23,19 +23,22 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of advanced monitor parameters as key=value pairs (i.e. `max-age=SECONDS`, `invert-regex`)\n**Note**: When you need a value of `key` only format just set value to empty string (i.e. `linespan = \"\"`)."
+        },
+        "Id": {
+            "type": "string"
         },
         "Interval": {
             "type": "number",
@@ -89,10 +92,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

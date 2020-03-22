@@ -49,14 +49,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CsvOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GoogleSheetsOptions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GoogleSheetsOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -183,6 +185,9 @@
             "type": "string",
             "description": "A descriptive name for the table."
         },
+        "Id": {
+            "type": "string"
+        },
         "Labels": {
             "type": "array",
             "insertionOrder": true,
@@ -190,16 +195,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of labels to assign to the resource."
@@ -295,6 +300,7 @@
         "/properties/tfcfnid",
         "/properties/CreationTime",
         "/properties/Etag",
+        "/properties/Id",
         "/properties/LastModifiedTime",
         "/properties/Location",
         "/properties/NumBytes",
@@ -304,7 +310,7 @@
         "/properties/Type"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

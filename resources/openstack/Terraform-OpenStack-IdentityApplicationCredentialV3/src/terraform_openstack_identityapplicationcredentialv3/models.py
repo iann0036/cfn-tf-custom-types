@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     ExpiresAt: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ProjectId: Optional[str]
     Region: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             ExpiresAt=json_data.get("ExpiresAt"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProjectId=json_data.get("ProjectId"),
             Region=json_data.get("Region"),

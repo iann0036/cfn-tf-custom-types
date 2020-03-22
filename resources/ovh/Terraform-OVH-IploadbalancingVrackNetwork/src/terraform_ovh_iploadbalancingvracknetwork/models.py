@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DisplayName: Optional[str]
     FarmId: Optional[Sequence[float]]
+    Id: Optional[str]
     NatIp: Optional[str]
     ServiceName: Optional[str]
     Subnet: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DisplayName=json_data.get("DisplayName"),
             FarmId=json_data.get("FarmId"),
+            Id=json_data.get("Id"),
             NatIp=json_data.get("NatIp"),
             ServiceName=json_data.get("ServiceName"),
             Subnet=json_data.get("Subnet"),

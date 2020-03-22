@@ -23,6 +23,9 @@
         "CreatedTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxConcurrent": {
             "type": "number",
             "description": "The upper limit of concurrent connection of NAT gateway, the available values include: 1000000,3000000,10000000. Default is 1000000."
@@ -44,10 +47,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CreatedTime"
+        "/properties/CreatedTime",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

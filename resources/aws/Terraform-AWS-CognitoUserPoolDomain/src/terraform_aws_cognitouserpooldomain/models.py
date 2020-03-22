@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CertificateArn: Optional[str]
     CloudfrontDistributionArn: Optional[str]
     Domain: Optional[str]
+    Id: Optional[str]
     S3Bucket: Optional[str]
     UserPoolId: Optional[str]
     Version: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             CertificateArn=json_data.get("CertificateArn"),
             CloudfrontDistributionArn=json_data.get("CloudfrontDistributionArn"),
             Domain=json_data.get("Domain"),
+            Id=json_data.get("Id"),
             S3Bucket=json_data.get("S3Bucket"),
             UserPoolId=json_data.get("UserPoolId"),
             Version=json_data.get("Version"),

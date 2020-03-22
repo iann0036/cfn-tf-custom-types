@@ -15,16 +15,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Service providers customize additional components."
@@ -36,6 +36,9 @@
         "Duration": {
             "type": "number",
             "description": "The number of purchase cycles."
+        },
+        "Id": {
+            "type": "string"
         },
         "PackageVersion": {
             "type": "string",
@@ -65,10 +68,11 @@
         "ProductCode"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

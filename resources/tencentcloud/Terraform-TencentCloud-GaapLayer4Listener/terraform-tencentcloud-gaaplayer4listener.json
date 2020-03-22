@@ -47,6 +47,9 @@
             "type": "boolean",
             "description": "Indicates whether health check is enable, default value is `false`. NOTES: Only supports listeners of `TCP` protocol."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interval": {
             "type": "number",
             "description": "Interval of the health check, default value is 5s. NOTES: Only supports listeners of `TCP` protocol."
@@ -97,10 +100,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

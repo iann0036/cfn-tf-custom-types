@@ -30,6 +30,9 @@
             "type": "boolean",
             "description": "The administrative state of the member.\nAcceptable values are 'true' and 'false'. Changing this value updates the\nstate of the existing member."
         },
+        "Id": {
+            "type": "string"
+        },
         "PoolId": {
             "type": "string",
             "description": "The ID of the LB pool. Changing this creates a new\nmember."
@@ -60,10 +63,11 @@
         "Port"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

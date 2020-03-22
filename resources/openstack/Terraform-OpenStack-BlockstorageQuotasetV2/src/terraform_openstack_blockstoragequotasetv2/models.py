@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Backups: Optional[float]
     Gigabytes: Optional[float]
     Groups: Optional[float]
+    Id: Optional[str]
     PerVolumeGigabytes: Optional[float]
     ProjectId: Optional[str]
     Region: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Backups=json_data.get("Backups"),
             Gigabytes=json_data.get("Gigabytes"),
             Groups=json_data.get("Groups"),
+            Id=json_data.get("Id"),
             PerVolumeGigabytes=json_data.get("PerVolumeGigabytes"),
             ProjectId=json_data.get("ProjectId"),
             Region=json_data.get("Region"),

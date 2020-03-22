@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Email: Optional[str]
     IamUserAccessToBilling: Optional[str]
+    Id: Optional[str]
     JoinedMethod: Optional[str]
     JoinedTimestamp: Optional[str]
     Name: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Email=json_data.get("Email"),
             IamUserAccessToBilling=json_data.get("IamUserAccessToBilling"),
+            Id=json_data.get("Id"),
             JoinedMethod=json_data.get("JoinedMethod"),
             JoinedTimestamp=json_data.get("JoinedTimestamp"),
             Name=json_data.get("Name"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

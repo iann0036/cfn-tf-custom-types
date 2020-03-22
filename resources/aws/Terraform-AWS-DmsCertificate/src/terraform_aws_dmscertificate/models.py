@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CertificateId: Optional[str]
     CertificatePem: Optional[str]
     CertificateWallet: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             CertificateId=json_data.get("CertificateId"),
             CertificatePem=json_data.get("CertificatePem"),
             CertificateWallet=json_data.get("CertificateWallet"),
+            Id=json_data.get("Id"),
         )
 
 

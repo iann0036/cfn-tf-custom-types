@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Gateway: Optional[str]
+    Id: Optional[str]
     IpRange: Optional[str]
     NetworkId: Optional[float]
     NetworkZone: Optional[str]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Gateway=json_data.get("Gateway"),
+            Id=json_data.get("Id"),
             IpRange=json_data.get("IpRange"),
             NetworkId=json_data.get("NetworkId"),
             NetworkZone=json_data.get("NetworkZone"),

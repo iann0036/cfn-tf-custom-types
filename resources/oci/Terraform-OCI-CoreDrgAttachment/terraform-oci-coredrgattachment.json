@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The OCID of the DRG."
         },
+        "Id": {
+            "type": "string"
+        },
         "RouteTableId": {
             "type": "string",
             "description": "(Updatable) The OCID of the route table the DRG attachment will use."
@@ -62,11 +65,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CompartmentId",
+        "/properties/Id",
         "/properties/State",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

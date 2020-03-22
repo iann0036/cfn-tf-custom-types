@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bandwidth: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     InstanceChargeType: Optional[str]
     InternetChargeType: Optional[str]
     IpAddress: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Bandwidth=json_data.get("Bandwidth"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             InternetChargeType=json_data.get("InternetChargeType"),
             IpAddress=json_data.get("IpAddress"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

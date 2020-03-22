@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Branch: Optional[str]
+    Id: Optional[str]
     MergeAccessLevel: Optional[str]
     Project: Optional[str]
     PushAccessLevel: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Branch=json_data.get("Branch"),
+            Id=json_data.get("Id"),
             MergeAccessLevel=json_data.get("MergeAccessLevel"),
             Project=json_data.get("Project"),
             PushAccessLevel=json_data.get("PushAccessLevel"),

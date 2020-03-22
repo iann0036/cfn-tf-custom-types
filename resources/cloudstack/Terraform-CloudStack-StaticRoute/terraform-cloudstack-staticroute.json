@@ -15,6 +15,9 @@
         "GatewayId": {
             "type": "string",
             "description": "The ID of the Private gateway. Changing this forces\na new resource to be created."
+        },
+        "Id": {
+            "type": "string"
         }
     },
     "additionalProperties": false,
@@ -23,10 +26,11 @@
         "GatewayId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

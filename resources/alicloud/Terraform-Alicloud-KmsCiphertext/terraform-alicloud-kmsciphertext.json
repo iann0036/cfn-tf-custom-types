@@ -18,18 +18,21 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
+        },
+        "Id": {
+            "type": "string"
         },
         "KeyId": {
             "type": "string",
@@ -47,10 +50,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CiphertextBlob"
+        "/properties/CiphertextBlob",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

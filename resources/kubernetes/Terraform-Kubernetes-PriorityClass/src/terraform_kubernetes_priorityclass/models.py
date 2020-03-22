@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     GlobalDefault: Optional[bool]
+    Id: Optional[str]
     Value: Optional[float]
     Metadata: Optional[Sequence["_Metadata"]]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             GlobalDefault=json_data.get("GlobalDefault"),
+            Id=json_data.get("Id"),
             Value=json_data.get("Value"),
             Metadata=json_data.get("Metadata"),
         )
@@ -89,8 +91,8 @@ _Metadata = Metadata
 
 @dataclass
 class Annotations:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Annotations:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -111,8 +113,8 @@ _Annotations = Annotations
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

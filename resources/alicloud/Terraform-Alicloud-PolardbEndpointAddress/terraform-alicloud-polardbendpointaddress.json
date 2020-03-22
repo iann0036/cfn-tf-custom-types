@@ -23,6 +23,9 @@
             "type": "string",
             "description": "The Id of endpoint that can run database."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string"
         },
@@ -42,11 +45,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ConnectionString",
+        "/properties/Id",
         "/properties/IpAddress",
         "/properties/Port"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

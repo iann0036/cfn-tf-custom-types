@@ -81,6 +81,9 @@
             "type": "string",
             "description": "This failover mode determines, whether the preferred service router instance for given logical router will preempt the peer. Note - It can be specified if and only if logical router is ACTIVE_STANDBY and NON_PREEMPTIVE mode is supported only for a Tier1 logical router. For ACTIVE_ACTIVE logical routers, this field must not be populated."
         },
+        "Id": {
+            "type": "string"
+        },
         "Revision": {
             "type": "number"
         },
@@ -104,10 +107,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AdvertiseConfigRevision",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

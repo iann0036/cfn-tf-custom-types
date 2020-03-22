@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountName: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     Throughput: Optional[float]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AccountName=json_data.get("AccountName"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Throughput=json_data.get("Throughput"),

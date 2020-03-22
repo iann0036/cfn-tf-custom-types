@@ -40,6 +40,9 @@
             "type": "string",
             "description": "The content type of the API Schema."
         },
+        "Id": {
+            "type": "string"
+        },
         "ResourceGroupName": {
             "type": "string",
             "description": "The Name of the Resource Group in which the API Management Service exists. Changing this forces a new resource to be created."
@@ -66,10 +69,11 @@
         "Value"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

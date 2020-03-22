@@ -72,6 +72,9 @@
             "type": "string",
             "description": "The pool ID to use when all other pools are detected as unhealthy."
         },
+        "Id": {
+            "type": "string"
+        },
         "ModifiedOn": {
             "type": "string"
         },
@@ -124,10 +127,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreatedOn",
+        "/properties/Id",
         "/properties/ModifiedOn"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

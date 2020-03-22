@@ -43,6 +43,9 @@
         "EngineVersion": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Iops": {
             "type": "number"
         },
@@ -80,16 +83,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -113,6 +116,7 @@
         "/properties/Encrypted",
         "/properties/Engine",
         "/properties/EngineVersion",
+        "/properties/Id",
         "/properties/Iops",
         "/properties/KmsKeyId",
         "/properties/LicenseModel",
@@ -126,7 +130,7 @@
         "/properties/VpcId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

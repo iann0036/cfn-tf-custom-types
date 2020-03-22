@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Disabled: Optional[bool]
     ExternalPolicies: Optional[bool]
+    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
     Policies: Optional[Sequence[str]]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Disabled=json_data.get("Disabled"),
             ExternalPolicies=json_data.get("ExternalPolicies"),
+            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
             Policies=json_data.get("Policies"),
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

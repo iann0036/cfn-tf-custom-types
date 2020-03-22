@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     InitialSettings: Optional[Sequence["_InitialSettings"]]
     InitialSettingsReadAt: Optional[str]
     ReadonlySettings: Optional[Sequence[str]]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             InitialSettings=json_data.get("InitialSettings"),
             InitialSettingsReadAt=json_data.get("InitialSettingsReadAt"),
             ReadonlySettings=json_data.get("ReadonlySettings"),

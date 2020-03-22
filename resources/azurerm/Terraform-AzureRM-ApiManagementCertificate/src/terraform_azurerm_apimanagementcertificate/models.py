@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ApiManagementName: Optional[str]
     Data: Optional[str]
     Expiration: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
     ResourceGroupName: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             ApiManagementName=json_data.get("ApiManagementName"),
             Data=json_data.get("Data"),
             Expiration=json_data.get("Expiration"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

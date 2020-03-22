@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DestRange: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Network: Optional[str]
     NextHopGateway: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DestRange=json_data.get("DestRange"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Network=json_data.get("Network"),
             NextHopGateway=json_data.get("NextHopGateway"),

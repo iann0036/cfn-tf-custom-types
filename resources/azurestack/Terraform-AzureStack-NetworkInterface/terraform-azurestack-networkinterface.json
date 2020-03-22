@@ -94,6 +94,9 @@
             "type": "boolean",
             "description": "Enables IP Forwarding on the NIC. Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternalDnsNameLabel": {
             "type": "string",
             "description": "Relative DNS name for this NIC used for internal communications between VMs in the same VNet."
@@ -137,16 +140,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -171,11 +174,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PrivateIpAddress",
         "/properties/PrivateIpAddresses"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

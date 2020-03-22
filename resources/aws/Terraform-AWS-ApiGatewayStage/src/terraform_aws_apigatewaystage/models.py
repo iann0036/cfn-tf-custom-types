@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DocumentationVersion: Optional[str]
     ExecutionArn: Optional[str]
+    Id: Optional[str]
     InvokeUrl: Optional[str]
     RestApiId: Optional[str]
     StageName: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DocumentationVersion=json_data.get("DocumentationVersion"),
             ExecutionArn=json_data.get("ExecutionArn"),
+            Id=json_data.get("Id"),
             InvokeUrl=json_data.get("InvokeUrl"),
             RestApiId=json_data.get("RestApiId"),
             StageName=json_data.get("StageName"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -107,8 +109,8 @@ _Tags = Tags
 
 @dataclass
 class Variables:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -118,8 +120,8 @@ class Variables:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

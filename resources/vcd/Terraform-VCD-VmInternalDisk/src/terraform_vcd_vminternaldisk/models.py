@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllowVmReboot: Optional[bool]
     BusNumber: Optional[float]
     BusType: Optional[str]
+    Id: Optional[str]
     Iops: Optional[float]
     Org: Optional[str]
     SizeInMb: Optional[float]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             AllowVmReboot=json_data.get("AllowVmReboot"),
             BusNumber=json_data.get("BusNumber"),
             BusType=json_data.get("BusType"),
+            Id=json_data.get("Id"),
             Iops=json_data.get("Iops"),
             Org=json_data.get("Org"),
             SizeInMb=json_data.get("SizeInMb"),

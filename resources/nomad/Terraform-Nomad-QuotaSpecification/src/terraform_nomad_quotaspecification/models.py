@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Limits: Optional[Sequence["_Limits"]]
     RegionLimit: Optional[Sequence["_RegionLimit"]]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Limits=json_data.get("Limits"),
             RegionLimit=json_data.get("RegionLimit"),

@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     VpcPeeringConnectionId: Optional[str]
     Accepter: Optional[Sequence["_Accepter"]]
     Requester: Optional[Sequence["_Requester"]]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             VpcPeeringConnectionId=json_data.get("VpcPeeringConnectionId"),
             Accepter=json_data.get("Accepter"),
             Requester=json_data.get("Requester"),

@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     FixedNetwork: Optional[str]
     FixedSubnet: Optional[str]
     Flavor: Optional[str]
+    Id: Optional[str]
     Keypair: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MasterAddresses: Optional[str]
@@ -82,6 +83,7 @@ class ResourceModel(BaseResourceModel):
             FixedNetwork=json_data.get("FixedNetwork"),
             FixedSubnet=json_data.get("FixedSubnet"),
             Flavor=json_data.get("Flavor"),
+            Id=json_data.get("Id"),
             Keypair=json_data.get("Keypair"),
             Labels=json_data.get("Labels"),
             MasterAddresses=json_data.get("MasterAddresses"),
@@ -105,8 +107,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -116,8 +118,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

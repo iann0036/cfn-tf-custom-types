@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     Guid: Optional[str]
+    Id: Optional[str]
     IdcsAccessToken: Optional[str]
     IdcsTenancy: Optional[str]
     InstanceUsageType: Optional[str]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FreeformTags=json_data.get("FreeformTags"),
             Guid=json_data.get("Guid"),
+            Id=json_data.get("Id"),
             IdcsAccessToken=json_data.get("IdcsAccessToken"),
             IdcsTenancy=json_data.get("IdcsTenancy"),
             InstanceUsageType=json_data.get("InstanceUsageType"),
@@ -93,8 +95,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -115,8 +117,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -137,8 +139,8 @@ _FreeformTags = FreeformTags
 
 @dataclass
 class Service:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -148,8 +150,8 @@ class Service:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

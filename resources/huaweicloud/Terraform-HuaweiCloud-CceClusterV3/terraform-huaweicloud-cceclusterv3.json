@@ -29,16 +29,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Cluster annotation, key/value pair format. Changing this parameter will create a new cluster resource."
@@ -112,16 +112,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -132,6 +132,9 @@
         "HighwaySubnetId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Labels": {
             "type": "array",
             "insertionOrder": true,
@@ -139,16 +142,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Cluster tag, key/value pair format. Changing this parameter will create a new cluster resource."
@@ -189,10 +192,11 @@
         "/properties/tfcfnid",
         "/properties/CertificateClusters",
         "/properties/CertificateUsers",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

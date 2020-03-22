@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     EnableAutomaticUpdates: Optional[bool]
     EvictionPolicy: Optional[str]
     HealthProbeId: Optional[str]
+    Id: Optional[str]
     Instances: Optional[float]
     LicenseType: Optional[str]
     Location: Optional[str]
@@ -102,6 +103,7 @@ class ResourceModel(BaseResourceModel):
             EnableAutomaticUpdates=json_data.get("EnableAutomaticUpdates"),
             EvictionPolicy=json_data.get("EvictionPolicy"),
             HealthProbeId=json_data.get("HealthProbeId"),
+            Id=json_data.get("Id"),
             Instances=json_data.get("Instances"),
             LicenseType=json_data.get("LicenseType"),
             Location=json_data.get("Location"),
@@ -151,8 +153,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -162,8 +164,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

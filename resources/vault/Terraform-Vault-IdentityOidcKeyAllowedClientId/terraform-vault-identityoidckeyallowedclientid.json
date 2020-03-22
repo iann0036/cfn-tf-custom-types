@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Client ID to allow usage with the OIDC named key."
         },
+        "Id": {
+            "type": "string"
+        },
         "KeyName": {
             "type": "string",
             "description": "Name of the OIDC Key allow the Client ID."
@@ -23,10 +26,11 @@
         "KeyName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

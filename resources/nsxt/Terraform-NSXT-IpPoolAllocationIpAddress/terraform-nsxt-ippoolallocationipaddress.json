@@ -11,6 +11,9 @@
         "AllocationId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpPoolId": {
             "type": "string",
             "description": "Ip Pool ID from which the IP address will be allocated."
@@ -21,10 +24,11 @@
         "IpPoolId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

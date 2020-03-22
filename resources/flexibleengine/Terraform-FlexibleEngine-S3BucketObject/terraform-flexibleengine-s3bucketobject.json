@@ -44,6 +44,9 @@
             "type": "string",
             "description": "Used to trigger updates. The only meaningful value is `${md5(file(\"path/to/file\"))}`.\nThis attribute is not compatible with `kms_key_id`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "The name of the object once it is in the bucket."
@@ -71,10 +74,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/VersionId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

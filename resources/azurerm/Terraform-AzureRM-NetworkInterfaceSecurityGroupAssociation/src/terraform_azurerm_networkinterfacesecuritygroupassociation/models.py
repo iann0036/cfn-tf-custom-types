@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     NetworkInterfaceId: Optional[str]
     NetworkSecurityGroupId: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             NetworkInterfaceId=json_data.get("NetworkInterfaceId"),
             NetworkSecurityGroupId=json_data.get("NetworkSecurityGroupId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

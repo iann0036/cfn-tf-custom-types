@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AuthorizerCredentials: Optional[str]
     AuthorizerResultTtlInSeconds: Optional[float]
     AuthorizerUri: Optional[str]
+    Id: Optional[str]
     IdentitySource: Optional[str]
     IdentityValidationExpression: Optional[str]
     Name: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             AuthorizerCredentials=json_data.get("AuthorizerCredentials"),
             AuthorizerResultTtlInSeconds=json_data.get("AuthorizerResultTtlInSeconds"),
             AuthorizerUri=json_data.get("AuthorizerUri"),
+            Id=json_data.get("Id"),
             IdentitySource=json_data.get("IdentitySource"),
             IdentityValidationExpression=json_data.get("IdentityValidationExpression"),
             Name=json_data.get("Name"),

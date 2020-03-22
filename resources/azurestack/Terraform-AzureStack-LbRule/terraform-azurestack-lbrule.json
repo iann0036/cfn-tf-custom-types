@@ -31,6 +31,9 @@
             "type": "number",
             "description": "The port for the external endpoint. Port numbers for each Rule must be unique within the Load Balancer. Possible values range between 1 and 65534, inclusive."
         },
+        "Id": {
+            "type": "string"
+        },
         "IdleTimeoutInMinutes": {
             "type": "number",
             "description": "Specifies the timeout for the Tcp idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to Tcp."
@@ -72,10 +75,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/FrontendIpConfigurationId"
+        "/properties/FrontendIpConfigurationId",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

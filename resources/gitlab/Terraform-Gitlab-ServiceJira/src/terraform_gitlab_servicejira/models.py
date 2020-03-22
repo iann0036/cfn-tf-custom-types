@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Active: Optional[bool]
     CreatedAt: Optional[str]
+    Id: Optional[str]
     JiraIssueTransitionId: Optional[str]
     Password: Optional[str]
     Project: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Active=json_data.get("Active"),
             CreatedAt=json_data.get("CreatedAt"),
+            Id=json_data.get("Id"),
             JiraIssueTransitionId=json_data.get("JiraIssueTransitionId"),
             Password=json_data.get("Password"),
             Project=json_data.get("Project"),

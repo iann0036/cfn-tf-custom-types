@@ -16,6 +16,9 @@
             "type": "string",
             "description": "A description for the snapshot."
         },
+        "Id": {
+            "type": "string"
+        },
         "Memory": {
             "type": "boolean",
             "description": "If set to `true`, a dump of the internal state of the\nvirtual machine is included in the snapshot."
@@ -46,10 +49,11 @@
         "VirtualMachineUuid"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

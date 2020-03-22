@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The e-mail address of the user."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsAdmin": {
             "type": "boolean",
             "description": "Boolean, defaults to false.  Whether to enable administrative priviledges\nfor the user."
@@ -57,10 +60,11 @@
         "Username"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

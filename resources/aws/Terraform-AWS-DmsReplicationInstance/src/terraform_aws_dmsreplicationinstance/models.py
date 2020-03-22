@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     AutoMinorVersionUpgrade: Optional[bool]
     AvailabilityZone: Optional[str]
     EngineVersion: Optional[str]
+    Id: Optional[str]
     KmsKeyArn: Optional[str]
     MultiAz: Optional[bool]
     PreferredMaintenanceWindow: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             AutoMinorVersionUpgrade=json_data.get("AutoMinorVersionUpgrade"),
             AvailabilityZone=json_data.get("AvailabilityZone"),
             EngineVersion=json_data.get("EngineVersion"),
+            Id=json_data.get("Id"),
             KmsKeyArn=json_data.get("KmsKeyArn"),
             MultiAz=json_data.get("MultiAz"),
             PreferredMaintenanceWindow=json_data.get("PreferredMaintenanceWindow"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

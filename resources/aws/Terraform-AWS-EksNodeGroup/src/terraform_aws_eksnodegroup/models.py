@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     ClusterName: Optional[str]
     DiskSize: Optional[float]
+    Id: Optional[str]
     InstanceTypes: Optional[Sequence[str]]
     Labels: Optional[Sequence["_Labels"]]
     NodeGroupName: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             ClusterName=json_data.get("ClusterName"),
             DiskSize=json_data.get("DiskSize"),
+            Id=json_data.get("Id"),
             InstanceTypes=json_data.get("InstanceTypes"),
             Labels=json_data.get("Labels"),
             NodeGroupName=json_data.get("NodeGroupName"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -153,8 +155,8 @@ _AutoscalingGroups = AutoscalingGroups
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -164,8 +166,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

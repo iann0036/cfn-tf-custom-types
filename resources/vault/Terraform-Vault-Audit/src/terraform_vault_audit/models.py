@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Options: Optional[Sequence["_Options"]]
     Path: Optional[str]
     Type: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Options=json_data.get("Options"),
             Path=json_data.get("Path"),
             Type=json_data.get("Type"),
@@ -63,8 +65,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Options:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -74,8 +76,8 @@ class Options:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

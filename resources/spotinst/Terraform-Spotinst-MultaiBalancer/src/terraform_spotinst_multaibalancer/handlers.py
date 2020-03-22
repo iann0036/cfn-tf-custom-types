@@ -1,6 +1,4 @@
 import logging
-import os, subprocess, json, re
-from uuid import uuid4
 from typing import Any, MutableMapping, Optional
 
 from cloudformation_cli_python_lib import (
@@ -22,31 +20,6 @@ TYPE_NAME = "Terraform::Spotinst::MultaiBalancer"
 resource = Resource(TYPE_NAME, ResourceModel)
 test_entrypoint = resource.test_entrypoint
 
-def check_call(args, cwd):
-    proc = subprocess.Popen(args,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        cwd=cwd)
-    stdout, stderr = proc.communicate()
-    LOG.warn(stdout.decode('utf-8'))
-    LOG.warn(stderr.decode('utf-8'))
-    if proc.returncode != 0:
-        raise exceptions.InternalFailure(f"{stderr.decode('utf-8')}")
-    
-    return stdout
-
-def cfn_to_tf_str(obj):
-    return re.sub('([A-Z]{1})', r'_\1', obj).lower()[1:]
-
-def parse_obj(obj):
-    if isinstance(obj, dict):
-        ret = {}
-        for prop, value in obj.items():
-            ret[cfn_to_tf_str(prop)] = parse_obj(value)
-
-        return ret
-
-    return obj
 
 @resource.handler(Action.CREATE)
 def create_handler(
@@ -59,67 +32,19 @@ def create_handler(
         status=OperationStatus.IN_PROGRESS,
         resourceModel=model,
     )
+    # TODO: put code here
 
-    LOG.warn("Starting create action")
-    
+    # Example:
     try:
-        s3client = session.client("s3")
-        stsclient = session.client("sts")
-        secretsmanagerclient = session.client("secretsmanager")
-
-        trackingid = str(uuid4())
-        callerid = stsclient.get_caller_identity()
-        statebucketname = "cfntfstate-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
-
-        tf = {
-            "provider": {
-                "spotinst": {}
-            },
-            "resource": {
-                "spotinst_multai_balancer": {}
-            }
-        }
-        tf['resource']['spotinst_multai_balancer'][request.logicalResourceIdentifier] = {}
-
-        if "spotinst" == "aws":
-            creds = session.credentials
-            tf["provider"]["spotinst"] = {
-                "access_key": creds.access_key,
-                "secret_key": creds.secret_key,
-                "token": creds.token
-            }
-
-        try:
-            secretstr = secretsmanagerclient.get_secret_value(SecretId="terraform/{}".format("spotinst"))['SecretString']
-            tf["provider"]["spotinst"].update(json.loads(secretstr))
-        except:
-            pass
-
-        for prop, value in vars(model).items():
-            if value is not None and prop != "tfcfnid":
-                tf['resource']['spotinst_multai_balancer'][request.logicalResourceIdentifier][cfn_to_tf_str(prop)] = parse_obj(value)
-
-        with open("/tmp/main.tf.json", "w") as f:
-            f.write(json.dumps(tf, indent=2))
-
-        LOG.warn("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
-        LOG.warn("Executing create")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
-
-        LOG.warn("Storing result")
-        with open("/tmp/terraform.tfstate", "rb") as f:
-            s3client.upload_fileobj(f, statebucketname, "{}.tfstate".format(trackingid))
-
-        os.remove("/tmp/main.tf.json")
-        os.remove("/tmp/terraform.tfstate")
-
-        model.tfcfnid = trackingid
-
+        if isinstance(session, SessionProxy):
+            client = session.client("s3")
+        # Setting Status to success will signal to cfn that the operation is complete
         progress.status = OperationStatus.SUCCESS
-    except Exception as e:
-        progress.message = str(e)
-        progress.status = OperationStatus.FAILED
+    except TypeError as e:
+        # exceptions module lets CloudFormation know the type of failure that occurred
+        raise exceptions.InternalFailure(f"was not expecting type {e}")
+        # this can also be done by returning a failed progress event
+        # return ProgressEvent.failed(HandlerErrorCode.InternalFailure, f"was not expecting type {e}")
     return progress
 
 
@@ -134,64 +59,7 @@ def update_handler(
         status=OperationStatus.IN_PROGRESS,
         resourceModel=model,
     )
-
-    LOG.warn("Starting update action")
-    
-    try:
-        s3client = session.client("s3")
-        stsclient = session.client("sts")
-        secretsmanagerclient = session.client("secretsmanager")
-
-        trackingid = model.tfcfnid
-        callerid = stsclient.get_caller_identity()
-        statebucketname = "cfntfstate-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
-
-        tf = {
-            "provider": {
-                "spotinst": {}
-            },
-            "resource": {
-                "spotinst_multai_balancer": {}
-            }
-        }
-        tf['resource']['spotinst_multai_balancer'][request.logicalResourceIdentifier] = {}
-
-        if "spotinst" == "aws":
-            creds = session.credentials
-            tf["provider"]["spotinst"] = {
-                "access_key": creds.access_key,
-                "secret_key": creds.secret_key,
-                "token": creds.token
-            }
-
-        try:
-            secretstr = secretsmanagerclient.get_secret_value(SecretId="terraform/{}".format("spotinst"))['SecretString']
-            tf["provider"]["spotinst"].update(json.loads(secretstr))
-        except:
-            pass
-
-        for prop, value in vars(model).items():
-            if value is not None and prop != "tfcfnid":
-                tf['resource']['spotinst_multai_balancer'][request.logicalResourceIdentifier][cfn_to_tf_str(prop)] = parse_obj(value)
-        
-        LOG.warn(json.dumps(tf))
-
-        with open("/tmp/main.tf.json", "w") as f:
-            f.write(json.dumps(tf, indent=2))
-
-        LOG.warn("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
-        LOG.warn("Executing update")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'apply', '-auto-approve', '-no-color'], "/tmp/")
-
-        LOG.warn("Storing result")
-        with open("/tmp/terraform.tfstate", "rb") as f:
-            s3client.upload_fileobj(f, statebucketname, "{}.tfstate".format(trackingid))
-
-        progress.status = OperationStatus.SUCCESS
-    except Exception as e:
-        progress.message = str(e)
-        progress.status = OperationStatus.FAILED
+    # TODO: put code here
     return progress
 
 
@@ -206,69 +74,7 @@ def delete_handler(
         status=OperationStatus.IN_PROGRESS,
         resourceModel=model,
     )
-
-    LOG.warn("Starting delete action")
-    
-    try:
-        s3client = session.client("s3")
-        stsclient = session.client("sts")
-        secretsmanagerclient = session.client("secretsmanager")
-
-        trackingid = model.tfcfnid
-        callerid = stsclient.get_caller_identity()
-        statebucketname = "cfntfstate-{}-{}".format(os.environ['AWS_REGION'], callerid.get('Account'))
-
-        with open('/tmp/terraform.tfstate', 'wb') as f:
-            s3client.download_fileobj(statebucketname, '{}.tfstate'.format(trackingid), f)
-
-        tf = {
-            "provider": {
-                "spotinst": {}
-            },
-            "resource": {
-                "spotinst_multai_balancer": {}
-            }
-        }
-        tf['resource']['spotinst_multai_balancer'][request.logicalResourceIdentifier] = {}
-
-        if "spotinst" == "aws":
-            creds = session.credentials
-            tf["provider"]["spotinst"] = {
-                "access_key": creds.access_key,
-                "secret_key": creds.secret_key,
-                "token": creds.token
-            }
-
-        try:
-            secretstr = secretsmanagerclient.get_secret_value(SecretId="terraform/{}".format("spotinst"))['SecretString']
-            tf["provider"]["spotinst"].update(json.loads(secretstr))
-        except:
-            pass
-
-        for prop, value in vars(model).items():
-            if value is not None and prop != "tfcfnid":
-                tf['resource']['spotinst_multai_balancer'][request.logicalResourceIdentifier][cfn_to_tf_str(prop)] = parse_obj(value)
-        
-        LOG.warn(json.dumps(tf))
-
-        with open("/tmp/main.tf.json", "w") as f:
-            f.write(json.dumps(tf, indent=2))
-        
-        LOG.warn("Initializing provider")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-no-color'], "/tmp/")
-        LOG.warn("Executing delete")
-        check_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'destroy', '-auto-approve', '-no-color'], "/tmp/")
-
-        LOG.warn("Deleting state S3 object")
-        s3client.delete_object(
-            Bucket=statebucketname,
-            Key="{}.tfstate".format(trackingid)
-        )
-
-        progress.status = OperationStatus.SUCCESS
-    except Exception as e:
-        progress.message = str(e)
-        progress.status = OperationStatus.FAILED
+    # TODO: put code here
     return progress
 
 

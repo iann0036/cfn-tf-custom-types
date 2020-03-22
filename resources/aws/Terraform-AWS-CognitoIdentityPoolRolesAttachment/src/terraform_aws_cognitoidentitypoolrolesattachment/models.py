@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     IdentityPoolId: Optional[str]
     Roles: Optional[Sequence["_Roles"]]
     RoleMapping: Optional[Sequence["_RoleMapping"]]
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             IdentityPoolId=json_data.get("IdentityPoolId"),
             Roles=json_data.get("Roles"),
             RoleMapping=json_data.get("RoleMapping"),
@@ -63,8 +65,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Roles:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -74,8 +76,8 @@ class Roles:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

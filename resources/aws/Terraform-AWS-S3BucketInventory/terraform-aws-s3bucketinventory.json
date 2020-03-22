@@ -12,7 +12,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Bucket"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -60,7 +62,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Encryption"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -77,14 +80,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SseKms"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SseS3": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SseS3"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -128,6 +133,9 @@
         },
         "Enabled": {
             "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
         },
         "IncludedObjectVersions": {
             "type": "string"
@@ -200,10 +208,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

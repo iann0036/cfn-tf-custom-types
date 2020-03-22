@@ -45,6 +45,9 @@
             },
             "description": "Up to 2 edge nodes from the given cluster. If none is provided, the NSX will auto-select two edge-nodes from the given edge cluster. If user provides only one edge node, there will be no HA support."
         },
+        "Id": {
+            "type": "string"
+        },
         "Revision": {
             "type": "number"
         },
@@ -62,10 +65,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

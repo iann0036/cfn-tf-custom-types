@@ -61,6 +61,9 @@
             "type": "number",
             "description": "The cooling duration (in seconds), and is 900 by default."
         },
+        "Id": {
+            "type": "string"
+        },
         "Region": {
             "type": "string"
         },
@@ -100,10 +103,11 @@
         "ScalingPolicyType"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

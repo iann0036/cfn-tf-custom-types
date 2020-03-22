@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BackupPolicyId: Optional[str]
+    Id: Optional[str]
     RecoveryVaultName: Optional[str]
     ResourceGroupName: Optional[str]
     SourceVmId: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BackupPolicyId=json_data.get("BackupPolicyId"),
+            Id=json_data.get("Id"),
             RecoveryVaultName=json_data.get("RecoveryVaultName"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             SourceVmId=json_data.get("SourceVmId"),
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

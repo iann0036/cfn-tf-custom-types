@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApiManagementName: Optional[str]
+    Id: Optional[str]
     ProductId: Optional[str]
     ResourceGroupName: Optional[str]
     XmlContent: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ApiManagementName=json_data.get("ApiManagementName"),
+            Id=json_data.get("Id"),
             ProductId=json_data.get("ProductId"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             XmlContent=json_data.get("XmlContent"),

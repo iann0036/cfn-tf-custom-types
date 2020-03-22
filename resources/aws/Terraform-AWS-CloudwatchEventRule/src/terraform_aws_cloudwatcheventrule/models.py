@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Description: Optional[str]
     EventPattern: Optional[str]
+    Id: Optional[str]
     IsEnabled: Optional[bool]
     Name: Optional[str]
     NamePrefix: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
             EventPattern=json_data.get("EventPattern"),
+            Id=json_data.get("Id"),
             IsEnabled=json_data.get("IsEnabled"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

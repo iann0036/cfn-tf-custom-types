@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreateTime: Optional[str]
     DiskType: Optional[str]
+    Id: Optional[str]
     Percent: Optional[float]
     SnapshotName: Optional[str]
     SnapshotStatus: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreateTime=json_data.get("CreateTime"),
             DiskType=json_data.get("DiskType"),
+            Id=json_data.get("Id"),
             Percent=json_data.get("Percent"),
             SnapshotName=json_data.get("SnapshotName"),
             SnapshotStatus=json_data.get("SnapshotStatus"),

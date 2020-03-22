@@ -22,6 +22,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InvitationArn": {
             "type": "string"
         },
@@ -60,6 +63,7 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/InvitationArn",
         "/properties/ReceiverAccountId",
         "/properties/Resources",
@@ -69,7 +73,7 @@
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

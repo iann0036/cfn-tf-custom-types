@@ -49,6 +49,7 @@ class ResourceModel(BaseResourceModel):
     HealthCheckIntervalTime: Optional[float]
     HealthCheckSwitch: Optional[bool]
     HealthCheckUnhealthNum: Optional[float]
+    Id: Optional[str]
     ListenerId: Optional[str]
     Scheduler: Optional[str]
     SessionExpireTime: Optional[float]
@@ -76,6 +77,7 @@ class ResourceModel(BaseResourceModel):
             HealthCheckIntervalTime=json_data.get("HealthCheckIntervalTime"),
             HealthCheckSwitch=json_data.get("HealthCheckSwitch"),
             HealthCheckUnhealthNum=json_data.get("HealthCheckUnhealthNum"),
+            Id=json_data.get("Id"),
             ListenerId=json_data.get("ListenerId"),
             Scheduler=json_data.get("Scheduler"),
             SessionExpireTime=json_data.get("SessionExpireTime"),

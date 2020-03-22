@@ -20,7 +20,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RetentionPolicy"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -44,7 +46,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RetentionPolicy"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -101,6 +105,9 @@
             "type": "string",
             "description": "Specifies the name of the Event Hub where Diagnostics Data should be sent. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "LogAnalyticsDestinationType": {
             "type": "string",
             "description": "When set to 'Dedicated' logs sent to a Log Analytics workspace will go into resource specific tables, instead of the legacy AzureDiagnostics table."
@@ -154,10 +161,11 @@
         "TargetResourceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

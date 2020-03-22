@@ -32,6 +32,9 @@
             "type": "boolean",
             "description": "Should Advanced Threat Protection be enabled on this resource?."
         },
+        "Id": {
+            "type": "string"
+        },
         "TargetResourceId": {
             "type": "string",
             "description": "The ID of the Azure Resource which to enable Advanced Threat Protection on. Changing this forces a new resource to be created."
@@ -46,10 +49,11 @@
         "TargetResourceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

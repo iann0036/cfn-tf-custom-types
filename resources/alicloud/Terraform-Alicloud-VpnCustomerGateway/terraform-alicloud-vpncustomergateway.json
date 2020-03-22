@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The description of the VPN customer gateway instance."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "The IP address of the customer gateway."
@@ -26,10 +29,11 @@
         "IpAddress"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

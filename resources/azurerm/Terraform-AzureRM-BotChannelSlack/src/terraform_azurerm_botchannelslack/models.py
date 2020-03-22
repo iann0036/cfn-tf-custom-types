@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BotName: Optional[str]
     ClientId: Optional[str]
     ClientSecret: Optional[str]
+    Id: Optional[str]
     LandingPageUrl: Optional[str]
     Location: Optional[str]
     ResourceGroupName: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             BotName=json_data.get("BotName"),
             ClientId=json_data.get("ClientId"),
             ClientSecret=json_data.get("ClientSecret"),
+            Id=json_data.get("Id"),
             LandingPageUrl=json_data.get("LandingPageUrl"),
             Location=json_data.get("Location"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

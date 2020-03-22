@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Endpoint: Optional[str]
     EndpointFullHostname: Optional[str]
     EndpointFullUrl: Optional[str]
+    Id: Optional[str]
     Image: Optional[str]
     Instances: Optional[float]
     Memory: Optional[float]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Endpoint=json_data.get("Endpoint"),
             EndpointFullHostname=json_data.get("EndpointFullHostname"),
             EndpointFullUrl=json_data.get("EndpointFullUrl"),
+            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             Instances=json_data.get("Instances"),
             Memory=json_data.get("Memory"),

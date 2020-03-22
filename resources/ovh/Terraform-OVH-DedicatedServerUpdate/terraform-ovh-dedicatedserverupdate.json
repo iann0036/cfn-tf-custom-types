@@ -12,6 +12,9 @@
             "type": "number",
             "description": "boot id of the server."
         },
+        "Id": {
+            "type": "string"
+        },
         "Monitoring": {
             "type": "boolean",
             "description": "Icmp monitoring state."
@@ -30,10 +33,11 @@
         "ServiceName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

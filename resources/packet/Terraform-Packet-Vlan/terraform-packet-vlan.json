@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Facility where to create the VLAN."
         },
+        "Id": {
+            "type": "string"
+        },
         "ProjectId": {
             "type": "string",
             "description": "ID of parent project."
@@ -31,10 +34,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Vxlan"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

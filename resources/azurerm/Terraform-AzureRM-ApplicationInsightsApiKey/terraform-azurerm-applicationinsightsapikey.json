@@ -35,6 +35,9 @@
             "type": "string",
             "description": "The ID of the Application Insights component on which the API key operates. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the Application Insights API key. Changing this forces a\nnew resource to be created."
@@ -66,10 +69,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ApiKey"
+        "/properties/ApiKey",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

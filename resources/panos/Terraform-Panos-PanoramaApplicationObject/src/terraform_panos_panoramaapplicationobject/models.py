@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     EvasiveBehavior: Optional[bool]
     ExcessiveBandwidth: Optional[bool]
     HasKnownVulnerability: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     NoAppIdCaching: Optional[bool]
     ParentApp: Optional[str]
@@ -81,6 +82,7 @@ class ResourceModel(BaseResourceModel):
             EvasiveBehavior=json_data.get("EvasiveBehavior"),
             ExcessiveBandwidth=json_data.get("ExcessiveBandwidth"),
             HasKnownVulnerability=json_data.get("HasKnownVulnerability"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NoAppIdCaching=json_data.get("NoAppIdCaching"),
             ParentApp=json_data.get("ParentApp"),

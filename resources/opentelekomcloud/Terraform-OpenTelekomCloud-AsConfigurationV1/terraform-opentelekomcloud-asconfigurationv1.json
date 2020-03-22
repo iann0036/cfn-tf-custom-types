@@ -30,16 +30,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "Metadata key/value pairs to make available from\nwithin the instance."
@@ -60,14 +60,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Personality"
-                    }
+                    },
+                    "maxItems": 5
                 },
                 "PublicIp": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PublicIp"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -127,7 +129,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Eip"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -145,7 +149,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Bandwidth"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -179,6 +185,9 @@
     "properties": {
         "tfcfnid": {
             "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Region": {
@@ -244,10 +253,11 @@
         "ScalingConfigurationName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

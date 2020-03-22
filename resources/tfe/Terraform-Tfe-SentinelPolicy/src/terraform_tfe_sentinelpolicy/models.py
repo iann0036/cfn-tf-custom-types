@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     EnforceMode: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Organization: Optional[str]
     Policy: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             EnforceMode=json_data.get("EnforceMode"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Organization=json_data.get("Organization"),
             Policy=json_data.get("Policy"),

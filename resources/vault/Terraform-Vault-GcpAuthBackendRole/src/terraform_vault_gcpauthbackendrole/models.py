@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     BoundRegions: Optional[Sequence[str]]
     BoundServiceAccounts: Optional[Sequence[str]]
     BoundZones: Optional[Sequence[str]]
+    Id: Optional[str]
     MaxJwtExp: Optional[str]
     MaxTtl: Optional[str]
     Period: Optional[str]
@@ -81,6 +82,7 @@ class ResourceModel(BaseResourceModel):
             BoundRegions=json_data.get("BoundRegions"),
             BoundServiceAccounts=json_data.get("BoundServiceAccounts"),
             BoundZones=json_data.get("BoundZones"),
+            Id=json_data.get("Id"),
             MaxJwtExp=json_data.get("MaxJwtExp"),
             MaxTtl=json_data.get("MaxTtl"),
             Period=json_data.get("Period"),

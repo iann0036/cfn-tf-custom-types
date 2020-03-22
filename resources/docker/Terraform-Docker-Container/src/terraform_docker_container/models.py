@@ -53,6 +53,7 @@ class ResourceModel(BaseResourceModel):
     Gateway: Optional[str]
     GroupAdd: Optional[Sequence[str]]
     Hostname: Optional[str]
+    Id: Optional[str]
     Image: Optional[str]
     IpAddress: Optional[str]
     IpPrefixLength: Optional[float]
@@ -124,6 +125,7 @@ class ResourceModel(BaseResourceModel):
             Gateway=json_data.get("Gateway"),
             GroupAdd=json_data.get("GroupAdd"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             IpAddress=json_data.get("IpAddress"),
             IpPrefixLength=json_data.get("IpPrefixLength"),
@@ -177,8 +179,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class LogOpts:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -188,8 +190,8 @@ class LogOpts:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -225,8 +227,8 @@ _NetworkData = NetworkData
 
 @dataclass
 class Sysctls:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -236,8 +238,8 @@ class Sysctls:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -247,8 +249,8 @@ _Sysctls = Sysctls
 
 @dataclass
 class Tmpfs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -258,8 +260,8 @@ class Tmpfs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -487,8 +489,8 @@ _VolumeOptions = VolumeOptions
 
 @dataclass
 class DriverOptions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -498,8 +500,8 @@ class DriverOptions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

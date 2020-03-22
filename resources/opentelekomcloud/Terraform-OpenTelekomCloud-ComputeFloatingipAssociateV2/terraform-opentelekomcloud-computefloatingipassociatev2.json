@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The floating IP to associate."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "The instance to associte the floating IP with."
@@ -30,10 +33,11 @@
         "InstanceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

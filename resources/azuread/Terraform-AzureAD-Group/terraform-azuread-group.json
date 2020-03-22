@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The description for the Group.  Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Members": {
             "type": "array",
             "insertionOrder": true,
@@ -40,10 +43,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/ObjectId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

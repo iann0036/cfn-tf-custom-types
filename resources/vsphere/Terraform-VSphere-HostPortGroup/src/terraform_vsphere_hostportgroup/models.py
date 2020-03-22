@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     ComputedPolicy: Optional[Sequence["_ComputedPolicy"]]
     Failback: Optional[bool]
     HostSystemId: Optional[str]
+    Id: Optional[str]
     Key: Optional[str]
     Name: Optional[str]
     NotifySwitches: Optional[bool]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             ComputedPolicy=json_data.get("ComputedPolicy"),
             Failback=json_data.get("Failback"),
             HostSystemId=json_data.get("HostSystemId"),
+            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Name=json_data.get("Name"),
             NotifySwitches=json_data.get("NotifySwitches"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ComputedPolicy:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class ComputedPolicy:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

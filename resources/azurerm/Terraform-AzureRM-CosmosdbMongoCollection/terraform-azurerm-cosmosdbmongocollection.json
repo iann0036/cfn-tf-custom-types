@@ -39,6 +39,9 @@
             "type": "number",
             "description": "The default Time To Live in seconds. If the value is `0` items are not automatically expired."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the Cosmos DB Mongo Collection. Changing this forces a new resource to be created."
@@ -67,10 +70,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

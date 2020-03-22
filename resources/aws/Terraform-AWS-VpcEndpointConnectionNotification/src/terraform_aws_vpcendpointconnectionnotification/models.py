@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ConnectionEvents: Optional[Sequence[str]]
     ConnectionNotificationArn: Optional[str]
+    Id: Optional[str]
     NotificationType: Optional[str]
     State: Optional[str]
     VpcEndpointId: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ConnectionEvents=json_data.get("ConnectionEvents"),
             ConnectionNotificationArn=json_data.get("ConnectionNotificationArn"),
+            Id=json_data.get("Id"),
             NotificationType=json_data.get("NotificationType"),
             State=json_data.get("State"),
             VpcEndpointId=json_data.get("VpcEndpointId"),

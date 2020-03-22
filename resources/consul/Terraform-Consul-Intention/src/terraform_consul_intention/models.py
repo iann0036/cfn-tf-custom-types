@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Action: Optional[str]
     Description: Optional[str]
     DestinationName: Optional[str]
+    Id: Optional[str]
     Meta: Optional[Sequence["_Meta"]]
     SourceName: Optional[str]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             Action=json_data.get("Action"),
             Description=json_data.get("Description"),
             DestinationName=json_data.get("DestinationName"),
+            Id=json_data.get("Id"),
             Meta=json_data.get("Meta"),
             SourceName=json_data.get("SourceName"),
         )
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Meta:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class Meta:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

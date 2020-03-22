@@ -128,6 +128,9 @@
         "IamDatabaseAuthenticationEnabled": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "Identifier": {
             "type": "string"
         },
@@ -230,16 +233,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -278,12 +281,13 @@
         "/properties/Arn",
         "/properties/Endpoint",
         "/properties/HostedZoneId",
+        "/properties/Id",
         "/properties/Replicas",
         "/properties/ResourceId",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

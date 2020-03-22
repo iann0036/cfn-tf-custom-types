@@ -40,7 +40,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/MatchCondition"
-                    }
+                    },
+                    "maxItems": 100
                 }
             },
             "required": [
@@ -66,14 +67,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Exclusion"
-                    }
+                    },
+                    "maxItems": 100
                 },
                 "Override": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Override"
-                    }
+                    },
+                    "maxItems": 100
                 }
             },
             "required": [
@@ -179,14 +182,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Exclusion"
-                    }
+                    },
+                    "maxItems": 100
                 },
                 "Rule": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Rule"
-                    }
+                    },
+                    "maxItems": 1000
                 }
             },
             "required": [
@@ -214,7 +219,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Exclusion"
-                    }
+                    },
+                    "maxItems": 100
                 }
             },
             "required": [
@@ -247,6 +253,9 @@
                 "type": "string"
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string"
         },
@@ -273,16 +282,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the Web Application Firewall Policy."
@@ -347,10 +356,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/FrontendEndpointIds",
+        "/properties/Id",
         "/properties/Location"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

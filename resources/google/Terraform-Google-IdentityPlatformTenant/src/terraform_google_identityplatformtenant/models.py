@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DisableAuth: Optional[bool]
     DisplayName: Optional[str]
     EnableEmailLinkSignin: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             DisableAuth=json_data.get("DisableAuth"),
             DisplayName=json_data.get("DisplayName"),
             EnableEmailLinkSignin=json_data.get("EnableEmailLinkSignin"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

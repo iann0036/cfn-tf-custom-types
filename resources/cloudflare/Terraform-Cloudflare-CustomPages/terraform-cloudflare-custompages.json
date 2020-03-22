@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The account ID where the custom pages should be\nupdated. Either `account_id` or `zone_id` must be provided. If\n`account_id` is present, it will override the zone setting."
         },
+        "Id": {
+            "type": "string"
+        },
         "State": {
             "type": "string",
             "description": "Managed state of the custom page. Must be one of\n`default`, `customised`. If the value is `default` it will be removed\nfrom the Terraform state management."
@@ -35,10 +38,11 @@
         "Url"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

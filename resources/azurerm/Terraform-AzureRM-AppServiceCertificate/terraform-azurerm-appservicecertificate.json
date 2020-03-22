@@ -41,6 +41,9 @@
                 "type": "string"
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "IssueDate": {
             "type": "string"
         },
@@ -81,16 +84,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -112,13 +115,14 @@
         "/properties/ExpirationDate",
         "/properties/FriendlyName",
         "/properties/HostNames",
+        "/properties/Id",
         "/properties/IssueDate",
         "/properties/Issuer",
         "/properties/SubjectName",
         "/properties/Thumbprint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

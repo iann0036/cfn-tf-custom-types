@@ -47,6 +47,9 @@
             "type": "string",
             "description": "The edition of the elastic pool to be created. Valid values are `Basic`, `Standard`, and `Premium`. Refer to [Azure SQL Database Service Tiers](https://docs.microsoft.com/en-gb/azure/sql-database/sql-database-service-tiers#elastic-pool-service-tiers-and-performance-in-edtus) for details. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
@@ -74,16 +77,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -103,10 +106,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CreationDate"
+        "/properties/CreationDate",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

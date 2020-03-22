@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     EipId: Optional[str]
     ExpireTime: Optional[str]
     Grade: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Remark: Optional[str]
     Tag: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             EipId=json_data.get("EipId"),
             ExpireTime=json_data.get("ExpireTime"),
             Grade=json_data.get("Grade"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Remark=json_data.get("Remark"),
             Tag=json_data.get("Tag"),

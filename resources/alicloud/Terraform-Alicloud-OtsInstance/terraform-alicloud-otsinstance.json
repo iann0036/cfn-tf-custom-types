@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The description of the instance. Currently, it does not support modifying."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceType": {
             "type": "string",
             "description": "The type of instance. Valid values are \"Capacity\" and \"HighPerformance\". Default to \"HighPerformance\"."
@@ -31,16 +34,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the instance."
@@ -51,10 +54,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

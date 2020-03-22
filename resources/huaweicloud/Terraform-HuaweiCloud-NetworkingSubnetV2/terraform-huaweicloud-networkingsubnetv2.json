@@ -78,6 +78,9 @@
             "type": "string",
             "description": "Default gateway used by devices in this subnet.\nLeaving this blank and not setting `no_gateway` will cause a default\ngateway of `.1` to be used. Changing this updates the gateway IP of the\nexisting subnet."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpVersion": {
             "type": "number",
             "description": "IP version, either 4 (default) or 6. Changing this creates a\nnew subnet."
@@ -115,16 +118,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -153,10 +156,11 @@
         "NetworkId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

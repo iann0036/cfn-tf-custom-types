@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Charset: Optional[str]
     Collation: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     ServerName: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Charset=json_data.get("Charset"),
             Collation=json_data.get("Collation"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             ServerName=json_data.get("ServerName"),

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AcceleratorArn: Optional[str]
     ClientAffinity: Optional[str]
+    Id: Optional[str]
     Protocol: Optional[str]
     PortRange: Optional[Sequence["_PortRange"]]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AcceleratorArn=json_data.get("AcceleratorArn"),
             ClientAffinity=json_data.get("ClientAffinity"),
+            Id=json_data.get("Id"),
             Protocol=json_data.get("Protocol"),
             PortRange=json_data.get("PortRange"),
         )

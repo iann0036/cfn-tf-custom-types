@@ -27,14 +27,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DestinationPortRange"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SourcePortRange": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SourcePortRange"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -64,14 +66,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DestinationPortRange"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SourcePortRange": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SourcePortRange"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -129,6 +133,9 @@
         "Direction": {
             "type": "string",
             "description": "Direction of the security rule. Set to `EGRESS` for rules to allow outbound IP packets, or `INGRESS` for rules to allow inbound IP packets.\n* `icmp_options` - (Optional) Optional and valid only for ICMP and ICMPv6. Use to specify a particular ICMP type and code as defined in:\n* [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)\n* [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)."
+        },
+        "Id": {
+            "type": "string"
         },
         "IsValid": {
             "type": "boolean"
@@ -208,11 +215,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/IsValid",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

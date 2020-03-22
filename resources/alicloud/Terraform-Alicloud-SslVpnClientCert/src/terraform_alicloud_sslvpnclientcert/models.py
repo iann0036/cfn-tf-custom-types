@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ClientCert: Optional[str]
     ClientConfig: Optional[str]
     ClientKey: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     SslVpnServerId: Optional[str]
     Status: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             ClientCert=json_data.get("ClientCert"),
             ClientConfig=json_data.get("ClientConfig"),
             ClientKey=json_data.get("ClientKey"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SslVpnServerId=json_data.get("SslVpnServerId"),
             Status=json_data.get("Status"),

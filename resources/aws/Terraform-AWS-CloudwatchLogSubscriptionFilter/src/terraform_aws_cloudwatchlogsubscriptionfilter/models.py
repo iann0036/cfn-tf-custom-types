@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DestinationArn: Optional[str]
     Distribution: Optional[str]
     FilterPattern: Optional[str]
+    Id: Optional[str]
     LogGroupName: Optional[str]
     Name: Optional[str]
     RoleArn: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             DestinationArn=json_data.get("DestinationArn"),
             Distribution=json_data.get("Distribution"),
             FilterPattern=json_data.get("FilterPattern"),
+            Id=json_data.get("Id"),
             LogGroupName=json_data.get("LogGroupName"),
             Name=json_data.get("Name"),
             RoleArn=json_data.get("RoleArn"),

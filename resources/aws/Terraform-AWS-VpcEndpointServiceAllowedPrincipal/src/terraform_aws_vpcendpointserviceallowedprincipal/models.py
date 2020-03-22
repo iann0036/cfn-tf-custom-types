@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     PrincipalArn: Optional[str]
     VpcEndpointServiceId: Optional[str]
 
@@ -48,6 +49,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             PrincipalArn=json_data.get("PrincipalArn"),
             VpcEndpointServiceId=json_data.get("VpcEndpointServiceId"),
         )

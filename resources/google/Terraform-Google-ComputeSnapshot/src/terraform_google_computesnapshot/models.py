@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreationTimestamp: Optional[str]
     Description: Optional[str]
     DiskSizeGb: Optional[float]
+    Id: Optional[str]
     LabelFingerprint: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Licenses: Optional[Sequence[str]]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
             DiskSizeGb=json_data.get("DiskSizeGb"),
+            Id=json_data.get("Id"),
             LabelFingerprint=json_data.get("LabelFingerprint"),
             Labels=json_data.get("Labels"),
             Licenses=json_data.get("Licenses"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

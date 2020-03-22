@@ -123,6 +123,9 @@
         "HostStatus": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string",
             "description": "Changing this creates a new bms server."
@@ -145,16 +148,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Metadata key/value pairs to make available from\nwithin the instance. Changing this updates the existing bms server metadata."
@@ -219,12 +222,13 @@
         "/properties/ConfigDrive",
         "/properties/HostId",
         "/properties/HostStatus",
+        "/properties/Id",
         "/properties/KernelId",
         "/properties/TenantId",
         "/properties/UserId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

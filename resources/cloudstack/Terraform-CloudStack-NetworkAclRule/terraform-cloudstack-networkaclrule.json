@@ -59,6 +59,9 @@
             "type": "string",
             "description": "The network ACL ID for which to create the rules.\nChanging this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Managed": {
             "type": "boolean",
             "description": "USE WITH CAUTION! If enabled all the firewall rules for\nthis network ACL will be managed by this resource. This means it will delete\nall firewall rules that are not in your config! (defaults false)."
@@ -83,10 +86,11 @@
         "AclId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

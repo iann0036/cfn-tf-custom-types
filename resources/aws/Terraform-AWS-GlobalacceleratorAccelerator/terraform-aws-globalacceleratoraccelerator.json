@@ -34,6 +34,9 @@
         "HostedZoneId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddressType": {
             "type": "string"
         },
@@ -67,16 +70,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -97,10 +100,11 @@
         "/properties/tfcfnid",
         "/properties/DnsName",
         "/properties/HostedZoneId",
+        "/properties/Id",
         "/properties/IpSets"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     HostnameLabel: Optional[str]
+    Id: Optional[str]
     IpAddress: Optional[str]
     IsPrimary: Optional[bool]
     SubnetId: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             FreeformTags=json_data.get("FreeformTags"),
             HostnameLabel=json_data.get("HostnameLabel"),
+            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             IsPrimary=json_data.get("IsPrimary"),
             SubnetId=json_data.get("SubnetId"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -101,8 +103,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -112,8 +114,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

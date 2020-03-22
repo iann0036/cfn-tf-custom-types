@@ -67,6 +67,9 @@
             "type": "boolean",
             "description": "When transparency is `false` (default) backend servers see the IP address of the\ntraffic source as the internal IP address of the load balancer. When it is `true` the source IP address is the actual IP\naddress of the client and the edge gateway must be set as the default gateway to ensure that return packets go through\nthe edge gateway."
         },
+        "Id": {
+            "type": "string"
+        },
         "MonitorId": {
             "type": "string",
             "description": "`vcd_lb_service_monitor` resource `id` to attach to server pool for health check parameters."
@@ -98,10 +101,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

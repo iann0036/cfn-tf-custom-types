@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Categories: Optional[Sequence[str]]
+    Id: Optional[str]
     Locations: Optional[Sequence[str]]
     Name: Optional[str]
     ServicebusRuleId: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Categories=json_data.get("Categories"),
+            Id=json_data.get("Id"),
             Locations=json_data.get("Locations"),
             Name=json_data.get("Name"),
             ServicebusRuleId=json_data.get("ServicebusRuleId"),

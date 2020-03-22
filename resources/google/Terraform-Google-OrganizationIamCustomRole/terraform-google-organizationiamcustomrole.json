@@ -15,6 +15,9 @@
             "type": "string",
             "description": "A human-readable description for the role."
         },
+        "Id": {
+            "type": "string"
+        },
         "OrgId": {
             "type": "string",
             "description": "The numeric ID of the organization in which you want to create a custom role."
@@ -48,10 +51,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Deleted"
+        "/properties/Deleted",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

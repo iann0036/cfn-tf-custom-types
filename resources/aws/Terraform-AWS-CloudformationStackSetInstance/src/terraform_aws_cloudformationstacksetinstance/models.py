@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountId: Optional[str]
+    Id: Optional[str]
     ParameterOverrides: Optional[Sequence["_ParameterOverrides"]]
     Region: Optional[str]
     RetainStack: Optional[bool]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AccountId=json_data.get("AccountId"),
+            Id=json_data.get("Id"),
             ParameterOverrides=json_data.get("ParameterOverrides"),
             Region=json_data.get("Region"),
             RetainStack=json_data.get("RetainStack"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ParameterOverrides:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class ParameterOverrides:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

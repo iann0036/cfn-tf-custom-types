@@ -12,6 +12,9 @@
             "type": "boolean",
             "description": "Whether the topic is compactTopic or not. Compact topic must be a localTopic."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "InstanceId of your Kafka resource, the topic will create in this instance."
@@ -35,16 +38,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -61,10 +64,11 @@
         "Topic"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

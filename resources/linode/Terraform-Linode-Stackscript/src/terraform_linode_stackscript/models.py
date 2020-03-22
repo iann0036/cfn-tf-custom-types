@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DeploymentsActive: Optional[float]
     DeploymentsTotal: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     Images: Optional[Sequence[str]]
     IsPublic: Optional[bool]
     Label: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             DeploymentsActive=json_data.get("DeploymentsActive"),
             DeploymentsTotal=json_data.get("DeploymentsTotal"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Images=json_data.get("Images"),
             IsPublic=json_data.get("IsPublic"),
             Label=json_data.get("Label"),

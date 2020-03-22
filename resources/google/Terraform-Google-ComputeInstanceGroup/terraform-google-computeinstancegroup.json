@@ -31,6 +31,9 @@
             "type": "string",
             "description": "An optional textual description of the instance\ngroup."
         },
+        "Id": {
+            "type": "string"
+        },
         "Instances": {
             "type": "array",
             "insertionOrder": true,
@@ -75,11 +78,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SelfLink",
         "/properties/Size"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Attachable: Optional[bool]
     CheckDuplicate: Optional[bool]
     Driver: Optional[str]
+    Id: Optional[str]
     Ingress: Optional[bool]
     Internal: Optional[bool]
     IpamDriver: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             Attachable=json_data.get("Attachable"),
             CheckDuplicate=json_data.get("CheckDuplicate"),
             Driver=json_data.get("Driver"),
+            Id=json_data.get("Id"),
             Ingress=json_data.get("Ingress"),
             Internal=json_data.get("Internal"),
             IpamDriver=json_data.get("IpamDriver"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Options:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Options:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -127,8 +129,8 @@ _IpamConfig = IpamConfig
 
 @dataclass
 class AuxAddress:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -138,8 +140,8 @@ class AuxAddress:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

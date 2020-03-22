@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     CurrentNum: Optional[float]
     CvmQuotaTotal: Optional[float]
+    Id: Optional[str]
     Name: Optional[str]
     Type: Optional[str]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             CurrentNum=json_data.get("CurrentNum"),
             CvmQuotaTotal=json_data.get("CvmQuotaTotal"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Type=json_data.get("Type"),
         )

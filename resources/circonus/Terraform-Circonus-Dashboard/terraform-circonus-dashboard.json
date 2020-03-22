@@ -59,7 +59,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Settings"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -285,7 +286,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/BadRules"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Datapoints": {
                     "type": "array",
@@ -393,19 +395,22 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "number"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map. Has members `width` and `height` to control the\ndimensions of the dashboard."
+        },
+        "Id": {
+            "type": "string"
         },
         "Shared": {
             "type": "boolean",
@@ -479,10 +484,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Uuid"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

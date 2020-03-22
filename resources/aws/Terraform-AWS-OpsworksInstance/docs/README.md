@@ -484,7 +484,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the Id.
 
 ### Fn::GetAtt
 
@@ -499,4 +499,8 @@ Internal identifier for tracking resource changes. Do not use.
 #### Ec2InstanceId
 
 Returns the <code>Ec2InstanceId</code> value.
+
+#### Id
+
+Returns the <code>Id</code> value.
 

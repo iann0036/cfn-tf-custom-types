@@ -34,6 +34,9 @@
             "type": "string",
             "description": "A unique name for the security group."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "A unique name for the security group."
@@ -64,10 +67,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/AllTags"
+        "/properties/AllTags",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

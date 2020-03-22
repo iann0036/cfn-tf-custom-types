@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     EdgeGateway: Optional[str]
     Enabled: Optional[bool]
     IcmpType: Optional[str]
+    Id: Optional[str]
     LoggingEnabled: Optional[bool]
     NetworkName: Optional[str]
     NetworkType: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             EdgeGateway=json_data.get("EdgeGateway"),
             Enabled=json_data.get("Enabled"),
             IcmpType=json_data.get("IcmpType"),
+            Id=json_data.get("Id"),
             LoggingEnabled=json_data.get("LoggingEnabled"),
             NetworkName=json_data.get("NetworkName"),
             NetworkType=json_data.get("NetworkType"),

@@ -12,28 +12,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HorizontalPodAutoscaling"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpLoadBalancing": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpLoadBalancing"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "KubernetesDashboard": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KubernetesDashboard"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "NetworkPolicyConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NetworkPolicyConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -64,7 +68,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoProvisioningDefaults"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ResourceLimits": {
                     "type": "array",
@@ -116,7 +121,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DailyMaintenanceWindow"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -138,7 +145,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ClientCertificateConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -214,16 +222,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "The Kubernetes labels (key/value pairs) to be applied to each node."
@@ -243,16 +251,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "The metadata key/value pairs assigned to instances in\nthe cluster. From GKE `1.12` onwards, `disable-legacy-endpoints` is set to\n`true` by the API; if `metadata` is set but that default value is not\nincluded, Terraform will attempt to unset the value. To avoid this, set the\nvalue in your config."
@@ -310,21 +318,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SandboxConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ShieldedInstanceConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ShieldedInstanceConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "WorkloadMetadataConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/WorkloadMetadataConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -356,21 +367,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Autoscaling"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Management": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Management"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "NodeConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NodeConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -672,6 +686,9 @@
         "Endpoint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InitialNodeCount": {
             "type": "number",
             "description": "The number of nodes to create in this\ncluster's default node pool. In regional or multi-zonal clusters, this is the\nnumber of nodes per zone. Must be set if `node_pool` is not set. If you're using\n`google_container_node_pool` objects with no default node pool, you'll need to\nset this to a value of at least `1`, alongside setting\n`remove_default_node_pool` to `true`."
@@ -746,16 +763,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The GCE resource labels (a map of key/value pairs) to be applied to the cluster."
@@ -995,6 +1012,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/InstanceGroupUrls",
         "/properties/LabelFingerprint",
         "/properties/MasterVersion",
@@ -1002,7 +1020,7 @@
         "/properties/ServicesIpv4Cidr"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

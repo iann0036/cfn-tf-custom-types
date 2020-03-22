@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     CheckId: Optional[str]
     Checks: Optional[Sequence[str]]
     Created: Optional[float]
+    Id: Optional[str]
     LastModified: Optional[float]
     LastModifiedBy: Optional[str]
     MetricLimit: Optional[float]
@@ -91,6 +92,7 @@ class ResourceModel(BaseResourceModel):
             CheckId=json_data.get("CheckId"),
             Checks=json_data.get("Checks"),
             Created=json_data.get("Created"),
+            Id=json_data.get("Id"),
             LastModified=json_data.get("LastModified"),
             LastModifiedBy=json_data.get("LastModifiedBy"),
             MetricLimit=json_data.get("MetricLimit"),
@@ -135,8 +137,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CheckByCollector:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -146,8 +148,8 @@ class CheckByCollector:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -209,8 +211,8 @@ _Cloudwatch = Cloudwatch
 
 @dataclass
 class Dimmensions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -220,8 +222,8 @@ class Dimmensions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -299,8 +301,8 @@ _Consul = Consul
 
 @dataclass
 class Headers:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -310,8 +312,8 @@ class Headers:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -439,8 +441,8 @@ _Http = Http
 
 @dataclass
 class Headers2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -450,8 +452,8 @@ class Headers2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -609,8 +611,8 @@ _Json = Json
 
 @dataclass
 class Headers3:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -620,8 +622,8 @@ class Headers3:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

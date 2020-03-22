@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     HealthCheckSourceIp: Optional[str]
     HealthCheckTargetIp: Optional[str]
+    Id: Optional[str]
     InstanceChargeType: Optional[str]
     Name: Optional[str]
     OppositeAccessPointId: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             HealthCheckSourceIp=json_data.get("HealthCheckSourceIp"),
             HealthCheckTargetIp=json_data.get("HealthCheckTargetIp"),
+            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             Name=json_data.get("Name"),
             OppositeAccessPointId=json_data.get("OppositeAccessPointId"),

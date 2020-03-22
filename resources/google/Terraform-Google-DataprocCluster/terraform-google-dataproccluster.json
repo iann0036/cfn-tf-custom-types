@@ -16,21 +16,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscalingConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "EncryptionConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/EncryptionConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GceClusterConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GceClusterConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "InitializationAction": {
                     "type": "array",
@@ -44,35 +47,40 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/MasterConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PreemptibleWorkerConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PreemptibleWorkerConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SecurityConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecurityConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SoftwareConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SoftwareConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "WorkerConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/WorkerConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -132,16 +140,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -219,7 +227,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DiskConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -236,7 +245,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DiskConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -250,7 +260,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KerberosConfig"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -276,16 +288,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -320,7 +332,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DiskConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -418,6 +431,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Labels": {
             "type": "array",
             "insertionOrder": true,
@@ -425,16 +441,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The list of labels (key/value pairs) to be applied to\ninstances in the cluster. GCP generates some itself including `goog-dataproc-cluster-name`\nwhich is the name of the cluster."
@@ -563,10 +579,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

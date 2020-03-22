@@ -37,6 +37,9 @@
         "Default": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "LimitNum": {
             "type": "number",
             "description": "Specifies the number of requests allowed from a web visitor in a rate limiting period. Changing this creates a new rule."
@@ -92,10 +95,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Default"
+        "/properties/Default",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

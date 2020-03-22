@@ -236,6 +236,9 @@
         "Hostname": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "Specifies the supported Azure location where the resource has to be createc. Changing this forces a new resource to be created."
@@ -277,16 +280,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -357,11 +360,12 @@
         "/properties/EventHubOperationsEndpoint",
         "/properties/EventHubOperationsPath",
         "/properties/Hostname",
+        "/properties/Id",
         "/properties/SharedAccessPolicy",
         "/properties/Type"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

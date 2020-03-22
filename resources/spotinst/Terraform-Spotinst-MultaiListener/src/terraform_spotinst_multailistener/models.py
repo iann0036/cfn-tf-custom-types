@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BalancerId: Optional[str]
+    Id: Optional[str]
     Port: Optional[float]
     Protocol: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BalancerId=json_data.get("BalancerId"),
+            Id=json_data.get("Id"),
             Port=json_data.get("Port"),
             Protocol=json_data.get("Protocol"),
             Tags=json_data.get("Tags"),

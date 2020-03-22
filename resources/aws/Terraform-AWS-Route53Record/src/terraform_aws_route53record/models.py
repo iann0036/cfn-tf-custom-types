@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllowOverwrite: Optional[bool]
     Fqdn: Optional[str]
     HealthCheckId: Optional[str]
+    Id: Optional[str]
     MultivalueAnswerRoutingPolicy: Optional[bool]
     Name: Optional[str]
     Records: Optional[Sequence[str]]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             AllowOverwrite=json_data.get("AllowOverwrite"),
             Fqdn=json_data.get("Fqdn"),
             HealthCheckId=json_data.get("HealthCheckId"),
+            Id=json_data.get("Id"),
             MultivalueAnswerRoutingPolicy=json_data.get("MultivalueAnswerRoutingPolicy"),
             Name=json_data.get("Name"),
             Records=json_data.get("Records"),

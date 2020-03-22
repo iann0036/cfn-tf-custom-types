@@ -20,6 +20,9 @@
             "type": "string",
             "description": "Email of the CAM user."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of CAM user."
@@ -63,13 +66,14 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SecretId",
         "/properties/SecretKey",
         "/properties/Uid",
         "/properties/Uin"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

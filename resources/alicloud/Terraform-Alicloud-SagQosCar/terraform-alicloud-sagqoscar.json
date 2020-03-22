@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The description of the QoS speed limiting rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "LimitType": {
             "type": "string",
             "description": "The speed limiting method. Valid values: Absolute, Percent."
@@ -56,10 +59,11 @@
         "QosId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

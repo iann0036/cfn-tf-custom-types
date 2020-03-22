@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     DisableSecurityService: Optional[bool]
     ExpiredTime: Optional[str]
     Hostname: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     InstanceChargeType: Optional[str]
     InstanceChargeTypePrepaidPeriod: Optional[float]
@@ -88,6 +89,7 @@ class ResourceModel(BaseResourceModel):
             DisableSecurityService=json_data.get("DisableSecurityService"),
             ExpiredTime=json_data.get("ExpiredTime"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             InstanceChargeTypePrepaidPeriod=json_data.get("InstanceChargeTypePrepaidPeriod"),
@@ -125,8 +127,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -136,8 +138,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

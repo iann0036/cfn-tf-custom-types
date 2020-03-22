@@ -60,6 +60,9 @@
             "type": "string",
             "description": "Human-readable description of the trunk. Changing this\nupdates the name of the existing trunk."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "A unique name for the trunk. Changing this\nupdates the `name` of an existing trunk."
@@ -101,10 +104,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/AllTags"
+        "/properties/AllTags",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

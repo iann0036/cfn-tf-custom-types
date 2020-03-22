@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ComputePlatform: Optional[str]
     DeploymentConfigId: Optional[str]
     DeploymentConfigName: Optional[str]
+    Id: Optional[str]
     MinimumHealthyHosts: Optional[Sequence["_MinimumHealthyHosts"]]
     TrafficRoutingConfig: Optional[Sequence["_TrafficRoutingConfig"]]
     TimeBasedCanary: Optional[Sequence["_TimeBasedCanary"]]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             ComputePlatform=json_data.get("ComputePlatform"),
             DeploymentConfigId=json_data.get("DeploymentConfigId"),
             DeploymentConfigName=json_data.get("DeploymentConfigName"),
+            Id=json_data.get("Id"),
             MinimumHealthyHosts=json_data.get("MinimumHealthyHosts"),
             TrafficRoutingConfig=json_data.get("TrafficRoutingConfig"),
             TimeBasedCanary=json_data.get("TimeBasedCanary"),

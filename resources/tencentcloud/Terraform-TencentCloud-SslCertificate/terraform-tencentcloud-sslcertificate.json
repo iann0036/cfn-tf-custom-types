@@ -24,6 +24,9 @@
         "EndTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "Key of the SSL certificate and required when certificate type is `SVR`. Not allowed newline at the start and end."
@@ -65,12 +68,13 @@
         "/properties/CreateTime",
         "/properties/Domain",
         "/properties/EndTime",
+        "/properties/Id",
         "/properties/ProductZhName",
         "/properties/Status",
         "/properties/SubjectNames"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

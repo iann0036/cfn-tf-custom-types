@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DomainId: Optional[str]
     DrType: Optional[str]
     Enable: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     SourceAvailabilityZone: Optional[str]
     SourceVpcId: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             DomainId=json_data.get("DomainId"),
             DrType=json_data.get("DrType"),
             Enable=json_data.get("Enable"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SourceAvailabilityZone=json_data.get("SourceAvailabilityZone"),
             SourceVpcId=json_data.get("SourceVpcId"),

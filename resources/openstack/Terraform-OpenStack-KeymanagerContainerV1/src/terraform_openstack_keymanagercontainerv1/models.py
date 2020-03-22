@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ContainerRef: Optional[str]
     CreatedAt: Optional[str]
     CreatorId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Status: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             ContainerRef=json_data.get("ContainerRef"),
             CreatedAt=json_data.get("CreatedAt"),
             CreatorId=json_data.get("CreatorId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Status=json_data.get("Status"),

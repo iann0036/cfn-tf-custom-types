@@ -39,6 +39,9 @@
             "type": "string",
             "description": "The PowerShell DSC Node Configuration (mof content)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the DSC Node Configuration. Changing this forces a new resource to be created."
@@ -60,10 +63,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ConfigurationName"
+        "/properties/ConfigurationName",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppServiceName: Optional[str]
     Hostname: Optional[str]
+    Id: Optional[str]
     ResourceGroupName: Optional[str]
     SslState: Optional[str]
     Thumbprint: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AppServiceName=json_data.get("AppServiceName"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             SslState=json_data.get("SslState"),
             Thumbprint=json_data.get("Thumbprint"),

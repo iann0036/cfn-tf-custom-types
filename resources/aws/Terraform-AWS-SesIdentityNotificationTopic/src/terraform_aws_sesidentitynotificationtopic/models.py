@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Identity: Optional[str]
     IncludeOriginalHeaders: Optional[bool]
     NotificationType: Optional[str]
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Identity=json_data.get("Identity"),
             IncludeOriginalHeaders=json_data.get("IncludeOriginalHeaders"),
             NotificationType=json_data.get("NotificationType"),

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BalancerId: Optional[str]
     DeploymentId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Port: Optional[float]
     Protocol: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BalancerId=json_data.get("BalancerId"),
             DeploymentId=json_data.get("DeploymentId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Port=json_data.get("Port"),
             Protocol=json_data.get("Protocol"),

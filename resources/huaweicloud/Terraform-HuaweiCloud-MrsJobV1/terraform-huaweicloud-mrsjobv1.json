@@ -37,6 +37,9 @@
             "type": "string",
             "description": "SQL program path This parameter is needed\nby Spark Script and Hive Script jobs only and must meet the following requirements:\nContains a maximum of 1023 characters, excluding special characters such as\n;|&><'$. The address cannot be empty or full of spaces. Starts with / or s3a://.\nEnds with .sql. sql is case-insensitive."
         },
+        "Id": {
+            "type": "string"
+        },
         "Input": {
             "type": "string",
             "description": "Path for inputting data, which must start with / or s3a://.\nA correct OBS path is required. The parameter contains a maximum of 1023 characters,\nexcluding special characters such as ;|&>'<$, and can be empty."
@@ -88,10 +91,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/JobState"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

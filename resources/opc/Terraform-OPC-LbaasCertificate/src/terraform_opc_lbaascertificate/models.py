@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CertificateBody: Optional[str]
     CertificateChain: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PrivateKey: Optional[str]
     State: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CertificateBody=json_data.get("CertificateBody"),
             CertificateChain=json_data.get("CertificateChain"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivateKey=json_data.get("PrivateKey"),
             State=json_data.get("State"),

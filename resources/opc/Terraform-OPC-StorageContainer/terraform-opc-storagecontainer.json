@@ -24,6 +24,9 @@
             },
             "description": "List of headers exposed to the user agent (e.g. browser) in the actual request response."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxAge": {
             "type": "number",
             "description": "Maximum age in seconds for the origin to hold the preflight results."
@@ -35,16 +38,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Additional object metadata headers. See [Container Metadata ](#container-metadata) below for more information."
@@ -91,10 +94,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

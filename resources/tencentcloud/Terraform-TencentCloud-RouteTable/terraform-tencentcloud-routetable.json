@@ -11,6 +11,9 @@
         "CreateTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsDefault": {
             "type": "boolean"
         },
@@ -39,16 +42,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The tags of routing table."
@@ -66,12 +69,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/IsDefault",
         "/properties/RouteEntryIds",
         "/properties/SubnetIds"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

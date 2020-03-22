@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Interface: Optional[str]
     Template: Optional[str]
     VirtualRouter: Optional[str]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Interface=json_data.get("Interface"),
             Template=json_data.get("Template"),
             VirtualRouter=json_data.get("VirtualRouter"),

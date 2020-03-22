@@ -108,7 +108,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TargetSize"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -145,6 +146,9 @@
             "description": "An optional textual description of the instance\ngroup manager."
         },
         "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "InstanceGroup": {
@@ -234,12 +238,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Fingerprint",
+        "/properties/Id",
         "/properties/InstanceGroup",
         "/properties/SelfLink",
         "/properties/UpdateStrategy"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

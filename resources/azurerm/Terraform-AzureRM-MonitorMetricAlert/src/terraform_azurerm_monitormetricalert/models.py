@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Enabled: Optional[bool]
     Frequency: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     Scopes: Optional[Sequence[str]]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
             Frequency=json_data.get("Frequency"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Scopes=json_data.get("Scopes"),
@@ -83,8 +85,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -127,8 +129,8 @@ _Action = Action
 
 @dataclass
 class WebhookProperties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -138,8 +140,8 @@ class WebhookProperties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

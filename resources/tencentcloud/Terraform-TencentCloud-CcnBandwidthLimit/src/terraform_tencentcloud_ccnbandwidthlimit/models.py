@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BandwidthLimit: Optional[float]
     CcnId: Optional[str]
+    Id: Optional[str]
     Region: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BandwidthLimit=json_data.get("BandwidthLimit"),
             CcnId=json_data.get("CcnId"),
+            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
         )
 

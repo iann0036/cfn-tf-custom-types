@@ -34,6 +34,9 @@
         "ExpireTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of disk, should have 6-63 characters and only support Chinese, English, numbers, '-', '_'. If not specified, terraform will auto-generate a name beginning with `tf-disk`."
@@ -55,10 +58,11 @@
         "/properties/tfcfnid",
         "/properties/CreateTime",
         "/properties/ExpireTime",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -32,6 +32,9 @@
             "type": "string",
             "description": "The name of the Automation Account in which the Job Schedule is created. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "JobScheduleId": {
             "type": "string"
         },
@@ -42,16 +45,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of key/value pairs corresponding to the arguments that can be passed to the Runbook. Changing this forces a new resource to be created."
@@ -83,10 +86,11 @@
         "ScheduleName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -51,28 +51,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutomationParameters"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "LambdaParameters": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LambdaParameters"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "RunCommandParameters": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RunCommandParameters"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "StepFunctionsParameters": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StepFunctionsParameters"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -160,7 +164,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NotificationConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Parameter": {
                     "type": "array",
@@ -232,6 +237,9 @@
             "type": "string"
         },
         "Description": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "MaxConcurrency": {
@@ -347,10 +355,11 @@
         "WindowId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

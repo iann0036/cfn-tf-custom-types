@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BackupName: Optional[str]
     BackupRecordId: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Region: Optional[str]
     ResourceId: Optional[str]
     ResourceType: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             BackupName=json_data.get("BackupName"),
             BackupRecordId=json_data.get("BackupRecordId"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             ResourceId=json_data.get("ResourceId"),
             ResourceType=json_data.get("ResourceType"),

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     DisplayName: Optional[str]
     DomainName: Optional[str]
+    Id: Optional[str]
     Rtypes: Optional[Sequence[str]]
     Self: Optional[str]
     State: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             DisplayName=json_data.get("DisplayName"),
             DomainName=json_data.get("DomainName"),
+            Id=json_data.get("Id"),
             Rtypes=json_data.get("Rtypes"),
             Self=json_data.get("Self"),
             State=json_data.get("State"),

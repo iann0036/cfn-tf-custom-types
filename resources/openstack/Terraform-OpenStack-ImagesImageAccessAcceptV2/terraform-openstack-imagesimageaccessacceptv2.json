@@ -11,6 +11,9 @@
         "CreatedAt": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string",
             "description": "The proposed image ID."
@@ -42,11 +45,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/Schema",
         "/properties/UpdatedAt"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

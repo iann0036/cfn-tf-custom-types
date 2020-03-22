@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bucket: Optional[str]
+    Id: Optional[str]
     Object: Optional[str]
     PredefinedAcl: Optional[str]
     RoleEntity: Optional[Sequence[str]]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Bucket=json_data.get("Bucket"),
+            Id=json_data.get("Id"),
             Object=json_data.get("Object"),
             PredefinedAcl=json_data.get("PredefinedAcl"),
             RoleEntity=json_data.get("RoleEntity"),

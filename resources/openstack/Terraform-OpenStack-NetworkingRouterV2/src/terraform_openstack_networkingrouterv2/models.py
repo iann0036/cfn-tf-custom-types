@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     EnableSnat: Optional[bool]
     ExternalGateway: Optional[str]
     ExternalNetworkId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Tags: Optional[Sequence[str]]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             EnableSnat=json_data.get("EnableSnat"),
             ExternalGateway=json_data.get("ExternalGateway"),
             ExternalNetworkId=json_data.get("ExternalNetworkId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Tags=json_data.get("Tags"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

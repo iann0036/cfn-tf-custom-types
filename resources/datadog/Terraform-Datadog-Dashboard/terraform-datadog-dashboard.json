@@ -31,7 +31,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TemplateVariable"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -49,16 +50,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -67,154 +68,176 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AlertGraphDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AlertValueDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AlertValueDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ChangeDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ChangeDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "CheckStatusDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CheckStatusDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "DistributionDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DistributionDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "EventStreamDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/EventStreamDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "EventTimelineDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/EventTimelineDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "FreeTextDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FreeTextDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HeatmapDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HeatmapDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HostmapDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HostmapDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "IframeDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/IframeDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ImageDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ImageDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "LogStreamDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LogStreamDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ManageStatusDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ManageStatusDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "NoteDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NoteDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "QueryTableDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/QueryTableDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "QueryValueDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/QueryValueDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ScatterplotDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ScatterplotDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ServiceLevelObjectiveDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ServiceLevelObjectiveDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TimeseriesDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TimeseriesDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ToplistDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ToplistDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TraceServiceDefinition": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TraceServiceDefinition"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -233,16 +256,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -305,16 +328,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -371,16 +394,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -410,16 +433,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -459,16 +482,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -500,16 +523,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -563,7 +586,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Widget"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -581,16 +605,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -615,7 +639,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Yaxis"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -661,14 +686,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Request"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Style": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Style"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -727,16 +754,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -840,16 +867,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -895,16 +922,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -945,16 +972,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -972,21 +999,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Request"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Xaxis": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Xaxis"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Yaxis": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Yaxis"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -1048,16 +1078,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -1096,7 +1126,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Yaxis"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -1112,16 +1143,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -1188,16 +1219,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -1229,7 +1260,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ApmQuery"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ConditionalFormats": {
                     "type": "array",
@@ -1243,21 +1275,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LogQuery"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ProcessQuery": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ProcessQuery"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Style": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Style"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -1357,16 +1392,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -1380,16 +1415,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -1452,16 +1487,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -1475,16 +1510,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -1543,16 +1578,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -1568,6 +1603,9 @@
         "Description": {
             "type": "string",
             "description": "Description of the dashboard.\n- `is_read_only` - (Optional) Whether this dashboard is read-only. If `true`, only the author and admins can make changes to it.\n- `notify_list` - (Optional) List of handles of users to notify when changes are made to this dashboard.\n- `template_variables` - (Optional) Nested block describing a template variable. The structure of this block is described [below](dashboard.html#nested-template_variable-blocks). Multiple template_variable blocks are allowed within a `datadog_dashboard` resource.\n- `template_variable_presets` - (Optional) Nested block describing saved configurations of existing template variables. The structure of this block is described [below](dashboard.html#nested-template_variable_preset-blocks). Multiple template_variable_preset blocks are allowed within a `datadog_dashboard` resource, and multiple template_variables can be described by each template_variable_preset."
+        },
+        "Id": {
+            "type": "string"
         },
         "IsReadOnly": {
             "type": "boolean",
@@ -1886,10 +1924,11 @@
         "Title"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     BusType: Optional[str]
     DatastoreName: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Iops: Optional[float]
     IsAttached: Optional[bool]
     Name: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             BusType=json_data.get("BusType"),
             DatastoreName=json_data.get("DatastoreName"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Iops=json_data.get("Iops"),
             IsAttached=json_data.get("IsAttached"),
             Name=json_data.get("Name"),

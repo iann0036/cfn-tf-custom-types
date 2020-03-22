@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EniId: Optional[str]
     IamRoleArn: Optional[str]
+    Id: Optional[str]
     LogDestination: Optional[str]
     LogDestinationType: Optional[str]
     LogFormat: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EniId=json_data.get("EniId"),
             IamRoleArn=json_data.get("IamRoleArn"),
+            Id=json_data.get("Id"),
             LogDestination=json_data.get("LogDestination"),
             LogDestinationType=json_data.get("LogDestinationType"),
             LogFormat=json_data.get("LogFormat"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -26,6 +26,9 @@
             "type": "string",
             "description": "Specifies the private IP address of the backend member."
         },
+        "Id": {
+            "type": "string"
+        },
         "ListenerId": {
             "type": "string",
             "description": "Specifies the listener ID."
@@ -45,10 +48,11 @@
         "ServerId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

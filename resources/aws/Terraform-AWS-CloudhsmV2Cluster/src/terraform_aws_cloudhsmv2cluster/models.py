@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ClusterId: Optional[str]
     ClusterState: Optional[str]
     HsmType: Optional[str]
+    Id: Optional[str]
     SecurityGroupId: Optional[str]
     SourceBackupIdentifier: Optional[str]
     SubnetIds: Optional[Sequence[str]]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             ClusterId=json_data.get("ClusterId"),
             ClusterState=json_data.get("ClusterState"),
             HsmType=json_data.get("HsmType"),
+            Id=json_data.get("Id"),
             SecurityGroupId=json_data.get("SecurityGroupId"),
             SourceBackupIdentifier=json_data.get("SourceBackupIdentifier"),
             SubnetIds=json_data.get("SubnetIds"),
@@ -103,8 +105,8 @@ _ClusterCertificates = ClusterCertificates
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

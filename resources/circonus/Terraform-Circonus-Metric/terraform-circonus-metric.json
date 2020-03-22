@@ -12,6 +12,9 @@
             "type": "boolean",
             "description": "A boolean indicating if the metric is being filtered out\nat the `circonus_check`'s collector(s) or not."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the metric.  A `name` must be unique within a\n`circonus_check` and its meaning is `circonus_check.type` specific."
@@ -39,10 +42,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

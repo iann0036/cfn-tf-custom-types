@@ -28,6 +28,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Listen": {
             "type": "boolean",
             "description": "Does this Authorization Rule have Listen access to the Notification Hub? Defaults to `false`."
@@ -75,11 +78,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PrimaryAccessKey",
         "/properties/SecondaryAccessKey"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

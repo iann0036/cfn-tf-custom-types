@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DefaultBranch: Optional[str]
     Description: Optional[str]
     HttpUrlToRepo: Optional[str]
+    Id: Optional[str]
     InitializeWithReadme: Optional[bool]
     IssuesEnabled: Optional[bool]
     LfsEnabled: Optional[bool]
@@ -79,6 +80,7 @@ class ResourceModel(BaseResourceModel):
             DefaultBranch=json_data.get("DefaultBranch"),
             Description=json_data.get("Description"),
             HttpUrlToRepo=json_data.get("HttpUrlToRepo"),
+            Id=json_data.get("Id"),
             InitializeWithReadme=json_data.get("InitializeWithReadme"),
             IssuesEnabled=json_data.get("IssuesEnabled"),
             LfsEnabled=json_data.get("LfsEnabled"),

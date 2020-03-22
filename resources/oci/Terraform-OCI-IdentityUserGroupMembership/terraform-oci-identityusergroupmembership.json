@@ -32,6 +32,9 @@
             "type": "string",
             "description": "The OCID of the group."
         },
+        "Id": {
+            "type": "string"
+        },
         "InactiveState": {
             "type": "string"
         },
@@ -56,12 +59,13 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/InactiveState",
         "/properties/State",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

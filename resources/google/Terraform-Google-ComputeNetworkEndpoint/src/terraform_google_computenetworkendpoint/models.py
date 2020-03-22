@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Instance: Optional[str]
     IpAddress: Optional[str]
     NetworkEndpointGroup: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Instance=json_data.get("Instance"),
             IpAddress=json_data.get("IpAddress"),
             NetworkEndpointGroup=json_data.get("NetworkEndpointGroup"),

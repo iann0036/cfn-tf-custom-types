@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Database: Optional[str]
     Etag: Optional[str]
+    Id: Optional[str]
     Instance: Optional[str]
     PolicyData: Optional[str]
     Project: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Database=json_data.get("Database"),
             Etag=json_data.get("Etag"),
+            Id=json_data.get("Id"),
             Instance=json_data.get("Instance"),
             PolicyData=json_data.get("PolicyData"),
             Project=json_data.get("Project"),

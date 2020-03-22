@@ -8,6 +8,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "NetworkTier": {
             "type": "string",
             "description": "The default network tier to be configured for the project.\nThis field can take the following values: `PREMIUM` or `STANDARD`."
@@ -22,10 +25,11 @@
         "NetworkTier"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

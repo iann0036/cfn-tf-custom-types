@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ClientId: Optional[str]
     ClientSecret: Optional[str]
     Environment: Optional[str]
+    Id: Optional[str]
     Resource: Optional[str]
     TenantId: Optional[str]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             ClientId=json_data.get("ClientId"),
             ClientSecret=json_data.get("ClientSecret"),
             Environment=json_data.get("Environment"),
+            Id=json_data.get("Id"),
             Resource=json_data.get("Resource"),
             TenantId=json_data.get("TenantId"),
         )

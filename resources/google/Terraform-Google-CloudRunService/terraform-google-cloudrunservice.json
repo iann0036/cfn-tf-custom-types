@@ -14,16 +14,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -34,16 +34,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -65,14 +65,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Metadata"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Spec": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Spec"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -174,7 +176,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Resources"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -206,14 +209,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ConfigMapRef"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SecretRef": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecretRef"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -229,16 +234,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -249,16 +254,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -277,7 +282,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LocalObjectReference"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -294,7 +300,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LocalObjectReference"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -315,6 +322,9 @@
     "properties": {
         "tfcfnid": {
             "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Location": {
@@ -465,10 +475,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

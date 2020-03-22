@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     BlockContent: Optional[str]
     BlockContentType: Optional[str]
     Default: Optional[bool]
+    Id: Optional[str]
     LimitNum: Optional[float]
     LimitPeriod: Optional[float]
     LockTime: Optional[float]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             BlockContent=json_data.get("BlockContent"),
             BlockContentType=json_data.get("BlockContentType"),
             Default=json_data.get("Default"),
+            Id=json_data.get("Id"),
             LimitNum=json_data.get("LimitNum"),
             LimitPeriod=json_data.get("LimitPeriod"),
             LockTime=json_data.get("LockTime"),

@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The name or ID of the disk offering to use for\nthis disk volume."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the disk volume. Changing this forces a new\nresource to be created."
@@ -51,10 +54,11 @@
         "Zone"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

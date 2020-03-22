@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AmazonSideAsn: Optional[str]
     AvailabilityZone: Optional[str]
+    Id: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     VpcId: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AmazonSideAsn=json_data.get("AmazonSideAsn"),
             AvailabilityZone=json_data.get("AvailabilityZone"),
+            Id=json_data.get("Id"),
             Tags=json_data.get("Tags"),
             VpcId=json_data.get("VpcId"),
         )
@@ -63,8 +65,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -74,8 +76,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Backend: Optional[str]
     DbName: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     RotationPeriod: Optional[float]
     RotationStatements: Optional[Sequence[str]]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Backend=json_data.get("Backend"),
             DbName=json_data.get("DbName"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RotationPeriod=json_data.get("RotationPeriod"),
             RotationStatements=json_data.get("RotationStatements"),

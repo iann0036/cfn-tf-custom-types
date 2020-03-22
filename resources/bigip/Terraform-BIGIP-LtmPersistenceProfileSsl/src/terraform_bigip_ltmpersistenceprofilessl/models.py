@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppService: Optional[str]
     DefaultsFrom: Optional[str]
+    Id: Optional[str]
     MatchAcrossPools: Optional[str]
     MatchAcrossServices: Optional[str]
     MatchAcrossVirtuals: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AppService=json_data.get("AppService"),
             DefaultsFrom=json_data.get("DefaultsFrom"),
+            Id=json_data.get("Id"),
             MatchAcrossPools=json_data.get("MatchAcrossPools"),
             MatchAcrossServices=json_data.get("MatchAcrossServices"),
             MatchAcrossVirtuals=json_data.get("MatchAcrossVirtuals"),

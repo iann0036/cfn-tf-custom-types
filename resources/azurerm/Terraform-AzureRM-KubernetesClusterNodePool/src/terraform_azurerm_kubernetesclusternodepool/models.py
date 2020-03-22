@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AvailabilityZones: Optional[Sequence[str]]
     EnableAutoScaling: Optional[bool]
     EnableNodePublicIp: Optional[bool]
+    Id: Optional[str]
     KubernetesClusterId: Optional[str]
     MaxCount: Optional[float]
     MaxPods: Optional[float]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             AvailabilityZones=json_data.get("AvailabilityZones"),
             EnableAutoScaling=json_data.get("EnableAutoScaling"),
             EnableNodePublicIp=json_data.get("EnableNodePublicIp"),
+            Id=json_data.get("Id"),
             KubernetesClusterId=json_data.get("KubernetesClusterId"),
             MaxCount=json_data.get("MaxCount"),
             MaxPods=json_data.get("MaxPods"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class NodeLabels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class NodeLabels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -111,8 +113,8 @@ _NodeLabels = NodeLabels
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

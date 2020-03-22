@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     ExadataInfrastructureId: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     GiVersion: Optional[str]
+    Id: Optional[str]
     IsLocalBackupEnabled: Optional[bool]
     IsSparseDiskgroupEnabled: Optional[bool]
     LicenseModel: Optional[str]
@@ -75,6 +76,7 @@ class ResourceModel(BaseResourceModel):
             ExadataInfrastructureId=json_data.get("ExadataInfrastructureId"),
             FreeformTags=json_data.get("FreeformTags"),
             GiVersion=json_data.get("GiVersion"),
+            Id=json_data.get("Id"),
             IsLocalBackupEnabled=json_data.get("IsLocalBackupEnabled"),
             IsSparseDiskgroupEnabled=json_data.get("IsSparseDiskgroupEnabled"),
             LicenseModel=json_data.get("LicenseModel"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -117,8 +119,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

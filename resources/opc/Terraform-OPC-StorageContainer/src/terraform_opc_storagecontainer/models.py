@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllowedOrigins: Optional[Sequence[str]]
     ExposedHeaders: Optional[Sequence[str]]
+    Id: Optional[str]
     MaxAge: Optional[float]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AllowedOrigins=json_data.get("AllowedOrigins"),
             ExposedHeaders=json_data.get("ExposedHeaders"),
+            Id=json_data.get("Id"),
             MaxAge=json_data.get("MaxAge"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

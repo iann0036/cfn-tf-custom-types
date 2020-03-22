@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     GitBranch: Optional[str]
     GitCommit: Optional[str]
+    Id: Optional[str]
     ModelId: Optional[str]
     RepositoryUrl: Optional[str]
     ScriptDir: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             GitBranch=json_data.get("GitBranch"),
             GitCommit=json_data.get("GitCommit"),
+            Id=json_data.get("Id"),
             ModelId=json_data.get("ModelId"),
             RepositoryUrl=json_data.get("RepositoryUrl"),
             ScriptDir=json_data.get("ScriptDir"),

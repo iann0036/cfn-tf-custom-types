@@ -81,6 +81,9 @@
         "Endpoint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InputSchema": {
             "type": "string",
             "description": "Specifies the schema in which incoming events will be published to this domain. Allowed values are `cloudeventv01schema`, `customeventschema`, or `eventgridschema`. Defaults to `eventgridschema`. Changing this forces a new resource to be created."
@@ -110,16 +113,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -153,11 +156,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/PrimaryAccessKey",
         "/properties/SecondaryAccessKey"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

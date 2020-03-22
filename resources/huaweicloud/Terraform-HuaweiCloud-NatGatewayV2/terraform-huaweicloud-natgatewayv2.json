@@ -26,6 +26,9 @@
             "type": "string",
             "description": "The description of the nat gateway."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternalNetworkId": {
             "type": "string",
             "description": "ID of the network this nat gateway connects to.\nChanging this creates a new nat gateway."
@@ -62,10 +65,11 @@
         "Spec"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

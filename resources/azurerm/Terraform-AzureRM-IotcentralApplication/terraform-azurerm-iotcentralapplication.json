@@ -32,6 +32,9 @@
             "type": "string",
             "description": "A `display_name` name. Custom display name for the IoT Central application. Default is resource name."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "Specifies the supported Azure location where the resource has to be create. Changing this forces a new resource to be created."
@@ -59,16 +62,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -89,10 +92,11 @@
         "SubDomain"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

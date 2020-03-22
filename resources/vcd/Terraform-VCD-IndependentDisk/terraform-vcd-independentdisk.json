@@ -22,6 +22,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Iops": {
             "type": "number"
         },
@@ -60,12 +63,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DatastoreName",
+        "/properties/Id",
         "/properties/Iops",
         "/properties/IsAttached",
         "/properties/OwnerName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

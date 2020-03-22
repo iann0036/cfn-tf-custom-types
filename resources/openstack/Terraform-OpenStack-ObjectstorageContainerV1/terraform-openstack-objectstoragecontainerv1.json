@@ -51,6 +51,9 @@
             "type": "boolean",
             "description": "A boolean that indicates all objects should be deleted from the container so that the container can be destroyed without error. These objects are not recoverable."
         },
+        "Id": {
+            "type": "string"
+        },
         "Metadata": {
             "type": "array",
             "insertionOrder": true,
@@ -58,16 +61,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Custom key/value pairs to associate with the container.\nChanging this updates the existing container metadata."
@@ -94,10 +97,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

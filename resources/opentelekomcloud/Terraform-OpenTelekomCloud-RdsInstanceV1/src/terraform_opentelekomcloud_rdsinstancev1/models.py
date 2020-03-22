@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Dbrtpd: Optional[str]
     Flavorref: Optional[str]
     Hostname: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Status: Optional[str]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             Dbrtpd=json_data.get("Dbrtpd"),
             Flavorref=json_data.get("Flavorref"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Status=json_data.get("Status"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tag:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class Tag:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

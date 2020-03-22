@@ -72,7 +72,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/EnterpriseMonitorConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -139,6 +140,9 @@
             "description": ". A description of the MySQL Instance."
         },
         "EmUrl": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "IpNetwork": {
@@ -221,11 +225,12 @@
         "/properties/tfcfnid",
         "/properties/BaseReleaseVersion",
         "/properties/EmUrl",
+        "/properties/Id",
         "/properties/ReleaseVersion",
         "/properties/ServiceVersion"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

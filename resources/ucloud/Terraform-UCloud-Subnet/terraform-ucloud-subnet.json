@@ -15,6 +15,9 @@
         "CreateTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the desired subnet. If not specified, terraform will auto-generate a name beginning with `tf-subnet`."
@@ -39,10 +42,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CreateTime"
+        "/properties/CreateTime",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

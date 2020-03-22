@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ExportCustomRoutes: Optional[bool]
+    Id: Optional[str]
     ImportCustomRoutes: Optional[bool]
     Network: Optional[str]
     Peering: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ExportCustomRoutes=json_data.get("ExportCustomRoutes"),
+            Id=json_data.get("Id"),
             ImportCustomRoutes=json_data.get("ImportCustomRoutes"),
             Network=json_data.get("Network"),
             Peering=json_data.get("Peering"),

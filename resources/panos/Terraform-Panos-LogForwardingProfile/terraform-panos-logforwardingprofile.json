@@ -83,14 +83,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AzureIntegration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TaggingIntegration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TaggingIntegration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -125,21 +127,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LocalRegistration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PanoramaRegistration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PanoramaRegistration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "RemoteRegistration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RemoteRegistration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -210,6 +215,9 @@
             "type": "boolean",
             "description": "Set to `true` to enable enhanced logging."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The group's name."
@@ -278,10 +286,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

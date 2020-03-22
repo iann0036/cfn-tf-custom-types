@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApiManagementName: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     PrimaryKey: Optional[str]
     ProductId: Optional[str]
     ResourceGroupName: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApiManagementName=json_data.get("ApiManagementName"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             PrimaryKey=json_data.get("PrimaryKey"),
             ProductId=json_data.get("ProductId"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

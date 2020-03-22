@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Account: Optional[str]
     Collocated: Optional[bool]
     Description: Optional[str]
+    Id: Optional[str]
     MachineImageName: Optional[str]
     Name: Optional[str]
     ParentVolumeBootable: Optional[bool]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             Account=json_data.get("Account"),
             Collocated=json_data.get("Collocated"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             MachineImageName=json_data.get("MachineImageName"),
             Name=json_data.get("Name"),
             ParentVolumeBootable=json_data.get("ParentVolumeBootable"),

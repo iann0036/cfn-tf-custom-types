@@ -46,6 +46,7 @@ class ResourceModel(BaseResourceModel):
     Groupattr: Optional[str]
     Groupdn: Optional[str]
     Groupfilter: Optional[str]
+    Id: Optional[str]
     InsecureTls: Optional[bool]
     Path: Optional[str]
     Starttls: Optional[bool]
@@ -85,6 +86,7 @@ class ResourceModel(BaseResourceModel):
             Groupattr=json_data.get("Groupattr"),
             Groupdn=json_data.get("Groupdn"),
             Groupfilter=json_data.get("Groupfilter"),
+            Id=json_data.get("Id"),
             InsecureTls=json_data.get("InsecureTls"),
             Path=json_data.get("Path"),
             Starttls=json_data.get("Starttls"),

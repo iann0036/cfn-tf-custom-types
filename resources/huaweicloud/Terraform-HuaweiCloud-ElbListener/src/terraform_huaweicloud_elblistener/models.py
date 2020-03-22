@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     Description: Optional[str]
     HealthcheckId: Optional[str]
+    Id: Optional[str]
     LbAlgorithm: Optional[str]
     LoadbalancerId: Optional[str]
     MemberNumber: Optional[float]
@@ -81,6 +82,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             Description=json_data.get("Description"),
             HealthcheckId=json_data.get("HealthcheckId"),
+            Id=json_data.get("Id"),
             LbAlgorithm=json_data.get("LbAlgorithm"),
             LoadbalancerId=json_data.get("LoadbalancerId"),
             MemberNumber=json_data.get("MemberNumber"),

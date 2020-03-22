@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Curve: Optional[str]
     E: Optional[str]
     ExpirationDate: Optional[str]
+    Id: Optional[str]
     KeyOpts: Optional[Sequence[str]]
     KeySize: Optional[float]
     KeyType: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Curve=json_data.get("Curve"),
             E=json_data.get("E"),
             ExpirationDate=json_data.get("ExpirationDate"),
+            Id=json_data.get("Id"),
             KeyOpts=json_data.get("KeyOpts"),
             KeySize=json_data.get("KeySize"),
             KeyType=json_data.get("KeyType"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

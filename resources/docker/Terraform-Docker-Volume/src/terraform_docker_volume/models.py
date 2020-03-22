@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Driver: Optional[str]
     DriverOpts: Optional[Sequence["_DriverOpts"]]
+    Id: Optional[str]
     Mountpoint: Optional[str]
     Name: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Driver=json_data.get("Driver"),
             DriverOpts=json_data.get("DriverOpts"),
+            Id=json_data.get("Id"),
             Mountpoint=json_data.get("Mountpoint"),
             Name=json_data.get("Name"),
             Labels=json_data.get("Labels"),
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DriverOpts:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class DriverOpts:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

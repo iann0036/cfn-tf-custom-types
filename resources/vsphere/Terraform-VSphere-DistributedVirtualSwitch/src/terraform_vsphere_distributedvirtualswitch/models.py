@@ -63,6 +63,7 @@ class ResourceModel(BaseResourceModel):
     HbrReservationMbit: Optional[float]
     HbrShareCount: Optional[float]
     HbrShareLevel: Optional[str]
+    Id: Optional[str]
     IngressShapingAverageBandwidth: Optional[float]
     IngressShapingBurstSize: Optional[float]
     IngressShapingEnabled: Optional[bool]
@@ -162,6 +163,7 @@ class ResourceModel(BaseResourceModel):
             HbrReservationMbit=json_data.get("HbrReservationMbit"),
             HbrShareCount=json_data.get("HbrShareCount"),
             HbrShareLevel=json_data.get("HbrShareLevel"),
+            Id=json_data.get("Id"),
             IngressShapingAverageBandwidth=json_data.get("IngressShapingAverageBandwidth"),
             IngressShapingBurstSize=json_data.get("IngressShapingBurstSize"),
             IngressShapingEnabled=json_data.get("IngressShapingEnabled"),
@@ -233,8 +235,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomAttributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -244,8 +246,8 @@ class CustomAttributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EbgpDist: Optional[float]
     IbgpDist: Optional[float]
+    Id: Optional[str]
     Interfaces: Optional[Sequence[str]]
     Name: Optional[str]
     OspfExtDist: Optional[float]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EbgpDist=json_data.get("EbgpDist"),
             IbgpDist=json_data.get("IbgpDist"),
+            Id=json_data.get("Id"),
             Interfaces=json_data.get("Interfaces"),
             Name=json_data.get("Name"),
             OspfExtDist=json_data.get("OspfExtDist"),

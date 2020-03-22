@@ -26,6 +26,9 @@
             "type": "string",
             "description": "The associated environment to the cluster. Defaults to `*`."
         },
+        "Id": {
+            "type": "string"
+        },
         "KubernetesApiUrl": {
             "type": "string",
             "description": "The URL to access the Kubernetes API."
@@ -76,11 +79,12 @@
         "/properties/tfcfnid",
         "/properties/ClusterType",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/PlatformType",
         "/properties/ProviderType"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

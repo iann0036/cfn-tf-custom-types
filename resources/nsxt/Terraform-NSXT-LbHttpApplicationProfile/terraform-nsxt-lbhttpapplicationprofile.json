@@ -41,6 +41,9 @@
             "type": "boolean",
             "description": "A boolean flag which reflects whether the client will automatically be redirected to use SSL. When true, the http_redirect_to should not be specified."
         },
+        "Id": {
+            "type": "string"
+        },
         "IdleTimeout": {
             "type": "number",
             "description": "Timeout in seconds to specify how long an HTTP application can remain idle. Defaults to 15 seconds."
@@ -80,10 +83,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

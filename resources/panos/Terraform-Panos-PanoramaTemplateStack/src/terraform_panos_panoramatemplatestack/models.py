@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DefaultVsys: Optional[str]
     Description: Optional[str]
     Devices: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     Templates: Optional[Sequence[str]]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             DefaultVsys=json_data.get("DefaultVsys"),
             Description=json_data.get("Description"),
             Devices=json_data.get("Devices"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Templates=json_data.get("Templates"),
         )

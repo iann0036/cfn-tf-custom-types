@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ConfigurationSetName: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     MatchingTypes: Optional[Sequence[str]]
     Name: Optional[str]
     CloudwatchDestination: Optional[Sequence["_CloudwatchDestination"]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ConfigurationSetName=json_data.get("ConfigurationSetName"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             MatchingTypes=json_data.get("MatchingTypes"),
             Name=json_data.get("Name"),
             CloudwatchDestination=json_data.get("CloudwatchDestination"),

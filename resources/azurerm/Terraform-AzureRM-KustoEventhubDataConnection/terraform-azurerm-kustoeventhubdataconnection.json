@@ -48,6 +48,9 @@
             "type": "string",
             "description": "Specifies the resource id of the EventHub this data connection will use for ingestion. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "The location where the Kusto Database should be created. Changing this forces a new resource to be created."
@@ -83,10 +86,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

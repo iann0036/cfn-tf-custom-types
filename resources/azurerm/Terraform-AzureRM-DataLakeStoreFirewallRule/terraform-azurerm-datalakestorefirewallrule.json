@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The End IP Address for the firewall rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the Data Lake Store. Changing this forces a new resource to be created. Has to be between 3 to 24 characters."
@@ -61,10 +64,11 @@
         "StartIpAddress"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

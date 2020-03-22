@@ -96,7 +96,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DataDisk"
-                    }
+                    },
+                    "maxItems": 11
                 }
             },
             "required": [
@@ -129,6 +130,9 @@
         "ClusterId": {
             "type": "string",
             "description": "ID of the cluster."
+        },
+        "Id": {
+            "type": "string"
         },
         "WorkerInstancesList": {
             "type": "array",
@@ -176,10 +180,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/WorkerInstancesList"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -29,6 +29,9 @@
             "type": "boolean",
             "description": "Define if the token should automatically expire or not."
         },
+        "Id": {
+            "type": "string"
+        },
         "Password": {
             "type": "string",
             "description": "Scaleway account password. Required for cross-account token management."
@@ -47,11 +50,12 @@
         "/properties/AccessKey",
         "/properties/CreationIp",
         "/properties/ExpirationDate",
+        "/properties/Id",
         "/properties/SecretKey",
         "/properties/UserId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

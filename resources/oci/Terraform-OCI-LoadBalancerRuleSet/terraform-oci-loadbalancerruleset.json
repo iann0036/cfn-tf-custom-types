@@ -50,7 +50,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RedirectUri"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -120,6 +121,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancerId": {
             "type": "string",
             "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the specified load balancer."
@@ -165,10 +169,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

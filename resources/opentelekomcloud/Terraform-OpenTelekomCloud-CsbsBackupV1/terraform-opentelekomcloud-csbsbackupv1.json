@@ -51,6 +51,9 @@
             "type": "string",
             "description": "Backup description. The value consists of 0 to 255 characters and must not contain a greater-than sign (>) or less-than sign (<). Changing description creates a new backup."
         },
+        "Id": {
+            "type": "string"
+        },
         "Region": {
             "type": "string"
         },
@@ -166,12 +169,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/BackupRecordId",
+        "/properties/Id",
         "/properties/Status",
         "/properties/VmMetadata",
         "/properties/VolumeBackups"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

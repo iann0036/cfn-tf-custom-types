@@ -28,6 +28,9 @@
         "FullPath": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Mirror": {
             "type": "string",
             "description": "Enables or disables mirroring of SNAT connections."
@@ -78,10 +81,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ClientSecret: Optional[str]
     DisplayName: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     Issuer: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             ClientSecret=json_data.get("ClientSecret"),
             DisplayName=json_data.get("DisplayName"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             Issuer=json_data.get("Issuer"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),

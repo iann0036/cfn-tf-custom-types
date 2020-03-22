@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     ErrorReason: Optional[str]
     File: Optional[str]
     Hypervisor: Optional[Sequence["_Hypervisor"]]
+    Id: Optional[str]
     ImageFormat: Optional[str]
     Name: Optional[str]
     NoUpload: Optional[bool]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             ErrorReason=json_data.get("ErrorReason"),
             File=json_data.get("File"),
             Hypervisor=json_data.get("Hypervisor"),
+            Id=json_data.get("Id"),
             ImageFormat=json_data.get("ImageFormat"),
             Name=json_data.get("Name"),
             NoUpload=json_data.get("NoUpload"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Hypervisor:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Hypervisor:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

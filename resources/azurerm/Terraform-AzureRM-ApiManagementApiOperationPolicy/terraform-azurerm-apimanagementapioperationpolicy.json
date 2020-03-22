@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The ID of the API Management API Operation within the API Management Service. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "OperationId": {
             "type": "string"
         },
@@ -63,10 +66,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

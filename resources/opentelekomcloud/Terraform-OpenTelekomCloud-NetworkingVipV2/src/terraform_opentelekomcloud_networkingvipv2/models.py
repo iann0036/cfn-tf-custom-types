@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeviceOwner: Optional[str]
+    Id: Optional[str]
     IpAddress: Optional[str]
     Name: Optional[str]
     NetworkId: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DeviceOwner=json_data.get("DeviceOwner"),
+            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             Name=json_data.get("Name"),
             NetworkId=json_data.get("NetworkId"),

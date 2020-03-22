@@ -20,6 +20,9 @@
             "type": "boolean",
             "description": "Whether the user is enabled or disabled. Valid\nvalues are `true` and `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the user. The user name consists of 5 to 32\ncharacters. It can contain only uppercase letters, lowercase letters,\ndigits, spaces, and special characters (-_) and cannot start with a digit."
@@ -35,10 +38,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

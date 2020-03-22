@@ -36,6 +36,9 @@
             "type": "string",
             "description": "EULA link."
         },
+        "Id": {
+            "type": "string"
+        },
         "ListingId": {
             "type": "string",
             "description": "The OCID of the listing."
@@ -85,13 +88,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DisplayName",
+        "/properties/Id",
         "/properties/ListingResourceId",
         "/properties/PublisherName",
         "/properties/Summary",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DefaultsFrom: Optional[str]
     ExplicitflowMigration: Optional[str]
     HardwareSyncookie: Optional[str]
+    Id: Optional[str]
     IdleTimeout: Optional[str]
     IptosToclient: Optional[str]
     IptosToserver: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             DefaultsFrom=json_data.get("DefaultsFrom"),
             ExplicitflowMigration=json_data.get("ExplicitflowMigration"),
             HardwareSyncookie=json_data.get("HardwareSyncookie"),
+            Id=json_data.get("Id"),
             IdleTimeout=json_data.get("IdleTimeout"),
             IptosToclient=json_data.get("IptosToclient"),
             IptosToserver=json_data.get("IptosToserver"),

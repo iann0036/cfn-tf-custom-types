@@ -75,6 +75,9 @@
             "type": "string",
             "description": "The device owner of the Port. Changing this creates\na new port."
         },
+        "Id": {
+            "type": "string"
+        },
         "MacAddress": {
             "type": "string",
             "description": "Specify a specific MAC address for the port. Changing\nthis creates a new port."
@@ -112,16 +115,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -150,10 +153,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/AllFixedIps"
+        "/properties/AllFixedIps",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

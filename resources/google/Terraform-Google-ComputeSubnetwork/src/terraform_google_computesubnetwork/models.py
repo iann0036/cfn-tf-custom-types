@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EnableFlowLogs: Optional[bool]
     Fingerprint: Optional[str]
     GatewayAddress: Optional[str]
+    Id: Optional[str]
     IpCidrRange: Optional[str]
     Name: Optional[str]
     Network: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             EnableFlowLogs=json_data.get("EnableFlowLogs"),
             Fingerprint=json_data.get("Fingerprint"),
             GatewayAddress=json_data.get("GatewayAddress"),
+            Id=json_data.get("Id"),
             IpCidrRange=json_data.get("IpCidrRange"),
             Name=json_data.get("Name"),
             Network=json_data.get("Network"),

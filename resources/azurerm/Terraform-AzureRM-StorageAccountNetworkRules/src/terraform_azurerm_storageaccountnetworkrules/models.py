@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bypass: Optional[Sequence[str]]
     DefaultAction: Optional[str]
+    Id: Optional[str]
     IpRules: Optional[Sequence[str]]
     ResourceGroupName: Optional[str]
     StorageAccountName: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Bypass=json_data.get("Bypass"),
             DefaultAction=json_data.get("DefaultAction"),
+            Id=json_data.get("Id"),
             IpRules=json_data.get("IpRules"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             StorageAccountName=json_data.get("StorageAccountName"),

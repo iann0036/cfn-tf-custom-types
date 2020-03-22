@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisableApiTermination: Optional[bool]
     EbsOptimized: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     InstanceInitiatedShutdownBehavior: Optional[str]
     InstanceType: Optional[str]
@@ -85,6 +86,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisableApiTermination=json_data.get("DisableApiTermination"),
             EbsOptimized=json_data.get("EbsOptimized"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceInitiatedShutdownBehavior=json_data.get("InstanceInitiatedShutdownBehavior"),
             InstanceType=json_data.get("InstanceType"),
@@ -123,8 +125,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -134,8 +136,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -533,8 +535,8 @@ _TagSpecifications = TagSpecifications
 
 @dataclass
 class Tags2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -544,8 +546,8 @@ class Tags2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

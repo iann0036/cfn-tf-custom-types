@@ -46,6 +46,7 @@ class ResourceModel(BaseResourceModel):
     CvmType: Optional[str]
     DockerGraphPath: Optional[str]
     GoodsNum: Optional[float]
+    Id: Optional[str]
     InstanceName: Optional[str]
     InstanceType: Optional[str]
     IsVpcGateway: Optional[float]
@@ -91,6 +92,7 @@ class ResourceModel(BaseResourceModel):
             CvmType=json_data.get("CvmType"),
             DockerGraphPath=json_data.get("DockerGraphPath"),
             GoodsNum=json_data.get("GoodsNum"),
+            Id=json_data.get("Id"),
             InstanceName=json_data.get("InstanceName"),
             InstanceType=json_data.get("InstanceType"),
             IsVpcGateway=json_data.get("IsVpcGateway"),

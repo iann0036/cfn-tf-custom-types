@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreationTimestamp: Optional[str]
     Description: Optional[str]
     GatewayId: Optional[float]
+    Id: Optional[str]
     Name: Optional[str]
     Network: Optional[str]
     Project: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
             GatewayId=json_data.get("GatewayId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Network=json_data.get("Network"),
             Project=json_data.get("Project"),

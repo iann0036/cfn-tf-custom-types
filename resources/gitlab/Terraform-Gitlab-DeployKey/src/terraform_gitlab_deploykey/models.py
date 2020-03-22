@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CanPush: Optional[bool]
+    Id: Optional[str]
     Key: Optional[str]
     Project: Optional[str]
     Title: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CanPush=json_data.get("CanPush"),
+            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Project=json_data.get("Project"),
             Title=json_data.get("Title"),

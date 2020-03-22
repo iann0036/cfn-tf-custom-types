@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     AvailabilityZone: Optional[str]
     Encrypted: Optional[bool]
+    Id: Optional[str]
     Iops: Optional[float]
     KmsKeyId: Optional[str]
     Size: Optional[float]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             AvailabilityZone=json_data.get("AvailabilityZone"),
             Encrypted=json_data.get("Encrypted"),
+            Id=json_data.get("Id"),
             Iops=json_data.get("Iops"),
             KmsKeyId=json_data.get("KmsKeyId"),
             Size=json_data.get("Size"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

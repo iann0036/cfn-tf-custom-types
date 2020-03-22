@@ -17,6 +17,9 @@
         "ConsumedMessages": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Indicates the unique name of a group. A string of 1 to 64\ncharacters that contain a-z, A-Z, 0-9, hyphens (-), and underscores (_).\nThe name cannot be modified once specified."
@@ -42,11 +45,12 @@
         "/properties/AvailableDeadletters",
         "/properties/AvailableMessages",
         "/properties/ConsumedMessages",
+        "/properties/Id",
         "/properties/ProducedDeadletters",
         "/properties/ProducedMessages"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

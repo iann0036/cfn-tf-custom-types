@@ -13,7 +13,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::AWS::CloudwatchDashboard",
     "Properties" : {
         "<a href="#dashboardbody" title="DashboardBody">DashboardBody</a>" : <i>String</i>,
-        "<a href="#dashboardname" title="DashboardName">DashboardName</a>" : <i>String</i>
+        "<a href="#dashboardname" title="DashboardName">DashboardName</a>" : <i>String</i>,
     }
 }
 </pre>
@@ -49,7 +49,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the Id.
 
 ### Fn::GetAtt
 
@@ -64,4 +64,8 @@ Internal identifier for tracking resource changes. Do not use.
 #### DashboardArn
 
 Returns the <code>DashboardArn</code> value.
+
+#### Id
+
+Returns the <code>Id</code> value.
 

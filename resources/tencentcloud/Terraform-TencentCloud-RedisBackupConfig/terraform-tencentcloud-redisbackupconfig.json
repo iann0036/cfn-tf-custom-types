@@ -20,6 +20,9 @@
             "type": "string",
             "description": "Specifys what time the backup action should take place."
         },
+        "Id": {
+            "type": "string"
+        },
         "RedisId": {
             "type": "string",
             "description": "ID of a Redis instance to which the policy will be applied."
@@ -32,10 +35,11 @@
         "RedisId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

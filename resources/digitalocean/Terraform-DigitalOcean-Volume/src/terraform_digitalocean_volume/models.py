@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DropletIds: Optional[Sequence[float]]
     FilesystemLabel: Optional[str]
     FilesystemType: Optional[str]
+    Id: Optional[str]
     InitialFilesystemLabel: Optional[str]
     InitialFilesystemType: Optional[str]
     Name: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             DropletIds=json_data.get("DropletIds"),
             FilesystemLabel=json_data.get("FilesystemLabel"),
             FilesystemType=json_data.get("FilesystemType"),
+            Id=json_data.get("Id"),
             InitialFilesystemLabel=json_data.get("InitialFilesystemLabel"),
             InitialFilesystemType=json_data.get("InitialFilesystemType"),
             Name=json_data.get("Name"),

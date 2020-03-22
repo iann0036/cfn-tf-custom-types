@@ -34,6 +34,9 @@
         "DisplayName": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsEnabled": {
             "type": "boolean",
             "description": "(Updatable) If set to false, skips the Maintenance Run."
@@ -82,6 +85,7 @@
         "/properties/CompartmentId",
         "/properties/Description",
         "/properties/DisplayName",
+        "/properties/Id",
         "/properties/LifecycleDetails",
         "/properties/MaintenanceSubtype",
         "/properties/MaintenanceType",
@@ -93,7 +97,7 @@
         "/properties/TimeStarted"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

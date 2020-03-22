@@ -228,6 +228,9 @@
             "type": "string",
             "description": "The api gateway that the api belongs to. Defaults to null."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the api gateway api. Defaults to null."
@@ -317,10 +320,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ApiId"
+        "/properties/ApiId",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

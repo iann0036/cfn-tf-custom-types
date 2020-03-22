@@ -88,6 +88,9 @@
             },
             "description": "Specify list of routes to publish\nto Global Protect Gateway."
         },
+        "Id": {
+            "type": "string"
+        },
         "MkAuthKey": {
             "type": "string",
             "description": "The auth key for the given auth type."
@@ -177,11 +180,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/MkAuthKeyEnc",
         "/properties/MkEspEncryptionKeyEnc"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

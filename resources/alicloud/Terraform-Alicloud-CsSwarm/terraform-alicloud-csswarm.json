@@ -23,6 +23,9 @@
             "type": "number",
             "description": "The data disk size of ECS instance node. Its valid value is 20~32768 GB. Default to 20."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string",
             "description": "The image ID of ECS instance node used. Default to System automate allocated."
@@ -112,13 +115,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AgentVersion",
+        "/properties/Id",
         "/properties/Nodes",
         "/properties/SecurityGroupId",
         "/properties/SlbId",
         "/properties/VpcId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

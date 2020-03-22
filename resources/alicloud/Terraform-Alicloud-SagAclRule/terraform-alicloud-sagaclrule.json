@@ -28,6 +28,9 @@
             "type": "string",
             "description": "The direction of the ACL rule. Valid values: in|out."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpProtocol": {
             "type": "string",
             "description": "The protocol used by the ACL rule. The value is not case sensitive."
@@ -61,10 +64,11 @@
         "SourcePortRange"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The domain of content forward matching fields. `path` and `domain` cannot coexist. `path` and `domain` must be filled in one."
         },
+        "Id": {
+            "type": "string"
+        },
         "ListenerId": {
             "type": "string",
             "description": "The ID of a listener server."
@@ -40,10 +43,11 @@
         "LoadBalancerId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

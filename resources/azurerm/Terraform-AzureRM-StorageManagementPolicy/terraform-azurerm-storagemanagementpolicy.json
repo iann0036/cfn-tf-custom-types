@@ -20,14 +20,17 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Actions"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Filters": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Filters"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -63,14 +66,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/BaseBlob"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Snapshot": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Snapshot"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -134,6 +139,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "StorageAccountId": {
             "type": "string",
             "description": "Specifies the id of the storage account to apply the management policy to."
@@ -187,10 +195,11 @@
         "StorageAccountId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

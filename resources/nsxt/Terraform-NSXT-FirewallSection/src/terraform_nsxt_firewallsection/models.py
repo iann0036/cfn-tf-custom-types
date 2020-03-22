@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     InsertBefore: Optional[str]
     IsDefault: Optional[bool]
     Revision: Optional[float]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             InsertBefore=json_data.get("InsertBefore"),
             IsDefault=json_data.get("IsDefault"),
             Revision=json_data.get("Revision"),

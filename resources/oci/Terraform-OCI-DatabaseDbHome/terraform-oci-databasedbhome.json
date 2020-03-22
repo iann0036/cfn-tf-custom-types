@@ -32,16 +32,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -52,16 +52,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -76,7 +76,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DbBackupConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -156,6 +157,9 @@
         "DisplayName": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LastPatchHistoryEntryId": {
             "type": "string"
         },
@@ -208,13 +212,14 @@
         "/properties/tfcfnid",
         "/properties/CompartmentId",
         "/properties/DbHomeLocation",
+        "/properties/Id",
         "/properties/LastPatchHistoryEntryId",
         "/properties/LifecycleDetails",
         "/properties/State",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

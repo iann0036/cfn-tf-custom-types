@@ -32,6 +32,9 @@
             "type": "string",
             "description": "Specifies the name of the EventHub. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the EventHub Consumer Group resource. Changing this forces a new resource to be created."
@@ -60,10 +63,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

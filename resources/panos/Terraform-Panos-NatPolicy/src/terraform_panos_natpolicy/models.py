@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     DestinationAddresses: Optional[Sequence[str]]
     DestinationZone: Optional[str]
     Disabled: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Rulebase: Optional[str]
     SatAddressType: Optional[str]
@@ -83,6 +84,7 @@ class ResourceModel(BaseResourceModel):
             DestinationAddresses=json_data.get("DestinationAddresses"),
             DestinationZone=json_data.get("DestinationZone"),
             Disabled=json_data.get("Disabled"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Rulebase=json_data.get("Rulebase"),
             SatAddressType=json_data.get("SatAddressType"),

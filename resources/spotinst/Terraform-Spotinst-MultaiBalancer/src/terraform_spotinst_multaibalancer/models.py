@@ -35,12 +35,15 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 
 @dataclass
 class ResourceModel(BaseResourceModel):
-    tfcfnid: Optional[str]
-    DnsCnameAliases: Optional[Sequence[str]]
-    Name: Optional[str]
-    Scheme: Optional[str]
-    ConnectionTimeouts: Optional[Sequence["_ConnectionTimeouts"]]
-    Tags: Optional[Sequence["_Tags"]]
+    TPSCode: Optional[str]
+    Title: Optional[str]
+    CoverSheetIncluded: Optional[bool]
+    DueDate: Optional[str]
+    ApprovalDate: Optional[str]
+    Memo: Optional["_Memo"]
+    SecondCopyOfMemo: Optional["_Memo"]
+    TestCode: Optional[str]
+    Authors: Optional[Sequence[str]]
 
     @classmethod
     def _deserialize(
@@ -50,12 +53,15 @@ class ResourceModel(BaseResourceModel):
         if not json_data:
             return None
         return cls(
-            tfcfnid=json_data.get("tfcfnid"),
-            DnsCnameAliases=json_data.get("DnsCnameAliases"),
-            Name=json_data.get("Name"),
-            Scheme=json_data.get("Scheme"),
-            ConnectionTimeouts=json_data.get("ConnectionTimeouts"),
-            Tags=json_data.get("Tags"),
+            TPSCode=json_data.get("TPSCode"),
+            Title=json_data.get("Title"),
+            CoverSheetIncluded=json_data.get("CoverSheetIncluded"),
+            DueDate=json_data.get("DueDate"),
+            ApprovalDate=json_data.get("ApprovalDate"),
+            Memo=Memo._deserialize(json_data.get("Memo")),
+            SecondCopyOfMemo=Memo._deserialize(json_data.get("SecondCopyOfMemo")),
+            TestCode=json_data.get("TestCode"),
+            Authors=json_data.get("Authors"),
         )
 
 
@@ -64,46 +70,24 @@ _ResourceModel = ResourceModel
 
 
 @dataclass
-class ConnectionTimeouts:
-    Draining: Optional[float]
-    Idle: Optional[float]
+class Memo:
+    Heading: Optional[str]
+    Body: Optional[str]
 
     @classmethod
     def _deserialize(
-        cls: Type["_ConnectionTimeouts"],
+        cls: Type["_Memo"],
         json_data: Optional[Mapping[str, Any]],
-    ) -> Optional["_ConnectionTimeouts"]:
+    ) -> Optional["_Memo"]:
         if not json_data:
             return None
         return cls(
-            Draining=json_data.get("Draining"),
-            Idle=json_data.get("Idle"),
+            Heading=json_data.get("Heading"),
+            Body=json_data.get("Body"),
         )
 
 
 # work around possible type aliasing issues when variable has same name as a model
-_ConnectionTimeouts = ConnectionTimeouts
-
-
-@dataclass
-class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
-
-    @classmethod
-    def _deserialize(
-        cls: Type["_Tags"],
-        json_data: Optional[Mapping[str, Any]],
-    ) -> Optional["_Tags"]:
-        if not json_data:
-            return None
-        return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
-        )
-
-
-# work around possible type aliasing issues when variable has same name as a model
-_Tags = Tags
+_Memo = Memo
 
 

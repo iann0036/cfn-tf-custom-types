@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContentTypesToCompress: Optional[Sequence[str]]
     HostName: Optional[str]
+    Id: Optional[str]
     IsCompressionEnabled: Optional[bool]
     IsHttpAllowed: Optional[bool]
     IsHttpsAllowed: Optional[bool]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ContentTypesToCompress=json_data.get("ContentTypesToCompress"),
             HostName=json_data.get("HostName"),
+            Id=json_data.get("Id"),
             IsCompressionEnabled=json_data.get("IsCompressionEnabled"),
             IsHttpAllowed=json_data.get("IsHttpAllowed"),
             IsHttpsAllowed=json_data.get("IsHttpsAllowed"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

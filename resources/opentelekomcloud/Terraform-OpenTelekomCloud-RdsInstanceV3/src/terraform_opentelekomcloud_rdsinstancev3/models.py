@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Created: Optional[str]
     Flavor: Optional[str]
     HaReplicationMode: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Nodes: Optional[Sequence["_Nodes"]]
     ParamGroupId: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Created=json_data.get("Created"),
             Flavor=json_data.get("Flavor"),
             HaReplicationMode=json_data.get("HaReplicationMode"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Nodes=json_data.get("Nodes"),
             ParamGroupId=json_data.get("ParamGroupId"),
@@ -117,8 +119,8 @@ _Nodes = Nodes
 
 @dataclass
 class Tag:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class Tag:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

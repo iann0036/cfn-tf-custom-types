@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DesiredState: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence[str]]
     Version: Optional[float]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DesiredState=json_data.get("DesiredState"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             Version=json_data.get("Version"),

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CustomAttributes: Optional[Sequence["_CustomAttributes"]]
     Folder: Optional[str]
+    Id: Optional[str]
     Moid: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence[str]]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CustomAttributes=json_data.get("CustomAttributes"),
             Folder=json_data.get("Folder"),
+            Id=json_data.get("Id"),
             Moid=json_data.get("Moid"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomAttributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class CustomAttributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

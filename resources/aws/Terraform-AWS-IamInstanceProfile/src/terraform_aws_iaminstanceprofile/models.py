@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     CreateDate: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
     Path: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             CreateDate=json_data.get("CreateDate"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
             Path=json_data.get("Path"),

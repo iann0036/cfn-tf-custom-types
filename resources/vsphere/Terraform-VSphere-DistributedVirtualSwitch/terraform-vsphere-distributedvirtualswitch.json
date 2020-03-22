@@ -85,16 +85,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of custom attribute ids to attribute\nvalue strings to set for virtual switch. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
@@ -151,6 +151,9 @@
             "type": "number"
         },
         "HbrShareLevel": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "IngressShapingAverageBandwidth": {
@@ -376,10 +379,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ConfigVersion"
+        "/properties/ConfigVersion",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

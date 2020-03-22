@@ -51,7 +51,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ResourceAccess"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -96,6 +97,9 @@
         "Homepage": {
             "type": "string",
             "description": "The URL to the application's home page. If no homepage is specified this defaults to `https://{name}`."
+        },
+        "Id": {
+            "type": "string"
         },
         "IdentifierUris": {
             "type": "array",
@@ -174,10 +178,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ApplicationId",
+        "/properties/Id",
         "/properties/ObjectId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

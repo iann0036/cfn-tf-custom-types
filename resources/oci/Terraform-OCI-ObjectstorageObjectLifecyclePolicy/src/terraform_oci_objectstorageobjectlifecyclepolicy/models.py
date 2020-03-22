@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bucket: Optional[str]
+    Id: Optional[str]
     Namespace: Optional[str]
     TimeCreated: Optional[str]
     Rules: Optional[Sequence["_Rules"]]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Bucket=json_data.get("Bucket"),
+            Id=json_data.get("Id"),
             Namespace=json_data.get("Namespace"),
             TimeCreated=json_data.get("TimeCreated"),
             Rules=json_data.get("Rules"),

@@ -144,6 +144,9 @@
             "type": "string",
             "description": "Specifies the event delivery schema for the event subscription. Possible values include: `EventGridSchema`, `CloudEventV01Schema`, `CustomInputSchema`."
         },
+        "Id": {
+            "type": "string"
+        },
         "IncludedEventTypes": {
             "type": "array",
             "insertionOrder": false,
@@ -238,10 +241,11 @@
         "Scope"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

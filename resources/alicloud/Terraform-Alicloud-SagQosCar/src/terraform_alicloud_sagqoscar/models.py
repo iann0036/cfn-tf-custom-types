@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     LimitType: Optional[str]
     MaxBandwidthAbs: Optional[float]
     MaxBandwidthPercent: Optional[float]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             LimitType=json_data.get("LimitType"),
             MaxBandwidthAbs=json_data.get("MaxBandwidthAbs"),
             MaxBandwidthPercent=json_data.get("MaxBandwidthPercent"),

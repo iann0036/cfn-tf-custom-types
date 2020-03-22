@@ -61,6 +61,9 @@
             "type": "string",
             "description": "The hostname of CVM. Windows instance: The name should be a combination of 2 to 15 characters comprised of letters (case insensitive), numbers, and hyphens (-). Period (.) is not supported, and the name cannot be a string of pure numbers. Other types (such as Linux) of instances: The name should be a combination of 2 to 60 characters, supporting multiple periods (.). The piece between two periods is composed of letters (case insensitive), numbers, and hyphens (-)."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string",
             "description": "The Image to use for the instance. Change 'image_id' will case instance destroy and re-created."
@@ -162,16 +165,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource. For tag limits, please refer to [Use Limits](https://intl.cloud.tencent.com/document/product/651/13354)."
@@ -206,11 +209,12 @@
         "/properties/tfcfnid",
         "/properties/CreateTime",
         "/properties/ExpiredTime",
+        "/properties/Id",
         "/properties/InstanceStatus",
         "/properties/PublicIp"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

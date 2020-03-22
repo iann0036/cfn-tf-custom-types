@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     IamRequestBody: Optional[str]
     IamRequestHeaders: Optional[str]
     IamRequestUrl: Optional[str]
+    Id: Optional[str]
     Identity: Optional[str]
     LeaseDuration: Optional[float]
     LeaseStartTime: Optional[str]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             IamRequestBody=json_data.get("IamRequestBody"),
             IamRequestHeaders=json_data.get("IamRequestHeaders"),
             IamRequestUrl=json_data.get("IamRequestUrl"),
+            Id=json_data.get("Id"),
             Identity=json_data.get("Identity"),
             LeaseDuration=json_data.get("LeaseDuration"),
             LeaseStartTime=json_data.get("LeaseStartTime"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

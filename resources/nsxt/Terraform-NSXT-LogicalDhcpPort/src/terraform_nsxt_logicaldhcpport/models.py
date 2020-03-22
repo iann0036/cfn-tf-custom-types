@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DhcpServerId: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     LogicalSwitchId: Optional[str]
     Revision: Optional[float]
     Tag: Optional[Sequence["_Tag"]]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DhcpServerId=json_data.get("DhcpServerId"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             LogicalSwitchId=json_data.get("LogicalSwitchId"),
             Revision=json_data.get("Revision"),
             Tag=json_data.get("Tag"),

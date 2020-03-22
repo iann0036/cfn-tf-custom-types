@@ -46,6 +46,7 @@ class ResourceModel(BaseResourceModel):
     EnableDisplay: Optional[bool]
     GuestAccelerator: Optional[Sequence["_GuestAccelerator"]]
     Hostname: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     LabelFingerprint: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
@@ -90,6 +91,7 @@ class ResourceModel(BaseResourceModel):
             EnableDisplay=json_data.get("EnableDisplay"),
             GuestAccelerator=json_data.get("GuestAccelerator"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             LabelFingerprint=json_data.get("LabelFingerprint"),
             Labels=json_data.get("Labels"),
@@ -175,8 +177,8 @@ _GuestAccelerator = GuestAccelerator
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -186,8 +188,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -197,8 +199,8 @@ _Labels = Labels
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -208,8 +210,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -319,8 +321,8 @@ _InitializeParams = InitializeParams
 
 @dataclass
 class Labels2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -330,8 +332,8 @@ class Labels2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

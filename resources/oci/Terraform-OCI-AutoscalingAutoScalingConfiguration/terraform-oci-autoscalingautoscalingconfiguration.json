@@ -34,14 +34,17 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Capacity"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Rules": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Rules"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -96,14 +99,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Action"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Metric": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Metric"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -138,7 +145,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Threshold"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -182,16 +191,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
@@ -207,19 +216,23 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
+        },
+        "Id": {
+            "type": "string",
+            "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.\n* `type` - (Required) The type of resource."
         },
         "IsEnabled": {
             "type": "boolean",
@@ -299,10 +312,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

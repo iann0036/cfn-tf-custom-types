@@ -18,6 +18,9 @@
         "ClientToken": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LeaseDuration": {
             "type": "number"
         },
@@ -31,16 +34,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -71,6 +74,7 @@
         "/properties/tfcfnid",
         "/properties/Accessor",
         "/properties/ClientToken",
+        "/properties/Id",
         "/properties/LeaseDuration",
         "/properties/LeaseStarted",
         "/properties/Metadata",
@@ -78,7 +82,7 @@
         "/properties/Renewable"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Dnssec: Optional[bool]
     Expiry: Optional[float]
     Hostmaster: Optional[str]
+    Id: Optional[str]
     Link: Optional[str]
     Networks: Optional[Sequence[float]]
     NxTtl: Optional[float]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Dnssec=json_data.get("Dnssec"),
             Expiry=json_data.get("Expiry"),
             Hostmaster=json_data.get("Hostmaster"),
+            Id=json_data.get("Id"),
             Link=json_data.get("Link"),
             Networks=json_data.get("Networks"),
             NxTtl=json_data.get("NxTtl"),

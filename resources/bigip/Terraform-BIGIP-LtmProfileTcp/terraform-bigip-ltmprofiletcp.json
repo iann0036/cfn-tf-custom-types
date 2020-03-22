@@ -32,6 +32,9 @@
             "type": "number",
             "description": "Specifies the number of seconds that a connection is in the FIN-WAIT-1 or closing state before quitting. The default value is 5 seconds. A value of 0 (zero) represents a term of forever (or until the maxrtx of the FIN state). You can also specify immediate or indefinite."
         },
+        "Id": {
+            "type": "string"
+        },
         "IdleTimeout": {
             "type": "number",
             "description": "Specifies the number of seconds that a connection is idle before the connection is eligible for deletion. The default value is 300 seconds."
@@ -53,10 +56,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

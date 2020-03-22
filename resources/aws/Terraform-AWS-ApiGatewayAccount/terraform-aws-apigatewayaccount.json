@@ -11,6 +11,9 @@
         "CloudwatchRoleArn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ThrottleSettings": {
             "type": "array",
             "insertionOrder": false,
@@ -32,10 +35,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/ThrottleSettings"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

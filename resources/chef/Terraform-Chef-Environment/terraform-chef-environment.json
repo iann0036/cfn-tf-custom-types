@@ -15,16 +15,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Mapping of cookbook names to cookbook\nversion constraints that should apply for this environment."
@@ -36,6 +36,9 @@
         "Description": {
             "type": "string",
             "description": "A human-friendly description of the environment.\nIf not set, a placeholder of \"Managed by Terraform\" will be set."
+        },
+        "Id": {
+            "type": "string"
         },
         "Name": {
             "type": "string",
@@ -51,10 +54,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

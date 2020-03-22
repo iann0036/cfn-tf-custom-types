@@ -24,6 +24,9 @@
             "type": "string",
             "description": "Only when `protocol` is set to `icmp`. One of `any`,\n`address-mask-request`, `address-mask-reply`, `destination-unreachable`, `echo-request`,\n`echo-reply`, `parameter-problem`, `redirect`, `router-advertisement`, `router-solicitation`,\n`source-quench`, `time-exceeded`, `timestamp-request`, `timestamp-reply`. Default `any`."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoggingEnabled": {
             "type": "boolean",
             "description": "Defines if the logging for this rule is enabaled. Default `false`."
@@ -80,10 +83,11 @@
         "OriginalAddress"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

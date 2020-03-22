@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ChargeType: Optional[str]
     CreateTime: Optional[str]
     ExpiredTime: Optional[str]
+    Id: Optional[str]
     IsAddressBlocked: Optional[bool]
     Name: Optional[str]
     NewPurchasePlan: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             ChargeType=json_data.get("ChargeType"),
             CreateTime=json_data.get("CreateTime"),
             ExpiredTime=json_data.get("ExpiredTime"),
+            Id=json_data.get("Id"),
             IsAddressBlocked=json_data.get("IsAddressBlocked"),
             Name=json_data.get("Name"),
             NewPurchasePlan=json_data.get("NewPurchasePlan"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -48,6 +48,7 @@ class ResourceModel(BaseResourceModel):
     DbWorkload: Optional[str]
     DefinedTags: Optional[Sequence["_DefinedTags"]]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
+    Id: Optional[str]
     LifecycleDetails: Optional[str]
     NcharacterSet: Optional[str]
     PdbName: Optional[str]
@@ -80,6 +81,7 @@ class ResourceModel(BaseResourceModel):
             DbWorkload=json_data.get("DbWorkload"),
             DefinedTags=json_data.get("DefinedTags"),
             FreeformTags=json_data.get("FreeformTags"),
+            Id=json_data.get("Id"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             NcharacterSet=json_data.get("NcharacterSet"),
             PdbName=json_data.get("PdbName"),
@@ -123,8 +125,8 @@ _ConnectionStrings = ConnectionStrings
 
 @dataclass
 class AllConnectionStrings:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -134,8 +136,8 @@ class AllConnectionStrings:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -193,8 +195,8 @@ _BackupDestinationDetails = BackupDestinationDetails
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -204,8 +206,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -215,8 +217,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -226,8 +228,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -275,8 +277,8 @@ _Database = Database
 
 @dataclass
 class DefinedTags2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -286,8 +288,8 @@ class DefinedTags2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -297,8 +299,8 @@ _DefinedTags2 = DefinedTags2
 
 @dataclass
 class FreeformTags2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -308,8 +310,8 @@ class FreeformTags2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

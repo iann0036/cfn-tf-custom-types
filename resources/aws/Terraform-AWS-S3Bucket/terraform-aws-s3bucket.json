@@ -93,16 +93,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -111,14 +111,16 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Expiration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "NoncurrentVersionExpiration": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/NoncurrentVersionExpiration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "NoncurrentVersionTransition": {
                     "type": "array",
@@ -166,7 +168,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Rule"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -185,7 +188,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Rules"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -201,7 +205,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Rule"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -306,7 +312,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ApplyServerSideEncryptionByDefault"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -332,21 +340,25 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Destination"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Filter": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Filter"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SourceSelectionCriteria": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/SourceSelectionCriteria"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -389,7 +401,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AccessControlTranslation"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -410,16 +423,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -435,7 +448,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/SseKmsEncryptedObjects"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -497,6 +511,9 @@
         "HostedZoneId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Policy": {
             "type": "string"
         },
@@ -513,16 +530,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -703,10 +720,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/BucketDomainName",
-        "/properties/BucketRegionalDomainName"
+        "/properties/BucketRegionalDomainName",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

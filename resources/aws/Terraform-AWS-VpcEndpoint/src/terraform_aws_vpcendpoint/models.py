@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AutoAccept: Optional[bool]
     CidrBlocks: Optional[Sequence[str]]
     DnsEntry: Optional[Sequence["_DnsEntry"]]
+    Id: Optional[str]
     NetworkInterfaceIds: Optional[Sequence[str]]
     OwnerId: Optional[str]
     Policy: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             AutoAccept=json_data.get("AutoAccept"),
             CidrBlocks=json_data.get("CidrBlocks"),
             DnsEntry=json_data.get("DnsEntry"),
+            Id=json_data.get("Id"),
             NetworkInterfaceIds=json_data.get("NetworkInterfaceIds"),
             OwnerId=json_data.get("OwnerId"),
             Policy=json_data.get("Policy"),
@@ -113,8 +115,8 @@ _DnsEntry = DnsEntry
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -124,8 +126,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

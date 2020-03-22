@@ -28,6 +28,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LogicAppId": {
             "type": "string",
             "description": "Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created."
@@ -59,10 +62,11 @@
         "Schema"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

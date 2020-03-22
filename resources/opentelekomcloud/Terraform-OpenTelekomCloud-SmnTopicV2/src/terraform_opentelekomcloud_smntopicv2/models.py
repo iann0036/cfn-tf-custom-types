@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreateTime: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PushPolicy: Optional[float]
     TopicUrn: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreateTime=json_data.get("CreateTime"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PushPolicy=json_data.get("PushPolicy"),
             TopicUrn=json_data.get("TopicUrn"),

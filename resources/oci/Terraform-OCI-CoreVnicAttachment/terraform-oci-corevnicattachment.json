@@ -17,16 +17,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -40,16 +40,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -109,6 +109,9 @@
             "type": "string",
             "description": "A user-friendly name for the attachment. Does not have to be unique, and it cannot be changed. Avoid entering confidential information."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "The OCID of the instance."
@@ -154,6 +157,7 @@
         "/properties/tfcfnid",
         "/properties/AvailabilityDomain",
         "/properties/CompartmentId",
+        "/properties/Id",
         "/properties/State",
         "/properties/SubnetId",
         "/properties/TimeCreated",
@@ -161,7 +165,7 @@
         "/properties/VnicId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

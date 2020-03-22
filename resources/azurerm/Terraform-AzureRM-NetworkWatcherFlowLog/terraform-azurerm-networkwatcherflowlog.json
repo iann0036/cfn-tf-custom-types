@@ -82,6 +82,9 @@
             "type": "boolean",
             "description": "Should Network Flow Logging be Enabled?."
         },
+        "Id": {
+            "type": "string"
+        },
         "NetworkSecurityGroupId": {
             "type": "string",
             "description": "The ID of the Network Security Group for which to enable flow logs for. Changing this forces a new resource to be created."
@@ -132,10 +135,11 @@
         "StorageAccountId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

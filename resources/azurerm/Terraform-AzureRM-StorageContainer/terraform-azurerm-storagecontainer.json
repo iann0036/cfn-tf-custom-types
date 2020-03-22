@@ -38,6 +38,9 @@
         "HasLegalHold": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "Metadata": {
             "type": "array",
             "insertionOrder": true,
@@ -45,16 +48,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of MetaData for this Container."
@@ -79,10 +82,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/HasImmutabilityPolicy",
-        "/properties/HasLegalHold"
+        "/properties/HasLegalHold",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

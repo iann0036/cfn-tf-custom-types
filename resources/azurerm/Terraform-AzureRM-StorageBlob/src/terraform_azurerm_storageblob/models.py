@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessTier: Optional[str]
     ContentType: Optional[str]
+    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
     Parallelism: Optional[float]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessTier=json_data.get("AccessTier"),
             ContentType=json_data.get("ContentType"),
+            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
             Parallelism=json_data.get("Parallelism"),
@@ -83,8 +85,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

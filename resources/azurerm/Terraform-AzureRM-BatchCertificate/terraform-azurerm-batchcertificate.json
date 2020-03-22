@@ -40,6 +40,9 @@
             "type": "string",
             "description": "The format of the certificate. Possible values are `Cer` or `Pfx`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -76,11 +79,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Name",
         "/properties/PublicData"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

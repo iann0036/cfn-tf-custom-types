@@ -32,6 +32,9 @@
             },
             "description": "A list of email addresses corresponding to users who\nshould be given `editor` access to the organization. Note: users specified\nhere must already exist in Grafana unless 'create_users' is set to true."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The display name for the Grafana organization created."
@@ -54,10 +57,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/OrgId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

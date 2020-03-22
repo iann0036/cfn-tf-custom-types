@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     ExternalV4Ip: Optional[str]
     ExternalV6Ip: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     RouterId: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             ExternalV4Ip=json_data.get("ExternalV4Ip"),
             ExternalV6Ip=json_data.get("ExternalV6Ip"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             RouterId=json_data.get("RouterId"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

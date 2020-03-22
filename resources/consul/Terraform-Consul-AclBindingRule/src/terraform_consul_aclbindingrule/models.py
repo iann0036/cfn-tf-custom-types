@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     BindName: Optional[str]
     BindType: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Selector: Optional[str]
 
     @classmethod
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             BindName=json_data.get("BindName"),
             BindType=json_data.get("BindType"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Selector=json_data.get("Selector"),
         )
 

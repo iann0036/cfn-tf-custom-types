@@ -40,6 +40,9 @@
             "type": "string",
             "description": "The ETag generated for the object (an MD5 sum of the object content)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "The name of the object once it is in the bucket."
@@ -59,10 +62,11 @@
         "Key"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -15,7 +15,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FilterLabels"
-                    }
+                    },
+                    "maxItems": 64,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -61,6 +63,9 @@
             "type": "string"
         },
         "Description": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "IpAddress": {
@@ -118,10 +123,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

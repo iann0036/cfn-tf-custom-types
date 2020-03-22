@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BackendAddressPoolId: Optional[str]
+    Id: Optional[str]
     IpConfigurationName: Optional[str]
     NetworkInterfaceId: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BackendAddressPoolId=json_data.get("BackendAddressPoolId"),
+            Id=json_data.get("Id"),
             IpConfigurationName=json_data.get("IpConfigurationName"),
             NetworkInterfaceId=json_data.get("NetworkInterfaceId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

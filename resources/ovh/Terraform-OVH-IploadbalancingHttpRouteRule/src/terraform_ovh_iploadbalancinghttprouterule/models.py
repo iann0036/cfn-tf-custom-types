@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DisplayName: Optional[str]
     Field: Optional[str]
+    Id: Optional[str]
     Match: Optional[str]
     Negate: Optional[bool]
     Pattern: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DisplayName=json_data.get("DisplayName"),
             Field=json_data.get("Field"),
+            Id=json_data.get("Id"),
             Match=json_data.get("Match"),
             Negate=json_data.get("Negate"),
             Pattern=json_data.get("Pattern"),

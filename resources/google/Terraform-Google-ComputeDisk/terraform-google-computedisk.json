@@ -70,6 +70,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Image": {
             "type": "string"
         },
@@ -83,16 +86,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -175,6 +178,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreationTimestamp",
+        "/properties/Id",
         "/properties/LabelFingerprint",
         "/properties/LastAttachTimestamp",
         "/properties/LastDetachTimestamp",
@@ -184,7 +188,7 @@
         "/properties/Users"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -20,6 +20,9 @@
             },
             "description": "Override LDAP groups which should be granted to user."
         },
+        "Id": {
+            "type": "string"
+        },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
@@ -38,10 +41,11 @@
         "Username"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

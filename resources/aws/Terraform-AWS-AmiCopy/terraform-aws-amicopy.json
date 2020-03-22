@@ -37,6 +37,9 @@
         "Encrypted": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageLocation": {
             "type": "string"
         },
@@ -77,16 +80,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -107,6 +110,7 @@
         "/properties/tfcfnid",
         "/properties/Architecture",
         "/properties/EnaSupport",
+        "/properties/Id",
         "/properties/ImageLocation",
         "/properties/KernelId",
         "/properties/ManageEbsSnapshots",
@@ -117,7 +121,7 @@
         "/properties/VirtualizationType"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

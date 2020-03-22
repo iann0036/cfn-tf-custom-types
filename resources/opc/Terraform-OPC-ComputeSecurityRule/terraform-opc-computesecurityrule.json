@@ -35,6 +35,9 @@
             "type": "string",
             "description": "Specify the direction of flow of traffic, which is relative to the instances, for this security rule. Allowed values are ingress or egress."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the security rule."
@@ -78,10 +81,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

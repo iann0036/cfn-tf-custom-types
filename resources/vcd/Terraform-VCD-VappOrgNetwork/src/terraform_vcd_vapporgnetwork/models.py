@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     FirewallEnabled: Optional[bool]
+    Id: Optional[str]
     IsFenced: Optional[bool]
     NatEnabled: Optional[bool]
     Org: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             FirewallEnabled=json_data.get("FirewallEnabled"),
+            Id=json_data.get("Id"),
             IsFenced=json_data.get("IsFenced"),
             NatEnabled=json_data.get("NatEnabled"),
             Org=json_data.get("Org"),

@@ -29,6 +29,9 @@
             "type": "string",
             "description": "(Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         },
+        "Id": {
+            "type": "string"
+        },
         "ShouldRotate": {
             "type": "boolean",
             "description": "(Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`."
@@ -49,11 +52,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/State",
         "/properties/TimeRotated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

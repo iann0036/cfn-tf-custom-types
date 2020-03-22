@@ -358,6 +358,9 @@
             "type": "boolean",
             "description": "Should the OS Disk be deleted when the Virtual Machine is destroyed? Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "LicenseType": {
             "type": "string",
             "description": "Specifies the Windows OS license type. If supplied, the only allowed values are `Windows_Client` and `Windows_Server`."
@@ -393,16 +396,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -528,10 +531,11 @@
         "VmSize"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

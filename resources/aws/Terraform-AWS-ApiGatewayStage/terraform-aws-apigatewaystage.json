@@ -49,6 +49,9 @@
         "ExecutionArn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InvokeUrl": {
             "type": "string"
         },
@@ -65,16 +68,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -85,16 +88,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -120,10 +123,11 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/ExecutionArn",
+        "/properties/Id",
         "/properties/InvokeUrl"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -26,16 +26,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "A list of environment variables to be set on the container. Specified as a map of name/value pairs. Changing this forces a new resource to be created."
@@ -59,16 +59,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "A list of sensitive environment variables to be set on the container. Specified as a map of name/value pairs. Changing this forces a new resource to be created."
@@ -78,14 +78,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Gpu"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "LivenessProbe": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LivenessProbe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Ports": {
                     "type": "array",
@@ -99,7 +101,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ReadinessProbe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Volume": {
                     "type": "array",
@@ -125,7 +128,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LogAnalytics"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -359,16 +364,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "Any metadata required for Log Analytics. Changing this forces a new resource to be created."
@@ -419,6 +424,9 @@
         "Fqdn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string"
         },
@@ -457,16 +465,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource. Changing this forces a new resource to be created."
@@ -570,10 +578,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Fqdn",
+        "/properties/Id",
         "/properties/IpAddress"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

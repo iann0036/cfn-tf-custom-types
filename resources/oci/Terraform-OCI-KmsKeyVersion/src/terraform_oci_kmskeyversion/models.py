@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompartmentId: Optional[str]
+    Id: Optional[str]
     KeyId: Optional[str]
     KeyVersionId: Optional[str]
     ManagementEndpoint: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CompartmentId=json_data.get("CompartmentId"),
+            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
             KeyVersionId=json_data.get("KeyVersionId"),
             ManagementEndpoint=json_data.get("ManagementEndpoint"),

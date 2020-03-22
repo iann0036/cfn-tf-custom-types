@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AdminDistance: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     IpAddressPrefix: Optional[str]
     Name: Optional[str]
     NextHopVnicSet: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AdminDistance=json_data.get("AdminDistance"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IpAddressPrefix=json_data.get("IpAddressPrefix"),
             Name=json_data.get("Name"),
             NextHopVnicSet=json_data.get("NextHopVnicSet"),

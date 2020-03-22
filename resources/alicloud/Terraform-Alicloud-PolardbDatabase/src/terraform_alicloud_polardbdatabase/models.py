@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DbClusterId: Optional[str]
     DbDescription: Optional[str]
     DbName: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             DbClusterId=json_data.get("DbClusterId"),
             DbDescription=json_data.get("DbDescription"),
             DbName=json_data.get("DbName"),
+            Id=json_data.get("Id"),
         )
 
 

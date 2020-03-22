@@ -15,16 +15,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Additional key/value arguments for the binding."
@@ -36,6 +36,9 @@
         "DestinationType": {
             "type": "string",
             "description": "The type of destination (queue or exchange)."
+        },
+        "Id": {
+            "type": "string"
         },
         "PropertiesKey": {
             "type": "string"
@@ -62,10 +65,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PropertiesKey"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

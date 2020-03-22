@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     DnsLabel: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
+    Id: Optional[str]
     Ipv6cidrBlock: Optional[str]
     Ipv6publicCidrBlock: Optional[str]
     IsIpv6enabled: Optional[bool]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             DnsLabel=json_data.get("DnsLabel"),
             FreeformTags=json_data.get("FreeformTags"),
+            Id=json_data.get("Id"),
             Ipv6cidrBlock=json_data.get("Ipv6cidrBlock"),
             Ipv6publicCidrBlock=json_data.get("Ipv6publicCidrBlock"),
             IsIpv6enabled=json_data.get("IsIpv6enabled"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -109,8 +111,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -120,8 +122,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

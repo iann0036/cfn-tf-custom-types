@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     EipIds: Optional[Sequence[str]]
     ExtendParamChargingMode: Optional[float]
     FlavorId: Optional[str]
+    Id: Optional[str]
     Iptype: Optional[str]
     KeyPair: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
@@ -88,6 +89,7 @@ class ResourceModel(BaseResourceModel):
             EipIds=json_data.get("EipIds"),
             ExtendParamChargingMode=json_data.get("ExtendParamChargingMode"),
             FlavorId=json_data.get("FlavorId"),
+            Id=json_data.get("Id"),
             Iptype=json_data.get("Iptype"),
             KeyPair=json_data.get("KeyPair"),
             Labels=json_data.get("Labels"),
@@ -117,8 +119,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Annotations:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class Annotations:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -139,8 +141,8 @@ _Annotations = Annotations
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -150,8 +152,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

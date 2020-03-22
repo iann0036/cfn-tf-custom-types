@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The group that the api belongs to."
         },
+        "Id": {
+            "type": "string"
+        },
         "StageName": {
             "type": "string",
             "description": "Stage that the app apply to access."
@@ -33,10 +36,11 @@
         "StageName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

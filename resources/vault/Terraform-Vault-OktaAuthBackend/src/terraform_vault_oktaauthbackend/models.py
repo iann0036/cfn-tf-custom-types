@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     BypassOktaMfa: Optional[bool]
     Description: Optional[str]
     Group: Optional[Sequence["_Group"]]
+    Id: Optional[str]
     MaxTtl: Optional[str]
     Organization: Optional[str]
     Path: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             BypassOktaMfa=json_data.get("BypassOktaMfa"),
             Description=json_data.get("Description"),
             Group=json_data.get("Group"),
+            Id=json_data.get("Id"),
             MaxTtl=json_data.get("MaxTtl"),
             Organization=json_data.get("Organization"),
             Path=json_data.get("Path"),

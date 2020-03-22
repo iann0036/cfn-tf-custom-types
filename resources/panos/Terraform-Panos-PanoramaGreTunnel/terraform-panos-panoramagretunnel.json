@@ -20,6 +20,9 @@
             "type": "boolean",
             "description": "Enable tunnel monitoring."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interface": {
             "type": "string",
             "description": "Interface to terminate tunnel."
@@ -75,10 +78,11 @@
         "TunnelInterface"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

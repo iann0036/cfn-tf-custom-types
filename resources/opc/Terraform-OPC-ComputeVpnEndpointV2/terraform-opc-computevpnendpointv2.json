@@ -79,6 +79,9 @@
             "type": "boolean",
             "description": "Enables or disables the VPN Endpoint V2. Set to true by default."
         },
+        "Id": {
+            "type": "string"
+        },
         "IkeIdentifier": {
             "type": "string",
             "description": "The Internet Key Exchange (IKE) ID. If you don't specify a value, the default value is the public IP address of the cloud gateway."
@@ -169,13 +172,14 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/LocalGatewayIpAddress",
         "/properties/LocalGatewayPrivateIpAddress",
         "/properties/TunnelStatus",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

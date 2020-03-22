@@ -73,6 +73,9 @@
         "Href": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InterfaceType": {
             "type": "string",
             "description": "An interface for the network. One of `internal` (default), `subinterface`,\n`distributed` (requires the edge gateway to support distributed networks)."
@@ -118,10 +121,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

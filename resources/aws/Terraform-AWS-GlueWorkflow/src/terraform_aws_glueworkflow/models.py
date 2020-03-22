@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultRunProperties: Optional[Sequence["_DefaultRunProperties"]]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultRunProperties=json_data.get("DefaultRunProperties"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 
@@ -61,8 +63,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefaultRunProperties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -72,8 +74,8 @@ class DefaultRunProperties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

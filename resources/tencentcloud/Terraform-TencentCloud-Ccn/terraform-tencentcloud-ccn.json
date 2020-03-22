@@ -15,6 +15,9 @@
             "type": "string",
             "description": "Description of CCN, and maximum length does not exceed 100 bytes."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceCount": {
             "type": "number"
         },
@@ -37,11 +40,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/InstanceCount",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

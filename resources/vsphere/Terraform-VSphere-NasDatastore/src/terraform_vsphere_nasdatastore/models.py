@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     Folder: Optional[str]
     FreeSpace: Optional[float]
     HostSystemIds: Optional[Sequence[str]]
+    Id: Optional[str]
     MaintenanceMode: Optional[str]
     MultipleHostAccess: Optional[bool]
     Name: Optional[str]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             Folder=json_data.get("Folder"),
             FreeSpace=json_data.get("FreeSpace"),
             HostSystemIds=json_data.get("HostSystemIds"),
+            Id=json_data.get("Id"),
             MaintenanceMode=json_data.get("MaintenanceMode"),
             MultipleHostAccess=json_data.get("MultipleHostAccess"),
             Name=json_data.get("Name"),
@@ -93,8 +95,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomAttributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class CustomAttributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

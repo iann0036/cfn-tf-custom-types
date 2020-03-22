@@ -16,6 +16,9 @@
             "type": "number",
             "description": "The ID of the NodeBalancerConfig to access."
         },
+        "Id": {
+            "type": "string"
+        },
         "Label": {
             "type": "string",
             "description": "The label of the Linode NodeBalancer Node. This is for display purposes only."
@@ -45,10 +48,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

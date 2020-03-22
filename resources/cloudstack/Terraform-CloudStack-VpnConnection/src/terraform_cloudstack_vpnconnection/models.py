@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CustomerGatewayId: Optional[str]
+    Id: Optional[str]
     VpnGatewayId: Optional[str]
 
     @classmethod
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CustomerGatewayId=json_data.get("CustomerGatewayId"),
+            Id=json_data.get("Id"),
             VpnGatewayId=json_data.get("VpnGatewayId"),
         )
 

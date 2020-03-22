@@ -23,19 +23,22 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The format of the notification content (JSON Format - Key+Value). Valid values: `\"%instance-id%\"`, `\"%event%\"`, `\"%resource-id%\"`, `\"%resource-name%\"`."
+        },
+        "Id": {
+            "type": "string"
         },
         "Protocol": {
             "type": "string",
@@ -54,10 +57,11 @@
         "ResourceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

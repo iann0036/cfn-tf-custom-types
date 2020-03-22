@@ -35,19 +35,22 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Dictionary of hypervisor-specific attributes."
+        },
+        "Id": {
+            "type": "string"
         },
         "ImageFormat": {
             "type": "string",
@@ -83,6 +86,7 @@
         "/properties/tfcfnid",
         "/properties/ErrorReason",
         "/properties/Hypervisor",
+        "/properties/Id",
         "/properties/ImageFormat",
         "/properties/NoUpload",
         "/properties/Platform",
@@ -90,7 +94,7 @@
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

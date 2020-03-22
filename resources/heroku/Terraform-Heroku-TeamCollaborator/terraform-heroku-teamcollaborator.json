@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Email address of the team collaborator."
         },
+        "Id": {
+            "type": "string"
+        },
         "Permissions": {
             "type": "array",
             "insertionOrder": true,
@@ -32,10 +35,11 @@
         "Permissions"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

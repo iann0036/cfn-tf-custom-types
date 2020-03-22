@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     EventEndpointDeletedTopicArn: Optional[str]
     EventEndpointUpdatedTopicArn: Optional[str]
     FailureFeedbackRoleArn: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Platform: Optional[str]
     PlatformCredential: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             EventEndpointDeletedTopicArn=json_data.get("EventEndpointDeletedTopicArn"),
             EventEndpointUpdatedTopicArn=json_data.get("EventEndpointUpdatedTopicArn"),
             FailureFeedbackRoleArn=json_data.get("FailureFeedbackRoleArn"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Platform=json_data.get("Platform"),
             PlatformCredential=json_data.get("PlatformCredential"),

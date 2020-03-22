@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Capabilities: Optional[Sequence[str]]
     Description: Optional[str]
     ExecutionRoleName: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
     StackSetId: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             Capabilities=json_data.get("Capabilities"),
             Description=json_data.get("Description"),
             ExecutionRoleName=json_data.get("ExecutionRoleName"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),
             StackSetId=json_data.get("StackSetId"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -101,8 +103,8 @@ _Parameters = Parameters
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -112,8 +114,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

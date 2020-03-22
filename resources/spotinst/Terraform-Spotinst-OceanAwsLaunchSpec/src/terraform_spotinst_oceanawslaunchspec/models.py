@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     IamInstanceProfile: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     OceanId: Optional[str]
     RootVolumeSize: Optional[float]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             IamInstanceProfile=json_data.get("IamInstanceProfile"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             OceanId=json_data.get("OceanId"),
             RootVolumeSize=json_data.get("RootVolumeSize"),

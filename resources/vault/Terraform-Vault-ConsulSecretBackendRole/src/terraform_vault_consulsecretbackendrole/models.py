@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Backend: Optional[str]
+    Id: Optional[str]
     Local: Optional[bool]
     MaxTtl: Optional[float]
     Name: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Backend=json_data.get("Backend"),
+            Id=json_data.get("Id"),
             Local=json_data.get("Local"),
             MaxTtl=json_data.get("MaxTtl"),
             Name=json_data.get("Name"),

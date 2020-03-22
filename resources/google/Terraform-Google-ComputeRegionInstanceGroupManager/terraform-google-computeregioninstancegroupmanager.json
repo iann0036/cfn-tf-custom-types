@@ -112,7 +112,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TargetSize"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -157,6 +158,9 @@
             "description": "The distribution policy for this managed instance\ngroup. You can specify one or more values. For more information, see the [official documentation](https://cloud.google.com/compute/docs/instance-groups/distributing-instances-with-regional-instance-groups#selectingzones).\n- - -."
         },
         "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "InstanceGroup": {
@@ -247,12 +251,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Fingerprint",
+        "/properties/Id",
         "/properties/InstanceGroup",
         "/properties/InstanceTemplate",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

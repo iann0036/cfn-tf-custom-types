@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     EngineType: Optional[str]
     EngineVersion: Optional[str]
     HostInstanceType: Optional[str]
+    Id: Optional[str]
     Instances: Optional[Sequence["_Instances"]]
     PubliclyAccessible: Optional[bool]
     SecurityGroups: Optional[Sequence[str]]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             EngineType=json_data.get("EngineType"),
             EngineVersion=json_data.get("EngineVersion"),
             HostInstanceType=json_data.get("HostInstanceType"),
+            Id=json_data.get("Id"),
             Instances=json_data.get("Instances"),
             PubliclyAccessible=json_data.get("PubliclyAccessible"),
             SecurityGroups=json_data.get("SecurityGroups"),
@@ -115,8 +117,8 @@ _Instances = Instances
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

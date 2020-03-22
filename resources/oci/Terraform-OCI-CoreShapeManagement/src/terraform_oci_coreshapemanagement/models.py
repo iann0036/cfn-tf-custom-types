@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompartmentId: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     ShapeName: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CompartmentId=json_data.get("CompartmentId"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             ShapeName=json_data.get("ShapeName"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

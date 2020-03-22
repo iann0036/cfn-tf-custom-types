@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Configure this ACL to be the default ACL."
         },
+        "Id": {
+            "type": "string"
+        },
         "PredefinedAcl": {
             "type": "string",
             "description": "The [canned GCS ACL](https://cloud.google.com/storage/docs/access-control/lists#predefined-acl) to apply. Must be set if `role_entity` is not."
@@ -34,10 +37,11 @@
         "Bucket"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

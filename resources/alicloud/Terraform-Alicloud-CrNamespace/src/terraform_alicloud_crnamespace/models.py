@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutoCreate: Optional[bool]
     DefaultVisibility: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AutoCreate=json_data.get("AutoCreate"),
             DefaultVisibility=json_data.get("DefaultVisibility"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

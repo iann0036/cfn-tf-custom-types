@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Config: Optional[str]
     Group: Optional[str]
+    Id: Optional[str]
     InputValues: Optional[Sequence[Sequence["_InputValues"]]]
     Name: Optional[str]
     Options: Optional[Sequence["_Options"]]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Config=json_data.get("Config"),
             Group=json_data.get("Group"),
+            Id=json_data.get("Id"),
             InputValues=json_data.get("InputValues"),
             Name=json_data.get("Name"),
             Options=json_data.get("Options"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class InputValues:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class InputValues:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -93,8 +95,8 @@ _InputValues = InputValues
 
 @dataclass
 class Options:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class Options:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -115,8 +117,8 @@ _Options = Options
 
 @dataclass
 class OutputValues:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class OutputValues:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

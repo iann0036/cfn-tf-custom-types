@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     App: Optional[str]
     Email: Optional[str]
+    Id: Optional[str]
     Permissions: Optional[Sequence[str]]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             App=json_data.get("App"),
             Email=json_data.get("Email"),
+            Id=json_data.get("Id"),
             Permissions=json_data.get("Permissions"),
         )
 

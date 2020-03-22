@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     ConfigVars: Optional[Sequence["_ConfigVars"]]
     GitUrl: Optional[str]
     HerokuHostname: Optional[str]
+    Id: Optional[str]
     InternalRouting: Optional[bool]
     Name: Optional[str]
     Region: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             ConfigVars=json_data.get("ConfigVars"),
             GitUrl=json_data.get("GitUrl"),
             HerokuHostname=json_data.get("HerokuHostname"),
+            Id=json_data.get("Id"),
             InternalRouting=json_data.get("InternalRouting"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AllConfigVars:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class AllConfigVars:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -107,8 +109,8 @@ _AllConfigVars = AllConfigVars
 
 @dataclass
 class ConfigVars:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -118,8 +120,8 @@ class ConfigVars:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -129,8 +131,8 @@ _ConfigVars = ConfigVars
 
 @dataclass
 class SensitiveConfigVars:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -140,8 +142,8 @@ class SensitiveConfigVars:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

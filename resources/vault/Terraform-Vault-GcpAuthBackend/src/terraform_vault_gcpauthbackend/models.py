@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ClientId: Optional[str]
     Credentials: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Path: Optional[str]
     PrivateKeyId: Optional[str]
     ProjectId: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             ClientId=json_data.get("ClientId"),
             Credentials=json_data.get("Credentials"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Path=json_data.get("Path"),
             PrivateKeyId=json_data.get("PrivateKeyId"),
             ProjectId=json_data.get("ProjectId"),

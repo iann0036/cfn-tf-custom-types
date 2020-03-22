@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     DnsName: Optional[str]
     ExportPath: Optional[str]
+    Id: Optional[str]
     ImportPath: Optional[str]
     ImportedFileChunkSize: Optional[float]
     NetworkInterfaceIds: Optional[Sequence[str]]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             DnsName=json_data.get("DnsName"),
             ExportPath=json_data.get("ExportPath"),
+            Id=json_data.get("Id"),
             ImportPath=json_data.get("ImportPath"),
             ImportedFileChunkSize=json_data.get("ImportedFileChunkSize"),
             NetworkInterfaceIds=json_data.get("NetworkInterfaceIds"),
@@ -83,8 +85,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

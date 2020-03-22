@@ -14,6 +14,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KafkaVersions": {
             "type": "array",
             "insertionOrder": true,
@@ -40,10 +43,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Arn",
+        "/properties/Id",
         "/properties/LatestRevision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

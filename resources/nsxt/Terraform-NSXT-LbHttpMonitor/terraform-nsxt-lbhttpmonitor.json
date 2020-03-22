@@ -53,6 +53,9 @@
             "type": "number",
             "description": "Number of consecutive checks that must fail before marking it down."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interval": {
             "type": "number",
             "description": "The frequency at which the system issues the monitor check (in seconds)."
@@ -119,10 +122,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,9 @@
             "type": "number",
             "description": "Max frequency per minute, only valid when `smode` is `speedlimit`, the valid value ranges from 1 to 10000."
         },
+        "Id": {
+            "type": "string"
+        },
         "Ip": {
             "type": "string",
             "description": "Ip of the CC self-define http policy, only valid when `resource_type` is `bgp-multip`. The num of list items can only be set one."
@@ -83,10 +86,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/PolicyId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

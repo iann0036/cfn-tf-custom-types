@@ -29,6 +29,9 @@
             "type": "boolean",
             "description": "Is the Virtual Hub traffic allowed to transit via the Remote Virtual Network? Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternetSecurityEnabled": {
             "type": "boolean",
             "description": "Should Internet Security be enabled to secure internet traffic? Changing this forces a new resource to be created."
@@ -60,10 +63,11 @@
         "VirtualHubId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

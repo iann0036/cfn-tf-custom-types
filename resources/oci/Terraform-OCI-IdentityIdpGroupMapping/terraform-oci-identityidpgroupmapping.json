@@ -32,6 +32,9 @@
             "type": "string",
             "description": "(Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group."
         },
+        "Id": {
+            "type": "string"
+        },
         "IdentityProviderId": {
             "type": "string",
             "description": "The OCID of the identity provider."
@@ -62,12 +65,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CompartmentId",
+        "/properties/Id",
         "/properties/InactiveState",
         "/properties/State",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

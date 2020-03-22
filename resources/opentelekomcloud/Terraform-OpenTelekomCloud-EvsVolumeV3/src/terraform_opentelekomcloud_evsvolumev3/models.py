@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Cascade: Optional[bool]
     Description: Optional[str]
     DeviceType: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     KmsId: Optional[str]
     Multiattach: Optional[bool]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             Cascade=json_data.get("Cascade"),
             Description=json_data.get("Description"),
             DeviceType=json_data.get("DeviceType"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             KmsId=json_data.get("KmsId"),
             Multiattach=json_data.get("Multiattach"),
@@ -111,8 +113,8 @@ _Attachment = Attachment
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

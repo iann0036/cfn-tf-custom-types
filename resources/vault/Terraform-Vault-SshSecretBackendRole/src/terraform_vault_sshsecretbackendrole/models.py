@@ -51,6 +51,7 @@ class ResourceModel(BaseResourceModel):
     DefaultCriticalOptions: Optional[Sequence["_DefaultCriticalOptions"]]
     DefaultExtensions: Optional[Sequence["_DefaultExtensions"]]
     DefaultUser: Optional[str]
+    Id: Optional[str]
     KeyIdFormat: Optional[str]
     KeyType: Optional[str]
     MaxTtl: Optional[str]
@@ -81,6 +82,7 @@ class ResourceModel(BaseResourceModel):
             DefaultCriticalOptions=json_data.get("DefaultCriticalOptions"),
             DefaultExtensions=json_data.get("DefaultExtensions"),
             DefaultUser=json_data.get("DefaultUser"),
+            Id=json_data.get("Id"),
             KeyIdFormat=json_data.get("KeyIdFormat"),
             KeyType=json_data.get("KeyType"),
             MaxTtl=json_data.get("MaxTtl"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AllowedUserKeyLengths:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class AllowedUserKeyLengths:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -117,8 +119,8 @@ _AllowedUserKeyLengths = AllowedUserKeyLengths
 
 @dataclass
 class DefaultCriticalOptions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class DefaultCriticalOptions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -139,8 +141,8 @@ _DefaultCriticalOptions = DefaultCriticalOptions
 
 @dataclass
 class DefaultExtensions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -150,8 +152,8 @@ class DefaultExtensions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

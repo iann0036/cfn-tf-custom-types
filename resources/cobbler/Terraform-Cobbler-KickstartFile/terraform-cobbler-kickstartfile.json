@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The body of the kickstart file."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the kickstart file. This must be\nthe full path, including `/var/lib/cobbler/kickstarts`."
@@ -23,10 +26,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

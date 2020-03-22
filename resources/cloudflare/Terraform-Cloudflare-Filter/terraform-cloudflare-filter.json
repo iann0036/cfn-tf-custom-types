@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The filter expression to be used."
         },
+        "Id": {
+            "type": "string"
+        },
         "Paused": {
             "type": "boolean",
             "description": "Whether this filter is currently paused. Boolean value."
@@ -35,10 +38,11 @@
         "ZoneId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

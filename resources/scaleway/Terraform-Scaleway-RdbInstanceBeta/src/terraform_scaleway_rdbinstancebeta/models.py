@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EndpointIp: Optional[str]
     EndpointPort: Optional[float]
     Engine: Optional[str]
+    Id: Optional[str]
     IsHaCluster: Optional[bool]
     Name: Optional[str]
     NodeType: Optional[str]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             EndpointIp=json_data.get("EndpointIp"),
             EndpointPort=json_data.get("EndpointPort"),
             Engine=json_data.get("Engine"),
+            Id=json_data.get("Id"),
             IsHaCluster=json_data.get("IsHaCluster"),
             Name=json_data.get("Name"),
             NodeType=json_data.get("NodeType"),

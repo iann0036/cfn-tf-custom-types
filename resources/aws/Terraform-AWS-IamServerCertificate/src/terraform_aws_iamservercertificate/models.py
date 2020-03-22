@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     CertificateBody: Optional[str]
     CertificateChain: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
     Path: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             CertificateBody=json_data.get("CertificateBody"),
             CertificateChain=json_data.get("CertificateChain"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
             Path=json_data.get("Path"),

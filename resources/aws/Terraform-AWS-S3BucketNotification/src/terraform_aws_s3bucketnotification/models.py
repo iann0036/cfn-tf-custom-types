@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bucket: Optional[str]
+    Id: Optional[str]
     LambdaFunction: Optional[Sequence["_LambdaFunction"]]
     Queue: Optional[Sequence["_Queue"]]
     Topic: Optional[Sequence["_Topic"]]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Bucket=json_data.get("Bucket"),
+            Id=json_data.get("Id"),
             LambdaFunction=json_data.get("LambdaFunction"),
             Queue=json_data.get("Queue"),
             Topic=json_data.get("Topic"),

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Attach: Optional[bool]
     DeviceId: Optional[float]
     DiskOffering: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     ShrinkOk: Optional[bool]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             Attach=json_data.get("Attach"),
             DeviceId=json_data.get("DeviceId"),
             DiskOffering=json_data.get("DiskOffering"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             ShrinkOk=json_data.get("ShrinkOk"),

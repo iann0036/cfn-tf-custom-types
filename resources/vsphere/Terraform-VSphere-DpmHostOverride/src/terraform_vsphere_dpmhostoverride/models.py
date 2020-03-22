@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DpmAutomationLevel: Optional[str]
     DpmEnabled: Optional[bool]
     HostSystemId: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             DpmAutomationLevel=json_data.get("DpmAutomationLevel"),
             DpmEnabled=json_data.get("DpmEnabled"),
             HostSystemId=json_data.get("HostSystemId"),
+            Id=json_data.get("Id"),
         )
 
 

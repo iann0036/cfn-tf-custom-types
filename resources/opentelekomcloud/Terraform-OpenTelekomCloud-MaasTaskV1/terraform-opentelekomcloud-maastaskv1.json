@@ -120,6 +120,9 @@
             "type": "boolean",
             "description": "Specifies whether to use KMS encryption."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -164,11 +167,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Name",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

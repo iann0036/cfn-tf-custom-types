@@ -18,7 +18,9 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Attribute"
-                    }
+                    },
+                    "maxItems": 255,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -50,6 +52,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Event": {
             "type": "array",
             "insertionOrder": true,
@@ -71,10 +76,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

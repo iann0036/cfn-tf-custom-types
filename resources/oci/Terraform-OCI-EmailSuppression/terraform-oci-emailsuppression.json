@@ -33,6 +33,9 @@
             "type": "string",
             "description": "The recipient email address of the suppression."
         },
+        "Id": {
+            "type": "string"
+        },
         "Reason": {
             "type": "string"
         },
@@ -50,11 +53,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Reason",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

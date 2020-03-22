@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DestinationCidrblock: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NexthopId: Optional[str]
     NexthopType: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DestinationCidrblock=json_data.get("DestinationCidrblock"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NexthopId=json_data.get("NexthopId"),
             NexthopType=json_data.get("NexthopType"),

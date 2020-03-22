@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Description of the security group rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpProtocol": {
             "type": "string",
             "description": "Type of ip protocol, the available value include `TCP`, `UDP` and `ICMP`. Default to all types protocol."
@@ -48,10 +51,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -15,14 +15,16 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/DataOpts"
-                    }
+                    },
+                    "minItems": 1
                 },
                 "UiSpecs": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/UiSpecs"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -84,6 +86,9 @@
         "GraphCid": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Title": {
             "type": "string"
         },
@@ -118,10 +123,11 @@
         "Title"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

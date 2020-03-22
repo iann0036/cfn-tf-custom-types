@@ -14,16 +14,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -37,16 +37,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -109,14 +109,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Release"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Runtime": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Runtime"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -232,6 +234,9 @@
             "type": "string",
             "description": "The username of a user with access to the git respository if the repository is private."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancerSubnets": {
             "type": "array",
             "insertionOrder": false,
@@ -279,16 +284,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of tags for the application container."
@@ -339,10 +344,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AppUrl",
+        "/properties/Id",
         "/properties/WebUrl"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -28,6 +28,9 @@
             "type": "string",
             "description": "The hostname of the host."
         },
+        "Id": {
+            "type": "string"
+        },
         "Templates": {
             "type": "array",
             "insertionOrder": false,
@@ -43,16 +46,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of variables to assign to the host."
@@ -65,10 +68,11 @@
         "Hostname"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

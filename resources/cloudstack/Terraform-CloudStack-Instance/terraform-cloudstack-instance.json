@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The group name of the instance."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "The IP address to assign to this instance. Changing\nthis forces a new resource to be created."
@@ -104,10 +107,11 @@
         "Zone"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

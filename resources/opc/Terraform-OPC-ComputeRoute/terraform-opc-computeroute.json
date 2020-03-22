@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The description of the route."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddressPrefix": {
             "type": "string",
             "description": "The IPv4 address prefix, in CIDR format, of the external network from which to route traffic."
@@ -43,10 +46,11 @@
         "NextHopVnicSet"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

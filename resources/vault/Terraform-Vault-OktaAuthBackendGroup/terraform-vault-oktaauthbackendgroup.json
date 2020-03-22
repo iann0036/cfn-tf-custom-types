@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Name of the group within the Okta."
         },
+        "Id": {
+            "type": "string"
+        },
         "Path": {
             "type": "string",
             "description": "The path where the Okta auth backend is mounted."
@@ -31,10 +34,11 @@
         "Path"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

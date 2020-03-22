@@ -20,6 +20,9 @@
             },
             "description": "The [managed object IDs][docs-about-morefs] of\nthe hosts to put in the cluster."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the host group. This must be unique in the\ncluster. Forces a new resource if changed."
@@ -31,10 +34,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

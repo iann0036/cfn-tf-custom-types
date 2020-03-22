@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EventDeliverySchema: Optional[str]
+    Id: Optional[str]
     IncludedEventTypes: Optional[Sequence[str]]
     Labels: Optional[Sequence[str]]
     Name: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EventDeliverySchema=json_data.get("EventDeliverySchema"),
+            Id=json_data.get("Id"),
             IncludedEventTypes=json_data.get("IncludedEventTypes"),
             Labels=json_data.get("Labels"),
             Name=json_data.get("Name"),

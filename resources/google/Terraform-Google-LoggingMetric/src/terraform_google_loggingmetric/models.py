@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Filter: Optional[str]
+    Id: Optional[str]
     LabelExtractors: Optional[Sequence["_LabelExtractors"]]
     Name: Optional[str]
     Project: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Filter=json_data.get("Filter"),
+            Id=json_data.get("Id"),
             LabelExtractors=json_data.get("LabelExtractors"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
@@ -81,8 +83,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class LabelExtractors:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -92,8 +94,8 @@ class LabelExtractors:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

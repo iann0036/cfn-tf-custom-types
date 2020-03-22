@@ -70,6 +70,9 @@
         "DeregistrationDelay": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "LambdaMultiValueHeadersEnabled": {
             "type": "boolean"
         },
@@ -101,16 +104,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -142,10 +145,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Arn",
-        "/properties/ArnSuffix"
+        "/properties/ArnSuffix",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

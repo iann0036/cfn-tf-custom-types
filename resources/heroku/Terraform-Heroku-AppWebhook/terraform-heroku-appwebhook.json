@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Values used in `Authorization` header. Once set, this value cannot be fetched from the Heroku API, but it can be updated."
         },
+        "Id": {
+            "type": "string"
+        },
         "Include": {
             "type": "array",
             "insertionOrder": false,
@@ -45,10 +48,11 @@
         "Url"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

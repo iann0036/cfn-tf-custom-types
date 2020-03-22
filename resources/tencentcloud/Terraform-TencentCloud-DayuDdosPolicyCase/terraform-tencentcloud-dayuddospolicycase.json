@@ -39,6 +39,9 @@
             "type": "string",
             "description": "Indicate whether the service involves VPN service or not, valid values are `no` and `yes`."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxTcpPackageLen": {
             "type": "string",
             "description": "The max length of TCP message package, valid value length should be greater than 0 and less than 1500. It should be greater than `min_tcp_package_len`."
@@ -133,10 +136,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/SceneId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -46,6 +46,7 @@ class ResourceModel(BaseResourceModel):
     EnableMpBgp: Optional[bool]
     EnableSenderSideLoopDetection: Optional[bool]
     HoldTime: Optional[float]
+    Id: Optional[str]
     IdleHoldTime: Optional[float]
     IncomingConnectionsRemotePort: Optional[float]
     KeepAliveInterval: Optional[float]
@@ -84,6 +85,7 @@ class ResourceModel(BaseResourceModel):
             EnableMpBgp=json_data.get("EnableMpBgp"),
             EnableSenderSideLoopDetection=json_data.get("EnableSenderSideLoopDetection"),
             HoldTime=json_data.get("HoldTime"),
+            Id=json_data.get("Id"),
             IdleHoldTime=json_data.get("IdleHoldTime"),
             IncomingConnectionsRemotePort=json_data.get("IncomingConnectionsRemotePort"),
             KeepAliveInterval=json_data.get("KeepAliveInterval"),

@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "File type identification\nreports."
         },
+        "Id": {
+            "type": "string"
+        },
         "PassiveDnsMonitoring": {
             "type": "boolean",
             "description": "Passive DNS monitoring."
@@ -44,10 +47,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

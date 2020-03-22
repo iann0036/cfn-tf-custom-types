@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Capabilities: Optional[Sequence[str]]
     DisableRollback: Optional[bool]
     IamRoleArn: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NotificationArns: Optional[Sequence[str]]
     OnFailure: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Capabilities=json_data.get("Capabilities"),
             DisableRollback=json_data.get("DisableRollback"),
             IamRoleArn=json_data.get("IamRoleArn"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NotificationArns=json_data.get("NotificationArns"),
             OnFailure=json_data.get("OnFailure"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Outputs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Outputs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -107,8 +109,8 @@ _Outputs = Outputs
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -118,8 +120,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -129,8 +131,8 @@ _Parameters = Parameters
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -140,8 +142,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

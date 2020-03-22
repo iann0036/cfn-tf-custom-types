@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     Engine: Optional[str]
     EngineVersion: Optional[str]
     ForceRestart: Optional[bool]
+    Id: Optional[str]
     InstanceChargeType: Optional[str]
     InstanceName: Optional[str]
     InstanceStorage: Optional[float]
@@ -81,6 +82,7 @@ class ResourceModel(BaseResourceModel):
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
             ForceRestart=json_data.get("ForceRestart"),
+            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             InstanceName=json_data.get("InstanceName"),
             InstanceStorage=json_data.get("InstanceStorage"),
@@ -109,8 +111,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -120,8 +122,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

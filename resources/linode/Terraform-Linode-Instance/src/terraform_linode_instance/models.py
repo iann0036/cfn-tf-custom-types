@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     BackupsEnabled: Optional[bool]
     BootConfigLabel: Optional[str]
     Group: Optional[str]
+    Id: Optional[str]
     Image: Optional[str]
     IpAddress: Optional[str]
     Ipv4: Optional[Sequence[str]]
@@ -91,6 +92,7 @@ class ResourceModel(BaseResourceModel):
             BackupsEnabled=json_data.get("BackupsEnabled"),
             BootConfigLabel=json_data.get("BootConfigLabel"),
             Group=json_data.get("Group"),
+            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             IpAddress=json_data.get("IpAddress"),
             Ipv4=json_data.get("Ipv4"),
@@ -201,8 +203,8 @@ _Specs = Specs
 
 @dataclass
 class StackscriptData:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -212,8 +214,8 @@ class StackscriptData:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -579,8 +581,8 @@ _Disk = Disk
 
 @dataclass
 class StackscriptData2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -590,8 +592,8 @@ class StackscriptData2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

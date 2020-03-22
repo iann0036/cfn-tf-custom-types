@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     DoNotRunExtensionsOnOverprovisionedMachines: Optional[bool]
     EvictionPolicy: Optional[str]
     HealthProbeId: Optional[str]
+    Id: Optional[str]
     Instances: Optional[float]
     Location: Optional[str]
     MaxBidPrice: Optional[float]
@@ -99,6 +100,7 @@ class ResourceModel(BaseResourceModel):
             DoNotRunExtensionsOnOverprovisionedMachines=json_data.get("DoNotRunExtensionsOnOverprovisionedMachines"),
             EvictionPolicy=json_data.get("EvictionPolicy"),
             HealthProbeId=json_data.get("HealthProbeId"),
+            Id=json_data.get("Id"),
             Instances=json_data.get("Instances"),
             Location=json_data.get("Location"),
             MaxBidPrice=json_data.get("MaxBidPrice"),
@@ -145,8 +147,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -156,8 +158,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

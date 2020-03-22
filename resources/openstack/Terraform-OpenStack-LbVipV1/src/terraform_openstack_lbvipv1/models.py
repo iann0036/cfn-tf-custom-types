@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ConnLimit: Optional[float]
     Description: Optional[str]
     FloatingIp: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Persistence: Optional[Sequence["_Persistence"]]
     PoolId: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             ConnLimit=json_data.get("ConnLimit"),
             Description=json_data.get("Description"),
             FloatingIp=json_data.get("FloatingIp"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Persistence=json_data.get("Persistence"),
             PoolId=json_data.get("PoolId"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Persistence:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Persistence:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

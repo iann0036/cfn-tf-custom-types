@@ -15,6 +15,9 @@
             "type": "string",
             "description": "A description associated with the user."
         },
+        "Id": {
+            "type": "string"
+        },
         "OpenstackRc": {
             "type": "array",
             "insertionOrder": true,
@@ -22,16 +25,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -56,12 +59,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreationDate",
+        "/properties/Id",
         "/properties/Password",
         "/properties/Status",
         "/properties/Username"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

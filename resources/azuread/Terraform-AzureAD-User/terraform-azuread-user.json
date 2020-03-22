@@ -20,6 +20,9 @@
             "type": "boolean",
             "description": "`true` if the User is forced to change the password during the next sign-in. Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImmutableId": {
             "type": "string",
             "description": "The value used to associate an on-premises Active Directory user account with their Azure AD user object. This must be specified if you are using a federated domain for the user's userPrincipalName (UPN) property when creating a new user account."
@@ -61,13 +64,14 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Mail",
         "/properties/ObjectId",
         "/properties/OnpremisesSamAccountName",
         "/properties/OnpremisesUserPrincipalName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

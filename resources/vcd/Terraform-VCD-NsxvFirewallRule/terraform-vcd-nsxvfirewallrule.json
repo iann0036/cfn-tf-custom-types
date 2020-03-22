@@ -133,6 +133,9 @@
             "type": "boolean",
             "description": "Defines if the rule is enabaled. Default `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoggingEnabled": {
             "type": "boolean",
             "description": "Defines if the logging for this rule is enabaled. Default `false`."
@@ -188,10 +191,11 @@
         "EdgeGateway"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

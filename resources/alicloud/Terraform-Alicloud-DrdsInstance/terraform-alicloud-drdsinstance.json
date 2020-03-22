@@ -26,6 +26,9 @@
             "type": "string",
             "description": "Description of the DRDS instance, This description can have a string of 2 to 256 characters."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceChargeType": {
             "type": "string",
             "description": "Valid values are `PrePaid`, `PostPaid`, Default to `PostPaid`."
@@ -57,10 +60,11 @@
         "Specification"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

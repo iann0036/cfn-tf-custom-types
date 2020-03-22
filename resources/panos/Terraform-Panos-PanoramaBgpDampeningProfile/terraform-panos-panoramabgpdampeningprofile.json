@@ -24,6 +24,9 @@
             "type": "boolean",
             "description": "Enable or not (default: `true`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxHoldTime": {
             "type": "number",
             "description": "Maximum hold-down time, in\nseconds (default: `900`)."
@@ -55,10 +58,11 @@
         "VirtualRouter"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

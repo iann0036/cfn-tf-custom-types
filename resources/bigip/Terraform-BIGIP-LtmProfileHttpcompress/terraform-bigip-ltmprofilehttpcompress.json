@@ -28,6 +28,9 @@
             "type": "string",
             "description": "Specifies the profile that you want to use as the parent profile. Your new profile inherits all settings and values from the parent profile specified."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -53,10 +56,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

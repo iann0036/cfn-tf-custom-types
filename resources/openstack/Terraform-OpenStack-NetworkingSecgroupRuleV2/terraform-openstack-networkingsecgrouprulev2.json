@@ -31,6 +31,9 @@
             "type": "string",
             "description": "The layer 3 protocol type, valid values are __IPv4__\nor __IPv6__. Changing this creates a new security group rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "PortRangeMax": {
             "type": "number",
             "description": "The higher part of the allowed port range, valid\ninteger value needs to be between 1 and 65535. Changing this creates a new\nsecurity group rule."
@@ -74,10 +77,11 @@
         "SecurityGroupId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

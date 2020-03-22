@@ -52,6 +52,9 @@
             "type": "number",
             "description": "Specifies the threshold at which the health\ncheck result is success, that is, the number of consecutive successful health\nchecks when the health check result of the backend server changes from fail\nto success. The value ranges from 1 to 10."
         },
+        "Id": {
+            "type": "string"
+        },
         "ListenerId": {
             "type": "string",
             "description": "Specifies the ID of the listener to which the health\ncheck task belongs."
@@ -74,10 +77,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/UpdateTime"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

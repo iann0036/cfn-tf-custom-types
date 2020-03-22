@@ -38,6 +38,9 @@
             "type": "string",
             "description": "Required for HTTP(S) types. The HTTP method used\nfor requests by the monitor. If this attribute is not specified, it defaults\nto \"GET\". Changing this updates the http_method of the existing monitor."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxRetries": {
             "type": "number",
             "description": "Number of permissible ping failures before changing\nthe member's status to INACTIVE. Must be a number between 1 and 10. Changing\nthis updates the max_retries of the existing monitor."
@@ -74,10 +77,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

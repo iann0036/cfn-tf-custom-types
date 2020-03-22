@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Database: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Query: Optional[str]
     Workgroup: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Database=json_data.get("Database"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Query=json_data.get("Query"),
             Workgroup=json_data.get("Workgroup"),

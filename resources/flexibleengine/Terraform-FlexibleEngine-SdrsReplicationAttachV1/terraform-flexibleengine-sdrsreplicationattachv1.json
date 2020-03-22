@@ -26,6 +26,9 @@
             "type": "string",
             "description": "Specifies the device name, eg. /dev/vdb. Changing this creates a new replication attach."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "Specifies the ID of a protected instance. Changing this creates a new replication attach."
@@ -45,10 +48,11 @@
         "ReplicationId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

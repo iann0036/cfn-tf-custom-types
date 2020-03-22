@@ -58,6 +58,9 @@
             "type": "string",
             "description": "The name of the Shared Image Gallery in which the Shared Image exists. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageName": {
             "type": "string",
             "description": "The name of the Shared Image within the Shared Image Gallery in which this Version should be created. Changing this forces a new resource to be created."
@@ -85,16 +88,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A collection of tags which should be applied to this resource."
@@ -121,10 +124,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

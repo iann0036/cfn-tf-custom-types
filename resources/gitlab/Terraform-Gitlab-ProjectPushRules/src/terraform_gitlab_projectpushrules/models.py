@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     CommitMessageRegex: Optional[str]
     DenyDeleteTag: Optional[bool]
     FileNameRegex: Optional[str]
+    Id: Optional[str]
     MaxFileSize: Optional[float]
     MemberCheck: Optional[bool]
     PreventSecrets: Optional[bool]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             CommitMessageRegex=json_data.get("CommitMessageRegex"),
             DenyDeleteTag=json_data.get("DenyDeleteTag"),
             FileNameRegex=json_data.get("FileNameRegex"),
+            Id=json_data.get("Id"),
             MaxFileSize=json_data.get("MaxFileSize"),
             MemberCheck=json_data.get("MemberCheck"),
             PreventSecrets=json_data.get("PreventSecrets"),

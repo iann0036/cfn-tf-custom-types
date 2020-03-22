@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     LoadBalancer: Optional[str]
     Name: Optional[str]
     State: Optional[bool]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             LoadBalancer=json_data.get("LoadBalancer"),
             Name=json_data.get("Name"),
             State=json_data.get("State"),

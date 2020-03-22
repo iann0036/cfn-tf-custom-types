@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Disk: Optional[float]
     Ephemeral: Optional[float]
     ExtraSpecs: Optional[Sequence["_ExtraSpecs"]]
+    Id: Optional[str]
     IsPublic: Optional[bool]
     Name: Optional[str]
     Ram: Optional[float]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Disk=json_data.get("Disk"),
             Ephemeral=json_data.get("Ephemeral"),
             ExtraSpecs=json_data.get("ExtraSpecs"),
+            Id=json_data.get("Id"),
             IsPublic=json_data.get("IsPublic"),
             Name=json_data.get("Name"),
             Ram=json_data.get("Ram"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ExtraSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class ExtraSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

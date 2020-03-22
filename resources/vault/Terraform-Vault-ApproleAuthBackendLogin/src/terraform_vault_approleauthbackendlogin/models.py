@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Accessor: Optional[str]
     Backend: Optional[str]
     ClientToken: Optional[str]
+    Id: Optional[str]
     LeaseDuration: Optional[float]
     LeaseStarted: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Accessor=json_data.get("Accessor"),
             Backend=json_data.get("Backend"),
             ClientToken=json_data.get("ClientToken"),
+            Id=json_data.get("Id"),
             LeaseDuration=json_data.get("LeaseDuration"),
             LeaseStarted=json_data.get("LeaseStarted"),
             Metadata=json_data.get("Metadata"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

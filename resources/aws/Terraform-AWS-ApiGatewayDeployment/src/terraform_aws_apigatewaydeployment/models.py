@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreatedDate: Optional[str]
     Description: Optional[str]
     ExecutionArn: Optional[str]
+    Id: Optional[str]
     InvokeUrl: Optional[str]
     RestApiId: Optional[str]
     StageDescription: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             CreatedDate=json_data.get("CreatedDate"),
             Description=json_data.get("Description"),
             ExecutionArn=json_data.get("ExecutionArn"),
+            Id=json_data.get("Id"),
             InvokeUrl=json_data.get("InvokeUrl"),
             RestApiId=json_data.get("RestApiId"),
             StageDescription=json_data.get("StageDescription"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Variables:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Variables:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

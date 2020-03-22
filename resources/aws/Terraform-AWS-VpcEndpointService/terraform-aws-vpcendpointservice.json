@@ -32,6 +32,9 @@
                 "type": "string"
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "ManagesVpcEndpoints": {
             "type": "boolean"
         },
@@ -61,16 +64,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         }
@@ -84,6 +87,7 @@
         "/properties/tfcfnid",
         "/properties/AvailabilityZones",
         "/properties/BaseEndpointDnsNames",
+        "/properties/Id",
         "/properties/ManagesVpcEndpoints",
         "/properties/PrivateDnsName",
         "/properties/ServiceName",
@@ -91,7 +95,7 @@
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     Duration: Optional[float]
     ExpireTime: Optional[str]
+    Id: Optional[str]
     PeerRegion: Optional[str]
 
     @classmethod
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             Duration=json_data.get("Duration"),
             ExpireTime=json_data.get("ExpireTime"),
+            Id=json_data.get("Id"),
             PeerRegion=json_data.get("PeerRegion"),
         )
 

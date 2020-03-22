@@ -16,6 +16,9 @@
             "type": "number",
             "description": "Defines the amount of time, in seconds, that can elapse before the lifecycle hook times out. The range is 30 to 3600, and default value is 300."
         },
+        "Id": {
+            "type": "string"
+        },
         "LifecycleHookName": {
             "type": "string",
             "description": "The name of the lifecycle hook."
@@ -52,10 +55,11 @@
         "ScalingGroupId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -43,7 +43,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Recipient"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -74,6 +75,9 @@
         "Description": {
             "type": "string",
             "description": "Description of the escalation."
+        },
+        "Id": {
+            "type": "string"
         },
         "Name": {
             "type": "string",
@@ -112,10 +116,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bucket: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Filter: Optional[Sequence["_Filter"]]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Bucket=json_data.get("Bucket"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Filter=json_data.get("Filter"),
         )
@@ -83,8 +85,8 @@ _Filter = Filter
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

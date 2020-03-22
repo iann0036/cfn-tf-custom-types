@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ChannelId: Optional[str]
     Description: Optional[str]
     HlsIngest: Optional[Sequence["_HlsIngest"]]
+    Id: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
 
     @classmethod
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             ChannelId=json_data.get("ChannelId"),
             Description=json_data.get("Description"),
             HlsIngest=json_data.get("HlsIngest"),
+            Id=json_data.get("Id"),
             Tags=json_data.get("Tags"),
         )
 
@@ -109,8 +111,8 @@ _IngestEndpoints = IngestEndpoints
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -120,8 +122,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

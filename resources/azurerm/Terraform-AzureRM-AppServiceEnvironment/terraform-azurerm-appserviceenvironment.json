@@ -32,6 +32,9 @@
             "type": "number",
             "description": "Scale factor for front end instances. Possible values are between `5` and `15`. Defaults to `15`."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternalLoadBalancingMode": {
             "type": "string"
         },
@@ -60,16 +63,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -84,11 +87,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Location",
         "/properties/ResourceGroupName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

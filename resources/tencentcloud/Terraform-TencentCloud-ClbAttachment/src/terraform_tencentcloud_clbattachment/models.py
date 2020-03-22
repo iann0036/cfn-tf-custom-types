@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClbId: Optional[str]
+    Id: Optional[str]
     ListenerId: Optional[str]
     ProtocolType: Optional[str]
     RuleId: Optional[str]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ClbId=json_data.get("ClbId"),
+            Id=json_data.get("Id"),
             ListenerId=json_data.get("ListenerId"),
             ProtocolType=json_data.get("ProtocolType"),
             RuleId=json_data.get("RuleId"),

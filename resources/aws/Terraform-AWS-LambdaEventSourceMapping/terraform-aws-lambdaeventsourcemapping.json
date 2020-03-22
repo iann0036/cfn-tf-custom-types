@@ -12,7 +12,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OnFailure"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -51,6 +52,9 @@
             "type": "string"
         },
         "FunctionName": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "LastModified": {
@@ -111,6 +115,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/FunctionArn",
+        "/properties/Id",
         "/properties/LastModified",
         "/properties/LastProcessingResult",
         "/properties/State",
@@ -118,7 +123,7 @@
         "/properties/Uuid"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

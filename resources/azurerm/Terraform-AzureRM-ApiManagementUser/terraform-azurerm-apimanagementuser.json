@@ -44,6 +44,9 @@
             "type": "string",
             "description": "The first name for this user."
         },
+        "Id": {
+            "type": "string"
+        },
         "LastName": {
             "type": "string",
             "description": "The last name for this user."
@@ -82,10 +85,11 @@
         "UserId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

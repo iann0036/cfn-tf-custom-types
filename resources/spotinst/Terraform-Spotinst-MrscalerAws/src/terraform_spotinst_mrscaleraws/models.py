@@ -52,6 +52,7 @@ class ResourceModel(BaseResourceModel):
     EbsRootVolumeSize: Optional[float]
     Ec2KeyName: Optional[str]
     ExposeClusterId: Optional[bool]
+    Id: Optional[str]
     JobFlowRole: Optional[str]
     KeepJobFlowAlive: Optional[bool]
     LogUri: Optional[str]
@@ -119,6 +120,7 @@ class ResourceModel(BaseResourceModel):
             EbsRootVolumeSize=json_data.get("EbsRootVolumeSize"),
             Ec2KeyName=json_data.get("Ec2KeyName"),
             ExposeClusterId=json_data.get("ExposeClusterId"),
+            Id=json_data.get("Id"),
             JobFlowRole=json_data.get("JobFlowRole"),
             KeepJobFlowAlive=json_data.get("KeepJobFlowAlive"),
             LogUri=json_data.get("LogUri"),
@@ -317,8 +319,8 @@ _CoreScalingDownPolicy = CoreScalingDownPolicy
 
 @dataclass
 class Dimensions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -328,8 +330,8 @@ class Dimensions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -393,8 +395,8 @@ _CoreScalingUpPolicy = CoreScalingUpPolicy
 
 @dataclass
 class Dimensions2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -404,8 +406,8 @@ class Dimensions2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -641,8 +643,8 @@ _TaskScalingDownPolicy = TaskScalingDownPolicy
 
 @dataclass
 class Dimensions3:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -652,8 +654,8 @@ class Dimensions3:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -717,8 +719,8 @@ _TaskScalingUpPolicy = TaskScalingUpPolicy
 
 @dataclass
 class Dimensions4:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -728,8 +730,8 @@ class Dimensions4:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

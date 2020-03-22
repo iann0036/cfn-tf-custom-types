@@ -12,14 +12,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Cpu"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Memory": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Memory"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -127,6 +131,9 @@
             "type": "boolean",
             "description": "True if this VDC is enabled for use by the organization VDCs. Default is true."
         },
+        "Id": {
+            "type": "string"
+        },
         "IncludeVmMemoryOverhead": {
             "type": "boolean",
             "description": "Indicates if the Flex VDC should include memory overhead into its accounting for admission control. Required with the Flex allocation model."
@@ -142,16 +149,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Key value map of metadata to assign to this VDC."
@@ -229,10 +236,11 @@
         "ProviderVdcName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

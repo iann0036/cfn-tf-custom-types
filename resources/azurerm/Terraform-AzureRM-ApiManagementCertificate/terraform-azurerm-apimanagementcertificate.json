@@ -39,6 +39,9 @@
         "Expiration": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the API Management Certificate. Changing this forces a new resource to be created."
@@ -71,11 +74,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Expiration",
+        "/properties/Id",
         "/properties/Subject",
         "/properties/Thumbprint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

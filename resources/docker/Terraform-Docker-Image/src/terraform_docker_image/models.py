@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     KeepLocally: Optional[bool]
     Latest: Optional[str]
     Name: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             KeepLocally=json_data.get("KeepLocally"),
             Latest=json_data.get("Latest"),
             Name=json_data.get("Name"),

@@ -203,6 +203,9 @@
             "type": "boolean",
             "description": "A boolean that indicates all objects should be deleted from the bucket so that the bucket can be destroyed without error. These objects are not recoverable. Defaults to \"false\"."
         },
+        "Id": {
+            "type": "string"
+        },
         "IntranetEndpoint": {
             "type": "string"
         },
@@ -231,16 +234,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the bucket. The items are no more than 10 for a bucket."
@@ -322,12 +325,13 @@
         "/properties/tfcfnid",
         "/properties/CreationDate",
         "/properties/ExtranetEndpoint",
+        "/properties/Id",
         "/properties/IntranetEndpoint",
         "/properties/Location",
         "/properties/Owner"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

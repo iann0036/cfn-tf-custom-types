@@ -359,7 +359,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RollConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -462,6 +463,9 @@
         "DesiredCapacity": {
             "type": "number",
             "description": "The desired number of instances the group should have at any time."
+        },
+        "Id": {
+            "type": "string"
         },
         "LowPrioritySizes": {
             "type": "array",
@@ -658,10 +662,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

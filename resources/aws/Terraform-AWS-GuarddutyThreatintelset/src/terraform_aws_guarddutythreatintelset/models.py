@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Activate: Optional[bool]
     DetectorId: Optional[str]
     Format: Optional[str]
+    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             Activate=json_data.get("Activate"),
             DetectorId=json_data.get("DetectorId"),
             Format=json_data.get("Format"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
         )

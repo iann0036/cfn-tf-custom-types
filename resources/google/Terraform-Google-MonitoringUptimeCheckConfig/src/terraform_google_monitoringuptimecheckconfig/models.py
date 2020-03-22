@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     IsInternal: Optional[bool]
     Name: Optional[str]
     Period: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             IsInternal=json_data.get("IsInternal"),
             Name=json_data.get("Name"),
             Period=json_data.get("Period"),
@@ -139,8 +141,8 @@ _HttpCheck = HttpCheck
 
 @dataclass
 class Headers:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -150,8 +152,8 @@ class Headers:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -233,8 +235,8 @@ _MonitoredResource = MonitoredResource
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -244,8 +246,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Entity: Optional[Sequence["_Entity"]]
+    Id: Optional[str]
     PartitionKey: Optional[str]
     RowKey: Optional[str]
     StorageAccountName: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Entity=json_data.get("Entity"),
+            Id=json_data.get("Id"),
             PartitionKey=json_data.get("PartitionKey"),
             RowKey=json_data.get("RowKey"),
             StorageAccountName=json_data.get("StorageAccountName"),
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Entity:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class Entity:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

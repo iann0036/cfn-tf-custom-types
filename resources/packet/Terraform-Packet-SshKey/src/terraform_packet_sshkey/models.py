@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Created: Optional[str]
     Fingerprint: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     OwnerId: Optional[str]
     PublicKey: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Created=json_data.get("Created"),
             Fingerprint=json_data.get("Fingerprint"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OwnerId=json_data.get("OwnerId"),
             PublicKey=json_data.get("PublicKey"),

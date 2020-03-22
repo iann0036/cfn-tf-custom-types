@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The content type of the storage blob. Cannot be defined if `source_uri` is defined. Defaults to `application/octet-stream`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Metadata": {
             "type": "array",
             "insertionOrder": true,
@@ -43,16 +46,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of custom blob metadata."
@@ -109,10 +112,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

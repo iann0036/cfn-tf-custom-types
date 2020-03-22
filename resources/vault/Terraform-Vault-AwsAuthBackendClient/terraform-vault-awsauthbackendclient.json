@@ -28,6 +28,9 @@
             "type": "string",
             "description": "The value to require in the\n`X-Vault-AWS-IAM-Server-ID` header as part of `GetCallerIdentity` requests\nthat are used in the IAM auth method."
         },
+        "Id": {
+            "type": "string"
+        },
         "SecretKey": {
             "type": "string",
             "description": "The AWS secret key that Vault should use for the\nauth backend."
@@ -40,10 +43,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

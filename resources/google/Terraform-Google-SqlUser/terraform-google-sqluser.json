@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The host the user can connect from. This is only supported\nfor MySQL instances. Don't set this field for PostgreSQL instances.\nCan be an IP address. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Instance": {
             "type": "string",
             "description": "The name of the Cloud SQL instance. Changing this\nforces a new resource to be created."
@@ -35,10 +38,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

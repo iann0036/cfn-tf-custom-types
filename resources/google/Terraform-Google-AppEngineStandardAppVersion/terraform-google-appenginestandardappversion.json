@@ -19,7 +19,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Zip"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -60,14 +61,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Script"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "StaticFiles": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StaticFiles"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -165,16 +168,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -210,18 +213,21 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
+        },
+        "Id": {
+            "type": "string"
         },
         "InstanceClass": {
             "type": "string"
@@ -323,10 +329,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Name"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

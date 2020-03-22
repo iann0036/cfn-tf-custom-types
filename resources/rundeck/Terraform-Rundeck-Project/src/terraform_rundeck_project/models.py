@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DefaultNodeFileCopierPlugin: Optional[str]
     Description: Optional[str]
     ExtraConfig: Optional[Sequence["_ExtraConfig"]]
+    Id: Optional[str]
     Name: Optional[str]
     SshAuthenticationType: Optional[str]
     SshKeyFilePath: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             DefaultNodeFileCopierPlugin=json_data.get("DefaultNodeFileCopierPlugin"),
             Description=json_data.get("Description"),
             ExtraConfig=json_data.get("ExtraConfig"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SshAuthenticationType=json_data.get("SshAuthenticationType"),
             SshKeyFilePath=json_data.get("SshKeyFilePath"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ExtraConfig:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class ExtraConfig:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -119,8 +121,8 @@ _ResourceModelSource = ResourceModelSource
 
 @dataclass
 class Config:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -130,8 +132,8 @@ class Config:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

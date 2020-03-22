@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Provide description for your DNS server."
         },
+        "Id": {
+            "type": "string"
+        },
         "NameServers": {
             "type": "array",
             "insertionOrder": true,
@@ -38,10 +41,11 @@
         "Description"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

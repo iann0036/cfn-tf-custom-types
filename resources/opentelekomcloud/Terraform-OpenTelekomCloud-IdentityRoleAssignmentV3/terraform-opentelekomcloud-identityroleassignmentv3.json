@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The group to assign the role to."
         },
+        "Id": {
+            "type": "string"
+        },
         "ProjectId": {
             "type": "string",
             "description": "The project to assign the role in."
@@ -34,10 +37,11 @@
         "RoleId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

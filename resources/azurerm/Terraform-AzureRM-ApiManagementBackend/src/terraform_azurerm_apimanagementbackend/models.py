@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApiManagementName: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Protocol: Optional[str]
     ResourceGroupName: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApiManagementName=json_data.get("ApiManagementName"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Protocol=json_data.get("Protocol"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
@@ -111,8 +113,8 @@ _Credentials = Credentials
 
 @dataclass
 class Header:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class Header:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -133,8 +135,8 @@ _Header = Header
 
 @dataclass
 class Query:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -144,8 +146,8 @@ class Query:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

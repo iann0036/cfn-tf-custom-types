@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AutomaticAttributesJson: Optional[str]
     DefaultAttributesJson: Optional[str]
     EnvironmentName: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NormalAttributesJson: Optional[str]
     OverrideAttributesJson: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             AutomaticAttributesJson=json_data.get("AutomaticAttributesJson"),
             DefaultAttributesJson=json_data.get("DefaultAttributesJson"),
             EnvironmentName=json_data.get("EnvironmentName"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NormalAttributesJson=json_data.get("NormalAttributesJson"),
             OverrideAttributesJson=json_data.get("OverrideAttributesJson"),

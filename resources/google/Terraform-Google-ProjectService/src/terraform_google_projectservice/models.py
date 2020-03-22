@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DisableDependentServices: Optional[bool]
     DisableOnDestroy: Optional[bool]
+    Id: Optional[str]
     Project: Optional[str]
     Service: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DisableDependentServices=json_data.get("DisableDependentServices"),
             DisableOnDestroy=json_data.get("DisableOnDestroy"),
+            Id=json_data.get("Id"),
             Project=json_data.get("Project"),
             Service=json_data.get("Service"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

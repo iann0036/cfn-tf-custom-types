@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppliedAcls: Optional[Sequence[str]]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence[str]]
     VirtualNics: Optional[Sequence[str]]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AppliedAcls=json_data.get("AppliedAcls"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             VirtualNics=json_data.get("VirtualNics"),

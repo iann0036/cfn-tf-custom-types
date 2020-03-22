@@ -35,29 +35,15 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 
 @dataclass
 class ResourceModel(BaseResourceModel):
-    tfcfnid: Optional[str]
-    Adaptive: Optional[str]
-    AdaptiveLimit: Optional[float]
-    Compatibility: Optional[str]
-    Database: Optional[str]
-    DefaultsFrom: Optional[str]
-    Destination: Optional[str]
-    Filename: Optional[str]
-    Interval: Optional[float]
-    IpDscp: Optional[float]
-    ManualResume: Optional[str]
-    Mode: Optional[str]
-    Name: Optional[str]
-    Parent: Optional[str]
-    Password: Optional[str]
-    Receive: Optional[str]
-    ReceiveDisable: Optional[str]
-    Reverse: Optional[str]
-    Send: Optional[str]
-    TimeUntilUp: Optional[float]
-    Timeout: Optional[float]
-    Transparent: Optional[str]
-    Username: Optional[str]
+    TPSCode: Optional[str]
+    Title: Optional[str]
+    CoverSheetIncluded: Optional[bool]
+    DueDate: Optional[str]
+    ApprovalDate: Optional[str]
+    Memo: Optional["_Memo"]
+    SecondCopyOfMemo: Optional["_Memo"]
+    TestCode: Optional[str]
+    Authors: Optional[Sequence[str]]
 
     @classmethod
     def _deserialize(
@@ -67,33 +53,41 @@ class ResourceModel(BaseResourceModel):
         if not json_data:
             return None
         return cls(
-            tfcfnid=json_data.get("tfcfnid"),
-            Adaptive=json_data.get("Adaptive"),
-            AdaptiveLimit=json_data.get("AdaptiveLimit"),
-            Compatibility=json_data.get("Compatibility"),
-            Database=json_data.get("Database"),
-            DefaultsFrom=json_data.get("DefaultsFrom"),
-            Destination=json_data.get("Destination"),
-            Filename=json_data.get("Filename"),
-            Interval=json_data.get("Interval"),
-            IpDscp=json_data.get("IpDscp"),
-            ManualResume=json_data.get("ManualResume"),
-            Mode=json_data.get("Mode"),
-            Name=json_data.get("Name"),
-            Parent=json_data.get("Parent"),
-            Password=json_data.get("Password"),
-            Receive=json_data.get("Receive"),
-            ReceiveDisable=json_data.get("ReceiveDisable"),
-            Reverse=json_data.get("Reverse"),
-            Send=json_data.get("Send"),
-            TimeUntilUp=json_data.get("TimeUntilUp"),
-            Timeout=json_data.get("Timeout"),
-            Transparent=json_data.get("Transparent"),
-            Username=json_data.get("Username"),
+            TPSCode=json_data.get("TPSCode"),
+            Title=json_data.get("Title"),
+            CoverSheetIncluded=json_data.get("CoverSheetIncluded"),
+            DueDate=json_data.get("DueDate"),
+            ApprovalDate=json_data.get("ApprovalDate"),
+            Memo=Memo._deserialize(json_data.get("Memo")),
+            SecondCopyOfMemo=Memo._deserialize(json_data.get("SecondCopyOfMemo")),
+            TestCode=json_data.get("TestCode"),
+            Authors=json_data.get("Authors"),
         )
 
 
 # work around possible type aliasing issues when variable has same name as a model
 _ResourceModel = ResourceModel
+
+
+@dataclass
+class Memo:
+    Heading: Optional[str]
+    Body: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Memo"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Memo"]:
+        if not json_data:
+            return None
+        return cls(
+            Heading=json_data.get("Heading"),
+            Body=json_data.get("Body"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Memo = Memo
 
 

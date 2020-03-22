@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     EnableGpxe: Optional[bool]
     EnableMenu: Optional[bool]
     FetchableFiles: Optional[str]
+    Id: Optional[str]
     KernelOptions: Optional[str]
     KernelOptionsPost: Optional[str]
     Kickstart: Optional[str]
@@ -84,6 +85,7 @@ class ResourceModel(BaseResourceModel):
             EnableGpxe=json_data.get("EnableGpxe"),
             EnableMenu=json_data.get("EnableMenu"),
             FetchableFiles=json_data.get("FetchableFiles"),
+            Id=json_data.get("Id"),
             KernelOptions=json_data.get("KernelOptions"),
             KernelOptionsPost=json_data.get("KernelOptionsPost"),
             Kickstart=json_data.get("Kickstart"),

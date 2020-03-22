@@ -12,6 +12,9 @@
             "type": "number",
             "description": "ID of the Floating IP.\n- `server_id` - (Required, int) Server to assign the Floating IP to."
         },
+        "Id": {
+            "type": "string"
+        },
         "ServerId": {
             "type": "number",
             "description": "Server to assign the Floating IP to."
@@ -23,10 +26,11 @@
         "ServerId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

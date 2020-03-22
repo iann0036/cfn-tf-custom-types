@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CloudwatchRoleArn: Optional[str]
+    Id: Optional[str]
     ThrottleSettings: Optional[Sequence["_ThrottleSettings"]]
 
     @classmethod
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CloudwatchRoleArn=json_data.get("CloudwatchRoleArn"),
+            Id=json_data.get("Id"),
             ThrottleSettings=json_data.get("ThrottleSettings"),
         )
 

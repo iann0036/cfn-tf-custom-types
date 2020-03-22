@@ -77,6 +77,9 @@
         "DeviceProvisioningHostName": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IdScope": {
             "type": "string"
         },
@@ -102,16 +105,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -146,11 +149,12 @@
         "/properties/tfcfnid",
         "/properties/AllocationPolicy",
         "/properties/DeviceProvisioningHostName",
+        "/properties/Id",
         "/properties/IdScope",
         "/properties/ServiceOperationsHostName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

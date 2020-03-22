@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     HtmlUrl: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             HtmlUrl=json_data.get("HtmlUrl"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

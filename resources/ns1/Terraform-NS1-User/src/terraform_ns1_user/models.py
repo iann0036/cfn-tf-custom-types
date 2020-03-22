@@ -55,6 +55,7 @@ class ResourceModel(BaseResourceModel):
     DnsZonesAllowByDefault: Optional[bool]
     DnsZonesDeny: Optional[Sequence[str]]
     Email: Optional[str]
+    Id: Optional[str]
     IpWhitelist: Optional[Sequence[str]]
     IpWhitelistStrict: Optional[bool]
     IpamManageIpam: Optional[bool]
@@ -97,6 +98,7 @@ class ResourceModel(BaseResourceModel):
             DnsZonesAllowByDefault=json_data.get("DnsZonesAllowByDefault"),
             DnsZonesDeny=json_data.get("DnsZonesDeny"),
             Email=json_data.get("Email"),
+            Id=json_data.get("Id"),
             IpWhitelist=json_data.get("IpWhitelist"),
             IpWhitelistStrict=json_data.get("IpWhitelistStrict"),
             IpamManageIpam=json_data.get("IpamManageIpam"),
@@ -119,8 +121,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Notify:
-    Key: Optional[str]
-    Value: Optional[bool]
+    MapKey: Optional[str]
+    MapValue: Optional[bool]
 
     @classmethod
     def _deserialize(
@@ -130,8 +132,8 @@ class Notify:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

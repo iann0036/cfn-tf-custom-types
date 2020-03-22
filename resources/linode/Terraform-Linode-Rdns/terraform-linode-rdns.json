@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The Public IPv4 or IPv6 address that will receive the `PTR` record.  A matching `A` or `AAAA` record must exist."
         },
+        "Id": {
+            "type": "string"
+        },
         "Rdns": {
             "type": "string",
             "description": "The name of the RDNS address."
@@ -23,10 +26,11 @@
         "Rdns"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

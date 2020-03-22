@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     ForceDestroy: Optional[bool]
     HostKey: Optional[str]
     HostKeyFingerprint: Optional[str]
+    Id: Optional[str]
     IdentityProviderType: Optional[str]
     InvocationRole: Optional[str]
     LoggingRole: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             ForceDestroy=json_data.get("ForceDestroy"),
             HostKey=json_data.get("HostKey"),
             HostKeyFingerprint=json_data.get("HostKeyFingerprint"),
+            Id=json_data.get("Id"),
             IdentityProviderType=json_data.get("IdentityProviderType"),
             InvocationRole=json_data.get("InvocationRole"),
             LoggingRole=json_data.get("LoggingRole"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

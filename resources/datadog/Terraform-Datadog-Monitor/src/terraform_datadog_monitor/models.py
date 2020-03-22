@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     EnableLogsSample: Optional[bool]
     EscalationMessage: Optional[str]
     EvaluationDelay: Optional[float]
+    Id: Optional[str]
     IncludeTags: Optional[bool]
     Locked: Optional[bool]
     Message: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             EnableLogsSample=json_data.get("EnableLogsSample"),
             EscalationMessage=json_data.get("EscalationMessage"),
             EvaluationDelay=json_data.get("EvaluationDelay"),
+            Id=json_data.get("Id"),
             IncludeTags=json_data.get("IncludeTags"),
             Locked=json_data.get("Locked"),
             Message=json_data.get("Message"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Silenced:
-    Key: Optional[str]
-    Value: Optional[float]
+    MapKey: Optional[str]
+    MapValue: Optional[float]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class Silenced:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -117,8 +119,8 @@ _Silenced = Silenced
 
 @dataclass
 class ThresholdWindows:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class ThresholdWindows:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -139,8 +141,8 @@ _ThresholdWindows = ThresholdWindows
 
 @dataclass
 class Thresholds:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -150,8 +152,8 @@ class Thresholds:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

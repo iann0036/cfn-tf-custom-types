@@ -37,6 +37,9 @@
             "type": "boolean",
             "description": "A boolean flag which reflects whether persistence entries will be synchronized to the HA peer."
         },
+        "Id": {
+            "type": "string"
+        },
         "PersistenceShared": {
             "type": "boolean",
             "description": "A boolean flag which reflects whether the cookie persistence is private or shared."
@@ -64,10 +67,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

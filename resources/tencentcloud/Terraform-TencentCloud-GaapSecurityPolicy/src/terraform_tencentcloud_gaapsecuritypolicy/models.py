@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
     Enable: Optional[bool]
+    Id: Optional[str]
     ProxyId: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
             Enable=json_data.get("Enable"),
+            Id=json_data.get("Id"),
             ProxyId=json_data.get("ProxyId"),
         )
 

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     DrgId: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
+    Id: Optional[str]
     IsCrossTenancyPeering: Optional[bool]
     PeerId: Optional[str]
     PeerRegionName: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             DrgId=json_data.get("DrgId"),
             FreeformTags=json_data.get("FreeformTags"),
+            Id=json_data.get("Id"),
             IsCrossTenancyPeering=json_data.get("IsCrossTenancyPeering"),
             PeerId=json_data.get("PeerId"),
             PeerRegionName=json_data.get("PeerRegionName"),
@@ -81,8 +83,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -92,8 +94,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -103,8 +105,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

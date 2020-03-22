@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The description of the security group rule. The description can be up to 1 to 512 characters in length. Defaults to null."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpProtocol": {
             "type": "string",
             "description": "The protocol. Can be `tcp`, `udp`, `icmp`, `gre` or `all`."
@@ -60,10 +63,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

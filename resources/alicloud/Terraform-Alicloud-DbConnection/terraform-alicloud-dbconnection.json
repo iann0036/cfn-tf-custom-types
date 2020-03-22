@@ -15,6 +15,9 @@
         "ConnectionString": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "The Id of instance that can run database."
@@ -34,10 +37,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ConnectionString",
+        "/properties/Id",
         "/properties/IpAddress"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

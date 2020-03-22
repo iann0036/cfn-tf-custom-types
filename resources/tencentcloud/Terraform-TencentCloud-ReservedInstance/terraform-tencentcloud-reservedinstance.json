@@ -15,6 +15,9 @@
         "EndTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceCount": {
             "type": "number",
             "description": "Number of reserved instances to be purchased."
@@ -34,11 +37,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/EndTime",
+        "/properties/Id",
         "/properties/StartTime",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

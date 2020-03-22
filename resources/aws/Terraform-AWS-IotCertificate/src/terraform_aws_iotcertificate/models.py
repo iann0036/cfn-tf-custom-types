@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     CertificatePem: Optional[str]
     Csr: Optional[str]
+    Id: Optional[str]
     PrivateKey: Optional[str]
     PublicKey: Optional[str]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             CertificatePem=json_data.get("CertificatePem"),
             Csr=json_data.get("Csr"),
+            Id=json_data.get("Id"),
             PrivateKey=json_data.get("PrivateKey"),
             PublicKey=json_data.get("PublicKey"),
         )

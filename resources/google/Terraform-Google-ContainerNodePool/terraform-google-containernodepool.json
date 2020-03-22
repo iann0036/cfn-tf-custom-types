@@ -72,16 +72,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -98,16 +98,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -158,21 +158,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SandboxConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ShieldedInstanceConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ShieldedInstanceConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "WorkloadMetadataConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/WorkloadMetadataConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -239,6 +242,9 @@
         "Cluster": {
             "type": "string",
             "description": "The cluster to create the node pool for. Cluster must be present in `location` provided for zonal clusters."
+        },
+        "Id": {
+            "type": "string"
         },
         "InitialNodeCount": {
             "type": "number",
@@ -343,10 +349,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/InstanceGroupUrls"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

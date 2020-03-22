@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The address prefix to use for the subnet."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpConfigurations": {
             "type": "array",
             "insertionOrder": true,
@@ -48,10 +51,11 @@
         "VirtualNetworkName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

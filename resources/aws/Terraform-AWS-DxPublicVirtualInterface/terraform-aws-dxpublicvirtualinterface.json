@@ -49,6 +49,9 @@
         "CustomerAddress": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -66,16 +69,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -99,10 +102,11 @@
         "/properties/tfcfnid",
         "/properties/AmazonSideAsn",
         "/properties/Arn",
-        "/properties/AwsDevice"
+        "/properties/AwsDevice",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

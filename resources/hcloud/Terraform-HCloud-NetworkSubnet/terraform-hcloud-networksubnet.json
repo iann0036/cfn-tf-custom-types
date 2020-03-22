@@ -11,6 +11,9 @@
         "Gateway": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpRange": {
             "type": "string",
             "description": "Range to allocate IPs from. Must be a subnet of the ip_range of the Network and must not overlap with any other subnets or with any destinations in routes.\n- `network_zone` - (Required, string) Name of network zone."
@@ -37,10 +40,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Gateway"
+        "/properties/Gateway",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

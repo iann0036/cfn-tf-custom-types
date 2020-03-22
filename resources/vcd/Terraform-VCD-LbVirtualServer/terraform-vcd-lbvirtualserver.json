@@ -44,6 +44,9 @@
             "type": "boolean",
             "description": "Defines if the virtual server is enabled. Default `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "Set the IP address that the load balancer listens on."
@@ -82,10 +85,11 @@
         "Protocol"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

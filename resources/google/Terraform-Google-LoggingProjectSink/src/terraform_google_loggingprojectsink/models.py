@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Destination: Optional[str]
     Filter: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     UniqueWriterIdentity: Optional[bool]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Destination=json_data.get("Destination"),
             Filter=json_data.get("Filter"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             UniqueWriterIdentity=json_data.get("UniqueWriterIdentity"),

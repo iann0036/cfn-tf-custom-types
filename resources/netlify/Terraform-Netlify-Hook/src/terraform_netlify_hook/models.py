@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Data: Optional[Sequence["_Data"]]
     Event: Optional[str]
+    Id: Optional[str]
     SiteId: Optional[str]
     Type: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Data=json_data.get("Data"),
             Event=json_data.get("Event"),
+            Id=json_data.get("Id"),
             SiteId=json_data.get("SiteId"),
             Type=json_data.get("Type"),
         )
@@ -63,8 +65,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Data:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -74,8 +76,8 @@ class Data:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

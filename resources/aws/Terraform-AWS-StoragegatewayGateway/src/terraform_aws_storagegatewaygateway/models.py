@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     GatewayName: Optional[str]
     GatewayTimezone: Optional[str]
     GatewayType: Optional[str]
+    Id: Optional[str]
     MediumChangerType: Optional[str]
     SmbGuestPassword: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             GatewayName=json_data.get("GatewayName"),
             GatewayTimezone=json_data.get("GatewayTimezone"),
             GatewayType=json_data.get("GatewayType"),
+            Id=json_data.get("Id"),
             MediumChangerType=json_data.get("MediumChangerType"),
             SmbGuestPassword=json_data.get("SmbGuestPassword"),
             Tags=json_data.get("Tags"),
@@ -83,8 +85,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

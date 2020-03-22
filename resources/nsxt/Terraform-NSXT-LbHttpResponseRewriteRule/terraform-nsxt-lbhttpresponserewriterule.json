@@ -230,6 +230,9 @@
             "type": "string",
             "description": "The display name of this resource. Defaults to ID if not set."
         },
+        "Id": {
+            "type": "string"
+        },
         "MatchStrategy": {
             "type": "string",
             "description": "Strategy to define how load balancer rule is considered a match when multiple match conditions are specified in one rule. If set to ALL, then load balancer rule is considered a match only if all the conditions match. If set to ANY, then load balancer rule is considered a match if any one of the conditions match."
@@ -322,10 +325,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

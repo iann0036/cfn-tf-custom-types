@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     HealthCheckMethod: Optional[str]
     HealthCheckPath: Optional[str]
     HealthCheckStatusCodes: Optional[Sequence[float]]
+    Id: Optional[str]
     Interval: Optional[float]
     ListenerId: Optional[str]
     Path: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             HealthCheckMethod=json_data.get("HealthCheckMethod"),
             HealthCheckPath=json_data.get("HealthCheckPath"),
             HealthCheckStatusCodes=json_data.get("HealthCheckStatusCodes"),
+            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             ListenerId=json_data.get("ListenerId"),
             Path=json_data.get("Path"),

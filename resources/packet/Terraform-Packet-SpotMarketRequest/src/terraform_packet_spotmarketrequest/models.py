@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DevicesMax: Optional[float]
     DevicesMin: Optional[float]
     Facilities: Optional[Sequence[str]]
+    Id: Optional[str]
     MaxBidPrice: Optional[float]
     ProjectId: Optional[str]
     WaitForDevices: Optional[bool]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             DevicesMax=json_data.get("DevicesMax"),
             DevicesMin=json_data.get("DevicesMin"),
             Facilities=json_data.get("Facilities"),
+            Id=json_data.get("Id"),
             MaxBidPrice=json_data.get("MaxBidPrice"),
             ProjectId=json_data.get("ProjectId"),
             WaitForDevices=json_data.get("WaitForDevices"),

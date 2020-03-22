@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClusterName: Optional[str]
     HotCachePeriod: Optional[str]
+    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ClusterName=json_data.get("ClusterName"),
             HotCachePeriod=json_data.get("HotCachePeriod"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

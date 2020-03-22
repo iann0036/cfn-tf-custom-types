@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BandwidthPackageId: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
 
     @classmethod
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BandwidthPackageId=json_data.get("BandwidthPackageId"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
         )
 

@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The source host of the user. Defaults to \"localhost\"."
         },
+        "Id": {
+            "type": "string"
+        },
         "Password": {
             "type": "string",
             "description": "Deprecated alias of `plaintext_password`, whose value is *stored as plaintext in state*. Prefer to use `plaintext_password` instead, which stores the password as an unsalted hash. Conflicts with `auth_plugin`."
@@ -38,10 +41,11 @@
         "User"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

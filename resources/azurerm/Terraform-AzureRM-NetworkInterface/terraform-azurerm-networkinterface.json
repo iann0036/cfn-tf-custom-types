@@ -88,6 +88,9 @@
             "type": "boolean",
             "description": "Should IP Forwarding be enabled? Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternalDnsNameLabel": {
             "type": "string",
             "description": "The (relative) DNS Name used for internal communications between Virtual Machines in the same Virtual Network."
@@ -124,16 +127,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -162,13 +165,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AppliedDnsServers",
+        "/properties/Id",
         "/properties/MacAddress",
         "/properties/PrivateIpAddress",
         "/properties/PrivateIpAddresses",
         "/properties/VirtualMachineId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DirectoryPermission: Optional[str]
     FilePermission: Optional[str]
     Filename: Optional[str]
+    Id: Optional[str]
     SensitiveContent: Optional[str]
 
     @classmethod
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             DirectoryPermission=json_data.get("DirectoryPermission"),
             FilePermission=json_data.get("FilePermission"),
             Filename=json_data.get("Filename"),
+            Id=json_data.get("Id"),
             SensitiveContent=json_data.get("SensitiveContent"),
         )
 

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DeleteTargetServer: Optional[bool]
     Description: Optional[str]
     GroupId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PrimaryIpAddress: Optional[str]
     PrimarySubnetId: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             DeleteTargetServer=json_data.get("DeleteTargetServer"),
             Description=json_data.get("Description"),
             GroupId=json_data.get("GroupId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrimaryIpAddress=json_data.get("PrimaryIpAddress"),
             PrimarySubnetId=json_data.get("PrimarySubnetId"),

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Device: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     PciAddress: Optional[str]
     Region: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Device=json_data.get("Device"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             PciAddress=json_data.get("PciAddress"),
             Region=json_data.get("Region"),

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DhcpSnoopingEnabled: Optional[bool]
     DisplayName: Optional[str]
+    Id: Optional[str]
     Revision: Optional[float]
     VmToolsEnabled: Optional[bool]
     Tag: Optional[Sequence["_Tag"]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DhcpSnoopingEnabled=json_data.get("DhcpSnoopingEnabled"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             VmToolsEnabled=json_data.get("VmToolsEnabled"),
             Tag=json_data.get("Tag"),

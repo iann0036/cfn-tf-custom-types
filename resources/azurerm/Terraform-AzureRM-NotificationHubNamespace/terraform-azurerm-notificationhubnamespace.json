@@ -32,6 +32,9 @@
             "type": "boolean",
             "description": "Is this Notification Hub Namespace enabled? Defaults to `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "The Azure Region in which this Notification Hub Namespace should be created."
@@ -69,10 +72,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/ServicebusEndpoint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

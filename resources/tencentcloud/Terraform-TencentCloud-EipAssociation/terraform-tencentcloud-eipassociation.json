@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The id of eip."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "The CVM or CLB instance id going to bind with the eip. This field is conflict with `network_interface_id` and `private_ip fields`."
@@ -30,10 +33,11 @@
         "EipId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

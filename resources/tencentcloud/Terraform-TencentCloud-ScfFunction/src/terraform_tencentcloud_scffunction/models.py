@@ -51,6 +51,7 @@ class ResourceModel(BaseResourceModel):
     ErrNo: Optional[float]
     Handler: Optional[str]
     Host: Optional[str]
+    Id: Optional[str]
     InstallDependency: Optional[bool]
     L5Enable: Optional[bool]
     MemSize: Optional[float]
@@ -94,6 +95,7 @@ class ResourceModel(BaseResourceModel):
             ErrNo=json_data.get("ErrNo"),
             Handler=json_data.get("Handler"),
             Host=json_data.get("Host"),
+            Id=json_data.get("Id"),
             InstallDependency=json_data.get("InstallDependency"),
             L5Enable=json_data.get("L5Enable"),
             MemSize=json_data.get("MemSize"),
@@ -121,8 +123,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Environment:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -132,8 +134,8 @@ class Environment:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -143,8 +145,8 @@ _Environment = Environment
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -154,8 +156,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

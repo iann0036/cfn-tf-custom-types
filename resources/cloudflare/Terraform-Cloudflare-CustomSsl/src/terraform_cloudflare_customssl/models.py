@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CustomSslOptions: Optional[Sequence["_CustomSslOptions"]]
     ExpiresOn: Optional[str]
     Hosts: Optional[Sequence[str]]
+    Id: Optional[str]
     Issuer: Optional[str]
     ModifiedOn: Optional[str]
     Priority: Optional[float]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             CustomSslOptions=json_data.get("CustomSslOptions"),
             ExpiresOn=json_data.get("ExpiresOn"),
             Hosts=json_data.get("Hosts"),
+            Id=json_data.get("Id"),
             Issuer=json_data.get("Issuer"),
             ModifiedOn=json_data.get("ModifiedOn"),
             Priority=json_data.get("Priority"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomSslOptions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class CustomSslOptions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

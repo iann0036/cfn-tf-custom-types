@@ -35,6 +35,9 @@
             "type": "string",
             "description": "The folder\u2019s display name.\nA folder\u2019s display name must be unique amongst its siblings, e.g. no two folders with the same parent can share the same display name. The display name must start and end with a letter or digit, may contain letters, digits, spaces, hyphens and underscores and can be no longer than 30 characters."
         },
+        "Id": {
+            "type": "string"
+        },
         "LifecycleState": {
             "type": "string"
         },
@@ -57,11 +60,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/LifecycleState",
         "/properties/Name"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

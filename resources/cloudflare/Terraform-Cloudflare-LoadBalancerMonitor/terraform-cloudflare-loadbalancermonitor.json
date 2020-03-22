@@ -52,6 +52,9 @@
             "type": "boolean",
             "description": "Follow redirects if returned by the origin. Only valid if `type` is \"http\" or \"https\"."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interval": {
             "type": "number",
             "description": "The interval between each health check. Shorter intervals may improve failover time, but will increase load on the origins as we check from multiple locations. Default: 60."
@@ -95,10 +98,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreatedOn",
+        "/properties/Id",
         "/properties/ModifiedOn"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

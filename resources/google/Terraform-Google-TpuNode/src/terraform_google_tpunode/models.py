@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AcceleratorType: Optional[str]
     CidrBlock: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Name: Optional[str]
     Network: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             AcceleratorType=json_data.get("AcceleratorType"),
             CidrBlock=json_data.get("CidrBlock"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Name=json_data.get("Name"),
             Network=json_data.get("Network"),
@@ -81,8 +83,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -92,8 +94,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

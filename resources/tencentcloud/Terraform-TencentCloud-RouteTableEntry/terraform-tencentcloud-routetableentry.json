@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Destination address block."
         },
+        "Id": {
+            "type": "string"
+        },
         "NextHub": {
             "type": "string",
             "description": "ID of next-hop gateway. Note: when 'next_type' is EIP, GatewayId should be '0'."
@@ -37,10 +40,11 @@
         "RouteTableId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

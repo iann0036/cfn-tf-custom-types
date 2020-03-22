@@ -34,6 +34,9 @@
             "type": "string",
             "description": "Specifies the deployment model. The default value is migration indicating migration within a VPC.\nChanging this creates a new group."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of a protection group."
@@ -63,10 +66,11 @@
         "TargetAvailabilityZone"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

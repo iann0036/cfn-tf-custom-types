@@ -50,6 +50,7 @@ class ResourceModel(BaseResourceModel):
     FloatingIpEnabled: Optional[bool]
     HttpProxy: Optional[str]
     HttpsProxy: Optional[str]
+    Id: Optional[str]
     Image: Optional[str]
     InsecureRegistry: Optional[str]
     KeypairId: Optional[str]
@@ -93,6 +94,7 @@ class ResourceModel(BaseResourceModel):
             FloatingIpEnabled=json_data.get("FloatingIpEnabled"),
             HttpProxy=json_data.get("HttpProxy"),
             HttpsProxy=json_data.get("HttpsProxy"),
+            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             InsecureRegistry=json_data.get("InsecureRegistry"),
             KeypairId=json_data.get("KeypairId"),
@@ -121,8 +123,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -132,8 +134,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

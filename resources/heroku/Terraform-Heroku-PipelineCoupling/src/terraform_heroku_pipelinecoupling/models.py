@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     App: Optional[str]
     AppId: Optional[str]
+    Id: Optional[str]
     Pipeline: Optional[str]
     Stage: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             App=json_data.get("App"),
             AppId=json_data.get("AppId"),
+            Id=json_data.get("Id"),
             Pipeline=json_data.get("Pipeline"),
             Stage=json_data.get("Stage"),
         )

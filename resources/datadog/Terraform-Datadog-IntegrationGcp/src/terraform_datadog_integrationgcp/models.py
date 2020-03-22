@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ClientEmail: Optional[str]
     ClientId: Optional[str]
     HostFilters: Optional[str]
+    Id: Optional[str]
     PrivateKey: Optional[str]
     PrivateKeyId: Optional[str]
     ProjectId: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             ClientEmail=json_data.get("ClientEmail"),
             ClientId=json_data.get("ClientId"),
             HostFilters=json_data.get("HostFilters"),
+            Id=json_data.get("Id"),
             PrivateKey=json_data.get("PrivateKey"),
             PrivateKeyId=json_data.get("PrivateKeyId"),
             ProjectId=json_data.get("ProjectId"),

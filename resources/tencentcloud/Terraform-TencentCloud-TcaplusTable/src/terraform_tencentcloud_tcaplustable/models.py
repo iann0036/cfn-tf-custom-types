@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     Description: Optional[str]
     Error: Optional[str]
+    Id: Optional[str]
     IdlId: Optional[str]
     ReservedReadQps: Optional[float]
     ReservedVolume: Optional[float]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             Description=json_data.get("Description"),
             Error=json_data.get("Error"),
+            Id=json_data.get("Id"),
             IdlId=json_data.get("IdlId"),
             ReservedReadQps=json_data.get("ReservedReadQps"),
             ReservedVolume=json_data.get("ReservedVolume"),

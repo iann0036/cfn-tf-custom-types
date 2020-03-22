@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     AllSecurityGroupIds: Optional[Sequence[str]]
     DeviceId: Optional[str]
     DeviceOwner: Optional[str]
+    Id: Optional[str]
     MacAddress: Optional[str]
     Name: Optional[str]
     NetworkId: Optional[str]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             AllSecurityGroupIds=json_data.get("AllSecurityGroupIds"),
             DeviceId=json_data.get("DeviceId"),
             DeviceOwner=json_data.get("DeviceOwner"),
+            Id=json_data.get("Id"),
             MacAddress=json_data.get("MacAddress"),
             Name=json_data.get("Name"),
             NetworkId=json_data.get("NetworkId"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

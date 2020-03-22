@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DisplayText: Optional[str]
     Endip: Optional[str]
     Gateway: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NetworkDomain: Optional[str]
     NetworkOffering: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             DisplayText=json_data.get("DisplayText"),
             Endip=json_data.get("Endip"),
             Gateway=json_data.get("Gateway"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NetworkDomain=json_data.get("NetworkDomain"),
             NetworkOffering=json_data.get("NetworkOffering"),

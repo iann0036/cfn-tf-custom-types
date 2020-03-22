@@ -44,6 +44,9 @@
             "type": "number",
             "description": "ICMP message type."
         },
+        "Id": {
+            "type": "string"
+        },
         "Protocol": {
             "type": "string",
             "description": "Version of ICMP protocol ICMPv4 or ICMPv6."
@@ -66,10 +69,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DefaultService",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

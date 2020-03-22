@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultPort: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Network: Optional[str]
     NetworkEndpointType: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DefaultPort=json_data.get("DefaultPort"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Network=json_data.get("Network"),
             NetworkEndpointType=json_data.get("NetworkEndpointType"),

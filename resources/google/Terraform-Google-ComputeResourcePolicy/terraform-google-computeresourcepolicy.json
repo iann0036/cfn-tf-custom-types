@@ -12,21 +12,25 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RetentionPolicy"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Schedule": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Schedule"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "SnapshotProperties": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SnapshotProperties"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -68,21 +72,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DailySchedule"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HourlySchedule": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HourlySchedule"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "WeeklySchedule": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/WeeklySchedule"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -101,16 +108,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -165,7 +172,9 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/DayOfWeeks"
-                    }
+                    },
+                    "maxItems": 7,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -190,6 +199,9 @@
     "properties": {
         "tfcfnid": {
             "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Name": {
@@ -281,10 +293,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

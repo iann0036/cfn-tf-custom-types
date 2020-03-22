@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     Device: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     Ipv4: Optional[str]
     Iqn: Optional[str]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             Device=json_data.get("Device"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             Ipv4=json_data.get("Ipv4"),
             Iqn=json_data.get("Iqn"),

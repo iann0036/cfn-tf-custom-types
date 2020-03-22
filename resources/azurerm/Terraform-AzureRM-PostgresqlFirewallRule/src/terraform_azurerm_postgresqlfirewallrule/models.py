@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EndIpAddress: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     ServerName: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EndIpAddress=json_data.get("EndIpAddress"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             ServerName=json_data.get("ServerName"),

@@ -41,6 +41,9 @@
             "type": "boolean",
             "description": "enable/disable the rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "Logging": {
             "type": "boolean",
             "description": "enable/disable the logging of rule."
@@ -91,10 +94,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

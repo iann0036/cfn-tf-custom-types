@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Description: Optional[str]
     Egress: Optional[Sequence["_Egress"]]
+    Id: Optional[str]
     Ingress: Optional[Sequence["_Ingress"]]
     Name: Optional[str]
     NamePrefix: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
             Egress=json_data.get("Egress"),
+            Id=json_data.get("Id"),
             Ingress=json_data.get("Ingress"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
@@ -149,8 +151,8 @@ _Ingress = Ingress
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -160,8 +162,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

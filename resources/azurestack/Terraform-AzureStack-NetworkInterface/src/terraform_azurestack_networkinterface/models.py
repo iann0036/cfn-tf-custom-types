@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AppliedDnsServers: Optional[Sequence[str]]
     DnsServers: Optional[Sequence[str]]
     EnableIpForwarding: Optional[bool]
+    Id: Optional[str]
     InternalDnsNameLabel: Optional[str]
     InternalFqdn: Optional[str]
     Location: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             AppliedDnsServers=json_data.get("AppliedDnsServers"),
             DnsServers=json_data.get("DnsServers"),
             EnableIpForwarding=json_data.get("EnableIpForwarding"),
+            Id=json_data.get("Id"),
             InternalDnsNameLabel=json_data.get("InternalDnsNameLabel"),
             InternalFqdn=json_data.get("InternalFqdn"),
             Location=json_data.get("Location"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

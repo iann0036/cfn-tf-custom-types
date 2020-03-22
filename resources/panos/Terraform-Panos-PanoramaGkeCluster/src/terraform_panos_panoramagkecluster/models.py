@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ClusterCredential: Optional[str]
     GcpZone: Optional[str]
     GkeClusterGroup: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             ClusterCredential=json_data.get("ClusterCredential"),
             GcpZone=json_data.get("GcpZone"),
             GkeClusterGroup=json_data.get("GkeClusterGroup"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

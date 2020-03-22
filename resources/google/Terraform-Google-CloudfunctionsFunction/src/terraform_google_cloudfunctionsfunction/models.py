@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EntryPoint: Optional[str]
     EnvironmentVariables: Optional[Sequence["_EnvironmentVariables"]]
     HttpsTriggerUrl: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MaxInstances: Optional[float]
     Name: Optional[str]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             EntryPoint=json_data.get("EntryPoint"),
             EnvironmentVariables=json_data.get("EnvironmentVariables"),
             HttpsTriggerUrl=json_data.get("HttpsTriggerUrl"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             MaxInstances=json_data.get("MaxInstances"),
             Name=json_data.get("Name"),
@@ -97,8 +99,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class EnvironmentVariables:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -108,8 +110,8 @@ class EnvironmentVariables:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -119,8 +121,8 @@ _EnvironmentVariables = EnvironmentVariables
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -130,8 +132,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

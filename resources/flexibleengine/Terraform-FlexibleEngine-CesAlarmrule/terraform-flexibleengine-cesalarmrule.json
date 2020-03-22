@@ -101,7 +101,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Dimensions"
-                    }
+                    },
+                    "maxItems": 3,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -190,6 +192,9 @@
         "AlarmState": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "UpdateTime": {
             "type": "number"
         },
@@ -250,10 +255,11 @@
         "AlarmName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

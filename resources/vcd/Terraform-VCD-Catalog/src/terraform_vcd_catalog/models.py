@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DeleteForce: Optional[bool]
     DeleteRecursive: Optional[bool]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Org: Optional[str]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             DeleteForce=json_data.get("DeleteForce"),
             DeleteRecursive=json_data.get("DeleteRecursive"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Org=json_data.get("Org"),
         )

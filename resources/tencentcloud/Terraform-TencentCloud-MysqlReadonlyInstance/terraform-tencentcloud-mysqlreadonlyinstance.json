@@ -12,6 +12,9 @@
             "type": "number",
             "description": "Auto renew flag. NOTES: Only supported prepay instance."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceName": {
             "type": "string",
             "description": "The name of a mysql instance."
@@ -64,16 +67,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Instance tags."
@@ -99,13 +102,14 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/IntranetIp",
         "/properties/Locked",
         "/properties/Status",
         "/properties/TaskStatus"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

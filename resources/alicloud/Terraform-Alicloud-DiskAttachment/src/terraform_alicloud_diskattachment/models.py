@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeviceName: Optional[str]
     DiskId: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DeviceName=json_data.get("DeviceName"),
             DiskId=json_data.get("DiskId"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
         )
 

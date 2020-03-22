@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Account: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PermissionsGroup: Optional[str]
     Secret: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Account=json_data.get("Account"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PermissionsGroup=json_data.get("PermissionsGroup"),
             Secret=json_data.get("Secret"),

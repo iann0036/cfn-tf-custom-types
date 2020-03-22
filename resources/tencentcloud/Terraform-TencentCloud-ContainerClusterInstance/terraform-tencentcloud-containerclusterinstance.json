@@ -35,6 +35,9 @@
             "type": "string",
             "description": "The docker graph path is going to mounted."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string"
         },
@@ -134,13 +137,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AbnormalReason",
+        "/properties/Id",
         "/properties/InstanceId",
         "/properties/IsNormal",
         "/properties/LanIp",
         "/properties/WanIp"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

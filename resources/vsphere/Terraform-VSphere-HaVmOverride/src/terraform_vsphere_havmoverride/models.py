@@ -50,6 +50,7 @@ class ResourceModel(BaseResourceModel):
     HaVmMonitoringUseClusterDefaults: Optional[bool]
     HaVmRestartPriority: Optional[str]
     HaVmRestartTimeout: Optional[float]
+    Id: Optional[str]
     VirtualMachineId: Optional[str]
 
     @classmethod
@@ -75,6 +76,7 @@ class ResourceModel(BaseResourceModel):
             HaVmMonitoringUseClusterDefaults=json_data.get("HaVmMonitoringUseClusterDefaults"),
             HaVmRestartPriority=json_data.get("HaVmRestartPriority"),
             HaVmRestartTimeout=json_data.get("HaVmRestartTimeout"),
+            Id=json_data.get("Id"),
             VirtualMachineId=json_data.get("VirtualMachineId"),
         )
 

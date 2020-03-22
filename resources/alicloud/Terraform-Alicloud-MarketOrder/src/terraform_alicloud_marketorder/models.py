@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Components: Optional[Sequence["_Components"]]
     CouponId: Optional[str]
     Duration: Optional[float]
+    Id: Optional[str]
     PackageVersion: Optional[str]
     PayType: Optional[str]
     PricingCycle: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Components=json_data.get("Components"),
             CouponId=json_data.get("CouponId"),
             Duration=json_data.get("Duration"),
+            Id=json_data.get("Id"),
             PackageVersion=json_data.get("PackageVersion"),
             PayType=json_data.get("PayType"),
             PricingCycle=json_data.get("PricingCycle"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Components:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Components:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

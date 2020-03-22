@@ -54,6 +54,9 @@
             "type": "string",
             "description": "Used to trigger updates. The only meaningful value is ${md5(file(\"path/to/file\"))}."
         },
+        "Id": {
+            "type": "string"
+        },
         "LastModified": {
             "type": "string"
         },
@@ -64,16 +67,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -106,11 +109,12 @@
         "/properties/tfcfnid",
         "/properties/ContentLength",
         "/properties/Date",
+        "/properties/Id",
         "/properties/LastModified",
         "/properties/TransId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

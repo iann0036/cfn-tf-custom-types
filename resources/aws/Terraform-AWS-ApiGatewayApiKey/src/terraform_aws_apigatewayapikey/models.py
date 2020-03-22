@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CreatedDate: Optional[str]
     Description: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     LastUpdatedDate: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             CreatedDate=json_data.get("CreatedDate"),
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             LastUpdatedDate=json_data.get("LastUpdatedDate"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

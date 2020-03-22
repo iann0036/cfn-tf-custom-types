@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ConnectionPrefix: Optional[str]
     ConnectionString: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     IpAddress: Optional[str]
     Port: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ConnectionPrefix=json_data.get("ConnectionPrefix"),
             ConnectionString=json_data.get("ConnectionString"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             IpAddress=json_data.get("IpAddress"),
             Port=json_data.get("Port"),

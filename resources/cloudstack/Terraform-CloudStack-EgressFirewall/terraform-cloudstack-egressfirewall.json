@@ -47,6 +47,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Managed": {
             "type": "boolean",
             "description": "USE WITH CAUTION! If enabled all the egress firewall\nrules for this network will be managed by this resource. This means it will\ndelete all firewall rules that are not in your config! (defaults false)."
@@ -71,10 +74,11 @@
         "NetworkId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Href: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ServerUuids: Optional[Sequence[str]]
     SizeGb: Optional[float]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Href=json_data.get("Href"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ServerUuids=json_data.get("ServerUuids"),
             SizeGb=json_data.get("SizeGb"),

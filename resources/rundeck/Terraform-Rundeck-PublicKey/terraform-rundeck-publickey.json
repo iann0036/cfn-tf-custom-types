@@ -12,6 +12,9 @@
             "type": "boolean",
             "description": "True if the key should be deleted when the resource is deleted.\nDefaults to true if key_material is provided in the configuration."
         },
+        "Id": {
+            "type": "string"
+        },
         "KeyMaterial": {
             "type": "string",
             "description": "The public key string to store, serialized in any way that is accepted\nby OpenSSH. If this is not included, ``key_material`` becomes an attribute that can be used\nto read the already-existing key material in the Rundeck store."
@@ -31,10 +34,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Delete",
+        "/properties/Id",
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

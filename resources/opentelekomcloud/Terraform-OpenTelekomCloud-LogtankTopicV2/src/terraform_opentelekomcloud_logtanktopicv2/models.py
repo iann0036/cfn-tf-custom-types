@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     GroupId: Optional[str]
+    Id: Optional[str]
     IndexEnabled: Optional[bool]
     TopicName: Optional[str]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             GroupId=json_data.get("GroupId"),
+            Id=json_data.get("Id"),
             IndexEnabled=json_data.get("IndexEnabled"),
             TopicName=json_data.get("TopicName"),
         )

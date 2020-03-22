@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AdjustmentType: Optional[str]
     Arn: Optional[str]
     Cooldown: Optional[float]
+    Id: Optional[str]
     MetricAggregationType: Optional[str]
     MinAdjustmentMagnitude: Optional[float]
     Name: Optional[str]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             AdjustmentType=json_data.get("AdjustmentType"),
             Arn=json_data.get("Arn"),
             Cooldown=json_data.get("Cooldown"),
+            Id=json_data.get("Id"),
             MetricAggregationType=json_data.get("MetricAggregationType"),
             MinAdjustmentMagnitude=json_data.get("MinAdjustmentMagnitude"),
             Name=json_data.get("Name"),

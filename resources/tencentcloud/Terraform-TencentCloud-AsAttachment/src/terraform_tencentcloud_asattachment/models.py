@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     InstanceIds: Optional[Sequence[str]]
     ScalingGroupId: Optional[str]
 
@@ -48,6 +49,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             InstanceIds=json_data.get("InstanceIds"),
             ScalingGroupId=json_data.get("ScalingGroupId"),
         )

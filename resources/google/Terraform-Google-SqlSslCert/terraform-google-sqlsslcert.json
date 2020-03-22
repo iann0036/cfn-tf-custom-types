@@ -24,6 +24,9 @@
         "ExpirationTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Instance": {
             "type": "string",
             "description": "The name of the Cloud SQL instance. Changing this\nforces a new resource to be created."
@@ -53,12 +56,13 @@
         "/properties/CertSerialNumber",
         "/properties/CreateTime",
         "/properties/ExpirationTime",
+        "/properties/Id",
         "/properties/PrivateKey",
         "/properties/ServerCaCert",
         "/properties/Sha1Fingerprint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

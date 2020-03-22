@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The email of the existing Heroku Team member."
         },
+        "Id": {
+            "type": "string"
+        },
         "Permissions": {
             "type": "array",
             "insertionOrder": true,
@@ -32,10 +35,11 @@
         "Space"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

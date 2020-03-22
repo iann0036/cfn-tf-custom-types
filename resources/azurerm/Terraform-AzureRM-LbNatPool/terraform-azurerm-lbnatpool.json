@@ -47,6 +47,9 @@
             "type": "number",
             "description": "The first port number in the range of external ports that will be used to provide Inbound Nat to NICs associated with this Load Balancer. Possible values range between 1 and 65534, inclusive."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadbalancerId": {
             "type": "string",
             "description": "The ID of the Load Balancer in which to create the NAT pool."
@@ -80,10 +83,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/FrontendIpConfigurationId"
+        "/properties/FrontendIpConfigurationId",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

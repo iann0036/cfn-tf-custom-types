@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Branch: Optional[str]
     EnforceAdmins: Optional[bool]
     Etag: Optional[str]
+    Id: Optional[str]
     Repository: Optional[str]
     RequireSignedCommits: Optional[bool]
     RequiredPullRequestReviews: Optional[Sequence["_RequiredPullRequestReviews"]]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Branch=json_data.get("Branch"),
             EnforceAdmins=json_data.get("EnforceAdmins"),
             Etag=json_data.get("Etag"),
+            Id=json_data.get("Id"),
             Repository=json_data.get("Repository"),
             RequireSignedCommits=json_data.get("RequireSignedCommits"),
             RequiredPullRequestReviews=json_data.get("RequiredPullRequestReviews"),

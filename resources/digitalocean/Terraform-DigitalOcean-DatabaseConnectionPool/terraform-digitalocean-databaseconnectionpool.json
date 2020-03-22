@@ -19,6 +19,9 @@
         "Host": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Mode": {
             "type": "string",
             "description": "The PGBouncer transaction mode for the connection pool. The allowed values are session, transaction, and statement."
@@ -63,6 +66,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Host",
+        "/properties/Id",
         "/properties/Password",
         "/properties/Port",
         "/properties/PrivateHost",
@@ -70,7 +74,7 @@
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

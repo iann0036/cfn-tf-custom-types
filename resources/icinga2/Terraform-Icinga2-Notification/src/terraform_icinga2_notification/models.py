@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Command: Optional[str]
     Hostname: Optional[str]
+    Id: Optional[str]
     Interval: Optional[float]
     Servicename: Optional[str]
     Templates: Optional[Sequence[str]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Command=json_data.get("Command"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             Servicename=json_data.get("Servicename"),
             Templates=json_data.get("Templates"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Vars:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class Vars:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

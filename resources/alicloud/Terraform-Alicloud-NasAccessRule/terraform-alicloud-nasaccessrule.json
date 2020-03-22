@@ -15,6 +15,9 @@
         "AccessRuleId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Priority": {
             "type": "number",
             "description": "Priority level. Range: 1-100. Default value: 1."
@@ -39,10 +42,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/AccessRuleId"
+        "/properties/AccessRuleId",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -46,6 +46,7 @@ class ResourceModel(BaseResourceModel):
     CloudfrontDomainName: Optional[str]
     CloudfrontZoneId: Optional[str]
     DomainName: Optional[str]
+    Id: Optional[str]
     RegionalCertificateArn: Optional[str]
     RegionalCertificateName: Optional[str]
     RegionalDomainName: Optional[str]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             CloudfrontDomainName=json_data.get("CloudfrontDomainName"),
             CloudfrontZoneId=json_data.get("CloudfrontZoneId"),
             DomainName=json_data.get("DomainName"),
+            Id=json_data.get("Id"),
             RegionalCertificateArn=json_data.get("RegionalCertificateArn"),
             RegionalCertificateName=json_data.get("RegionalCertificateName"),
             RegionalDomainName=json_data.get("RegionalDomainName"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

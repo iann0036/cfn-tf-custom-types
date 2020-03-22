@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutoCreateRoutes: Optional[bool]
     ExportCustomRoutes: Optional[bool]
+    Id: Optional[str]
     ImportCustomRoutes: Optional[bool]
     Name: Optional[str]
     Network: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AutoCreateRoutes=json_data.get("AutoCreateRoutes"),
             ExportCustomRoutes=json_data.get("ExportCustomRoutes"),
+            Id=json_data.get("Id"),
             ImportCustomRoutes=json_data.get("ImportCustomRoutes"),
             Name=json_data.get("Name"),
             Network=json_data.get("Network"),

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Comment: Optional[str]
     CreateTime: Optional[str]
+    Id: Optional[str]
     LastModifyTime: Optional[str]
     LifeCycle: Optional[float]
     Name: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Comment=json_data.get("Comment"),
             CreateTime=json_data.get("CreateTime"),
+            Id=json_data.get("Id"),
             LastModifyTime=json_data.get("LastModifyTime"),
             LifeCycle=json_data.get("LifeCycle"),
             Name=json_data.get("Name"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class RecordSchema:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class RecordSchema:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

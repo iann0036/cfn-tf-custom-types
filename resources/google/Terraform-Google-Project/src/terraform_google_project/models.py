@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AutoCreateNetwork: Optional[bool]
     BillingAccount: Optional[str]
     FolderId: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Name: Optional[str]
     Number: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AutoCreateNetwork=json_data.get("AutoCreateNetwork"),
             BillingAccount=json_data.get("BillingAccount"),
             FolderId=json_data.get("FolderId"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Name=json_data.get("Name"),
             Number=json_data.get("Number"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

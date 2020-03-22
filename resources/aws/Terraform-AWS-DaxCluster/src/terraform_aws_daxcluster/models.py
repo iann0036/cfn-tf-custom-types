@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     ConfigurationEndpoint: Optional[str]
     Description: Optional[str]
     IamRoleArn: Optional[str]
+    Id: Optional[str]
     MaintenanceWindow: Optional[str]
     NodeType: Optional[str]
     Nodes: Optional[Sequence["_Nodes"]]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             ConfigurationEndpoint=json_data.get("ConfigurationEndpoint"),
             Description=json_data.get("Description"),
             IamRoleArn=json_data.get("IamRoleArn"),
+            Id=json_data.get("Id"),
             MaintenanceWindow=json_data.get("MaintenanceWindow"),
             NodeType=json_data.get("NodeType"),
             Nodes=json_data.get("Nodes"),
@@ -119,8 +121,8 @@ _Nodes = Nodes
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -130,8 +132,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AutoscalingGroupName: Optional[str]
     DefaultResult: Optional[str]
     HeartbeatTimeout: Optional[float]
+    Id: Optional[str]
     LifecycleTransition: Optional[str]
     Name: Optional[str]
     NotificationMetadata: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             AutoscalingGroupName=json_data.get("AutoscalingGroupName"),
             DefaultResult=json_data.get("DefaultResult"),
             HeartbeatTimeout=json_data.get("HeartbeatTimeout"),
+            Id=json_data.get("Id"),
             LifecycleTransition=json_data.get("LifecycleTransition"),
             Name=json_data.get("Name"),
             NotificationMetadata=json_data.get("NotificationMetadata"),

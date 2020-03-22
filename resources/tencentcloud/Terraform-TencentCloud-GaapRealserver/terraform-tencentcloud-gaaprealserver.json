@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Domain of the GAAP realserver, conflict with `ip`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Ip": {
             "type": "string",
             "description": "IP of the GAAP realserver, conflict with `domain`."
@@ -31,16 +34,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Tags of the GAAP realserver."
@@ -51,10 +54,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

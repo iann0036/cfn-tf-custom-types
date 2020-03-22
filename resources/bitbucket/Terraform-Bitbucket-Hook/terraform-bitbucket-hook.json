@@ -23,6 +23,9 @@
             },
             "description": "The event you want to react on."
         },
+        "Id": {
+            "type": "string"
+        },
         "Owner": {
             "type": "string",
             "description": "The owner of this repository. Can be you or any team you\nhave write access to."
@@ -52,10 +55,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Uuid"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     CuCount: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     ManagementSubnetCidr: Optional[str]
     Name: Optional[str]
     SubnetCidr: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             CuCount=json_data.get("CuCount"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             ManagementSubnetCidr=json_data.get("ManagementSubnetCidr"),
             Name=json_data.get("Name"),
             SubnetCidr=json_data.get("SubnetCidr"),

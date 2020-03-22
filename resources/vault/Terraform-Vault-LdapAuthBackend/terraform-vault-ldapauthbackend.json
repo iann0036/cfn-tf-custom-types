@@ -45,6 +45,9 @@
             "type": "string",
             "description": "Go template used to construct group membership query."
         },
+        "Id": {
+            "type": "string"
+        },
         "InsecureTls": {
             "type": "boolean",
             "description": "Control whether or TLS certificates must be validated."
@@ -127,10 +130,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Accessor"
+        "/properties/Accessor",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

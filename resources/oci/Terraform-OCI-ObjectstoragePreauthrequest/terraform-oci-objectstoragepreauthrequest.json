@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "A user-specified name for the pre-authenticated request. Names can be helpful in managing pre-authenticated requests."
@@ -73,11 +76,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AccessUri",
+        "/properties/Id",
         "/properties/ParId",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

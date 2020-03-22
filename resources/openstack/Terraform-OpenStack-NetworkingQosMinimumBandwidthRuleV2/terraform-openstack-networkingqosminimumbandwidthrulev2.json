@@ -26,6 +26,9 @@
             "type": "string",
             "description": "The direction of traffic. Defaults to \"egress\". Changing this updates the direction of the\nexisting QoS minimum bandwidth rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "MinKbps": {
             "type": "number",
             "description": "The minimum kilobits per second. Changing this updates the min kbps value of the existing\nQoS minimum bandwidth rule."
@@ -48,10 +51,11 @@
         "QosPolicyId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

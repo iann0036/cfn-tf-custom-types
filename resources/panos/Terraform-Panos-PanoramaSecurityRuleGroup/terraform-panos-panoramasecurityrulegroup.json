@@ -227,6 +227,9 @@
             "type": "string",
             "description": "The device group to put the security rules into\n(default: `shared`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "PositionKeyword": {
             "type": "string",
             "description": "A positioning keyword for this group.  This\ncan be `before`, `directly before`, `after`, `directly after`, `top`,\n`bottom`, or left empty (the default) to have no particular placement.  This\nparam works in combination with the `position_reference` param."
@@ -258,10 +261,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

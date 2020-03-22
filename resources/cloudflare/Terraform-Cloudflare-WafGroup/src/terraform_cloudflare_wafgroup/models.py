@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     GroupId: Optional[str]
+    Id: Optional[str]
     Mode: Optional[str]
     PackageId: Optional[str]
     ZoneId: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             GroupId=json_data.get("GroupId"),
+            Id=json_data.get("Id"),
             Mode=json_data.get("Mode"),
             PackageId=json_data.get("PackageId"),
             ZoneId=json_data.get("ZoneId"),

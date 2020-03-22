@@ -28,6 +28,9 @@
             },
             "description": "- List of encryption types.  Valid values\nare `des`, `3des`, `aes-128-cbc`, `aes-192-cbc`, `aes-256-cbc`, `aes-128-gcm`,\n`aes-256-gcm`, and `null`.  Note that the \"gcm\" values are only available in\nPAN-OS 7.0+."
         },
+        "Id": {
+            "type": "string"
+        },
         "LifesizeType": {
             "type": "string",
             "description": "The lifesize type.  Valid values are `kb`, `mb`,\n`gb`, or `tb`."
@@ -60,10 +63,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

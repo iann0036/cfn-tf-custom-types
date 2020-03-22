@@ -18,6 +18,9 @@
         "ExpireTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Internal": {
             "type": "boolean",
             "description": "Indicate whether the load balancer is intranet mode.(Default: `\"false\"`)."
@@ -68,11 +71,12 @@
         "/properties/tfcfnid",
         "/properties/CreateTime",
         "/properties/ExpireTime",
+        "/properties/Id",
         "/properties/IpSet",
         "/properties/PrivateIp"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

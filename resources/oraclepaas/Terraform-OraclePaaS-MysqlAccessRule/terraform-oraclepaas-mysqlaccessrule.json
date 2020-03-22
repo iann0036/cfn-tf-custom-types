@@ -34,6 +34,9 @@
             "type": "boolean",
             "description": "Determines whether the access rule is enabled. Valid values are `true` and `false`. The Default is `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the rule."
@@ -71,10 +74,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Type"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     ContentHandling: Optional[str]
     Credentials: Optional[str]
     HttpMethod: Optional[str]
+    Id: Optional[str]
     IntegrationHttpMethod: Optional[str]
     PassthroughBehavior: Optional[str]
     RequestParameters: Optional[Sequence["_RequestParameters"]]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             ContentHandling=json_data.get("ContentHandling"),
             Credentials=json_data.get("Credentials"),
             HttpMethod=json_data.get("HttpMethod"),
+            Id=json_data.get("Id"),
             IntegrationHttpMethod=json_data.get("IntegrationHttpMethod"),
             PassthroughBehavior=json_data.get("PassthroughBehavior"),
             RequestParameters=json_data.get("RequestParameters"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class RequestParameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class RequestParameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -111,8 +113,8 @@ _RequestParameters = RequestParameters
 
 @dataclass
 class RequestTemplates:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class RequestTemplates:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

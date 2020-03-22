@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     Logging: Optional[bool]
     LogicalRouterId: Optional[str]
     MatchDestinationNetwork: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             Logging=json_data.get("Logging"),
             LogicalRouterId=json_data.get("LogicalRouterId"),
             MatchDestinationNetwork=json_data.get("MatchDestinationNetwork"),

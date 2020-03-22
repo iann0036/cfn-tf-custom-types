@@ -254,6 +254,9 @@
             "type": "boolean",
             "description": "Specifies whether the service instance will be provisioned with high performance storage.\nDefault value is `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "IdentityDomain": {
             "type": "string"
         },
@@ -379,12 +382,13 @@
         "/properties/DbaasMonitorUrl",
         "/properties/EmUrl",
         "/properties/GlassfishUrl",
+        "/properties/Id",
         "/properties/IdentityDomain",
         "/properties/Status",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpFirewall": {
             "type": "boolean",
             "description": "Enables the IP Firewall for this application. Defaults to `true`."
@@ -97,10 +100,11 @@
         "ZoneId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

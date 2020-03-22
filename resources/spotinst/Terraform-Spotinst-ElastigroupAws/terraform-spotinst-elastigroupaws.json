@@ -80,14 +80,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DeploymentPreferences"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ManagedActions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ManagedActions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -107,7 +109,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/DeploymentGroups"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -136,14 +139,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleDown"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AutoscaleHeadroom": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleHeadroom"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -182,14 +187,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleDown"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AutoscaleHeadroom": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleHeadroom"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -205,7 +212,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Runner"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -240,14 +248,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleDown"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AutoscaleHeadroom": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleHeadroom"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AutoscaleLabels": {
                     "type": "array",
@@ -314,14 +324,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleDown"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AutoscaleHeadroom": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleHeadroom"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -361,7 +373,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Domains"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": []
@@ -767,7 +780,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RollConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -793,7 +807,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Strategy"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -807,7 +822,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PlatformUpdate"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -927,7 +943,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/RecordSets"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -973,7 +990,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Strategy"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -1108,6 +1126,9 @@
         "IamInstanceProfile": {
             "type": "string",
             "description": "The ARN or name of an IAM instance profile to associate with launched instances."
+        },
+        "Id": {
+            "type": "string"
         },
         "ImageId": {
             "type": "string",
@@ -1567,10 +1588,11 @@
         "SecurityGroups"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

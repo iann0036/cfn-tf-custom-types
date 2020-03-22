@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The name of the bucket the object is stored in."
         },
+        "Id": {
+            "type": "string"
+        },
         "Object": {
             "type": "string",
             "description": "The name of the object to apply the acl to."
@@ -35,10 +38,11 @@
         "Object"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

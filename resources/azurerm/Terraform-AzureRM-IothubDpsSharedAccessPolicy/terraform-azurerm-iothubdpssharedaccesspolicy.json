@@ -36,6 +36,9 @@
             "type": "boolean",
             "description": "Adds `EnrollmentWrite` permission to this Shared Access Account. It allows write access to enrollment data."
         },
+        "Id": {
+            "type": "string"
+        },
         "IothubDpsName": {
             "type": "string",
             "description": "The name of the IoT Hub Device Provisioning service to which this Shared Access Policy belongs. Changing this forces a new resource to be created."
@@ -84,13 +87,14 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PrimaryConnectionString",
         "/properties/PrimaryKey",
         "/properties/SecondaryConnectionString",
         "/properties/SecondaryKey"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

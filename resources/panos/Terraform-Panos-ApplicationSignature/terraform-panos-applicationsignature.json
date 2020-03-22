@@ -12,7 +12,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OrCondition"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": []
@@ -26,28 +27,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/EqualTo"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GreaterThan": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GreaterThan"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "LessThan": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LessThan"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PatternMatch": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PatternMatch"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -88,16 +93,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -124,16 +129,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -163,16 +168,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -195,6 +200,9 @@
         "Comment": {
             "type": "string",
             "description": "The description."
+        },
+        "Id": {
+            "type": "string"
         },
         "Name": {
             "type": "string",
@@ -266,10 +274,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

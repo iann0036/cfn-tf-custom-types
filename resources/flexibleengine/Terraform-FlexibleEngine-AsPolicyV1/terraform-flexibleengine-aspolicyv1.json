@@ -61,6 +61,9 @@
             "type": "number",
             "description": "The cooling duration (in seconds), and is 900 by default."
         },
+        "Id": {
+            "type": "string"
+        },
         "Region": {
             "type": "string",
             "description": "The region in which to create the AS policy. If\nomitted, the `region` argument of the provider is used. Changing this\ncreates a new AS policy."
@@ -101,10 +104,11 @@
         "ScalingPolicyType"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

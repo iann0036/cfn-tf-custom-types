@@ -74,6 +74,9 @@
         "DiskSize": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceTypes": {
             "type": "array",
             "insertionOrder": true,
@@ -88,16 +91,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -153,16 +156,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -200,11 +203,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Arn",
+        "/properties/Id",
         "/properties/Resources",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     ErrorThreshold: Optional[float]
     GatewayIp: Optional[str]
+    Id: Optional[str]
     LeaseTime: Optional[float]
     LogicalDhcpServerId: Optional[str]
     Revision: Optional[float]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             ErrorThreshold=json_data.get("ErrorThreshold"),
             GatewayIp=json_data.get("GatewayIp"),
+            Id=json_data.get("Id"),
             LeaseTime=json_data.get("LeaseTime"),
             LogicalDhcpServerId=json_data.get("LogicalDhcpServerId"),
             Revision=json_data.get("Revision"),

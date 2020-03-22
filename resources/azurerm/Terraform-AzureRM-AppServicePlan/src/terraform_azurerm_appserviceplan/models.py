@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppServiceEnvironmentId: Optional[str]
+    Id: Optional[str]
     IsXenon: Optional[bool]
     Kind: Optional[str]
     Location: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AppServiceEnvironmentId=json_data.get("AppServiceEnvironmentId"),
+            Id=json_data.get("Id"),
             IsXenon=json_data.get("IsXenon"),
             Kind=json_data.get("Kind"),
             Location=json_data.get("Location"),
@@ -81,8 +83,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -92,8 +94,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CustomerGatewayConfiguration: Optional[str]
     CustomerGatewayId: Optional[str]
+    Id: Optional[str]
     Routes: Optional[Sequence["_Routes"]]
     StaticRoutesOnly: Optional[bool]
     Tags: Optional[Sequence["_Tags"]]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CustomerGatewayConfiguration=json_data.get("CustomerGatewayConfiguration"),
             CustomerGatewayId=json_data.get("CustomerGatewayId"),
+            Id=json_data.get("Id"),
             Routes=json_data.get("Routes"),
             StaticRoutesOnly=json_data.get("StaticRoutesOnly"),
             Tags=json_data.get("Tags"),
@@ -127,8 +129,8 @@ _Routes = Routes
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -138,8 +140,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

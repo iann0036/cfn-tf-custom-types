@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     DefaultSiteHostname: Optional[str]
     Enabled: Optional[bool]
     HttpsOnly: Optional[bool]
+    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     OutboundIpAddresses: Optional[str]
@@ -87,6 +88,7 @@ class ResourceModel(BaseResourceModel):
             DefaultSiteHostname=json_data.get("DefaultSiteHostname"),
             Enabled=json_data.get("Enabled"),
             HttpsOnly=json_data.get("HttpsOnly"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             OutboundIpAddresses=json_data.get("OutboundIpAddresses"),
@@ -123,8 +125,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AppSettings:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -134,8 +136,8 @@ class AppSettings:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -189,8 +191,8 @@ _SourceControl = SourceControl
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -200,8 +202,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -257,8 +259,8 @@ _AuthSettings = AuthSettings
 
 @dataclass
 class AdditionalLoginParams:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -268,8 +270,8 @@ class AdditionalLoginParams:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -45,6 +45,9 @@
             "type": "string",
             "description": "The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)."
         },
+        "Id": {
+            "type": "string"
+        },
         "LifecycleDetails": {
             "type": "string"
         },
@@ -73,11 +76,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/LifecycleDetails",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

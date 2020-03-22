@@ -52,6 +52,9 @@
             "type": "string",
             "description": "Indicates the version of a cache engine, which is 3.0.7.\nChanging this creates a new instance."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternalVersion": {
             "type": "string"
         },
@@ -146,6 +149,7 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/InternalVersion",
         "/properties/Ip",
         "/properties/MaxMemory",
@@ -159,7 +163,7 @@
         "/properties/VpcName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DiskId: Optional[float]
     Expiry: Optional[str]
+    Id: Optional[str]
     IsPublic: Optional[bool]
     Label: Optional[str]
     LinodeId: Optional[float]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DiskId=json_data.get("DiskId"),
             Expiry=json_data.get("Expiry"),
+            Id=json_data.get("Id"),
             IsPublic=json_data.get("IsPublic"),
             Label=json_data.get("Label"),
             LinodeId=json_data.get("LinodeId"),

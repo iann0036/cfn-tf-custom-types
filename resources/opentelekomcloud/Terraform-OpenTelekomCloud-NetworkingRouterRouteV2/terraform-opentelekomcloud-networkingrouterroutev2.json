@@ -12,6 +12,9 @@
             "type": "string",
             "description": "CIDR block to match on the packet\u2019s destination IP. Changing\nthis creates a new routing entry."
         },
+        "Id": {
+            "type": "string"
+        },
         "NextHop": {
             "type": "string",
             "description": "IP address of the next hop gateway.  Changing\nthis creates a new routing entry."
@@ -31,10 +34,11 @@
         "RouterId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

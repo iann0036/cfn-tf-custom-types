@@ -141,6 +141,9 @@
             "type": "string",
             "description": "Hostname of the system."
         },
+        "Id": {
+            "type": "string"
+        },
         "Image": {
             "type": "string",
             "description": "Parent image (if no profile is used)."
@@ -315,10 +318,11 @@
         "Profile"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

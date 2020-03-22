@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The description of the token."
         },
+        "Id": {
+            "type": "string"
+        },
         "Local": {
             "type": "boolean",
             "description": "The flag to set the token local to the current datacenter."
@@ -32,10 +35,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

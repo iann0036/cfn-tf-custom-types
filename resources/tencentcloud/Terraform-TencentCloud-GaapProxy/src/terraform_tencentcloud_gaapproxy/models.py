@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     Domain: Optional[str]
     Enable: Optional[bool]
     ForwardIp: Optional[str]
+    Id: Optional[str]
     Ip: Optional[str]
     Name: Optional[str]
     ProjectId: Optional[float]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             Domain=json_data.get("Domain"),
             Enable=json_data.get("Enable"),
             ForwardIp=json_data.get("ForwardIp"),
+            Id=json_data.get("Id"),
             Ip=json_data.get("Ip"),
             Name=json_data.get("Name"),
             ProjectId=json_data.get("ProjectId"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

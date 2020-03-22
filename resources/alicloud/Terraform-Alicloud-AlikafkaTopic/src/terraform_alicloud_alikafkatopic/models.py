@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompactTopic: Optional[bool]
+    Id: Optional[str]
     InstanceId: Optional[str]
     LocalTopic: Optional[bool]
     PartitionNum: Optional[float]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CompactTopic=json_data.get("CompactTopic"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             LocalTopic=json_data.get("LocalTopic"),
             PartitionNum=json_data.get("PartitionNum"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

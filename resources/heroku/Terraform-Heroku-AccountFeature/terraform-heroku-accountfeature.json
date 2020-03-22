@@ -15,6 +15,9 @@
             "type": "boolean",
             "description": "Enable or disable the account feature."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the account feature."
@@ -31,10 +34,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Description",
+        "/properties/Id",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

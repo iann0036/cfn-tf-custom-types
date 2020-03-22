@@ -68,19 +68,22 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Environment key/value pairs to associate with\nthe stack which contains details for the environment of the stack.\nAllowed keys: Bin, URL, Files. Changing this updates the existing stack\nEnvironment Opts."
+        },
+        "Id": {
+            "type": "string"
         },
         "Name": {
             "type": "string",
@@ -100,16 +103,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "User-defined key/value pairs as parameters to pass\nto the template. Changing this updates the existing stack parameters."
@@ -142,16 +145,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Template key/value pairs to associate with the\nstack which contains either the template file or url.\nAllowed keys: Bin, URL, Files. Changing this updates the existing stack\nTemplate Opts."
@@ -180,10 +183,11 @@
         "TemplateOpts"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

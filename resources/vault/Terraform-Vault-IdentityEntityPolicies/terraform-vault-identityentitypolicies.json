@@ -19,6 +19,9 @@
             "type": "boolean",
             "description": "Defaults to `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
@@ -35,10 +38,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/EntityName"
+        "/properties/EntityName",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

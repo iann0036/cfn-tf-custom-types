@@ -44,6 +44,9 @@
             },
             "description": "The endpoints to which messages that satisfy the condition are routed. Currently only 1 endpoint is allowed."
         },
+        "Id": {
+            "type": "string"
+        },
         "IothubName": {
             "type": "string",
             "description": "The name of the IoTHub to which this Fallback Route belongs. Changing this forces a new resource to be created."
@@ -64,10 +67,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

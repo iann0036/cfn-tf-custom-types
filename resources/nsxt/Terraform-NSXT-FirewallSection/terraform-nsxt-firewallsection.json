@@ -155,6 +155,9 @@
             "type": "string",
             "description": "The display name of this rule. Defaults to ID if not set.\n* `description` - (Optional) Description of this rule.\n* `action` - (Required) Action enforced on the packets which matches the firewall rule. [Allowed values: \"ALLOW\", \"DROP\", \"REJECT\"]\n* `applied_to` - (Optional) List of objects where rule will be enforced. The section level field overrides this one. Null will be treated as any. [Supported target types: \"LogicalPort\", \"LogicalSwitch\", \"NSGroup\", \"LogicalRouterPort\"]\n* `destination` - (Optional) List of the destinations. Null will be treated as any. [Allowed target types: \"IPSet\", \"LogicalPort\", \"LogicalSwitch\", \"NSGroup\", \"MACSet\" (depending on the section type)]\n* `destinations_excluded` - (Optional) When this boolean flag is set to true, the rule destinations will be negated.\n* `direction` - (Optional) Rule direction in case of stateless firewall rules. This will only considered if section level parameter is set to stateless. Default to IN_OUT if not specified. [Allowed values: \"IN\", \"OUT\", \"IN_OUT\"]\n* `disabled` - (Optional) Flag to disable rule. Disabled will only be persisted but never provisioned/realized.\n* `ip_protocol` - (Optional) Type of IP packet that should be matched while enforcing the rule. [allowed values: \"IPV4\", \"IPV6\", \"IPV4_IPV6\"]\n* `logged` - (Optional) Flag to enable packet logging. Default is disabled.\n* `notes` - (Optional) User notes specific to the rule.\n* `rule_tag` - (Optional) User level field which will be printed in CLI and packet logs.\n* `service` - (Optional) List of the services. Null will be treated as any. [Allowed target types: \"NSService\", \"NSServiceGroup\"]\n* `source` - (Optional) List of sources. Null will be treated as any. [Allowed target types: \"IPSet\", \"LogicalPort\", \"LogicalSwitch\", \"NSGroup\", \"MACSet\" (depending on the section type)]\n* `sources_excluded` - (Optional) When this boolean flag is set to true, the rule sources will be negated."
         },
+        "Id": {
+            "type": "string"
+        },
         "InsertBefore": {
             "type": "string",
             "description": "Firewall section id that should come immediately after this one. It is user responsibility to use this attribute in consistent manner (for example, if same value would be set in two separate sections, the outcome would depend on order of creation). Changing this attribute would force recreation of the firewall section."
@@ -223,11 +226,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/IsDefault",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

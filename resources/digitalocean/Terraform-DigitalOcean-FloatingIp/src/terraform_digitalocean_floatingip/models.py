@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DropletId: Optional[float]
+    Id: Optional[str]
     IpAddress: Optional[str]
     Region: Optional[str]
     Urn: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DropletId=json_data.get("DropletId"),
+            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             Region=json_data.get("Region"),
             Urn=json_data.get("Urn"),

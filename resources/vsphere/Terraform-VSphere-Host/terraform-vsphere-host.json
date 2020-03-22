@@ -28,6 +28,9 @@
             "type": "string",
             "description": "FQDN or IP address of the host to be added."
         },
+        "Id": {
+            "type": "string"
+        },
         "License": {
             "type": "string",
             "description": "The license key that will be applied to the host.\nThe license key is expected to be present in vSphere."
@@ -60,10 +63,11 @@
         "Username"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

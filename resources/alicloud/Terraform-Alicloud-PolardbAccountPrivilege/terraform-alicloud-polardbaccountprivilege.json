@@ -27,6 +27,9 @@
                 "type": "string"
             },
             "description": "List of specified database name."
+        },
+        "Id": {
+            "type": "string"
         }
     },
     "additionalProperties": false,
@@ -36,10 +39,11 @@
         "DbNames"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

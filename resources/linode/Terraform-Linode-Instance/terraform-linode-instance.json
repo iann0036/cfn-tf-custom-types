@@ -55,14 +55,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Devices"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Helpers": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Helpers"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -112,16 +114,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -159,56 +161,64 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sda"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Sdb": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sdb"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Sdc": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sdc"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Sdd": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sdd"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Sde": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sde"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Sdf": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sdf"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Sdg": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sdg"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Sdh": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sdh"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -426,6 +436,9 @@
             "type": "string",
             "description": "The display group of the Linode instance."
         },
+        "Id": {
+            "type": "string"
+        },
         "Image": {
             "type": "string"
         },
@@ -489,16 +502,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -640,6 +653,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Backups",
+        "/properties/Id",
         "/properties/IpAddress",
         "/properties/Ipv4",
         "/properties/Ipv6",
@@ -648,7 +662,7 @@
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

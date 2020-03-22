@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The id of the environment to use when running the test.\nIf given, creates a test specific schedule, otherwise creates a shared schedule."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interval": {
             "type": "string",
             "description": "The schedule's interval, must be one of:\n* 1m \u2014 every minute\n* 5m \u2014 every 5 minutes\n* 15m \u2014 every 15 minutes\n* 30m \u2014 every 30 minutes\n* 1h \u2014 every hour\n* 6h \u2014 every 6 hours\n* 1d \u2014 every day."
@@ -36,10 +39,11 @@
         "TestId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

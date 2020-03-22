@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Expression: Optional[str]
+    Id: Optional[str]
     Paused: Optional[bool]
     Ref: Optional[str]
     ZoneId: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Expression=json_data.get("Expression"),
+            Id=json_data.get("Id"),
             Paused=json_data.get("Paused"),
             Ref=json_data.get("Ref"),
             ZoneId=json_data.get("ZoneId"),

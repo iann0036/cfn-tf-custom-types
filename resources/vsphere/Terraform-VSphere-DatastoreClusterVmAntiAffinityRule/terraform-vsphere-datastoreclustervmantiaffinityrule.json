@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "Enable this rule in the cluster. Default: `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Mandatory": {
             "type": "boolean",
             "description": "When this value is `true`, prevents any virtual\nmachine operations that may violate this rule. Default: `false`."
@@ -40,10 +43,11 @@
         "VirtualMachineIds"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

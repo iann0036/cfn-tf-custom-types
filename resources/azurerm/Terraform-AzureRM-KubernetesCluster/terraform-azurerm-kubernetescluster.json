@@ -12,35 +12,40 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AciConnectorLinux"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AzurePolicy": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AzurePolicy"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpApplicationRouting": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpApplicationRouting"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "KubeDashboard": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KubeDashboard"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "OmsAgent": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OmsAgent"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -89,16 +94,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "A map of Kubernetes labels which should be applied to nodes in the Default Node Pool."
@@ -122,16 +127,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "A mapping of tags to assign to the resource."
@@ -180,7 +185,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SshKey"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -224,7 +231,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LoadBalancerProfile"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -244,7 +252,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AzureActiveDirectory"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -463,6 +472,9 @@
         "Fqdn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KubeAdminConfig": {
             "type": "array",
             "insertionOrder": false,
@@ -558,16 +570,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -717,6 +729,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Fqdn",
+        "/properties/Id",
         "/properties/KubeAdminConfig",
         "/properties/KubeAdminConfigRaw",
         "/properties/KubeConfig",
@@ -724,7 +737,7 @@
         "/properties/PrivateFqdn"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContactMethod: Optional[Sequence["_ContactMethod"]]
+    Id: Optional[str]
     StartDelayInMinutes: Optional[float]
     Urgency: Optional[str]
     UserId: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ContactMethod=json_data.get("ContactMethod"),
+            Id=json_data.get("Id"),
             StartDelayInMinutes=json_data.get("StartDelayInMinutes"),
             Urgency=json_data.get("Urgency"),
             UserId=json_data.get("UserId"),
@@ -63,8 +65,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ContactMethod:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -74,8 +76,8 @@ class ContactMethod:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

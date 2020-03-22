@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     ContentType: Optional[str]
     Encryption: Optional[bool]
     Etag: Optional[str]
+    Id: Optional[str]
     Key: Optional[str]
     KmsKeyId: Optional[str]
     Size: Optional[float]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             ContentType=json_data.get("ContentType"),
             Encryption=json_data.get("Encryption"),
             Etag=json_data.get("Etag"),
+            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             KmsKeyId=json_data.get("KmsKeyId"),
             Size=json_data.get("Size"),

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ComparisonOperator: Optional[str]
     ContinuousTime: Optional[float]
     Cooldown: Optional[float]
+    Id: Optional[str]
     MetricName: Optional[str]
     NotificationUserGroupIds: Optional[Sequence[str]]
     Period: Optional[float]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             ComparisonOperator=json_data.get("ComparisonOperator"),
             ContinuousTime=json_data.get("ContinuousTime"),
             Cooldown=json_data.get("Cooldown"),
+            Id=json_data.get("Id"),
             MetricName=json_data.get("MetricName"),
             NotificationUserGroupIds=json_data.get("NotificationUserGroupIds"),
             Period=json_data.get("Period"),

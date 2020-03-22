@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The Full Name of the User."
         },
+        "Id": {
+            "type": "string"
+        },
         "Locale": {
             "type": "string",
             "description": "Location information for the user. Please look at [Supported Locale Ids](https://docs.opsgenie.com/docs/supported-locales) for available locales."
@@ -36,10 +39,11 @@
         "Username"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

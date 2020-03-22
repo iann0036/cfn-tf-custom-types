@@ -141,21 +141,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Minify"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "MobileRedirect": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/MobileRedirect"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SecurityHeader": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecurityHeader"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -226,6 +229,9 @@
     "properties": {
         "tfcfnid": {
             "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "InitialSettings": {
@@ -489,6 +495,7 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/InitialSettings",
         "/properties/InitialSettingsReadAt",
         "/properties/ReadonlySettings",
@@ -496,7 +503,7 @@
         "/properties/ZoneType"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

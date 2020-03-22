@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     ForceDelete: Optional[bool]
     HealthCheckGracePeriod: Optional[float]
     HealthCheckType: Optional[str]
+    Id: Optional[str]
     LaunchConfiguration: Optional[str]
     LoadBalancers: Optional[Sequence[str]]
     MaxInstanceLifetime: Optional[float]
@@ -89,6 +90,7 @@ class ResourceModel(BaseResourceModel):
             ForceDelete=json_data.get("ForceDelete"),
             HealthCheckGracePeriod=json_data.get("HealthCheckGracePeriod"),
             HealthCheckType=json_data.get("HealthCheckType"),
+            Id=json_data.get("Id"),
             LaunchConfiguration=json_data.get("LaunchConfiguration"),
             LoadBalancers=json_data.get("LoadBalancers"),
             MaxInstanceLifetime=json_data.get("MaxInstanceLifetime"),
@@ -125,8 +127,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -136,8 +138,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

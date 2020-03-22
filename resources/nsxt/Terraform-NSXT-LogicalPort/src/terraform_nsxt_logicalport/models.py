@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AdminState: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     LogicalSwitchId: Optional[str]
     Revision: Optional[float]
     SwitchingProfileId: Optional[Sequence["_SwitchingProfileId"]]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             AdminState=json_data.get("AdminState"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             LogicalSwitchId=json_data.get("LogicalSwitchId"),
             Revision=json_data.get("Revision"),
             SwitchingProfileId=json_data.get("SwitchingProfileId"),

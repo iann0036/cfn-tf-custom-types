@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CustomBlockResponseStatusCode: Optional[float]
     Enabled: Optional[bool]
     FrontendEndpointIds: Optional[Sequence[str]]
+    Id: Optional[str]
     Location: Optional[str]
     Mode: Optional[str]
     Name: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             CustomBlockResponseStatusCode=json_data.get("CustomBlockResponseStatusCode"),
             Enabled=json_data.get("Enabled"),
             FrontendEndpointIds=json_data.get("FrontendEndpointIds"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Mode=json_data.get("Mode"),
             Name=json_data.get("Name"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

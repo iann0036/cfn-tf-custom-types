@@ -19,7 +19,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Hash"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -79,6 +80,9 @@
             "type": "string",
             "description": "A description for this credential."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
@@ -110,16 +114,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -156,10 +160,11 @@
         "RunbookType"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -49,6 +49,9 @@
             "type": "string",
             "description": "The human-readable description for the connection.\nChanging this updates the description of the existing connection."
         },
+        "Id": {
+            "type": "string"
+        },
         "IkepolicyId": {
             "type": "string",
             "description": "The ID of the IKE policy. Changing this creates a new connection."
@@ -116,16 +119,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -155,10 +158,11 @@
         "VpnserviceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

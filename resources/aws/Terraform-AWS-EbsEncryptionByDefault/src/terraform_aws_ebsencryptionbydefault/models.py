@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -48,6 +49,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
         )
 
 

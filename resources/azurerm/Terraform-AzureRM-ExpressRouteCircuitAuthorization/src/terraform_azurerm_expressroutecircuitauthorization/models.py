@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AuthorizationKey: Optional[str]
     AuthorizationUseStatus: Optional[str]
     ExpressRouteCircuitName: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             AuthorizationKey=json_data.get("AuthorizationKey"),
             AuthorizationUseStatus=json_data.get("AuthorizationUseStatus"),
             ExpressRouteCircuitName=json_data.get("ExpressRouteCircuitName"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

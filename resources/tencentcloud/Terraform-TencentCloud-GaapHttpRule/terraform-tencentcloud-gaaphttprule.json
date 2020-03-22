@@ -68,6 +68,9 @@
             },
             "description": "Return code of confirmed normal, the available values include `100`, `200`, `300`, `400` and `500`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interval": {
             "type": "number",
             "description": "Interval of the health check, default value is 5s."
@@ -106,10 +109,11 @@
         "RealserverType"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

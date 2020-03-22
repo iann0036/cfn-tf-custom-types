@@ -20,7 +20,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/WsdlSelector"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -100,6 +101,9 @@
         "DisplayName": {
             "type": "string",
             "description": "The display name of the API."
+        },
+        "Id": {
+            "type": "string"
         },
         "IsCurrent": {
             "type": "boolean"
@@ -187,11 +191,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/IsCurrent",
         "/properties/IsOnline"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -75,6 +75,9 @@
             "type": "string",
             "description": "Type of filter to be applied to a BrokeredMessage. Possible values are `SqlFilter` and `CorrelationFilter`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the ServiceBus Subscription Rule. Changing this forces a new resource to be created."
@@ -121,10 +124,11 @@
         "TopicName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

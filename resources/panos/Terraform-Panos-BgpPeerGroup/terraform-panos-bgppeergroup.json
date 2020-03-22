@@ -20,6 +20,9 @@
             "type": "string",
             "description": "Export next hop.  Valid values are\n`original`, `use-self`, or `resolve`."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImportNextHop": {
             "type": "string",
             "description": "Import next hop.  Valid values are\n`original`, `use-peer`, or the empty string."
@@ -51,10 +54,11 @@
         "VirtualRouter"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

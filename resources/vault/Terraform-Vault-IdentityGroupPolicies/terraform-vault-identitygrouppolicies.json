@@ -19,6 +19,9 @@
         "GroupName": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Policies": {
             "type": "array",
             "insertionOrder": true,
@@ -35,10 +38,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/GroupName"
+        "/properties/GroupName",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

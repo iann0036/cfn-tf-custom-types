@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     BackendService: Optional[str]
     CreationTimestamp: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     IpAddress: Optional[str]
     IpProtocol: Optional[str]
     IpVersion: Optional[str]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             BackendService=json_data.get("BackendService"),
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             IpProtocol=json_data.get("IpProtocol"),
             IpVersion=json_data.get("IpVersion"),

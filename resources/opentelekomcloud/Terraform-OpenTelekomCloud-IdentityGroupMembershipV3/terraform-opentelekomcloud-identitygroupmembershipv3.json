@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The group ID of this membership."
         },
+        "Id": {
+            "type": "string"
+        },
         "Users": {
             "type": "array",
             "insertionOrder": true,
@@ -27,10 +30,11 @@
         "Users"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

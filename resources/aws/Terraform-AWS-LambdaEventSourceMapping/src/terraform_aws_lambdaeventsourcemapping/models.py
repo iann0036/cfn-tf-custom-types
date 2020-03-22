@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     EventSourceArn: Optional[str]
     FunctionArn: Optional[str]
     FunctionName: Optional[str]
+    Id: Optional[str]
     LastModified: Optional[str]
     LastProcessingResult: Optional[str]
     MaximumBatchingWindowInSeconds: Optional[float]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             EventSourceArn=json_data.get("EventSourceArn"),
             FunctionArn=json_data.get("FunctionArn"),
             FunctionName=json_data.get("FunctionName"),
+            Id=json_data.get("Id"),
             LastModified=json_data.get("LastModified"),
             LastProcessingResult=json_data.get("LastProcessingResult"),
             MaximumBatchingWindowInSeconds=json_data.get("MaximumBatchingWindowInSeconds"),

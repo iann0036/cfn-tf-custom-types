@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The type of the LB, valid choices: 'CLASSIC', 'APPLICATION'."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the LB."
@@ -38,10 +41,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

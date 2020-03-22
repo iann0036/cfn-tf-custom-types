@@ -20,6 +20,9 @@
             "type": "string",
             "description": "Destination IP address / prefix."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interface": {
             "type": "string",
             "description": "Interface to use."
@@ -64,10 +67,11 @@
         "VirtualRouter"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

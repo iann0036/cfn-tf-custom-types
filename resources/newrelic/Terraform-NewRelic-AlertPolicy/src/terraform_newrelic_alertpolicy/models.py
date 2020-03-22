@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ChannelIds: Optional[Sequence[float]]
     CreatedAt: Optional[str]
+    Id: Optional[str]
     IncidentPreference: Optional[str]
     Name: Optional[str]
     UpdatedAt: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ChannelIds=json_data.get("ChannelIds"),
             CreatedAt=json_data.get("CreatedAt"),
+            Id=json_data.get("Id"),
             IncidentPreference=json_data.get("IncidentPreference"),
             Name=json_data.get("Name"),
             UpdatedAt=json_data.get("UpdatedAt"),

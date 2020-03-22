@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     CreatedAt: Optional[str]
     DiskFormat: Optional[str]
     File: Optional[str]
+    Id: Optional[str]
     ImageCachePath: Optional[str]
     ImageSourceUrl: Optional[str]
     LocalFilePath: Optional[str]
@@ -76,6 +77,7 @@ class ResourceModel(BaseResourceModel):
             CreatedAt=json_data.get("CreatedAt"),
             DiskFormat=json_data.get("DiskFormat"),
             File=json_data.get("File"),
+            Id=json_data.get("Id"),
             ImageCachePath=json_data.get("ImageCachePath"),
             ImageSourceUrl=json_data.get("ImageSourceUrl"),
             LocalFilePath=json_data.get("LocalFilePath"),
@@ -105,8 +107,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -116,8 +118,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -127,8 +129,8 @@ _Metadata = Metadata
 
 @dataclass
 class Properties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -138,8 +140,8 @@ class Properties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

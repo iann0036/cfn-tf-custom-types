@@ -16,7 +16,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Dimension"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -93,6 +94,9 @@
             "type": "boolean",
             "description": "Whether this scheduled query rule is enabled.  Default is `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string"
         },
@@ -111,16 +115,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -153,10 +157,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

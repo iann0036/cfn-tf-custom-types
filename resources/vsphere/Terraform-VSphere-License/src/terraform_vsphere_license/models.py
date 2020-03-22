@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EditionKey: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     LicenseKey: Optional[str]
     Name: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EditionKey=json_data.get("EditionKey"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             LicenseKey=json_data.get("LicenseKey"),
             Name=json_data.get("Name"),
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

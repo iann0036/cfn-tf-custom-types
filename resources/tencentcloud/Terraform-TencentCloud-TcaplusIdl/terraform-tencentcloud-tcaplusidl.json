@@ -28,6 +28,9 @@
             "type": "string",
             "description": "Type of this idl file, Valid values are PROTO,TDR,MIX."
         },
+        "Id": {
+            "type": "string"
+        },
         "TableInfos": {
             "type": "array",
             "insertionOrder": false,
@@ -70,10 +73,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/TableInfos"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

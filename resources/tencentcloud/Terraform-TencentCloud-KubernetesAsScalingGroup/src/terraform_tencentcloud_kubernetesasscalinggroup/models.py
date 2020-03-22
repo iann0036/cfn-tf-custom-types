@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClusterId: Optional[str]
+    Id: Optional[str]
     AutoScalingConfig: Optional[Sequence["_AutoScalingConfig"]]
     AutoScalingGroup: Optional[Sequence["_AutoScalingGroup"]]
     DataDisk: Optional[Sequence["_DataDisk"]]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ClusterId=json_data.get("ClusterId"),
+            Id=json_data.get("Id"),
             AutoScalingConfig=json_data.get("AutoScalingConfig"),
             AutoScalingGroup=json_data.get("AutoScalingGroup"),
             DataDisk=json_data.get("DataDisk"),
@@ -115,8 +117,8 @@ _AutoScalingConfig = AutoScalingConfig
 
 @dataclass
 class InstanceTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class InstanceTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -207,8 +209,8 @@ _AutoScalingGroup = AutoScalingGroup
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -218,8 +220,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CertificateContent: Optional[str]
+    Id: Optional[str]
     IotDpsName: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CertificateContent=json_data.get("CertificateContent"),
+            Id=json_data.get("Id"),
             IotDpsName=json_data.get("IotDpsName"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

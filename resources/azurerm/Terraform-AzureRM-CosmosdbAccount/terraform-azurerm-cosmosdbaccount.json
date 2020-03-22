@@ -115,6 +115,9 @@
         "Endpoint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpRangeFilter": {
             "type": "string",
             "description": "CosmosDB Firewall Support: This value specifies the set of IP addresses or IP address ranges in CIDR form to be included as the allowed list of client IP's for a given database account. IP addresses/ranges must be comma separated and must not contain any spaces."
@@ -169,16 +172,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -236,6 +239,7 @@
         "/properties/tfcfnid",
         "/properties/ConnectionStrings",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/PrimaryMasterKey",
         "/properties/PrimaryReadonlyMasterKey",
         "/properties/ReadEndpoints",
@@ -244,7 +248,7 @@
         "/properties/WriteEndpoints"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

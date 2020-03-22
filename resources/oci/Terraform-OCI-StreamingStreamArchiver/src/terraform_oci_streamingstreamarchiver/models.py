@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     BatchRolloverTimeInSeconds: Optional[float]
     Bucket: Optional[str]
     Error: Optional[Sequence["_Error"]]
+    Id: Optional[str]
     StartPosition: Optional[str]
     State: Optional[str]
     StreamId: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             BatchRolloverTimeInSeconds=json_data.get("BatchRolloverTimeInSeconds"),
             Bucket=json_data.get("Bucket"),
             Error=json_data.get("Error"),
+            Id=json_data.get("Id"),
             StartPosition=json_data.get("StartPosition"),
             State=json_data.get("State"),
             StreamId=json_data.get("StreamId"),

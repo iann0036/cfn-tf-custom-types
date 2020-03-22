@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The device group to put the service group into\n(default: `shared`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The service group's name."
@@ -39,10 +42,11 @@
         "Services"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

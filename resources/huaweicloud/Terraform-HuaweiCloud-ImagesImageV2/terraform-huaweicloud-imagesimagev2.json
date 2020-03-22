@@ -36,6 +36,9 @@
         "File": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageCachePath": {
             "type": "string",
             "description": "This is the directory where the images will\nbe downloaded. Images will be stored with a filename corresponding to\nthe url's md5 hash. Defaults to \"$HOME/.terraform/image_cache\"."
@@ -55,16 +58,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -130,6 +133,7 @@
         "/properties/Checksum",
         "/properties/CreatedAt",
         "/properties/File",
+        "/properties/Id",
         "/properties/Metadata",
         "/properties/Owner",
         "/properties/Schema",
@@ -138,7 +142,7 @@
         "/properties/UpdateAt"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

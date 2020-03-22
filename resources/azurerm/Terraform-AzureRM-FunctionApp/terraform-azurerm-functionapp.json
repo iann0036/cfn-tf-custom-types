@@ -14,16 +14,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "Login parameters to send to the OpenID Connect authorization endpoint when a user logs in. Each parameter must be in the form \"key=value\"."
@@ -69,35 +69,40 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ActiveDirectory"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Facebook": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Facebook"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Google": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Google"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Microsoft": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Microsoft"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Twitter": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Twitter"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -202,7 +207,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Cors"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -379,16 +385,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A key-value pair of App Settings."
@@ -415,6 +421,9 @@
         "HttpsOnly": {
             "type": "boolean",
             "description": "Can the Function App only be accessed via HTTPS? Defaults to `false`."
+        },
+        "Id": {
+            "type": "string"
         },
         "Kind": {
             "type": "string"
@@ -468,16 +477,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -580,13 +589,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DefaultHostname",
+        "/properties/Id",
         "/properties/Kind",
         "/properties/OutboundIpAddresses",
         "/properties/PossibleOutboundIpAddresses",
         "/properties/SiteCredential"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     CreatedTime: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ProviderName: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             CreatedTime=json_data.get("CreatedTime"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProviderName=json_data.get("ProviderName"),
             Tags=json_data.get("Tags"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

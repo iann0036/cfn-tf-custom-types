@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AuthPlugin: Optional[str]
     Host: Optional[str]
+    Id: Optional[str]
     Password: Optional[str]
     PlaintextPassword: Optional[str]
     TlsOption: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AuthPlugin=json_data.get("AuthPlugin"),
             Host=json_data.get("Host"),
+            Id=json_data.get("Id"),
             Password=json_data.get("Password"),
             PlaintextPassword=json_data.get("PlaintextPassword"),
             TlsOption=json_data.get("TlsOption"),

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     AccountTier: Optional[str]
     AccountType: Optional[str]
     EnableBlobEncryption: Optional[bool]
+    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     PrimaryAccessKey: Optional[str]
@@ -78,6 +79,7 @@ class ResourceModel(BaseResourceModel):
             AccountTier=json_data.get("AccountTier"),
             AccountType=json_data.get("AccountType"),
             EnableBlobEncryption=json_data.get("EnableBlobEncryption"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             PrimaryAccessKey=json_data.get("PrimaryAccessKey"),
@@ -107,8 +109,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -118,8 +120,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     HaFlowMirroring: Optional[bool]
+    Id: Optional[str]
     IdleTimeout: Optional[float]
     Revision: Optional[float]
     Tag: Optional[Sequence["_Tag"]]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             HaFlowMirroring=json_data.get("HaFlowMirroring"),
+            Id=json_data.get("Id"),
             IdleTimeout=json_data.get("IdleTimeout"),
             Revision=json_data.get("Revision"),
             Tag=json_data.get("Tag"),

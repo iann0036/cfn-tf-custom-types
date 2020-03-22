@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompleteLock: Optional[bool]
+    Id: Optional[str]
     IgnoreDeletionError: Optional[bool]
     Policy: Optional[str]
     VaultName: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CompleteLock=json_data.get("CompleteLock"),
+            Id=json_data.get("Id"),
             IgnoreDeletionError=json_data.get("IgnoreDeletionError"),
             Policy=json_data.get("Policy"),
             VaultName=json_data.get("VaultName"),

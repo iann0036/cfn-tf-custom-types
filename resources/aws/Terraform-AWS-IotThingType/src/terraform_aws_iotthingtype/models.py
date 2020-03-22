@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     Deprecated: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Properties: Optional[Sequence["_Properties"]]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             Deprecated=json_data.get("Deprecated"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Properties=json_data.get("Properties"),
         )

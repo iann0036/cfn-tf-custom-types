@@ -11,6 +11,9 @@
         "ApiUri": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The unique name to assign to the data bag. This is the\nname that other server clients will use to find and retrieve data from the\ndata bag."
@@ -22,10 +25,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ApiUri"
+        "/properties/ApiUri",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

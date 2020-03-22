@@ -19,6 +19,9 @@
             "type": "string",
             "description": "The explicit max TTL of this token."
         },
+        "Id": {
+            "type": "string"
+        },
         "LeaseDuration": {
             "type": "number"
         },
@@ -84,13 +87,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ClientToken",
+        "/properties/Id",
         "/properties/LeaseDuration",
         "/properties/LeaseStarted",
         "/properties/WrappedToken",
         "/properties/WrappingAccessor"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

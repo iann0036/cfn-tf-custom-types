@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     EngineVersion: Optional[str]
     GlobalClusterIdentifier: Optional[str]
     GlobalClusterResourceId: Optional[str]
+    Id: Optional[str]
     StorageEncrypted: Optional[bool]
 
     @classmethod
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             EngineVersion=json_data.get("EngineVersion"),
             GlobalClusterIdentifier=json_data.get("GlobalClusterIdentifier"),
             GlobalClusterResourceId=json_data.get("GlobalClusterResourceId"),
+            Id=json_data.get("Id"),
             StorageEncrypted=json_data.get("StorageEncrypted"),
         )
 

@@ -247,6 +247,9 @@
         "CreateTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the DDoS policy. Length should between 1 and 32."
@@ -329,12 +332,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/PolicyId",
         "/properties/SceneId",
         "/properties/WatermarkKey"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

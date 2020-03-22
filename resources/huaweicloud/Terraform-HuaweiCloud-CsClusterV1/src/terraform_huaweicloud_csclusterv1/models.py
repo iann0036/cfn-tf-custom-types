@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreatedAt: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     ManagerNodeSpuNum: Optional[float]
     MaxSpuNum: Optional[float]
     Name: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreatedAt=json_data.get("CreatedAt"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             ManagerNodeSpuNum=json_data.get("ManagerNodeSpuNum"),
             MaxSpuNum=json_data.get("MaxSpuNum"),
             Name=json_data.get("Name"),

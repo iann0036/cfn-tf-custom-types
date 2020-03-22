@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Message endpoint.\nFor an HTTP subscription, the endpoint starts with http\\://.\nFor an HTTPS subscription, the endpoint starts with https\\://.\nFor an email subscription, the endpoint is a mail address.\nFor an SMS message subscription, the endpoint is a phone number."
         },
+        "Id": {
+            "type": "string"
+        },
         "Owner": {
             "type": "string",
             "description": "Project ID of the topic creator."
@@ -44,10 +47,11 @@
         "TopicUrn"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

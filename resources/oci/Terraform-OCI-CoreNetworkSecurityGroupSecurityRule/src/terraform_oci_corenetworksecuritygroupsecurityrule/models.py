@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Destination: Optional[str]
     DestinationType: Optional[str]
     Direction: Optional[str]
+    Id: Optional[str]
     IsValid: Optional[bool]
     NetworkSecurityGroupId: Optional[str]
     Protocol: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Destination=json_data.get("Destination"),
             DestinationType=json_data.get("DestinationType"),
             Direction=json_data.get("Direction"),
+            Id=json_data.get("Id"),
             IsValid=json_data.get("IsValid"),
             NetworkSecurityGroupId=json_data.get("NetworkSecurityGroupId"),
             Protocol=json_data.get("Protocol"),

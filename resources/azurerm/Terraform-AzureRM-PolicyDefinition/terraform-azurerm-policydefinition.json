@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The display name of the policy definition."
         },
+        "Id": {
+            "type": "string"
+        },
         "ManagementGroupId": {
             "type": "string",
             "description": "The ID of the Management Group where this policy should be defined. Changing this forces a new resource to be created."
@@ -76,10 +79,11 @@
         "PolicyType"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

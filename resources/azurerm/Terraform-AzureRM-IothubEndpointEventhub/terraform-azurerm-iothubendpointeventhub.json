@@ -32,6 +32,9 @@
             "type": "string",
             "description": "The connection string for the endpoint."
         },
+        "Id": {
+            "type": "string"
+        },
         "IothubName": {
             "type": "string"
         },
@@ -54,10 +57,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -96,7 +96,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DataDisk"
-                    }
+                    },
+                    "maxItems": 11
                 }
             },
             "required": [
@@ -197,7 +198,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DataDisk"
-                    }
+                    },
+                    "maxItems": 11
                 }
             },
             "required": [
@@ -295,6 +297,9 @@
         "Domain": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IgnoreClusterCidrConflict": {
             "type": "boolean",
             "description": "Indicates whether to ignore the cluster cidr conflict error. Default is false."
@@ -331,16 +336,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The tags of the cluster."
@@ -410,6 +415,7 @@
         "/properties/ClusterExternalEndpoint",
         "/properties/ClusterNodeNum",
         "/properties/Domain",
+        "/properties/Id",
         "/properties/Password",
         "/properties/PgwEndpoint",
         "/properties/SecurityPolicy",
@@ -417,7 +423,7 @@
         "/properties/WorkerInstancesList"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -16,6 +16,9 @@
             "type": "string",
             "description": "A string referencing the check CID to have maintenance on, mutually exclusive\nwith `account`, `rule_set`, and `target`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Notes": {
             "type": "string"
         },
@@ -59,10 +62,11 @@
         "Stop"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

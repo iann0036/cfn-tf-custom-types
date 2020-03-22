@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Backups: Optional[bool]
     CreatedAt: Optional[str]
     Disk: Optional[float]
+    Id: Optional[str]
     Image: Optional[str]
     Ipv4Address: Optional[str]
     Ipv4AddressPrivate: Optional[str]
@@ -75,6 +76,7 @@ class ResourceModel(BaseResourceModel):
             Backups=json_data.get("Backups"),
             CreatedAt=json_data.get("CreatedAt"),
             Disk=json_data.get("Disk"),
+            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             Ipv4Address=json_data.get("Ipv4Address"),
             Ipv4AddressPrivate=json_data.get("Ipv4AddressPrivate"),

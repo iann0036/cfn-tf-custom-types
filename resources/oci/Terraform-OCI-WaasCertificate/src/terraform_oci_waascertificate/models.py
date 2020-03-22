@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     Extensions: Optional[Sequence["_Extensions"]]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
+    Id: Optional[str]
     IsTrustVerificationDisabled: Optional[bool]
     IssuedBy: Optional[str]
     IssuerName: Optional[Sequence["_IssuerName"]]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             Extensions=json_data.get("Extensions"),
             FreeformTags=json_data.get("FreeformTags"),
+            Id=json_data.get("Id"),
             IsTrustVerificationDisabled=json_data.get("IsTrustVerificationDisabled"),
             IssuedBy=json_data.get("IssuedBy"),
             IssuerName=json_data.get("IssuerName"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -141,8 +143,8 @@ _Extensions = Extensions
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -152,8 +154,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

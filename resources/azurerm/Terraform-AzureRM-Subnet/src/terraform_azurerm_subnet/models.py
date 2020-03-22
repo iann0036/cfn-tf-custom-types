@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AddressPrefix: Optional[str]
     EnforcePrivateLinkEndpointNetworkPolicies: Optional[bool]
     EnforcePrivateLinkServiceNetworkPolicies: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     ServiceEndpoints: Optional[Sequence[str]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AddressPrefix=json_data.get("AddressPrefix"),
             EnforcePrivateLinkEndpointNetworkPolicies=json_data.get("EnforcePrivateLinkEndpointNetworkPolicies"),
             EnforcePrivateLinkServiceNetworkPolicies=json_data.get("EnforcePrivateLinkServiceNetworkPolicies"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             ServiceEndpoints=json_data.get("ServiceEndpoints"),

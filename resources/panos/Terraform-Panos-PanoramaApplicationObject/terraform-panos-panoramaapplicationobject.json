@@ -12,28 +12,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Icmp"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Icmp6": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Icmp6"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "IpProtocol": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/IpProtocol"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Port": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Port"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -184,6 +188,9 @@
             "type": "boolean",
             "description": "Has known vulnerabilities."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The object's name."
@@ -289,10 +296,11 @@
         "Technology"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

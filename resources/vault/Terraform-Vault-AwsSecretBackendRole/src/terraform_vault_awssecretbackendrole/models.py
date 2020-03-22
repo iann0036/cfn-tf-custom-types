@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Backend: Optional[str]
     CredentialType: Optional[str]
     DefaultStsTtl: Optional[float]
+    Id: Optional[str]
     MaxStsTtl: Optional[float]
     Name: Optional[str]
     Policy: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Backend=json_data.get("Backend"),
             CredentialType=json_data.get("CredentialType"),
             DefaultStsTtl=json_data.get("DefaultStsTtl"),
+            Id=json_data.get("Id"),
             MaxStsTtl=json_data.get("MaxStsTtl"),
             Name=json_data.get("Name"),
             Policy=json_data.get("Policy"),

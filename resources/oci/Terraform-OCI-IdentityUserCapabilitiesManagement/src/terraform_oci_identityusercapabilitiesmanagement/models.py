@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     CanUseConsolePassword: Optional[bool]
     CanUseCustomerSecretKeys: Optional[bool]
     CanUseSmtpCredentials: Optional[bool]
+    Id: Optional[str]
     UserId: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             CanUseConsolePassword=json_data.get("CanUseConsolePassword"),
             CanUseCustomerSecretKeys=json_data.get("CanUseCustomerSecretKeys"),
             CanUseSmtpCredentials=json_data.get("CanUseSmtpCredentials"),
+            Id=json_data.get("Id"),
             UserId=json_data.get("UserId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

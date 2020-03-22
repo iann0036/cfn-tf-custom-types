@@ -40,6 +40,9 @@
             "type": "boolean",
             "description": "Set to `true` to enable DHCP."
         },
+        "Id": {
+            "type": "string"
+        },
         "InterfaceType": {
             "type": "string",
             "description": "The interface type.  Valid values are `ethernet` (default)\nor `aggregate-ethernet`."
@@ -103,10 +106,11 @@
         "ParentInterface"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -138,14 +138,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleDown"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AutoscaleHeadroom": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleHeadroom"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AutoscaleLabels": {
                     "type": "array",
@@ -480,6 +482,9 @@
         "FallbackToOndemand": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceTypesOndemand": {
             "type": "string"
         },
@@ -673,10 +678,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

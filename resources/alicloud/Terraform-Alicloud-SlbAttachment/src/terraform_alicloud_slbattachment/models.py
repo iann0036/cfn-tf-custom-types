@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BackendServers: Optional[str]
     DeleteProtectionValidation: Optional[bool]
+    Id: Optional[str]
     InstanceIds: Optional[Sequence[str]]
     LoadBalancerId: Optional[str]
     ServerType: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BackendServers=json_data.get("BackendServers"),
             DeleteProtectionValidation=json_data.get("DeleteProtectionValidation"),
+            Id=json_data.get("Id"),
             InstanceIds=json_data.get("InstanceIds"),
             LoadBalancerId=json_data.get("LoadBalancerId"),
             ServerType=json_data.get("ServerType"),

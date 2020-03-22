@@ -114,6 +114,9 @@
         "Hostname": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "The location of the resource group."
@@ -171,16 +174,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -224,6 +227,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Hostname",
+        "/properties/Id",
         "/properties/Port",
         "/properties/PrimaryAccessKey",
         "/properties/PrimaryConnectionString",
@@ -232,7 +236,7 @@
         "/properties/SslPort"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The name of the certificate."
         },
+        "Id": {
+            "type": "string"
+        },
         "Type": {
             "type": "string",
             "description": "Either \"pkcs7\" or \"identity\", indicating the type of\ndocument which can be verified using the given certificate. Defaults to\n\"pkcs7\"."
@@ -31,10 +34,11 @@
         "CertName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

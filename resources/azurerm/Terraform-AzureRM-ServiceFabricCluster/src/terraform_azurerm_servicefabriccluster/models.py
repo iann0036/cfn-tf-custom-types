@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AddOnFeatures: Optional[Sequence[str]]
     ClusterCodeVersion: Optional[str]
     ClusterEndpoint: Optional[str]
+    Id: Optional[str]
     Location: Optional[str]
     ManagementEndpoint: Optional[str]
     Name: Optional[str]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             AddOnFeatures=json_data.get("AddOnFeatures"),
             ClusterCodeVersion=json_data.get("ClusterCodeVersion"),
             ClusterEndpoint=json_data.get("ClusterEndpoint"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             ManagementEndpoint=json_data.get("ManagementEndpoint"),
             Name=json_data.get("Name"),
@@ -101,8 +103,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -112,8 +114,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -287,8 +289,8 @@ _FabricSettings = FabricSettings
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -298,8 +300,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -349,8 +351,8 @@ _NodeType = NodeType
 
 @dataclass
 class Capacities:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -360,8 +362,8 @@ class Capacities:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -371,8 +373,8 @@ _Capacities = Capacities
 
 @dataclass
 class PlacementProperties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -382,8 +384,8 @@ class PlacementProperties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

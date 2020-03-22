@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Direction: Optional[str]
     Ethertype: Optional[str]
+    Id: Optional[str]
     PortRangeMax: Optional[float]
     PortRangeMin: Optional[float]
     Protocol: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Direction=json_data.get("Direction"),
             Ethertype=json_data.get("Ethertype"),
+            Id=json_data.get("Id"),
             PortRangeMax=json_data.get("PortRangeMax"),
             PortRangeMin=json_data.get("PortRangeMin"),
             Protocol=json_data.get("Protocol"),

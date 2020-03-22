@@ -44,6 +44,9 @@
             "type": "string",
             "description": "The Display Name for this API Management Product."
         },
+        "Id": {
+            "type": "string"
+        },
         "ProductId": {
             "type": "string",
             "description": "The Identifier for this Product, which must be unique within the API Management Service. Changing this forces a new resource to be created."
@@ -82,10 +85,11 @@
         "SubscriptionRequired"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

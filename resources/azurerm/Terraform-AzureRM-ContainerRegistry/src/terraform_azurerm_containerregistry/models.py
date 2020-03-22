@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     AdminPassword: Optional[str]
     AdminUsername: Optional[str]
     GeoreplicationLocations: Optional[Sequence[str]]
+    Id: Optional[str]
     Location: Optional[str]
     LoginServer: Optional[str]
     Name: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             AdminPassword=json_data.get("AdminPassword"),
             AdminUsername=json_data.get("AdminUsername"),
             GeoreplicationLocations=json_data.get("GeoreplicationLocations"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             LoginServer=json_data.get("LoginServer"),
             Name=json_data.get("Name"),
@@ -149,8 +151,8 @@ _VirtualNetwork = VirtualNetwork
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -160,8 +162,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -12,6 +12,9 @@
             "type": "string",
             "description": "An optional description for IP set."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddresses": {
             "type": "array",
             "insertionOrder": true,
@@ -42,10 +45,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

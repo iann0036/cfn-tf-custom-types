@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CryptoKeyId: Optional[str]
     Etag: Optional[str]
+    Id: Optional[str]
     PolicyData: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CryptoKeyId=json_data.get("CryptoKeyId"),
             Etag=json_data.get("Etag"),
+            Id=json_data.get("Id"),
             PolicyData=json_data.get("PolicyData"),
         )
 

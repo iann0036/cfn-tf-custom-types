@@ -8,6 +8,10 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string",
+            "description": "the `id` of the resource is a combination of the pool and node member full path, joined by a hyphen (e.g. \"/Common/terraform-pool-/Common/node1:80\")."
+        },
         "Node": {
             "type": "string",
             "description": "Node to add to the pool in /Partition/NodeName:Port format (e.g. /Common/Node01:80)."
@@ -23,10 +27,11 @@
         "Pool"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

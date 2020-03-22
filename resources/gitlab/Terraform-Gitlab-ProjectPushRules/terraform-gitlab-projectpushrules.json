@@ -28,6 +28,9 @@
             "type": "string",
             "description": "All commited filenames must not match this regex, e.g. \"(jar|exe)$\"."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxFileSize": {
             "type": "number",
             "description": "Maximum file size (MB)."
@@ -50,10 +53,11 @@
         "Project"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

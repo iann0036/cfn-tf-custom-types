@@ -89,6 +89,9 @@
             "type": "string",
             "description": "Specifies the name of the Firewall in which the Network Rule Collection should be created. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the Network Rule Collection which must be unique within the Firewall. Changing this forces a new resource to be created."
@@ -122,10 +125,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

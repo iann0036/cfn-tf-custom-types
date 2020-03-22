@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessGroupName: Optional[str]
     FileSystemId: Optional[str]
+    Id: Optional[str]
     Status: Optional[str]
     VswitchId: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessGroupName=json_data.get("AccessGroupName"),
             FileSystemId=json_data.get("FileSystemId"),
+            Id=json_data.get("Id"),
             Status=json_data.get("Status"),
             VswitchId=json_data.get("VswitchId"),
         )

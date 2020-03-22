@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     ContentLength: Optional[str]
     ContentMd5: Optional[str]
     ContentType: Optional[str]
+    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Namespace: Optional[str]
     Object: Optional[str]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             ContentLength=json_data.get("ContentLength"),
             ContentMd5=json_data.get("ContentMd5"),
             ContentType=json_data.get("ContentType"),
+            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Namespace=json_data.get("Namespace"),
             Object=json_data.get("Object"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

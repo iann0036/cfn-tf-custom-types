@@ -16,7 +16,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Hash"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -68,6 +69,9 @@
             "type": "string",
             "description": "The name of the automation account in which the Module is created. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the Module. Changing this forces a new resource to be created."
@@ -104,10 +108,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

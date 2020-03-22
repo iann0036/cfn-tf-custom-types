@@ -12,6 +12,9 @@
             "type": "string",
             "description": "A description of the metric."
         },
+        "Id": {
+            "type": "string"
+        },
         "Metric": {
             "type": "string",
             "description": "The name of the metric."
@@ -41,10 +44,11 @@
         "Metric"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

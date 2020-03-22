@@ -243,6 +243,9 @@
         "EbsRootVolumeSize": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "KeepJobFlowAliveWhenNoSteps": {
             "type": "boolean"
         },
@@ -307,16 +310,16 @@
                                         "type": "object",
                                         "additionalProperties": false,
                                         "properties": {
-                                            "Key": {
+                                            "MapKey": {
                                                 "type": "string"
                                             },
-                                            "Value": {
+                                            "MapValue": {
                                                 "type": "string"
                                             }
                                         },
                                         "required": [
-                                            "Key",
-                                            "Value"
+                                            "MapKey",
+                                            "MapValue"
                                         ]
                                     }
                                 }
@@ -339,16 +342,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -422,10 +425,11 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/ClusterState",
+        "/properties/Id",
         "/properties/MasterPublicDns"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

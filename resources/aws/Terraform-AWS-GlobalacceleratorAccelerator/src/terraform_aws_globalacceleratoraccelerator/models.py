@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DnsName: Optional[str]
     Enabled: Optional[bool]
     HostedZoneId: Optional[str]
+    Id: Optional[str]
     IpAddressType: Optional[str]
     IpSets: Optional[Sequence["_IpSets"]]
     Name: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             DnsName=json_data.get("DnsName"),
             Enabled=json_data.get("Enabled"),
             HostedZoneId=json_data.get("HostedZoneId"),
+            Id=json_data.get("Id"),
             IpAddressType=json_data.get("IpAddressType"),
             IpSets=json_data.get("IpSets"),
             Name=json_data.get("Name"),
@@ -93,8 +95,8 @@ _IpSets = IpSets
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

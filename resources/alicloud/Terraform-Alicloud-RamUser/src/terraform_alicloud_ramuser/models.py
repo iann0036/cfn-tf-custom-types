@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DisplayName: Optional[str]
     Email: Optional[str]
     Force: Optional[bool]
+    Id: Optional[str]
     Mobile: Optional[str]
     Name: Optional[str]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             DisplayName=json_data.get("DisplayName"),
             Email=json_data.get("Email"),
             Force=json_data.get("Force"),
+            Id=json_data.get("Id"),
             Mobile=json_data.get("Mobile"),
             Name=json_data.get("Name"),
         )

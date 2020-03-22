@@ -29,6 +29,9 @@
             "type": "string",
             "description": "The OCID of the volume to assign the policy to."
         },
+        "Id": {
+            "type": "string"
+        },
         "PolicyId": {
             "type": "string",
             "description": "The OCID of the volume backup policy to assign to the volume."
@@ -47,10 +50,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

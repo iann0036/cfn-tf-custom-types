@@ -32,16 +32,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -75,6 +75,9 @@
         "Host": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsPublic": {
             "type": "boolean",
             "description": "The level of visibility for the share. Set to true to make\nshare public. Set to false to make it private. Default value is false. Changing this\nupdates the existing share."
@@ -86,16 +89,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "One or more metadata key and value pairs as a dictionary of\nstrings."
@@ -153,12 +156,13 @@
         "/properties/ExportLocations",
         "/properties/HasReplicas",
         "/properties/Host",
+        "/properties/Id",
         "/properties/ProjectId",
         "/properties/ReplicationType",
         "/properties/ShareServerId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

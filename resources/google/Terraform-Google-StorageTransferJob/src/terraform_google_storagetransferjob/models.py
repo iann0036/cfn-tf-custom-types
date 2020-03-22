@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreationTime: Optional[str]
     DeletionTime: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     LastModificationTime: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             CreationTime=json_data.get("CreationTime"),
             DeletionTime=json_data.get("DeletionTime"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             LastModificationTime=json_data.get("LastModificationTime"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),

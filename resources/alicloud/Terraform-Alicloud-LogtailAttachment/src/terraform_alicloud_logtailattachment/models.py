@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     LogtailConfigName: Optional[str]
     MachineGroupName: Optional[str]
     Project: Optional[str]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             LogtailConfigName=json_data.get("LogtailConfigName"),
             MachineGroupName=json_data.get("MachineGroupName"),
             Project=json_data.get("Project"),

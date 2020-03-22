@@ -40,7 +40,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OriginalPacket"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Target": {
                     "type": "array",
@@ -54,7 +56,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TranslatedPacket"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -139,14 +143,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Destination"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Source": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Source"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -160,28 +168,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Dynamic"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "DynamicTranslation": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DynamicTranslation"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Static": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Static"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "StaticTranslation": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StaticTranslation"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -195,21 +207,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DynamicIp"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "DynamicIpAndPort": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DynamicIpAndPort"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "StaticIp": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StaticIp"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -296,7 +311,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Fallback"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -312,14 +328,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/InterfaceAddress"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TranslatedAddress": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TranslatedAddress"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -348,14 +366,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/InterfaceAddress"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TranslatedAddress": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TranslatedAddress"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -401,6 +421,9 @@
         "DeviceGroup": {
             "type": "string",
             "description": "Device group the NAT rules should be put into\n(default: `shared`)."
+        },
+        "Id": {
+            "type": "string"
         },
         "PositionKeyword": {
             "type": "string",
@@ -549,10 +572,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

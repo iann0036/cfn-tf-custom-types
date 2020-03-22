@@ -33,6 +33,9 @@
             "type": "string",
             "description": "Specifies the full path and file name of the file that the system attempts to download. The health check is successful if the system can download the file."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interval": {
             "type": "number",
             "description": "Check interval in seconds."
@@ -99,10 +102,11 @@
         "Parent"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

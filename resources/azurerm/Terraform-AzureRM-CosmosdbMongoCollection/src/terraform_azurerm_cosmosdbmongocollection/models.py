@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AccountName: Optional[str]
     DatabaseName: Optional[str]
     DefaultTtlSeconds: Optional[float]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     ShardKey: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             AccountName=json_data.get("AccountName"),
             DatabaseName=json_data.get("DatabaseName"),
             DefaultTtlSeconds=json_data.get("DefaultTtlSeconds"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             ShardKey=json_data.get("ShardKey"),

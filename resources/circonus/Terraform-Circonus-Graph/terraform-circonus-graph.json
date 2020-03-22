@@ -117,6 +117,9 @@
             "type": "string",
             "description": "How the graph should be rendered.  Valid options\nare `area` or `line` (default)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Left": {
             "type": "array",
             "insertionOrder": true,
@@ -124,16 +127,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of graph left axis options.  Valid values in `left`\ninclude: `logarithmic` can be set to `0` (default) or `1`; `min` is the `min`\nY axis value on the left; and `max` is the Y axis max value on the left."
@@ -157,16 +160,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of graph right axis options.  Valid values in\n`right` include: `logarithmic` can be set to `0` (default) or `1`; `min` is\nthe `min` Y axis value on the right; and `max` is the Y axis max value on the\nright."
@@ -206,10 +209,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,9 @@
             "type": "string",
             "description": "The UUID of a flavor. Changing this creates a new\nloadbalancer."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadbalancerProvider": {
             "type": "string",
             "description": "The name of the provider. Changing this\ncreates a new loadbalancer."
@@ -82,10 +85,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/VipPortId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BandwidthLimit: Optional[float]
+    Id: Optional[str]
     InstanceId: Optional[str]
     RegionIds: Optional[Sequence[str]]
     Timeouts: Optional["_Timeouts"]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BandwidthLimit=json_data.get("BandwidthLimit"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             RegionIds=json_data.get("RegionIds"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

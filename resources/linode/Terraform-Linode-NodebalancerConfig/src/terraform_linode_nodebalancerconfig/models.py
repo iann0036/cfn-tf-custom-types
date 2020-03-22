@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     CheckPath: Optional[str]
     CheckTimeout: Optional[float]
     CipherSuite: Optional[str]
+    Id: Optional[str]
     NodeStatus: Optional[Sequence["_NodeStatus"]]
     NodebalancerId: Optional[float]
     Port: Optional[float]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             CheckPath=json_data.get("CheckPath"),
             CheckTimeout=json_data.get("CheckTimeout"),
             CipherSuite=json_data.get("CipherSuite"),
+            Id=json_data.get("Id"),
             NodeStatus=json_data.get("NodeStatus"),
             NodebalancerId=json_data.get("NodebalancerId"),
             Port=json_data.get("Port"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class NodeStatus:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class NodeStatus:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

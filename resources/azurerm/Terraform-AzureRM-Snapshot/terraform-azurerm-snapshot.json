@@ -15,14 +15,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DiskEncryptionKey"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "KeyEncryptionKey": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KeyEncryptionKey"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -94,6 +96,9 @@
             "type": "number",
             "description": "The size of the Snapshotted Disk in GB."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "Specifies the supported Azure location where the resource exists. Changing this forces a new resource to be created."
@@ -125,16 +130,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -175,10 +180,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

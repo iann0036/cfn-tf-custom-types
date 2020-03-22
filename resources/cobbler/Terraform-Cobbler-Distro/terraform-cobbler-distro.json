@@ -28,6 +28,9 @@
             "type": "string",
             "description": "Templates for tftp or wget."
         },
+        "Id": {
+            "type": "string"
+        },
         "Initrd": {
             "type": "string",
             "description": "Absolute path to initrd on filesystem. This\nmust already exist prior to creating the distro."
@@ -90,10 +93,11 @@
         "OsVersion"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     ArnSuffix: Optional[str]
     DeregistrationDelay: Optional[float]
+    Id: Optional[str]
     LambdaMultiValueHeadersEnabled: Optional[bool]
     LoadBalancingAlgorithmType: Optional[str]
     Name: Optional[str]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             ArnSuffix=json_data.get("ArnSuffix"),
             DeregistrationDelay=json_data.get("DeregistrationDelay"),
+            Id=json_data.get("Id"),
             LambdaMultiValueHeadersEnabled=json_data.get("LambdaMultiValueHeadersEnabled"),
             LoadBalancingAlgorithmType=json_data.get("LoadBalancingAlgorithmType"),
             Name=json_data.get("Name"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

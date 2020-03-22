@@ -48,6 +48,9 @@
             "type": "number",
             "description": "The estimated time, in seconds, until a newly launched instance will contribute CloudMonitor metrics. Default to 300."
         },
+        "Id": {
+            "type": "string"
+        },
         "MetricName": {
             "type": "string",
             "description": "A CloudMonitor metric name."
@@ -82,10 +85,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Ari"
+        "/properties/Ari",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Active: Optional[bool]
     Description: Optional[str]
     Events: Optional[Sequence[str]]
+    Id: Optional[str]
     Owner: Optional[str]
     Repository: Optional[str]
     SkipCertVerification: Optional[bool]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Active=json_data.get("Active"),
             Description=json_data.get("Description"),
             Events=json_data.get("Events"),
+            Id=json_data.get("Id"),
             Owner=json_data.get("Owner"),
             Repository=json_data.get("Repository"),
             SkipCertVerification=json_data.get("SkipCertVerification"),

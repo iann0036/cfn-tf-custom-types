@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     LockLevel: Optional[str]
     Name: Optional[str]
     Notes: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             LockLevel=json_data.get("LockLevel"),
             Name=json_data.get("Name"),
             Notes=json_data.get("Notes"),

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     EdgesetPath: Optional[Sequence["_EdgesetPath"]]
     EipId: Optional[str]
     GraphSizeType: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PrivateIp: Optional[str]
     PublicIp: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             EdgesetPath=json_data.get("EdgesetPath"),
             EipId=json_data.get("EipId"),
             GraphSizeType=json_data.get("GraphSizeType"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivateIp=json_data.get("PrivateIp"),
             PublicIp=json_data.get("PublicIp"),

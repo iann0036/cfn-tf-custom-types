@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Document: Optional[str]
     Force: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     RamUsers: Optional[Sequence[str]]
     RoleId: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Document=json_data.get("Document"),
             Force=json_data.get("Force"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RamUsers=json_data.get("RamUsers"),
             RoleId=json_data.get("RoleId"),

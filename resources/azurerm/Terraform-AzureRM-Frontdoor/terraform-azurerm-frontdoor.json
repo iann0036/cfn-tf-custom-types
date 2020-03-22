@@ -24,7 +24,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Backend"
-                    }
+                    },
+                    "maxItems": 100,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -124,7 +126,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CustomHttpsConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -174,14 +177,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ForwardingConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "RedirectConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RedirectConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -354,6 +359,9 @@
             "type": "string",
             "description": "A friendly name for the Front Door service."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancerEnabled": {
             "type": "boolean",
             "description": "Should the Front Door Load Balancer be Enabled? Defaults to `true`."
@@ -376,16 +384,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -480,10 +488,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Cname"
+        "/properties/Cname",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

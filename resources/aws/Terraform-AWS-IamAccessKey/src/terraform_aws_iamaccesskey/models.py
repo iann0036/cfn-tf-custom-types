@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EncryptedSecret: Optional[str]
+    Id: Optional[str]
     KeyFingerprint: Optional[str]
     PgpKey: Optional[str]
     Secret: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EncryptedSecret=json_data.get("EncryptedSecret"),
+            Id=json_data.get("Id"),
             KeyFingerprint=json_data.get("KeyFingerprint"),
             PgpKey=json_data.get("PgpKey"),
             Secret=json_data.get("Secret"),

@@ -1,6 +1,6 @@
 # Terraform::OpsGenie::TeamRoutingRule
 
-Manages a Team Routing Rule within Opsgenie.
+An example resource schema demonstrating some basic constructs and validation rules.
 
 ## Syntax
 
@@ -12,16 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::OpsGenie::TeamRoutingRule",
     "Properties" : {
-        "<a href="#name" title="Name">Name</a>" : <i>String</i>,
-        "<a href="#order" title="Order">Order</a>" : <i>Double</i>,
-        "<a href="#teamid" title="TeamId">TeamId</a>" : <i>String</i>,
-        "<a href="#timezone" title="Timezone">Timezone</a>" : <i>String</i>,
-        "<a href="#criteria" title="Criteria">Criteria</a>" : <i>[ <a href="criteria.md">Criteria</a>, ... ]</i>,
-        "<a href="#notify" title="Notify">Notify</a>" : <i>[ <a href="notify.md">Notify</a>, ... ]</i>,
-        "<a href="#timerestriction" title="TimeRestriction">TimeRestriction</a>" : <i>[ <a href="timerestriction.md">TimeRestriction</a>, ... ]</i>,
-        "<a href="#conditions" title="Conditions">Conditions</a>" : <i>[ <a href="conditions.md">Conditions</a>, ... ]</i>,
-        "<a href="#restriction" title="Restriction">Restriction</a>" : <i>[ <a href="restriction.md">Restriction</a>, ... ]</i>,
-        "<a href="#restrictions" title="Restrictions">Restrictions</a>" : <i>[ <a href="restrictions.md">Restrictions</a>, ... ]</i>
+        "<a href="#title" title="Title">Title</a>" : <i>String</i>,
+        "<a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>" : <i>Boolean</i>,
+        "<a href="#duedate" title="DueDate">DueDate</a>" : <i>String</i>,
+        "<a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>" : <i>String</i>,
+        "<a href="#memo" title="Memo">Memo</a>" : <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>,
+        "<a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>" : <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>,
+        "<a href="#testcode" title="TestCode">TestCode</a>" : <i>String</i>,
+        "<a href="#authors" title="Authors">Authors</a>" : <i>[ String, ... ]</i>
     }
 }
 </pre>
@@ -31,109 +29,90 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::OpsGenie::TeamRoutingRule
 Properties:
-    <a href="#name" title="Name">Name</a>: <i>String</i>
-    <a href="#order" title="Order">Order</a>: <i>Double</i>
-    <a href="#teamid" title="TeamId">TeamId</a>: <i>String</i>
-    <a href="#timezone" title="Timezone">Timezone</a>: <i>String</i>
-    <a href="#criteria" title="Criteria">Criteria</a>: <i>
-      - <a href="criteria.md">Criteria</a></i>
-    <a href="#notify" title="Notify">Notify</a>: <i>
-      - <a href="notify.md">Notify</a></i>
-    <a href="#timerestriction" title="TimeRestriction">TimeRestriction</a>: <i>
-      - <a href="timerestriction.md">TimeRestriction</a></i>
-    <a href="#conditions" title="Conditions">Conditions</a>: <i>
-      - <a href="conditions.md">Conditions</a></i>
-    <a href="#restriction" title="Restriction">Restriction</a>: <i>
-      - <a href="restriction.md">Restriction</a></i>
-    <a href="#restrictions" title="Restrictions">Restrictions</a>: <i>
-      - <a href="restrictions.md">Restrictions</a></i>
+    <a href="#title" title="Title">Title</a>: <i>String</i>
+    <a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>: <i>Boolean</i>
+    <a href="#duedate" title="DueDate">DueDate</a>: <i>String</i>
+    <a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>: <i>String</i>
+    <a href="#memo" title="Memo">Memo</a>: <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>
+    <a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>: <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>
+    <a href="#testcode" title="TestCode">TestCode</a>: <i>String</i>
+    <a href="#authors" title="Authors">Authors</a>: <i>
+      - String</i>
 </pre>
 
 ## Properties
 
-#### Name
+#### Title
 
-(Optional) Name of the team routing rule.
-
-_Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Order
-
-(Optional) The order of the team routing rule within the rules. order value is actually the index of the team routing rule whose minimum value is 0 and whose maximum value is n-1 (number of team routing rules is n).
-
-_Required_: Yes
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### TeamId
+The title of the TPS report is a mandatory element.
 
 _Required_: Yes
 
 _Type_: String
 
+_Minimum_: <code>20</code>
+
+_Maximum_: <code>250</code>
+
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Timezone
+#### CoverSheetIncluded
 
-(Optional) Timezone of team routing rule. If timezone field is not given, account timezone is used as default.You can refer to Supported Locale IDs for available timezones.
+Required for all TPS Reports submitted after 2/19/1999
 
-_Required_: Yes
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DueDate
+
+_Required_: No
 
 _Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Criteria
+#### ApprovalDate
 
 _Required_: No
 
-_Type_: List of <a href="criteria.md">Criteria</a>
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Notify
+#### Memo
 
 _Required_: No
 
-_Type_: List of <a href="notify.md">Notify</a>
+_Type_: <a href="secondcopyofmemo.md">SecondCopyOfMemo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### TimeRestriction
+#### SecondCopyOfMemo
 
 _Required_: No
 
-_Type_: List of <a href="timerestriction.md">TimeRestriction</a>
+_Type_: <a href="secondcopyofmemo.md">SecondCopyOfMemo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Conditions
+#### TestCode
 
-_Required_: No
+_Required_: Yes
 
-_Type_: List of <a href="conditions.md">Conditions</a>
+_Type_: String
 
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Restriction
-
-_Required_: No
-
-_Type_: List of <a href="restriction.md">Restriction</a>
+_Allowed Values_: <code>NOT_STARTED</code> | <code>CANCELLED</code>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Restrictions
+#### Authors
 
 _Required_: No
 
-_Type_: List of <a href="restrictions.md">Restrictions</a>
+_Type_: List of String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -141,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the TPSCode.
 
 ### Fn::GetAtt
 
@@ -149,7 +128,7 @@ The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of
 
 For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
 
-#### tfcfnid
+#### TPSCode
 
-Internal identifier for tracking resource changes. Do not use.
+A TPS Code is automatically generated on creation and assigned as the unique identifier.
 

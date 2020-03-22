@@ -43,6 +43,9 @@
             "type": "boolean",
             "description": "Specifies if a notification email will be send when the daily data volume cap is met."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstrumentationKey": {
             "type": "string"
         },
@@ -73,16 +76,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -101,10 +104,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AppId",
+        "/properties/Id",
         "/properties/InstrumentationKey"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

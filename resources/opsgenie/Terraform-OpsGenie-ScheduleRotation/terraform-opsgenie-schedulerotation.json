@@ -117,6 +117,9 @@
             "type": "string",
             "description": "This parameter takes a date format as (yyyy-MM-dd'T'HH:mm:ssZ) (e.g. 2019-06-11T08:00:00+02:00). Minutes may take 0 or 30 as value. Otherwise they will be converted to nearest 0 or 30 automatically."
         },
+        "Id": {
+            "type": "string"
+        },
         "Length": {
             "type": "number",
             "description": "Length of the rotation with default value 1."
@@ -174,10 +177,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

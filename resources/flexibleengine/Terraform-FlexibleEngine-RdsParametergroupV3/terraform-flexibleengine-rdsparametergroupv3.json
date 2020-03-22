@@ -75,6 +75,9 @@
             "type": "string",
             "description": "The parameter group description. It contains a maximum of 256 characters and cannot contain the following special characters:>!<\"&'= the value is left blank by default."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The parameter group name. It contains a maximum of 64 characters."
@@ -86,16 +89,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Parameter group values key/value pairs defined by users based on the default parameter groups."
@@ -119,10 +122,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ConfigurationParameters"
+        "/properties/ConfigurationParameters",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Entity ID to which this alias belongs to."
         },
+        "Id": {
+            "type": "string"
+        },
         "MountAccessor": {
             "type": "string",
             "description": "Accessor of the mount to which the alias should belong to."
@@ -28,10 +31,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

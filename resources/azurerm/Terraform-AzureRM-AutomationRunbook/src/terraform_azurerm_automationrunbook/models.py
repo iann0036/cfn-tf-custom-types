@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AutomationAccountName: Optional[str]
     Content: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Location: Optional[str]
     LogProgress: Optional[bool]
     LogVerbose: Optional[bool]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             AutomationAccountName=json_data.get("AutomationAccountName"),
             Content=json_data.get("Content"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             LogProgress=json_data.get("LogProgress"),
             LogVerbose=json_data.get("LogVerbose"),
@@ -81,8 +83,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -92,8 +94,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

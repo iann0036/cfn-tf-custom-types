@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DnsIp: Optional[str]
     Domain: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Ou: Optional[str]
     Password: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DnsIp=json_data.get("DnsIp"),
             Domain=json_data.get("Domain"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Ou=json_data.get("Ou"),
             Password=json_data.get("Password"),

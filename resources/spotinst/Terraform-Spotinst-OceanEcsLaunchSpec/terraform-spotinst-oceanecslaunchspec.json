@@ -47,6 +47,9 @@
             "type": "string",
             "description": "The ARN or name of an IAM instance profile to associate with launched instances."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string",
             "description": "ID of the image used to launch the instances."
@@ -92,10 +95,11 @@
         "OceanId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

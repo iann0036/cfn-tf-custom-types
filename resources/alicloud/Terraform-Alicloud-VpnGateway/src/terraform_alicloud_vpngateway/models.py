@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EnableIpsec: Optional[bool]
     EnableSsl: Optional[bool]
+    Id: Optional[str]
     InstanceChargeType: Optional[str]
     InternetIp: Optional[str]
     Name: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EnableIpsec=json_data.get("EnableIpsec"),
             EnableSsl=json_data.get("EnableSsl"),
+            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             InternetIp=json_data.get("InternetIp"),
             Name=json_data.get("Name"),

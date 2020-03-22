@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EndIp: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     RedisCacheName: Optional[str]
     ResourceGroupName: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EndIp=json_data.get("EndIp"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RedisCacheName=json_data.get("RedisCacheName"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     DxGatewayId: Optional[str]
+    Id: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     VirtualInterfaceId: Optional[str]
     VpnGatewayId: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             DxGatewayId=json_data.get("DxGatewayId"),
+            Id=json_data.get("Id"),
             Tags=json_data.get("Tags"),
             VirtualInterfaceId=json_data.get("VirtualInterfaceId"),
             VpnGatewayId=json_data.get("VpnGatewayId"),
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

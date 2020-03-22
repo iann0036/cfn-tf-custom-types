@@ -58,6 +58,9 @@
             },
             "description": "List of DNS names for which a certificate is being requested."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddresses": {
             "type": "array",
             "insertionOrder": false,
@@ -98,10 +101,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CertRequestPem"
+        "/properties/CertRequestPem",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

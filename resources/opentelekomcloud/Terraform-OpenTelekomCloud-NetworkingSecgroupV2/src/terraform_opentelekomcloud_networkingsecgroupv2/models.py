@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeleteDefaultRules: Optional[bool]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     TenantId: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DeleteDefaultRules=json_data.get("DeleteDefaultRules"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             TenantId=json_data.get("TenantId"),

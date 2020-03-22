@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Cidr: Optional[str]
     GatewayId: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Cidr=json_data.get("Cidr"),
             GatewayId=json_data.get("GatewayId"),
+            Id=json_data.get("Id"),
         )
 
 

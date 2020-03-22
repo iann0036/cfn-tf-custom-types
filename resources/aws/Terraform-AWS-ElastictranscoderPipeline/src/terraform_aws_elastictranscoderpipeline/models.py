@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     AwsKmsKeyArn: Optional[str]
+    Id: Optional[str]
     InputBucket: Optional[str]
     Name: Optional[str]
     OutputBucket: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             AwsKmsKeyArn=json_data.get("AwsKmsKeyArn"),
+            Id=json_data.get("Id"),
             InputBucket=json_data.get("InputBucket"),
             Name=json_data.get("Name"),
             OutputBucket=json_data.get("OutputBucket"),

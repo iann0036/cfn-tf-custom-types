@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CopyTos: Optional[bool]
     Disabled: Optional[bool]
     EnableKeepAlive: Optional[bool]
+    Id: Optional[str]
     Interface: Optional[str]
     KeepAliveHoldTimer: Optional[float]
     KeepAliveInterval: Optional[float]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             CopyTos=json_data.get("CopyTos"),
             Disabled=json_data.get("Disabled"),
             EnableKeepAlive=json_data.get("EnableKeepAlive"),
+            Id=json_data.get("Id"),
             Interface=json_data.get("Interface"),
             KeepAliveHoldTimer=json_data.get("KeepAliveHoldTimer"),
             KeepAliveInterval=json_data.get("KeepAliveInterval"),

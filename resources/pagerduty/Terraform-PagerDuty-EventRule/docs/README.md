@@ -14,7 +14,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Properties" : {
         "<a href="#actionjson" title="ActionJson">ActionJson</a>" : <i>String</i>,
         "<a href="#advancedconditionjson" title="AdvancedConditionJson">AdvancedConditionJson</a>" : <i>String</i>,
-        "<a href="#conditionjson" title="ConditionJson">ConditionJson</a>" : <i>String</i>
+        "<a href="#conditionjson" title="ConditionJson">ConditionJson</a>" : <i>String</i>,
     }
 }
 </pre>
@@ -65,7 +65,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the Id.
 
 ### Fn::GetAtt
 
@@ -80,4 +80,8 @@ Internal identifier for tracking resource changes. Do not use.
 #### CatchAll
 
 Returns the <code>CatchAll</code> value.
+
+#### Id
+
+Returns the <code>Id</code> value.
 

@@ -32,6 +32,9 @@
             "type": "string",
             "description": "Specifies the unique identifier of the object content. It can be used to trigger updates.\nThe only meaningful value is `md5(file(\"path_to_file\"))`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "The name of the object once it is in the bucket."
@@ -61,11 +64,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Size",
         "/properties/VersionId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

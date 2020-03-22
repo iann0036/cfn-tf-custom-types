@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The security group description. Defaults to null."
         },
+        "Id": {
+            "type": "string"
+        },
         "InnerAccess": {
             "type": "boolean",
             "description": "Field 'inner_access' has been deprecated from provider version 1.55.3. Use 'inner_access_policy' replaces it."
@@ -39,16 +42,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -61,10 +64,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -12,6 +12,9 @@
             "type": "boolean",
             "description": "Whether or not the key is enabled. This is useful if you want to temporarily disable an SSH key,\nwithout removing it entirely from your Terraform resource definition. Defaults to `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "The SSH key itself."
@@ -27,10 +30,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

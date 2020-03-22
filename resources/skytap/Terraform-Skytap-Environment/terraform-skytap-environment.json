@@ -31,6 +31,9 @@
             "type": "string",
             "description": "User-defined description of the environment. Limited to 1000 characters. Null allowed. UTF-8 character type."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "User-defined name of the environment. Limited to 255 characters. UTF-8 character type. Will default to source template\u2019s name if null is provided."
@@ -90,10 +93,11 @@
         "TemplateId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

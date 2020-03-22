@@ -19,6 +19,9 @@
         "Global": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "Rule": {
             "type": "string",
             "description": "The firewall rule described using the Cloud API rule syntax defined at https://docs.joyent.com/public-cloud/network/firewall/cloud-firewall-rules-reference.\nNote: Cloud API will normalize rules based on case-sensitivity, parentheses,\nordering of IP addresses, etc. This can result in Terraform updating rules\nrepeatedly if the rule definition differs from the normalized value."
@@ -30,10 +33,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Global"
+        "/properties/Global",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

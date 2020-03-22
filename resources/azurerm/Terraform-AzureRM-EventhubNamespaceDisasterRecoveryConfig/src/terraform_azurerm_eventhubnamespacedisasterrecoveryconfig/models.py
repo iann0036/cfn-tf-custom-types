@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AlternateName: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NamespaceName: Optional[str]
     PartnerNamespaceId: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AlternateName=json_data.get("AlternateName"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamespaceName=json_data.get("NamespaceName"),
             PartnerNamespaceId=json_data.get("PartnerNamespaceId"),

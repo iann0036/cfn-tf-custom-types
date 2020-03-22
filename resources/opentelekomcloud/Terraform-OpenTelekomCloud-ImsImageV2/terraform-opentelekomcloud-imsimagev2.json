@@ -36,6 +36,9 @@
         "DiskFormat": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageSize": {
             "type": "string"
         },
@@ -78,16 +81,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The tags of the image."
@@ -111,11 +114,12 @@
         "/properties/tfcfnid",
         "/properties/DataOrigin",
         "/properties/DiskFormat",
+        "/properties/Id",
         "/properties/ImageSize",
         "/properties/Visibility"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

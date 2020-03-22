@@ -39,6 +39,9 @@
             "type": "string",
             "description": "The name of the column family."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceName": {
             "type": "string",
             "description": "The name of the Bigtable instance."
@@ -77,10 +80,11 @@
         "Table"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

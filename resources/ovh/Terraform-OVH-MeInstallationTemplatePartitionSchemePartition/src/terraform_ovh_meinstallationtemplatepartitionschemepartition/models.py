@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Filesystem: Optional[str]
+    Id: Optional[str]
     Mountpoint: Optional[str]
     Order: Optional[float]
     Raid: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Filesystem=json_data.get("Filesystem"),
+            Id=json_data.get("Id"),
             Mountpoint=json_data.get("Mountpoint"),
             Order=json_data.get("Order"),
             Raid=json_data.get("Raid"),

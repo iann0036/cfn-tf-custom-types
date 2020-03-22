@@ -30,6 +30,9 @@
             "type": "boolean",
             "description": "If this should have wiki turned on or not."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsPrivate": {
             "type": "boolean",
             "description": "If this should be private or not. Defaults to `true`."
@@ -75,10 +78,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CloneHttps",
-        "/properties/CloneSsh"
+        "/properties/CloneSsh",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

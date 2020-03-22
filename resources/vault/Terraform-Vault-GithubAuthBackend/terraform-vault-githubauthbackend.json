@@ -19,6 +19,9 @@
             "type": "string",
             "description": "Specifies the description of the mount.\nThis overrides the current stored value, if any."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxTtl": {
             "type": "string"
         },
@@ -126,10 +129,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Accessor"
+        "/properties/Accessor",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

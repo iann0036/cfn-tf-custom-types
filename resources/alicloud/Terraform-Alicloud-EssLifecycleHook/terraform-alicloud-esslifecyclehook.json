@@ -16,6 +16,9 @@
             "type": "number",
             "description": "Defines the amount of time, in seconds, that can elapse before the lifecycle hook times out. When the lifecycle hook times out, Auto Scaling performs the action defined in the default_result parameter. Default value: 600."
         },
+        "Id": {
+            "type": "string"
+        },
         "LifecycleTransition": {
             "type": "string",
             "description": "Type of Scaling activity attached to lifecycle hook. Supported value: SCALE_OUT, SCALE_IN."
@@ -43,10 +46,11 @@
         "ScalingGroupId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

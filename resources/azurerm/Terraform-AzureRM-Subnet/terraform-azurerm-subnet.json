@@ -15,7 +15,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ServiceDelegation"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -80,6 +82,9 @@
             "type": "boolean",
             "description": "Enable or Disable network policies for the private link service on the subnet. Default valule is `false`. Conflicts with `enforce_private_link_endpoint_network_policies`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the subnet. Changing this forces a new resource to be created."
@@ -128,10 +133,11 @@
         "VirtualNetworkName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

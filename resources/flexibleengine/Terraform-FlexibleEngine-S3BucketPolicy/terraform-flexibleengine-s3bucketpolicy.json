@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The name of the bucket to which to apply the policy."
         },
+        "Id": {
+            "type": "string"
+        },
         "Policy": {
             "type": "string",
             "description": "The text of the policy."
@@ -23,10 +26,11 @@
         "Policy"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

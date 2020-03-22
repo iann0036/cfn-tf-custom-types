@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     InstanceChargeType: Optional[str]
     InstanceSeries: Optional[str]
     Specification: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             InstanceSeries=json_data.get("InstanceSeries"),
             Specification=json_data.get("Specification"),

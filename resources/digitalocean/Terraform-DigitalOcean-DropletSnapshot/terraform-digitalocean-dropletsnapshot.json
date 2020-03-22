@@ -15,6 +15,9 @@
             "type": "string",
             "description": "The ID of the Droplet from which the snapshot will be taken."
         },
+        "Id": {
+            "type": "string"
+        },
         "MinDiskSize": {
             "type": "number"
         },
@@ -41,12 +44,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/MinDiskSize",
         "/properties/Regions",
         "/properties/Size"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

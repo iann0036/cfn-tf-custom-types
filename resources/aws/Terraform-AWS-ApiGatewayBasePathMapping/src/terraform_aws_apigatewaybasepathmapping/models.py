@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ApiId: Optional[str]
     BasePath: Optional[str]
     DomainName: Optional[str]
+    Id: Optional[str]
     StageName: Optional[str]
 
     @classmethod
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             ApiId=json_data.get("ApiId"),
             BasePath=json_data.get("BasePath"),
             DomainName=json_data.get("DomainName"),
+            Id=json_data.get("Id"),
             StageName=json_data.get("StageName"),
         )
 

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Content: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     KvNamespaceBinding: Optional[Sequence["_KvNamespaceBinding"]]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Content=json_data.get("Content"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             KvNamespaceBinding=json_data.get("KvNamespaceBinding"),
         )

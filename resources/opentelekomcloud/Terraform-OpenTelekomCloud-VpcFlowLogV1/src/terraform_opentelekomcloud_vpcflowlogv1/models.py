@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AdminState: Optional[bool]
     Description: Optional[str]
+    Id: Optional[str]
     LogGroupId: Optional[str]
     LogTopicId: Optional[str]
     Name: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AdminState=json_data.get("AdminState"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             LogGroupId=json_data.get("LogGroupId"),
             LogTopicId=json_data.get("LogTopicId"),
             Name=json_data.get("Name"),

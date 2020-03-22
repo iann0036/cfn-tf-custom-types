@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Fieldtype: Optional[str]
+    Id: Optional[str]
     Subdomain: Optional[str]
     Target: Optional[str]
     Ttl: Optional[float]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Fieldtype=json_data.get("Fieldtype"),
+            Id=json_data.get("Id"),
             Subdomain=json_data.get("Subdomain"),
             Target=json_data.get("Target"),
             Ttl=json_data.get("Ttl"),

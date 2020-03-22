@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreatedAt: Optional[str]
     ExternalServicePort: Optional[float]
     FloatingIpId: Optional[str]
+    Id: Optional[str]
     InternalServicePort: Optional[float]
     NatGatewayId: Optional[str]
     PortId: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             CreatedAt=json_data.get("CreatedAt"),
             ExternalServicePort=json_data.get("ExternalServicePort"),
             FloatingIpId=json_data.get("FloatingIpId"),
+            Id=json_data.get("Id"),
             InternalServicePort=json_data.get("InternalServicePort"),
             NatGatewayId=json_data.get("NatGatewayId"),
             PortId=json_data.get("PortId"),

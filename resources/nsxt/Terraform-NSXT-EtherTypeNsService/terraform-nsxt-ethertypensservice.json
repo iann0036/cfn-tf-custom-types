@@ -40,6 +40,9 @@
             "type": "number",
             "description": "Type of the encapsulated protocol."
         },
+        "Id": {
+            "type": "string"
+        },
         "Revision": {
             "type": "number"
         },
@@ -58,10 +61,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DefaultService",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

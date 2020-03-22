@@ -17,6 +17,9 @@
         "GatewayArn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LunNumber": {
             "type": "number"
         },
@@ -39,16 +42,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -79,6 +82,7 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/ChapEnabled",
+        "/properties/Id",
         "/properties/LunNumber",
         "/properties/NetworkInterfacePort",
         "/properties/TargetArn",
@@ -86,7 +90,7 @@
         "/properties/VolumeId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

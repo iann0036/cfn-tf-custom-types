@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     AccountReplicationType: Optional[str]
     AccountTier: Optional[str]
     EnableHttpsTrafficOnly: Optional[bool]
+    Id: Optional[str]
     IsHnsEnabled: Optional[bool]
     Location: Optional[str]
     Name: Optional[str]
@@ -105,6 +106,7 @@ class ResourceModel(BaseResourceModel):
             AccountReplicationType=json_data.get("AccountReplicationType"),
             AccountTier=json_data.get("AccountTier"),
             EnableHttpsTrafficOnly=json_data.get("EnableHttpsTrafficOnly"),
+            Id=json_data.get("Id"),
             IsHnsEnabled=json_data.get("IsHnsEnabled"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
@@ -163,8 +165,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -174,8 +176,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

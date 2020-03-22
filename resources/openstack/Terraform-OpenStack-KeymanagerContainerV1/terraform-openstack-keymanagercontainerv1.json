@@ -12,7 +12,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Read"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -98,6 +99,9 @@
         "CreatorId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Human-readable name for the Container. Does not have\nto be unique."
@@ -153,11 +157,12 @@
         "/properties/ContainerRef",
         "/properties/CreatedAt",
         "/properties/CreatorId",
+        "/properties/Id",
         "/properties/Status",
         "/properties/UpdatedAt"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

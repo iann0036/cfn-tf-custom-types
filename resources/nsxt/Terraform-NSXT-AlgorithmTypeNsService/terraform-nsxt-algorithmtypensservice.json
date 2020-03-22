@@ -44,6 +44,9 @@
             "type": "string",
             "description": "Display name, defaults to ID if not set."
         },
+        "Id": {
+            "type": "string"
+        },
         "Revision": {
             "type": "number"
         },
@@ -71,10 +74,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DefaultService",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

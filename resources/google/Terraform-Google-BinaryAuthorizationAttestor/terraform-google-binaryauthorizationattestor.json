@@ -56,7 +56,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PkixPublicKey"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -81,6 +82,9 @@
             "type": "string"
         },
         "Description": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Name": {
@@ -122,10 +126,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

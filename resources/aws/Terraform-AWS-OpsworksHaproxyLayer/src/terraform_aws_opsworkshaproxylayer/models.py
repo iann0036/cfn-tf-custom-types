@@ -52,6 +52,7 @@ class ResourceModel(BaseResourceModel):
     ElasticLoadBalancer: Optional[str]
     HealthcheckMethod: Optional[str]
     HealthcheckUrl: Optional[str]
+    Id: Optional[str]
     InstallUpdatesOnBoot: Optional[bool]
     InstanceShutdownTimeout: Optional[float]
     Name: Optional[str]
@@ -90,6 +91,7 @@ class ResourceModel(BaseResourceModel):
             ElasticLoadBalancer=json_data.get("ElasticLoadBalancer"),
             HealthcheckMethod=json_data.get("HealthcheckMethod"),
             HealthcheckUrl=json_data.get("HealthcheckUrl"),
+            Id=json_data.get("Id"),
             InstallUpdatesOnBoot=json_data.get("InstallUpdatesOnBoot"),
             InstanceShutdownTimeout=json_data.get("InstanceShutdownTimeout"),
             Name=json_data.get("Name"),
@@ -111,8 +113,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

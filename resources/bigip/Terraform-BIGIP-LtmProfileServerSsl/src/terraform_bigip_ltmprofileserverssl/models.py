@@ -51,6 +51,7 @@ class ResourceModel(BaseResourceModel):
     Generation: Optional[float]
     GenericAlert: Optional[str]
     HandshakeTimeout: Optional[str]
+    Id: Optional[str]
     Key: Optional[str]
     ModSslMethods: Optional[str]
     Mode: Optional[str]
@@ -101,6 +102,7 @@ class ResourceModel(BaseResourceModel):
             Generation=json_data.get("Generation"),
             GenericAlert=json_data.get("GenericAlert"),
             HandshakeTimeout=json_data.get("HandshakeTimeout"),
+            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             ModSslMethods=json_data.get("ModSslMethods"),
             Mode=json_data.get("Mode"),

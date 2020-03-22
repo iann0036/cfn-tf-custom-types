@@ -52,6 +52,9 @@
             "type": "string",
             "description": "Description of the image. The length is 2 to 256 English or Chinese characters, and cannot begin with http: // and https: //."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageName": {
             "type": "string",
             "description": "The image name. The length is 2 ~ 128 English or Chinese characters. Must start with a capital letter or Chinese, and cannot start with http: // and https: //. Can contain numbers, colons (:), underscores (_), or hyphens (-)."
@@ -83,10 +86,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

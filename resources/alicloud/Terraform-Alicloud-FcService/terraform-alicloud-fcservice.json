@@ -49,6 +49,9 @@
             "type": "string",
             "description": "The function compute service description."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternetAccess": {
             "type": "boolean",
             "description": "Whether to allow the service to access Internet. Default to \"true\"."
@@ -92,11 +95,12 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/LastModified",
         "/properties/ServiceId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

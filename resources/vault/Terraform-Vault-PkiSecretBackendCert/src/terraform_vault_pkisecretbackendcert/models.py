@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     ExcludeCnFromSans: Optional[bool]
     Expiration: Optional[float]
     Format: Optional[str]
+    Id: Optional[str]
     IpSans: Optional[Sequence[str]]
     IssuingCa: Optional[str]
     MinSecondsRemaining: Optional[float]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             ExcludeCnFromSans=json_data.get("ExcludeCnFromSans"),
             Expiration=json_data.get("Expiration"),
             Format=json_data.get("Format"),
+            Id=json_data.get("Id"),
             IpSans=json_data.get("IpSans"),
             IssuingCa=json_data.get("IssuingCa"),
             MinSecondsRemaining=json_data.get("MinSecondsRemaining"),

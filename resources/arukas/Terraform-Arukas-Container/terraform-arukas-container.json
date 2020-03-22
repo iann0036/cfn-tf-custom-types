@@ -52,6 +52,9 @@
         "EndpointFullUrl": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Image": {
             "type": "string",
             "description": "The ID of the image to back this container.It must be a public image on DockerHub."
@@ -126,12 +129,13 @@
         "/properties/tfcfnid",
         "/properties/EndpointFullHostname",
         "/properties/EndpointFullUrl",
+        "/properties/Id",
         "/properties/PortMappings",
         "/properties/Region",
         "/properties/ServiceId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

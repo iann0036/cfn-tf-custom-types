@@ -21,16 +21,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -56,6 +56,9 @@
         "HostSystemId": {
             "type": "string",
             "description": "The [managed object ID][docs-about-morefs] of\nthe host to set the datastore up on. Note that this is not necessarily the\nonly host that the datastore will be set up on - see\n[here](#auto-mounting-of-datastores-within-vcenter) for more info. Forces a\nnew resource if changed."
+        },
+        "Id": {
+            "type": "string"
         },
         "MaintenanceMode": {
             "type": "string"
@@ -93,13 +96,14 @@
         "/properties/Accessible",
         "/properties/Capacity",
         "/properties/FreeSpace",
+        "/properties/Id",
         "/properties/MaintenanceMode",
         "/properties/MultipleHostAccess",
         "/properties/UncommittedSpace",
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

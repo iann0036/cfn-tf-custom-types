@@ -11,6 +11,9 @@
         "DeviceOwner": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "IP address desired in the subnet for this vip.\nIf you don't specify `ip_address`, an available IP address from\nthe specified subnet will be allocated to this vip."
@@ -42,11 +45,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DeviceOwner",
+        "/properties/Id",
         "/properties/Status",
         "/properties/TenantId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

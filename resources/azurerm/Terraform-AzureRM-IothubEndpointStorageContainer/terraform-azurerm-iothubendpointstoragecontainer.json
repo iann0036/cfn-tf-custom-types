@@ -48,6 +48,9 @@
             "type": "string",
             "description": "File name format for the blob. Default format is ``{iothub}/{partition}/{YYYY}/{MM}/{DD}/{HH}/{mm}``. All parameters are mandatory but can be reordered."
         },
+        "Id": {
+            "type": "string"
+        },
         "IothubName": {
             "type": "string",
             "description": "The name of the IoTHub to which this Storage Container Endpoint belongs. Changing this forces a new resource to be created."
@@ -77,10 +80,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

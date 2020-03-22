@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     EfsFileSystemArn: Optional[str]
+    Id: Optional[str]
     Subdirectory: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     Uri: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             EfsFileSystemArn=json_data.get("EfsFileSystemArn"),
+            Id=json_data.get("Id"),
             Subdirectory=json_data.get("Subdirectory"),
             Tags=json_data.get("Tags"),
             Uri=json_data.get("Uri"),
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

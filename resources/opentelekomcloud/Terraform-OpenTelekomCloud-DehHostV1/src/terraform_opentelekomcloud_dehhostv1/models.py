@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     Cores: Optional[str]
     HostType: Optional[str]
     HostTypeName: Optional[str]
+    Id: Optional[str]
     InstanceTotal: Optional[str]
     InstanceUuids: Optional[Sequence[str]]
     Memory: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             Cores=json_data.get("Cores"),
             HostType=json_data.get("HostType"),
             HostTypeName=json_data.get("HostTypeName"),
+            Id=json_data.get("Id"),
             InstanceTotal=json_data.get("InstanceTotal"),
             InstanceUuids=json_data.get("InstanceUuids"),
             Memory=json_data.get("Memory"),

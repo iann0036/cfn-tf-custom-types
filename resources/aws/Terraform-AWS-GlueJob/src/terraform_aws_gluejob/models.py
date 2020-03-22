@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DefaultArguments: Optional[Sequence["_DefaultArguments"]]
     Description: Optional[str]
     GlueVersion: Optional[str]
+    Id: Optional[str]
     MaxCapacity: Optional[float]
     MaxRetries: Optional[float]
     Name: Optional[str]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             DefaultArguments=json_data.get("DefaultArguments"),
             Description=json_data.get("Description"),
             GlueVersion=json_data.get("GlueVersion"),
+            Id=json_data.get("Id"),
             MaxCapacity=json_data.get("MaxCapacity"),
             MaxRetries=json_data.get("MaxRetries"),
             Name=json_data.get("Name"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefaultArguments:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class DefaultArguments:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -113,8 +115,8 @@ _DefaultArguments = DefaultArguments
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -124,8 +126,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Automount: Optional[bool]
+    Id: Optional[str]
     ServerId: Optional[float]
     VolumeId: Optional[float]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Automount=json_data.get("Automount"),
+            Id=json_data.get("Id"),
             ServerId=json_data.get("ServerId"),
             VolumeId=json_data.get("VolumeId"),
         )

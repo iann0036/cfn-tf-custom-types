@@ -41,6 +41,9 @@
             "type": "number",
             "description": "Quota value for groups. Changing this updates the\nexisting quotaset."
         },
+        "Id": {
+            "type": "string"
+        },
         "PerVolumeGigabytes": {
             "type": "number",
             "description": "Quota value for gigabytes per volume .\nChanging this updates the existing quotaset."
@@ -70,10 +73,11 @@
         "ProjectId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

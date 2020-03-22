@@ -19,6 +19,9 @@
         "BinlogPeriod": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "MysqlId": {
             "type": "string",
             "description": "Instance ID to which policies will be applied."
@@ -34,10 +37,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/BinlogPeriod"
+        "/properties/BinlogPeriod",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

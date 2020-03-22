@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CertificateChain: Optional[str]
     Domains: Optional[Sequence[str]]
+    Id: Optional[str]
     LeafCertificate: Optional[str]
     Name: Optional[str]
     NotAfter: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CertificateChain=json_data.get("CertificateChain"),
             Domains=json_data.get("Domains"),
+            Id=json_data.get("Id"),
             LeafCertificate=json_data.get("LeafCertificate"),
             Name=json_data.get("Name"),
             NotAfter=json_data.get("NotAfter"),

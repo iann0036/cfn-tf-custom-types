@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The URL to which traffic that arrives at the destination address\nshould be redirected. Only applies for types `http` and `https`."
         },
+        "Id": {
+            "type": "string"
+        },
         "InsertXForwardedHttpHeader": {
             "type": "boolean",
             "description": "Enables 'X-Forwarded-For' header for identifying\nthe originating IP address of a client connecting to a Web server through the load balancer.\nOnly applies for types `http` and `https`."
@@ -68,10 +71,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

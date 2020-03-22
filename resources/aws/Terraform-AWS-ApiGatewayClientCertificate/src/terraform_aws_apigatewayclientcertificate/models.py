@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CreatedDate: Optional[str]
     Description: Optional[str]
     ExpirationDate: Optional[str]
+    Id: Optional[str]
     PemEncodedCertificate: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             CreatedDate=json_data.get("CreatedDate"),
             Description=json_data.get("Description"),
             ExpirationDate=json_data.get("ExpirationDate"),
+            Id=json_data.get("Id"),
             PemEncodedCertificate=json_data.get("PemEncodedCertificate"),
             Tags=json_data.get("Tags"),
         )
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

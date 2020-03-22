@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EdgeGateway: Optional[str]
     EnableTransparency: Optional[bool]
+    Id: Optional[str]
     MonitorId: Optional[str]
     Name: Optional[str]
     Org: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EdgeGateway=json_data.get("EdgeGateway"),
             EnableTransparency=json_data.get("EnableTransparency"),
+            Id=json_data.get("Id"),
             MonitorId=json_data.get("MonitorId"),
             Name=json_data.get("Name"),
             Org=json_data.get("Org"),

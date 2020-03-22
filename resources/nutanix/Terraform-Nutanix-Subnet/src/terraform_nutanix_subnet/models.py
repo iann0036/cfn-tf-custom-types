@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     DhcpOptions: Optional[Sequence["_DhcpOptions"]]
     DhcpServerAddress: Optional[Sequence["_DhcpServerAddress"]]
     DhcpServerAddressPort: Optional[float]
+    Id: Optional[str]
     IpConfigPoolListRanges: Optional[Sequence[str]]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -81,6 +82,7 @@ class ResourceModel(BaseResourceModel):
             DhcpOptions=json_data.get("DhcpOptions"),
             DhcpServerAddress=json_data.get("DhcpServerAddress"),
             DhcpServerAddressPort=json_data.get("DhcpServerAddressPort"),
+            Id=json_data.get("Id"),
             IpConfigPoolListRanges=json_data.get("IpConfigPoolListRanges"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
@@ -103,8 +105,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AvailabilityZoneReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class AvailabilityZoneReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -125,8 +127,8 @@ _AvailabilityZoneReference = AvailabilityZoneReference
 
 @dataclass
 class DhcpOptions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -136,8 +138,8 @@ class DhcpOptions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -147,8 +149,8 @@ _DhcpOptions = DhcpOptions
 
 @dataclass
 class DhcpServerAddress:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -158,8 +160,8 @@ class DhcpServerAddress:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -169,8 +171,8 @@ _DhcpServerAddress = DhcpServerAddress
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -180,8 +182,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -191,8 +193,8 @@ _Metadata = Metadata
 
 @dataclass
 class NetworkFunctionChainReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -202,8 +204,8 @@ class NetworkFunctionChainReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -213,8 +215,8 @@ _NetworkFunctionChainReference = NetworkFunctionChainReference
 
 @dataclass
 class OwnerReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -224,8 +226,8 @@ class OwnerReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -235,8 +237,8 @@ _OwnerReference = OwnerReference
 
 @dataclass
 class ProjectReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -246,8 +248,8 @@ class ProjectReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

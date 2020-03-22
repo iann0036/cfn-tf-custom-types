@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Accessor: Optional[str]
     DefaultLeaseTtlSeconds: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     Local: Optional[bool]
     MaxLeaseTtlSeconds: Optional[float]
     Options: Optional[Sequence["_Options"]]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             Accessor=json_data.get("Accessor"),
             DefaultLeaseTtlSeconds=json_data.get("DefaultLeaseTtlSeconds"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Local=json_data.get("Local"),
             MaxLeaseTtlSeconds=json_data.get("MaxLeaseTtlSeconds"),
             Options=json_data.get("Options"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Options:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Options:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

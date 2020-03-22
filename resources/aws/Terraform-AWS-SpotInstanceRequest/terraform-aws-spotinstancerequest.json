@@ -166,6 +166,9 @@
         "IamInstanceProfile": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceInitiatedShutdownBehavior": {
             "type": "string"
         },
@@ -256,16 +259,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -291,16 +294,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -363,6 +366,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Arn",
+        "/properties/Id",
         "/properties/InstanceState",
         "/properties/NetworkInterfaceId",
         "/properties/PasswordData",
@@ -375,7 +379,7 @@
         "/properties/SpotRequestState"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

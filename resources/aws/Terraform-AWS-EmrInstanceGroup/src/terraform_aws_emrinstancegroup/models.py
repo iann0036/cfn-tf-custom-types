@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ClusterId: Optional[str]
     ConfigurationsJson: Optional[str]
     EbsOptimized: Optional[bool]
+    Id: Optional[str]
     InstanceCount: Optional[float]
     InstanceType: Optional[str]
     Name: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             ClusterId=json_data.get("ClusterId"),
             ConfigurationsJson=json_data.get("ConfigurationsJson"),
             EbsOptimized=json_data.get("EbsOptimized"),
+            Id=json_data.get("Id"),
             InstanceCount=json_data.get("InstanceCount"),
             InstanceType=json_data.get("InstanceType"),
             Name=json_data.get("Name"),

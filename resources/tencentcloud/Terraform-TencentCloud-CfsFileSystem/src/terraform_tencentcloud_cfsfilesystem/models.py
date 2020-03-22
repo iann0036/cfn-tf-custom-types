@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AccessGroupId: Optional[str]
     AvailabilityZone: Optional[str]
     CreateTime: Optional[str]
+    Id: Optional[str]
     MountIp: Optional[str]
     Name: Optional[str]
     Protocol: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             AccessGroupId=json_data.get("AccessGroupId"),
             AvailabilityZone=json_data.get("AvailabilityZone"),
             CreateTime=json_data.get("CreateTime"),
+            Id=json_data.get("Id"),
             MountIp=json_data.get("MountIp"),
             Name=json_data.get("Name"),
             Protocol=json_data.get("Protocol"),

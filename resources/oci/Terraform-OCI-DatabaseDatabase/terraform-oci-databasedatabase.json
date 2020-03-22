@@ -29,16 +29,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -49,16 +49,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -73,7 +73,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DbBackupConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -162,16 +163,16 @@
                             "type": "object",
                             "additionalProperties": false,
                             "properties": {
-                                "Key": {
+                                "MapKey": {
                                     "type": "string"
                                 },
-                                "Value": {
+                                "MapValue": {
                                     "type": "string"
                                 }
                             },
                             "required": [
-                                "Key",
-                                "Value"
+                                "MapKey",
+                                "MapValue"
                             ]
                         }
                     },
@@ -217,16 +218,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -237,18 +238,21 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
+        },
+        "Id": {
+            "type": "string"
         },
         "LifecycleDetails": {
             "type": "string"
@@ -308,6 +312,7 @@
         "/properties/DbWorkload",
         "/properties/DefinedTags",
         "/properties/FreeformTags",
+        "/properties/Id",
         "/properties/LifecycleDetails",
         "/properties/NcharacterSet",
         "/properties/PdbName",
@@ -316,7 +321,7 @@
         "/properties/VmClusterId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -34,16 +34,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -53,6 +53,9 @@
         "HostSystemId": {
             "type": "string",
             "description": "The [managed object ID][docs-about-morefs] of\nthe host to set the port group up on. Forces a new resource if changed."
+        },
+        "Id": {
+            "type": "string"
         },
         "Key": {
             "type": "string"
@@ -127,11 +130,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ComputedPolicy",
+        "/properties/Id",
         "/properties/Key",
         "/properties/Ports"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

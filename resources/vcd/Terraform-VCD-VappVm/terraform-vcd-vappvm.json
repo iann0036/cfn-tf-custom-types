@@ -176,21 +176,24 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Key value map of guest properties."
         },
         "Href": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Initscript": {
@@ -248,16 +251,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Key value map of metadata to assign to this VM."
@@ -344,10 +347,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Description",
+        "/properties/Id",
         "/properties/InternalDisk"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

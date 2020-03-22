@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     FixedIp: Optional[str]
     FloatingIp: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     Region: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             FixedIp=json_data.get("FixedIp"),
             FloatingIp=json_data.get("FloatingIp"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             Region=json_data.get("Region"),
         )

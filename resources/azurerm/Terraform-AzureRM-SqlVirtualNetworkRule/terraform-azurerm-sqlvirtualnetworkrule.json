@@ -28,6 +28,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IgnoreMissingVnetServiceEndpoint": {
             "type": "boolean",
             "description": "Create the virtual network rule before the subnet has the virtual network service endpoint enabled. The default value is false."
@@ -60,10 +63,11 @@
         "SubnetId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

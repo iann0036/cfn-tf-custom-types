@@ -24,6 +24,9 @@
             "type": "string",
             "description": "Firewall hostname."
         },
+        "Id": {
+            "type": "string"
+        },
         "NtpPrimaryAddress": {
             "type": "string",
             "description": "Primary NTP server."
@@ -99,10 +102,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/ProxyPasswordEnc"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -11,6 +11,9 @@
         "CreateTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "The ip address of the VPN Customer Gateway."
@@ -34,10 +37,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CreateTime"
+        "/properties/CreateTime",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

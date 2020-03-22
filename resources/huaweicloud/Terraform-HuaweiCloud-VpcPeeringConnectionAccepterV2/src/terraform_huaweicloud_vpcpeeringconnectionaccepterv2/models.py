@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Accept: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     PeerTenantId: Optional[str]
     PeerVpcId: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Accept=json_data.get("Accept"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PeerTenantId=json_data.get("PeerTenantId"),
             PeerVpcId=json_data.get("PeerVpcId"),

@@ -44,6 +44,9 @@
             },
             "description": "Associate Okta groups with policies within Vault.\n[See below for more details](#okta-group)."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxTtl": {
             "type": "string",
             "description": "Maximum duration after which authentication will be expired\n[See the documentation for info on valid duration formats](https://golang.org/pkg/time/#ParseDuration)."
@@ -99,10 +102,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Accessor"
+        "/properties/Accessor",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

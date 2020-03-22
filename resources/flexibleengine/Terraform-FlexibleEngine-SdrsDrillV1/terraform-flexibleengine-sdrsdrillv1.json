@@ -30,6 +30,9 @@
             "type": "string",
             "description": "Specifies the ID of a protection group. Changing this creates a new drill."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of a DR drill. The name can contain a maximum of 64 bytes.\nThe value can contain only letters (a to z and A to Z), digits (0 to 9), decimal points (.),\nunderscores (_), and hyphens (-)."
@@ -48,10 +51,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

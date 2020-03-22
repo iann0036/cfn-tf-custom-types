@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApplicationConsistentSnapshotFrequencyInMinutes: Optional[float]
+    Id: Optional[str]
     Name: Optional[str]
     RecoveryPointRetentionInMinutes: Optional[float]
     RecoveryVaultName: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ApplicationConsistentSnapshotFrequencyInMinutes=json_data.get("ApplicationConsistentSnapshotFrequencyInMinutes"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RecoveryPointRetentionInMinutes=json_data.get("RecoveryPointRetentionInMinutes"),
             RecoveryVaultName=json_data.get("RecoveryVaultName"),

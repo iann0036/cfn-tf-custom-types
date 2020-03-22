@@ -44,6 +44,9 @@
             "type": "string",
             "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this function."
         },
+        "Id": {
+            "type": "string"
+        },
         "InputBodySourcePath": {
             "type": "string",
             "description": "An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit."
@@ -70,10 +73,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Content",
+        "/properties/Id",
         "/properties/InvokeEndpoint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

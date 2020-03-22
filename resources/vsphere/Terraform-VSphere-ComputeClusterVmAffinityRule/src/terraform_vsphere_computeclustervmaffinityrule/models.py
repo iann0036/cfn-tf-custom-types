@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ComputeClusterId: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     Mandatory: Optional[bool]
     Name: Optional[str]
     VirtualMachineIds: Optional[Sequence[str]]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ComputeClusterId=json_data.get("ComputeClusterId"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             Mandatory=json_data.get("Mandatory"),
             Name=json_data.get("Name"),
             VirtualMachineIds=json_data.get("VirtualMachineIds"),

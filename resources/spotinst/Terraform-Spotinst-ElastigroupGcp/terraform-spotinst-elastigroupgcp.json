@@ -138,14 +138,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleDown"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AutoscaleHeadroom": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AutoscaleHeadroom"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AutoscaleLabels": {
                     "type": "array",
@@ -543,6 +545,9 @@
         "HealthCheckType": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceTypesOndemand": {
             "type": "string",
             "description": "The regular VM instance type to use for mixed-type groups and when falling back to on-demand. Required if instance_types_preemptible is not set."
@@ -758,10 +763,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

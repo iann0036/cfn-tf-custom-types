@@ -23,10 +23,11 @@ Resources:
             Statement:
               - Effect: Allow
                 Action:
-                - "s3:DeleteObject"
-                - "s3:GetObject"
-                - "s3:PutObject"
-                - "secretsmanager:GetSecretValue"
+                - "initech:CreateReport"
+                - "initech:DeleteReport"
+                - "initech:DescribeReport"
+                - "initech:ListReports"
+                - "initech:UpdateReport"
                 Resource: "*"
 Outputs:
   ExecutionRoleArn:

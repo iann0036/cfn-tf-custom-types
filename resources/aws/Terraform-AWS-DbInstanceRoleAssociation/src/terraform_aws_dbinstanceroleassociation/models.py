@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DbInstanceIdentifier: Optional[str]
     FeatureName: Optional[str]
+    Id: Optional[str]
     RoleArn: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DbInstanceIdentifier=json_data.get("DbInstanceIdentifier"),
             FeatureName=json_data.get("FeatureName"),
+            Id=json_data.get("Id"),
             RoleArn=json_data.get("RoleArn"),
         )
 

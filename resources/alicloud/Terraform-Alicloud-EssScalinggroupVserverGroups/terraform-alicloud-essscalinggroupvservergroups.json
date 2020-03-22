@@ -15,7 +15,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/VserverAttributes"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -52,6 +53,9 @@
             "type": "boolean",
             "description": "If instances of scaling group are attached/removed from slb backend server when attach/detach vserver group from scaling group. Default to true."
         },
+        "Id": {
+            "type": "string"
+        },
         "ScalingGroupId": {
             "type": "string",
             "description": "ID of the scaling group."
@@ -78,10 +82,11 @@
         "ScalingGroupId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

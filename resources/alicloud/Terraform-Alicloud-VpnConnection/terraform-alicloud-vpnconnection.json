@@ -70,6 +70,9 @@
             "type": "boolean",
             "description": "Whether to delete a successfully negotiated IPsec tunnel and initiate a negotiation again. Valid value:true,false."
         },
+        "Id": {
+            "type": "string"
+        },
         "LocalSubnet": {
             "type": "array",
             "insertionOrder": true,
@@ -121,10 +124,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

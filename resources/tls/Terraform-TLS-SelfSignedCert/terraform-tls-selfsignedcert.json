@@ -70,6 +70,9 @@
             "type": "number",
             "description": "If set, the resource will consider the certificate to\nhave expired the given number of hours before its actual expiry time. This can be useful\nto deploy an updated certificate in advance of the expiration of the current certificate.\nNote however that the old certificate remains valid until its true expiration time, since\nthis resource does not (and cannot) support certificate revocation. Note also that this\nadvance update can only be performed should the Terraform configuration be applied during the\nearly renewal period."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddresses": {
             "type": "array",
             "insertionOrder": false,
@@ -134,12 +137,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CertPem",
+        "/properties/Id",
         "/properties/ReadyForRenewal",
         "/properties/ValidityEndTime",
         "/properties/ValidityStartTime"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

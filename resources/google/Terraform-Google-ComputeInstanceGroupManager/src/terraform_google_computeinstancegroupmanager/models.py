@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BaseInstanceName: Optional[str]
     Description: Optional[str]
     Fingerprint: Optional[str]
+    Id: Optional[str]
     InstanceGroup: Optional[str]
     InstanceTemplate: Optional[str]
     Name: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             BaseInstanceName=json_data.get("BaseInstanceName"),
             Description=json_data.get("Description"),
             Fingerprint=json_data.get("Fingerprint"),
+            Id=json_data.get("Id"),
             InstanceGroup=json_data.get("InstanceGroup"),
             InstanceTemplate=json_data.get("InstanceTemplate"),
             Name=json_data.get("Name"),

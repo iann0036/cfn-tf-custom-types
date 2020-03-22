@@ -32,6 +32,9 @@
             },
             "description": "Original error codes."
         },
+        "Id": {
+            "type": "string"
+        },
         "ListenerId": {
             "type": "string",
             "description": "ID of the layer7 listener."
@@ -47,16 +50,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Response headers to be set."
@@ -70,10 +73,11 @@
         "ListenerId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

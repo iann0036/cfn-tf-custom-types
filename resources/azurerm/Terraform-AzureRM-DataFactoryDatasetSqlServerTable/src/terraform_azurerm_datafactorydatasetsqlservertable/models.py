@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DataFactoryName: Optional[str]
     Description: Optional[str]
     Folder: Optional[str]
+    Id: Optional[str]
     LinkedServiceName: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             DataFactoryName=json_data.get("DataFactoryName"),
             Description=json_data.get("Description"),
             Folder=json_data.get("Folder"),
+            Id=json_data.get("Id"),
             LinkedServiceName=json_data.get("LinkedServiceName"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AdditionalProperties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class AdditionalProperties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -101,8 +103,8 @@ _AdditionalProperties = AdditionalProperties
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -112,8 +114,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

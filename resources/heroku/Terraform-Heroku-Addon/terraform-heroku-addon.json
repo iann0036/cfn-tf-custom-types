@@ -19,16 +19,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Optional plan configuration."
@@ -39,6 +39,9 @@
             "items": {
                 "type": "string"
             }
+        },
+        "Id": {
+            "type": "string"
         },
         "Name": {
             "type": "string",
@@ -60,10 +63,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ConfigVars",
+        "/properties/Id",
         "/properties/ProviderId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

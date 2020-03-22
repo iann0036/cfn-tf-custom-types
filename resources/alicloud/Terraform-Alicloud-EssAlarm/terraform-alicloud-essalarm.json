@@ -35,16 +35,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The dimension map for the alarm's associated metric (documented below). For all metrics, you can not set the dimension key as \"scaling_group\" or \"userId\", which is set by default, the second dimension for metric, such as \"device\" for \"PackagesNetIn\", need to be set by users."
@@ -56,6 +56,9 @@
         "EvaluationCount": {
             "type": "number",
             "description": "The number of times that needs to satisfies comparison condition before transition into ALARM state. Defaults to 3."
+        },
+        "Id": {
+            "type": "string"
         },
         "MetricName": {
             "type": "string",
@@ -98,10 +101,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

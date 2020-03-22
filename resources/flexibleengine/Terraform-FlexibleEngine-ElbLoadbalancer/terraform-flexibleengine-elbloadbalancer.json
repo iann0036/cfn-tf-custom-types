@@ -41,6 +41,9 @@
             "type": "string",
             "description": "Provides supplementary information about the\nlistener. The value is a string of 0 to 128 characters and cannot be <>."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the load balancer name. The name is a string\nof 1 to 64 characters that consist of letters, digits, underscores (_),\nand hyphens (-)."
@@ -83,10 +86,11 @@
         "VpcId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

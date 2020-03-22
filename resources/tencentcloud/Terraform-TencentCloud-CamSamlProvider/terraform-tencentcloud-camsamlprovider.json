@@ -15,6 +15,9 @@
             "type": "string",
             "description": "The description of the CAM SAML provider."
         },
+        "Id": {
+            "type": "string"
+        },
         "MetaData": {
             "type": "string",
             "description": "The meta data document of the CAM SAML provider."
@@ -39,11 +42,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/ProviderArn",
         "/properties/UpdateTime"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

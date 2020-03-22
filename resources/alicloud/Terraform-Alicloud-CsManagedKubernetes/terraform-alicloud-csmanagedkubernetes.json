@@ -78,16 +78,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -99,6 +99,9 @@
         },
         "ForceUpdate": {
             "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
         },
         "ImageId": {
             "type": "string"
@@ -119,16 +122,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -301,6 +304,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Connections",
+        "/properties/Id",
         "/properties/NatGatewayId",
         "/properties/SecurityGroupId",
         "/properties/SlbId",
@@ -310,7 +314,7 @@
         "/properties/WorkerNodes"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

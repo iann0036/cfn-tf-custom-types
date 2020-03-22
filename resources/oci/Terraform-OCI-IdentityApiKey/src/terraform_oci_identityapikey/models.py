@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Fingerprint: Optional[str]
+    Id: Optional[str]
     InactiveStatus: Optional[str]
     KeyValue: Optional[str]
     State: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Fingerprint=json_data.get("Fingerprint"),
+            Id=json_data.get("Id"),
             InactiveStatus=json_data.get("InactiveStatus"),
             KeyValue=json_data.get("KeyValue"),
             State=json_data.get("State"),

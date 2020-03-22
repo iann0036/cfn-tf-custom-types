@@ -15,6 +15,9 @@
             "type": "string",
             "description": "A human-readable description for the role."
         },
+        "Id": {
+            "type": "string"
+        },
         "Permissions": {
             "type": "array",
             "insertionOrder": true,
@@ -47,10 +50,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Deleted"
+        "/properties/Deleted",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

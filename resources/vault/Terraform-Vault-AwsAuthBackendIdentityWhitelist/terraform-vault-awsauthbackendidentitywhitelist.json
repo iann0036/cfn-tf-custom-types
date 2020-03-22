@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "If set to true, disables the periodic\ntidying of the identity-whitelist entries."
         },
+        "Id": {
+            "type": "string"
+        },
         "SafetyBuffer": {
             "type": "number",
             "description": "The amount of extra time, in minutes, that must\nhave passed beyond the roletag expiration, before it is removed from the\nbackend storage."
@@ -24,10 +27,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

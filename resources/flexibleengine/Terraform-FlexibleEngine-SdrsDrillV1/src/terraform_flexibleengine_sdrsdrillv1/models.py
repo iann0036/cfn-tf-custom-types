@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DrillVpcId: Optional[str]
     GroupId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Status: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DrillVpcId=json_data.get("DrillVpcId"),
             GroupId=json_data.get("GroupId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Status=json_data.get("Status"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

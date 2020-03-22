@@ -15,6 +15,9 @@
             "type": "string",
             "description": "The Id of cluster that can run database."
         },
+        "Id": {
+            "type": "string"
+        },
         "PreferredBackupPeriod": {
             "type": "array",
             "insertionOrder": true,
@@ -34,10 +37,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/BackupRetentionPeriod"
+        "/properties/BackupRetentionPeriod",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

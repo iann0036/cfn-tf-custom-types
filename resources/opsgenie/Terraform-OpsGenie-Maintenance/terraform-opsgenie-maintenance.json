@@ -16,7 +16,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Entity"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": []
@@ -62,6 +63,9 @@
             "type": "string",
             "description": "Description for the maintenance."
         },
+        "Id": {
+            "type": "string"
+        },
         "Rules": {
             "type": "array",
             "insertionOrder": false,
@@ -91,10 +95,11 @@
         "Description"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -50,6 +50,9 @@
             "type": "string",
             "description": "The datacenter to use. This overrides the\nagent's default datacenter and the datacenter in the provider setup."
         },
+        "Id": {
+            "type": "string"
+        },
         "Node": {
             "type": "string",
             "description": "The name of the node being added to, or\nreferenced in the catalog."
@@ -72,10 +75,11 @@
         "Node"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AccountId: Optional[str]
     Enable: Optional[bool]
     FindingPublishingFrequency: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             AccountId=json_data.get("AccountId"),
             Enable=json_data.get("Enable"),
             FindingPublishingFrequency=json_data.get("FindingPublishingFrequency"),
+            Id=json_data.get("Id"),
         )
 
 

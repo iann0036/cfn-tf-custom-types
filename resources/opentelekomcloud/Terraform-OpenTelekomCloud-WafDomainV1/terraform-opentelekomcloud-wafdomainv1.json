@@ -67,6 +67,9 @@
             "type": "string",
             "description": "The domain name. For example, www.example.com or *.example.com. Changing this creates a new domain."
         },
+        "Id": {
+            "type": "string"
+        },
         "PolicyId": {
             "type": "string",
             "description": "The policy ID associate with the domain. Changing this create a new domain."
@@ -121,13 +124,14 @@
         "/properties/AccessCode",
         "/properties/AccessStatus",
         "/properties/Cname",
+        "/properties/Id",
         "/properties/ProtectStatus",
         "/properties/Protocol",
         "/properties/SubDomain",
         "/properties/TxtCode"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

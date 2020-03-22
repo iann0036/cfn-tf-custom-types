@@ -29,6 +29,9 @@
             "type": "string",
             "description": "ID of the root compartment (tenancy)."
         },
+        "Id": {
+            "type": "string"
+        },
         "RetentionPeriodDays": {
             "type": "number",
             "description": "(Updatable) The retention period setting, specified in days. The minimum is 90, the maximum 365.  Example: `90`."
@@ -43,10 +46,11 @@
         "RetentionPeriodDays"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

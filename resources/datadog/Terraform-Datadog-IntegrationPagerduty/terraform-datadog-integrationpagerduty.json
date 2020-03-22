@@ -29,6 +29,9 @@
             "type": "string",
             "description": "Your PagerDuty API token."
         },
+        "Id": {
+            "type": "string"
+        },
         "IndividualServices": {
             "type": "boolean",
             "description": "Boolean to specify whether or not individual service objects specified by [datadog_integration_pagerduty_service_object](/docs/providers/datadog/r/integration_pagerduty_service_object.html) resource are to be used. Mutually exclusive with `services` key."
@@ -58,10 +61,11 @@
         "Subdomain"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Enabled: Optional[bool]
     ExpirationModel: Optional[str]
+    Id: Optional[str]
     KeyMaterialBase64: Optional[str]
     KeyState: Optional[str]
     KeyUsage: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
             ExpirationModel=json_data.get("ExpirationModel"),
+            Id=json_data.get("Id"),
             KeyMaterialBase64=json_data.get("KeyMaterialBase64"),
             KeyState=json_data.get("KeyState"),
             KeyUsage=json_data.get("KeyUsage"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

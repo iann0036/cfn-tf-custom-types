@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Filename: Optional[str]
     FunctionName: Optional[str]
     Handler: Optional[str]
+    Id: Optional[str]
     InvokeArn: Optional[str]
     KmsKeyArn: Optional[str]
     LastModified: Optional[str]
@@ -79,6 +80,7 @@ class ResourceModel(BaseResourceModel):
             Filename=json_data.get("Filename"),
             FunctionName=json_data.get("FunctionName"),
             Handler=json_data.get("Handler"),
+            Id=json_data.get("Id"),
             InvokeArn=json_data.get("InvokeArn"),
             KmsKeyArn=json_data.get("KmsKeyArn"),
             LastModified=json_data.get("LastModified"),
@@ -111,8 +113,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -173,8 +175,8 @@ _Environment = Environment
 
 @dataclass
 class Variables:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -184,8 +186,8 @@ class Variables:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

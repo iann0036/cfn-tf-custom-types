@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EnableWhitelist: Optional[bool]
+    Id: Optional[str]
     ListenerId: Optional[str]
     TenantId: Optional[str]
     Whitelist: Optional[str]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EnableWhitelist=json_data.get("EnableWhitelist"),
+            Id=json_data.get("Id"),
             ListenerId=json_data.get("ListenerId"),
             TenantId=json_data.get("TenantId"),
             Whitelist=json_data.get("Whitelist"),

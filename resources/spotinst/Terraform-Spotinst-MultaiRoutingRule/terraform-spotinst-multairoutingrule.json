@@ -29,6 +29,9 @@
             "type": "string",
             "description": "The ID of the balancer."
         },
+        "Id": {
+            "type": "string"
+        },
         "ListenerId": {
             "type": "string",
             "description": "The ID of the listener."
@@ -74,10 +77,11 @@
         "TargetSetIds"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

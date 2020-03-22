@@ -125,6 +125,9 @@
             "type": "boolean",
             "description": "IF set to `true`, only allows a\nsingle token to be granted per instance ID. This can only be set when\n`auth_type` is set to `ec2`."
         },
+        "Id": {
+            "type": "string"
+        },
         "InferredAwsRegion": {
             "type": "string",
             "description": "When `inferred_entity_type` is set, this\nis the region to search for the inferred entities. Required if\n`inferred_entity_type` is set. This only applies when `auth_type` is set to\n`iam`."
@@ -202,10 +205,11 @@
         "Role"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

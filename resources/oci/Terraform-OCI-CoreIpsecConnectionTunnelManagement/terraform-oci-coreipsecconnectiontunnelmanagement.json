@@ -51,6 +51,9 @@
             "type": "string",
             "description": "A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.\n* `ike_version` - (Optional) Internet Key Exchange protocol version.\n* `shared_secret` - (Optional) The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`."
         },
+        "Id": {
+            "type": "string"
+        },
         "IkeVersion": {
             "type": "string",
             "description": "Internet Key Exchange protocol version.\n* `shared_secret` - (Optional) The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`."
@@ -107,6 +110,7 @@
         "/properties/tfcfnid",
         "/properties/CompartmentId",
         "/properties/CpeIp",
+        "/properties/Id",
         "/properties/State",
         "/properties/Status",
         "/properties/TimeCreated",
@@ -114,7 +118,7 @@
         "/properties/VpnIp"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

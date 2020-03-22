@@ -26,6 +26,9 @@
             "type": "string",
             "description": "The device of the volume attachment (ex: `/dev/vdc`).\n_NOTE_: Being able to specify a device is dependent upon the hypervisor in\nuse. There is a chance that the device specified in Terraform will not be\nthe same device the hypervisor chose. If this happens, Terraform will wish\nto update the device upon subsequent applying which will cause the volume\nto be detached and reattached indefinitely. Please use with caution."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "The ID of the Instance to attach the Volume to."
@@ -52,10 +55,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PciAddress"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

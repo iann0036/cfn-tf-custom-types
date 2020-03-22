@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AutomationAccountName: Optional[str]
     Description: Optional[str]
     Encrypted: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     Value: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             AutomationAccountName=json_data.get("AutomationAccountName"),
             Description=json_data.get("Description"),
             Encrypted=json_data.get("Encrypted"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Value=json_data.get("Value"),

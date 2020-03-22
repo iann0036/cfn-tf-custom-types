@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContentType: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     RestApiId: Optional[str]
     Schema: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ContentType=json_data.get("ContentType"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RestApiId=json_data.get("RestApiId"),
             Schema=json_data.get("Schema"),

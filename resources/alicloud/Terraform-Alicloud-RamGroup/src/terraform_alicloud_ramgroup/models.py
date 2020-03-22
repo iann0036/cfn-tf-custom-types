@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Comments: Optional[str]
     Force: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Comments=json_data.get("Comments"),
             Force=json_data.get("Force"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

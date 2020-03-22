@@ -75,7 +75,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/IpConfiguration"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -357,7 +358,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PublicIpAddressConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -468,6 +470,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LicenseType": {
             "type": "string",
             "description": "Specifies the Windows OS license type. If supplied, the only allowed values are `Windows_Client` and `Windows_Server`."
@@ -502,16 +507,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -669,10 +674,11 @@
         "UpgradePolicyMode"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The interface comment."
         },
+        "Id": {
+            "type": "string"
+        },
         "InterfaceType": {
             "type": "string",
             "description": "The interface type.  Valid values are `ethernet` (default)\nor `aggregate-ethernet`."
@@ -52,10 +55,11 @@
         "Template"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "Whether the notification configuration should be enabled or not.\nDisabled configurations will not send any notifications. Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the notification configuration."
@@ -49,10 +52,11 @@
         "WorkspaceExternalId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

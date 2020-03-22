@@ -47,6 +47,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddressId": {
             "type": "string",
             "description": "The IP address ID for which to create the\nfirewall rules. Changing this forces a new resource to be created."
@@ -71,10 +74,11 @@
         "IpAddressId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

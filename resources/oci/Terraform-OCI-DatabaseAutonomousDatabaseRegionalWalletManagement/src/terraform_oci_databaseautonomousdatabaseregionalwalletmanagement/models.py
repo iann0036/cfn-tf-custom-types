@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     ShouldRotate: Optional[bool]
     State: Optional[str]
     TimeRotated: Optional[str]
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             ShouldRotate=json_data.get("ShouldRotate"),
             State=json_data.get("State"),
             TimeRotated=json_data.get("TimeRotated"),

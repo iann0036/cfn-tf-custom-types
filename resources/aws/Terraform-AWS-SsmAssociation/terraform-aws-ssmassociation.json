@@ -59,6 +59,9 @@
         "DocumentVersion": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string"
         },
@@ -78,16 +81,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -117,10 +120,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/AssociationId"
+        "/properties/AssociationId",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

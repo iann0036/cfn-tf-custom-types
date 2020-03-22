@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Body: Optional[str]
     Etag: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Url: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Body=json_data.get("Body"),
             Etag=json_data.get("Etag"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Url=json_data.get("Url"),
         )

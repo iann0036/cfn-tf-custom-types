@@ -40,6 +40,9 @@
             "type": "string",
             "description": "The display name of this API Version Set."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the API Version Set. Changing this forces a new resource to be created."
@@ -73,10 +76,11 @@
         "VersioningScheme"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

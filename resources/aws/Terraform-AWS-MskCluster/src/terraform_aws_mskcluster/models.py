@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     ClusterName: Optional[str]
     CurrentVersion: Optional[str]
     EnhancedMonitoring: Optional[str]
+    Id: Optional[str]
     KafkaVersion: Optional[str]
     NumberOfBrokerNodes: Optional[float]
     Tags: Optional[Sequence["_Tags"]]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             ClusterName=json_data.get("ClusterName"),
             CurrentVersion=json_data.get("CurrentVersion"),
             EnhancedMonitoring=json_data.get("EnhancedMonitoring"),
+            Id=json_data.get("Id"),
             KafkaVersion=json_data.get("KafkaVersion"),
             NumberOfBrokerNodes=json_data.get("NumberOfBrokerNodes"),
             Tags=json_data.get("Tags"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

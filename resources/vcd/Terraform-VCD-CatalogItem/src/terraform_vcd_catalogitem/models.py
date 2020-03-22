@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Catalog: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
     Org: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Catalog=json_data.get("Catalog"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
             Org=json_data.get("Org"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

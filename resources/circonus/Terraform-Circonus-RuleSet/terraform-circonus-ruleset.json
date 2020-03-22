@@ -12,14 +12,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Then"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Value": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Value"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -77,7 +79,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Over"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -104,6 +107,9 @@
         "Check": {
             "type": "string",
             "description": "The Circonus ID that this Rule Set will use to search for\na metric stream to alert on."
+        },
+        "Id": {
+            "type": "string"
         },
         "Link": {
             "type": "string",
@@ -181,10 +187,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/RuleSetId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

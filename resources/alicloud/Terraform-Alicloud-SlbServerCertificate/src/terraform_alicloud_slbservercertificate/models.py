@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     AlicloudCertificateId: Optional[str]
     AlicloudCertificateName: Optional[str]
     AlicloudCertificateRegionId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PrivateKey: Optional[str]
     ResourceGroupId: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             AlicloudCertificateId=json_data.get("AlicloudCertificateId"),
             AlicloudCertificateName=json_data.get("AlicloudCertificateName"),
             AlicloudCertificateRegionId=json_data.get("AlicloudCertificateRegionId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivateKey=json_data.get("PrivateKey"),
             ResourceGroupId=json_data.get("ResourceGroupId"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

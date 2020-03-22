@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ClusterSubnet: Optional[str]
     CreatedAt: Optional[str]
     Endpoint: Optional[str]
+    Id: Optional[str]
     Ipv4Address: Optional[str]
     KubeConfig: Optional[Sequence["_KubeConfig"]]
     Name: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             ClusterSubnet=json_data.get("ClusterSubnet"),
             CreatedAt=json_data.get("CreatedAt"),
             Endpoint=json_data.get("Endpoint"),
+            Id=json_data.get("Id"),
             Ipv4Address=json_data.get("Ipv4Address"),
             KubeConfig=json_data.get("KubeConfig"),
             Name=json_data.get("Name"),
@@ -147,8 +149,8 @@ _NodePool = NodePool
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -158,8 +160,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

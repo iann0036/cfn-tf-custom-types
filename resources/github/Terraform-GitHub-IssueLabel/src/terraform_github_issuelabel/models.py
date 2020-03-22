@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Color: Optional[str]
     Description: Optional[str]
     Etag: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Repository: Optional[str]
     Url: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             Color=json_data.get("Color"),
             Description=json_data.get("Description"),
             Etag=json_data.get("Etag"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Repository=json_data.get("Repository"),
             Url=json_data.get("Url"),

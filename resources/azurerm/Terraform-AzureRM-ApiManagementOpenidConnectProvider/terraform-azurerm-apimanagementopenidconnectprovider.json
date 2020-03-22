@@ -48,6 +48,9 @@
             "type": "string",
             "description": "A user-friendly name for this OpenID Connect Provider."
         },
+        "Id": {
+            "type": "string"
+        },
         "MetadataEndpoint": {
             "type": "string",
             "description": "The URI of the Metadata endpoint."
@@ -75,10 +78,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

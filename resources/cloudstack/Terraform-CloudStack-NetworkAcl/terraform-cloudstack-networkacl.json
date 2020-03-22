@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The description of the ACL. Changing this forces a\nnew resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the ACL. Changing this forces a new resource\nto be created."
@@ -31,10 +34,11 @@
         "VpcId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

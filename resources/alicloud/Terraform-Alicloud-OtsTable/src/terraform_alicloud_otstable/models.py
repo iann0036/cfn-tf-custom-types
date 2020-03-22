@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeviationCellVersionInSec: Optional[str]
+    Id: Optional[str]
     InstanceName: Optional[str]
     MaxVersion: Optional[float]
     TableName: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DeviationCellVersionInSec=json_data.get("DeviationCellVersionInSec"),
+            Id=json_data.get("Id"),
             InstanceName=json_data.get("InstanceName"),
             MaxVersion=json_data.get("MaxVersion"),
             TableName=json_data.get("TableName"),

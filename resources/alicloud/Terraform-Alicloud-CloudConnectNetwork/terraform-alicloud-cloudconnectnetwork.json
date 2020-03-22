@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The description of the CCN instance. The description can contain 2 to 256 characters. The description must start with English letters, but cannot start with http:// or https://."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsDefault": {
             "type": "boolean",
             "description": "Created by default. If the client does not have ccn in the binding, it will create a ccn for the user to replace."
@@ -30,10 +33,11 @@
         "IsDefault"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

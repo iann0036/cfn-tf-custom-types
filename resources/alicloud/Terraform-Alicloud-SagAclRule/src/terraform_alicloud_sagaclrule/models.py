@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DestCidr: Optional[str]
     DestPortRange: Optional[str]
     Direction: Optional[str]
+    Id: Optional[str]
     IpProtocol: Optional[str]
     Policy: Optional[str]
     Priority: Optional[float]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             DestCidr=json_data.get("DestCidr"),
             DestPortRange=json_data.get("DestPortRange"),
             Direction=json_data.get("Direction"),
+            Id=json_data.get("Id"),
             IpProtocol=json_data.get("IpProtocol"),
             Policy=json_data.get("Policy"),
             Priority=json_data.get("Priority"),

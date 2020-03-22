@@ -59,14 +59,18 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Action"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Condition": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Condition"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -201,6 +205,9 @@
             "type": "boolean",
             "description": "When deleting a bucket, this\nboolean option will delete all contained objects. If you try to delete a\nbucket that contains objects, Terraform will fail that run."
         },
+        "Id": {
+            "type": "string"
+        },
         "Labels": {
             "type": "array",
             "insertionOrder": true,
@@ -208,16 +215,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A set of key/value label pairs to assign to the bucket."
@@ -328,11 +335,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SelfLink",
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

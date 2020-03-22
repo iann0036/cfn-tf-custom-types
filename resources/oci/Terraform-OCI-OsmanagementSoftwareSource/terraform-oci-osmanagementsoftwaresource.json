@@ -60,16 +60,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{\"foo-namespace.bar-key\": \"value\"}`."
@@ -89,16 +89,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "(Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{\"bar-key\": \"value\"}`."
@@ -110,6 +110,9 @@
             "type": "string"
         },
         "GpgKeyUrl": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "MaintainerEmail": {
@@ -162,6 +165,7 @@
         "/properties/GpgKeyFingerprint",
         "/properties/GpgKeyId",
         "/properties/GpgKeyUrl",
+        "/properties/Id",
         "/properties/Packages",
         "/properties/ParentName",
         "/properties/RepoType",
@@ -170,7 +174,7 @@
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

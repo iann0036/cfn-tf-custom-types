@@ -67,16 +67,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Node annotation, key/value pair format. Changing this parameter will create a new resource."
@@ -125,6 +125,9 @@
             "type": "string",
             "description": "Specifies the flavor id. Changing this parameter will create a new resource."
         },
+        "Id": {
+            "type": "string"
+        },
         "Iptype": {
             "type": "string",
             "description": "Elastic IP type."
@@ -140,16 +143,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Node tag, key/value pair format. Changing this parameter will create a new resource."
@@ -221,10 +224,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PrivateIp"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

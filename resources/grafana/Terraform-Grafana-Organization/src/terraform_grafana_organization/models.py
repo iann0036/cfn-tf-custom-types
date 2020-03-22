@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Admins: Optional[Sequence[str]]
     CreateUsers: Optional[bool]
     Editors: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     OrgId: Optional[float]
     Viewers: Optional[Sequence[str]]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Admins=json_data.get("Admins"),
             CreateUsers=json_data.get("CreateUsers"),
             Editors=json_data.get("Editors"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OrgId=json_data.get("OrgId"),
             Viewers=json_data.get("Viewers"),

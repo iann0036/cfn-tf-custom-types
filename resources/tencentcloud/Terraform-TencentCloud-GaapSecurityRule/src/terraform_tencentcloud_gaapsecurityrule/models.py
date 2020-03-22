@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
     CidrIp: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PolicyId: Optional[str]
     Port: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
             CidrIp=json_data.get("CidrIp"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PolicyId=json_data.get("PolicyId"),
             Port=json_data.get("Port"),

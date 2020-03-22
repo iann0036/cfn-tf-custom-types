@@ -19,6 +19,9 @@
             "type": "string",
             "description": "- Description of media file."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsIso": {
             "type": "boolean"
         },
@@ -36,16 +39,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Key value map of metadata to assign."
@@ -88,6 +91,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreationDate",
+        "/properties/Id",
         "/properties/IsIso",
         "/properties/IsPublished",
         "/properties/OwnerName",
@@ -96,7 +100,7 @@
         "/properties/StorageProfileName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

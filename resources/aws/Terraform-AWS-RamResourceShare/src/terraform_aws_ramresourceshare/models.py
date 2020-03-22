@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllowExternalPrincipals: Optional[bool]
     Arn: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     Timeouts: Optional["_Timeouts"]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AllowExternalPrincipals=json_data.get("AllowExternalPrincipals"),
             Arn=json_data.get("Arn"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Tags=json_data.get("Tags"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

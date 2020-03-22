@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AddressIp: Optional[str]
     CreateTime: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     Name: Optional[str]
     NetworkInterfaceId: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AddressIp=json_data.get("AddressIp"),
             CreateTime=json_data.get("CreateTime"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             Name=json_data.get("Name"),
             NetworkInterfaceId=json_data.get("NetworkInterfaceId"),

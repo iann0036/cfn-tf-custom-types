@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Algorithm: Optional[str]
     EcdsaCurve: Optional[str]
+    Id: Optional[str]
     PrivateKeyPem: Optional[str]
     PublicKeyFingerprintMd5: Optional[str]
     PublicKeyOpenssh: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Algorithm=json_data.get("Algorithm"),
             EcdsaCurve=json_data.get("EcdsaCurve"),
+            Id=json_data.get("Id"),
             PrivateKeyPem=json_data.get("PrivateKeyPem"),
             PublicKeyFingerprintMd5=json_data.get("PublicKeyFingerprintMd5"),
             PublicKeyOpenssh=json_data.get("PublicKeyOpenssh"),

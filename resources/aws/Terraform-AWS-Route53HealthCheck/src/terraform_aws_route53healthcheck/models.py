@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     EnableSni: Optional[bool]
     FailureThreshold: Optional[float]
     Fqdn: Optional[str]
+    Id: Optional[str]
     InsufficientDataHealthStatus: Optional[str]
     InvertHealthcheck: Optional[bool]
     IpAddress: Optional[str]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             EnableSni=json_data.get("EnableSni"),
             FailureThreshold=json_data.get("FailureThreshold"),
             Fqdn=json_data.get("Fqdn"),
+            Id=json_data.get("Id"),
             InsufficientDataHealthStatus=json_data.get("InsufficientDataHealthStatus"),
             InvertHealthcheck=json_data.get("InvertHealthcheck"),
             IpAddress=json_data.get("IpAddress"),
@@ -93,8 +95,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

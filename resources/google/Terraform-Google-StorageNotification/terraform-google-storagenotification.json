@@ -19,16 +19,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A set of key/value attribute pairs to attach to each Cloud PubSub message published for this notification subscription."
@@ -40,6 +40,9 @@
                 "type": "string"
             },
             "description": "List of event type filters for this notification config. If not specified, Cloud Storage will send notifications for all event types. The valid types are: `\"OBJECT_FINALIZE\"`, `\"OBJECT_METADATA_UPDATE\"`, `\"OBJECT_DELETE\"`, `\"OBJECT_ARCHIVE\"`."
+        },
+        "Id": {
+            "type": "string"
         },
         "NotificationId": {
             "type": "string"
@@ -68,11 +71,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/NotificationId",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

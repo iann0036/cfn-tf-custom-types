@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     CustomerGatewayId: Optional[str]
     EncryptProto: Optional[str]
+    Id: Optional[str]
     IkeDhGroupName: Optional[str]
     IkeExchangeMode: Optional[str]
     IkeLocalAddress: Optional[str]
@@ -79,6 +80,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             CustomerGatewayId=json_data.get("CustomerGatewayId"),
             EncryptProto=json_data.get("EncryptProto"),
+            Id=json_data.get("Id"),
             IkeDhGroupName=json_data.get("IkeDhGroupName"),
             IkeExchangeMode=json_data.get("IkeExchangeMode"),
             IkeLocalAddress=json_data.get("IkeLocalAddress"),
@@ -115,8 +117,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

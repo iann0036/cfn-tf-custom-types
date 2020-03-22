@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The ID of the device to which the volume should be attached."
         },
+        "Id": {
+            "type": "string"
+        },
         "VolumeId": {
             "type": "string",
             "description": "The ID of the volume to attach."
@@ -23,10 +26,11 @@
         "VolumeId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

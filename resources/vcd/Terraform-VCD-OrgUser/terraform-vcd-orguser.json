@@ -28,6 +28,9 @@
             "type": "string",
             "description": "The full name of the user."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstantMessaging": {
             "type": "string",
             "description": "The Org User instant messaging."
@@ -82,10 +85,11 @@
         "Role"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

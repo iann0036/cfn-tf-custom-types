@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     GlobalPolicyEvaluationMode: Optional[str]
+    Id: Optional[str]
     Project: Optional[str]
     AdmissionWhitelistPatterns: Optional[Sequence["_AdmissionWhitelistPatterns"]]
     ClusterAdmissionRules: Optional[Sequence["_ClusterAdmissionRules"]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             GlobalPolicyEvaluationMode=json_data.get("GlobalPolicyEvaluationMode"),
+            Id=json_data.get("Id"),
             Project=json_data.get("Project"),
             AdmissionWhitelistPatterns=json_data.get("AdmissionWhitelistPatterns"),
             ClusterAdmissionRules=json_data.get("ClusterAdmissionRules"),

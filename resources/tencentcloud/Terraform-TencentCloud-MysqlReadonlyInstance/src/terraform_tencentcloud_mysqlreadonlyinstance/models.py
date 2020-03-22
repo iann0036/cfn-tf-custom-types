@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutoRenewFlag: Optional[float]
+    Id: Optional[str]
     InstanceName: Optional[str]
     IntranetIp: Optional[str]
     IntranetPort: Optional[float]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AutoRenewFlag=json_data.get("AutoRenewFlag"),
+            Id=json_data.get("Id"),
             InstanceName=json_data.get("InstanceName"),
             IntranetIp=json_data.get("IntranetIp"),
             IntranetPort=json_data.get("IntranetPort"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

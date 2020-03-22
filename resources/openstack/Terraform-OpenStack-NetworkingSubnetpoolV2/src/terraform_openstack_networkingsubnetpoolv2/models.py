@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DefaultPrefixlen: Optional[float]
     DefaultQuota: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     IpVersion: Optional[float]
     IsDefault: Optional[bool]
     MaxPrefixlen: Optional[float]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             DefaultPrefixlen=json_data.get("DefaultPrefixlen"),
             DefaultQuota=json_data.get("DefaultQuota"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IpVersion=json_data.get("IpVersion"),
             IsDefault=json_data.get("IsDefault"),
             MaxPrefixlen=json_data.get("MaxPrefixlen"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

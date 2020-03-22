@@ -70,6 +70,9 @@
         "Family": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LabelFingerprint": {
             "type": "string"
         },
@@ -80,16 +83,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -140,11 +143,12 @@
         "/properties/tfcfnid",
         "/properties/ArchiveSizeBytes",
         "/properties/CreationTimestamp",
+        "/properties/Id",
         "/properties/LabelFingerprint",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

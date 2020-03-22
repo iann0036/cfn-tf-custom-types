@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CustomerAwsId: Optional[str]
     Enabled: Optional[bool]
     EventCategories: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     Severity: Optional[str]
     SnsTopicArn: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             CustomerAwsId=json_data.get("CustomerAwsId"),
             Enabled=json_data.get("Enabled"),
             EventCategories=json_data.get("EventCategories"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Severity=json_data.get("Severity"),
             SnsTopicArn=json_data.get("SnsTopicArn"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

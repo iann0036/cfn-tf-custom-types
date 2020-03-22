@@ -26,6 +26,9 @@
             "type": "string",
             "description": "The direction of traffic. Defaults to \"egress\". Changing this updates the direction of the\nexisting QoS bandwidth limit rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxBurstKbps": {
             "type": "number",
             "description": "The maximum burst size in kilobits of a QoS bandwidth limit rule. Changing this updates the\nmaximum burst size in kilobits of the existing QoS bandwidth limit rule."
@@ -52,10 +55,11 @@
         "QosPolicyId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

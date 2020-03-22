@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Datacenter: Optional[str]
     Datastore: Optional[str]
     DestinationFile: Optional[str]
+    Id: Optional[str]
     SourceDatacenter: Optional[str]
     SourceDatastore: Optional[str]
     SourceFile: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Datacenter=json_data.get("Datacenter"),
             Datastore=json_data.get("Datastore"),
             DestinationFile=json_data.get("DestinationFile"),
+            Id=json_data.get("Id"),
             SourceDatacenter=json_data.get("SourceDatacenter"),
             SourceDatastore=json_data.get("SourceDatastore"),
             SourceFile=json_data.get("SourceFile"),

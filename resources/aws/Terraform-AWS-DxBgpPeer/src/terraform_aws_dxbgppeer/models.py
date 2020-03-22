@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     BgpPeerId: Optional[str]
     BgpStatus: Optional[str]
     CustomerAddress: Optional[str]
+    Id: Optional[str]
     VirtualInterfaceId: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             BgpPeerId=json_data.get("BgpPeerId"),
             BgpStatus=json_data.get("BgpStatus"),
             CustomerAddress=json_data.get("CustomerAddress"),
+            Id=json_data.get("Id"),
             VirtualInterfaceId=json_data.get("VirtualInterfaceId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

@@ -36,6 +36,9 @@
             "type": "string",
             "description": "Friendly name for the service group."
         },
+        "Id": {
+            "type": "string"
+        },
         "Template": {
             "type": "string",
             "description": "Identifier of an instance template."
@@ -50,10 +53,11 @@
         "Template"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

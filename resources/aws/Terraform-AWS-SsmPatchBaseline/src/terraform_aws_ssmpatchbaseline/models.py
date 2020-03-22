@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ApprovedPatches: Optional[Sequence[str]]
     ApprovedPatchesComplianceLevel: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     OperatingSystem: Optional[str]
     RejectedPatches: Optional[Sequence[str]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             ApprovedPatches=json_data.get("ApprovedPatches"),
             ApprovedPatchesComplianceLevel=json_data.get("ApprovedPatchesComplianceLevel"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OperatingSystem=json_data.get("OperatingSystem"),
             RejectedPatches=json_data.get("RejectedPatches"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EnableL7: Optional[bool]
     FloatingIpId: Optional[str]
     HttpRequestPosId: Optional[float]
+    Id: Optional[str]
     Region: Optional[str]
     TrafficPosId: Optional[float]
     Timeouts: Optional["_Timeouts"]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             EnableL7=json_data.get("EnableL7"),
             FloatingIpId=json_data.get("FloatingIpId"),
             HttpRequestPosId=json_data.get("HttpRequestPosId"),
+            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             TrafficPosId=json_data.get("TrafficPosId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

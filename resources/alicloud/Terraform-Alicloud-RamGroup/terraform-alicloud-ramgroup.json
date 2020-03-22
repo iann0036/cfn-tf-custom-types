@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "This parameter is used for resource destroy. Default value is `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the RAM group. This name can have a string of 1 to 128 characters, must contain only alphanumeric characters or hyphen \"-\", and must not begin with a hyphen."
@@ -26,10 +29,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

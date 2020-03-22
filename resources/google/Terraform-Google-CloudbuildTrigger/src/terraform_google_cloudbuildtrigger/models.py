@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Disabled: Optional[bool]
     Filename: Optional[str]
+    Id: Optional[str]
     IgnoredFiles: Optional[Sequence[str]]
     IncludedFiles: Optional[Sequence[str]]
     Name: Optional[str]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Disabled=json_data.get("Disabled"),
             Filename=json_data.get("Filename"),
+            Id=json_data.get("Id"),
             IgnoredFiles=json_data.get("IgnoredFiles"),
             IncludedFiles=json_data.get("IncludedFiles"),
             Name=json_data.get("Name"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Substitutions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Substitutions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

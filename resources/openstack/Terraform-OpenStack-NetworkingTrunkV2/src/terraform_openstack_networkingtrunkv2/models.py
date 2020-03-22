@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AdminStateUp: Optional[bool]
     AllTags: Optional[Sequence[str]]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PortId: Optional[str]
     Region: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AdminStateUp=json_data.get("AdminStateUp"),
             AllTags=json_data.get("AllTags"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PortId=json_data.get("PortId"),
             Region=json_data.get("Region"),

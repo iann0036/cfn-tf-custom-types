@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The datacenter to use. This overrides the agent's\ndefault datacenter and the datacenter in the provider setup."
         },
+        "Id": {
+            "type": "string"
+        },
         "Meta": {
             "type": "array",
             "insertionOrder": true,
@@ -23,16 +26,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Key/value pairs that are associated with the node."
@@ -51,10 +54,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

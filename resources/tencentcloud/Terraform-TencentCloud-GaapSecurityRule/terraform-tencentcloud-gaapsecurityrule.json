@@ -16,6 +16,9 @@
             "type": "string",
             "description": "A network address block of the request source."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the security policy rule. Maximum length is 30."
@@ -40,10 +43,11 @@
         "PolicyId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

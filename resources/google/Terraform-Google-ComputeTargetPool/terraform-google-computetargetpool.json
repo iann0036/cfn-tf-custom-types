@@ -28,6 +28,9 @@
             },
             "description": "List of zero or one health check name or self_link. Only\nlegacy `google_compute_http_health_check` is supported."
         },
+        "Id": {
+            "type": "string"
+        },
         "Instances": {
             "type": "array",
             "insertionOrder": true,
@@ -62,10 +65,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

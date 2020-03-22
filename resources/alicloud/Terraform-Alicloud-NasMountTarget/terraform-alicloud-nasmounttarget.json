@@ -16,6 +16,9 @@
             "type": "string",
             "description": "File system ID."
         },
+        "Id": {
+            "type": "string"
+        },
         "Status": {
             "type": "string",
             "description": "Whether the MountTarget is active. An inactive MountTarget is inusable. Valid values are Active(default) and Inactive."
@@ -31,10 +34,11 @@
         "FileSystemId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

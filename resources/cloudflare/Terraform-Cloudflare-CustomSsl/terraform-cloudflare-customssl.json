@@ -29,16 +29,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The certificate, private key and associated optional parameters, such as bundle_method, geo_restrictions, and type."
@@ -52,6 +52,9 @@
             "items": {
                 "type": "string"
             }
+        },
+        "Id": {
+            "type": "string"
         },
         "Issuer": {
             "type": "string"
@@ -91,6 +94,7 @@
         "/properties/tfcfnid",
         "/properties/ExpiresOn",
         "/properties/Hosts",
+        "/properties/Id",
         "/properties/Issuer",
         "/properties/ModifiedOn",
         "/properties/Priority",
@@ -99,7 +103,7 @@
         "/properties/UploadedOn"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

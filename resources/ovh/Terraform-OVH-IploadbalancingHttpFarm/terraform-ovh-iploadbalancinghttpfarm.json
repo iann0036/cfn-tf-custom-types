@@ -53,6 +53,9 @@
             "type": "string",
             "description": "Readable label for loadbalancer farm."
         },
+        "Id": {
+            "type": "string"
+        },
         "Port": {
             "type": "number",
             "description": "Port for backends to recieve traffic on.\n* `negate` - Negate probe result\n* `pattern` - Pattern to match against `match`\n* `force_ssl` - Force use of SSL (TLS)\n* `url` - URL for HTTP probe type.\n* `method` - HTTP probe method (`GET`, `HEAD`, `OPTIONS`, `internal`)."
@@ -87,10 +90,11 @@
         "Zone"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

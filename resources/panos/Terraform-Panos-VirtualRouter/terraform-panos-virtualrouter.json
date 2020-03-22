@@ -16,6 +16,9 @@
             "type": "number",
             "description": "Admin distance - IBGP (default: `200`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interfaces": {
             "type": "array",
             "insertionOrder": false,
@@ -66,10 +69,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

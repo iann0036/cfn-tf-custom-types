@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ClusterId: Optional[str]
     ContainerRuntime: Optional[str]
     CreatedAt: Optional[str]
+    Id: Optional[str]
     MaxSize: Optional[float]
     MinSize: Optional[float]
     Name: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             ClusterId=json_data.get("ClusterId"),
             ContainerRuntime=json_data.get("ContainerRuntime"),
             CreatedAt=json_data.get("CreatedAt"),
+            Id=json_data.get("Id"),
             MaxSize=json_data.get("MaxSize"),
             MinSize=json_data.get("MinSize"),
             Name=json_data.get("Name"),

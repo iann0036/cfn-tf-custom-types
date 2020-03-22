@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     AccountPrivilege: Optional[str]
     AccountType: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     KmsEncryptedPassword: Optional[str]
     KmsEncryptionContext: Optional[Sequence["_KmsEncryptionContext"]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AccountPrivilege=json_data.get("AccountPrivilege"),
             AccountType=json_data.get("AccountType"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             KmsEncryptedPassword=json_data.get("KmsEncryptedPassword"),
             KmsEncryptionContext=json_data.get("KmsEncryptionContext"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class KmsEncryptionContext:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class KmsEncryptionContext:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

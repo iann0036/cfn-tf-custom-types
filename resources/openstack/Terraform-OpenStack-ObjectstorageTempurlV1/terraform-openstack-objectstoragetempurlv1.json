@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The container name the object belongs to."
         },
+        "Id": {
+            "type": "string"
+        },
         "Method": {
             "type": "string",
             "description": "The method allowed when accessing this URL.\nValid values are `GET`, and `POST`. Default is `GET`."
@@ -47,10 +50,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

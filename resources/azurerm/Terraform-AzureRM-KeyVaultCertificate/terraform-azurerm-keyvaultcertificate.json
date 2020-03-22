@@ -29,14 +29,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/IssuerParameters"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "KeyProperties": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KeyProperties"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "LifetimeAction": {
                     "type": "array",
@@ -50,14 +54,17 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecretProperties"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "X509CertificateProperties": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/X509CertificateProperties"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -128,14 +135,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Action"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Trigger": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Trigger"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -186,7 +197,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SubjectAlternativeNames"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -263,6 +275,9 @@
         "CertificateData": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KeyVaultId": {
             "type": "string",
             "description": "The ID of the Key Vault where the Certificate should be created."
@@ -281,16 +296,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -398,12 +413,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CertificateData",
+        "/properties/Id",
         "/properties/SecretId",
         "/properties/Thumbprint",
         "/properties/Version"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

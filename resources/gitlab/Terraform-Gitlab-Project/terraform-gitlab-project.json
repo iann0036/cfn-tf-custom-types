@@ -48,6 +48,9 @@
         "HttpUrlToRepo": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InitializeWithReadme": {
             "type": "boolean",
             "description": "Create master branch with first commit containing a README.md file."
@@ -144,12 +147,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/HttpUrlToRepo",
+        "/properties/Id",
         "/properties/RunnersToken",
         "/properties/SshUrlToRepo",
         "/properties/WebUrl"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

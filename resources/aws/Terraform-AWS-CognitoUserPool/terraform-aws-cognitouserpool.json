@@ -18,7 +18,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/InviteMessageTemplate"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -141,14 +142,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NumberAttributeConstraints"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "StringAttributeConstraints": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StringAttributeConstraints"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -310,6 +313,9 @@
         "Endpoint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LastModifiedDate": {
             "type": "string"
         },
@@ -332,16 +338,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -474,10 +480,11 @@
         "/properties/Arn",
         "/properties/CreationDate",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/LastModifiedDate"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

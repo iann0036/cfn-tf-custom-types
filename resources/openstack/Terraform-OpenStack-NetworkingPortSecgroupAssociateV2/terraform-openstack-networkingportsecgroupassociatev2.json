@@ -19,6 +19,9 @@
             "type": "boolean",
             "description": "Whether to replace or append the list of security\ngroups, specified in the `security_group_ids`. Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "PortId": {
             "type": "string",
             "description": "An UUID of the port to apply security groups to."
@@ -43,10 +46,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/AllSecurityGroupIds"
+        "/properties/AllSecurityGroupIds",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

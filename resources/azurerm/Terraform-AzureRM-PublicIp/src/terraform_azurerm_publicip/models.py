@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllocationMethod: Optional[str]
     DomainNameLabel: Optional[str]
     Fqdn: Optional[str]
+    Id: Optional[str]
     IdleTimeoutInMinutes: Optional[float]
     IpAddress: Optional[str]
     IpVersion: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             AllocationMethod=json_data.get("AllocationMethod"),
             DomainNameLabel=json_data.get("DomainNameLabel"),
             Fqdn=json_data.get("Fqdn"),
+            Id=json_data.get("Id"),
             IdleTimeoutInMinutes=json_data.get("IdleTimeoutInMinutes"),
             IpAddress=json_data.get("IpAddress"),
             IpVersion=json_data.get("IpVersion"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

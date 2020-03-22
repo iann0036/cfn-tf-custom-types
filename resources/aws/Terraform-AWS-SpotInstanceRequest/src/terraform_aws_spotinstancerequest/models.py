@@ -49,6 +49,7 @@ class ResourceModel(BaseResourceModel):
     Hibernation: Optional[bool]
     HostId: Optional[str]
     IamInstanceProfile: Optional[str]
+    Id: Optional[str]
     InstanceInitiatedShutdownBehavior: Optional[str]
     InstanceInterruptionBehaviour: Optional[str]
     InstanceState: Optional[str]
@@ -112,6 +113,7 @@ class ResourceModel(BaseResourceModel):
             Hibernation=json_data.get("Hibernation"),
             HostId=json_data.get("HostId"),
             IamInstanceProfile=json_data.get("IamInstanceProfile"),
+            Id=json_data.get("Id"),
             InstanceInitiatedShutdownBehavior=json_data.get("InstanceInitiatedShutdownBehavior"),
             InstanceInterruptionBehaviour=json_data.get("InstanceInterruptionBehaviour"),
             InstanceState=json_data.get("InstanceState"),
@@ -161,8 +163,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -172,8 +174,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -183,8 +185,8 @@ _Tags = Tags
 
 @dataclass
 class VolumeTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -194,8 +196,8 @@ class VolumeTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

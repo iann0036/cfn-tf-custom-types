@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The description of the project."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsPrivate": {
             "type": "boolean",
             "description": "If you want to keep the project private - defaults to true."
@@ -36,10 +39,11 @@
         "Owner"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -31,6 +31,9 @@
         "Encrypted": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "KmsKeyId": {
             "type": "string"
         },
@@ -47,16 +50,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -78,13 +81,14 @@
         "/properties/tfcfnid",
         "/properties/DataEncryptionKeyId",
         "/properties/Encrypted",
+        "/properties/Id",
         "/properties/KmsKeyId",
         "/properties/OwnerAlias",
         "/properties/OwnerId",
         "/properties/VolumeSize"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

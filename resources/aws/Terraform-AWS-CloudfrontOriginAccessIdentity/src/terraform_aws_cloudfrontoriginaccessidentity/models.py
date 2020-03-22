@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Comment: Optional[str]
     Etag: Optional[str]
     IamArn: Optional[str]
+    Id: Optional[str]
     S3CanonicalUserId: Optional[str]
 
     @classmethod
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Comment=json_data.get("Comment"),
             Etag=json_data.get("Etag"),
             IamArn=json_data.get("IamArn"),
+            Id=json_data.get("Id"),
             S3CanonicalUserId=json_data.get("S3CanonicalUserId"),
         )
 

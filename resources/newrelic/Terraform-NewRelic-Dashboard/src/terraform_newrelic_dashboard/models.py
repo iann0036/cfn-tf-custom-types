@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DashboardUrl: Optional[str]
     Editable: Optional[str]
     Icon: Optional[str]
+    Id: Optional[str]
     Title: Optional[str]
     Visibility: Optional[str]
     Filter: Optional[Sequence["_Filter"]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             DashboardUrl=json_data.get("DashboardUrl"),
             Editable=json_data.get("Editable"),
             Icon=json_data.get("Icon"),
+            Id=json_data.get("Id"),
             Title=json_data.get("Title"),
             Visibility=json_data.get("Visibility"),
             Filter=json_data.get("Filter"),

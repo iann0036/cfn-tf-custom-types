@@ -86,16 +86,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Environment of the SCF function."
@@ -108,6 +108,9 @@
             "description": "Handler of the SCF function. The format of name is `<filename>.<method_name>`, and it supports 26 English letters, numbers, connectors, and underscores, it should start with a letter. The last character cannot be `-` or `_`. Available length is 2-60."
         },
         "Host": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "InstallDependency": {
@@ -157,16 +160,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Tags of the SCF function."
@@ -240,6 +243,7 @@
         "/properties/Eips",
         "/properties/ErrNo",
         "/properties/Host",
+        "/properties/Id",
         "/properties/InstallDependency",
         "/properties/ModifyTime",
         "/properties/Status",
@@ -248,7 +252,7 @@
         "/properties/Vip"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

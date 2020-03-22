@@ -33,14 +33,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Allow"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Deny": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Deny"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -130,6 +132,9 @@
             "type": "string",
             "description": "The resource name of the folder to set the policy for. Its format is folders/{folder_id}."
         },
+        "Id": {
+            "type": "string"
+        },
         "UpdateTime": {
             "type": "string"
         },
@@ -189,10 +194,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Etag",
+        "/properties/Id",
         "/properties/UpdateTime"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

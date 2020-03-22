@@ -21,6 +21,9 @@
             "type": "string",
             "description": "Type of the gateway, the available value include 'NORMAL' and 'NAT'. Default is 'NORMAL'. NOTES: CCN only supports 'NORMAL' and a vpc can create two DCGs, the one is NAT type and the other is non-NAT type."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the DCG."
@@ -44,10 +47,11 @@
         "/properties/tfcfnid",
         "/properties/CnnRouteType",
         "/properties/CreateTime",
-        "/properties/EnableBgp"
+        "/properties/EnableBgp",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

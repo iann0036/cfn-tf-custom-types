@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     HasInitiateTcp: Optional[str]
     HasInitiateUdp: Optional[str]
     HasVpn: Optional[str]
+    Id: Optional[str]
     MaxTcpPackageLen: Optional[str]
     MaxUdpPackageLen: Optional[str]
     MinTcpPackageLen: Optional[str]
@@ -77,6 +78,7 @@ class ResourceModel(BaseResourceModel):
             HasInitiateTcp=json_data.get("HasInitiateTcp"),
             HasInitiateUdp=json_data.get("HasInitiateUdp"),
             HasVpn=json_data.get("HasVpn"),
+            Id=json_data.get("Id"),
             MaxTcpPackageLen=json_data.get("MaxTcpPackageLen"),
             MaxUdpPackageLen=json_data.get("MaxUdpPackageLen"),
             MinTcpPackageLen=json_data.get("MinTcpPackageLen"),

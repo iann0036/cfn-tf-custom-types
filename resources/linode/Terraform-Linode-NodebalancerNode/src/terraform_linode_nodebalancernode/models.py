@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Address: Optional[str]
     ConfigId: Optional[float]
+    Id: Optional[str]
     Label: Optional[str]
     Mode: Optional[str]
     NodebalancerId: Optional[float]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Address=json_data.get("Address"),
             ConfigId=json_data.get("ConfigId"),
+            Id=json_data.get("Id"),
             Label=json_data.get("Label"),
             Mode=json_data.get("Mode"),
             NodebalancerId=json_data.get("NodebalancerId"),

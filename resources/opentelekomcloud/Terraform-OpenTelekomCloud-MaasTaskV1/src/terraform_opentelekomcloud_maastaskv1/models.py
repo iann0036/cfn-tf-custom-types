@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     EnableKms: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Status: Optional[float]
     ThreadNum: Optional[float]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             EnableKms=json_data.get("EnableKms"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Status=json_data.get("Status"),
             ThreadNum=json_data.get("ThreadNum"),

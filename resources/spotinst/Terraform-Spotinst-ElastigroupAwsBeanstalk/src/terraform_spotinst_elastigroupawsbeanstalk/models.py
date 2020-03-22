@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BeanstalkEnvironmentId: Optional[str]
     BeanstalkEnvironmentName: Optional[str]
     DesiredCapacity: Optional[float]
+    Id: Optional[str]
     InstanceTypesSpot: Optional[Sequence[str]]
     Maintenance: Optional[str]
     MaxSize: Optional[float]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             BeanstalkEnvironmentId=json_data.get("BeanstalkEnvironmentId"),
             BeanstalkEnvironmentName=json_data.get("BeanstalkEnvironmentName"),
             DesiredCapacity=json_data.get("DesiredCapacity"),
+            Id=json_data.get("Id"),
             InstanceTypesSpot=json_data.get("InstanceTypesSpot"),
             Maintenance=json_data.get("Maintenance"),
             MaxSize=json_data.get("MaxSize"),

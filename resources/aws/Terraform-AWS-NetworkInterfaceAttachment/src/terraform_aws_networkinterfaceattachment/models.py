@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AttachmentId: Optional[str]
     DeviceIndex: Optional[float]
+    Id: Optional[str]
     InstanceId: Optional[str]
     NetworkInterfaceId: Optional[str]
     Status: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AttachmentId=json_data.get("AttachmentId"),
             DeviceIndex=json_data.get("DeviceIndex"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             NetworkInterfaceId=json_data.get("NetworkInterfaceId"),
             Status=json_data.get("Status"),

@@ -28,6 +28,9 @@
             "type": "string",
             "description": "The public IP address of the related VPN Gateway."
         },
+        "Id": {
+            "type": "string"
+        },
         "IkeLifetime": {
             "type": "number",
             "description": "The IKE lifetime of phase 2 VPN connection to this\nVPN Customer Gateway in seconds (defaults 86400)."
@@ -59,10 +62,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

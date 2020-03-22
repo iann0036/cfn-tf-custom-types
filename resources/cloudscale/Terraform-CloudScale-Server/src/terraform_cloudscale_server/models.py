@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     BulkVolumeSizeGb: Optional[float]
     FlavorSlug: Optional[str]
     Href: Optional[str]
+    Id: Optional[str]
     ImageSlug: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             BulkVolumeSizeGb=json_data.get("BulkVolumeSizeGb"),
             FlavorSlug=json_data.get("FlavorSlug"),
             Href=json_data.get("Href"),
+            Id=json_data.get("Id"),
             ImageSlug=json_data.get("ImageSlug"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),

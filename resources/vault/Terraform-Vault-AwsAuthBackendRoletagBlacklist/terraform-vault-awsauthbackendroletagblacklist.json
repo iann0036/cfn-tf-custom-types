@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "If set to true, disables the periodic\ntidying of the roletag blacklist entries. Defaults to false."
         },
+        "Id": {
+            "type": "string"
+        },
         "SafetyBuffer": {
             "type": "number",
             "description": "The amount of extra time that must have passed\nbeyond the roletag expiration, before it is removed from the backend storage.\nDefaults to 259,200 seconds, or 72 hours."
@@ -26,10 +29,11 @@
         "Backend"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

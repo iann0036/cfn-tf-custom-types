@@ -17,16 +17,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -42,7 +42,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DataExport"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -59,7 +61,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Destination"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -73,7 +77,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/S3BucketDestination"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -106,6 +112,9 @@
             "type": "string"
         },
         "Bucket": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Name": {
@@ -161,10 +170,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

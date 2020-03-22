@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DatabaseName: Optional[str]
     Email: Optional[str]
     FullyQualifiedName: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ObjectId: Optional[str]
     ResourceGroupName: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             DatabaseName=json_data.get("DatabaseName"),
             Email=json_data.get("Email"),
             FullyQualifiedName=json_data.get("FullyQualifiedName"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ObjectId=json_data.get("ObjectId"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

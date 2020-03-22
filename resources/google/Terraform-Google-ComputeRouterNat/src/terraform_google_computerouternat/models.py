@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DrainNatIps: Optional[Sequence[str]]
     IcmpIdleTimeoutSec: Optional[float]
+    Id: Optional[str]
     MinPortsPerVm: Optional[float]
     Name: Optional[str]
     NatIpAllocateOption: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DrainNatIps=json_data.get("DrainNatIps"),
             IcmpIdleTimeoutSec=json_data.get("IcmpIdleTimeoutSec"),
+            Id=json_data.get("Id"),
             MinPortsPerVm=json_data.get("MinPortsPerVm"),
             Name=json_data.get("Name"),
             NatIpAllocateOption=json_data.get("NatIpAllocateOption"),

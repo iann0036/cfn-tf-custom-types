@@ -57,7 +57,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CacheKeyPolicy"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -155,6 +156,9 @@
                 "type": "string"
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancingScheme": {
             "type": "string"
         },
@@ -227,10 +231,11 @@
         "/properties/tfcfnid",
         "/properties/CreationTimestamp",
         "/properties/Fingerprint",
+        "/properties/Id",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

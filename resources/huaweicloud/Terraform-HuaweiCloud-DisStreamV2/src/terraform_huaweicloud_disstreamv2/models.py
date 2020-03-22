@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     CsvDelimiter: Optional[str]
     DataSchema: Optional[str]
     DataType: Optional[str]
+    Id: Optional[str]
     PartitionCount: Optional[float]
     ReadablePartitionCount: Optional[float]
     RetentionPeriod: Optional[float]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             CsvDelimiter=json_data.get("CsvDelimiter"),
             DataSchema=json_data.get("DataSchema"),
             DataType=json_data.get("DataType"),
+            Id=json_data.get("Id"),
             PartitionCount=json_data.get("PartitionCount"),
             ReadablePartitionCount=json_data.get("ReadablePartitionCount"),
             RetentionPeriod=json_data.get("RetentionPeriod"),

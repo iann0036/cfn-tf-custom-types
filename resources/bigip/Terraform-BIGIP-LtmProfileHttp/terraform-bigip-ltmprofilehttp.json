@@ -54,6 +54,9 @@
             "type": "string",
             "description": "Specifies a quoted header string that you want to insert into an HTTP request."
         },
+        "Id": {
+            "type": "string"
+        },
         "InsertXforwardedFor": {
             "type": "string",
             "description": "When using connection pooling, which allows clients to make use of other client requests' server-side connections, you can insert the X-Forwarded-For header and specify a client IP address."
@@ -116,10 +119,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

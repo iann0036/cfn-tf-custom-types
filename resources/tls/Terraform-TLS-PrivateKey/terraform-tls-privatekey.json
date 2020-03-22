@@ -16,6 +16,9 @@
             "type": "string",
             "description": "When `algorithm` is \"ECDSA\", the name of the elliptic\ncurve to use. May be any one of \"P224\", \"P256\", \"P384\" or \"P521\", with \"P224\" as the\ndefault."
         },
+        "Id": {
+            "type": "string"
+        },
         "PrivateKeyPem": {
             "type": "string"
         },
@@ -39,13 +42,14 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PrivateKeyPem",
         "/properties/PublicKeyFingerprintMd5",
         "/properties/PublicKeyOpenssh",
         "/properties/PublicKeyPem"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

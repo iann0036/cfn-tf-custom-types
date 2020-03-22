@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The name of the destination service for the intention. This\nservice does not have to exist."
         },
+        "Id": {
+            "type": "string"
+        },
         "Meta": {
             "type": "array",
             "insertionOrder": true,
@@ -27,16 +30,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Key/value pairs that are opaque to Consul and are associated\nwith the intention."
@@ -53,10 +56,11 @@
         "SourceName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The description of the common bandwidth package instance."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternetChargeType": {
             "type": "string",
             "description": "The billing method of the common bandwidth package. Valid values are \"PayByBandwidth\" and \"PayBy95\" and \"PayByTraffic\". \"PayBy95\" is pay by classic 95th percentile pricing. International Account doesn't supports \"PayByBandwidth\" and \"PayBy95\". Default to \"PayByTraffic\"."
@@ -38,10 +41,11 @@
         "Bandwidth"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

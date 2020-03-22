@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Deleted: Optional[bool]
     Description: Optional[str]
+    Id: Optional[str]
     OrgId: Optional[str]
     Permissions: Optional[Sequence[str]]
     RoleId: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Deleted=json_data.get("Deleted"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             OrgId=json_data.get("OrgId"),
             Permissions=json_data.get("Permissions"),
             RoleId=json_data.get("RoleId"),

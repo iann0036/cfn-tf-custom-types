@@ -65,6 +65,7 @@ class ResourceModel(BaseResourceModel):
     GuestIpAddresses: Optional[Sequence[str]]
     HostSystemId: Optional[str]
     HvMode: Optional[str]
+    Id: Optional[str]
     IgnoredGuestIps: Optional[Sequence[str]]
     Imported: Optional[bool]
     LatencySensitivity: Optional[str]
@@ -149,6 +150,7 @@ class ResourceModel(BaseResourceModel):
             GuestIpAddresses=json_data.get("GuestIpAddresses"),
             HostSystemId=json_data.get("HostSystemId"),
             HvMode=json_data.get("HvMode"),
+            Id=json_data.get("Id"),
             IgnoredGuestIps=json_data.get("IgnoredGuestIps"),
             Imported=json_data.get("Imported"),
             LatencySensitivity=json_data.get("LatencySensitivity"),
@@ -203,8 +205,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomAttributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -214,8 +216,8 @@ class CustomAttributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -225,8 +227,8 @@ _CustomAttributes = CustomAttributes
 
 @dataclass
 class ExtraConfig:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -236,8 +238,8 @@ class ExtraConfig:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -507,8 +509,8 @@ _Vapp = Vapp
 
 @dataclass
 class Properties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -518,8 +520,8 @@ class Properties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     DestinationPortRange: Optional[str]
     DestinationPortRanges: Optional[Sequence[str]]
     Direction: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NetworkSecurityGroupName: Optional[str]
     Priority: Optional[float]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             DestinationPortRange=json_data.get("DestinationPortRange"),
             DestinationPortRanges=json_data.get("DestinationPortRanges"),
             Direction=json_data.get("Direction"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NetworkSecurityGroupName=json_data.get("NetworkSecurityGroupName"),
             Priority=json_data.get("Priority"),

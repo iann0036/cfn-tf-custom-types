@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ApiManagementName: Optional[str]
     ClientId: Optional[str]
     ClientSecret: Optional[str]
+    Id: Optional[str]
     ResourceGroupName: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             ApiManagementName=json_data.get("ApiManagementName"),
             ClientId=json_data.get("ClientId"),
             ClientSecret=json_data.get("ClientSecret"),
+            Id=json_data.get("Id"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

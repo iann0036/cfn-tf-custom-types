@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The endpoint region. The `region` and\n`endpoint_region` can be different."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interface": {
             "type": "string",
             "description": "The endpoint interface. Valid values are `public`,\n`internal` and `admin`. Default value is `public`."
@@ -47,11 +50,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/ServiceName",
         "/properties/ServiceType"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

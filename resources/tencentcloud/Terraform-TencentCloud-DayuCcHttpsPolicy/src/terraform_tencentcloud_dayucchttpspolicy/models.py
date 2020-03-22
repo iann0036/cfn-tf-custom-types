@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Action: Optional[str]
     CreateTime: Optional[str]
     Domain: Optional[str]
+    Id: Optional[str]
     IpList: Optional[Sequence[str]]
     Name: Optional[str]
     PolicyId: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Action=json_data.get("Action"),
             CreateTime=json_data.get("CreateTime"),
             Domain=json_data.get("Domain"),
+            Id=json_data.get("Id"),
             IpList=json_data.get("IpList"),
             Name=json_data.get("Name"),
             PolicyId=json_data.get("PolicyId"),

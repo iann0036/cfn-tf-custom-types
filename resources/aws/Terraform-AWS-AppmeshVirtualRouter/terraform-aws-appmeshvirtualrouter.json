@@ -19,7 +19,9 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Listener"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -33,7 +35,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PortMapping"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -66,6 +70,9 @@
         "CreatedDate": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LastUpdatedDate": {
             "type": "string"
         },
@@ -82,16 +89,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -132,10 +139,11 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/CreatedDate",
+        "/properties/Id",
         "/properties/LastUpdatedDate"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

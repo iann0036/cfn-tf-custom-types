@@ -29,6 +29,9 @@
             "type": "string",
             "description": "A long-form description of the metric cluster."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the metric cluster.  This name must be unique\nacross all metric clusters in a given Circonus Account."
@@ -54,10 +57,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -46,6 +46,9 @@
                 }
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "Tags": {
             "type": "array",
             "insertionOrder": true,
@@ -53,16 +56,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         }
@@ -74,10 +77,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Arn",
-        "/properties/HlsIngest"
+        "/properties/HlsIngest",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

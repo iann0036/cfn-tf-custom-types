@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DbInstanceClass: Optional[str]
     DbInstanceStorage: Optional[float]
     EngineVersion: Optional[str]
+    Id: Optional[str]
     InstanceChargeType: Optional[str]
     KmsEncryptedPassword: Optional[str]
     KmsEncryptionContext: Optional[Sequence["_KmsEncryptionContext"]]
@@ -76,6 +77,7 @@ class ResourceModel(BaseResourceModel):
             DbInstanceClass=json_data.get("DbInstanceClass"),
             DbInstanceStorage=json_data.get("DbInstanceStorage"),
             EngineVersion=json_data.get("EngineVersion"),
+            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             KmsEncryptedPassword=json_data.get("KmsEncryptedPassword"),
             KmsEncryptionContext=json_data.get("KmsEncryptionContext"),
@@ -103,8 +105,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class KmsEncryptionContext:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class KmsEncryptionContext:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -125,8 +127,8 @@ _KmsEncryptionContext = KmsEncryptionContext
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -136,8 +138,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ConnectionName: Optional[str]
     DatabaseVersion: Optional[str]
     FirstIpAddress: Optional[str]
+    Id: Optional[str]
     IpAddress: Optional[Sequence["_IpAddress"]]
     MasterInstanceName: Optional[str]
     Name: Optional[str]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             ConnectionName=json_data.get("ConnectionName"),
             DatabaseVersion=json_data.get("DatabaseVersion"),
             FirstIpAddress=json_data.get("FirstIpAddress"),
+            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             MasterInstanceName=json_data.get("MasterInstanceName"),
             Name=json_data.get("Name"),
@@ -241,8 +243,8 @@ _Settings = Settings
 
 @dataclass
 class UserLabels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -252,8 +254,8 @@ class UserLabels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

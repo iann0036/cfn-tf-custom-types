@@ -31,6 +31,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpVersion": {
             "type": "number"
         },
@@ -74,13 +77,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Cidr",
+        "/properties/Id",
         "/properties/IpVersion",
         "/properties/NetworkType",
         "/properties/ProjectId",
         "/properties/SegmentationId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

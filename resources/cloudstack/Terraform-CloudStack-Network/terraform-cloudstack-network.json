@@ -28,6 +28,9 @@
             "type": "string",
             "description": "Gateway that will be provided to the instances in this\nnetwork. Defaults to the first usable IP in the range."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the network."
@@ -77,10 +80,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SourceNatIpId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

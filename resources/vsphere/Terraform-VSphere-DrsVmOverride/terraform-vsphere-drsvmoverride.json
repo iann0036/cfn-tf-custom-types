@@ -20,6 +20,9 @@
             "type": "boolean",
             "description": "Overrides the default DRS setting for this virtual\nmachine. Can be either `true` or `false`. Default: `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "VirtualMachineId": {
             "type": "string",
             "description": "The UUID of the virtual machine to create\nthe override for.  Forces a new resource if changed."
@@ -31,10 +34,11 @@
         "VirtualMachineId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,9 @@
         "Fqdn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IdleTimeoutInMinutes": {
             "type": "number",
             "description": "Specifies the timeout for the TCP idle connection. The value can be set between 4 and 30 minutes."
@@ -81,16 +84,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -117,10 +120,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Fqdn",
+        "/properties/Id",
         "/properties/IpAddress"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Created: Optional[str]
     Description: Optional[str]
     Facility: Optional[str]
+    Id: Optional[str]
     Locked: Optional[bool]
     Name: Optional[str]
     Plan: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Created=json_data.get("Created"),
             Description=json_data.get("Description"),
             Facility=json_data.get("Facility"),
+            Id=json_data.get("Id"),
             Locked=json_data.get("Locked"),
             Name=json_data.get("Name"),
             Plan=json_data.get("Plan"),

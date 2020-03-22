@@ -12,6 +12,9 @@
             "type": "boolean",
             "description": "Enable contact of the user in OpsGenie. Default value is true."
         },
+        "Id": {
+            "type": "string"
+        },
         "Method": {
             "type": "string",
             "description": "This parameter is the contact method of user and should be one of email, sms or voice. Please note that adding mobile is not supported from API."
@@ -32,10 +35,11 @@
         "Username"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AckDeadlineSeconds: Optional[float]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MessageRetentionDuration: Optional[str]
     Name: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AckDeadlineSeconds=json_data.get("AckDeadlineSeconds"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             MessageRetentionDuration=json_data.get("MessageRetentionDuration"),
             Name=json_data.get("Name"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -145,8 +147,8 @@ _PushConfig = PushConfig
 
 @dataclass
 class Attributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -156,8 +158,8 @@ class Attributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

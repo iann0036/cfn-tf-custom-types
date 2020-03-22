@@ -40,6 +40,9 @@
             "type": "boolean",
             "description": "Controls if the VMs in the remote\nvirtual network can access VMs in the local virtual network. Defaults to\ntrue."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the virtual network peering. Changing this\nforces a new resource to be created."
@@ -72,10 +75,11 @@
         "VirtualNetworkName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Configuration: Optional[str]
     DatabaseName: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Role: Optional[str]
     Schedule: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Configuration=json_data.get("Configuration"),
             DatabaseName=json_data.get("DatabaseName"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Role=json_data.get("Role"),
             Schedule=json_data.get("Schedule"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

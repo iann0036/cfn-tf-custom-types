@@ -18,21 +18,24 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of attributes that constitute the record value. Primarily used for LOC and SRV record types. Either this or `value` must be specified."
         },
         "Hostname": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Metadata": {
@@ -42,16 +45,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -100,12 +103,13 @@
         "/properties/tfcfnid",
         "/properties/CreatedOn",
         "/properties/Hostname",
+        "/properties/Id",
         "/properties/Metadata",
         "/properties/ModifiedOn",
         "/properties/Proxiable"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

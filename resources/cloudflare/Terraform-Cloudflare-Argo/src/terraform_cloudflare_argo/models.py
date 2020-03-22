@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     SmartRouting: Optional[str]
     TieredCaching: Optional[str]
     ZoneId: Optional[str]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             SmartRouting=json_data.get("SmartRouting"),
             TieredCaching=json_data.get("TieredCaching"),
             ZoneId=json_data.get("ZoneId"),

@@ -51,6 +51,9 @@
         "Host": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsPublic": {
             "type": "boolean",
             "description": "The level of visibility for the shared file system."
@@ -62,16 +65,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Metadata key and value pairs as a dictionary of strings.Changing this will create a new resource."
@@ -115,12 +118,13 @@
         "/properties/AccessRuleStatus",
         "/properties/ExportLocation",
         "/properties/Host",
+        "/properties/Id",
         "/properties/ShareAccessId",
         "/properties/Status",
         "/properties/VolumeType"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

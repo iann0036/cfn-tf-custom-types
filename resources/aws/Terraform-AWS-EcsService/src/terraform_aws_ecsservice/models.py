@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     EnableEcsManagedTags: Optional[bool]
     HealthCheckGracePeriodSeconds: Optional[float]
     IamRole: Optional[str]
+    Id: Optional[str]
     LaunchType: Optional[str]
     Name: Optional[str]
     PlatformVersion: Optional[str]
@@ -75,6 +76,7 @@ class ResourceModel(BaseResourceModel):
             EnableEcsManagedTags=json_data.get("EnableEcsManagedTags"),
             HealthCheckGracePeriodSeconds=json_data.get("HealthCheckGracePeriodSeconds"),
             IamRole=json_data.get("IamRole"),
+            Id=json_data.get("Id"),
             LaunchType=json_data.get("LaunchType"),
             Name=json_data.get("Name"),
             PlatformVersion=json_data.get("PlatformVersion"),
@@ -99,8 +101,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -110,8 +112,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ConnectionString: Optional[str]
     DbClusterId: Optional[str]
     DbEndpointId: Optional[str]
+    Id: Optional[str]
     IpAddress: Optional[str]
     NetType: Optional[str]
     Port: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             ConnectionString=json_data.get("ConnectionString"),
             DbClusterId=json_data.get("DbClusterId"),
             DbEndpointId=json_data.get("DbEndpointId"),
+            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             NetType=json_data.get("NetType"),
             Port=json_data.get("Port"),

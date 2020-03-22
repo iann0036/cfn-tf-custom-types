@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     GroupObjectId: Optional[str]
+    Id: Optional[str]
     MemberObjectId: Optional[str]
 
     @classmethod
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             GroupObjectId=json_data.get("GroupObjectId"),
+            Id=json_data.get("Id"),
             MemberObjectId=json_data.get("MemberObjectId"),
         )
 

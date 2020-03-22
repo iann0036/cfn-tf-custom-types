@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ConnectionProperties: Optional[Sequence["_ConnectionProperties"]]
     ConnectionType: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     MatchCriteria: Optional[Sequence[str]]
     Name: Optional[str]
     PhysicalConnectionRequirements: Optional[Sequence["_PhysicalConnectionRequirements"]]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             ConnectionProperties=json_data.get("ConnectionProperties"),
             ConnectionType=json_data.get("ConnectionType"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             MatchCriteria=json_data.get("MatchCriteria"),
             Name=json_data.get("Name"),
             PhysicalConnectionRequirements=json_data.get("PhysicalConnectionRequirements"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ConnectionProperties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class ConnectionProperties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

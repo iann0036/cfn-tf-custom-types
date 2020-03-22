@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     ExecutionEnabled: Optional[bool]
     GroupName: Optional[str]
+    Id: Optional[str]
     LogLevel: Optional[str]
     MaxThreadCount: Optional[float]
     Name: Optional[str]
@@ -78,6 +79,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             ExecutionEnabled=json_data.get("ExecutionEnabled"),
             GroupName=json_data.get("GroupName"),
+            Id=json_data.get("Id"),
             LogLevel=json_data.get("LogLevel"),
             MaxThreadCount=json_data.get("MaxThreadCount"),
             Name=json_data.get("Name"),
@@ -169,8 +171,8 @@ _Job = Job
 
 @dataclass
 class Nodefilters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -180,8 +182,8 @@ class Nodefilters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -213,8 +215,8 @@ _NodeStepPlugin = NodeStepPlugin
 
 @dataclass
 class Config:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -224,8 +226,8 @@ class Config:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -257,8 +259,8 @@ _StepPlugin = StepPlugin
 
 @dataclass
 class Config2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -268,8 +270,8 @@ class Config2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -351,8 +353,8 @@ _Plugin = Plugin
 
 @dataclass
 class Config3:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -362,8 +364,8 @@ class Config3:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -45,6 +45,9 @@
             "type": "string",
             "description": "Human-readable description for the Listener."
         },
+        "Id": {
+            "type": "string"
+        },
         "InsertHeaders": {
             "type": "array",
             "insertionOrder": true,
@@ -52,16 +55,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The list of key value pairs representing headers to insert\ninto the request before it is sent to the backend members. Changing this updates the headers of the\nexisting listener."
@@ -125,10 +128,11 @@
         "ProtocolPort"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

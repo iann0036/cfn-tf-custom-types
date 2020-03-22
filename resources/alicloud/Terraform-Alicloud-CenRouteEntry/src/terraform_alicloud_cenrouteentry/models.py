@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CidrBlock: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     RouteTableId: Optional[str]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CidrBlock=json_data.get("CidrBlock"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             RouteTableId=json_data.get("RouteTableId"),
         )

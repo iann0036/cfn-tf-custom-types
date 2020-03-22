@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DnsPtr: Optional[str]
     FloatingIpId: Optional[float]
+    Id: Optional[str]
     IpAddress: Optional[str]
     ServerId: Optional[float]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DnsPtr=json_data.get("DnsPtr"),
             FloatingIpId=json_data.get("FloatingIpId"),
+            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             ServerId=json_data.get("ServerId"),
         )

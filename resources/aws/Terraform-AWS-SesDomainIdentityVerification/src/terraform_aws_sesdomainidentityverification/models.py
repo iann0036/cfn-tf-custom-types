@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     Domain: Optional[str]
+    Id: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             Domain=json_data.get("Domain"),
+            Id=json_data.get("Id"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )
 

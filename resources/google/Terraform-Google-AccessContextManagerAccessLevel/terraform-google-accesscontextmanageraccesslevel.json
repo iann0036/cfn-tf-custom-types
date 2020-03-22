@@ -15,7 +15,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Conditions"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": []
@@ -69,7 +70,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DevicePolicy"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -135,6 +137,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -186,10 +191,11 @@
         "Title"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

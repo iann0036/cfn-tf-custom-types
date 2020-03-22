@@ -33,6 +33,9 @@
         "ForwardIp": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Ip": {
             "type": "string"
         },
@@ -68,16 +71,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Tags of the GAAP proxy."
@@ -96,13 +99,14 @@
         "/properties/CreateTime",
         "/properties/Domain",
         "/properties/ForwardIp",
+        "/properties/Id",
         "/properties/Ip",
         "/properties/Scalable",
         "/properties/Status",
         "/properties/SupportProtocols"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

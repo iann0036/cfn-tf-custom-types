@@ -126,7 +126,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ConnectionDraining"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -332,7 +333,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Match"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -586,7 +588,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PathRule"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -866,6 +869,9 @@
             "type": "boolean",
             "description": "Is HTTP2 enabled on the application gateway resource? Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "The Azure region where the Application Gateway should exist. Changing this forces a new resource to be created."
@@ -885,16 +891,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -1137,10 +1143,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

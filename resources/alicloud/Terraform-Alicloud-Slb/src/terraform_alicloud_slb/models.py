@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     AddressType: Optional[str]
     Bandwidth: Optional[float]
     DeleteProtection: Optional[str]
+    Id: Optional[str]
     InstanceChargeType: Optional[str]
     Internet: Optional[bool]
     InternetChargeType: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             AddressType=json_data.get("AddressType"),
             Bandwidth=json_data.get("Bandwidth"),
             DeleteProtection=json_data.get("DeleteProtection"),
+            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             Internet=json_data.get("Internet"),
             InternetChargeType=json_data.get("InternetChargeType"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

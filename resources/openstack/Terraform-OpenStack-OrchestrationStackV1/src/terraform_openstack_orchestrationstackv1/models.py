@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisableRollback: Optional[bool]
     EnvironmentOpts: Optional[Sequence["_EnvironmentOpts"]]
+    Id: Optional[str]
     Name: Optional[str]
     NotificationTopics: Optional[Sequence[str]]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisableRollback=json_data.get("DisableRollback"),
             EnvironmentOpts=json_data.get("EnvironmentOpts"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NotificationTopics=json_data.get("NotificationTopics"),
             Parameters=json_data.get("Parameters"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class EnvironmentOpts:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class EnvironmentOpts:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -113,8 +115,8 @@ _EnvironmentOpts = EnvironmentOpts
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -124,8 +126,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -135,8 +137,8 @@ _Parameters = Parameters
 
 @dataclass
 class TemplateOpts:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -146,8 +148,8 @@ class TemplateOpts:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

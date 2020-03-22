@@ -121,6 +121,9 @@
             "type": "string",
             "description": "The flavor ID of the desired flavor for the instance.\nChanging this creates new instance."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "A unique name for the resource."
@@ -173,10 +176,11 @@
         "Size"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

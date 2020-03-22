@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Algorithm: Optional[str]
     CertificateId: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     IpAddressId: Optional[str]
     MemberIds: Optional[Sequence[str]]
     Name: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Algorithm=json_data.get("Algorithm"),
             CertificateId=json_data.get("CertificateId"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IpAddressId=json_data.get("IpAddressId"),
             MemberIds=json_data.get("MemberIds"),
             Name=json_data.get("Name"),

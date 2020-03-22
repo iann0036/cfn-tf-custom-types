@@ -45,6 +45,9 @@
             },
             "description": "A list of events which should trigger the webhook. See a list of [available events](https://developer.github.com/v3/activity/events/types/)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The type of the webhook. `web` is the default and the only option."
@@ -73,10 +76,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Etag",
+        "/properties/Id",
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

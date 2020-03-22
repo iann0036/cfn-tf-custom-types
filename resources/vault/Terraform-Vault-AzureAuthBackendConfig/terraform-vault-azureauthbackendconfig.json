@@ -24,6 +24,9 @@
             "type": "string",
             "description": "The Azure cloud environment. Valid values:\nAzurePublicCloud, AzureUSGovernmentCloud, AzureChinaCloud,\nAzureGermanCloud.  Defaults to `AzurePublicCloud`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Resource": {
             "type": "string",
             "description": "The configured URL for the application registered in\nAzure Active Directory."
@@ -39,10 +42,11 @@
         "TenantId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

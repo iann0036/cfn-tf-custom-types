@@ -47,6 +47,9 @@
             "type": "number",
             "description": "Specifies the fixed ratio value used for a node during ratio load balancing."
         },
+        "Id": {
+            "type": "string"
+        },
         "Monitor": {
             "type": "string",
             "description": "specifies the name of the monitor or monitor rule that you want to associate with the node."
@@ -81,10 +84,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

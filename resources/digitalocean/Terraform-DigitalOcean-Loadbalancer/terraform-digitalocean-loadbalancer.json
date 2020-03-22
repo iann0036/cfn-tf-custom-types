@@ -120,6 +120,9 @@
             "type": "boolean",
             "description": "A boolean value indicating whether PROXY\nProtocol should be used to pass information from connecting client requests to\nthe backend service. Default value is `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Ip": {
             "type": "string"
         },
@@ -173,12 +176,13 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Ip",
         "/properties/Status",
         "/properties/Urn"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

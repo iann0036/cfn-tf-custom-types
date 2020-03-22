@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DefaultRouteTableId: Optional[str]
+    Id: Optional[str]
     OwnerId: Optional[str]
     PropagatingVgws: Optional[Sequence[str]]
     Route: Optional[Sequence["_Route"]]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DefaultRouteTableId=json_data.get("DefaultRouteTableId"),
+            Id=json_data.get("Id"),
             OwnerId=json_data.get("OwnerId"),
             PropagatingVgws=json_data.get("PropagatingVgws"),
             Route=json_data.get("Route"),
@@ -103,8 +105,8 @@ _Route = Route
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

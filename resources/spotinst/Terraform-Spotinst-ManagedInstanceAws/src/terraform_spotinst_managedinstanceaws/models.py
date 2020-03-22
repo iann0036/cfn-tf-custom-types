@@ -48,6 +48,7 @@ class ResourceModel(BaseResourceModel):
     GracePeriod: Optional[float]
     HealthCheckType: Optional[str]
     IamInstanceProfile: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     InstanceTypes: Optional[Sequence[str]]
     KeyPair: Optional[str]
@@ -100,6 +101,7 @@ class ResourceModel(BaseResourceModel):
             GracePeriod=json_data.get("GracePeriod"),
             HealthCheckType=json_data.get("HealthCheckType"),
             IamInstanceProfile=json_data.get("IamInstanceProfile"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceTypes=json_data.get("InstanceTypes"),
             KeyPair=json_data.get("KeyPair"),

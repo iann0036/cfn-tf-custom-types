@@ -21,21 +21,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Down"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Headroom": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Headroom"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ResourceLimits": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ResourceLimits"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -68,7 +71,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RollConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -155,6 +159,9 @@
         "IamInstanceProfile": {
             "type": "string",
             "description": "The instance profile iam role."
+        },
+        "Id": {
+            "type": "string"
         },
         "ImageId": {
             "type": "string",
@@ -280,10 +287,11 @@
         "SubnetIds"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Destination: Optional[str]
     FallbackPersistenceProfile: Optional[str]
+    Id: Optional[str]
     IpProtocol: Optional[str]
     Irules: Optional[Sequence[str]]
     Mask: Optional[str]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Destination=json_data.get("Destination"),
             FallbackPersistenceProfile=json_data.get("FallbackPersistenceProfile"),
+            Id=json_data.get("Id"),
             IpProtocol=json_data.get("IpProtocol"),
             Irules=json_data.get("Irules"),
             Mask=json_data.get("Mask"),

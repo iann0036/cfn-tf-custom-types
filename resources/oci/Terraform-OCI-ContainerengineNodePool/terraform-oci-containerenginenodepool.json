@@ -28,7 +28,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PlacementConfigs"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -97,6 +98,9 @@
             "type": "string",
             "description": "The OCID of the compartment in which the node pool exists."
         },
+        "Id": {
+            "type": "string"
+        },
         "KubernetesVersion": {
             "type": "string",
             "description": "(Updatable) The version of Kubernetes to install on the nodes in the node pool."
@@ -120,16 +124,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool."
@@ -277,11 +281,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/NodeSource",
         "/properties/Nodes"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApplicationReports: Optional[bool]
     FileTypeIdentificationReports: Optional[bool]
+    Id: Optional[str]
     PassiveDnsMonitoring: Optional[bool]
     ProductUsageStats: Optional[bool]
     ThreatPreventionData: Optional[bool]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApplicationReports=json_data.get("ApplicationReports"),
             FileTypeIdentificationReports=json_data.get("FileTypeIdentificationReports"),
+            Id=json_data.get("Id"),
             PassiveDnsMonitoring=json_data.get("PassiveDnsMonitoring"),
             ProductUsageStats=json_data.get("ProductUsageStats"),
             ThreatPreventionData=json_data.get("ThreatPreventionData"),

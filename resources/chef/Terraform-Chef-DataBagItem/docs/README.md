@@ -18,7 +18,7 @@ To declare this entity in your AWS CloudFormation template, use the following sy
     "Type" : "Terraform::Chef::DataBagItem",
     "Properties" : {
         "<a href="#contentjson" title="ContentJson">ContentJson</a>" : <i>String</i>,
-        "<a href="#databagname" title="DataBagName">DataBagName</a>" : <i>String</i>
+        "<a href="#databagname" title="DataBagName">DataBagName</a>" : <i>String</i>,
     }
 }
 </pre>
@@ -62,7 +62,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the Id.
 
 ### Fn::GetAtt
 
@@ -73,4 +73,8 @@ For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::G
 #### tfcfnid
 
 Internal identifier for tracking resource changes. Do not use.
+
+#### Id
+
+Returns the <code>Id</code> value.
 

@@ -111,7 +111,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ForwardingUrl"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Minify": {
                     "type": "array",
@@ -165,6 +166,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Priority": {
             "type": "number",
             "description": "The priority of the page rule among others for this target, the higher the number the higher the priority as per [API documentation](https://api.cloudflare.com/#page-rules-for-a-zone-create-page-rule)."
@@ -212,10 +216,11 @@
         "ZoneId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

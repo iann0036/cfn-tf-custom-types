@@ -53,6 +53,9 @@
             "type": "string",
             "description": "Display name, defaults to ID if not set."
         },
+        "Id": {
+            "type": "string"
+        },
         "LogicalSwitchId": {
             "type": "string",
             "description": "Logical switch ID for the logical port."
@@ -81,10 +84,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

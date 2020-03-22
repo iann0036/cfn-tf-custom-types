@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     ExportLocation: Optional[str]
     Host: Optional[str]
+    Id: Optional[str]
     IsPublic: Optional[bool]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             ExportLocation=json_data.get("ExportLocation"),
             Host=json_data.get("Host"),
+            Id=json_data.get("Id"),
             IsPublic=json_data.get("IsPublic"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -21,7 +21,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Ebs"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -38,7 +39,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CapacityReservationTarget"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -115,7 +117,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SpotOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -236,16 +239,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -333,6 +336,9 @@
         "EbsOptimized": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string"
         },
@@ -374,16 +380,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -527,10 +533,11 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/DefaultVersion",
+        "/properties/Id",
         "/properties/LatestVersion"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

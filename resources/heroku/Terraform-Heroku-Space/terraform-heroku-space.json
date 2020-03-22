@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The RFC-1918 CIDR that the Private Space will use for the Heroku-managed peering connection that\u2019s automatically created when using Heroku Data add-ons. It must be between a /16 and a /20."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the Private Space."
@@ -54,10 +57,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/OutboundIps"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

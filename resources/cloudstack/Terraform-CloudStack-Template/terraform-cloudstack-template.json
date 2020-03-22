@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The target hypervisor for the template. Changing\nthis forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsDynamicallyScalable": {
             "type": "boolean",
             "description": "Set to indicate if the template contains\ntools to support dynamic scaling of VM cpu/memory (defaults false)."
@@ -78,10 +81,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/IsReady"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

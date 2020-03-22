@@ -19,6 +19,9 @@
             "type": "boolean",
             "description": "Indicates whether CBS is encrypted."
         },
+        "Id": {
+            "type": "string"
+        },
         "Period": {
             "type": "number",
             "description": "The purchased usage period of CBS, and value range [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36]."
@@ -53,16 +56,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The available tags within this CBS."
@@ -78,10 +81,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Attached",
+        "/properties/Id",
         "/properties/StorageStatus"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

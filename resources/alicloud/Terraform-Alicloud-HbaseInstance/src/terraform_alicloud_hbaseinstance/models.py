@@ -46,6 +46,7 @@ class ResourceModel(BaseResourceModel):
     Duration: Optional[float]
     Engine: Optional[str]
     EngineVersion: Optional[str]
+    Id: Optional[str]
     MaintainEndTime: Optional[str]
     MaintainStartTime: Optional[str]
     MasterInstanceType: Optional[str]
@@ -75,6 +76,7 @@ class ResourceModel(BaseResourceModel):
             Duration=json_data.get("Duration"),
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
+            Id=json_data.get("Id"),
             MaintainEndTime=json_data.get("MaintainEndTime"),
             MaintainStartTime=json_data.get("MaintainStartTime"),
             MasterInstanceType=json_data.get("MasterInstanceType"),
@@ -93,8 +95,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -48,16 +48,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Information that can be used to provide an encryption context for the encrypted data.  The length of the string representation of the associated data must be fewer than 4096  characters."
@@ -68,6 +68,9 @@
         "CryptoEndpoint": {
             "type": "string",
             "description": "The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint."
+        },
+        "Id": {
+            "type": "string"
         },
         "IncludePlaintextKey": {
             "type": "boolean",
@@ -84,16 +87,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Information that provides context for audit logging. You can provide this additional  data by formatting it as key-value pairs to include in audit logs when audit logging is enabled."
@@ -126,11 +129,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Ciphertext",
+        "/properties/Id",
         "/properties/Plaintext",
         "/properties/PlaintextChecksum"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

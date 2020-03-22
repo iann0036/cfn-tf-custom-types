@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     AwsAccountId: Optional[str]
     Email: Optional[str]
     IamArn: Optional[str]
+    Id: Optional[str]
     IdentityType: Optional[str]
     Namespace: Optional[str]
     SessionName: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AwsAccountId=json_data.get("AwsAccountId"),
             Email=json_data.get("Email"),
             IamArn=json_data.get("IamArn"),
+            Id=json_data.get("Id"),
             IdentityType=json_data.get("IdentityType"),
             Namespace=json_data.get("Namespace"),
             SessionName=json_data.get("SessionName"),

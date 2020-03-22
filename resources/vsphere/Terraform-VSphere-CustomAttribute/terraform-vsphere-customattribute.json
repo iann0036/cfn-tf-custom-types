@@ -8,6 +8,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ManagedObjectType": {
             "type": "string",
             "description": "The object type that this attribute may be\napplied to. If not set, the custom attribute may be applied to any object\ntype. For a full list, click [here](#managed-object-types). Forces a new\nresource if changed."
@@ -22,10 +25,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

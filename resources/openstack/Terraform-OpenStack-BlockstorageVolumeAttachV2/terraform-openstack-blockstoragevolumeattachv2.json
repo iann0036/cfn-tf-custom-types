@@ -33,16 +33,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -56,6 +56,9 @@
         "HostName": {
             "type": "string",
             "description": "The host to attach the volume to."
+        },
+        "Id": {
+            "type": "string"
         },
         "Initiator": {
             "type": "string",
@@ -116,10 +119,11 @@
         "/properties/tfcfnid",
         "/properties/Data",
         "/properties/DriverVolumeType",
+        "/properties/Id",
         "/properties/MountPointBase"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

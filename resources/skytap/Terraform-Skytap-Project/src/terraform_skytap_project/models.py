@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutoAddRoleName: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ShowProjectMembers: Optional[bool]
     Summary: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AutoAddRoleName=json_data.get("AutoAddRoleName"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ShowProjectMembers=json_data.get("ShowProjectMembers"),
             Summary=json_data.get("Summary"),

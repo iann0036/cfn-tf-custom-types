@@ -81,6 +81,9 @@
                 }
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "Ingress": {
             "type": "array",
             "insertionOrder": true,
@@ -150,16 +153,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -176,11 +179,12 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/Description",
+        "/properties/Id",
         "/properties/Name",
         "/properties/OwnerId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

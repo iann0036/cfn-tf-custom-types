@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
     FilterType: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NamespaceName: Optional[str]
     ResourceGroupName: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
             FilterType=json_data.get("FilterType"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamespaceName=json_data.get("NamespaceName"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

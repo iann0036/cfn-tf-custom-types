@@ -58,6 +58,7 @@ class ResourceModel(BaseResourceModel):
     ExternalIp: Optional[str]
     Fee: Optional[str]
     HadoopVersion: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     InternalIp: Optional[str]
     LogCollection: Optional[float]
@@ -116,6 +117,7 @@ class ResourceModel(BaseResourceModel):
             ExternalIp=json_data.get("ExternalIp"),
             Fee=json_data.get("Fee"),
             HadoopVersion=json_data.get("HadoopVersion"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             InternalIp=json_data.get("InternalIp"),
             LogCollection=json_data.get("LogCollection"),

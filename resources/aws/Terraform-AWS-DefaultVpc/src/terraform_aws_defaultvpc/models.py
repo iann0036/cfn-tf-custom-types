@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     EnableClassiclinkDnsSupport: Optional[bool]
     EnableDnsHostnames: Optional[bool]
     EnableDnsSupport: Optional[bool]
+    Id: Optional[str]
     InstanceTenancy: Optional[str]
     Ipv6AssociationId: Optional[str]
     Ipv6CidrBlock: Optional[str]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             EnableClassiclinkDnsSupport=json_data.get("EnableClassiclinkDnsSupport"),
             EnableDnsHostnames=json_data.get("EnableDnsHostnames"),
             EnableDnsSupport=json_data.get("EnableDnsSupport"),
+            Id=json_data.get("Id"),
             InstanceTenancy=json_data.get("InstanceTenancy"),
             Ipv6AssociationId=json_data.get("Ipv6AssociationId"),
             Ipv6CidrBlock=json_data.get("Ipv6CidrBlock"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

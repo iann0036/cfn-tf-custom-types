@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     DbClusterSnapshotIdentifier: Optional[str]
     Engine: Optional[str]
     EngineVersion: Optional[str]
+    Id: Optional[str]
     KmsKeyId: Optional[str]
     LicenseModel: Optional[str]
     Port: Optional[float]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             DbClusterSnapshotIdentifier=json_data.get("DbClusterSnapshotIdentifier"),
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
+            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             LicenseModel=json_data.get("LicenseModel"),
             Port=json_data.get("Port"),

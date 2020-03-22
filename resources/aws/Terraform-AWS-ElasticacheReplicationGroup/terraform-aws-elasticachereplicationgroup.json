@@ -72,6 +72,9 @@
         "EngineVersion": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KmsKeyId": {
             "type": "string"
         },
@@ -149,16 +152,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -185,11 +188,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ConfigurationEndpointAddress",
+        "/properties/Id",
         "/properties/MemberClusters",
         "/properties/PrimaryEndpointAddress"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

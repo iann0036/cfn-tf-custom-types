@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Endpoint: Optional[str]
     EventType: Optional[str]
     Format: Optional[Sequence["_Format"]]
+    Id: Optional[str]
     Protocol: Optional[str]
     ResourceId: Optional[str]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             Endpoint=json_data.get("Endpoint"),
             EventType=json_data.get("EventType"),
             Format=json_data.get("Format"),
+            Id=json_data.get("Id"),
             Protocol=json_data.get("Protocol"),
             ResourceId=json_data.get("ResourceId"),
         )
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Format:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class Format:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

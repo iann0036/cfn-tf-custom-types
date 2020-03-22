@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     EnableCollectorDeviceFailover: Optional[bool]
     EnableFailback: Optional[bool]
     EscalationChainId: Optional[float]
+    Id: Optional[str]
     Properties: Optional[Sequence["_Properties"]]
     ResendInterval: Optional[float]
     SuppressAlertClear: Optional[bool]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             EnableCollectorDeviceFailover=json_data.get("EnableCollectorDeviceFailover"),
             EnableFailback=json_data.get("EnableFailback"),
             EscalationChainId=json_data.get("EscalationChainId"),
+            Id=json_data.get("Id"),
             Properties=json_data.get("Properties"),
             ResendInterval=json_data.get("ResendInterval"),
             SuppressAlertClear=json_data.get("SuppressAlertClear"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Properties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Properties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

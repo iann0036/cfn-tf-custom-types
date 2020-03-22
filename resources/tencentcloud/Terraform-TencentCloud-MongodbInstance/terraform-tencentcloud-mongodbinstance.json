@@ -19,6 +19,9 @@
             "type": "string",
             "description": "Version of the Mongodb, and available values include MONGO_3_WT, MONGO_3_ROCKS and MONGO_36_WT."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceName": {
             "type": "string",
             "description": "Name of the Mongodb instance."
@@ -61,16 +64,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The tags of the Mongodb."
@@ -103,12 +106,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/Status",
         "/properties/Vip",
         "/properties/Vport"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

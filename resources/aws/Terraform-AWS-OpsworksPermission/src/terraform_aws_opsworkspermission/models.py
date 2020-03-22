@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllowSsh: Optional[bool]
     AllowSudo: Optional[bool]
+    Id: Optional[str]
     Level: Optional[str]
     StackId: Optional[str]
     UserArn: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AllowSsh=json_data.get("AllowSsh"),
             AllowSudo=json_data.get("AllowSudo"),
+            Id=json_data.get("Id"),
             Level=json_data.get("Level"),
             StackId=json_data.get("StackId"),
             UserArn=json_data.get("UserArn"),

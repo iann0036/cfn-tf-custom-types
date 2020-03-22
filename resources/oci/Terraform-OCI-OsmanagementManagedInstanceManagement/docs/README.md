@@ -97,7 +97,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the Id.
 
 ### Fn::GetAtt
 
@@ -121,6 +121,11 @@ Returns the <code>Description</code> value.
 
 User friendly name
 * `id` - unique identifier that is immutable on creation.
+
+#### Id
+
+software source identifier
+* `name` - software source name.
 
 #### LastBoot
 

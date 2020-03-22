@@ -16,6 +16,9 @@
             },
             "description": "Configures hosts or networks from which snmpd can accept traffic. Entries go directly into hosts.allow."
         },
+        "Id": {
+            "type": "string"
+        },
         "SysContact": {
             "type": "string",
             "description": "Specifies the contact information for the system administrator."
@@ -28,10 +31,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

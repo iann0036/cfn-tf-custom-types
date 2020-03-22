@@ -24,91 +24,104 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ArithmeticProcessor"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AttributeRemapper": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AttributeRemapper"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "CategoryProcessor": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CategoryProcessor"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "DateRemapper": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DateRemapper"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GeoIpParser": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GeoIpParser"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GrokParser": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GrokParser"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "MessageRemapper": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/MessageRemapper"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ServiceRemapper": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ServiceRemapper"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "StatusRemapper": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StatusRemapper"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "StringBuilderProcessor": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StringBuilderProcessor"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TraceIdRemapper": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TraceIdRemapper"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "UrlParser": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/UrlParser"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "UserAgentParser": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/UserAgentParser"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -196,7 +209,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Category"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -276,7 +290,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Grok"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -320,7 +336,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Filter"
-                    }
+                    },
+                    "minItems": 1
                 },
                 "Processor": {
                     "type": "array",
@@ -495,7 +512,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Filter"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -522,6 +540,9 @@
     "properties": {
         "tfcfnid": {
             "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "IsEnabled": {
@@ -682,10 +703,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

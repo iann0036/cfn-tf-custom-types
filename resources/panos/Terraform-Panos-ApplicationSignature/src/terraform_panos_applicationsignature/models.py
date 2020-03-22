@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApplicationObject: Optional[str]
     Comment: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     OrderedMatch: Optional[bool]
     Scope: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApplicationObject=json_data.get("ApplicationObject"),
             Comment=json_data.get("Comment"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OrderedMatch=json_data.get("OrderedMatch"),
             Scope=json_data.get("Scope"),
@@ -175,8 +177,8 @@ _GreaterThan = GreaterThan
 
 @dataclass
 class Qualifiers:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -186,8 +188,8 @@ class Qualifiers:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -221,8 +223,8 @@ _LessThan = LessThan
 
 @dataclass
 class Qualifiers2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -232,8 +234,8 @@ class Qualifiers2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -267,8 +269,8 @@ _PatternMatch = PatternMatch
 
 @dataclass
 class Qualifiers3:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -278,8 +280,8 @@ class Qualifiers3:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

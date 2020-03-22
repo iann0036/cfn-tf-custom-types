@@ -19,6 +19,9 @@
             "type": "string",
             "description": "Human-friendly description of the mount."
         },
+        "Id": {
+            "type": "string"
+        },
         "Local": {
             "type": "boolean",
             "description": "Boolean flag that can be explicitly set to true to enforce local mount in HA environment."
@@ -34,16 +37,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Specifies mount type specific options that are passed to the backend."
@@ -68,10 +71,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Accessor"
+        "/properties/Accessor",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

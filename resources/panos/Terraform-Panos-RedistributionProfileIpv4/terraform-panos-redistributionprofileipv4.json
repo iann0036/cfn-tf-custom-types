@@ -36,6 +36,9 @@
             },
             "description": "Specify candidate routes' next-hop addresses\n(subnet match)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interfaces": {
             "type": "array",
             "insertionOrder": false,
@@ -104,10 +107,11 @@
         "VirtualRouter"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

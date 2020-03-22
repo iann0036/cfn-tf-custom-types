@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     DeviceOwner: Optional[str]
     DnsAssignment: Optional[Sequence[Sequence["_DnsAssignment"]]]
     DnsName: Optional[str]
+    Id: Optional[str]
     MacAddress: Optional[str]
     Name: Optional[str]
     NetworkId: Optional[str]
@@ -81,6 +82,7 @@ class ResourceModel(BaseResourceModel):
             DeviceOwner=json_data.get("DeviceOwner"),
             DnsAssignment=json_data.get("DnsAssignment"),
             DnsName=json_data.get("DnsName"),
+            Id=json_data.get("Id"),
             MacAddress=json_data.get("MacAddress"),
             Name=json_data.get("Name"),
             NetworkId=json_data.get("NetworkId"),
@@ -107,8 +109,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DnsAssignment:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -118,8 +120,8 @@ class DnsAssignment:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -129,8 +131,8 @@ _DnsAssignment = DnsAssignment
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -140,8 +142,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

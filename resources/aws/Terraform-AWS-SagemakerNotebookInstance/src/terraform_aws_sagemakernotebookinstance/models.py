@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     DirectInternetAccess: Optional[str]
+    Id: Optional[str]
     InstanceType: Optional[str]
     KmsKeyId: Optional[str]
     LifecycleConfigName: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             DirectInternetAccess=json_data.get("DirectInternetAccess"),
+            Id=json_data.get("Id"),
             InstanceType=json_data.get("InstanceType"),
             KmsKeyId=json_data.get("KmsKeyId"),
             LifecycleConfigName=json_data.get("LifecycleConfigName"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

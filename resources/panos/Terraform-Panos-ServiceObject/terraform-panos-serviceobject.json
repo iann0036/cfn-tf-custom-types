@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The destination port.  This can be a single\nport number, range (1-65535), or comma separated (80,8080,443)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The service object's name."
@@ -64,10 +67,11 @@
         "Protocol"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

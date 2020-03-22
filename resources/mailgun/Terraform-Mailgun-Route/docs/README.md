@@ -1,6 +1,6 @@
 # Terraform::Mailgun::Route
 
-Provides a Mailgun Route resource. This can be used to create and manage routes on Mailgun.
+An example resource schema demonstrating some basic constructs and validation rules.
 
 ## Syntax
 
@@ -12,11 +12,14 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 {
     "Type" : "Terraform::Mailgun::Route",
     "Properties" : {
-        "<a href="#actions" title="Actions">Actions</a>" : <i>[ String, ... ]</i>,
-        "<a href="#description" title="Description">Description</a>" : <i>String</i>,
-        "<a href="#expression" title="Expression">Expression</a>" : <i>String</i>,
-        "<a href="#priority" title="Priority">Priority</a>" : <i>Double</i>,
-        "<a href="#region" title="Region">Region</a>" : <i>String</i>
+        "<a href="#title" title="Title">Title</a>" : <i>String</i>,
+        "<a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>" : <i>Boolean</i>,
+        "<a href="#duedate" title="DueDate">DueDate</a>" : <i>String</i>,
+        "<a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>" : <i>String</i>,
+        "<a href="#memo" title="Memo">Memo</a>" : <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>,
+        "<a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>" : <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>,
+        "<a href="#testcode" title="TestCode">TestCode</a>" : <i>String</i>,
+        "<a href="#authors" title="Authors">Authors</a>" : <i>[ String, ... ]</i>
     }
 }
 </pre>
@@ -26,61 +29,90 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 <pre>
 Type: Terraform::Mailgun::Route
 Properties:
-    <a href="#actions" title="Actions">Actions</a>: <i>
+    <a href="#title" title="Title">Title</a>: <i>String</i>
+    <a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>: <i>Boolean</i>
+    <a href="#duedate" title="DueDate">DueDate</a>: <i>String</i>
+    <a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>: <i>String</i>
+    <a href="#memo" title="Memo">Memo</a>: <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>
+    <a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>: <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>
+    <a href="#testcode" title="TestCode">TestCode</a>: <i>String</i>
+    <a href="#authors" title="Authors">Authors</a>: <i>
       - String</i>
-    <a href="#description" title="Description">Description</a>: <i>String</i>
-    <a href="#expression" title="Expression">Expression</a>: <i>String</i>
-    <a href="#priority" title="Priority">Priority</a>: <i>Double</i>
-    <a href="#region" title="Region">Region</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Actions
+#### Title
+
+The title of the TPS report is a mandatory element.
 
 _Required_: Yes
+
+_Type_: String
+
+_Minimum_: <code>20</code>
+
+_Maximum_: <code>250</code>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### CoverSheetIncluded
+
+Required for all TPS Reports submitted after 2/19/1999
+
+_Required_: No
+
+_Type_: Boolean
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### DueDate
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### ApprovalDate
+
+_Required_: No
+
+_Type_: String
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Memo
+
+_Required_: No
+
+_Type_: <a href="secondcopyofmemo.md">SecondCopyOfMemo</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### SecondCopyOfMemo
+
+_Required_: No
+
+_Type_: <a href="secondcopyofmemo.md">SecondCopyOfMemo</a>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### TestCode
+
+_Required_: Yes
+
+_Type_: String
+
+_Allowed Values_: <code>NOT_STARTED</code> | <code>CANCELLED</code>
+
+_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
+
+#### Authors
+
+_Required_: No
 
 _Type_: List of String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Description
-
-(Required).
-
-_Required_: No
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Expression
-
-(Required) A filter expression like `match_recipient('.*@gmail.com')`.
-
-_Required_: Yes
-
-_Type_: String
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Priority
-
-(Required) Smaller number indicates higher priority. Higher priority routes are handled first.
-
-_Required_: Yes
-
-_Type_: Double
-
-_Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
-
-#### Region
-
-(Optional) The region where domain will be created. Default value is `us`.
-
-_Required_: No
-
-_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -88,7 +120,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the TPSCode.
 
 ### Fn::GetAtt
 
@@ -96,7 +128,7 @@ The `Fn::GetAtt` intrinsic function returns a value for a specified attribute of
 
 For more information about using the `Fn::GetAtt` intrinsic function, see [Fn::GetAtt](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html).
 
-#### tfcfnid
+#### TPSCode
 
-Internal identifier for tracking resource changes. Do not use.
+A TPS Code is automatically generated on creation and assigned as the unique identifier.
 

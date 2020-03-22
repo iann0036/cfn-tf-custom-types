@@ -12,6 +12,9 @@
             "type": "string",
             "description": "JSON String of optional data that will be passed to an instance of this machine image when it is launched."
         },
+        "Id": {
+            "type": "string"
+        },
         "MachineImages": {
             "type": "array",
             "insertionOrder": false,
@@ -40,10 +43,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     BucketPrefix: Optional[str]
     ForceDestroy: Optional[bool]
     HostedZoneId: Optional[str]
+    Id: Optional[str]
     Policy: Optional[str]
     Region: Optional[str]
     WebsiteDomain: Optional[str]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             BucketPrefix=json_data.get("BucketPrefix"),
             ForceDestroy=json_data.get("ForceDestroy"),
             HostedZoneId=json_data.get("HostedZoneId"),
+            Id=json_data.get("Id"),
             Policy=json_data.get("Policy"),
             Region=json_data.get("Region"),
             WebsiteDomain=json_data.get("WebsiteDomain"),

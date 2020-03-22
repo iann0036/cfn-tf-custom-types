@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Annotations: Optional[Sequence[str]]
     DataFactoryName: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
     ResourceGroupName: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Annotations=json_data.get("Annotations"),
             DataFactoryName=json_data.get("DataFactoryName"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -93,8 +95,8 @@ _Parameters = Parameters
 
 @dataclass
 class Variables:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class Variables:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

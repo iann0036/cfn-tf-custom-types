@@ -36,6 +36,9 @@
             "type": "string",
             "description": "Specifies the Custom Hostname to use for the App Service, example `www.example.com`. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "ResourceGroupName": {
             "type": "string",
             "description": "The name of the resource group in which the App Service exists. Changing this forces a new resource to be created."
@@ -63,10 +66,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/VirtualIp"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

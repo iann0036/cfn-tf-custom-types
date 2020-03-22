@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Cpu: Optional[str]
     ExecutionRoleArn: Optional[str]
     Family: Optional[str]
+    Id: Optional[str]
     IpcMode: Optional[str]
     Memory: Optional[str]
     NetworkMode: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             Cpu=json_data.get("Cpu"),
             ExecutionRoleArn=json_data.get("ExecutionRoleArn"),
             Family=json_data.get("Family"),
+            Id=json_data.get("Id"),
             IpcMode=json_data.get("IpcMode"),
             Memory=json_data.get("Memory"),
             NetworkMode=json_data.get("NetworkMode"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -159,8 +161,8 @@ _ProxyConfiguration = ProxyConfiguration
 
 @dataclass
 class Properties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -170,8 +172,8 @@ class Properties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -235,8 +237,8 @@ _DockerVolumeConfiguration = DockerVolumeConfiguration
 
 @dataclass
 class DriverOpts:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -246,8 +248,8 @@ class DriverOpts:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -257,8 +259,8 @@ _DriverOpts = DriverOpts
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -268,8 +270,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

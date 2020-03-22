@@ -37,6 +37,9 @@
             "type": "number",
             "description": "Quota value for floating IPs.\nChanging this updates the existing quotaset."
         },
+        "Id": {
+            "type": "string"
+        },
         "InjectedFileContentBytes": {
             "type": "number",
             "description": "Quota value for content bytes\nof injected files. Changing this updates the existing quotaset."
@@ -98,10 +101,11 @@
         "ProjectId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

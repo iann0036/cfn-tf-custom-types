@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DisplayName: Optional[str]
     ExternalKey: Optional[str]
+    Id: Optional[str]
     Key: Optional[str]
     Properties: Optional[Sequence["_Properties"]]
     State: Optional[str]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
             ExternalKey=json_data.get("ExternalKey"),
+            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Properties=json_data.get("Properties"),
             State=json_data.get("State"),
@@ -83,8 +85,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Properties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class Properties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

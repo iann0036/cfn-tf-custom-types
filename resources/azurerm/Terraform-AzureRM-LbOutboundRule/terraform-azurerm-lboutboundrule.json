@@ -53,6 +53,9 @@
             "type": "boolean",
             "description": "Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP."
         },
+        "Id": {
+            "type": "string"
+        },
         "IdleTimeoutInMinutes": {
             "type": "number",
             "description": "The timeout for the TCP idle connection."
@@ -93,10 +96,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

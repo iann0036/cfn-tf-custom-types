@@ -48,6 +48,9 @@
             "type": "number",
             "description": "Hold time, in seconds."
         },
+        "Id": {
+            "type": "string"
+        },
         "IdleHoldTime": {
             "type": "number",
             "description": "Idle hold time, in seconds."
@@ -138,10 +141,11 @@
         "VirtualRouter"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

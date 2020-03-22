@@ -62,16 +62,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -83,7 +83,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LaunchTemplate"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -133,6 +134,9 @@
         "EcsClusterArn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ServiceRole": {
             "type": "string"
         },
@@ -175,11 +179,12 @@
         "/properties/Arn",
         "/properties/EccClusterArn",
         "/properties/EcsClusterArn",
+        "/properties/Id",
         "/properties/Status",
         "/properties/StatusReason"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

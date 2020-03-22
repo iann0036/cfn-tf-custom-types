@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DnsDomain: Optional[str]
     DnsName: Optional[str]
     FixedIp: Optional[str]
+    Id: Optional[str]
     Pool: Optional[str]
     PortId: Optional[str]
     Region: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             DnsDomain=json_data.get("DnsDomain"),
             DnsName=json_data.get("DnsName"),
             FixedIp=json_data.get("FixedIp"),
+            Id=json_data.get("Id"),
             Pool=json_data.get("Pool"),
             PortId=json_data.get("PortId"),
             Region=json_data.get("Region"),
@@ -83,8 +85,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

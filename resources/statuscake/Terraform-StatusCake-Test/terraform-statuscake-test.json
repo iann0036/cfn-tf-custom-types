@@ -64,6 +64,9 @@
             "type": "boolean",
             "description": "Use to specify whether redirects should be followed, set to true to enable. Default is false."
         },
+        "Id": {
+            "type": "string"
+        },
         "LogoImage": {
             "type": "string",
             "description": "A URL to a image to use for public reporting."
@@ -166,12 +169,13 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Status",
         "/properties/TestId",
         "/properties/Uptime"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

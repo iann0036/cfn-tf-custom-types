@@ -11,6 +11,9 @@
         "EncryptedSecret": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KeyFingerprint": {
             "type": "string"
         },
@@ -40,13 +43,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/EncryptedSecret",
+        "/properties/Id",
         "/properties/KeyFingerprint",
         "/properties/Secret",
         "/properties/SesSmtpPassword",
         "/properties/SesSmtpPasswordV4"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

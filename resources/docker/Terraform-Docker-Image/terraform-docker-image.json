@@ -8,6 +8,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KeepLocally": {
             "type": "boolean",
             "description": "If true, then the Docker image won't be\ndeleted on destroy operation. If this is false, it will delete the image from\nthe docker local storage on destroy operation."
@@ -38,10 +41,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Latest"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

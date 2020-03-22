@@ -44,6 +44,9 @@
             },
             "description": "List of peers that advertised the route entry."
         },
+        "Id": {
+            "type": "string"
+        },
         "Med": {
             "type": "string",
             "description": "Match MED."
@@ -85,10 +88,11 @@
         "VirtualRouter"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

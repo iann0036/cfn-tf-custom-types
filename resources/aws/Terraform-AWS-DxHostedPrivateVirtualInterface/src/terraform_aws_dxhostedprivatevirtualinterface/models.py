@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     BgpAuthKey: Optional[str]
     ConnectionId: Optional[str]
     CustomerAddress: Optional[str]
+    Id: Optional[str]
     JumboFrameCapable: Optional[bool]
     Mtu: Optional[float]
     Name: Optional[str]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             BgpAuthKey=json_data.get("BgpAuthKey"),
             ConnectionId=json_data.get("ConnectionId"),
             CustomerAddress=json_data.get("CustomerAddress"),
+            Id=json_data.get("Id"),
             JumboFrameCapable=json_data.get("JumboFrameCapable"),
             Mtu=json_data.get("Mtu"),
             Name=json_data.get("Name"),

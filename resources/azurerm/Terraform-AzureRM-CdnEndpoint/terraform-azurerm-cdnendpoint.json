@@ -92,6 +92,9 @@
         "HostName": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsCompressionEnabled": {
             "type": "boolean",
             "description": "Indicates whether compression is to be enabled. Defaults to false."
@@ -147,16 +150,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -189,10 +192,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/HostName"
+        "/properties/HostName",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

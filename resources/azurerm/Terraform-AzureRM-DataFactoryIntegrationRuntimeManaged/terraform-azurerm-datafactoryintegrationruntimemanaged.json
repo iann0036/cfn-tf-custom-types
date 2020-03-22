@@ -102,6 +102,9 @@
             "type": "string",
             "description": "The Managed Integration Runtime edition. Valid values are `Standard` and `Enterprise`. Defaults to `Standard`."
         },
+        "Id": {
+            "type": "string"
+        },
         "LicenseType": {
             "type": "string",
             "description": "The type of the license that is used. Valid values are `LicenseIncluded` and `BasePrize`. Defaults to `LicenseIncluded`."
@@ -167,10 +170,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

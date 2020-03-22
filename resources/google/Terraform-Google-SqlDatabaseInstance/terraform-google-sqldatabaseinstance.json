@@ -98,16 +98,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "A set of key/value user label pairs to assign to the instance."
@@ -117,7 +117,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/BackupConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "DatabaseFlags": {
                     "type": "array",
@@ -131,21 +132,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/IpConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "LocationPreference": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LocationPreference"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "MaintenanceWindow": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/MaintenanceWindow"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -287,6 +291,9 @@
             "description": "The MySQL, PostgreSQL or\nSQL Server (beta) version to use. Supported values include `MYSQL_5_6`,\n`MYSQL_5_7`, `POSTGRES_9_6`,`POSTGRES_11`, `SQLSERVER_2017_STANDARD`,\n`SQLSERVER_2017_ENTERPRISE`, `SQLSERVER_2017_EXPRESS`, `SQLSERVER_2017_WEB`.\n[Database Version Policies](https://cloud.google.com/sql/docs/sqlserver/db-versions)\nincludes an up-to-date reference of supported versions."
         },
         "FirstIpAddress": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "IpAddress": {
@@ -434,6 +441,7 @@
         "/properties/tfcfnid",
         "/properties/ConnectionName",
         "/properties/FirstIpAddress",
+        "/properties/Id",
         "/properties/IpAddress",
         "/properties/PrivateIpAddress",
         "/properties/PublicIpAddress",
@@ -442,7 +450,7 @@
         "/properties/ServiceAccountEmailAddress"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

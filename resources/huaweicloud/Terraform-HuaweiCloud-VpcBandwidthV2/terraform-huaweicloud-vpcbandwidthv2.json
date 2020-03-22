@@ -29,6 +29,9 @@
             "type": "string",
             "description": "The enterprise project id of the Shared Bandwidth. Changing this creates a new bandwidth."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the Shared Bandwidth."
@@ -47,10 +50,11 @@
         "Size"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

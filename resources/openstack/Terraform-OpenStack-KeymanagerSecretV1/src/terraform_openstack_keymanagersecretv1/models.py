@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     CreatedAt: Optional[str]
     CreatorId: Optional[str]
     Expiration: Optional[str]
+    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Mode: Optional[str]
     Name: Optional[str]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             CreatedAt=json_data.get("CreatedAt"),
             CreatorId=json_data.get("CreatorId"),
             Expiration=json_data.get("Expiration"),
+            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Mode=json_data.get("Mode"),
             Name=json_data.get("Name"),
@@ -97,8 +99,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AllMetadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -108,8 +110,8 @@ class AllMetadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -119,8 +121,8 @@ _AllMetadata = AllMetadata
 
 @dataclass
 class ContentTypes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -130,8 +132,8 @@ class ContentTypes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -141,8 +143,8 @@ _ContentTypes = ContentTypes
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -152,8 +154,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

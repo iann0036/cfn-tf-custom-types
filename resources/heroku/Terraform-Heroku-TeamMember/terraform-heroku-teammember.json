@@ -15,6 +15,9 @@
         "Federated": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "Role": {
             "type": "string",
             "description": "The role to assign the member. See [the API docs](https://devcenter.heroku.com/articles/platform-api-reference#team-member) for available options."
@@ -31,10 +34,11 @@
         "Team"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

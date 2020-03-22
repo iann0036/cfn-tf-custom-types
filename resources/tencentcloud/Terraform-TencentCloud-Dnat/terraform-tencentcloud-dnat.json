@@ -20,6 +20,9 @@
             "type": "string",
             "description": "Port of the EIP."
         },
+        "Id": {
+            "type": "string"
+        },
         "NatId": {
             "type": "string",
             "description": "Id of the NAT gateway."
@@ -52,10 +55,11 @@
         "VpcId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

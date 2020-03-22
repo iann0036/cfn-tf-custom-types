@@ -8,6 +8,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "PolicyName": {
             "type": "string",
             "description": "Name of the RAM policy. This name can have a string of 1 to 128 characters, must contain only alphanumeric characters or hyphen \"-\", and must not begin with a hyphen."
@@ -28,10 +31,11 @@
         "UserName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

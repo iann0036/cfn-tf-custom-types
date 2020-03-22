@@ -29,6 +29,9 @@
             "type": "string",
             "description": "A description about the lockdown entry. Typically used as a reminder or explanation for the lockdown."
         },
+        "Id": {
+            "type": "string"
+        },
         "Paused": {
             "type": "boolean",
             "description": "Boolean of whether this zone lockdown is currently paused. Default: false."
@@ -63,10 +66,11 @@
         "ZoneId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -20,6 +20,9 @@
             },
             "description": "Users from these addresses/subnets will not\nbe identified.  This can be an address object, an address group, a single\nIP address, or an IP address subnet."
         },
+        "Id": {
+            "type": "string"
+        },
         "IncludeAcls": {
             "type": "array",
             "insertionOrder": false,
@@ -62,10 +65,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

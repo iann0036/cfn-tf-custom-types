@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     FlavorName: Optional[str]
     HostId: Optional[str]
     HostStatus: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     ImageName: Optional[str]
     KernelId: Optional[str]
@@ -79,6 +80,7 @@ class ResourceModel(BaseResourceModel):
             FlavorName=json_data.get("FlavorName"),
             HostId=json_data.get("HostId"),
             HostStatus=json_data.get("HostStatus"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             ImageName=json_data.get("ImageName"),
             KernelId=json_data.get("KernelId"),
@@ -103,8 +105,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

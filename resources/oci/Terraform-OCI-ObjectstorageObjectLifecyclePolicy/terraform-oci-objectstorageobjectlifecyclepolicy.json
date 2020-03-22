@@ -27,7 +27,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ObjectNameFilter"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -92,6 +93,9 @@
             "type": "string",
             "description": "The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Namespace": {
             "type": "string",
             "description": "The Object Storage namespace used for the request."
@@ -125,10 +129,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

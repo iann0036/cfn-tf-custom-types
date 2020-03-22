@@ -206,6 +206,9 @@
         "HadoopVersion": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string"
         },
@@ -282,16 +285,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Tags key/value pairs to associate with the cluster."
@@ -373,6 +376,7 @@
         "/properties/ExternalIp",
         "/properties/Fee",
         "/properties/HadoopVersion",
+        "/properties/Id",
         "/properties/InstanceId",
         "/properties/InternalIp",
         "/properties/MasterNodeIp",
@@ -388,7 +392,7 @@
         "/properties/Vnc"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

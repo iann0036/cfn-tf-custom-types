@@ -20,6 +20,9 @@
             },
             "description": "List of fully qualified domain names (FQDNs) for\nwhich the certificate will be issued. The domains must be managed using\nDigitalOcean's DNS. Only valid when type is `lets_encrypt`."
         },
+        "Id": {
+            "type": "string"
+        },
         "LeafCertificate": {
             "type": "string",
             "description": "The contents of a PEM-formatted public\nTLS certificate. Only valid when type is `custom`."
@@ -52,12 +55,13 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/NotAfter",
         "/properties/Sha1Fingerprint",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

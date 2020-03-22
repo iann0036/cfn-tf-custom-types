@@ -11,6 +11,9 @@
         "Etag": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Username": {
             "type": "string",
             "description": "The name of the user to block."
@@ -22,10 +25,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Etag"
+        "/properties/Etag",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

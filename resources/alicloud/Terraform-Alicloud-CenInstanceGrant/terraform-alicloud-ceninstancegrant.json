@@ -19,6 +19,9 @@
         "ChildInstanceId": {
             "type": "string",
             "description": "The ID of the child instance to grant."
+        },
+        "Id": {
+            "type": "string"
         }
     },
     "additionalProperties": false,
@@ -28,10 +31,11 @@
         "ChildInstanceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

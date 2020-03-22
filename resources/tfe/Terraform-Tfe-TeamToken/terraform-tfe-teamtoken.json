@@ -12,6 +12,9 @@
             "type": "boolean",
             "description": "If set to `true`, a new token will be\ngenerated even if a token already exists. This will invalidate the existing\ntoken!."
         },
+        "Id": {
+            "type": "string"
+        },
         "TeamId": {
             "type": "string",
             "description": "ID of the team."
@@ -26,10 +29,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Token"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

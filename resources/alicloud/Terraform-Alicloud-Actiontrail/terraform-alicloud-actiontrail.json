@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Indicates whether the event is a read or a write event. Valid values: Read, Write, and All. Default value: Write."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the trail to be created, which must be unique for an account."
@@ -44,10 +47,11 @@
         "RoleName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

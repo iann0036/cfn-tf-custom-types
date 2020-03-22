@@ -15,6 +15,9 @@
             "type": "boolean",
             "description": "Whether to export the custom routes to the peer network. Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImportCustomRoutes": {
             "type": "boolean",
             "description": "Whether to export the custom routes from the peer network. Defaults to `false`."
@@ -46,11 +49,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/State",
         "/properties/StateDetails"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

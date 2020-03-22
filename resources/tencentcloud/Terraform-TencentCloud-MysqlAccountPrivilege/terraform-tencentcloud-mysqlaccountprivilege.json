@@ -20,6 +20,9 @@
             },
             "description": "List of specified database name."
         },
+        "Id": {
+            "type": "string"
+        },
         "MysqlId": {
             "type": "string",
             "description": "Instance ID."
@@ -40,10 +43,11 @@
         "MysqlId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

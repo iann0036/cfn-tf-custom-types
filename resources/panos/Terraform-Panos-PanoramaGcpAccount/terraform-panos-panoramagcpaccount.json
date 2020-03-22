@@ -19,6 +19,9 @@
             "type": "string",
             "description": "Account description."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The account's name."
@@ -40,10 +43,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CredentialFileEnc"
+        "/properties/CredentialFileEnc",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

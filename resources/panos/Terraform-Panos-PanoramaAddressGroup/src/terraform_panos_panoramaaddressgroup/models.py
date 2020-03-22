@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DeviceGroup: Optional[str]
     DynamicMatch: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     StaticAddresses: Optional[Sequence[str]]
     Tags: Optional[Sequence[str]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DeviceGroup=json_data.get("DeviceGroup"),
             DynamicMatch=json_data.get("DynamicMatch"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             StaticAddresses=json_data.get("StaticAddresses"),
             Tags=json_data.get("Tags"),

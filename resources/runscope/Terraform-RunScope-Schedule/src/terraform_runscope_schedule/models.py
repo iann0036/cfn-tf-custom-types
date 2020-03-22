@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BucketId: Optional[str]
     EnvironmentId: Optional[str]
+    Id: Optional[str]
     Interval: Optional[str]
     Note: Optional[str]
     TestId: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BucketId=json_data.get("BucketId"),
             EnvironmentId=json_data.get("EnvironmentId"),
+            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             Note=json_data.get("Note"),
             TestId=json_data.get("TestId"),

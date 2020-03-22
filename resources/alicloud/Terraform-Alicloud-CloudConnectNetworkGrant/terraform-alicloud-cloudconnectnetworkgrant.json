@@ -19,6 +19,9 @@
         "CenUid": {
             "type": "string",
             "description": "The ID of the account to which the CEN instance belongs."
+        },
+        "Id": {
+            "type": "string"
         }
     },
     "additionalProperties": false,
@@ -28,10 +31,11 @@
         "CenUid"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

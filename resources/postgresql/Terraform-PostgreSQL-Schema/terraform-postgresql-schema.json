@@ -44,6 +44,9 @@
             "type": "boolean",
             "description": "When true, will also drop all the objects that are contained in the schema. (Default: false)."
         },
+        "Id": {
+            "type": "string"
+        },
         "IfNotExists": {
             "type": "boolean",
             "description": "When true, use the existing schema if it exists. (Default: true)."
@@ -69,10 +72,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,9 @@
         "CidrBlock": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Ipv6CidrBlock": {
             "type": "string"
         },
@@ -56,16 +59,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -86,13 +89,14 @@
         "/properties/AssignIpv6AddressOnCreation",
         "/properties/AvailabilityZoneId",
         "/properties/CidrBlock",
+        "/properties/Id",
         "/properties/Ipv6CidrBlock",
         "/properties/Ipv6CidrBlockAssociationId",
         "/properties/OwnerId",
         "/properties/VpcId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

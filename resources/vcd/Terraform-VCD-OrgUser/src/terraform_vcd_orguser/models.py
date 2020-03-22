@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EmailAddress: Optional[str]
     Enabled: Optional[bool]
     FullName: Optional[str]
+    Id: Optional[str]
     InstantMessaging: Optional[str]
     IsGroupRole: Optional[bool]
     IsLocked: Optional[bool]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             EmailAddress=json_data.get("EmailAddress"),
             Enabled=json_data.get("Enabled"),
             FullName=json_data.get("FullName"),
+            Id=json_data.get("Id"),
             InstantMessaging=json_data.get("InstantMessaging"),
             IsGroupRole=json_data.get("IsGroupRole"),
             IsLocked=json_data.get("IsLocked"),

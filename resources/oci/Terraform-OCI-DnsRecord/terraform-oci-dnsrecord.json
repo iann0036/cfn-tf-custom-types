@@ -33,6 +33,9 @@
             "type": "string",
             "description": "The fully qualified domain name where the record can be located."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsProtected": {
             "type": "boolean"
         },
@@ -70,12 +73,13 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/IsProtected",
         "/properties/RecordHash",
         "/properties/RrsetVersion"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

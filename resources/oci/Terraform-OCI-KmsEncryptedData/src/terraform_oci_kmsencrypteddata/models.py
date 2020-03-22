@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AssociatedData: Optional[Sequence["_AssociatedData"]]
     Ciphertext: Optional[str]
     CryptoEndpoint: Optional[str]
+    Id: Optional[str]
     KeyId: Optional[str]
     LoggingContext: Optional[Sequence["_LoggingContext"]]
     Plaintext: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             AssociatedData=json_data.get("AssociatedData"),
             Ciphertext=json_data.get("Ciphertext"),
             CryptoEndpoint=json_data.get("CryptoEndpoint"),
+            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
             LoggingContext=json_data.get("LoggingContext"),
             Plaintext=json_data.get("Plaintext"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AssociatedData:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class AssociatedData:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -91,8 +93,8 @@ _AssociatedData = AssociatedData
 
 @dataclass
 class LoggingContext:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class LoggingContext:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

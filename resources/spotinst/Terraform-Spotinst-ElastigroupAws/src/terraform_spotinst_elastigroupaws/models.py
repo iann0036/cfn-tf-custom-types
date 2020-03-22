@@ -52,6 +52,7 @@ class ResourceModel(BaseResourceModel):
     HealthCheckType: Optional[str]
     HealthCheckUnhealthyDurationBeforeReplacement: Optional[float]
     IamInstanceProfile: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     InstanceTypesOndemand: Optional[str]
     InstanceTypesPreferredSpot: Optional[Sequence[str]]
@@ -147,6 +148,7 @@ class ResourceModel(BaseResourceModel):
             HealthCheckType=json_data.get("HealthCheckType"),
             HealthCheckUnhealthyDurationBeforeReplacement=json_data.get("HealthCheckUnhealthyDurationBeforeReplacement"),
             IamInstanceProfile=json_data.get("IamInstanceProfile"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceTypesOndemand=json_data.get("InstanceTypesOndemand"),
             InstanceTypesPreferredSpot=json_data.get("InstanceTypesPreferredSpot"),

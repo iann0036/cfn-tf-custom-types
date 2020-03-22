@@ -20,6 +20,9 @@
         "ClientKey": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the client certificate.\n- `ssl_vpn_server_id` - (Required, ForceNew) The ID of the SSL-VPN server."
@@ -42,10 +45,11 @@
         "/properties/ClientCert",
         "/properties/ClientConfig",
         "/properties/ClientKey",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

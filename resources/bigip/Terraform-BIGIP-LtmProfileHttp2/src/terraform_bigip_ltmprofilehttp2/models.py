@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ConnectionIdleTimeout: Optional[float]
     DefaultsFrom: Optional[str]
     HeaderTableSize: Optional[float]
+    Id: Optional[str]
     Name: Optional[str]
 
     @classmethod
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             ConnectionIdleTimeout=json_data.get("ConnectionIdleTimeout"),
             DefaultsFrom=json_data.get("DefaultsFrom"),
             HeaderTableSize=json_data.get("HeaderTableSize"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
         )
 

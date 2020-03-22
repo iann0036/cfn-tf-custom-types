@@ -16,6 +16,9 @@
             },
             "description": "List of Okta groups to associate with this user."
         },
+        "Id": {
+            "type": "string"
+        },
         "Path": {
             "type": "string",
             "description": "The path where the Okta auth backend is mounted."
@@ -39,10 +42,11 @@
         "Username"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

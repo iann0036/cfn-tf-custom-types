@@ -20,6 +20,9 @@
             "type": "boolean",
             "description": "Enable notifications for confidential note events."
         },
+        "Id": {
+            "type": "string"
+        },
         "IssueChannel": {
             "type": "string",
             "description": "The name of the channel to receive issue events notifications."
@@ -107,10 +110,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/JobEvents"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

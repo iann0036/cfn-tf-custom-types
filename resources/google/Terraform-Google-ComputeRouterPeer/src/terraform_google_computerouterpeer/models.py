@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AdvertiseMode: Optional[str]
     AdvertisedGroups: Optional[Sequence[str]]
     AdvertisedRoutePriority: Optional[float]
+    Id: Optional[str]
     Interface: Optional[str]
     IpAddress: Optional[str]
     ManagementType: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             AdvertiseMode=json_data.get("AdvertiseMode"),
             AdvertisedGroups=json_data.get("AdvertisedGroups"),
             AdvertisedRoutePriority=json_data.get("AdvertisedRoutePriority"),
+            Id=json_data.get("Id"),
             Interface=json_data.get("Interface"),
             IpAddress=json_data.get("IpAddress"),
             ManagementType=json_data.get("ManagementType"),

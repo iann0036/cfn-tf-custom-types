@@ -45,6 +45,9 @@
             "type": "string",
             "description": "The user-friendly name for the backup. The name does not have to be unique."
         },
+        "Id": {
+            "type": "string"
+        },
         "LifecycleDetails": {
             "type": "string"
         },
@@ -75,6 +78,7 @@
         "/properties/CompartmentId",
         "/properties/DatabaseEdition",
         "/properties/DatabaseSizeInGbs",
+        "/properties/Id",
         "/properties/LifecycleDetails",
         "/properties/State",
         "/properties/TimeEnded",
@@ -82,7 +86,7 @@
         "/properties/Type"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

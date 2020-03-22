@@ -49,21 +49,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DeploymentReadyOption"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GreenFleetProvisioningOption": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GreenFleetProvisioningOption"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TerminateBlueInstancesOnDeploymentSuccess": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TerminateBlueInstancesOnDeploymentSuccess"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -150,7 +153,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TargetGroupPairInfo"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -260,21 +264,26 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ProdTrafficRoute"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "TargetGroup": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TargetGroup"
-                    }
+                    },
+                    "maxItems": 2,
+                    "minItems": 1
                 },
                 "TestTrafficRoute": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TestTrafficRoute"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -343,6 +352,9 @@
             "type": "string"
         },
         "DeploymentGroupName": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "ServiceRoleArn": {
@@ -504,10 +516,11 @@
         "ServiceRoleArn"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

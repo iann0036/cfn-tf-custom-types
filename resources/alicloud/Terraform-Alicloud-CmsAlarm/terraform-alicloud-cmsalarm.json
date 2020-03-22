@@ -23,16 +23,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of the resources associated with the alarm rule, such as \"instanceId\", \"device\" and \"port\". Each key's value is a string and it uses comma to split multiple items. For more information, see [Metrics Reference](https://www.alibabacloud.com/help/doc-detail/28619.htm)."
@@ -48,6 +48,9 @@
         "EndTime": {
             "type": "number",
             "description": "It has been deprecated from provider version 1.50.0 and 'effective_interval' instead."
+        },
+        "Id": {
+            "type": "string"
         },
         "Metric": {
             "type": "string",
@@ -112,10 +115,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

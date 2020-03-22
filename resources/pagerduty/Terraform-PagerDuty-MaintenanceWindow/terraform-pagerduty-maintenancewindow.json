@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The maintenance window's end time. This is when the services will start creating incidents again. This date must be in the future and after the `start_time`.\n* `services`    - (Required) A list of service IDs to include in the maintenance window.\n* `description` - (Optional) A description for the maintenance window."
         },
+        "Id": {
+            "type": "string"
+        },
         "Services": {
             "type": "array",
             "insertionOrder": true,
@@ -36,10 +39,11 @@
         "StartTime"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

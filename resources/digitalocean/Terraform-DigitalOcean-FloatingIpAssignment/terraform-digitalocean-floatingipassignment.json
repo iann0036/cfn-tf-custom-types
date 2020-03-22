@@ -12,6 +12,9 @@
             "type": "number",
             "description": "The ID of Droplet that the Floating IP will be assigned to."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "The Floating IP to assign to the Droplet."
@@ -23,10 +26,11 @@
         "IpAddress"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,9 @@
         "DeviceName": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KmsKeyId": {
             "type": "string"
         },
@@ -53,16 +56,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -81,10 +84,11 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/CreationTime",
+        "/properties/Id",
         "/properties/Version"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

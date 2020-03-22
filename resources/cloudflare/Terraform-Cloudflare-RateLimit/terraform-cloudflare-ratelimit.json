@@ -18,7 +18,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Response"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -44,14 +45,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Request"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Response": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Response"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -119,6 +122,9 @@
             "type": "boolean",
             "description": "Whether this ratelimit is currently disabled. Default: `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Period": {
             "type": "number",
             "description": "The time in seconds to count matching traffic. If the count exceeds threshold within this period the action will be performed (min: 1, max: 86,400)."
@@ -180,10 +186,11 @@
         "ZoneId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

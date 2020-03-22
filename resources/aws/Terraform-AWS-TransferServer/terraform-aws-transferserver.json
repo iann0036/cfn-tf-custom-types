@@ -39,6 +39,9 @@
         "HostKeyFingerprint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IdentityProviderType": {
             "type": "string"
         },
@@ -55,16 +58,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -86,10 +89,11 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/Endpoint",
-        "/properties/HostKeyFingerprint"
+        "/properties/HostKeyFingerprint",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     ContainerWrite: Optional[Sequence[str]]
     CreatedAt: Optional[str]
     HistoryLocation: Optional[str]
+    Id: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
     ObjectCount: Optional[float]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             ContainerWrite=json_data.get("ContainerWrite"),
             CreatedAt=json_data.get("CreatedAt"),
             HistoryLocation=json_data.get("HistoryLocation"),
+            Id=json_data.get("Id"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
             ObjectCount=json_data.get("ObjectCount"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

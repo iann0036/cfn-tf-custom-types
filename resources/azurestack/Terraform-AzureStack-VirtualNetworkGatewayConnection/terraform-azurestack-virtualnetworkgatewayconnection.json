@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The ID of the Express Route Circuit\nwhen creating an ExpressRoute connection (i.e. when `type` is `ExpressRoute`).\nThe Express Route Circuit can be in the same or in a different subscription."
         },
+        "Id": {
+            "type": "string"
+        },
         "LocalNetworkGatewayId": {
             "type": "string",
             "description": "The ID of the local network gateway\nwhen creating Site-to-Site connection (i.e. when `type` is `IPsec`)."
@@ -55,16 +58,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -87,10 +90,11 @@
         "VirtualNetworkGatewayId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

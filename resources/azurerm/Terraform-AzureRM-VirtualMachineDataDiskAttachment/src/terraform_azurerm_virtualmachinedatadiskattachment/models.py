@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Caching: Optional[str]
     CreateOption: Optional[str]
+    Id: Optional[str]
     Lun: Optional[float]
     ManagedDiskId: Optional[str]
     VirtualMachineId: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Caching=json_data.get("Caching"),
             CreateOption=json_data.get("CreateOption"),
+            Id=json_data.get("Id"),
             Lun=json_data.get("Lun"),
             ManagedDiskId=json_data.get("ManagedDiskId"),
             VirtualMachineId=json_data.get("VirtualMachineId"),

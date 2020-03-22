@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EnableUserId: Optional[bool]
     ExcludeAcls: Optional[Sequence[str]]
+    Id: Optional[str]
     IncludeAcls: Optional[Sequence[str]]
     Interfaces: Optional[Sequence[str]]
     LogSetting: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EnableUserId=json_data.get("EnableUserId"),
             ExcludeAcls=json_data.get("ExcludeAcls"),
+            Id=json_data.get("Id"),
             IncludeAcls=json_data.get("IncludeAcls"),
             Interfaces=json_data.get("Interfaces"),
             LogSetting=json_data.get("LogSetting"),

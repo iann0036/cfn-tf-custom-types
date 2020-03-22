@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Created: Optional[str]
     CurrentTask: Optional[str]
     Flavor: Optional[str]
+    Id: Optional[str]
     InnerEndpoint: Optional[str]
     Name: Optional[str]
     PublicEndpoint: Optional[str]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             Created=json_data.get("Created"),
             CurrentTask=json_data.get("CurrentTask"),
             Flavor=json_data.get("Flavor"),
+            Id=json_data.get("Id"),
             InnerEndpoint=json_data.get("InnerEndpoint"),
             Name=json_data.get("Name"),
             PublicEndpoint=json_data.get("PublicEndpoint"),

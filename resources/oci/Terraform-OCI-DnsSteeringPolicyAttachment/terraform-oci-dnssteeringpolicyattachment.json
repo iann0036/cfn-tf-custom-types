@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The attached domain within the attached zone."
         },
+        "Id": {
+            "type": "string"
+        },
         "Rtypes": {
             "type": "array",
             "insertionOrder": false,
@@ -73,13 +76,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CompartmentId",
+        "/properties/Id",
         "/properties/Rtypes",
         "/properties/Self",
         "/properties/State",
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

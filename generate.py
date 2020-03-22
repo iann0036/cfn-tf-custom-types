@@ -107,11 +107,13 @@ PROVIDERS_MAP = {
 def tf_to_cfn_str(obj):
     return re.sub(r'(?:^|_)(\w)', lambda x: x.group(1).upper(), obj)
 
+
 def tf_type_to_cfn_type(tf_name, provider_name):
     split_provider_name = tf_name.split("_")
     split_provider_name.pop(0)
     cfn_provider_name = PROVIDERS_MAP[provider_name][0]
     return "Terraform::" + cfn_provider_name + "::" + tf_to_cfn_str("_".join(split_provider_name))
+
 
 def check_call(args, cwd, inputstr):
     proc = subprocess.Popen(args,
@@ -128,6 +130,7 @@ def check_call(args, cwd, inputstr):
             cmd=args)
     
     return stdout
+
 
 def jsonschema_type(attrtype):
     if attrtype == "string":
@@ -173,17 +176,17 @@ def jsonschema_type(attrtype):
                 'type': 'object',
                 'additionalProperties': False,
                 'properties': {
-                    'Key': {
+                    'MapKey': {
                         'type': 'string'
                     },
-                    'Value': jsonschema_type(attrtype[1])
+                    'MapValue': jsonschema_type(attrtype[1])
                 },
                 'required': [
-                    'Key',
-                    'Value'
+                    'MapKey',
+                    'MapValue'
                 ]
             }
-        } # TODO: Reverse this in the Lambda
+        } # TODO: Handle this in the handlers
     else:
         print("ERROR: Unknown attribute type")
         print(attrtype)
@@ -191,11 +194,13 @@ def jsonschema_type(attrtype):
             'type': 'string'
         }
 
+
 def checkout(url, provider_name):
     try:
         check_call(['git', 'clone', url, '/tmp/' + provider_name + '/'], '/tmp', None)
     except:
         check_call(['git', 'pull', url], '/tmp/' + provider_name, None)
+
 
 def process_provider(provider_type):
     tmpdir = tempfile.TemporaryDirectory()
@@ -295,28 +300,31 @@ def process_provider(provider_type):
 
             if 'attributes' in v['block']:
                 for attrname,attr in v['block']['attributes'].items():
-                    if attrname == "id":
-                        continue
-                    
                     cfnattrname = tf_to_cfn_str(attrname)
                     attrtype = attr['type']
 
                     computed = False
                     optional = None
-                    if 'optional' in attr:
-                        if not attr['optional']:
-                            schema['required'].append(cfnattrname)
-                            optional = False
-                        else:
-                            optional = True
-                    elif 'required' in attr:
-                        if attr['required']:
-                            schema['required'].append(cfnattrname)
-                    if 'computed' in attr:
-                        if attr['computed']:
-                            computed = True
-                            if not optional:
-                                schema['readOnlyProperties'].append("/properties/" + cfnattrname)
+
+                    if attrname == "id":
+                        computed = True
+                        schema['primaryIdentifier'] = ["/properties/Id"]
+                        schema['readOnlyProperties'].append("/properties/Id")
+                    else:
+                        if 'optional' in attr:
+                            if not attr['optional']:
+                                schema['required'].append(cfnattrname)
+                                optional = False
+                            else:
+                                optional = True
+                        elif 'required' in attr:
+                            if attr['required']:
+                                schema['required'].append(cfnattrname)
+                        if 'computed' in attr:
+                            if attr['computed']:
+                                computed = True
+                                if not optional:
+                                    schema['readOnlyProperties'].append("/properties/" + cfnattrname)
 
                     schema['properties'][cfnattrname] = jsonschema_type(attrtype)
 
@@ -370,7 +378,6 @@ def process_provider(provider_type):
                                     schema['definitions'][cfnblockname]['properties'][cfnattrname]['description'] = docarg['description']
                 
                 if 'block_types' in block['block']:
-                    # TODO: Descriptions mapping for block types
                     outstandingblocks.update(block['block']['block_types'])
                     for subblockname,subblock in block['block']['block_types'].items():
                         cfnsubblockname = tf_to_cfn_str(subblockname)
@@ -397,6 +404,11 @@ def process_provider(provider_type):
                         else:
                             print("Unknown subblock nesting_mode: " + subblock['nesting_mode'])
 
+                        if 'max_items' in subblock:
+                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname]['maxItems'] = subblock['max_items']
+                        if 'min_items' in subblock:
+                            schema['definitions'][cfnblockname]['properties'][cfnsubblockname]['minItems'] = subblock['min_items']
+
                 if not bool(schema['definitions'][cfnblockname]['properties']):
                     if bool(block['block']):
                         del schema['definitions'][cfnblockname] # no properties found
@@ -405,7 +417,7 @@ def process_provider(provider_type):
                     else:
                         schema['definitions'][cfnblockname]['properties']['IsPropertyDefined'] = {
                             'type': 'boolean'
-                        }
+                        } # TODO: Handle this in handlers
                         print("Retained propertyless block: " + cfnblockname)
 
                 if block['nesting_mode'] == "list":
@@ -436,6 +448,8 @@ def process_provider(provider_type):
                 if 'min_items' in block:
                     schema['properties'][cfnblockname]['minItems'] = block['min_items']
 
+                # TODO: Block descriptions
+
             with open(providerdir / (cfndirname.lower() + ".json"), "w") as f:
                 f.write(json.dumps(schema, indent=4))
             
@@ -453,6 +467,7 @@ def process_provider(provider_type):
         except:
             traceback.print_exc(file=sys.stdout)
             print("Failed to generate " + cfntypename)
+
 
 # Docs
 def process_resource_docs(provider_name, file_contents, provider_readme_items):
@@ -554,6 +569,7 @@ def process_resource_docs(provider_name, file_contents, provider_readme_items):
         }
     
     return None
+
 
 def generate_docs(tempdir, provider_type, tfschema):
     resources_path = (tempdir / provider_type / "website" / "docs" / "r").absolute()
@@ -671,6 +687,7 @@ def generate_docs(tempdir, provider_type, tfschema):
 
     return ret
 
+
 def main():
     if sys.argv[1] == "all":
         provider_list = PROVIDERS_MAP.keys()
@@ -678,6 +695,7 @@ def main():
             list(p.imap_unordered(process_provider, provider_list))
     else:
         process_provider(sys.argv[1])
+
 
 if __name__ == "__main__":
     main()

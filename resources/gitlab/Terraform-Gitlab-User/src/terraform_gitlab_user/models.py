@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CanCreateGroup: Optional[bool]
     Email: Optional[str]
+    Id: Optional[str]
     IsAdmin: Optional[bool]
     IsExternal: Optional[bool]
     Name: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CanCreateGroup=json_data.get("CanCreateGroup"),
             Email=json_data.get("Email"),
+            Id=json_data.get("Id"),
             IsAdmin=json_data.get("IsAdmin"),
             IsExternal=json_data.get("IsExternal"),
             Name=json_data.get("Name"),

@@ -44,6 +44,9 @@
             "type": "string",
             "description": "Environment variables to use during repo command\nexecution."
         },
+        "Id": {
+            "type": "string"
+        },
         "KeepUpdated": {
             "type": "boolean",
             "description": "Update the repo upon Cobbler sync. Valid values\nare true or false."
@@ -88,10 +91,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

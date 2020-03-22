@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Breed: Optional[str]
     Comment: Optional[str]
     FetchableFiles: Optional[str]
+    Id: Optional[str]
     Initrd: Optional[str]
     Kernel: Optional[str]
     KernelOptions: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Breed=json_data.get("Breed"),
             Comment=json_data.get("Comment"),
             FetchableFiles=json_data.get("FetchableFiles"),
+            Id=json_data.get("Id"),
             Initrd=json_data.get("Initrd"),
             Kernel=json_data.get("Kernel"),
             KernelOptions=json_data.get("KernelOptions"),

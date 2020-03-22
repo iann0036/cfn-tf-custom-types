@@ -28,14 +28,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TimeBasedCanary"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TimeBasedLinear": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TimeBasedLinear"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -81,6 +83,9 @@
         "DeploymentConfigName": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "MinimumHealthyHosts": {
             "type": "array",
             "insertionOrder": false,
@@ -120,10 +125,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/DeploymentConfigId"
+        "/properties/DeploymentConfigId",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

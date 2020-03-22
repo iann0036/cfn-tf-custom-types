@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     FromPort: Optional[float]
     IcmpCode: Optional[str]
     IcmpType: Optional[str]
+    Id: Optional[str]
     Ipv6CidrBlock: Optional[str]
     NetworkAclId: Optional[str]
     Protocol: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             FromPort=json_data.get("FromPort"),
             IcmpCode=json_data.get("IcmpCode"),
             IcmpType=json_data.get("IcmpType"),
+            Id=json_data.get("Id"),
             Ipv6CidrBlock=json_data.get("Ipv6CidrBlock"),
             NetworkAclId=json_data.get("NetworkAclId"),
             Protocol=json_data.get("Protocol"),

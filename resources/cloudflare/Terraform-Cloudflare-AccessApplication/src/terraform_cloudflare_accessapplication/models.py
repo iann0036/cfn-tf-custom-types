@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Aud: Optional[str]
     Domain: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     SessionDuration: Optional[str]
     ZoneId: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Aud=json_data.get("Aud"),
             Domain=json_data.get("Domain"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SessionDuration=json_data.get("SessionDuration"),
             ZoneId=json_data.get("ZoneId"),

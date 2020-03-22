@@ -51,6 +51,9 @@
         "DeferScaleInDuration": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Utilization": {
             "type": "string",
             "description": "The utilization option of cluster-autoscaler."
@@ -75,10 +78,11 @@
         "Utilization"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

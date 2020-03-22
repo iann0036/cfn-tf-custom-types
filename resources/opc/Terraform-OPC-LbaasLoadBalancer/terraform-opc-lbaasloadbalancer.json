@@ -29,6 +29,9 @@
             "type": "boolean",
             "description": "Boolean flag to enable or disable the Load Balancer. Default is `true` (enabled)."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpNetwork": {
             "type": "string",
             "description": "Fully qualified three part name of the IP network to be associated with the load balancer."
@@ -98,10 +101,11 @@
         "/properties/BalancerVips",
         "/properties/CanonicalHostName",
         "/properties/CloudgateCapable",
+        "/properties/Id",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

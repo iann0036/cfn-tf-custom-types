@@ -11,6 +11,9 @@
         "Backend": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Issuer": {
             "type": "string",
             "description": "Optional JWT issuer. If no issuer is specified, `kubernetes.io/serviceaccount` will be used as the default issuer."
@@ -41,10 +44,11 @@
         "KubernetesHost"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FullName: Optional[str]
     FullPath: Optional[str]
+    Id: Optional[str]
     LfsEnabled: Optional[bool]
     Name: Optional[str]
     ParentId: Optional[float]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FullName=json_data.get("FullName"),
             FullPath=json_data.get("FullPath"),
+            Id=json_data.get("Id"),
             LfsEnabled=json_data.get("LfsEnabled"),
             Name=json_data.get("Name"),
             ParentId=json_data.get("ParentId"),

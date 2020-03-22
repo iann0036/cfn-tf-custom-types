@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The name of the bucket it applies to."
         },
+        "Id": {
+            "type": "string"
+        },
         "RoleEntity": {
             "type": "array",
             "insertionOrder": true,
@@ -26,10 +29,11 @@
         "Bucket"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

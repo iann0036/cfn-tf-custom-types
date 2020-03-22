@@ -113,16 +113,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "Arbitrary key/value pairs of additional\nproperties to pass to the scheduler."
@@ -234,16 +234,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -277,6 +277,9 @@
             "type": "boolean",
             "description": "Whether to force the OpenStack instance to be\nforcefully deleted. This is useful for environments that have reclaim / soft\ndeletion enabled."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string",
             "description": "The image ID of\nthe desired image for the server. Changing this creates a new server."
@@ -296,16 +299,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Metadata key/value pairs to make available from\nwithin the instance. Changing this updates the existing server metadata."
@@ -400,10 +403,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AllMetadata",
-        "/properties/AllTags"
+        "/properties/AllTags",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

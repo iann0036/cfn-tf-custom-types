@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ExternalIp: Optional[str]
     ExternalPort: Optional[str]
+    Id: Optional[str]
     InternalIp: Optional[str]
     InternalPort: Optional[str]
     IpProtocol: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ExternalIp=json_data.get("ExternalIp"),
             ExternalPort=json_data.get("ExternalPort"),
+            Id=json_data.get("Id"),
             InternalIp=json_data.get("InternalIp"),
             InternalPort=json_data.get("InternalPort"),
             IpProtocol=json_data.get("IpProtocol"),

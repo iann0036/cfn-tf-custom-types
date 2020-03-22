@@ -22,6 +22,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LbMethod": {
             "type": "string",
             "description": "The algorithm used to distribute load between the\nmembers of the pool. The current specification supports 'ROUND_ROBIN' and\n'LEAST_CONNECTIONS' as valid values for this attribute."
@@ -78,10 +81,11 @@
         "SubnetId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

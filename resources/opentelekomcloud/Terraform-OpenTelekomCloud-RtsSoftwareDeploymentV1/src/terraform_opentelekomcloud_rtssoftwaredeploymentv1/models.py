@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
     ConfigId: Optional[str]
+    Id: Optional[str]
     InputValues: Optional[Sequence["_InputValues"]]
     OutputValues: Optional[Sequence["_OutputValues"]]
     Region: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
             ConfigId=json_data.get("ConfigId"),
+            Id=json_data.get("Id"),
             InputValues=json_data.get("InputValues"),
             OutputValues=json_data.get("OutputValues"),
             Region=json_data.get("Region"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class InputValues:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class InputValues:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -97,8 +99,8 @@ _InputValues = InputValues
 
 @dataclass
 class OutputValues:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -108,8 +110,8 @@ class OutputValues:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

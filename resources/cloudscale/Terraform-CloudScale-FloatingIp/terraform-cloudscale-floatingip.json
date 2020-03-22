@@ -11,6 +11,9 @@
         "Href": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IpVersion": {
             "type": "number",
             "description": "`4` or `6`, for an IPv4 or IPv6 address or network respectively."
@@ -46,11 +49,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Href",
+        "/properties/Id",
         "/properties/Network",
         "/properties/NextHop"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

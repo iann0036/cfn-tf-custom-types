@@ -45,6 +45,9 @@
                 "type": "string"
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "Specifies the supported Azure location where the Logic App Workflow exists. Changing this forces a new resource to be created."
@@ -60,16 +63,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of Key-Value pairs."
@@ -85,16 +88,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -136,11 +139,12 @@
         "/properties/AccessEndpoint",
         "/properties/ConnectorEndpointIpAddresses",
         "/properties/ConnectorOutboundIpAddresses",
+        "/properties/Id",
         "/properties/WorkflowEndpointIpAddresses",
         "/properties/WorkflowOutboundIpAddresses"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

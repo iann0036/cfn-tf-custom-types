@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The ID of a host project to associate."
         },
+        "Id": {
+            "type": "string"
+        },
         "ServiceProject": {
             "type": "string",
             "description": "The ID of the project that will serve as a Shared VPC service project."
@@ -23,10 +26,11 @@
         "ServiceProject"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

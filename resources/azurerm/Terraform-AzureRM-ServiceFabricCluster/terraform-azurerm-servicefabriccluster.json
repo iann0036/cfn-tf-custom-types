@@ -61,7 +61,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/CommonNames"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -134,16 +135,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "A map containing settings for the specified Fabric Setting."
@@ -164,16 +165,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "The capacity tags applied to the nodes in the node type, the cluster resource manager uses these tags to understand how much resource a node has."
@@ -209,16 +210,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     },
                     "description": "The placement tags applied to nodes in the node type, which can be used to indicate where certain services (workload) should run."
@@ -232,14 +233,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ApplicationPorts"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "EphemeralPorts": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/EphemeralPorts"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -365,6 +368,9 @@
         "ClusterEndpoint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "Specifies the Azure Region where the Service Fabric Cluster should exist. Changing this forces a new resource to be created."
@@ -392,16 +398,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -517,10 +523,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ClusterEndpoint"
+        "/properties/ClusterEndpoint",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

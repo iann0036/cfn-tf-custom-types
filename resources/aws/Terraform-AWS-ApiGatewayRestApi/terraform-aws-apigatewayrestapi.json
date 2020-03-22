@@ -57,6 +57,9 @@
         "ExecutionArn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "MinimumCompressionSize": {
             "type": "number"
         },
@@ -76,16 +79,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -107,10 +110,11 @@
         "/properties/Arn",
         "/properties/CreatedDate",
         "/properties/ExecutionArn",
+        "/properties/Id",
         "/properties/RootResourceId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

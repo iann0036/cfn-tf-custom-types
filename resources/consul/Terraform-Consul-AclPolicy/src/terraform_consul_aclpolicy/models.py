@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Datacenters: Optional[Sequence[str]]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Rules: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Datacenters=json_data.get("Datacenters"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Rules=json_data.get("Rules"),
         )

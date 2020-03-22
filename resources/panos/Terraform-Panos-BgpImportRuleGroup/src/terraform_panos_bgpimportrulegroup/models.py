@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     PositionKeyword: Optional[str]
     PositionReference: Optional[str]
     VirtualRouter: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             PositionKeyword=json_data.get("PositionKeyword"),
             PositionReference=json_data.get("PositionReference"),
             VirtualRouter=json_data.get("VirtualRouter"),

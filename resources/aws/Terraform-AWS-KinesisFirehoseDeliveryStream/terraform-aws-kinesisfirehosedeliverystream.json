@@ -39,14 +39,16 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/CloudwatchLoggingOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ProcessingConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ProcessingConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -91,28 +93,32 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/CloudwatchLoggingOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "DataFormatConversionConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DataFormatConversionConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ProcessingConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ProcessingConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "S3BackupConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/S3BackupConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -172,21 +178,24 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/CloudwatchLoggingOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ProcessingConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ProcessingConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "S3BackupConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/S3BackupConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -227,7 +236,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/CloudwatchLoggingOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -272,14 +282,16 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/CloudwatchLoggingOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ProcessingConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ProcessingConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -332,21 +344,27 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/InputFormatConfiguration"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "OutputFormatConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OutputFormatConfiguration"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "SchemaConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SchemaConfiguration"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -381,7 +399,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/CloudwatchLoggingOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -417,7 +436,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Deserializer"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -431,7 +452,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Serializer"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -490,14 +513,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HiveJsonSerDe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "OpenXJsonSerDe": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OpenXJsonSerDe"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -511,14 +536,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OrcSerDe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ParquetSerDe": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ParquetSerDe"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -551,16 +578,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -651,6 +678,9 @@
         "DestinationId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -661,16 +691,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -863,10 +893,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EngineVersion: Optional[str]
     FirstSlaveZone: Optional[str]
     Gtid: Optional[float]
+    Id: Optional[str]
     InstanceName: Optional[str]
     InternetHost: Optional[str]
     InternetPort: Optional[float]
@@ -79,6 +80,7 @@ class ResourceModel(BaseResourceModel):
             EngineVersion=json_data.get("EngineVersion"),
             FirstSlaveZone=json_data.get("FirstSlaveZone"),
             Gtid=json_data.get("Gtid"),
+            Id=json_data.get("Id"),
             InstanceName=json_data.get("InstanceName"),
             InternetHost=json_data.get("InternetHost"),
             InternetPort=json_data.get("InternetPort"),
@@ -111,8 +113,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -133,8 +135,8 @@ _Parameters = Parameters
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -144,8 +146,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

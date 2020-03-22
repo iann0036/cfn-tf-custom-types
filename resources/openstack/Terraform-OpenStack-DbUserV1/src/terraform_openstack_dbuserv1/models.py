@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Databases: Optional[Sequence[str]]
     Host: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Databases=json_data.get("Databases"),
             Host=json_data.get("Host"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),

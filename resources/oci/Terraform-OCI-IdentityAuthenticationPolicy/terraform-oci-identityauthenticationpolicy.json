@@ -54,6 +54,9 @@
             "type": "string",
             "description": "The OCID of the compartment."
         },
+        "Id": {
+            "type": "string"
+        },
         "PasswordPolicy": {
             "type": "array",
             "insertionOrder": false,
@@ -71,10 +74,11 @@
         "CompartmentId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

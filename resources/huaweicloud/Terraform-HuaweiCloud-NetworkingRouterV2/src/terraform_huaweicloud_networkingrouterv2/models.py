@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Distributed: Optional[bool]
     EnableSnat: Optional[bool]
     ExternalNetworkId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     TenantId: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Distributed=json_data.get("Distributed"),
             EnableSnat=json_data.get("EnableSnat"),
             ExternalNetworkId=json_data.get("ExternalNetworkId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             TenantId=json_data.get("TenantId"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

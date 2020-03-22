@@ -20,6 +20,9 @@
             "type": "boolean",
             "description": "Whether to disable [upgrade migrations](https://www.consul.io/docs/guides/autopilot.html#redundancy-zones).\nDefaults to false."
         },
+        "Id": {
+            "type": "string"
+        },
         "LastContactThreshold": {
             "type": "string",
             "description": "The time after which a server is\nconsidered as unhealthy and will be removed. Defaults to `\"200ms\"`."
@@ -44,10 +47,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -54,6 +54,9 @@
             "type": "boolean",
             "description": "Unless `true`, the bucket will only be destroyed if empty (Defaults to `false`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the bucket."
@@ -80,10 +83,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/BucketDomainName",
+        "/properties/Id",
         "/properties/Urn"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

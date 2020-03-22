@@ -121,6 +121,9 @@
             "type": "boolean",
             "description": "Default: `false`\nWhether the cloud firewall should be enabled for this machine."
         },
+        "Id": {
+            "type": "string"
+        },
         "Image": {
             "type": "string",
             "description": "The UUID of the image to provision."
@@ -142,16 +145,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of metadata to apply to the machine."
@@ -186,16 +189,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to apply to the machine."
@@ -253,6 +256,7 @@
         "/properties/Dataset",
         "/properties/Disk",
         "/properties/DomainNames",
+        "/properties/Id",
         "/properties/Ips",
         "/properties/Memory",
         "/properties/Primaryip",
@@ -260,7 +264,7 @@
         "/properties/Updated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

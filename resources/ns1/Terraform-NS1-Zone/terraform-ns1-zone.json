@@ -53,6 +53,9 @@
         "Hostmaster": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Link": {
             "type": "string",
             "description": "The target zone(domain name) to link to."
@@ -104,10 +107,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DnsServers",
-        "/properties/Hostmaster"
+        "/properties/Hostmaster",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

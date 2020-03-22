@@ -70,6 +70,9 @@
             },
             "description": "(Updatable) An array of hostname resource names."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancerId": {
             "type": "string",
             "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer on which to add a listener."
@@ -131,10 +134,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

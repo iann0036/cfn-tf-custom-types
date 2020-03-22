@@ -40,6 +40,9 @@
             "type": "string",
             "description": "Client secret for Google Sign-in."
         },
+        "Id": {
+            "type": "string"
+        },
         "ResourceGroupName": {
             "type": "string",
             "description": "The Name of the Resource Group where the API Management Service exists. Changing this forces a new resource to be created."
@@ -56,10 +59,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

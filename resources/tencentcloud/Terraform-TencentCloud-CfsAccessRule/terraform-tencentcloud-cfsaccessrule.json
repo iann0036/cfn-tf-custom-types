@@ -16,6 +16,9 @@
             "type": "string",
             "description": "A single IP or a single IP address range such as 10.1.10.11 or 10.10.1.0/24 indicates that all IPs are allowed. Please note that the IP entered should be CVM's private IP."
         },
+        "Id": {
+            "type": "string"
+        },
         "Priority": {
             "type": "number",
             "description": "The priority level of rule. The range is 1-100, and 1 indicates the highest priority."
@@ -36,10 +39,11 @@
         "Priority"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

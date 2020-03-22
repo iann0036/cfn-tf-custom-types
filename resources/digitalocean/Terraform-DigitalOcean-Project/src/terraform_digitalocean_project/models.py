@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreatedAt: Optional[str]
     Description: Optional[str]
     Environment: Optional[str]
+    Id: Optional[str]
     IsDefault: Optional[bool]
     Name: Optional[str]
     OwnerId: Optional[float]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             CreatedAt=json_data.get("CreatedAt"),
             Description=json_data.get("Description"),
             Environment=json_data.get("Environment"),
+            Id=json_data.get("Id"),
             IsDefault=json_data.get("IsDefault"),
             Name=json_data.get("Name"),
             OwnerId=json_data.get("OwnerId"),

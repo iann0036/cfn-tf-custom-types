@@ -12,6 +12,9 @@
             "type": "string",
             "description": "branch to be built when the hook is triggered."
         },
+        "Id": {
+            "type": "string"
+        },
         "SiteId": {
             "type": "string",
             "description": "Your netlify site's unique id."
@@ -32,10 +35,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

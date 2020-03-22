@@ -79,6 +79,9 @@
         "EnableHttp2": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "IdleTimeout": {
             "type": "number"
         },
@@ -118,16 +121,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -163,11 +166,12 @@
         "/properties/Arn",
         "/properties/ArnSuffix",
         "/properties/DnsName",
+        "/properties/Id",
         "/properties/VpcId",
         "/properties/ZoneId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

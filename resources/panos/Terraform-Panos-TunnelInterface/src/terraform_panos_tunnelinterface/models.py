@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Comment: Optional[str]
+    Id: Optional[str]
     ManagementProfile: Optional[str]
     Mtu: Optional[float]
     Name: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Comment=json_data.get("Comment"),
+            Id=json_data.get("Id"),
             ManagementProfile=json_data.get("ManagementProfile"),
             Mtu=json_data.get("Mtu"),
             Name=json_data.get("Name"),

@@ -18,14 +18,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NetworkInfo"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Volume": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Volume"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -118,6 +122,9 @@
         "ExpectNodeNum": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -183,11 +190,12 @@
         "/properties/Created",
         "/properties/Datastore",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/Nodes",
         "/properties/Updated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -33,6 +33,9 @@
             "type": "string",
             "description": "The comparison type for the L7 rule - can either be\nCONTAINS, STARTS\\_WITH, ENDS_WITH, EQUAL_TO or REGEX."
         },
+        "Id": {
+            "type": "string"
+        },
         "Invert": {
             "type": "boolean",
             "description": "When true the logic of the rule is inverted. For example, with invert\ntrue, equal to would become not equal to. Default is false."
@@ -77,10 +80,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/ListenerId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

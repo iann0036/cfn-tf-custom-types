@@ -11,6 +11,9 @@
         "Etag": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "The public SSH key to add to your GitHub account."
@@ -31,10 +34,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Etag",
+        "/properties/Id",
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

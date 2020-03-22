@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Owner: Optional[str]
     Repository: Optional[str]
     Reviewers: Optional[Sequence[str]]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Owner=json_data.get("Owner"),
             Repository=json_data.get("Repository"),
             Reviewers=json_data.get("Reviewers"),

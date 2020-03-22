@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DomainId: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     IsDomain: Optional[bool]
     Name: Optional[str]
     ParentId: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DomainId=json_data.get("DomainId"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             IsDomain=json_data.get("IsDomain"),
             Name=json_data.get("Name"),
             ParentId=json_data.get("ParentId"),

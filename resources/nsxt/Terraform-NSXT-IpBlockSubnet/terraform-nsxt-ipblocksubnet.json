@@ -56,6 +56,9 @@
             "type": "string",
             "description": "The display name of this resource. Defaults to ID if not set."
         },
+        "Id": {
+            "type": "string"
+        },
         "Revision": {
             "type": "number"
         },
@@ -80,10 +83,11 @@
         "/properties/tfcfnid",
         "/properties/AllocationRanges",
         "/properties/Cidr",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

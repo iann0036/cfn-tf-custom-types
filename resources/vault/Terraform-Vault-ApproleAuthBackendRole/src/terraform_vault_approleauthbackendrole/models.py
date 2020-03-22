@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Backend: Optional[str]
     BindSecretId: Optional[bool]
     BoundCidrList: Optional[Sequence[str]]
+    Id: Optional[str]
     Period: Optional[float]
     Policies: Optional[Sequence[str]]
     RoleId: Optional[str]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             Backend=json_data.get("Backend"),
             BindSecretId=json_data.get("BindSecretId"),
             BoundCidrList=json_data.get("BoundCidrList"),
+            Id=json_data.get("Id"),
             Period=json_data.get("Period"),
             Policies=json_data.get("Policies"),
             RoleId=json_data.get("RoleId"),

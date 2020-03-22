@@ -53,6 +53,7 @@ class ResourceModel(BaseResourceModel):
     HostedZoneId: Optional[str]
     IamDatabaseAuthenticationEnabled: Optional[bool]
     IamRoles: Optional[Sequence[str]]
+    Id: Optional[str]
     KmsKeyArn: Optional[str]
     NeptuneClusterParameterGroupName: Optional[str]
     NeptuneSubnetGroupName: Optional[str]
@@ -94,6 +95,7 @@ class ResourceModel(BaseResourceModel):
             HostedZoneId=json_data.get("HostedZoneId"),
             IamDatabaseAuthenticationEnabled=json_data.get("IamDatabaseAuthenticationEnabled"),
             IamRoles=json_data.get("IamRoles"),
+            Id=json_data.get("Id"),
             KmsKeyArn=json_data.get("KmsKeyArn"),
             NeptuneClusterParameterGroupName=json_data.get("NeptuneClusterParameterGroupName"),
             NeptuneSubnetGroupName=json_data.get("NeptuneSubnetGroupName"),
@@ -117,8 +119,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

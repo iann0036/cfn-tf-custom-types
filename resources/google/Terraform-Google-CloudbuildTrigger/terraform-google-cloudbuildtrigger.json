@@ -29,7 +29,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Step"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": []
@@ -171,6 +172,9 @@
         "Filename": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IgnoredFiles": {
             "type": "array",
             "insertionOrder": false,
@@ -199,16 +203,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -255,10 +259,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/TriggerId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

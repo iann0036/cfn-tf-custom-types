@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ApiId: Optional[str]
     AppId: Optional[str]
     GroupId: Optional[str]
+    Id: Optional[str]
     StageName: Optional[str]
 
     @classmethod
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             ApiId=json_data.get("ApiId"),
             AppId=json_data.get("AppId"),
             GroupId=json_data.get("GroupId"),
+            Id=json_data.get("Id"),
             StageName=json_data.get("StageName"),
         )
 

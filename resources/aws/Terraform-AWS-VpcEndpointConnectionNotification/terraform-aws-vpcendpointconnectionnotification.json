@@ -18,6 +18,9 @@
         "ConnectionNotificationArn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "NotificationType": {
             "type": "string"
         },
@@ -38,11 +41,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/NotificationType",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

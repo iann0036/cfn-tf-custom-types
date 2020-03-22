@@ -12,6 +12,9 @@
             "type": "string",
             "description": "A Heroku app's `UUID`. Can also be the name of the Heroku app but `UUID` is preferred as it is idempotent."
         },
+        "Id": {
+            "type": "string"
+        },
         "SensitiveVars": {
             "type": "array",
             "insertionOrder": true,
@@ -19,16 +22,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "This is the same as `vars`. The main difference between the two\nattributes is `sensitive_vars` outputs are redacted on-screen and replaced by a <sensitive> placeholder, following a terraform\nplan or apply. It is recommended to put private keys, passwords, etc in this argument."
@@ -40,16 +43,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of config vars that are output in plaintext."
@@ -60,10 +63,11 @@
         "AppId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

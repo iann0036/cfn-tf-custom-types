@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     AwsAccountId: Optional[str]
     Description: Optional[str]
     GroupName: Optional[str]
+    Id: Optional[str]
     Namespace: Optional[str]
 
     @classmethod
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             AwsAccountId=json_data.get("AwsAccountId"),
             Description=json_data.get("Description"),
             GroupName=json_data.get("GroupName"),
+            Id=json_data.get("Id"),
             Namespace=json_data.get("Namespace"),
         )
 

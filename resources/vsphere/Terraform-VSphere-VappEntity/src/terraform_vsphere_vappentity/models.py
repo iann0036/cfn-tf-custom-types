@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ContainerId: Optional[str]
     CustomAttributes: Optional[Sequence["_CustomAttributes"]]
+    Id: Optional[str]
     StartAction: Optional[str]
     StartDelay: Optional[float]
     StartOrder: Optional[float]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ContainerId=json_data.get("ContainerId"),
             CustomAttributes=json_data.get("CustomAttributes"),
+            Id=json_data.get("Id"),
             StartAction=json_data.get("StartAction"),
             StartDelay=json_data.get("StartDelay"),
             StartOrder=json_data.get("StartOrder"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomAttributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class CustomAttributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

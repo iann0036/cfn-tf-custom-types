@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EncryptedPassword: Optional[str]
     Host: Optional[str]
+    Id: Optional[str]
     KeyFingerprint: Optional[str]
     PgpKey: Optional[str]
     User: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EncryptedPassword=json_data.get("EncryptedPassword"),
             Host=json_data.get("Host"),
+            Id=json_data.get("Id"),
             KeyFingerprint=json_data.get("KeyFingerprint"),
             PgpKey=json_data.get("PgpKey"),
             User=json_data.get("User"),

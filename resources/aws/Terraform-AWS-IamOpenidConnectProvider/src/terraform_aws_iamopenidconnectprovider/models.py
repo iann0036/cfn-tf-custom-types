@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     ClientIdList: Optional[Sequence[str]]
+    Id: Optional[str]
     ThumbprintList: Optional[Sequence[str]]
     Url: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             ClientIdList=json_data.get("ClientIdList"),
+            Id=json_data.get("Id"),
             ThumbprintList=json_data.get("ThumbprintList"),
             Url=json_data.get("Url"),
         )

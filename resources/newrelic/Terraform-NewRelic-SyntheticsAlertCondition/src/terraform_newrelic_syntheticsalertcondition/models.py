@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     MonitorId: Optional[str]
     Name: Optional[str]
     PolicyId: Optional[float]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             MonitorId=json_data.get("MonitorId"),
             Name=json_data.get("Name"),
             PolicyId=json_data.get("PolicyId"),

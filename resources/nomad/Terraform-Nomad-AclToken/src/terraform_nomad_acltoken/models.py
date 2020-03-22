@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AccessorId: Optional[str]
     CreateTime: Optional[str]
     Global: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Policies: Optional[Sequence[str]]
     SecretId: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             AccessorId=json_data.get("AccessorId"),
             CreateTime=json_data.get("CreateTime"),
             Global=json_data.get("Global"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Policies=json_data.get("Policies"),
             SecretId=json_data.get("SecretId"),

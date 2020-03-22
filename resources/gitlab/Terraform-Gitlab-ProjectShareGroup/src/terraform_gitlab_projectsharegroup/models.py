@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessLevel: Optional[str]
     GroupId: Optional[float]
+    Id: Optional[str]
     ProjectId: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessLevel=json_data.get("AccessLevel"),
             GroupId=json_data.get("GroupId"),
+            Id=json_data.get("Id"),
             ProjectId=json_data.get("ProjectId"),
         )
 

@@ -123,21 +123,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/BindOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TmpfsOptions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TmpfsOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "VolumeOptions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/VolumeOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -297,16 +300,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -421,6 +424,9 @@
             "type": "string",
             "description": "Hostname of the container."
         },
+        "Id": {
+            "type": "string"
+        },
         "Image": {
             "type": "string",
             "description": "The ID of the image to back this container.\nThe easiest way to get this value is to use the `docker_image` resource\nas is shown in the example above."
@@ -454,16 +460,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Key/value pairs to use as options for\nthe logging driver."
@@ -573,16 +579,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of kernel parameters (sysctls) to set in the container."
@@ -594,16 +600,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of container directories which should be replaced by `tmpfs mounts`, and their corresponding mount options."
@@ -735,12 +741,13 @@
         "/properties/ContainerLogs",
         "/properties/ExitCode",
         "/properties/Gateway",
+        "/properties/Id",
         "/properties/IpAddress",
         "/properties/IpPrefixLength",
         "/properties/NetworkData"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

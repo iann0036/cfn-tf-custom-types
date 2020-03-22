@@ -24,6 +24,9 @@
             "type": "string",
             "description": "The name of the datastore in which to create the\ndisk."
         },
+        "Id": {
+            "type": "string"
+        },
         "Size": {
             "type": "number",
             "description": "Size of the disk (in GB)."
@@ -44,10 +47,11 @@
         "VmdkPath"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

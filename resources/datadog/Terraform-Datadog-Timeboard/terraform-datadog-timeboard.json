@@ -53,16 +53,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -82,16 +82,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -107,7 +107,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Request"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -193,16 +194,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -214,7 +215,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ApmQuery"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ConditionalFormat": {
                     "type": "array",
@@ -228,14 +230,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LogQuery"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ProcessQuery": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ProcessQuery"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -252,7 +256,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Compute"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "GroupBy": {
                     "type": "array",
@@ -266,7 +272,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Search"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -309,7 +316,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Compute"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "GroupBy": {
                     "type": "array",
@@ -323,7 +332,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Search"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -388,7 +398,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sort"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -435,6 +446,9 @@
         "Description": {
             "type": "string",
             "description": "A description of the dashboard's content.\n- `read_only` - (Optional) The read-only status of the timeboard. Default is false.\n- `graph` - (Required) Nested block describing a graph definition. The structure of this block is described below. Multiple graph blocks are allowed within a datadog_timeboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_timeboard resource."
+        },
+        "Id": {
+            "type": "string"
         },
         "ReadOnly": {
             "type": "boolean",
@@ -544,10 +558,11 @@
         "Title"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

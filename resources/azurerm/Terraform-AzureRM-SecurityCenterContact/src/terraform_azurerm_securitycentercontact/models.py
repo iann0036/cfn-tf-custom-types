@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AlertNotifications: Optional[bool]
     AlertsToAdmins: Optional[bool]
     Email: Optional[str]
+    Id: Optional[str]
     Phone: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             AlertNotifications=json_data.get("AlertNotifications"),
             AlertsToAdmins=json_data.get("AlertsToAdmins"),
             Email=json_data.get("Email"),
+            Id=json_data.get("Id"),
             Phone=json_data.get("Phone"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

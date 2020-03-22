@@ -14,16 +14,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -37,16 +37,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -94,16 +94,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -130,7 +130,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Affinity"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Container": {
                     "type": "array",
@@ -144,7 +145,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DnsConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HostAliases": {
                     "type": "array",
@@ -172,7 +174,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecurityContext"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Toleration": {
                     "type": "array",
@@ -242,16 +245,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -278,7 +281,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Affinity"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Container": {
                     "type": "array",
@@ -292,7 +296,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DnsConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HostAliases": {
                     "type": "array",
@@ -320,21 +325,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Metadata"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SecurityContext": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecurityContext"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Spec": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Spec"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Toleration": {
                     "type": "array",
@@ -362,21 +370,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NodeAffinity"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PodAffinity": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PodAffinity"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PodAntiAffinity": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PodAntiAffinity"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -442,14 +453,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Lifecycle"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "LivenessProbe": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LivenessProbe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Port": {
                     "type": "array",
@@ -463,28 +476,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ReadinessProbe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Resources": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Resources"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SecurityContext": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecurityContext"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "StartupProbe": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StartupProbe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "VolumeMount": {
                     "type": "array",
@@ -619,14 +636,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Lifecycle"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "LivenessProbe": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LivenessProbe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Port": {
                     "type": "array",
@@ -640,28 +659,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ReadinessProbe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Resources": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Resources"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SecurityContext": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecurityContext"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "StartupProbe": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StartupProbe"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "VolumeMount": {
                     "type": "array",
@@ -702,14 +725,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Capabilities"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SeLinuxOptions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SeLinuxOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -748,168 +773,192 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AwsElasticBlockStore"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AzureDisk": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AzureDisk"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AzureFile": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AzureFile"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "CephFs": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CephFs"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Cinder": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Cinder"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ConfigMap": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ConfigMap"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "DownwardApi": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DownwardApi"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "EmptyDir": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/EmptyDir"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Fc": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Fc"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "FlexVolume": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FlexVolume"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Flocker": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Flocker"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GcePersistentDisk": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GcePersistentDisk"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GitRepo": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GitRepo"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Glusterfs": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Glusterfs"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HostPath": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HostPath"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Iscsi": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Iscsi"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Local": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Local"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Nfs": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Nfs"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PersistentVolumeClaim": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PersistentVolumeClaim"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PhotonPersistentDisk": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PhotonPersistentDisk"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Quobyte": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Quobyte"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Rbd": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Rbd"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Secret": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Secret"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "VsphereVolume": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/VsphereVolume"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -930,7 +979,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RequiredDuringSchedulingIgnoredDuringExecution"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -992,7 +1042,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ValueFrom"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -1011,14 +1062,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ConfigMapRef"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SecretRef": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecretRef"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -1068,14 +1121,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Exec"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpGet": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpGet"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TcpSocket": {
                     "type": "array",
@@ -1135,14 +1190,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Exec"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpGet": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpGet"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TcpSocket": {
                     "type": "array",
@@ -1163,14 +1220,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Limits"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Requests": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Requests"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -1199,14 +1258,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Exec"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpGet": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpGet"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TcpSocket": {
                     "type": "array",
@@ -1392,7 +1453,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecretRef"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -1507,16 +1569,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -1528,7 +1590,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecretRef"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -1761,7 +1824,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecretRef"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -1819,7 +1883,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PodAffinityTerm"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -1859,28 +1925,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ConfigMapKeyRef"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "FieldRef": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FieldRef"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ResourceFieldRef": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ResourceFieldRef"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SecretKeyRef": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SecretKeyRef"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -1924,14 +1994,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Exec"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpGet": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpGet"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TcpSocket": {
                     "type": "array",
@@ -1952,14 +2024,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Exec"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpGet": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpGet"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TcpSocket": {
                     "type": "array",
@@ -2100,16 +2174,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -2214,6 +2288,9 @@
     "properties": {
         "tfcfnid": {
             "description": "Internal identifier for tracking resource changes. Do not use.",
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Metadata": {
@@ -2781,10 +2858,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

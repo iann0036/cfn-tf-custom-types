@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ConsistencyGroupId: Optional[str]
     Description: Optional[str]
     EnableOnlineResize: Optional[bool]
+    Id: Optional[str]
     ImageId: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Multiattach: Optional[bool]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             ConsistencyGroupId=json_data.get("ConsistencyGroupId"),
             Description=json_data.get("Description"),
             EnableOnlineResize=json_data.get("EnableOnlineResize"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             Metadata=json_data.get("Metadata"),
             Multiattach=json_data.get("Multiattach"),
@@ -111,8 +113,8 @@ _Attachment = Attachment
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     EnhancedMonitorService: Optional[bool]
     EnhancedSecurityService: Optional[bool]
+    Id: Optional[str]
     ImageId: Optional[str]
     InstanceTags: Optional[Sequence["_InstanceTags"]]
     InstanceTypes: Optional[Sequence[str]]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             EnhancedMonitorService=json_data.get("EnhancedMonitorService"),
             EnhancedSecurityService=json_data.get("EnhancedSecurityService"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceTags=json_data.get("InstanceTags"),
             InstanceTypes=json_data.get("InstanceTypes"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class InstanceTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class InstanceTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

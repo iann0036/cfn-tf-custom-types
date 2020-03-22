@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     KeyName: Optional[str]
     ProjectId: Optional[float]
     PublicKey: Optional[str]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             KeyName=json_data.get("KeyName"),
             ProjectId=json_data.get("ProjectId"),
             PublicKey=json_data.get("PublicKey"),

@@ -21,7 +21,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/IdpCertificates"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -83,6 +84,9 @@
         "Enabled": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -129,10 +133,11 @@
         "Tenant"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

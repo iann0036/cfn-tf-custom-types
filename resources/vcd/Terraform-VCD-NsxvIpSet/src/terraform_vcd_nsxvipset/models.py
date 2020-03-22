@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     IpAddresses: Optional[Sequence[str]]
     IsInheritanceAllowed: Optional[bool]
     Name: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IpAddresses=json_data.get("IpAddresses"),
             IsInheritanceAllowed=json_data.get("IsInheritanceAllowed"),
             Name=json_data.get("Name"),

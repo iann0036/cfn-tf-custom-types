@@ -18,6 +18,9 @@
         "GroupCount": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxConsumeCount": {
             "type": "number",
             "description": "This parameter is mandatory only when redrive_policy is\nset to enable. This parameter indicates the maximum number of allowed message consumption\nfailures. When a message fails to be consumed after the number of consumption attempts of\nthis message reaches this value, DMS stores this message into the dead letter queue.\nThe max_consume_count value range is 1\u2013100."
@@ -55,12 +58,13 @@
         "/properties/tfcfnid",
         "/properties/Created",
         "/properties/GroupCount",
+        "/properties/Id",
         "/properties/MaxMsgSizeByte",
         "/properties/ProducedMessages",
         "/properties/Reservation"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

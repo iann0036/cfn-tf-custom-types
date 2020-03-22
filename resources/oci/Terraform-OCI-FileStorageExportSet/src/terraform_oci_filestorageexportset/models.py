@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AvailabilityDomain: Optional[str]
     CompartmentId: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     MaxFsStatBytes: Optional[str]
     MaxFsStatFiles: Optional[str]
     MountTargetId: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AvailabilityDomain=json_data.get("AvailabilityDomain"),
             CompartmentId=json_data.get("CompartmentId"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             MaxFsStatBytes=json_data.get("MaxFsStatBytes"),
             MaxFsStatFiles=json_data.get("MaxFsStatFiles"),
             MountTargetId=json_data.get("MountTargetId"),

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CreationTimestamp: Optional[str]
     Description: Optional[str]
     EnableCdn: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     SelfLink: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
             EnableCdn=json_data.get("EnableCdn"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             SelfLink=json_data.get("SelfLink"),

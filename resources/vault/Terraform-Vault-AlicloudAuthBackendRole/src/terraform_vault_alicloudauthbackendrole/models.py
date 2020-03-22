@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     Backend: Optional[str]
+    Id: Optional[str]
     Role: Optional[str]
     TokenBoundCidrs: Optional[Sequence[str]]
     TokenExplicitMaxTtl: Optional[float]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             Backend=json_data.get("Backend"),
+            Id=json_data.get("Id"),
             Role=json_data.get("Role"),
             TokenBoundCidrs=json_data.get("TokenBoundCidrs"),
             TokenExplicitMaxTtl=json_data.get("TokenExplicitMaxTtl"),

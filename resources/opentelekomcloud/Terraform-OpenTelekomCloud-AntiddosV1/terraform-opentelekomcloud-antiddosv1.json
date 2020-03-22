@@ -45,6 +45,9 @@
             "type": "number",
             "description": "The position ID of number of HTTP requests. The value ranges from 1 to 15."
         },
+        "Id": {
+            "type": "string"
+        },
         "Region": {
             "type": "string"
         },
@@ -66,10 +69,11 @@
         "TrafficPosId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

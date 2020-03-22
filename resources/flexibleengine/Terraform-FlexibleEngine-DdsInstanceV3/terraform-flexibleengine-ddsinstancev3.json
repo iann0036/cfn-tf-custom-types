@@ -102,6 +102,9 @@
             "type": "string",
             "description": "Specifies the disk encryption ID of the instance.\nChanging this creates a new instance."
         },
+        "Id": {
+            "type": "string"
+        },
         "Mode": {
             "type": "string",
             "description": "Specifies the mode of the database instance. Changing this creates\na new instance."
@@ -171,10 +174,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/DbUsername"
+        "/properties/DbUsername",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

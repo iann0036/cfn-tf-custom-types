@@ -19,6 +19,9 @@
         "FilterId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Paused": {
             "type": "boolean",
             "description": "Whether this filter based firewall rule is currently paused. Boolean value."
@@ -47,10 +50,11 @@
         "ZoneId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

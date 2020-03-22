@@ -57,6 +57,9 @@
             "type": "boolean",
             "description": "Specifies if the streaming ingest is enabled."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "The location where the Kusto Cluster should be created. Changing this forces a new resource to be created."
@@ -76,16 +79,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -115,10 +118,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DataIngestionUri",
+        "/properties/Id",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

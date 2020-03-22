@@ -28,6 +28,9 @@
             "type": "boolean",
             "description": "Enabled status for the firewall rule (must be \"true\"\nor \"false\" if provided - defaults to \"true\"). Changing this updates the\n`enabled` status of an existing firewall rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpVersion": {
             "type": "number",
             "description": "IP version, either 4 (default) or 6. Changing this\nupdates the `ip_version` of an existing firewall rule."
@@ -63,16 +66,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -84,10 +87,11 @@
         "Protocol"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

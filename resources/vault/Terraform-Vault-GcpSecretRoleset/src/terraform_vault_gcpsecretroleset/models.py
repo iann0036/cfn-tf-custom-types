@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Backend: Optional[str]
+    Id: Optional[str]
     Project: Optional[str]
     Roleset: Optional[str]
     SecretType: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Backend=json_data.get("Backend"),
+            Id=json_data.get("Id"),
             Project=json_data.get("Project"),
             Roleset=json_data.get("Roleset"),
             SecretType=json_data.get("SecretType"),

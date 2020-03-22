@@ -38,6 +38,9 @@
             "type": "string",
             "description": "The ID of the ACL that the items belong to."
         },
+        "Id": {
+            "type": "string"
+        },
         "ServiceId": {
             "type": "string",
             "description": "The ID of the Service that the ACL belongs to."
@@ -57,10 +60,11 @@
         "ServiceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

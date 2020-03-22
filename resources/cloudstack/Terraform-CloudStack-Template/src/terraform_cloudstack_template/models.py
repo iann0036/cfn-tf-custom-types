@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DisplayText: Optional[str]
     Format: Optional[str]
     Hypervisor: Optional[str]
+    Id: Optional[str]
     IsDynamicallyScalable: Optional[bool]
     IsExtractable: Optional[bool]
     IsFeatured: Optional[bool]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             DisplayText=json_data.get("DisplayText"),
             Format=json_data.get("Format"),
             Hypervisor=json_data.get("Hypervisor"),
+            Id=json_data.get("Id"),
             IsDynamicallyScalable=json_data.get("IsDynamicallyScalable"),
             IsExtractable=json_data.get("IsExtractable"),
             IsFeatured=json_data.get("IsFeatured"),

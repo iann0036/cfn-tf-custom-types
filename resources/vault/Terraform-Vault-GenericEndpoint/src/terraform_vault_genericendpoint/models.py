@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DataJson: Optional[str]
     DisableDelete: Optional[bool]
     DisableRead: Optional[bool]
+    Id: Optional[str]
     IgnoreAbsentFields: Optional[bool]
     Path: Optional[str]
     WriteData: Optional[Sequence["_WriteData"]]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             DataJson=json_data.get("DataJson"),
             DisableDelete=json_data.get("DisableDelete"),
             DisableRead=json_data.get("DisableRead"),
+            Id=json_data.get("Id"),
             IgnoreAbsentFields=json_data.get("IgnoreAbsentFields"),
             Path=json_data.get("Path"),
             WriteData=json_data.get("WriteData"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class WriteData:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class WriteData:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

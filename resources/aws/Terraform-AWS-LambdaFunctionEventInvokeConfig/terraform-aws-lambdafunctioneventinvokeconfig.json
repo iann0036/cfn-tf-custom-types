@@ -12,14 +12,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OnFailure"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "OnSuccess": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OnSuccess"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -55,6 +57,9 @@
             "type": "string"
         },
         "FunctionName": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "MaximumEventAgeInSeconds": {
@@ -96,10 +101,11 @@
         "FunctionName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

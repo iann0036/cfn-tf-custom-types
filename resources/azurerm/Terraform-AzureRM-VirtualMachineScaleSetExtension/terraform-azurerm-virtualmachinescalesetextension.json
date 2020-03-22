@@ -36,6 +36,9 @@
             "type": "string",
             "description": "A value which, when different to the previous value can be used to force-run the Extension even if the Extension Configuration hasn't changed."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name for the Virtual Machine Scale Set Extension. Changing this forces a new resource to be created."
@@ -85,10 +88,11 @@
         "VirtualMachineScaleSetId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

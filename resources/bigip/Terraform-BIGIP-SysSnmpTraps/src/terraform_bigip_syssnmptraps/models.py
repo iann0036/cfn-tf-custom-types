@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EngineId: Optional[str]
     Host: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Port: Optional[float]
     PrivacyPassword: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EngineId=json_data.get("EngineId"),
             Host=json_data.get("Host"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Port=json_data.get("Port"),
             PrivacyPassword=json_data.get("PrivacyPassword"),

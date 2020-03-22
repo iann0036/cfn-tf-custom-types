@@ -30,6 +30,9 @@
             "type": "number",
             "description": "ID of the farm this server is attached to."
         },
+        "Id": {
+            "type": "string"
+        },
         "Port": {
             "type": "number",
             "description": "Port that backend will respond on."
@@ -68,10 +71,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Cookie"
+        "/properties/Cookie",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

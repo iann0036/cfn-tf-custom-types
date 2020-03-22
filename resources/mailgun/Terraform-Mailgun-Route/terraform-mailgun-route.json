@@ -23,6 +23,9 @@
             "type": "string",
             "description": "A filter expression like `match_recipient('.*@gmail.com')`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Priority": {
             "type": "number",
             "description": "Smaller number indicates higher priority. Higher priority routes are handled first."
@@ -39,10 +42,11 @@
         "Priority"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

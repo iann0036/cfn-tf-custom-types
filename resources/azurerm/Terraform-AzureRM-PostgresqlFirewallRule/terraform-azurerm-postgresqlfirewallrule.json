@@ -32,6 +32,9 @@
             "type": "string",
             "description": "Specifies the End IP Address associated with this Firewall Rule. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the PostgreSQL Firewall Rule. Changing this forces a\nnew resource to be created."
@@ -61,10 +64,11 @@
         "StartIpAddress"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

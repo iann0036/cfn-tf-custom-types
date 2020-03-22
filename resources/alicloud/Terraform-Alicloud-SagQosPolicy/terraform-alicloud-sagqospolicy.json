@@ -24,6 +24,9 @@
             "type": "string",
             "description": "The expiration time of the quintuple rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpProtocol": {
             "type": "string",
             "description": "The transport layer protocol."
@@ -64,10 +67,11 @@
         "SourcePortRange"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -51,6 +51,9 @@
             "type": "string",
             "description": "The email contact for the zone record."
         },
+        "Id": {
+            "type": "string"
+        },
         "Masters": {
             "type": "array",
             "insertionOrder": true,
@@ -77,16 +80,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options. Changing this creates a\nnew DNS zone."
@@ -112,10 +115,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Masters"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

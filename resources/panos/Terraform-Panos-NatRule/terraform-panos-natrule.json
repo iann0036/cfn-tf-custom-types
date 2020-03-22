@@ -44,6 +44,9 @@
             "type": "boolean",
             "description": "Set to `true` to disable this rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The NAT rule's name."
@@ -158,10 +161,11 @@
         "SourceZones"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

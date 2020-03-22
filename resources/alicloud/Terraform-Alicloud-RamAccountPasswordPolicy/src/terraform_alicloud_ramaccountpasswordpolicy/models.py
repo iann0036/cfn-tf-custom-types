@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     HardExpiry: Optional[bool]
+    Id: Optional[str]
     MaxLoginAttempts: Optional[float]
     MaxPasswordAge: Optional[float]
     MinimumPasswordLength: Optional[float]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             HardExpiry=json_data.get("HardExpiry"),
+            Id=json_data.get("Id"),
             MaxLoginAttempts=json_data.get("MaxLoginAttempts"),
             MaxPasswordAge=json_data.get("MaxPasswordAge"),
             MinimumPasswordLength=json_data.get("MinimumPasswordLength"),

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Ancestor: Optional[str]
+    Id: Optional[str]
     IndexId: Optional[str]
     Kind: Optional[str]
     Project: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Ancestor=json_data.get("Ancestor"),
+            Id=json_data.get("Id"),
             IndexId=json_data.get("IndexId"),
             Kind=json_data.get("Kind"),
             Project=json_data.get("Project"),

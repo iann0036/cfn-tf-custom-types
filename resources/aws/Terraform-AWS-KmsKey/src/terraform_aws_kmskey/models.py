@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DeletionWindowInDays: Optional[float]
     Description: Optional[str]
     EnableKeyRotation: Optional[bool]
+    Id: Optional[str]
     IsEnabled: Optional[bool]
     KeyId: Optional[str]
     KeyUsage: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             DeletionWindowInDays=json_data.get("DeletionWindowInDays"),
             Description=json_data.get("Description"),
             EnableKeyRotation=json_data.get("EnableKeyRotation"),
+            Id=json_data.get("Id"),
             IsEnabled=json_data.get("IsEnabled"),
             KeyId=json_data.get("KeyId"),
             KeyUsage=json_data.get("KeyUsage"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

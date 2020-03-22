@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CertificateArn: Optional[str]
+    Id: Optional[str]
     ListenerArn: Optional[str]
 
     @classmethod
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CertificateArn=json_data.get("CertificateArn"),
+            Id=json_data.get("Id"),
             ListenerArn=json_data.get("ListenerArn"),
         )
 

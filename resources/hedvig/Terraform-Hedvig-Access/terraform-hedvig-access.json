@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The fully qualified domain name of the controller this Access is associated with."
         },
+        "Id": {
+            "type": "string"
+        },
         "Type": {
             "type": "string",
             "description": "The type of address provided in `address`. Can be `host`, `ip` or `iqn`."
@@ -33,10 +36,11 @@
         "Vdisk"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

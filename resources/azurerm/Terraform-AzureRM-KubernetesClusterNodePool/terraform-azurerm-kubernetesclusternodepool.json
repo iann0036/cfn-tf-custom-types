@@ -44,6 +44,9 @@
             "type": "boolean",
             "description": "Should each node have a Public IP Address? Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "KubernetesClusterId": {
             "type": "string",
             "description": "The ID of the Kubernetes Cluster where this Node Pool should exist. Changing this forces a new resource to be created."
@@ -72,16 +75,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of Kubernetes labels which should be applied to nodes in this Node Pool."
@@ -109,16 +112,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -142,10 +145,11 @@
         "VmSize"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

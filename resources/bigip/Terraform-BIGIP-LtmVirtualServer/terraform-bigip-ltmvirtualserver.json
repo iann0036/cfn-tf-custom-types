@@ -31,6 +31,9 @@
             "type": "string",
             "description": "Specifies a fallback persistence profile for the Virtual Server to use when the default persistence profile is not available."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpProtocol": {
             "type": "string",
             "description": "Specify the IP protocol to use with the the virtual server (all, tcp, or udp are valid)."
@@ -133,10 +136,11 @@
         "Port"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

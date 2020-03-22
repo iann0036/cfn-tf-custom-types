@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Csr: Optional[str]
     ExpiresOn: Optional[str]
     Hostnames: Optional[Sequence[str]]
+    Id: Optional[str]
     RequestType: Optional[str]
     RequestedValidity: Optional[float]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Csr=json_data.get("Csr"),
             ExpiresOn=json_data.get("ExpiresOn"),
             Hostnames=json_data.get("Hostnames"),
+            Id=json_data.get("Id"),
             RequestType=json_data.get("RequestType"),
             RequestedValidity=json_data.get("RequestedValidity"),
         )

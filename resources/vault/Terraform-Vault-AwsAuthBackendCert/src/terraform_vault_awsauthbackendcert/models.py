@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AwsPublicCert: Optional[str]
     Backend: Optional[str]
     CertName: Optional[str]
+    Id: Optional[str]
     Type: Optional[str]
 
     @classmethod
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             AwsPublicCert=json_data.get("AwsPublicCert"),
             Backend=json_data.get("Backend"),
             CertName=json_data.get("CertName"),
+            Id=json_data.get("Id"),
             Type=json_data.get("Type"),
         )
 

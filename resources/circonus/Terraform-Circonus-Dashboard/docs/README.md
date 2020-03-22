@@ -16,8 +16,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
         "<a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>" : <i>Boolean</i>,
         "<a href="#duedate" title="DueDate">DueDate</a>" : <i>String</i>,
         "<a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>" : <i>String</i>,
-        "<a href="#memo" title="Memo">Memo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
-        "<a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>" : <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>,
+        "<a href="#memo" title="Memo">Memo</a>" : <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>,
+        "<a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>" : <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>,
         "<a href="#testcode" title="TestCode">TestCode</a>" : <i>String</i>,
         "<a href="#authors" title="Authors">Authors</a>" : <i>[ String, ... ]</i>
     }
@@ -33,8 +33,8 @@ Properties:
     <a href="#coversheetincluded" title="CoverSheetIncluded">CoverSheetIncluded</a>: <i>Boolean</i>
     <a href="#duedate" title="DueDate">DueDate</a>: <i>String</i>
     <a href="#approvaldate" title="ApprovalDate">ApprovalDate</a>: <i>String</i>
-    <a href="#memo" title="Memo">Memo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
-    <a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>: <i>&lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;</i>
+    <a href="#memo" title="Memo">Memo</a>: <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>
+    <a href="#secondcopyofmemo" title="SecondCopyOfMemo">SecondCopyOfMemo</a>: <i><a href="secondcopyofmemo.md">SecondCopyOfMemo</a></i>
     <a href="#testcode" title="TestCode">TestCode</a>: <i>String</i>
     <a href="#authors" title="Authors">Authors</a>: <i>
       - String</i>
@@ -86,7 +86,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
+_Type_: <a href="secondcopyofmemo.md">SecondCopyOfMemo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
@@ -94,7 +94,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 _Required_: No
 
-_Type_: &lt;a href=&#34;secondcopyofmemo.md&#34;&gt;SecondCopyOfMemo&lt;/a&gt;
+_Type_: <a href="secondcopyofmemo.md">SecondCopyOfMemo</a>
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

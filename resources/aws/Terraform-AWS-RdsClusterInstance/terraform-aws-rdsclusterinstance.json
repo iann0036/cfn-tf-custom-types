@@ -64,6 +64,9 @@
         "EngineVersion": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Identifier": {
             "type": "string"
         },
@@ -113,16 +116,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -143,13 +146,14 @@
         "/properties/Arn",
         "/properties/DbiResourceId",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/KmsKeyId",
         "/properties/Port",
         "/properties/StorageEncrypted",
         "/properties/Writer"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

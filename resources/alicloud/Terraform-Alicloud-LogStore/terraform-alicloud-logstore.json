@@ -20,6 +20,9 @@
             "type": "boolean",
             "description": "Determines whether to enable Web Tracking. Default false."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxSplitShardCount": {
             "type": "number",
             "description": "The maximum number of shards for automatic split, which is in the range of 1 to 64. You must specify this parameter when autoSplit is true."
@@ -70,10 +73,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Shards"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

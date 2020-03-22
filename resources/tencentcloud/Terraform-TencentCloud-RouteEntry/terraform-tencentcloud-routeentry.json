@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The RouteEntry's target network segment."
         },
+        "Id": {
+            "type": "string"
+        },
         "NextHub": {
             "type": "string",
             "description": "The route entry's next hub. CVM instance ID or VPC router interface ID."
@@ -38,10 +41,11 @@
         "VpcId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

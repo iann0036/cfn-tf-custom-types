@@ -22,6 +22,9 @@
         "Endpoint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Origin": {
             "type": "string",
             "description": "The fully qualified domain name, (FQDN) for a Space."
@@ -38,10 +41,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreatedAt",
-        "/properties/Endpoint"
+        "/properties/Endpoint",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

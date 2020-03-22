@@ -15,6 +15,9 @@
             "type": "string",
             "description": "Description of the SCF namespace."
         },
+        "Id": {
+            "type": "string"
+        },
         "ModifyTime": {
             "type": "string"
         },
@@ -33,11 +36,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/ModifyTime",
         "/properties/Type"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

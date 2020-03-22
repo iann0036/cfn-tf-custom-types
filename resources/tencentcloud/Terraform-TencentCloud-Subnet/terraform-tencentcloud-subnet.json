@@ -22,6 +22,9 @@
         "CreateTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsDefault": {
             "type": "boolean"
         },
@@ -44,16 +47,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Tags of the subnet."
@@ -74,10 +77,11 @@
         "/properties/tfcfnid",
         "/properties/AvailableIpCount",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/IsDefault"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

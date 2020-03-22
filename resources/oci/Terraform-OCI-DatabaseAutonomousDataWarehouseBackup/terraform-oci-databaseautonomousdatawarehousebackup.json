@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The user-friendly name for the backup. The name does not have to be unique."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsAutomatic": {
             "type": "boolean"
         },
@@ -66,6 +69,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CompartmentId",
+        "/properties/Id",
         "/properties/IsAutomatic",
         "/properties/LifecycleDetails",
         "/properties/State",
@@ -74,7 +78,7 @@
         "/properties/Type"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -20,6 +20,9 @@
             "type": "string",
             "description": "Backup time, in the format of HH:mmZ- HH:mm Z."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "The id of ApsaraDB for Redis or Memcache intance."
@@ -30,10 +33,11 @@
         "InstanceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

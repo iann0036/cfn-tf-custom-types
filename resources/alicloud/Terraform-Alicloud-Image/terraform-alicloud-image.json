@@ -53,6 +53,9 @@
             "type": "boolean",
             "description": "Indicates whether to force delete the custom image, Default is `false`.\n- true\uff1aForce deletes the custom image, regardless of whether the image is currently being used by other instances.\n- false\uff1aVerifies that the image is not currently in use by any other instances before deleting the image."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageName": {
             "type": "string",
             "description": "The image name. It must be 2 to 128 characters in length, and must begin with a letter or Chinese character (beginning with http:// or https:// is not allowed). It can contain digits, colons (:), underscores (_), or hyphens (-). Default value: null."
@@ -83,16 +86,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The tag value of an image. The value of N ranges from 1 to 20."
@@ -111,10 +114,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

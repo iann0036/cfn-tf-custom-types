@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "default: true. Add default security group rules."
         },
+        "Id": {
+            "type": "string"
+        },
         "InboundDefaultPolicy": {
             "type": "string",
             "description": "default policy for inbound traffic. Can be one of accept or drop."
@@ -39,10 +42,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

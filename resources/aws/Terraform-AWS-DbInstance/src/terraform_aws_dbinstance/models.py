@@ -60,6 +60,7 @@ class ResourceModel(BaseResourceModel):
     FinalSnapshotIdentifier: Optional[str]
     HostedZoneId: Optional[str]
     IamDatabaseAuthenticationEnabled: Optional[bool]
+    Id: Optional[str]
     Identifier: Optional[str]
     IdentifierPrefix: Optional[str]
     InstanceClass: Optional[str]
@@ -129,6 +130,7 @@ class ResourceModel(BaseResourceModel):
             FinalSnapshotIdentifier=json_data.get("FinalSnapshotIdentifier"),
             HostedZoneId=json_data.get("HostedZoneId"),
             IamDatabaseAuthenticationEnabled=json_data.get("IamDatabaseAuthenticationEnabled"),
+            Id=json_data.get("Id"),
             Identifier=json_data.get("Identifier"),
             IdentifierPrefix=json_data.get("IdentifierPrefix"),
             InstanceClass=json_data.get("InstanceClass"),
@@ -173,8 +175,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -184,8 +186,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

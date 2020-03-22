@@ -32,6 +32,9 @@
             "type": "string",
             "description": "The Base-64 representation of the X509 leaf certificate .cer file or just a .pem file content."
         },
+        "Id": {
+            "type": "string"
+        },
         "IotDpsName": {
             "type": "string",
             "description": "The name of the IoT Device Provisioning Service that this certificate will be attached to. Changing this forces a new resource to be created."
@@ -56,10 +59,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

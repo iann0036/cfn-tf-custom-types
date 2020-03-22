@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CpuRatio: Optional[float]
     DiskRatio: Optional[float]
     FullPath: Optional[str]
+    Id: Optional[str]
     Level: Optional[str]
     MemoryRatio: Optional[float]
     Name: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             CpuRatio=json_data.get("CpuRatio"),
             DiskRatio=json_data.get("DiskRatio"),
             FullPath=json_data.get("FullPath"),
+            Id=json_data.get("Id"),
             Level=json_data.get("Level"),
             MemoryRatio=json_data.get("MemoryRatio"),
             Name=json_data.get("Name"),

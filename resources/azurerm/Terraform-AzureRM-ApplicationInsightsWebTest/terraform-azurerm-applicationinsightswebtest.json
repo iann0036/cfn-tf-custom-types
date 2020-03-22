@@ -56,6 +56,9 @@
             },
             "description": "A list of where to physically run the tests from to give global coverage for accessibility of your application."
         },
+        "Id": {
+            "type": "string"
+        },
         "Kind": {
             "type": "string",
             "description": "The kind of web test that this web test watches. Choices are `ping` and `multistep`."
@@ -85,16 +88,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Resource tags."
@@ -119,10 +122,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SyntheticMonitorId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DestinationPort: Optional[str]
     FirewallPolicy: Optional[str]
     IcmpTypeName: Optional[str]
+    Id: Optional[str]
     Protocol: Optional[str]
     Source: Optional[str]
     SourcePort: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             DestinationPort=json_data.get("DestinationPort"),
             FirewallPolicy=json_data.get("FirewallPolicy"),
             IcmpTypeName=json_data.get("IcmpTypeName"),
+            Id=json_data.get("Id"),
             Protocol=json_data.get("Protocol"),
             Source=json_data.get("Source"),
             SourcePort=json_data.get("SourcePort"),

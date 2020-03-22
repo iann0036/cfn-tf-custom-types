@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     Headers: Optional[Sequence["_Headers"]]
     HomeRegion: Optional[str]
+    Id: Optional[str]
     Method: Optional[str]
     Path: Optional[str]
     Port: Optional[float]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             Headers=json_data.get("Headers"),
             HomeRegion=json_data.get("HomeRegion"),
+            Id=json_data.get("Id"),
             Method=json_data.get("Method"),
             Path=json_data.get("Path"),
             Port=json_data.get("Port"),
@@ -81,8 +83,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Headers:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -92,8 +94,8 @@ class Headers:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

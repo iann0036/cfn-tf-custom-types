@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DefaultPoolId: Optional[str]
     DefaultTlsContainerRef: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     InsertHeaders: Optional[Sequence["_InsertHeaders"]]
     LoadbalancerId: Optional[str]
     Name: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             DefaultPoolId=json_data.get("DefaultPoolId"),
             DefaultTlsContainerRef=json_data.get("DefaultTlsContainerRef"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             InsertHeaders=json_data.get("InsertHeaders"),
             LoadbalancerId=json_data.get("LoadbalancerId"),
             Name=json_data.get("Name"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class InsertHeaders:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class InsertHeaders:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

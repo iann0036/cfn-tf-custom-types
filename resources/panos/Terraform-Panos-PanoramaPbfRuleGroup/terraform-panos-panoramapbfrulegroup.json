@@ -48,21 +48,27 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Destination"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Forwarding": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Forwarding"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Source": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Source"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Target": {
                     "type": "array",
@@ -135,14 +141,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Monitor"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "SymmetricReturn": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/SymmetricReturn"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -250,6 +258,9 @@
             "type": "string",
             "description": "The device group to put the rules into\n(default: `shared`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "PositionKeyword": {
             "type": "string",
             "description": "A positioning keyword for this group.  This\ncan be `before`, `directly before`, `after`, `directly after`, `top`,\n`bottom`, or left empty (the default) to have no particular placement.  This\nparam works in combination with the `position_reference` param."
@@ -324,10 +335,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -38,6 +38,9 @@
             "type": "string",
             "description": "The name of the Express Route Circuit in which to create the Authorization."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the ExpressRoute circuit. Changing this forces a\nnew resource to be created."
@@ -59,10 +62,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AuthorizationKey",
-        "/properties/AuthorizationUseStatus"
+        "/properties/AuthorizationUseStatus",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     Description: Optional[str]
     EipType: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     SecurityGroupId: Optional[str]
     Status: Optional[str]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             Description=json_data.get("Description"),
             EipType=json_data.get("EipType"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SecurityGroupId=json_data.get("SecurityGroupId"),
             Status=json_data.get("Status"),

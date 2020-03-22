@@ -44,6 +44,9 @@
             },
             "description": "The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is allowed."
         },
+        "Id": {
+            "type": "string"
+        },
         "IothubName": {
             "type": "string",
             "description": "The name of the IoTHub to which this Route belongs. Changing this forces a new resource to be created."
@@ -74,10 +77,11 @@
         "Source"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

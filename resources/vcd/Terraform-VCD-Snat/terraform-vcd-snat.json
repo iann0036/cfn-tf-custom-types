@@ -20,6 +20,9 @@
             "type": "string",
             "description": "One of the external IPs available on your Edge Gateway."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternalIp": {
             "type": "string",
             "description": "The IP or IP Range of the VM(s) to map from."
@@ -48,10 +51,11 @@
         "InternalIp"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

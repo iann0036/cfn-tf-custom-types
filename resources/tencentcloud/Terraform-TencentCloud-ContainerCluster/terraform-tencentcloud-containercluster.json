@@ -48,6 +48,9 @@
             "type": "number",
             "description": "The node number is going to create in the cluster."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceName": {
             "type": "string",
             "description": "The name ot node."
@@ -162,6 +165,7 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/KubernetesVersion",
         "/properties/NodesNum",
         "/properties/NodesStatus",
@@ -169,7 +173,7 @@
         "/properties/TotalMem"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

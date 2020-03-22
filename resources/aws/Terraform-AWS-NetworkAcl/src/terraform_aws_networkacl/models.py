@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Egress: Optional[Sequence["_Egress"]]
+    Id: Optional[str]
     Ingress: Optional[Sequence["_Ingress"]]
     OwnerId: Optional[str]
     SubnetId: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Egress=json_data.get("Egress"),
+            Id=json_data.get("Id"),
             Ingress=json_data.get("Ingress"),
             OwnerId=json_data.get("OwnerId"),
             SubnetId=json_data.get("SubnetId"),
@@ -141,8 +143,8 @@ _Ingress = Ingress
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -152,8 +154,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

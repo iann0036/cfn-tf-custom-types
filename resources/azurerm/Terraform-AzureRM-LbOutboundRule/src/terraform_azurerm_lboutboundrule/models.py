@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllocatedOutboundPorts: Optional[float]
     BackendAddressPoolId: Optional[str]
     EnableTcpReset: Optional[bool]
+    Id: Optional[str]
     IdleTimeoutInMinutes: Optional[float]
     LoadbalancerId: Optional[str]
     Name: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AllocatedOutboundPorts=json_data.get("AllocatedOutboundPorts"),
             BackendAddressPoolId=json_data.get("BackendAddressPoolId"),
             EnableTcpReset=json_data.get("EnableTcpReset"),
+            Id=json_data.get("Id"),
             IdleTimeoutInMinutes=json_data.get("IdleTimeoutInMinutes"),
             LoadbalancerId=json_data.get("LoadbalancerId"),
             Name=json_data.get("Name"),

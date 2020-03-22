@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Acl: Optional[str]
     Bucket: Optional[str]
+    Id: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
     CorsRules: Optional[Sequence["_CorsRules"]]
     LifecycleRules: Optional[Sequence["_LifecycleRules"]]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Acl=json_data.get("Acl"),
             Bucket=json_data.get("Bucket"),
+            Id=json_data.get("Id"),
             Tags=json_data.get("Tags"),
             CorsRules=json_data.get("CorsRules"),
             LifecycleRules=json_data.get("LifecycleRules"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

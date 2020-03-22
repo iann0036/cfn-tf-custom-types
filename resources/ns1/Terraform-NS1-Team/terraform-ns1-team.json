@@ -109,6 +109,9 @@
             },
             "description": "List of zones that the team may not access."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpamManageIpam": {
             "type": "boolean",
             "description": "Whether the team can manage IPAM.\nOnly relevant for the DDI product."
@@ -154,10 +157,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

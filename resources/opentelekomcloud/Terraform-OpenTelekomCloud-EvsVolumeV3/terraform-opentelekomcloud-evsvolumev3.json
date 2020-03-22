@@ -61,6 +61,9 @@
             "type": "string",
             "description": "The device type of volume to create. Valid options are VBD and SCSI.\nDefaults to VBD. Changing this creates a new volume."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string",
             "description": "The image ID from which to create the volume.\nChanging this creates a new volume."
@@ -92,16 +95,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Tags key/value pairs to associate with the volume.\nChanging this updates the existing volume tags."
@@ -125,10 +128,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Attachment",
+        "/properties/Id",
         "/properties/Wwn"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

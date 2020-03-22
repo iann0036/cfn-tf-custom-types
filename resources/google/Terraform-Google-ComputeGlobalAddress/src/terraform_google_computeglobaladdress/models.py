@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     AddressType: Optional[str]
     CreationTimestamp: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     IpVersion: Optional[str]
     Name: Optional[str]
     Network: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             AddressType=json_data.get("AddressType"),
             CreationTimestamp=json_data.get("CreationTimestamp"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IpVersion=json_data.get("IpVersion"),
             Name=json_data.get("Name"),
             Network=json_data.get("Network"),

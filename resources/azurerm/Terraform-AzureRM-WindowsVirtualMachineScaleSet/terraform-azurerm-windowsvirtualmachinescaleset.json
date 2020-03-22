@@ -157,7 +157,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/IpConfiguration"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -193,7 +194,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DiffDiskSettings"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -262,7 +264,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Certificate"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -516,6 +519,9 @@
             "type": "string",
             "description": "The ID of a Load Balancer Probe which should be used to determine the health of an instance. Changing this forces a new resource to be created. This is Required and can only be specified when `upgrade_mode` is set to `Automatic` or `Rolling`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Instances": {
             "type": "number",
             "description": "The number of Virtual Machines in the Scale Set."
@@ -579,16 +585,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags which should be assigned to this Virtual Machine Scale Set."
@@ -779,10 +785,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/UniqueId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

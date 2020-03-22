@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     LastBoot: Optional[str]
     LastCheckin: Optional[str]
     ManagedInstanceId: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             LastBoot=json_data.get("LastBoot"),
             LastCheckin=json_data.get("LastCheckin"),
             ManagedInstanceId=json_data.get("ManagedInstanceId"),

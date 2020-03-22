@@ -24,6 +24,9 @@
             "type": "boolean",
             "description": "Boolean flag to enable or disable the Listener. Default is `true` (enabled)."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancer": {
             "type": "string",
             "description": "The parent Load Balancer the Listener."
@@ -98,13 +101,14 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/OperationDetails",
         "/properties/ParentListener",
         "/properties/State",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

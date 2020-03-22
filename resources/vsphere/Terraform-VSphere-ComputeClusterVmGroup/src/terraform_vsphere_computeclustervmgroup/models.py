@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ComputeClusterId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     VirtualMachineIds: Optional[Sequence[str]]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ComputeClusterId=json_data.get("ComputeClusterId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             VirtualMachineIds=json_data.get("VirtualMachineIds"),
         )

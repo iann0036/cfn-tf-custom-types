@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     Email: Optional[str]
     ExternalIdentifier: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
+    Id: Optional[str]
     IdentityProviderId: Optional[str]
     InactiveState: Optional[str]
     Name: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             Email=json_data.get("Email"),
             ExternalIdentifier=json_data.get("ExternalIdentifier"),
             FreeformTags=json_data.get("FreeformTags"),
+            Id=json_data.get("Id"),
             IdentityProviderId=json_data.get("IdentityProviderId"),
             InactiveState=json_data.get("InactiveState"),
             Name=json_data.get("Name"),
@@ -111,8 +113,8 @@ _Capabilities = Capabilities
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -122,8 +124,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -133,8 +135,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -144,8 +146,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

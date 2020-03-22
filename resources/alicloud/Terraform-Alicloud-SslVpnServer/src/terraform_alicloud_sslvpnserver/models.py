@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ClientIpPool: Optional[str]
     Compress: Optional[bool]
     Connections: Optional[float]
+    Id: Optional[str]
     InternetIp: Optional[str]
     LocalSubnet: Optional[str]
     MaxConnections: Optional[float]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             ClientIpPool=json_data.get("ClientIpPool"),
             Compress=json_data.get("Compress"),
             Connections=json_data.get("Connections"),
+            Id=json_data.get("Id"),
             InternetIp=json_data.get("InternetIp"),
             LocalSubnet=json_data.get("LocalSubnet"),
             MaxConnections=json_data.get("MaxConnections"),

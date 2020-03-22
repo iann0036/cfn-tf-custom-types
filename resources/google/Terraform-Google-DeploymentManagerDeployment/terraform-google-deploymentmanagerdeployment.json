@@ -25,7 +25,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Config"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Imports": {
                     "type": "array",
@@ -96,6 +98,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Manifest": {
             "type": "string"
         },
@@ -154,11 +159,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DeploymentId",
+        "/properties/Id",
         "/properties/Manifest",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

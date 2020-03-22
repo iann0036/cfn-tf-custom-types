@@ -55,7 +55,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ServerProcess"
-                    }
+                    },
+                    "maxItems": 50
                 }
             },
             "required": []
@@ -113,6 +114,9 @@
         "FleetType": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceRoleArn": {
             "type": "string"
         },
@@ -146,16 +150,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -204,11 +208,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Arn",
+        "/properties/Id",
         "/properties/LogPaths",
         "/properties/OperatingSystem"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

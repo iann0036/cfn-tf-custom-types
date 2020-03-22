@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     InterconnectAttachment: Optional[str]
     IpRange: Optional[str]
     Name: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             InterconnectAttachment=json_data.get("InterconnectAttachment"),
             IpRange=json_data.get("IpRange"),
             Name=json_data.get("Name"),

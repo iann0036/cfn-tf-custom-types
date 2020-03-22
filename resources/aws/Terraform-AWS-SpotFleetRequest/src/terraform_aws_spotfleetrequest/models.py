@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ExcessCapacityTerminationPolicy: Optional[str]
     FleetType: Optional[str]
     IamFleetRole: Optional[str]
+    Id: Optional[str]
     InstanceInterruptionBehaviour: Optional[str]
     InstancePoolsToUseCount: Optional[float]
     LoadBalancers: Optional[Sequence[str]]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             ExcessCapacityTerminationPolicy=json_data.get("ExcessCapacityTerminationPolicy"),
             FleetType=json_data.get("FleetType"),
             IamFleetRole=json_data.get("IamFleetRole"),
+            Id=json_data.get("Id"),
             InstanceInterruptionBehaviour=json_data.get("InstanceInterruptionBehaviour"),
             InstancePoolsToUseCount=json_data.get("InstancePoolsToUseCount"),
             LoadBalancers=json_data.get("LoadBalancers"),
@@ -157,8 +159,8 @@ _LaunchSpecification = LaunchSpecification
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -168,8 +170,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

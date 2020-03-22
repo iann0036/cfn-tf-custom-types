@@ -28,6 +28,9 @@
         "FilesystemPath": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Label": {
             "type": "string",
             "description": "The label of the Linode Volume."
@@ -67,10 +70,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/FilesystemPath",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

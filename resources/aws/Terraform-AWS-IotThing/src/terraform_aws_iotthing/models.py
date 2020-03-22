@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     Attributes: Optional[Sequence["_Attributes"]]
     DefaultClientId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ThingTypeName: Optional[str]
     Version: Optional[float]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             Attributes=json_data.get("Attributes"),
             DefaultClientId=json_data.get("DefaultClientId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ThingTypeName=json_data.get("ThingTypeName"),
             Version=json_data.get("Version"),
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Attributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class Attributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

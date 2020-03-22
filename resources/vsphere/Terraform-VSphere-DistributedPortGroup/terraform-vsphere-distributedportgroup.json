@@ -64,16 +64,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -102,6 +102,9 @@
         },
         "Failback": {
             "type": "boolean"
+        },
+        "Id": {
+            "type": "string"
         },
         "IngressShapingAverageBandwidth": {
             "type": "number"
@@ -219,10 +222,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ConfigVersion",
+        "/properties/Id",
         "/properties/Key"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

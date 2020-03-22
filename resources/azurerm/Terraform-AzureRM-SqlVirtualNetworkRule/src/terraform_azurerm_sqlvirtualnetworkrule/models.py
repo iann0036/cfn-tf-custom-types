@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     IgnoreMissingVnetServiceEndpoint: Optional[bool]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             IgnoreMissingVnetServiceEndpoint=json_data.get("IgnoreMissingVnetServiceEndpoint"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

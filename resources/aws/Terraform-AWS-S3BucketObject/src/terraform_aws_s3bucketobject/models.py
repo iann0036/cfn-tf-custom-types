@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     ContentType: Optional[str]
     Etag: Optional[str]
     ForceDestroy: Optional[bool]
+    Id: Optional[str]
     Key: Optional[str]
     KmsKeyId: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
@@ -80,6 +81,7 @@ class ResourceModel(BaseResourceModel):
             ContentType=json_data.get("ContentType"),
             Etag=json_data.get("Etag"),
             ForceDestroy=json_data.get("ForceDestroy"),
+            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             KmsKeyId=json_data.get("KmsKeyId"),
             Metadata=json_data.get("Metadata"),
@@ -101,8 +103,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -112,8 +114,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -123,8 +125,8 @@ _Metadata = Metadata
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -134,8 +136,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

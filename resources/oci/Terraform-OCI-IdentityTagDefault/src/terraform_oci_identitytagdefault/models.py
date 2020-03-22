@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompartmentId: Optional[str]
+    Id: Optional[str]
     IsRequired: Optional[bool]
     State: Optional[str]
     TagDefinitionId: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CompartmentId=json_data.get("CompartmentId"),
+            Id=json_data.get("Id"),
             IsRequired=json_data.get("IsRequired"),
             State=json_data.get("State"),
             TagDefinitionId=json_data.get("TagDefinitionId"),

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     Email: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             Email=json_data.get("Email"),
+            Id=json_data.get("Id"),
         )
 
 

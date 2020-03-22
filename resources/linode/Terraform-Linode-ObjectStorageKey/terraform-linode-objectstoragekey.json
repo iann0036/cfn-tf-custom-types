@@ -11,6 +11,9 @@
         "AccessKey": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Label": {
             "type": "string",
             "description": "The label given to this key. For display purposes only."
@@ -26,10 +29,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AccessKey",
+        "/properties/Id",
         "/properties/SecretKey"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

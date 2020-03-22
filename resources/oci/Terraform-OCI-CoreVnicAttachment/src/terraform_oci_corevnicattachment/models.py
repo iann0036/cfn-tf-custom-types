@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AvailabilityDomain: Optional[str]
     CompartmentId: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     NicIndex: Optional[float]
     State: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             AvailabilityDomain=json_data.get("AvailabilityDomain"),
             CompartmentId=json_data.get("CompartmentId"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             NicIndex=json_data.get("NicIndex"),
             State=json_data.get("State"),
@@ -115,8 +117,8 @@ _CreateVnicDetails = CreateVnicDetails
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -137,8 +139,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -148,8 +150,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     DefaultRedirectUri: Optional[str]
     ExplicitAuthFlows: Optional[Sequence[str]]
     GenerateSecret: Optional[bool]
+    Id: Optional[str]
     LogoutUrls: Optional[Sequence[str]]
     Name: Optional[str]
     PreventUserExistenceErrors: Optional[str]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             DefaultRedirectUri=json_data.get("DefaultRedirectUri"),
             ExplicitAuthFlows=json_data.get("ExplicitAuthFlows"),
             GenerateSecret=json_data.get("GenerateSecret"),
+            Id=json_data.get("Id"),
             LogoutUrls=json_data.get("LogoutUrls"),
             Name=json_data.get("Name"),
             PreventUserExistenceErrors=json_data.get("PreventUserExistenceErrors"),

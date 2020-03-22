@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DiskSize: Optional[float]
     DiskType: Optional[float]
     EipMax: Optional[float]
+    Id: Optional[str]
     IoMax: Optional[float]
     Name: Optional[str]
     PaidType: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             DiskSize=json_data.get("DiskSize"),
             DiskType=json_data.get("DiskType"),
             EipMax=json_data.get("EipMax"),
+            Id=json_data.get("Id"),
             IoMax=json_data.get("IoMax"),
             Name=json_data.get("Name"),
             PaidType=json_data.get("PaidType"),
@@ -81,8 +83,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -92,8 +94,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

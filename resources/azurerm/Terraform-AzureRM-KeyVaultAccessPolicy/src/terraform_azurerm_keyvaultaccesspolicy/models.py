@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApplicationId: Optional[str]
     CertificatePermissions: Optional[Sequence[str]]
+    Id: Optional[str]
     KeyPermissions: Optional[Sequence[str]]
     KeyVaultId: Optional[str]
     ObjectId: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApplicationId=json_data.get("ApplicationId"),
             CertificatePermissions=json_data.get("CertificatePermissions"),
+            Id=json_data.get("Id"),
             KeyPermissions=json_data.get("KeyPermissions"),
             KeyVaultId=json_data.get("KeyVaultId"),
             ObjectId=json_data.get("ObjectId"),

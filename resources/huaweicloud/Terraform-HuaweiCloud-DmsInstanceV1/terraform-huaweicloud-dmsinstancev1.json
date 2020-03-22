@@ -38,6 +38,9 @@
             "type": "string",
             "description": "Indicates the version of a message engine."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaintainBegin": {
             "type": "string",
             "description": "Indicates the time at which a maintenance time window starts.\nFormat: HH:mm:ss.\nThe start time and end time of a maintenance time window must indicate the time segment of\na supported maintenance time window. For details, see section Querying Maintenance Time Windows.\nThe start time must be set to 22:00, 02:00, 06:00, 10:00, 14:00, or 18:00.\nParameters maintain_begin and maintain_end must be set in pairs. If parameter maintain_begin\nis left blank, parameter maintain_end is also blank. In this case, the system automatically\nallocates the default start time 02:00."
@@ -132,6 +135,7 @@
         "/properties/tfcfnid",
         "/properties/ConnectAddress",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/OrderId",
         "/properties/Port",
         "/properties/ResourceSpecCode",
@@ -144,7 +148,7 @@
         "/properties/VpcName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

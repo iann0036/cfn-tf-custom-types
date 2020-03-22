@@ -19,28 +19,32 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Backend"
-                    }
+                    },
+                    "maxItems": 25
                 },
                 "Listener": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Listener"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Logging": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Logging"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ServiceDiscovery": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ServiceDiscovery"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -54,7 +58,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/VirtualService"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -68,14 +73,17 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HealthCheck"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PortMapping": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PortMapping"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -89,7 +97,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AccessLog"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -103,14 +112,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AwsCloudMap"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Dns": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Dns"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -186,7 +197,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/File"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -202,16 +214,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -266,6 +278,9 @@
         "CreatedDate": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LastUpdatedDate": {
             "type": "string"
         },
@@ -282,16 +297,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -403,10 +418,11 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/CreatedDate",
+        "/properties/Id",
         "/properties/LastUpdatedDate"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

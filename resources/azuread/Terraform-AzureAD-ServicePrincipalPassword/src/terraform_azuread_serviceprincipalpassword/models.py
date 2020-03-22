@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EndDate: Optional[str]
     EndDateRelative: Optional[str]
+    Id: Optional[str]
     KeyId: Optional[str]
     ServicePrincipalId: Optional[str]
     StartDate: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EndDate=json_data.get("EndDate"),
             EndDateRelative=json_data.get("EndDateRelative"),
+            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
             ServicePrincipalId=json_data.get("ServicePrincipalId"),
             StartDate=json_data.get("StartDate"),

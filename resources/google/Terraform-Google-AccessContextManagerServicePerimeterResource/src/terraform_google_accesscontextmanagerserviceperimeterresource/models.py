@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     PerimeterName: Optional[str]
     Resource: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             PerimeterName=json_data.get("PerimeterName"),
             Resource=json_data.get("Resource"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     DetailType: Optional[str]
     EventTypeIds: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     Resource: Optional[str]
     Status: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             DetailType=json_data.get("DetailType"),
             EventTypeIds=json_data.get("EventTypeIds"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Resource=json_data.get("Resource"),
             Status=json_data.get("Status"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

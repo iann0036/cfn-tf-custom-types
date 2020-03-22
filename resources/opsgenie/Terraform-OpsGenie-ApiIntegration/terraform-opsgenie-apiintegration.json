@@ -35,6 +35,9 @@
             "type": "boolean",
             "description": "This parameter is for specifying whether the integration will be enabled or not. Defaults to true."
         },
+        "Id": {
+            "type": "string"
+        },
         "IgnoreRespondersFromPayload": {
             "type": "boolean",
             "description": "If enabled, the integration will ignore recipients sent in request payloads. Defaults to false."
@@ -69,10 +72,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ApiKey"
+        "/properties/ApiKey",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

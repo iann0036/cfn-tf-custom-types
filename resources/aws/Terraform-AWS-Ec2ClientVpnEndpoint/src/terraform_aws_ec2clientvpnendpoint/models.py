@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DnsName: Optional[str]
     DnsServers: Optional[Sequence[str]]
+    Id: Optional[str]
     ServerCertificateArn: Optional[str]
     SplitTunnel: Optional[bool]
     Status: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DnsName=json_data.get("DnsName"),
             DnsServers=json_data.get("DnsServers"),
+            Id=json_data.get("Id"),
             ServerCertificateArn=json_data.get("ServerCertificateArn"),
             SplitTunnel=json_data.get("SplitTunnel"),
             Status=json_data.get("Status"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

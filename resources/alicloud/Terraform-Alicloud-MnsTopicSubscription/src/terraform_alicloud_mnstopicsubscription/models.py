@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Endpoint: Optional[str]
     FilterTag: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NotifyContentFormat: Optional[str]
     NotifyStrategy: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Endpoint=json_data.get("Endpoint"),
             FilterTag=json_data.get("FilterTag"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NotifyContentFormat=json_data.get("NotifyContentFormat"),
             NotifyStrategy=json_data.get("NotifyStrategy"),

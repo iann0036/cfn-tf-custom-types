@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Email: Optional[str]
     ExpirationDate: Optional[str]
     Expires: Optional[bool]
+    Id: Optional[str]
     Password: Optional[str]
     SecretKey: Optional[str]
     UserId: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             Email=json_data.get("Email"),
             ExpirationDate=json_data.get("ExpirationDate"),
             Expires=json_data.get("Expires"),
+            Id=json_data.get("Id"),
             Password=json_data.get("Password"),
             SecretKey=json_data.get("SecretKey"),
             UserId=json_data.get("UserId"),

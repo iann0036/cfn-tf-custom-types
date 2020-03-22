@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     CoreInstanceType: Optional[str]
     CustomAmiId: Optional[str]
     EbsRootVolumeSize: Optional[float]
+    Id: Optional[str]
     KeepJobFlowAliveWhenNoSteps: Optional[bool]
     LogUri: Optional[str]
     MasterInstanceType: Optional[str]
@@ -89,6 +90,7 @@ class ResourceModel(BaseResourceModel):
             CoreInstanceType=json_data.get("CoreInstanceType"),
             CustomAmiId=json_data.get("CustomAmiId"),
             EbsRootVolumeSize=json_data.get("EbsRootVolumeSize"),
+            Id=json_data.get("Id"),
             KeepJobFlowAliveWhenNoSteps=json_data.get("KeepJobFlowAliveWhenNoSteps"),
             LogUri=json_data.get("LogUri"),
             MasterInstanceType=json_data.get("MasterInstanceType"),
@@ -169,8 +171,8 @@ _HadoopJarStep = HadoopJarStep
 
 @dataclass
 class Properties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -180,8 +182,8 @@ class Properties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -191,8 +193,8 @@ _Properties = Properties
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -202,8 +204,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

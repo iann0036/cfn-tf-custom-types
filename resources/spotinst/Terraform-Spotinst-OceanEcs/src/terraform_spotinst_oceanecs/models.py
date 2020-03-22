@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DrainingTimeout: Optional[float]
     EbsOptimized: Optional[bool]
     IamInstanceProfile: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     KeyPair: Optional[str]
     MaxSize: Optional[float]
@@ -77,6 +78,7 @@ class ResourceModel(BaseResourceModel):
             DrainingTimeout=json_data.get("DrainingTimeout"),
             EbsOptimized=json_data.get("EbsOptimized"),
             IamInstanceProfile=json_data.get("IamInstanceProfile"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             KeyPair=json_data.get("KeyPair"),
             MaxSize=json_data.get("MaxSize"),

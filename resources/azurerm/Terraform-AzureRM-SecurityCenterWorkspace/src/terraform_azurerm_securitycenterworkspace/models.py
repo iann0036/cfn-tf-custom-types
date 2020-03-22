@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Scope: Optional[str]
     WorkspaceId: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Scope=json_data.get("Scope"),
             WorkspaceId=json_data.get("WorkspaceId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AvailableDeadletters: Optional[float]
     AvailableMessages: Optional[float]
     ConsumedMessages: Optional[float]
+    Id: Optional[str]
     Name: Optional[str]
     ProducedDeadletters: Optional[float]
     ProducedMessages: Optional[float]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             AvailableDeadletters=json_data.get("AvailableDeadletters"),
             AvailableMessages=json_data.get("AvailableMessages"),
             ConsumedMessages=json_data.get("ConsumedMessages"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProducedDeadletters=json_data.get("ProducedDeadletters"),
             ProducedMessages=json_data.get("ProducedMessages"),

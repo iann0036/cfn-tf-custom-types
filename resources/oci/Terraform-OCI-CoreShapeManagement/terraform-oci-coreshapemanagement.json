@@ -29,6 +29,9 @@
             "type": "string",
             "description": "The OCID of the compartment containing the image."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string",
             "description": "The OCID of the Image to which the shape should be added."
@@ -48,10 +51,11 @@
         "ShapeName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

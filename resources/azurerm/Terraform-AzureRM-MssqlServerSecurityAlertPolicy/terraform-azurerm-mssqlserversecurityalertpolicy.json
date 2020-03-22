@@ -48,6 +48,9 @@
             },
             "description": "Specifies an array of e-mail addresses to which the alert is sent."
         },
+        "Id": {
+            "type": "string"
+        },
         "ResourceGroupName": {
             "type": "string",
             "description": "The name of the resource group that contains the MS SQL Server. Changing this forces a new resource to be created."
@@ -83,10 +86,11 @@
         "State"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

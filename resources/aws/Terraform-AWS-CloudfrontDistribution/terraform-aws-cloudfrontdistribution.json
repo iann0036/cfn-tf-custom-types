@@ -60,14 +60,17 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/ForwardedValues"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "LambdaFunctionAssociation": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/LambdaFunctionAssociation"
-                    }
+                    },
+                    "maxItems": 4
                 }
             },
             "required": [
@@ -153,14 +156,17 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ForwardedValues"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "LambdaFunctionAssociation": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/LambdaFunctionAssociation"
-                    }
+                    },
+                    "maxItems": 4
                 }
             },
             "required": [
@@ -245,14 +251,17 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ForwardedValues"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "LambdaFunctionAssociation": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/LambdaFunctionAssociation"
-                    }
+                    },
+                    "maxItems": 4
                 }
             },
             "required": [
@@ -288,14 +297,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CustomOriginConfig"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "S3OriginConfig": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/S3OriginConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -315,14 +326,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FailoverCriteria"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Member": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Member"
-                    }
+                    },
+                    "maxItems": 2,
+                    "minItems": 2
                 }
             },
             "required": [
@@ -338,7 +353,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GeoRestriction"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -391,7 +408,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Cookies"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -558,16 +577,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -605,6 +624,9 @@
         "HttpVersion": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InProgressValidationBatches": {
             "type": "number"
         },
@@ -630,16 +652,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -809,12 +831,13 @@
         "/properties/DomainName",
         "/properties/Etag",
         "/properties/HostedZoneId",
+        "/properties/Id",
         "/properties/InProgressValidationBatches",
         "/properties/LastModifiedTime",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

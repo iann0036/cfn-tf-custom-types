@@ -16,14 +16,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DiskEncryptionKey"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "KeyEncryptionKey": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KeyEncryptionKey"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -109,6 +111,9 @@
             "type": "number",
             "description": "Specifies the size of the managed disk to create in gigabytes. If `create_option` is `Copy` or `FromImage`, then the value must be equal to or greater than the source's size."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageReferenceId": {
             "type": "string",
             "description": "ID of an existing platform/marketplace disk image to copy when `create_option` is `FromImage`."
@@ -152,16 +157,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -211,10 +216,11 @@
         "StorageAccountType"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

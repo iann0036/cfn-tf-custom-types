@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     DeregisterOnDestroy: Optional[bool]
     DeregisterOnIdChange: Optional[bool]
     Detach: Optional[bool]
+    Id: Optional[str]
     Jobspec: Optional[str]
     Json: Optional[bool]
     ModifyIndex: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             DeregisterOnDestroy=json_data.get("DeregisterOnDestroy"),
             DeregisterOnIdChange=json_data.get("DeregisterOnIdChange"),
             Detach=json_data.get("Detach"),
+            Id=json_data.get("Id"),
             Jobspec=json_data.get("Jobspec"),
             Json=json_data.get("Json"),
             ModifyIndex=json_data.get("ModifyIndex"),
@@ -115,8 +117,8 @@ _TaskGroups = TaskGroups
 
 @dataclass
 class Meta:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class Meta:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -163,8 +165,8 @@ _Task = Task
 
 @dataclass
 class Meta2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -174,8 +176,8 @@ class Meta2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

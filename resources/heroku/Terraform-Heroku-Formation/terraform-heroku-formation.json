@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The name of the application."
         },
+        "Id": {
+            "type": "string"
+        },
         "Quantity": {
             "type": "number",
             "description": "number of processes to maintain."
@@ -33,10 +36,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

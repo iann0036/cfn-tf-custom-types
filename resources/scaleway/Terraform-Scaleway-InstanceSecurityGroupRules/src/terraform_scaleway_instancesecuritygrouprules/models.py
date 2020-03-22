@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     SecurityGroupId: Optional[str]
     InboundRule: Optional[Sequence["_InboundRule"]]
     OutboundRule: Optional[Sequence["_OutboundRule"]]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             SecurityGroupId=json_data.get("SecurityGroupId"),
             InboundRule=json_data.get("InboundRule"),
             OutboundRule=json_data.get("OutboundRule"),

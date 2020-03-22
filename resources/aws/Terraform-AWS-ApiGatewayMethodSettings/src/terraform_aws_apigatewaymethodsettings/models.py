@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     MethodPath: Optional[str]
     RestApiId: Optional[str]
     StageName: Optional[str]
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             MethodPath=json_data.get("MethodPath"),
             RestApiId=json_data.get("RestApiId"),
             StageName=json_data.get("StageName"),

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApiHostname: Optional[str]
+    Id: Optional[str]
     IntegrationKey: Optional[str]
     MountAccessor: Optional[str]
     Name: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ApiHostname=json_data.get("ApiHostname"),
+            Id=json_data.get("Id"),
             IntegrationKey=json_data.get("IntegrationKey"),
             MountAccessor=json_data.get("MountAccessor"),
             Name=json_data.get("Name"),

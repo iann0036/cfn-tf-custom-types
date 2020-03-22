@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     EipId: Optional[str]
     EnableWhiteList: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Remark: Optional[str]
     SecurityGroup: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             EipId=json_data.get("EipId"),
             EnableWhiteList=json_data.get("EnableWhiteList"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Remark=json_data.get("Remark"),
             SecurityGroup=json_data.get("SecurityGroup"),

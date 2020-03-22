@@ -11,6 +11,9 @@
         "EditionKey": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Labels": {
             "type": "array",
             "insertionOrder": true,
@@ -18,16 +21,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of key/value pairs to be attached as labels (tags) to the license key."
@@ -53,12 +56,13 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/EditionKey",
+        "/properties/Id",
         "/properties/Name",
         "/properties/Total",
         "/properties/Used"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

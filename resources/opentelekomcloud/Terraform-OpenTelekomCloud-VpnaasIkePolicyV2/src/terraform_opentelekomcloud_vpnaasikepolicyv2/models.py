@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AuthAlgorithm: Optional[str]
     Description: Optional[str]
     EncryptionAlgorithm: Optional[str]
+    Id: Optional[str]
     IkeVersion: Optional[str]
     Name: Optional[str]
     Pfs: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             AuthAlgorithm=json_data.get("AuthAlgorithm"),
             Description=json_data.get("Description"),
             EncryptionAlgorithm=json_data.get("EncryptionAlgorithm"),
+            Id=json_data.get("Id"),
             IkeVersion=json_data.get("IkeVersion"),
             Name=json_data.get("Name"),
             Pfs=json_data.get("Pfs"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AvailableZone: Optional[str]
     CreateTime: Optional[str]
     EngineVersion: Optional[str]
+    Id: Optional[str]
     InstanceName: Optional[str]
     MachineType: Optional[str]
     Memory: Optional[float]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             AvailableZone=json_data.get("AvailableZone"),
             CreateTime=json_data.get("CreateTime"),
             EngineVersion=json_data.get("EngineVersion"),
+            Id=json_data.get("Id"),
             InstanceName=json_data.get("InstanceName"),
             MachineType=json_data.get("MachineType"),
             Memory=json_data.get("Memory"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     InterfaceId: Optional[str]
     OppositeInterfaceId: Optional[str]
     OppositeInterfaceOwnerId: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             InterfaceId=json_data.get("InterfaceId"),
             OppositeInterfaceId=json_data.get("OppositeInterfaceId"),
             OppositeInterfaceOwnerId=json_data.get("OppositeInterfaceOwnerId"),

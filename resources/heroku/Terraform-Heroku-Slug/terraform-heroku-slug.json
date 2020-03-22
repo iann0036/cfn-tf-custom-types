@@ -52,6 +52,9 @@
             "type": "string",
             "description": "**https** URL to a slug archive, `\"https://example.com/slugs/app-v1.tgz\"`."
         },
+        "Id": {
+            "type": "string"
+        },
         "ProcessTypes": {
             "type": "array",
             "insertionOrder": true,
@@ -59,16 +62,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of [processes to launch on Heroku Dynos](https://devcenter.heroku.com/articles/process-model)."
@@ -92,11 +95,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Blob",
+        "/properties/Id",
         "/properties/Size",
         "/properties/StackId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

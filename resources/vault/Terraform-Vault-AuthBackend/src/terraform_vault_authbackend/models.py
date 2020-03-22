@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Accessor: Optional[str]
     DefaultLeaseTtlSeconds: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     ListingVisibility: Optional[str]
     Local: Optional[bool]
     MaxLeaseTtlSeconds: Optional[float]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             Accessor=json_data.get("Accessor"),
             DefaultLeaseTtlSeconds=json_data.get("DefaultLeaseTtlSeconds"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             ListingVisibility=json_data.get("ListingVisibility"),
             Local=json_data.get("Local"),
             MaxLeaseTtlSeconds=json_data.get("MaxLeaseTtlSeconds"),

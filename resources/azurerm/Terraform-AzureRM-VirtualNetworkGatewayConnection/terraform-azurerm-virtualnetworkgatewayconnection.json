@@ -94,6 +94,9 @@
             "type": "boolean",
             "description": "If `true`, data packets will bypass ExpressRoute Gateway for data forwarding This is only valid for ExpressRoute connections."
         },
+        "Id": {
+            "type": "string"
+        },
         "LocalNetworkGatewayId": {
             "type": "string",
             "description": "The ID of the local network gateway\nwhen creating Site-to-Site connection (i.e. when `type` is `IPsec`)."
@@ -129,16 +132,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -176,10 +179,11 @@
         "VirtualNetworkGatewayId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

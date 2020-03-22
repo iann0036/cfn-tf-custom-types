@@ -15,16 +15,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of custom attribute ids to value\nstrings to set for datacenter resource. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
@@ -32,6 +32,9 @@
         "Folder": {
             "type": "string",
             "description": "The folder where the datacenter should be created.\nForces a new resource if changed."
+        },
+        "Id": {
+            "type": "string"
         },
         "Moid": {
             "type": "string"
@@ -55,10 +58,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Moid"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

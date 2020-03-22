@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AcceptStatus: Optional[str]
     AutoAccept: Optional[bool]
+    Id: Optional[str]
     PeerOwnerId: Optional[str]
     PeerRegion: Optional[str]
     PeerVpcId: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AcceptStatus=json_data.get("AcceptStatus"),
             AutoAccept=json_data.get("AutoAccept"),
+            Id=json_data.get("Id"),
             PeerOwnerId=json_data.get("PeerOwnerId"),
             PeerRegion=json_data.get("PeerRegion"),
             PeerVpcId=json_data.get("PeerVpcId"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

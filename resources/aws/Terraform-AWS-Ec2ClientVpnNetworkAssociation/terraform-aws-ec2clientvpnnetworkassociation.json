@@ -11,6 +11,9 @@
         "ClientVpnEndpointId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
@@ -35,12 +38,13 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/SecurityGroups",
         "/properties/Status",
         "/properties/VpcId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

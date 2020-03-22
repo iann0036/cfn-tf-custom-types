@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CookieExpirationPeriod: Optional[float]
+    Id: Optional[str]
     LbPort: Optional[float]
     LoadBalancer: Optional[str]
     Name: Optional[str]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CookieExpirationPeriod=json_data.get("CookieExpirationPeriod"),
+            Id=json_data.get("Id"),
             LbPort=json_data.get("LbPort"),
             LoadBalancer=json_data.get("LoadBalancer"),
             Name=json_data.get("Name"),

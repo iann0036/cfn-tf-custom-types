@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DnsPrefix: Optional[str]
     EnablePodSecurityPolicy: Optional[bool]
     Fqdn: Optional[str]
+    Id: Optional[str]
     KubeAdminConfig: Optional[Sequence["_KubeAdminConfig"]]
     KubeAdminConfigRaw: Optional[str]
     KubeConfig: Optional[Sequence["_KubeConfig"]]
@@ -83,6 +84,7 @@ class ResourceModel(BaseResourceModel):
             DnsPrefix=json_data.get("DnsPrefix"),
             EnablePodSecurityPolicy=json_data.get("EnablePodSecurityPolicy"),
             Fqdn=json_data.get("Fqdn"),
+            Id=json_data.get("Id"),
             KubeAdminConfig=json_data.get("KubeAdminConfig"),
             KubeAdminConfigRaw=json_data.get("KubeAdminConfigRaw"),
             KubeConfig=json_data.get("KubeConfig"),
@@ -181,8 +183,8 @@ _KubeConfig = KubeConfig
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -192,8 +194,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -383,8 +385,8 @@ _DefaultNodePool = DefaultNodePool
 
 @dataclass
 class NodeLabels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -394,8 +396,8 @@ class NodeLabels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -405,8 +407,8 @@ _NodeLabels = NodeLabels
 
 @dataclass
 class Tags2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -416,8 +418,8 @@ class Tags2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

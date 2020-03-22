@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Enforcement level of Sentinel policy. Can be either `advisory` or `soft-mandatory` or `hard-mandatory`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the policy."
@@ -37,10 +40,11 @@
         "Policy"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

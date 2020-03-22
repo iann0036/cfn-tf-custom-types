@@ -30,6 +30,9 @@
         "ExpireTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceType": {
             "type": "string",
             "description": "The type of Redis instance, please visit the [instance type table](https://www.terraform.io/docs/providers/ucloud/appendix/redis_instance_type.html) for more details."
@@ -83,11 +86,12 @@
         "/properties/tfcfnid",
         "/properties/CreateTime",
         "/properties/ExpireTime",
+        "/properties/Id",
         "/properties/IpSet",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

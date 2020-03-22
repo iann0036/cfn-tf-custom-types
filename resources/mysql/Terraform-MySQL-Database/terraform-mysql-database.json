@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The default collation to use when a table\nis created without specifying an explicit collation. Defaults to\n``utf8_general_ci``. Each character set has its own set of collations, so\nchanging the character set requires also changing the collation."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the database. This must be unique within\na given MySQL server and may or may not be case-sensitive depending on\nthe operating system on which the MySQL server is running."
@@ -26,10 +29,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

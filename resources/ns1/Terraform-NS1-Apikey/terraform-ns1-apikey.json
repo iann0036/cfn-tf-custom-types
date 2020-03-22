@@ -88,6 +88,9 @@
             },
             "description": "List of zones that the apikey may not access."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpWhitelist": {
             "type": "array",
             "insertionOrder": false,
@@ -151,10 +154,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Key"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

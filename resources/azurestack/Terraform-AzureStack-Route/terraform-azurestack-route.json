@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The destination CIDR to which the route applies, such as `10.1.0.0/16`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the route. Changing this forces a new resource to be created."
@@ -42,10 +45,11 @@
         "RouteTableName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

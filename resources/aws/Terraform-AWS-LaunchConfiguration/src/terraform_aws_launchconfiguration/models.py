@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EbsOptimized: Optional[bool]
     EnableMonitoring: Optional[bool]
     IamInstanceProfile: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     InstanceType: Optional[str]
     KeyName: Optional[str]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             EbsOptimized=json_data.get("EbsOptimized"),
             EnableMonitoring=json_data.get("EnableMonitoring"),
             IamInstanceProfile=json_data.get("IamInstanceProfile"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceType=json_data.get("InstanceType"),
             KeyName=json_data.get("KeyName"),

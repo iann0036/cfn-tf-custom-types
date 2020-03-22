@@ -1,9 +1,113 @@
 AWSTemplateFormatVersion: "2010-09-09"
 
-Description: "S3 Bucket for holding state data for Terraform->CloudFormation custom types"
+Description: "Resources for Terraform->CloudFormation custom type handler"
+
+Parameters:
+    S3Bucket:
+        Description: The name of the bucket that contains the Lambda source (leave blank to use latest)
+        Type: String
+        Default: ''
+    
+    S3Key:
+        Description: The key of the ZIP package within the bucket (leave blank to use latest)
+        Type: String
+        Default: ''
+
+Mappings:
+    RegionMap:
+        us-east-1:
+            bucketname: ianmckay-us-east-1
+        us-east-2:
+            bucketname: ianmckay-us-east-2
+        us-west-1:
+            bucketname: ianmckay-us-west-1
+        us-west-2:
+            bucketname: ianmckay-us-west-2
+        ap-south-1:
+            bucketname: ianmckay-ap-south-1
+        ap-northeast-2:
+            bucketname: ianmckay-ap-northeast-2
+        ap-southeast-1:
+            bucketname: ianmckay-ap-southeast-1
+        ap-southeast-2:
+            bucketname: ianmckay-ap-southeast-2
+        ap-northeast-1:
+            bucketname: ianmckay-ap-northeast-1
+        ca-central-1:
+            bucketname: ianmckay-ca-central-1
+        eu-central-1:
+            bucketname: ianmckay-eu-central-1
+        eu-west-1:
+            bucketname: ianmckay-eu-west-1
+        eu-west-2:
+            bucketname: ianmckay-eu-west-2
+        eu-west-3:
+            bucketname: ianmckay-eu-west-3
+        eu-north-1:
+            bucketname: ianmckay-eu-north-1
+        sa-east-1:
+            bucketname: ianmckay-sa-east-1
+
+Conditions:
+
+    S3Defined: !Not [ !Equals [ '', !Ref S3Bucket ] ]
 
 Resources:
-    S3Bucket:
-        Type: "AWS::S3::Bucket"
+
+    StateS3Bucket:
+        Type: AWS::S3::Bucket
         Properties:
-            BucketName: !Sub "cfntfstate-${AWS::Region}-${AWS::AccountId}"
+            BucketName: !Sub "cfntf-${AWS::Region}-${AWS::AccountId}"
+            BucketEncryption:
+                ServerSideEncryptionConfiguration:
+                  - ServerSideEncryptionByDefault:
+                        SSEAlgorithm: AES256
+            PublicAccessBlockConfiguration:
+                BlockPublicAcls: true
+                BlockPublicPolicy: true
+                IgnorePublicAcls: true
+                RestrictPublicBuckets: true
+
+    ExecutorLambdaServiceRole:
+        Type: AWS::IAM::Role
+        Properties:
+            AssumeRolePolicyDocument:
+                Version: '2012-10-17'
+                Statement:
+                  - Effect: Allow
+                    Principal:
+                        Service: lambda.amazonaws.com
+                    Action: sts:AssumeRole
+            Path: /
+            ManagedPolicyArns:
+              - arn:aws:iam::aws:policy/AdministratorAccess
+
+    ExecutorLambdaLogGroup:
+        Type: AWS::Logs::LogGroup
+        Properties:
+            LogGroupName: "/aws/lambda/cfntf-executor"
+            RetentionInDays: 14
+
+    ExecutorLambdaFunction:
+        Type: AWS::Lambda::Function
+        Properties:
+            FunctionName: cfntf-executor
+            Handler: index.handler
+            Role: !GetAtt ExecutorLambdaServiceRole.Arn
+            Environment:
+                Variables:
+                    BUCKET: !Ref StateS3Bucket
+            Code:
+                S3Bucket: !If
+                  - S3Defined
+                  - !Ref S3Bucket
+                  - Fn::FindInMap:
+                      - RegionMap
+                      - !Ref AWS::Region
+                      - bucketname
+                S3Key: !If
+                  - S3Defined
+                  - !Ref S3Key
+                  - cf-tf-custom-types/app.zip
+            Runtime: python3.8
+            Timeout: 900

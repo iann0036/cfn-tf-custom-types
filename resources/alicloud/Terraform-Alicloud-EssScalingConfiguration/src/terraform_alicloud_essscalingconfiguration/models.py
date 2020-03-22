@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Active: Optional[bool]
     Enable: Optional[bool]
     ForceDelete: Optional[bool]
+    Id: Optional[str]
     ImageId: Optional[str]
     InstanceIds: Optional[Sequence[str]]
     InstanceName: Optional[str]
@@ -79,6 +80,7 @@ class ResourceModel(BaseResourceModel):
             Active=json_data.get("Active"),
             Enable=json_data.get("Enable"),
             ForceDelete=json_data.get("ForceDelete"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             InstanceIds=json_data.get("InstanceIds"),
             InstanceName=json_data.get("InstanceName"),
@@ -115,8 +117,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class KmsEncryptionContext:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class KmsEncryptionContext:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -137,8 +139,8 @@ _KmsEncryptionContext = KmsEncryptionContext
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -148,8 +150,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

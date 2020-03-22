@@ -46,6 +46,9 @@
             "type": "string",
             "description": "Entry point of the function. Changing this creates a new function."
         },
+        "Id": {
+            "type": "string"
+        },
         "MemorySize": {
             "type": "number",
             "description": "Memory size(MB) allocated to the function. Changing this creates a new function."
@@ -90,10 +93,11 @@
         "Timeout"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

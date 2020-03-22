@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AsPath: Optional[Sequence[str]]
     CidrBlock: Optional[str]
     DcgId: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             AsPath=json_data.get("AsPath"),
             CidrBlock=json_data.get("CidrBlock"),
             DcgId=json_data.get("DcgId"),
+            Id=json_data.get("Id"),
         )
 
 

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DetectorId: Optional[str]
     DisableEmailNotification: Optional[bool]
     Email: Optional[str]
+    Id: Optional[str]
     InvitationMessage: Optional[str]
     Invite: Optional[bool]
     RelationshipStatus: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             DetectorId=json_data.get("DetectorId"),
             DisableEmailNotification=json_data.get("DisableEmailNotification"),
             Email=json_data.get("Email"),
+            Id=json_data.get("Id"),
             InvitationMessage=json_data.get("InvitationMessage"),
             Invite=json_data.get("Invite"),
             RelationshipStatus=json_data.get("RelationshipStatus"),

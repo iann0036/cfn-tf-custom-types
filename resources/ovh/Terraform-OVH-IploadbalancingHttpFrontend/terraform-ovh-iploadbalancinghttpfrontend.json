@@ -40,6 +40,9 @@
             "type": "string",
             "description": "Human readable name for your frontend, this field is for you."
         },
+        "Id": {
+            "type": "string"
+        },
         "Port": {
             "type": "string",
             "description": "Port(s) attached to your frontend. Supports single port (numerical value),\nrange (2 dash-delimited increasing ports) and comma-separated list of 'single port'\nand/or 'range'. Each port must be in the [1;49151] range."
@@ -64,10 +67,11 @@
         "Zone"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

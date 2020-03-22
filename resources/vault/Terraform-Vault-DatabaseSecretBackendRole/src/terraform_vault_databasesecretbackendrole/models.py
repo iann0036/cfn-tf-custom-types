@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CreationStatements: Optional[Sequence[str]]
     DbName: Optional[str]
     DefaultTtl: Optional[float]
+    Id: Optional[str]
     MaxTtl: Optional[float]
     Name: Optional[str]
     RenewStatements: Optional[Sequence[str]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             CreationStatements=json_data.get("CreationStatements"),
             DbName=json_data.get("DbName"),
             DefaultTtl=json_data.get("DefaultTtl"),
+            Id=json_data.get("Id"),
             MaxTtl=json_data.get("MaxTtl"),
             Name=json_data.get("Name"),
             RenewStatements=json_data.get("RenewStatements"),

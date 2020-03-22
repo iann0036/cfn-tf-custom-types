@@ -39,6 +39,9 @@
             },
             "description": "List of namespaces allowed to access this role. If set to `[\"*\"]` all namespaces are allowed, both this and bound_service_account_names can not be set to \"*\"."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxTtl": {
             "type": "number"
         },
@@ -105,10 +108,11 @@
         "RoleName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

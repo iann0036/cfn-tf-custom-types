@@ -19,6 +19,9 @@
                 "type": "string"
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "NetworkType": {
             "type": "string",
             "description": "Type of CLB instance, and available values include 'OPEN' and 'INTERNAL'."
@@ -46,16 +49,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "The available tags within this CLB."
@@ -80,10 +83,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ClbVips"
+        "/properties/ClbVips",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

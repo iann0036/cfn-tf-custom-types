@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     ContentType: Optional[str]
     Etag: Optional[str]
     Expires: Optional[str]
+    Id: Optional[str]
     Key: Optional[str]
     KmsKeyId: Optional[str]
     ServerSideEncryption: Optional[str]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             ContentType=json_data.get("ContentType"),
             Etag=json_data.get("Etag"),
             Expires=json_data.get("Expires"),
+            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             KmsKeyId=json_data.get("KmsKeyId"),
             ServerSideEncryption=json_data.get("ServerSideEncryption"),

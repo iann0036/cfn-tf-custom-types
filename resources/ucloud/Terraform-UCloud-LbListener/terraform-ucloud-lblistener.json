@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Health check method. Possible values are `port` as port checking and `path` as http checking."
         },
+        "Id": {
+            "type": "string"
+        },
         "IdleTimeout": {
             "type": "number",
             "description": "Keep alive timeout of the connection between the client and LB, measured in second. Range: 0-86400 when `listen_type` is `request_proxy`, range: 60-900 when `listen_type` is `packets_transmit` (Default: `60`). The connection will be closed as soon as no response between the client and LB if it set by `0`."
@@ -67,10 +70,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

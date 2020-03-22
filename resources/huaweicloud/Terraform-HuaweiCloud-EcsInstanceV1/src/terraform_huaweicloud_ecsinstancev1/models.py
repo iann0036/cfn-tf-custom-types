@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DeleteDisksOnTermination: Optional[bool]
     EnterpriseProjectId: Optional[str]
     Flavor: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     KeyName: Optional[str]
     Name: Optional[str]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             DeleteDisksOnTermination=json_data.get("DeleteDisksOnTermination"),
             EnterpriseProjectId=json_data.get("EnterpriseProjectId"),
             Flavor=json_data.get("Flavor"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             KeyName=json_data.get("KeyName"),
             Name=json_data.get("Name"),
@@ -99,8 +101,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -110,8 +112,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

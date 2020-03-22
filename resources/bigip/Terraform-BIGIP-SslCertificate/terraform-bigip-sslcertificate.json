@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Content of certificate on Local Disk,path of SSL certificate will be provided to terraform `file` function."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the SSL Certificate to be Imported on to BIGIP."
@@ -27,10 +30,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

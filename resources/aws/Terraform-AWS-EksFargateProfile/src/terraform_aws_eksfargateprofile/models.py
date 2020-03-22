@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     ClusterName: Optional[str]
     FargateProfileName: Optional[str]
+    Id: Optional[str]
     PodExecutionRoleArn: Optional[str]
     Status: Optional[str]
     SubnetIds: Optional[Sequence[str]]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             ClusterName=json_data.get("ClusterName"),
             FargateProfileName=json_data.get("FargateProfileName"),
+            Id=json_data.get("Id"),
             PodExecutionRoleArn=json_data.get("PodExecutionRoleArn"),
             Status=json_data.get("Status"),
             SubnetIds=json_data.get("SubnetIds"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -117,8 +119,8 @@ _Selector = Selector
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

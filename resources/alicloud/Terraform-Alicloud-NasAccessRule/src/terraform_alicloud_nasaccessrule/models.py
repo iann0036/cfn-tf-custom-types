@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccessGroupName: Optional[str]
     AccessRuleId: Optional[str]
+    Id: Optional[str]
     Priority: Optional[float]
     RwAccessType: Optional[str]
     SourceCidrIp: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccessGroupName=json_data.get("AccessGroupName"),
             AccessRuleId=json_data.get("AccessRuleId"),
+            Id=json_data.get("Id"),
             Priority=json_data.get("Priority"),
             RwAccessType=json_data.get("RwAccessType"),
             SourceCidrIp=json_data.get("SourceCidrIp"),

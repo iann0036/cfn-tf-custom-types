@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AdminStateUp: Optional[bool]
     Description: Optional[str]
+    Id: Optional[str]
     IkepolicyId: Optional[str]
     Initiator: Optional[str]
     IpsecpolicyId: Optional[str]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AdminStateUp=json_data.get("AdminStateUp"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IkepolicyId=json_data.get("IkepolicyId"),
             Initiator=json_data.get("Initiator"),
             IpsecpolicyId=json_data.get("IpsecpolicyId"),
@@ -95,8 +97,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

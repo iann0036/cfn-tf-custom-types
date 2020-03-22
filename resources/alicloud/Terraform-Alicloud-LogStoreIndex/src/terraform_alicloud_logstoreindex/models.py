@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Logstore: Optional[str]
     Project: Optional[str]
     FieldSearch: Optional[Sequence["_FieldSearch"]]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Logstore=json_data.get("Logstore"),
             Project=json_data.get("Project"),
             FieldSearch=json_data.get("FieldSearch"),

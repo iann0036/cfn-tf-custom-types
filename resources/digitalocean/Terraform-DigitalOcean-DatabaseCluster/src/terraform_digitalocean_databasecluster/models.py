@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Engine: Optional[str]
     EvictionPolicy: Optional[str]
     Host: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NodeCount: Optional[float]
     Password: Optional[str]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             Engine=json_data.get("Engine"),
             EvictionPolicy=json_data.get("EvictionPolicy"),
             Host=json_data.get("Host"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NodeCount=json_data.get("NodeCount"),
             Password=json_data.get("Password"),

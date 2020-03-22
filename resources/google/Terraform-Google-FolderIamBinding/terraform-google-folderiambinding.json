@@ -15,6 +15,9 @@
             "type": "string",
             "description": "The resource name of the folder the policy is attached to. Its format is folders/{folder_id}."
         },
+        "Id": {
+            "type": "string"
+        },
         "Members": {
             "type": "array",
             "insertionOrder": true,
@@ -35,10 +38,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Etag"
+        "/properties/Etag",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

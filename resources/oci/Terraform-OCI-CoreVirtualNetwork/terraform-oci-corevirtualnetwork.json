@@ -47,16 +47,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -73,18 +73,21 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
+        },
+        "Id": {
+            "type": "string"
         },
         "Ipv6cidrBlock": {
             "type": "string"
@@ -118,13 +121,14 @@
         "/properties/DefaultDhcpOptionsId",
         "/properties/DefaultRouteTableId",
         "/properties/DefaultSecurityListId",
+        "/properties/Id",
         "/properties/Ipv6publicCidrBlock",
         "/properties/State",
         "/properties/TimeCreated",
         "/properties/VcnDomainName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

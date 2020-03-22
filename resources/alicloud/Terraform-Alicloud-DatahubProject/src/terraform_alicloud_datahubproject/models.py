@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Comment: Optional[str]
     CreateTime: Optional[str]
+    Id: Optional[str]
     LastModifyTime: Optional[str]
     Name: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Comment=json_data.get("Comment"),
             CreateTime=json_data.get("CreateTime"),
+            Id=json_data.get("Id"),
             LastModifyTime=json_data.get("LastModifyTime"),
             Name=json_data.get("Name"),
         )

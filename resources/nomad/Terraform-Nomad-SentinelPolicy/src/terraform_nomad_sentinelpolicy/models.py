@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     EnforcementLevel: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Policy: Optional[str]
     Scope: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             EnforcementLevel=json_data.get("EnforcementLevel"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Policy=json_data.get("Policy"),
             Scope=json_data.get("Scope"),

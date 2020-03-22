@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     ClientCertificateIds: Optional[Sequence[str]]
     CreateTime: Optional[str]
     ForwardProtocol: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Port: Optional[float]
     Protocol: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             ClientCertificateIds=json_data.get("ClientCertificateIds"),
             CreateTime=json_data.get("CreateTime"),
             ForwardProtocol=json_data.get("ForwardProtocol"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Port=json_data.get("Port"),
             Protocol=json_data.get("Protocol"),

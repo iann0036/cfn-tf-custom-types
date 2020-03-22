@@ -26,6 +26,9 @@
             },
             "description": "An array of hostnames or wildcard names bound to the certificate."
         },
+        "Id": {
+            "type": "string"
+        },
         "RequestType": {
             "type": "string",
             "description": "The signature type desired on the certificate."
@@ -44,10 +47,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Certificate",
-        "/properties/ExpiresOn"
+        "/properties/ExpiresOn",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

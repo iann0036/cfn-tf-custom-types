@@ -88,6 +88,9 @@
             "type": "string",
             "description": "The RSA private key used to sign the certificate in PEM format. Must be included along with `certificate_pem`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Locked": {
             "type": "boolean"
         },
@@ -139,11 +142,12 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Locked",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

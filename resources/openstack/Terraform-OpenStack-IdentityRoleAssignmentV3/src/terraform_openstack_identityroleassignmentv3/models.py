@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DomainId: Optional[str]
     GroupId: Optional[str]
+    Id: Optional[str]
     ProjectId: Optional[str]
     Region: Optional[str]
     RoleId: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DomainId=json_data.get("DomainId"),
             GroupId=json_data.get("GroupId"),
+            Id=json_data.get("Id"),
             ProjectId=json_data.get("ProjectId"),
             Region=json_data.get("Region"),
             RoleId=json_data.get("RoleId"),

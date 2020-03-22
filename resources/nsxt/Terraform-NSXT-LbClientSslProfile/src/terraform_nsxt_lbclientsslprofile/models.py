@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Ciphers: Optional[Sequence[str]]
     Description: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     IsSecure: Optional[bool]
     PreferServerCiphers: Optional[bool]
     Protocols: Optional[Sequence[str]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Ciphers=json_data.get("Ciphers"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             IsSecure=json_data.get("IsSecure"),
             PreferServerCiphers=json_data.get("PreferServerCiphers"),
             Protocols=json_data.get("Protocols"),

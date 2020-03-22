@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DataEncryptionKeyId: Optional[str]
     Description: Optional[str]
     Encrypted: Optional[bool]
+    Id: Optional[str]
     KmsKeyId: Optional[str]
     OwnerAlias: Optional[str]
     OwnerId: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             DataEncryptionKeyId=json_data.get("DataEncryptionKeyId"),
             Description=json_data.get("Description"),
             Encrypted=json_data.get("Encrypted"),
+            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             OwnerAlias=json_data.get("OwnerAlias"),
             OwnerId=json_data.get("OwnerId"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

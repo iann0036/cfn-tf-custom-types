@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AvailabilityZone: Optional[str]
     Created: Optional[str]
     Endpoints: Optional[Sequence["_Endpoints"]]
+    Id: Optional[str]
     Name: Optional[str]
     NetworkId: Optional[str]
     NodeType: Optional[str]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             AvailabilityZone=json_data.get("AvailabilityZone"),
             Created=json_data.get("Created"),
             Endpoints=json_data.get("Endpoints"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NetworkId=json_data.get("NetworkId"),
             NodeType=json_data.get("NodeType"),

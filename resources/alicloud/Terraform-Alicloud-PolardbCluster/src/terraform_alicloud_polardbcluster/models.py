@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DbType: Optional[str]
     DbVersion: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     MaintainTime: Optional[str]
     ModifyType: Optional[str]
     PayType: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             DbType=json_data.get("DbType"),
             DbVersion=json_data.get("DbVersion"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             MaintainTime=json_data.get("MaintainTime"),
             ModifyType=json_data.get("ModifyType"),
             PayType=json_data.get("PayType"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

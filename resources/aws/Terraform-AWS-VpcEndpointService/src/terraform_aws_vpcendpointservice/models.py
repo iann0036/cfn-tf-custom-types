@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     AllowedPrincipals: Optional[Sequence[str]]
     AvailabilityZones: Optional[Sequence[str]]
     BaseEndpointDnsNames: Optional[Sequence[str]]
+    Id: Optional[str]
     ManagesVpcEndpoints: Optional[bool]
     NetworkLoadBalancerArns: Optional[Sequence[str]]
     PrivateDnsName: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             AllowedPrincipals=json_data.get("AllowedPrincipals"),
             AvailabilityZones=json_data.get("AvailabilityZones"),
             BaseEndpointDnsNames=json_data.get("BaseEndpointDnsNames"),
+            Id=json_data.get("Id"),
             ManagesVpcEndpoints=json_data.get("ManagesVpcEndpoints"),
             NetworkLoadBalancerArns=json_data.get("NetworkLoadBalancerArns"),
             PrivateDnsName=json_data.get("PrivateDnsName"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

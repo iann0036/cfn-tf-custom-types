@@ -26,6 +26,9 @@
             "type": "number",
             "description": "The bandwidth configured for the interconnected regions communication."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "The ID of the CEN."
@@ -49,10 +52,11 @@
         "RegionIds"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The VCL code that specifies exactly what the snippet does."
         },
+        "Id": {
+            "type": "string"
+        },
         "ServiceId": {
             "type": "string",
             "description": "The ID of the service that the dynamic snippet belongs to."
@@ -28,10 +31,11 @@
         "SnippetId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

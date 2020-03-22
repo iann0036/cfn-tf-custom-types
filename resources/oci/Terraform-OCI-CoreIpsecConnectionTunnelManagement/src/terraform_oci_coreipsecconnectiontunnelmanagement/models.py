@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     CpeIp: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     IkeVersion: Optional[str]
     IpsecId: Optional[str]
     Routing: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             CpeIp=json_data.get("CpeIp"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             IkeVersion=json_data.get("IkeVersion"),
             IpsecId=json_data.get("IpsecId"),
             Routing=json_data.get("Routing"),

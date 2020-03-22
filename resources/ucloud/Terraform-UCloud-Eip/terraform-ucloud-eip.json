@@ -29,6 +29,9 @@
         "ExpireTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InternetType": {
             "type": "string",
             "description": "Type of Elastic IP routes. Possible values are: `international` as international BGP IP and `bgp` as china mainland BGP IP."
@@ -67,16 +70,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -96,13 +99,14 @@
         "/properties/tfcfnid",
         "/properties/CreateTime",
         "/properties/ExpireTime",
+        "/properties/Id",
         "/properties/IpSet",
         "/properties/PublicIp",
         "/properties/Resource",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

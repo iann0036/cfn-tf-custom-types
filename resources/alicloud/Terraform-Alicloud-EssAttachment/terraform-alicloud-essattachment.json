@@ -12,6 +12,9 @@
             "type": "boolean",
             "description": "Whether to remove forcibly \"AutoCreated\" ECS instances in order to release scaling group capacity \"MaxSize\" for attaching ECS instances. Default to false."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceIds": {
             "type": "array",
             "insertionOrder": true,
@@ -31,10 +34,11 @@
         "ScalingGroupId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

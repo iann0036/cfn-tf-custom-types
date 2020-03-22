@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllowConnections: Optional[bool]
     ConnectionLimit: Optional[float]
     Encoding: Optional[str]
+    Id: Optional[str]
     IsTemplate: Optional[bool]
     LcCollate: Optional[str]
     LcCtype: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AllowConnections=json_data.get("AllowConnections"),
             ConnectionLimit=json_data.get("ConnectionLimit"),
             Encoding=json_data.get("Encoding"),
+            Id=json_data.get("Id"),
             IsTemplate=json_data.get("IsTemplate"),
             LcCollate=json_data.get("LcCollate"),
             LcCtype=json_data.get("LcCtype"),

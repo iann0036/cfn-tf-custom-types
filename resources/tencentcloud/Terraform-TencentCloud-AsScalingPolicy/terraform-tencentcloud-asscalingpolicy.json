@@ -28,6 +28,9 @@
             "type": "number",
             "description": "Cooldwon time in second. Default is 300."
         },
+        "Id": {
+            "type": "string"
+        },
         "MetricName": {
             "type": "string",
             "description": "Name of an indicator, which can be CPU_UTILIZATION, MEM_UTILIZATION, LAN_TRAFFIC_OUT, LAN_TRAFFIC_IN, WAN_TRAFFIC_OUT and WAN_TRAFFIC_IN."
@@ -74,10 +77,11 @@
         "Threshold"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

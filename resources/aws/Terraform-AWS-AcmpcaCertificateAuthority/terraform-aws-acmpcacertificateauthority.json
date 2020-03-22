@@ -18,7 +18,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Subject"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -35,7 +37,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CrlConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -138,6 +141,9 @@
         "Enabled": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "NotAfter": {
             "type": "string"
         },
@@ -160,16 +166,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -222,13 +228,14 @@
         "/properties/Certificate",
         "/properties/CertificateChain",
         "/properties/CertificateSigningRequest",
+        "/properties/Id",
         "/properties/NotAfter",
         "/properties/NotBefore",
         "/properties/Serial",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

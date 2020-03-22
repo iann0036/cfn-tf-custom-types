@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Ip: Optional[str]
     Ipreverse: Optional[str]
     Reverse: Optional[str]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Ip=json_data.get("Ip"),
             Ipreverse=json_data.get("Ipreverse"),
             Reverse=json_data.get("Reverse"),

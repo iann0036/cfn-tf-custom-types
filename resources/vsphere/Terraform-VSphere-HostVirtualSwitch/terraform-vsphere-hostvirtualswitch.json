@@ -37,6 +37,9 @@
             "type": "string",
             "description": "The [managed object ID][docs-about-morefs] of\nthe host to set the virtual switch up on. Forces a new resource if changed."
         },
+        "Id": {
+            "type": "string"
+        },
         "LinkDiscoveryOperation": {
             "type": "string"
         },
@@ -97,10 +100,11 @@
         "StandbyNics"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

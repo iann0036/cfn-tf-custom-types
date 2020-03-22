@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "Enable this rule or not (default: `true`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Metric": {
             "type": "number",
             "description": "Metric value."
@@ -71,10 +74,11 @@
         "VirtualRouter"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

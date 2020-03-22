@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeviceId: Optional[str]
     ForceBond: Optional[bool]
+    Id: Optional[str]
     Native: Optional[bool]
     PortId: Optional[str]
     PortName: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DeviceId=json_data.get("DeviceId"),
             ForceBond=json_data.get("ForceBond"),
+            Id=json_data.get("Id"),
             Native=json_data.get("Native"),
             PortId=json_data.get("PortId"),
             PortName=json_data.get("PortName"),

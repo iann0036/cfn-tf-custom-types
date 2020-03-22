@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     BackupStatus: Optional[str]
     Container: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Region: Optional[str]
     ServiceMetadata: Optional[str]
     ShareIds: Optional[Sequence[str]]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             BackupStatus=json_data.get("BackupStatus"),
             Container=json_data.get("Container"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             ServiceMetadata=json_data.get("ServiceMetadata"),
             ShareIds=json_data.get("ShareIds"),

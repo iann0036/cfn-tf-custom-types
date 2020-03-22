@@ -35,6 +35,9 @@
             "type": "string",
             "description": "(Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxFsStatBytes": {
             "type": "string",
             "description": "(Updatable) Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'."
@@ -68,12 +71,13 @@
         "/properties/tfcfnid",
         "/properties/AvailabilityDomain",
         "/properties/CompartmentId",
+        "/properties/Id",
         "/properties/State",
         "/properties/TimeCreated",
         "/properties/VcnId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The Name of the API Management Group within the API Management Service. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "ProductId": {
             "type": "string",
             "description": "The ID of the API Management Product within the API Management Service. Changing this forces a new resource to be created."
@@ -56,10 +59,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

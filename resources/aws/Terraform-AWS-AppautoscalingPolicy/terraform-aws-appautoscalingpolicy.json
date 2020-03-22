@@ -68,14 +68,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CustomizedMetricSpecification"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PredefinedMetricSpecification": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PredefinedMetricSpecification"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -158,6 +160,9 @@
         "Cooldown": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "MetricAggregationType": {
             "type": "string"
         },
@@ -235,10 +240,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Arn"
+        "/properties/Arn",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

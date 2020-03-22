@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ActualNodeCount: Optional[float]
     AutoScale: Optional[bool]
     ClusterId: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MaxNodes: Optional[float]
     MinNodes: Optional[float]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             ActualNodeCount=json_data.get("ActualNodeCount"),
             AutoScale=json_data.get("AutoScale"),
             ClusterId=json_data.get("ClusterId"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             MaxNodes=json_data.get("MaxNodes"),
             MinNodes=json_data.get("MinNodes"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

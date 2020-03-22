@@ -83,6 +83,9 @@
         "EnableSso": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -105,16 +108,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -147,10 +150,11 @@
         "/properties/tfcfnid",
         "/properties/AccessUrl",
         "/properties/DnsIpAddresses",
+        "/properties/Id",
         "/properties/SecurityGroupId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

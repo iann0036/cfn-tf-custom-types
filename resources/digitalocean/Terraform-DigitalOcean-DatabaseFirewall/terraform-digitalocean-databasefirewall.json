@@ -29,6 +29,9 @@
             "type": "string",
             "description": "The ID of the target database cluster."
         },
+        "Id": {
+            "type": "string"
+        },
         "Rule": {
             "type": "array",
             "insertionOrder": true,
@@ -43,10 +46,11 @@
         "ClusterId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     BoundScaleSets: Optional[Sequence[str]]
     BoundServicePrincipalIds: Optional[Sequence[str]]
     BoundSubscriptionIds: Optional[Sequence[str]]
+    Id: Optional[str]
     MaxTtl: Optional[float]
     Period: Optional[float]
     Policies: Optional[Sequence[str]]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             BoundScaleSets=json_data.get("BoundScaleSets"),
             BoundServicePrincipalIds=json_data.get("BoundServicePrincipalIds"),
             BoundSubscriptionIds=json_data.get("BoundSubscriptionIds"),
+            Id=json_data.get("Id"),
             MaxTtl=json_data.get("MaxTtl"),
             Period=json_data.get("Period"),
             Policies=json_data.get("Policies"),

@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The source host of the user. Defaults to \"localhost\". Conflicts with `role`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Privileges": {
             "type": "array",
             "insertionOrder": true,
@@ -58,10 +61,11 @@
         "Database"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -117,6 +117,9 @@
                 "type": "number"
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The Firewall name."
@@ -172,11 +175,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/PendingChanges",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

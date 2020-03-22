@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ConfigurationId: Optional[str]
+    Id: Optional[str]
     RepositoryName: Optional[str]
     Trigger: Optional[Sequence["_Trigger"]]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ConfigurationId=json_data.get("ConfigurationId"),
+            Id=json_data.get("Id"),
             RepositoryName=json_data.get("RepositoryName"),
             Trigger=json_data.get("Trigger"),
         )

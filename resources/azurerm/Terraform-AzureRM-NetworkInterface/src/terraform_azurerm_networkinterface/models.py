@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DnsServers: Optional[Sequence[str]]
     EnableAcceleratedNetworking: Optional[bool]
     EnableIpForwarding: Optional[bool]
+    Id: Optional[str]
     InternalDnsNameLabel: Optional[str]
     Location: Optional[str]
     MacAddress: Optional[str]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             DnsServers=json_data.get("DnsServers"),
             EnableAcceleratedNetworking=json_data.get("EnableAcceleratedNetworking"),
             EnableIpForwarding=json_data.get("EnableIpForwarding"),
+            Id=json_data.get("Id"),
             InternalDnsNameLabel=json_data.get("InternalDnsNameLabel"),
             Location=json_data.get("Location"),
             MacAddress=json_data.get("MacAddress"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -11,6 +11,9 @@
         "Etag": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Permission": {
             "type": "string",
             "description": "The permissions of team members regarding the repository.\nMust be one of `pull`, `triage`, `push`, `maintain`, or `admin`. Defaults to `pull`."
@@ -31,10 +34,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Etag"
+        "/properties/Etag",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

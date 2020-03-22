@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CustomAttributes: Optional[Sequence["_CustomAttributes"]]
     DatacenterId: Optional[str]
     Folder: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     SdrsAdvancedOptions: Optional[Sequence["_SdrsAdvancedOptions"]]
     SdrsAutomationLevel: Optional[str]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             CustomAttributes=json_data.get("CustomAttributes"),
             DatacenterId=json_data.get("DatacenterId"),
             Folder=json_data.get("Folder"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SdrsAdvancedOptions=json_data.get("SdrsAdvancedOptions"),
             SdrsAutomationLevel=json_data.get("SdrsAutomationLevel"),
@@ -105,8 +107,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomAttributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -116,8 +118,8 @@ class CustomAttributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -127,8 +129,8 @@ _CustomAttributes = CustomAttributes
 
 @dataclass
 class SdrsAdvancedOptions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -138,8 +140,8 @@ class SdrsAdvancedOptions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

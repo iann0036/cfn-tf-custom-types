@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     DistinguishedName: Optional[str]
     DomainVerificationToken: Optional[str]
     ExpirationTime: Optional[str]
+    Id: Optional[str]
     IntermediateThumbprint: Optional[str]
     IsPrivateKeyExternal: Optional[bool]
     KeySize: Optional[float]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             DistinguishedName=json_data.get("DistinguishedName"),
             DomainVerificationToken=json_data.get("DomainVerificationToken"),
             ExpirationTime=json_data.get("ExpirationTime"),
+            Id=json_data.get("Id"),
             IntermediateThumbprint=json_data.get("IntermediateThumbprint"),
             IsPrivateKeyExternal=json_data.get("IsPrivateKeyExternal"),
             KeySize=json_data.get("KeySize"),
@@ -121,8 +123,8 @@ _Certificates = Certificates
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -132,8 +134,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

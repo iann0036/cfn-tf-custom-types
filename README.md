@@ -20,9 +20,9 @@ The below requirements must be installed and be available in PATH:
 
 ## Installation
 
-### State Bucket
+### Execution Infrastructure
 
-[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=terraform-cloudformation-state-bucket&templateURL=https://s3.amazonaws.com/ianmckay-us-east-1/cf-tf-custom-types/template.yml)
+[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=tfcfn-custom-type-resources&templateURL=https://s3.amazonaws.com/ianmckay-us-east-1/cf-tf-custom-types/template.yml)
 
 Click the above link to deploy the stack to your environment. This stack creates a single bucket in your account for the storage of state data.
 

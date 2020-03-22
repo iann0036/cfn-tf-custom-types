@@ -68,6 +68,9 @@
             "type": "string",
             "description": "The id of the deployment."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the Target Set. Must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen."
@@ -109,10 +112,11 @@
         "Weight"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -11,6 +11,9 @@
         "AllocationId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "NetworkInterfaceId": {
             "type": "string"
         },
@@ -30,16 +33,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         }
@@ -51,12 +54,13 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/NetworkInterfaceId",
         "/properties/PrivateIp",
         "/properties/PublicIp"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

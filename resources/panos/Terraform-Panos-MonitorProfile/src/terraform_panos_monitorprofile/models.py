@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Action: Optional[str]
+    Id: Optional[str]
     Interval: Optional[float]
     Name: Optional[str]
     Threshold: Optional[float]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Action=json_data.get("Action"),
+            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             Name=json_data.get("Name"),
             Threshold=json_data.get("Threshold"),

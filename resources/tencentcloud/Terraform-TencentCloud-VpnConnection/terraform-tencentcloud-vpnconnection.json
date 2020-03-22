@@ -41,6 +41,9 @@
         "EncryptProto": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IkeDhGroupName": {
             "type": "string",
             "description": "DH group name of the IKE operation specification, valid values are `GROUP1`, `GROUP2`, `GROUP5`, `GROUP14`, `GROUP24`. Default value is `GROUP1`."
@@ -133,16 +136,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A list of tags used to associate different resources."
@@ -179,13 +182,14 @@
         "/properties/tfcfnid",
         "/properties/CreateTime",
         "/properties/EncryptProto",
+        "/properties/Id",
         "/properties/NetStatus",
         "/properties/RouteType",
         "/properties/State",
         "/properties/VpnProto"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

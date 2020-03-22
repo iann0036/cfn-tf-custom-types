@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     Comment: Optional[str]
     CreaterepoFlags: Optional[str]
     Environment: Optional[str]
+    Id: Optional[str]
     KeepUpdated: Optional[bool]
     Mirror: Optional[str]
     MirrorLocally: Optional[bool]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Comment=json_data.get("Comment"),
             CreaterepoFlags=json_data.get("CreaterepoFlags"),
             Environment=json_data.get("Environment"),
+            Id=json_data.get("Id"),
             KeepUpdated=json_data.get("KeepUpdated"),
             Mirror=json_data.get("Mirror"),
             MirrorLocally=json_data.get("MirrorLocally"),

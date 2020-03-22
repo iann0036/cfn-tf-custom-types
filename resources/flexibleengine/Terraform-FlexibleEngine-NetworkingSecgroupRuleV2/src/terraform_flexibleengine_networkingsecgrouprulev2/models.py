@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Direction: Optional[str]
     Ethertype: Optional[str]
+    Id: Optional[str]
     PortRangeMax: Optional[float]
     PortRangeMin: Optional[float]
     Protocol: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Direction=json_data.get("Direction"),
             Ethertype=json_data.get("Ethertype"),
+            Id=json_data.get("Id"),
             PortRangeMax=json_data.get("PortRangeMax"),
             PortRangeMin=json_data.get("PortRangeMin"),
             Protocol=json_data.get("Protocol"),

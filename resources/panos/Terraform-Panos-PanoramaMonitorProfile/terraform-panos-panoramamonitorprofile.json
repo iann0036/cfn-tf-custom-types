@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Action triggered when tunnel's status changes.  Valid values\nare `wait-recover` (default) or `fail-over`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Interval": {
             "type": "number",
             "description": "The probing interval in seconds."
@@ -38,10 +41,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

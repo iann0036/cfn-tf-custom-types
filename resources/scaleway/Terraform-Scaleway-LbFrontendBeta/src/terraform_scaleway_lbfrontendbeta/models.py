@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BackendId: Optional[str]
     CertificateId: Optional[str]
+    Id: Optional[str]
     InboundPort: Optional[float]
     LbId: Optional[str]
     Name: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BackendId=json_data.get("BackendId"),
             CertificateId=json_data.get("CertificateId"),
+            Id=json_data.get("Id"),
             InboundPort=json_data.get("InboundPort"),
             LbId=json_data.get("LbId"),
             Name=json_data.get("Name"),

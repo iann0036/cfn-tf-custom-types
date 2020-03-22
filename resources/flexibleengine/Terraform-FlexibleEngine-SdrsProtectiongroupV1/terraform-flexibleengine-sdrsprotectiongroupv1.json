@@ -38,6 +38,9 @@
             "type": "boolean",
             "description": "Enable protection or not. It can only be set to true when there's replication pairs within the protection group."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of a protection group."
@@ -67,10 +70,11 @@
         "TargetAvailabilityZone"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

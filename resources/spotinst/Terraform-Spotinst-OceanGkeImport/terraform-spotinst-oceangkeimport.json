@@ -65,6 +65,9 @@
             "type": "number",
             "description": "The number of instances to launch and maintain in the cluster."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "The zone the master cluster is located in."
@@ -106,10 +109,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/ClusterControllerId"
+        "/properties/ClusterControllerId",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

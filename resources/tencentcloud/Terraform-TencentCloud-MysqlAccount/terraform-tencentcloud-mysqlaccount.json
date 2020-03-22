@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Database description."
         },
+        "Id": {
+            "type": "string"
+        },
         "MysqlId": {
             "type": "string",
             "description": "Instance ID to which the account belongs."
@@ -32,10 +35,11 @@
         "Password"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

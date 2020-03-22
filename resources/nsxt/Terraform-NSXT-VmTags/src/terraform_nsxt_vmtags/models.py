@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     LogicalPortTag: Optional[Sequence["_LogicalPortTag"]]
     Tag: Optional[Sequence["_Tag"]]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             LogicalPortTag=json_data.get("LogicalPortTag"),
             Tag=json_data.get("Tag"),

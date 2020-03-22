@@ -38,6 +38,9 @@
         "ForwardTableIds": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceChargeType": {
             "type": "string",
             "description": "The billing method of the nat gateway. Valid values are \"PrePaid\" and \"PostPaid\". Default to \"PostPaid\"."
@@ -82,10 +85,11 @@
         "/properties/tfcfnid",
         "/properties/BandwidthPackageIds",
         "/properties/ForwardTableIds",
+        "/properties/Id",
         "/properties/SnatTableIds"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

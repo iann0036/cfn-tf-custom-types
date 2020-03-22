@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     MfaBindRequired: Optional[bool]
     Password: Optional[str]
     PasswordResetRequired: Optional[bool]
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             MfaBindRequired=json_data.get("MfaBindRequired"),
             Password=json_data.get("Password"),
             PasswordResetRequired=json_data.get("PasswordResetRequired"),

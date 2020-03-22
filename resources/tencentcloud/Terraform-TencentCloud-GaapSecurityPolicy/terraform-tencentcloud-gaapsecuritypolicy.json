@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "Indicates whether policy is enable, default value is `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "ProxyId": {
             "type": "string",
             "description": "ID of the GAAP proxy."
@@ -27,10 +30,11 @@
         "ProxyId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

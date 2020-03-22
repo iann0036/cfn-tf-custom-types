@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DataNodeSpec: Optional[str]
     Description: Optional[str]
     Domain: Optional[str]
+    Id: Optional[str]
     InstanceChargeType: Optional[str]
     KibanaDomain: Optional[str]
     KibanaPort: Optional[float]
@@ -76,6 +77,7 @@ class ResourceModel(BaseResourceModel):
             DataNodeSpec=json_data.get("DataNodeSpec"),
             Description=json_data.get("Description"),
             Domain=json_data.get("Domain"),
+            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             KibanaDomain=json_data.get("KibanaDomain"),
             KibanaPort=json_data.get("KibanaPort"),
@@ -103,8 +105,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class KmsEncryptionContext:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class KmsEncryptionContext:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -125,8 +127,8 @@ _KmsEncryptionContext = KmsEncryptionContext
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -136,8 +138,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

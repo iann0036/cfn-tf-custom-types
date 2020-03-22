@@ -56,16 +56,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of additional properties to associate with the Data Factory Dataset PostgreSQL."
@@ -90,6 +90,9 @@
             "type": "string",
             "description": "The folder that this Dataset is in. If not specified, the Dataset will appear at the root level."
         },
+        "Id": {
+            "type": "string"
+        },
         "LinkedServiceName": {
             "type": "string",
             "description": "The Data Factory Linked Service name in which to associate the Dataset with."
@@ -105,16 +108,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of parameters to associate with the Data Factory Dataset PostgreSQL."
@@ -146,10 +149,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -12,21 +12,25 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ScheduleEndDate"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ScheduleStartDate": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ScheduleStartDate"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "StartTimeOfDay": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/StartTimeOfDay"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -40,42 +44,48 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AwsS3DataSource"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GcsDataSink": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GcsDataSink"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "GcsDataSource": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GcsDataSource"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "HttpDataSource": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HttpDataSource"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ObjectConditions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ObjectConditions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "TransferOptions": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/TransferOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -164,7 +174,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AwsAccessKey"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -294,6 +306,9 @@
             "type": "string",
             "description": "Unique description to identify the Transfer Job."
         },
+        "Id": {
+            "type": "string"
+        },
         "LastModificationTime": {
             "type": "string"
         },
@@ -417,11 +432,12 @@
         "/properties/tfcfnid",
         "/properties/CreationTime",
         "/properties/DeletionTime",
+        "/properties/Id",
         "/properties/LastModificationTime",
         "/properties/Name"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

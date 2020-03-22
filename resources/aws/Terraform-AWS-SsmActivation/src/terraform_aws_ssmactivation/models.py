@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ExpirationDate: Optional[str]
     Expired: Optional[str]
     IamRole: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     RegistrationCount: Optional[float]
     RegistrationLimit: Optional[float]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             ExpirationDate=json_data.get("ExpirationDate"),
             Expired=json_data.get("Expired"),
             IamRole=json_data.get("IamRole"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RegistrationCount=json_data.get("RegistrationCount"),
             RegistrationLimit=json_data.get("RegistrationLimit"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

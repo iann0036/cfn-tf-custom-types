@@ -15,6 +15,9 @@
                 "type": "string"
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancingRules": {
             "type": "array",
             "insertionOrder": true,
@@ -44,10 +47,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/BackendIpConfigurations",
+        "/properties/Id",
         "/properties/LoadBalancingRules"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

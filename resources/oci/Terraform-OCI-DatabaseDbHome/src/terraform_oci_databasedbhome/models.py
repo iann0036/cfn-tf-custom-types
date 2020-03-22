@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DbSystemId: Optional[str]
     DbVersion: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     LastPatchHistoryEntryId: Optional[str]
     LifecycleDetails: Optional[str]
     Source: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             DbSystemId=json_data.get("DbSystemId"),
             DbVersion=json_data.get("DbVersion"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             LastPatchHistoryEntryId=json_data.get("LastPatchHistoryEntryId"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             Source=json_data.get("Source"),
@@ -125,8 +127,8 @@ _Database = Database
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -136,8 +138,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -147,8 +149,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -158,8 +160,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DomainRoles: Optional[Sequence[str]]
     Duration: Optional[str]
     ExpireTime: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ProjectRole: Optional[Sequence["_ProjectRole"]]
     Timeouts: Optional["_Timeouts"]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             DomainRoles=json_data.get("DomainRoles"),
             Duration=json_data.get("Duration"),
             ExpireTime=json_data.get("ExpireTime"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ProjectRole=json_data.get("ProjectRole"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

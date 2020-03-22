@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EngineType: Optional[str]
     EngineVersion: Optional[str]
     ExpectNodeNum: Optional[float]
+    Id: Optional[str]
     Name: Optional[str]
     Nodes: Optional[Sequence["_Nodes"]]
     NodeConfig: Optional[Sequence["_NodeConfig"]]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             EngineType=json_data.get("EngineType"),
             EngineVersion=json_data.get("EngineVersion"),
             ExpectNodeNum=json_data.get("ExpectNodeNum"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Nodes=json_data.get("Nodes"),
             NodeConfig=json_data.get("NodeConfig"),

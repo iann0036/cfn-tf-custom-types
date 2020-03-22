@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Rulebase: Optional[str]
     Vsys: Optional[str]
     Rule: Optional[Sequence["_Rule"]]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Rulebase=json_data.get("Rulebase"),
             Vsys=json_data.get("Vsys"),
             Rule=json_data.get("Rule"),

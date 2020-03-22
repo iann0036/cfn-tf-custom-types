@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CreateMode: Optional[float]
     CreateTime: Optional[str]
     GroupId: Optional[str]
+    Id: Optional[str]
     PolicyId: Optional[str]
     PolicyName: Optional[str]
     PolicyType: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             CreateMode=json_data.get("CreateMode"),
             CreateTime=json_data.get("CreateTime"),
             GroupId=json_data.get("GroupId"),
+            Id=json_data.get("Id"),
             PolicyId=json_data.get("PolicyId"),
             PolicyName=json_data.get("PolicyName"),
             PolicyType=json_data.get("PolicyType"),

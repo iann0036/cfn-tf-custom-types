@@ -12,14 +12,17 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LaunchTemplateSpecification"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Override": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Override"
-                    }
+                    },
+                    "maxItems": 50
                 }
             },
             "required": []
@@ -140,6 +143,9 @@
         "ExcessCapacityTerminationPolicy": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ReplaceUnhealthyInstances": {
             "type": "boolean"
         },
@@ -150,16 +156,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -230,10 +236,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

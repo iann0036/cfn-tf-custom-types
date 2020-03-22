@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreateTime: Optional[str]
     HealthStatus: Optional[str]
+    Id: Optional[str]
     ListenerId: Optional[str]
     Listeners: Optional[Sequence["_Listeners"]]
     PrivateAddress: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreateTime=json_data.get("CreateTime"),
             HealthStatus=json_data.get("HealthStatus"),
+            Id=json_data.get("Id"),
             ListenerId=json_data.get("ListenerId"),
             Listeners=json_data.get("Listeners"),
             PrivateAddress=json_data.get("PrivateAddress"),

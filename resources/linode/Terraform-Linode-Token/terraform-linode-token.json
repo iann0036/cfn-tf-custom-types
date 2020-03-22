@@ -15,6 +15,9 @@
             "type": "string",
             "description": "When this token will expire. Personal Access Tokens cannot be renewed, so after this time the token will be completely unusable and a new token will need to be generated. Tokens may be created with 'null' as their expiry and will never expire unless revoked."
         },
+        "Id": {
+            "type": "string"
+        },
         "Label": {
             "type": "string",
             "description": "A label for the Token."
@@ -34,10 +37,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Created",
+        "/properties/Id",
         "/properties/Token"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

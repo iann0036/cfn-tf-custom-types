@@ -24,6 +24,9 @@
             "type": "string",
             "description": "The path to where the file should be uploaded\nor copied to on vSphere."
         },
+        "Id": {
+            "type": "string"
+        },
         "SourceDatacenter": {
             "type": "string",
             "description": "The name of a datacenter in which the file\nwill be copied from. Forces a new resource if changed."
@@ -44,10 +47,11 @@
         "SourceFile"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

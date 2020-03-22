@@ -29,6 +29,9 @@
             "type": "string",
             "description": "The max version offset of the table. The valid value is 1-9223372036854775807. Defaults to 86400."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceName": {
             "type": "string",
             "description": "The name of the OTS instance in which table will located."
@@ -63,10 +66,11 @@
         "TimeToLive"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

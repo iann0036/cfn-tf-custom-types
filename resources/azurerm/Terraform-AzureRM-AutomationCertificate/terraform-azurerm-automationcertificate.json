@@ -43,6 +43,9 @@
         "Exportable": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the Certificate. Changing this forces a new resource to be created."
@@ -68,10 +71,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Exportable",
+        "/properties/Id",
         "/properties/Thumbprint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ContentBasedDeduplication: Optional[bool]
     DelaySeconds: Optional[float]
     FifoQueue: Optional[bool]
+    Id: Optional[str]
     KmsDataKeyReusePeriodSeconds: Optional[float]
     KmsMasterKeyId: Optional[str]
     MaxMessageSize: Optional[float]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             ContentBasedDeduplication=json_data.get("ContentBasedDeduplication"),
             DelaySeconds=json_data.get("DelaySeconds"),
             FifoQueue=json_data.get("FifoQueue"),
+            Id=json_data.get("Id"),
             KmsDataKeyReusePeriodSeconds=json_data.get("KmsDataKeyReusePeriodSeconds"),
             KmsMasterKeyId=json_data.get("KmsMasterKeyId"),
             MaxMessageSize=json_data.get("MaxMessageSize"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

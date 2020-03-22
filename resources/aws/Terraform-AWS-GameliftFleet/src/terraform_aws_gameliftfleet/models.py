@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Ec2InstanceType: Optional[str]
     FleetType: Optional[str]
+    Id: Optional[str]
     InstanceRoleArn: Optional[str]
     LogPaths: Optional[Sequence[str]]
     MetricGroups: Optional[Sequence[str]]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Ec2InstanceType=json_data.get("Ec2InstanceType"),
             FleetType=json_data.get("FleetType"),
+            Id=json_data.get("Id"),
             InstanceRoleArn=json_data.get("InstanceRoleArn"),
             LogPaths=json_data.get("LogPaths"),
             MetricGroups=json_data.get("MetricGroups"),
@@ -89,8 +91,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

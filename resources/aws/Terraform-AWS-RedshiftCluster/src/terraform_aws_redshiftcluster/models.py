@@ -58,6 +58,7 @@ class ResourceModel(BaseResourceModel):
     EnhancedVpcRouting: Optional[bool]
     FinalSnapshotIdentifier: Optional[str]
     IamRoles: Optional[Sequence[str]]
+    Id: Optional[str]
     KmsKeyId: Optional[str]
     MasterPassword: Optional[str]
     MasterUsername: Optional[str]
@@ -108,6 +109,7 @@ class ResourceModel(BaseResourceModel):
             EnhancedVpcRouting=json_data.get("EnhancedVpcRouting"),
             FinalSnapshotIdentifier=json_data.get("FinalSnapshotIdentifier"),
             IamRoles=json_data.get("IamRoles"),
+            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             MasterPassword=json_data.get("MasterPassword"),
             MasterUsername=json_data.get("MasterUsername"),
@@ -135,8 +137,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -146,8 +148,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

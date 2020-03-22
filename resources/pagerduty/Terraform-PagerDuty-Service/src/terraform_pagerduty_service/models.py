@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EscalationPolicy: Optional[str]
     HtmlUrl: Optional[str]
+    Id: Optional[str]
     LastIncidentTimestamp: Optional[str]
     Name: Optional[str]
     Status: Optional[str]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EscalationPolicy=json_data.get("EscalationPolicy"),
             HtmlUrl=json_data.get("HtmlUrl"),
+            Id=json_data.get("Id"),
             LastIncidentTimestamp=json_data.get("LastIncidentTimestamp"),
             Name=json_data.get("Name"),
             Status=json_data.get("Status"),

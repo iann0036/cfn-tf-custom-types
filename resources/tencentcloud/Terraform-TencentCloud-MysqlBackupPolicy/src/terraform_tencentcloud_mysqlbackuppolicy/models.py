@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BackupModel: Optional[str]
     BackupTime: Optional[str]
     BinlogPeriod: Optional[float]
+    Id: Optional[str]
     MysqlId: Optional[str]
     RetentionPeriod: Optional[float]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             BackupModel=json_data.get("BackupModel"),
             BackupTime=json_data.get("BackupTime"),
             BinlogPeriod=json_data.get("BinlogPeriod"),
+            Id=json_data.get("Id"),
             MysqlId=json_data.get("MysqlId"),
             RetentionPeriod=json_data.get("RetentionPeriod"),
         )

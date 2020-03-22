@@ -35,12 +35,15 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 
 @dataclass
 class ResourceModel(BaseResourceModel):
-    tfcfnid: Optional[str]
-    Actions: Optional[Sequence[str]]
-    Description: Optional[str]
-    Expression: Optional[str]
-    Priority: Optional[float]
-    Region: Optional[str]
+    TPSCode: Optional[str]
+    Title: Optional[str]
+    CoverSheetIncluded: Optional[bool]
+    DueDate: Optional[str]
+    ApprovalDate: Optional[str]
+    Memo: Optional["_Memo"]
+    SecondCopyOfMemo: Optional["_Memo"]
+    TestCode: Optional[str]
+    Authors: Optional[Sequence[str]]
 
     @classmethod
     def _deserialize(
@@ -50,16 +53,41 @@ class ResourceModel(BaseResourceModel):
         if not json_data:
             return None
         return cls(
-            tfcfnid=json_data.get("tfcfnid"),
-            Actions=json_data.get("Actions"),
-            Description=json_data.get("Description"),
-            Expression=json_data.get("Expression"),
-            Priority=json_data.get("Priority"),
-            Region=json_data.get("Region"),
+            TPSCode=json_data.get("TPSCode"),
+            Title=json_data.get("Title"),
+            CoverSheetIncluded=json_data.get("CoverSheetIncluded"),
+            DueDate=json_data.get("DueDate"),
+            ApprovalDate=json_data.get("ApprovalDate"),
+            Memo=Memo._deserialize(json_data.get("Memo")),
+            SecondCopyOfMemo=Memo._deserialize(json_data.get("SecondCopyOfMemo")),
+            TestCode=json_data.get("TestCode"),
+            Authors=json_data.get("Authors"),
         )
 
 
 # work around possible type aliasing issues when variable has same name as a model
 _ResourceModel = ResourceModel
+
+
+@dataclass
+class Memo:
+    Heading: Optional[str]
+    Body: Optional[str]
+
+    @classmethod
+    def _deserialize(
+        cls: Type["_Memo"],
+        json_data: Optional[Mapping[str, Any]],
+    ) -> Optional["_Memo"]:
+        if not json_data:
+            return None
+        return cls(
+            Heading=json_data.get("Heading"),
+            Body=json_data.get("Body"),
+        )
+
+
+# work around possible type aliasing issues when variable has same name as a model
+_Memo = Memo
 
 

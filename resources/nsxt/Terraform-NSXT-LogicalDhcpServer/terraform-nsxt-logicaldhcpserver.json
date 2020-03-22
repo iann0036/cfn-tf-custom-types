@@ -96,6 +96,9 @@
             "type": "string",
             "description": "Gateway IP."
         },
+        "Id": {
+            "type": "string"
+        },
         "Revision": {
             "type": "number"
         },
@@ -130,10 +133,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AttachedLogicalPortId",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

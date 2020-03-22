@@ -61,6 +61,7 @@ class ResourceModel(BaseResourceModel):
     ExternalIp: Optional[str]
     Fee: Optional[str]
     HadoopVersion: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     InternalIp: Optional[str]
     LogCollection: Optional[float]
@@ -127,6 +128,7 @@ class ResourceModel(BaseResourceModel):
             ExternalIp=json_data.get("ExternalIp"),
             Fee=json_data.get("Fee"),
             HadoopVersion=json_data.get("HadoopVersion"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             InternalIp=json_data.get("InternalIp"),
             LogCollection=json_data.get("LogCollection"),
@@ -167,8 +169,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -178,8 +180,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

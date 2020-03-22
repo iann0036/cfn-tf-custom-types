@@ -29,6 +29,9 @@
         "GlobalClusterResourceId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "StorageEncrypted": {
             "type": "boolean"
         }
@@ -40,10 +43,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Arn",
-        "/properties/GlobalClusterResourceId"
+        "/properties/GlobalClusterResourceId",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ComputePlatform: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     UniqueId: Optional[str]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ComputePlatform=json_data.get("ComputePlatform"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             UniqueId=json_data.get("UniqueId"),
         )

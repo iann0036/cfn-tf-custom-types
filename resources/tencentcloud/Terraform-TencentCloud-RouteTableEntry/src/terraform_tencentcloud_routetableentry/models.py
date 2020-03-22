@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DestinationCidrBlock: Optional[str]
+    Id: Optional[str]
     NextHub: Optional[str]
     NextType: Optional[str]
     RouteTableId: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DestinationCidrBlock=json_data.get("DestinationCidrBlock"),
+            Id=json_data.get("Id"),
             NextHub=json_data.get("NextHub"),
             NextType=json_data.get("NextType"),
             RouteTableId=json_data.get("RouteTableId"),

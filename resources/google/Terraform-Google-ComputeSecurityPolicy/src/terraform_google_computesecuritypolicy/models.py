@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Fingerprint: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
     SelfLink: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Fingerprint=json_data.get("Fingerprint"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),
             SelfLink=json_data.get("SelfLink"),

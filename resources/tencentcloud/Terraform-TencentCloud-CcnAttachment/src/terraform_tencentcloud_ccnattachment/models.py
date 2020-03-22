@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AttachedTime: Optional[str]
     CcnId: Optional[str]
     CidrBlock: Optional[Sequence[str]]
+    Id: Optional[str]
     InstanceId: Optional[str]
     InstanceRegion: Optional[str]
     InstanceType: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             AttachedTime=json_data.get("AttachedTime"),
             CcnId=json_data.get("CcnId"),
             CidrBlock=json_data.get("CidrBlock"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             InstanceRegion=json_data.get("InstanceRegion"),
             InstanceType=json_data.get("InstanceType"),

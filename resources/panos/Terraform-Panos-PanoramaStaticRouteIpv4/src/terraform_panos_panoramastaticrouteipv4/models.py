@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AdminDistance: Optional[float]
     BfdProfile: Optional[str]
     Destination: Optional[str]
+    Id: Optional[str]
     Interface: Optional[str]
     Metric: Optional[float]
     Name: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             AdminDistance=json_data.get("AdminDistance"),
             BfdProfile=json_data.get("BfdProfile"),
             Destination=json_data.get("Destination"),
+            Id=json_data.get("Id"),
             Interface=json_data.get("Interface"),
             Metric=json_data.get("Metric"),
             Name=json_data.get("Name"),

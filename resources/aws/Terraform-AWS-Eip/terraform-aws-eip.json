@@ -37,6 +37,9 @@
         "Domain": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Instance": {
             "type": "string"
         },
@@ -65,16 +68,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -92,13 +95,14 @@
         "/properties/AllocationId",
         "/properties/AssociationId",
         "/properties/Domain",
+        "/properties/Id",
         "/properties/PrivateDns",
         "/properties/PrivateIp",
         "/properties/PublicDns",
         "/properties/PublicIp"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

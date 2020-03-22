@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AnycastZone: Optional[str]
     ApplicableForClb: Optional[bool]
+    Id: Optional[str]
     InternetChargeType: Optional[str]
     InternetMaxBandwidthOut: Optional[float]
     InternetServiceProvider: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AnycastZone=json_data.get("AnycastZone"),
             ApplicableForClb=json_data.get("ApplicableForClb"),
+            Id=json_data.get("Id"),
             InternetChargeType=json_data.get("InternetChargeType"),
             InternetMaxBandwidthOut=json_data.get("InternetMaxBandwidthOut"),
             InternetServiceProvider=json_data.get("InternetServiceProvider"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

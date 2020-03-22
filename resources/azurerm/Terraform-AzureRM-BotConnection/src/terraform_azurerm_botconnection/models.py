@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BotName: Optional[str]
     ClientId: Optional[str]
     ClientSecret: Optional[str]
+    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             BotName=json_data.get("BotName"),
             ClientId=json_data.get("ClientId"),
             ClientSecret=json_data.get("ClientSecret"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -99,8 +101,8 @@ _Parameters = Parameters
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -110,8 +112,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

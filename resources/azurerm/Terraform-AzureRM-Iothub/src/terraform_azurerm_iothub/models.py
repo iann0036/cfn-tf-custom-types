@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     EventHubPartitionCount: Optional[float]
     EventHubRetentionInDays: Optional[float]
     Hostname: Optional[str]
+    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             EventHubPartitionCount=json_data.get("EventHubPartitionCount"),
             EventHubRetentionInDays=json_data.get("EventHubRetentionInDays"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
@@ -121,8 +123,8 @@ _SharedAccessPolicy = SharedAccessPolicy
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -132,8 +134,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

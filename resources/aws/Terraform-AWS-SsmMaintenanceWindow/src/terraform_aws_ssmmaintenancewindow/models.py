@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Duration: Optional[float]
     Enabled: Optional[bool]
     EndDate: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Schedule: Optional[str]
     ScheduleTimezone: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             Duration=json_data.get("Duration"),
             Enabled=json_data.get("Enabled"),
             EndDate=json_data.get("EndDate"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Schedule=json_data.get("Schedule"),
             ScheduleTimezone=json_data.get("ScheduleTimezone"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

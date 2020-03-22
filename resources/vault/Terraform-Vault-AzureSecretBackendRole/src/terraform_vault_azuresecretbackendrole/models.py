@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ApplicationObjectId: Optional[str]
     Backend: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     MaxTtl: Optional[str]
     Role: Optional[str]
     Ttl: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             ApplicationObjectId=json_data.get("ApplicationObjectId"),
             Backend=json_data.get("Backend"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             MaxTtl=json_data.get("MaxTtl"),
             Role=json_data.get("Role"),
             Ttl=json_data.get("Ttl"),

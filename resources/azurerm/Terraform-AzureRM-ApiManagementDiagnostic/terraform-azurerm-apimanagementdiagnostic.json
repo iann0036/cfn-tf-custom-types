@@ -36,6 +36,9 @@
             "type": "boolean",
             "description": "Indicates whether a Diagnostic should receive data or not."
         },
+        "Id": {
+            "type": "string"
+        },
         "Identifier": {
             "type": "string",
             "description": "The diagnostic identifier for the API Management Service. At this time the only supported value is `applicationinsights`. Changing this forces a new resource to be created."
@@ -56,10 +59,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

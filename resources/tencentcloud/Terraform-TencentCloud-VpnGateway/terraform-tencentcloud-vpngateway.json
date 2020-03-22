@@ -22,6 +22,9 @@
         "ExpiredTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsAddressBlocked": {
             "type": "boolean"
         },
@@ -56,16 +59,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A list of tags used to associate different resources."
@@ -92,6 +95,7 @@
         "/properties/tfcfnid",
         "/properties/CreateTime",
         "/properties/ExpiredTime",
+        "/properties/Id",
         "/properties/IsAddressBlocked",
         "/properties/NewPurchasePlan",
         "/properties/PublicIpAddress",
@@ -100,7 +104,7 @@
         "/properties/Type"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

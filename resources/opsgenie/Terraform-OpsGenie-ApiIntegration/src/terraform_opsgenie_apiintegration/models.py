@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllowWriteAccess: Optional[bool]
     ApiKey: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     IgnoreRespondersFromPayload: Optional[bool]
     Name: Optional[str]
     OwnerTeamId: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             AllowWriteAccess=json_data.get("AllowWriteAccess"),
             ApiKey=json_data.get("ApiKey"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             IgnoreRespondersFromPayload=json_data.get("IgnoreRespondersFromPayload"),
             Name=json_data.get("Name"),
             OwnerTeamId=json_data.get("OwnerTeamId"),

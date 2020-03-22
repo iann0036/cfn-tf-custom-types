@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     DestinationZone: Optional[str]
     DeviceGroup: Optional[str]
     Disabled: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     NegateTarget: Optional[bool]
     Rulebase: Optional[str]
@@ -86,6 +87,7 @@ class ResourceModel(BaseResourceModel):
             DestinationZone=json_data.get("DestinationZone"),
             DeviceGroup=json_data.get("DeviceGroup"),
             Disabled=json_data.get("Disabled"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NegateTarget=json_data.get("NegateTarget"),
             Rulebase=json_data.get("Rulebase"),

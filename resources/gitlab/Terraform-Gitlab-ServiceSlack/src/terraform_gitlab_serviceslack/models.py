@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ConfidentialIssueChannel: Optional[str]
     ConfidentialIssuesEvents: Optional[bool]
     ConfidentialNoteEvents: Optional[bool]
+    Id: Optional[str]
     IssueChannel: Optional[str]
     IssuesEvents: Optional[bool]
     JobEvents: Optional[bool]
@@ -72,6 +73,7 @@ class ResourceModel(BaseResourceModel):
             ConfidentialIssueChannel=json_data.get("ConfidentialIssueChannel"),
             ConfidentialIssuesEvents=json_data.get("ConfidentialIssuesEvents"),
             ConfidentialNoteEvents=json_data.get("ConfidentialNoteEvents"),
+            Id=json_data.get("Id"),
             IssueChannel=json_data.get("IssueChannel"),
             IssuesEvents=json_data.get("IssuesEvents"),
             JobEvents=json_data.get("JobEvents"),

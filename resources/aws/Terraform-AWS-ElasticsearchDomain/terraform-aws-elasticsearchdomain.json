@@ -30,7 +30,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ZoneAwarenessConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -199,16 +200,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -227,6 +228,9 @@
         "Endpoint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KibanaEndpoint": {
             "type": "string"
         },
@@ -237,16 +241,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -339,10 +343,11 @@
         "/properties/Arn",
         "/properties/DomainId",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/KibanaEndpoint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

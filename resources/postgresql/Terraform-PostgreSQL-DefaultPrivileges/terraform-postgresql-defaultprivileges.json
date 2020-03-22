@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The database to grant default privileges for this role."
         },
+        "Id": {
+            "type": "string"
+        },
         "ObjectType": {
             "type": "string",
             "description": "The PostgreSQL object type to set the default privileges on (one of: table, sequence)."
@@ -47,10 +50,11 @@
         "Schema"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

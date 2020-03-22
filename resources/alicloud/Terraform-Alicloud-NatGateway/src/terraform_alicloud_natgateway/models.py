@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BandwidthPackageIds: Optional[str]
     Description: Optional[str]
     ForwardTableIds: Optional[str]
+    Id: Optional[str]
     InstanceChargeType: Optional[str]
     Name: Optional[str]
     Period: Optional[float]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             BandwidthPackageIds=json_data.get("BandwidthPackageIds"),
             Description=json_data.get("Description"),
             ForwardTableIds=json_data.get("ForwardTableIds"),
+            Id=json_data.get("Id"),
             InstanceChargeType=json_data.get("InstanceChargeType"),
             Name=json_data.get("Name"),
             Period=json_data.get("Period"),

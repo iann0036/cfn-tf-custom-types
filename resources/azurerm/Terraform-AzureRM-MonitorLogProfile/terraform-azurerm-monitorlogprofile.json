@@ -53,6 +53,9 @@
             },
             "description": "List of categories of the logs."
         },
+        "Id": {
+            "type": "string"
+        },
         "Locations": {
             "type": "array",
             "insertionOrder": true,
@@ -93,10 +96,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

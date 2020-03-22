@@ -50,6 +50,7 @@ class ResourceModel(BaseResourceModel):
     ExtendParam: Optional[Sequence["_ExtendParam"]]
     FlavorId: Optional[str]
     HighwaySubnetId: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MultiAz: Optional[bool]
     Name: Optional[str]
@@ -82,6 +83,7 @@ class ResourceModel(BaseResourceModel):
             ExtendParam=json_data.get("ExtendParam"),
             FlavorId=json_data.get("FlavorId"),
             HighwaySubnetId=json_data.get("HighwaySubnetId"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             MultiAz=json_data.get("MultiAz"),
             Name=json_data.get("Name"),
@@ -99,8 +101,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Annotations:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -110,8 +112,8 @@ class Annotations:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -169,8 +171,8 @@ _CertificateUsers = CertificateUsers
 
 @dataclass
 class ExtendParam:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -180,8 +182,8 @@ class ExtendParam:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -191,8 +193,8 @@ _ExtendParam = ExtendParam
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -202,8 +204,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     DbNodeCount: Optional[float]
     DbNodeStorage: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     MaintainTime: Optional[str]
     PayType: Optional[str]
     Period: Optional[float]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             DbNodeCount=json_data.get("DbNodeCount"),
             DbNodeStorage=json_data.get("DbNodeStorage"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             MaintainTime=json_data.get("MaintainTime"),
             PayType=json_data.get("PayType"),
             Period=json_data.get("Period"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

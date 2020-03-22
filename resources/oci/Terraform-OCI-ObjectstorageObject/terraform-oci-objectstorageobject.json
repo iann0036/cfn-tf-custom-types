@@ -92,6 +92,9 @@
             "type": "string",
             "description": "The content type of the object.  Defaults to 'application/octet-stream' if not overridden during the PutObject call."
         },
+        "Id": {
+            "type": "string"
+        },
         "Metadata": {
             "type": "array",
             "insertionOrder": true,
@@ -99,16 +102,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Optional user-defined metadata key and value.\nNote: All specified keys must be in lower case."
@@ -153,11 +156,12 @@
         "/properties/tfcfnid",
         "/properties/ContentLength",
         "/properties/ContentMd5",
+        "/properties/Id",
         "/properties/State",
         "/properties/WorkRequestId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

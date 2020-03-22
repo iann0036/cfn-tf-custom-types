@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DashboardArn: Optional[str]
     DashboardBody: Optional[str]
     DashboardName: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             DashboardArn=json_data.get("DashboardArn"),
             DashboardBody=json_data.get("DashboardBody"),
             DashboardName=json_data.get("DashboardName"),
+            Id=json_data.get("Id"),
         )
 
 

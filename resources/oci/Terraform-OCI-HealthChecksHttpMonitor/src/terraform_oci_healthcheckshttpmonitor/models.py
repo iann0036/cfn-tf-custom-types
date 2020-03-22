@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     Headers: Optional[Sequence["_Headers"]]
     HomeRegion: Optional[str]
+    Id: Optional[str]
     IntervalInSeconds: Optional[float]
     IsEnabled: Optional[bool]
     Method: Optional[str]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             FreeformTags=json_data.get("FreeformTags"),
             Headers=json_data.get("Headers"),
             HomeRegion=json_data.get("HomeRegion"),
+            Id=json_data.get("Id"),
             IntervalInSeconds=json_data.get("IntervalInSeconds"),
             IsEnabled=json_data.get("IsEnabled"),
             Method=json_data.get("Method"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -113,8 +115,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -124,8 +126,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -135,8 +137,8 @@ _FreeformTags = FreeformTags
 
 @dataclass
 class Headers:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -146,8 +148,8 @@ class Headers:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

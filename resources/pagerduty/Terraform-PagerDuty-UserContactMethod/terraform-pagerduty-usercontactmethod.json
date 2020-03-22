@@ -22,6 +22,9 @@
         "Enabled": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "Label": {
             "type": "string",
             "description": "The label (e.g., \"Work\", \"Mobile\", etc.).\n* `address` - (Required) The \"address\" to deliver to: `email`, `phone number`, etc., depending on the type."
@@ -49,10 +52,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Blacklisted",
-        "/properties/Enabled"
+        "/properties/Enabled",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

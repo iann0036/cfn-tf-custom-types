@@ -11,6 +11,9 @@
         "Etag": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Role": {
             "type": "string",
             "description": "The role of the user within the team.\nMust be one of `member` or `maintainer`. Defaults to `member`."
@@ -31,10 +34,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Etag"
+        "/properties/Etag",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

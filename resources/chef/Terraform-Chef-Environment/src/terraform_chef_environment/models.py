@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CookbookConstraints: Optional[Sequence["_CookbookConstraints"]]
     DefaultAttributesJson: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     OverrideAttributesJson: Optional[str]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             CookbookConstraints=json_data.get("CookbookConstraints"),
             DefaultAttributesJson=json_data.get("DefaultAttributesJson"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OverrideAttributesJson=json_data.get("OverrideAttributesJson"),
         )
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CookbookConstraints:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class CookbookConstraints:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

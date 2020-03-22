@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Account: Optional[str]
     CreationTime: Optional[str]
+    Id: Optional[str]
     Instance: Optional[str]
     MachineImage: Optional[str]
     Name: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Account=json_data.get("Account"),
             CreationTime=json_data.get("CreationTime"),
+            Id=json_data.get("Id"),
             Instance=json_data.get("Instance"),
             MachineImage=json_data.get("MachineImage"),
             Name=json_data.get("Name"),

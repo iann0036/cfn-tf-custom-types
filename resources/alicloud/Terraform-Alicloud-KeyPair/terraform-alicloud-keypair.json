@@ -11,6 +11,9 @@
         "FingerPrint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KeyFile": {
             "type": "string",
             "description": "The name of file to save your new key pair's private key. Strongly suggest you to specified it when you creating key pair, otherwise, you wouldn't get its private key ever."
@@ -38,16 +41,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource.\n-> **NOTE:** If `key_name` and `key_name_prefix` are not set, terraform will produce a specified ID to replace."
@@ -57,10 +60,11 @@
     "required": [],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/FingerPrint"
+        "/properties/FingerPrint",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

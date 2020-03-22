@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Name of the branch."
         },
+        "Id": {
+            "type": "string"
+        },
         "MergeAccessLevel": {
             "type": "string",
             "description": "One of five levels of access to the project."
@@ -33,10 +36,11 @@
         "PushAccessLevel"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AutomationAccountName: Optional[str]
     ConfigurationName: Optional[str]
     ContentEmbedded: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             AutomationAccountName=json_data.get("AutomationAccountName"),
             ConfigurationName=json_data.get("ConfigurationName"),
             ContentEmbedded=json_data.get("ContentEmbedded"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

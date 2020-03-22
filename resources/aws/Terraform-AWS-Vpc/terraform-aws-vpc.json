@@ -41,6 +41,9 @@
         "EnableDnsSupport": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceTenancy": {
             "type": "string"
         },
@@ -63,16 +66,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         }
@@ -88,13 +91,14 @@
         "/properties/DefaultRouteTableId",
         "/properties/DefaultSecurityGroupId",
         "/properties/DhcpOptionsId",
+        "/properties/Id",
         "/properties/Ipv6AssociationId",
         "/properties/Ipv6CidrBlock",
         "/properties/MainRouteTableId",
         "/properties/OwnerId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

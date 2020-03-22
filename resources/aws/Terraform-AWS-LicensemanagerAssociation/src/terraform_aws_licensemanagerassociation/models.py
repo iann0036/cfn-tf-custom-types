@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     LicenseConfigurationArn: Optional[str]
     ResourceArn: Optional[str]
 
@@ -48,6 +49,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             LicenseConfigurationArn=json_data.get("LicenseConfigurationArn"),
             ResourceArn=json_data.get("ResourceArn"),
         )

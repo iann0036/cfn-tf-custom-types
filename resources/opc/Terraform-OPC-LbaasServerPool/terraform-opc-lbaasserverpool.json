@@ -51,6 +51,9 @@
             "type": "boolean",
             "description": "Boolean flag to enable or disable the Server Pool. Default is `true` (enabled)."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancer": {
             "type": "string",
             "description": "The parent Load Balancer the Origin Server Pool."
@@ -109,13 +112,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Consumers",
+        "/properties/Id",
         "/properties/OperationDetails",
         "/properties/State",
         "/properties/Status",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

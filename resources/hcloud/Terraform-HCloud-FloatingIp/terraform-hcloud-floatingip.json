@@ -16,6 +16,9 @@
             "type": "string",
             "description": "Home location (routing is optimized for that location). Optional if server_id argument is passed.\n- `description` - (Optional, string) Description of the Floating IP.\n- `labels` - (Optional, map) User-defined labels (key-value pairs) should be created with."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string"
         },
@@ -29,16 +32,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "User-defined labels (key-value pairs) should be created with."
@@ -62,11 +65,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/IpAddress",
         "/properties/IpNetwork"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

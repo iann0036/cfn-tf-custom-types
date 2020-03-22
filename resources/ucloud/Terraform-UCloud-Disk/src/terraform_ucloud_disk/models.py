@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     DiskType: Optional[str]
     Duration: Optional[float]
     ExpireTime: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Status: Optional[str]
     Tag: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             DiskType=json_data.get("DiskType"),
             Duration=json_data.get("Duration"),
             ExpireTime=json_data.get("ExpireTime"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Status=json_data.get("Status"),
             Tag=json_data.get("Tag"),

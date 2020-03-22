@@ -57,6 +57,9 @@
             "type": "boolean",
             "description": "When this option is set it allows extending\nattached volumes. Note: updating size of an attached volume requires Cinder\nsupport for version 3.42 and a compatible storage driver."
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string",
             "description": "The image ID from which to create the volume.\nChanging this creates a new volume."
@@ -68,16 +71,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Metadata key/value pairs to associate with the volume.\nChanging this updates the existing volume metadata."
@@ -124,10 +127,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Attachment"
+        "/properties/Attachment",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     DefaultBucket: Optional[str]
     DefaultHostname: Optional[str]
     GcrDomain: Optional[str]
+    Id: Optional[str]
     LocationId: Optional[str]
     Name: Optional[str]
     Project: Optional[str]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             DefaultBucket=json_data.get("DefaultBucket"),
             DefaultHostname=json_data.get("DefaultHostname"),
             GcrDomain=json_data.get("GcrDomain"),
+            Id=json_data.get("Id"),
             LocationId=json_data.get("LocationId"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),

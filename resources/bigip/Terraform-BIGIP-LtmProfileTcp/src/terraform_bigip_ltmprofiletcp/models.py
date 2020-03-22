@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     FastOpen: Optional[str]
     Finwait2timeout: Optional[float]
     FinwaitTimeout: Optional[float]
+    Id: Optional[str]
     IdleTimeout: Optional[float]
     KeepaliveInterval: Optional[float]
     Name: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             FastOpen=json_data.get("FastOpen"),
             Finwait2timeout=json_data.get("Finwait2timeout"),
             FinwaitTimeout=json_data.get("FinwaitTimeout"),
+            Id=json_data.get("Id"),
             IdleTimeout=json_data.get("IdleTimeout"),
             KeepaliveInterval=json_data.get("KeepaliveInterval"),
             Name=json_data.get("Name"),

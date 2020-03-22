@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     App: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     SlugId: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             App=json_data.get("App"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             SlugId=json_data.get("SlugId"),
         )
 

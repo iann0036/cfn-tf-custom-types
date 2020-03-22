@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     CommitMessage: Optional[str]
     Content: Optional[str]
     File: Optional[str]
+    Id: Optional[str]
     Repository: Optional[str]
     Sha: Optional[str]
 
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             CommitMessage=json_data.get("CommitMessage"),
             Content=json_data.get("Content"),
             File=json_data.get("File"),
+            Id=json_data.get("Id"),
             Repository=json_data.get("Repository"),
             Sha=json_data.get("Sha"),
         )

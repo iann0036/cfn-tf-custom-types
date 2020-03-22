@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     HtmlUrl: Optional[str]
+    Id: Optional[str]
     IntegrationEmail: Optional[str]
     IntegrationKey: Optional[str]
     Name: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             HtmlUrl=json_data.get("HtmlUrl"),
+            Id=json_data.get("Id"),
             IntegrationEmail=json_data.get("IntegrationEmail"),
             IntegrationKey=json_data.get("IntegrationKey"),
             Name=json_data.get("Name"),

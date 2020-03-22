@@ -12,6 +12,9 @@
             "type": "boolean",
             "description": "Enable ssl verification when invoking\nthe hook."
         },
+        "Id": {
+            "type": "string"
+        },
         "IssuesEvents": {
             "type": "boolean",
             "description": "Invoke the hook for issues events."
@@ -63,10 +66,11 @@
         "Url"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

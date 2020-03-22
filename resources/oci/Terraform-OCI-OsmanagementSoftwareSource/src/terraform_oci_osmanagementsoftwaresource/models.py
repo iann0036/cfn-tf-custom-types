@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     GpgKeyFingerprint: Optional[str]
     GpgKeyId: Optional[str]
     GpgKeyUrl: Optional[str]
+    Id: Optional[str]
     MaintainerEmail: Optional[str]
     MaintainerName: Optional[str]
     MaintainerPhone: Optional[str]
@@ -79,6 +80,7 @@ class ResourceModel(BaseResourceModel):
             GpgKeyFingerprint=json_data.get("GpgKeyFingerprint"),
             GpgKeyId=json_data.get("GpgKeyId"),
             GpgKeyUrl=json_data.get("GpgKeyUrl"),
+            Id=json_data.get("Id"),
             MaintainerEmail=json_data.get("MaintainerEmail"),
             MaintainerName=json_data.get("MaintainerName"),
             MaintainerPhone=json_data.get("MaintainerPhone"),
@@ -121,8 +123,8 @@ _AssociatedManagedInstances = AssociatedManagedInstances
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -132,8 +134,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -143,8 +145,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -154,8 +156,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

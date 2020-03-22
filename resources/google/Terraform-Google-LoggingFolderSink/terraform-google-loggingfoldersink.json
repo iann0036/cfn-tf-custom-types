@@ -34,6 +34,9 @@
             "type": "string",
             "description": "The folder to be exported to the sink. Note that either [FOLDER_ID] or \"folders/[FOLDER_ID]\" is\naccepted."
         },
+        "Id": {
+            "type": "string"
+        },
         "IncludeChildren": {
             "type": "boolean",
             "description": "Whether or not to include children folders in the sink export. If true, logs\nassociated with child projects are also exported; otherwise only logs relating to the provided folder are included."
@@ -62,10 +65,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/WriterIdentity"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

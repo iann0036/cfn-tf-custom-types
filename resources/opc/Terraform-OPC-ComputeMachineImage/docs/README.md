@@ -91,7 +91,7 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 ### Ref
 
-When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the tfcfnid.
+When you pass the logical ID of this resource to the intrinsic `Ref` function, Ref returns the Id.
 
 ### Fn::GetAtt
 
@@ -110,6 +110,10 @@ Description of the state of the machine image if there is an error.
 #### Hypervisor
 
 Dictionary of hypervisor-specific attributes.
+
+#### Id
+
+Returns the <code>Id</code> value.
 
 #### ImageFormat
 

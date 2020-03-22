@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Filename: Optional[str]
     FunctionId: Optional[str]
     Handler: Optional[str]
+    Id: Optional[str]
     LastModified: Optional[str]
     MemorySize: Optional[float]
     Name: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Filename=json_data.get("Filename"),
             FunctionId=json_data.get("FunctionId"),
             Handler=json_data.get("Handler"),
+            Id=json_data.get("Id"),
             LastModified=json_data.get("LastModified"),
             MemorySize=json_data.get("MemorySize"),
             Name=json_data.get("Name"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class EnvironmentVariables:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class EnvironmentVariables:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

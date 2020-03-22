@@ -37,6 +37,9 @@
         "HistoryLocation": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Metadata": {
             "type": "array",
             "insertionOrder": true,
@@ -44,16 +47,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A dictionary of metadata key/value items. The key must be in lower case with no underscores or spaces."
@@ -80,11 +83,12 @@
         "/properties/tfcfnid",
         "/properties/BytesUsed",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/ObjectCount",
         "/properties/StoragePolicy"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -23,6 +23,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "RepositoryId": {
             "type": "string"
         },
@@ -36,16 +39,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         }
@@ -59,10 +62,11 @@
         "/properties/Arn",
         "/properties/CloneUrlHttp",
         "/properties/CloneUrlSsh",
+        "/properties/Id",
         "/properties/RepositoryId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

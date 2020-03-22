@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DbSystemId: Optional[str]
+    Id: Optional[str]
     LifecycleDetails: Optional[str]
     Objective: Optional[str]
     State: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DbSystemId=json_data.get("DbSystemId"),
+            Id=json_data.get("Id"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             Objective=json_data.get("Objective"),
             State=json_data.get("State"),

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     CreateDate: Optional[str]
     Description: Optional[str]
     ForceDetachPolicies: Optional[bool]
+    Id: Optional[str]
     MaxSessionDuration: Optional[float]
     Name: Optional[str]
     NamePrefix: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             CreateDate=json_data.get("CreateDate"),
             Description=json_data.get("Description"),
             ForceDetachPolicies=json_data.get("ForceDetachPolicies"),
+            Id=json_data.get("Id"),
             MaxSessionDuration=json_data.get("MaxSessionDuration"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     DisplayName: Optional[str]
     EulaLink: Optional[str]
+    Id: Optional[str]
     ListingId: Optional[str]
     ListingResourceId: Optional[str]
     ListingResourceVersion: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             DisplayName=json_data.get("DisplayName"),
             EulaLink=json_data.get("EulaLink"),
+            Id=json_data.get("Id"),
             ListingId=json_data.get("ListingId"),
             ListingResourceId=json_data.get("ListingResourceId"),
             ListingResourceVersion=json_data.get("ListingResourceVersion"),

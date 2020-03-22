@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DeviceGroup: Optional[str]
     EnhancedLogging: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     MatchList: Optional[Sequence["_MatchList"]]
     Action: Optional[Sequence["_Action"]]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DeviceGroup=json_data.get("DeviceGroup"),
             EnhancedLogging=json_data.get("EnhancedLogging"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             MatchList=json_data.get("MatchList"),
             Action=json_data.get("Action"),

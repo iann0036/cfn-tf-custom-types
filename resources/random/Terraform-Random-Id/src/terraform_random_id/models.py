@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     ByteLength: Optional[float]
     Dec: Optional[str]
     Hex: Optional[str]
+    Id: Optional[str]
     Keepers: Optional[Sequence["_Keepers"]]
     Prefix: Optional[str]
 
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             ByteLength=json_data.get("ByteLength"),
             Dec=json_data.get("Dec"),
             Hex=json_data.get("Hex"),
+            Id=json_data.get("Id"),
             Keepers=json_data.get("Keepers"),
             Prefix=json_data.get("Prefix"),
         )
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Keepers:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Keepers:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

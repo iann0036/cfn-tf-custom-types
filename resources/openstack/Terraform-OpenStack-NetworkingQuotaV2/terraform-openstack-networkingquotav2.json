@@ -29,6 +29,9 @@
             "type": "number",
             "description": "Quota value for floating IPs. Changing this updates the\nexisting quota."
         },
+        "Id": {
+            "type": "string"
+        },
         "Network": {
             "type": "number",
             "description": "Quota value for networks. Changing this updates the\nexisting quota."
@@ -78,10 +81,11 @@
         "ProjectId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

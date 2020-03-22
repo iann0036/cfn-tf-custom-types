@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ConnectionPrefix: Optional[str]
     ConnectionString: Optional[str]
     DistributionType: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     MaxDelayTime: Optional[float]
     Port: Optional[float]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             ConnectionPrefix=json_data.get("ConnectionPrefix"),
             ConnectionString=json_data.get("ConnectionString"),
             DistributionType=json_data.get("DistributionType"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             MaxDelayTime=json_data.get("MaxDelayTime"),
             Port=json_data.get("Port"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Weight:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class Weight:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AutonomousDataWarehouseId: Optional[str]
     CompartmentId: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     IsAutomatic: Optional[bool]
     LifecycleDetails: Optional[str]
     State: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AutonomousDataWarehouseId=json_data.get("AutonomousDataWarehouseId"),
             CompartmentId=json_data.get("CompartmentId"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             IsAutomatic=json_data.get("IsAutomatic"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             State=json_data.get("State"),

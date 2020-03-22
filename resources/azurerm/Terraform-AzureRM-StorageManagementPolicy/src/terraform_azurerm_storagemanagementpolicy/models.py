@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     StorageAccountId: Optional[str]
     Rule: Optional[Sequence["_Rule"]]
     Timeouts: Optional["_Timeouts"]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             StorageAccountId=json_data.get("StorageAccountId"),
             Rule=json_data.get("Rule"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

@@ -32,6 +32,9 @@
             "type": "string",
             "description": "The name of the Cosmos DB Mongo Database to create the table within. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the Cosmos DB Mongo Database. Changing this forces a new resource to be created."
@@ -55,10 +58,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

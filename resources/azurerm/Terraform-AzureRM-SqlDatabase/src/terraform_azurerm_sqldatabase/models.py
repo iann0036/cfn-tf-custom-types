@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     Edition: Optional[str]
     ElasticPoolName: Optional[str]
     Encryption: Optional[str]
+    Id: Optional[str]
     Location: Optional[str]
     MaxSizeBytes: Optional[str]
     MaxSizeGb: Optional[str]
@@ -78,6 +79,7 @@ class ResourceModel(BaseResourceModel):
             Edition=json_data.get("Edition"),
             ElasticPoolName=json_data.get("ElasticPoolName"),
             Encryption=json_data.get("Encryption"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             MaxSizeBytes=json_data.get("MaxSizeBytes"),
             MaxSizeGb=json_data.get("MaxSizeGb"),
@@ -105,8 +107,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -116,8 +118,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

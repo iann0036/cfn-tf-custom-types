@@ -54,6 +54,7 @@ class ResourceModel(BaseResourceModel):
     ClusterVersion: Optional[str]
     ContainerRuntime: Optional[str]
     Domain: Optional[str]
+    Id: Optional[str]
     IgnoreClusterCidrConflict: Optional[bool]
     ManagedClusterInternetSecurityPolicies: Optional[Sequence[str]]
     Password: Optional[str]
@@ -95,6 +96,7 @@ class ResourceModel(BaseResourceModel):
             ClusterVersion=json_data.get("ClusterVersion"),
             ContainerRuntime=json_data.get("ContainerRuntime"),
             Domain=json_data.get("Domain"),
+            Id=json_data.get("Id"),
             IgnoreClusterCidrConflict=json_data.get("IgnoreClusterCidrConflict"),
             ManagedClusterInternetSecurityPolicies=json_data.get("ManagedClusterInternetSecurityPolicies"),
             Password=json_data.get("Password"),
@@ -117,8 +119,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

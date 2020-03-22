@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Enabled: Optional[bool]
     Entities: Optional[Sequence[float]]
+    Id: Optional[str]
     Metric: Optional[str]
     MetricDescription: Optional[str]
     Name: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Enabled=json_data.get("Enabled"),
             Entities=json_data.get("Entities"),
+            Id=json_data.get("Id"),
             Metric=json_data.get("Metric"),
             MetricDescription=json_data.get("MetricDescription"),
             Name=json_data.get("Name"),

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Architecture: Optional[str]
     Description: Optional[str]
     EnaSupport: Optional[bool]
+    Id: Optional[str]
     ImageLocation: Optional[str]
     KernelId: Optional[str]
     ManageEbsSnapshots: Optional[bool]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             Architecture=json_data.get("Architecture"),
             Description=json_data.get("Description"),
             EnaSupport=json_data.get("EnaSupport"),
+            Id=json_data.get("Id"),
             ImageLocation=json_data.get("ImageLocation"),
             KernelId=json_data.get("KernelId"),
             ManageEbsSnapshots=json_data.get("ManageEbsSnapshots"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

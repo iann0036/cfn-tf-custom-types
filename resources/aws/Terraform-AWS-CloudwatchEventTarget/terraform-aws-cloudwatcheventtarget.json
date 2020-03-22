@@ -49,7 +49,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NetworkConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -67,16 +68,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -163,6 +164,9 @@
         "Arn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Input": {
             "type": "string"
         },
@@ -241,10 +245,11 @@
         "Rule"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

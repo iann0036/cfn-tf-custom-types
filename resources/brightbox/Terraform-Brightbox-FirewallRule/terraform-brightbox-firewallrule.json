@@ -28,6 +28,9 @@
             "type": "string",
             "description": "ICMP type name. `echo-request`, `echo-reply`. Only allowed if protocol is `icmp`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Protocol": {
             "type": "string",
             "description": "Protocol Number or one of `tcp`, `udp`, `icmp`."
@@ -46,10 +49,11 @@
         "FirewallPolicy"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

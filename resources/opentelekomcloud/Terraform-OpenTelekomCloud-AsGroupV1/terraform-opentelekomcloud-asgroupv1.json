@@ -102,6 +102,9 @@
             "type": "number",
             "description": "The health check period for instances.\nThe period has four options: 5 minutes (default), 15 minutes, 60 minutes, and 180 minutes."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceTerminatePolicy": {
             "type": "string",
             "description": "The instance removal policy. The policy has\nfour options: `OLD_CONFIG_OLD_INSTANCE` (default), `OLD_CONFIG_NEW_INSTANCE`,\n`OLD_INSTANCE`, and `NEW_INSTANCE`."
@@ -182,10 +185,11 @@
         "VpcId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

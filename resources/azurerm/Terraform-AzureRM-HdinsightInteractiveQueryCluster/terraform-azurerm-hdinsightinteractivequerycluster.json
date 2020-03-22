@@ -47,21 +47,27 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HeadNode"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "WorkerNode": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/WorkerNode"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "ZookeeperNode": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ZookeeperNode"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -266,6 +272,9 @@
         "HttpsEndpoint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string",
             "description": "Specifies the Azure Region which this HDInsight Interactive Query Cluster should exist. Changing this forces a new resource to be created."
@@ -288,16 +297,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of Tags which should be assigned to this HDInsight Interactive Query Cluster."
@@ -390,10 +399,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/HttpsEndpoint",
+        "/properties/Id",
         "/properties/SshEndpoint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -53,16 +53,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -214,6 +214,9 @@
         "IamFleetRole": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceInterruptionBehaviour": {
             "type": "string"
         },
@@ -299,10 +302,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ClientToken",
+        "/properties/Id",
         "/properties/SpotRequestState"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

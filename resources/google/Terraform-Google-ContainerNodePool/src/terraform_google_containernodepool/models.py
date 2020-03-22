@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Cluster: Optional[str]
+    Id: Optional[str]
     InitialNodeCount: Optional[float]
     InstanceGroupUrls: Optional[Sequence[str]]
     Location: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Cluster=json_data.get("Cluster"),
+            Id=json_data.get("Id"),
             InitialNodeCount=json_data.get("InitialNodeCount"),
             InstanceGroupUrls=json_data.get("InstanceGroupUrls"),
             Location=json_data.get("Location"),
@@ -211,8 +213,8 @@ _GuestAccelerator = GuestAccelerator
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -222,8 +224,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -233,8 +235,8 @@ _Labels = Labels
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -244,8 +246,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -18,20 +18,23 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
         "DefaultClientId": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Name": {
@@ -52,10 +55,11 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/DefaultClientId",
+        "/properties/Id",
         "/properties/Version"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Path to the directory where the templated files will be written."
         },
+        "Id": {
+            "type": "string"
+        },
         "SourceDir": {
             "type": "string",
             "description": "Path to the directory where the files to template reside."
@@ -23,16 +26,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Variables for interpolation within the template. Note\nthat variables must all be primitives. Direct references to lists or maps\nwill cause a validation error."
@@ -44,10 +47,11 @@
         "SourceDir"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

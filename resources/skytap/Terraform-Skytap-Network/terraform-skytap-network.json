@@ -20,6 +20,9 @@
             "type": "string",
             "description": "Gateway IP address."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "User-defined name of the network. Limited to 255 characters. UTF-8 character type."
@@ -41,10 +44,11 @@
         "Subnet"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -52,6 +52,9 @@
             "type": "boolean",
             "description": "Boolean flag which controls whether to enable\nthe topic to be partitioned across multiple message brokers. Defaults to false.\nChanging this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxSizeInMegabytes": {
             "type": "number",
             "description": "Integer value which controls the size of\nmemory allocated for the topic. For supported values see the \"Queue/topic size\"\nsection of [this document](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quotas)."
@@ -91,10 +94,11 @@
         "ResourceGroupName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

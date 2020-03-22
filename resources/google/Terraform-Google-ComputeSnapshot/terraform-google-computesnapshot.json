@@ -56,6 +56,9 @@
         "DiskSizeGb": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "LabelFingerprint": {
             "type": "string"
         },
@@ -66,16 +69,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -140,6 +143,7 @@
         "/properties/tfcfnid",
         "/properties/CreationTimestamp",
         "/properties/DiskSizeGb",
+        "/properties/Id",
         "/properties/LabelFingerprint",
         "/properties/Licenses",
         "/properties/SelfLink",
@@ -148,7 +152,7 @@
         "/properties/StorageBytes"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

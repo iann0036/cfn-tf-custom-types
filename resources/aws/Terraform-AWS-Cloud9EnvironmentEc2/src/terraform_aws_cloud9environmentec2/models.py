@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     AutomaticStopTimeMinutes: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     InstanceType: Optional[str]
     Name: Optional[str]
     OwnerArn: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             AutomaticStopTimeMinutes=json_data.get("AutomaticStopTimeMinutes"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             InstanceType=json_data.get("InstanceType"),
             Name=json_data.get("Name"),
             OwnerArn=json_data.get("OwnerArn"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

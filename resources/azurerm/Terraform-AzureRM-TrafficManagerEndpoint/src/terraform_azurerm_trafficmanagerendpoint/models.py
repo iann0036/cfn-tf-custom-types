@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     EndpointMonitorStatus: Optional[str]
     EndpointStatus: Optional[str]
     GeoMappings: Optional[Sequence[str]]
+    Id: Optional[str]
     MinChildEndpoints: Optional[float]
     Name: Optional[str]
     Priority: Optional[float]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             EndpointMonitorStatus=json_data.get("EndpointMonitorStatus"),
             EndpointStatus=json_data.get("EndpointStatus"),
             GeoMappings=json_data.get("GeoMappings"),
+            Id=json_data.get("Id"),
             MinChildEndpoints=json_data.get("MinChildEndpoints"),
             Name=json_data.get("Name"),
             Priority=json_data.get("Priority"),

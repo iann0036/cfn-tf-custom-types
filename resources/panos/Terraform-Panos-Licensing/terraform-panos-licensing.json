@@ -20,6 +20,9 @@
             "type": "boolean",
             "description": "Leave as `true` if you want to delicense\nthe firewall when this resource is removed, otherwise set to `false` to\nprevent firewall delicensing.  Delicensing requires that the licensing\nAPI key has been installed."
         },
+        "Id": {
+            "type": "string"
+        },
         "Licenses": {
             "type": "array",
             "insertionOrder": false,
@@ -62,10 +65,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Licenses"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

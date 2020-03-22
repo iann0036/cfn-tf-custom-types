@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     DomainId: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
     Region: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             DomainId=json_data.get("DomainId"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),
             Region=json_data.get("Region"),

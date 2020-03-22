@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Fqdn: Optional[str]
     Hostname: Optional[str]
+    Id: Optional[str]
     Image: Optional[str]
     Interface: Optional[str]
     Ipv4Address: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Fqdn=json_data.get("Fqdn"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             Image=json_data.get("Image"),
             Interface=json_data.get("Interface"),
             Ipv4Address=json_data.get("Ipv4Address"),

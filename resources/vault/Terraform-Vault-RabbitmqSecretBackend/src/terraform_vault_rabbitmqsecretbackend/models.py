@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ConnectionUri: Optional[str]
     DefaultLeaseTtlSeconds: Optional[float]
     Description: Optional[str]
+    Id: Optional[str]
     MaxLeaseTtlSeconds: Optional[float]
     Password: Optional[str]
     Path: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             ConnectionUri=json_data.get("ConnectionUri"),
             DefaultLeaseTtlSeconds=json_data.get("DefaultLeaseTtlSeconds"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             MaxLeaseTtlSeconds=json_data.get("MaxLeaseTtlSeconds"),
             Password=json_data.get("Password"),
             Path=json_data.get("Path"),

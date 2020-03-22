@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The [managed object reference\nID][docs-about-morefs] of the datastore cluster to put the override in.\nForces a new resource if changed."
         },
+        "Id": {
+            "type": "string"
+        },
         "SdrsAutomationLevel": {
             "type": "string",
             "description": "Overrides any Storage DRS automation\nlevels for this virtual machine. Can be one of `automated` or `manual`. When\nnot specified, the datastore cluster's settings are used according to the\n[specific SDRS subsystem][tf-vsphere-datastore-cluster-sdrs-levels]."
@@ -35,10 +38,11 @@
         "VirtualMachineId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -42,16 +42,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "If set, a map of claims/values to match against.\nThe expected value may be a single string or a list of strings."
@@ -67,16 +67,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "If set, a map of claims (keys) to be copied\nto specified metadata fields (values)."
@@ -96,6 +96,9 @@
         "GroupsClaimDelimiterPattern": {
             "type": "string",
             "description": ".)\nA pattern of delimiters\nused to allow the groups_claim to live outside of the top-level JWT structure.\nFor instance, a groups_claim of meta/user.name/groups with this field\nset to // will expect nested structures named meta, user.name, and groups.\nIf this field was set to /./ the groups information would expect to be\nvia nested structures of meta, user, name, and groups."
+        },
+        "Id": {
+            "type": "string"
         },
         "MaxTtl": {
             "type": "number"
@@ -186,10 +189,11 @@
         "UserClaim"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

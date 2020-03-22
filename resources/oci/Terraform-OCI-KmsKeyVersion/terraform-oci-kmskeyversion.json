@@ -28,6 +28,9 @@
         "CompartmentId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KeyId": {
             "type": "string",
             "description": "The OCID of the key."
@@ -64,13 +67,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CompartmentId",
+        "/properties/Id",
         "/properties/KeyVersionId",
         "/properties/State",
         "/properties/TimeCreated",
         "/properties/VaultId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

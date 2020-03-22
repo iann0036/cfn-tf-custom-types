@@ -12,6 +12,9 @@
             "type": "string",
             "description": "IP Address of an existing floating IP."
         },
+        "Id": {
+            "type": "string"
+        },
         "PortId": {
             "type": "string",
             "description": "ID of an existing port with at least one IP address to\nassociate with this floating IP."
@@ -26,10 +29,11 @@
         "PortId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

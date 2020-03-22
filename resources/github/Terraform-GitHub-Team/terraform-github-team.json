@@ -15,6 +15,9 @@
         "Etag": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LdapDn": {
             "type": "string",
             "description": "The LDAP Distinguished Name of the group where membership will be synchronized. Only available in GitHub Enterprise."
@@ -42,10 +45,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Etag",
+        "/properties/Id",
         "/properties/Slug"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -39,6 +39,9 @@
         "Href": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageSlug": {
             "type": "string",
             "description": "The slug (name) of the image to use for the new server. Possible values can be found in our [API documentation](https://www.cloudscale.ch/en/api/v1#images)."
@@ -175,6 +178,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Href",
+        "/properties/Id",
         "/properties/PrivateIpv4Address",
         "/properties/PublicIpv4Address",
         "/properties/PublicIpv6Address",
@@ -184,7 +188,7 @@
         "/properties/Volumes"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

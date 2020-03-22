@@ -19,7 +19,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Provider"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -125,6 +127,9 @@
         "Endpoint": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Identity": {
             "type": "array",
             "insertionOrder": false,
@@ -167,16 +172,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -224,12 +229,13 @@
         "/properties/CertificateAuthority",
         "/properties/CreatedAt",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/Identity",
         "/properties/PlatformVersion",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

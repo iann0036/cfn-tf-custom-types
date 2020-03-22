@@ -69,6 +69,9 @@
             "type": "string",
             "description": "The ID of the balancer."
         },
+        "Id": {
+            "type": "string"
+        },
         "Port": {
             "type": "number",
             "description": "The port on which the load balancer is listening."
@@ -100,10 +103,11 @@
         "Protocol"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -29,6 +29,9 @@
             "type": "boolean",
             "description": "Specify whether to enable access control."
         },
+        "Id": {
+            "type": "string"
+        },
         "ListenerId": {
             "type": "string",
             "description": "The Listener ID that the whitelist will be associated with. Changing this creates a new whitelist."
@@ -50,10 +53,11 @@
         "ListenerId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     CloudgateCapable: Optional[bool]
     Description: Optional[str]
     Enabled: Optional[bool]
+    Id: Optional[str]
     IpNetwork: Optional[str]
     Name: Optional[str]
     ParentLoadBalancer: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             CloudgateCapable=json_data.get("CloudgateCapable"),
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             IpNetwork=json_data.get("IpNetwork"),
             Name=json_data.get("Name"),
             ParentLoadBalancer=json_data.get("ParentLoadBalancer"),

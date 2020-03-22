@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Dbrtpd: Optional[str]
     Flavorref: Optional[str]
     Hostname: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Region: Optional[str]
     Status: Optional[str]
@@ -71,6 +72,7 @@ class ResourceModel(BaseResourceModel):
             Dbrtpd=json_data.get("Dbrtpd"),
             Flavorref=json_data.get("Flavorref"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Region=json_data.get("Region"),
             Status=json_data.get("Status"),

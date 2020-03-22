@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EdgeClusterId: Optional[str]
     FailoverMode: Optional[str]
     HighAvailabilityMode: Optional[str]
+    Id: Optional[str]
     Revision: Optional[float]
     FirewallSections: Optional[Sequence["_FirewallSections"]]
     Tag: Optional[Sequence["_Tag"]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             EdgeClusterId=json_data.get("EdgeClusterId"),
             FailoverMode=json_data.get("FailoverMode"),
             HighAvailabilityMode=json_data.get("HighAvailabilityMode"),
+            Id=json_data.get("Id"),
             Revision=json_data.get("Revision"),
             FirewallSections=json_data.get("FirewallSections"),
             Tag=json_data.get("Tag"),

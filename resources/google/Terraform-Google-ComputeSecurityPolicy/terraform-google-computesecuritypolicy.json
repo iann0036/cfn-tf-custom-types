@@ -28,7 +28,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Match"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -65,14 +67,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Config"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Expr": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Expr"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -118,6 +122,9 @@
             "description": "An optional description of this security policy. Max size is 2048."
         },
         "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Name": {
@@ -174,10 +181,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Fingerprint",
+        "/properties/Id",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -37,7 +37,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Customize"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -145,16 +146,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 }
@@ -196,7 +197,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LinuxOptions"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "NetworkInterface": {
                     "type": "array",
@@ -210,7 +212,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/WindowsOptions"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -341,16 +344,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -382,16 +385,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -418,6 +421,9 @@
             "type": "string"
         },
         "HvMode": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "IgnoredGuestIps": {
@@ -617,6 +623,7 @@
         "/properties/ChangeVersion",
         "/properties/DefaultIpAddress",
         "/properties/GuestIpAddresses",
+        "/properties/Id",
         "/properties/Imported",
         "/properties/Moid",
         "/properties/RebootRequired",
@@ -626,7 +633,7 @@
         "/properties/VmxPath"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

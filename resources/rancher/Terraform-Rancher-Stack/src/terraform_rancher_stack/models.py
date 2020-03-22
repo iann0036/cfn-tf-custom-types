@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     Environment: Optional[Sequence["_Environment"]]
     EnvironmentId: Optional[str]
     FinishUpgrade: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     RancherCompose: Optional[str]
     RenderedDockerCompose: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Environment=json_data.get("Environment"),
             EnvironmentId=json_data.get("EnvironmentId"),
             FinishUpgrade=json_data.get("FinishUpgrade"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             RancherCompose=json_data.get("RancherCompose"),
             RenderedDockerCompose=json_data.get("RenderedDockerCompose"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Environment:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Environment:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

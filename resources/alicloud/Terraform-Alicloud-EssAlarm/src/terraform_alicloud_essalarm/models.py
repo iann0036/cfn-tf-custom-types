@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     Dimensions: Optional[Sequence["_Dimensions"]]
     Enable: Optional[bool]
     EvaluationCount: Optional[float]
+    Id: Optional[str]
     MetricName: Optional[str]
     MetricType: Optional[str]
     Name: Optional[str]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             Dimensions=json_data.get("Dimensions"),
             Enable=json_data.get("Enable"),
             EvaluationCount=json_data.get("EvaluationCount"),
+            Id=json_data.get("Id"),
             MetricName=json_data.get("MetricName"),
             MetricType=json_data.get("MetricType"),
             Name=json_data.get("Name"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Dimensions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Dimensions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

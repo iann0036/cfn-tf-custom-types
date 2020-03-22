@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Fabric: Optional[bool]
     Gateway: Optional[str]
+    Id: Optional[str]
     InternetNat: Optional[bool]
     Name: Optional[str]
     ProvisionEndIp: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Fabric=json_data.get("Fabric"),
             Gateway=json_data.get("Gateway"),
+            Id=json_data.get("Id"),
             InternetNat=json_data.get("InternetNat"),
             Name=json_data.get("Name"),
             ProvisionEndIp=json_data.get("ProvisionEndIp"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Routes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Routes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

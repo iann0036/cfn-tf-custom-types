@@ -191,6 +191,9 @@
             "description": "Internal identifier for tracking resource changes. Do not use.",
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Rulebase": {
             "type": "string",
             "description": "The rulebase.  For firewalls, there is only the\n`rulebase` value (default), but on Panorama, there is also `pre-rulebase`\nand `post-rulebase`."
@@ -211,10 +214,11 @@
     "additionalProperties": false,
     "required": [],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

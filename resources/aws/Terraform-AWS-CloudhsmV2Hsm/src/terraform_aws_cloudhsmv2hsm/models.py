@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     HsmEniId: Optional[str]
     HsmId: Optional[str]
     HsmState: Optional[str]
+    Id: Optional[str]
     IpAddress: Optional[str]
     SubnetId: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             HsmEniId=json_data.get("HsmEniId"),
             HsmId=json_data.get("HsmId"),
             HsmState=json_data.get("HsmState"),
+            Id=json_data.get("Id"),
             IpAddress=json_data.get("IpAddress"),
             SubnetId=json_data.get("SubnetId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

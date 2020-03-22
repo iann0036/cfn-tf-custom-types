@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arn: Optional[str]
     EncryptionType: Optional[str]
     EnforceConsumerDeletion: Optional[bool]
+    Id: Optional[str]
     KmsKeyId: Optional[str]
     Name: Optional[str]
     RetentionPeriod: Optional[float]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Arn=json_data.get("Arn"),
             EncryptionType=json_data.get("EncryptionType"),
             EnforceConsumerDeletion=json_data.get("EnforceConsumerDeletion"),
+            Id=json_data.get("Id"),
             KmsKeyId=json_data.get("KmsKeyId"),
             Name=json_data.get("Name"),
             RetentionPeriod=json_data.get("RetentionPeriod"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     GitPassword: Optional[str]
     GitRepository: Optional[str]
     GitUsername: Optional[str]
+    Id: Optional[str]
     LoadBalancerSubnets: Optional[Sequence[str]]
     ManifestFile: Optional[str]
     Name: Optional[str]
@@ -77,6 +78,7 @@ class ResourceModel(BaseResourceModel):
             GitPassword=json_data.get("GitPassword"),
             GitRepository=json_data.get("GitRepository"),
             GitUsername=json_data.get("GitUsername"),
+            Id=json_data.get("Id"),
             LoadBalancerSubnets=json_data.get("LoadBalancerSubnets"),
             ManifestFile=json_data.get("ManifestFile"),
             Name=json_data.get("Name"),
@@ -121,8 +123,8 @@ _Runtime = Runtime
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -132,8 +134,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -175,8 +177,8 @@ _Deployment = Deployment
 
 @dataclass
 class Environment:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -186,8 +188,8 @@ class Environment:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -197,8 +199,8 @@ _Environment = Environment
 
 @dataclass
 class JavaSystemProperties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -208,8 +210,8 @@ class JavaSystemProperties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

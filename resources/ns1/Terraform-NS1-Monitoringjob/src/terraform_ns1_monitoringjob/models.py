@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Active: Optional[bool]
     Config: Optional[Sequence["_Config"]]
     Frequency: Optional[float]
+    Id: Optional[str]
     JobType: Optional[str]
     Name: Optional[str]
     Notes: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Active=json_data.get("Active"),
             Config=json_data.get("Config"),
             Frequency=json_data.get("Frequency"),
+            Id=json_data.get("Id"),
             JobType=json_data.get("JobType"),
             Name=json_data.get("Name"),
             Notes=json_data.get("Notes"),
@@ -85,8 +87,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Config:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -96,8 +98,8 @@ class Config:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

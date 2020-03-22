@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Cores: Optional[float]
     FixedIps: Optional[float]
     FloatingIps: Optional[float]
+    Id: Optional[str]
     InjectedFileContentBytes: Optional[float]
     InjectedFilePathBytes: Optional[float]
     InjectedFiles: Optional[float]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             Cores=json_data.get("Cores"),
             FixedIps=json_data.get("FixedIps"),
             FloatingIps=json_data.get("FloatingIps"),
+            Id=json_data.get("Id"),
             InjectedFileContentBytes=json_data.get("InjectedFileContentBytes"),
             InjectedFilePathBytes=json_data.get("InjectedFilePathBytes"),
             InjectedFiles=json_data.get("InjectedFiles"),

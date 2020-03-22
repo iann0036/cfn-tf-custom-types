@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arguments: Optional[Sequence["_Arguments"]]
     Command: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Templates: Optional[Sequence[str]]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arguments=json_data.get("Arguments"),
             Command=json_data.get("Command"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Templates=json_data.get("Templates"),
         )
@@ -63,8 +65,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Arguments:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -74,8 +76,8 @@ class Arguments:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

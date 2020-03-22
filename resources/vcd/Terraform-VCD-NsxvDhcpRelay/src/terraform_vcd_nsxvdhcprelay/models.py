@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DomainNames: Optional[Sequence[str]]
     EdgeGateway: Optional[str]
+    Id: Optional[str]
     IpAddresses: Optional[Sequence[str]]
     IpSets: Optional[Sequence[str]]
     Org: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DomainNames=json_data.get("DomainNames"),
             EdgeGateway=json_data.get("EdgeGateway"),
+            Id=json_data.get("Id"),
             IpAddresses=json_data.get("IpAddresses"),
             IpSets=json_data.get("IpSets"),
             Org=json_data.get("Org"),

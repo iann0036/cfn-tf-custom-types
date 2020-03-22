@@ -36,6 +36,9 @@
             "type": "boolean",
             "description": "If true, disable the service when the terraform resource is destroyed.  Defaults to true.  May be useful in the event that a project is long-lived but the infrastructure running in that project changes frequently."
         },
+        "Id": {
+            "type": "string"
+        },
         "Project": {
             "type": "string",
             "description": "The project ID. If not provided, the provider project is used."
@@ -53,10 +56,11 @@
         "Service"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

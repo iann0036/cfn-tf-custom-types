@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     IamRoleArn: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PlanId: Optional[str]
     Resources: Optional[Sequence[str]]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             IamRoleArn=json_data.get("IamRoleArn"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PlanId=json_data.get("PlanId"),
             Resources=json_data.get("Resources"),

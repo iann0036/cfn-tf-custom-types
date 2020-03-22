@@ -12,6 +12,9 @@
             "type": "string",
             "description": "An arbitrary map of configuration values."
         },
+        "Id": {
+            "type": "string"
+        },
         "Kind": {
             "type": "string",
             "description": "The kind of configuration entry to register."
@@ -27,10 +30,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -50,6 +50,9 @@
             "type": "string",
             "description": "Specifies expire date for the the request/response. Read [RFC2616 Expires](https://www.ietf.org/rfc/rfc2616.txt) for further details."
         },
+        "Id": {
+            "type": "string"
+        },
         "Key": {
             "type": "string",
             "description": "The name of the object once it is in the bucket."
@@ -79,10 +82,11 @@
         "/properties/tfcfnid",
         "/properties/ContentLength",
         "/properties/Etag",
+        "/properties/Id",
         "/properties/VersionId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

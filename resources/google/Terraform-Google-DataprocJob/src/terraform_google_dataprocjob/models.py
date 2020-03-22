@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DriverControlsFilesUri: Optional[str]
     DriverOutputResourceUri: Optional[str]
     ForceDelete: Optional[bool]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     Project: Optional[str]
     Region: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             DriverControlsFilesUri=json_data.get("DriverControlsFilesUri"),
             DriverOutputResourceUri=json_data.get("DriverOutputResourceUri"),
             ForceDelete=json_data.get("ForceDelete"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             Project=json_data.get("Project"),
             Region=json_data.get("Region"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -173,8 +175,8 @@ _HadoopConfig = HadoopConfig
 
 @dataclass
 class Properties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -184,8 +186,8 @@ class Properties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -215,8 +217,8 @@ _LoggingConfig = LoggingConfig
 
 @dataclass
 class DriverLogLevels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -226,8 +228,8 @@ class DriverLogLevels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -267,8 +269,8 @@ _HiveConfig = HiveConfig
 
 @dataclass
 class Properties2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -278,8 +280,8 @@ class Properties2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -289,8 +291,8 @@ _Properties2 = Properties2
 
 @dataclass
 class ScriptVariables:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -300,8 +302,8 @@ class ScriptVariables:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -343,8 +345,8 @@ _PigConfig = PigConfig
 
 @dataclass
 class Properties3:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -354,8 +356,8 @@ class Properties3:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -365,8 +367,8 @@ _Properties3 = Properties3
 
 @dataclass
 class ScriptVariables2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -376,8 +378,8 @@ class ScriptVariables2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -441,8 +443,8 @@ _PysparkConfig = PysparkConfig
 
 @dataclass
 class Properties4:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -452,8 +454,8 @@ class Properties4:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -537,8 +539,8 @@ _SparkConfig = SparkConfig
 
 @dataclass
 class Properties5:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -548,8 +550,8 @@ class Properties5:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -589,8 +591,8 @@ _SparksqlConfig = SparksqlConfig
 
 @dataclass
 class Properties6:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -600,8 +602,8 @@ class Properties6:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -611,8 +613,8 @@ _Properties6 = Properties6
 
 @dataclass
 class ScriptVariables3:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -622,8 +624,8 @@ class ScriptVariables3:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

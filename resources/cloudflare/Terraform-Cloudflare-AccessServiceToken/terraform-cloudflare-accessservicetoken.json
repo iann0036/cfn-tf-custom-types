@@ -18,6 +18,9 @@
         "ClientSecret": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Friendly name of the token's intent."
@@ -31,10 +34,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/ClientId",
-        "/properties/ClientSecret"
+        "/properties/ClientSecret",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

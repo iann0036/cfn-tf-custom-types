@@ -23,7 +23,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Recipients"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -79,6 +80,9 @@
             "type": "string",
             "description": "The id of the bucket to associate this environment with."
         },
+        "Id": {
+            "type": "string"
+        },
         "InitialVariables": {
             "type": "array",
             "insertionOrder": true,
@@ -86,16 +90,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of keys and values being used for variables when the test begins."
@@ -175,10 +179,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

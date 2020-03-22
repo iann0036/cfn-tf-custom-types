@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     OriginalRouteTableId: Optional[str]
     RouteTableId: Optional[str]
     VpcId: Optional[str]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             OriginalRouteTableId=json_data.get("OriginalRouteTableId"),
             RouteTableId=json_data.get("RouteTableId"),
             VpcId=json_data.get("VpcId"),

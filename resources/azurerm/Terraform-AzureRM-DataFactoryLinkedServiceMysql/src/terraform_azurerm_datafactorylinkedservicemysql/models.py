@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ConnectionString: Optional[str]
     DataFactoryName: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     IntegrationRuntimeName: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             ConnectionString=json_data.get("ConnectionString"),
             DataFactoryName=json_data.get("DataFactoryName"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IntegrationRuntimeName=json_data.get("IntegrationRuntimeName"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AdditionalProperties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class AdditionalProperties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -97,8 +99,8 @@ _AdditionalProperties = AdditionalProperties
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -108,8 +110,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

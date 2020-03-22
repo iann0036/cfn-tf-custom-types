@@ -277,6 +277,9 @@
             "type": "string",
             "description": "The Display Name for this API Management Operation."
         },
+        "Id": {
+            "type": "string"
+        },
         "Method": {
             "type": "string",
             "description": "The HTTP Method used for this API Management Operation, like `GET`, `DELETE`, `PUT` or `POST` - but not limited to these values."
@@ -358,10 +361,11 @@
         "UrlTemplate"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

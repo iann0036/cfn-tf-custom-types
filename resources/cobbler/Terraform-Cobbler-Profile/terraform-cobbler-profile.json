@@ -32,6 +32,9 @@
             "type": "string",
             "description": "Templates for tftp or wget."
         },
+        "Id": {
+            "type": "string"
+        },
         "KernelOptions": {
             "type": "string",
             "description": "Kernel options for the profile."
@@ -163,10 +166,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

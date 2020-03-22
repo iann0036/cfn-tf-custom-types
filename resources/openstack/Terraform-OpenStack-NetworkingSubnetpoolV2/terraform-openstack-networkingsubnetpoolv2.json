@@ -48,6 +48,9 @@
             "type": "string",
             "description": "The human-readable description for the subnetpool.\nChanging this updates the description of the existing subnetpool."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpVersion": {
             "type": "number"
         },
@@ -108,16 +111,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of additional options."
@@ -135,11 +138,12 @@
         "/properties/tfcfnid",
         "/properties/AllTags",
         "/properties/CreatedAt",
+        "/properties/Id",
         "/properties/RevisionNumber",
         "/properties/UpdatedAt"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

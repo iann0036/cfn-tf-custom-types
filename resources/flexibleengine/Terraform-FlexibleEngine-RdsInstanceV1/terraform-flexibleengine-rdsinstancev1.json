@@ -132,6 +132,9 @@
         "Hostname": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the DB instance name. The DB instance name of\nthe same type is unique in the same tenant. The changes of the instance name\nwill be suppressed in HA scenario."
@@ -217,10 +220,11 @@
         "Vpc"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

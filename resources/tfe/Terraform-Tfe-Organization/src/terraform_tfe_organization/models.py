@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CollaboratorAuthPolicy: Optional[str]
     Email: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     OwnersTeamSamlRoleId: Optional[str]
     SessionRememberMinutes: Optional[float]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CollaboratorAuthPolicy=json_data.get("CollaboratorAuthPolicy"),
             Email=json_data.get("Email"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OwnersTeamSamlRoleId=json_data.get("OwnersTeamSamlRoleId"),
             SessionRememberMinutes=json_data.get("SessionRememberMinutes"),

@@ -60,6 +60,9 @@
             "type": "string",
             "description": "Specifies the time when the precise protection rule expires. If time is set to true,\neither the start time or the end time must be set. Changing this creates a new rule."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of a precise protection rule. Changing this creates a new rule."
@@ -99,10 +102,11 @@
         "PolicyId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

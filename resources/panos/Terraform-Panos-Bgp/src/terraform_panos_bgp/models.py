@@ -49,6 +49,7 @@ class ResourceModel(BaseResourceModel):
     Enable: Optional[bool]
     EnableGracefulRestart: Optional[bool]
     EnforceFirstAs: Optional[bool]
+    Id: Optional[str]
     InstallRoute: Optional[bool]
     LocalRestartTime: Optional[float]
     MaxPeerRestartTime: Optional[float]
@@ -80,6 +81,7 @@ class ResourceModel(BaseResourceModel):
             Enable=json_data.get("Enable"),
             EnableGracefulRestart=json_data.get("EnableGracefulRestart"),
             EnforceFirstAs=json_data.get("EnforceFirstAs"),
+            Id=json_data.get("Id"),
             InstallRoute=json_data.get("InstallRoute"),
             LocalRestartTime=json_data.get("LocalRestartTime"),
             MaxPeerRestartTime=json_data.get("MaxPeerRestartTime"),

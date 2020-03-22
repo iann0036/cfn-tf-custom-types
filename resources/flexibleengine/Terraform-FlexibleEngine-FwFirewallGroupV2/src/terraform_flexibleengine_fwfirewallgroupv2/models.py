@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AdminStateUp: Optional[bool]
     Description: Optional[str]
     EgressPolicyId: Optional[str]
+    Id: Optional[str]
     IngressPolicyId: Optional[str]
     Name: Optional[str]
     Ports: Optional[Sequence[str]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             AdminStateUp=json_data.get("AdminStateUp"),
             Description=json_data.get("Description"),
             EgressPolicyId=json_data.get("EgressPolicyId"),
+            Id=json_data.get("Id"),
             IngressPolicyId=json_data.get("IngressPolicyId"),
             Name=json_data.get("Name"),
             Ports=json_data.get("Ports"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

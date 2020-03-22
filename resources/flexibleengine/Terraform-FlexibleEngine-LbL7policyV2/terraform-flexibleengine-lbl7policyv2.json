@@ -37,6 +37,9 @@
             "type": "string",
             "description": "Human-readable description for the L7 Policy."
         },
+        "Id": {
+            "type": "string"
+        },
         "ListenerId": {
             "type": "string",
             "description": "The Listener on which the L7 Policy will be associated with.\nChanging this creates a new L7 Policy."
@@ -75,10 +78,11 @@
         "ListenerId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DetectionMultiplier: Optional[float]
     HoldTime: Optional[float]
+    Id: Optional[str]
     MinimumRxInterval: Optional[float]
     MinimumRxTtl: Optional[float]
     MinimumTxInterval: Optional[float]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             DetectionMultiplier=json_data.get("DetectionMultiplier"),
             HoldTime=json_data.get("HoldTime"),
+            Id=json_data.get("Id"),
             MinimumRxInterval=json_data.get("MinimumRxInterval"),
             MinimumRxTtl=json_data.get("MinimumRxTtl"),
             MinimumTxInterval=json_data.get("MinimumTxInterval"),

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ExternalId: Optional[str]
     FilterTags: Optional[Sequence[str]]
     HostTags: Optional[Sequence[str]]
+    Id: Optional[str]
     RoleName: Optional[str]
 
     @classmethod
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             ExternalId=json_data.get("ExternalId"),
             FilterTags=json_data.get("FilterTags"),
             HostTags=json_data.get("HostTags"),
+            Id=json_data.get("Id"),
             RoleName=json_data.get("RoleName"),
         )
 
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AccountSpecificNamespaceRules:
-    Key: Optional[str]
-    Value: Optional[bool]
+    MapKey: Optional[str]
+    MapValue: Optional[bool]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class AccountSpecificNamespaceRules:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Id of CLB instance."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsAutoRewrite": {
             "type": "boolean",
             "description": "Indicates whether automatic forwarding is enable, default is false. If enabled, the source listener and location should be empty, the target listener must be https protocol and port is 443."
@@ -40,10 +43,11 @@
         "TargetRuleId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

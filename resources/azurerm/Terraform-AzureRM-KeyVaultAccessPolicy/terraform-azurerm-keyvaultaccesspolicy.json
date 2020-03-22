@@ -40,6 +40,9 @@
             },
             "description": "List of certificate permissions, must be one or more from\nthe following: `backup`, `create`, `delete`, `deleteissuers`, `get`, `getissuers`, `import`, `list`, `listissuers`,\n`managecontacts`, `manageissuers`, `purge`, `recover`, `restore`, `setissuers` and `update`."
         },
+        "Id": {
+            "type": "string"
+        },
         "KeyPermissions": {
             "type": "array",
             "insertionOrder": false,
@@ -87,10 +90,11 @@
         "TenantId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

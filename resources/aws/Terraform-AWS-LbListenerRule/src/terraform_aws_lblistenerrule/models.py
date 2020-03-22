@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
+    Id: Optional[str]
     ListenerArn: Optional[str]
     Priority: Optional[float]
     Action: Optional[Sequence["_Action"]]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
+            Id=json_data.get("Id"),
             ListenerArn=json_data.get("ListenerArn"),
             Priority=json_data.get("Priority"),
             Action=json_data.get("Action"),
@@ -151,8 +153,8 @@ _AuthenticateCognito = AuthenticateCognito
 
 @dataclass
 class AuthenticationRequestExtraParams:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -162,8 +164,8 @@ class AuthenticationRequestExtraParams:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -213,8 +215,8 @@ _AuthenticateOidc = AuthenticateOidc
 
 @dataclass
 class AuthenticationRequestExtraParams2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -224,8 +226,8 @@ class AuthenticationRequestExtraParams2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

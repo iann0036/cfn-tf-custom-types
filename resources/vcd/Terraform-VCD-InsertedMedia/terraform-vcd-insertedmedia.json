@@ -16,6 +16,9 @@
             "type": "boolean",
             "description": "Allows to pass answer to question in vCD\n\"The guest operating system has locked the CD-ROM door and is probably using the CD-ROM.\nDisconnect anyway (and override the lock)?\"\nwhen ejecting from a VM which is powered on. True means \"Yes\" as answer to question. Default is `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Media file name in catalog which will be inserted to VM."
@@ -45,10 +48,11 @@
         "VmName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

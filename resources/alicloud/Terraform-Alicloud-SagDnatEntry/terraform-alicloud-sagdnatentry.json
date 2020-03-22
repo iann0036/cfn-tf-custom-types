@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The public port.Value range: 1 to 65535 or \"any\"."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternalIp": {
             "type": "string",
             "description": "The destination private IP address."
@@ -47,10 +50,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

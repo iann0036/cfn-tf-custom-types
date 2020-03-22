@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Backend: Optional[str]
     DisablePeriodicTidy: Optional[bool]
+    Id: Optional[str]
     SafetyBuffer: Optional[float]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Backend=json_data.get("Backend"),
             DisablePeriodicTidy=json_data.get("DisablePeriodicTidy"),
+            Id=json_data.get("Id"),
             SafetyBuffer=json_data.get("SafetyBuffer"),
         )
 

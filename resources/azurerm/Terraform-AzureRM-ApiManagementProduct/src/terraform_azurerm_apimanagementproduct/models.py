@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ApprovalRequired: Optional[bool]
     Description: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     ProductId: Optional[str]
     Published: Optional[bool]
     ResourceGroupName: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             ApprovalRequired=json_data.get("ApprovalRequired"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             ProductId=json_data.get("ProductId"),
             Published=json_data.get("Published"),
             ResourceGroupName=json_data.get("ResourceGroupName"),

@@ -20,6 +20,9 @@
             },
             "description": "List of existing farm ids your vRack network is attached to."
         },
+        "Id": {
+            "type": "string"
+        },
         "NatIp": {
             "type": "string",
             "description": "An IP block used as a pool of IPs by this Load Balancer to connect to the servers in this private network. The blck must be in the private network and reserved for the Load Balancer."
@@ -48,10 +51,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/VrackNetworkId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

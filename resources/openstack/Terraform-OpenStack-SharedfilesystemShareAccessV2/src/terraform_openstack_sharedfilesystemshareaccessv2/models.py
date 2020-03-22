@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     AccessLevel: Optional[str]
     AccessTo: Optional[str]
     AccessType: Optional[str]
+    Id: Optional[str]
     Region: Optional[str]
     ShareId: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             AccessLevel=json_data.get("AccessLevel"),
             AccessTo=json_data.get("AccessTo"),
             AccessType=json_data.get("AccessType"),
+            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             ShareId=json_data.get("ShareId"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

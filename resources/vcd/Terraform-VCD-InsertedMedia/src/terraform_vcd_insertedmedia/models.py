@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Catalog: Optional[str]
     EjectForce: Optional[bool]
+    Id: Optional[str]
     Name: Optional[str]
     Org: Optional[str]
     VappName: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Catalog=json_data.get("Catalog"),
             EjectForce=json_data.get("EjectForce"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Org=json_data.get("Org"),
             VappName=json_data.get("VappName"),

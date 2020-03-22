@@ -29,16 +29,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Cluster annotation, key/value pair format. Changing this parameter will create a new cluster resource."
@@ -117,16 +117,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Extended parameter. Changing this parameter will create a new cluster resource."
@@ -145,6 +145,9 @@
             "type": "string",
             "description": "The ID of the high speed network used to create bare metal nodes. Changing this parameter will create a new cluster resource."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternalEndpoint": {
             "type": "string"
         },
@@ -155,16 +158,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Cluster tag, key/value pair format. Changing this parameter will create a new cluster resource."
@@ -209,12 +212,13 @@
         "/properties/CertificateUsers",
         "/properties/ExternalApigEndpoint",
         "/properties/ExternalEndpoint",
+        "/properties/Id",
         "/properties/InternalEndpoint",
         "/properties/SecurityGroupId",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

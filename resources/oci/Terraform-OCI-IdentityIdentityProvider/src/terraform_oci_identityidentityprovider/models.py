@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FreeformAttributes: Optional[Sequence["_FreeformAttributes"]]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
+    Id: Optional[str]
     InactiveState: Optional[str]
     Metadata: Optional[str]
     MetadataUrl: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FreeformAttributes=json_data.get("FreeformAttributes"),
             FreeformTags=json_data.get("FreeformTags"),
+            Id=json_data.get("Id"),
             InactiveState=json_data.get("InactiveState"),
             Metadata=json_data.get("Metadata"),
             MetadataUrl=json_data.get("MetadataUrl"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -109,8 +111,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformAttributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -120,8 +122,8 @@ class FreeformAttributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -131,8 +133,8 @@ _FreeformAttributes = FreeformAttributes
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -142,8 +144,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

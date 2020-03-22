@@ -24,6 +24,9 @@
             "type": "string",
             "description": "The description of the pipeline schedule."
         },
+        "Id": {
+            "type": "string"
+        },
         "Project": {
             "type": "string",
             "description": "The name or id of the project to add the schedule to."
@@ -41,10 +44,11 @@
         "Ref"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

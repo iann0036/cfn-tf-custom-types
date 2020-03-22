@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The destination CIDR block."
         },
+        "Id": {
+            "type": "string"
+        },
         "SagId": {
             "type": "string",
             "description": "The ID of the SAG instance."
@@ -28,10 +31,11 @@
         "SnatIp"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

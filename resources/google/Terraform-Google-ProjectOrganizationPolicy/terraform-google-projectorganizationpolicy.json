@@ -33,14 +33,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Allow"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Deny": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Deny"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -126,6 +128,9 @@
         "Etag": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Project": {
             "type": "string",
             "description": "The project id of the project to set the policy for."
@@ -189,10 +194,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Etag",
+        "/properties/Id",
         "/properties/UpdateTime"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

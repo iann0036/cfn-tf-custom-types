@@ -165,6 +165,9 @@
                 "type": "string"
             }
         },
+        "Id": {
+            "type": "string"
+        },
         "KmsKeyId": {
             "type": "string"
         },
@@ -208,16 +211,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -256,10 +259,11 @@
         "/properties/ClusterResourceId",
         "/properties/Endpoint",
         "/properties/HostedZoneId",
+        "/properties/Id",
         "/properties/ReaderEndpoint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

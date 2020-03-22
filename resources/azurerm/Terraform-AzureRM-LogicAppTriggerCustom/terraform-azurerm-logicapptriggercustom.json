@@ -32,6 +32,9 @@
             "type": "string",
             "description": "Specifies the JSON Blob defining the Body of this Custom Trigger."
         },
+        "Id": {
+            "type": "string"
+        },
         "LogicAppId": {
             "type": "string",
             "description": "Specifies the ID of the Logic App Workflow. Changing this forces a new resource to be created."
@@ -51,10 +54,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

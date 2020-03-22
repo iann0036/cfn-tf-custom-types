@@ -50,6 +50,9 @@
             "type": "string",
             "description": "Human-readable description for the pool."
         },
+        "Id": {
+            "type": "string"
+        },
         "LbMethod": {
             "type": "string",
             "description": "The load balancing algorithm to\ndistribute traffic to the pool's members. Must be one of\nROUND_ROBIN, LEAST_CONNECTIONS, or SOURCE_IP."
@@ -96,10 +99,11 @@
         "Protocol"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

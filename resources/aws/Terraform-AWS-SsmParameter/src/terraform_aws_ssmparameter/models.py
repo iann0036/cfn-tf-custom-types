@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllowedPattern: Optional[str]
     Arn: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     KeyId: Optional[str]
     Name: Optional[str]
     Overwrite: Optional[bool]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             AllowedPattern=json_data.get("AllowedPattern"),
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             KeyId=json_data.get("KeyId"),
             Name=json_data.get("Name"),
             Overwrite=json_data.get("Overwrite"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

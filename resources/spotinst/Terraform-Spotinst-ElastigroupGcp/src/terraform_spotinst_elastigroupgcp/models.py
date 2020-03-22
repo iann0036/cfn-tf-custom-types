@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     FallbackToOndemand: Optional[bool]
     HealthCheckGracePeriod: Optional[float]
     HealthCheckType: Optional[str]
+    Id: Optional[str]
     InstanceTypesOndemand: Optional[str]
     InstanceTypesPreemptible: Optional[Sequence[str]]
     IpForwarding: Optional[bool]
@@ -96,6 +97,7 @@ class ResourceModel(BaseResourceModel):
             FallbackToOndemand=json_data.get("FallbackToOndemand"),
             HealthCheckGracePeriod=json_data.get("HealthCheckGracePeriod"),
             HealthCheckType=json_data.get("HealthCheckType"),
+            Id=json_data.get("Id"),
             InstanceTypesOndemand=json_data.get("InstanceTypesOndemand"),
             InstanceTypesPreemptible=json_data.get("InstanceTypesPreemptible"),
             IpForwarding=json_data.get("IpForwarding"),

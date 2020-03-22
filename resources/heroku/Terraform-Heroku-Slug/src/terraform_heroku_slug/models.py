@@ -44,6 +44,7 @@ class ResourceModel(BaseResourceModel):
     CommitDescription: Optional[str]
     FilePath: Optional[str]
     FileUrl: Optional[str]
+    Id: Optional[str]
     ProcessTypes: Optional[Sequence["_ProcessTypes"]]
     Size: Optional[float]
     Stack: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             CommitDescription=json_data.get("CommitDescription"),
             FilePath=json_data.get("FilePath"),
             FileUrl=json_data.get("FileUrl"),
+            Id=json_data.get("Id"),
             ProcessTypes=json_data.get("ProcessTypes"),
             Size=json_data.get("Size"),
             Stack=json_data.get("Stack"),
@@ -101,8 +103,8 @@ _Blob = Blob
 
 @dataclass
 class ProcessTypes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -112,8 +114,8 @@ class ProcessTypes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

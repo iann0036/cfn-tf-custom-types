@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The ID of the original source database cluster."
         },
+        "Id": {
+            "type": "string"
+        },
         "MysqlAuthPlugin": {
             "type": "string",
             "description": "The authentication method to use for connections to the MySQL user account. The valid values are `mysql_native_password` or `caching_sha2_password` (this is the default)."
@@ -34,11 +37,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Password",
         "/properties/Role"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

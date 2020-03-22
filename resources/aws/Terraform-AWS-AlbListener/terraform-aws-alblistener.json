@@ -21,28 +21,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AuthenticateCognito"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "AuthenticateOidc": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AuthenticateOidc"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "FixedResponse": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FixedResponse"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Redirect": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Redirect"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -70,16 +74,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -122,16 +126,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -232,6 +236,9 @@
         "CertificateArn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancerArn": {
             "type": "string"
         },
@@ -295,10 +302,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/Arn"
+        "/properties/Arn",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

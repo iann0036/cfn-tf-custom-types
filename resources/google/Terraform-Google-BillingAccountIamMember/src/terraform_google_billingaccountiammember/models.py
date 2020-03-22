@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BillingAccountId: Optional[str]
     Etag: Optional[str]
+    Id: Optional[str]
     Member: Optional[str]
     Role: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             BillingAccountId=json_data.get("BillingAccountId"),
             Etag=json_data.get("Etag"),
+            Id=json_data.get("Id"),
             Member=json_data.get("Member"),
             Role=json_data.get("Role"),
         )

@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppId: Optional[str]
+    Id: Optional[str]
     SensitiveVars: Optional[Sequence["_SensitiveVars"]]
     Vars: Optional[Sequence["_Vars"]]
 
@@ -50,6 +51,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AppId=json_data.get("AppId"),
+            Id=json_data.get("Id"),
             SensitiveVars=json_data.get("SensitiveVars"),
             Vars=json_data.get("Vars"),
         )
@@ -61,8 +63,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class SensitiveVars:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -72,8 +74,8 @@ class SensitiveVars:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -83,8 +85,8 @@ _SensitiveVars = SensitiveVars
 
 @dataclass
 class Vars:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class Vars:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

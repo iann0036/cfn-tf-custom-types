@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     CustomEndpointType: Optional[str]
     Endpoint: Optional[str]
     ExcludedMembers: Optional[Sequence[str]]
+    Id: Optional[str]
     StaticMembers: Optional[Sequence[str]]
     Tags: Optional[Sequence["_Tags"]]
 
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             CustomEndpointType=json_data.get("CustomEndpointType"),
             Endpoint=json_data.get("Endpoint"),
             ExcludedMembers=json_data.get("ExcludedMembers"),
+            Id=json_data.get("Id"),
             StaticMembers=json_data.get("StaticMembers"),
             Tags=json_data.get("Tags"),
         )
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

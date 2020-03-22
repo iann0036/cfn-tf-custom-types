@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     CurrentLocationId: Optional[str]
     DisplayName: Optional[str]
     Host: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     LocationId: Optional[str]
     MemorySizeGb: Optional[float]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             CurrentLocationId=json_data.get("CurrentLocationId"),
             DisplayName=json_data.get("DisplayName"),
             Host=json_data.get("Host"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             LocationId=json_data.get("LocationId"),
             MemorySizeGb=json_data.get("MemorySizeGb"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -113,8 +115,8 @@ _Labels = Labels
 
 @dataclass
 class RedisConfigs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -124,8 +126,8 @@ class RedisConfigs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

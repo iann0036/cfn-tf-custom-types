@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Address: Optional[str]
     Datacenter: Optional[str]
     External: Optional[bool]
+    Id: Optional[str]
     Meta: Optional[Sequence["_Meta"]]
     Name: Optional[str]
     Node: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Address=json_data.get("Address"),
             Datacenter=json_data.get("Datacenter"),
             External=json_data.get("External"),
+            Id=json_data.get("Id"),
             Meta=json_data.get("Meta"),
             Name=json_data.get("Name"),
             Node=json_data.get("Node"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Meta:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Meta:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

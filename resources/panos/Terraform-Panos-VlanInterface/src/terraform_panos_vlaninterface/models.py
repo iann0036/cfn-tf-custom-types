@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     CreateDhcpDefaultRoute: Optional[bool]
     DhcpDefaultRouteMetric: Optional[float]
     EnableDhcp: Optional[bool]
+    Id: Optional[str]
     Ipv4MssAdjust: Optional[float]
     Ipv6MssAdjust: Optional[float]
     ManagementProfile: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             CreateDhcpDefaultRoute=json_data.get("CreateDhcpDefaultRoute"),
             DhcpDefaultRouteMetric=json_data.get("DhcpDefaultRouteMetric"),
             EnableDhcp=json_data.get("EnableDhcp"),
+            Id=json_data.get("Id"),
             Ipv4MssAdjust=json_data.get("Ipv4MssAdjust"),
             Ipv6MssAdjust=json_data.get("Ipv6MssAdjust"),
             ManagementProfile=json_data.get("ManagementProfile"),

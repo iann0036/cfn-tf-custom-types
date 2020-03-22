@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Bucket: Optional[Sequence["_Bucket"]]
     Enabled: Optional[bool]
+    Id: Optional[str]
     IncludedObjectVersions: Optional[str]
     Name: Optional[str]
     OptionalFields: Optional[Sequence[str]]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Bucket=json_data.get("Bucket"),
             Enabled=json_data.get("Enabled"),
+            Id=json_data.get("Id"),
             IncludedObjectVersions=json_data.get("IncludedObjectVersions"),
             Name=json_data.get("Name"),
             OptionalFields=json_data.get("OptionalFields"),

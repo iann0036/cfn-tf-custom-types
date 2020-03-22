@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The time for this action to end, in \"YYYY-MM-DDThh:mm:ss+08:00\" format (UTC+8)."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxSize": {
             "type": "number",
             "description": "The maximum size for the Auto Scaling group."
@@ -51,10 +54,11 @@
         "StartTime"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

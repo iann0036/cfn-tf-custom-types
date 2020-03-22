@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AlarmId: Optional[str]
     CoolDownTime: Optional[float]
+    Id: Optional[str]
     Region: Optional[str]
     ScalingGroupId: Optional[str]
     ScalingPolicyName: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AlarmId=json_data.get("AlarmId"),
             CoolDownTime=json_data.get("CoolDownTime"),
+            Id=json_data.get("Id"),
             Region=json_data.get("Region"),
             ScalingGroupId=json_data.get("ScalingGroupId"),
             ScalingPolicyName=json_data.get("ScalingPolicyName"),

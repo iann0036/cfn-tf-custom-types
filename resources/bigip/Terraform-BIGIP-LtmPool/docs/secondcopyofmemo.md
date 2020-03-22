@@ -1,4 +1,4 @@
-# Terraform::Spotinst::MultaiBalancer ConnectionTimeouts
+# Terraform::BIGIP::LtmPool SecondCopyOfMemo
 
 ## Syntax
 
@@ -8,33 +8,33 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 <pre>
 {
-    "<a href="#draining" title="Draining">Draining</a>" : <i>Double</i>,
-    "<a href="#idle" title="Idle">Idle</a>" : <i>Double</i>
+    "<a href="#heading" title="Heading">Heading</a>" : <i>String</i>,
+    "<a href="#body" title="Body">Body</a>" : <i>String</i>
 }
 </pre>
 
 ### YAML
 
 <pre>
-<a href="#draining" title="Draining">Draining</a>: <i>Double</i>
-<a href="#idle" title="Idle">Idle</a>: <i>Double</i>
+<a href="#heading" title="Heading">Heading</a>: <i>String</i>
+<a href="#body" title="Body">Body</a>: <i>String</i>
 </pre>
 
 ## Properties
 
-#### Draining
+#### Heading
 
 _Required_: No
 
-_Type_: Double
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
-#### Idle
+#### Body
 
 _Required_: No
 
-_Type_: Double
+_Type_: String
 
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 

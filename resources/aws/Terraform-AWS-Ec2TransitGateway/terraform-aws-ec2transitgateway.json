@@ -32,6 +32,9 @@
         "DnsSupport": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "OwnerId": {
             "type": "string"
         },
@@ -45,16 +48,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -68,11 +71,12 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/AssociationDefaultRouteTableId",
+        "/properties/Id",
         "/properties/OwnerId",
         "/properties/PropagationDefaultRouteTableId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -11,6 +11,9 @@
         "DnsSupport": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Ipv6Support": {
             "type": "string"
         },
@@ -28,16 +31,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -67,6 +70,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DnsSupport",
+        "/properties/Id",
         "/properties/Ipv6Support",
         "/properties/SubnetIds",
         "/properties/TransitGatewayId",
@@ -74,7 +78,7 @@
         "/properties/VpcOwnerId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

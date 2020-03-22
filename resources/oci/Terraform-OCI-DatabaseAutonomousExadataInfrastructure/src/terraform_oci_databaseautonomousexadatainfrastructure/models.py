@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     Domain: Optional[str]
     FreeformTags: Optional[Sequence["_FreeformTags"]]
     Hostname: Optional[str]
+    Id: Optional[str]
     LastMaintenanceRunId: Optional[str]
     LicenseModel: Optional[str]
     LifecycleDetails: Optional[str]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             Domain=json_data.get("Domain"),
             FreeformTags=json_data.get("FreeformTags"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             LastMaintenanceRunId=json_data.get("LastMaintenanceRunId"),
             LicenseModel=json_data.get("LicenseModel"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
@@ -97,8 +99,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DefinedTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -108,8 +110,8 @@ class DefinedTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -119,8 +121,8 @@ _DefinedTags = DefinedTags
 
 @dataclass
 class FreeformTags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -130,8 +132,8 @@ class FreeformTags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     HealthyThreshold: Optional[float]
     Host: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Port: Optional[float]
     Project: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             HealthyThreshold=json_data.get("HealthyThreshold"),
             Host=json_data.get("Host"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Port=json_data.get("Port"),
             Project=json_data.get("Project"),

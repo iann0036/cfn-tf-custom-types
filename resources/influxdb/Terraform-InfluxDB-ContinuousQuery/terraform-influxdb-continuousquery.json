@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The database for the continuous_query. This must be an existing influxdb database."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name for the continuous_query. This must be unique on the InfluxDB server."
@@ -28,10 +31,11 @@
         "Query"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

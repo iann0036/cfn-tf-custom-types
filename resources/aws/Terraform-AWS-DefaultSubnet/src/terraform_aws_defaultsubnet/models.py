@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     AvailabilityZone: Optional[str]
     AvailabilityZoneId: Optional[str]
     CidrBlock: Optional[str]
+    Id: Optional[str]
     Ipv6CidrBlock: Optional[str]
     Ipv6CidrBlockAssociationId: Optional[str]
     MapPublicIpOnLaunch: Optional[bool]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             AvailabilityZone=json_data.get("AvailabilityZone"),
             AvailabilityZoneId=json_data.get("AvailabilityZoneId"),
             CidrBlock=json_data.get("CidrBlock"),
+            Id=json_data.get("Id"),
             Ipv6CidrBlock=json_data.get("Ipv6CidrBlock"),
             Ipv6CidrBlockAssociationId=json_data.get("Ipv6CidrBlockAssociationId"),
             MapPublicIpOnLaunch=json_data.get("MapPublicIpOnLaunch"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -32,6 +32,9 @@
             "type": "string",
             "description": "The ID of the App Service to associate to the VNet. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "SubnetId": {
             "type": "string",
             "description": "The ID of the subnet the app service will be associated to (the subnet must have a `service_delegation` configured for `Microsoft.Web/serverFarms`)."
@@ -46,10 +49,11 @@
         "SubnetId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

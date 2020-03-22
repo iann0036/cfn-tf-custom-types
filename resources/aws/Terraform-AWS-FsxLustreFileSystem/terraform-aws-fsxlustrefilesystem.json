@@ -31,6 +31,9 @@
         "ExportPath": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "ImportPath": {
             "type": "string"
         },
@@ -71,16 +74,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -103,12 +106,13 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/DnsName",
+        "/properties/Id",
         "/properties/NetworkInterfaceIds",
         "/properties/OwnerId",
         "/properties/VpcId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

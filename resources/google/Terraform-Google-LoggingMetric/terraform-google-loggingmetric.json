@@ -12,21 +12,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ExplicitBuckets"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ExponentialBuckets": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ExponentialBuckets"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "LinearBuckets": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LinearBuckets"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -154,6 +157,9 @@
         "Filter": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LabelExtractors": {
             "type": "array",
             "insertionOrder": true,
@@ -161,16 +167,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -241,10 +247,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

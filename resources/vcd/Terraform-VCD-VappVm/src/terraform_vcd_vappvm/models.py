@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     ExposeHardwareVirtualization: Optional[bool]
     GuestProperties: Optional[Sequence["_GuestProperties"]]
     Href: Optional[str]
+    Id: Optional[str]
     Initscript: Optional[str]
     InternalDisk: Optional[Sequence["_InternalDisk"]]
     Ip: Optional[str]
@@ -85,6 +86,7 @@ class ResourceModel(BaseResourceModel):
             ExposeHardwareVirtualization=json_data.get("ExposeHardwareVirtualization"),
             GuestProperties=json_data.get("GuestProperties"),
             Href=json_data.get("Href"),
+            Id=json_data.get("Id"),
             Initscript=json_data.get("Initscript"),
             InternalDisk=json_data.get("InternalDisk"),
             Ip=json_data.get("Ip"),
@@ -115,8 +117,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class GuestProperties:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class GuestProperties:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -171,8 +173,8 @@ _InternalDisk = InternalDisk
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -182,8 +184,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

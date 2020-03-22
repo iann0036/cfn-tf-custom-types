@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CompartmentId: Optional[str]
+    Id: Optional[str]
     IsIfNotExists: Optional[bool]
     LifecycleDetails: Optional[str]
     Name: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CompartmentId=json_data.get("CompartmentId"),
+            Id=json_data.get("Id"),
             IsIfNotExists=json_data.get("IsIfNotExists"),
             LifecycleDetails=json_data.get("LifecycleDetails"),
             Name=json_data.get("Name"),

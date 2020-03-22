@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Detail: Optional[str]
     DomainList: Optional[Sequence["_DomainList"]]
+    Id: Optional[str]
     Name: Optional[str]
     Namespace: Optional[str]
     RepoType: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Detail=json_data.get("Detail"),
             DomainList=json_data.get("DomainList"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Namespace=json_data.get("Namespace"),
             RepoType=json_data.get("RepoType"),
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class DomainList:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class DomainList:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

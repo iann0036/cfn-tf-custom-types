@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreateTime: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     MetaData: Optional[str]
     Name: Optional[str]
     ProviderArn: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreateTime=json_data.get("CreateTime"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             MetaData=json_data.get("MetaData"),
             Name=json_data.get("Name"),
             ProviderArn=json_data.get("ProviderArn"),

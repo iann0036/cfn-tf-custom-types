@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EvaluatorType: Optional[str]
     FactData: Optional[str]
+    Id: Optional[str]
     LabName: Optional[str]
     Name: Optional[str]
     PolicySetName: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EvaluatorType=json_data.get("EvaluatorType"),
             FactData=json_data.get("FactData"),
+            Id=json_data.get("Id"),
             LabName=json_data.get("LabName"),
             Name=json_data.get("Name"),
             PolicySetName=json_data.get("PolicySetName"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

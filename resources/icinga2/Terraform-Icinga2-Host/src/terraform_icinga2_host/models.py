@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CheckCommand: Optional[str]
     Groups: Optional[Sequence[str]]
     Hostname: Optional[str]
+    Id: Optional[str]
     Templates: Optional[Sequence[str]]
     Vars: Optional[Sequence["_Vars"]]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             CheckCommand=json_data.get("CheckCommand"),
             Groups=json_data.get("Groups"),
             Hostname=json_data.get("Hostname"),
+            Id=json_data.get("Id"),
             Templates=json_data.get("Templates"),
             Vars=json_data.get("Vars"),
         )
@@ -67,8 +69,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Vars:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -78,8 +80,8 @@ class Vars:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

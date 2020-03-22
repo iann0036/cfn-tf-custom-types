@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     DscPrimaryAccessKey: Optional[str]
     DscSecondaryAccessKey: Optional[str]
     DscServerEndpoint: Optional[str]
+    Id: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
     ResourceGroupName: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             DscPrimaryAccessKey=json_data.get("DscPrimaryAccessKey"),
             DscSecondaryAccessKey=json_data.get("DscSecondaryAccessKey"),
             DscServerEndpoint=json_data.get("DscServerEndpoint"),
+            Id=json_data.get("Id"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

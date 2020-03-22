@@ -22,6 +22,9 @@
         "ConditionJson": {
             "type": "string",
             "description": "Contains a list of conditions. The first field in the list is `and` or `or`, followed by a list of operators and values."
+        },
+        "Id": {
+            "type": "string"
         }
     },
     "additionalProperties": false,
@@ -31,10 +34,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/CatchAll"
+        "/properties/CatchAll",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

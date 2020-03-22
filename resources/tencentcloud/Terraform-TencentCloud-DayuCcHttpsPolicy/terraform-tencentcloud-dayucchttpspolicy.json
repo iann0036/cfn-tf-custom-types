@@ -43,6 +43,9 @@
             "type": "string",
             "description": "Domain that the CC self-define https policy works for, only valid when `protocol` is `https`."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpList": {
             "type": "array",
             "insertionOrder": true,
@@ -93,11 +96,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/IpList",
         "/properties/PolicyId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

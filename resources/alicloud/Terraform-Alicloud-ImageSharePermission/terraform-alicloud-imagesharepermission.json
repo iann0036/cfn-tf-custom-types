@@ -12,6 +12,10 @@
             "type": "string",
             "description": "Alibaba Cloud Account ID. It is used to share images."
         },
+        "Id": {
+            "type": "string",
+            "description": "ID of the image. It formats as `<image_id>:<account_id>`."
+        },
         "ImageId": {
             "type": "string",
             "description": "The source image ID."
@@ -23,10 +27,11 @@
         "ImageId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

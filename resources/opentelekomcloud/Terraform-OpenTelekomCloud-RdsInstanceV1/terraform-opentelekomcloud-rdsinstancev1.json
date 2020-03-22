@@ -132,6 +132,9 @@
         "Hostname": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the DB instance name. The DB instance name of\nthe same type is unique in the same tenant. The changes of the instance name\nwill be suppressed in HA scenario."
@@ -149,16 +152,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Tags key/value pairs to associate with the instance."
@@ -240,12 +243,13 @@
         "/properties/tfcfnid",
         "/properties/Created",
         "/properties/Hostname",
+        "/properties/Id",
         "/properties/Status",
         "/properties/Type",
         "/properties/Updated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

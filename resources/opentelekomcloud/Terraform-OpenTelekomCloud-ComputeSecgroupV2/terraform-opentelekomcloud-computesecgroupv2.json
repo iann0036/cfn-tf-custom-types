@@ -58,6 +58,9 @@
             "type": "string",
             "description": "A description for the security group. Changing this\nupdates the `description` of an existing security group."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "A unique name for the security group. Changing this\nupdates the `name` of an existing security group."
@@ -82,10 +85,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

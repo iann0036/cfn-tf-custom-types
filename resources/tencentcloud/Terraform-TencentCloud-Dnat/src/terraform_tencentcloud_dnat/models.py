@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     ElasticIp: Optional[str]
     ElasticPort: Optional[str]
+    Id: Optional[str]
     NatId: Optional[str]
     PrivateIp: Optional[str]
     PrivatePort: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             ElasticIp=json_data.get("ElasticIp"),
             ElasticPort=json_data.get("ElasticPort"),
+            Id=json_data.get("Id"),
             NatId=json_data.get("NatId"),
             PrivateIp=json_data.get("PrivateIp"),
             PrivatePort=json_data.get("PrivatePort"),

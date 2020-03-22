@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Name of the of the Declarative DO JSON file."
         },
+        "Id": {
+            "type": "string"
+        },
         "TenantName": {
             "type": "string"
         }
@@ -22,10 +25,11 @@
         "TenantName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

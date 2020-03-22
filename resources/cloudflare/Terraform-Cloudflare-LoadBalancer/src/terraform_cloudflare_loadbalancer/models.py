@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     Enabled: Optional[bool]
     FallbackPoolId: Optional[str]
+    Id: Optional[str]
     ModifiedOn: Optional[str]
     Name: Optional[str]
     Proxied: Optional[bool]
@@ -65,6 +66,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             Enabled=json_data.get("Enabled"),
             FallbackPoolId=json_data.get("FallbackPoolId"),
+            Id=json_data.get("Id"),
             ModifiedOn=json_data.get("ModifiedOn"),
             Name=json_data.get("Name"),
             Proxied=json_data.get("Proxied"),

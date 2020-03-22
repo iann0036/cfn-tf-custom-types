@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     SqlInjectionMatchTuples: Optional[Sequence["_SqlInjectionMatchTuples"]]
     FieldToMatch: Optional[Sequence["_FieldToMatch"]]
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             SqlInjectionMatchTuples=json_data.get("SqlInjectionMatchTuples"),
             FieldToMatch=json_data.get("FieldToMatch"),

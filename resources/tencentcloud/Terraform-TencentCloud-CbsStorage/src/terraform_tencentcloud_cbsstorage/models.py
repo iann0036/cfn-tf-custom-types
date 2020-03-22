@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Attached: Optional[bool]
     AvailabilityZone: Optional[str]
     Encrypt: Optional[bool]
+    Id: Optional[str]
     Period: Optional[float]
     ProjectId: Optional[float]
     SnapshotId: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Attached=json_data.get("Attached"),
             AvailabilityZone=json_data.get("AvailabilityZone"),
             Encrypt=json_data.get("Encrypt"),
+            Id=json_data.get("Id"),
             Period=json_data.get("Period"),
             ProjectId=json_data.get("ProjectId"),
             SnapshotId=json_data.get("SnapshotId"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

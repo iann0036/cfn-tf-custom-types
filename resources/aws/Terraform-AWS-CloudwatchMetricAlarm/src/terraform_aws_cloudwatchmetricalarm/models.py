@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     EvaluateLowSampleCountPercentiles: Optional[str]
     EvaluationPeriods: Optional[float]
     ExtendedStatistic: Optional[str]
+    Id: Optional[str]
     InsufficientDataActions: Optional[Sequence[str]]
     MetricName: Optional[str]
     Namespace: Optional[str]
@@ -81,6 +82,7 @@ class ResourceModel(BaseResourceModel):
             EvaluateLowSampleCountPercentiles=json_data.get("EvaluateLowSampleCountPercentiles"),
             EvaluationPeriods=json_data.get("EvaluationPeriods"),
             ExtendedStatistic=json_data.get("ExtendedStatistic"),
+            Id=json_data.get("Id"),
             InsufficientDataActions=json_data.get("InsufficientDataActions"),
             MetricName=json_data.get("MetricName"),
             Namespace=json_data.get("Namespace"),
@@ -103,8 +105,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Dimensions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class Dimensions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -125,8 +127,8 @@ _Dimensions = Dimensions
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -136,8 +138,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -205,8 +207,8 @@ _Metric = Metric
 
 @dataclass
 class Dimensions2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -216,8 +218,8 @@ class Dimensions2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

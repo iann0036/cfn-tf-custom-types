@@ -17,16 +17,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -71,6 +71,9 @@
             "type": "string"
         },
         "Endpoint": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "Ipv4Address": {
@@ -157,6 +160,7 @@
         "/properties/ClusterSubnet",
         "/properties/CreatedAt",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/Ipv4Address",
         "/properties/KubeConfig",
         "/properties/ServiceSubnet",
@@ -164,7 +168,7 @@
         "/properties/UpdatedAt"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     CpuShareLevel: Optional[str]
     CpuShares: Optional[float]
     CustomAttributes: Optional[Sequence["_CustomAttributes"]]
+    Id: Optional[str]
     MemoryExpandable: Optional[bool]
     MemoryLimit: Optional[float]
     MemoryReservation: Optional[float]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             CpuShareLevel=json_data.get("CpuShareLevel"),
             CpuShares=json_data.get("CpuShares"),
             CustomAttributes=json_data.get("CustomAttributes"),
+            Id=json_data.get("Id"),
             MemoryExpandable=json_data.get("MemoryExpandable"),
             MemoryLimit=json_data.get("MemoryLimit"),
             MemoryReservation=json_data.get("MemoryReservation"),
@@ -83,8 +85,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CustomAttributes:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class CustomAttributes:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

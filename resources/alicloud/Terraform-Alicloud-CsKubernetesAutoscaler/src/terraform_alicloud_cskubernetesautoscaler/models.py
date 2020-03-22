@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ClusterId: Optional[str]
     CoolDownDuration: Optional[str]
     DeferScaleInDuration: Optional[str]
+    Id: Optional[str]
     Utilization: Optional[str]
     Nodepools: Optional[Sequence["_Nodepools"]]
     Timeouts: Optional["_Timeouts"]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             ClusterId=json_data.get("ClusterId"),
             CoolDownDuration=json_data.get("CoolDownDuration"),
             DeferScaleInDuration=json_data.get("DeferScaleInDuration"),
+            Id=json_data.get("Id"),
             Utilization=json_data.get("Utilization"),
             Nodepools=json_data.get("Nodepools"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

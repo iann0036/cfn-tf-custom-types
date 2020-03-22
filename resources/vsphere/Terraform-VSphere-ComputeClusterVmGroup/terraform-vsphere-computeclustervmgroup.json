@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The [managed object reference\nID][docs-about-morefs] of the cluster to put the group in.  Forces a new\nresource if changed."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the VM group. This must be unique in the\ncluster. Forces a new resource if changed."
@@ -31,10 +34,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

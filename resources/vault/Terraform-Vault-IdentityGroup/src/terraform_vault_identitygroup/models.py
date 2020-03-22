@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ExternalPolicies: Optional[bool]
+    Id: Optional[str]
     MemberEntityIds: Optional[Sequence[str]]
     MemberGroupIds: Optional[Sequence[str]]
     Metadata: Optional[Sequence["_Metadata"]]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ExternalPolicies=json_data.get("ExternalPolicies"),
+            Id=json_data.get("Id"),
             MemberEntityIds=json_data.get("MemberEntityIds"),
             MemberGroupIds=json_data.get("MemberGroupIds"),
             Metadata=json_data.get("Metadata"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

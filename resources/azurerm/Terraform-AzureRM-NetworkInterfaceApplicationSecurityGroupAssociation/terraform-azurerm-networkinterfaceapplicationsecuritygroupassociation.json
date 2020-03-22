@@ -32,6 +32,9 @@
             "type": "string",
             "description": "The ID of the Application Security Group which this Network Interface which should be connected to. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "NetworkInterfaceId": {
             "type": "string",
             "description": "The ID of the Network Interface. Changing this forces a new resource to be created."
@@ -46,10 +49,11 @@
         "NetworkInterfaceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

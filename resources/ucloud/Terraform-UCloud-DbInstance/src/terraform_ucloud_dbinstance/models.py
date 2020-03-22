@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     Engine: Optional[str]
     EngineVersion: Optional[str]
     ExpireTime: Optional[str]
+    Id: Optional[str]
     InstanceStorage: Optional[float]
     InstanceType: Optional[str]
     ModifyTime: Optional[str]
@@ -80,6 +81,7 @@ class ResourceModel(BaseResourceModel):
             Engine=json_data.get("Engine"),
             EngineVersion=json_data.get("EngineVersion"),
             ExpireTime=json_data.get("ExpireTime"),
+            Id=json_data.get("Id"),
             InstanceStorage=json_data.get("InstanceStorage"),
             InstanceType=json_data.get("InstanceType"),
             ModifyTime=json_data.get("ModifyTime"),

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Automount: Optional[bool]
     Format: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     LinuxDevice: Optional[str]
     Location: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Automount=json_data.get("Automount"),
             Format=json_data.get("Format"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             LinuxDevice=json_data.get("LinuxDevice"),
             Location=json_data.get("Location"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

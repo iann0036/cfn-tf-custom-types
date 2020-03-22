@@ -73,6 +73,9 @@
             "type": "boolean",
             "description": "Is the cost management export active? Default is `true`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the Cost Management Export. Changing this forces a new resource to be created."
@@ -124,10 +127,11 @@
         "ResourceGroupId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

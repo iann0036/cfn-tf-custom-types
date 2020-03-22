@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Name of the group. Two groups on a single instance cannot have the same name. A `group_id` starts with \"GID_\" or \"GID-\", and contains letters, numbers, hyphens (-), and underscores (_)."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "ID of the ONS Instance that owns the groups."
@@ -31,10 +34,11 @@
         "InstanceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

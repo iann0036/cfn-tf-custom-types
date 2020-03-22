@@ -60,6 +60,9 @@
             "type": "number",
             "description": "Threshold determining the result of the health check is success. It is required when `health_check` is on. Valid value range: [1-10] in seconds. Default to 3."
         },
+        "Id": {
+            "type": "string"
+        },
         "ListenerSync": {
             "type": "string",
             "description": "Indicates whether a forwarding rule inherits the settings of a health check , session persistence, and scheduling algorithm from a listener. Default to on."
@@ -104,10 +107,11 @@
         "ServerGroupId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

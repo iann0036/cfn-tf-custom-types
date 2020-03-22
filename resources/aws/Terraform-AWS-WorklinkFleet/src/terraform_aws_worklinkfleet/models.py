@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     CreatedTime: Optional[str]
     DeviceCaCertificate: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     LastUpdatedTime: Optional[str]
     Name: Optional[str]
     OptimizeForEndUserLocation: Optional[bool]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             CreatedTime=json_data.get("CreatedTime"),
             DeviceCaCertificate=json_data.get("DeviceCaCertificate"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             LastUpdatedTime=json_data.get("LastUpdatedTime"),
             Name=json_data.get("Name"),
             OptimizeForEndUserLocation=json_data.get("OptimizeForEndUserLocation"),

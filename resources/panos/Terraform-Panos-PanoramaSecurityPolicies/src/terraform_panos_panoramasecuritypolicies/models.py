@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DeviceGroup: Optional[str]
+    Id: Optional[str]
     Rulebase: Optional[str]
     Rule: Optional[Sequence["_Rule"]]
     Target: Optional[Sequence["_Target"]]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DeviceGroup=json_data.get("DeviceGroup"),
+            Id=json_data.get("Id"),
             Rulebase=json_data.get("Rulebase"),
             Rule=json_data.get("Rule"),
             Target=json_data.get("Target"),

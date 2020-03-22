@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CanIpForward: Optional[bool]
     Description: Optional[str]
     EnableDisplay: Optional[bool]
+    Id: Optional[str]
     InstanceDescription: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     MachineType: Optional[str]
@@ -76,6 +77,7 @@ class ResourceModel(BaseResourceModel):
             CanIpForward=json_data.get("CanIpForward"),
             Description=json_data.get("Description"),
             EnableDisplay=json_data.get("EnableDisplay"),
+            Id=json_data.get("Id"),
             InstanceDescription=json_data.get("InstanceDescription"),
             Labels=json_data.get("Labels"),
             MachineType=json_data.get("MachineType"),
@@ -109,8 +111,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -120,8 +122,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -131,8 +133,8 @@ _Labels = Labels
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -142,8 +144,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -197,8 +199,8 @@ _Disk = Disk
 
 @dataclass
 class Labels2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -208,8 +210,8 @@ class Labels2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

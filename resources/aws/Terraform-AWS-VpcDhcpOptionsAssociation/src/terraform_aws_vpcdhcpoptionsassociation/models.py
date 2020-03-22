@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DhcpOptionsId: Optional[str]
+    Id: Optional[str]
     VpcId: Optional[str]
 
     @classmethod
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DhcpOptionsId=json_data.get("DhcpOptionsId"),
+            Id=json_data.get("Id"),
             VpcId=json_data.get("VpcId"),
         )
 

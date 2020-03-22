@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Groups: Optional[Sequence[str]]
+    Id: Optional[str]
     MonitorIds: Optional[Sequence[float]]
     MonitorSearch: Optional[str]
     Name: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Groups=json_data.get("Groups"),
+            Id=json_data.get("Id"),
             MonitorIds=json_data.get("MonitorIds"),
             MonitorSearch=json_data.get("MonitorSearch"),
             Name=json_data.get("Name"),

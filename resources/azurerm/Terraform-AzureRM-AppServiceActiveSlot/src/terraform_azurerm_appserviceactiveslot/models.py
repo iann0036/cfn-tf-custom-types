@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AppServiceName: Optional[str]
     AppServiceSlotName: Optional[str]
+    Id: Optional[str]
     ResourceGroupName: Optional[str]
     Timeouts: Optional["_Timeouts"]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AppServiceName=json_data.get("AppServiceName"),
             AppServiceSlotName=json_data.get("AppServiceSlotName"),
+            Id=json_data.get("Id"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),
         )

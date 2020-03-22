@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreateMode: Optional[float]
     CreateTime: Optional[str]
+    Id: Optional[str]
     PolicyId: Optional[str]
     PolicyName: Optional[str]
     PolicyType: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CreateMode=json_data.get("CreateMode"),
             CreateTime=json_data.get("CreateTime"),
+            Id=json_data.get("Id"),
             PolicyId=json_data.get("PolicyId"),
             PolicyName=json_data.get("PolicyName"),
             PolicyType=json_data.get("PolicyType"),

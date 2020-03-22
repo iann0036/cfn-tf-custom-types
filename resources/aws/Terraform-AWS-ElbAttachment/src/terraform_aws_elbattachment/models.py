@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Elb: Optional[str]
+    Id: Optional[str]
     Instance: Optional[str]
 
     @classmethod
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Elb=json_data.get("Elb"),
+            Id=json_data.get("Id"),
             Instance=json_data.get("Instance"),
         )
 

@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Enabled: Optional[bool]
     ExpectedGroups: Optional[float]
+    Id: Optional[str]
     IgnoreOverlap: Optional[bool]
     Name: Optional[str]
     PolicyId: Optional[float]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Enabled=json_data.get("Enabled"),
             ExpectedGroups=json_data.get("ExpectedGroups"),
+            Id=json_data.get("Id"),
             IgnoreOverlap=json_data.get("IgnoreOverlap"),
             Name=json_data.get("Name"),
             PolicyId=json_data.get("PolicyId"),

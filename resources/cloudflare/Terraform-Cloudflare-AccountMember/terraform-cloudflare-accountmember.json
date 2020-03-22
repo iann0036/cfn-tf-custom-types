@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The email address of the user who you wish to manage. Note: Following creation, this field becomes read only via the API and cannot be updated."
         },
+        "Id": {
+            "type": "string"
+        },
         "RoleIds": {
             "type": "array",
             "insertionOrder": false,
@@ -27,10 +30,11 @@
         "RoleIds"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

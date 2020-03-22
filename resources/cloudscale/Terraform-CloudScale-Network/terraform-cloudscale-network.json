@@ -11,6 +11,9 @@
         "Href": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Mtu": {
             "type": "number",
             "description": "`You can specify the MTU size for the network, defaults to 9000."
@@ -50,10 +53,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Href",
+        "/properties/Id",
         "/properties/Subnets"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

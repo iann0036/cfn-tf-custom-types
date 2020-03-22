@@ -47,6 +47,9 @@
             "type": "string",
             "description": "A description for the Virtual Network."
         },
+        "Id": {
+            "type": "string"
+        },
         "LabName": {
             "type": "string",
             "description": "Specifies the name of the Dev Test Lab in which the Virtual Network should be created. Changing this forces a new resource to be created."
@@ -66,16 +69,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags to assign to the resource."
@@ -103,10 +106,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/UniqueIdentifier"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

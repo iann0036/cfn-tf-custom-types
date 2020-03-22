@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Arn: Optional[str]
     DefaultVersionId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Policy: Optional[str]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Arn=json_data.get("Arn"),
             DefaultVersionId=json_data.get("DefaultVersionId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Policy=json_data.get("Policy"),
         )

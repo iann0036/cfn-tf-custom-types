@@ -15,7 +15,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/InstanceProperties"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -110,6 +112,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -173,11 +178,12 @@
         "/properties/tfcfnid",
         "/properties/Commitment",
         "/properties/CreationTimestamp",
+        "/properties/Id",
         "/properties/SelfLink",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

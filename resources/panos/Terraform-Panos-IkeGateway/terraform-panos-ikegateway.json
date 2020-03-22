@@ -72,6 +72,9 @@
             "type": "boolean",
             "description": "Set to `true` to enable passive\nmode (responder only)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Ikev1CryptoProfile": {
             "type": "string",
             "description": "IKEv1 crypto profile."
@@ -167,10 +170,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PreSharedKeyEnc"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

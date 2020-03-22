@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FailureDetail: Optional[str]
     FaultLevel: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     PriorityStation: Optional[str]
     Progress: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FailureDetail=json_data.get("FailureDetail"),
             FaultLevel=json_data.get("FaultLevel"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PriorityStation=json_data.get("PriorityStation"),
             Progress=json_data.get("Progress"),

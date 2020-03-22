@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     LogicalRouterId: Optional[str]
     Network: Optional[str]
     Revision: Optional[float]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             LogicalRouterId=json_data.get("LogicalRouterId"),
             Network=json_data.get("Network"),
             Revision=json_data.get("Revision"),

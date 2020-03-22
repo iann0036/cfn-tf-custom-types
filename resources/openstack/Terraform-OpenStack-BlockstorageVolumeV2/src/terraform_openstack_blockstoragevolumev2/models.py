@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     AvailabilityZone: Optional[str]
     ConsistencyGroupId: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     ImageId: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             AvailabilityZone=json_data.get("AvailabilityZone"),
             ConsistencyGroupId=json_data.get("ConsistencyGroupId"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             ImageId=json_data.get("ImageId"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
@@ -107,8 +109,8 @@ _Attachment = Attachment
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -118,8 +120,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

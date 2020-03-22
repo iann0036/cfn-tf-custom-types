@@ -16,6 +16,9 @@
             "type": "string",
             "description": "direction of rule (`inbound`, `outbound`)."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpRange": {
             "type": "string",
             "description": "ip_range of rule."
@@ -42,10 +45,11 @@
         "SecurityGroup"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

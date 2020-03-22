@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     EnableAutomaticFailover: Optional[bool]
     EnableMultipleWriteLocations: Optional[bool]
     Endpoint: Optional[str]
+    Id: Optional[str]
     IpRangeFilter: Optional[str]
     IsVirtualNetworkFilterEnabled: Optional[bool]
     Kind: Optional[str]
@@ -73,6 +74,7 @@ class ResourceModel(BaseResourceModel):
             EnableAutomaticFailover=json_data.get("EnableAutomaticFailover"),
             EnableMultipleWriteLocations=json_data.get("EnableMultipleWriteLocations"),
             Endpoint=json_data.get("Endpoint"),
+            Id=json_data.get("Id"),
             IpRangeFilter=json_data.get("IpRangeFilter"),
             IsVirtualNetworkFilterEnabled=json_data.get("IsVirtualNetworkFilterEnabled"),
             Kind=json_data.get("Kind"),
@@ -101,8 +103,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -112,8 +114,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

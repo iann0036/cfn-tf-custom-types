@@ -55,6 +55,7 @@ class ResourceModel(BaseResourceModel):
     HardwareClockTimezone: Optional[str]
     HostReference: Optional[Sequence["_HostReference"]]
     HypervisorType: Optional[str]
+    Id: Optional[str]
     MemorySizeMib: Optional[float]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -109,6 +110,7 @@ class ResourceModel(BaseResourceModel):
             HardwareClockTimezone=json_data.get("HardwareClockTimezone"),
             HostReference=json_data.get("HostReference"),
             HypervisorType=json_data.get("HypervisorType"),
+            Id=json_data.get("Id"),
             MemorySizeMib=json_data.get("MemorySizeMib"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
@@ -143,8 +145,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AvailabilityZoneReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -154,8 +156,8 @@ class AvailabilityZoneReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -165,8 +167,8 @@ _AvailabilityZoneReference = AvailabilityZoneReference
 
 @dataclass
 class BootDeviceDiskAddress:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -176,8 +178,8 @@ class BootDeviceDiskAddress:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -187,8 +189,8 @@ _BootDeviceDiskAddress = BootDeviceDiskAddress
 
 @dataclass
 class GuestCustomizationCloudInitCustomKeyValues:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -198,8 +200,8 @@ class GuestCustomizationCloudInitCustomKeyValues:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -209,8 +211,8 @@ _GuestCustomizationCloudInitCustomKeyValues = GuestCustomizationCloudInitCustomK
 
 @dataclass
 class GuestCustomizationSysprep:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -220,8 +222,8 @@ class GuestCustomizationSysprep:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -231,8 +233,8 @@ _GuestCustomizationSysprep = GuestCustomizationSysprep
 
 @dataclass
 class GuestCustomizationSysprepCustomKeyValues:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -242,8 +244,8 @@ class GuestCustomizationSysprepCustomKeyValues:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -253,8 +255,8 @@ _GuestCustomizationSysprepCustomKeyValues = GuestCustomizationSysprepCustomKeyVa
 
 @dataclass
 class HostReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -264,8 +266,8 @@ class HostReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -275,8 +277,8 @@ _HostReference = HostReference
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -286,8 +288,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -297,8 +299,8 @@ _Metadata = Metadata
 
 @dataclass
 class NgtCredentials:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -308,8 +310,8 @@ class NgtCredentials:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -381,8 +383,8 @@ _IpEndpointList = IpEndpointList
 
 @dataclass
 class NetworkFunctionChainReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -392,8 +394,8 @@ class NetworkFunctionChainReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -403,8 +405,8 @@ _NetworkFunctionChainReference = NetworkFunctionChainReference
 
 @dataclass
 class NutanixGuestTools:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -414,8 +416,8 @@ class NutanixGuestTools:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -425,8 +427,8 @@ _NutanixGuestTools = NutanixGuestTools
 
 @dataclass
 class OwnerReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -436,8 +438,8 @@ class OwnerReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -447,8 +449,8 @@ _OwnerReference = OwnerReference
 
 @dataclass
 class ParentReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -458,8 +460,8 @@ class ParentReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -469,8 +471,8 @@ _ParentReference = ParentReference
 
 @dataclass
 class ProjectReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -480,8 +482,8 @@ class ProjectReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -543,8 +545,8 @@ _DiskList = DiskList
 
 @dataclass
 class DataSourceReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -554,8 +556,8 @@ class DataSourceReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -565,8 +567,8 @@ _DataSourceReference = DataSourceReference
 
 @dataclass
 class VolumeGroupReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -576,8 +578,8 @@ class VolumeGroupReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -609,8 +611,8 @@ _DeviceProperties = DeviceProperties
 
 @dataclass
 class DiskAddress:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -620,8 +622,8 @@ class DiskAddress:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -693,8 +695,8 @@ _NicList = NicList
 
 @dataclass
 class NetworkFunctionChainReference2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -704,8 +706,8 @@ class NetworkFunctionChainReference2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

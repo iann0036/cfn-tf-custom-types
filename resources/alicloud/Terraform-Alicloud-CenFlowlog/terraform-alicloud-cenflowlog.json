@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The name of flowlog."
         },
+        "Id": {
+            "type": "string"
+        },
         "LogStoreName": {
             "type": "string",
             "description": "The name of the log store which is in the  `project_name` SLS project."
@@ -40,10 +43,11 @@
         "ProjectName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

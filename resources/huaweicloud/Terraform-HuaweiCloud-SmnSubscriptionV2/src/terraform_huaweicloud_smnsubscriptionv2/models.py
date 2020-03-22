@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Endpoint: Optional[str]
+    Id: Optional[str]
     Owner: Optional[str]
     Protocol: Optional[str]
     Remark: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Endpoint=json_data.get("Endpoint"),
+            Id=json_data.get("Id"),
             Owner=json_data.get("Owner"),
             Protocol=json_data.get("Protocol"),
             Remark=json_data.get("Remark"),

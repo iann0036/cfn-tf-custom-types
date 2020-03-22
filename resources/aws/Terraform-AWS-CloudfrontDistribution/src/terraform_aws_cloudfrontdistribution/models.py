@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     Etag: Optional[str]
     HostedZoneId: Optional[str]
     HttpVersion: Optional[str]
+    Id: Optional[str]
     InProgressValidationBatches: Optional[float]
     IsIpv6Enabled: Optional[bool]
     LastModifiedTime: Optional[str]
@@ -95,6 +96,7 @@ class ResourceModel(BaseResourceModel):
             Etag=json_data.get("Etag"),
             HostedZoneId=json_data.get("HostedZoneId"),
             HttpVersion=json_data.get("HttpVersion"),
+            Id=json_data.get("Id"),
             InProgressValidationBatches=json_data.get("InProgressValidationBatches"),
             IsIpv6Enabled=json_data.get("IsIpv6Enabled"),
             LastModifiedTime=json_data.get("LastModifiedTime"),
@@ -131,8 +133,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ActiveTrustedSigners:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -142,8 +144,8 @@ class ActiveTrustedSigners:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -153,8 +155,8 @@ _ActiveTrustedSigners = ActiveTrustedSigners
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -164,8 +166,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

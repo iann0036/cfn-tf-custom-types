@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Action for the RBAC policy. Can either be\n`access_as_external` or `access_as_shared`."
         },
+        "Id": {
+            "type": "string"
+        },
         "ObjectId": {
             "type": "string",
             "description": "The ID of the `object_type` resource. An\n`object_type` of `network` returns a network ID and an `object_type` of\n`qos_policy` returns a QoS ID."
@@ -41,10 +44,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/ProjectId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

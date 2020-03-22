@@ -79,7 +79,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HeaderAction"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "PathRule": {
                     "type": "array",
@@ -198,14 +199,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RouteAction"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "UrlRedirect": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/UrlRedirect"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -227,7 +230,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HeaderAction"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "MatchRules": {
                     "type": "array",
@@ -241,14 +245,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RouteAction"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "UrlRedirect": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/UrlRedirect"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -264,42 +270,48 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CorsPolicy"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "FaultInjectionPolicy": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FaultInjectionPolicy"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "RequestMirrorPolicy": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RequestMirrorPolicy"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "RetryPolicy": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RetryPolicy"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Timeout": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Timeout"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "UrlRewrite": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/UrlRewrite"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "WeightedBackendServices": {
                     "type": "array",
@@ -436,14 +448,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Abort"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Delay": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Delay"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -479,7 +493,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/PerTryTimeout"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -529,7 +544,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HeaderAction"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -567,7 +583,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RangeMatch"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -586,7 +603,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FilterLabels"
-                    }
+                    },
+                    "maxItems": 64,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -639,7 +658,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/FixedDelay"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -722,6 +742,9 @@
             "type": "string"
         },
         "Fingerprint": {
+            "type": "string"
+        },
+        "Id": {
             "type": "string"
         },
         "MapId": {
@@ -954,11 +977,12 @@
         "/properties/tfcfnid",
         "/properties/CreationTimestamp",
         "/properties/Fingerprint",
+        "/properties/Id",
         "/properties/MapId",
         "/properties/SelfLink"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

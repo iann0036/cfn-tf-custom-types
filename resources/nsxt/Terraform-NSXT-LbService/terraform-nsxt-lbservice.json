@@ -41,6 +41,9 @@
             "type": "string",
             "description": "Load balancer engine writes information about encountered issues of different severity levels to the error log. This setting is used to define the severity level of the error log."
         },
+        "Id": {
+            "type": "string"
+        },
         "LogicalRouterId": {
             "type": "string",
             "description": "Tier1 logical router this service is attached to. Note that this router needs to have edge cluster configured, and have an uplink port or CSP (centralized service port)."
@@ -74,10 +77,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

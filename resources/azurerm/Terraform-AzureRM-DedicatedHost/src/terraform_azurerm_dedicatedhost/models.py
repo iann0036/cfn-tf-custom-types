@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AutoReplaceOnFailure: Optional[bool]
     DedicatedHostGroupId: Optional[str]
+    Id: Optional[str]
     LicenseType: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AutoReplaceOnFailure=json_data.get("AutoReplaceOnFailure"),
             DedicatedHostGroupId=json_data.get("DedicatedHostGroupId"),
+            Id=json_data.get("Id"),
             LicenseType=json_data.get("LicenseType"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

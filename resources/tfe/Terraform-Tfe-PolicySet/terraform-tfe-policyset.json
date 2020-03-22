@@ -43,6 +43,9 @@
             "type": "boolean",
             "description": "Whether or not policies in this set will apply to\nall workspaces. Defaults to `false`. This value _must not_ be provided if\n`workspace_external_ids` are provided."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the policy set."
@@ -86,10 +89,11 @@
         "Organization"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

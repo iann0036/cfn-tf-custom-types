@@ -20,6 +20,9 @@
         "DiskSize": {
             "type": "number"
         },
+        "Id": {
+            "type": "string"
+        },
         "ImageId": {
             "type": "string"
         },
@@ -98,13 +101,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AgentVersion",
+        "/properties/Id",
         "/properties/Nodes",
         "/properties/SecurityGroupId",
         "/properties/SlbId",
         "/properties/VpcId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

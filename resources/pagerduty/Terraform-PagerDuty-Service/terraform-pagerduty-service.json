@@ -18,14 +18,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DuringSupportHours"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "OutsideSupportHours": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/OutsideSupportHours"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -157,6 +159,9 @@
         "HtmlUrl": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LastIncidentTimestamp": {
             "type": "string"
         },
@@ -222,11 +227,12 @@
         "/properties/tfcfnid",
         "/properties/CreatedAt",
         "/properties/HtmlUrl",
+        "/properties/Id",
         "/properties/LastIncidentTimestamp",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

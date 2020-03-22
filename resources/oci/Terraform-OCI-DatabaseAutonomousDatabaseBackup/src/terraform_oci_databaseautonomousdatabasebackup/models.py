@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CompartmentId: Optional[str]
     DatabaseSizeInTbs: Optional[float]
     DisplayName: Optional[str]
+    Id: Optional[str]
     IsAutomatic: Optional[bool]
     IsRestorable: Optional[bool]
     LifecycleDetails: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             CompartmentId=json_data.get("CompartmentId"),
             DatabaseSizeInTbs=json_data.get("DatabaseSizeInTbs"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             IsAutomatic=json_data.get("IsAutomatic"),
             IsRestorable=json_data.get("IsRestorable"),
             LifecycleDetails=json_data.get("LifecycleDetails"),

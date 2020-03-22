@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountId: Optional[str]
     Email: Optional[str]
+    Id: Optional[str]
     Invite: Optional[bool]
     MasterId: Optional[str]
     MemberStatus: Optional[str]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccountId=json_data.get("AccountId"),
             Email=json_data.get("Email"),
+            Id=json_data.get("Id"),
             Invite=json_data.get("Invite"),
             MasterId=json_data.get("MasterId"),
             MemberStatus=json_data.get("MemberStatus"),

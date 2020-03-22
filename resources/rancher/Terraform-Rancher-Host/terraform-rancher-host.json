@@ -20,6 +20,10 @@
             "type": "string",
             "description": "The host name. Used as the primary key to detect the host ID."
         },
+        "Id": {
+            "type": "string",
+            "description": "The ID of the resource."
+        },
         "Labels": {
             "type": "array",
             "insertionOrder": true,
@@ -27,16 +31,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A dictionary of labels to apply to the host. Computed internal labels are excluded from that list."
@@ -53,10 +57,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

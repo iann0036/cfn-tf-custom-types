@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ApplicationId: Optional[str]
     Arn: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
     Tags: Optional[Sequence["_Tags"]]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ApplicationId=json_data.get("ApplicationId"),
             Arn=json_data.get("Arn"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
             Tags=json_data.get("Tags"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

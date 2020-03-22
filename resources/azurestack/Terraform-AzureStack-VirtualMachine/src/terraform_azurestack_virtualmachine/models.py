@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AvailabilitySetId: Optional[str]
     DeleteDataDisksOnTermination: Optional[bool]
     DeleteOsDiskOnTermination: Optional[bool]
+    Id: Optional[str]
     LicenseType: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             AvailabilitySetId=json_data.get("AvailabilitySetId"),
             DeleteDataDisksOnTermination=json_data.get("DeleteDataDisksOnTermination"),
             DeleteOsDiskOnTermination=json_data.get("DeleteOsDiskOnTermination"),
+            Id=json_data.get("Id"),
             LicenseType=json_data.get("LicenseType"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
@@ -105,8 +107,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -116,8 +118,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

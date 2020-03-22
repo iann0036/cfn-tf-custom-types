@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     DeleteAt: Optional[float]
     Etag: Optional[str]
     File: Optional[str]
+    Id: Optional[str]
     LastModified: Optional[str]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -75,6 +76,7 @@ class ResourceModel(BaseResourceModel):
             DeleteAt=json_data.get("DeleteAt"),
             Etag=json_data.get("Etag"),
             File=json_data.get("File"),
+            Id=json_data.get("Id"),
             LastModified=json_data.get("LastModified"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
@@ -91,8 +93,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -102,8 +104,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

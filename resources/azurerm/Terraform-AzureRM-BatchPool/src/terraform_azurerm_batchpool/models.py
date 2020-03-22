@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AccountName: Optional[str]
     DisplayName: Optional[str]
+    Id: Optional[str]
     MaxTasksPerNode: Optional[float]
     Metadata: Optional[Sequence["_Metadata"]]
     Name: Optional[str]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AccountName=json_data.get("AccountName"),
             DisplayName=json_data.get("DisplayName"),
+            Id=json_data.get("Id"),
             MaxTasksPerNode=json_data.get("MaxTasksPerNode"),
             Metadata=json_data.get("Metadata"),
             Name=json_data.get("Name"),
@@ -99,8 +101,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -110,8 +112,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -345,8 +347,8 @@ _StartTask = StartTask
 
 @dataclass
 class Environment:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -356,8 +358,8 @@ class Environment:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

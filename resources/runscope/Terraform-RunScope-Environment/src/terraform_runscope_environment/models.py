@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     BucketId: Optional[str]
+    Id: Optional[str]
     InitialVariables: Optional[Sequence["_InitialVariables"]]
     Integrations: Optional[Sequence[str]]
     Name: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             BucketId=json_data.get("BucketId"),
+            Id=json_data.get("Id"),
             InitialVariables=json_data.get("InitialVariables"),
             Integrations=json_data.get("Integrations"),
             Name=json_data.get("Name"),
@@ -83,8 +85,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class InitialVariables:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -94,8 +96,8 @@ class InitialVariables:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -54,6 +54,9 @@
         "ExpireTime": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceStorage": {
             "type": "number",
             "description": "Specifies the allocated storage size in gigabytes (GB), range from 20 to 4500GB. The volume adjustment must be a multiple of 10 GB. The maximum disk volume for SSD type are\uff1a\n- 500GB if the memory chosen is equal or less than 6GB;\n- 1000GB if the memory chosen is from 8 to 16GB;\n- 2000GB if the memory chosen is 24GB or 32GB;\n- 3500GB if the memory chosen is 48GB or 64GB;\n- 4500GB if the memory chosen is equal or more than 96GB;."
@@ -112,12 +115,13 @@
         "/properties/tfcfnid",
         "/properties/CreateTime",
         "/properties/ExpireTime",
+        "/properties/Id",
         "/properties/ModifyTime",
         "/properties/PrivateIp",
         "/properties/Status"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

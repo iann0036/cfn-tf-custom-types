@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AssignedEipSet: Optional[Sequence[str]]
     Bandwidth: Optional[float]
     CreatedTime: Optional[str]
+    Id: Optional[str]
     MaxConcurrent: Optional[float]
     Name: Optional[str]
     VpcId: Optional[str]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             AssignedEipSet=json_data.get("AssignedEipSet"),
             Bandwidth=json_data.get("Bandwidth"),
             CreatedTime=json_data.get("CreatedTime"),
+            Id=json_data.get("Id"),
             MaxConcurrent=json_data.get("MaxConcurrent"),
             Name=json_data.get("Name"),
             VpcId=json_data.get("VpcId"),

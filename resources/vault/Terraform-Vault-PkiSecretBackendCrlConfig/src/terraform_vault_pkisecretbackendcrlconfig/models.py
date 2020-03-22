@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Backend: Optional[str]
     Disable: Optional[bool]
     Expiry: Optional[str]
+    Id: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             Backend=json_data.get("Backend"),
             Disable=json_data.get("Disable"),
             Expiry=json_data.get("Expiry"),
+            Id=json_data.get("Id"),
         )
 
 

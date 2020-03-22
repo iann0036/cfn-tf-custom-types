@@ -39,6 +39,9 @@
             "type": "string",
             "description": "The human-readable display name of the Bigtable instance. Defaults to the instance `name`."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceType": {
             "type": "string",
             "description": "The instance type to create. One of `\"DEVELOPMENT\"` or `\"PRODUCTION\"`. Defaults to `\"PRODUCTION\"`."
@@ -64,10 +67,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

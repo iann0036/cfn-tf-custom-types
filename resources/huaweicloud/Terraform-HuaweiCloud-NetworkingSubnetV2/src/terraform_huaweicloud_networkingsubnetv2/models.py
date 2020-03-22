@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DnsNameservers: Optional[Sequence[str]]
     EnableDhcp: Optional[bool]
     GatewayIp: Optional[str]
+    Id: Optional[str]
     IpVersion: Optional[float]
     Ipv6AddressMode: Optional[str]
     Ipv6RaMode: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             DnsNameservers=json_data.get("DnsNameservers"),
             EnableDhcp=json_data.get("EnableDhcp"),
             GatewayIp=json_data.get("GatewayIp"),
+            Id=json_data.get("Id"),
             IpVersion=json_data.get("IpVersion"),
             Ipv6AddressMode=json_data.get("Ipv6AddressMode"),
             Ipv6RaMode=json_data.get("Ipv6RaMode"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ValueSpecs:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class ValueSpecs:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

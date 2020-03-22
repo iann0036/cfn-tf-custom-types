@@ -20,6 +20,9 @@
             "type": "number",
             "description": "The frontend port used by the HTTPS listener of the SLB instance. Valid values: 1\u201365535."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadBalancerId": {
             "type": "string",
             "description": "The ID of the SLB instance."
@@ -37,10 +40,11 @@
         "ServerCertificateId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

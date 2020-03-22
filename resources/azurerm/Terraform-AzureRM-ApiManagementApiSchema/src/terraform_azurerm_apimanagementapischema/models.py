@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ApiManagementName: Optional[str]
     ApiName: Optional[str]
     ContentType: Optional[str]
+    Id: Optional[str]
     ResourceGroupName: Optional[str]
     SchemaId: Optional[str]
     Value: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             ApiManagementName=json_data.get("ApiManagementName"),
             ApiName=json_data.get("ApiName"),
             ContentType=json_data.get("ContentType"),
+            Id=json_data.get("Id"),
             ResourceGroupName=json_data.get("ResourceGroupName"),
             SchemaId=json_data.get("SchemaId"),
             Value=json_data.get("Value"),

@@ -47,6 +47,7 @@ class ResourceModel(BaseResourceModel):
     ExpirationLeeway: Optional[float]
     GroupsClaim: Optional[str]
     GroupsClaimDelimiterPattern: Optional[str]
+    Id: Optional[str]
     MaxTtl: Optional[float]
     NotBeforeLeeway: Optional[float]
     NumUses: Optional[float]
@@ -88,6 +89,7 @@ class ResourceModel(BaseResourceModel):
             ExpirationLeeway=json_data.get("ExpirationLeeway"),
             GroupsClaim=json_data.get("GroupsClaim"),
             GroupsClaimDelimiterPattern=json_data.get("GroupsClaimDelimiterPattern"),
+            Id=json_data.get("Id"),
             MaxTtl=json_data.get("MaxTtl"),
             NotBeforeLeeway=json_data.get("NotBeforeLeeway"),
             NumUses=json_data.get("NumUses"),
@@ -117,8 +119,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class BoundClaims:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class BoundClaims:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -139,8 +141,8 @@ _BoundClaims = BoundClaims
 
 @dataclass
 class ClaimMappings:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -150,8 +152,8 @@ class ClaimMappings:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

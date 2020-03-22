@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The device group's name."
         },
+        "Id": {
+            "type": "string"
+        },
         "Serial": {
             "type": "string",
             "description": "The serial number of the firewall."
@@ -31,10 +34,11 @@
         "Serial"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

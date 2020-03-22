@@ -15,6 +15,9 @@
             "type": "string",
             "description": "A further description of the API Client."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "A label to assign to the API Client."
@@ -32,10 +35,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Account",
+        "/properties/Id",
         "/properties/Secret"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

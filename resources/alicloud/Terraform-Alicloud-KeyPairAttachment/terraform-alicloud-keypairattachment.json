@@ -12,6 +12,9 @@
             "type": "boolean",
             "description": "Set it to true and it will reboot instances which attached with the key pair to make key pair affect immediately."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceIds": {
             "type": "array",
             "insertionOrder": true,
@@ -31,10 +34,11 @@
         "KeyName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

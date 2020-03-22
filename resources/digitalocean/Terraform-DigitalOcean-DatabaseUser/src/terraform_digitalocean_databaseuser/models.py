@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClusterId: Optional[str]
+    Id: Optional[str]
     MysqlAuthPlugin: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             ClusterId=json_data.get("ClusterId"),
+            Id=json_data.get("Id"),
             MysqlAuthPlugin=json_data.get("MysqlAuthPlugin"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),

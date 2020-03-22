@@ -136,6 +136,9 @@
             "type": "boolean",
             "description": "Enable high availability on this edge gateway. Default is `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "LbAccelerationEnabled": {
             "type": "boolean",
             "description": "Enable to configure the load balancer to use the faster L4\nengine rather than L7 engine. The L4 TCP VIP is processed before the edge gateway firewall so no\n`allow` firewall rule is required. Default is `false`. **Note:** L7 VIPs for HTTP and HTTPS are\nprocessed after the firewall, so when Acceleration Enabled is not selected, an edge gateway firewall\nrule must exist to allow access to the L7 VIP for those protocols. When Acceleration Enabled is\nselected and the server pool is in non-transparent mode, an SNAT rule is added, so you must ensure\nthat the firewall is enabled on the edge gateway."
@@ -198,10 +201,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DefaultExternalNetworkIp",
-        "/properties/ExternalNetworkIps"
+        "/properties/ExternalNetworkIps",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

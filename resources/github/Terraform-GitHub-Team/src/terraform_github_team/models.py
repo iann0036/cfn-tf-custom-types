@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Description: Optional[str]
     Etag: Optional[str]
+    Id: Optional[str]
     LdapDn: Optional[str]
     Name: Optional[str]
     ParentTeamId: Optional[float]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Description=json_data.get("Description"),
             Etag=json_data.get("Etag"),
+            Id=json_data.get("Id"),
             LdapDn=json_data.get("LdapDn"),
             Name=json_data.get("Name"),
             ParentTeamId=json_data.get("ParentTeamId"),

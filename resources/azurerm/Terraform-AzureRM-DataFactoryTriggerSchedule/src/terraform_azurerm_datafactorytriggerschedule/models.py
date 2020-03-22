@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     DataFactoryName: Optional[str]
     EndTime: Optional[str]
     Frequency: Optional[str]
+    Id: Optional[str]
     Interval: Optional[float]
     Name: Optional[str]
     PipelineName: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             DataFactoryName=json_data.get("DataFactoryName"),
             EndTime=json_data.get("EndTime"),
             Frequency=json_data.get("Frequency"),
+            Id=json_data.get("Id"),
             Interval=json_data.get("Interval"),
             Name=json_data.get("Name"),
             PipelineName=json_data.get("PipelineName"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class PipelineParameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class PipelineParameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

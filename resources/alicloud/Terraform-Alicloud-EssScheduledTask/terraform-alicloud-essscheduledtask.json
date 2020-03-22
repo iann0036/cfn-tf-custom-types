@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Description of the scheduled task, which is 2-200 characters (English or Chinese) long."
         },
+        "Id": {
+            "type": "string"
+        },
         "LaunchExpirationTime": {
             "type": "number",
             "description": "The time period during which a failed scheduled task is retried. Unit: seconds. Valid values: 0 to 21600. Default value: 600."
@@ -51,10 +54,11 @@
         "ScheduledAction"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

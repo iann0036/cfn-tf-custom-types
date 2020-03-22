@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Backend: Optional[str]
     CrlDistributionPoints: Optional[Sequence[str]]
+    Id: Optional[str]
     IssuingCertificates: Optional[Sequence[str]]
     OcspServers: Optional[Sequence[str]]
 
@@ -52,6 +53,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Backend=json_data.get("Backend"),
             CrlDistributionPoints=json_data.get("CrlDistributionPoints"),
+            Id=json_data.get("Id"),
             IssuingCertificates=json_data.get("IssuingCertificates"),
             OcspServers=json_data.get("OcspServers"),
         )

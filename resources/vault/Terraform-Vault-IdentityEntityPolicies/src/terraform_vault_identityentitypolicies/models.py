@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     EntityId: Optional[str]
     EntityName: Optional[str]
     Exclusive: Optional[bool]
+    Id: Optional[str]
     Policies: Optional[Sequence[str]]
 
     @classmethod
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             EntityId=json_data.get("EntityId"),
             EntityName=json_data.get("EntityName"),
             Exclusive=json_data.get("Exclusive"),
+            Id=json_data.get("Id"),
             Policies=json_data.get("Policies"),
         )
 

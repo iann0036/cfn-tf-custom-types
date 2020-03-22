@@ -23,6 +23,9 @@
             },
             "description": "The DNS server list of the VPC. And you can specify 0 to 5 servers to this list."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsDefault": {
             "type": "boolean"
         },
@@ -41,16 +44,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Tags of the VPC."
@@ -64,10 +67,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CreateTime",
+        "/properties/Id",
         "/properties/IsDefault"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

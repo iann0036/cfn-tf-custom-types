@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ApiId: Optional[str]
     Arn: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     ServiceRoleArn: Optional[str]
     Type: Optional[str]
@@ -59,6 +60,7 @@ class ResourceModel(BaseResourceModel):
             ApiId=json_data.get("ApiId"),
             Arn=json_data.get("Arn"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ServiceRoleArn=json_data.get("ServiceRoleArn"),
             Type=json_data.get("Type"),

@@ -60,6 +60,7 @@ class ResourceModel(BaseResourceModel):
     HealthCheckType: Optional[str]
     HealthCheckUri: Optional[str]
     HealthyThreshold: Optional[float]
+    Id: Optional[str]
     IdleTimeout: Optional[float]
     InstancePort: Optional[float]
     LbPort: Optional[float]
@@ -113,6 +114,7 @@ class ResourceModel(BaseResourceModel):
             HealthCheckType=json_data.get("HealthCheckType"),
             HealthCheckUri=json_data.get("HealthCheckUri"),
             HealthyThreshold=json_data.get("HealthyThreshold"),
+            Id=json_data.get("Id"),
             IdleTimeout=json_data.get("IdleTimeout"),
             InstancePort=json_data.get("InstancePort"),
             LbPort=json_data.get("LbPort"),

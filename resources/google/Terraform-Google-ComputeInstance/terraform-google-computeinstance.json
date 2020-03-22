@@ -65,7 +65,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/InitializeParams"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -214,16 +215,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -352,6 +353,9 @@
             "type": "string",
             "description": "A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid.\nValid format is a series of labels 1-63 characters long matching the regular expression `[a-z]([-a-z0-9]*[a-z0-9])`, concatenated with periods.\nThe entire hostname must not exceed 253 characters. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string"
         },
@@ -365,16 +369,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A map of key/value label pairs to assign to the instance."
@@ -390,16 +394,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Metadata key/value pairs to make available from\nwithin the instance. Ssh keys attached in the Cloud Console will be removed.\nAdd them to your config in order to keep them attached to your instance."
@@ -537,6 +541,7 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/CpuPlatform",
+        "/properties/Id",
         "/properties/InstanceId",
         "/properties/LabelFingerprint",
         "/properties/MetadataFingerprint",
@@ -544,7 +549,7 @@
         "/properties/TagsFingerprint"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

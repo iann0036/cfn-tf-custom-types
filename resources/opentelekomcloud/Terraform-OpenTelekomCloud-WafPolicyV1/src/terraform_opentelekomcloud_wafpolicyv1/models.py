@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     FullDetection: Optional[bool]
     Hosts: Optional[Sequence[str]]
+    Id: Optional[str]
     Level: Optional[float]
     Name: Optional[str]
     Action: Optional[Sequence["_Action"]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             FullDetection=json_data.get("FullDetection"),
             Hosts=json_data.get("Hosts"),
+            Id=json_data.get("Id"),
             Level=json_data.get("Level"),
             Name=json_data.get("Name"),
             Action=json_data.get("Action"),

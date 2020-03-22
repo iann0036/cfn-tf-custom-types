@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FailoverRatio: Optional[float]
     HealthChecks: Optional[Sequence[str]]
+    Id: Optional[str]
     Instances: Optional[Sequence[str]]
     Name: Optional[str]
     Project: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FailoverRatio=json_data.get("FailoverRatio"),
             HealthChecks=json_data.get("HealthChecks"),
+            Id=json_data.get("Id"),
             Instances=json_data.get("Instances"),
             Name=json_data.get("Name"),
             Project=json_data.get("Project"),

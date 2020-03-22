@@ -44,6 +44,9 @@
             "type": "string",
             "description": "Display name, defaults to ID if not set."
         },
+        "Id": {
+            "type": "string"
+        },
         "Protocol": {
             "type": "string",
             "description": "L4 protocol. Accepted values - 'TCP' or 'UDP'."
@@ -74,10 +77,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/DefaultService",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

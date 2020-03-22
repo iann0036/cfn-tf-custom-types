@@ -47,7 +47,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Tls"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -80,7 +81,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/EncryptionInTransit"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -94,7 +96,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Prometheus"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -135,14 +139,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/JmxExporter"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "NodeExporter": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/NodeExporter"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -195,6 +201,9 @@
         "EnhancedMonitoring": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "KafkaVersion": {
             "type": "string"
         },
@@ -208,16 +217,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -319,10 +328,11 @@
         "/properties/BootstrapBrokers",
         "/properties/BootstrapBrokersTls",
         "/properties/CurrentVersion",
+        "/properties/Id",
         "/properties/ZookeeperConnectString"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

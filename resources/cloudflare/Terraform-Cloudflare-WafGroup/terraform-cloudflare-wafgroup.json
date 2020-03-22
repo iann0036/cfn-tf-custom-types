@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The WAF Rule Group ID."
         },
+        "Id": {
+            "type": "string"
+        },
         "Mode": {
             "type": "string",
             "description": "The mode of the group, can be one of [\"on\", \"off\"]."
@@ -31,10 +34,11 @@
         "ZoneId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

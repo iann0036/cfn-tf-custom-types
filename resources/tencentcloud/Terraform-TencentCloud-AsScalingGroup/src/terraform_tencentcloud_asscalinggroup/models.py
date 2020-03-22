@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     CreateTime: Optional[str]
     DefaultCooldown: Optional[float]
     DesiredCapacity: Optional[float]
+    Id: Optional[str]
     InstanceCount: Optional[float]
     LoadBalancerIds: Optional[Sequence[str]]
     MaxSize: Optional[float]
@@ -69,6 +70,7 @@ class ResourceModel(BaseResourceModel):
             CreateTime=json_data.get("CreateTime"),
             DefaultCooldown=json_data.get("DefaultCooldown"),
             DesiredCapacity=json_data.get("DesiredCapacity"),
+            Id=json_data.get("Id"),
             InstanceCount=json_data.get("InstanceCount"),
             LoadBalancerIds=json_data.get("LoadBalancerIds"),
             MaxSize=json_data.get("MaxSize"),
@@ -93,8 +95,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

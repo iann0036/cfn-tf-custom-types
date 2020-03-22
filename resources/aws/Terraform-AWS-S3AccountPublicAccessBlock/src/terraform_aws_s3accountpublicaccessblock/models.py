@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AccountId: Optional[str]
     BlockPublicAcls: Optional[bool]
     BlockPublicPolicy: Optional[bool]
+    Id: Optional[str]
     IgnorePublicAcls: Optional[bool]
     RestrictPublicBuckets: Optional[bool]
 
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             AccountId=json_data.get("AccountId"),
             BlockPublicAcls=json_data.get("BlockPublicAcls"),
             BlockPublicPolicy=json_data.get("BlockPublicPolicy"),
+            Id=json_data.get("Id"),
             IgnorePublicAcls=json_data.get("IgnorePublicAcls"),
             RestrictPublicBuckets=json_data.get("RestrictPublicBuckets"),
         )

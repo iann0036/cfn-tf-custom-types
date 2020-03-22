@@ -12,7 +12,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Duration"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": []
@@ -30,7 +31,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Duration"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -257,6 +259,9 @@
             "type": "boolean",
             "description": "If policy should be enabled. Default: true."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the notification policy."
@@ -351,10 +356,11 @@
         "TeamId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

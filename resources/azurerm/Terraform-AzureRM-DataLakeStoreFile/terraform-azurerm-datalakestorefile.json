@@ -32,6 +32,9 @@
             "type": "string",
             "description": "Specifies the name of the Data Lake Store for which the File should created."
         },
+        "Id": {
+            "type": "string"
+        },
         "LocalFilePath": {
             "type": "string",
             "description": "The path to the local file to be added to the Data Lake Store."
@@ -51,10 +54,11 @@
         "RemoteFilePath"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

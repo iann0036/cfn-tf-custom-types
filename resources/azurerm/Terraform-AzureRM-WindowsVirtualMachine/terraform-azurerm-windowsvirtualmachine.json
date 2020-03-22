@@ -99,7 +99,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DiffDiskSettings"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -143,7 +144,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Certificate"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -279,6 +281,9 @@
             "type": "string",
             "description": "Specifies what should happen when the Virtual Machine is evicted for price reasons when using a Spot instance. At this time the only supported value is `Deallocate`. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "LicenseType": {
             "type": "string",
             "description": "Specifies the type of on-premise license (also known as [Azure Hybrid Use Benefit](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-hybrid-use-benefit-licensing)) which should be used for this Virtual Machine. Possible values are `None`, `Windows_Client` and `Windows_Server`. Changing this forces a new resource to be created."
@@ -354,16 +359,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "A mapping of tags which should be assigned to this Virtual Machine."
@@ -481,6 +486,7 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PrivateIpAddress",
         "/properties/PrivateIpAddresses",
         "/properties/PublicIpAddress",
@@ -488,7 +494,7 @@
         "/properties/VirtualMachineId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

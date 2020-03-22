@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     EndDate: Optional[str]
     EndDateType: Optional[str]
     EphemeralStorage: Optional[bool]
+    Id: Optional[str]
     InstanceCount: Optional[float]
     InstanceMatchCriteria: Optional[str]
     InstancePlatform: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             EndDate=json_data.get("EndDate"),
             EndDateType=json_data.get("EndDateType"),
             EphemeralStorage=json_data.get("EphemeralStorage"),
+            Id=json_data.get("Id"),
             InstanceCount=json_data.get("InstanceCount"),
             InstanceMatchCriteria=json_data.get("InstanceMatchCriteria"),
             InstancePlatform=json_data.get("InstancePlatform"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

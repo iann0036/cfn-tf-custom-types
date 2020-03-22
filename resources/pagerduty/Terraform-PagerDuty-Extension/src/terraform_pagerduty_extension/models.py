@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     ExtensionObjects: Optional[Sequence[str]]
     ExtensionSchema: Optional[str]
     HtmlUrl: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Type: Optional[str]
 
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             ExtensionObjects=json_data.get("ExtensionObjects"),
             ExtensionSchema=json_data.get("ExtensionSchema"),
             HtmlUrl=json_data.get("HtmlUrl"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Type=json_data.get("Type"),
         )

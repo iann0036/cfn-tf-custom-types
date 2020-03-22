@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllowClaim: Optional[bool]
     DisallowPublicIpAddress: Optional[bool]
     Fqdn: Optional[str]
+    Id: Optional[str]
     LabName: Optional[str]
     LabSubnetName: Optional[str]
     LabVirtualNetworkId: Optional[str]
@@ -68,6 +69,7 @@ class ResourceModel(BaseResourceModel):
             AllowClaim=json_data.get("AllowClaim"),
             DisallowPublicIpAddress=json_data.get("DisallowPublicIpAddress"),
             Fqdn=json_data.get("Fqdn"),
+            Id=json_data.get("Id"),
             LabName=json_data.get("LabName"),
             LabSubnetName=json_data.get("LabSubnetName"),
             LabVirtualNetworkId=json_data.get("LabVirtualNetworkId"),
@@ -93,8 +95,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

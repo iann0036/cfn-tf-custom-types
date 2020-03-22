@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     FunctionName: Optional[str]
     FunctionVersion: Optional[str]
+    Id: Optional[str]
     InvokeArn: Optional[str]
     Name: Optional[str]
     RoutingConfig: Optional[Sequence["_RoutingConfig"]]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             FunctionName=json_data.get("FunctionName"),
             FunctionVersion=json_data.get("FunctionVersion"),
+            Id=json_data.get("Id"),
             InvokeArn=json_data.get("InvokeArn"),
             Name=json_data.get("Name"),
             RoutingConfig=json_data.get("RoutingConfig"),
@@ -89,8 +91,8 @@ _RoutingConfig = RoutingConfig
 
 @dataclass
 class AdditionalVersionWeights:
-    Key: Optional[str]
-    Value: Optional[float]
+    MapKey: Optional[str]
+    MapValue: Optional[float]
 
     @classmethod
     def _deserialize(
@@ -100,8 +102,8 @@ class AdditionalVersionWeights:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -16,6 +16,9 @@
             "type": "string",
             "description": "PEM encoded bodies of all certificates in the chain up to and including the CA certificate. This is not need when the certificate is self signed."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The name of the Certificate."
@@ -43,11 +46,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/State",
         "/properties/Uri"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

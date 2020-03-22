@@ -93,6 +93,9 @@
             "type": "string",
             "description": "Gateway IP."
         },
+        "Id": {
+            "type": "string"
+        },
         "LeaseTime": {
             "type": "number",
             "description": "Lease time in seconds. Default is 86400."
@@ -143,10 +146,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Revision"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

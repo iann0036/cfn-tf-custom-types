@@ -30,6 +30,9 @@
             "type": "string",
             "description": "The prefix of a log that needs to be stored in an OBS bucket."
         },
+        "Id": {
+            "type": "string"
+        },
         "Region": {
             "type": "string"
         },
@@ -50,10 +53,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/TrackerName"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

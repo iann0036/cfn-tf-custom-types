@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllocationId: Optional[str]
     AllowReassociation: Optional[bool]
+    Id: Optional[str]
     InstanceId: Optional[str]
     NetworkInterfaceId: Optional[str]
     PrivateIpAddress: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AllocationId=json_data.get("AllocationId"),
             AllowReassociation=json_data.get("AllowReassociation"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             NetworkInterfaceId=json_data.get("NetworkInterfaceId"),
             PrivateIpAddress=json_data.get("PrivateIpAddress"),

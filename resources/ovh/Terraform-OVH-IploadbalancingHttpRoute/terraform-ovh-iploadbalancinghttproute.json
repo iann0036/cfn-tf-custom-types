@@ -35,6 +35,9 @@
             "type": "number",
             "description": "Route traffic for this frontend."
         },
+        "Id": {
+            "type": "string"
+        },
         "ServiceName": {
             "type": "string",
             "description": "The internal name of your IP load balancing."
@@ -57,10 +60,11 @@
         "ServiceName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

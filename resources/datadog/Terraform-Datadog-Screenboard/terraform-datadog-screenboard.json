@@ -114,16 +114,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -152,16 +152,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -221,16 +221,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -351,16 +351,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -389,7 +389,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Request"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -474,16 +475,16 @@
                         "type": "object",
                         "additionalProperties": false,
                         "properties": {
-                            "Key": {
+                            "MapKey": {
                                 "type": "string"
                             },
-                            "Value": {
+                            "MapValue": {
                                 "type": "string"
                             }
                         },
                         "required": [
-                            "Key",
-                            "Value"
+                            "MapKey",
+                            "MapValue"
                         ]
                     }
                 },
@@ -505,7 +506,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ApmQuery"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ConditionalFormat": {
                     "type": "array",
@@ -519,14 +521,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LogQuery"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ProcessQuery": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ProcessQuery"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -543,7 +547,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Compute"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "GroupBy": {
                     "type": "array",
@@ -557,7 +563,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Search"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -603,7 +610,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Compute"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "GroupBy": {
                     "type": "array",
@@ -617,7 +626,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Search"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -682,7 +692,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Sort"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -729,6 +740,9 @@
         "Height": {
             "type": "string",
             "description": "The screenboard's height.\n- `width` - (Optional) The screenboard's width.\n- `read_only` - (Optional) The read-only status of the screenboard. Default is false.\n- `shared` - (Optional) Whether the screenboard is shared or not. Default is false.\n- `widget` - (Required) Nested block describing a widget. The structure of this block is described below. Multiple widget blocks are allowed within a datadog_screenboard resource.\n- `template_variable` - (Optional) Nested block describing a template variable. The structure of this block is described below. Multiple template_variable blocks are allowed within a datadog_screenboard resource."
+        },
+        "Id": {
+            "type": "string"
         },
         "ReadOnly": {
             "type": "boolean",
@@ -866,10 +880,11 @@
         "Title"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -49,6 +49,9 @@
             "type": "string",
             "description": "A user-friendly name. Does not have to be unique, and it cannot be changed. Avoid entering confidential information."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceId": {
             "type": "string",
             "description": "The OCID of the instance."
@@ -103,6 +106,7 @@
         "/properties/AvailabilityDomain",
         "/properties/ChapSecret",
         "/properties/ChapUsername",
+        "/properties/Id",
         "/properties/Ipv4",
         "/properties/Iqn",
         "/properties/Port",
@@ -110,7 +114,7 @@
         "/properties/TimeCreated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

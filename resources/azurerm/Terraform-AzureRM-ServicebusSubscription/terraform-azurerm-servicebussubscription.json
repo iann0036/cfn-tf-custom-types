@@ -52,6 +52,9 @@
             "type": "string",
             "description": "The name of a Queue or Topic to automatically forward messages to."
         },
+        "Id": {
+            "type": "string"
+        },
         "LockDuration": {
             "type": "string",
             "description": "The lock duration for the subscription as an [ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations). The default value is `1` minute or `P1M`."
@@ -93,10 +96,11 @@
         "TopicName"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

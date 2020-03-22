@@ -12,14 +12,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CorsRule"
-                    }
+                    },
+                    "maxItems": 5
                 },
                 "DeleteRetentionPolicy": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/DeleteRetentionPolicy"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -93,28 +95,32 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CorsRule"
-                    }
+                    },
+                    "maxItems": 5
                 },
                 "HourMetrics": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/HourMetrics"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Logging": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Logging"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "MinuteMetrics": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/MinuteMetrics"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -297,6 +303,9 @@
         "EnableHttpsTrafficOnly": {
             "type": "boolean"
         },
+        "Id": {
+            "type": "string"
+        },
         "IsHnsEnabled": {
             "type": "boolean"
         },
@@ -413,16 +422,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -528,6 +537,7 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PrimaryAccessKey",
         "/properties/PrimaryBlobConnectionString",
         "/properties/PrimaryBlobEndpoint",
@@ -562,7 +572,7 @@
         "/properties/SecondaryWebHost"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

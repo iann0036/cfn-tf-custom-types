@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CustomData: Optional[str]
     DesiredCapacity: Optional[float]
+    Id: Optional[str]
     LowPrioritySizes: Optional[Sequence[str]]
     MaxSize: Optional[float]
     MinSize: Optional[float]
@@ -78,6 +79,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CustomData=json_data.get("CustomData"),
             DesiredCapacity=json_data.get("DesiredCapacity"),
+            Id=json_data.get("Id"),
             LowPrioritySizes=json_data.get("LowPrioritySizes"),
             MaxSize=json_data.get("MaxSize"),
             MinSize=json_data.get("MinSize"),

@@ -24,6 +24,9 @@
             "type": "string",
             "description": "Used as the Packet Target IP of health check for disaster recovery or ECMP. It is only valid when `router_type` is `VBR`. The IP must be an unused IP in the local VPC. It and `health_check_source_ip` must be specified at the same time."
         },
+        "Id": {
+            "type": "string"
+        },
         "InstanceChargeType": {
             "type": "string",
             "description": "The billing method of the router interface. Valid values are \"PrePaid\" and \"PostPaid\". Default to \"PostPaid\". Router Interface doesn't support \"PrePaid\" when region and opposite_region are the same."
@@ -87,13 +90,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/AccessPointId",
+        "/properties/Id",
         "/properties/OppositeInterfaceId",
         "/properties/OppositeInterfaceOwnerId",
         "/properties/OppositeRouterId",
         "/properties/OppositeRouterType"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

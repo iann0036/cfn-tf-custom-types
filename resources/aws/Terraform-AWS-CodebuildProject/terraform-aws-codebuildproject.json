@@ -93,7 +93,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RegistryCredential"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -111,14 +112,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/CloudwatchLogs"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "S3Logs": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/S3Logs"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -197,7 +200,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GitSubmodulesConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -239,7 +243,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/GitSubmodulesConfig"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -392,6 +397,9 @@
         "EncryptionKey": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string"
         },
@@ -411,16 +419,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -544,10 +552,11 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Arn",
-        "/properties/BadgeUrl"
+        "/properties/BadgeUrl",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

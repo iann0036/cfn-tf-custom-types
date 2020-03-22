@@ -42,6 +42,7 @@ class ResourceModel(BaseResourceModel):
     EnableBatchedOperations: Optional[bool]
     ForwardDeadLetteredMessagesTo: Optional[str]
     ForwardTo: Optional[str]
+    Id: Optional[str]
     LockDuration: Optional[str]
     MaxDeliveryCount: Optional[float]
     Name: Optional[str]
@@ -66,6 +67,7 @@ class ResourceModel(BaseResourceModel):
             EnableBatchedOperations=json_data.get("EnableBatchedOperations"),
             ForwardDeadLetteredMessagesTo=json_data.get("ForwardDeadLetteredMessagesTo"),
             ForwardTo=json_data.get("ForwardTo"),
+            Id=json_data.get("Id"),
             LockDuration=json_data.get("LockDuration"),
             MaxDeliveryCount=json_data.get("MaxDeliveryCount"),
             Name=json_data.get("Name"),

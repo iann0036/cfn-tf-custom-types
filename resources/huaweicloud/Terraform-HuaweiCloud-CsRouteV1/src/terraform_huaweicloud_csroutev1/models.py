@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     ClusterId: Optional[str]
     Destination: Optional[str]
+    Id: Optional[str]
     PeeringId: Optional[str]
 
     @classmethod
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             ClusterId=json_data.get("ClusterId"),
             Destination=json_data.get("Destination"),
+            Id=json_data.get("Id"),
             PeeringId=json_data.get("PeeringId"),
         )
 

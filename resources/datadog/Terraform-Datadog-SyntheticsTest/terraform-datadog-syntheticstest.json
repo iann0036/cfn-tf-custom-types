@@ -18,16 +18,16 @@
                     "type": "object",
                     "additionalProperties": false,
                     "properties": {
-                        "Key": {
+                        "MapKey": {
                             "type": "string"
                         },
-                        "Value": {
+                        "MapValue": {
                             "type": "string"
                         }
                     },
                     "required": [
-                        "Key",
-                        "Value"
+                        "MapKey",
+                        "MapValue"
                     ]
                 }
             },
@@ -40,6 +40,9 @@
                 "type": "string"
             },
             "description": "\"laptop_large\", \"tablet\" or \"mobile_small\" (only available if type=browser)\n- `status` - (Required) \"live\", \"paused\"."
+        },
+        "Id": {
+            "type": "string"
         },
         "Locations": {
             "type": "array",
@@ -67,16 +70,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser\n- `follow_redirects` - (Optional) For type=api, true or false\n- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.\n- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications\n- `accept_self_signed` - (Optional) For type=ssl, true or false\n- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. \"aws:eu-central-1\")\n- `device_ids` - (Optional) \"laptop_large\", \"tablet\" or \"mobile_small\" (only available if type=browser)\n- `status` - (Required) \"live\", \"paused\"."
@@ -88,16 +91,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "if type=browser\n- `method` - (Required) no-op, use GET\n- `url` - (Required) Any url\n- `request_headers` - (Optional) Header name and value map\n- `assertions` - (Required) Array of 1 to 10 items, only some combinations of type/operator are valid (please refer to Datadog documentation)\n- `type` - (Required) body, header, responseTime, statusCode\n- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type\n- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type\n- `property` - (Optional) if assertion type is \"header\", this is a the header name\n- `options` - (Required)\n- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser\n- `follow_redirects` - (Optional) For type=api, true or false\n- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.\n- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications\n- `accept_self_signed` - (Optional) For type=ssl, true or false\n- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. \"aws:eu-central-1\")\n- `device_ids` - (Optional) \"laptop_large\", \"tablet\" or \"mobile_small\" (only available if type=browser)\n- `status` - (Required) \"live\", \"paused\"."
@@ -109,16 +112,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Header name and value map\n- `assertions` - (Required) Array of 1 to 10 items, only some combinations of type/operator are valid (please refer to Datadog documentation)\n- `type` - (Required) body, header, responseTime, statusCode\n- `operator` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as operator depend on assertion type\n- `target` - (Required) Expected value, please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#validation) as target depend on assertion type\n- `property` - (Optional) if assertion type is \"header\", this is a the header name\n- `options` - (Required)\n- `tick_every` - (Required)  How often the test should run (in seconds). Current possible values are 900, 1800, 3600, 21600, 43200, 86400, 604800 plus 60 if type=api or 300 if type=browser\n- `follow_redirects` - (Optional) For type=api, true or false\n- `min_failure_duration` - (Optional) How long the test should be in failure before alerting (integer, number of seconds, max 7200). Default is 0.\n- `min_location_failed` - (Optional) Threshold below which a synthetics test is allowed to fail before sending notifications\n- `accept_self_signed` - (Optional) For type=ssl, true or false\n- `locations` - (Required) Please refer to [Datadog documentation](https://docs.datadoghq.com/synthetics/api_test/#request) for available locations (e.g. \"aws:eu-central-1\")\n- `device_ids` - (Optional) \"laptop_large\", \"tablet\" or \"mobile_small\" (only available if type=browser)\n- `status` - (Required) \"live\", \"paused\"."
@@ -155,10 +158,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/MonitorId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

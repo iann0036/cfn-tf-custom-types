@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Type of access to grant. Valid values are `admin`,\n`read`, `plan`, or `write`."
         },
+        "Id": {
+            "type": "string"
+        },
         "TeamId": {
             "type": "string",
             "description": "ID of the team to add to the workspace."
@@ -28,10 +31,11 @@
         "WorkspaceId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

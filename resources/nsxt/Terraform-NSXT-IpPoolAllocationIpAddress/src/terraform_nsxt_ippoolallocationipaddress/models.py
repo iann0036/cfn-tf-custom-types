@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AllocationId: Optional[str]
+    Id: Optional[str]
     IpPoolId: Optional[str]
 
     @classmethod
@@ -49,6 +50,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             AllocationId=json_data.get("AllocationId"),
+            Id=json_data.get("Id"),
             IpPoolId=json_data.get("IpPoolId"),
         )
 

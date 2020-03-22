@@ -56,6 +56,9 @@
             "type": "string",
             "description": "The name of the edge gateway on which to apply the Firewall Rules."
         },
+        "Id": {
+            "type": "string"
+        },
         "Org": {
             "type": "string",
             "description": "The name of organization to use, optional if defined at provider level. Useful when connected as sysadmin working across different organisations."
@@ -78,10 +81,11 @@
         "EdgeGateway"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

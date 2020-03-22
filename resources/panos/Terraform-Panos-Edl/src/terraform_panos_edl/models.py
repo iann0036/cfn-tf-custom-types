@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     CertificateProfile: Optional[str]
     Description: Optional[str]
     Exceptions: Optional[Sequence[str]]
+    Id: Optional[str]
     Name: Optional[str]
     Password: Optional[str]
     PasswordEnc: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             CertificateProfile=json_data.get("CertificateProfile"),
             Description=json_data.get("Description"),
             Exceptions=json_data.get("Exceptions"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Password=json_data.get("Password"),
             PasswordEnc=json_data.get("PasswordEnc"),

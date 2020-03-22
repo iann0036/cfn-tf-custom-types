@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ApplicationType: Optional[str]
     DailyDataCapInGb: Optional[float]
     DailyDataCapNotificationsDisabled: Optional[bool]
+    Id: Optional[str]
     InstrumentationKey: Optional[str]
     Location: Optional[str]
     Name: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             ApplicationType=json_data.get("ApplicationType"),
             DailyDataCapInGb=json_data.get("DailyDataCapInGb"),
             DailyDataCapNotificationsDisabled=json_data.get("DailyDataCapNotificationsDisabled"),
+            Id=json_data.get("Id"),
             InstrumentationKey=json_data.get("InstrumentationKey"),
             Location=json_data.get("Location"),
             Name=json_data.get("Name"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

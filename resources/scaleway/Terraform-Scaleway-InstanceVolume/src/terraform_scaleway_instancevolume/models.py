@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     FromSnapshotId: Optional[str]
     FromVolumeId: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     OrganizationId: Optional[str]
     ServerId: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             FromSnapshotId=json_data.get("FromSnapshotId"),
             FromVolumeId=json_data.get("FromVolumeId"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             OrganizationId=json_data.get("OrganizationId"),
             ServerId=json_data.get("ServerId"),

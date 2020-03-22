@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CreatedAt: Optional[str]
+    Id: Optional[str]
     MinDiskSize: Optional[float]
     Name: Optional[str]
     Regions: Optional[Sequence[str]]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             CreatedAt=json_data.get("CreatedAt"),
+            Id=json_data.get("Id"),
             MinDiskSize=json_data.get("MinDiskSize"),
             Name=json_data.get("Name"),
             Regions=json_data.get("Regions"),

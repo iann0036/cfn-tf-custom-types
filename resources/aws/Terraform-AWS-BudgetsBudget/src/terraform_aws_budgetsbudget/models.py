@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AccountId: Optional[str]
     BudgetType: Optional[str]
     CostFilters: Optional[Sequence["_CostFilters"]]
+    Id: Optional[str]
     LimitAmount: Optional[str]
     LimitUnit: Optional[str]
     Name: Optional[str]
@@ -61,6 +62,7 @@ class ResourceModel(BaseResourceModel):
             AccountId=json_data.get("AccountId"),
             BudgetType=json_data.get("BudgetType"),
             CostFilters=json_data.get("CostFilters"),
+            Id=json_data.get("Id"),
             LimitAmount=json_data.get("LimitAmount"),
             LimitUnit=json_data.get("LimitUnit"),
             Name=json_data.get("Name"),
@@ -79,8 +81,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class CostFilters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -90,8 +92,8 @@ class CostFilters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -36,6 +36,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 @dataclass
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
+    Id: Optional[str]
     MaxNumberOfRecordSets: Optional[float]
     MaxNumberOfVirtualNetworkLinks: Optional[float]
     MaxNumberOfVirtualNetworkLinksWithRegistration: Optional[float]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
             return None
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
+            Id=json_data.get("Id"),
             MaxNumberOfRecordSets=json_data.get("MaxNumberOfRecordSets"),
             MaxNumberOfVirtualNetworkLinks=json_data.get("MaxNumberOfVirtualNetworkLinks"),
             MaxNumberOfVirtualNetworkLinksWithRegistration=json_data.get("MaxNumberOfVirtualNetworkLinksWithRegistration"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

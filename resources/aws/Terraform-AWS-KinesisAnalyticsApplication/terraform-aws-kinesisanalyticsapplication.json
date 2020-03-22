@@ -31,35 +31,41 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KinesisFirehose"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "KinesisStream": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KinesisStream"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Parallelism": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Parallelism"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ProcessingConfiguration": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ProcessingConfiguration"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Schema": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Schema"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -78,28 +84,33 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KinesisFirehose"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "KinesisStream": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/KinesisStream"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Lambda": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Lambda"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Schema": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Schema"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -118,14 +129,18 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/S3"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "Schema": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Schema"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": [
@@ -185,7 +200,9 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Lambda"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -202,14 +219,17 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RecordColumns"
-                    }
+                    },
+                    "minItems": 1
                 },
                 "RecordFormat": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RecordFormat"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 }
             },
             "required": []
@@ -278,7 +298,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/MappingParameters"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -292,14 +313,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Csv"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Json": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Json"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -350,6 +373,9 @@
         "Description": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "LastUpdateTimestamp": {
             "type": "string"
         },
@@ -366,16 +392,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -523,12 +549,13 @@
         "/properties/tfcfnid",
         "/properties/Arn",
         "/properties/CreateTimestamp",
+        "/properties/Id",
         "/properties/LastUpdateTimestamp",
         "/properties/Status",
         "/properties/Version"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

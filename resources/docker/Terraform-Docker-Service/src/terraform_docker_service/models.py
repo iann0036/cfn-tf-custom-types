@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Auth: Optional[Sequence["_Auth"]]
+    Id: Optional[str]
     Name: Optional[str]
     ConvergeConfig: Optional[Sequence["_ConvergeConfig"]]
     EndpointSpec: Optional[Sequence["_EndpointSpec"]]
@@ -78,6 +79,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             Auth=json_data.get("Auth"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             ConvergeConfig=json_data.get("ConvergeConfig"),
             EndpointSpec=json_data.get("EndpointSpec"),
@@ -117,8 +119,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Auth:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -128,8 +130,8 @@ class Auth:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -339,8 +341,8 @@ _TaskSpec = TaskSpec
 
 @dataclass
 class RestartPolicy:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -350,8 +352,8 @@ class RestartPolicy:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -419,8 +421,8 @@ _ContainerSpec = ContainerSpec
 
 @dataclass
 class Env:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -430,8 +432,8 @@ class Env:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -645,8 +647,8 @@ _VolumeOptions = VolumeOptions
 
 @dataclass
 class DriverOptions:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -656,8 +658,8 @@ class DriverOptions:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -791,8 +793,8 @@ _LogDriver = LogDriver
 
 @dataclass
 class Options:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -802,8 +804,8 @@ class Options:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

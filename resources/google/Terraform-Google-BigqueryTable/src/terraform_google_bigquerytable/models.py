@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     Etag: Optional[str]
     ExpirationTime: Optional[float]
     FriendlyName: Optional[str]
+    Id: Optional[str]
     Labels: Optional[Sequence["_Labels"]]
     LastModifiedTime: Optional[float]
     Location: Optional[str]
@@ -77,6 +78,7 @@ class ResourceModel(BaseResourceModel):
             Etag=json_data.get("Etag"),
             ExpirationTime=json_data.get("ExpirationTime"),
             FriendlyName=json_data.get("FriendlyName"),
+            Id=json_data.get("Id"),
             Labels=json_data.get("Labels"),
             LastModifiedTime=json_data.get("LastModifiedTime"),
             Location=json_data.get("Location"),
@@ -103,8 +105,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Labels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -114,8 +116,8 @@ class Labels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

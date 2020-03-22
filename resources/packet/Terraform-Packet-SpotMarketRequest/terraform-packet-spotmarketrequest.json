@@ -95,6 +95,9 @@
             },
             "description": "Facility IDs where devices should be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "MaxBidPrice": {
             "type": "number",
             "description": "Maximum price user is willing to pay per hour per device."
@@ -129,10 +132,11 @@
         "ProjectId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

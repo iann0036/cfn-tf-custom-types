@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     ContentTypeExclude: Optional[Sequence[str]]
     ContentTypeInclude: Optional[Sequence[str]]
     DefaultsFrom: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     UriExclude: Optional[Sequence[str]]
     UriInclude: Optional[Sequence[str]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             ContentTypeExclude=json_data.get("ContentTypeExclude"),
             ContentTypeInclude=json_data.get("ContentTypeInclude"),
             DefaultsFrom=json_data.get("DefaultsFrom"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             UriExclude=json_data.get("UriExclude"),
             UriInclude=json_data.get("UriInclude"),

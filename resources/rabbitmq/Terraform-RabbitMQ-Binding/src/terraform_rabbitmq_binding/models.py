@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     Arguments: Optional[Sequence["_Arguments"]]
     Destination: Optional[str]
     DestinationType: Optional[str]
+    Id: Optional[str]
     PropertiesKey: Optional[str]
     RoutingKey: Optional[str]
     Source: Optional[str]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Arguments=json_data.get("Arguments"),
             Destination=json_data.get("Destination"),
             DestinationType=json_data.get("DestinationType"),
+            Id=json_data.get("Id"),
             PropertiesKey=json_data.get("PropertiesKey"),
             RoutingKey=json_data.get("RoutingKey"),
             Source=json_data.get("Source"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Arguments:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class Arguments:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

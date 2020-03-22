@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EventNotificationConfig: Optional[Sequence["_EventNotificationConfig"]]
     HttpConfig: Optional[Sequence["_HttpConfig"]]
+    Id: Optional[str]
     LogLevel: Optional[str]
     MqttConfig: Optional[Sequence["_MqttConfig"]]
     Name: Optional[str]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             EventNotificationConfig=json_data.get("EventNotificationConfig"),
             HttpConfig=json_data.get("HttpConfig"),
+            Id=json_data.get("Id"),
             LogLevel=json_data.get("LogLevel"),
             MqttConfig=json_data.get("MqttConfig"),
             Name=json_data.get("Name"),
@@ -75,8 +77,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class EventNotificationConfig:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -86,8 +88,8 @@ class EventNotificationConfig:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -97,8 +99,8 @@ _EventNotificationConfig = EventNotificationConfig
 
 @dataclass
 class HttpConfig:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -108,8 +110,8 @@ class HttpConfig:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -119,8 +121,8 @@ _HttpConfig = HttpConfig
 
 @dataclass
 class MqttConfig:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -130,8 +132,8 @@ class MqttConfig:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -141,8 +143,8 @@ _MqttConfig = MqttConfig
 
 @dataclass
 class StateNotificationConfig:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -152,8 +154,8 @@ class StateNotificationConfig:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -183,8 +185,8 @@ _Credentials = Credentials
 
 @dataclass
 class PublicKeyCertificate:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -194,8 +196,8 @@ class PublicKeyCertificate:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

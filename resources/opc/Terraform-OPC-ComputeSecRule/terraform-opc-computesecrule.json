@@ -28,6 +28,9 @@
             "type": "boolean",
             "description": "Whether to disable this security rule. This is useful if you want to temporarily disable a rule\nwithout removing it outright from your Terraform resource definition. Defaults to `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "The unique (within the identity domain) name of the security rule."
@@ -46,10 +49,11 @@
         "SourceList"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

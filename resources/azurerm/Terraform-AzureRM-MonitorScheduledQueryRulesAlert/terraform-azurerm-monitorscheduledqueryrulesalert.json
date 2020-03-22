@@ -64,7 +64,8 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/MetricTrigger"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -126,6 +127,9 @@
             "type": "number",
             "description": "Frequency (in minutes) at which rule condition should be evaluated.  Values must be between 5 and 1440 (inclusive)."
         },
+        "Id": {
+            "type": "string"
+        },
         "Location": {
             "type": "string"
         },
@@ -155,16 +159,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -217,10 +221,11 @@
         "TimeWindow"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

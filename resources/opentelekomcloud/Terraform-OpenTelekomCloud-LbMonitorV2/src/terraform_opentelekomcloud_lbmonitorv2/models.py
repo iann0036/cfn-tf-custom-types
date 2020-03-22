@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Delay: Optional[float]
     ExpectedCodes: Optional[str]
     HttpMethod: Optional[str]
+    Id: Optional[str]
     MaxRetries: Optional[float]
     Name: Optional[str]
     PoolId: Optional[str]
@@ -63,6 +64,7 @@ class ResourceModel(BaseResourceModel):
             Delay=json_data.get("Delay"),
             ExpectedCodes=json_data.get("ExpectedCodes"),
             HttpMethod=json_data.get("HttpMethod"),
+            Id=json_data.get("Id"),
             MaxRetries=json_data.get("MaxRetries"),
             Name=json_data.get("Name"),
             PoolId=json_data.get("PoolId"),

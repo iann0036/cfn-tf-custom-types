@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     DscpMark: Optional[float]
+    Id: Optional[str]
     QosPolicyId: Optional[str]
     Region: Optional[str]
     Timeouts: Optional["_Timeouts"]
@@ -51,6 +52,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             DscpMark=json_data.get("DscpMark"),
+            Id=json_data.get("Id"),
             QosPolicyId=json_data.get("QosPolicyId"),
             Region=json_data.get("Region"),
             Timeouts=Timeouts._deserialize(json_data.get("Timeouts")),

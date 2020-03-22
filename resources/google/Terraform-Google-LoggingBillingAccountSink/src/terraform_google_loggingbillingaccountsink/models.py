@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BillingAccount: Optional[str]
     Destination: Optional[str]
     Filter: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     WriterIdentity: Optional[str]
     BigqueryOptions: Optional[Sequence["_BigqueryOptions"]]
@@ -55,6 +56,7 @@ class ResourceModel(BaseResourceModel):
             BillingAccount=json_data.get("BillingAccount"),
             Destination=json_data.get("Destination"),
             Filter=json_data.get("Filter"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             WriterIdentity=json_data.get("WriterIdentity"),
             BigqueryOptions=json_data.get("BigqueryOptions"),

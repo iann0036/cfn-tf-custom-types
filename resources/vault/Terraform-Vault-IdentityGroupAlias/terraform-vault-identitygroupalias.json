@@ -12,6 +12,9 @@
             "type": "string",
             "description": "ID of the group to which this is an alias."
         },
+        "Id": {
+            "type": "string"
+        },
         "MountAccessor": {
             "type": "string",
             "description": "Mount accessor of the authentication backend to which this alias belongs to."
@@ -28,10 +31,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

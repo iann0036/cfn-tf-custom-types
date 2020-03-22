@@ -45,6 +45,9 @@
             "type": "boolean",
             "description": "enable ipv6."
         },
+        "Id": {
+            "type": "string"
+        },
         "Image": {
             "type": "string",
             "description": "base image of server."
@@ -104,12 +107,13 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/PrivateIp",
         "/properties/PublicIpv6",
         "/properties/StateDetail"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

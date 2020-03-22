@@ -36,6 +36,9 @@
             "type": "string",
             "description": "The Create Option of the Data Disk, such as `Empty` or `Attach`. Defaults to `Attach`. Changing this forces a new resource to be created."
         },
+        "Id": {
+            "type": "string"
+        },
         "Lun": {
             "type": "number",
             "description": "The Logical Unit Number of the Data Disk, which needs to be unique within the Virtual Machine. Changing this forces a new resource to be created."
@@ -64,10 +67,11 @@
         "VirtualMachineId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

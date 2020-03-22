@@ -33,6 +33,9 @@
             "type": "string",
             "description": "Human-readable description for the Loadbalancer."
         },
+        "Id": {
+            "type": "string"
+        },
         "LoadbalancerProvider": {
             "type": "string",
             "description": "The name of the provider. Changing this\ncreates a new loadbalancer."
@@ -77,10 +80,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/VipPortId"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

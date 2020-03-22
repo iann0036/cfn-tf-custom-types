@@ -60,6 +60,9 @@
         "IamRoleArn": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "MaintenanceWindow": {
             "type": "string"
         },
@@ -117,16 +120,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -154,11 +157,12 @@
         "/properties/Arn",
         "/properties/ClusterAddress",
         "/properties/ConfigurationEndpoint",
+        "/properties/Id",
         "/properties/Nodes",
         "/properties/Port"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

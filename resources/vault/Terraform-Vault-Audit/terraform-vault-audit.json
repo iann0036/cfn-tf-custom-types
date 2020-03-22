@@ -12,6 +12,9 @@
             "type": "string",
             "description": "Human-friendly description of the audit device."
         },
+        "Id": {
+            "type": "string"
+        },
         "Options": {
             "type": "array",
             "insertionOrder": true,
@@ -19,16 +22,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Configuration options to pass to the audit device itself."
@@ -48,10 +51,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

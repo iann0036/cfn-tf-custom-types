@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     AllowUnauthenticatedIdentities: Optional[bool]
     Arn: Optional[str]
     DeveloperProviderName: Optional[str]
+    Id: Optional[str]
     IdentityPoolName: Optional[str]
     OpenidConnectProviderArns: Optional[Sequence[str]]
     SamlProviderArns: Optional[Sequence[str]]
@@ -58,6 +59,7 @@ class ResourceModel(BaseResourceModel):
             AllowUnauthenticatedIdentities=json_data.get("AllowUnauthenticatedIdentities"),
             Arn=json_data.get("Arn"),
             DeveloperProviderName=json_data.get("DeveloperProviderName"),
+            Id=json_data.get("Id"),
             IdentityPoolName=json_data.get("IdentityPoolName"),
             OpenidConnectProviderArns=json_data.get("OpenidConnectProviderArns"),
             SamlProviderArns=json_data.get("SamlProviderArns"),
@@ -73,8 +75,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class SupportedLoginProviders:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -84,8 +86,8 @@ class SupportedLoginProviders:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -95,8 +97,8 @@ _SupportedLoginProviders = SupportedLoginProviders
 
 @dataclass
 class Tags:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -106,8 +108,8 @@ class Tags:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

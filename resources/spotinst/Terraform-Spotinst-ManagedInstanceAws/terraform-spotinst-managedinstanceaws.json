@@ -12,7 +12,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/Domains"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": []
@@ -129,7 +130,8 @@
                     "insertionOrder": false,
                     "items": {
                         "$ref": "#/definitions/RecordSets"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": [
@@ -203,6 +205,9 @@
         "IamInstanceProfile": {
             "type": "string",
             "description": "Set IAM profile to instance. Set only one of ARN or Name."
+        },
+        "Id": {
+            "type": "string"
         },
         "ImageId": {
             "type": "string",
@@ -379,10 +384,11 @@
         "VpcId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

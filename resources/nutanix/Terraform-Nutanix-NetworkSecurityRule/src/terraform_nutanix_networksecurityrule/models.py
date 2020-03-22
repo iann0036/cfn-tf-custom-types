@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     AppRuleTargetGroupFilterType: Optional[str]
     AppRuleTargetGroupPeerSpecificationType: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     IsolationRuleAction: Optional[str]
     IsolationRuleFirstEntityFilterKindList: Optional[Sequence[str]]
     IsolationRuleFirstEntityFilterType: Optional[str]
@@ -79,6 +80,7 @@ class ResourceModel(BaseResourceModel):
             AppRuleTargetGroupFilterType=json_data.get("AppRuleTargetGroupFilterType"),
             AppRuleTargetGroupPeerSpecificationType=json_data.get("AppRuleTargetGroupPeerSpecificationType"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             IsolationRuleAction=json_data.get("IsolationRuleAction"),
             IsolationRuleFirstEntityFilterKindList=json_data.get("IsolationRuleFirstEntityFilterKindList"),
             IsolationRuleFirstEntityFilterType=json_data.get("IsolationRuleFirstEntityFilterType"),
@@ -107,8 +109,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Metadata:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -118,8 +120,8 @@ class Metadata:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -129,8 +131,8 @@ _Metadata = Metadata
 
 @dataclass
 class OwnerReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -140,8 +142,8 @@ class OwnerReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -151,8 +153,8 @@ _OwnerReference = OwnerReference
 
 @dataclass
 class ProjectReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -162,8 +164,8 @@ class ProjectReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -215,8 +217,8 @@ _AppRuleInboundAllowList = AppRuleInboundAllowList
 
 @dataclass
 class NetworkFunctionChainReference:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -226,8 +228,8 @@ class NetworkFunctionChainReference:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -367,8 +369,8 @@ _AppRuleOutboundAllowList = AppRuleOutboundAllowList
 
 @dataclass
 class NetworkFunctionChainReference2:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -378,8 +380,8 @@ class NetworkFunctionChainReference2:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

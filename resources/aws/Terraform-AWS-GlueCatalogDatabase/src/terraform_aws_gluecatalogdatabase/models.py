@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     CatalogId: Optional[str]
     Description: Optional[str]
+    Id: Optional[str]
     LocationUri: Optional[str]
     Name: Optional[str]
     Parameters: Optional[Sequence["_Parameters"]]
@@ -53,6 +54,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             CatalogId=json_data.get("CatalogId"),
             Description=json_data.get("Description"),
+            Id=json_data.get("Id"),
             LocationUri=json_data.get("LocationUri"),
             Name=json_data.get("Name"),
             Parameters=json_data.get("Parameters"),
@@ -65,8 +67,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -76,8 +78,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

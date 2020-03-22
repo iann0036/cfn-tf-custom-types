@@ -16,6 +16,9 @@
             "type": "string",
             "description": "The enforcement level of the policy. Valid\nvalues are `advisory`, `hard-mandatory` and `soft-mandatory`. Defaults\nto `soft-mandatory`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Name of the policy."
@@ -36,10 +39,11 @@
         "Policy"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

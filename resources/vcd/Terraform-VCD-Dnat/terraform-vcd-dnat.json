@@ -24,6 +24,9 @@
             "type": "string",
             "description": "The name of ICMP type. Possible values are   address-mask-request, destination-unreachable, echo-request, echo-reply, parameter-problem, redirect, router-advertisement, router-solicitation, source-quench, time-exceeded, timestamp-request, timestamp-reply, any."
         },
+        "Id": {
+            "type": "string"
+        },
         "InternalIp": {
             "type": "string",
             "description": "The IP of the VM to map to."
@@ -64,10 +67,11 @@
         "InternalIp"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

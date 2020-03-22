@@ -43,6 +43,7 @@ class ResourceModel(BaseResourceModel):
     Description: Optional[str]
     EnableDashboard: Optional[bool]
     FeatureGates: Optional[Sequence[str]]
+    Id: Optional[str]
     Ingress: Optional[str]
     Kubeconfig: Optional[Sequence["_Kubeconfig"]]
     Name: Optional[str]
@@ -74,6 +75,7 @@ class ResourceModel(BaseResourceModel):
             Description=json_data.get("Description"),
             EnableDashboard=json_data.get("EnableDashboard"),
             FeatureGates=json_data.get("FeatureGates"),
+            Id=json_data.get("Id"),
             Ingress=json_data.get("Ingress"),
             Kubeconfig=json_data.get("Kubeconfig"),
             Name=json_data.get("Name"),

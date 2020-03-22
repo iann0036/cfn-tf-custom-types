@@ -42,6 +42,9 @@
         "FlavorId": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Instances": {
             "type": "array",
             "insertionOrder": false,
@@ -121,11 +124,12 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Created",
+        "/properties/Id",
         "/properties/Instances",
         "/properties/PublidIp"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

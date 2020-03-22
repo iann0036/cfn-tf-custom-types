@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Comment: Optional[str]
     EncodedKey: Optional[str]
     Etag: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     NamePrefix: Optional[str]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Comment=json_data.get("Comment"),
             EncodedKey=json_data.get("EncodedKey"),
             Etag=json_data.get("Etag"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             NamePrefix=json_data.get("NamePrefix"),
         )

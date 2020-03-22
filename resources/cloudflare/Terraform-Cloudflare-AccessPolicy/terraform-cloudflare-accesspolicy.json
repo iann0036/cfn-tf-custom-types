@@ -110,6 +110,9 @@
             "type": "string",
             "description": "Defines the action Access will take if the policy matches the user.\nAllowed values: `allow`, `deny`, `non_identity`, `bypass`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Friendly name of the Access Application."
@@ -153,10 +156,11 @@
         "ZoneId"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

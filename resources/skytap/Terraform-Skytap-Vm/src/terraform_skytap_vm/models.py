@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     Cpus: Optional[float]
     EnvironmentId: Optional[str]
+    Id: Optional[str]
     MaxCpus: Optional[float]
     MaxRam: Optional[float]
     Name: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             Cpus=json_data.get("Cpus"),
             EnvironmentId=json_data.get("EnvironmentId"),
+            Id=json_data.get("Id"),
             MaxCpus=json_data.get("MaxCpus"),
             MaxRam=json_data.get("MaxRam"),
             Name=json_data.get("Name"),
@@ -87,8 +89,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class ServiceIps:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -98,8 +100,8 @@ class ServiceIps:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -109,8 +111,8 @@ _ServiceIps = ServiceIps
 
 @dataclass
 class ServicePorts:
-    Key: Optional[str]
-    Value: Optional[float]
+    MapKey: Optional[str]
+    MapValue: Optional[float]
 
     @classmethod
     def _deserialize(
@@ -120,8 +122,8 @@ class ServicePorts:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

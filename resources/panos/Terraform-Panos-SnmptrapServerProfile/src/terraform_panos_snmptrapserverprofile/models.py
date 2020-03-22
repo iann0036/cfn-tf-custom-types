@@ -38,6 +38,7 @@ class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     AuthPasswordEnc: Optional[Sequence["_AuthPasswordEnc"]]
     AuthPasswordRaw: Optional[Sequence["_AuthPasswordRaw"]]
+    Id: Optional[str]
     Name: Optional[str]
     PrivPasswordEnc: Optional[Sequence["_PrivPasswordEnc"]]
     PrivPasswordRaw: Optional[Sequence["_PrivPasswordRaw"]]
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             tfcfnid=json_data.get("tfcfnid"),
             AuthPasswordEnc=json_data.get("AuthPasswordEnc"),
             AuthPasswordRaw=json_data.get("AuthPasswordRaw"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             PrivPasswordEnc=json_data.get("PrivPasswordEnc"),
             PrivPasswordRaw=json_data.get("PrivPasswordRaw"),
@@ -71,8 +73,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class AuthPasswordEnc:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -82,8 +84,8 @@ class AuthPasswordEnc:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -93,8 +95,8 @@ _AuthPasswordEnc = AuthPasswordEnc
 
 @dataclass
 class AuthPasswordRaw:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -104,8 +106,8 @@ class AuthPasswordRaw:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -115,8 +117,8 @@ _AuthPasswordRaw = AuthPasswordRaw
 
 @dataclass
 class PrivPasswordEnc:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -126,8 +128,8 @@ class PrivPasswordEnc:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -137,8 +139,8 @@ _PrivPasswordEnc = PrivPasswordEnc
 
 @dataclass
 class PrivPasswordRaw:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -148,8 +150,8 @@ class PrivPasswordRaw:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

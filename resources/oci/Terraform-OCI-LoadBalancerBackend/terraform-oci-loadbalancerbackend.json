@@ -37,6 +37,9 @@
             "type": "boolean",
             "description": "(Updatable) Whether the load balancer should drain this server. Servers marked \"drain\" receive no new incoming traffic.  Example: `false`."
         },
+        "Id": {
+            "type": "string"
+        },
         "IpAddress": {
             "type": "string",
             "description": "The IP address of the backend server.  Example: `10.0.0.3`."
@@ -76,11 +79,12 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/Name",
         "/properties/State"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

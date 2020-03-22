@@ -20,6 +20,9 @@
             "type": "string",
             "description": "The type of disk controller. Possible values: `ide`, `parallel`( LSI Logic Parallel SCSI), `sas`(LSI Logic SAS (SCSI)), `paravirtual`(Paravirtual (SCSI)), `sata`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Iops": {
             "type": "number",
             "description": "Specifies the IOPS for the disk. Default is 0."
@@ -67,10 +70,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/ThinProvisioned"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

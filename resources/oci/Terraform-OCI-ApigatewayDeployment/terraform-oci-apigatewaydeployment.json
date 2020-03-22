@@ -12,21 +12,24 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LoggingPolicies"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "RequestPolicies": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RequestPolicies"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Routes": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Routes"
-                    }
+                    },
+                    "minItems": 1
                 }
             },
             "required": []
@@ -56,14 +59,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/AccessLog"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "ExecutionLog": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/ExecutionLog"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -77,14 +82,16 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Authorization"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "Cors": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Cors"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": []
@@ -108,21 +115,25 @@
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/Backend"
-                    }
+                    },
+                    "maxItems": 1,
+                    "minItems": 1
                 },
                 "LoggingPolicies": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/LoggingPolicies"
-                    }
+                    },
+                    "maxItems": 1
                 },
                 "RequestPolicies": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "$ref": "#/definitions/RequestPolicies"
-                    }
+                    },
+                    "maxItems": 1
                 }
             },
             "required": [
@@ -326,16 +337,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Operations.CostCenter\": \"42\"}`."
@@ -354,16 +365,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{\"Department\": \"Finance\"}`."
@@ -371,6 +382,9 @@
         "GatewayId": {
             "type": "string",
             "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource."
+        },
+        "Id": {
+            "type": "string"
         },
         "LifecycleDetails": {
             "type": "string"
@@ -498,13 +512,14 @@
     "readOnlyProperties": [
         "/properties/tfcfnid",
         "/properties/Endpoint",
+        "/properties/Id",
         "/properties/LifecycleDetails",
         "/properties/State",
         "/properties/TimeCreated",
         "/properties/TimeUpdated"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -77,6 +77,9 @@
             "type": "string",
             "description": "Org full name."
         },
+        "Id": {
+            "type": "string"
+        },
         "IsEnabled": {
             "type": "boolean",
             "description": "- True if this organization is enabled (allows login and all other operations). Default is `true`."
@@ -114,10 +117,11 @@
         "Name"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     Dport: Optional[str]
     Icmpcode: Optional[str]
     Icmptype: Optional[str]
+    Id: Optional[str]
     Name: Optional[str]
     Protocol: Optional[str]
 
@@ -56,6 +57,7 @@ class ResourceModel(BaseResourceModel):
             Dport=json_data.get("Dport"),
             Icmpcode=json_data.get("Icmpcode"),
             Icmptype=json_data.get("Icmptype"),
+            Id=json_data.get("Id"),
             Name=json_data.get("Name"),
             Protocol=json_data.get("Protocol"),
         )

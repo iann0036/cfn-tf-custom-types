@@ -15,16 +15,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "object/hash of data to be sent along with the webhook. this varies depending on the `type`."
@@ -32,6 +32,9 @@
         "Event": {
             "type": "string",
             "description": "- when to send the data, for example on deploy create, succeed, fail, etc."
+        },
+        "Id": {
+            "type": "string"
         },
         "SiteId": {
             "type": "string",
@@ -50,10 +53,11 @@
         "Type"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

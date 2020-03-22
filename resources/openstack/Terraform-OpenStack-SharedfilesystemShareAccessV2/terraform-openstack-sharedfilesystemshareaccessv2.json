@@ -40,6 +40,9 @@
             "type": "string",
             "description": "The access rule type. Can either be an ip, user,\ncert, or cephx. cephx support requires an OpenStack environment that supports\nShared Filesystem microversion 2.13 (Mitaka) or later."
         },
+        "Id": {
+            "type": "string"
+        },
         "Region": {
             "type": "string",
             "description": "The region in which to obtain the V2 Shared File System client.\nA Shared File System client is needed to create a share access. Changing this\ncreates a new share access."
@@ -61,10 +64,11 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
-        "/properties/AccessKey"
+        "/properties/AccessKey",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

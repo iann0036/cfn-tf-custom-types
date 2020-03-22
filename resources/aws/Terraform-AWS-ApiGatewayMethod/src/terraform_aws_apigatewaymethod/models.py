@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     AuthorizationScopes: Optional[Sequence[str]]
     AuthorizerId: Optional[str]
     HttpMethod: Optional[str]
+    Id: Optional[str]
     RequestModels: Optional[Sequence["_RequestModels"]]
     RequestParameters: Optional[Sequence["_RequestParameters"]]
     RequestParametersInJson: Optional[str]
@@ -62,6 +63,7 @@ class ResourceModel(BaseResourceModel):
             AuthorizationScopes=json_data.get("AuthorizationScopes"),
             AuthorizerId=json_data.get("AuthorizerId"),
             HttpMethod=json_data.get("HttpMethod"),
+            Id=json_data.get("Id"),
             RequestModels=json_data.get("RequestModels"),
             RequestParameters=json_data.get("RequestParameters"),
             RequestParametersInJson=json_data.get("RequestParametersInJson"),
@@ -77,8 +79,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class RequestModels:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -88,8 +90,8 @@ class RequestModels:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 
@@ -99,8 +101,8 @@ _RequestModels = RequestModels
 
 @dataclass
 class RequestParameters:
-    Key: Optional[str]
-    Value: Optional[bool]
+    MapKey: Optional[str]
+    MapValue: Optional[bool]
 
     @classmethod
     def _deserialize(
@@ -110,8 +112,8 @@ class RequestParameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -39,6 +39,7 @@ class ResourceModel(BaseResourceModel):
     BlockIps: Optional[Sequence[str]]
     CdnType: Optional[str]
     DomainName: Optional[str]
+    Id: Optional[str]
     OptimizeEnable: Optional[str]
     PageCompressEnable: Optional[str]
     RangeEnable: Optional[str]
@@ -67,6 +68,7 @@ class ResourceModel(BaseResourceModel):
             BlockIps=json_data.get("BlockIps"),
             CdnType=json_data.get("CdnType"),
             DomainName=json_data.get("DomainName"),
+            Id=json_data.get("Id"),
             OptimizeEnable=json_data.get("OptimizeEnable"),
             PageCompressEnable=json_data.get("PageCompressEnable"),
             RangeEnable=json_data.get("RangeEnable"),

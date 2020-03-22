@@ -25,16 +25,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             },
             "description": "Map of custom attribute ids to attribute\nvalue strings to set on datasource resource. See\n[here][docs-setting-custom-attributes] for a reference on how to set values\nfor custom attributes."
@@ -57,6 +57,9 @@
                 "type": "string"
             },
             "description": "The [managed object IDs][docs-about-morefs] of\nthe hosts to mount the datastore on."
+        },
+        "Id": {
+            "type": "string"
         },
         "MaintenanceMode": {
             "type": "string"
@@ -118,6 +121,7 @@
         "/properties/Accessible",
         "/properties/Capacity",
         "/properties/FreeSpace",
+        "/properties/Id",
         "/properties/MaintenanceMode",
         "/properties/MultipleHostAccess",
         "/properties/ProtocolEndpoint",
@@ -125,7 +129,7 @@
         "/properties/Url"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

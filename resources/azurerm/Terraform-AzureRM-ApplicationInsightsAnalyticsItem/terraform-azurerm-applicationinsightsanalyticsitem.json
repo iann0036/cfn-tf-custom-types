@@ -40,6 +40,9 @@
             "type": "string",
             "description": "The alias to use for the function. Required when `type` is `function`."
         },
+        "Id": {
+            "type": "string"
+        },
         "Name": {
             "type": "string",
             "description": "Specifies the name of the Application Insights Analytics Item. Changing this forces a new resource to be created."
@@ -75,12 +78,13 @@
     ],
     "readOnlyProperties": [
         "/properties/tfcfnid",
+        "/properties/Id",
         "/properties/TimeCreated",
         "/properties/TimeModified",
         "/properties/Version"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

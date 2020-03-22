@@ -79,6 +79,9 @@
         "EndpointUrl": {
             "type": "string"
         },
+        "Id": {
+            "type": "string"
+        },
         "Instances": {
             "type": "array",
             "insertionOrder": false,
@@ -126,16 +129,16 @@
                 "type": "object",
                 "additionalProperties": false,
                 "properties": {
-                    "Key": {
+                    "MapKey": {
                         "type": "string"
                     },
-                    "Value": {
+                    "MapValue": {
                         "type": "string"
                     }
                 },
                 "required": [
-                    "Key",
-                    "Value"
+                    "MapKey",
+                    "MapValue"
                 ]
             }
         },
@@ -178,6 +181,7 @@
         "/properties/AutoscalingGroups",
         "/properties/Cname",
         "/properties/EndpointUrl",
+        "/properties/Id",
         "/properties/Instances",
         "/properties/LaunchConfigurations",
         "/properties/LoadBalancers",
@@ -185,7 +189,7 @@
         "/properties/Triggers"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

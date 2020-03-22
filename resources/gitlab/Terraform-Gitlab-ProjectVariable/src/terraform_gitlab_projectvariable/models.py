@@ -37,6 +37,7 @@ class ResourceHandlerRequest(BaseResourceHandlerRequest):
 class ResourceModel(BaseResourceModel):
     tfcfnid: Optional[str]
     EnvironmentScope: Optional[str]
+    Id: Optional[str]
     Key: Optional[str]
     Masked: Optional[bool]
     Project: Optional[str]
@@ -54,6 +55,7 @@ class ResourceModel(BaseResourceModel):
         return cls(
             tfcfnid=json_data.get("tfcfnid"),
             EnvironmentScope=json_data.get("EnvironmentScope"),
+            Id=json_data.get("Id"),
             Key=json_data.get("Key"),
             Masked=json_data.get("Masked"),
             Project=json_data.get("Project"),

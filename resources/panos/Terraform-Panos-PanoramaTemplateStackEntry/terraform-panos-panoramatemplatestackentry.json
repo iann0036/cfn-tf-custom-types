@@ -12,6 +12,9 @@
             "type": "string",
             "description": "The serial number of the device to add."
         },
+        "Id": {
+            "type": "string"
+        },
         "TemplateStack": {
             "type": "string",
             "description": "The template name."
@@ -23,10 +26,11 @@
         "TemplateStack"
     ],
     "readOnlyProperties": [
-        "/properties/tfcfnid"
+        "/properties/tfcfnid",
+        "/properties/Id"
     ],
     "primaryIdentifier": [
-        "/properties/tfcfnid"
+        "/properties/Id"
     ],
     "handlers": {
         "create": {

@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     AutomationTargetParameterName: Optional[str]
     ComplianceSeverity: Optional[str]
     DocumentVersion: Optional[str]
+    Id: Optional[str]
     InstanceId: Optional[str]
     MaxConcurrency: Optional[str]
     MaxErrors: Optional[str]
@@ -64,6 +65,7 @@ class ResourceModel(BaseResourceModel):
             AutomationTargetParameterName=json_data.get("AutomationTargetParameterName"),
             ComplianceSeverity=json_data.get("ComplianceSeverity"),
             DocumentVersion=json_data.get("DocumentVersion"),
+            Id=json_data.get("Id"),
             InstanceId=json_data.get("InstanceId"),
             MaxConcurrency=json_data.get("MaxConcurrency"),
             MaxErrors=json_data.get("MaxErrors"),
@@ -81,8 +83,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class Parameters:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -92,8 +94,8 @@ class Parameters:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

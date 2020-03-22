@@ -40,6 +40,7 @@ class ResourceModel(BaseResourceModel):
     ClearHeaders: Optional[Sequence[str]]
     Domain: Optional[str]
     ErrorCodes: Optional[Sequence[float]]
+    Id: Optional[str]
     ListenerId: Optional[str]
     NewErrorCode: Optional[float]
     SetHeaders: Optional[Sequence["_SetHeaders"]]
@@ -57,6 +58,7 @@ class ResourceModel(BaseResourceModel):
             ClearHeaders=json_data.get("ClearHeaders"),
             Domain=json_data.get("Domain"),
             ErrorCodes=json_data.get("ErrorCodes"),
+            Id=json_data.get("Id"),
             ListenerId=json_data.get("ListenerId"),
             NewErrorCode=json_data.get("NewErrorCode"),
             SetHeaders=json_data.get("SetHeaders"),
@@ -69,8 +71,8 @@ _ResourceModel = ResourceModel
 
 @dataclass
 class SetHeaders:
-    Key: Optional[str]
-    Value: Optional[str]
+    MapKey: Optional[str]
+    MapValue: Optional[str]
 
     @classmethod
     def _deserialize(
@@ -80,8 +82,8 @@ class SetHeaders:
         if not json_data:
             return None
         return cls(
-            Key=json_data.get("Key"),
-            Value=json_data.get("Value"),
+            MapKey=json_data.get("MapKey"),
+            MapValue=json_data.get("MapValue"),
         )
 
 

@@ -45,6 +45,7 @@ class ResourceModel(BaseResourceModel):
     HealthCheckSwitch: Optional[bool]
     HealthCheckTimeOut: Optional[float]
     HealthCheckUnhealthNum: Optional[float]
+    Id: Optional[str]
     ListenerName: Optional[str]
     Port: Optional[float]
     Protocol: Optional[str]
@@ -70,6 +71,7 @@ class ResourceModel(BaseResourceModel):
             HealthCheckSwitch=json_data.get("HealthCheckSwitch"),
             HealthCheckTimeOut=json_data.get("HealthCheckTimeOut"),
             HealthCheckUnhealthNum=json_data.get("HealthCheckUnhealthNum"),
+            Id=json_data.get("Id"),
             ListenerName=json_data.get("ListenerName"),
             Port=json_data.get("Port"),
             Protocol=json_data.get("Protocol"),

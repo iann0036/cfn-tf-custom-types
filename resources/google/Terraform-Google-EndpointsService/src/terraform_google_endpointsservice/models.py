@@ -41,6 +41,7 @@ class ResourceModel(BaseResourceModel):
     DnsAddress: Optional[str]
     Endpoints: Optional[Sequence["_Endpoints"]]
     GrpcConfig: Optional[str]
+    Id: Optional[str]
     OpenapiConfig: Optional[str]
     Project: Optional[str]
     ProtocOutputBase64: Optional[str]
@@ -60,6 +61,7 @@ class ResourceModel(BaseResourceModel):
             DnsAddress=json_data.get("DnsAddress"),
             Endpoints=json_data.get("Endpoints"),
             GrpcConfig=json_data.get("GrpcConfig"),
+            Id=json_data.get("Id"),
             OpenapiConfig=json_data.get("OpenapiConfig"),
             Project=json_data.get("Project"),
             ProtocOutputBase64=json_data.get("ProtocOutputBase64"),
