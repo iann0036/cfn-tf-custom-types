@@ -22,11 +22,11 @@ The below requirements must be installed and be available in PATH:
 
 ### Execution Infrastructure
 
-[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=tfcfn-custom-type-resources&templateURL=https://s3.amazonaws.com/ianmckay-us-east-1/cf-tf-custom-types/template.yml)
+[![Launch Stack](https://cdn.rawgit.com/buildkite/cloudformation-launch-stack-button-svg/master/launch-stack.svg)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=tfcfn-custom-type-resources&templateURL=https://s3.amazonaws.com/ianmckay-us-east-1/cfn-tf-custom-types/template.yml)
 
 Click the above link to deploy the stack to your environment. This stack creates a single bucket in your account for the storage of state data, as well as a Lambda function that is used to execute the Terraform actions.
 
-If you prefer, you can also manually upsert the [template.yml](https://github.com/iann0036/cf-tf-custom-types/blob/master/template.yml) stack from source.
+If you prefer, you can also manually upsert the [template.yml](https://github.com/iann0036/cfn-tf-custom-types/blob/master/template.yml) stack from source.
 
 ### Resource Generation
 
