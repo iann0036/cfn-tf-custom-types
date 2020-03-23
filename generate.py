@@ -480,10 +480,16 @@ def process_resource_docs(provider_name, file_contents, provider_readme_items):
     argument_lines = []
     attributes = {}
 
+    print("#---------#")
+    print(file_contents)
+
     lines = file_contents.split("\n")
     for line in lines:
         if line.startswith("# " + provider_name):
             resource_type = line[2:].replace("\\", "")
+            section = "description"
+        elif line.startswith("# Resource: " + provider_name): # aws docs differences
+            resource_type = line[len("# Resource: "):].replace("\\", "")
             section = "description"
         elif line == "## Example Usage":
             section = "example"
@@ -640,9 +646,13 @@ def generate_docs(tempdir, provider_type, tfschema):
                 argument_text = re.sub(r"(\`%s\_.+\`)" % provider_type, lambda x: "`" + tf_type_to_cfn_type(x.group(1), provider_type), argument_text) # TODO - why only one backtick used?!?
 
             has_required_arguments = False
-            if "required" in argument_text.lower():
+            if "required" in argument_text.lower() and provider_type not in ['aws']:
                 has_required_arguments = True
-            provider_readme.write("# {} Provider\n\n## Configuration\n\n".format(readable_provider_name))
+            
+            provider_readme.write("# {} Provider\n\n".format(readable_provider_name))
+            if provider_type == "aws":
+                provider_readme.write("> For the AWS provider, credentials will be inherited from the executor role, meaning you are not required to provide credentials in a configuration secret.\n\n")
+            provider_readme.write("## Configuration\n\n")
             if len(arguments) == 0:
                 provider_readme.write("No configuration is required for this provider.\n\n")
             elif not has_required_arguments:
