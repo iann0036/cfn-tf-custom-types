@@ -62,6 +62,10 @@ A full list of documentation can be found [here](docs/README.md).
 
 You can use a submitted resource like any other CloudFormation native resource, provided you follow the appropriate documentation. Check out some of the [examples](https://github.com/iann0036/cfn-tf-custom-types/tree/master/examples) to get started.
 
+## How It Works
+
+![Architecture Diagram](assets/arch.png)
+
 ## Acknowledgements
 
 This project would not be possible without the work from the contributors to Terraform providers and the Terraform core product.
