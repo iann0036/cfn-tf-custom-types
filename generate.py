@@ -653,10 +653,10 @@ def generate_docs(tempdir, provider_type, tfschema):
             if len(arguments) == 0:
                 provider_readme.write("No configuration is required for this provider.\n\n")
             elif not has_required_arguments:
-                provider_readme.write("To configure this resource, you may optionally create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:\n\n".format(provider_type))
+                provider_readme.write("To configure this resource, you may optionally create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret:\n\n".format(provider_type))
                 provider_readme.write(argument_text + "\n\n")
             else:
-                provider_readme.write("To configure this resource, you must create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:\n\n".format(provider_type))
+                provider_readme.write("To configure this resource, you must create an AWS Secrets Manager secret with the name **terraform/{}**. The below arguments may be included as the key/value or JSON properties in the secret:\n\n".format(provider_type))
                 provider_readme.write(argument_text + "\n\n")
 
             # iterate provider resources
