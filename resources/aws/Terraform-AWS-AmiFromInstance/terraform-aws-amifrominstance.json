@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AmiFromInstance",
-    "description": "CloudFormation equivalent of aws_ami_from_instance",
+    "description": "The \"AMI from instance\" resource allows the creation of an Amazon Machine\nImage (AMI) modelled after an existing EBS-backed EC2 instance.\n\nThe created AMI will refer to implicitly-created snapshots of the instance's\nEBS volumes and mimick its assigned block device configuration at the time\nthe resource is created.\n\nThis resource is best applied to an instance that is stopped when this instance\nis created, so that the contents of the created image are predictable. When\napplied to an instance that is running, *the instance will be stopped before taking\nthe snapshots and then started back up again*, resulting in a period of\ndowntime.\n\nNote that the source instance is inspected only at the initial creation of this\nresource. Ongoing updates to the referenced instance will not be propagated into\nthe generated AMI. Users may taint or otherwise recreate the resource in order\nto produce a fresh snapshot.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -47,7 +47,8 @@
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A region-unique name for the AMI."
         },
         "RamdiskId": {
             "type": "string"
@@ -59,10 +60,12 @@
             "type": "string"
         },
         "SnapshotWithoutReboot": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean that overrides the behavior of stopping\nthe instance before snapshotting. This is risky since it may cause a snapshot of an\ninconsistent filesystem state, but can be used to avoid downtime if the user otherwise\nguarantees that no filesystem writes will be underway at the time of snapshot."
         },
         "SourceInstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the instance to use as the basis of the AMI."
         },
         "SriovNetSupport": {
             "type": "string"
@@ -85,7 +88,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VirtualizationType": {
             "type": "string"

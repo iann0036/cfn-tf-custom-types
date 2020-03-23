@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::S3BucketInventory",
-    "description": "CloudFormation equivalent of aws_s3_bucket_inventory",
+    "description": "Provides a S3 bucket [inventory configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html) resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Destination": {
@@ -24,7 +24,8 @@
             "additionalProperties": false,
             "properties": {
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The prefix that an object must have to be included in the inventory results."
                 }
             },
             "required": []
@@ -34,7 +35,8 @@
             "additionalProperties": false,
             "properties": {
                 "Frequency": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies how frequently inventory results are produced. Valid values: `Daily`, `Weekly`."
                 }
             },
             "required": [
@@ -46,16 +48,20 @@
             "additionalProperties": false,
             "properties": {
                 "AccountId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the account that owns the destination bucket. Recommended to be set to prevent problems if the destination bucket ownership changes."
                 },
                 "BucketArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Amazon S3 bucket ARN of the destination."
                 },
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies the output format of the inventory results. Can be `CSV`, [`ORC`](https://orc.apache.org/) or [`Parquet`](https://parquet.apache.org/)."
                 },
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The prefix that is prepended to all inventory results."
                 },
                 "Encryption": {
                     "type": "array",
@@ -99,7 +105,8 @@
             "additionalProperties": false,
             "properties": {
                 "KeyId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ARN of the KMS customer master key (CMK) used to encrypt the inventory file."
                 }
             },
             "required": [
@@ -132,23 +139,27 @@
             "minItems": 1
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the inventory is enabled or disabled."
         },
         "Id": {
             "type": "string"
         },
         "IncludedObjectVersions": {
-            "type": "string"
+            "type": "string",
+            "description": "Object versions to include in the inventory list. Valid values: `All`, `Current`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier of the inventory configuration for the bucket."
         },
         "OptionalFields": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of optional fields that are included in the inventory results.\nValid values: `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, `ReplicationStatus`, `EncryptionStatus`, `ObjectLockRetainUntilDate`, `ObjectLockMode`, `ObjectLockLegalHoldStatus`, `IntelligentTieringAccessTier`."
         },
         "Destination": {
             "type": "array",

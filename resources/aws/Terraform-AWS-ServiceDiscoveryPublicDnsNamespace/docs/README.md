@@ -1,6 +1,6 @@
 # Terraform::AWS::ServiceDiscoveryPublicDnsNamespace
 
-CloudFormation equivalent of aws_service_discovery_public_dns_namespace
+Provides a Service Discovery Public DNS Namespace resource.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Description
 
+The description that you specify for the namespace when you create it.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the namespace.
 
 _Required_: Yes
 

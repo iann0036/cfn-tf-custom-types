@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayModel
 
-CloudFormation equivalent of aws_api_gateway_model
+Provides a Model for a REST API Gateway.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### ContentType
 
+The content type of the model.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the model.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the model.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RestApiId
 
+The ID of the associated REST API.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Schema
+
+The schema of the model in a JSON form.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2ClientVpnEndpoint",
-    "description": "CloudFormation equivalent of aws_ec2_client_vpn_endpoint",
+    "description": "Provides an AWS Client VPN endpoint for OpenVPN clients. For more information on usage, please see the\n[AWS Client VPN Administrator's Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AuthenticationOptions": {
@@ -46,10 +46,12 @@
             "type": "string"
         },
         "ClientCidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. The CIDR block should be /22 or greater."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the repository."
         },
         "DnsName": {
             "type": "string"
@@ -59,16 +61,19 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN endpoint is used as the DNS server."
         },
         "Id": {
             "type": "string"
         },
         "ServerCertificateArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the ACM server certificate."
         },
         "SplitTunnel": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether split-tunnel is enabled on VPN endpoint. Default value is `false`."
         },
         "Status": {
             "type": "string"
@@ -91,10 +96,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "TransportProtocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The transport protocol to be used by the VPN session. Default value is `udp`."
         },
         "AuthenticationOptions": {
             "type": "array",

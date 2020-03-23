@@ -1,6 +1,6 @@
 # Terraform::AWS::S3Bucket
 
-CloudFormation equivalent of aws_s3_bucket
+Provides a S3 bucket resource.
 
 ## Syntax
 
@@ -117,6 +117,8 @@ Properties:
 
 #### AccelerationStatus
 
+Sets the accelerate configuration of an existing bucket. Can be `Enabled` or `Suspended`.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Acl
+
+The [canned ACL](https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl) to apply. Defaults to "private".  Conflicts with `grant`.
 
 _Required_: No
 
@@ -141,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Bucket
 
+The name of the bucket. If omitted, Terraform will assign a random, unique name.
+
 _Required_: No
 
 _Type_: String
@@ -149,6 +155,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BucketPrefix
 
+Creates a unique bucket name beginning with the specified prefix. Conflicts with `bucket`.
+
 _Required_: No
 
 _Type_: String
@@ -156,6 +164,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForceDestroy
+
+A boolean that indicates all objects (including any [locked objects](https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html)) should be deleted from the bucket so that the bucket can be destroyed without error. These objects are *not* recoverable.
 
 _Required_: No
 
@@ -173,6 +183,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policy
 
+A valid [bucket policy](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) JSON document. Note that if the policy document is not specific enough (but still valid), Terraform may view the policy as constantly changing in a `terraform plan`. In this case, please make sure you use the verbose/specific version of the policy. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
+
 _Required_: No
 
 _Type_: String
@@ -180,6 +192,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+If specified, the AWS region this bucket should reside in. Otherwise, the region used by the callee.
 
 _Required_: No
 
@@ -189,6 +203,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestPayer
 
+Specifies who should bear the cost of Amazon S3 data transfer.
+Can be either `BucketOwner` or `Requester`. By default, the owner of the S3 bucket would incur
+the costs of any data transfer. See [Requester Pays Buckets](http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html)
+developer guide for more information.
+
 _Required_: No
 
 _Type_: String
@@ -196,6 +215,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the bucket.
 
 _Required_: No
 

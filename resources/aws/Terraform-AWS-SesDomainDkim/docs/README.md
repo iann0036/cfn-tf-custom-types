@@ -1,6 +1,8 @@
 # Terraform::AWS::SesDomainDkim
 
-CloudFormation equivalent of aws_ses_domain_dkim
+Provides an SES domain DKIM generation resource.
+
+Domain ownership needs to be confirmed first using [ses_domain_identity Resource](/docs/providers/aws/r/ses_domain_identity.html)
 
 ## Syntax
 
@@ -28,6 +30,8 @@ Properties:
 ## Properties
 
 #### Domain
+
+Verified domain name to generate DKIM tokens for.
 
 _Required_: Yes
 

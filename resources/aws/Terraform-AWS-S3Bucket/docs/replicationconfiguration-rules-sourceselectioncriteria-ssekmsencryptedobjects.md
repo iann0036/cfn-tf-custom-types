@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Boolean which indicates if this criteria is enabled.
+
 _Required_: Yes
 
 _Type_: Boolean

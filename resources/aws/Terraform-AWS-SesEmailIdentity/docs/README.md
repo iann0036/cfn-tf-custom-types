@@ -1,6 +1,6 @@
 # Terraform::AWS::SesEmailIdentity
 
-CloudFormation equivalent of aws_ses_email_identity
+Provides an SES email identity resource
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Email
+
+The email address to assign to SES.
 
 _Required_: Yes
 

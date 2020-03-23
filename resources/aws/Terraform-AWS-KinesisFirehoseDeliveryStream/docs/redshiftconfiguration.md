@@ -47,6 +47,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ClusterJdbcurl
 
+The jdbcurl of the redshift cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CopyOptions
+
+Copy options for copying the data from the s3 intermediate bucket into redshift, for example to change the default delimiter. For valid values, see the [AWS documentation](http://docs.aws.amazon.com/firehose/latest/APIReference/API_CopyCommand.html).
 
 _Required_: No
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataTableColumns
 
+The data table columns that will be targeted by the copy command.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataTableName
+
+The name of the table in the redshift cluster that the s3 bucket will copy to.
 
 _Required_: Yes
 
@@ -79,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+The password for the username above.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RetryDuration
+
+The length of time during which Firehose retries delivery after a failure, starting from the initial request and including the first attempt. The default value is 3600 seconds (60 minutes). Firehose does not retry if the value of DurationInSeconds is 0 (zero) or if the first delivery attempt takes longer than the current value.
 
 _Required_: No
 
@@ -95,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleArn
 
+The arn of the role the stream assumes.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### S3BackupMode
 
+The Amazon S3 backup mode.  Valid values are `Disabled` and `Enabled`.  Default value is `Disabled`.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The username that the firehose delivery stream will assume. It is strongly recommended that the username and password provided is used exclusively for Amazon Kinesis Firehose purposes, and that the permissions for the account are restricted for Amazon Redshift INSERT permissions.
 
 _Required_: Yes
 

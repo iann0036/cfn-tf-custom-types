@@ -1,6 +1,10 @@
 # Terraform::AWS::CodecommitRepository
 
-CloudFormation equivalent of aws_codecommit_repository
+Provides a CodeCommit Repository Resource.
+
+~> **NOTE on CodeCommit Availability**: The CodeCommit is not yet rolled out
+in all regions - available regions are listed
+[the AWS Docs](https://docs.aws.amazon.com/general/latest/gr/rande.html#codecommit_region).
 
 ## Syntax
 
@@ -36,6 +40,8 @@ Properties:
 
 #### DefaultBranch
 
+The default branch of the repository. The branch specified here needs to exist.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the repository. This needs to be less than 1000 characters.
 
 _Required_: No
 
@@ -52,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RepositoryName
 
+The name for the repository. This needs to be less than 100 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

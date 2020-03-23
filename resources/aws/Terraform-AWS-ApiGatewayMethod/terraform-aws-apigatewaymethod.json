@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayMethod",
-    "description": "CloudFormation equivalent of aws_api_gateway_method",
+    "description": "Provides a HTTP Method for an API Gateway Resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,23 +9,28 @@
             "type": "string"
         },
         "ApiKeyRequired": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specify if the method requires an API key."
         },
         "Authorization": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of authorization used for the method (`NONE`, `CUSTOM`, `AWS_IAM`, `COGNITO_USER_POOLS`)."
         },
         "AuthorizationScopes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The authorization scopes used when the authorization is `COGNITO_USER_POOLS`."
         },
         "AuthorizerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The authorizer id to be used when the authorization is `CUSTOM` or `COGNITO_USER_POOLS`."
         },
         "HttpMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "The HTTP Method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`)."
         },
         "Id": {
             "type": "string"
@@ -48,7 +53,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map of the API models used for the request's content type\nwhere key is the content type (e.g. `application/json`)\nand value is either `Error`, `Empty` (built-in models) or `aws_api_gateway_model`'s `name`."
         },
         "RequestParameters": {
             "type": "array",
@@ -68,19 +74,23 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map of request parameters (from the path, query string and headers) that should be passed to the integration. The boolean value indicates whether the parameter is required (`true`) or optional (`false`).\nFor example: `request_parameters = {\"method.request.header.X-Some-Header\" = true \"method.request.querystring.some-query-param\" = true}` would define that the header `X-Some-Header` and the query string `some-query-param` must be provided in the request."
         },
         "RequestParametersInJson": {
             "type": "string"
         },
         "RequestValidatorId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of a `aws_api_gateway_request_validator`."
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The API resource ID."
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated REST API."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::AWS::DmsReplicationTask
 
-CloudFormation equivalent of aws_dms_replication_task
+Provides a DMS (Data Migration Service) replication task resource. DMS replication tasks can be created, updated, deleted, and imported.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### CdcStartTime
 
+The Unix timestamp integer for the start of the Change Data Capture (CDC) operation.
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MigrationType
+
+The migration type. Can be one of `full-load | cdc | full-load-and-cdc`.
 
 _Required_: Yes
 
@@ -62,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReplicationInstanceArn
 
+The Amazon Resource Name (ARN) of the replication instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReplicationTaskId
+
+The replication task identifier.
 
 _Required_: Yes
 
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReplicationTaskSettings
 
+An escaped JSON string that contains the task settings. For a complete list of task settings, see [Task Settings for AWS Database Migration Service Tasks](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html).
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceEndpointArn
+
+The Amazon Resource Name (ARN) string that uniquely identifies the source endpoint.
 
 _Required_: Yes
 
@@ -94,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TableMappings
 
+An escaped JSON string that contains the table mappings. For information on table mapping see [Using Table Mapping with an AWS Database Migration Service Task to Select and Filter Data](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html).
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +116,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -109,6 +125,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetEndpointArn
+
+The Amazon Resource Name (ARN) string that uniquely identifies the target endpoint.
 
 _Required_: Yes
 

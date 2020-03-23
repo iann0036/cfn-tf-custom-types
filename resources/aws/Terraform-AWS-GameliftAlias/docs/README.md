@@ -1,6 +1,6 @@
 # Terraform::AWS::GameliftAlias
 
-CloudFormation equivalent of aws_gamelift_alias
+Provides a Gamelift Alias resource.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+Description of the alias.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the alias.
 
 _Required_: Yes
 

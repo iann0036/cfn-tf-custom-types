@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpnConnectionRoute",
-    "description": "CloudFormation equivalent of aws_vpn_connection_route",
+    "description": "Provides a static route between a VPN connection and a customer gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "DestinationCidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR block associated with the local subnet of the customer network."
         },
         "Id": {
             "type": "string"
         },
         "VpnConnectionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPN connection."
         }
     },
     "additionalProperties": false,

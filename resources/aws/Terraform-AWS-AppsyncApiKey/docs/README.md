@@ -1,6 +1,6 @@
 # Terraform::AWS::AppsyncApiKey
 
-CloudFormation equivalent of aws_appsync_api_key
+Provides an AppSync API Key.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### ApiId
 
+The ID of the associated AppSync API.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The API key description. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Expires
+
+RFC3339 string representation of the expiry date. Rounded down to nearest hour. By default, it is 7 days from the date of creation.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::DaxCluster
 
-CloudFormation equivalent of aws_dax_cluster
+Provides a DAX Cluster resource.
 
 ## Syntax
 
@@ -59,6 +59,9 @@ Properties:
 
 #### AvailabilityZones
 
+List of Availability Zones in which the
+nodes will be created.
+
 _Required_: No
 
 _Type_: List of String
@@ -82,6 +85,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamRoleArn
+
+A valid Amazon Resource Name (ARN) that identifies
+an IAM role. At runtime, DAX will assume this role and use the role's
+permissions to access DynamoDB on your behalf.
 
 _Required_: Yes
 
@@ -146,6 +153,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

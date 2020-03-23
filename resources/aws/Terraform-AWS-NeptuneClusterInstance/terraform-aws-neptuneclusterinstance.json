@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::NeptuneClusterInstance",
-    "description": "CloudFormation equivalent of aws_neptune_cluster_instance",
+    "description": "A Cluster Instance Resource defines attributes that are specific to a single instance in a Neptune Cluster.\n\nYou can simply add neptune instances and Neptune manages the replication. You can use the [count][1]\nmeta-parameter to make multiple instances and join them all to the same Neptune Cluster, or you may specify different Cluster Instance resources with various `instance_class` sizes.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,19 +29,23 @@
             "type": "string"
         },
         "ApplyImmediately": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether any instance modifications\nare applied immediately, or during the next maintenance window. Default is`false`."
         },
         "Arn": {
             "type": "string"
         },
         "AutoMinorVersionUpgrade": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates that minor engine upgrades will be applied automatically to the instance during the maintenance window. Default is `true`."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The EC2 Availability Zone that the neptune instance is created in."
         },
         "ClusterIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The identifier of the [`aws_neptune_cluster`](/docs/providers/aws/r/neptune_cluster.html) in which to launch this instance."
         },
         "DbiResourceId": {
             "type": "string"
@@ -50,46 +54,58 @@
             "type": "string"
         },
         "Engine": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the database engine to be used for the neptune instance. Defaults to `neptune`. Valid Values: `neptune`."
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The neptune engine version."
         },
         "Id": {
             "type": "string"
         },
         "Identifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The indentifier for the neptune instance, if omitted, Terraform will assign a random, unique identifier."
         },
         "IdentifierPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique identifier beginning with the specified prefix. Conflicts with `identifier`."
         },
         "InstanceClass": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance class to use."
         },
         "KmsKeyArn": {
             "type": "string"
         },
         "NeptuneParameterGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the neptune parameter group to associate with this instance."
         },
         "NeptuneSubnetGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "A subnet group to associate with this neptune instance. **NOTE:** This must match the `neptune_subnet_group_name` of the attached [`aws_neptune_cluster`](/docs/providers/aws/r/neptune_cluster.html)."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which the DB accepts connections. Defaults to `8182`."
         },
         "PreferredBackupWindow": {
-            "type": "string"
+            "type": "string",
+            "description": "The daily time range during which automated backups are created if automated backups are enabled. Eg: \"04:00-09:00\"."
         },
         "PreferredMaintenanceWindow": {
-            "type": "string"
+            "type": "string",
+            "description": "The window to perform maintenance in.\nSyntax: \"ddd:hh24:mi-ddd:hh24:mi\". Eg: \"Mon:00:00-Mon:03:00\"."
         },
         "PromotionTier": {
-            "type": "number"
+            "type": "number",
+            "description": "Default 0. Failover Priority setting on instance level. The reader who has lower tier has higher priority to get promoter to writer."
         },
         "PubliclyAccessible": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Bool to control if instance is publicly accessible. Default is `false`."
         },
         "StorageEncrypted": {
             "type": "boolean"
@@ -112,7 +128,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the instance."
         },
         "Writer": {
             "type": "boolean"

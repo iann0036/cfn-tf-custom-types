@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::IamServerCertificate",
-    "description": "CloudFormation equivalent of aws_iam_server_certificate",
+    "description": "Provides an IAM Server Certificate resource to upload Server Certificates.\nCerts uploaded to IAM can easily work with other AWS services such as:\n\n- AWS Elastic Beanstalk\n- Elastic Load Balancing\n- CloudFront\n- AWS OpsWorks\n\nFor information about server certificates in IAM, see [Managing Server\nCertificates][2] in AWS Documentation.\n\n~> **Note:** All arguments including the private key will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -21,13 +21,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Server Certificate. Do not include the\npath in this value. If omitted, Terraform will assign a random, unique name."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified\nprefix. Conflicts with `name`."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "The IAM path for the server certificate.  If it is not\nincluded, it defaults to a slash (/). If this certificate is for use with\nAWS CloudFront, the path must be in format `/cloudfront/your_path_here`.\nSee [IAM Identifiers][1] for more details on IAM Paths."
         },
         "PrivateKey": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SagemakerEndpointConfiguration",
-    "description": "CloudFormation equivalent of aws_sagemaker_endpoint_configuration",
+    "description": "Provides a SageMaker endpoint configuration resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ProductionVariants": {
@@ -11,7 +11,8 @@
                     "type": "string"
                 },
                 "InitialInstanceCount": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Initial number of instances used for auto-scaling."
                 },
                 "InitialVariantWeight": {
                     "type": "number"
@@ -20,10 +21,12 @@
                     "type": "string"
                 },
                 "ModelName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the model to use."
                 },
                 "VariantName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the variant. If omitted, Terraform will assign a random, unique name."
                 }
             },
             "required": [
@@ -45,10 +48,12 @@
             "type": "string"
         },
         "KmsKeyArn": {
-            "type": "string"
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the endpoint configuration. If omitted, Terraform will assign a random, unique name."
         },
         "Tags": {
             "type": "array",
@@ -68,7 +73,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ProductionVariants": {
             "type": "array",

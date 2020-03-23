@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppmeshVirtualService",
-    "description": "CloudFormation equivalent of aws_appmesh_virtual_service",
+    "description": "Provides an AWS App Mesh virtual service resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Spec": {
@@ -46,7 +46,8 @@
             "additionalProperties": false,
             "properties": {
                 "VirtualNodeName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the virtual node that is acting as a service provider."
                 }
             },
             "required": [
@@ -58,7 +59,8 @@
             "additionalProperties": false,
             "properties": {
                 "VirtualRouterName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the virtual router that is acting as a service provider."
                 }
             },
             "required": [
@@ -84,10 +86,12 @@
             "type": "string"
         },
         "MeshName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the service mesh in which to create the virtual service."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to use for the virtual service."
         },
         "Tags": {
             "type": "array",
@@ -107,7 +111,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Spec": {
             "type": "array",

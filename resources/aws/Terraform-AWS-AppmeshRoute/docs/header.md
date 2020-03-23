@@ -27,6 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Invert
 
+If `true`, the match is on the opposite of the `match` method and value. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -34,6 +36,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A name for the HTTP header in the client request that will be matched on.
 
 _Required_: Yes
 

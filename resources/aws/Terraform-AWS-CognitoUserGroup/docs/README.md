@@ -1,6 +1,6 @@
 # Terraform::AWS::CognitoUserGroup
 
-CloudFormation equivalent of aws_cognito_user_group
+Provides a Cognito User Group resource.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+The description of the user group.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the user group.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Precedence
 
+The precedence of the user group.
+
 _Required_: No
 
 _Type_: Double
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleArn
 
+The ARN of the IAM role to be associated with the user group.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserPoolId
+
+The user pool ID.
 
 _Required_: Yes
 

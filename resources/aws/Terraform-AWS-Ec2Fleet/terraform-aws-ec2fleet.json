@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2Fleet",
-    "description": "CloudFormation equivalent of aws_ec2_fleet",
+    "description": "Provides a resource to manage EC2 Fleets.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "LaunchTemplateConfig": {
@@ -141,13 +141,15 @@
             "type": "string"
         },
         "ExcessCapacityTerminationPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2. Valid values: `no-termination`, `termination`. Defaults to `termination`."
         },
         "Id": {
             "type": "string"
         },
         "ReplaceUnhealthyInstances": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether EC2 Fleet should replace unhealthy instances. Defaults to `false`."
         },
         "Tags": {
             "type": "array",
@@ -167,16 +169,20 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Map of Fleet tags. To tag instances at launch, specify the tags in the Launch Template."
         },
         "TerminateInstances": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to terminate instances for an EC2 Fleet if it is deleted successfully. Defaults to `false`."
         },
         "TerminateInstancesWithExpiration": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether running instances should be terminated when the EC2 Fleet expires. Defaults to `false`."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of request. Indicates whether the EC2 Fleet only requests the target capacity, or also attempts to maintain it. Valid values: `maintain`, `request`. Defaults to `maintain`."
         },
         "LaunchTemplateConfig": {
             "type": "array",

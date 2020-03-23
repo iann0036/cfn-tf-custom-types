@@ -1,6 +1,8 @@
 # Terraform::AWS::ApiGatewayRestApi
 
-CloudFormation equivalent of aws_api_gateway_rest_api
+Provides an API Gateway REST API.
+
+-> **Note:** Amazon API Gateway Version 1 resources are used for creating and deploying REST APIs. To create and deploy WebSocket and HTTP APIs, use Amazon API Gateway Version 2 [resources](https://www.terraform.io/docs/providers/aws/r/apigatewayv2_api.html).
 
 ## Syntax
 
@@ -48,6 +50,8 @@ Properties:
 
 #### ApiKeySource
 
+The source of the API key for requests. Valid values are HEADER (default) and AUTHORIZER.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BinaryMediaTypes
+
+The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads.
 
 _Required_: No
 
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Body
 
+An OpenAPI specification that defines the set of routes and integrations to create as part of the REST API.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the REST API.
 
 _Required_: No
 
@@ -80,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MinimumCompressionSize
 
+Minimum response size to compress for the REST API. Integer between -1 and 10485760 (10MB). Setting a value greater than -1 will enable compression, -1 disables compression (default).
+
 _Required_: No
 
 _Type_: Double
@@ -87,6 +99,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the REST API.
 
 _Required_: Yes
 
@@ -96,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policy
 
+JSON formatted policy document that controls access to the API Gateway. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

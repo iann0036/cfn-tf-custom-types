@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudwatchLogSubscriptionFilter
 
-CloudFormation equivalent of aws_cloudwatch_log_subscription_filter
+Provides a CloudWatch Logs subscription filter resource.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### DestinationArn
 
+The ARN of the destination to deliver matching log events to. Kinesis stream or Lambda function ARN.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Distribution
+
+The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. Valid values are "Random" and "ByLogStream".
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FilterPattern
 
+A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogGroupName
+
+The name of the log group to associate the subscription filter with.
 
 _Required_: Yes
 
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name for the subscription filter.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleArn
+
+The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination. If you use Lambda as a destination, you should skip this argument and use `aws_lambda_permission` resource for granting access from CloudWatch logs to the destination Lambda function.
 
 _Required_: No
 

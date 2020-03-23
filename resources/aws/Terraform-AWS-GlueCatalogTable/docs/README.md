@@ -1,6 +1,6 @@
 # Terraform::AWS::GlueCatalogTable
 
-CloudFormation equivalent of aws_glue_catalog_table
+Provides a Glue Catalog Table Resource. You can refer to the [Glue Developer Guide](http://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) for a full explanation of the Glue Data Catalog functionality.
 
 ## Syntax
 
@@ -66,6 +66,8 @@ Properties:
 
 #### CatalogId
 
+ID of the Glue Catalog and database to create the table in. If omitted, this defaults to the AWS Account ID plus the database name.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatabaseName
+
+Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase.
 
 _Required_: Yes
 
@@ -82,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Description of the table.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the table. For Hive compatibility, this must be entirely lowercase.
 
 _Required_: Yes
 
@@ -98,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Owner
 
+Owner of the table.
+
 _Required_: No
 
 _Type_: String
@@ -105,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Parameters
+
+Properties associated with this table, as a list of key-value pairs.
 
 _Required_: No
 
@@ -114,6 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Retention
 
+Retention time for this table.
+
 _Required_: No
 
 _Type_: Double
@@ -121,6 +135,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TableType
+
+The type of this table (EXTERNAL_TABLE, VIRTUAL_VIEW, etc.).
 
 _Required_: No
 
@@ -130,6 +146,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ViewExpandedText
 
+If the table is a view, the expanded text of the view; otherwise null.
+
 _Required_: No
 
 _Type_: String
@@ -137,6 +155,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ViewOriginalText
+
+If the table is a view, the original text of the view; otherwise null.
 
 _Required_: No
 

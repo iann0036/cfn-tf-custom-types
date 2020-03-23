@@ -23,6 +23,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Functions
 
+The list of Function ID.
+
 _Required_: No
 
 _Type_: List of String

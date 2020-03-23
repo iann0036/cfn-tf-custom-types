@@ -1,6 +1,6 @@
 # Terraform::AWS::SesConfigurationSet
 
-CloudFormation equivalent of aws_ses_configuration_set
+Provides an SES configuration set resource
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the configuration set.
 
 _Required_: Yes
 

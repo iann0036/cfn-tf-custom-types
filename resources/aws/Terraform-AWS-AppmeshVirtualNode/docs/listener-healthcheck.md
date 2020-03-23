@@ -34,6 +34,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### HealthyThreshold
 
+The number of consecutive successful health checks that must occur before declaring listener healthy.
+
 _Required_: Yes
 
 _Type_: Double
@@ -41,6 +43,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IntervalMillis
+
+The time period in milliseconds between each health check execution.
 
 _Required_: Yes
 
@@ -50,6 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+The destination path for the health check request. This is only required if the specified protocol is `http`.
+
 _Required_: No
 
 _Type_: String
@@ -57,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+The destination port for the health check request. This port must match the port defined in the `port_mapping` for the listener.
 
 _Required_: No
 
@@ -66,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The protocol for the health check request. Valid values are `http` and `tcp`.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TimeoutMillis
 
+The amount of time to wait when receiving a response from the health check, in milliseconds.
+
 _Required_: Yes
 
 _Type_: Double
@@ -81,6 +93,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UnhealthyThreshold
+
+The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy.
 
 _Required_: Yes
 

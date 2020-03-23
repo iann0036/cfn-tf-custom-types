@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::FlowLog",
-    "description": "CloudFormation equivalent of aws_flow_log",
+    "description": "Provides a VPC/Subnet/ENI Flow Log to capture IP traffic for a specific network\ninterface, subnet, or VPC. Logs are sent to a CloudWatch Log Group or a S3 Bucket.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,28 +9,35 @@
             "type": "string"
         },
         "EniId": {
-            "type": "string"
+            "type": "string",
+            "description": "Elastic Network Interface ID to attach to."
         },
         "IamRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group."
         },
         "Id": {
             "type": "string"
         },
         "LogDestination": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the logging destination."
         },
         "LogDestinationType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the logging destination. Valid values: `cloud-watch-logs`, `s3`. Default: `cloud-watch-logs`."
         },
         "LogFormat": {
-            "type": "string"
+            "type": "string",
+            "description": "The fields to include in the flow log record, in the order in which they should appear."
         },
         "LogGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "*Deprecated:* Use `log_destination` instead. The name of the CloudWatch log group."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet ID to attach to."
         },
         "Tags": {
             "type": "array",
@@ -50,13 +57,16 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "TrafficType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of traffic to capture. Valid values: `ACCEPT`,`REJECT`, `ALL`."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "VPC ID to attach to."
         }
     },
     "additionalProperties": false,

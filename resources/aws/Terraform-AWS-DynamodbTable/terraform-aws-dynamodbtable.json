@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DynamodbTable",
-    "description": "CloudFormation equivalent of aws_dynamodb_table",
+    "description": "Provides a DynamoDB table resource\n\n~> **Note:** It is recommended to use `lifecycle` [`ignore_changes`](/docs/configuration/resources.html#ignore_changes) for `read_capacity` and/or `write_capacity` if there's [autoscaling policy](/docs/providers/aws/r/appautoscaling_policy.html) attached to the table.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Attribute": {
@@ -150,34 +150,41 @@
             "type": "string"
         },
         "BillingMode": {
-            "type": "string"
+            "type": "string",
+            "description": "Controls how you are charged for read and write throughput and how you manage capacity. The valid values are `PROVISIONED` and `PAY_PER_REQUEST`. Defaults to `PROVISIONED`."
         },
         "HashKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The attribute to use as the hash (partition) key. Must also be defined as an `attribute`, see below."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the attribute\n* `type` - (Required) Attribute type, which must be a scalar type: `S`, `N`, or `B` for (S)tring, (N)umber or (B)inary data."
         },
         "RangeKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The attribute to use as the range (sort) key. Must also be defined as an `attribute`, see below."
         },
         "ReadCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of read units for this table. If the `billing_mode` is `PROVISIONED`, this field is required."
         },
         "StreamArn": {
             "type": "string"
         },
         "StreamEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether Streams are to be enabled (true) or disabled (false)."
         },
         "StreamLabel": {
             "type": "string"
         },
         "StreamViewType": {
-            "type": "string"
+            "type": "string",
+            "description": "When an item in the table is modified, StreamViewType determines what information is written to the table's stream. Valid values are `KEYS_ONLY`, `NEW_IMAGE`, `OLD_IMAGE`, `NEW_AND_OLD_IMAGES`."
         },
         "Tags": {
             "type": "array",
@@ -197,10 +204,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map of tags to populate on the created table."
         },
         "WriteCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of write units for this table. If the `billing_mode` is `PROVISIONED`, this field is required."
         },
         "Attribute": {
             "type": "array",

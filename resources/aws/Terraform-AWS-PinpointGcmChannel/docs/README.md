@@ -1,6 +1,9 @@
 # Terraform::AWS::PinpointGcmChannel
 
-CloudFormation equivalent of aws_pinpoint_gcm_channel
+Provides a Pinpoint GCM Channel resource.
+
+~> **Note:** Api Key argument will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -33,6 +36,8 @@ Properties:
 
 #### ApiKey
 
+Platform credential API key from Google.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ApplicationId
 
+The application ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Whether the channel is enabled or disabled. Defaults to `true`.
 
 _Required_: No
 

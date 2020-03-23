@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayResource
 
-CloudFormation equivalent of aws_api_gateway_resource
+Provides an API Gateway Resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### ParentId
 
+The ID of the parent API resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PathPart
 
+The last path segment of this API resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RestApiId
+
+The ID of the associated REST API.
 
 _Required_: Yes
 

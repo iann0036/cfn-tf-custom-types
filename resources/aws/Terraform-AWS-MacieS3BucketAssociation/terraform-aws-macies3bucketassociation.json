@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::MacieS3BucketAssociation",
-    "description": "CloudFormation equivalent of aws_macie_s3_bucket_association",
+    "description": "Associates an S3 resource with Amazon Macie for monitoring and data classification.\n\n~> **NOTE:** Before using Amazon Macie for the first time it must be enabled manually. Instructions are [here](https://docs.aws.amazon.com/macie/latest/userguide/macie-setting-up.html#macie-setting-up-enable).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ClassificationType": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Continuous": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A string value indicating that Macie perform a one-time classification of all of the existing objects in the bucket.\nThe only valid value is the default value, `FULL`."
                 },
                 "OneTime": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A string value indicating whether or not Macie performs a one-time classification of all of the existing objects in the bucket.\nValid values are `NONE` and `FULL`. Defaults to `NONE` indicating that Macie only classifies objects that are added after the association was created."
                 }
             },
             "required": []
@@ -23,16 +25,19 @@
             "type": "string"
         },
         "BucketName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the S3 bucket that you want to associate with Amazon Macie."
         },
         "Id": {
             "type": "string"
         },
         "MemberAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Amazon Macie member account whose S3 resources you want to associate with Macie. If `member_account_id` isn't specified, the action associates specified S3 resources with Macie for the current master account."
         },
         "Prefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Object key prefix identifying one or more S3 objects to which the association applies."
         },
         "ClassificationType": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::AWS::StoragegatewaySmbFileShare
 
-CloudFormation equivalent of aws_storagegateway_smb_file_share
+Manages an AWS Storage Gateway SMB File Share.
 
 ## Syntax
 
@@ -60,6 +60,8 @@ Properties:
 
 #### Authentication
 
+The authentication method that users use to access the file share. Defaults to `ActiveDirectory`. Valid values: `ActiveDirectory`, `GuestAccess`.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultStorageClass
+
+The default storage class for objects put into an Amazon S3 bucket by the file gateway. Defaults to `S3_STANDARD`. Valid values: `S3_STANDARD`, `S3_STANDARD_IA`, `S3_ONEZONE_IA`.
 
 _Required_: No
 
@@ -76,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GatewayArn
 
+Amazon Resource Name (ARN) of the file gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GuessMimeTypeEnabled
+
+Boolean value that enables guessing of the MIME type for uploaded objects based on file extensions. Defaults to `true`.
 
 _Required_: No
 
@@ -92,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InvalidUserList
 
+A list of users in the Active Directory that are not allowed to access the file share. Only valid if `authentication` is set to `ActiveDirectory`.
+
 _Required_: No
 
 _Type_: List of String
@@ -99,6 +109,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsEncrypted
+
+Boolean value if `true` to use Amazon S3 server side encryption with your own AWS KMS key, or `false` to use a key managed by Amazon S3. Defaults to `false`.
 
 _Required_: No
 
@@ -108,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyArn
 
+Amazon Resource Name (ARN) for KMS key used for Amazon S3 server side encryption. This value can only be set when `kms_encrypted` is true.
+
 _Required_: No
 
 _Type_: String
@@ -115,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LocationArn
+
+The ARN of the backed storage used for storing file data.
 
 _Required_: Yes
 
@@ -124,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ObjectAcl
 
+Access Control List permission for S3 bucket objects. Defaults to `private`.
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +149,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReadOnly
+
+Boolean to indicate write status of file share. File share does not accept writes if `true`. Defaults to `false`.
 
 _Required_: No
 
@@ -140,6 +160,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequesterPays
 
+Boolean who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to `true` if you want the requester to pay instead of the bucket owner. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -147,6 +169,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleArn
+
+The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses the underlying storage.
 
 _Required_: Yes
 
@@ -156,6 +180,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value mapping of resource tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -163,6 +189,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidUserList
+
+A list of users in the Active Directory that are allowed to access the file share. Only valid if `authentication` is set to `ActiveDirectory`.
 
 _Required_: No
 

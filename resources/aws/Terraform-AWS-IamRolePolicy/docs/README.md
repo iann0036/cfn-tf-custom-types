@@ -1,6 +1,6 @@
 # Terraform::AWS::IamRolePolicy
 
-CloudFormation equivalent of aws_iam_role_policy
+Provides an IAM role policy.
 
 ## Syntax
 
@@ -35,6 +35,9 @@ Properties:
 
 #### Name
 
+The name of the role policy. If omitted, Terraform will
+assign a random, unique name.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +45,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamePrefix
+
+Creates a unique name beginning with the specified
+prefix. Conflicts with `name`.
 
 _Required_: No
 
@@ -51,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policy
 
+The policy document. This is a JSON formatted string. For more information about building IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+The IAM role to attach to the policy.
 
 _Required_: Yes
 

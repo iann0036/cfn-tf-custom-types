@@ -1,6 +1,8 @@
 # Terraform::AWS::StoragegatewayCache
 
-CloudFormation equivalent of aws_storagegateway_cache
+Manages an AWS Storage Gateway cache.
+
+~> **NOTE:** The Storage Gateway API provides no method to remove a cache disk. Destroying this Terraform resource does not perform any Storage Gateway actions.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### DiskId
 
+Local disk identifier. For example, `pci-0000:03:00.0-scsi-0:0:0:0`.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GatewayArn
+
+The Amazon Resource Name (ARN) of the gateway.
 
 _Required_: Yes
 

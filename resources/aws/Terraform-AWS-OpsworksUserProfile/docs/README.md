@@ -1,6 +1,6 @@
 # Terraform::AWS::OpsworksUserProfile
 
-CloudFormation equivalent of aws_opsworks_user_profile
+Provides an OpsWorks User Profile resource.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### AllowSelfManagement
 
+Whether users can specify their own SSH public key through the My Settings page.
+
 _Required_: No
 
 _Type_: Boolean
@@ -42,6 +44,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SshPublicKey
+
+The users public key.
 
 _Required_: No
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SshUsername
 
+The ssh username, with witch this user wants to log in.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserArn
+
+The user's IAM ARN.
 
 _Required_: Yes
 

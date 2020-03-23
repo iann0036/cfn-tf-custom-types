@@ -1,6 +1,8 @@
 # Terraform::AWS::IamGroupPolicyAttachment
 
-CloudFormation equivalent of aws_iam_group_policy_attachment
+Attaches a Managed IAM Policy to an IAM group
+
+~> **NOTE:** The usage of this resource conflicts with the `aws_iam_policy_attachment` resource and will permanently show a difference if both are defined.
 
 ## Syntax
 

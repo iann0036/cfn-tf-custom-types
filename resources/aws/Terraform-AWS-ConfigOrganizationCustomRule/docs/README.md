@@ -1,6 +1,10 @@
 # Terraform::AWS::ConfigOrganizationCustomRule
 
-CloudFormation equivalent of aws_config_organization_custom_rule
+Manages a Config Organization Custom Rule. More information about these rules can be found in the [Enabling AWS Config Rules Across all Accounts in Your Organization](https://docs.aws.amazon.com/config/latest/developerguide/config-rule-multi-account-deployment.html) and [AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html) documentation. For working with Organization Managed Rules (those invoking an AWS managed rule), see the [`aws_config_organization_managed__rule` resource](/docs/providers/aws/r/config_organization_managed_rule.html).
+
+~> **NOTE:** This resource must be created in the Organization master account and rules will include the master account unless its ID is added to the `excluded_accounts` argument.
+
+~> **NOTE:** The proper Lambda permission to allow the AWS Config service invoke the Lambda Function must be in place before the rule will successfully create or update. See also the [`aws_lambda_permission` resource](/docs/providers/aws/r/lambda_permission.html).
 
 ## Syntax
 
@@ -54,6 +58,8 @@ Properties:
 
 #### Description
 
+Description of the rule.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExcludedAccounts
+
+List of AWS account identifiers to exclude from the rule.
 
 _Required_: No
 
@@ -70,6 +78,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InputParameters
 
+A string in JSON format that is passed to the AWS Config Rule Lambda Function.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +87,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LambdaFunctionArn
+
+Amazon Resource Name (ARN) of the rule Lambda Function.
 
 _Required_: Yes
 
@@ -86,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaximumExecutionFrequency
 
+The maximum frequency with which AWS Config runs evaluations for a rule, if the rule is triggered at a periodic frequency. Defaults to `TwentyFour_Hours` for periodic frequency triggered rules. Valid values: `One_Hour`, `Three_Hours`, `Six_Hours`, `Twelve_Hours`, or `TwentyFour_Hours`.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +107,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the rule.
 
 _Required_: Yes
 
@@ -102,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceIdScope
 
+Identifier of the AWS resource to evaluate.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +127,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceTypesScope
+
+List of types of AWS resources to evaluate.
 
 _Required_: No
 
@@ -118,6 +138,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TagKeyScope
 
+Tag key of AWS resources to evaluate.
+
 _Required_: No
 
 _Type_: String
@@ -126,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TagValueScope
 
+Tag value of AWS resources to evaluate.
+
 _Required_: No
 
 _Type_: String
@@ -133,6 +157,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TriggerTypes
+
+List of notification types that trigger AWS Config to run an evaluation for the rule. Valid values: `ConfigurationItemChangeNotification`, `OversizedConfigurationItemChangeNotification`, and `ScheduledNotification`.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::VpnConnectionRoute
 
-CloudFormation equivalent of aws_vpn_connection_route
+Provides a static route between a VPN connection and a customer gateway.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### DestinationCidrBlock
 
+The CIDR block associated with the local subnet of the customer network.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnConnectionId
+
+The ID of the VPN connection.
 
 _Required_: Yes
 

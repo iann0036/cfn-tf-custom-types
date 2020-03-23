@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SecurityGroup",
-    "description": "CloudFormation equivalent of aws_security_group",
+    "description": "Provides a security group resource.\n\n~> **NOTE on Security Groups and Security Group Rules:** Terraform currently\nprovides both a standalone [Security Group Rule resource](security_group_rule.html) (a single `ingress` or\n`egress` rule), and a Security Group resource with `ingress` and `egress` rules\ndefined in-line. At this time you cannot use a Security Group with in-line rules\nin conjunction with any Security Group Rule resources. Doing so will cause\na conflict of rule settings and will overwrite rules.\n\n~> **NOTE:** Referencing Security Groups across VPC peering has certain restrictions. More information is available in the [VPC Peering User Guide](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html).\n\n~> **NOTE:** Due to [AWS Lambda improved VPC networking changes that began deploying in September 2019](https://aws.amazon.com/blogs/compute/announcing-improved-vpc-networking-for-aws-lambda-functions/), security groups associated with Lambda Functions can take up to 45 minutes to successfully delete. Terraform AWS Provider version 2.31.0 and later automatically handles this increased timeout, however prior versions require setting the [customizable deletion timeout](#timeouts) to 45 minutes (`delete = \"45m\"`). AWS and HashiCorp are working together to reduce the amount of time required for resource deletion and updates can be tracked in this [GitHub issue](https://github.com/terraform-providers/terraform-provider-aws/issues/10329).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The security group description. Defaults to\n\"Managed by Terraform\". Cannot be \"\". __NOTE__: This field maps to the AWS\n`GroupDescription` attribute, for which there is no Update API. If you'd like\nto classify your security groups in a way that can be updated, use `tags`."
         },
         "Egress": {
             "type": "array",
@@ -79,7 +80,8 @@
                         "type": "number"
                     }
                 }
-            }
+            },
+            "description": "Can be specified multiple times for each\negress rule. Each egress block supports fields documented below.\nThis argument is processed in [attribute-as-blocks mode](/docs/configuration/attr-as-blocks.html)."
         },
         "Id": {
             "type": "string"
@@ -135,19 +137,23 @@
                         "type": "number"
                     }
                 }
-            }
+            },
+            "description": "Can be specified multiple times for each\ningress rule. Each ingress block supports fields documented below.\nThis argument is processed in [attribute-as-blocks mode](/docs/configuration/attr-as-blocks.html)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the security group. If omitted, Terraform will\nassign a random, unique name."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified\nprefix. Conflicts with `name`."
         },
         "OwnerId": {
             "type": "string"
         },
         "RevokeRulesOnDelete": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Instruct Terraform to revoke all of the\nSecurity Groups attached ingress and egress rules before deleting the rule\nitself. This is normally not needed, however certain AWS services such as\nElastic Map Reduce may automatically add required rules to security groups used\nwith the service, and those rules may contain a cyclic dependency that prevent\nthe security groups from being destroyed without removing the dependency first.\nDefault `false`."
         },
         "Tags": {
             "type": "array",
@@ -167,10 +173,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

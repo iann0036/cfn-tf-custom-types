@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::IotPolicyAttachment",
-    "description": "CloudFormation equivalent of aws_iot_policy_attachment",
+    "description": "Provides an IoT policy attachment.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy to attach."
         },
         "Target": {
-            "type": "string"
+            "type": "string",
+            "description": "The identity to which the policy is attached."
         }
     },
     "additionalProperties": false,

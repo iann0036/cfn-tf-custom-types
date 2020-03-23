@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Type
 
+Type of traffic routing config. One of `TimeBasedCanary`, `TimeBasedLinear`, `AllAtOnce`.
+
 _Required_: No
 
 _Type_: String

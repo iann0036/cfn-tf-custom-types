@@ -1,6 +1,12 @@
 # Terraform::AWS::VpnConnection
 
-CloudFormation equivalent of aws_vpn_connection
+Manages an EC2 VPN connection. These objects can be connected to customer gateways, and allow you to establish tunnels between your network and Amazon.
+
+~> **Note:** All arguments including `tunnel1_preshared_key` and `tunnel2_preshared_key` will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
+
+~> **Note:** The CIDR blocks in the arguments `tunnel1_inside_cidr` and `tunnel2_inside_cidr` must have a prefix of /30 and be a part of a specific range.
+[Read more about this in the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnTunnelOptionsSpecification.html).
 
 ## Syntax
 
@@ -48,6 +54,8 @@ Properties:
 
 #### CustomerGatewayId
 
+The ID of the customer gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StaticRoutesOnly
+
+Whether the VPN connection uses static routes exclusively. Static routes must be used for devices that don't support BGP.
 
 _Required_: No
 
@@ -64,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags to apply to the connection.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -71,6 +83,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransitGatewayId
+
+The ID of the EC2 Transit Gateway.
 
 _Required_: No
 
@@ -80,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tunnel1InsideCidr
 
+The CIDR block of the inside IP addresses for the first VPN tunnel.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tunnel1PresharedKey
+
+The preshared key of the first VPN tunnel.
 
 _Required_: No
 
@@ -96,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tunnel2InsideCidr
 
+The CIDR block of the inside IP addresses for the second VPN tunnel.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +123,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tunnel2PresharedKey
+
+The preshared key of the second VPN tunnel.
 
 _Required_: No
 
@@ -112,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of VPN connection. The only type AWS supports at this time is "ipsec.1".
+
 _Required_: Yes
 
 _Type_: String
@@ -119,6 +143,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnGatewayId
+
+The ID of the Virtual Private Gateway.
 
 _Required_: No
 

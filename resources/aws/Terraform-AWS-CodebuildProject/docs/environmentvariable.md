@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Name
 
+The environment variable's name or key.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of environment variable. Valid values: `PARAMETER_STORE`, `PLAINTEXT`.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The environment variable's value.
 
 _Required_: Yes
 

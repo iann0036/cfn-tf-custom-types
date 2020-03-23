@@ -1,6 +1,17 @@
 # Terraform::AWS::DocdbCluster
 
-CloudFormation equivalent of aws_docdb_cluster
+Manages a DocDB Cluster.
+
+Changes to a DocDB Cluster can occur when you manually change a
+parameter, such as `port`, and are reflected in the next maintenance
+window. Because of this, Terraform may report a difference in its planning
+phase because a modification has not yet taken place. You can use the
+`apply_immediately` flag to instruct the service to apply the change immediately
+(see documentation below).
+
+~> **Note:** using `apply_immediately` can result in a brief downtime as the server reboots.
+~> **Note:** All arguments including the username and password will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -80,6 +91,10 @@ Properties:
 
 #### ApplyImmediately
 
+Specifies whether any cluster modifications
+are applied immediately, or during the next maintenance window. Default is
+`false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -87,6 +102,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZones
+
+A list of EC2 Availability Zones that
+instances in the DB cluster can be created in.
 
 _Required_: No
 
@@ -96,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BackupRetentionPeriod
 
+The days to retain backups for. Default `1`.
+
 _Required_: No
 
 _Type_: Double
@@ -104,6 +124,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterIdentifier
 
+The cluster identifier. If omitted, Terraform will assign a random, unique identifier.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +133,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterIdentifierPrefix
+
+Creates a unique cluster identifier beginning with the specified prefix. Conflicts with `cluster_identifer`.
 
 _Required_: No
 
@@ -128,6 +152,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DbClusterParameterGroupName
 
+A cluster parameter group to associate with the cluster.
+
 _Required_: No
 
 _Type_: String
@@ -135,6 +161,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbSubnetGroupName
+
+A DB subnet group to associate with this DB instance.
 
 _Required_: No
 
@@ -144,6 +172,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnabledCloudwatchLogsExports
 
+List of log types to export to cloudwatch. If omitted, no logs will be exported.
+The following log types are supported: `audit`, `profiler`.
+
 _Required_: No
 
 _Type_: List of String
@@ -151,6 +182,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Engine
+
+The name of the database engine to be used for this DB cluster. Defaults to `docdb`. Valid Values: `docdb`.
 
 _Required_: No
 
@@ -160,6 +193,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EngineVersion
 
+The database engine version. Updating this argument results in an outage.
+
 _Required_: No
 
 _Type_: String
@@ -167,6 +202,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FinalSnapshotIdentifier
+
+The name of your final DB snapshot
+when this DB cluster is deleted. If omitted, no final snapshot will be
+made.
 
 _Required_: No
 
@@ -176,6 +215,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyId
 
+The ARN for the KMS encryption key. When specifying `kms_key_id`, `storage_encrypted` needs to be set to true.
+
 _Required_: No
 
 _Type_: String
@@ -183,6 +224,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MasterPassword
+
+Password for the master DB user. Note that this may
+show up in logs, and it will be stored in the state file. Please refer to the DocDB Naming Constraints.
 
 _Required_: No
 
@@ -192,6 +236,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MasterUsername
 
+Username for the master DB user.
+
 _Required_: No
 
 _Type_: String
@@ -200,6 +246,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port on which the DB accepts connections.
+
 _Required_: No
 
 _Type_: Double
@@ -207,6 +255,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PreferredBackupWindow
+
+The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter.Time in UTC
+Default: A 30-minute window selected at random from an 8-hour block of time per region. e.g. 04:00-09:00.
 
 _Required_: No
 
@@ -224,6 +275,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SkipFinalSnapshot
 
+Determines whether a final DB snapshot is created before the DB cluster is deleted. If true is specified, no DB snapshot is created. If false is specified, a DB snapshot is created before the DB cluster is deleted, using the value from `final_snapshot_identifier`. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -231,6 +284,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotIdentifier
+
+Specifies whether or not to create this cluster from a snapshot. You can use either the name or ARN when specifying a DB cluster snapshot, or the ARN when specifying a DB snapshot.
 
 _Required_: No
 
@@ -240,6 +295,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StorageEncrypted
 
+Specifies whether the DB cluster is encrypted. The default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -248,6 +305,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the DB cluster.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -255,6 +314,9 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcSecurityGroupIds
+
+List of VPC security groups to associate
+with the Cluster.
 
 _Required_: No
 

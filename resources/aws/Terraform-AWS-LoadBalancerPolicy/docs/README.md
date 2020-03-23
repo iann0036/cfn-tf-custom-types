@@ -1,6 +1,6 @@
 # Terraform::AWS::LoadBalancerPolicy
 
-CloudFormation equivalent of aws_load_balancer_policy
+Provides a load balancer policy, which can be attached to an ELB listener or backend server.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### LoadBalancerName
 
+The load balancer on which the policy is defined.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyName
 
+The name of the load balancer policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PolicyTypeName
+
+The policy type.
 
 _Required_: Yes
 

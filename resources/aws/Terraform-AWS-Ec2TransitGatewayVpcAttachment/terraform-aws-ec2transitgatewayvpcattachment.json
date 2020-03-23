@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2TransitGatewayVpcAttachment",
-    "description": "CloudFormation equivalent of aws_ec2_transit_gateway_vpc_attachment",
+    "description": "Manages an EC2 Transit Gateway VPC Attachment. For examples of custom route table association and propagation, see the EC2 Transit Gateway Networking Examples Guide.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,23 @@
             "type": "string"
         },
         "DnsSupport": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether DNS support is enabled. Valid values: `disable`, `enable`. Default value: `enable`."
         },
         "Id": {
             "type": "string"
         },
         "Ipv6Support": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether IPv6 support is enabled. Valid values: `disable`, `enable`. Default value: `disable`."
         },
         "SubnetIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Identifiers of EC2 Subnets."
         },
         "Tags": {
             "type": "array",
@@ -42,19 +45,24 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value tags for the EC2 Transit Gateway VPC Attachment."
         },
         "TransitGatewayDefaultRouteTableAssociation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean whether the VPC Attachment should be associated with the EC2 Transit Gateway association default route table. This cannot be configured or perform drift detection with Resource Access Manager shared EC2 Transit Gateways. Default value: `true`."
         },
         "TransitGatewayDefaultRouteTablePropagation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean whether the VPC Attachment should propagate routes with the EC2 Transit Gateway propagation default route table. This cannot be configured or perform drift detection with Resource Access Manager shared EC2 Transit Gateways. Default value: `true`."
         },
         "TransitGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of EC2 Transit Gateway."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of EC2 VPC."
         },
         "VpcOwnerId": {
             "type": "string"

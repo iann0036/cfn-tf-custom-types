@@ -1,6 +1,6 @@
 # Terraform::AWS::SesTemplate
 
-CloudFormation equivalent of aws_ses_template
+Provides a resource to create a SES template.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Html
 
+The HTML body of the email. Must be less than 500KB in size, including both the text and HTML parts.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the template. Cannot exceed 64 characters. You will refer to this name when you send email.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subject
 
+The subject line of the email.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Text
+
+The email body that will be visible to recipients whose email clients do not display HTML. Must be less than 500KB in size, including both the text and HTML parts.
 
 _Required_: No
 

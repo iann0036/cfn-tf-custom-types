@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppautoscalingTarget",
-    "description": "CloudFormation equivalent of aws_appautoscaling_target",
+    "description": "Provides an Application AutoScaling ScalableTarget resource. To manage policies which get attached to the target, see the [`aws_appautoscaling_policy` resource](/docs/providers/aws/r/appautoscaling_policy.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,22 +12,28 @@
             "type": "string"
         },
         "MaxCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The max capacity of the scalable target."
         },
         "MinCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The min capacity of the scalable target."
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the `ResourceId` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)."
         },
         "RoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the IAM role that allows Application\nAutoScaling to modify your scalable target on your behalf."
         },
         "ScalableDimension": {
-            "type": "string"
+            "type": "string",
+            "description": "The scalable dimension of the scalable target. Documentation can be found in the `ScalableDimension` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)."
         },
         "ServiceNamespace": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS service namespace of the scalable target. Documentation can be found in the `ServiceNamespace` parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/application/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)."
         }
     },
     "additionalProperties": false,

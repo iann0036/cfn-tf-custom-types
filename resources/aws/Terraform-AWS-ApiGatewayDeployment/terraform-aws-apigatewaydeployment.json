@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayDeployment",
-    "description": "CloudFormation equivalent of aws_api_gateway_deployment",
+    "description": "Provides an API Gateway REST Deployment.\n\n-> **Note:** Depends on having `aws_api_gateway_integration` inside your rest api (which in turn depends on `aws_api_gateway_method`). To avoid race conditions\nyou might need to add an explicit `depends_on = [\"aws_api_gateway_integration.name\"]`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the deployment."
         },
         "ExecutionArn": {
             "type": "string"
@@ -24,13 +25,16 @@
             "type": "string"
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated REST API."
         },
         "StageDescription": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the stage."
         },
         "StageName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the stage. If the specified stage already exists, it will be updated to point to the new deployment. If the stage does not exist, a new one will be created and point to this deployment."
         },
         "Variables": {
             "type": "array",
@@ -50,7 +54,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map that defines variables for the stage."
         }
     },
     "additionalProperties": false,

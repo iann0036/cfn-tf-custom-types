@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayMethodSettings",
-    "description": "CloudFormation equivalent of aws_api_gateway_method_settings",
+    "description": "Provides an API Gateway Method Settings, e.g. logging or monitoring.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Settings": {
@@ -50,13 +50,16 @@
             "type": "string"
         },
         "MethodPath": {
-            "type": "string"
+            "type": "string",
+            "description": "Method path defined as `{resource_path}/{http_method}` for an individual method override, or `*/*` for overriding all methods in the stage."
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the REST API."
         },
         "StageName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the stage."
         },
         "Settings": {
             "type": "array",

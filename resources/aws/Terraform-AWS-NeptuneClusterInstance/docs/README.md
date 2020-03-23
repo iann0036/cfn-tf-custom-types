@@ -1,6 +1,9 @@
 # Terraform::AWS::NeptuneClusterInstance
 
-CloudFormation equivalent of aws_neptune_cluster_instance
+A Cluster Instance Resource defines attributes that are specific to a single instance in a Neptune Cluster.
+
+You can simply add neptune instances and Neptune manages the replication. You can use the [count][1]
+meta-parameter to make multiple instances and join them all to the same Neptune Cluster, or you may specify different Cluster Instance resources with various `instance_class` sizes.
 
 ## Syntax
 
@@ -64,6 +67,9 @@ Properties:
 
 #### ApplyImmediately
 
+Specifies whether any instance modifications
+are applied immediately, or during the next maintenance window. Default is`false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -71,6 +77,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoMinorVersionUpgrade
+
+Indicates that minor engine upgrades will be applied automatically to the instance during the maintenance window. Default is `true`.
 
 _Required_: No
 
@@ -80,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AvailabilityZone
 
+The EC2 Availability Zone that the neptune instance is created in.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +97,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterIdentifier
+
+The identifier of the [`aws_neptune_cluster`](/docs/providers/aws/r/neptune_cluster.html) in which to launch this instance.
 
 _Required_: Yes
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Engine
 
+The name of the database engine to be used for the neptune instance. Defaults to `neptune`. Valid Values: `neptune`.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EngineVersion
+
+The neptune engine version.
 
 _Required_: No
 
@@ -112,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Identifier
 
+The indentifier for the neptune instance, if omitted, Terraform will assign a random, unique identifier.
+
 _Required_: No
 
 _Type_: String
@@ -119,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdentifierPrefix
+
+Creates a unique identifier beginning with the specified prefix. Conflicts with `identifier`.
 
 _Required_: No
 
@@ -128,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceClass
 
+The instance class to use.
+
 _Required_: Yes
 
 _Type_: String
@@ -135,6 +157,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NeptuneParameterGroupName
+
+The name of the neptune parameter group to associate with this instance.
 
 _Required_: No
 
@@ -144,6 +168,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NeptuneSubnetGroupName
 
+A subnet group to associate with this neptune instance. **NOTE:** This must match the `neptune_subnet_group_name` of the attached [`aws_neptune_cluster`](/docs/providers/aws/r/neptune_cluster.html).
+
 _Required_: No
 
 _Type_: String
@@ -151,6 +177,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+The port on which the DB accepts connections. Defaults to `8182`.
 
 _Required_: No
 
@@ -160,6 +188,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PreferredBackupWindow
 
+The daily time range during which automated backups are created if automated backups are enabled. Eg: "04:00-09:00".
+
 _Required_: No
 
 _Type_: String
@@ -167,6 +197,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PreferredMaintenanceWindow
+
+The window to perform maintenance in.
+Syntax: "ddd:hh24:mi-ddd:hh24:mi". Eg: "Mon:00:00-Mon:03:00".
 
 _Required_: No
 
@@ -176,6 +209,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PromotionTier
 
+Default 0. Failover Priority setting on instance level. The reader who has lower tier has higher priority to get promoter to writer.
+
 _Required_: No
 
 _Type_: Double
@@ -184,6 +219,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PubliclyAccessible
 
+Bool to control if instance is publicly accessible. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -191,6 +228,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the instance.
 
 _Required_: No
 

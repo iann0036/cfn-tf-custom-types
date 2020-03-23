@@ -1,6 +1,6 @@
 # Terraform::AWS::XraySamplingRule
 
-CloudFormation equivalent of aws_xray_sampling_rule
+Creates and manages an AWS XRay Sampling Rule.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### Attributes
 
+Matches attributes derived from the request.
+
 _Required_: No
 
 _Type_: List of <a href="attributes.md">Attributes</a>
@@ -59,6 +61,8 @@ _Type_: List of <a href="attributes.md">Attributes</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FixedRate
+
+The percentage of matching requests to instrument, after the reservoir is exhausted.
 
 _Required_: Yes
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Host
 
+Matches the hostname from a request URL.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HttpMethod
+
+Matches the HTTP method of a request.
 
 _Required_: Yes
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+The priority of the sampling rule.
+
 _Required_: Yes
 
 _Type_: Double
@@ -91,6 +101,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReservoirSize
+
+A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively.
 
 _Required_: Yes
 
@@ -100,6 +112,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceArn
 
+Matches the ARN of the AWS resource on which the service runs.
+
 _Required_: Yes
 
 _Type_: String
@@ -107,6 +121,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleName
+
+The name of the sampling rule.
 
 _Required_: No
 
@@ -116,6 +132,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceName
 
+Matches the `name` that the service uses to identify itself in segments.
+
 _Required_: Yes
 
 _Type_: String
@@ -123,6 +141,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceType
+
+Matches the `origin` that the service uses to identify its type in segments.
 
 _Required_: Yes
 
@@ -132,6 +152,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UrlPath
 
+Matches the path from a request URL.
+
 _Required_: Yes
 
 _Type_: String
@@ -139,6 +161,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+The version of the sampling rule format (`1` ).
 
 _Required_: Yes
 

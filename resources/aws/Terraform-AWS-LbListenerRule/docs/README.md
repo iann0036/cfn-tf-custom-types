@@ -1,6 +1,8 @@
 # Terraform::AWS::LbListenerRule
 
-CloudFormation equivalent of aws_lb_listener_rule
+Provides a Load Balancer Listener Rule resource.
+
+~> **Note:** `aws_alb_listener_rule` is known as `aws_lb_listener_rule`. The functionality is identical.
 
 ## Syntax
 
@@ -67,6 +69,8 @@ Properties:
 
 #### ListenerArn
 
+The ARN of the listener to which to attach the rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Priority
+
+The priority for the rule between `1` and `50000`. Leaving it unset will automatically set the rule with next available priority after currently existing highest rule. A listener can't have multiple rules with the same priority.
 
 _Required_: No
 

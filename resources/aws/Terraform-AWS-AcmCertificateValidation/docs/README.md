@@ -1,6 +1,13 @@
 # Terraform::AWS::AcmCertificateValidation
 
-CloudFormation equivalent of aws_acm_certificate_validation
+This resource represents a successful validation of an ACM certificate in concert
+with other resources.
+
+Most commonly, this resource is used together with [`aws_route53_record`](route53_record.html) and
+[`aws_acm_certificate`](acm_certificate.html) to request a DNS validated certificate,
+deploy the required validation records and wait for validation to complete.
+
+~> **WARNING:** This resource implements a part of the validation workflow. It does not represent a real-world entity in AWS, therefore changing or deleting this resource on its own has no immediate effect.
 
 ## Syntax
 
@@ -34,6 +41,8 @@ Properties:
 
 #### CertificateArn
 
+The ARN of the certificate that is being validated.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidationRecordFqdns
+
+List of FQDNs that implement the validation. Only valid for DNS validation method ACM certificates. If this is set, the resource can implement additional sanity checks and has an explicit dependency on the resource that is implementing the validation.
 
 _Required_: No
 

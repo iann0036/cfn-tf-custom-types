@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::KmsGrant",
-    "description": "CloudFormation equivalent of aws_kms_grant",
+    "description": "Provides a resource-based access control mechanism for a KMS customer master key.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Constraints": {
@@ -25,7 +25,8 @@
                             "MapKey",
                             "MapValue"
                         ]
-                    }
+                    },
+                    "description": "A list of key-value pairs that must match the encryption context in subsequent cryptographic operation requests. The grant allows the operation only when the encryption context in the request is the same as the encryption context specified in this constraint. Conflicts with `encryption_context_subset`."
                 },
                 "EncryptionContextSubset": {
                     "type": "array",
@@ -45,7 +46,8 @@
                             "MapKey",
                             "MapValue"
                         ]
-                    }
+                    },
+                    "description": "A list of key-value pairs that must be included in the encryption context of subsequent cryptographic operation requests. The grant allows the cryptographic operation only when the encryption context in the request includes the key-value pairs specified in this constraint, although it can include additional key-value pairs. Conflicts with `encryption_context_equals`."
                 }
             },
             "required": []
@@ -61,7 +63,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of grant tokens to be used when creating the grant. See [Grant Tokens](http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token) for more information about grant tokens."
         },
         "GrantId": {
             "type": "string"
@@ -70,29 +73,34 @@
             "type": "string"
         },
         "GranteePrincipal": {
-            "type": "string"
+            "type": "string",
+            "description": "The principal that is given permission to perform the operations that the grant permits in ARN format. Note that due to eventual consistency issues around IAM principals, terraform's state may not always be refreshed to reflect what is true in AWS."
         },
         "Id": {
             "type": "string"
         },
         "KeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier for the customer master key (CMK) that the grant applies to. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you must use the key ARN."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name for identifying the grant."
         },
         "Operations": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of operations that the grant permits. The permitted values are: `Decrypt, Encrypt, GenerateDataKey, GenerateDataKeyWithoutPlaintext, ReEncryptFrom, ReEncryptTo, CreateGrant, RetireGrant, DescribeKey`."
         },
         "RetireOnDelete": {
             "type": "boolean"
         },
         "RetiringPrincipal": {
-            "type": "string"
+            "type": "string",
+            "description": "The principal that is given permission to retire the grant by using RetireGrant operation in ARN format. Note that due to eventual consistency issues around IAM principals, terraform's state may not always be refreshed to reflect what is true in AWS."
         },
         "Constraints": {
             "type": "array",

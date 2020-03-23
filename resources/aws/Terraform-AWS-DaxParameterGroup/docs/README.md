@@ -1,6 +1,6 @@
 # Terraform::AWS::DaxParameterGroup
 
-CloudFormation equivalent of aws_dax_parameter_group
+Provides a DAX Parameter Group resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 ## Properties
 
 #### Description
+
+A description of the parameter group.
 
 _Required_: No
 

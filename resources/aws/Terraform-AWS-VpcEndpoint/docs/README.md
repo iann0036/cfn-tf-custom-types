@@ -1,6 +1,13 @@
 # Terraform::AWS::VpcEndpoint
 
-CloudFormation equivalent of aws_vpc_endpoint
+Provides a VPC Endpoint resource.
+
+~> **NOTE on VPC Endpoints and VPC Endpoint Associations:** Terraform provides both standalone VPC Endpoint Associations for
+[Route Tables](vpc_endpoint_route_table_association.html) - (an association between a VPC endpoint and a single `route_table_id`) and
+[Subnets](vpc_endpoint_subnet_association.html) - (an association between a VPC endpoint and a single `subnet_id`) and
+a VPC Endpoint resource with `route_table_ids` and `subnet_ids` attributes.
+Do not use the same resource ID in both a VPC Endpoint resource and a VPC Endpoint Association resource.
+Doing so will cause a conflict of associations and will overwrite the association.
 
 ## Syntax
 
@@ -53,6 +60,8 @@ Properties:
 
 #### AutoAccept
 
+Accept the VPC endpoint (the VPC endpoint and service need to be in the same AWS account).
+
 _Required_: No
 
 _Type_: Boolean
@@ -60,6 +69,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+A policy to attach to the endpoint that controls access to the service. Defaults to full access. All `Gateway` and some `Interface` endpoints support policies - see the [relevant AWS documentation](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-access.html) for more details. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
 
 _Required_: No
 
@@ -69,6 +80,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateDnsEnabled
 
+Whether or not to associate a private hosted zone with the specified VPC. Applicable for endpoints of type `Interface`.
+Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -76,6 +90,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouteTableIds
+
+One or more route table IDs. Applicable for endpoints of type `Gateway`.
 
 _Required_: No
 
@@ -85,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupIds
 
+The ID of one or more security groups to associate with the network interface. Required for endpoints of type `Interface`.
+
 _Required_: No
 
 _Type_: List of String
@@ -92,6 +110,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceName
+
+The service name. For AWS services the service name is usually in the form `com.amazonaws.<region>.<service>` (the SageMaker Notebook service is an exception to this rule, the service name is in the form `aws.sagemaker.<region>.notebook`).
 
 _Required_: Yes
 
@@ -101,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+The ID of one or more subnets in which to create a network interface for the endpoint. Applicable for endpoints of type `Interface`.
+
 _Required_: No
 
 _Type_: List of String
@@ -108,6 +130,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 
@@ -117,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcEndpointType
 
+The VPC endpoint type, `Gateway` or `Interface`. Defaults to `Gateway`.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +150,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of the VPC in which the endpoint will be used.
 
 _Required_: Yes
 

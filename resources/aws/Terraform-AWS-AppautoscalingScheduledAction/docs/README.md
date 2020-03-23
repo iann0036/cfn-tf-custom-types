@@ -1,6 +1,6 @@
 # Terraform::AWS::AppautoscalingScheduledAction
 
-CloudFormation equivalent of aws_appautoscaling_scheduled_action
+Provides an Application AutoScaling ScheduledAction resource.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### EndTime
 
+The date and time for the scheduled action to end. Specify the following format: 2006-01-02T15:04:05Z.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the scheduled action.
 
 _Required_: Yes
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceId
 
+The identifier of the resource associated with the scheduled action. Documentation can be found in the parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html#ApplicationAutoScaling-PutScheduledAction-request-ResourceId).
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalableDimension
+
+The scalable dimension. Documentation can be found in the parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html#ApplicationAutoScaling-PutScheduledAction-request-ScalableDimension) Example: ecs:service:DesiredCount.
 
 _Required_: No
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Schedule
 
+The schedule for this action. The following formats are supported: At expressions - at(yyyy-mm-ddThh:mm:ss), Rate expressions - rate(valueunit), Cron expressions - cron(fields). In UTC. Documentation can be found in the parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html#ApplicationAutoScaling-PutScheduledAction-request-Schedule).
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceNamespace
 
+The namespace of the AWS service. Documentation can be found in the parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html#ApplicationAutoScaling-PutScheduledAction-request-ServiceNamespace) Example: ecs.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartTime
+
+The date and time for the scheduled action to start. Specify the following format: 2006-01-02T15:04:05Z.
 
 _Required_: No
 

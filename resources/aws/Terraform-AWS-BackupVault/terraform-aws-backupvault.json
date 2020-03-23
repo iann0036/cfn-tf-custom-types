@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::BackupVault",
-    "description": "CloudFormation equivalent of aws_backup_vault",
+    "description": "Provides an AWS Backup vault resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,10 +15,12 @@
             "type": "string"
         },
         "KmsKeyArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The server-side encryption key that is used to protect your backups."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the backup vault to create."
         },
         "RecoveryPoints": {
             "type": "number"
@@ -41,7 +43,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Metadata that you can assign to help organize the resources that you create."
         }
     },
     "additionalProperties": false,

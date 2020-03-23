@@ -1,6 +1,10 @@
 # Terraform::AWS::VpnGatewayRoutePropagation
 
-CloudFormation equivalent of aws_vpn_gateway_route_propagation
+Requests automatic route propagation between a VPN gateway and a route table.
+
+~> **Note:** This resource should not be used with a route table that has
+the `propagating_vgws` argument set. If that argument is set, any route
+propagation not explicitly listed in its value will be removed.
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 
 #### RouteTableId
 
+The id of the `aws_route_table` to propagate routes into.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnGatewayId
+
+The id of the `aws_vpn_gateway` to propagate routes from.
 
 _Required_: Yes
 

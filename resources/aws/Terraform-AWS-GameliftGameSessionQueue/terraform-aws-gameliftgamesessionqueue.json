@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::GameliftGameSessionQueue",
-    "description": "CloudFormation equivalent of aws_gamelift_game_session_queue",
+    "description": "Provides an Gamelift Game Session Queue resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PlayerLatencyPolicy": {
@@ -32,13 +32,15 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of fleet/alias ARNs used by session queue for placing game sessions."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the session queue."
         },
         "Tags": {
             "type": "array",
@@ -58,10 +60,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "TimeoutInSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum time a game session request can remain in the queue."
         },
         "PlayerLatencyPolicy": {
             "type": "array",

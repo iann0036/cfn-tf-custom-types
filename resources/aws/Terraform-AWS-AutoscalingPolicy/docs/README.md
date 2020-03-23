@@ -1,6 +1,12 @@
 # Terraform::AWS::AutoscalingPolicy
 
-CloudFormation equivalent of aws_autoscaling_policy
+Provides an AutoScaling Scaling Policy resource.
+
+~> **NOTE:** You may want to omit `desired_capacity` attribute from attached `aws_autoscaling_group`
+when using autoscaling policies. It's good practice to pick either
+[manual](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-manual-scaling.html)
+or [dynamic](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html)
+(policy-based) scaling.
 
 ## Syntax
 
@@ -62,6 +68,8 @@ Properties:
 
 #### AdjustmentType
 
+Specifies whether the adjustment is an absolute number or a percentage of the current capacity. Valid values are `ChangeInCapacity`, `ExactCapacity`, and `PercentChangeInCapacity`.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoscalingGroupName
+
+The name of the autoscaling group.
 
 _Required_: Yes
 
@@ -78,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Cooldown
 
+The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start.
+
 _Required_: No
 
 _Type_: Double
@@ -86,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EstimatedInstanceWarmup
 
+The estimated time, in seconds, until a newly launched instance will contribute CloudWatch metrics. Without a value, AWS will default to the group's specified cooldown period.
+
 _Required_: No
 
 _Type_: Double
@@ -93,6 +107,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetricAggregationType
+
+The aggregation type for the policy's metrics. Valid values are "Minimum", "Maximum", and "Average". Without a value, AWS will treat the aggregation type as "Average".
 
 _Required_: No
 
@@ -118,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +144,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PolicyType
 
+The policy type, either "SimpleScaling", "StepScaling" or "TargetTrackingScaling". If this value isn't provided, AWS will default to "SimpleScaling.".
+
 _Required_: No
 
 _Type_: String
@@ -133,6 +153,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScalingAdjustment
+
+The number of members by which to
+scale, when the adjustment bounds are breached. A positive value scales
+up. A negative value scales down.
 
 _Required_: No
 

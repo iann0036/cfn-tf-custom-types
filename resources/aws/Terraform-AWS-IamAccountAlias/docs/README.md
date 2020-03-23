@@ -1,6 +1,8 @@
 # Terraform::AWS::IamAccountAlias
 
-CloudFormation equivalent of aws_iam_account_alias
+-> **Note:** There is only a single account alias per AWS account.
+
+Manages the account alias for the AWS Account.
 
 ## Syntax
 
@@ -28,6 +30,8 @@ Properties:
 ## Properties
 
 #### AccountAlias
+
+The account alias.
 
 _Required_: Yes
 

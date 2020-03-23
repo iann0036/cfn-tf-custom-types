@@ -1,6 +1,8 @@
 # Terraform::AWS::ConfigConfigurationRecorderStatus
 
-CloudFormation equivalent of aws_config_configuration_recorder_status
+Manages status (recording / stopped) of an AWS Config Configuration Recorder.
+
+~> **Note:** Starting Configuration Recorder requires a [Delivery Channel](/docs/providers/aws/r/config_delivery_channel.html) to be present. Use of `depends_on` (as shown below) is recommended to avoid race conditions.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### IsEnabled
 
+Whether the configuration recorder should be enabled or disabled.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -38,6 +42,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the recorder.
 
 _Required_: Yes
 

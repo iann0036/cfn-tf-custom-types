@@ -1,6 +1,6 @@
 # Terraform::AWS::SagemakerModel
 
-CloudFormation equivalent of aws_sagemaker_model
+Provides a SageMaker model resource.
 
 ## Syntax
 
@@ -53,6 +53,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ExecutionRoleArn
 
+A role that SageMaker can assume to access model artifacts and docker images for deployment.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the model (must be unique). If omitted, Terraform will assign a random, unique name.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

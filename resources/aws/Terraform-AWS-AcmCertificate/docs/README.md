@@ -1,6 +1,22 @@
 # Terraform::AWS::AcmCertificate
 
-CloudFormation equivalent of aws_acm_certificate
+The ACM certificate resource allows requesting and management of certificates
+from the Amazon Certificate Manager.
+
+It deals with requesting certificates and managing their attributes and life-cycle.
+This resource does not deal with validation of a certificate but can provide inputs
+for other resources implementing the validation. It does not wait for a certificate to be issued.
+Use a [`aws_acm_certificate_validation`](acm_certificate_validation.html) resource for this.
+
+Most commonly, this resource is used to together with [`aws_route53_record`](route53_record.html) and
+[`aws_acm_certificate_validation`](acm_certificate_validation.html) to request a DNS validated certificate,
+deploy the required validation records and wait for validation to complete.
+
+Domain validation through email is also supported but should be avoided as it requires a manual step outside
+of Terraform.
+
+It's recommended to specify `create_before_destroy = true` in a [lifecycle][1] block to replace a certificate
+which is currently in use (eg, by [`aws_lb_listener`](lb_listener.html)).
 
 ## Syntax
 
@@ -48,6 +64,9 @@ Properties:
 
 #### CertificateAuthorityArn
 
+ARN of an ACMPCA
+* `subject_alternative_names` - (Optional) A list of domains that should be SANs in the issued certificate.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +74,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateBody
+
+The certificate's PEM-formatted public key
+* `certificate_chain` - (Optional) The certificate's PEM-formatted chain.
 
 _Required_: No
 
@@ -64,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertificateChain
 
+The certificate's PEM-formatted chain.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +95,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainName
+
+A domain name for which the certificate should be issued
+* `certificate_authority_arn` - (Required) ARN of an ACMPCA
+* `subject_alternative_names` - (Optional) A list of domains that should be SANs in the issued certificate.
 
 _Required_: No
 
@@ -80,6 +108,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateKey
 
+The certificate's PEM-formatted private key
+* `certificate_body` - (Required) The certificate's PEM-formatted public key
+* `certificate_chain` - (Optional) The certificate's PEM-formatted chain.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubjectAlternativeNames
+
+A list of domains that should be SANs in the issued certificate.
 
 _Required_: No
 
@@ -96,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -103,6 +139,9 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidationMethod
+
+Which method to use for validation. `DNS` or `EMAIL` are valid, `NONE` can be used for certificates that were imported into ACM and then into Terraform.
+* `options` - (Optional) Configuration block used to set certificate options. Detailed below.
 
 _Required_: No
 

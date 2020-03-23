@@ -1,6 +1,6 @@
 # Terraform::AWS::Cloud9EnvironmentEc2
 
-CloudFormation equivalent of aws_cloud9_environment_ec2
+Provides a Cloud9 EC2 Development Environment.
 
 ## Syntax
 
@@ -42,6 +42,8 @@ Properties:
 
 #### AutomaticStopTimeMinutes
 
+The number of minutes until the running instance is shut down after the environment has last been used.
+
 _Required_: No
 
 _Type_: Double
@@ -49,6 +51,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the environment.
 
 _Required_: No
 
@@ -58,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceType
 
+The type of instance to connect to the environment, e.g. `t2.micro`.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +71,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the environment.
 
 _Required_: Yes
 
@@ -74,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OwnerArn
 
+The ARN of the environment owner. This can be ARN of any AWS IAM principal. Defaults to the environment's creator.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
+
 _Required_: No
 
 _Type_: String
@@ -89,6 +101,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

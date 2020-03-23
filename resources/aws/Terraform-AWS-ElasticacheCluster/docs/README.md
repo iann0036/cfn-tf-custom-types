@@ -1,6 +1,15 @@
 # Terraform::AWS::ElasticacheCluster
 
-CloudFormation equivalent of aws_elasticache_cluster
+Provides an ElastiCache Cluster resource, which manages a Memcached cluster or Redis instance.
+For working with Redis (Cluster Mode Enabled) replication groups, see the
+[`aws_elasticache_replication_group` resource](/docs/providers/aws/r/elasticache_replication_group.html).
+
+~> **Note:** When you change an attribute, such as `node_type`, by default
+it is applied in the next maintenance window. Because of this, Terraform may report
+a difference in its planning phase because the actual modification has not yet taken
+place. You can use the `apply_immediately` flag to instruct the service to apply the
+change immediately. Using `apply_immediately` can result in a brief downtime as the server reboots.
+See the AWS Docs on [Modifying an ElastiCache Cache Cluster][2] for more information.
 
 ## Syntax
 
@@ -79,6 +88,11 @@ Properties:
 
 #### ApplyImmediately
 
+Specifies whether any database modifications
+are applied immediately, or during the next maintenance window. Default is
+`false`. See [Amazon ElastiCache Documentation for more information.][1]
+(Available since v0.6.0).
+
 _Required_: No
 
 _Type_: Boolean
@@ -86,6 +100,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+The Availability Zone for the cache cluster. If you want to create cache nodes in multi-az, use `preferred_availability_zones` instead. Default: System chosen Availability Zone.
 
 _Required_: No
 
@@ -102,6 +118,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AzMode
+
+Specifies whether the nodes in this Memcached node group are created in a single Availability Zone or created across multiple Availability Zones in the cluster's region. Valid values for this parameter are `single-az` or `cross-az`, default is `single-az`. If you want to choose `cross-az`, `num_cache_nodes` must be greater than `1`.
 
 _Required_: No
 
@@ -183,6 +201,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PreferredAvailabilityZones
 
+A list of the Availability Zones in which cache nodes are created. If you are creating your cluster in an Amazon VPC you can only locate nodes in Availability Zones that are associated with the subnets in the selected subnet group. The number of Availability Zones listed must equal the value of `num_cache_nodes`. If you want all the nodes in the same Availability Zone, use `availability_zone` instead, or repeat the Availability Zone multiple times in the list. Default: System chosen Availability Zones. Detecting drift of existing node availability zone is not currently supported. Updating this argument by itself to migrate existing node availability zones is not currently supported and will show a perpetual difference.
+
 _Required_: No
 
 _Type_: List of String
@@ -190,6 +210,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReplicationGroupId
+
+The ID of the replication group to which this cluster should belong. If this parameter is specified, the cluster is added to the specified replication group as a read replica; otherwise, the cluster is a standalone primary that is not part of any replication group.
 
 _Required_: No
 
@@ -223,6 +245,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotName
 
+The name of a snapshot from which to restore data into the new node group.  Changing the `snapshot_name` forces a new resource.
+
 _Required_: No
 
 _Type_: String
@@ -231,6 +255,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotRetentionLimit
 
+The number of days for which ElastiCache will
+retain automatic cache cluster snapshots before deleting them. For example, if you set
+SnapshotRetentionLimit to 5, then a snapshot that was taken today will be retained for 5 days
+before being deleted. If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
+Please note that setting a `snapshot_retention_limit` is not supported on cache.t1.micro or cache.t2.* cache nodes.
+
 _Required_: No
 
 _Type_: Double
@@ -238,6 +268,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotWindow
+
+The daily time range (in UTC) during which ElastiCache will
+begin taking a daily snapshot of your cache cluster. Example: 05:00-09:00.
 
 _Required_: No
 
@@ -254,6 +287,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

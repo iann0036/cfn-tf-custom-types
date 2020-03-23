@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::RouteTableAssociation",
-    "description": "CloudFormation equivalent of aws_route_table_association",
+    "description": "Provides a resource to create an association between a route table and a subnet or a route table and an\ninternet gateway or virtual private gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "GatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The gateway ID to create an association. Conflicts with `subnet_id`."
         },
         "Id": {
             "type": "string"
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the routing table to associate with."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The subnet ID to create an association. Conflicts with `gateway_id`."
         }
     },
     "additionalProperties": false,

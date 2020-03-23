@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::EbsEncryptionByDefault",
-    "description": "CloudFormation equivalent of aws_ebs_encryption_by_default",
+    "description": "Provides a resource to manage whether default EBS encryption is enabled for your AWS account in the current AWS region. To manage the default KMS key for the region, see the [`aws_ebs_default_kms_key` resource](/docs/providers/aws/r/ebs_default_kms_key.html).\n\n~> **NOTE:** Removing this Terraform resource disables default EBS encryption.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not default EBS encryption is enabled. Valid values are `true` or `false`. Defaults to `true`."
         },
         "Id": {
             "type": "string"

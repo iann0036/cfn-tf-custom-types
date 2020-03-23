@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Port
 
+The port used for the port mapping.
+
 _Required_: Yes
 
 _Type_: Double
@@ -31,6 +33,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol used for the port mapping. Valid values are `http` and `tcp`.
 
 _Required_: Yes
 

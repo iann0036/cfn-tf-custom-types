@@ -1,6 +1,6 @@
 # Terraform::AWS::LbCookieStickinessPolicy
 
-CloudFormation equivalent of aws_lb_cookie_stickiness_policy
+Provides a load balancer cookie stickiness policy, which allows an ELB to control the sticky session lifetime of the browser.
 
 ## Syntax
 
@@ -35,6 +35,9 @@ Properties:
 
 #### CookieExpirationPeriod
 
+The time period after which
+the session cookie should be considered stale, expressed in seconds.
+
 _Required_: No
 
 _Type_: Double
@@ -42,6 +45,10 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LbPort
+
+The load balancer port to which the policy
+should be applied. This must be an active listener on the load
+balancer.
 
 _Required_: Yes
 
@@ -51,6 +58,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancer
 
+The load balancer to which the policy
+should be attached.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the stickiness policy.
 
 _Required_: Yes
 

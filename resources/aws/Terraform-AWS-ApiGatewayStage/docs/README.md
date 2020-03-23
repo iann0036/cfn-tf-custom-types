@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayStage
 
-CloudFormation equivalent of aws_api_gateway_stage
+Provides an API Gateway Stage.
 
 ## Syntax
 
@@ -54,6 +54,8 @@ Properties:
 
 #### CacheClusterEnabled
 
+Specifies whether a cache cluster is enabled for the stage.
+
 _Required_: No
 
 _Type_: Boolean
@@ -61,6 +63,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CacheClusterSize
+
+The size of the cache cluster for the stage, if enabled.
+Allowed values include `0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118` and `237`.
 
 _Required_: No
 
@@ -70,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientCertificateId
 
+The identifier of a client certificate for the stage.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeploymentId
+
+The ID of the deployment that the stage points to.
 
 _Required_: Yes
 
@@ -86,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of the stage.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DocumentationVersion
+
+The version of the associated API documentation.
 
 _Required_: No
 
@@ -102,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RestApiId
 
+The ID of the associated REST API.
+
 _Required_: Yes
 
 _Type_: String
@@ -109,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StageName
+
+The name of the stage.
 
 _Required_: Yes
 
@@ -118,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -126,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Variables
 
+A map that defines the stage variables.
+
 _Required_: No
 
 _Type_: List of <a href="variables.md">Variables</a>
@@ -133,6 +154,8 @@ _Type_: List of <a href="variables.md">Variables</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### XrayTracingEnabled
+
+Whether active tracing with X-ray is enabled. Defaults to `false`.
 
 _Required_: No
 

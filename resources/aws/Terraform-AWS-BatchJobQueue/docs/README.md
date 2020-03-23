@@ -1,6 +1,6 @@
 # Terraform::AWS::BatchJobQueue
 
-CloudFormation equivalent of aws_batch_job_queue
+Provides a Batch Job Queue resource.
 
 ## Syntax
 
@@ -36,6 +36,11 @@ Properties:
 
 #### ComputeEnvironments
 
+Specifies the set of compute environments
+mapped to a job queue and their order.  The position of the compute environments
+in the list will dictate the order. You can associate up to 3 compute environments
+with a job queue.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -43,6 +48,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the job queue.
 
 _Required_: Yes
 
@@ -52,6 +59,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+The priority of the job queue. Job queues with a higher priority
+are evaluated first when associated with the same compute environment.
+
 _Required_: Yes
 
 _Type_: Double
@@ -59,6 +69,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### State
+
+The state of the job queue. Must be one of: `ENABLED` or `DISABLED`.
 
 _Required_: Yes
 

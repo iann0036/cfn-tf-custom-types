@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2TransitGatewayRoute",
-    "description": "CloudFormation equivalent of aws_ec2_transit_gateway_route",
+    "description": "Manages an EC2 Transit Gateway Route.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,23 @@
             "type": "string"
         },
         "Blackhole": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether to drop traffic that matches this route (default to `false`)."
         },
         "DestinationCidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "IPv4 CIDR range used for destination matches. Routing decisions are based on the most specific match."
         },
         "Id": {
             "type": "string"
         },
         "TransitGatewayAttachmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of EC2 Transit Gateway Attachment (required if `blackhole` is set to false)."
         },
         "TransitGatewayRouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of EC2 Transit Gateway Route Table."
         }
     },
     "additionalProperties": false,

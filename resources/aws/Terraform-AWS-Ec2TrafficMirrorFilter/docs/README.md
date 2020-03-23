@@ -1,6 +1,7 @@
 # Terraform::AWS::Ec2TrafficMirrorFilter
 
-CloudFormation equivalent of aws_ec2_traffic_mirror_filter
+Provides an Traffic mirror filter.  
+Read [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring
 
 ## Syntax
 
@@ -35,6 +36,8 @@ Properties:
 
 #### Description
 
+A description of the filter.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkServices
 
+List of amazon network services that should be mirrored. Valid values: `amazon-dns`.
+
 _Required_: No
 
 _Type_: List of String
@@ -50,6 +55,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

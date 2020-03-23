@@ -1,6 +1,11 @@
 # Terraform::AWS::DbOptionGroup
 
-CloudFormation equivalent of aws_db_option_group
+Provides an RDS DB option group resource. Documentation of the available options for various RDS engines can be found at:
+
+* [MariaDB Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MariaDB.Options.html)
+* [Microsoft SQL Server Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.SQLServer.Options.html)
+* [MySQL Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MySQL.Options.html)
+* [Oracle Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.Options.html)
 
 ## Syntax
 
@@ -48,6 +53,8 @@ Properties:
 
 #### EngineName
 
+Specifies the name of the engine that this option group should be associated with.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +62,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MajorEngineVersion
+
+Specifies the major version of the engine that this option group should be associated with.
 
 _Required_: Yes
 
@@ -64,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The Name of the setting.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamePrefix
+
+Creates a unique name beginning with the specified prefix. Conflicts with `name`. Must be lowercase, to match as it is stored in AWS.
 
 _Required_: No
 
@@ -80,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OptionGroupDescription
 
+The description of the option group. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

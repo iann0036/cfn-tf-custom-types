@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DmsReplicationTask",
-    "description": "CloudFormation equivalent of aws_dms_replication_task",
+    "description": "Provides a DMS (Data Migration Service) replication task resource. DMS replication tasks can be created, updated, deleted, and imported.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,31 +9,38 @@
             "type": "string"
         },
         "CdcStartTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The Unix timestamp integer for the start of the Change Data Capture (CDC) operation."
         },
         "Id": {
             "type": "string"
         },
         "MigrationType": {
-            "type": "string"
+            "type": "string",
+            "description": "The migration type. Can be one of `full-load | cdc | full-load-and-cdc`."
         },
         "ReplicationInstanceArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the replication instance."
         },
         "ReplicationTaskArn": {
             "type": "string"
         },
         "ReplicationTaskId": {
-            "type": "string"
+            "type": "string",
+            "description": "The replication task identifier."
         },
         "ReplicationTaskSettings": {
-            "type": "string"
+            "type": "string",
+            "description": "An escaped JSON string that contains the task settings. For a complete list of task settings, see [Task Settings for AWS Database Migration Service Tasks](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html)."
         },
         "SourceEndpointArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) string that uniquely identifies the source endpoint."
         },
         "TableMappings": {
-            "type": "string"
+            "type": "string",
+            "description": "An escaped JSON string that contains the table mappings. For information on table mapping see [Using Table Mapping with an AWS Database Migration Service Task to Select and Filter Data](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html)."
         },
         "Tags": {
             "type": "array",
@@ -53,10 +60,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "TargetEndpointArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) string that uniquely identifies the target endpoint."
         }
     },
     "additionalProperties": false,

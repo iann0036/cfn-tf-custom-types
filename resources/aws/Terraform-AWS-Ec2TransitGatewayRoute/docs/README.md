@@ -1,6 +1,6 @@
 # Terraform::AWS::Ec2TransitGatewayRoute
 
-CloudFormation equivalent of aws_ec2_transit_gateway_route
+Manages an EC2 Transit Gateway Route.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Blackhole
 
+Indicates whether to drop traffic that matches this route (default to `false`).
+
 _Required_: No
 
 _Type_: Boolean
@@ -42,6 +44,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationCidrBlock
+
+IPv4 CIDR range used for destination matches. Routing decisions are based on the most specific match.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TransitGatewayAttachmentId
 
+Identifier of EC2 Transit Gateway Attachment (required if `blackhole` is set to false).
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransitGatewayRouteTableId
+
+Identifier of EC2 Transit Gateway Route Table.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::WafRegexMatchSet
 
-CloudFormation equivalent of aws_waf_regex_match_set
+Provides a WAF Regex Match Set Resource
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the Regex Match Set.
 
 _Required_: Yes
 

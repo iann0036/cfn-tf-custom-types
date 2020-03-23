@@ -1,6 +1,10 @@
 # Terraform::AWS::LightsailInstance
 
-CloudFormation equivalent of aws_lightsail_instance
+Provides a Lightsail Instance. Amazon Lightsail is a service to provide easy virtual private servers
+with custom software already setup. See [What is Amazon Lightsail?](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/what-is-amazon-lightsail)
+for more information.
+
+~> **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see ["Regions and Availability Zones in Amazon Lightsail"](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details
 
 ## Syntax
 
@@ -42,6 +46,9 @@ Properties:
 
 #### AvailabilityZone
 
+The Availability Zone in which to create your
+instance (see list below).
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +56,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BlueprintId
+
+The ID for a virtual private server image
+(see list below).
 
 _Required_: Yes
 
@@ -58,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BundleId
 
+The bundle of specification information (see list below).
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +77,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyPairName
+
+The name of your key pair. Created in the
+Lightsail console (cannot use `aws_key_pair` at this time).
 
 _Required_: No
 
@@ -74,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Lightsail Instance. Names be unique within each AWS Region in your Lightsail account.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +99,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -89,6 +108,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserData
+
+launch script to configure server with additional user data.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::AWS::LbListener
 
-CloudFormation equivalent of aws_lb_listener
+Provides a Load Balancer Listener resource.
+
+~> **Note:** `aws_alb_listener` is known as `aws_lb_listener`. The functionality is identical.
 
 ## Syntax
 
@@ -54,6 +56,8 @@ Properties:
 
 #### CertificateArn
 
+The ARN of the default SSL server certificate. Exactly one certificate is required if the protocol is HTTPS. For adding additional SSL certificates, see the [`aws_lb_listener_certificate` resource](/docs/providers/aws/r/lb_listener_certificate.html).
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancerArn
+
+The ARN of the load balancer.
 
 _Required_: Yes
 
@@ -70,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port on which the load balancer is listening.
+
 _Required_: Yes
 
 _Type_: Double
@@ -78,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The protocol for connections from clients to the load balancer. Valid values are `TCP`, `TLS`, `UDP`, `TCP_UDP`, `HTTP` and `HTTPS`. Defaults to `HTTP`.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslPolicy
+
+The name of the SSL Policy for the listener. Required if `protocol` is `HTTPS` or `TLS`.
 
 _Required_: No
 

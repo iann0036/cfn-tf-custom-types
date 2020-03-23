@@ -1,6 +1,6 @@
 # Terraform::AWS::Route53DelegationSet
 
-CloudFormation equivalent of aws_route53_delegation_set
+Provides a [Route53 Delegation Set](https://docs.aws.amazon.com/Route53/latest/APIReference/API-actions-by-function.html#actions-by-function-reusable-delegation-sets) resource.
 
 ## Syntax
 
@@ -28,6 +28,9 @@ Properties:
 ## Properties
 
 #### ReferenceName
+
+This is a reference name used in Caller Reference
+(helpful for identifying single delegation set amongst others).
 
 _Required_: No
 

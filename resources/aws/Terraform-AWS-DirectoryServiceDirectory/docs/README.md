@@ -1,6 +1,9 @@
 # Terraform::AWS::DirectoryServiceDirectory
 
-CloudFormation equivalent of aws_directory_service_directory
+Provides a Simple or Managed Microsoft directory in AWS Directory Service.
+
+~> **Note:** All arguments including the password and customer username will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -54,6 +57,8 @@ Properties:
 
 #### Alias
 
+The alias for the directory (must be unique amongst all aliases in AWS). Required for `enable_sso`.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A textual description for the directory.
 
 _Required_: No
 
@@ -70,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Edition
 
+The MicrosoftAD edition (`Standard` or `Enterprise`). Defaults to `Enterprise` (applies to MicrosoftAD type only).
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableSso
+
+Whether to enable single-sign on for the directory. Requires `alias`. Defaults to `false`.
 
 _Required_: No
 
@@ -86,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The fully qualified name for the directory, such as `corp.example.com`.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password for the directory administrator or connector user.
 
 _Required_: Yes
 
@@ -102,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShortName
 
+The short name of the directory, such as `CORP`.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Size
 
+The size of the directory (`Small` or `Large` are accepted values).
+
 _Required_: No
 
 _Type_: String
@@ -117,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::NetworkInterfaceAttachment",
-    "description": "CloudFormation equivalent of aws_network_interface_attachment",
+    "description": "Attach an Elastic network interface (ENI) resource with EC2 instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,19 @@
             "type": "string"
         },
         "DeviceIndex": {
-            "type": "number"
+            "type": "number",
+            "description": "Network interface index (int)."
         },
         "Id": {
             "type": "string"
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance ID to attach."
         },
         "NetworkInterfaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "ENI ID to attach."
         },
         "Status": {
             "type": "string"

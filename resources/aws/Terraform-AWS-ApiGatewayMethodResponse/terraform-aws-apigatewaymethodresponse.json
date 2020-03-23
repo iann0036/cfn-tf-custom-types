@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayMethodResponse",
-    "description": "CloudFormation equivalent of aws_api_gateway_method_response",
+    "description": "Provides an HTTP Method Response for an API Gateway Resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "HttpMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "The HTTP Method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`)."
         },
         "Id": {
             "type": "string"
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The API resource ID."
         },
         "ResponseModels": {
             "type": "array",
@@ -35,7 +37,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map of the API models used for the response's content type."
         },
         "ResponseParameters": {
             "type": "array",
@@ -55,16 +58,19 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map of response parameters that can be sent to the caller.\nFor example: `response_parameters = { \"method.response.header.X-Some-Header\" = true }`\nwould define that the header `X-Some-Header` can be provided on the response."
         },
         "ResponseParametersInJson": {
             "type": "string"
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated REST API."
         },
         "StatusCode": {
-            "type": "string"
+            "type": "string",
+            "description": "The HTTP status code."
         }
     },
     "additionalProperties": false,

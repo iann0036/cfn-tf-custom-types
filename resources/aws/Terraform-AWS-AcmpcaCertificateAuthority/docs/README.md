@@ -1,6 +1,8 @@
 # Terraform::AWS::AcmpcaCertificateAuthority
 
-CloudFormation equivalent of aws_acmpca_certificate_authority
+Provides a resource to manage AWS Certificate Manager Private Certificate Authorities (ACM PCA Certificate Authorities).
+
+~> **NOTE:** Creating this resource will leave the certificate authority in a `PENDING_CERTIFICATE` status, which means it cannot yet issue certificates. To complete this setup, you must fully sign the certificate authority CSR available in the `certificate_signing_request` attribute and import the signed certificate outside of Terraform. Terraform can support another resource to manage that workflow automatically in the future.
 
 ## Syntax
 
@@ -50,6 +52,8 @@ Properties:
 
 #### Enabled
 
+Whether the certificate authority is enabled or disabled. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -57,6 +61,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PermanentDeletionTimeInDays
+
+The number of days to make a CA restorable after it has been deleted, must be between 7 to 30 days, with default to 30 days.
 
 _Required_: No
 
@@ -66,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Specifies a key-value map of user-defined tags that are attached to the certificate authority.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -73,6 +81,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the certificate authority. Defaults to `SUBORDINATE`. Valid values: `ROOT` and `SUBORDINATE`.
 
 _Required_: No
 

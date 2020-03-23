@@ -1,6 +1,6 @@
 # Terraform::AWS::Vpc
 
-CloudFormation equivalent of aws_vpc
+Provides a VPC resource.
 
 ## Syntax
 
@@ -44,6 +44,10 @@ Properties:
 
 #### AssignGeneratedIpv6CidrBlock
 
+Requests an Amazon-provided IPv6 CIDR
+block with a /56 prefix length for the VPC. You cannot specify the range of IP addresses, or
+the size of the CIDR block. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +55,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CidrBlock
+
+The CIDR block for the VPC.
 
 _Required_: Yes
 
@@ -60,6 +66,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableClassiclink
 
+A boolean flag to enable/disable ClassicLink
+for the VPC. Only valid in regions and accounts that support EC2 Classic.
+See the [ClassicLink documentation][1] for more information. Defaults false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -67,6 +77,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableClassiclinkDnsSupport
+
+A boolean flag to enable/disable ClassicLink DNS Support for the VPC.
+Only valid in regions and accounts that support EC2 Classic.
 
 _Required_: No
 
@@ -76,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableDnsHostnames
 
+A boolean flag to enable/disable DNS hostnames in the VPC. Defaults false.
+
 _Required_: No
 
 _Type_: Boolean
@@ -83,6 +98,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableDnsSupport
+
+A boolean flag to enable/disable DNS support in the VPC. Defaults true.
 
 _Required_: No
 
@@ -92,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceTenancy
 
+A tenancy option for instances launched into the VPC.
+
 _Required_: No
 
 _Type_: String
@@ -99,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

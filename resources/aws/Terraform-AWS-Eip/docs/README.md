@@ -1,6 +1,10 @@
 # Terraform::AWS::Eip
 
-CloudFormation equivalent of aws_eip
+Provides an Elastic IP resource.
+
+~> **Note:** EIP may require IGW to exist prior to association. Use `depends_on` to set an explicit dependency on the IGW.
+
+~> **Note:** Do not use `network_interface` to associate the EIP to `aws_lb` or `aws_nat_gateway` resources. Instead use the `allocation_id` available in those resources to allow AWS to manage the association, otherwise you will see `AuthFailure` errors.
 
 ## Syntax
 
@@ -42,6 +46,10 @@ Properties:
 
 #### AssociateWithPrivateIp
 
+A user specified primary or secondary private IP address to
+associate with the Elastic IP address. If no private IP address is specified,
+the Elastic IP address is associated with the primary private IP address.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Instance
+
+EC2 instance ID.
 
 _Required_: No
 
@@ -58,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkInterface
 
+Network interface ID to associate with.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicIpv4Pool
+
+EC2 IPv4 address pool identifier or `amazon`. This option is only available for VPC EIPs.
 
 _Required_: No
 
@@ -74,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -81,6 +97,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vpc
+
+Boolean if the EIP is in a VPC or not.
 
 _Required_: No
 

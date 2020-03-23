@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Subnet",
-    "description": "CloudFormation equivalent of aws_subnet",
+    "description": "Provides an VPC subnet resource.\n\n~> **NOTE:** Due to [AWS Lambda improved VPC networking changes that began deploying in September 2019](https://aws.amazon.com/blogs/compute/announcing-improved-vpc-networking-for-aws-lambda-functions/), subnets associated with Lambda Functions can take up to 45 minutes to successfully delete. Terraform AWS Provider version 2.31.0 and later automatically handles this increased timeout, however prior versions require setting the [customizable deletion timeout](#timeouts) to 45 minutes (`delete = \"45m\"`). AWS and HashiCorp are working together to reduce the amount of time required for resource deletion and updates can be tracked in this [GitHub issue](https://github.com/terraform-providers/terraform-provider-aws/issues/10329).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,28 +26,34 @@
             "type": "string"
         },
         "AssignIpv6AddressOnCreation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specify true to indicate\nthat network interfaces created in the specified subnet should be\nassigned an IPv6 address. Default is `false`."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The AZ for the subnet."
         },
         "AvailabilityZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The AZ ID of the subnet."
         },
         "CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR block for the subnet."
         },
         "Id": {
             "type": "string"
         },
         "Ipv6CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The IPv6 network range for the subnet,\nin CIDR notation. The subnet size must use a /64 prefix length."
         },
         "Ipv6CidrBlockAssociationId": {
             "type": "string"
         },
         "MapPublicIpOnLaunch": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specify true to indicate\nthat instances launched into the subnet should be assigned\na public IP address. Default is `false`."
         },
         "OwnerId": {
             "type": "string"
@@ -70,10 +76,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

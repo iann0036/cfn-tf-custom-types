@@ -1,6 +1,6 @@
 # Terraform::AWS::VpnGateway
 
-CloudFormation equivalent of aws_vpn_gateway
+Provides a resource to create a VPC VPN Gateway.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### AmazonSideAsn
 
+The Autonomous System Number (ASN) for the Amazon side of the gateway. If you don't specify an ASN, the virtual private gateway is created with the default ASN.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+The Availability Zone for the virtual private gateway.
 
 _Required_: No
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -59,6 +65,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The VPC ID to create in.
 
 _Required_: No
 

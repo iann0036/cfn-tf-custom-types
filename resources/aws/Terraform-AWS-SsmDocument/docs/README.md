@@ -1,6 +1,10 @@
 # Terraform::AWS::SsmDocument
 
-CloudFormation equivalent of aws_ssm_document
+Provides an SSM Document resource
+
+~> **NOTE on updating SSM documents:** Only documents with a schema version of 2.0
+or greater can update their content once created, see [SSM Schema Features][1]. To update a document with an older
+schema version you must recreate the resource.
 
 ## Syntax
 
@@ -46,6 +50,8 @@ Properties:
 
 #### Content
 
+The JSON or YAML content of the document.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DocumentFormat
+
+The format of the document. Valid document types include: `JSON` and `YAML`.
 
 _Required_: No
 
@@ -62,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DocumentType
 
+The type of the document. Valid document types include: `Automation`, `Command`, `Package`, `Policy`, and `Session`.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the document.
 
 _Required_: Yes
 
@@ -78,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Permissions
 
+Additional Permissions to attach to the document. See [Permissions](#permissions) below for details.
+
 _Required_: No
 
 _Type_: List of <a href="permissions.md">Permissions</a>
@@ -86,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the object.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -93,6 +109,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetType
+
+The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance. For a list of valid resource types, see AWS Resource Types Reference (http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html).
 
 _Required_: No
 

@@ -1,6 +1,12 @@
 # Terraform::AWS::DbParameterGroup
 
-CloudFormation equivalent of aws_db_parameter_group
+Provides an RDS DB parameter group resource .Documentation of the available parameters for various RDS engines can be found at:
+
+* [Aurora MySQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Reference.html)
+* [Aurora PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraPostgreSQL.Reference.html)
+* [MariaDB Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MariaDB.Parameters.html)
+* [Oracle Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ModifyInstance.Oracle.html#USER_ModifyInstance.Oracle.sqlnet)
+* [PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.PostgreSQL.CommonDBATasks.html#Appendix.PostgreSQL.CommonDBATasks.Parameters)
 
 ## Syntax
 
@@ -41,6 +47,8 @@ Properties:
 
 #### Description
 
+The description of the DB parameter group. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Family
+
+The family of the DB parameter group.
 
 _Required_: Yes
 
@@ -57,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the DB parameter.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamePrefix
 
+Creates a unique name beginning with the specified prefix. Conflicts with `name`.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::DbSnapshot
 
-CloudFormation equivalent of aws_db_snapshot
+Manages a RDS database instance snapshot. For managing RDS database cluster snapshots, see the [`aws_db_cluster_snapshot` resource](/docs/providers/aws/r/db_cluster_snapshot.html).
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### DbInstanceIdentifier
 
+The DB Instance Identifier from which to take the snapshot.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DbSnapshotIdentifier
 
+The Identifier for the snapshot.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

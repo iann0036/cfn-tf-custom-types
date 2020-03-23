@@ -1,6 +1,6 @@
 # Terraform::AWS::Route53Record
 
-CloudFormation equivalent of aws_route53_record
+Provides a Route53 record resource.
 
 ## Syntax
 
@@ -61,6 +61,8 @@ Properties:
 
 #### AllowOverwrite
 
+Allow creation of this record in Terraform to overwrite an existing record, if any. This does not affect the ability to update the record in Terraform and does not prevent other resources within Terraform or manual Route 53 changes outside Terraform from overwriting this record. `false` by default. This configuration is not recommended for most environments.
+
 _Required_: No
 
 _Type_: Boolean
@@ -68,6 +70,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckId
+
+The health check the record should be associated with.
 
 _Required_: No
 
@@ -77,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MultivalueAnswerRoutingPolicy
 
+Set to `true` to indicate a multivalue answer routing policy. Conflicts with any other routing policy.
+
 _Required_: No
 
 _Type_: Boolean
@@ -84,6 +90,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+DNS domain name for a CloudFront distribution, S3 bucket, ELB, or another resource record set in this hosted zone.
 
 _Required_: Yes
 
@@ -93,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Records
 
+A string list of records. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\"\"` inside the Terraform configuration string (e.g. `"first255characters\"\"morecharacters"`).
+
 _Required_: No
 
 _Type_: List of String
@@ -100,6 +110,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SetIdentifier
+
+Unique identifier to differentiate records with routing policies from one another. Required if using `failover`, `geolocation`, `latency`, or `weighted` routing policies documented below.
 
 _Required_: No
 
@@ -109,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ttl
 
+The TTL of the record.
+
 _Required_: No
 
 _Type_: Double
@@ -117,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+`PRIMARY` or `SECONDARY`. A `PRIMARY` record will be served if its healthcheck is passing, otherwise the `SECONDARY` will be served. See http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html#dns-failover-failover-rrsets.
+
 _Required_: Yes
 
 _Type_: String
@@ -124,6 +140,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+Hosted zone ID for a CloudFront distribution, S3 bucket, ELB, or Route 53 hosted zone. See [`resource_elb.zone_id`](/docs/providers/aws/r/elb.html#zone_id) for example.
 
 _Required_: Yes
 

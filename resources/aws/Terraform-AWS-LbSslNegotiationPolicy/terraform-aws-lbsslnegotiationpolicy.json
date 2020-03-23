@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LbSslNegotiationPolicy",
-    "description": "CloudFormation equivalent of aws_lb_ssl_negotiation_policy",
+    "description": "Provides a load balancer SSL negotiation policy, which allows an ELB to control the ciphers and protocols that are supported during SSL negotiations between a client and a load balancer.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Attribute": {
@@ -29,13 +29,16 @@
             "type": "string"
         },
         "LbPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The load balancer port to which the policy\nshould be applied. This must be an active listener on the load\nbalancer."
         },
         "LoadBalancer": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancer to which the policy\nshould be attached."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the attribute\n* `value` - The value of the attribute."
         },
         "Attribute": {
             "type": "array",

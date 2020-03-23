@@ -1,6 +1,6 @@
 # Terraform::AWS::IotThingPrincipalAttachment
 
-CloudFormation equivalent of aws_iot_thing_principal_attachment
+Attaches Principal to AWS IoT Thing.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Principal
 
+The AWS IoT Certificate ARN or Amazon Cognito Identity ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Thing
+
+The name of the thing.
 
 _Required_: Yes
 

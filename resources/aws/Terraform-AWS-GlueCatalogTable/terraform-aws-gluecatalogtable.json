@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::GlueCatalogTable",
-    "description": "CloudFormation equivalent of aws_glue_catalog_table",
+    "description": "Provides a Glue Catalog Table Resource. You can refer to the [Glue Developer Guide](http://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) for a full explanation of the Glue Data Catalog functionality.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PartitionKeys": {
@@ -218,22 +218,27 @@
             "type": "string"
         },
         "CatalogId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the Glue Catalog and database to create the table in. If omitted, this defaults to the AWS Account ID plus the database name."
         },
         "DatabaseName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the table."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the table. For Hive compatibility, this must be entirely lowercase."
         },
         "Owner": {
-            "type": "string"
+            "type": "string",
+            "description": "Owner of the table."
         },
         "Parameters": {
             "type": "array",
@@ -253,19 +258,24 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Properties associated with this table, as a list of key-value pairs."
         },
         "Retention": {
-            "type": "number"
+            "type": "number",
+            "description": "Retention time for this table."
         },
         "TableType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of this table (EXTERNAL_TABLE, VIRTUAL_VIEW, etc.)."
         },
         "ViewExpandedText": {
-            "type": "string"
+            "type": "string",
+            "description": "If the table is a view, the expanded text of the view; otherwise null."
         },
         "ViewOriginalText": {
-            "type": "string"
+            "type": "string",
+            "description": "If the table is a view, the original text of the view; otherwise null."
         },
         "PartitionKeys": {
             "type": "array",

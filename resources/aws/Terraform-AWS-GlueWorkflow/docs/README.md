@@ -1,6 +1,8 @@
 # Terraform::AWS::GlueWorkflow
 
-CloudFormation equivalent of aws_glue_workflow
+Provides a Glue Workflow resource.
+The workflow graph (DAG) can be build using the `aws_glue_trigger` resource. 
+See the example below for creating a graph with four nodes (two triggers and two jobs).
 
 ## Syntax
 

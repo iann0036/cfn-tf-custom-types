@@ -1,6 +1,6 @@
 # Terraform::AWS::IotThingType
 
-CloudFormation equivalent of aws_iot_thing_type
+Creates and manages an AWS IoT Thing Type.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Deprecated
 
+Whether the thing type is deprecated. If true, no new things could be associated with this type.
+
 _Required_: No
 
 _Type_: Boolean
@@ -41,6 +43,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the thing type.
 
 _Required_: Yes
 

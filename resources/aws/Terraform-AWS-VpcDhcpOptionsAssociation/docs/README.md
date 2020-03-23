@@ -1,6 +1,6 @@
 # Terraform::AWS::VpcDhcpOptionsAssociation
 
-CloudFormation equivalent of aws_vpc_dhcp_options_association
+Provides a VPC DHCP Options Association resource.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### DhcpOptionsId
 
+The ID of the DHCP Options Set to associate to the VPC.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of the VPC to which we would like to associate a DHCP Options Set.
 
 _Required_: Yes
 

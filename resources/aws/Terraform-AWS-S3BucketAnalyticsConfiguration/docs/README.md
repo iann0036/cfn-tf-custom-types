@@ -1,6 +1,6 @@
 # Terraform::AWS::S3BucketAnalyticsConfiguration
 
-CloudFormation equivalent of aws_s3_bucket_analytics_configuration
+Provides a S3 bucket [analytics configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html) resource.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### Bucket
 
+The name of the bucket this analytics configuration is associated with.
+
 _Required_: Yes
 
 _Type_: String
@@ -53,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Unique identifier of the analytics configuration for the bucket.
 
 _Required_: Yes
 

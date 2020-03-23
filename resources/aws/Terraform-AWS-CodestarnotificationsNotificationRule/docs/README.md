@@ -1,6 +1,6 @@
 # Terraform::AWS::CodestarnotificationsNotificationRule
 
-CloudFormation equivalent of aws_codestarnotifications_notification_rule
+Provides a CodeStar Notifications Rule.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### DetailType
 
+The level of detail to include in the notifications for this resource. Possible values are `BASIC` and `FULL`.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EventTypeIds
+
+A list of event types associated with this notification rule.
+For list of allowed events see [here](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api).
 
 _Required_: Yes
 
@@ -60,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of notification rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Resource
+
+The ARN of the resource to associate with the notification rule.
 
 _Required_: Yes
 
@@ -76,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+The status of the notification rule. Possible values are `ENABLED` and `DISABLED`, default is `ENABLED`.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

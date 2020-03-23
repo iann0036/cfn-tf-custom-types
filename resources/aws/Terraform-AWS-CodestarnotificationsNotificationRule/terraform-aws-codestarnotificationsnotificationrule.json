@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CodestarnotificationsNotificationRule",
-    "description": "CloudFormation equivalent of aws_codestarnotifications_notification_rule",
+    "description": "Provides a CodeStar Notifications Rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Target": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Address": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ARN of notification rule target. For example, a SNS Topic ARN."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of the notification target. Default value is `SNS`."
                 }
             },
             "required": [
@@ -28,26 +30,31 @@
             "type": "string"
         },
         "DetailType": {
-            "type": "string"
+            "type": "string",
+            "description": "The level of detail to include in the notifications for this resource. Possible values are `BASIC` and `FULL`."
         },
         "EventTypeIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of event types associated with this notification rule.\nFor list of allowed events see [here](https://docs.aws.amazon.com/codestar-notifications/latest/userguide/concepts.html#concepts-api)."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of notification rule."
         },
         "Resource": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the resource to associate with the notification rule."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "The status of the notification rule. Possible values are `ENABLED` and `DISABLED`, default is `ENABLED`."
         },
         "Tags": {
             "type": "array",
@@ -67,7 +74,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Target": {
             "type": "array",

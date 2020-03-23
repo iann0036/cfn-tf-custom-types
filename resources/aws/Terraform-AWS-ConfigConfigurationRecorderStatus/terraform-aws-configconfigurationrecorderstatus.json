@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ConfigConfigurationRecorderStatus",
-    "description": "CloudFormation equivalent of aws_config_configuration_recorder_status",
+    "description": "Manages status (recording / stopped) of an AWS Config Configuration Recorder.\n\n~> **Note:** Starting Configuration Recorder requires a [Delivery Channel](/docs/providers/aws/r/config_delivery_channel.html) to be present. Use of `depends_on` (as shown below) is recommended to avoid race conditions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "IsEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the configuration recorder should be enabled or disabled."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the recorder."
         }
     },
     "additionalProperties": false,

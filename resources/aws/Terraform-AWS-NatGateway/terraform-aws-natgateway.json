@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::NatGateway",
-    "description": "CloudFormation equivalent of aws_nat_gateway",
+    "description": "Provides a resource to create a VPC NAT Gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AllocationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Allocation ID of the Elastic IP address for the gateway."
         },
         "Id": {
             "type": "string"
@@ -24,7 +25,8 @@
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Subnet ID of the subnet in which to place the gateway."
         },
         "Tags": {
             "type": "array",
@@ -44,7 +46,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

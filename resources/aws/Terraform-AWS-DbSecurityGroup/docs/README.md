@@ -1,6 +1,9 @@
 # Terraform::AWS::DbSecurityGroup
 
-CloudFormation equivalent of aws_db_security_group
+Provides an RDS security group resource. This is only for DB instances in the
+EC2-Classic Platform. For instances inside a VPC, use the
+[`aws_db_instance.vpc_security_group_ids`](/docs/providers/aws/r/db_instance.html#vpc_security_group_ids)
+attribute instead.
 
 ## Syntax
 
@@ -37,6 +40,8 @@ Properties:
 
 #### Description
 
+The description of the DB security group. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the DB security group.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::DirectoryServiceConditionalForwarder
 
-CloudFormation equivalent of aws_directory_service_conditional_forwarder
+Provides a conditional forwarder for managed Microsoft AD in AWS Directory Service.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### DirectoryId
 
+The id of directory.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsIps
 
+A list of forwarder IP addresses.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -49,6 +53,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RemoteDomainName
+
+The fully qualified domain name of the remote domain for which forwarders will be used.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CloudwatchLogSubscriptionFilter",
-    "description": "CloudFormation equivalent of aws_cloudwatch_log_subscription_filter",
+    "description": "Provides a CloudWatch Logs subscription filter resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,31 @@
             "type": "string"
         },
         "DestinationArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the destination to deliver matching log events to. Kinesis stream or Lambda function ARN."
         },
         "Distribution": {
-            "type": "string"
+            "type": "string",
+            "description": "The method used to distribute log data to the destination. By default log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis stream. Valid values are \"Random\" and \"ByLogStream\"."
         },
         "FilterPattern": {
-            "type": "string"
+            "type": "string",
+            "description": "A valid CloudWatch Logs filter pattern for subscribing to a filtered stream of log events."
         },
         "Id": {
             "type": "string"
         },
         "LogGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the log group to associate the subscription filter with."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the subscription filter."
         },
         "RoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to deliver ingested log events to the destination. If you use Lambda as a destination, you should skip this argument and use `aws_lambda_permission` resource for granting access from CloudWatch logs to the destination Lambda function."
         }
     },
     "additionalProperties": false,

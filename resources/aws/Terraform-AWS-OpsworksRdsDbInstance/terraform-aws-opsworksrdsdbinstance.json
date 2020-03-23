@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OpsworksRdsDbInstance",
-    "description": "CloudFormation equivalent of aws_opsworks_rds_db_instance",
+    "description": "Provides an OpsWorks RDS DB Instance resource.\n\n~> **Note:** All arguments including the username and password will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,23 @@
             "type": "string"
         },
         "DbPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "A db password."
         },
         "DbUser": {
-            "type": "string"
+            "type": "string",
+            "description": "A db username."
         },
         "Id": {
             "type": "string"
         },
         "RdsDbInstanceArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The db instance to register for this stack. Changing this will force a new resource."
         },
         "StackId": {
-            "type": "string"
+            "type": "string",
+            "description": "The stack to register a db instance for. Changing this will force a new resource."
         }
     },
     "additionalProperties": false,

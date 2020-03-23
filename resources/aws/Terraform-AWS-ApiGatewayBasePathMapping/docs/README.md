@@ -1,6 +1,8 @@
 # Terraform::AWS::ApiGatewayBasePathMapping
 
-CloudFormation equivalent of aws_api_gateway_base_path_mapping
+Connects a custom domain name registered via `aws_api_gateway_domain_name`
+with a deployed API so that its methods can be called via the
+custom domain name.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### ApiId
 
+The id of the API to connect.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BasePath
+
+Path segment that must be prepended to the path when accessing the API via this mapping. If omitted, the API is exposed at the root of the given domain.
 
 _Required_: No
 
@@ -51,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DomainName
 
+The already-registered domain name to connect the API to.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StageName
+
+The name of a specific deployment stage to expose at the given path. If omitted, callers may select any stage by including its name as a path element after the base path.
 
 _Required_: No
 

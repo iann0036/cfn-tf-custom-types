@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayUsagePlanKey",
-    "description": "CloudFormation equivalent of aws_api_gateway_usage_plan_key",
+    "description": "Provides an API Gateway Usage Plan Key.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,19 @@
             "type": "string"
         },
         "KeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The identifier of the API key resource."
         },
         "KeyType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the API key resource. Currently, the valid key type is API_KEY."
         },
         "Name": {
             "type": "string"
         },
         "UsagePlanId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of the usage plan resource representing to associate the key to."
         },
         "Value": {
             "type": "string"

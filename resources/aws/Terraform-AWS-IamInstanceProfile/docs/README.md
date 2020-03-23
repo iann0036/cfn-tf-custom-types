@@ -1,6 +1,6 @@
 # Terraform::AWS::IamInstanceProfile
 
-CloudFormation equivalent of aws_iam_instance_profile
+Provides an IAM instance profile.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Name
 
+The profile's name. If omitted, Terraform will assign a random, unique name.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamePrefix
+
+Creates a unique name beginning with the specified prefix. Conflicts with `name`.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+Path in which to create the profile.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Role
 
+The role name to include in the profile.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +77,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Roles
+
+A list of role names to include in the profile.  The current default is 1.  If you see an error message similar to `Cannot exceed quota for InstanceSessionsPerInstanceProfile: 1`, then you must contact AWS support and ask for a limit increase.
+WARNING: This is deprecated since [version 0.9.3 (April 12, 2017)](https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md#093-april-12-2017), as >= 2 roles are not possible. See [issue #11575](https://github.com/hashicorp/terraform/issues/11575).
 
 _Required_: No
 

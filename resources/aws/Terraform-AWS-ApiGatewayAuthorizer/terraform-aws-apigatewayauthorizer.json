@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayAuthorizer",
-    "description": "CloudFormation equivalent of aws_api_gateway_authorizer",
+    "description": "Provides an API Gateway Authorizer.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,38 +9,47 @@
             "type": "string"
         },
         "AuthorizerCredentials": {
-            "type": "string"
+            "type": "string",
+            "description": "The credentials required for the authorizer.\nTo specify an IAM Role for API Gateway to assume, use the IAM Role ARN."
         },
         "AuthorizerResultTtlInSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of cached authorizer results in seconds.\nDefaults to `300`."
         },
         "AuthorizerUri": {
-            "type": "string"
+            "type": "string",
+            "description": "The authorizer's Uniform Resource Identifier (URI).\nThis must be a well-formed Lambda function URI in the form of `arn:aws:apigateway:{region}:lambda:path/{service_api}`,\ne.g. `arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:012345678912:function:my-function/invocations`."
         },
         "Id": {
             "type": "string"
         },
         "IdentitySource": {
-            "type": "string"
+            "type": "string",
+            "description": "The source of the identity in an incoming request.\nDefaults to `method.request.header.Authorization`. For `REQUEST` type, this may be a comma-separated list of values, including headers, query string parameters and stage variables - e.g. `\"method.request.header.SomeHeaderName,method.request.querystring.SomeQueryStringName,stageVariables.SomeStageVariableName\"`."
         },
         "IdentityValidationExpression": {
-            "type": "string"
+            "type": "string",
+            "description": "A validation expression for the incoming identity.\nFor `TOKEN` type, this value should be a regular expression. The incoming token from the client is matched\nagainst this expression, and will proceed if the token matches. If the token doesn't match,\nthe client receives a 401 Unauthorized response."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the authorizer."
         },
         "ProviderArns": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of the Amazon Cognito user pool ARNs.\nEach element is of this format: `arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}`."
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated REST API."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the authorizer. Possible values are `TOKEN` for a Lambda function using a single authorization token submitted in a custom header, `REQUEST` for a Lambda function using incoming request parameters, or `COGNITO_USER_POOLS` for using an Amazon Cognito user pool.\nDefaults to `TOKEN`."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,12 @@
 # Terraform::AWS::LambdaFunction
 
-CloudFormation equivalent of aws_lambda_function
+Provides a Lambda Function resource. Lambda allows you to trigger execution of code in response to events in AWS, enabling serverless backend solutions. The Lambda Function itself includes source code and runtime configuration.
+
+For information about Lambda and how to use it, see [What is AWS Lambda?][1]
+
+For a detailed example of setting up Lambda and API Gateway, see [Serverless Applications with AWS Lambda and API Gateway.][11]
+
+~> **NOTE:** Due to [AWS Lambda improved VPC networking changes that began deploying in September 2019](https://aws.amazon.com/blogs/compute/announcing-improved-vpc-networking-for-aws-lambda-functions/), EC2 subnets and security groups associated with Lambda Functions can take up to 45 minutes to successfully delete. Terraform AWS Provider version 2.31.0 and later automatically handles this increased timeout, however prior versions require setting the customizable deletion timeouts of those Terraform resources to 45 minutes (`delete = "45m"`). AWS and HashiCorp are working together to reduce the amount of time required for resource deletion and updates can be tracked in this [GitHub issue](https://github.com/terraform-providers/terraform-provider-aws/issues/10329).
 
 ## Syntax
 
@@ -77,6 +83,8 @@ Properties:
 
 #### Description
 
+Description of what your Lambda Function does.
+
 _Required_: No
 
 _Type_: String
@@ -84,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Filename
+
+The path to the function's deployment package within the local filesystem. If defined, The `s3_`-prefixed options cannot be used.
 
 _Required_: No
 
@@ -93,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FunctionName
 
+A unique name for your Lambda Function.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Handler
+
+The function [entrypoint][3] in your code.
 
 _Required_: Yes
 
@@ -109,6 +123,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyArn
 
+Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key that is used to encrypt environment variables. If this configuration is not provided when environment variables are in use, AWS Lambda uses a default service key. If this configuration is provided when environment variables are not in use, the AWS Lambda API does not save this configuration and Terraform will show a perpetual difference of adding the key. To fix the perpetual difference, remove this configuration.
+
 _Required_: No
 
 _Type_: String
@@ -116,6 +132,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Layers
+
+List of Lambda Layer Version ARNs (maximum of 5) to attach to your Lambda Function. See [Lambda Layers][10].
 
 _Required_: No
 
@@ -125,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MemorySize
 
+Amount of memory in MB your Lambda Function can use at runtime. Defaults to `128`. See [Limits][5].
+
 _Required_: No
 
 _Type_: Double
@@ -132,6 +152,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Publish
+
+Whether to publish creation/change as new Lambda Function Version. Defaults to `false`.
 
 _Required_: No
 
@@ -141,6 +163,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReservedConcurrentExecutions
 
+The amount of reserved concurrent executions for this lambda function. A value of `0` disables lambda from being triggered and `-1` removes any concurrency limitations. Defaults to Unreserved Concurrency Limits `-1`. See [Managing Concurrency][9].
+
 _Required_: No
 
 _Type_: Double
@@ -148,6 +172,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+IAM role attached to the Lambda Function. This governs both who / what can invoke your Lambda Function, as well as what resources our Lambda Function has access to. See [Lambda Permission Model][4] for more details.
 
 _Required_: Yes
 
@@ -157,6 +183,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Runtime
 
+See [Runtimes][6] for valid values.
+
 _Required_: Yes
 
 _Type_: String
@@ -164,6 +192,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3Bucket
+
+The S3 bucket location containing the function's deployment package. Conflicts with `filename`. This bucket must reside in the same AWS region where you are creating the Lambda function.
 
 _Required_: No
 
@@ -173,6 +203,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### S3Key
 
+The S3 key of an object containing the function's deployment package. Conflicts with `filename`.
+
 _Required_: No
 
 _Type_: String
@@ -180,6 +212,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3ObjectVersion
+
+The object version containing the function's deployment package. Conflicts with `filename`.
 
 _Required_: No
 
@@ -189,6 +223,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceCodeHash
 
+Used to trigger updates. Must be set to a base64-encoded SHA256 hash of the package file specified with either `filename` or `s3_key`. The usual way to set this is `filebase64sha256("file.zip")` (Terraform 0.11.12 and later) or `base64sha256(file("file.zip"))` (Terraform 0.11.11 and earlier), where "file.zip" is the local filename of the lambda function source archive.
+
 _Required_: No
 
 _Type_: String
@@ -197,6 +233,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the object.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -204,6 +242,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Timeout
+
+The amount of time your Lambda Function has to run in seconds. Defaults to `3`. See [Limits][5].
 
 _Required_: No
 

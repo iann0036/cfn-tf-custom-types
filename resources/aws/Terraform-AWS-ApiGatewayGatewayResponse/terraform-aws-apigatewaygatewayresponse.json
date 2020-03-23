@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayGatewayResponse",
-    "description": "CloudFormation equivalent of aws_api_gateway_gateway_response",
+    "description": "Provides an API Gateway Gateway Response for a REST API Gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -29,7 +29,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map specifying the parameters (paths, query strings and headers) of the Gateway Response."
         },
         "ResponseTemplates": {
             "type": "array",
@@ -49,16 +50,20 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map specifying the templates used to transform the response body."
         },
         "ResponseType": {
-            "type": "string"
+            "type": "string",
+            "description": "The response type of the associated GatewayResponse."
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The string identifier of the associated REST API."
         },
         "StatusCode": {
-            "type": "string"
+            "type": "string",
+            "description": "The HTTP status code of the Gateway Response."
         }
     },
     "additionalProperties": false,

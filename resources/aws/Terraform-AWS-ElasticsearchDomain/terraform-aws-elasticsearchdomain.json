@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ElasticsearchDomain",
-    "description": "CloudFormation equivalent of aws_elasticsearch_domain",
+    "description": "Manages an AWS Elasticsearch Domain.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ClusterConfig": {
@@ -191,7 +191,8 @@
             "type": "string"
         },
         "AccessPolicies": {
-            "type": "string"
+            "type": "string",
+            "description": "IAM policy document specifying the access policies for the domain."
         },
         "AdvancedOptions": {
             "type": "array",
@@ -211,7 +212,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value string pairs to specify advanced configuration options.\nNote that the values for these configuration options must be strings (wrapped in quotes) or they\nmay be wrong and cause a perpetual diff, causing Terraform to want to recreate your Elasticsearch\ndomain on every apply."
         },
         "Arn": {
             "type": "string"
@@ -220,10 +222,12 @@
             "type": "string"
         },
         "DomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the domain."
         },
         "ElasticsearchVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The version of Elasticsearch to deploy. Defaults to `1.5`."
         },
         "Endpoint": {
             "type": "string"
@@ -252,7 +256,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ClusterConfig": {
             "type": "array",

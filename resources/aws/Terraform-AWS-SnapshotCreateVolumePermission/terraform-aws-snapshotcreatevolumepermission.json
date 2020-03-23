@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SnapshotCreateVolumePermission",
-    "description": "CloudFormation equivalent of aws_snapshot_create_volume_permission",
+    "description": "Adds permission to create volumes off of a given EBS Snapshot.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "AccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "An AWS Account ID to add create volume permissions."
         },
         "Id": {
             "type": "string"
         },
         "SnapshotId": {
-            "type": "string"
+            "type": "string",
+            "description": "A snapshot ID\n* `account_id` - (required) An AWS Account ID to add create volume permissions."
         }
     },
     "additionalProperties": false,

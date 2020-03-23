@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::MediaConvertQueue",
-    "description": "CloudFormation equivalent of aws_media_convert_queue",
+    "description": "Provides an AWS Elemental MediaConvert Queue.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ReservationPlanSettings": {
@@ -33,19 +33,23 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the queue."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique identifier describing the queue."
         },
         "PricingPlan": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies whether the pricing plan for the queue is on-demand or reserved. Valid values are `ON_DEMAND` or `RESERVED`. Default to `ON_DEMAND`."
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "A status of the queue. Valid values are `ACTIVE` or `RESERVED`. Default to `PAUSED`."
         },
         "Tags": {
             "type": "array",
@@ -65,7 +69,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ReservationPlanSettings": {
             "type": "array",

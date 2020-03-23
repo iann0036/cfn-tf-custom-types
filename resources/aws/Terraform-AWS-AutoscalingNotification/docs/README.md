@@ -1,6 +1,8 @@
 # Terraform::AWS::AutoscalingNotification
 
-CloudFormation equivalent of aws_autoscaling_notification
+Provides an AutoScaling Group with Notification support, via SNS Topics. Each of
+the `notifications` map to a [Notification Configuration][2] inside Amazon Web
+Services, and are applied to each AutoScaling Group you supply.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### GroupNames
 
+A list of AutoScaling Group Names.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -43,6 +47,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Notifications
 
+A list of Notification Types that trigger
+notifications. Acceptable values are documented [in the AWS documentation here][1].
+
 _Required_: Yes
 
 _Type_: List of String
@@ -50,6 +57,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TopicArn
+
+The Topic ARN for notifications to be sent through.
 
 _Required_: Yes
 

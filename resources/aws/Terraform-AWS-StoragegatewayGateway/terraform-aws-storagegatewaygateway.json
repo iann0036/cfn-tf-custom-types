@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::StoragegatewayGateway",
-    "description": "CloudFormation equivalent of aws_storagegateway_gateway",
+    "description": "Manages an AWS Storage Gateway file, tape, or volume gateway in the provider region.\n\n~> NOTE: The Storage Gateway API requires the gateway to be connected to properly return information after activation. If you are receiving `The specified gateway is not connected` errors during resource creation (gateway activation), ensure your gateway instance meets the [Storage Gateway requirements](https://docs.aws.amazon.com/storagegateway/latest/userguide/Requirements.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SmbActiveDirectorySettings": {
@@ -40,28 +40,34 @@
             "type": "string"
         },
         "ActivationKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Gateway activation key during resource creation. Conflicts with `gateway_ip_address`. Additional information is available in the [Storage Gateway User Guide](https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html)."
         },
         "Arn": {
             "type": "string"
         },
         "CloudwatchLogGroupArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the Amazon CloudWatch log group to use to monitor and log events in the gateway."
         },
         "GatewayId": {
             "type": "string"
         },
         "GatewayIpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "Gateway IP address to retrieve activation key during resource creation. Conflicts with `activation_key`. Gateway must be accessible on port 80 from where Terraform is running. Additional information is available in the [Storage Gateway User Guide](https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html)."
         },
         "GatewayName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the gateway."
         },
         "GatewayTimezone": {
-            "type": "string"
+            "type": "string",
+            "description": "Time zone for the gateway. The time zone is of the format \"GMT\", \"GMT-hr:mm\", or \"GMT+hr:mm\". For example, `GMT-4:00` indicates the time is 4 hours behind GMT. The time zone is used, for example, for scheduling snapshots and your gateway's maintenance schedule."
         },
         "GatewayType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of the gateway. The default value is `STORED`. Valid values: `CACHED`, `FILE_S3`, `STORED`, `VTL`."
         },
         "Id": {
             "type": "string"
@@ -70,7 +76,8 @@
             "type": "string"
         },
         "SmbGuestPassword": {
-            "type": "string"
+            "type": "string",
+            "description": "Guest password for Server Message Block (SMB) file shares. Only valid for `FILE_S3` gateway type. Must be set before creating `GuestAccess` authentication SMB file shares. Terraform can only detect drift of the existence of a guest password, not its actual value from the gateway. Terraform can however update the password with changing the argument."
         },
         "Tags": {
             "type": "array",
@@ -90,10 +97,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "TapeDriveType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of tape drive to use for tape gateway. Terraform cannot detect drift of this argument. Valid values: `IBM-ULT3580-TD5`."
         },
         "SmbActiveDirectorySettings": {
             "type": "array",

@@ -1,6 +1,7 @@
 # Terraform::AWS::FlowLog
 
-CloudFormation equivalent of aws_flow_log
+Provides a VPC/Subnet/ENI Flow Log to capture IP traffic for a specific network
+interface, subnet, or VPC. Logs are sent to a CloudWatch Log Group or a S3 Bucket.
 
 ## Syntax
 
@@ -48,6 +49,8 @@ Properties:
 
 #### EniId
 
+Elastic Network Interface ID to attach to.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamRoleArn
+
+The ARN for the IAM role that's used to post flow logs to a CloudWatch Logs log group.
 
 _Required_: No
 
@@ -64,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogDestination
 
+The ARN of the logging destination.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogDestinationType
+
+The type of the logging destination. Valid values: `cloud-watch-logs`, `s3`. Default: `cloud-watch-logs`.
 
 _Required_: No
 
@@ -80,6 +89,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogFormat
 
+The fields to include in the flow log record, in the order in which they should appear.
+
 _Required_: No
 
 _Type_: String
@@ -87,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogGroupName
+
+*Deprecated:* Use `log_destination` instead. The name of the CloudWatch log group.
 
 _Required_: No
 
@@ -96,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+Subnet ID to attach to.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +118,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 
@@ -112,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TrafficType
 
+The type of traffic to capture. Valid values: `ACCEPT`,`REJECT`, `ALL`.
+
 _Required_: Yes
 
 _Type_: String
@@ -119,6 +138,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+VPC ID to attach to.
 
 _Required_: No
 

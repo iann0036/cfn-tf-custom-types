@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DxConnectionAssociation",
-    "description": "CloudFormation equivalent of aws_dx_connection_association",
+    "description": "Associates a Direct Connect Connection with a LAG.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "ConnectionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the connection."
         },
         "Id": {
             "type": "string"
         },
         "LagId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the LAG with which to associate the connection."
         }
     },
     "additionalProperties": false,

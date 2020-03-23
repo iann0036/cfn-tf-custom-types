@@ -1,6 +1,8 @@
 # Terraform::AWS::EcsCapacityProvider
 
-CloudFormation equivalent of aws_ecs_capacity_provider
+Provides an ECS cluster capacity provider. More information can be found on the [ECS Developer Guide](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-capacity-providers.html).
+
+~> **NOTE:** The AWS API does not currently support deleting ECS cluster capacity providers. Removing this Terraform resource will only remove the Terraform state for it.
 
 ## Syntax
 
@@ -38,6 +40,8 @@ Properties:
 
 #### Name
 
+The name of the capacity provider.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::AWS::GlueClassifier
 
-CloudFormation equivalent of aws_glue_classifier
+Provides a Glue Classifier resource.
+
+~> **NOTE:** It is only valid to create one type of classifier (csv, grok, JSON, or XML). Changing classifier types will recreate the classifier.
 
 ## Syntax
 

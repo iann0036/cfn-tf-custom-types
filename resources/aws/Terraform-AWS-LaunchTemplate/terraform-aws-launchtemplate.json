@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LaunchTemplate",
-    "description": "CloudFormation equivalent of aws_launch_template",
+    "description": "Provides an EC2 launch template resource. Can be used to create instances or auto scaling groups.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BlockDeviceMappings": {
@@ -328,50 +328,62 @@
             "type": "number"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the launch template."
         },
         "DisableApiTermination": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If `true`, enables [EC2 Instance\nTermination Protection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingDisableAPITermination)."
         },
         "EbsOptimized": {
-            "type": "string"
+            "type": "string",
+            "description": "If `true`, the launched EC2 instance will be EBS-optimized."
         },
         "Id": {
             "type": "string"
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "The AMI from which to launch the instance."
         },
         "InstanceInitiatedShutdownBehavior": {
-            "type": "string"
+            "type": "string",
+            "description": "Shutdown behavior for the instance. Can be `stop` or `terminate`.\n(Default: `stop`)."
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the instance."
         },
         "KernelId": {
-            "type": "string"
+            "type": "string",
+            "description": "The kernel ID."
         },
         "KeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The key name to use for the instance."
         },
         "LatestVersion": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the launch template. If you leave this blank, Terraform will auto-generate a unique name."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`."
         },
         "RamDiskId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the RAM disk."
         },
         "SecurityGroupNames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of security group names to associate with. If you are creating Instances in a VPC, use\n`vpc_security_group_ids` instead."
         },
         "Tags": {
             "type": "array",
@@ -391,17 +403,20 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the launch template."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "The Base64-encoded user data to provide when launching the instance."
         },
         "VpcSecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of security group IDs to associate with."
         },
         "BlockDeviceMappings": {
             "type": "array",

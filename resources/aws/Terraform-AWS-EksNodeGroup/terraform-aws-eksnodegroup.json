@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::EksNodeGroup",
-    "description": "CloudFormation equivalent of aws_eks_node_group",
+    "description": "Manages an EKS Node Group, which can provision and optionally update an Auto Scaling Group of Kubernetes worker nodes compatible with EKS. Additional documentation about this functionality can be found in the [EKS User Guide](https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RemoteAccess": {
@@ -63,7 +63,8 @@
             "type": "string"
         },
         "AmiType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of Amazon Machine Image (AMI) associated with the EKS Node Group. Defaults to `AL2_x86_64`. Valid values: `AL2_x86_64`, `AL2_x86_64_GPU`. Terraform will only perform drift detection if a configuration value is provided."
         },
         "Arn": {
             "type": "string"
@@ -72,7 +73,8 @@
             "type": "string"
         },
         "DiskSize": {
-            "type": "number"
+            "type": "number",
+            "description": "Disk size in GiB for worker nodes. Defaults to `20`. Terraform will only perform drift detection if a configuration value is provided."
         },
         "Id": {
             "type": "string"
@@ -82,7 +84,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Set of instance types associated with the EKS Node Group. Defaults to `[\"t3.medium\"]`. Terraform will only perform drift detection if a configuration value is provided. Currently, the EKS API only accepts a single value in the set."
         },
         "Labels": {
             "type": "array",
@@ -102,7 +105,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of Kubernetes labels. Only labels that are applied with the EKS API are managed by this argument. Other Kubernetes labels applied to the EKS Node Group will not be managed."
         },
         "NodeGroupName": {
             "type": "string"
@@ -167,7 +171,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Version": {
             "type": "string"

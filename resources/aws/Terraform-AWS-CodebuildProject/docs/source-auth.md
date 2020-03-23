@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Resource
 
+The resource value that applies to the specified authorization type.
+
 _Required_: No
 
 _Type_: String
@@ -31,6 +33,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The authorization type to use. The only valid value is `OAUTH`.
 
 _Required_: Yes
 

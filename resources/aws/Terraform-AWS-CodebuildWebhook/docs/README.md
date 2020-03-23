@@ -1,6 +1,6 @@
 # Terraform::AWS::CodebuildWebhook
 
-CloudFormation equivalent of aws_codebuild_webhook
+Manages a CodeBuild webhook, which is an endpoint accepted by the CodeBuild service to trigger builds from source code repositories. Depending on the source type of the CodeBuild project, the CodeBuild service may also automatically create and delete the actual repository webhook as well.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### BranchFilter
 
+A regular expression used to determine which branches get built. Default is all branches are built. It is recommended to use `filter_group` over `branch_filter`.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProjectName
+
+The name of the build project.
 
 _Required_: Yes
 

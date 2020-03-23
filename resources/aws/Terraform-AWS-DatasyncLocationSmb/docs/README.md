@@ -1,6 +1,8 @@
 # Terraform::AWS::DatasyncLocationSmb
 
-CloudFormation equivalent of aws_datasync_location_smb
+Manages a SMB Location within AWS DataSync.
+
+~> **NOTE:** The DataSync Agents must be available before creating this resource.
 
 ## Syntax
 
@@ -46,6 +48,8 @@ Properties:
 
 #### AgentArns
 
+A list of DataSync Agent ARNs with which this location will be associated.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -53,6 +57,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domain
+
+The name of the Windows domain the SMB server belongs to.
 
 _Required_: No
 
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Password
 
+The password of the user who can mount the share and has file permissions in the SMB.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerHostname
+
+Specifies the IP address or DNS name of the SMB server. The DataSync Agent(s) use this to mount the SMB share.
 
 _Required_: Yes
 
@@ -78,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subdirectory
 
+Subdirectory to perform actions as source or destination. Should be exported by the NFS server.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value pairs of resource tags to assign to the DataSync Location.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -93,6 +107,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+The user who can mount the share and has file and folder permissions in the SMB share.
 
 _Required_: Yes
 

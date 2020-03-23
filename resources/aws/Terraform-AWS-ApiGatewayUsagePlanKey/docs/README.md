@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayUsagePlanKey
 
-CloudFormation equivalent of aws_api_gateway_usage_plan_key
+Provides an API Gateway Usage Plan Key.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### KeyId
 
+The identifier of the API key resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyType
 
+The type of the API key resource. Currently, the valid key type is API_KEY.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UsagePlanId
+
+The Id of the usage plan resource representing to associate the key to.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::EbsSnapshotCopy
 
-CloudFormation equivalent of aws_ebs_snapshot_copy
+Creates a Snapshot of a snapshot.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Description
 
+A description of what the snapshot is.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Encrypted
 
+Whether the snapshot is encrypted.
+
 _Required_: No
 
 _Type_: Boolean
@@ -55,6 +59,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsKeyId
+
+The ARN for the KMS encryption key.
 
 _Required_: No
 
@@ -79,6 +85,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags for the snapshot.
 
 _Required_: No
 

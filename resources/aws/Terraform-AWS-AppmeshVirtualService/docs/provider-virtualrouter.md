@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### VirtualRouterName
 
+The name of the virtual router that is acting as a service provider.
+
 _Required_: Yes
 
 _Type_: String

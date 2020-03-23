@@ -1,6 +1,6 @@
 # Terraform::AWS::LaunchConfiguration
 
-CloudFormation equivalent of aws_launch_configuration
+Provides a resource to create a new launch configuration, used for autoscaling groups.
 
 ## Syntax
 
@@ -70,6 +70,8 @@ Properties:
 
 #### AssociatePublicIpAddress
 
+Associate a public ip address with an instance in a VPC.
+
 _Required_: No
 
 _Type_: Boolean
@@ -77,6 +79,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EbsOptimized
+
+If true, the launched EC2 instance will be EBS-optimized.
 
 _Required_: No
 
@@ -86,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableMonitoring
 
+Enables/disables detailed monitoring. This is enabled by default.
+
 _Required_: No
 
 _Type_: Boolean
@@ -93,6 +99,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamInstanceProfile
+
+The name attribute of the IAM instance profile to associate
+with launched instances.
 
 _Required_: No
 
@@ -102,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ImageId
 
+The EC2 image ID to launch.
+
 _Required_: Yes
 
 _Type_: String
@@ -109,6 +120,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceType
+
+The size of instance to launch.
 
 _Required_: Yes
 
@@ -118,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KeyName
 
+The key name that should be used for the instance.
+
 _Required_: No
 
 _Type_: String
@@ -125,6 +140,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the launch configuration. If you leave
+this blank, Terraform will auto-generate a unique name.
 
 _Required_: No
 
@@ -134,6 +152,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamePrefix
 
+Creates a unique name beginning with the specified
+prefix. Conflicts with `name`.
+
 _Required_: No
 
 _Type_: String
@@ -141,6 +162,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PlacementTenancy
+
+The tenancy of the instance. Valid values are
+`"default"` or `"dedicated"`, see [AWS's Create Launch Configuration](http://docs.aws.amazon.com/AutoScaling/latest/APIReference/API_CreateLaunchConfiguration.html)
+for more details.
 
 _Required_: No
 
@@ -150,6 +175,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+A list of associated security group IDS.
+
 _Required_: No
 
 _Type_: List of String
@@ -157,6 +184,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SpotPrice
+
+The maximum price to use for reserving spot instances.
 
 _Required_: No
 
@@ -166,6 +195,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see `user_data_base64` instead.
+
 _Required_: No
 
 _Type_: String
@@ -173,6 +204,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserDataBase64
+
+Can be used instead of `user_data` to pass base64-encoded binary data directly. Use this instead of `user_data` whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption.
 
 _Required_: No
 
@@ -182,6 +215,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcClassicLinkId
 
+The ID of a ClassicLink-enabled VPC. Only applies to EC2-Classic instances. (eg. `vpc-2730681a`).
+
 _Required_: No
 
 _Type_: String
@@ -189,6 +224,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcClassicLinkSecurityGroups
+
+The IDs of one or more security groups for the specified ClassicLink-enabled VPC (eg. `sg-46ae3d11`).
 
 _Required_: No
 

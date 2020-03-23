@@ -1,6 +1,6 @@
 # Terraform::AWS::AthenaDatabase
 
-CloudFormation equivalent of aws_athena_database
+Provides an Athena database.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Bucket
 
+Name of s3 bucket to save the results of the query execution.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForceDestroy
 
+A boolean that indicates all tables should be deleted from the database so that the database can be destroyed without error. The tables are *not* recoverable.
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +55,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the database to create.
 
 _Required_: Yes
 

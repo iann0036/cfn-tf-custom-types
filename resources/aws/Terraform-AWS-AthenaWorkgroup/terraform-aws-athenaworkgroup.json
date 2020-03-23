@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AthenaWorkgroup",
-    "description": "CloudFormation equivalent of aws_athena_workgroup",
+    "description": "Provides an Athena Workgroup.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Configuration": {
@@ -68,16 +68,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the workgroup."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the workgroup."
         },
         "State": {
-            "type": "string"
+            "type": "string",
+            "description": "State of the workgroup. Valid values are `DISABLED` or `ENABLED`. Defaults to `ENABLED`."
         },
         "Tags": {
             "type": "array",
@@ -97,7 +100,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags for the workgroup."
         },
         "Configuration": {
             "type": "array",

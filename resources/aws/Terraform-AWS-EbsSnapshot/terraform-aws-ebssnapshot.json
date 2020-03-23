@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::EbsSnapshot",
-    "description": "CloudFormation equivalent of aws_ebs_snapshot",
+    "description": "Creates a Snapshot of an EBS Volume.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of what the snapshot is."
         },
         "Encrypted": {
             "type": "boolean"
@@ -61,10 +62,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the snapshot."
         },
         "VolumeId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Volume ID of which to make a snapshot."
         },
         "VolumeSize": {
             "type": "number"

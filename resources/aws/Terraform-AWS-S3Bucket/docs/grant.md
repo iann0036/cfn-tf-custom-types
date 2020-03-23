@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Id
 
+Canonical user id to grant for. Used only when `type` is `CanonicalUser`.
+
 _Required_: No
 
 _Type_: String
@@ -36,6 +38,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Permissions
+
+List of permissions to apply for grantee. Valid values are `READ`, `WRITE`, `READ_ACP`, `WRITE_ACP`, `FULL_ACCESS`.
 
 _Required_: Yes
 
@@ -45,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+- Type of grantee to apply for. Valid values are `CanonicalUser` and `Group`. `AmazonCustomerByEmail` is not supported.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Uri
+
+Uri address to grant for. Used only when `type` is `Group`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LoadBalancerPolicy",
-    "description": "CloudFormation equivalent of aws_load_balancer_policy",
+    "description": "Provides a load balancer policy, which can be attached to an ELB listener or backend server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PolicyAttribute": {
@@ -26,13 +26,16 @@
             "type": "string"
         },
         "LoadBalancerName": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancer on which the policy is defined."
         },
         "PolicyName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the load balancer policy."
         },
         "PolicyTypeName": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy type."
         },
         "PolicyAttribute": {
             "type": "array",

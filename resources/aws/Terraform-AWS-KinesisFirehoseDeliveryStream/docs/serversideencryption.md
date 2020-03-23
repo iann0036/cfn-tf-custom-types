@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Whether to enable encryption at rest. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean

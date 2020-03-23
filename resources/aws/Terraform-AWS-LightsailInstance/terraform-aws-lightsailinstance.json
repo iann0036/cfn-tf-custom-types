@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LightsailInstance",
-    "description": "CloudFormation equivalent of aws_lightsail_instance",
+    "description": "Provides a Lightsail Instance. Amazon Lightsail is a service to provide easy virtual private servers\nwith custom software already setup. See [What is Amazon Lightsail?](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/what-is-amazon-lightsail)\nfor more information.\n\n~> **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [\"Regions and Availability Zones in Amazon Lightsail\"](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The Availability Zone in which to create your\ninstance (see list below)."
         },
         "BlueprintId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID for a virtual private server image\n(see list below)."
         },
         "BundleId": {
-            "type": "string"
+            "type": "string",
+            "description": "The bundle of specification information (see list below)."
         },
         "CpuCount": {
             "type": "number"
@@ -36,10 +39,12 @@
             "type": "boolean"
         },
         "KeyPairName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of your key pair. Created in the\nLightsail console (cannot use `aws_key_pair` at this time)."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Lightsail Instance. Names be unique within each AWS Region in your Lightsail account."
         },
         "PrivateIpAddress": {
             "type": "string"
@@ -68,10 +73,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "UserData": {
-            "type": "string"
+            "type": "string",
+            "description": "launch script to configure server with additional user data."
         },
         "Username": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::NetworkInterface",
-    "description": "CloudFormation equivalent of aws_network_interface",
+    "description": "Provides an Elastic network interface (ENI) resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Attachment": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "DeviceIndex": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Integer to define the devices index."
                 },
                 "Instance": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "ID of the instance to attach to."
                 }
             },
             "required": [
@@ -26,7 +28,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the network interface."
         },
         "Id": {
             "type": "string"
@@ -45,23 +48,28 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of private IPs to assign to the ENI."
         },
         "PrivateIpsCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of secondary private IPs to assign to the ENI. The total number of private IPs will be 1 + private_ips_count, as a primary private IP will be assiged to an ENI by default."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of security group IDs to assign to the ENI."
         },
         "SourceDestCheck": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable source destination checking for the ENI. Default true."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet ID to create the ENI in."
         },
         "Tags": {
             "type": "array",
@@ -81,7 +89,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Attachment": {
             "type": "array",

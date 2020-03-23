@@ -1,6 +1,7 @@
 # Terraform::AWS::Instance
 
-CloudFormation equivalent of aws_instance
+Provides an EC2 instance resource. This allows instances to be created, updated,
+and deleted. Instances also support [provisioning](/docs/provisioners/index.html).
 
 ## Syntax
 
@@ -105,6 +106,8 @@ Properties:
 
 #### Ami
 
+The AMI to use for the instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -112,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AssociatePublicIpAddress
+
+Associate a public ip address with an instance in a VPC.  Boolean value.
 
 _Required_: No
 
@@ -121,6 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AvailabilityZone
 
+The AZ to start the instance in.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +135,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CpuCoreCount
+
+Sets the number of CPU cores for an instance. This option is
+only supported on creation of instance type that support CPU Options
+[CPU Cores and Threads Per CPU Core Per Instance Type](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html#cpu-options-supported-instances-values) - specifying this option for unsupported instance types will return an error from the EC2 API.
 
 _Required_: No
 
@@ -137,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CpuThreadsPerCore
 
+If set to to 1, hyperthreading is disabled on the launched instance. Defaults to 2 if not set. See [Optimizing CPU Options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html) for more information.
+
 _Required_: No
 
 _Type_: Double
@@ -144,6 +157,9 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisableApiTermination
+
+If true, enables [EC2 Instance
+Termination Protection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingDisableAPITermination).
 
 _Required_: No
 
@@ -153,6 +169,12 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EbsOptimized
 
+If true, the launched EC2 instance will be EBS-optimized.
+Note that if this is not set on an instance type that is optimized by default then
+this will show as disabled but if the instance type is optimized by default then
+there is no need to set this and there is no effect to disabling it.
+See the [EBS Optimized section](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html) of the AWS User Guide for more information.
+
 _Required_: No
 
 _Type_: Boolean
@@ -160,6 +182,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GetPasswordData
+
+If true, wait for password data to become available and retrieve it. Useful for getting the administrator password for instances running Microsoft Windows. The password data is exported to the `password_data` attribute. See [GetPasswordData](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetPasswordData.html) for more information.
 
 _Required_: No
 
@@ -169,6 +193,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Hibernation
 
+If true, the launched EC2 instance will support hibernation.
+
 _Required_: No
 
 _Type_: Boolean
@@ -176,6 +202,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HostId
+
+The Id of a dedicated host that the instance will be assigned to. Use when an instance is to be launched on a specific dedicated host.
 
 _Required_: No
 
@@ -185,6 +213,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IamInstanceProfile
 
+The IAM Instance Profile to
+launch the instance with. Specified as the name of the Instance Profile. Ensure your credentials have the correct permission to assign the instance profile according to the [EC2 documentation](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html#roles-usingrole-ec2instance-permissions), notably `iam:PassRole`.
+
 _Required_: No
 
 _Type_: String
@@ -192,6 +223,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceInitiatedShutdownBehavior
+
+Shutdown behavior for the
+instance. Amazon defaults this to `stop` for EBS-backed instances and
+`terminate` for instance-store instances. Cannot be set on instance-store
+instances. See [Shutdown Behavior](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingInstanceInitiatedShutdownBehavior) for more information.
 
 _Required_: No
 
@@ -201,6 +237,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceType
 
+The type of instance to start. Updates to this field will trigger a stop/start of the EC2 instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -208,6 +246,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv6AddressCount
+
+A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses the IPv6 addresses from the range of your subnet.
 
 _Required_: No
 
@@ -217,6 +257,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv6Addresses
 
+Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network interface.
+
 _Required_: No
 
 _Type_: List of String
@@ -224,6 +266,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The key name of the Key Pair to use for the instance; which can be managed using [the `aws_key_pair` resource](key_pair.html).
 
 _Required_: No
 
@@ -233,6 +277,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Monitoring
 
+If true, the launched EC2 instance will have detailed monitoring enabled. (Available since v0.6.0).
+
 _Required_: No
 
 _Type_: Boolean
@@ -240,6 +286,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PlacementGroup
+
+The Placement Group to start the instance in.
 
 _Required_: No
 
@@ -249,6 +297,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIp
 
+Private IP address to associate with the
+instance in a VPC.
+
 _Required_: No
 
 _Type_: String
@@ -256,6 +307,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroups
+
+A list of security group names (EC2-Classic) or IDs (default VPC) to associate with.
 
 _Required_: No
 
@@ -265,6 +318,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceDestCheck
 
+Controls if traffic is routed to the instance when
+the destination address does not match the instance. Used for NAT or VPNs. Defaults true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -272,6 +328,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The VPC Subnet ID to launch in.
 
 _Required_: No
 
@@ -281,6 +339,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -288,6 +348,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tenancy
+
+The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of dedicated runs on single-tenant hardware. The host tenancy is not supported for the import-instance command.
 
 _Required_: No
 
@@ -297,6 +359,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see `user_data_base64` instead.
+
 _Required_: No
 
 _Type_: String
@@ -304,6 +368,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserDataBase64
+
+Can be used instead of `user_data` to pass base64-encoded binary data directly. Use this instead of `user_data` whenever the value is not a valid UTF-8 string. For example, gzip-encoded user data must be base64-encoded and passed via this argument to avoid corruption.
 
 _Required_: No
 
@@ -313,6 +379,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VolumeTags
 
+A mapping of tags to assign to the devices created by the instance at launch time.
+
 _Required_: No
 
 _Type_: List of <a href="volumetags.md">VolumeTags</a>
@@ -320,6 +388,8 @@ _Type_: List of <a href="volumetags.md">VolumeTags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcSecurityGroupIds
+
+A list of security group IDs to associate with.
 
 _Required_: No
 

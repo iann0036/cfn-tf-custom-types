@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2TrafficMirrorFilter",
-    "description": "CloudFormation equivalent of aws_ec2_traffic_mirror_filter",
+    "description": "Provides an Traffic mirror filter.  \nRead [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the filter."
         },
         "Id": {
             "type": "string"
@@ -19,7 +20,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of amazon network services that should be mirrored. Valid values: `amazon-dns`."
         },
         "Tags": {
             "type": "array",
@@ -39,7 +41,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         }
     },
     "additionalProperties": false,

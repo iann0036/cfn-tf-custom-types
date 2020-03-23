@@ -1,6 +1,6 @@
 # Terraform::AWS::DmsReplicationSubnetGroup
 
-CloudFormation equivalent of aws_dms_replication_subnet_group
+Provides a DMS (Data Migration Service) replication subnet group resource. DMS replication subnet groups can be created, updated, deleted, and imported.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### ReplicationSubnetGroupDescription
 
+The description for the subnet group.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReplicationSubnetGroupId
+
+The name for the replication subnet group. This value is stored as a lowercase string.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+A list of the EC2 subnet IDs for the subnet group.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -60,6 +66,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

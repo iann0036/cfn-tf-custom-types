@@ -1,6 +1,10 @@
 # Terraform::AWS::CloudformationStackSetInstance
 
-CloudFormation equivalent of aws_cloudformation_stack_set_instance
+Manages a CloudFormation StackSet Instance. Instances are managed in the account and region of the StackSet after the target account permissions have been configured. Additional information about StackSets can be found in the [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/what-is-cfnstacksets.html).
+
+~> **NOTE:** All target accounts must have an IAM Role created that matches the name of the execution role configured in the StackSet (the `execution_role_name` argument in the `aws_cloudformation_stack_set` resource) in a trust relationship with the administrative account or administration IAM Role. The execution role must have appropriate permissions to manage resources defined in the template along with those required for StackSets to operate. See the [AWS CloudFormation User Guide](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html) for more details.
+
+~> **NOTE:** To retain the Stack during Terraform resource destroy, ensure `retain_stack = true` has been successfully applied into the Terraform state first. This must be completed _before_ an apply that would destroy the resource.
 
 ## Syntax
 
@@ -40,6 +44,8 @@ Properties:
 
 #### AccountId
 
+Target AWS Account ID to create a Stack based on the StackSet. Defaults to current account.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParameterOverrides
+
+Key-value map of input parameters to override from the StackSet for this Instance.
 
 _Required_: No
 
@@ -56,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Region
 
+Target AWS Region to create a Stack based on the StackSet. Defaults to current region.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RetainStack
 
+During Terraform resource destroy, remove Instance from StackSet while keeping the Stack and its associated resources. Must be enabled in Terraform state _before_ destroy operation to take effect. You cannot reassociate a retained Stack or add an existing, saved Stack to a new StackSet. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -71,6 +83,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StackSetName
+
+Name of the StackSet.
 
 _Required_: Yes
 

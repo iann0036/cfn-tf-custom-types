@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Prefix
 
+Object keyname prefix that identifies subset of objects to which the rule applies.
+
 _Required_: No
 
 _Type_: String
@@ -32,6 +34,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags that identifies subset of objects to which the rule applies.
+The rule applies only to objects having all the tags in its tagset.
 
 _Required_: No
 

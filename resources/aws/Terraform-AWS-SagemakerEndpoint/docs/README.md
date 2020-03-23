@@ -1,6 +1,6 @@
 # Terraform::AWS::SagemakerEndpoint
 
-CloudFormation equivalent of aws_sagemaker_endpoint
+Provides a SageMaker Endpoint resource.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### EndpointConfigName
 
+The name of the endpoint configuration to use.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the endpoint. If omitted, Terraform will assign a random, unique name.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

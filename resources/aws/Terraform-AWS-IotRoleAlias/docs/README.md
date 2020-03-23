@@ -1,6 +1,6 @@
 # Terraform::AWS::IotRoleAlias
 
-CloudFormation equivalent of aws_iot_role_alias
+Provides an IoT role alias.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Alias
 
+The name of the role alias.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CredentialDuration
 
+The duration of the credential, in seconds. If you do not specify a value for this setting, the default maximum of one hour is applied. This setting can have a value from 900 seconds (15 minutes) to 3600 seconds (60 minutes).
+
 _Required_: No
 
 _Type_: Double
@@ -48,6 +52,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleArn
+
+The identity of the role to which the alias refers.
 
 _Required_: Yes
 

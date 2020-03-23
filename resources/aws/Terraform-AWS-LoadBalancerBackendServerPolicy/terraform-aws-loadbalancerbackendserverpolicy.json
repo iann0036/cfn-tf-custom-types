@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LoadBalancerBackendServerPolicy",
-    "description": "CloudFormation equivalent of aws_load_balancer_backend_server_policy",
+    "description": "Attaches a load balancer policy to an ELB backend server.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,17 +12,20 @@
             "type": "string"
         },
         "InstancePort": {
-            "type": "number"
+            "type": "number",
+            "description": "The instance port to apply the policy to."
         },
         "LoadBalancerName": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancer to attach the policy to."
         },
         "PolicyNames": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Policy Names to apply to the backend server."
         }
     },
     "additionalProperties": false,

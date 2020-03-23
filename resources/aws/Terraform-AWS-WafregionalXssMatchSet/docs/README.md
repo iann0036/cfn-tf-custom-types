@@ -1,6 +1,6 @@
 # Terraform::AWS::WafregionalXssMatchSet
 
-CloudFormation equivalent of aws_wafregional_xss_match_set
+Provides a WAF Regional XSS Match Set Resource for use with Application Load Balancer.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the set.
 
 _Required_: Yes
 

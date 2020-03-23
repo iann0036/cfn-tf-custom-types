@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::WafregionalRule",
-    "description": "CloudFormation equivalent of aws_wafregional_rule",
+    "description": "Provides an WAF Regional Rule Resource for use with Application Load Balancer.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Predicate": {
@@ -36,10 +36,12 @@
             "type": "string"
         },
         "MetricName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or description for the Amazon CloudWatch metric of this rule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or description of the rule."
         },
         "Tags": {
             "type": "array",
@@ -59,7 +61,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Predicate": {
             "type": "array",

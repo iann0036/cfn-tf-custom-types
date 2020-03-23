@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Route53ResolverRuleAssociation",
-    "description": "CloudFormation equivalent of aws_route53_resolver_rule_association",
+    "description": "Provides a Route53 Resolver rule association.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,13 +26,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the association that you're creating between a resolver rule and a VPC."
         },
         "ResolverRuleId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the resolver rule that you want to associate with the VPC."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC that you want to associate the resolver rule with."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

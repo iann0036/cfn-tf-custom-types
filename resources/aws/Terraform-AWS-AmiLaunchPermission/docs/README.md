@@ -1,6 +1,6 @@
 # Terraform::AWS::AmiLaunchPermission
 
-CloudFormation equivalent of aws_ami_launch_permission
+Adds launch permission to Amazon Machine Image (AMI) from another AWS account.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### AccountId
 
+An AWS Account ID to add launch permissions.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageId
+
+A region-unique name for the AMI.
+* `account_id` - (required) An AWS Account ID to add launch permissions.
 
 _Required_: Yes
 

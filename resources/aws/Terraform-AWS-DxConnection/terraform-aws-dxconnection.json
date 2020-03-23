@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DxConnection",
-    "description": "CloudFormation equivalent of aws_dx_connection",
+    "description": "Provides a Connection of Direct Connect.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,7 +15,8 @@
             "type": "string"
         },
         "Bandwidth": {
-            "type": "string"
+            "type": "string",
+            "description": "The bandwidth of the connection. Available values: 1Gbps, 10Gbps. Case sensitive."
         },
         "HasLogicalRedundancy": {
             "type": "string"
@@ -27,10 +28,12 @@
             "type": "boolean"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS Direct Connect location where the connection is located. See [DescribeLocations](https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLocations.html) for the list of AWS Direct Connect locations. Use `locationCode`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the connection."
         },
         "Tags": {
             "type": "array",
@@ -50,7 +53,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

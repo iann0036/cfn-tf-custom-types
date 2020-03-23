@@ -1,6 +1,6 @@
 # Terraform::AWS::ElasticsearchDomain
 
-CloudFormation equivalent of aws_elasticsearch_domain
+Manages an AWS Elasticsearch Domain.
 
 ## Syntax
 
@@ -69,6 +69,8 @@ Properties:
 
 #### AccessPolicies
 
+IAM policy document specifying the access policies for the domain.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +78,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdvancedOptions
+
+Key-value string pairs to specify advanced configuration options.
+Note that the values for these configuration options must be strings (wrapped in quotes) or they
+may be wrong and cause a perpetual diff, causing Terraform to want to recreate your Elasticsearch
+domain on every apply.
 
 _Required_: No
 
@@ -85,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DomainName
 
+Name of the domain.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ElasticsearchVersion
 
+The version of Elasticsearch to deploy. Defaults to `1.5`.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +111,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

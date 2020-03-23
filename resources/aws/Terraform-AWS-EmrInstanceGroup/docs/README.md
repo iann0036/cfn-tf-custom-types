@@ -1,6 +1,11 @@
 # Terraform::AWS::EmrInstanceGroup
 
-CloudFormation equivalent of aws_emr_instance_group
+Provides an Elastic MapReduce Cluster Instance Group configuration.
+See [Amazon Elastic MapReduce Documentation](https://aws.amazon.com/documentation/emr/) for more information.
+
+~> **NOTE:** At this time, Instance Groups cannot be destroyed through the API nor
+web interface. Instance Groups are destroyed when the EMR Cluster is destroyed.
+Terraform will resize any Instance Group to zero when destroying the resource.
 
 ## Syntax
 
@@ -46,6 +51,8 @@ Properties:
 
 #### AutoscalingPolicy
 
+The autoscaling policy document. This is a JSON formatted string. See [EMR Auto Scaling](https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-automatic-scaling.html).
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BidPrice
+
+If set, the bid price for each EC2 instance in the instance group, expressed in USD. By setting this attribute, the instance group is being declared as a Spot Instance, and will implicitly create a Spot request. Leave this blank to use On-Demand Instances.
 
 _Required_: No
 
@@ -69,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConfigurationsJson
+
+A JSON string for supplying list of configurations specific to the EMR instance group. Note that this can only be changed when using EMR release 5.21 or later.
 
 _Required_: No
 

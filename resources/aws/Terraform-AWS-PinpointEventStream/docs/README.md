@@ -1,6 +1,6 @@
 # Terraform::AWS::PinpointEventStream
 
-CloudFormation equivalent of aws_pinpoint_event_stream
+Provides a Pinpoint Event Stream resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### ApplicationId
 
+The application ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DestinationStreamArn
 
+The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery stream to which you want to publish events.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleArn
+
+The IAM role that authorizes Amazon Pinpoint to publish events to the stream in your account.
 
 _Required_: Yes
 

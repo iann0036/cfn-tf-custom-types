@@ -1,6 +1,6 @@
 # Terraform::AWS::ServicecatalogPortfolio
 
-CloudFormation equivalent of aws_servicecatalog_portfolio
+Provides a resource to create a Service Catalog Portfolio.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Description
 
+Description of the portfolio.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the portfolio.
 
 _Required_: Yes
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProviderName
 
+Name of the person or organization who owns the portfolio.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Tags to apply to the connection.
 
 _Required_: No
 

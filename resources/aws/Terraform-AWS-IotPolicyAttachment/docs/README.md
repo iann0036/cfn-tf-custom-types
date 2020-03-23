@@ -1,6 +1,6 @@
 # Terraform::AWS::IotPolicyAttachment
 
-CloudFormation equivalent of aws_iot_policy_attachment
+Provides an IoT policy attachment.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Policy
 
+The name of the policy to attach.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Target
+
+The identity to which the policy is attached.
 
 _Required_: Yes
 

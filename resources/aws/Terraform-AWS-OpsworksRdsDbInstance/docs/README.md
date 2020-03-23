@@ -1,6 +1,9 @@
 # Terraform::AWS::OpsworksRdsDbInstance
 
-CloudFormation equivalent of aws_opsworks_rds_db_instance
+Provides an OpsWorks RDS DB Instance resource.
+
+~> **Note:** All arguments including the username and password will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -35,6 +38,8 @@ Properties:
 
 #### DbPassword
 
+A db password.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbUser
+
+A db username.
 
 _Required_: Yes
 
@@ -51,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RdsDbInstanceArn
 
+The db instance to register for this stack. Changing this will force a new resource.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StackId
+
+The stack to register a db instance for. Changing this will force a new resource.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::AWS::S3AccessPoint
 
-CloudFormation equivalent of aws_s3_access_point
+Provides a resource to manage an S3 Access Point.
+
+-> Advanced usage: To use a custom API endpoint for this Terraform resource, use the [`s3control` endpoint provider configuration](/docs/providers/aws/index.html#s3control), not the `s3` endpoint provider configuration.
 
 ## Syntax
 
@@ -41,6 +43,8 @@ Properties:
 
 #### AccountId
 
+The AWS account ID for the owner of the bucket for which you want to create an access point. Defaults to automatically determined account ID of the Terraform AWS provider.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
+
+The name of the bucket that you want to associate this access point with.
 
 _Required_: Yes
 
@@ -57,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name you want to assign to this access point.
+
 _Required_: Yes
 
 _Type_: String
@@ -64,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+A valid JSON document that specifies the policy that you want to apply to this access point.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpnConnection",
-    "description": "CloudFormation equivalent of aws_vpn_connection",
+    "description": "Manages an EC2 VPN connection. These objects can be connected to customer gateways, and allow you to establish tunnels between your network and Amazon.\n\n~> **Note:** All arguments including `tunnel1_preshared_key` and `tunnel2_preshared_key` will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).\n\n~> **Note:** The CIDR blocks in the arguments `tunnel1_inside_cidr` and `tunnel2_inside_cidr` must have a prefix of /30 and be a part of a specific range.\n[Read more about this in the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnTunnelOptionsSpecification.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "CustomerGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the customer gateway."
         },
         "Id": {
             "type": "string"
@@ -37,7 +38,8 @@
             }
         },
         "StaticRoutesOnly": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the VPN connection uses static routes exclusively. Static routes must be used for devices that don't support BGP."
         },
         "Tags": {
             "type": "array",
@@ -57,13 +59,15 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Tags to apply to the connection."
         },
         "TransitGatewayAttachmentId": {
             "type": "string"
         },
         "TransitGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the EC2 Transit Gateway."
         },
         "Tunnel1Address": {
             "type": "string"
@@ -78,10 +82,12 @@
             "type": "string"
         },
         "Tunnel1InsideCidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR block of the inside IP addresses for the first VPN tunnel."
         },
         "Tunnel1PresharedKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The preshared key of the first VPN tunnel."
         },
         "Tunnel1VgwInsideAddress": {
             "type": "string"
@@ -99,16 +105,19 @@
             "type": "string"
         },
         "Tunnel2InsideCidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The CIDR block of the inside IP addresses for the second VPN tunnel."
         },
         "Tunnel2PresharedKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The preshared key of the second VPN tunnel."
         },
         "Tunnel2VgwInsideAddress": {
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of VPN connection. The only type AWS supports at this time is \"ipsec.1\"."
         },
         "VgwTelemetry": {
             "type": "array",
@@ -136,7 +145,8 @@
             }
         },
         "VpnGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Virtual Private Gateway."
         }
     },
     "additionalProperties": false,

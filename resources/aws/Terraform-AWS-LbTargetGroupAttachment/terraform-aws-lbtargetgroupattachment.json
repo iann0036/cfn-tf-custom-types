@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LbTargetGroupAttachment",
-    "description": "CloudFormation equivalent of aws_lb_target_group_attachment",
+    "description": "Provides the ability to register instances and containers with an Application Load Balancer (ALB) or Network Load Balancer (NLB) target group. For attaching resources with Elastic Load Balancer (ELB), see the [`aws_elb_attachment` resource](/docs/providers/aws/r/elb_attachment.html).\n\n~> **Note:** `aws_alb_target_group_attachment` is known as `aws_lb_target_group_attachment`. The functionality is identical.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The Availability Zone where the IP address of the target is to be registered."
         },
         "Id": {
             "type": "string"
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which targets receive traffic."
         },
         "TargetGroupArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the target group with which to register targets."
         },
         "TargetId": {
             "type": "string"

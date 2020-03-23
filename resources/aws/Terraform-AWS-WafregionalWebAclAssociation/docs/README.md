@@ -1,6 +1,8 @@
 # Terraform::AWS::WafregionalWebAclAssociation
 
-CloudFormation equivalent of aws_wafregional_web_acl_association
+Manages an association with WAF Regional Web ACL.
+
+-> **Note:** An Application Load Balancer can only be associated with one WAF Regional WebACL.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### ResourceArn
 
+ARN of the resource to associate with. For example, an Application Load Balancer or API Gateway Stage.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WebAclId
+
+The ID of the WAF Regional WebACL to create an association.
 
 _Required_: Yes
 

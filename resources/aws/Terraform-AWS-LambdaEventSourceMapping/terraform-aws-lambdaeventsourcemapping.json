@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LambdaEventSourceMapping",
-    "description": "CloudFormation equivalent of aws_lambda_event_source_mapping",
+    "description": "Provides a Lambda event source mapping. This allows Lambda functions to get events from Kinesis, DynamoDB and SQS.\n\nFor information about Lambda and how to use it, see [What is AWS Lambda?][1].\nFor information about event source mappings, see [CreateEventSourceMapping][2] in the API docs.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DestinationConfig": {
@@ -37,22 +37,26 @@
             "type": "string"
         },
         "BatchSize": {
-            "type": "number"
+            "type": "number",
+            "description": "The largest number of records that Lambda will retrieve from your event source at the time of invocation. Defaults to `100` for DynamoDB and Kinesis, `10` for SQS."
         },
         "BisectBatchOnFunctionError": {
             "type": "boolean"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines if the mapping will be enabled on creation. Defaults to `true`."
         },
         "EventSourceArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The event source ARN - can be a Kinesis stream, DynamoDB stream, or SQS queue."
         },
         "FunctionArn": {
             "type": "string"
         },
         "FunctionName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or the ARN of the Lambda function that will be subscribing to events."
         },
         "Id": {
             "type": "string"
@@ -64,7 +68,8 @@
             "type": "string"
         },
         "MaximumBatchingWindowInSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum amount of time to gather records before invoking the function, in seconds.  Records will continue to buffer until either `maximum_batching_window_in_seconds` expires or `batch_size` has been met. Defaults to as soon as records are available in the stream. If the batch it reads from the stream only has one record in it, Lambda only sends one record to the function."
         },
         "MaximumRecordAgeInSeconds": {
             "type": "number"
@@ -76,10 +81,12 @@
             "type": "number"
         },
         "StartingPosition": {
-            "type": "string"
+            "type": "string",
+            "description": "The position in the stream where AWS Lambda should start reading. Must be one of `AT_TIMESTAMP` (Kinesis only), `LATEST` or `TRIM_HORIZON` if getting events from Kinesis or DynamoDB. Must not be provided if getting events from SQS. More information about these positions can be found in the [AWS DynamoDB Streams API Reference](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html) and [AWS Kinesis API Reference](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType)."
         },
         "StartingPositionTimestamp": {
-            "type": "string"
+            "type": "string",
+            "description": "A timestamp in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) of the data record which to start reading when using `starting_position` set to `AT_TIMESTAMP`. If a record with this exact timestamp does not exist, the next later record is chosen. If the timestamp is older than the current trim horizon, the oldest available record is chosen."
         },
         "State": {
             "type": "string"

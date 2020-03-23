@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OpsworksInstance",
-    "description": "CloudFormation equivalent of aws_opsworks_instance",
+    "description": "Provides an OpsWorks instance resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EbsBlockDevice": {
@@ -88,19 +88,24 @@
             "type": "string"
         },
         "AgentVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS OpsWorks agent to install.  Defaults to `\"INHERIT\"`."
         },
         "AmiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The AMI to use for the instance.  If an AMI is specified, `os` must be `\"Custom\"`."
         },
         "Architecture": {
-            "type": "string"
+            "type": "string",
+            "description": "Machine architecture for created instances.  Can be either `\"x86_64\"` (the default) or `\"i386\"`."
         },
         "AutoScalingType": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates load-based or time-based instances.  If set, can be either: `\"load\"` or `\"timer\"`."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the availability zone where instances will be created\nby default."
         },
         "CreatedAt": {
             "type": "string"
@@ -112,7 +117,8 @@
             "type": "boolean"
         },
         "EbsOptimized": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the launched EC2 instance will be EBS-optimized."
         },
         "Ec2InstanceId": {
             "type": "string"
@@ -124,7 +130,8 @@
             "type": "string"
         },
         "Hostname": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance's host name."
         },
         "Id": {
             "type": "string"
@@ -133,13 +140,15 @@
             "type": "string"
         },
         "InstallUpdatesOnBoot": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Controls where to install OS and package updates when the instance boots.  Defaults to `true`."
         },
         "InstanceProfileArn": {
             "type": "string"
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of instance to start."
         },
         "LastServiceErrorId": {
             "type": "string"
@@ -149,10 +158,12 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The ids of the layers the instance will belong to."
         },
         "Os": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of operating system that will be installed."
         },
         "Platform": {
             "type": "string"
@@ -185,7 +196,8 @@
             "type": "string"
         },
         "RootDeviceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the type of root device instances will have by default.  Can be either `\"ebs\"` or `\"instance-store\"`."
         },
         "RootDeviceVolumeId": {
             "type": "string"
@@ -204,25 +216,31 @@
             "type": "string"
         },
         "SshKeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the SSH keypair that instances will have by default."
         },
         "StackId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the stack the instance will belong to."
         },
         "State": {
-            "type": "string"
+            "type": "string",
+            "description": "The desired state of the instance.  Can be either `\"running\"` or `\"stopped\"`."
         },
         "Status": {
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Subnet ID to attach to."
         },
         "Tenancy": {
-            "type": "string"
+            "type": "string",
+            "description": "Instance tenancy to use. Can be one of `\"default\"`, `\"dedicated\"` or `\"host\"`."
         },
         "VirtualizationType": {
-            "type": "string"
+            "type": "string",
+            "description": "Keyword to choose what virtualization mode created instances\nwill use. Can be either `\"paravirtual\"` or `\"hvm\"`."
         },
         "EbsBlockDevice": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CloudwatchLogMetricFilter",
-    "description": "CloudFormation equivalent of aws_cloudwatch_log_metric_filter",
+    "description": "Provides a CloudWatch Log Metric Filter resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "MetricTransformation": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "DefaultValue": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The value to emit when a filter pattern does not match a log event."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the CloudWatch metric to which the monitored log information should be published (e.g. `ErrorCount`)."
                 },
                 "Namespace": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The destination namespace of the CloudWatch metric."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "What to publish to the metric. For example, if you're counting the occurrences of a particular term like \"Error\", the value will be \"1\" for each occurrence. If you're counting the bytes transferred the published value will be the value in the log event."
                 }
             },
             "required": [
@@ -36,13 +40,16 @@
             "type": "string"
         },
         "LogGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the log group to associate the metric filter with."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the metric filter."
         },
         "Pattern": {
-            "type": "string"
+            "type": "string",
+            "description": "A valid [CloudWatch Logs filter pattern](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/FilterAndPatternSyntax.html)\nfor extracting metric data out of ingested log events."
         },
         "MetricTransformation": {
             "type": "array",

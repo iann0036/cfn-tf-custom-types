@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::MainRouteTableAssociation",
-    "description": "CloudFormation equivalent of aws_main_route_table_association",
+    "description": "Provides a resource for managing the main routing table of a VPC.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,10 +15,12 @@
             "type": "string"
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Route Table to set as the new\nmain route table for the target VPC."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC whose main route table should be set."
         }
     },
     "additionalProperties": false,

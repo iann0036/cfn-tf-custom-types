@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CodecommitRepository",
-    "description": "CloudFormation equivalent of aws_codecommit_repository",
+    "description": "Provides a CodeCommit Repository Resource.\n\n~> **NOTE on CodeCommit Availability**: The CodeCommit is not yet rolled out\nin all regions - available regions are listed\n[the AWS Docs](https://docs.aws.amazon.com/general/latest/gr/rande.html#codecommit_region).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,10 +18,12 @@
             "type": "string"
         },
         "DefaultBranch": {
-            "type": "string"
+            "type": "string",
+            "description": "The default branch of the repository. The branch specified here needs to exist."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the repository. This needs to be less than 1000 characters."
         },
         "Id": {
             "type": "string"
@@ -30,7 +32,8 @@
             "type": "string"
         },
         "RepositoryName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the repository. This needs to be less than 100 characters."
         },
         "Tags": {
             "type": "array",
@@ -50,7 +53,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         }
     },
     "additionalProperties": false,

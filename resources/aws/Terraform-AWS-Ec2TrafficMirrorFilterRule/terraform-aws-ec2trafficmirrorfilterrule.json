@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2TrafficMirrorFilterRule",
-    "description": "CloudFormation equivalent of aws_ec2_traffic_mirror_filter_rule",
+    "description": "Provides an Traffic mirror filter rule.  \nRead [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DestinationPortRange": {
@@ -36,31 +36,39 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the traffic mirror filter rule."
         },
         "DestinationCidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination CIDR block to assign to the Traffic Mirror rule."
         },
         "Id": {
             "type": "string"
         },
         "Protocol": {
-            "type": "number"
+            "type": "number",
+            "description": "The protocol number, for example 17 (UDP), to assign to the Traffic Mirror rule. For information about the protocol value, see [Protocol Numbers](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) on the Internet Assigned Numbers Authority (IANA) website."
         },
         "RuleAction": {
-            "type": "string"
+            "type": "string",
+            "description": "The action to take (accept | reject) on the filtered traffic. Valid values are `accept` and `reject`."
         },
         "RuleNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number."
         },
         "SourceCidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The source CIDR block to assign to the Traffic Mirror rule."
         },
         "TrafficDirection": {
-            "type": "string"
+            "type": "string",
+            "description": "The direction of traffic to be captured. Valid values are `ingress` and `egress`."
         },
         "TrafficMirrorFilterId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the traffic mirror filter to which this rule should be added."
         },
         "DestinationPortRange": {
             "type": "array",

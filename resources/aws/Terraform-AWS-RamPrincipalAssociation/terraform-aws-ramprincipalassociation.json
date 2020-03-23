@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::RamPrincipalAssociation",
-    "description": "CloudFormation equivalent of aws_ram_principal_association",
+    "description": "Provides a Resource Access Manager (RAM) principal association. Depending if [RAM Sharing with AWS Organizations is enabled](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs), the RAM behavior with different principal types changes.\n\nWhen RAM Sharing with AWS Organizations is enabled:\n\n- For AWS Account ID, Organization, and Organizational Unit principals within the same AWS Organization, no resource share invitation is sent and resources become available automatically after creating the association.\n- For AWS Account ID principals outside the AWS Organization, a resource share invitation is sent and must be accepted before resources become available. See the [`aws_ram_resource_share_accepter` resource](/docs/providers/aws/r/ram_resource_share_accepter.html) to accept these invitations.\n\nWhen RAM Sharing with AWS Organizations is not enabled:\n\n- Organization and Organizational Unit principals cannot be used.\n- For AWS Account ID principals, a resource share invitation is sent and must be accepted before resources become available. See the [`aws_ram_resource_share_accepter` resource](/docs/providers/aws/r/ram_resource_share_accepter.html) to accept these invitations.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Principal": {
-            "type": "string"
+            "type": "string",
+            "description": "The principal to associate with the resource share. Possible values are an AWS account ID, an AWS Organizations Organization ARN, or an AWS Organizations Organization Unit ARN."
         },
         "ResourceShareArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the resource share."
         }
     },
     "additionalProperties": false,

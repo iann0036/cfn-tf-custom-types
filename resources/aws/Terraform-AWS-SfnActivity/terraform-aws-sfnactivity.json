@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SfnActivity",
-    "description": "CloudFormation equivalent of aws_sfn_activity",
+    "description": "Provides a Step Function Activity resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,7 +15,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the activity to create."
         },
         "Tags": {
             "type": "array",
@@ -35,7 +36,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         }
     },
     "additionalProperties": false,

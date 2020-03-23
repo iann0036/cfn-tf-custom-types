@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudwatchLogDestinationPolicy
 
-CloudFormation equivalent of aws_cloudwatch_log_destination_policy
+Provides a CloudWatch Logs destination policy resource.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### AccessPolicy
 
+The policy document. This is a JSON formatted string.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationName
+
+A name for the subscription filter.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayRequestValidator
 
-CloudFormation equivalent of aws_api_gateway_request_validator
+Manages an API Gateway Request Validator.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Name
 
+The name of the request validator.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RestApiId
+
+The ID of the associated Rest API.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ValidateRequestBody
 
+Boolean whether to validate request body. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +64,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidateRequestParameters
+
+Boolean whether to validate request parameters. Defaults to `false`.
 
 _Required_: No
 

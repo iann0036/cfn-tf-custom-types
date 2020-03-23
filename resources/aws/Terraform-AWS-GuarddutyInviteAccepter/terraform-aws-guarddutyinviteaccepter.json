@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::GuarddutyInviteAccepter",
-    "description": "CloudFormation equivalent of aws_guardduty_invite_accepter",
+    "description": "Provides a resource to accept a pending GuardDuty invite on creation, ensure the detector has the correct master account on read, and disassociate with the master account upon removal.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -20,13 +20,15 @@
             "type": "string"
         },
         "DetectorId": {
-            "type": "string"
+            "type": "string",
+            "description": "The detector ID of the member GuardDuty account."
         },
         "Id": {
             "type": "string"
         },
         "MasterAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "AWS account ID for master account."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::AWS::SsmParameter
 
-CloudFormation equivalent of aws_ssm_parameter
+Provides an SSM Parameter resource.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### AllowedPattern
 
+A regular expression used to validate the parameter value.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of the parameter.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyId
+
+The KMS key id or arn for encrypting a SecureString.
 
 _Required_: No
 
@@ -80,6 +86,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the parameter. If the name contains a path (e.g. any forward slashes (`/`)), it must be fully qualified with a leading forward slash (`/`). For additional requirements and constraints, see the [AWS SSM User Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html).
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +95,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Overwrite
+
+Overwrite an existing parameter. If not specified, will default to `false` if the resource has not been created by terraform to avoid overwrite of existing resource and will default to `true` otherwise (terraform lifecycle rules should then be used to manage the update behavior).
 
 _Required_: No
 
@@ -96,6 +106,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the object.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -103,6 +115,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tier
+
+The tier of the parameter. If not specified, will default to `Standard`. Valid tiers are `Standard` and `Advanced`. For more information on parameter tiers, see the [AWS SSM Parameter tier comparison and guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html).
 
 _Required_: No
 
@@ -112,6 +126,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Type
 
+The type of the parameter. Valid types are `String`, `StringList` and `SecureString`.
+
 _Required_: Yes
 
 _Type_: String
@@ -119,6 +135,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Value
+
+The value of the parameter.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::VpcEndpointRouteTableAssociation
 
-CloudFormation equivalent of aws_vpc_endpoint_route_table_association
+Manages a VPC Endpoint Route Table Association
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### RouteTableId
 
+Identifier of the EC2 Route Table to be associated with the VPC Endpoint.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcEndpointId
+
+Identifier of the VPC Endpoint with which the EC2 Route Table will be associated.
 
 _Required_: Yes
 

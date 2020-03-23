@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::TransferUser",
-    "description": "CloudFormation equivalent of aws_transfer_user",
+    "description": "Provides a AWS Transfer User resource. Managing SSH keys can be accomplished with the [`aws_transfer_ssh_key` resource](/docs/providers/aws/r/transfer_ssh_key.html).\n\n\n```hcl\nresource \"aws_transfer_server\" \"foo\" {\n  identity_provider_type = \"SERVICE_MANAGED\"\n\n  tags = {\n    NAME = \"tf-acc-test-transfer-server\"\n  }\n}\n\nresource \"aws_iam_role\" \"foo\" {\n  name = \"tf-test-transfer-user-iam-role\"\n\n  assume_role_policy = <<EOF\n{\n\t\"Version\": \"2012-10-17\",\n\t\"Statement\": [\n\t\t{\n\t\t\"Effect\": \"Allow\",\n\t\t\"Principal\": {\n\t\t\t\"Service\": \"transfer.amazonaws.com\"\n\t\t},\n\t\t\"Action\": \"sts:AssumeRole\"\n\t\t}\n\t]\n}\nEOF\n}\n\nresource \"aws_iam_role_policy\" \"foo\" {\n  name = \"tf-test-transfer-user-iam-policy\"\n  role = \"${aws_iam_role.foo.id}\"\n\n  policy = <<POLICY\n{\n\t\"Version\": \"2012-10-17\",\n\t\"Statement\": [\n\t\t{\n\t\t\t\"Sid\": \"AllowFullAccesstoS3\",\n\t\t\t\"Effect\": \"Allow\",\n\t\t\t\"Action\": [\n\t\t\t\t\"s3:*\"\n\t\t\t],\n\t\t\t\"Resource\": \"*\"\n\t\t}\n\t]\n}\nPOLICY\n}\n\nresource \"aws_transfer_user\" \"foo\" {\n  server_id = \"${aws_transfer_server.foo.id}\"\n  user_name = \"tftestuser\"\n  role      = \"${aws_iam_role.foo.arn}\"\n}\n```",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,19 +12,23 @@
             "type": "string"
         },
         "HomeDirectory": {
-            "type": "string"
+            "type": "string",
+            "description": "The landing directory (folder) for a user when they log in to the server using their SFTP client.  It should begin with a `/`.  The first item in the path is the name of the home bucket (accessible as `${Transfer:HomeBucket}` in the policy) and the rest is the home directory (accessible as `${Transfer:HomeDirectory}` in the policy). For example, `/example-bucket-1234/username` would set the home bucket to `example-bucket-1234` and the home directory to `username`."
         },
         "Id": {
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "An IAM JSON policy document that scopes down user access to portions of their Amazon S3 bucket. IAM variables you can use inside this policy include `${Transfer:UserName}`, `${Transfer:HomeDirectory}`, and `${Transfer:HomeBucket}`. Since the IAM variable syntax matches Terraform's interpolation syntax, they must be escaped inside Terraform configuration strings (`$${Transfer:UserName}`).  These are evaluated on-the-fly when navigating the bucket."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of an IAM role that allows the service to controls your user\u2019s access to your Amazon S3 bucket."
         },
         "ServerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Server ID of the Transfer Server (e.g. `s-12345678`)."
         },
         "Tags": {
             "type": "array",
@@ -44,10 +48,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "UserName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name used for log in to your SFTP server."
         }
     },
     "additionalProperties": false,

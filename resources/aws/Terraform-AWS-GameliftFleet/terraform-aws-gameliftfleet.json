@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::GameliftFleet",
-    "description": "CloudFormation equivalent of aws_gamelift_fleet",
+    "description": "Provides a Gamelift Fleet resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Ec2InboundPermission": {
@@ -103,22 +103,27 @@
             "type": "string"
         },
         "BuildId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the Gamelift Build to be deployed on the fleet."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Human-readable description of the fleet."
         },
         "Ec2InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of an EC2 instance type. e.g. `t2.micro`."
         },
         "FleetType": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of fleet. This value must be `ON_DEMAND` or `SPOT`. Defaults to `ON_DEMAND`."
         },
         "Id": {
             "type": "string"
         },
         "InstanceRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "ARN of an IAM role that instances in the fleet can assume."
         },
         "LogPaths": {
             "type": "array",
@@ -132,13 +137,16 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of names of metric groups to add this fleet to. A metric group tracks metrics across all fleets in the group. Defaults to `default`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the fleet."
         },
         "NewGameSessionProtectionPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Game session protection policy to apply to all instances in this fleet. e.g. `FullProtection`. Defaults to `NoProtection`."
         },
         "OperatingSystem": {
             "type": "string"
@@ -161,7 +169,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Ec2InboundPermission": {
             "type": "array",

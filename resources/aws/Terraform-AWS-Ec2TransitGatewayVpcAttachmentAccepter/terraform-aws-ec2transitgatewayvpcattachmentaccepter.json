@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2TransitGatewayVpcAttachmentAccepter",
-    "description": "CloudFormation equivalent of aws_ec2_transit_gateway_vpc_attachment_accepter",
+    "description": "Manages the accepter's side of an EC2 Transit Gateway VPC Attachment.\n\nWhen a cross-account (requester's AWS account differs from the accepter's AWS account) EC2 Transit Gateway VPC Attachment\nis created, an EC2 Transit Gateway VPC Attachment resource is automatically created in the accepter's account.\nThe requester can use the `aws_ec2_transit_gateway_vpc_attachment` resource to manage its side of the connection\nand the accepter can use the `aws_ec2_transit_gateway_vpc_attachment_accepter` resource to \"adopt\" its side of the\nconnection into management.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -42,16 +42,20 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value tags for the EC2 Transit Gateway VPC Attachment."
         },
         "TransitGatewayAttachmentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the EC2 Transit Gateway Attachment to manage."
         },
         "TransitGatewayDefaultRouteTableAssociation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean whether the VPC Attachment should be associated with the EC2 Transit Gateway association default route table. Default value: `true`."
         },
         "TransitGatewayDefaultRouteTablePropagation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean whether the VPC Attachment should propagate routes with the EC2 Transit Gateway propagation default route table. Default value: `true`."
         },
         "TransitGatewayId": {
             "type": "string"

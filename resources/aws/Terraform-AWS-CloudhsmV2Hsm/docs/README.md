@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudhsmV2Hsm
 
-CloudFormation equivalent of aws_cloudhsm_v2_hsm
+Creates an HSM module in Amazon CloudHSM v2 cluster.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### AvailabilityZone
 
+The IDs of AZ in which HSM module will be located. Do not use together with subnet_id.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterId
+
+The ID of Cloud HSM v2 cluster to which HSM will be added.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddress
 
+The IP address of HSM module. Must be within the CIDR of selected subnet.
+
 _Required_: No
 
 _Type_: String
@@ -60,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The ID of subnet in which HSM module will be located.
 
 _Required_: No
 

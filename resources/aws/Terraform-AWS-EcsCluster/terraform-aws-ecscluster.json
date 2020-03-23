@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::EcsCluster",
-    "description": "CloudFormation equivalent of aws_ecs_cluster",
+    "description": "Provides an ECS cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DefaultCapacityProviderStrategy": {
@@ -51,13 +51,15 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of short names of one or more capacity providers to associate with the cluster. Valid values also include `FARGATE` and `FARGATE_SPOT`."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the cluster (up to 255 letters, numbers, hyphens, and underscores)."
         },
         "Tags": {
             "type": "array",
@@ -77,7 +79,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "DefaultCapacityProviderStrategy": {
             "type": "array",

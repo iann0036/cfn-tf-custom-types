@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CodecommitTrigger",
-    "description": "CloudFormation equivalent of aws_codecommit_trigger",
+    "description": "Provides a CodeCommit Trigger Resource.\n\n~> **NOTE on CodeCommit**: The CodeCommit is not yet rolled out\nin all regions - available regions are listed\n[the AWS Docs](https://docs.aws.amazon.com/general/latest/gr/rande.html#codecommit_region).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Trigger": {
@@ -50,7 +50,8 @@
             "type": "string"
         },
         "RepositoryName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the repository. This needs to be less than 100 characters."
         },
         "Trigger": {
             "type": "array",

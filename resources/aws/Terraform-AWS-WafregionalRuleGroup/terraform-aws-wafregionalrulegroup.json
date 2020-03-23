@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::WafregionalRuleGroup",
-    "description": "CloudFormation equivalent of aws_wafregional_rule_group",
+    "description": "Provides a WAF Regional Rule Group Resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ActivatedRule": {
@@ -56,10 +56,12 @@
             "type": "string"
         },
         "MetricName": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name for the metrics from the rule group."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name of the rule group."
         },
         "Tags": {
             "type": "array",
@@ -79,7 +81,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "ActivatedRule": {
             "type": "array",

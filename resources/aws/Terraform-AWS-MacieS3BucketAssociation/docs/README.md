@@ -1,6 +1,8 @@
 # Terraform::AWS::MacieS3BucketAssociation
 
-CloudFormation equivalent of aws_macie_s3_bucket_association
+Associates an S3 resource with Amazon Macie for monitoring and data classification.
+
+~> **NOTE:** Before using Amazon Macie for the first time it must be enabled manually. Instructions are [here](https://docs.aws.amazon.com/macie/latest/userguide/macie-setting-up.html#macie-setting-up-enable).
 
 ## Syntax
 
@@ -36,6 +38,8 @@ Properties:
 
 #### BucketName
 
+The name of the S3 bucket that you want to associate with Amazon Macie.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MemberAccountId
 
+The ID of the Amazon Macie member account whose S3 resources you want to associate with Macie. If `member_account_id` isn't specified, the action associates specified S3 resources with Macie for the current master account.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Prefix
+
+Object key prefix identifying one or more S3 objects to which the association applies.
 
 _Required_: No
 

@@ -1,6 +1,7 @@
 # Terraform::AWS::RouteTableAssociation
 
-CloudFormation equivalent of aws_route_table_association
+Provides a resource to create an association between a route table and a subnet or a route table and an
+internet gateway or virtual private gateway.
 
 ## Syntax
 
@@ -33,6 +34,8 @@ Properties:
 
 #### GatewayId
 
+The gateway ID to create an association. Conflicts with `subnet_id`.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteTableId
 
+The ID of the routing table to associate with.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The subnet ID to create an association. Conflicts with `gateway_id`.
 
 _Required_: No
 

@@ -1,6 +1,8 @@
 # Terraform::AWS::DatasyncLocationNfs
 
-CloudFormation equivalent of aws_datasync_location_nfs
+Manages an NFS Location within AWS DataSync.
+
+~> **NOTE:** The DataSync Agents must be available before creating this resource.
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### ServerHostname
 
+Specifies the IP address or DNS name of the NFS server. The DataSync Agent(s) use this to mount the NFS server.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subdirectory
 
+Subdirectory to perform actions as source or destination. Should be exported by the NFS server.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value pairs of resource tags to assign to the DataSync Location.
 
 _Required_: No
 

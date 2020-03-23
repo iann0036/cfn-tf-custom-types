@@ -1,6 +1,6 @@
 # Terraform::AWS::DxConnection
 
-CloudFormation equivalent of aws_dx_connection
+Provides a Connection of Direct Connect.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Bandwidth
 
+The bandwidth of the connection. Available values: 1Gbps, 10Gbps. Case sensitive.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The AWS Direct Connect location where the connection is located. See [DescribeLocations](https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLocations.html) for the list of AWS Direct Connect locations. Use `locationCode`.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the connection.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayUsagePlan
 
-CloudFormation equivalent of aws_api_gateway_usage_plan
+Provides an API Gateway Usage Plan.
 
 ## Syntax
 

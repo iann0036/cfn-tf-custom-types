@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LicensemanagerLicenseConfiguration",
-    "description": "CloudFormation equivalent of aws_licensemanager_license_configuration",
+    "description": "Provides a License Manager license configuration resource.\n\n~> **Note:** Removing the `license_count` attribute is not supported by the License Manager API - use `terraform taint aws_licensemanager_license_configuration.<id>` to recreate the resource instead.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,29 +9,35 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the license configuration."
         },
         "Id": {
             "type": "string"
         },
         "LicenseCount": {
-            "type": "number"
+            "type": "number",
+            "description": "Number of licenses managed by the license configuration."
         },
         "LicenseCountHardLimit": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Sets the number of available licenses as a hard limit."
         },
         "LicenseCountingType": {
-            "type": "string"
+            "type": "string",
+            "description": "Dimension to use to track license inventory. Specify either `vCPU`, `Instance`, `Core` or `Socket`."
         },
         "LicenseRules": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Array of configured License Manager rules."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the license configuration."
         },
         "Tags": {
             "type": "array",
@@ -51,7 +57,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

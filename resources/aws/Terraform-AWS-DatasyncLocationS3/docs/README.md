@@ -1,6 +1,6 @@
 # Terraform::AWS::DatasyncLocationS3
 
-CloudFormation equivalent of aws_datasync_location_s3
+Manages an S3 Location within AWS DataSync.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### S3BucketArn
 
+Amazon Resource Name (ARN) of the S3 Bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subdirectory
 
+Prefix to perform actions as source or destination.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value pairs of resource tags to assign to the DataSync Location.
 
 _Required_: No
 

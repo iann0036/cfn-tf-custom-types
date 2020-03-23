@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::TransferSshKey",
-    "description": "CloudFormation equivalent of aws_transfer_ssh_key",
+    "description": "Provides a AWS Transfer User SSH Key resource.\n\n\n```hcl\nresource \"aws_transfer_server\" \"foo\" {\n  identity_provider_type = \"SERVICE_MANAGED\"\n\n  tags = {\n    NAME = \"tf-acc-test-transfer-server\"\n  }\n}\n\nresource \"aws_iam_role\" \"foo\" {\n  name = \"tf-test-transfer-user-iam-role-%s\"\n\n  assume_role_policy = <<EOF\n{\n\t\"Version\": \"2012-10-17\",\n\t\"Statement\": [\n\t\t{\n\t\t\"Effect\": \"Allow\",\n\t\t\"Principal\": {\n\t\t\t\"Service\": \"transfer.amazonaws.com\"\n\t\t},\n\t\t\"Action\": \"sts:AssumeRole\"\n\t\t}\n\t]\n}\nEOF\n}\n\nresource \"aws_iam_role_policy\" \"foo\" {\n  name = \"tf-test-transfer-user-iam-policy-%s\"\n  role = \"${aws_iam_role.foo.id}\"\n\n  policy = <<POLICY\n{\n\t\"Version\": \"2012-10-17\",\n\t\"Statement\": [\n\t\t{\n\t\t\t\"Sid\": \"AllowFullAccesstoS3\",\n\t\t\t\"Effect\": \"Allow\",\n\t\t\t\"Action\": [\n\t\t\t\t\"s3:*\"\n\t\t\t],\n\t\t\t\"Resource\": \"*\"\n\t\t}\n\t]\n}\nPOLICY\n}\n\nresource \"aws_transfer_user\" \"foo\" {\n  server_id = \"${aws_transfer_server.foo.id}\"\n  user_name = \"tftestuser\"\n  role      = \"${aws_iam_role.foo.arn}\"\n\n  tags = {\n    NAME = \"tftestuser\"\n  }\n}\n\nresource \"aws_transfer_ssh_key\" \"foo\" {\n  server_id = \"${aws_transfer_server.foo.id}\"\n  user_name = \"${aws_transfer_user.foo.user_name}\"\n  body      = \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD3F6tyPEFEzV0LX3X8BsXdMsQz1x2cEikKDEY0aIj41qgxMCP/iteneqXSIFZBp5vizPvaoIR3Um9xK7PGoW8giupGn+EPuxIA4cDM4vzOqOkiMPhz5XK0whEjkVzTo4+S0puvDZuwIsdiW9mxhJc7tgBNL0cYlWSYVkz4G/fslNfRPW5mYAM49f4fhtxPb5ok4Q2Lg9dPKVHO/Bgeu5woMc7RY0p1ej6D4CKFE6lymSDJpW0YHX/wqE9+cfEauh7xZcG0q9t2ta6F6fmX0agvpFyZo8aFbXeUBr7osSCJNgvavWbM/06niWrOvYX2xwWdhXmXSrbX8ZbabVohBK41 example@example.com\"\n}\n```",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "Body": {
-            "type": "string"
+            "type": "string",
+            "description": "The public key portion of an SSH key pair."
         },
         "Id": {
             "type": "string"
         },
         "ServerId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Server ID of the Transfer Server (e.g. `s-12345678`)."
         },
         "UserName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user account that is assigned to one or more servers."
         }
     },
     "additionalProperties": false,

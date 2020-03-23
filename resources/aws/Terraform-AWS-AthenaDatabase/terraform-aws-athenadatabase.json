@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AthenaDatabase",
-    "description": "CloudFormation equivalent of aws_athena_database",
+    "description": "Provides an Athena database.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EncryptionConfiguration": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "EncryptionOption": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of key; one of `SSE_S3`, `SSE_KMS`, `CSE_KMS`."
                 },
                 "KmsKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The KMS key ARN or ID; required for key types `SSE_KMS` and `CSE_KMS`."
                 }
             },
             "required": [
@@ -25,16 +27,19 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of s3 bucket to save the results of the query execution."
         },
         "ForceDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean that indicates all tables should be deleted from the database so that the database can be destroyed without error. The tables are *not* recoverable."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the database to create."
         },
         "EncryptionConfiguration": {
             "type": "array",

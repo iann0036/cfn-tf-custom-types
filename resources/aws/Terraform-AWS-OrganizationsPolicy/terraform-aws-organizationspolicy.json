@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OrganizationsPolicy",
-    "description": "CloudFormation equivalent of aws_organizations_policy",
+    "description": "Provides a resource to manage an [AWS Organizations policy](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,19 +12,23 @@
             "type": "string"
         },
         "Content": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy content to add to the new policy. For example, if you create a [service control policy (SCP)](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html), this string must be JSON text that specifies the permissions that admins in attached accounts can delegate to their users, groups, and roles. For more information about the SCP syntax, see the [Service Control Policy Syntax documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html) and for more information on the Tag Policy syntax, see the [Tag Policy Syntax documentation](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_example-tag-policies.html)."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description to assign to the policy."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The friendly name to assign to the policy."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of policy to create. Currently, the only valid values are `SERVICE_CONTROL_POLICY` (SCP) and `TAG_POLICY`. Defaults to `SERVICE_CONTROL_POLICY`."
         }
     },
     "additionalProperties": false,

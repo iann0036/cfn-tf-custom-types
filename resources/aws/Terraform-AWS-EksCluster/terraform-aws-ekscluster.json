@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::EksCluster",
-    "description": "CloudFormation equivalent of aws_eks_cluster",
+    "description": "Manages an EKS Cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EncryptionConfig": {
@@ -122,7 +122,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of the desired control plane logging to enable. For more information, see [Amazon EKS Control Plane Logging](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html)."
         },
         "Endpoint": {
             "type": "string"
@@ -160,7 +161,8 @@
             "type": "string"
         },
         "RoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf. Ensure the resource configuration includes explicit dependencies on the IAM Role permissions by adding [`depends_on`](/docs/configuration/resources.html#depends_on-explicit-resource-dependencies) if using the [`aws_iam_role_policy` resource](/docs/providers/aws/r/iam_role_policy.html) or [`aws_iam_role_policy_attachment` resource](/docs/providers/aws/r/iam_role_policy_attachment.html), otherwise EKS cannot delete EKS managed EC2 infrastructure such as Security Groups on EKS Cluster deletion."
         },
         "Status": {
             "type": "string"
@@ -183,7 +185,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Version": {
             "type": "string"

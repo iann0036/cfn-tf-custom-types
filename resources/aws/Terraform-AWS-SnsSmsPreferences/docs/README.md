@@ -1,6 +1,6 @@
 # Terraform::AWS::SnsSmsPreferences
 
-CloudFormation equivalent of aws_sns_sms_preferences
+Provides a way to set SNS SMS preferences.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### DefaultSenderId
 
+A string, such as your business brand, that is displayed as the sender on the receiving device.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultSmsType
+
+The type of SMS message that you will send by default. Possible values are: Promotional, Transactional.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeliveryStatusIamRoleArn
 
+The ARN of the IAM role that allows Amazon SNS to write logs about SMS deliveries in CloudWatch Logs.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeliveryStatusSuccessSamplingRate
+
+The percentage of successful SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value must be between 0 and 100.
 
 _Required_: No
 
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MonthlySpendLimit
 
+The maximum amount in USD that you are willing to spend each month to send SMS messages.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UsageReportS3Bucket
+
+The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS.
 
 _Required_: No
 

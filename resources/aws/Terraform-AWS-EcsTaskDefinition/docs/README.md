@@ -1,6 +1,6 @@
 # Terraform::AWS::EcsTaskDefinition
 
-CloudFormation equivalent of aws_ecs_task_definition
+Manages a revision of an ECS task definition to be used in `aws_ecs_service`.
 
 ## Syntax
 

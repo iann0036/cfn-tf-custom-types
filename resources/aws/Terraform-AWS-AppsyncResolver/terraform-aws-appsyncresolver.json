@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppsyncResolver",
-    "description": "CloudFormation equivalent of aws_appsync_resolver",
+    "description": "Provides an AppSync Resolver.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PipelineConfig": {
@@ -12,7 +12,8 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The list of Function ID."
                 }
             },
             "required": []
@@ -24,31 +25,38 @@
             "type": "string"
         },
         "ApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The API ID for the GraphQL API."
         },
         "Arn": {
             "type": "string"
         },
         "DataSource": {
-            "type": "string"
+            "type": "string",
+            "description": "The DataSource name."
         },
         "Field": {
-            "type": "string"
+            "type": "string",
+            "description": "The field name from the schema defined in the GraphQL API."
         },
         "Id": {
             "type": "string"
         },
         "Kind": {
-            "type": "string"
+            "type": "string",
+            "description": "The resolver type. Valid values are `UNIT` and `PIPELINE`."
         },
         "RequestTemplate": {
-            "type": "string"
+            "type": "string",
+            "description": "The request mapping template for UNIT resolver or 'before mapping template' for PIPELINE resolver."
         },
         "ResponseTemplate": {
-            "type": "string"
+            "type": "string",
+            "description": "The response mapping template for UNIT resolver or 'after mapping template' for PIPELINE resolver."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type name from the schema defined in the GraphQL API."
         },
         "PipelineConfig": {
             "type": "array",

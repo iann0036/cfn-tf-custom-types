@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SecurityGroupRule",
-    "description": "CloudFormation equivalent of aws_security_group_rule",
+    "description": "Provides a security group rule resource. Represents a single `ingress` or\n`egress` group rule, which can be added to external Security Groups.\n\n~> **NOTE on Security Groups and Security Group Rules:** Terraform currently\nprovides both a standalone Security Group Rule resource (a single `ingress` or\n`egress` rule), and a [Security Group resource](security_group.html) with `ingress` and `egress` rules\ndefined in-line. At this time you cannot use a Security Group with in-line rules\nin conjunction with any Security Group Rule resources. Doing so will cause\na conflict of rule settings and will overwrite rules.\n\n~> **NOTE:** Setting `protocol = \"all\"` or `protocol = -1` with `from_port` and `to_port` will result in the EC2 API creating a security group rule with all ports open. This API behavior cannot be controlled by Terraform and may generate warnings in the future.\n\n~> **NOTE:** Referencing Security Groups across VPC peering has certain restrictions. More information is available in the [VPC Peering User Guide](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,13 +13,16 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of CIDR blocks. Cannot be specified with `source_security_group_id`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the rule."
         },
         "FromPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The start port (or ICMP type number if protocol is \"icmp\" or \"icmpv6\")."
         },
         "Id": {
             "type": "string"
@@ -29,32 +32,40 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of IPv6 CIDR blocks."
         },
         "PrefixListIds": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of prefix list IDs (for allowing access to VPC endpoints).\nOnly valid with `egress`."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol. If not icmp, icmpv6, tcp, udp, or all use the [protocol number](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml)."
         },
         "SecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The security group to apply this rule to."
         },
         "Self": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the security group itself will be added as\na source to this ingress rule. Cannot be specified with `source_security_group_id`."
         },
         "SourceSecurityGroupId": {
-            "type": "string"
+            "type": "string",
+            "description": "The security group id to allow access to/from,\ndepending on the `type`. Cannot be specified with `cidr_blocks` and `self`."
         },
         "ToPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The end port (or ICMP code if protocol is \"icmp\")."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of rule being created. Valid options are `ingress` (inbound)\nor `egress` (outbound)."
         }
     },
     "additionalProperties": false,

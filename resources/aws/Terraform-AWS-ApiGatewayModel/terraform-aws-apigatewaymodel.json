@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayModel",
-    "description": "CloudFormation equivalent of aws_api_gateway_model",
+    "description": "Provides a Model for a REST API Gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "ContentType": {
-            "type": "string"
+            "type": "string",
+            "description": "The content type of the model."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the model."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the model."
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated REST API."
         },
         "Schema": {
-            "type": "string"
+            "type": "string",
+            "description": "The schema of the model in a JSON form."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::AWS::AppmeshVirtualService
 
-CloudFormation equivalent of aws_appmesh_virtual_service
+Provides an AWS App Mesh virtual service resource.
 
 ## Syntax
 
@@ -46,6 +46,8 @@ Properties:
 
 #### MeshName
 
+The name of the service mesh in which to create the virtual service.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name to use for the virtual service.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

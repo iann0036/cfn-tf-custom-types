@@ -1,6 +1,7 @@
 # Terraform::AWS::DxHostedPrivateVirtualInterfaceAccepter
 
-CloudFormation equivalent of aws_dx_hosted_private_virtual_interface_accepter
+Provides a resource to manage the accepter's side of a Direct Connect hosted private virtual interface.
+This resource accepts ownership of a private virtual interface created by another AWS account.
 
 ## Syntax
 
@@ -38,6 +39,8 @@ Properties:
 
 #### DxGatewayId
 
+The ID of the Direct Connect gateway to which to connect the virtual interface.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 
@@ -54,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VirtualInterfaceId
 
+The ID of the Direct Connect virtual interface to accept.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnGatewayId
+
+The ID of the [virtual private gateway](vpn_gateway.html) to which to connect the virtual interface.
 
 _Required_: No
 

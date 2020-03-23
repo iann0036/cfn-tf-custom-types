@@ -1,6 +1,6 @@
 # Terraform::AWS::SsmActivation
 
-CloudFormation equivalent of aws_ssm_activation
+Registers an on-premises server or virtual machine with Amazon EC2 so that it can be managed using Run Command.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Description
 
+The description of the resource that you want to register.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExpirationDate
+
+UTC timestamp in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) by which this activation request should expire. The default value is 24 hours from resource creation time. Terraform will only perform drift detection of its value when present in a configuration.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IamRole
 
+The IAM Role to attach to the managed instance.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The default name of the registered managed instance.
 
 _Required_: No
 
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RegistrationLimit
 
+The maximum number of managed instances you want to register. The default value is 1 instance.
+
 _Required_: No
 
 _Type_: Double
@@ -79,6 +89,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the object.
 
 _Required_: No
 

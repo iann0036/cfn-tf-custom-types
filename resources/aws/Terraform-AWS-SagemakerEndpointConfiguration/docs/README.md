@@ -1,6 +1,6 @@
 # Terraform::AWS::SagemakerEndpointConfiguration
 
-CloudFormation equivalent of aws_sagemaker_endpoint_configuration
+Provides a SageMaker endpoint configuration resource.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### KmsKeyArn
 
+Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the endpoint configuration. If omitted, Terraform will assign a random, unique name.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

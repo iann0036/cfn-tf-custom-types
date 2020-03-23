@@ -1,6 +1,6 @@
 # Terraform::AWS::WafregionalSizeConstraintSet
 
-CloudFormation equivalent of aws_wafregional_size_constraint_set
+Provides a WAF Regional Size Constraint Set Resource for use with Application Load Balancer.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the Size Constraint Set.
 
 _Required_: Yes
 

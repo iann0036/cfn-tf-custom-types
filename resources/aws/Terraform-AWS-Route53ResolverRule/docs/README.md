@@ -1,6 +1,6 @@
 # Terraform::AWS::Route53ResolverRule
 
-CloudFormation equivalent of aws_route53_resolver_rule
+Provides a Route53 Resolver rule.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### DomainName
 
+DNS queries for this domain name are forwarded to the IP addresses that are specified using `target_ip`.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A friendly name that lets you easily find a rule in the Resolver dashboard in the Route 53 console.
 
 _Required_: No
 
@@ -67,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RuleType
 
+The rule type. Valid values are `FORWARD`, `SYSTEM` and `RECURSIVE`.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

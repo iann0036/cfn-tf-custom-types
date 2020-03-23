@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::RedshiftParameterGroup",
-    "description": "CloudFormation equivalent of aws_redshift_parameter_group",
+    "description": "Provides a Redshift Cluster parameter group resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Parameter": {
@@ -29,16 +29,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the Redshift parameter group. Defaults to \"Managed by Terraform\"."
         },
         "Family": {
-            "type": "string"
+            "type": "string",
+            "description": "The family of the Redshift parameter group."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Redshift parameter."
         },
         "Tags": {
             "type": "array",
@@ -58,7 +61,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Parameter": {
             "type": "array",

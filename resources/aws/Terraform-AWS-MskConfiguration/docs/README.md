@@ -1,6 +1,8 @@
 # Terraform::AWS::MskConfiguration
 
-CloudFormation equivalent of aws_msk_configuration
+Manages an Amazon Managed Streaming for Kafka configuration. More information can be found on the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration.html).
+
+~> **NOTE:** The API does not support deleting MSK configurations. Removing this Terraform resource will only remove the Terraform state for it.
 
 ## Syntax
 
@@ -36,6 +38,8 @@ Properties:
 
 #### Description
 
+Description of the configuration.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KafkaVersions
+
+List of Apache Kafka versions which can use this configuration.
 
 _Required_: Yes
 
@@ -52,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerProperties
+
+Contents of the server.properties file. Supported properties are documented in the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration-properties.html).
 
 _Required_: Yes
 

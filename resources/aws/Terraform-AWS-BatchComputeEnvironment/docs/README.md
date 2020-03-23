@@ -1,6 +1,12 @@
 # Terraform::AWS::BatchComputeEnvironment
 
-CloudFormation equivalent of aws_batch_compute_environment
+Creates a AWS Batch compute environment. Compute environments contain the Amazon ECS container instances that are used to run containerized batch jobs.
+
+For information about AWS Batch, see [What is AWS Batch?][1] .
+For information about compute environment, see [Compute Environments][2] .
+
+~> **Note:** To prevent a race condition during environment deletion, make sure to set `depends_on` to the related `aws_iam_role_policy_attachment`;
+otherwise, the policy may be destroyed too soon and the compute environment will then get stuck in the `DELETING` state, see [Troubleshooting AWS Batch][3] .
 
 ## Syntax
 
@@ -43,6 +49,8 @@ Properties:
 
 #### ComputeEnvironmentName
 
+The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and underscores are allowed. If omitted, Terraform will assign a random, unique name.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ComputeEnvironmentNamePrefix
+
+Creates a unique compute environment name beginning with the specified prefix. Conflicts with `compute_environment_name`.
 
 _Required_: No
 
@@ -59,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceRole
 
+The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### State
 
+The state of the compute environment. If the state is `ENABLED`, then the compute environment accepts jobs from a queue and can scale out automatically based on queues. Valid items are `ENABLED` or `DISABLED`. Defaults to `ENABLED`.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of compute environment. Valid items are `EC2` or `SPOT`.
 
 _Required_: Yes
 

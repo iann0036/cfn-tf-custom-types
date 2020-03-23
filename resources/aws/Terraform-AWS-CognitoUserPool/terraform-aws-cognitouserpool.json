@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CognitoUserPool",
-    "description": "CloudFormation equivalent of aws_cognito_user_pool",
+    "description": "Provides a Cognito User Pool resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AdminCreateUserConfig": {
@@ -289,7 +289,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Attributes supported as an alias for this user pool. Possible values: phone_number, email, or preferred_username. Conflicts with `username_attributes`."
         },
         "Arn": {
             "type": "string"
@@ -299,16 +300,19 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The attributes to be auto-verified. Possible values: email, phone_number."
         },
         "CreationDate": {
             "type": "string"
         },
         "EmailVerificationMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "A string representing the email verification message. Conflicts with `verification_message_template` configuration block `email_message` argument."
         },
         "EmailVerificationSubject": {
-            "type": "string"
+            "type": "string",
+            "description": "A string representing the email verification subject. Conflicts with `verification_message_template` configuration block `email_subject` argument."
         },
         "Endpoint": {
             "type": "string"
@@ -320,16 +324,20 @@
             "type": "string"
         },
         "MfaConfiguration": {
-            "type": "string"
+            "type": "string",
+            "description": "Multi-Factor Authentication (MFA) configuration for the User Pool. Defaults of `OFF`. Valid values:\n* `OFF` - MFA tokens are not required.\n* `ON` - MFA is required for all users to sign in. Requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured.\n* `OPTIONAL` - MFA will be required only for individual users who have MFA enabled. Requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user pool."
         },
         "SmsAuthenticationMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "A string representing the SMS authentication message. The message must contain the `{####}` placeholder, which will be replaced with the code."
         },
         "SmsVerificationMessage": {
-            "type": "string"
+            "type": "string",
+            "description": "A string representing the SMS verification message. Conflicts with `verification_message_template` configuration block `sms_message` argument."
         },
         "Tags": {
             "type": "array",
@@ -349,14 +357,16 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the User Pool."
         },
         "UsernameAttributes": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up. Conflicts with `alias_attributes`."
         },
         "AdminCreateUserConfig": {
             "type": "array",

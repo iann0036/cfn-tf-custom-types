@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DaxCluster",
-    "description": "CloudFormation equivalent of aws_dax_cluster",
+    "description": "Provides a DAX Cluster resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ServerSideEncryption": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Whether to enable encryption at rest. Defaults to `false`."
                 }
             },
             "required": []
@@ -43,7 +44,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Availability Zones in which the\nnodes will be created."
         },
         "ClusterAddress": {
             "type": "string"
@@ -58,7 +60,8 @@
             "type": "string"
         },
         "IamRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "A valid Amazon Resource Name (ARN) that identifies\nan IAM role. At runtime, DAX will assume this role and use the role's\npermissions to access DynamoDB on your behalf."
         },
         "Id": {
             "type": "string"
@@ -131,7 +134,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ServerSideEncryption": {
             "type": "array",

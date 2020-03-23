@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ConfigConfigurationAggregator",
-    "description": "CloudFormation equivalent of aws_config_configuration_aggregator",
+    "description": "Manages an AWS Config Configuration Aggregator",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AccountAggregationSource": {
@@ -64,7 +64,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the configuration aggregator."
         },
         "Tags": {
             "type": "array",
@@ -84,7 +85,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "AccountAggregationSource": {
             "type": "array",

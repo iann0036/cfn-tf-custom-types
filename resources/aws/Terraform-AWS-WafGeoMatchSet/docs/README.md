@@ -1,6 +1,6 @@
 # Terraform::AWS::WafGeoMatchSet
 
-CloudFormation equivalent of aws_waf_geo_match_set
+Provides a WAF Geo Match Set Resource
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the GeoMatchSet.
 
 _Required_: Yes
 

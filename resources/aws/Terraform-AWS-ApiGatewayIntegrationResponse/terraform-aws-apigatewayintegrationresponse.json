@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayIntegrationResponse",
-    "description": "CloudFormation equivalent of aws_api_gateway_integration_response",
+    "description": "Provides an HTTP Method Integration Response for an API Gateway Resource.\n\n-> **Note:** Depends on having `aws_api_gateway_integration` inside your rest api. To ensure this\nyou might need to add an explicit `depends_on` for clean runs.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "ContentHandling": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies how to handle request payload content type conversions. Supported values are `CONVERT_TO_BINARY` and `CONVERT_TO_TEXT`. If this property is not defined, the response payload will be passed through from the integration response to the method response without modification."
         },
         "HttpMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "The HTTP method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`)."
         },
         "Id": {
             "type": "string"
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The API resource ID."
         },
         "ResponseParameters": {
             "type": "array",
@@ -38,7 +41,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map of response parameters that can be read from the backend response.\nFor example: `response_parameters = { \"method.response.header.X-Some-Header\" = \"integration.response.header.X-Some-Other-Header\" }`."
         },
         "ResponseParametersInJson": {
             "type": "string"
@@ -61,16 +65,20 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map specifying the templates used to transform the integration response body."
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated REST API."
         },
         "SelectionPattern": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the regular expression pattern used to choose\nan integration response based on the response from the backend. Setting this to `-` makes the integration the default one.\nIf the backend is an `AWS` Lambda function, the AWS Lambda function error header is matched.\nFor all other `HTTP` and `AWS` backends, the HTTP status code is matched."
         },
         "StatusCode": {
-            "type": "string"
+            "type": "string",
+            "description": "The HTTP status code."
         }
     },
     "additionalProperties": false,

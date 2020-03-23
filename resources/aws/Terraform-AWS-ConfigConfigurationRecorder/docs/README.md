@@ -1,6 +1,8 @@
 # Terraform::AWS::ConfigConfigurationRecorder
 
-CloudFormation equivalent of aws_config_configuration_recorder
+Provides an AWS Config Configuration Recorder. Please note that this resource **does not start** the created recorder automatically.
+
+~> **Note:** _Starting_ the Configuration Recorder requires a [delivery channel](/docs/providers/aws/r/config_delivery_channel.html) (while delivery channel creation requires Configuration Recorder). This is why [`aws_config_configuration_recorder_status`](/docs/providers/aws/r/config_configuration_recorder_status.html) is a separate resource.
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### Name
 
+The name of the recorder. Defaults to `default`. Changing it recreates the resource.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleArn
+
+Amazon Resource Name (ARN) of the IAM role.
+used to make read or write requests to the delivery channel and to describe the AWS resources associated with the account.
+See [AWS Docs](http://docs.aws.amazon.com/config/latest/developerguide/iamrole-permissions.html) for more details.
 
 _Required_: Yes
 

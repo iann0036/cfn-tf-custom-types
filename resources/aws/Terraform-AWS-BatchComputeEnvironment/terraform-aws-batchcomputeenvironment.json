@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::BatchComputeEnvironment",
-    "description": "CloudFormation equivalent of aws_batch_compute_environment",
+    "description": "Creates a AWS Batch compute environment. Compute environments contain the Amazon ECS container instances that are used to run containerized batch jobs.\n\nFor information about AWS Batch, see [What is AWS Batch?][1] .\nFor information about compute environment, see [Compute Environments][2] .\n\n~> **Note:** To prevent a race condition during environment deletion, make sure to set `depends_on` to the related `aws_iam_role_policy_attachment`;\notherwise, the policy may be destroyed too soon and the compute environment will then get stuck in the `DELETING` state, see [Troubleshooting AWS Batch][3] .",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ComputeResources": {
@@ -123,10 +123,12 @@
             "type": "string"
         },
         "ComputeEnvironmentName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, and underscores are allowed. If omitted, Terraform will assign a random, unique name."
         },
         "ComputeEnvironmentNamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique compute environment name beginning with the specified prefix. Conflicts with `compute_environment_name`."
         },
         "EccClusterArn": {
             "type": "string"
@@ -138,10 +140,12 @@
             "type": "string"
         },
         "ServiceRole": {
-            "type": "string"
+            "type": "string",
+            "description": "The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf."
         },
         "State": {
-            "type": "string"
+            "type": "string",
+            "description": "The state of the compute environment. If the state is `ENABLED`, then the compute environment accepts jobs from a queue and can scale out automatically based on queues. Valid items are `ENABLED` or `DISABLED`. Defaults to `ENABLED`."
         },
         "Status": {
             "type": "string"
@@ -150,7 +154,8 @@
             "type": "string"
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of compute environment. Valid items are `EC2` or `SPOT`."
         },
         "ComputeResources": {
             "type": "array",

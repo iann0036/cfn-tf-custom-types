@@ -1,6 +1,6 @@
 # Terraform::AWS::SwfDomain
 
-CloudFormation equivalent of aws_swf_domain
+Provides an SWF Domain resource.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Description
 
+The domain description.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the domain. If omitted, Terraform will assign a random, unique name.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamePrefix
 
+Creates a unique name beginning with the specified prefix. Conflicts with `name`.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value mapping of resource tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -69,6 +77,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkflowExecutionRetentionPeriodInDays
+
+Length of time that SWF will continue to retain information about the workflow execution after the workflow execution is complete, must be between 0 and 90 days.
 
 _Required_: Yes
 

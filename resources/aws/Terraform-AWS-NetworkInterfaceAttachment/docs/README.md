@@ -1,6 +1,6 @@
 # Terraform::AWS::NetworkInterfaceAttachment
 
-CloudFormation equivalent of aws_network_interface_attachment
+Attach an Elastic network interface (ENI) resource with EC2 instance.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### DeviceIndex
 
+Network interface index (int).
+
 _Required_: Yes
 
 _Type_: Double
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+Instance ID to attach.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkInterfaceId
+
+ENI ID to attach.
 
 _Required_: Yes
 

@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Interval
 
+The number of minutes between the first and second traffic shifts of a `TimeBasedCanary` deployment.
+
 _Required_: No
 
 _Type_: Double
@@ -31,6 +33,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Percentage
+
+The percentage of traffic to shift in the first increment of a `TimeBasedCanary` deployment.
 
 _Required_: No
 

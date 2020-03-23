@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpcDhcpOptions",
-    "description": "CloudFormation equivalent of aws_vpc_dhcp_options",
+    "description": "Provides a VPC DHCP Options resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,14 +9,16 @@
             "type": "string"
         },
         "DomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "the suffix domain name to use by default when resolving non Fully Qualified Domain Names. In other words, this is what ends up being the `search` value in the `/etc/resolv.conf` file."
         },
         "DomainNameServers": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of name servers to configure in `/etc/resolv.conf`. If you want to use the default AWS nameservers you should set this to `AmazonProvidedDNS`."
         },
         "Id": {
             "type": "string"
@@ -26,17 +28,20 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of NETBIOS name servers."
         },
         "NetbiosNodeType": {
-            "type": "string"
+            "type": "string",
+            "description": "The NetBIOS node type (1, 2, 4, or 8). AWS recommends to specify 2 since broadcast and multicast are not supported in their network. For more information about these node types, see [RFC 2132](http://www.ietf.org/rfc/rfc2132.txt)."
         },
         "NtpServers": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of NTP servers to configure."
         },
         "OwnerId": {
             "type": "string"
@@ -59,7 +64,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

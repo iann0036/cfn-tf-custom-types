@@ -1,6 +1,6 @@
 # Terraform::AWS::S3BucketInventory
 
-CloudFormation equivalent of aws_s3_bucket_inventory
+Provides a S3 bucket [inventory configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html) resource.
 
 ## Syntax
 
@@ -65,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Specifies whether the inventory is enabled or disabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -72,6 +74,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IncludedObjectVersions
+
+Object versions to include in the inventory list. Valid values: `All`, `Current`.
 
 _Required_: Yes
 
@@ -81,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Unique identifier of the inventory configuration for the bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +94,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OptionalFields
+
+List of optional fields that are included in the inventory results.
+Valid values: `Size`, `LastModifiedDate`, `StorageClass`, `ETag`, `IsMultipartUploaded`, `ReplicationStatus`, `EncryptionStatus`, `ObjectLockRetainUntilDate`, `ObjectLockMode`, `ObjectLockLegalHoldStatus`, `IntelligentTieringAccessTier`.
 
 _Required_: No
 

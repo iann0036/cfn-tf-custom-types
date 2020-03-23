@@ -1,8 +1,10 @@
 # AWS Provider
 
+> For the AWS provider, credentials will be inherited from the executor role, meaning you are not required to provide credentials in a configuration secret.
+
 ## Configuration
 
-To configure this resource, you must create an AWS Secrets Manager secret with the name **terraform/aws**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:
+To configure this resource, you may optionally create an AWS Secrets Manager secret with the name **terraform/aws**. The below arguments may be included as the key/value or JSON properties in the secret or metadata object:
 
 * `access_key` - (Optional) This is the AWS access key.
 

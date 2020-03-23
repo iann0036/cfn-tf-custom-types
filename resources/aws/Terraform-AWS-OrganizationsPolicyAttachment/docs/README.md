@@ -1,6 +1,6 @@
 # Terraform::AWS::OrganizationsPolicyAttachment
 
-CloudFormation equivalent of aws_organizations_policy_attachment
+Provides a resource to attach an AWS Organizations policy to an organization account, root, or unit.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### PolicyId
 
+The unique identifier (ID) of the policy that you want to attach to the target.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetId
+
+The unique identifier (ID) of the root, organizational unit, or account number that you want to attach the policy to.
 
 _Required_: Yes
 

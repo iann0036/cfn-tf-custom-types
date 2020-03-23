@@ -1,6 +1,6 @@
 # Terraform::AWS::GameliftFleet
 
-CloudFormation equivalent of aws_gamelift_fleet
+Provides a Gamelift Fleet resource.
 
 ## Syntax
 
@@ -61,6 +61,8 @@ Properties:
 
 #### BuildId
 
+ID of the Gamelift Build to be deployed on the fleet.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Human-readable description of the fleet.
 
 _Required_: No
 
@@ -77,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ec2InstanceType
 
+Name of an EC2 instance type. e.g. `t2.micro`.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FleetType
+
+Type of fleet. This value must be `ON_DEMAND` or `SPOT`. Defaults to `ON_DEMAND`.
 
 _Required_: No
 
@@ -93,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceRoleArn
 
+ARN of an IAM role that instances in the fleet can assume.
+
 _Required_: No
 
 _Type_: String
@@ -100,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MetricGroups
+
+List of names of metric groups to add this fleet to. A metric group tracks metrics across all fleets in the group. Defaults to `default`.
 
 _Required_: No
 
@@ -109,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the fleet.
+
 _Required_: Yes
 
 _Type_: String
@@ -117,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NewGameSessionProtectionPolicy
 
+Game session protection policy to apply to all instances in this fleet. e.g. `FullProtection`. Defaults to `NoProtection`.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +140,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

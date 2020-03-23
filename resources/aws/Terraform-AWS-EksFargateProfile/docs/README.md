@@ -1,6 +1,6 @@
 # Terraform::AWS::EksFargateProfile
 
-CloudFormation equivalent of aws_eks_fargate_profile
+Manages an EKS Fargate Profile.
 
 ## Syntax
 
@@ -75,6 +75,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

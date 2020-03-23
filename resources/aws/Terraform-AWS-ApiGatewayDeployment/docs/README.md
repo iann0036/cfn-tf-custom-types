@@ -1,6 +1,9 @@
 # Terraform::AWS::ApiGatewayDeployment
 
-CloudFormation equivalent of aws_api_gateway_deployment
+Provides an API Gateway REST Deployment.
+
+-> **Note:** Depends on having `aws_api_gateway_integration` inside your rest api (which in turn depends on `aws_api_gateway_method`). To avoid race conditions
+you might need to add an explicit `depends_on = ["aws_api_gateway_integration.name"]`.
 
 ## Syntax
 
@@ -38,6 +41,8 @@ Properties:
 
 #### Description
 
+The description of the deployment.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RestApiId
+
+The ID of the associated REST API.
 
 _Required_: Yes
 
@@ -54,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StageDescription
 
+The description of the stage.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StageName
 
+The name of the stage. If the specified stage already exists, it will be updated to point to the new deployment. If the stage does not exist, a new one will be created and point to this deployment.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Variables
+
+A map that defines variables for the stage.
 
 _Required_: No
 

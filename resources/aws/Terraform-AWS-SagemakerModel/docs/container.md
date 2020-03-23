@@ -29,6 +29,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ContainerHostname
 
+The DNS host name for the container.
+
 _Required_: No
 
 _Type_: String
@@ -36,6 +38,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Environment
+
+Environment variables for the Docker container.
+A list of key value pairs.
 
 _Required_: No
 
@@ -45,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Image
 
+The registry path where the inference code image is stored in Amazon ECR.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ModelDataUrl
+
+The URL for the S3 location where model artifacts are stored.
 
 _Required_: No
 

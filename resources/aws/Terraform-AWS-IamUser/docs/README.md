@@ -1,6 +1,8 @@
 # Terraform::AWS::IamUser
 
-CloudFormation equivalent of aws_iam_user
+Provides an IAM user.
+
+~> *NOTE:* If policies are attached to the user via the [`aws_iam_policy_attachment` resource](/docs/providers/aws/r/iam_policy_attachment.html) and you are modifying the user `name` or `path`, the `force_destroy` argument must be set to `true` and applied before attempting the operation otherwise you will encounter a `DeleteConflict` error. The [`aws_iam_user_policy_attachment` resource (recommended)](/docs/providers/aws/r/iam_user_policy_attachment.html) does not have this requirement.
 
 ## Syntax
 
@@ -38,6 +40,10 @@ Properties:
 
 #### ForceDestroy
 
+When destroying this user, destroy even if it
+has non-Terraform-managed IAM access keys, login profile or MFA devices. Without `force_destroy`
+a user with non-Terraform-managed access keys and login profile will fail to be destroyed.
+
 _Required_: No
 
 _Type_: Boolean
@@ -45,6 +51,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The user's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: `=,.@-_.`. User names are not distinguished by case. For example, you cannot create users named both "TESTUSER" and "testuser".
 
 _Required_: Yes
 
@@ -54,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+Path in which to create the user.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PermissionsBoundary
 
+The ARN of the policy that is used to set the permissions boundary for the user.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of tags for the IAM user.
 
 _Required_: No
 

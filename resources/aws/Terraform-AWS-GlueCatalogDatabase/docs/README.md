@@ -1,6 +1,6 @@
 # Terraform::AWS::GlueCatalogDatabase
 
-CloudFormation equivalent of aws_glue_catalog_database
+Provides a Glue Catalog Database Resource. You can refer to the [Glue Developer Guide](http://docs.aws.amazon.com/glue/latest/dg/populate-data-catalog.html) for a full explanation of the Glue Data Catalog functionality
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### CatalogId
 
+ID of the Glue Catalog to create the database in. If omitted, this defaults to the AWS Account ID.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of the database.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocationUri
 
+The location of the database (for example, an HDFS path).
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the database.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Parameters
+
+A list of key-value pairs that define parameters and properties of the database.
 
 _Required_: No
 

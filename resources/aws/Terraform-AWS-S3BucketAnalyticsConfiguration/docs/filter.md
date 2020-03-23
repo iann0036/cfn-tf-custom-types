@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Prefix
 
+Object prefix for filtering.
+
 _Required_: No
 
 _Type_: String
@@ -32,6 +34,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Set of object tags for filtering.
 
 _Required_: No
 

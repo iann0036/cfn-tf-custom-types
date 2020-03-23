@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DirectoryServiceDirectory",
-    "description": "CloudFormation equivalent of aws_directory_service_directory",
+    "description": "Provides a Simple or Managed Microsoft directory in AWS Directory Service.\n\n~> **Note:** All arguments including the password and customer username will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ConnectSettings": {
@@ -65,10 +65,12 @@
             "type": "string"
         },
         "Alias": {
-            "type": "string"
+            "type": "string",
+            "description": "The alias for the directory (must be unique amongst all aliases in AWS). Required for `enable_sso`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A textual description for the directory."
         },
         "DnsIpAddresses": {
             "type": "array",
@@ -78,28 +80,34 @@
             }
         },
         "Edition": {
-            "type": "string"
+            "type": "string",
+            "description": "The MicrosoftAD edition (`Standard` or `Enterprise`). Defaults to `Enterprise` (applies to MicrosoftAD type only)."
         },
         "EnableSso": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable single-sign on for the directory. Requires `alias`. Defaults to `false`."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully qualified name for the directory, such as `corp.example.com`."
         },
         "Password": {
-            "type": "string"
+            "type": "string",
+            "description": "The password for the directory administrator or connector user."
         },
         "SecurityGroupId": {
             "type": "string"
         },
         "ShortName": {
-            "type": "string"
+            "type": "string",
+            "description": "The short name of the directory, such as `CORP`."
         },
         "Size": {
-            "type": "string"
+            "type": "string",
+            "description": "The size of the directory (`Small` or `Large` are accepted values)."
         },
         "Tags": {
             "type": "array",
@@ -119,7 +127,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Type": {
             "type": "string"

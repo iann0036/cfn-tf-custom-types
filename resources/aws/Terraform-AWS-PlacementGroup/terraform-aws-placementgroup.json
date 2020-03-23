@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::PlacementGroup",
-    "description": "CloudFormation equivalent of aws_placement_group",
+    "description": "Provides an EC2 placement group. Read more about placement groups\nin [AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,15 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the placement group."
         },
         "PlacementGroupId": {
             "type": "string"
         },
         "Strategy": {
-            "type": "string"
+            "type": "string",
+            "description": "The placement strategy."
         },
         "Tags": {
             "type": "array",
@@ -38,7 +40,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         }
     },
     "additionalProperties": false,

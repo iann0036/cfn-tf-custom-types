@@ -1,6 +1,8 @@
 # Terraform::AWS::CodedeployDeploymentGroup
 
-CloudFormation equivalent of aws_codedeploy_deployment_group
+Provides a CodeDeploy Deployment Group for a CodeDeploy Application
+
+~> **NOTE on blue/green deployments:** When using `green_fleet_provisioning_option` with the `COPY_AUTO_SCALING_GROUP` action, CodeDeploy will create a new ASG with a different name. This ASG is _not_ managed by terraform and will conflict with existing configuration and state. You may want to use a different approach to managing deployments that involve multiple ASG, such as `DISCOVER_EXISTING` with separate blue and green ASG.
 
 ## Syntax
 
@@ -95,6 +97,8 @@ Properties:
 
 #### AppName
 
+The name of the application.
+
 _Required_: Yes
 
 _Type_: String
@@ -102,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoscalingGroups
+
+Autoscaling groups associated with the deployment group.
 
 _Required_: No
 
@@ -111,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeploymentConfigName
 
+The name of the group's deployment config. The default is "CodeDeployDefault.OneAtATime".
+
 _Required_: No
 
 _Type_: String
@@ -119,6 +127,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeploymentGroupName
 
+The name of the deployment group.
+
 _Required_: Yes
 
 _Type_: String
@@ -126,6 +136,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServiceRoleArn
+
+The service role ARN that allows deployments.
 
 _Required_: Yes
 

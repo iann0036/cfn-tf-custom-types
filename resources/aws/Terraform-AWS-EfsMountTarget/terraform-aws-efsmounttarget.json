@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::EfsMountTarget",
-    "description": "CloudFormation equivalent of aws_efs_mount_target",
+    "description": "Provides an Elastic File System (EFS) mount target.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,13 +15,15 @@
             "type": "string"
         },
         "FileSystemId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the file system for which the mount target is intended."
         },
         "Id": {
             "type": "string"
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The address (within the address range of the specified subnet) at\nwhich the file system may be mounted via the mount target."
         },
         "NetworkInterfaceId": {
             "type": "string"
@@ -31,10 +33,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of up to 5 VPC security group IDs (that must\nbe for the same VPC as subnet specified) in effect for the mount target."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the subnet to add the mount target in."
         }
     },
     "additionalProperties": false,

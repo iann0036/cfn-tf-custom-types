@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CodedeployDeploymentGroup",
-    "description": "CloudFormation equivalent of aws_codedeploy_deployment_group",
+    "description": "Provides a CodeDeploy Deployment Group for a CodeDeploy Application\n\n~> **NOTE on blue/green deployments:** When using `green_fleet_provisioning_option` with the `COPY_AUTO_SCALING_GROUP` action, CodeDeploy will create a new ASG with a different name. This ASG is _not_ managed by terraform and will conflict with existing configuration and state. You may want to use a different approach to managing deployments that involve multiple ASG, such as `DISCOVER_EXISTING` with separate blue and green ASG.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AlarmConfiguration": {
@@ -339,26 +339,31 @@
             "type": "string"
         },
         "AppName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the application."
         },
         "AutoscalingGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Autoscaling groups associated with the deployment group."
         },
         "DeploymentConfigName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the group's deployment config. The default is \"CodeDeployDefault.OneAtATime\"."
         },
         "DeploymentGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the deployment group."
         },
         "Id": {
             "type": "string"
         },
         "ServiceRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The service role ARN that allows deployments."
         },
         "AlarmConfiguration": {
             "type": "array",

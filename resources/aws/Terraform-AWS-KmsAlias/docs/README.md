@@ -1,6 +1,8 @@
 # Terraform::AWS::KmsAlias
 
-CloudFormation equivalent of aws_kms_alias
+Provides an alias for a KMS customer master key. AWS Console enforces 1-to-1 mapping between aliases & keys,
+but API (hence Terraform too) allows you to create as many aliases as
+the [account limits](http://docs.aws.amazon.com/kms/latest/developerguide/limits.html) allow you.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 
 #### Name
 
+The display name of the alias. The name must start with the word "alias" followed by a forward slash (alias/).
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamePrefix
 
+Creates an unique alias beginning with the specified prefix.
+The name must start with the word "alias" followed by a forward slash (alias/).  Conflicts with `name`.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetKeyId
+
+Identifier for the key for which the alias is for, can be either an ARN or key_id.
 
 _Required_: Yes
 

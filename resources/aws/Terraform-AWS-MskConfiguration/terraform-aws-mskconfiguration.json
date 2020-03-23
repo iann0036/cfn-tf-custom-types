@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::MskConfiguration",
-    "description": "CloudFormation equivalent of aws_msk_configuration",
+    "description": "Manages an Amazon Managed Streaming for Kafka configuration. More information can be found on the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration.html).\n\n~> **NOTE:** The API does not support deleting MSK configurations. Removing this Terraform resource will only remove the Terraform state for it.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the configuration."
         },
         "Id": {
             "type": "string"
@@ -22,16 +23,19 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Apache Kafka versions which can use this configuration."
         },
         "LatestRevision": {
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the configuration."
         },
         "ServerProperties": {
-            "type": "string"
+            "type": "string",
+            "description": "Contents of the server.properties file. Supported properties are documented in the [MSK Developer Guide](https://docs.aws.amazon.com/msk/latest/developerguide/msk-configuration-properties.html)."
         }
     },
     "additionalProperties": false,

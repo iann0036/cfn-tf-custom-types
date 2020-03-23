@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DevicefarmProject",
-    "description": "CloudFormation equivalent of aws_devicefarm_project",
+    "description": "Provides a resource to manage AWS Device Farm Projects. \nPlease keep in mind that this feature is only supported on the \"us-west-2\" region.\nThis resource will error if you try to create a project in another region.\n\nFor more information about Device Farm Projects, see the AWS Documentation on\n[Device Farm Projects][aws-get-project].",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,7 +15,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the project."
         }
     },
     "additionalProperties": false,

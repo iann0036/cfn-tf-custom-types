@@ -1,6 +1,6 @@
 # Terraform::AWS::RedshiftSubnetGroup
 
-CloudFormation equivalent of aws_redshift_subnet_group
+Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+The description of the Redshift Subnet group. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Redshift Subnet group.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+An array of VPC subnet IDs.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -60,6 +66,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,9 @@
 # Terraform::AWS::DmsCertificate
 
-CloudFormation equivalent of aws_dms_certificate
+Provides a DMS (Data Migration Service) certificate resource. DMS certificates can be created, deleted, and imported.
+
+~> **Note:** All arguments including the PEM encoded certificate will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -33,6 +36,8 @@ Properties:
 
 #### CertificateId
 
+The certificate identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CertificatePem
 
+The contents of the .pem X.509 certificate file for the certificate. Either `certificate_pem` or `certificate_wallet` must be set.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CertificateWallet
+
+The contents of the Oracle Wallet certificate for use with SSL. Either `certificate_pem` or `certificate_wallet` must be set.
 
 _Required_: No
 

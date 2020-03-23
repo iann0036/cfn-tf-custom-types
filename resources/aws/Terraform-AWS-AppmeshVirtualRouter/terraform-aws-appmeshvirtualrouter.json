@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppmeshVirtualRouter",
-    "description": "CloudFormation equivalent of aws_appmesh_virtual_router",
+    "description": "Provides an AWS App Mesh virtual router resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Spec": {
@@ -47,10 +47,12 @@
             "additionalProperties": false,
             "properties": {
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port used for the port mapping."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol used for the port mapping. Valid values are `http` and `tcp`."
                 }
             },
             "required": [
@@ -77,10 +79,12 @@
             "type": "string"
         },
         "MeshName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the service mesh in which to create the virtual router."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to use for the virtual router."
         },
         "Tags": {
             "type": "array",
@@ -100,7 +104,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Spec": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppautoscalingScheduledAction",
-    "description": "CloudFormation equivalent of aws_appautoscaling_scheduled_action",
+    "description": "Provides an Application AutoScaling ScheduledAction resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ScalableTargetAction": {
@@ -26,28 +26,35 @@
             "type": "string"
         },
         "EndTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The date and time for the scheduled action to end. Specify the following format: 2006-01-02T15:04:05Z."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the scheduled action."
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The identifier of the resource associated with the scheduled action. Documentation can be found in the parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html#ApplicationAutoScaling-PutScheduledAction-request-ResourceId)."
         },
         "ScalableDimension": {
-            "type": "string"
+            "type": "string",
+            "description": "The scalable dimension. Documentation can be found in the parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html#ApplicationAutoScaling-PutScheduledAction-request-ScalableDimension) Example: ecs:service:DesiredCount."
         },
         "Schedule": {
-            "type": "string"
+            "type": "string",
+            "description": "The schedule for this action. The following formats are supported: At expressions - at(yyyy-mm-ddThh:mm:ss), Rate expressions - rate(valueunit), Cron expressions - cron(fields). In UTC. Documentation can be found in the parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html#ApplicationAutoScaling-PutScheduledAction-request-Schedule)."
         },
         "ServiceNamespace": {
-            "type": "string"
+            "type": "string",
+            "description": "The namespace of the AWS service. Documentation can be found in the parameter at: [AWS Application Auto Scaling API Reference](https://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_PutScheduledAction.html#ApplicationAutoScaling-PutScheduledAction-request-ServiceNamespace) Example: ecs."
         },
         "StartTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The date and time for the scheduled action to start. Specify the following format: 2006-01-02T15:04:05Z."
         },
         "ScalableTargetAction": {
             "type": "array",

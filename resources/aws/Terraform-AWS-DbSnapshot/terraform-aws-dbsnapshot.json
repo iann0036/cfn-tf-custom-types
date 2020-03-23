@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DbSnapshot",
-    "description": "CloudFormation equivalent of aws_db_snapshot",
+    "description": "Manages a RDS database instance snapshot. For managing RDS database cluster snapshots, see the [`aws_db_cluster_snapshot` resource](/docs/providers/aws/r/db_cluster_snapshot.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,13 +26,15 @@
             "type": "string"
         },
         "DbInstanceIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The DB Instance Identifier from which to take the snapshot."
         },
         "DbSnapshotArn": {
             "type": "string"
         },
         "DbSnapshotIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The Identifier for the snapshot."
         },
         "Encrypted": {
             "type": "boolean"
@@ -94,7 +96,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "VpcId": {
             "type": "string"

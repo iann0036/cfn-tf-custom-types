@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ElasticBeanstalkConfigurationTemplate",
-    "description": "CloudFormation equivalent of aws_elastic_beanstalk_configuration_template",
+    "description": "Provides an Elastic Beanstalk Configuration Template, which are associated with\na specific application and are used to deploy different versions of the\napplication with the same configuration settings.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Setting": {
@@ -36,7 +36,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Short description of the Template."
         },
         "EnvironmentId": {
             "type": "string"
@@ -45,7 +46,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for this Template."
         },
         "SolutionStackName": {
             "type": "string"

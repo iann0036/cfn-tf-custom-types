@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ServicecatalogPortfolio",
-    "description": "CloudFormation equivalent of aws_servicecatalog_portfolio",
+    "description": "Provides a resource to create a Service Catalog Portfolio.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -32,16 +32,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the portfolio."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the portfolio."
         },
         "ProviderName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the person or organization who owns the portfolio."
         },
         "Tags": {
             "type": "array",
@@ -61,7 +64,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Tags to apply to the connection."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,16 @@
 # Terraform::AWS::RamPrincipalAssociation
 
-CloudFormation equivalent of aws_ram_principal_association
+Provides a Resource Access Manager (RAM) principal association. Depending if [RAM Sharing with AWS Organizations is enabled](https://docs.aws.amazon.com/ram/latest/userguide/getting-started-sharing.html#getting-started-sharing-orgs), the RAM behavior with different principal types changes.
+
+When RAM Sharing with AWS Organizations is enabled:
+
+- For AWS Account ID, Organization, and Organizational Unit principals within the same AWS Organization, no resource share invitation is sent and resources become available automatically after creating the association.
+- For AWS Account ID principals outside the AWS Organization, a resource share invitation is sent and must be accepted before resources become available. See the [`aws_ram_resource_share_accepter` resource](/docs/providers/aws/r/ram_resource_share_accepter.html) to accept these invitations.
+
+When RAM Sharing with AWS Organizations is not enabled:
+
+- Organization and Organizational Unit principals cannot be used.
+- For AWS Account ID principals, a resource share invitation is sent and must be accepted before resources become available. See the [`aws_ram_resource_share_accepter` resource](/docs/providers/aws/r/ram_resource_share_accepter.html) to accept these invitations.
 
 ## Syntax
 
@@ -31,6 +41,8 @@ Properties:
 
 #### Principal
 
+The principal to associate with the resource share. Possible values are an AWS account ID, an AWS Organizations Organization ARN, or an AWS Organizations Organization Unit ARN.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceShareArn
+
+The Amazon Resource Name (ARN) of the resource share.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::AWS::LicensemanagerAssociation
 
-CloudFormation equivalent of aws_licensemanager_association
+Provides a License Manager association.
+
+~> **Note:** License configurations can also be associated with launch templates by specifying the `license_specifications` block for an `aws_launch_template`.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### LicenseConfigurationArn
 
+ARN of the license configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceArn
+
+ARN of the resource associated with the license configuration.
 
 _Required_: Yes
 

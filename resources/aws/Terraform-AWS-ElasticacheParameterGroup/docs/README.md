@@ -1,6 +1,8 @@
 # Terraform::AWS::ElasticacheParameterGroup
 
-CloudFormation equivalent of aws_elasticache_parameter_group
+Provides an ElastiCache parameter group resource.
+
+~> **NOTE:** Attempting to remove the `reserved-memory` parameter when `family` is set to `redis2.6` or `redis2.8` may show a perpetual difference in Terraform due to an Elasticache API limitation. Leave that parameter configured with any value to workaround the issue.
 
 ## Syntax
 
@@ -36,6 +38,8 @@ Properties:
 
 #### Description
 
+The description of the ElastiCache parameter group. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Family
 
+The family of the ElastiCache parameter group.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the ElastiCache parameter.
 
 _Required_: Yes
 

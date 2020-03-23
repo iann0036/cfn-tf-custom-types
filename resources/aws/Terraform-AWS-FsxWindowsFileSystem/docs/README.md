@@ -1,6 +1,8 @@
 # Terraform::AWS::FsxWindowsFileSystem
 
-CloudFormation equivalent of aws_fsx_windows_file_system
+Manages a FSx Windows File System. See the [FSx Windows Guide](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html) for more information.
+
+~> **NOTE:** Either the `active_directory_id` argument or `self_managed_active_directory` configuration block must be specified.
 
 ## Syntax
 
@@ -59,6 +61,8 @@ Properties:
 
 #### ActiveDirectoryId
 
+The ID for an existing Microsoft Active Directory instance that the file system should join when it's created. Cannot be specified with `self_managed_active_directory`.
+
 _Required_: No
 
 _Type_: String
@@ -66,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutomaticBackupRetentionDays
+
+The number of days to retain automatic backups. Minimum of `0` and maximum of `35`. Defaults to `7`. Set to `0` to disable.
 
 _Required_: No
 
@@ -75,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CopyTagsToBackups
 
+A boolean flag indicating whether tags on the file system should be copied to backups. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -82,6 +90,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DailyAutomaticBackupStartTime
+
+The preferred time (in `HH:MM` format) to take daily automatic backups, in the UTC time zone.
 
 _Required_: No
 
@@ -91,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyId
 
+ARN for the KMS Key to encrypt the file system at rest. Defaults to an AWS managed KMS Key.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupIds
+
+A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces.
 
 _Required_: No
 
@@ -107,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SkipFinalBackup
 
+When enabled, will skip the default final backup taken when the file system is deleted. This configuration must be applied separately before attempting to delete the resource to have the desired behavior. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -114,6 +130,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageCapacity
+
+Storage capacity (GiB) of the file system. Minimum of 32 and maximum of 65536.
 
 _Required_: Yes
 
@@ -123,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+A list of IDs for the subnets that the file system will be accessible from. File systems support only one subnet. The file server is also launched in that subnet's Availability Zone.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -130,6 +150,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the file system.
 
 _Required_: No
 
@@ -139,6 +161,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ThroughputCapacity
 
+Throughput (megabytes per second) of the file system in power of 2 increments. Minimum of `8` and maximum of `2048`.
+
 _Required_: Yes
 
 _Type_: Double
@@ -146,6 +170,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WeeklyMaintenanceStartTime
+
+The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone.
 
 _Required_: No
 

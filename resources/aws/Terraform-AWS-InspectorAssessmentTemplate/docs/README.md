@@ -1,6 +1,6 @@
 # Terraform::AWS::InspectorAssessmentTemplate
 
-CloudFormation equivalent of aws_inspector_assessment_template
+Provides a Inspector assessment template
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Duration
 
+The duration of the inspector run.
+
 _Required_: Yes
 
 _Type_: Double
@@ -46,6 +48,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the assessment template.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RulesPackageArns
 
+The rules to be used during the run.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value mapping of tags for the Inspector assessment template.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -70,6 +78,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetArn
+
+The assessment target ARN to attach the template to.
 
 _Required_: Yes
 

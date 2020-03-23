@@ -1,6 +1,6 @@
 # Terraform::AWS::SsmMaintenanceWindow
 
-CloudFormation equivalent of aws_ssm_maintenance_window
+Provides an SSM Maintenance Window resource
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### AllowUnassociatedTargets
 
+Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.
+
 _Required_: No
 
 _Type_: Boolean
@@ -57,6 +59,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Cutoff
+
+The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for execution.
 
 _Required_: Yes
 
@@ -66,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description for the maintenance window.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Duration
+
+The duration of the Maintenance Window in hours.
 
 _Required_: Yes
 
@@ -82,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Whether the maintenance window is enabled. Default: `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -89,6 +99,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndDate
+
+Timestamp in [ISO-8601 extended format](https://www.iso.org/iso-8601-date-and-time-format.html) when to no longer run the maintenance window.
 
 _Required_: No
 
@@ -98,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the maintenance window.
+
 _Required_: Yes
 
 _Type_: String
@@ -105,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Schedule
+
+The schedule of the Maintenance Window in the form of a [cron](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-cron.html) or rate expression.
 
 _Required_: Yes
 
@@ -114,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ScheduleTimezone
 
+Timezone for schedule in [Internet Assigned Numbers Authority (IANA) Time Zone Database format](https://www.iana.org/time-zones). For example: `America/Los_Angeles`, `etc/UTC`, or `Asia/Seoul`.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StartDate
 
+Timestamp in [ISO-8601 extended format](https://www.iso.org/iso-8601-date-and-time-format.html) when to begin the maintenance window.
+
 _Required_: No
 
 _Type_: String
@@ -129,6 +149,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

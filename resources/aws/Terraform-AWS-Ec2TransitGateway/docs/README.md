@@ -1,6 +1,6 @@
 # Terraform::AWS::Ec2TransitGateway
 
-CloudFormation equivalent of aws_ec2_transit_gateway
+Manages an EC2 Transit Gateway.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### AmazonSideAsn
 
+Private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is `64512` to `65534` for 16-bit ASNs and `4200000000` to `4294967294` for 32-bit ASNs. Default value: `64512`.
+
 _Required_: No
 
 _Type_: Double
@@ -51,6 +53,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoAcceptSharedAttachments
+
+Whether resource attachment requests are automatically accepted. Valid values: `disable`, `enable`. Default value: `disable`.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultRouteTableAssociation
 
+Whether resource attachments are automatically associated with the default association route table. Valid values: `disable`, `enable`. Default value: `enable`.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultRouteTablePropagation
+
+Whether resource attachments automatically propagate routes to the default propagation route table. Valid values: `disable`, `enable`. Default value: `enable`.
 
 _Required_: No
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Description of the EC2 Transit Gateway.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DnsSupport
+
+Whether DNS support is enabled. Valid values: `disable`, `enable`. Default value: `enable`.
 
 _Required_: No
 
@@ -92,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value tags for the EC2 Transit Gateway.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -99,6 +113,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnEcmpSupport
+
+Whether VPN Equal Cost Multipath Protocol support is enabled. Valid values: `disable`, `enable`. Default value: `enable`.
 
 _Required_: No
 

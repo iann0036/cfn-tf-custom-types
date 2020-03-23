@@ -70,6 +70,8 @@ Properties:
 
 #### Description
 
+The description of the rule.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Specifies whether the rule is enabled.
 
 _Required_: Yes
 
@@ -86,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -94,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Sql
 
+The SQL statement used to query the topic. For more information, see AWS IoT SQL Reference (http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference) in the AWS IoT Developer Guide.
+
 _Required_: Yes
 
 _Type_: String
@@ -101,6 +109,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SqlVersion
+
+The version of the SQL rules engine to use when evaluating the rule.
 
 _Required_: Yes
 
@@ -218,5 +228,5 @@ Returns the <code>Arn</code> value.
 
 #### Id
 
-Returns the <code>Id</code> value.
+The unique identifier for the document you are storing.
 

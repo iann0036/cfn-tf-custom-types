@@ -1,6 +1,6 @@
 # Terraform::AWS::WafregionalRateBasedRule
 
-CloudFormation equivalent of aws_wafregional_rate_based_rule
+Provides a WAF Rate Based Rule Resource
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### MetricName
 
+The name or description for the Amazon CloudWatch metric of this rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name or description of the rule.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RateKey
 
+Valid value is IP.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RateLimit
 
+The maximum number of requests, which have an identical value in the field specified by the RateKey, allowed in a five-minute period. Minimum value is 100.
+
 _Required_: Yes
 
 _Type_: Double
@@ -72,6 +80,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

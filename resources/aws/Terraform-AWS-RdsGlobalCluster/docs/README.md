@@ -1,6 +1,8 @@
 # Terraform::AWS::RdsGlobalCluster
 
-CloudFormation equivalent of aws_rds_global_cluster
+Manages a RDS Global Cluster, which is an Aurora global database spread across multiple regions. The global database contains a single primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.
+
+More information about Aurora global databases can be found in the [Aurora User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database-creating).
 
 ## Syntax
 
@@ -39,6 +41,8 @@ Properties:
 
 #### DatabaseName
 
+Name for an automatically created database on cluster creation.
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeletionProtection
+
+If the Global Cluster should have deletion protection enabled. The database can't be deleted when this value is set to `true`. The default is `false`.
 
 _Required_: No
 
@@ -55,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Engine
 
+Name of the database engine to be used for this DB cluster. Valid values: `aurora`, `aurora-mysql`. Defaults to `aurora`.
+
 _Required_: No
 
 _Type_: String
@@ -62,6 +70,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EngineVersion
+
+Engine version of the Aurora global database.
+* **NOTE:** When the engine is set to `aurora-mysql`, an engine version compatible with global database is required. The earliest available version is `5.7.mysql_aurora.2.06.0`.
 
 _Required_: No
 
@@ -71,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GlobalClusterIdentifier
 
+The global cluster identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageEncrypted
+
+Specifies whether the DB cluster is encrypted. The default is `false`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::SecurityhubMember
 
-CloudFormation equivalent of aws_securityhub_member
+Provides a Security Hub member resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### AccountId
 
+The ID of the member AWS account.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Email
 
+The email of the member AWS account.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Invite
+
+Boolean whether to invite the account to Security Hub as a member. Defaults to `false`.
 
 _Required_: No
 

@@ -1,6 +1,7 @@
 # Terraform::AWS::PlacementGroup
 
-CloudFormation equivalent of aws_placement_group
+Provides an EC2 placement group. Read more about placement groups
+in [AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html).
 
 ## Syntax
 
@@ -34,6 +35,8 @@ Properties:
 
 #### Name
 
+The name of the placement group.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Strategy
 
+The placement strategy.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::FsxLustreFileSystem",
-    "description": "CloudFormation equivalent of aws_fsx_lustre_file_system",
+    "description": "Manages a FSx Lustre File System. See the [FSx Lustre Guide](https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html) for more information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -29,16 +29,19 @@
             "type": "string"
         },
         "ExportPath": {
-            "type": "string"
+            "type": "string",
+            "description": "S3 URI (with optional prefix) where the root of your Amazon FSx file system is exported. Can only be specified with `import_path` argument and the path must use the same Amazon S3 bucket as specified in `import_path`. Set equal to `import_path` to overwrite files on export. Defaults to `s3://{IMPORT BUCKET}/FSxLustre{CREATION TIMESTAMP}`."
         },
         "Id": {
             "type": "string"
         },
         "ImportPath": {
-            "type": "string"
+            "type": "string",
+            "description": "S3 URI (with optional prefix) that you're using as the data repository for your FSx for Lustre file system. For example, `s3://example-bucket/optional-prefix/`."
         },
         "ImportedFileChunkSize": {
-            "type": "number"
+            "type": "number",
+            "description": "For files imported from a data repository, this value determines the stripe count and maximum amount of data per file (in MiB) stored on a single physical disk. Can only be specified with `import_path` argument. Defaults to `1024`. Minimum of `1` and maximum of `512000`."
         },
         "NetworkInterfaceIds": {
             "type": "array",
@@ -55,17 +58,20 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of IDs for the security groups that apply to the specified network interfaces created for file system access. These security groups will apply to all network interfaces."
         },
         "StorageCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The storage capacity (GiB) of the file system. Minimum of `1200`. Storage capacity is provisioned in increments of 3,600 GiB."
         },
         "SubnetIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of IDs for the subnets that the file system will be accessible from. File systems currently support only one subnet. The file server is also launched in that subnet's Availability Zone."
         },
         "Tags": {
             "type": "array",
@@ -85,13 +91,15 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the file system."
         },
         "VpcId": {
             "type": "string"
         },
         "WeeklyMaintenanceStartTime": {
-            "type": "string"
+            "type": "string",
+            "description": "The preferred start time (in `d:HH:MM` format) to perform weekly maintenance, in the UTC time zone."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

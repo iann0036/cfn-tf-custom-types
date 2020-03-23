@@ -28,6 +28,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### BitDepth
 
+The bit depth of a sample is how many bits of information are included in the audio samples. Valid values are `16` and `24`. (FLAC/PCM Only).
+
 _Required_: No
 
 _Type_: String
@@ -35,6 +37,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BitOrder
+
+The order the bits of a PCM sample are stored in. The supported value is LittleEndian. (PCM Only).
 
 _Required_: No
 
@@ -44,6 +48,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Profile
 
+If you specified AAC for Audio:Codec, choose the AAC profile for the output file.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Signed
+
+Whether audio samples are represented with negative and positive numbers (signed) or only positive numbers (unsigned). The supported value is Signed. (PCM Only).
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::BudgetsBudget
 
-CloudFormation equivalent of aws_budgets_budget
+Provides a budgets budget resource. Budgets use the cost visualisation provided by Cost Explorer to show you the status of your budgets, to provide forecasts of your estimated costs, and to track your AWS usage, including your free tier usage.
 
 ## Syntax
 
@@ -54,6 +54,8 @@ Properties:
 
 #### AccountId
 
+The ID of the target account for budget. Will use current user's account_id by default if omitted.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BudgetType
+
+Whether this budget tracks monetary cost or usage.
 
 _Required_: Yes
 
@@ -70,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CostFilters
 
+Map of [CostFilters](#CostFilters) key/value pairs to apply to the budget.
+
 _Required_: No
 
 _Type_: List of <a href="costfilters.md">CostFilters</a>
@@ -77,6 +83,8 @@ _Type_: List of <a href="costfilters.md">CostFilters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LimitAmount
+
+The amount of cost or usage being measured for a budget.
 
 _Required_: Yes
 
@@ -86,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LimitUnit
 
+The unit of measurement used for the budget forecast, actual spend, or budget threshold, such as dollars or GB. See [Spend](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/data-type-spend.html) documentation.
+
 _Required_: Yes
 
 _Type_: String
@@ -93,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of a budget. Unique within accounts.
 
 _Required_: No
 
@@ -102,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamePrefix
 
+The prefix of the name of a budget. Unique within accounts.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +123,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimePeriodEnd
+
+The end of the time period covered by the budget. There are no restrictions on the end date. Format: `2017-01-01_12:00`.
 
 _Required_: No
 
@@ -118,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TimePeriodStart
 
+The start of the time period covered by the budget. The start date must come before the end date. Format: `2017-01-01_12:00`.
+
 _Required_: Yes
 
 _Type_: String
@@ -125,6 +143,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeUnit
+
+The length of time until a budget resets the actual and forecasted spend. Valid values: `MONTHLY`, `QUARTERLY`, `ANNUALLY`.
 
 _Required_: Yes
 

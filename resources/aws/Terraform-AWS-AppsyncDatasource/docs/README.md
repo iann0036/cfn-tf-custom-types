@@ -1,6 +1,6 @@
 # Terraform::AWS::AppsyncDatasource
 
-CloudFormation equivalent of aws_appsync_datasource
+Provides an AppSync DataSource.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### ApiId
 
+The API ID for the GraphQL API for the DataSource.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the DataSource.
 
 _Required_: No
 
@@ -65,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A user-supplied name for the DataSource.
+
 _Required_: Yes
 
 _Type_: String
@@ -73,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceRoleArn
 
+The IAM service role ARN for the data source.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the DataSource. Valid values: `AWS_LAMBDA`, `AMAZON_DYNAMODB`, `AMAZON_ELASTICSEARCH`, `HTTP`, `NONE`.
 
 _Required_: Yes
 

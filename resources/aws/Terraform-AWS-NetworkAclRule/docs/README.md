@@ -1,6 +1,12 @@
 # Terraform::AWS::NetworkAclRule
 
-CloudFormation equivalent of aws_network_acl_rule
+Creates an entry (a rule) in a network ACL with the specified rule number.
+
+~> **NOTE on Network ACLs and Network ACL Rules:** Terraform currently
+provides both a standalone Network ACL Rule resource and a [Network ACL](network_acl.html) resource with rules
+defined in-line. At this time you cannot use a Network ACL with in-line rules
+in conjunction with any Network ACL Rule resources. Doing so will cause
+a conflict of rule settings and will overwrite rules.
 
 ## Syntax
 
@@ -49,6 +55,8 @@ Properties:
 
 #### CidrBlock
 
+The network range to allow or deny, in CIDR notation (for example 172.16.0.0/24 ).
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Egress
+
+Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet). Default `false`.
 
 _Required_: No
 
@@ -65,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FromPort
 
+The from port to match.
+
 _Required_: No
 
 _Type_: Double
@@ -72,6 +84,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IcmpCode
+
+ICMP protocol: The ICMP code. Required if specifying ICMP for the protocol. e.g. -1.
 
 _Required_: No
 
@@ -81,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IcmpType
 
+ICMP protocol: The ICMP type. Required if specifying ICMP for the protocol. e.g. -1.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv6CidrBlock
+
+The IPv6 CIDR block to allow or deny.
 
 _Required_: No
 
@@ -97,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkAclId
 
+The ID of the network ACL.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol. A value of -1 means all protocols.
 
 _Required_: Yes
 
@@ -113,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RuleAction
 
+Indicates whether to allow or deny the traffic that matches the rule. Accepted values: `allow` | `deny`.
+
 _Required_: Yes
 
 _Type_: String
@@ -121,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RuleNumber
 
+The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.
+
 _Required_: Yes
 
 _Type_: Double
@@ -128,6 +154,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ToPort
+
+The to port to match.
 
 _Required_: No
 

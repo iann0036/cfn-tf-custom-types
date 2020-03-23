@@ -1,6 +1,6 @@
 # Terraform::AWS::Ec2TransitGatewayRouteTablePropagation
 
-CloudFormation equivalent of aws_ec2_transit_gateway_route_table_propagation
+Manages an EC2 Transit Gateway Route Table propagation.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### TransitGatewayAttachmentId
 
+Identifier of EC2 Transit Gateway Attachment.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransitGatewayRouteTableId
+
+Identifier of EC2 Transit Gateway Route Table.
 
 _Required_: Yes
 

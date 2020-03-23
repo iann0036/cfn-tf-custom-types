@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpnGatewayAttachment",
-    "description": "CloudFormation equivalent of aws_vpn_gateway_attachment",
+    "description": "Provides a Virtual Private Gateway attachment resource, allowing for an existing\nhardware VPN gateway to be attached and/or detached from a VPC.\n\n-> **Note:** The [`aws_vpn_gateway`](vpn_gateway.html)\nresource can also automatically attach the Virtual Private Gateway it creates\nto an existing VPC by setting the [`vpc_id`](vpn_gateway.html#vpc_id) attribute accordingly.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC."
         },
         "VpnGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Virtual Private Gateway."
         }
     },
     "additionalProperties": false,

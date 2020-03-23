@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DbClusterSnapshot",
-    "description": "CloudFormation equivalent of aws_db_cluster_snapshot",
+    "description": "Manages a RDS database cluster snapshot for Aurora clusters. For managing RDS database instance snapshots, see the [`aws_db_snapshot` resource](/docs/providers/aws/r/db_snapshot.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -30,13 +30,15 @@
             }
         },
         "DbClusterIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The DB Cluster Identifier from which to take the snapshot."
         },
         "DbClusterSnapshotArn": {
             "type": "string"
         },
         "DbClusterSnapshotIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The Identifier for the snapshot."
         },
         "Engine": {
             "type": "string"
@@ -86,7 +88,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the DB cluster."
         },
         "VpcId": {
             "type": "string"

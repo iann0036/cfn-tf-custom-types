@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::MskCluster",
-    "description": "CloudFormation equivalent of aws_msk_cluster",
+    "description": "Manages AWS Managed Streaming for Kafka cluster",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "BrokerNodeGroupInfo": {
@@ -193,22 +193,26 @@
             "type": "string"
         },
         "ClusterName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the MSK cluster."
         },
         "CurrentVersion": {
             "type": "string"
         },
         "EnhancedMonitoring": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify the desired enhanced MSK CloudWatch monitoring level.  See [Monitoring Amazon MSK with Amazon CloudWatch](https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html)."
         },
         "Id": {
             "type": "string"
         },
         "KafkaVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify the desired Kafka software version."
         },
         "NumberOfBrokerNodes": {
-            "type": "number"
+            "type": "number",
+            "description": "The desired total number of broker nodes in the kafka cluster.  It must be a multiple of the number of specified client subnets."
         },
         "Tags": {
             "type": "array",
@@ -228,7 +232,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ZookeeperConnectString": {
             "type": "string"

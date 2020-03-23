@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppsyncFunction",
-    "description": "CloudFormation equivalent of aws_appsync_function",
+    "description": "Provides an AppSync Function.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,34 +9,41 @@
             "type": "string"
         },
         "ApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated AppSync API."
         },
         "Arn": {
             "type": "string"
         },
         "DataSource": {
-            "type": "string"
+            "type": "string",
+            "description": "The Function DataSource name."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The Function description."
         },
         "FunctionId": {
             "type": "string"
         },
         "FunctionVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The version of the request mapping template. Currently the supported value is `2018-05-29`."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Function name. The function name does not have to be unique."
         },
         "RequestMappingTemplate": {
-            "type": "string"
+            "type": "string",
+            "description": "The Function request mapping template. Functions support only the 2018-05-29 version of the request mapping template."
         },
         "ResponseMappingTemplate": {
-            "type": "string"
+            "type": "string",
+            "description": "The Function response mapping template."
         }
     },
     "additionalProperties": false,

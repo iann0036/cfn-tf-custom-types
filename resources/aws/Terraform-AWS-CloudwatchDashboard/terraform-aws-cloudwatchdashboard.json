@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CloudwatchDashboard",
-    "description": "CloudFormation equivalent of aws_cloudwatch_dashboard",
+    "description": "Provides a CloudWatch Dashboard resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "DashboardBody": {
-            "type": "string"
+            "type": "string",
+            "description": "The detailed information about the dashboard, including what widgets are included and their location on the dashboard. You can read more about the body structure in the [documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html)."
         },
         "DashboardName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the dashboard."
         },
         "Id": {
             "type": "string"

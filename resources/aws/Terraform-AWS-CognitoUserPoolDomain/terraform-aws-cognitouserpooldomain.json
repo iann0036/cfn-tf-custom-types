@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CognitoUserPoolDomain",
-    "description": "CloudFormation equivalent of aws_cognito_user_pool_domain",
+    "description": "Provides a Cognito User Pool Domain resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,15 @@
             "type": "string"
         },
         "CertificateArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an ISSUED ACM certificate in us-east-1 for a custom domain."
         },
         "CloudfrontDistributionArn": {
             "type": "string"
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain string."
         },
         "Id": {
             "type": "string"
@@ -27,7 +29,8 @@
             "type": "string"
         },
         "UserPoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The user pool ID."
         },
         "Version": {
             "type": "string"

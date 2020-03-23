@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::RedshiftSubnetGroup",
-    "description": "CloudFormation equivalent of aws_redshift_subnet_group",
+    "description": "Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,20 +12,23 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the Redshift Subnet group. Defaults to \"Managed by Terraform\"."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Redshift Subnet group."
         },
         "SubnetIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "An array of VPC subnet IDs."
         },
         "Tags": {
             "type": "array",
@@ -45,7 +48,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

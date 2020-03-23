@@ -1,6 +1,12 @@
 # Terraform::AWS::Ec2TransitGatewayVpcAttachmentAccepter
 
-CloudFormation equivalent of aws_ec2_transit_gateway_vpc_attachment_accepter
+Manages the accepter's side of an EC2 Transit Gateway VPC Attachment.
+
+When a cross-account (requester's AWS account differs from the accepter's AWS account) EC2 Transit Gateway VPC Attachment
+is created, an EC2 Transit Gateway VPC Attachment resource is automatically created in the accepter's account.
+The requester can use the `aws_ec2_transit_gateway_vpc_attachment` resource to manage its side of the connection
+and the accepter can use the `aws_ec2_transit_gateway_vpc_attachment_accepter` resource to "adopt" its side of the
+connection into management.
 
 ## Syntax
 
@@ -36,6 +42,8 @@ Properties:
 
 #### Tags
 
+Key-value tags for the EC2 Transit Gateway VPC Attachment.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -43,6 +51,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransitGatewayAttachmentId
+
+The ID of the EC2 Transit Gateway Attachment to manage.
 
 _Required_: Yes
 
@@ -52,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TransitGatewayDefaultRouteTableAssociation
 
+Boolean whether the VPC Attachment should be associated with the EC2 Transit Gateway association default route table. Default value: `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -59,6 +71,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransitGatewayDefaultRouteTablePropagation
+
+Boolean whether the VPC Attachment should propagate routes with the EC2 Transit Gateway propagation default route table. Default value: `true`.
 
 _Required_: No
 

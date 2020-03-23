@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2ClientVpnNetworkAssociation",
-    "description": "CloudFormation equivalent of aws_ec2_client_vpn_network_association",
+    "description": "Provides network associations for AWS Client VPN endpoints. For more information on usage, please see the \n[AWS Client VPN Administrator's Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "ClientVpnEndpointId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Client VPN endpoint."
         },
         "Id": {
             "type": "string"
@@ -25,7 +26,8 @@
             "type": "string"
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the subnet to associate with the Client VPN endpoint."
         },
         "VpcId": {
             "type": "string"

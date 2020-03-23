@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppmeshVirtualNode",
-    "description": "CloudFormation equivalent of aws_appmesh_virtual_node",
+    "description": "Provides an AWS App Mesh virtual node resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Spec": {
@@ -131,7 +131,8 @@
             "additionalProperties": false,
             "properties": {
                 "VirtualServiceName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the virtual service that is acting as a virtual node backend."
                 }
             },
             "required": [
@@ -143,25 +144,32 @@
             "additionalProperties": false,
             "properties": {
                 "HealthyThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of consecutive successful health checks that must occur before declaring listener healthy."
                 },
                 "IntervalMillis": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The time period in milliseconds between each health check execution."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The destination path for the health check request. This is only required if the specified protocol is `http`."
                 },
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The destination port for the health check request. This port must match the port defined in the `port_mapping` for the listener."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol for the health check request. Valid values are `http` and `tcp`."
                 },
                 "TimeoutMillis": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The amount of time to wait when receiving a response from the health check, in milliseconds."
                 },
                 "UnhealthyThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of consecutive failed health checks that must occur before declaring a virtual node unhealthy."
                 }
             },
             "required": [
@@ -177,10 +185,12 @@
             "additionalProperties": false,
             "properties": {
                 "Port": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port used for the port mapping."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol used for the port mapping. Valid values are `http` and `tcp`."
                 }
             },
             "required": [
@@ -225,13 +235,16 @@
                             "MapKey",
                             "MapValue"
                         ]
-                    }
+                    },
+                    "description": "A string map that contains attributes with values that you can use to filter instances by any custom attribute that you specified when you registered the instance. Only instances that match all of the specified key/value pairs will be returned."
                 },
                 "NamespaceName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the AWS Cloud Map namespace to use.\nUse the [`aws_service_discovery_http_namespace`](/docs/providers/aws/r/service_discovery_http_namespace.html) resource to configure a Cloud Map namespace."
                 },
                 "ServiceName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the AWS Cloud Map service to use. Use the [`aws_service_discovery_service`](/docs/providers/aws/r/service_discovery_service.html) resource to configure a Cloud Map service."
                 }
             },
             "required": [
@@ -244,7 +257,8 @@
             "additionalProperties": false,
             "properties": {
                 "Hostname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The DNS host name for your virtual node."
                 },
                 "ServiceName": {
                     "type": "string"
@@ -259,7 +273,8 @@
             "additionalProperties": false,
             "properties": {
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The file path to write access logs to. You can use `/dev/stdout` to send access logs to standard out."
                 }
             },
             "required": [
@@ -285,10 +300,12 @@
             "type": "string"
         },
         "MeshName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the service mesh in which to create the virtual node."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to use for the virtual node."
         },
         "Tags": {
             "type": "array",
@@ -308,7 +325,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Spec": {
             "type": "array",

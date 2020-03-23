@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudwatchLogDestination
 
-CloudFormation equivalent of aws_cloudwatch_log_destination
+Provides a CloudWatch Logs destination resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Name
 
+A name for the log destination.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleArn
 
+The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to put data into the target.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetArn
+
+The ARN of the target Amazon Kinesis stream resource for the destination.
 
 _Required_: Yes
 

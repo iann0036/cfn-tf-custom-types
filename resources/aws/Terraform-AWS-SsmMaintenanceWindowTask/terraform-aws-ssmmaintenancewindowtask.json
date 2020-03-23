@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SsmMaintenanceWindowTask",
-    "description": "CloudFormation equivalent of aws_ssm_maintenance_window_task",
+    "description": "Provides an SSM Maintenance Window Task resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "LoggingInfo": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "S3BucketName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": null
                 },
                 "S3BucketPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": null
                 },
                 "S3Region": {
-                    "type": "string"
+                    "type": "string",
+                    "description": null
                 }
             },
             "required": [
@@ -86,14 +89,16 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": null
                 },
                 "Values": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": null
                 }
             },
             "required": [
@@ -106,7 +111,8 @@
             "additionalProperties": false,
             "properties": {
                 "DocumentVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The version of an Automation document to use during task execution."
                 },
                 "Parameter": {
                     "type": "array",
@@ -123,13 +129,16 @@
             "additionalProperties": false,
             "properties": {
                 "ClientContext": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Pass client-specific information to the Lambda function that you are invoking."
                 },
                 "Payload": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "JSON to provide to your Lambda function as input."
                 },
                 "Qualifier": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specify a Lambda function version or alias name."
                 }
             },
             "required": []
@@ -139,25 +148,32 @@
             "additionalProperties": false,
             "properties": {
                 "Comment": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Information about the command(s) to execute."
                 },
                 "DocumentHash": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated."
                 },
                 "DocumentHashType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "SHA-256 or SHA-1. SHA-1 hashes have been deprecated. Valid values: `Sha256` and `Sha1`."
                 },
                 "OutputS3Bucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the Amazon S3 bucket."
                 },
                 "OutputS3KeyPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Amazon S3 bucket subfolder."
                 },
                 "ServiceRoleArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IAM service role to assume during task execution."
                 },
                 "TimeoutSeconds": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "If this time is reached and the command has not already started executing, it doesn't run."
                 },
                 "NotificationConfig": {
                     "type": "array",
@@ -182,10 +198,12 @@
             "additionalProperties": false,
             "properties": {
                 "Input": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The inputs for the STEP_FUNCTION task."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the STEP_FUNCTION task."
                 }
             },
             "required": []
@@ -195,14 +213,16 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The parameter name."
                 },
                 "Values": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The array of strings."
                 }
             },
             "required": [
@@ -215,17 +235,20 @@
             "additionalProperties": false,
             "properties": {
                 "NotificationArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes notifications about command status changes to this topic."
                 },
                 "NotificationEvents": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The different events for which you can receive notifications. Valid values: `All`, `InProgress`, `Success`, `TimedOut`, `Cancelled`, and `Failed`."
                 },
                 "NotificationType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "When specified with `Command`, receive notification when the status of a command changes. When specified with `Invocation`, for commands sent to multiple instances, receive notification on a per-instance basis when the status of a command changes. Valid values: `Command` and `Invocation`."
                 }
             },
             "required": []
@@ -237,34 +260,43 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the maintenance window task."
         },
         "Id": {
             "type": "string"
         },
         "MaxConcurrency": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum number of targets this task can be run for in parallel."
         },
         "MaxErrors": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum number of errors allowed before this task stops being scheduled."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the maintenance window task."
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel."
         },
         "ServiceRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The role that should be assumed when executing the task."
         },
         "TaskArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the task to execute."
         },
         "TaskType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of task being registered. The only allowed value is `RUN_COMMAND`."
         },
         "WindowId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of the maintenance window to register the task with."
         },
         "LoggingInfo": {
             "type": "array",

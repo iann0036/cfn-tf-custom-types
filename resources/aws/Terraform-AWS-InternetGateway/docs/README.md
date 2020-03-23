@@ -1,6 +1,6 @@
 # Terraform::AWS::InternetGateway
 
-CloudFormation equivalent of aws_internet_gateway
+Provides a resource to create a VPC Internet Gateway.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -39,6 +41,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The VPC ID to create in.
 
 _Required_: No
 

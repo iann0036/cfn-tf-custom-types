@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ResourcegroupsGroup",
-    "description": "CloudFormation equivalent of aws_resourcegroups_group",
+    "description": "Provides a Resource Group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ResourceQuery": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Query": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The resource query as a JSON string."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of the resource query. Defaults to `TAG_FILTERS_1_0`."
                 }
             },
             "required": [
@@ -28,13 +30,15 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the resource group."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource group's name. A resource group name can have a maximum of 127 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with `AWS` or `aws`."
         },
         "Tags": {
             "type": "array",
@@ -54,7 +58,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "ResourceQuery": {
             "type": "array",

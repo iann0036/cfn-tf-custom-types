@@ -1,6 +1,6 @@
 # Terraform::AWS::CognitoUserPool
 
-CloudFormation equivalent of aws_cognito_user_pool
+Provides a Cognito User Pool resource.
 
 ## Syntax
 
@@ -93,6 +93,8 @@ Properties:
 
 #### AliasAttributes
 
+Attributes supported as an alias for this user pool. Possible values: phone_number, email, or preferred_username. Conflicts with `username_attributes`.
+
 _Required_: No
 
 _Type_: List of String
@@ -100,6 +102,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoVerifiedAttributes
+
+The attributes to be auto-verified. Possible values: email, phone_number.
 
 _Required_: No
 
@@ -109,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EmailVerificationMessage
 
+A string representing the email verification message. Conflicts with `verification_message_template` configuration block `email_message` argument.
+
 _Required_: No
 
 _Type_: String
@@ -116,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EmailVerificationSubject
+
+A string representing the email verification subject. Conflicts with `verification_message_template` configuration block `email_subject` argument.
 
 _Required_: No
 
@@ -125,6 +133,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MfaConfiguration
 
+Multi-Factor Authentication (MFA) configuration for the User Pool. Defaults of `OFF`. Valid values:
+* `OFF` - MFA tokens are not required.
+* `ON` - MFA is required for all users to sign in. Requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured.
+* `OPTIONAL` - MFA will be required only for individual users who have MFA enabled. Requires at least one of `sms_configuration` or `software_token_mfa_configuration` to be configured.
+
 _Required_: No
 
 _Type_: String
@@ -132,6 +145,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the user pool.
 
 _Required_: Yes
 
@@ -141,6 +156,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SmsAuthenticationMessage
 
+A string representing the SMS authentication message. The message must contain the `{####}` placeholder, which will be replaced with the code.
+
 _Required_: No
 
 _Type_: String
@@ -148,6 +165,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SmsVerificationMessage
+
+A string representing the SMS verification message. Conflicts with `verification_message_template` configuration block `sms_message` argument.
 
 _Required_: No
 
@@ -157,6 +176,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the User Pool.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -164,6 +185,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UsernameAttributes
+
+Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up. Conflicts with `alias_attributes`.
 
 _Required_: No
 

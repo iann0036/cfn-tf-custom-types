@@ -1,6 +1,7 @@
 # Terraform::AWS::DxHostedPublicVirtualInterfaceAccepter
 
-CloudFormation equivalent of aws_dx_hosted_public_virtual_interface_accepter
+Provides a resource to manage the accepter's side of a Direct Connect hosted public virtual interface.
+This resource accepts ownership of a public virtual interface created by another AWS account.
 
 ## Syntax
 
@@ -34,6 +35,8 @@ Properties:
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -41,6 +44,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualInterfaceId
+
+The ID of the Direct Connect virtual interface to accept.
 
 _Required_: Yes
 

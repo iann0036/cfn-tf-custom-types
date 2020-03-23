@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::KmsExternalKey",
-    "description": "CloudFormation equivalent of aws_kms_external_key",
+    "description": "Manages a KMS Customer Master Key that uses external key material. To instead manage a KMS Customer Master Key where AWS automatically generates and potentially rotates key material, see the [`aws_kms_key` resource](/docs/providers/aws/r/kms_key.html).\n\n~> **Note:** All arguments including the key material will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "DeletionWindowInDays": {
-            "type": "number"
+            "type": "number",
+            "description": "Duration in days after which the key is deleted after destruction of the resource. Must be between `7` and `30` days. Defaults to `30`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the key."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the key is enabled. Keys pending import can only be `false`. Imported keys default to `true` unless expired."
         },
         "ExpirationModel": {
             "type": "string"
@@ -27,7 +30,8 @@
             "type": "string"
         },
         "KeyMaterialBase64": {
-            "type": "string"
+            "type": "string",
+            "description": "Base64 encoded 256-bit symmetric encryption key material to import. The CMK is permanently associated with this key material. The same key material can be reimported, but you cannot import different key material."
         },
         "KeyState": {
             "type": "string"
@@ -36,7 +40,8 @@
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "A key policy JSON document. If you do not provide a key policy, AWS KMS attaches a default key policy to the CMK."
         },
         "Tags": {
             "type": "array",
@@ -56,10 +61,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A key-value map of tags to assign to the key."
         },
         "ValidTo": {
-            "type": "string"
+            "type": "string",
+            "description": "Time at which the imported key material expires. When the key material expires, AWS KMS deletes the key material and the CMK becomes unusable. If not specified, key material does not expire. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`)."
         }
     },
     "additionalProperties": false,

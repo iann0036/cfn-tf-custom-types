@@ -1,6 +1,6 @@
 # Terraform::AWS::CognitoUserPoolDomain
 
-CloudFormation equivalent of aws_cognito_user_pool_domain
+Provides a Cognito User Pool Domain resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### CertificateArn
 
+The ARN of an ISSUED ACM certificate in us-east-1 for a custom domain.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Domain
 
+The domain string.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserPoolId
+
+The user pool ID.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::Route53ResolverRuleAssociation
 
-CloudFormation equivalent of aws_route53_resolver_rule_association
+Provides a Route53 Resolver rule association.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Name
 
+A name for the association that you're creating between a resolver rule and a VPC.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResolverRuleId
 
+The ID of the resolver rule that you want to associate with the VPC.
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of the VPC that you want to associate the resolver rule with.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CurReportDefinition",
-    "description": "CloudFormation equivalent of aws_cur_report_definition",
+    "description": "Manages Cost and Usage Report Definitions.\n\n~> *NOTE:* The AWS Cost and Usage Report service is only available in `us-east-1` currently.\n\n~> *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,38 +13,47 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of additional artifacts. Valid values are: REDSHIFT, QUICKSIGHT."
         },
         "AdditionalSchemaElements": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of schema elements. Valid values are: RESOURCES."
         },
         "Compression": {
-            "type": "string"
+            "type": "string",
+            "description": "Compression format for report. Valid values are: GZIP, ZIP."
         },
         "Format": {
-            "type": "string"
+            "type": "string",
+            "description": "Format for report. Valid values are: textORcsv."
         },
         "Id": {
             "type": "string"
         },
         "ReportName": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique name for the report. Must start with a number/letter and is case sensitive. Limited to 256 characters."
         },
         "S3Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the existing S3 bucket to hold generated reports."
         },
         "S3Prefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Report path prefix. Limited to 256 characters."
         },
         "S3Region": {
-            "type": "string"
+            "type": "string",
+            "description": "Region of the existing S3 bucket to hold generated reports."
         },
         "TimeUnit": {
-            "type": "string"
+            "type": "string",
+            "description": "The frequency on which report data are measured and displayed.  Valid values are: HOURLY, DAILY."
         }
     },
     "additionalProperties": false,

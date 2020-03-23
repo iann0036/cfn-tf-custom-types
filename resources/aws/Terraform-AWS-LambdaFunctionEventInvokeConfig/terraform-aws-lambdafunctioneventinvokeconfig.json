@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LambdaFunctionEventInvokeConfig",
-    "description": "CloudFormation equivalent of aws_lambda_function_event_invoke_config",
+    "description": "Manages an asynchronous invocation configuration for a Lambda Function or Alias. More information about asynchronous invocations and the configurable values can be found in the [Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DestinationConfig": {
@@ -57,19 +57,23 @@
             "type": "string"
         },
         "FunctionName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name or Amazon Resource Name (ARN) of the Lambda Function, omitting any version or alias qualifier."
         },
         "Id": {
             "type": "string"
         },
         "MaximumEventAgeInSeconds": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum age of a request that Lambda sends to a function for processing in seconds. Valid values between 60 and 21600."
         },
         "MaximumRetryAttempts": {
-            "type": "number"
+            "type": "number",
+            "description": "Maximum number of times to retry when the function returns an error. Valid values between 0 and 2. Defaults to 2."
         },
         "Qualifier": {
-            "type": "string"
+            "type": "string",
+            "description": "Lambda Function published version, `$LATEST`, or Lambda Alias name."
         },
         "DestinationConfig": {
             "type": "array",

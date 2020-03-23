@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SnsSmsPreferences",
-    "description": "CloudFormation equivalent of aws_sns_sms_preferences",
+    "description": "Provides a way to set SNS SMS preferences.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,31 @@
             "type": "string"
         },
         "DefaultSenderId": {
-            "type": "string"
+            "type": "string",
+            "description": "A string, such as your business brand, that is displayed as the sender on the receiving device."
         },
         "DefaultSmsType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of SMS message that you will send by default. Possible values are: Promotional, Transactional."
         },
         "DeliveryStatusIamRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the IAM role that allows Amazon SNS to write logs about SMS deliveries in CloudWatch Logs."
         },
         "DeliveryStatusSuccessSamplingRate": {
-            "type": "string"
+            "type": "string",
+            "description": "The percentage of successful SMS deliveries for which Amazon SNS will write logs in CloudWatch Logs. The value must be between 0 and 100."
         },
         "Id": {
             "type": "string"
         },
         "MonthlySpendLimit": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum amount in USD that you are willing to spend each month to send SMS messages."
         },
         "UsageReportS3Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Amazon S3 bucket to receive daily SMS usage reports from Amazon SNS."
         }
     },
     "additionalProperties": false,

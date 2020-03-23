@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Route53Record",
-    "description": "CloudFormation equivalent of aws_route53_record",
+    "description": "Provides a Route53 record resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Alias": {
@@ -82,41 +82,50 @@
             "type": "string"
         },
         "AllowOverwrite": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Allow creation of this record in Terraform to overwrite an existing record, if any. This does not affect the ability to update the record in Terraform and does not prevent other resources within Terraform or manual Route 53 changes outside Terraform from overwriting this record. `false` by default. This configuration is not recommended for most environments."
         },
         "Fqdn": {
             "type": "string"
         },
         "HealthCheckId": {
-            "type": "string"
+            "type": "string",
+            "description": "The health check the record should be associated with."
         },
         "Id": {
             "type": "string"
         },
         "MultivalueAnswerRoutingPolicy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Set to `true` to indicate a multivalue answer routing policy. Conflicts with any other routing policy."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "DNS domain name for a CloudFront distribution, S3 bucket, ELB, or another resource record set in this hosted zone."
         },
         "Records": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A string list of records. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add `\\\"\\\"` inside the Terraform configuration string (e.g. `\"first255characters\\\"\\\"morecharacters\"`)."
         },
         "SetIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier to differentiate records with routing policies from one another. Required if using `failover`, `geolocation`, `latency`, or `weighted` routing policies documented below."
         },
         "Ttl": {
-            "type": "number"
+            "type": "number",
+            "description": "The TTL of the record."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "`PRIMARY` or `SECONDARY`. A `PRIMARY` record will be served if its healthcheck is passing, otherwise the `SECONDARY` will be served. See http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-configuring-options.html#dns-failover-failover-rrsets."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "Hosted zone ID for a CloudFront distribution, S3 bucket, ELB, or Route 53 hosted zone. See [`resource_elb.zone_id`](/docs/providers/aws/r/elb.html#zone_id) for example."
         },
         "Alias": {
             "type": "array",

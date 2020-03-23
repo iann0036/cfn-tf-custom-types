@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DxBgpPeer",
-    "description": "CloudFormation equivalent of aws_dx_bgp_peer",
+    "description": "Provides a Direct Connect BGP peer resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,19 +23,23 @@
             "type": "string"
         },
         "AddressFamily": {
-            "type": "string"
+            "type": "string",
+            "description": "The address family for the BGP peer. `ipv4 ` or `ipv6`."
         },
         "AmazonAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IPv4 CIDR address to use to send traffic to Amazon.\nRequired for IPv4 BGP peers on public virtual interfaces."
         },
         "AwsDevice": {
             "type": "string"
         },
         "BgpAsn": {
-            "type": "number"
+            "type": "number",
+            "description": "The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration."
         },
         "BgpAuthKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The authentication key for BGP configuration."
         },
         "BgpPeerId": {
             "type": "string"
@@ -44,13 +48,15 @@
             "type": "string"
         },
         "CustomerAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IPv4 CIDR destination address to which Amazon should send traffic.\nRequired for IPv4 BGP peers on public virtual interfaces."
         },
         "Id": {
             "type": "string"
         },
         "VirtualInterfaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Direct Connect virtual interface on which to create the BGP peer."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

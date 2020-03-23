@@ -1,6 +1,9 @@
 # Terraform::AWS::PinpointBaiduChannel
 
-CloudFormation equivalent of aws_pinpoint_baidu_channel
+Provides a Pinpoint Baidu Channel resource.
+
+~> **Note:** All arguments including the Api Key and Secret Key will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -35,6 +38,8 @@ Properties:
 
 #### ApiKey
 
+Platform credential API key from Baidu.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApplicationId
+
+The application ID.
 
 _Required_: Yes
 
@@ -51,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Specifies whether to enable the channel. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -58,6 +67,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecretKey
+
+Platform credential Secret key from Baidu.
 
 _Required_: Yes
 

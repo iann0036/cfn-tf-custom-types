@@ -1,6 +1,8 @@
 # Terraform::AWS::GuarddutyIpset
 
-CloudFormation equivalent of aws_guardduty_ipset
+Provides a resource to manage a GuardDuty IPSet.
+
+~> **Note:** Currently in GuardDuty, users from member accounts cannot upload and further manage IPSets. IPSets that are uploaded by the master account are imposed on GuardDuty functionality in its member accounts. See the [GuardDuty API Documentation](https://docs.aws.amazon.com/guardduty/latest/ug/create-ip-set.html)
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### Activate
 
+Specifies whether GuardDuty is to start using the uploaded IPSet.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -44,6 +48,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DetectorId
+
+The detector ID of the GuardDuty.
 
 _Required_: Yes
 
@@ -53,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Format
 
+The format of the file that contains the IPSet. Valid values: `TXT` | `STIX` | `OTX_CSV` | `ALIEN_VAULT` | `PROOF_POINT` | `FIRE_EYE`.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Location
 
+The URI of the file that contains the IPSet.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The friendly name to identify the IPSet.
 
 _Required_: Yes
 

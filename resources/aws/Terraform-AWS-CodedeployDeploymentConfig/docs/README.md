@@ -1,6 +1,6 @@
 # Terraform::AWS::CodedeployDeploymentConfig
 
-CloudFormation equivalent of aws_codedeploy_deployment_config
+Provides a CodeDeploy deployment config for an application
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### ComputePlatform
 
+The compute platform can be `Server`, `Lambda`, or `ECS`. Default is `Server`.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeploymentConfigName
+
+The name of the deployment config.
 
 _Required_: Yes
 

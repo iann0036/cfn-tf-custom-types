@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SsmMaintenanceWindow",
-    "description": "CloudFormation equivalent of aws_ssm_maintenance_window",
+    "description": "Provides an SSM Maintenance Window resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,37 +9,47 @@
             "type": "string"
         },
         "AllowUnassociatedTargets": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets."
         },
         "Cutoff": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for execution."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the maintenance window."
         },
         "Duration": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration of the Maintenance Window in hours."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the maintenance window is enabled. Default: `true`."
         },
         "EndDate": {
-            "type": "string"
+            "type": "string",
+            "description": "Timestamp in [ISO-8601 extended format](https://www.iso.org/iso-8601-date-and-time-format.html) when to no longer run the maintenance window."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the maintenance window."
         },
         "Schedule": {
-            "type": "string"
+            "type": "string",
+            "description": "The schedule of the Maintenance Window in the form of a [cron](https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-cron.html) or rate expression."
         },
         "ScheduleTimezone": {
-            "type": "string"
+            "type": "string",
+            "description": "Timezone for schedule in [Internet Assigned Numbers Authority (IANA) Time Zone Database format](https://www.iana.org/time-zones). For example: `America/Los_Angeles`, `etc/UTC`, or `Asia/Seoul`."
         },
         "StartDate": {
-            "type": "string"
+            "type": "string",
+            "description": "Timestamp in [ISO-8601 extended format](https://www.iso.org/iso-8601-date-and-time-format.html) when to begin the maintenance window."
         },
         "Tags": {
             "type": "array",
@@ -59,7 +69,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

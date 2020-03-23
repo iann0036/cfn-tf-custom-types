@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::KinesisAnalyticsApplication",
-    "description": "CloudFormation equivalent of aws_kinesis_analytics_application",
+    "description": "Provides a Kinesis Analytics Application resource. Kinesis Analytics is a managed service that\nallows processing and analyzing streaming data using standard SQL.\n\nFor more details, see the [Amazon Kinesis Analytics Documentation][1].",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CloudwatchLoggingOptions": {
@@ -365,13 +365,15 @@
             "type": "string"
         },
         "Code": {
-            "type": "string"
+            "type": "string",
+            "description": "SQL Code to transform input data, and generate output."
         },
         "CreateTimestamp": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the application."
         },
         "Id": {
             "type": "string"
@@ -380,7 +382,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the Kinesis Analytics Application."
         },
         "Status": {
             "type": "string"
@@ -403,7 +406,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of tags for the Kinesis Analytics Application."
         },
         "Version": {
             "type": "number"

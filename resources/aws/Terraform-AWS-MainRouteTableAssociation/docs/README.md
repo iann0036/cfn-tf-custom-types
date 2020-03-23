@@ -1,6 +1,6 @@
 # Terraform::AWS::MainRouteTableAssociation
 
-CloudFormation equivalent of aws_main_route_table_association
+Provides a resource for managing the main routing table of a VPC.
 
 ## Syntax
 
@@ -31,6 +31,9 @@ Properties:
 
 #### RouteTableId
 
+The ID of the Route Table to set as the new
+main route table for the target VPC.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of the VPC whose main route table should be set.
 
 _Required_: Yes
 

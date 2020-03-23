@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AmiLaunchPermission",
-    "description": "CloudFormation equivalent of aws_ami_launch_permission",
+    "description": "Adds launch permission to Amazon Machine Image (AMI) from another AWS account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "AccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "An AWS Account ID to add launch permissions."
         },
         "Id": {
             "type": "string"
         },
         "ImageId": {
-            "type": "string"
+            "type": "string",
+            "description": "A region-unique name for the AMI.\n* `account_id` - (required) An AWS Account ID to add launch permissions."
         }
     },
     "additionalProperties": false,

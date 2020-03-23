@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OpsworksStack",
-    "description": "CloudFormation equivalent of aws_opsworks_stack",
+    "description": "Provides an OpsWorks stack resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CustomCookbooksSource": {
@@ -8,22 +8,28 @@
             "additionalProperties": false,
             "properties": {
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Password to use when authenticating to the source. Terraform cannot perform drift detection of this configuration."
                 },
                 "Revision": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "For sources that are version-aware, the revision to use."
                 },
                 "SshKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "SSH key to use when authenticating to the source. Terraform cannot perform drift detection of this configuration."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of source to use. For example, \"archive\"."
                 },
                 "Url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The URL where the cookbooks resource can be found."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Username to use when authenticating to the source."
                 }
             },
             "required": [
@@ -38,61 +44,78 @@
             "type": "string"
         },
         "AgentVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "If set to `\"LATEST\"`, OpsWorks will automatically install the latest version."
         },
         "Arn": {
             "type": "string"
         },
         "BerkshelfVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "If `manage_berkshelf` is enabled, the version of Berkshelf to use."
         },
         "Color": {
-            "type": "string"
+            "type": "string",
+            "description": "Color to paint next to the stack's resources in the OpsWorks console."
         },
         "ConfigurationManagerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the configuration manager to use. Defaults to \"Chef\"."
         },
         "ConfigurationManagerVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Version of the configuration manager to use. Defaults to \"11.4\"."
         },
         "CustomJson": {
-            "type": "string"
+            "type": "string",
+            "description": "Custom JSON attributes to apply to the entire stack."
         },
         "DefaultAvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the availability zone where instances will be created\nby default. This is required unless you set `vpc_id`."
         },
         "DefaultInstanceProfileArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an IAM Instance Profile that created instances\nwill have by default."
         },
         "DefaultOs": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of OS that will be installed on instances by default."
         },
         "DefaultRootDeviceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the type of root device instances will have by default."
         },
         "DefaultSshKeyName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the SSH keypair that instances will have by default."
         },
         "DefaultSubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the subnet in which instances will be created by default. Mandatory\nif `vpc_id` is set, and forbidden if it isn't."
         },
         "HostnameTheme": {
-            "type": "string"
+            "type": "string",
+            "description": "Keyword representing the naming scheme that will be used for instance hostnames\nwithin this stack."
         },
         "Id": {
             "type": "string"
         },
         "ManageBerkshelf": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean value controlling whether Opsworks will run Berkshelf for this stack."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the stack."
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the region where the stack will exist."
         },
         "ServiceRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an IAM role that the OpsWorks service will act as."
         },
         "StackEndpoint": {
             "type": "string"
@@ -115,16 +138,20 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "UseCustomCookbooks": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean value controlling whether the custom cookbook settings are\nenabled."
         },
         "UseOpsworksSecurityGroups": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean value controlling whether the standard OpsWorks\nsecurity groups apply to created instances."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the VPC that this stack belongs to."
         },
         "CustomCookbooksSource": {
             "type": "array",

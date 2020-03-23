@@ -1,6 +1,8 @@
 # Terraform::AWS::ElasticBeanstalkConfigurationTemplate
 
-CloudFormation equivalent of aws_elastic_beanstalk_configuration_template
+Provides an Elastic Beanstalk Configuration Template, which are associated with
+a specific application and are used to deploy different versions of the
+application with the same configuration settings.
 
 ## Syntax
 
@@ -48,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Short description of the Template.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for this Template.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OrganizationsOrganizationalUnit",
-    "description": "CloudFormation equivalent of aws_organizations_organizational_unit",
+    "description": "Provides a resource to create an organizational unit.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -37,10 +37,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name for the organizational unit."
         },
         "ParentId": {
-            "type": "string"
+            "type": "string",
+            "description": "ID of the parent organizational unit, which may be the root."
         }
     },
     "additionalProperties": false,

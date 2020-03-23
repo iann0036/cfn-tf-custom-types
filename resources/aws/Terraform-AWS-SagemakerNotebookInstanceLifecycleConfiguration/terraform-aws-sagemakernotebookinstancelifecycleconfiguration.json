@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SagemakerNotebookInstanceLifecycleConfiguration",
-    "description": "CloudFormation equivalent of aws_sagemaker_notebook_instance_lifecycle_configuration",
+    "description": "Provides a lifecycle configuration for SageMaker Notebook Instances.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,13 +15,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the lifecycle configuration (must be unique). If omitted, Terraform will assign a random, unique name."
         },
         "OnCreate": {
-            "type": "string"
+            "type": "string",
+            "description": "A shell script (base64-encoded) that runs only once when the SageMaker Notebook Instance is created."
         },
         "OnStart": {
-            "type": "string"
+            "type": "string",
+            "description": "A shell script (base64-encoded) that runs every time the SageMaker Notebook Instance is started including the time it's created."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::AWS::InspectorAssessmentTarget
 
-CloudFormation equivalent of aws_inspector_assessment_target
+Provides a Inspector assessment target
 
 ## Syntax
 
@@ -30,6 +30,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the assessment target.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::BudgetsBudget",
-    "description": "CloudFormation equivalent of aws_budgets_budget",
+    "description": "Provides a budgets budget resource. Budgets use the cost visualisation provided by Cost Explorer to show you the status of your budgets, to provide forecasts of your estimated costs, and to track your AWS usage, including your free tier usage.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CostTypes": {
@@ -88,10 +88,12 @@
             "type": "string"
         },
         "AccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the target account for budget. Will use current user's account_id by default if omitted."
         },
         "BudgetType": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether this budget tracks monetary cost or usage."
         },
         "CostFilters": {
             "type": "array",
@@ -111,31 +113,39 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Map of [CostFilters](#CostFilters) key/value pairs to apply to the budget."
         },
         "Id": {
             "type": "string"
         },
         "LimitAmount": {
-            "type": "string"
+            "type": "string",
+            "description": "The amount of cost or usage being measured for a budget."
         },
         "LimitUnit": {
-            "type": "string"
+            "type": "string",
+            "description": "The unit of measurement used for the budget forecast, actual spend, or budget threshold, such as dollars or GB. See [Spend](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/data-type-spend.html) documentation."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of a budget. Unique within accounts."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "The prefix of the name of a budget. Unique within accounts."
         },
         "TimePeriodEnd": {
-            "type": "string"
+            "type": "string",
+            "description": "The end of the time period covered by the budget. There are no restrictions on the end date. Format: `2017-01-01_12:00`."
         },
         "TimePeriodStart": {
-            "type": "string"
+            "type": "string",
+            "description": "The start of the time period covered by the budget. The start date must come before the end date. Format: `2017-01-01_12:00`."
         },
         "TimeUnit": {
-            "type": "string"
+            "type": "string",
+            "description": "The length of time until a budget resets the actual and forecasted spend. Valid values: `MONTHLY`, `QUARTERLY`, `ANNUALLY`."
         },
         "CostTypes": {
             "type": "array",

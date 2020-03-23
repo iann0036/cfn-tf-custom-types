@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::EcrRepository",
-    "description": "CloudFormation equivalent of aws_ecr_repository",
+    "description": "Provides an Elastic Container Registry Repository.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ImageScanningConfiguration": {
@@ -38,10 +38,12 @@
             "type": "string"
         },
         "ImageTagMutability": {
-            "type": "string"
+            "type": "string",
+            "description": "The tag mutability setting for the repository. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `MUTABLE`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the repository."
         },
         "RegistryId": {
             "type": "string"
@@ -67,7 +69,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ImageScanningConfiguration": {
             "type": "array",

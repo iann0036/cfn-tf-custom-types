@@ -40,6 +40,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Buildspec
 
+The build spec declaration to use for this build project's related builds.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GitCloneDepth
+
+Truncate git history to this many commits.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InsecureSsl
 
+Ignore SSL warnings when connecting to source control.
+
 _Required_: No
 
 _Type_: Boolean
@@ -63,6 +69,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Location
+
+The location of the source code from git or s3.
 
 _Required_: No
 
@@ -72,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReportBuildStatus
 
+Set to `true` to report the status of a build's start and finish to your source provider. This option is only valid when your source provider is `GITHUB`, `BITBUCKET`, or `GITHUB_ENTERPRISE`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -80,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceIdentifier
 
+The source identifier. Source data will be put inside a folder named as this parameter inside AWS CodeBuild source directory.
+
 _Required_: Yes
 
 _Type_: String
@@ -87,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of repository that contains the source code to be built. Valid values for this parameter are: `CODECOMMIT`, `CODEPIPELINE`, `GITHUB`, `GITHUB_ENTERPRISE`, `BITBUCKET` or `S3`.
 
 _Required_: Yes
 

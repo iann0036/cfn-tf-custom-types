@@ -1,6 +1,6 @@
 # Terraform::AWS::GlobalacceleratorAccelerator
 
-CloudFormation equivalent of aws_globalaccelerator_accelerator
+Creates a Global Accelerator accelerator.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Enabled
 
+Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
+
 _Required_: No
 
 _Type_: Boolean
@@ -46,6 +48,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddressType
+
+The value for the address type must be `IPV4`.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the accelerator.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

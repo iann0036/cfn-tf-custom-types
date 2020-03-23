@@ -1,6 +1,6 @@
 # Terraform::AWS::Ec2TransitGatewayVpcAttachment
 
-CloudFormation equivalent of aws_ec2_transit_gateway_vpc_attachment
+Manages an EC2 Transit Gateway VPC Attachment. For examples of custom route table association and propagation, see the EC2 Transit Gateway Networking Examples Guide.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### DnsSupport
 
+Whether DNS support is enabled. Valid values: `disable`, `enable`. Default value: `enable`.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ipv6Support
+
+Whether IPv6 support is enabled. Valid values: `disable`, `enable`. Default value: `disable`.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+Identifiers of EC2 Subnets.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -68,6 +74,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value tags for the EC2 Transit Gateway VPC Attachment.
 
 _Required_: No
 
@@ -77,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TransitGatewayDefaultRouteTableAssociation
 
+Boolean whether the VPC Attachment should be associated with the EC2 Transit Gateway association default route table. This cannot be configured or perform drift detection with Resource Access Manager shared EC2 Transit Gateways. Default value: `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -84,6 +94,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransitGatewayDefaultRouteTablePropagation
+
+Boolean whether the VPC Attachment should propagate routes with the EC2 Transit Gateway propagation default route table. This cannot be configured or perform drift detection with Resource Access Manager shared EC2 Transit Gateways. Default value: `true`.
 
 _Required_: No
 
@@ -93,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TransitGatewayId
 
+Identifier of EC2 Transit Gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -100,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+Identifier of EC2 VPC.
 
 _Required_: Yes
 

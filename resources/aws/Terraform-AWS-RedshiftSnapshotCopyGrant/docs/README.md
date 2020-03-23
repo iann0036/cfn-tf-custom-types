@@ -1,6 +1,8 @@
 # Terraform::AWS::RedshiftSnapshotCopyGrant
 
-CloudFormation equivalent of aws_redshift_snapshot_copy_grant
+Creates a snapshot copy grant that allows AWS Redshift to encrypt copied snapshots with a customer master key from AWS KMS in a destination region.
+
+Note that the grant must exist in the destination region, and not in the region of the cluster.
 
 ## Syntax
 
@@ -34,6 +36,8 @@ Properties:
 
 #### KmsKeyId
 
+The unique identifier for the customer master key (CMK) that the grant applies to. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you must use the key ARN. If not specified, the default key is used.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotCopyGrantName
 
+A friendly name for identifying the grant.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

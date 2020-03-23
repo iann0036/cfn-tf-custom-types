@@ -33,6 +33,8 @@ Properties:
 
 #### Certificate
 
+The root certificate of the Certificate Authority.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The certificate name to display.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FleetArn
+
+The ARN of the fleet.
 
 _Required_: Yes
 

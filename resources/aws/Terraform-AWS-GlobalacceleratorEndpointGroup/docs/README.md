@@ -1,6 +1,6 @@
 # Terraform::AWS::GlobalacceleratorEndpointGroup
 
-CloudFormation equivalent of aws_globalaccelerator_endpoint_group
+Provides a Global Accelerator endpoint group.
 
 ## Syntax
 
@@ -54,6 +54,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckIntervalSeconds
 
+The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
+
 _Required_: No
 
 _Type_: Double
@@ -61,6 +63,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckPath
+
+If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).
 
 _Required_: No
 
@@ -70,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HealthCheckPort
 
+The port that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.
+
 _Required_: No
 
 _Type_: Double
@@ -77,6 +83,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HealthCheckProtocol
+
+The protocol that AWS Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.
 
 _Required_: No
 
@@ -86,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ListenerArn
 
+The Amazon Resource Name (ARN) of the listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -94,6 +104,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ThresholdCount
 
+The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.
+
 _Required_: No
 
 _Type_: Double
@@ -101,6 +113,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TrafficDialPercentage
+
+The percentage of traffic to send to an AWS Region. Additional traffic is distributed to other endpoint groups for this listener. The default value is 100.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::FmsAdminAccount
 
-CloudFormation equivalent of aws_fms_admin_account
+Provides a resource to associate/disassociate an AWS Firewall Manager administrator account. This operation must be performed in the `us-east-1` region.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### AccountId
+
+The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager administrator account. This can be an AWS Organizations master account or a member account. Defaults to the current account. Must be configured to perform drift detection.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::RamResourceShare
 
-CloudFormation equivalent of aws_ram_resource_share
+Manages a Resource Access Manager (RAM) Resource Share. To association principals with the share, see the [`aws_ram_principal_association` resource](/docs/providers/aws/r/ram_principal_association.html). To associate resources with the share, see the [`aws_ram_resource_association` resource](/docs/providers/aws/r/ram_resource_association.html).
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### AllowExternalPrincipals
 
+Indicates whether principals outside your organization can be associated with a resource share.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the resource share.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource share.
 
 _Required_: No
 

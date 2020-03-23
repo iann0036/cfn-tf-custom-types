@@ -1,6 +1,8 @@
 # Terraform::AWS::Subnet
 
-CloudFormation equivalent of aws_subnet
+Provides an VPC subnet resource.
+
+~> **NOTE:** Due to [AWS Lambda improved VPC networking changes that began deploying in September 2019](https://aws.amazon.com/blogs/compute/announcing-improved-vpc-networking-for-aws-lambda-functions/), subnets associated with Lambda Functions can take up to 45 minutes to successfully delete. Terraform AWS Provider version 2.31.0 and later automatically handles this increased timeout, however prior versions require setting the [customizable deletion timeout](#timeouts) to 45 minutes (`delete = "45m"`). AWS and HashiCorp are working together to reduce the amount of time required for resource deletion and updates can be tracked in this [GitHub issue](https://github.com/terraform-providers/terraform-provider-aws/issues/10329).
 
 ## Syntax
 
@@ -46,6 +48,10 @@ Properties:
 
 #### AssignIpv6AddressOnCreation
 
+Specify true to indicate
+that network interfaces created in the specified subnet should be
+assigned an IPv6 address. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -53,6 +59,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+The AZ for the subnet.
 
 _Required_: No
 
@@ -62,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AvailabilityZoneId
 
+The AZ ID of the subnet.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CidrBlock
+
+The CIDR block for the subnet.
 
 _Required_: Yes
 
@@ -78,6 +90,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Ipv6CidrBlock
 
+The IPv6 network range for the subnet,
+in CIDR notation. The subnet size must use a /64 prefix length.
+
 _Required_: No
 
 _Type_: String
@@ -85,6 +100,10 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MapPublicIpOnLaunch
+
+Specify true to indicate
+that instances launched into the subnet should be assigned
+a public IP address. Default is `false`.
 
 _Required_: No
 
@@ -94,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -101,6 +122,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The VPC ID.
 
 _Required_: Yes
 

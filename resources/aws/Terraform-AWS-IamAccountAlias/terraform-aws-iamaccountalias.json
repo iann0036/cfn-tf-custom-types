@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::IamAccountAlias",
-    "description": "CloudFormation equivalent of aws_iam_account_alias",
+    "description": "-> **Note:** There is only a single account alias per AWS account.\n\nManages the account alias for the AWS Account.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AccountAlias": {
-            "type": "string"
+            "type": "string",
+            "description": "The account alias."
         },
         "Id": {
             "type": "string"

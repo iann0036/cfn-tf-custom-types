@@ -1,6 +1,6 @@
 # Terraform::AWS::SsmPatchGroup
 
-CloudFormation equivalent of aws_ssm_patch_group
+Provides an SSM Patch Group resource
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### BaselineId
 
+The ID of the patch baseline to register the patch group with.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PatchGroup
+
+The name of the patch group that should be registered with the patch baseline.
 
 _Required_: Yes
 

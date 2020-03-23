@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayMethodSettings
 
-CloudFormation equivalent of aws_api_gateway_method_settings
+Provides an API Gateway Method Settings, e.g. logging or monitoring.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### MethodPath
 
+Method path defined as `{resource_path}/{http_method}` for an individual method override, or `*/*` for overriding all methods in the stage.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RestApiId
 
+The ID of the REST API.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StageName
+
+The name of the stage.
 
 _Required_: Yes
 

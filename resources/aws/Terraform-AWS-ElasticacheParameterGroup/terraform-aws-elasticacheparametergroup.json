@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ElasticacheParameterGroup",
-    "description": "CloudFormation equivalent of aws_elasticache_parameter_group",
+    "description": "Provides an ElastiCache parameter group resource.\n\n~> **NOTE:** Attempting to remove the `reserved-memory` parameter when `family` is set to `redis2.6` or `redis2.8` may show a perpetual difference in Terraform due to an Elasticache API limitation. Leave that parameter configured with any value to workaround the issue.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Parameter": {
@@ -26,16 +26,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the ElastiCache parameter group. Defaults to \"Managed by Terraform\"."
         },
         "Family": {
-            "type": "string"
+            "type": "string",
+            "description": "The family of the ElastiCache parameter group."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ElastiCache parameter."
         },
         "Parameter": {
             "type": "array",

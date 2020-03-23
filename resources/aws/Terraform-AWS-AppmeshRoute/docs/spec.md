@@ -28,6 +28,9 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Priority
 
+The priority for the route, between `0` and `1000`.
+Routes are matched based on the specified value, where `0` is the highest priority.
+
 _Required_: No
 
 _Type_: Double

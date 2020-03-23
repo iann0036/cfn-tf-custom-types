@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpcEndpointConnectionNotification",
-    "description": "CloudFormation equivalent of aws_vpc_endpoint_connection_notification",
+    "description": "Provides a VPC Endpoint connection notification resource.\nConnection notifications notify subscribers of VPC Endpoint events.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,10 +13,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "One or more endpoint [events](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointConnectionNotification.html#API_CreateVpcEndpointConnectionNotification_RequestParameters) for which to receive notifications."
         },
         "ConnectionNotificationArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the SNS topic for the notifications."
         },
         "Id": {
             "type": "string"
@@ -28,10 +30,12 @@
             "type": "string"
         },
         "VpcEndpointId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC Endpoint to receive notifications for."
         },
         "VpcEndpointServiceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC Endpoint Service to receive notifications for."
         }
     },
     "additionalProperties": false,

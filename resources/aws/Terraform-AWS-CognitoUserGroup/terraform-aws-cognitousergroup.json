@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CognitoUserGroup",
-    "description": "CloudFormation equivalent of aws_cognito_user_group",
+    "description": "Provides a Cognito User Group resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the user group."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the user group."
         },
         "Precedence": {
-            "type": "number"
+            "type": "number",
+            "description": "The precedence of the user group."
         },
         "RoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the IAM role to be associated with the user group."
         },
         "UserPoolId": {
-            "type": "string"
+            "type": "string",
+            "description": "The user pool ID."
         }
     },
     "additionalProperties": false,

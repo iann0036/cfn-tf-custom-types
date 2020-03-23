@@ -1,6 +1,10 @@
 # Terraform::AWS::CurReportDefinition
 
-CloudFormation equivalent of aws_cur_report_definition
+Manages Cost and Usage Report Definitions.
+
+~> *NOTE:* The AWS Cost and Usage Report service is only available in `us-east-1` currently.
+
+~> *NOTE:* If AWS Organizations is enabled, only the master account can use this resource.
 
 ## Syntax
 
@@ -47,6 +51,8 @@ Properties:
 
 #### AdditionalArtifacts
 
+A list of additional artifacts. Valid values are: REDSHIFT, QUICKSIGHT.
+
 _Required_: No
 
 _Type_: List of String
@@ -54,6 +60,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AdditionalSchemaElements
+
+A list of schema elements. Valid values are: RESOURCES.
 
 _Required_: Yes
 
@@ -63,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Compression
 
+Compression format for report. Valid values are: GZIP, ZIP.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Format
+
+Format for report. Valid values are: textORcsv.
 
 _Required_: Yes
 
@@ -79,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReportName
 
+Unique name for the report. Must start with a number/letter and is case sensitive. Limited to 256 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3Bucket
+
+Name of the existing S3 bucket to hold generated reports.
 
 _Required_: Yes
 
@@ -95,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### S3Prefix
 
+Report path prefix. Limited to 256 characters.
+
 _Required_: No
 
 _Type_: String
@@ -103,6 +121,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### S3Region
 
+Region of the existing S3 bucket to hold generated reports.
+
 _Required_: Yes
 
 _Type_: String
@@ -110,6 +130,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeUnit
+
+The frequency on which report data are measured and displayed.  Valid values are: HOURLY, DAILY.
 
 _Required_: Yes
 

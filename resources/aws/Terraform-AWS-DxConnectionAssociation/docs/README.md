@@ -1,6 +1,6 @@
 # Terraform::AWS::DxConnectionAssociation
 
-CloudFormation equivalent of aws_dx_connection_association
+Associates a Direct Connect Connection with a LAG.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### ConnectionId
 
+The ID of the connection.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LagId
+
+The ID of the LAG with which to associate the connection.
 
 _Required_: Yes
 

@@ -1,6 +1,13 @@
 # Terraform::AWS::VpcEndpointService
 
-CloudFormation equivalent of aws_vpc_endpoint_service
+Provides a VPC Endpoint Service resource.
+Service consumers can create an _Interface_ [VPC Endpoint](vpc_endpoint.html) to connect to the service.
+
+~> **NOTE on VPC Endpoint Services and VPC Endpoint Service Allowed Principals:** Terraform provides
+both a standalone [VPC Endpoint Service Allowed Principal](vpc_endpoint_service_allowed_principal.html) resource
+and a VPC Endpoint Service resource with an `allowed_principals` attribute. Do not use the same principal ARN in both
+a VPC Endpoint Service resource and a VPC Endpoint Service Allowed Principal resource. Doing so will cause a conflict
+and will overwrite the association.
 
 ## Syntax
 
@@ -38,6 +45,8 @@ Properties:
 
 #### AcceptanceRequired
 
+Whether or not VPC endpoint connection requests to the service must be accepted by the service owner - `true` or `false`.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -45,6 +54,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedPrincipals
+
+The ARNs of one or more principals allowed to discover the endpoint service.
 
 _Required_: No
 
@@ -54,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkLoadBalancerArns
 
+The ARNs of one or more Network Load Balancers for the endpoint service.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -61,6 +74,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

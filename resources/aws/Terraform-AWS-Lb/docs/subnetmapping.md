@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AllocationId
 
+The allocation ID of the Elastic IP address.
+
 _Required_: No
 
 _Type_: String
@@ -31,6 +33,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The id of the subnet of which to attach to the load balancer. You can specify only one subnet per Availability Zone.
 
 _Required_: Yes
 

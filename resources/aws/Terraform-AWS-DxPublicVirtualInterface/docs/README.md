@@ -1,6 +1,6 @@
 # Terraform::AWS::DxPublicVirtualInterface
 
-CloudFormation equivalent of aws_dx_public_virtual_interface
+Provides a Direct Connect public virtual interface resource.
 
 ## Syntax
 
@@ -51,6 +51,8 @@ Properties:
 
 #### AddressFamily
 
+The address family for the BGP peer. `ipv4 ` or `ipv6`.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AmazonAddress
+
+The IPv4 CIDR address to use to send traffic to Amazon. Required for IPv4 BGP peers.
 
 _Required_: No
 
@@ -67,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BgpAsn
 
+The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+
 _Required_: Yes
 
 _Type_: Double
@@ -74,6 +80,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BgpAuthKey
+
+The authentication key for BGP configuration.
 
 _Required_: No
 
@@ -83,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConnectionId
 
+The ID of the Direct Connect connection (or LAG) on which to create the virtual interface.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomerAddress
+
+The IPv4 CIDR destination address to which Amazon should send traffic. Required for IPv4 BGP peers.
 
 _Required_: No
 
@@ -99,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name for the virtual interface.
+
 _Required_: Yes
 
 _Type_: String
@@ -106,6 +120,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouteFilterPrefixes
+
+A list of routes to be advertised to the AWS network in this region.
 
 _Required_: Yes
 
@@ -115,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -122,6 +140,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vlan
+
+The VLAN ID.
 
 _Required_: Yes
 

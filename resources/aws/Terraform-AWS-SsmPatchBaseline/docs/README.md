@@ -1,6 +1,10 @@
 # Terraform::AWS::SsmPatchBaseline
 
-CloudFormation equivalent of aws_ssm_patch_baseline
+Provides an SSM Patch Baseline resource
+
+~> **NOTE on Patch Baselines:** The `approved_patches` and `approval_rule` are 
+both marked as optional fields, but the Patch Baseline requires that at least one
+of them is specified.
 
 ## Syntax
 
@@ -53,6 +57,8 @@ Properties:
 
 #### ApprovedPatches
 
+A list of explicitly approved patches for the baseline.
+
 _Required_: No
 
 _Type_: List of String
@@ -60,6 +66,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ApprovedPatchesComplianceLevel
+
+Defines the compliance level for approved patches. This means that if an approved patch is reported as missing, this is the severity of the compliance violation. Valid compliance levels include the following: `CRITICAL`, `HIGH`, `MEDIUM`, `LOW`, `INFORMATIONAL`, `UNSPECIFIED`. The default value is `UNSPECIFIED`.
 
 _Required_: No
 
@@ -69,6 +77,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The description of the patch baseline.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +86,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the patch baseline.
 
 _Required_: Yes
 
@@ -85,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OperatingSystem
 
+Defines the operating system the patch baseline applies to. Supported operating systems include `WINDOWS`, `AMAZON_LINUX`, `AMAZON_LINUX_2`, `SUSE`, `UBUNTU`, `CENTOS`, and `REDHAT_ENTERPRISE_LINUX`. The Default value is `WINDOWS`.
+
 _Required_: No
 
 _Type_: String
@@ -92,6 +106,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RejectedPatches
+
+A list of rejected patches.
 
 _Required_: No
 

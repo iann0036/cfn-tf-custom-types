@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::RouteTable",
-    "description": "CloudFormation equivalent of aws_route_table",
+    "description": "Provides a resource to create a VPC routing table.\n\n~> **NOTE on Route Tables and Routes:** Terraform currently\nprovides both a standalone [Route resource](route.html) and a Route Table resource with routes\ndefined in-line. At this time you cannot use a Route Table with in-line routes\nin conjunction with any Route resources. Doing so will cause\na conflict of rule settings and will overwrite rules.\n\n~> **NOTE on `gateway_id` and `nat_gateway_id`:** The AWS API is very forgiving with these two\nattributes and the `aws_route_table` resource can be created with a NAT ID specified as a Gateway ID attribute.\nThis _will_ lead to a permanent diff between your configuration and statefile, as the API returns the correct\nparameters in the returned route table. If you're experiencing constant diffs in your `aws_route_table` resources,\nthe first thing to check is whether or not you're specifying a NAT ID instead of a Gateway ID, or vice-versa.\n\n~> **NOTE on `propagating_vgws` and the `aws_vpn_gateway_route_propagation` resource:**\nIf the `propagating_vgws` argument is present, it's not supported to _also_\ndefine route propagations using `aws_vpn_gateway_route_propagation`, since\nthis resource will delete any propagating gateways not explicitly listed in\n`propagating_vgws`. Omit this argument when defining route propagation using\nthe separate resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -19,7 +19,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of virtual gateways for propagation."
         },
         "Route": {
             "type": "array",
@@ -56,7 +57,8 @@
                         "type": "string"
                     }
                 }
-            }
+            },
+            "description": "A list of route objects. Their keys are documented below. This argument is processed in [attribute-as-blocks mode](/docs/configuration/attr-as-blocks.html)."
         },
         "Tags": {
             "type": "array",
@@ -76,10 +78,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID."
         }
     },
     "additionalProperties": false,

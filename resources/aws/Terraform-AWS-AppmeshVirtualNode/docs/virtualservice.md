@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### VirtualServiceName
 
+The name of the virtual service that is acting as a virtual node backend.
+
 _Required_: Yes
 
 _Type_: String

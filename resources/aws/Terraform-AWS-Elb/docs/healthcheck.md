@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### HealthyThreshold
 
+The number of checks before the instance is declared healthy.
+
 _Required_: Yes
 
 _Type_: Double
@@ -37,6 +39,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Interval
+
+The interval between checks.
 
 _Required_: Yes
 
@@ -46,6 +50,11 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Target
 
+The target of the check. Valid pattern is "${PROTOCOL}:${PORT}${PATH}", where PROTOCOL
+values are:
+* `HTTP`, `HTTPS` - PORT and PATH are required
+* `TCP`, `SSL` - PORT is required, PATH is not supported.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Timeout
 
+The length of time before the check times out.
+
 _Required_: Yes
 
 _Type_: Double
@@ -61,6 +72,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UnhealthyThreshold
+
+The number of checks before the instance is declared unhealthy.
 
 _Required_: Yes
 

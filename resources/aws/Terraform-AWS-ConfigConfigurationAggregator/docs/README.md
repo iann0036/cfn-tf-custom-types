@@ -1,6 +1,6 @@
 # Terraform::AWS::ConfigConfigurationAggregator
 
-CloudFormation equivalent of aws_config_configuration_aggregator
+Manages an AWS Config Configuration Aggregator
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Name
 
+The name of the configuration aggregator.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

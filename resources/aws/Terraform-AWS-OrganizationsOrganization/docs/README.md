@@ -1,6 +1,6 @@
 # Terraform::AWS::OrganizationsOrganization
 
-CloudFormation equivalent of aws_organizations_organization
+Provides a resource to create an organization.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### AwsServiceAccessPrincipals
 
+List of AWS service principal names for which you want to enable integration with your organization. This is typically in the form of a URL, such as service-abbreviation.amazonaws.com. Organization must have `feature_set` set to `ALL`. For additional information, see the [AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html).
+
 _Required_: No
 
 _Type_: List of String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnabledPolicyTypes
 
+List of Organizations policy types to enable in the Organization Root. Organization must have `feature_set` set to `ALL`. For additional information about valid policy types (e.g. `SERVICE_CONTROL_POLICY` and `TAG_POLICY`), see the [AWS Organizations API Reference](https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnablePolicyType.html).
+
 _Required_: No
 
 _Type_: List of String
@@ -50,6 +54,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FeatureSet
+
+Specify "ALL" (default) or "CONSOLIDATED_BILLING".
 
 _Required_: No
 

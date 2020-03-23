@@ -1,6 +1,6 @@
 # Terraform::AWS::Ec2Fleet
 
-CloudFormation equivalent of aws_ec2_fleet
+Provides a resource to manage EC2 Fleets.
 
 ## Syntax
 
@@ -60,6 +60,8 @@ Properties:
 
 #### ExcessCapacityTerminationPolicy
 
+Whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2. Valid values: `no-termination`, `termination`. Defaults to `termination`.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ReplaceUnhealthyInstances
+
+Whether EC2 Fleet should replace unhealthy instances. Defaults to `false`.
 
 _Required_: No
 
@@ -76,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Map of Fleet tags. To tag instances at launch, specify the tags in the Launch Template.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -83,6 +89,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TerminateInstances
+
+Whether to terminate instances for an EC2 Fleet if it is deleted successfully. Defaults to `false`.
 
 _Required_: No
 
@@ -92,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TerminateInstancesWithExpiration
 
+Whether running instances should be terminated when the EC2 Fleet expires. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -99,6 +109,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of request. Indicates whether the EC2 Fleet only requests the target capacity, or also attempts to maintain it. Valid values: `maintain`, `request`. Defaults to `maintain`.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::EgressOnlyInternetGateway",
-    "description": "CloudFormation equivalent of aws_egress_only_internet_gateway",
+    "description": "[IPv6 only] Creates an egress-only Internet gateway for your VPC.\nAn egress-only Internet gateway is used to enable outbound communication\nover IPv6 from instances in your VPC to the Internet, and prevents hosts\noutside of your VPC from initiating an IPv6 connection with your instance.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID to create in."
         }
     },
     "additionalProperties": false,

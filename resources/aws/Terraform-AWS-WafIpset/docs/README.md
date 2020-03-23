@@ -1,6 +1,6 @@
 # Terraform::AWS::WafIpset
 
-CloudFormation equivalent of aws_waf_ipset
+Provides a WAF IPSet Resource
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the IPSet.
 
 _Required_: Yes
 

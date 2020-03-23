@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::S3BucketNotification",
-    "description": "CloudFormation equivalent of aws_s3_bucket_notification",
+    "description": "Manages a S3 Bucket Notification Configuration. For additional information, see the [Configuring S3 Event Notifications section in the Amazon S3 Developer Guide](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html).\n\n~> **NOTE:** S3 Buckets only support a single notification configuration. Declaring multiple `aws_s3_bucket_notification` resources to the same S3 Bucket will cause a perpetual difference in configuration. See the example \"Trigger multiple Lambda functions\" for an option.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "LambdaFunction": {
@@ -12,19 +12,24 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies [event](http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#notification-how-to-event-types-and-destinations) for which to send notifications."
                 },
                 "FilterPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies object key name prefix."
                 },
                 "FilterSuffix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies object key name suffix."
                 },
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies unique identifier for each of the notification configurations."
                 },
                 "LambdaFunctionArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies Amazon Lambda function ARN."
                 }
             },
             "required": [
@@ -40,19 +45,24 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies [event](http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#notification-how-to-event-types-and-destinations) for which to send notifications."
                 },
                 "FilterPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies object key name prefix."
                 },
                 "FilterSuffix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies object key name suffix."
                 },
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies unique identifier for each of the notification configurations."
                 },
                 "QueueArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies Amazon SQS queue ARN."
                 }
             },
             "required": [
@@ -69,19 +79,24 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies [event](http://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html#notification-how-to-event-types-and-destinations) for which to send notifications."
                 },
                 "FilterPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies object key name prefix."
                 },
                 "FilterSuffix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies object key name suffix."
                 },
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies unique identifier for each of the notification configurations."
                 },
                 "TopicArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specifies Amazon SNS topic ARN."
                 }
             },
             "required": [
@@ -96,7 +111,8 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket to put notification configuration."
         },
         "Id": {
             "type": "string"

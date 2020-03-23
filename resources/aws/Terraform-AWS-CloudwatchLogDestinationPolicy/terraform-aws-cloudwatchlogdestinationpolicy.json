@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CloudwatchLogDestinationPolicy",
-    "description": "CloudFormation equivalent of aws_cloudwatch_log_destination_policy",
+    "description": "Provides a CloudWatch Logs destination policy resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "AccessPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy document. This is a JSON formatted string."
         },
         "DestinationName": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the subscription filter."
         },
         "Id": {
             "type": "string"

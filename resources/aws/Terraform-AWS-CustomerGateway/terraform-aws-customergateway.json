@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CustomerGateway",
-    "description": "CloudFormation equivalent of aws_customer_gateway",
+    "description": "Provides a customer gateway inside a VPC. These objects can be connected to VPN gateways via VPN connections, and allow you to establish tunnels between your network and the VPC.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "BgpAsn": {
-            "type": "number"
+            "type": "number",
+            "description": "The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN)."
         },
         "Id": {
             "type": "string"
         },
         "IpAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address of the gateway's Internet-routable external interface."
         },
         "Tags": {
             "type": "array",
@@ -35,10 +37,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Tags to apply to the gateway."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of customer gateway. The only type AWS\nsupports at this time is \"ipsec.1\"."
         }
     },
     "additionalProperties": false,

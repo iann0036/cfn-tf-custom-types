@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CloudwatchLogStream",
-    "description": "CloudFormation equivalent of aws_cloudwatch_log_stream",
+    "description": "Provides a CloudWatch Log Stream resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,10 +15,12 @@
             "type": "string"
         },
         "LogGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the log group under which the log stream is to be created."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the log stream. Must not be longer than 512 characters and must not contain `:`."
         }
     },
     "additionalProperties": false,

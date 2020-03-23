@@ -1,6 +1,6 @@
 # Terraform::AWS::ElastictranscoderPipeline
 
-CloudFormation equivalent of aws_elastictranscoder_pipeline
+Provides an Elastic Transcoder pipeline resource.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### AwsKmsKeyArn
 
+The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InputBucket
+
+The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.
 
 _Required_: Yes
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the pipeline. Maximum 40 characters.
+
 _Required_: No
 
 _Type_: String
@@ -76,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OutputBucket
 
+The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Role
+
+The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.
 
 _Required_: Yes
 

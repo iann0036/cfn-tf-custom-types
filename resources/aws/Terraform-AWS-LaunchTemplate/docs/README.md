@@ -1,6 +1,6 @@
 # Terraform::AWS::LaunchTemplate
 
-CloudFormation equivalent of aws_launch_template
+Provides an EC2 launch template resource. Can be used to create instances or auto scaling groups.
 
 ## Syntax
 
@@ -108,6 +108,8 @@ Properties:
 
 #### Description
 
+Description of the launch template.
+
 _Required_: No
 
 _Type_: String
@@ -115,6 +117,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DisableApiTermination
+
+If `true`, enables [EC2 Instance
+Termination Protection](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#Using_ChangingDisableAPITermination).
 
 _Required_: No
 
@@ -124,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EbsOptimized
 
+If `true`, the launched EC2 instance will be EBS-optimized.
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +138,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ImageId
+
+The AMI from which to launch the instance.
 
 _Required_: No
 
@@ -140,6 +149,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceInitiatedShutdownBehavior
 
+Shutdown behavior for the instance. Can be `stop` or `terminate`.
+(Default: `stop`).
+
 _Required_: No
 
 _Type_: String
@@ -147,6 +159,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceType
+
+The type of the instance.
 
 _Required_: No
 
@@ -156,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KernelId
 
+The kernel ID.
+
 _Required_: No
 
 _Type_: String
@@ -163,6 +179,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyName
+
+The key name to use for the instance.
 
 _Required_: No
 
@@ -172,6 +190,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the launch template. If you leave this blank, Terraform will auto-generate a unique name.
+
 _Required_: No
 
 _Type_: String
@@ -179,6 +199,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamePrefix
+
+Creates a unique name beginning with the specified prefix. Conflicts with `name`.
 
 _Required_: No
 
@@ -188,6 +210,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RamDiskId
 
+The ID of the RAM disk.
+
 _Required_: No
 
 _Type_: String
@@ -195,6 +219,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupNames
+
+A list of security group names to associate with. If you are creating Instances in a VPC, use
+`vpc_security_group_ids` instead.
 
 _Required_: No
 
@@ -204,6 +231,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the launch template.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -212,6 +241,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserData
 
+The Base64-encoded user data to provide when launching the instance.
+
 _Required_: No
 
 _Type_: String
@@ -219,6 +250,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcSecurityGroupIds
+
+A list of security group IDs to associate with.
 
 _Required_: No
 

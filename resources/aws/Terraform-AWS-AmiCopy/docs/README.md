@@ -1,6 +1,16 @@
 # Terraform::AWS::AmiCopy
 
-CloudFormation equivalent of aws_ami_copy
+The "AMI copy" resource allows duplication of an Amazon Machine Image (AMI),
+including cross-region copies.
+
+If the source AMI has associated EBS snapshots, those will also be duplicated
+along with the AMI.
+
+This is useful for taking a single AMI provisioned in one region and making
+it available in another for a multi-region deployment.
+
+Copying an AMI can take several minutes. The creation of this resource will
+block until the new AMI is available for use on new instances.
 
 ## Syntax
 
@@ -52,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Encrypted
 
+Specifies whether the destination snapshots of the copied image should be encrypted. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -59,6 +71,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsKeyId
+
+The full ARN of the KMS Key to use when encrypting the snapshots of an image during a copy operation. If not specified, then the default AWS KMS Key will be used.
 
 _Required_: No
 
@@ -68,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A region-unique name for the AMI.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +91,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceAmiId
+
+The id of the AMI to copy. This id must be valid in the region
+given by `source_ami_region`.
 
 _Required_: Yes
 
@@ -84,6 +103,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceAmiRegion
 
+The region from which the AMI will be copied. This may be the
+same as the AWS provider region in order to create a copy within the same region.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +113,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

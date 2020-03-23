@@ -1,6 +1,6 @@
 # Terraform::AWS::GameliftBuild
 
-CloudFormation equivalent of aws_gamelift_build
+Provides an Gamelift Build resource.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Name
 
+Name of the build.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OperatingSystem
+
+Operating system that the game server binaries are built to run on. e.g. `WINDOWS_2012` or `AMAZON_LINUX`.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value mapping of resource tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -62,6 +68,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+Version that is associated with this build.
 
 _Required_: No
 

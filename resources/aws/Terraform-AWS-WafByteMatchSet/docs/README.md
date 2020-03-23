@@ -1,6 +1,6 @@
 # Terraform::AWS::WafByteMatchSet
 
-CloudFormation equivalent of aws_waf_byte_match_set
+Provides a WAF Byte Match Set Resource
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the Byte Match Set.
 
 _Required_: Yes
 

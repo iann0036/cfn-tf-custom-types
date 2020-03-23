@@ -1,6 +1,6 @@
 # Terraform::AWS::ResourcegroupsGroup
 
-CloudFormation equivalent of aws_resourcegroups_group
+Provides a Resource Group.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+A description of the resource group.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The resource group's name. A resource group name can have a maximum of 127 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with `AWS` or `aws`.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

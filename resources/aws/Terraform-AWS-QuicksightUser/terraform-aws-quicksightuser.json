@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::QuicksightUser",
-    "description": "CloudFormation equivalent of aws_quicksight_user",
+    "description": "Resource for managing QuickSight User",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,31 +12,39 @@
             "type": "string"
         },
         "AwsAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account."
         },
         "Email": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address of the user that you want to register."
         },
         "IamArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the IAM user or role that you are registering with Amazon QuickSight."
         },
         "Id": {
             "type": "string"
         },
         "IdentityType": {
-            "type": "string"
+            "type": "string",
+            "description": "Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts either  `IAM` or `QUICKSIGHT`."
         },
         "Namespace": {
-            "type": "string"
+            "type": "string",
+            "description": "The namespace. Currently, you should set this to `default`."
         },
         "SessionName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the IAM session to use when assuming roles that can embed QuickSight dashboards."
         },
         "UserName": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon QuickSight user name that you want to create for the user you are registering."
         },
         "UserRole": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon QuickSight role of the user. The user role can be one of the following: `READER`, `AUTHOR`, or `ADMIN`."
         }
     },
     "additionalProperties": false,

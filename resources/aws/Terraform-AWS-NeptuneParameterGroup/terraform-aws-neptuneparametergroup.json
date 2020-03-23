@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::NeptuneParameterGroup",
-    "description": "CloudFormation equivalent of aws_neptune_parameter_group",
+    "description": "Manages a Neptune Parameter Group",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Parameter": {
@@ -32,16 +32,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the Neptune parameter group. Defaults to \"Managed by Terraform\"."
         },
         "Family": {
-            "type": "string"
+            "type": "string",
+            "description": "The family of the Neptune parameter group."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Neptune parameter."
         },
         "Tags": {
             "type": "array",
@@ -61,7 +64,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Parameter": {
             "type": "array",

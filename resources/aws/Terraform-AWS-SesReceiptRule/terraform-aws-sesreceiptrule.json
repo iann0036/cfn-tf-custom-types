@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SesReceiptRule",
-    "description": "CloudFormation equivalent of aws_ses_receipt_rule",
+    "description": "Provides an SES receipt rule resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AddHeaderAction": {
@@ -161,32 +161,39 @@
             "type": "string"
         },
         "After": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the rule to place this rule after."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the rule will be enabled."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the rule."
         },
         "Recipients": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of email addresses."
         },
         "RuleSetName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the rule set."
         },
         "ScanEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, incoming emails will be scanned for spam and viruses."
         },
         "TlsPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Require or Optional."
         },
         "AddHeaderAction": {
             "type": "array",

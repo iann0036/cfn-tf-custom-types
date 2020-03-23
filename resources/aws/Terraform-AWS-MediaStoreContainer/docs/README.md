@@ -1,6 +1,6 @@
 # Terraform::AWS::MediaStoreContainer
 
-CloudFormation equivalent of aws_media_store_container
+Provides a MediaStore Container.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### Name
 
+The name of the container. Must contain alphanumeric characters or underscores.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

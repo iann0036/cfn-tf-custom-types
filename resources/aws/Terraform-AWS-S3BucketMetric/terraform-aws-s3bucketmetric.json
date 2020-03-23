@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::S3BucketMetric",
-    "description": "CloudFormation equivalent of aws_s3_bucket_metric",
+    "description": "Provides a S3 bucket [metrics configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html) resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Filter": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Object prefix for filtering (singular)."
                 },
                 "Tags": {
                     "type": "array",
@@ -28,7 +29,8 @@
                             "MapKey",
                             "MapValue"
                         ]
-                    }
+                    },
+                    "description": "Object tags for filtering (up to 10)."
                 }
             },
             "required": []
@@ -40,13 +42,15 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket to put metric configuration."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier of the metrics configuration for the bucket."
         },
         "Filter": {
             "type": "array",

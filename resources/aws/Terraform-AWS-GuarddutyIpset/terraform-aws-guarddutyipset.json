@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::GuarddutyIpset",
-    "description": "CloudFormation equivalent of aws_guardduty_ipset",
+    "description": "Provides a resource to manage a GuardDuty IPSet.\n\n~> **Note:** Currently in GuardDuty, users from member accounts cannot upload and further manage IPSets. IPSets that are uploaded by the master account are imposed on GuardDuty functionality in its member accounts. See the [GuardDuty API Documentation](https://docs.aws.amazon.com/guardduty/latest/ug/create-ip-set.html)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "Activate": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether GuardDuty is to start using the uploaded IPSet."
         },
         "DetectorId": {
-            "type": "string"
+            "type": "string",
+            "description": "The detector ID of the GuardDuty."
         },
         "Format": {
-            "type": "string"
+            "type": "string",
+            "description": "The format of the file that contains the IPSet. Valid values: `TXT` | `STIX` | `OTX_CSV` | `ALIEN_VAULT` | `PROOF_POINT` | `FIRE_EYE`."
         },
         "Id": {
             "type": "string"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The URI of the file that contains the IPSet."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The friendly name to identify the IPSet."
         }
     },
     "additionalProperties": false,

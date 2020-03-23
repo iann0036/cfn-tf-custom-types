@@ -1,6 +1,6 @@
 # Terraform::AWS::SnapshotCreateVolumePermission
 
-CloudFormation equivalent of aws_snapshot_create_volume_permission
+Adds permission to create volumes off of a given EBS Snapshot.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### AccountId
 
+An AWS Account ID to add create volume permissions.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotId
+
+A snapshot ID
+* `account_id` - (required) An AWS Account ID to add create volume permissions.
 
 _Required_: Yes
 

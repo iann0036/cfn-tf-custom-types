@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SesEventDestination",
-    "description": "CloudFormation equivalent of aws_ses_event_destination",
+    "description": "Provides an SES event destination",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CloudwatchDestination": {
@@ -58,10 +58,12 @@
             "type": "string"
         },
         "ConfigurationSetName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the configuration set."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the event destination will be enabled."
         },
         "Id": {
             "type": "string"
@@ -71,10 +73,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of matching types. May be any of `\"send\"`, `\"reject\"`, `\"bounce\"`, `\"complaint\"`, `\"delivery\"`, `\"open\"`, `\"click\"`, or `\"renderingFailure\"`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the event destination."
         },
         "CloudwatchDestination": {
             "type": "array",

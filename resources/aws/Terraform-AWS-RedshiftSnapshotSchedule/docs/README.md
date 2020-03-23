@@ -41,6 +41,8 @@ Properties:
 
 #### Definitions
 
+The definition of the snapshot schedule. The definition is made up of schedule expressions, for example `cron(30 12 *)` or `rate(12 hours)`.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -48,6 +50,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the snapshot schedule.
 
 _Required_: No
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForceDestroy
 
+Whether to destroy all associated clusters with this snapshot schedule on deletion. Must be enabled and applied before attempting deletion.
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +70,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Identifier
+
+The snapshot schedule identifier. If omitted, Terraform will assign a random, unique identifier.
 
 _Required_: No
 
@@ -73,6 +81,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IdentifierPrefix
 
+Creates a unique
+identifier beginning with the specified prefix. Conflicts with `identifier`.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +91,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

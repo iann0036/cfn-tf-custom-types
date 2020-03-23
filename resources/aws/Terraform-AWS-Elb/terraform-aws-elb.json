@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Elb",
-    "description": "CloudFormation equivalent of aws_elb",
+    "description": "Provides an Elastic Load Balancer resource, also known as a \"Classic\nLoad Balancer\" after the release of\n[Application/Network Load Balancers](/docs/providers/aws/r/lb.html).\n\n~> **NOTE on ELB Instances and ELB Attachments:** Terraform currently\nprovides both a standalone [ELB Attachment resource](elb_attachment.html)\n(describing an instance attached to an ELB), and an ELB resource with\n`instances` defined in-line. At this time you cannot use an ELB with in-line\ninstances in conjunction with a ELB Attachment resources. Doing so will cause a\nconflict and will overwrite attachments.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AccessLogs": {
@@ -8,16 +8,20 @@
             "additionalProperties": false,
             "properties": {
                 "Bucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The S3 bucket name to store the logs in."
                 },
                 "BucketPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The S3 bucket prefix. Logs are stored in the root if not configured."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Boolean to enable / disable `access_logs`. Default is `true`."
                 },
                 "Interval": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The publishing interval in minutes. Default: 60 minutes."
                 }
             },
             "required": [
@@ -29,19 +33,24 @@
             "additionalProperties": false,
             "properties": {
                 "HealthyThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of checks before the instance is declared healthy."
                 },
                 "Interval": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The interval between checks."
                 },
                 "Target": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The target of the check. Valid pattern is \"${PROTOCOL}:${PORT}${PATH}\", where PROTOCOL\nvalues are:\n* `HTTP`, `HTTPS` - PORT and PATH are required\n* `TCP`, `SSL` - PORT is required, PATH is not supported."
                 },
                 "Timeout": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The length of time before the check times out."
                 },
                 "UnhealthyThreshold": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of checks before the instance is declared unhealthy."
                 }
             },
             "required": [
@@ -57,19 +66,24 @@
             "additionalProperties": false,
             "properties": {
                 "InstancePort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port on the instance to route to."
                 },
                 "InstanceProtocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol to use to the instance. Valid\nvalues are `HTTP`, `HTTPS`, `TCP`, or `SSL`."
                 },
                 "LbPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The port to listen on for the load balancer."
                 },
                 "LbProtocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol to listen on. Valid values are `HTTP`,\n`HTTPS`, `TCP`, or `SSL`."
                 },
                 "SslCertificateId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ARN of an SSL certificate you have\nuploaded to AWS IAM. **Note ECDSA-specific restrictions below.  Only valid when `lb_protocol` is either HTTPS or SSL**."
                 }
             },
             "required": [
@@ -93,16 +107,20 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The AZ's to serve traffic in."
         },
         "ConnectionDraining": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean to enable connection draining. Default: `false`."
         },
         "ConnectionDrainingTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds to allow for connections to drain. Default: `300`."
         },
         "CrossZoneLoadBalancing": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enable cross-zone load balancing. Default: `true`."
         },
         "DnsName": {
             "type": "string"
@@ -111,30 +129,36 @@
             "type": "string"
         },
         "IdleTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds that the connection is allowed to be idle. Default: `60`."
         },
         "Instances": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of instance ids to place in the ELB pool."
         },
         "Internal": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, ELB will be an internal ELB."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the ELB. By default generated by Terraform."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified\nprefix. Conflicts with `name`."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of security group IDs to assign to the ELB.\nOnly valid if creating an ELB within a VPC."
         },
         "SourceSecurityGroup": {
             "type": "string"
@@ -147,7 +171,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of subnet IDs to attach to the ELB."
         },
         "Tags": {
             "type": "array",
@@ -167,7 +192,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ZoneId": {
             "type": "string"

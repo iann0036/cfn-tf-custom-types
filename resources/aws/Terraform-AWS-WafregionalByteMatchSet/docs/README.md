@@ -1,6 +1,6 @@
 # Terraform::AWS::WafregionalByteMatchSet
 
-CloudFormation equivalent of aws_wafregional_byte_match_set
+Provides a WAF Regional Byte Match Set Resource for use with Application Load Balancer.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the ByteMatchSet.
 
 _Required_: Yes
 

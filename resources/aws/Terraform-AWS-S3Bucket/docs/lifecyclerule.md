@@ -51,6 +51,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Specifies lifecycle rule status.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -58,6 +60,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Id
+
+Unique identifier for the rule.
 
 _Required_: No
 
@@ -67,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Prefix
 
+Object key prefix identifying one or more objects to which the rule applies.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Specifies object tags key and value.
 
 _Required_: No
 

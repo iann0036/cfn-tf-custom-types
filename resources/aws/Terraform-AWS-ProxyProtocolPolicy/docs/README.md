@@ -1,6 +1,6 @@
 # Terraform::AWS::ProxyProtocolPolicy
 
-CloudFormation equivalent of aws_proxy_protocol_policy
+Provides a proxy protocol policy, which allows an ELB to carry a client connection information to a backend.
 
 ## Syntax
 
@@ -32,6 +32,9 @@ Properties:
 
 #### InstancePorts
 
+List of instance ports to which the policy
+should be applied. This can be specified if the protocol is SSL or TCP.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -39,6 +42,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancer
+
+The load balancer to which the policy
+should be attached.
 
 _Required_: Yes
 

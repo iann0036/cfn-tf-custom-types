@@ -1,6 +1,8 @@
 # Terraform::AWS::Lb
 
-CloudFormation equivalent of aws_lb
+Provides a Load Balancer resource.
+
+~> **Note:** `aws_alb` is known as `aws_lb`. The functionality is identical.
 
 ## Syntax
 
@@ -64,6 +66,8 @@ Properties:
 
 #### DropInvalidHeaderFields
 
+Indicates whether HTTP headers with header fields that are not valid are removed by the load balancer (true) or routed to targets (false). The default is false. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens. Only valid for Load Balancers of type `application`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -71,6 +75,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableCrossZoneLoadBalancing
+
+If true, cross-zone load balancing of the load balancer will be enabled.
+This is a `network` load balancer feature. Defaults to `false`.
 
 _Required_: No
 
@@ -80,6 +87,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableDeletionProtection
 
+If true, deletion of the load balancer will be disabled via
+the AWS API. This will prevent Terraform from deleting the load balancer. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -87,6 +97,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableHttp2
+
+Indicates whether HTTP/2 is enabled in `application` load balancers. Defaults to `true`.
 
 _Required_: No
 
@@ -96,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IdleTimeout
 
+The time in seconds that the connection is allowed to be idle. Only valid for Load Balancers of type `application`. Default: 60.
+
 _Required_: No
 
 _Type_: Double
@@ -103,6 +117,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Internal
+
+If true, the LB will be internal.
 
 _Required_: No
 
@@ -112,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IpAddressType
 
+The type of IP addresses used by the subnets for your load balancer. The possible values are `ipv4` and `dualstack`.
+
 _Required_: No
 
 _Type_: String
@@ -119,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LoadBalancerType
+
+The type of load balancer to create. Possible values are `application` or `network`. The default value is `application`.
 
 _Required_: No
 
@@ -128,6 +148,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the LB. This name must be unique within your AWS account, can have a maximum of 32 characters,
+must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen. If not specified,
+Terraform will autogenerate a name beginning with `tf-lb`.
+
 _Required_: No
 
 _Type_: String
@@ -135,6 +159,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamePrefix
+
+Creates a unique name beginning with the specified prefix. Conflicts with `name`.
 
 _Required_: No
 
@@ -144,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+A list of security group IDs to assign to the LB. Only valid for Load Balancers of type `application`.
+
 _Required_: No
 
 _Type_: List of String
@@ -152,6 +180,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subnets
 
+A list of subnet IDs to attach to the LB. Subnets
+cannot be updated for Load Balancers of type `network`. Changing this value
+for load balancers of type `network` will force a recreation of the resource.
+
 _Required_: No
 
 _Type_: List of String
@@ -159,6 +191,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

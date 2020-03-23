@@ -1,6 +1,6 @@
 # Terraform::AWS::S3BucketPolicy
 
-CloudFormation equivalent of aws_s3_bucket_policy
+Attaches a policy to an S3 bucket resource.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Bucket
 
+The name of the bucket to which to apply the policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+The text of the policy. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
 
 _Required_: Yes
 

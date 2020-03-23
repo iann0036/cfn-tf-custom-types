@@ -1,6 +1,6 @@
 # Terraform::AWS::DaxSubnetGroup
 
-CloudFormation equivalent of aws_dax_subnet_group
+Provides a DAX Subnet Group resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 ## Properties
 
 #### Description
+
+A description of the subnet group.
 
 _Required_: No
 

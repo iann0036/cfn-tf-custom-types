@@ -1,6 +1,10 @@
 # Terraform::AWS::EcrLifecyclePolicy
 
-CloudFormation equivalent of aws_ecr_lifecycle_policy
+Manages an ECR repository lifecycle policy.
+
+~> **NOTE:** Only one `aws_ecr_lifecycle_policy` resource can be used with the same ECR repository. To apply multiple rules, they must be combined in the `policy` JSON.
+
+~> **NOTE:** The AWS ECR API seems to reorder rules based on `rulePriority`. If you define multiple rules that are not sorted in ascending `rulePriority` order in the Terraform code, the resource will be flagged for recreation every `terraform plan`.
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 
 #### Policy
 
+The policy document. This is a JSON formatted string. See more details about [Policy Parameters](http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html#lifecycle_policy_parameters) in the official AWS docs. For more information about building IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Repository
+
+Name of the repository to apply the policy.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::CodebuildProject
 
-CloudFormation equivalent of aws_codebuild_project
+Provides a CodeBuild Project resource. See also the [`aws_codebuild_webhook` resource](/docs/providers/aws/r/codebuild_webhook.html), which manages the webhook to the source (e.g. the "rebuild every time a code change is pushed" option in the CodeBuild web console).
 
 ## Syntax
 
@@ -88,6 +88,8 @@ Properties:
 
 #### BadgeEnabled
 
+Generates a publicly-accessible URL for the projects build badge. Available as `badge_url` attribute when enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -95,6 +97,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BuildTimeout
+
+How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes.
 
 _Required_: No
 
@@ -104,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A short description of the project.
+
 _Required_: No
 
 _Type_: String
@@ -111,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EncryptionKey
+
+The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build project's build output artifacts.
 
 _Required_: No
 
@@ -120,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The projects name.
+
 _Required_: Yes
 
 _Type_: String
@@ -127,6 +137,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### QueuedTimeout
+
+How long in minutes, from 5 to 480 (8 hours), a build is allowed to be queued before it times out. The default is 8 hours.
 
 _Required_: No
 
@@ -136,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceRole
 
+The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account.
+
 _Required_: Yes
 
 _Type_: String
@@ -144,6 +158,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceVersion
 
+A version of the build input to be built for this project. If not specified, the latest version is used.
+
 _Required_: No
 
 _Type_: String
@@ -151,6 +167,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

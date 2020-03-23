@@ -1,6 +1,6 @@
 # Terraform::AWS::QuicksightUser
 
-CloudFormation equivalent of aws_quicksight_user
+Resource for managing QuickSight User
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### AwsAccountId
 
+The ID for the AWS account that the user is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Email
+
+The email address of the user that you want to register.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IamArn
 
+The ARN of the IAM user or role that you are registering with Amazon QuickSight.
+
 _Required_: No
 
 _Type_: String
@@ -66,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IdentityType
+
+Amazon QuickSight supports several ways of managing the identity of users. This parameter accepts either  `IAM` or `QUICKSIGHT`.
 
 _Required_: Yes
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Namespace
 
+The namespace. Currently, you should set this to `default`.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SessionName
+
+The name of the IAM session to use when assuming roles that can embed QuickSight dashboards.
 
 _Required_: No
 
@@ -91,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserName
 
+The Amazon QuickSight user name that you want to create for the user you are registering.
+
 _Required_: No
 
 _Type_: String
@@ -98,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserRole
+
+The Amazon QuickSight role of the user. The user role can be one of the following: `READER`, `AUTHOR`, or `ADMIN`.
 
 _Required_: Yes
 

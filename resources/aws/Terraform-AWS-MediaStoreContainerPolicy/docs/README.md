@@ -1,6 +1,6 @@
 # Terraform::AWS::MediaStoreContainerPolicy
 
-CloudFormation equivalent of aws_media_store_container_policy
+Provides a MediaStore Container Policy.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### ContainerName
 
+The name of the container.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+The contents of the policy. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
 
 _Required_: Yes
 

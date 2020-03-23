@@ -1,6 +1,8 @@
 # Terraform::AWS::Apigatewayv2Api
 
-CloudFormation equivalent of aws_apigatewayv2_api
+Manages an Amazon API Gateway Version 2 API.
+
+-> **Note:** Amazon API Gateway Version 2 resources are used for creating and deploying WebSocket and HTTP APIs. To create and deploy REST APIs, use Amazon API Gateway Version 1 [resources](https://www.terraform.io/docs/providers/aws/r/api_gateway_rest_api.html).
 
 ## Syntax
 
@@ -42,6 +44,10 @@ Properties:
 
 #### ApiKeySelectionExpression
 
+An [API key selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions).
+Valid values: `$context.authorizer.usageIdentifierKey`, `$request.header.x-api-key`. Defaults to `$request.header.x-api-key`.
+Applicable for WebSocket APIs.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the API.
 
 _Required_: No
 
@@ -58,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the API.
+
 _Required_: Yes
 
 _Type_: String
@@ -65,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ProtocolType
+
+The API protocol. Valid values: `HTTP`, `WEBSOCKET`.
 
 _Required_: Yes
 
@@ -74,6 +86,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RouteSelectionExpression
 
+The [route selection expression](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-route-selection-expressions) for the API.
+Defaults to `$request.method $request.path`.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +97,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the API.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -89,6 +106,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+A version identifier for the API.
 
 _Required_: No
 

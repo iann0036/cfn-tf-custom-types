@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayDomainName",
-    "description": "CloudFormation equivalent of aws_api_gateway_domain_name",
+    "description": "Registers a custom domain name for use with AWS API Gateway. Additional information about this functionality\ncan be found in the [API Gateway Developer Guide](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-custom-domains.html).\n\nThis resource just establishes ownership of and the TLS settings for\na particular domain name. An API can be attached to a particular path\nunder the registered domain name using\n[the `aws_api_gateway_base_path_mapping` resource](api_gateway_base_path_mapping.html).\n\nAPI Gateway domains can be defined as either 'edge-optimized' or 'regional'.  In an edge-optimized configuration,\nAPI Gateway internally creates and manages a CloudFront distribution to route requests on the given hostname. In\naddition to this resource it's necessary to create a DNS record corresponding to the given domain name which is an alias\n(either Route53 alias or traditional CNAME) to the Cloudfront domain name exported in the `cloudfront_domain_name`\nattribute.\n\nIn a regional configuration, API Gateway does not create a CloudFront distribution to route requests to the API, though\na distribution can be created if needed. In either case, it is necessary to create a DNS record corresponding to the\ngiven domain name which is an alias (either Route53 alias or traditional CNAME) to the regional domain name exported in\nthe `regional_domain_name` attribute.\n\n~> **Note:** API Gateway requires the use of AWS Certificate Manager (ACM) certificates instead of Identity and Access Management (IAM) certificates in regions that support ACM. Regions that support ACM can be found in the [Regions and Endpoints Documentation](https://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region). To import an existing private key and certificate into ACM or request an ACM certificate, see the [`aws_acm_certificate` resource](/docs/providers/aws/r/acm_certificate.html).\n\n~> **Note:** The `aws_api_gateway_domain_name` resource expects dependency on the `aws_acm_certificate_validation` as \nonly verified certificates can be used. This can be made either explicitly by adding the \n`depends_on = [aws_acm_certificate_validation.cert]` attribute. Or implicitly by referring certificate ARN \nfrom the validation resource where it will be available after the resource creation: \n`regional_certificate_arn = aws_acm_certificate_validation.cert.certificate_arn`.\n\n~> **Note:** All arguments including the private key will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EndpointConfiguration": {
@@ -29,19 +29,24 @@
             "type": "string"
         },
         "CertificateArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when an edge-optimized domain name is desired. Conflicts with `certificate_name`, `certificate_body`, `certificate_chain`, `certificate_private_key`, `regional_certificate_arn`, and `regional_certificate_name`."
         },
         "CertificateBody": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate issued for the domain name\nbeing registered, in PEM format. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and\n`regional_certificate_name`."
         },
         "CertificateChain": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate for the CA that issued the\ncertificate, along with any intermediate CA certificates required to\ncreate an unbroken chain to a certificate trusted by the intended API clients. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`,\n`regional_certificate_arn`, and `regional_certificate_name`."
         },
         "CertificateName": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique name to use when registering this\ncertificate as an IAM server certificate. Conflicts with `certificate_arn`, `regional_certificate_arn`, and\n`regional_certificate_name`. Required if `certificate_arn` is not set."
         },
         "CertificatePrivateKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The private key associated with the\ndomain certificate given in `certificate_body`. Only valid for `EDGE` endpoint configuration type. Conflicts with `certificate_arn`, `regional_certificate_arn`, and `regional_certificate_name`."
         },
         "CertificateUploadDate": {
             "type": "string"
@@ -53,16 +58,19 @@
             "type": "string"
         },
         "DomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully-qualified domain name to register."
         },
         "Id": {
             "type": "string"
         },
         "RegionalCertificateArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN for an AWS-managed certificate. AWS Certificate Manager is the only supported source. Used when a regional domain name is desired. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and `certificate_private_key`."
         },
         "RegionalCertificateName": {
-            "type": "string"
+            "type": "string",
+            "description": "The user-friendly name of the certificate that will be used by regional endpoint for this domain name. Conflicts with `certificate_arn`, `certificate_name`, `certificate_body`, `certificate_chain`, and\n`certificate_private_key`."
         },
         "RegionalDomainName": {
             "type": "string"
@@ -71,7 +79,8 @@
             "type": "string"
         },
         "SecurityPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "The Transport Layer Security (TLS) version + cipher suite for this DomainName. The valid values are `TLS_1_0` and `TLS_1_2`. Must be configured to perform drift detection."
         },
         "Tags": {
             "type": "array",
@@ -91,7 +100,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "EndpointConfiguration": {
             "type": "array",

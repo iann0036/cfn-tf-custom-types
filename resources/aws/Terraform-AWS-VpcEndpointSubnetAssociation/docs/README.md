@@ -1,6 +1,12 @@
 # Terraform::AWS::VpcEndpointSubnetAssociation
 
-CloudFormation equivalent of aws_vpc_endpoint_subnet_association
+Provides a resource to create an association between a VPC endpoint and a subnet.
+
+~> **NOTE on VPC Endpoints and VPC Endpoint Subnet Associations:** Terraform provides
+both a standalone VPC Endpoint Subnet Association (an association between a VPC endpoint
+and a single `subnet_id`) and a [VPC Endpoint](vpc_endpoint.html) resource with a `subnet_ids`
+attribute. Do not use the same subnet ID in both a VPC Endpoint resource and a VPC Endpoint Subnet
+Association resource. Doing so will cause a conflict of associations and will overwrite the association.
 
 ## Syntax
 
@@ -33,6 +39,8 @@ Properties:
 
 #### SubnetId
 
+The ID of the subnet to be associated with the VPC endpoint.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcEndpointId
+
+The ID of the VPC endpoint with which the subnet will be associated.
 
 _Required_: Yes
 

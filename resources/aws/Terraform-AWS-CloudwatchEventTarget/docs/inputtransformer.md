@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### InputPaths
 
+Key value pairs specified in the form of JSONPath (for example, time = $.time).
+
 _Required_: No
 
 _Type_: List of <a href="inputtransformer-inputpaths.md">InputPaths</a>
@@ -32,6 +34,8 @@ _Type_: List of <a href="inputtransformer-inputpaths.md">InputPaths</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InputTemplate
+
+Structure containing the template body.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::AWS::KinesisFirehoseDeliveryStream
 
-CloudFormation equivalent of aws_kinesis_firehose_delivery_stream
+Provides a Kinesis Firehose Delivery Stream resource. Amazon Kinesis Firehose is a fully managed, elastic service to easily deliver real-time data streams to destinations such as Amazon S3 and Amazon Redshift.
+
+For more details, see the [Amazon Kinesis Firehose Documentation][1].
 
 ## Syntax
 
@@ -130,6 +132,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name to identify the stream. This is unique to the
+AWS account and region the Stream is created in.
+
 _Required_: Yes
 
 _Type_: String
@@ -137,6 +142,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

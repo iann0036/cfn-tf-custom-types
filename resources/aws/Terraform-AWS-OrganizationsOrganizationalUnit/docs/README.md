@@ -1,6 +1,6 @@
 # Terraform::AWS::OrganizationsOrganizationalUnit
 
-CloudFormation equivalent of aws_organizations_organizational_unit
+Provides a resource to create an organizational unit.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Name
 
+The name for the organizational unit.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParentId
+
+ID of the parent organizational unit, which may be the root.
 
 _Required_: Yes
 

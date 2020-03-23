@@ -1,6 +1,9 @@
 # Terraform::AWS::SpotDatafeedSubscription
 
-CloudFormation equivalent of aws_spot_datafeed_subscription
+-> **Note:** There is only a single subscription allowed per account.
+
+To help you understand the charges for your Spot instances, Amazon EC2 provides a data feed that describes your Spot instance usage and pricing.
+This data feed is sent to an Amazon S3 bucket that you specify when you subscribe to the data feed.
 
 ## Syntax
 
@@ -31,6 +34,8 @@ Properties:
 
 #### Bucket
 
+The Amazon S3 bucket in which to store the Spot instance data feed.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Prefix
+
+Path of folder inside bucket to place spot pricing data.
 
 _Required_: No
 

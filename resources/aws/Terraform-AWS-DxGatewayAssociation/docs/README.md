@@ -1,6 +1,10 @@
 # Terraform::AWS::DxGatewayAssociation
 
-CloudFormation equivalent of aws_dx_gateway_association
+Associates a Direct Connect Gateway with a VGW or transit gateway.
+
+To create a cross-account association, create an [`aws_dx_gateway_association_proposal` resource](/docs/providers/aws/r/dx_gateway_association_proposal.html)
+in the AWS account that owns the VGW or transit gateway and then accept the proposal in the AWS account that owns the Direct Connect Gateway
+by creating an `aws_dx_gateway_association` resource with the `proposal_id` and `associated_gateway_owner_account_id` attributes set.
 
 ## Syntax
 
@@ -42,6 +46,8 @@ Properties:
 
 #### AllowedPrefixes
 
+VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured.
+
 _Required_: No
 
 _Type_: List of String
@@ -49,6 +55,9 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AssociatedGatewayId
+
+The ID of the VGW or transit gateway with which to associate the Direct Connect gateway.
+Used for single account Direct Connect gateway associations.
 
 _Required_: No
 
@@ -58,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AssociatedGatewayOwnerAccountId
 
+The ID of the AWS account that owns the VGW or transit gateway with which to associate the Direct Connect gateway.
+Used for cross-account Direct Connect gateway associations.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DxGatewayId
+
+The ID of the Direct Connect gateway.
 
 _Required_: Yes
 
@@ -74,6 +88,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProposalId
 
+The ID of the Direct Connect gateway association proposal.
+Used for cross-account Direct Connect gateway associations.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +98,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnGatewayId
+
+*Deprecated:* Use `associated_gateway_id` instead. The ID of the VGW with which to associate the gateway.
+Used for single account Direct Connect gateway associations.
 
 _Required_: No
 

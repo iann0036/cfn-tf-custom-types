@@ -1,6 +1,6 @@
 # Terraform::AWS::WafregionalRegexPatternSet
 
-CloudFormation equivalent of aws_wafregional_regex_pattern_set
+Provides a WAF Regional Regex Pattern Set Resource
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### Name
 
+The name or description of the Regex Pattern Set.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RegexPatternStrings
+
+A list of regular expression (regex) patterns that you want AWS WAF to search for, such as `B[a@]dB[o0]t`.
 
 _Required_: No
 

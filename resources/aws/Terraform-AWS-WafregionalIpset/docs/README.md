@@ -1,6 +1,6 @@
 # Terraform::AWS::WafregionalIpset
 
-CloudFormation equivalent of aws_wafregional_ipset
+Provides a WAF Regional IPSet Resource for use with Application Load Balancer.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the IPSet.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::NeptuneSubnetGroup
 
-CloudFormation equivalent of aws_neptune_subnet_group
+Provides an Neptune subnet group resource.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Description
 
+The description of the neptune subnet group. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the neptune subnet group. If omitted, Terraform will assign a random, unique name.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamePrefix
 
+Creates a unique name beginning with the specified prefix. Conflicts with `name`.
+
 _Required_: No
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+A list of VPC subnet IDs.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -70,6 +78,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

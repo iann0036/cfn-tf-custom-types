@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ProxyProtocolPolicy",
-    "description": "CloudFormation equivalent of aws_proxy_protocol_policy",
+    "description": "Provides a proxy protocol policy, which allows an ELB to carry a client connection information to a backend.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -16,10 +16,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of instance ports to which the policy\nshould be applied. This can be specified if the protocol is SSL or TCP."
         },
         "LoadBalancer": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancer to which the policy\nshould be attached."
         }
     },
     "additionalProperties": false,

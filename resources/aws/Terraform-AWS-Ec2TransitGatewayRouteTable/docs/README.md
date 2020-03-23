@@ -1,6 +1,6 @@
 # Terraform::AWS::Ec2TransitGatewayRouteTable
 
-CloudFormation equivalent of aws_ec2_transit_gateway_route_table
+Manages an EC2 Transit Gateway Route Table.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### Tags
 
+Key-value tags for the EC2 Transit Gateway Route Table.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -39,6 +41,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransitGatewayId
+
+Identifier of EC2 Transit Gateway.
 
 _Required_: Yes
 

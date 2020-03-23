@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppsyncDatasource",
-    "description": "CloudFormation equivalent of aws_appsync_datasource",
+    "description": "Provides an AppSync DataSource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DynamodbConfig": {
@@ -67,25 +67,30 @@
             "type": "string"
         },
         "ApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The API ID for the GraphQL API for the DataSource."
         },
         "Arn": {
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the DataSource."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A user-supplied name for the DataSource."
         },
         "ServiceRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The IAM service role ARN for the data source."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the DataSource. Valid values: `AWS_LAMBDA`, `AMAZON_DYNAMODB`, `AMAZON_ELASTICSEARCH`, `HTTP`, `NONE`."
         },
         "DynamodbConfig": {
             "type": "array",

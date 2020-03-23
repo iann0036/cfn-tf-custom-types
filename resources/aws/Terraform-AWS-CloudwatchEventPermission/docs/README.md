@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudwatchEventPermission
 
-CloudFormation equivalent of aws_cloudwatch_event_permission
+Provides a resource to create a CloudWatch Events permission to support cross-account events in the current account default event bus.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Action
 
+The action that you are enabling the other account to perform. Defaults to `events:PutEvents`.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Principal
 
+The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify `*` to permit any account to put events to your default event bus, optionally limited by `condition`.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StatementId
+
+An identifier string for the external account that you are granting permissions to.
 
 _Required_: Yes
 

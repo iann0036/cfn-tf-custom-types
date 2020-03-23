@@ -1,6 +1,6 @@
 # Terraform::AWS::EfsMountTarget
 
-CloudFormation equivalent of aws_efs_mount_target
+Provides an Elastic File System (EFS) mount target.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### FileSystemId
 
+The ID of the file system for which the mount target is intended.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddress
+
+The address (within the address range of the specified subnet) at
+which the file system may be mounted via the mount target.
 
 _Required_: No
 
@@ -52,6 +57,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+A list of up to 5 VPC security group IDs (that must
+be for the same VPC as subnet specified) in effect for the mount target.
+
 _Required_: No
 
 _Type_: List of String
@@ -59,6 +67,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The ID of the subnet to add the mount target in.
 
 _Required_: Yes
 

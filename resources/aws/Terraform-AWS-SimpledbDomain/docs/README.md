@@ -1,6 +1,6 @@
 # Terraform::AWS::SimpledbDomain
 
-CloudFormation equivalent of aws_simpledb_domain
+Provides a SimpleDB domain resource
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the SimpleDB domain.
 
 _Required_: Yes
 

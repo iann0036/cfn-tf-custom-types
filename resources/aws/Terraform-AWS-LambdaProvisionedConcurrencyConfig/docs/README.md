@@ -1,6 +1,6 @@
 # Terraform::AWS::LambdaProvisionedConcurrencyConfig
 
-CloudFormation equivalent of aws_lambda_provisioned_concurrency_config
+Manages a Lambda Provisioned Concurrency Configuration.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### FunctionName
 
+Name or Amazon Resource Name (ARN) of the Lambda Function.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ProvisionedConcurrentExecutions
 
+Amount of capacity to allocate. Must be greater than or equal to `1`.
+
 _Required_: Yes
 
 _Type_: Double
@@ -50,6 +54,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Qualifier
+
+Lambda Function version or Lambda Alias name.
 
 _Required_: Yes
 

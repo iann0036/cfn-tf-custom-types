@@ -1,6 +1,6 @@
 # Terraform::AWS::AppmeshVirtualNode
 
-CloudFormation equivalent of aws_appmesh_virtual_node
+Provides an AWS App Mesh virtual node resource.
 
 ## Syntax
 
@@ -70,6 +70,8 @@ Properties:
 
 #### MeshName
 
+The name of the service mesh in which to create the virtual node.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name to use for the virtual node.
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

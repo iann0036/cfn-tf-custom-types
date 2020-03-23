@@ -1,6 +1,6 @@
 # Terraform::AWS::QuicksightGroup
 
-CloudFormation equivalent of aws_quicksight_group
+Resource for managing QuickSight Group
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### AwsAccountId
 
+The ID for the AWS account that the group is in. Currently, you use the ID for the AWS account that contains your Amazon QuickSight account.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description for the group.
 
 _Required_: No
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GroupName
 
+A name for the group.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Namespace
+
+The namespace. Currently, you should set this to `default`.
 
 _Required_: No
 

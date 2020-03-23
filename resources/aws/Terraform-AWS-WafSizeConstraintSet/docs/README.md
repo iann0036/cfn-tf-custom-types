@@ -1,6 +1,6 @@
 # Terraform::AWS::WafSizeConstraintSet
 
-CloudFormation equivalent of aws_waf_size_constraint_set
+Provides a WAF Size Constraint Set Resource
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the Size Constraint Set.
 
 _Required_: Yes
 

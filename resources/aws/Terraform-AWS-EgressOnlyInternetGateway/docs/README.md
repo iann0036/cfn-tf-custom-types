@@ -1,6 +1,9 @@
 # Terraform::AWS::EgressOnlyInternetGateway
 
-CloudFormation equivalent of aws_egress_only_internet_gateway
+[IPv6 only] Creates an egress-only Internet gateway for your VPC.
+An egress-only Internet gateway is used to enable outbound communication
+over IPv6 from instances in your VPC to the Internet, and prevents hosts
+outside of your VPC from initiating an IPv6 connection with your instance.
 
 ## Syntax
 
@@ -28,6 +31,8 @@ Properties:
 ## Properties
 
 #### VpcId
+
+The VPC ID to create in.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::AWS::LicensemanagerLicenseConfiguration
 
-CloudFormation equivalent of aws_licensemanager_license_configuration
+Provides a License Manager license configuration resource.
+
+~> **Note:** Removing the `license_count` attribute is not supported by the License Manager API - use `terraform taint aws_licensemanager_license_configuration.<id>` to recreate the resource instead.
 
 ## Syntax
 
@@ -43,6 +45,8 @@ Properties:
 
 #### Description
 
+Description of the license configuration.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseCount
+
+Number of licenses managed by the license configuration.
 
 _Required_: No
 
@@ -59,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LicenseCountHardLimit
 
+Sets the number of available licenses as a hard limit.
+
 _Required_: No
 
 _Type_: Boolean
@@ -66,6 +74,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LicenseCountingType
+
+Dimension to use to track license inventory. Specify either `vCPU`, `Instance`, `Core` or `Socket`.
 
 _Required_: Yes
 
@@ -75,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LicenseRules
 
+Array of configured License Manager rules.
+
 _Required_: No
 
 _Type_: List of String
@@ -83,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the license configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

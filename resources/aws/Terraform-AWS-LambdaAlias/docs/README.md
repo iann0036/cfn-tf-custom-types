@@ -1,6 +1,9 @@
 # Terraform::AWS::LambdaAlias
 
-CloudFormation equivalent of aws_lambda_alias
+Creates a Lambda function alias. Creates an alias that points to the specified Lambda function version.
+
+For information about Lambda and how to use it, see [What is AWS Lambda?][1]
+For information about function aliases, see [CreateAlias][2] and [AliasRoutingConfiguration][3] in the API docs.
 
 ## Syntax
 
@@ -38,6 +41,8 @@ Properties:
 
 #### Description
 
+Description of the alias.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FunctionName
+
+The function ARN of the Lambda function for which you want to create an alias.
 
 _Required_: Yes
 
@@ -54,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FunctionVersion
 
+Lambda function version for which you are creating the alias. Pattern: `(\$LATEST|[0-9]+)`.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name for the alias you are creating. Pattern: `(?!^[0-9]+$)([a-zA-Z0-9-_]+)`.
 
 _Required_: Yes
 

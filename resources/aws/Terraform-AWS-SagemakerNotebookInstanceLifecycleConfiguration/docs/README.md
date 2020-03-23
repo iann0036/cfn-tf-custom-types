@@ -1,6 +1,6 @@
 # Terraform::AWS::SagemakerNotebookInstanceLifecycleConfiguration
 
-CloudFormation equivalent of aws_sagemaker_notebook_instance_lifecycle_configuration
+Provides a lifecycle configuration for SageMaker Notebook Instances.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Name
 
+The name of the lifecycle configuration (must be unique). If omitted, Terraform will assign a random, unique name.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OnCreate
 
+A shell script (base64-encoded) that runs only once when the SageMaker Notebook Instance is created.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OnStart
+
+A shell script (base64-encoded) that runs every time the SageMaker Notebook Instance is started including the time it's created.
 
 _Required_: No
 

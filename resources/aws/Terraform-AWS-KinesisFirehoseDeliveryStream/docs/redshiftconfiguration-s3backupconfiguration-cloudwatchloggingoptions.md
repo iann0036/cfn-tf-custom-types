@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Enables or disables the logging. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LogGroupName
 
+The CloudWatch group name for logging. This value is required if `enabled` is true.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogStreamName
+
+The CloudWatch log stream name for logging. This value is required if `enabled` is true.
 
 _Required_: No
 

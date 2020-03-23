@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CodedeployDeploymentConfig",
-    "description": "CloudFormation equivalent of aws_codedeploy_deployment_config",
+    "description": "Provides a CodeDeploy deployment config for an application",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "MinimumHealthyHosts": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type can either be `FLEET_PERCENT` or `HOST_COUNT`."
                 },
                 "Value": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The value when the type is `FLEET_PERCENT` represents the minimum number of healthy instances as\na percentage of the total number of instances in the deployment. If you specify FLEET_PERCENT, at the start of the\ndeployment, AWS CodeDeploy converts the percentage to the equivalent number of instance and rounds up fractional instances.\nWhen the type is `HOST_COUNT`, the value represents the minimum number of healthy instances as an absolute value."
                 }
             },
             "required": []
@@ -21,7 +23,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Type of traffic routing config. One of `TimeBasedCanary`, `TimeBasedLinear`, `AllAtOnce`."
                 },
                 "TimeBasedCanary": {
                     "type": "array",
@@ -47,10 +50,12 @@
             "additionalProperties": false,
             "properties": {
                 "Interval": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of minutes between the first and second traffic shifts of a `TimeBasedCanary` deployment."
                 },
                 "Percentage": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The percentage of traffic to shift in the first increment of a `TimeBasedCanary` deployment."
                 }
             },
             "required": []
@@ -60,10 +65,12 @@
             "additionalProperties": false,
             "properties": {
                 "Interval": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of minutes between each incremental traffic shift of a `TimeBasedLinear` deployment."
                 },
                 "Percentage": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The percentage of traffic that is shifted at the start of each increment of a `TimeBasedLinear` deployment."
                 }
             },
             "required": []
@@ -75,13 +82,15 @@
             "type": "string"
         },
         "ComputePlatform": {
-            "type": "string"
+            "type": "string",
+            "description": "The compute platform can be `Server`, `Lambda`, or `ECS`. Default is `Server`."
         },
         "DeploymentConfigId": {
             "type": "string"
         },
         "DeploymentConfigName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the deployment config."
         },
         "Id": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayResource",
-    "description": "CloudFormation equivalent of aws_api_gateway_resource",
+    "description": "Provides an API Gateway Resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,19 @@
             "type": "string"
         },
         "ParentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the parent API resource."
         },
         "Path": {
             "type": "string"
         },
         "PathPart": {
-            "type": "string"
+            "type": "string",
+            "description": "The last path segment of this API resource."
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated REST API."
         }
     },
     "additionalProperties": false,

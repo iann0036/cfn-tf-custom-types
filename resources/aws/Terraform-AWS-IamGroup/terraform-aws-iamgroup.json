@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::IamGroup",
-    "description": "CloudFormation equivalent of aws_iam_group",
+    "description": "Provides an IAM group.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,10 +15,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The group's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: `=,.@-_.`. Group names are not distinguished by case. For example, you cannot create groups named both \"ADMINS\" and \"admins\"."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "Path in which to create the group."
         },
         "UniqueId": {
             "type": "string"

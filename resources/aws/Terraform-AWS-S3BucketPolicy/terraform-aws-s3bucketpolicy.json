@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::S3BucketPolicy",
-    "description": "CloudFormation equivalent of aws_s3_bucket_policy",
+    "description": "Attaches a policy to an S3 bucket resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket to which to apply the policy."
         },
         "Id": {
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The text of the policy. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy)."
         }
     },
     "additionalProperties": false,

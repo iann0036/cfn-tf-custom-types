@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::IamInstanceProfile",
-    "description": "CloudFormation equivalent of aws_iam_instance_profile",
+    "description": "Provides an IAM instance profile.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,23 +18,28 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The profile's name. If omitted, Terraform will assign a random, unique name."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`."
         },
         "Path": {
-            "type": "string"
+            "type": "string",
+            "description": "Path in which to create the profile."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The role name to include in the profile."
         },
         "Roles": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of role names to include in the profile.  The current default is 1.  If you see an error message similar to `Cannot exceed quota for InstanceSessionsPerInstanceProfile: 1`, then you must contact AWS support and ask for a limit increase.\nWARNING: This is deprecated since [version 0.9.3 (April 12, 2017)](https://github.com/hashicorp/terraform/blob/master/CHANGELOG.md#093-april-12-2017), as >= 2 roles are not possible. See [issue #11575](https://github.com/hashicorp/terraform/issues/11575)."
         },
         "UniqueId": {
             "type": "string"

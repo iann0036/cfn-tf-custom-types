@@ -1,6 +1,6 @@
 # Terraform::AWS::DatasyncTask
 
-CloudFormation equivalent of aws_datasync_task
+Manages an AWS DataSync Task, which represents a configuration for synchronization. Starting an execution of these DataSync Tasks (actually synchronizing files) is performed outside of this Terraform resource.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### CloudwatchLogGroupArn
 
+Amazon Resource Name (ARN) of the CloudWatch Log Group that is used to monitor and log events in the sync task.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationLocationArn
+
+Amazon Resource Name (ARN) of destination DataSync Location.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the DataSync Task.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SourceLocationArn
 
+Amazon Resource Name (ARN) of source DataSync Location.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value pairs of resource tags to assign to the DataSync Task.
 
 _Required_: No
 

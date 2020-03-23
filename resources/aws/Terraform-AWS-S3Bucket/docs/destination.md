@@ -31,6 +31,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### AccountId
 
+The Account ID to use for overriding the object owner on replication. Must be used in conjunction with `access_control_translation` override configuration.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
+
+The ARN of the S3 bucket where you want Amazon S3 to store replicas of the object identified by the rule.
 
 _Required_: Yes
 
@@ -47,6 +51,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReplicaKmsKeyId
 
+Destination KMS encryption key ARN for SSE-KMS replication. Must be used in conjunction with
+`sse_kms_encrypted_objects` source selection criteria.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageClass
+
+The class of storage used to store the object. Can be `STANDARD`, `REDUCED_REDUNDANCY`, `STANDARD_IA`, `ONEZONE_IA`, `INTELLIGENT_TIERING`, `GLACIER`, or `DEEP_ARCHIVE`.
 
 _Required_: No
 

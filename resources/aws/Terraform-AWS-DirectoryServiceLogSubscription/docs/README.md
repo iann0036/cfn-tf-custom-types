@@ -1,6 +1,6 @@
 # Terraform::AWS::DirectoryServiceLogSubscription
 
-CloudFormation equivalent of aws_directory_service_log_subscription
+Provides a Log subscription for AWS Directory Service that pushes logs to cloudwatch.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### DirectoryId
 
+The id of directory.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogGroupName
+
+Name of the cloudwatch log group to which the logs should be published. The log group should be already created and the directory service principal should be provided with required permission to create stream and publish logs. Changing this value would delete the current subscription and create a new one. A directory can only have one log subscription at a time.
 
 _Required_: Yes
 

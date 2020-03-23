@@ -1,6 +1,6 @@
 # Terraform::AWS::SfnStateMachine
 
-CloudFormation equivalent of aws_sfn_state_machine
+Provides a Step Function State Machine resource
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Definition
 
+The Amazon States Language definition of the state machine.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the state machine.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleArn
 
+The Amazon Resource Name (ARN) of the IAM role to use for this state machine.
+
 _Required_: Yes
 
 _Type_: String
@@ -59,6 +65,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

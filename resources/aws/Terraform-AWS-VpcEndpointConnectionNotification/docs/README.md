@@ -1,6 +1,7 @@
 # Terraform::AWS::VpcEndpointConnectionNotification
 
-CloudFormation equivalent of aws_vpc_endpoint_connection_notification
+Provides a VPC Endpoint connection notification resource.
+Connection notifications notify subscribers of VPC Endpoint events.
 
 ## Syntax
 
@@ -36,6 +37,8 @@ Properties:
 
 #### ConnectionEvents
 
+One or more endpoint [events](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateVpcEndpointConnectionNotification.html#API_CreateVpcEndpointConnectionNotification_RequestParameters) for which to receive notifications.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -43,6 +46,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConnectionNotificationArn
+
+The ARN of the SNS topic for the notifications.
 
 _Required_: Yes
 
@@ -52,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VpcEndpointId
 
+The ID of the VPC Endpoint to receive notifications for.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcEndpointServiceId
+
+The ID of the VPC Endpoint Service to receive notifications for.
 
 _Required_: No
 

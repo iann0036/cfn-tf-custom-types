@@ -1,6 +1,6 @@
 # Terraform::AWS::OpsworksInstance
 
-CloudFormation equivalent of aws_opsworks_instance
+Provides an OpsWorks instance resource.
 
 ## Syntax
 
@@ -122,6 +122,8 @@ Properties:
 
 #### AgentVersion
 
+The AWS OpsWorks agent to install.  Defaults to `"INHERIT"`.
+
 _Required_: No
 
 _Type_: String
@@ -129,6 +131,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AmiId
+
+The AMI to use for the instance.  If an AMI is specified, `os` must be `"Custom"`.
 
 _Required_: No
 
@@ -138,6 +142,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Architecture
 
+Machine architecture for created instances.  Can be either `"x86_64"` (the default) or `"i386"`.
+
 _Required_: No
 
 _Type_: String
@@ -146,6 +152,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AutoScalingType
 
+Creates load-based or time-based instances.  If set, can be either: `"load"` or `"timer"`.
+
 _Required_: No
 
 _Type_: String
@@ -153,6 +161,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZone
+
+Name of the availability zone where instances will be created
+by default.
 
 _Required_: No
 
@@ -186,6 +197,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EbsOptimized
 
+If true, the launched EC2 instance will be EBS-optimized.
+
 _Required_: No
 
 _Type_: Boolean
@@ -210,6 +223,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Hostname
 
+The instance's host name.
+
 _Required_: No
 
 _Type_: String
@@ -225,6 +240,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstallUpdatesOnBoot
+
+Controls where to install OS and package updates when the instance boots.  Defaults to `true`.
 
 _Required_: No
 
@@ -242,6 +259,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceType
 
+The type of instance to start.
+
 _Required_: No
 
 _Type_: String
@@ -258,6 +277,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LayerIds
 
+The ids of the layers the instance will belong to.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -265,6 +286,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Os
+
+Name of operating system that will be installed.
 
 _Required_: No
 
@@ -354,6 +377,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RootDeviceType
 
+Name of the type of root device instances will have by default.  Can be either `"ebs"` or `"instance-store"`.
+
 _Required_: No
 
 _Type_: String
@@ -394,6 +419,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SshKeyName
 
+Name of the SSH keypair that instances will have by default.
+
 _Required_: No
 
 _Type_: String
@@ -402,6 +429,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StackId
 
+The id of the stack the instance will belong to.
+
 _Required_: Yes
 
 _Type_: String
@@ -409,6 +438,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### State
+
+The desired state of the instance.  Can be either `"running"` or `"stopped"`.
 
 _Required_: No
 
@@ -426,6 +457,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+Subnet ID to attach to.
+
 _Required_: No
 
 _Type_: String
@@ -434,6 +467,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tenancy
 
+Instance tenancy to use. Can be one of `"default"`, `"dedicated"` or `"host"`.
+
 _Required_: No
 
 _Type_: String
@@ -441,6 +476,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualizationType
+
+Keyword to choose what virtualization mode created instances
+will use. Can be either `"paravirtual"` or `"hvm"`.
 
 _Required_: No
 

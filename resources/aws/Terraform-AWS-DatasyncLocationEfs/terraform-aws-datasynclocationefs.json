@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DatasyncLocationEfs",
-    "description": "CloudFormation equivalent of aws_datasync_location_efs",
+    "description": "Manages an AWS DataSync EFS Location.\n\n~> **NOTE:** The EFS File System must have a mounted EFS Mount Target before creating this resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Ec2Config": {
@@ -33,13 +33,15 @@
             "type": "string"
         },
         "EfsFileSystemArn": {
-            "type": "string"
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of EFS File System."
         },
         "Id": {
             "type": "string"
         },
         "Subdirectory": {
-            "type": "string"
+            "type": "string",
+            "description": "Subdirectory to perform actions as source or destination. Default `/`."
         },
         "Tags": {
             "type": "array",
@@ -59,7 +61,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value pairs of resource tags to assign to the DataSync Location."
         },
         "Uri": {
             "type": "string"

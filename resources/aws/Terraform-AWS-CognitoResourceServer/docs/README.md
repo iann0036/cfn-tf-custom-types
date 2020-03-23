@@ -1,6 +1,6 @@
 # Terraform::AWS::CognitoResourceServer
 
-CloudFormation equivalent of aws_cognito_resource_server
+Provides a Cognito Resource Server.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Identifier
 
+An identifier for the resource server.
+
 _Required_: Yes
 
 _Type_: String
@@ -43,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A name for the resource server.
 
 _Required_: Yes
 

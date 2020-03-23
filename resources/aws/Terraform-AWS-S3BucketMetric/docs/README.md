@@ -1,6 +1,6 @@
 # Terraform::AWS::S3BucketMetric
 
-CloudFormation equivalent of aws_s3_bucket_metric
+Provides a S3 bucket [metrics configuration](http://docs.aws.amazon.com/AmazonS3/latest/dev/metrics-configurations.html) resource.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Bucket
 
+The name of the bucket to put metric configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Unique identifier of the metrics configuration for the bucket.
 
 _Required_: Yes
 

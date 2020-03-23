@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CloudwatchEventPermission",
-    "description": "CloudFormation equivalent of aws_cloudwatch_event_permission",
+    "description": "Provides a resource to create a CloudWatch Events permission to support cross-account events in the current account default event bus.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Condition": {
@@ -30,16 +30,19 @@
             "type": "string"
         },
         "Action": {
-            "type": "string"
+            "type": "string",
+            "description": "The action that you are enabling the other account to perform. Defaults to `events:PutEvents`."
         },
         "Id": {
             "type": "string"
         },
         "Principal": {
-            "type": "string"
+            "type": "string",
+            "description": "The 12-digit AWS account ID that you are permitting to put events to your default event bus. Specify `*` to permit any account to put events to your default event bus, optionally limited by `condition`."
         },
         "StatementId": {
-            "type": "string"
+            "type": "string",
+            "description": "An identifier string for the external account that you are granting permissions to."
         },
         "Condition": {
             "type": "array",

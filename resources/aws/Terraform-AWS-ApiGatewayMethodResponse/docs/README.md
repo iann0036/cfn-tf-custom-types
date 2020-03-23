@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayMethodResponse
 
-CloudFormation equivalent of aws_api_gateway_method_response
+Provides an HTTP Method Response for an API Gateway Resource.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### HttpMethod
 
+The HTTP Method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`).
+
 _Required_: Yes
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceId
+
+The API resource ID.
 
 _Required_: Yes
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResponseModels
 
+A map of the API models used for the response's content type.
+
 _Required_: No
 
 _Type_: List of <a href="responsemodels.md">ResponseModels</a>
@@ -66,6 +72,10 @@ _Type_: List of <a href="responsemodels.md">ResponseModels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResponseParameters
+
+A map of response parameters that can be sent to the caller.
+For example: `response_parameters = { "method.response.header.X-Some-Header" = true }`
+would define that the header `X-Some-Header` can be provided on the response.
 
 _Required_: No
 
@@ -83,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RestApiId
 
+The ID of the associated REST API.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StatusCode
+
+The HTTP status code.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpcEndpointRouteTableAssociation",
-    "description": "CloudFormation equivalent of aws_vpc_endpoint_route_table_association",
+    "description": "Manages a VPC Endpoint Route Table Association",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of the EC2 Route Table to be associated with the VPC Endpoint."
         },
         "VpcEndpointId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of the VPC Endpoint with which the EC2 Route Table will be associated."
         }
     },
     "additionalProperties": false,

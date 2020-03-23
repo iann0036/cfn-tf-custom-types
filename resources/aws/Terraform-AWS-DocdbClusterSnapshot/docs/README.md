@@ -1,6 +1,6 @@
 # Terraform::AWS::DocdbClusterSnapshot
 
-CloudFormation equivalent of aws_docdb_cluster_snapshot
+Manages a DocDB database cluster snapshot for DocDB clusters.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### DbClusterIdentifier
 
+The DocDB Cluster Identifier from which to take the snapshot.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbClusterSnapshotIdentifier
+
+The Identifier for the snapshot.
 
 _Required_: Yes
 

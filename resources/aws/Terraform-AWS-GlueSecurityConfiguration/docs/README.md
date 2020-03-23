@@ -1,6 +1,6 @@
 # Terraform::AWS::GlueSecurityConfiguration
 
-CloudFormation equivalent of aws_glue_security_configuration
+Manages a Glue Security Configuration.
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppmeshMesh",
-    "description": "CloudFormation equivalent of aws_appmesh_mesh",
+    "description": "Provides an AWS App Mesh service mesh resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Spec": {
@@ -23,7 +23,8 @@
             "additionalProperties": false,
             "properties": {
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The egress filter type. By default, the type is `DROP_ALL`.\nValid values are `ALLOW_ALL` and `DROP_ALL`."
                 }
             },
             "required": []
@@ -47,7 +48,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name to use for the service mesh."
         },
         "Tags": {
             "type": "array",
@@ -67,7 +69,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Spec": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::IamAccessKey",
-    "description": "CloudFormation equivalent of aws_iam_access_key",
+    "description": "Provides an IAM access key. This is a set of credentials that allow API requests to be made as an IAM user.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,7 +18,8 @@
             "type": "string"
         },
         "PgpKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Either a base-64 encoded PGP public key, or a\nkeybase username in the form `keybase:some_person_that_exists`, for use\nin the `encrypted_secret` output attribute."
         },
         "Secret": {
             "type": "string"
@@ -30,10 +31,12 @@
             "type": "string"
         },
         "Status": {
-            "type": "string"
+            "type": "string",
+            "description": "The access key status to apply. Defaults to `Active`.\nValid values are `Active` and `Inactive`."
         },
         "User": {
-            "type": "string"
+            "type": "string",
+            "description": "The IAM user to associate with this access key."
         }
     },
     "additionalProperties": false,

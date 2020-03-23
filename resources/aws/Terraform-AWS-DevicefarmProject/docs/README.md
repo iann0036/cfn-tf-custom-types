@@ -1,6 +1,11 @@
 # Terraform::AWS::DevicefarmProject
 
-CloudFormation equivalent of aws_devicefarm_project
+Provides a resource to manage AWS Device Farm Projects. 
+Please keep in mind that this feature is only supported on the "us-west-2" region.
+This resource will error if you try to create a project in another region.
+
+For more information about Device Farm Projects, see the AWS Documentation on
+[Device Farm Projects][aws-get-project].
 
 ## Syntax
 
@@ -28,6 +33,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the project.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::ElastictranscoderPreset
 
-CloudFormation equivalent of aws_elastictranscoder_preset
+Provides an Elastic Transcoder preset resource.
 
 ## Syntax
 
@@ -53,6 +53,8 @@ Properties:
 
 #### Container
 
+The container type for the output file. Valid values are `flac`, `flv`, `fmp4`, `gif`, `mp3`, `mp4`, `mpg`, `mxf`, `oga`, `ogg`, `ts`, and `webm`.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of the preset (maximum 255 characters).
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the preset. (maximum 40 characters).
 
 _Required_: No
 

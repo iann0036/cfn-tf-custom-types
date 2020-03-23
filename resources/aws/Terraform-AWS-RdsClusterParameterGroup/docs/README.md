@@ -1,6 +1,9 @@
 # Terraform::AWS::RdsClusterParameterGroup
 
-CloudFormation equivalent of aws_rds_cluster_parameter_group
+Provides an RDS DB cluster parameter group resource. Documentation of the available parameters for various Aurora engines can be found at:
+
+* [Aurora MySQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Reference.html)
+* [Aurora PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraPostgreSQL.Reference.html)
 
 ## Syntax
 
@@ -41,6 +44,8 @@ Properties:
 
 #### Description
 
+The description of the DB cluster parameter group. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Family
+
+The family of the DB cluster parameter group.
 
 _Required_: Yes
 
@@ -57,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the DB parameter.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamePrefix
 
+Creates a unique name beginning with the specified prefix. Conflicts with `name`.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +83,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

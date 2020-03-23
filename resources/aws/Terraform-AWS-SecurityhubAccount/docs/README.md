@@ -1,6 +1,8 @@
 # Terraform::AWS::SecurityhubAccount
 
-CloudFormation equivalent of aws_securityhub_account
+Enables Security Hub for this AWS account.
+
+~> **NOTE:** Destroying this resource will disable Security Hub for this AWS account.
 
 ## Syntax
 

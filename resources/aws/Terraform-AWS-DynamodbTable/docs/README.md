@@ -1,6 +1,8 @@
 # Terraform::AWS::DynamodbTable
 
-CloudFormation equivalent of aws_dynamodb_table
+Provides a DynamoDB table resource
+
+~> **Note:** It is recommended to use `lifecycle` [`ignore_changes`](/docs/configuration/resources.html#ignore_changes) for `read_capacity` and/or `write_capacity` if there's [autoscaling policy](/docs/providers/aws/r/appautoscaling_policy.html) attached to the table.
 
 ## Syntax
 
@@ -66,6 +68,8 @@ Properties:
 
 #### BillingMode
 
+Controls how you are charged for read and write throughput and how you manage capacity. The valid values are `PROVISIONED` and `PAY_PER_REQUEST`. Defaults to `PROVISIONED`.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HashKey
+
+The attribute to use as the hash (partition) key. Must also be defined as an `attribute`, see below.
 
 _Required_: Yes
 
@@ -82,6 +88,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the attribute
+* `type` - (Required) Attribute type, which must be a scalar type: `S`, `N`, or `B` for (S)tring, (N)umber or (B)inary data.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +98,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RangeKey
+
+The attribute to use as the range (sort) key. Must also be defined as an `attribute`, see below.
 
 _Required_: No
 
@@ -98,6 +109,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReadCapacity
 
+The number of read units for this table. If the `billing_mode` is `PROVISIONED`, this field is required.
+
 _Required_: No
 
 _Type_: Double
@@ -105,6 +118,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StreamEnabled
+
+Indicates whether Streams are to be enabled (true) or disabled (false).
 
 _Required_: No
 
@@ -114,6 +129,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StreamViewType
 
+When an item in the table is modified, StreamViewType determines what information is written to the table's stream. Valid values are `KEYS_ONLY`, `NEW_IMAGE`, `OLD_IMAGE`, `NEW_AND_OLD_IMAGES`.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A map of tags to populate on the created table.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -129,6 +148,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WriteCapacity
+
+The number of write units for this table. If the `billing_mode` is `PROVISIONED`, this field is required.
 
 _Required_: No
 

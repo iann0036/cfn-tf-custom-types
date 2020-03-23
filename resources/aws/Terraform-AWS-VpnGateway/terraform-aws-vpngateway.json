@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpnGateway",
-    "description": "CloudFormation equivalent of aws_vpn_gateway",
+    "description": "Provides a resource to create a VPC VPN Gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "AmazonSideAsn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Autonomous System Number (ASN) for the Amazon side of the gateway. If you don't specify an ASN, the virtual private gateway is created with the default ASN."
         },
         "AvailabilityZone": {
-            "type": "string"
+            "type": "string",
+            "description": "The Availability Zone for the virtual private gateway."
         },
         "Id": {
             "type": "string"
@@ -35,10 +37,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID to create in."
         }
     },
     "additionalProperties": false,

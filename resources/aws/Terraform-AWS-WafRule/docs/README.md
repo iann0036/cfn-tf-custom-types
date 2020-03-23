@@ -1,6 +1,6 @@
 # Terraform::AWS::WafRule
 
-CloudFormation equivalent of aws_waf_rule
+Provides a WAF Rule Resource
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### MetricName
 
+The name or description for the Amazon CloudWatch metric of this rule. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name or description of the rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SsmAssociation",
-    "description": "CloudFormation equivalent of aws_ssm_association",
+    "description": "Associates an SSM Document to an instance or EC2 tag.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "OutputLocation": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "S3BucketName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The S3 bucket name."
                 },
                 "S3KeyPrefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The S3 bucket prefix. Results stored in the root if not configured."
                 }
             },
             "required": [
@@ -48,31 +50,39 @@
             "type": "string"
         },
         "AssociationName": {
-            "type": "string"
+            "type": "string",
+            "description": "The descriptive name for the association."
         },
         "AutomationTargetParameterName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify the target for the association. This target is required for associations that use an `Automation` document and target resources by using rate controls."
         },
         "ComplianceSeverity": {
-            "type": "string"
+            "type": "string",
+            "description": "The compliance severity for the association. Can be one of the following: `UNSPECIFIED`, `LOW`, `MEDIUM`, `HIGH` or `CRITICAL`."
         },
         "DocumentVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The document version you want to associate with the target(s). Can be a specific version or the default version."
         },
         "Id": {
             "type": "string"
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The instance ID to apply an SSM document to. Use `targets` with key `InstanceIds` for document schema versions 2.0 and above."
         },
         "MaxConcurrency": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%."
         },
         "MaxErrors": {
-            "type": "string"
+            "type": "string",
+            "description": "The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify a number, for example 10, or a percentage of the target set, for example 10%."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SSM document to apply."
         },
         "Parameters": {
             "type": "array",
@@ -92,10 +102,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A block of arbitrary string parameters to pass to the SSM document."
         },
         "ScheduleExpression": {
-            "type": "string"
+            "type": "string",
+            "description": "A cron expression when the association will be applied to the target(s)."
         },
         "OutputLocation": {
             "type": "array",

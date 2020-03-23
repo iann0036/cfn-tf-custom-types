@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AcmCertificate",
-    "description": "CloudFormation equivalent of aws_acm_certificate",
+    "description": "The ACM certificate resource allows requesting and management of certificates\nfrom the Amazon Certificate Manager.\n\nIt deals with requesting certificates and managing their attributes and life-cycle.\nThis resource does not deal with validation of a certificate but can provide inputs\nfor other resources implementing the validation. It does not wait for a certificate to be issued.\nUse a [`aws_acm_certificate_validation`](acm_certificate_validation.html) resource for this.\n\nMost commonly, this resource is used to together with [`aws_route53_record`](route53_record.html) and\n[`aws_acm_certificate_validation`](acm_certificate_validation.html) to request a DNS validated certificate,\ndeploy the required validation records and wait for validation to complete.\n\nDomain validation through email is also supported but should be avoided as it requires a manual step outside\nof Terraform.\n\nIt's recommended to specify `create_before_destroy = true` in a [lifecycle][1] block to replace a certificate\nwhich is currently in use (eg, by [`aws_lb_listener`](lb_listener.html)).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Options": {
@@ -23,16 +23,20 @@
             "type": "string"
         },
         "CertificateAuthorityArn": {
-            "type": "string"
+            "type": "string",
+            "description": "ARN of an ACMPCA\n* `subject_alternative_names` - (Optional) A list of domains that should be SANs in the issued certificate."
         },
         "CertificateBody": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate's PEM-formatted public key\n* `certificate_chain` - (Optional) The certificate's PEM-formatted chain."
         },
         "CertificateChain": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate's PEM-formatted chain."
         },
         "DomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "A domain name for which the certificate should be issued\n* `certificate_authority_arn` - (Required) ARN of an ACMPCA\n* `subject_alternative_names` - (Optional) A list of domains that should be SANs in the issued certificate."
         },
         "DomainValidationOptions": {
             "type": "array",
@@ -60,14 +64,16 @@
             "type": "string"
         },
         "PrivateKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The certificate's PEM-formatted private key\n* `certificate_body` - (Required) The certificate's PEM-formatted public key\n* `certificate_chain` - (Optional) The certificate's PEM-formatted chain."
         },
         "SubjectAlternativeNames": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of domains that should be SANs in the issued certificate."
         },
         "Tags": {
             "type": "array",
@@ -87,7 +93,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ValidationEmails": {
             "type": "array",
@@ -97,7 +104,8 @@
             }
         },
         "ValidationMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "Which method to use for validation. `DNS` or `EMAIL` are valid, `NONE` can be used for certificates that were imported into ACM and then into Terraform.\n* `options` - (Optional) Configuration block used to set certificate options. Detailed below."
         },
         "Options": {
             "type": "array",

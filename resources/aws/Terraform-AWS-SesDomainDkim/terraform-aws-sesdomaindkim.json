@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SesDomainDkim",
-    "description": "CloudFormation equivalent of aws_ses_domain_dkim",
+    "description": "Provides an SES domain DKIM generation resource.\n\nDomain ownership needs to be confirmed first using [ses_domain_identity Resource](/docs/providers/aws/r/ses_domain_identity.html)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -16,7 +16,8 @@
             }
         },
         "Domain": {
-            "type": "string"
+            "type": "string",
+            "description": "Verified domain name to generate DKIM tokens for."
         },
         "Id": {
             "type": "string"

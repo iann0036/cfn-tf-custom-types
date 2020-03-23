@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::MediaStoreContainerPolicy",
-    "description": "CloudFormation equivalent of aws_media_store_container_policy",
+    "description": "Provides a MediaStore Container Policy.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "ContainerName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the container."
         },
         "Id": {
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The contents of the policy. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy)."
         }
     },
     "additionalProperties": false,

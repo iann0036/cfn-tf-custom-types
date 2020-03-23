@@ -1,6 +1,6 @@
 # Terraform::AWS::ServiceDiscoveryPrivateDnsNamespace
 
-CloudFormation equivalent of aws_service_discovery_private_dns_namespace
+Provides a Service Discovery Private DNS Namespace resource.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Description
 
+The description that you specify for the namespace when you create it.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the namespace.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Vpc
+
+The ID of VPC that you want to associate the namespace with.
 
 _Required_: Yes
 

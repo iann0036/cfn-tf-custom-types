@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LambdaProvisionedConcurrencyConfig",
-    "description": "CloudFormation equivalent of aws_lambda_provisioned_concurrency_config",
+    "description": "Manages a Lambda Provisioned Concurrency Configuration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,16 +23,19 @@
             "type": "string"
         },
         "FunctionName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name or Amazon Resource Name (ARN) of the Lambda Function."
         },
         "Id": {
             "type": "string"
         },
         "ProvisionedConcurrentExecutions": {
-            "type": "number"
+            "type": "number",
+            "description": "Amount of capacity to allocate. Must be greater than or equal to `1`."
         },
         "Qualifier": {
-            "type": "string"
+            "type": "string",
+            "description": "Lambda Function version or Lambda Alias name."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

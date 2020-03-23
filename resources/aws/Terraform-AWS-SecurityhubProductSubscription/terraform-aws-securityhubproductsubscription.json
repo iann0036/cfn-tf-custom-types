@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SecurityhubProductSubscription",
-    "description": "CloudFormation equivalent of aws_securityhub_product_subscription",
+    "description": "Subscribes to a Security Hub product.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,7 +15,8 @@
             "type": "string"
         },
         "ProductArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the product that generates findings that you want to import into Security Hub - see below."
         }
     },
     "additionalProperties": false,

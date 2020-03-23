@@ -1,6 +1,7 @@
 # Terraform::AWS::ShieldProtection
 
-CloudFormation equivalent of aws_shield_protection
+Enables AWS Shield Advanced for a specific AWS resource.
+The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, AWS Global Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### Name
 
+A friendly name for the Protection you are creating.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceArn
+
+The ARN (Amazon Resource Name) of the resource to be protected.
 
 _Required_: Yes
 

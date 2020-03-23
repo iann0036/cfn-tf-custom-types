@@ -1,6 +1,6 @@
 # Terraform::AWS::GlueConnection
 
-CloudFormation equivalent of aws_glue_connection
+Provides a Glue Connection resource.
 
 ## Syntax
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::OpsworksApplication
 
-CloudFormation equivalent of aws_opsworks_application
+Provides an OpsWorks application resource.
 
 ## Syntax
 
@@ -65,6 +65,8 @@ Properties:
 
 #### AutoBundleOnDeploy
 
+Run bundle install when deploying for application of type `rails`.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AwsFlowRubySettings
+
+Specify activity and workflow workers for your app using the aws-flow gem.
 
 _Required_: No
 
@@ -81,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataSourceArn
 
+The data source's ARN.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataSourceDatabaseName
+
+The database name.
 
 _Required_: No
 
@@ -97,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DataSourceType
 
+The data source's type one of `AutoSelectOpsworksMysqlInstance`, `OpsworksMysqlInstance`, or `RdsDbInstance`.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A description of the app.
 
 _Required_: No
 
@@ -113,6 +125,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DocumentRoot
 
+Subfolder for the document root for application of type `rails`.
+
 _Required_: No
 
 _Type_: String
@@ -120,6 +134,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Domains
+
+A list of virtual host alias.
 
 _Required_: No
 
@@ -129,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableSsl
 
+Whether to enable SSL for the app. This must be set in order to let `ssl_configuration.private_key`, `ssl_configuration.certificate` and `ssl_configuration.chain` take effect.
+
 _Required_: No
 
 _Type_: Boolean
@@ -136,6 +154,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A human-readable name for the application.
 
 _Required_: Yes
 
@@ -145,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RailsEnv
 
+The name of the Rails environment for application of type `rails`.
+
 _Required_: No
 
 _Type_: String
@@ -152,6 +174,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ShortName
+
+A short, machine-readable name for the application. This can only be defined on resource creation and ignored on resource update.
 
 _Required_: No
 
@@ -161,6 +185,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StackId
 
+The id of the stack the application will belong to.
+
 _Required_: Yes
 
 _Type_: String
@@ -168,6 +194,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Opsworks application type. One of `aws-flow-ruby`, `java`, `rails`, `php`, `nodejs`, `static` or `other`.
 
 _Required_: Yes
 

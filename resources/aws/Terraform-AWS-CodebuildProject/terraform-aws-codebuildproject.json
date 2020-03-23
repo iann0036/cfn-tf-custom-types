@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CodebuildProject",
-    "description": "CloudFormation equivalent of aws_codebuild_project",
+    "description": "Provides a CodeBuild Project resource. See also the [`aws_codebuild_webhook` resource](/docs/providers/aws/r/codebuild_webhook.html), which manages the webhook to the source (e.g. the \"rebuild every time a code change is pushed\" option in the CodeBuild web console).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Artifacts": {
@@ -8,31 +8,39 @@
             "additionalProperties": false,
             "properties": {
                 "ArtifactIdentifier": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The artifact identifier. Must be the same specified inside AWS CodeBuild buildspec."
                 },
                 "EncryptionDisabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If set to true, output artifacts will not be encrypted. If `type` is set to `NO_ARTIFACTS` then this value will be ignored. Defaults to `false`."
                 },
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Information about the build output artifact location. If `type` is set to `CODEPIPELINE` or `NO_ARTIFACTS` then this value will be ignored. If `type` is set to `S3`, this is the name of the output bucket."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the project. If `type` is set to `S3`, this is the name of the output artifact object."
                 },
                 "NamespaceType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The namespace to use in storing build artifacts. If `type` is set to `S3`, then valid values for this parameter are: `BUILD_ID` or `NONE`."
                 },
                 "OverrideArtifactName": {
                     "type": "boolean"
                 },
                 "Packaging": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of build output artifact to create. If `type` is set to `S3`, valid values for this parameter are: `NONE` or `ZIP`."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "If `type` is set to `S3`, this is the path to the output artifact."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The build output artifact's type. Valid values for this parameter are: `CODEPIPELINE`, `NO_ARTIFACTS` or `S3`."
                 }
             },
             "required": [
@@ -44,17 +52,20 @@
             "additionalProperties": false,
             "properties": {
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The location where the AWS CodeBuild project stores cached resources. For type `S3` the value must be a valid S3 bucket name/prefix."
                 },
                 "Modes": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Specifies settings that AWS CodeBuild uses to store and reuse build dependencies. Valid values:  `LOCAL_SOURCE_CACHE`, `LOCAL_DOCKER_LAYER_CACHE`, and `LOCAL_CUSTOM_CACHE`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of storage that will be used for the AWS CodeBuild project cache. Valid values: `NO_CACHE`, `LOCAL`, and `S3`. Defaults to `NO_CACHE`."
                 }
             },
             "required": []
@@ -64,22 +75,28 @@
             "additionalProperties": false,
             "properties": {
                 "Certificate": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ARN of the S3 bucket, path prefix and object key that contains the PEM-encoded certificate."
                 },
                 "ComputeType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Information about the compute resources the build project will use. Available values for this parameter are: `BUILD_GENERAL1_SMALL`, `BUILD_GENERAL1_MEDIUM`, `BUILD_GENERAL1_LARGE` or `BUILD_GENERAL1_2XLARGE`. `BUILD_GENERAL1_SMALL` is only valid if `type` is set to `LINUX_CONTAINER`. When `type` is set to `LINUX_GPU_CONTAINER`, `compute_type` need to be `BUILD_GENERAL1_LARGE`."
                 },
                 "Image": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Docker image to use for this build project. Valid values include [Docker images provided by CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html) (e.g `aws/codebuild/standard:2.0`), [Docker Hub images](https://hub.docker.com/) (e.g. `hashicorp/terraform:latest`), and full Docker repository URIs such as those for ECR (e.g. `137112412989.dkr.ecr.us-west-2.amazonaws.com/amazonlinux:latest`)."
                 },
                 "ImagePullCredentialsType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of credentials AWS CodeBuild uses to pull images in your build. Available values for this parameter are `CODEBUILD` or `SERVICE_ROLE`. When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an AWS CodeBuild curated image, you must use CODEBUILD credentials. Default to `CODEBUILD`."
                 },
                 "PrivilegedMode": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If set to true, enables running the Docker daemon inside a Docker container. Defaults to `false`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of build environment to use for related builds. Available values are: `LINUX_CONTAINER`, `LINUX_GPU_CONTAINER`, `WINDOWS_CONTAINER` or `ARM_CONTAINER`."
                 },
                 "EnvironmentVariable": {
                     "type": "array",
@@ -131,31 +148,39 @@
             "additionalProperties": false,
             "properties": {
                 "ArtifactIdentifier": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The artifact identifier. Must be the same specified inside AWS CodeBuild buildspec."
                 },
                 "EncryptionDisabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If set to true, output artifacts will not be encrypted. If `type` is set to `NO_ARTIFACTS` then this value will be ignored. Defaults to `false`."
                 },
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Information about the build output artifact location. If `type` is set to `CODEPIPELINE` or `NO_ARTIFACTS` then this value will be ignored. If `type` is set to `S3`, this is the name of the output bucket. If `path` is not also specified, then `location` can also specify the path of the output artifact in the output bucket."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the project. If `type` is set to `S3`, this is the name of the output artifact object."
                 },
                 "NamespaceType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The namespace to use in storing build artifacts. If `type` is set to `S3`, then valid values for this parameter are: `BUILD_ID` or `NONE`."
                 },
                 "OverrideArtifactName": {
                     "type": "boolean"
                 },
                 "Packaging": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of build output artifact to create. If `type` is set to `S3`, valid values for this parameter are: `NONE` or `ZIP`."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "If `type` is set to `S3`, this is the path to the output artifact."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The build output artifact's type. Valid values for this parameter are: `CODEPIPELINE`, `NO_ARTIFACTS` or `S3`."
                 }
             },
             "required": [
@@ -168,25 +193,32 @@
             "additionalProperties": false,
             "properties": {
                 "Buildspec": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The build spec declaration to use for this build project's related builds."
                 },
                 "GitCloneDepth": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Truncate git history to this many commits."
                 },
                 "InsecureSsl": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Ignore SSL warnings when connecting to source control."
                 },
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The location of the source code from git or s3."
                 },
                 "ReportBuildStatus": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to `true` to report the status of a build's start and finish to your source provider. This option is only valid when your source provider is `GITHUB`, `BITBUCKET`, or `GITHUB_ENTERPRISE`."
                 },
                 "SourceIdentifier": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The source identifier. Source data will be put inside a folder named as this parameter inside AWS CodeBuild source directory."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of repository that contains the source code to be built. Valid values for this parameter are: `CODECOMMIT`, `CODEPIPELINE`, `GITHUB`, `GITHUB_ENTERPRISE`, `BITBUCKET` or `S3`."
                 },
                 "Auth": {
                     "type": "array",
@@ -214,22 +246,28 @@
             "additionalProperties": false,
             "properties": {
                 "Buildspec": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The build spec declaration to use for this build project's related builds. This must be set when `type` is `NO_SOURCE`."
                 },
                 "GitCloneDepth": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Truncate git history to this many commits."
                 },
                 "InsecureSsl": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Ignore SSL warnings when connecting to source control."
                 },
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The location of the source code from git or s3."
                 },
                 "ReportBuildStatus": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to `true` to report the status of a build's start and finish to your source provider. This option is only valid when the `type` is `BITBUCKET` or `GITHUB`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of repository that contains the source code to be built. Valid values for this parameter are: `CODECOMMIT`, `CODEPIPELINE`, `GITHUB`, `GITHUB_ENTERPRISE`, `BITBUCKET`, `S3` or `NO_SOURCE`."
                 },
                 "Auth": {
                     "type": "array",
@@ -260,17 +298,20 @@
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The security group IDs to assign to running builds."
                 },
                 "Subnets": {
                     "type": "array",
                     "insertionOrder": true,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The subnet IDs within which to run builds."
                 },
                 "VpcId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the VPC within which to run builds."
                 }
             },
             "required": [
@@ -284,13 +325,16 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The environment variable's name or key."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of environment variable. Valid values: `PARAMETER_STORE`, `PLAINTEXT`."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The environment variable's value."
                 }
             },
             "required": [
@@ -303,10 +347,12 @@
             "additionalProperties": false,
             "properties": {
                 "Credential": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Amazon Resource Name (ARN) or name of credentials created using AWS Secrets Manager."
                 },
                 "CredentialProvider": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The service that created the credentials to access a private Docker registry. The valid value, SECRETS_MANAGER, is for AWS Secrets Manager."
                 }
             },
             "required": [
@@ -319,13 +365,16 @@
             "additionalProperties": false,
             "properties": {
                 "GroupName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The group name of the logs in CloudWatch Logs."
                 },
                 "Status": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Current status of logs in CloudWatch Logs for a build project. Valid values: `ENABLED`, `DISABLED`. Defaults to `ENABLED`."
                 },
                 "StreamName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The stream name of the logs in CloudWatch Logs."
                 }
             },
             "required": []
@@ -335,13 +384,16 @@
             "additionalProperties": false,
             "properties": {
                 "EncryptionDisabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set to `true` if you do not want S3 logs encrypted. Defaults to `false`."
                 },
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the S3 bucket and the path prefix for S3 logs. Must be set if status is `ENABLED`, otherwise it must be empty."
                 },
                 "Status": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Current status of logs in S3 for a build project. Valid values: `ENABLED`, `DISABLED`. Defaults to `DISABLED`."
                 }
             },
             "required": []
@@ -351,10 +403,12 @@
             "additionalProperties": false,
             "properties": {
                 "Resource": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The resource value that applies to the specified authorization type."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The authorization type to use. The only valid value is `OAUTH`."
                 }
             },
             "required": [
@@ -366,7 +420,8 @@
             "additionalProperties": false,
             "properties": {
                 "FetchSubmodules": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "If set to true, fetches Git submodules for the AWS CodeBuild build project."
                 }
             },
             "required": [
@@ -383,34 +438,42 @@
             "type": "string"
         },
         "BadgeEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Generates a publicly-accessible URL for the projects build badge. Available as `badge_url` attribute when enabled."
         },
         "BadgeUrl": {
             "type": "string"
         },
         "BuildTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "How long in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait until timing out any related build that does not get marked as completed. The default is 60 minutes."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A short description of the project."
         },
         "EncryptionKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build project's build output artifacts."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The projects name."
         },
         "QueuedTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "How long in minutes, from 5 to 480 (8 hours), a build is allowed to be queued before it times out. The default is 8 hours."
         },
         "ServiceRole": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services on behalf of the AWS account."
         },
         "SourceVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "A version of the build input to be built for this project. If not specified, the latest version is used."
         },
         "Tags": {
             "type": "array",
@@ -430,7 +493,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Artifacts": {
             "type": "array",

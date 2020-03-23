@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AcmpcaCertificateAuthority",
-    "description": "CloudFormation equivalent of aws_acmpca_certificate_authority",
+    "description": "Provides a resource to manage AWS Certificate Manager Private Certificate Authorities (ACM PCA Certificate Authorities).\n\n~> **NOTE:** Creating this resource will leave the certificate authority in a `PENDING_CERTIFICATE` status, which means it cannot yet issue certificates. To complete this setup, you must fully sign the certificate authority CSR available in the `certificate_signing_request` attribute and import the signed certificate outside of Terraform. Terraform can support another resource to manage that workflow automatically in the future.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CertificateAuthorityConfiguration": {
@@ -139,7 +139,8 @@
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the certificate authority is enabled or disabled. Defaults to `true`."
         },
         "Id": {
             "type": "string"
@@ -151,7 +152,8 @@
             "type": "string"
         },
         "PermanentDeletionTimeInDays": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of days to make a CA restorable after it has been deleted, must be between 7 to 30 days, with default to 30 days."
         },
         "Serial": {
             "type": "string"
@@ -177,10 +179,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Specifies a key-value map of user-defined tags that are attached to the certificate authority."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the certificate authority. Defaults to `SUBORDINATE`. Valid values: `ROOT` and `SUBORDINATE`."
         },
         "CertificateAuthorityConfiguration": {
             "type": "array",

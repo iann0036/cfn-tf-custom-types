@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Route",
-    "description": "CloudFormation equivalent of aws_route",
+    "description": "Provides a resource to create a routing table entry (a route) in a VPC routing table.\n\n~> **NOTE on Route Tables and Routes:** Terraform currently\nprovides both a standalone Route resource and a [Route Table](route_table.html) resource with routes\ndefined in-line. At this time you cannot use a Route Table with in-line routes\nin conjunction with any Route resources. Doing so will cause\na conflict of rule settings and will overwrite rules.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,49 +23,59 @@
             "type": "string"
         },
         "DestinationCidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination CIDR block."
         },
         "DestinationIpv6CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The destination IPv6 CIDR block."
         },
         "DestinationPrefixListId": {
             "type": "string"
         },
         "EgressOnlyGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of a VPC Egress Only Internet Gateway."
         },
         "GatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of a VPC internet gateway or a virtual private gateway."
         },
         "Id": {
             "type": "string"
         },
         "InstanceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of an EC2 instance."
         },
         "InstanceOwnerId": {
             "type": "string"
         },
         "NatGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of a VPC NAT gateway."
         },
         "NetworkInterfaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of an EC2 network interface."
         },
         "Origin": {
             "type": "string"
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the routing table."
         },
         "State": {
             "type": "string"
         },
         "TransitGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of an EC2 Transit Gateway."
         },
         "VpcPeeringConnectionId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of a VPC peering connection."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

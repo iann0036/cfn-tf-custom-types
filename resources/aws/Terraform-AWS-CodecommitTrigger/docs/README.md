@@ -1,6 +1,10 @@
 # Terraform::AWS::CodecommitTrigger
 
-CloudFormation equivalent of aws_codecommit_trigger
+Provides a CodeCommit Trigger Resource.
+
+~> **NOTE on CodeCommit**: The CodeCommit is not yet rolled out
+in all regions - available regions are listed
+[the AWS Docs](https://docs.aws.amazon.com/general/latest/gr/rande.html#codecommit_region).
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 ## Properties
 
 #### RepositoryName
+
+The name for the repository. This needs to be less than 100 characters.
 
 _Required_: Yes
 

@@ -1,6 +1,8 @@
 # Terraform::AWS::Codepipeline
 
-CloudFormation equivalent of aws_codepipeline
+Provides a CodePipeline.
+
+~> **NOTE on `aws_codepipeline`:** - the `GITHUB_TOKEN` environment variable must be set if the GitHub provider is specified.
 
 ## Syntax
 
@@ -46,6 +48,8 @@ Properties:
 
 #### Name
 
+The name of the pipeline.
+
 _Required_: Yes
 
 _Type_: String
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleArn
 
+A service role Amazon Resource Name (ARN) that grants AWS CodePipeline permission to make calls to AWS services on your behalf.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

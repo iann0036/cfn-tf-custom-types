@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ShieldProtection",
-    "description": "CloudFormation equivalent of aws_shield_protection",
+    "description": "Enables AWS Shield Advanced for a specific AWS resource.\nThe resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, AWS Global Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name for the Protection you are creating."
         },
         "ResourceArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN (Amazon Resource Name) of the resource to be protected."
         }
     },
     "additionalProperties": false,

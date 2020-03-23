@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### S3BucketName
 
+The S3 bucket name.
+
 _Required_: Yes
 
 _Type_: String
@@ -31,6 +33,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3KeyPrefix
+
+The S3 bucket prefix. Results stored in the root if not configured.
 
 _Required_: No
 

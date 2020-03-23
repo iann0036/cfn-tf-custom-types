@@ -1,6 +1,27 @@
 # Terraform::AWS::SpotInstanceRequest
 
-CloudFormation equivalent of aws_spot_instance_request
+Provides an EC2 Spot Instance Request resource. This allows instances to be
+requested on the spot market.
+
+By default Terraform creates Spot Instance Requests with a `persistent` type,
+which means that for the duration of their lifetime, AWS will launch an
+instance with the configured details if and when the spot market will accept
+the requested price.
+
+On destruction, Terraform will make an attempt to terminate the associated Spot
+Instance if there is one present.
+
+Spot Instances requests with a `one-time` type will close the spot request
+when the instance is terminated either by the request being below the current spot
+price availability or by a user.
+
+~> **NOTE:** Because their behavior depends on the live status of the spot
+market, Spot Instance Requests have a unique lifecycle that makes them behave
+differently than other Terraform resources. Most importantly: there is __no
+guarantee__ that a Spot Instance exists to fulfill the request at any given
+point in time. See the [AWS Spot Instance
+documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html)
+for more information.
 
 ## Syntax
 
@@ -145,6 +166,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BlockDurationMinutes
 
+The required duration for the Spot instances, in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).
+The duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which gives the instance a two-minute warning before it terminates.
+Note that you can't specify an Availability Zone group or a launch group if you specify a duration.
+
 _Required_: No
 
 _Type_: Double
@@ -225,6 +250,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceInterruptionBehaviour
 
+Indicates whether a Spot instance stops or terminates when it is interrupted. Default is `terminate` as this is the current AWS behaviour.
+
 _Required_: No
 
 _Type_: String
@@ -264,6 +291,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LaunchGroup
+
+A launch group is a group of spot instances that launch together and terminate together.
+If left empty instances are launched and terminated individually.
 
 _Required_: No
 
@@ -313,6 +343,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SpotPrice
 
+The maximum price to request on the spot market.
+
 _Required_: No
 
 _Type_: String
@@ -320,6 +352,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SpotType
+
+If set to `one-time`, after
+the instance is terminated, the spot request will be closed.
 
 _Required_: No
 
@@ -336,6 +371,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 
@@ -369,6 +406,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ValidFrom
 
+The start date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). The default is to start fulfilling the request immediately.
+
 _Required_: No
 
 _Type_: String
@@ -376,6 +415,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidUntil
+
+The end date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). At this point, no new Spot instance requests are placed or enabled to fulfill the request. The default end date is 7 days from the current date.
 
 _Required_: No
 
@@ -400,6 +441,10 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WaitForFulfillment
+
+If set, Terraform will
+wait for the Spot Request to be fulfilled, and will throw an error if the
+timeout of 10m is reached.
 
 _Required_: No
 

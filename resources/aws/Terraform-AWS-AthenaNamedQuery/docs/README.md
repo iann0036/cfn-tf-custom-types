@@ -1,6 +1,6 @@
 # Terraform::AWS::AthenaNamedQuery
 
-CloudFormation equivalent of aws_athena_named_query
+Provides an Athena Named Query resource.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Database
 
+The database to which the query belongs.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+A brief explanation of the query. Maximum length of 1024.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The plain language name for the query. Maximum length of 128.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Query
 
+The text of the query itself. In other words, all query statements. Maximum length of 262144.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Workgroup
+
+The workgroup to which the query belongs. Defaults to `primary`.
 
 _Required_: No
 

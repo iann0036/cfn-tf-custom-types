@@ -1,6 +1,8 @@
 # Terraform::AWS::DynamodbGlobalTable
 
-CloudFormation equivalent of aws_dynamodb_global_table
+Provides a resource to manage a DynamoDB Global Table. These are layered on top of existing DynamoDB Tables.
+
+~> Note: There are many restrictions before you can properly create DynamoDB Global Tables in multiple regions. See the [AWS DynamoDB Global Table Requirements](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_reqs_bestpractices.html) for more information.
 
 ## Syntax
 
@@ -33,6 +35,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name of the global table. Must match underlying DynamoDB Table names in all regions.
 
 _Required_: Yes
 

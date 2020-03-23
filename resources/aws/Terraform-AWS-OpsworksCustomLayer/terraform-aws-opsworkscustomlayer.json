@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OpsworksCustomLayer",
-    "description": "CloudFormation equivalent of aws_opsworks_custom_layer",
+    "description": "Provides an OpsWorks custom layer resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EbsVolume": {
@@ -8,25 +8,32 @@
             "additionalProperties": false,
             "properties": {
                 "Encrypted": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Encrypt the volume."
                 },
                 "Iops": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "For PIOPS volumes, the IOPS per disk."
                 },
                 "MountPoint": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The path to mount the EBS volume on the layer's instances."
                 },
                 "NumberOfDisks": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The number of disks to use for the EBS volume."
                 },
                 "RaidLevel": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The RAID level to use for the volume."
                 },
                 "Size": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The size of the volume in gigabytes."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of volume to create. This may be `standard` (the default), `io1` or `gp2`."
                 }
             },
             "required": [
@@ -45,13 +52,16 @@
             "type": "string"
         },
         "AutoAssignElasticIps": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to automatically assign an elastic IP address to the layer's instances."
         },
         "AutoAssignPublicIps": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "For stacks belonging to a VPC, whether to automatically assign a public IP address to each of the layer's instances."
         },
         "AutoHealing": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable auto-healing for the layer."
         },
         "CustomConfigureRecipes": {
             "type": "array",
@@ -68,17 +78,20 @@
             }
         },
         "CustomInstanceProfileArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an IAM profile that will be used for the layer's instances."
         },
         "CustomJson": {
-            "type": "string"
+            "type": "string",
+            "description": "Custom JSON attributes to apply to the layer."
         },
         "CustomSecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Ids for a set of security groups to apply to the layer's instances."
         },
         "CustomSetupRecipes": {
             "type": "array",
@@ -102,35 +115,43 @@
             }
         },
         "DrainElbOnShutdown": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable Elastic Load Balancing connection draining."
         },
         "ElasticLoadBalancer": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of an Elastic Load Balancer to attach to this layer."
         },
         "Id": {
             "type": "string"
         },
         "InstallUpdatesOnBoot": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to install OS and package updates on each instance when it boots."
         },
         "InstanceShutdownTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The time, in seconds, that OpsWorks will wait for Chef to complete after triggering the Shutdown event."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A human-readable name for the layer."
         },
         "ShortName": {
-            "type": "string"
+            "type": "string",
+            "description": "A short, machine-readable name for the layer, which will be used to identify it in the Chef node JSON."
         },
         "StackId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the stack the layer will belong to."
         },
         "SystemPackages": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Names of a set of system packages to install on the layer's instances."
         },
         "Tags": {
             "type": "array",
@@ -150,10 +171,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "UseEbsOptimizedInstances": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to use EBS-optimized instances."
         },
         "EbsVolume": {
             "type": "array",

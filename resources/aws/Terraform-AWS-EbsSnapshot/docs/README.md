@@ -1,6 +1,6 @@
 # Terraform::AWS::EbsSnapshot
 
-CloudFormation equivalent of aws_ebs_snapshot
+Creates a Snapshot of an EBS Volume.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### Description
 
+A description of what the snapshot is.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the snapshot.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -51,6 +55,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VolumeId
+
+The Volume ID of which to make a snapshot.
 
 _Required_: Yes
 

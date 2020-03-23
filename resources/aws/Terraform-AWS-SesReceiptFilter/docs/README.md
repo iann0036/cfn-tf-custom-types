@@ -1,6 +1,6 @@
 # Terraform::AWS::SesReceiptFilter
 
-CloudFormation equivalent of aws_ses_receipt_filter
+Provides an SES receipt filter resource
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Cidr
 
+The IP address or address range to filter, in CIDR notation.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the filter.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+Block or Allow.
 
 _Required_: Yes
 

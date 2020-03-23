@@ -1,6 +1,9 @@
 # Terraform::AWS::LambdaEventSourceMapping
 
-CloudFormation equivalent of aws_lambda_event_source_mapping
+Provides a Lambda event source mapping. This allows Lambda functions to get events from Kinesis, DynamoDB and SQS.
+
+For information about Lambda and how to use it, see [What is AWS Lambda?][1].
+For information about event source mappings, see [CreateEventSourceMapping][2] in the API docs.
 
 ## Syntax
 
@@ -55,6 +58,8 @@ Properties:
 
 #### BatchSize
 
+The largest number of records that Lambda will retrieve from your event source at the time of invocation. Defaults to `100` for DynamoDB and Kinesis, `10` for SQS.
+
 _Required_: No
 
 _Type_: Double
@@ -71,6 +76,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Determines if the mapping will be enabled on creation. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -78,6 +85,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EventSourceArn
+
+The event source ARN - can be a Kinesis stream, DynamoDB stream, or SQS queue.
 
 _Required_: Yes
 
@@ -87,6 +96,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FunctionName
 
+The name or the ARN of the Lambda function that will be subscribing to events.
+
 _Required_: Yes
 
 _Type_: String
@@ -94,6 +105,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaximumBatchingWindowInSeconds
+
+The maximum amount of time to gather records before invoking the function, in seconds.  Records will continue to buffer until either `maximum_batching_window_in_seconds` expires or `batch_size` has been met. Defaults to as soon as records are available in the stream. If the batch it reads from the stream only has one record in it, Lambda only sends one record to the function.
 
 _Required_: No
 
@@ -127,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StartingPosition
 
+The position in the stream where AWS Lambda should start reading. Must be one of `AT_TIMESTAMP` (Kinesis only), `LATEST` or `TRIM_HORIZON` if getting events from Kinesis or DynamoDB. Must not be provided if getting events from SQS. More information about these positions can be found in the [AWS DynamoDB Streams API Reference](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html) and [AWS Kinesis API Reference](https://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType).
+
 _Required_: No
 
 _Type_: String
@@ -134,6 +149,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StartingPositionTimestamp
+
+A timestamp in [RFC3339 format](https://tools.ietf.org/html/rfc3339#section-5.8) of the data record which to start reading when using `starting_position` set to `AT_TIMESTAMP`. If a record with this exact timestamp does not exist, the next later record is chosen. If the timestamp is older than the current trim horizon, the oldest available record is chosen.
 
 _Required_: No
 

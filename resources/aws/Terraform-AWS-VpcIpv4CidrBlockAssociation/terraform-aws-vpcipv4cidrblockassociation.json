@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpcIpv4CidrBlockAssociation",
-    "description": "CloudFormation equivalent of aws_vpc_ipv4_cidr_block_association",
+    "description": "Provides a resource to associate additional IPv4 CIDR blocks with a VPC.\n\nWhen a VPC is created, a primary IPv4 CIDR block for the VPC must be specified.\nThe `aws_vpc_ipv4_cidr_block_association` resource allows further IPv4 CIDR blocks to be added to the VPC.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -23,13 +23,15 @@
             "type": "string"
         },
         "CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The additional IPv4 CIDR block to associate with the VPC."
         },
         "Id": {
             "type": "string"
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC to make the association with."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

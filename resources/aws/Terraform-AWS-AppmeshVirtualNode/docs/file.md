@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Path
 
+The file path to write access logs to. You can use `/dev/stdout` to send access logs to standard out.
+
 _Required_: Yes
 
 _Type_: String

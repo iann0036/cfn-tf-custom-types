@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ElasticBeanstalkEnvironment",
-    "description": "CloudFormation equivalent of aws_elastic_beanstalk_environment",
+    "description": "Provides an Elastic Beanstalk Environment Resource. Elastic Beanstalk allows\nyou to deploy and manage applications in the AWS cloud without worrying about\nthe infrastructure that runs those applications.\n\nEnvironments are often things such as `development`, `integration`, or\n`production`.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Setting": {
@@ -71,10 +71,12 @@
             "type": "string"
         },
         "CnamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Prefix to use for the fully qualified DNS name of\nthe Environment."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Short description of the Environment."
         },
         "EndpointUrl": {
             "type": "string"
@@ -104,7 +106,8 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for this Environment. This name is used\nin the application URL."
         },
         "PlatformArn": {
             "type": "string"
@@ -146,7 +149,8 @@
             "type": "string"
         },
         "Tier": {
-            "type": "string"
+            "type": "string",
+            "description": "Elastic Beanstalk Environment tier. Valid values are `Worker`\nor `WebServer`. If tier is left blank `WebServer` will be used."
         },
         "Triggers": {
             "type": "array",
@@ -156,10 +160,12 @@
             }
         },
         "VersionLabel": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Elastic Beanstalk Application Version\nto use in deployment."
         },
         "WaitForReadyTimeout": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum\n[duration](https://golang.org/pkg/time/#ParseDuration) that Terraform should\nwait for an Elastic Beanstalk Environment to be in a ready state before timing\nout."
         },
         "Setting": {
             "type": "array",

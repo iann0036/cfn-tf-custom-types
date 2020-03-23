@@ -1,6 +1,6 @@
 # Terraform::AWS::IotCertificate
 
-CloudFormation equivalent of aws_iot_certificate
+Creates and manages an AWS IoT certificate.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Active
 
+Boolean flag to indicate if the certificate should be active.
+
 _Required_: Yes
 
 _Type_: Boolean
@@ -38,6 +40,12 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Csr
+
+The certificate signing request. Review
+[CreateCertificateFromCsr](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateCertificateFromCsr.html)
+for more information on generating a certificate from a certificate signing request (CSR).
+If none is specified both the certificate and keys will be generated, review [CreateKeysAndCertificate](https://docs.aws.amazon.com/iot/latest/apireference/API_CreateKeysAndCertificate.html)
+for more information on generating keys and a certificate.
 
 _Required_: No
 

@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ContentType
 
+The content type. Valid values are `text/plain`, `text/css`, `text/html`, `application/javascript` and `application/json`.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MessageBody
 
+The message body.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StatusCode
+
+The HTTP response code. Valid values are `2XX`, `4XX`, or `5XX`.
 
 _Required_: No
 

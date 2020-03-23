@@ -1,6 +1,6 @@
 # Terraform::AWS::CodepipelineWebhook
 
-CloudFormation equivalent of aws_codepipeline_webhook
+Provides a CodePipeline Webhook.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### Authentication
 
+The type of authentication  to use. One of `IP`, `GITHUB_HMAC`, or `UNAUTHENTICATED`.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the webhook.
 
 _Required_: Yes
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -68,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TargetAction
 
+The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +83,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetPipeline
+
+The name of the pipeline.
 
 _Required_: Yes
 

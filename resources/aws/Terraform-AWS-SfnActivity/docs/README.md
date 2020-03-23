@@ -1,6 +1,6 @@
 # Terraform::AWS::SfnActivity
 
-CloudFormation equivalent of aws_sfn_activity
+Provides a Step Function Activity resource
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### Name
 
+The name of the activity to create.
+
 _Required_: Yes
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

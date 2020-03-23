@@ -1,6 +1,8 @@
 # Terraform::AWS::ConfigConfigRule
 
-CloudFormation equivalent of aws_config_config_rule
+Provides an AWS Config Rule.
+
+~> **Note:** Config Rule requires an existing [Configuration Recorder](/docs/providers/aws/r/config_configuration_recorder.html) to be present. Use of `depends_on` is recommended (as shown below) to avoid race conditions.
 
 ## Syntax
 
@@ -47,6 +49,8 @@ Properties:
 
 #### Description
 
+Description of the rule.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InputParameters
+
+A string in JSON format that is passed to the AWS Config rule Lambda function.
 
 _Required_: No
 
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaximumExecutionFrequency
 
+The maximum frequency with which AWS Config runs evaluations for a rule.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -78,6 +88,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

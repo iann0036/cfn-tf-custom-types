@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Role
 
+The ARN of the IAM role for Amazon S3 to assume when replicating the objects.
+
 _Required_: Yes
 
 _Type_: String

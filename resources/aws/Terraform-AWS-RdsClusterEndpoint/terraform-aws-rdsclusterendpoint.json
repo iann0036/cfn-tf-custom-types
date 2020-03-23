@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::RdsClusterEndpoint",
-    "description": "CloudFormation equivalent of aws_rds_cluster_endpoint",
+    "description": "Manages a RDS Aurora Cluster Endpoint.\nYou can refer to the [User Guide][1].",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "ClusterEndpointIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The identifier to use for the new endpoint. This parameter is stored as a lowercase string."
         },
         "ClusterIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The cluster identifier."
         },
         "CustomEndpointType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of the endpoint. One of: READER , ANY ."
         },
         "Endpoint": {
             "type": "string"
@@ -28,7 +31,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of DB instance identifiers that aren't part of the custom endpoint group. All other eligible instances are reachable through the custom endpoint. Only relevant if the list of static members is empty. Conflicts with `static_members`."
         },
         "Id": {
             "type": "string"
@@ -38,7 +42,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of DB instance identifiers that are part of the custom endpoint group. Conflicts with `excluded_members`."
         },
         "Tags": {
             "type": "array",
@@ -58,7 +63,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         }
     },
     "additionalProperties": false,

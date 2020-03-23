@@ -1,6 +1,10 @@
 # Terraform::AWS::Cloudtrail
 
-CloudFormation equivalent of aws_cloudtrail
+Provides a CloudTrail resource.
+
+~> *NOTE:* For a multi-region trail, this resource must be in the home region of the trail.
+
+~> *NOTE:* For an organization trail, this resource must be in the master account of the organization.
 
 ## Syntax
 
@@ -60,6 +64,9 @@ Properties:
 
 #### CloudWatchLogsGroupArn
 
+Specifies a log group name using an Amazon Resource Name (ARN),
+that represents the log group to which CloudTrail logs will be delivered.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +74,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CloudWatchLogsRoleArn
+
+Specifies the role for the CloudWatch Logs
+endpoint to assume to write to a user’s log group.
 
 _Required_: No
 
@@ -76,6 +86,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableLogFileValidation
 
+Specifies whether log file integrity validation is enabled.
+Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -83,6 +96,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnableLogging
+
+Enables logging for the trail. Defaults to `true`.
+Setting this to `false` will pause logging.
 
 _Required_: No
 
@@ -92,6 +108,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IncludeGlobalServiceEvents
 
+Specifies whether the trail is publishing events
+from global services such as IAM to the log files. Defaults to `true`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -99,6 +118,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IsMultiRegionTrail
+
+Specifies whether the trail is created in the current
+region or in all regions. Defaults to `false`.
 
 _Required_: No
 
@@ -108,6 +130,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IsOrganizationTrail
 
+Specifies whether the trail is an AWS Organizations trail. Organization trails log events for the master account and all member accounts. Can only be created in the organization master account. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -115,6 +139,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsKeyId
+
+Specifies the KMS key ARN to use to encrypt the logs delivered by CloudTrail.
 
 _Required_: No
 
@@ -124,6 +150,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Specifies the name of the trail.
+
 _Required_: Yes
 
 _Type_: String
@@ -131,6 +159,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3BucketName
+
+Specifies the name of the S3 bucket designated for publishing log files.
 
 _Required_: Yes
 
@@ -140,6 +170,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### S3KeyPrefix
 
+Specifies the S3 key prefix that follows
+the name of the bucket you have designated for log file delivery.
+
 _Required_: No
 
 _Type_: String
@@ -148,6 +181,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnsTopicName
 
+Specifies the name of the Amazon SNS topic
+defined for notification of log file delivery.
+
 _Required_: No
 
 _Type_: String
@@ -155,6 +191,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the trail.
 
 _Required_: No
 

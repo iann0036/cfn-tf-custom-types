@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DirectoryServiceConditionalForwarder",
-    "description": "CloudFormation equivalent of aws_directory_service_conditional_forwarder",
+    "description": "Provides a conditional forwarder for managed Microsoft AD in AWS Directory Service.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,20 +9,23 @@
             "type": "string"
         },
         "DirectoryId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of directory."
         },
         "DnsIps": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of forwarder IP addresses."
         },
         "Id": {
             "type": "string"
         },
         "RemoteDomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully qualified domain name of the remote domain for which forwarders will be used."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::AWS::SesEventDestination
 
-CloudFormation equivalent of aws_ses_event_destination
+Provides an SES event destination
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### ConfigurationSetName
 
+The name of the configuration set.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+If true, the event destination will be enabled.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MatchingTypes
 
+A list of matching types. May be any of `"send"`, `"reject"`, `"bounce"`, `"complaint"`, `"delivery"`, `"open"`, `"click"`, or `"renderingFailure"`.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -68,6 +74,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the event destination.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SesIdentityPolicy",
-    "description": "CloudFormation equivalent of aws_ses_identity_policy",
+    "description": "Manages a SES Identity Policy. More information about SES Sending Authorization Policies can be found in the [SES Developer Guide](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-policies.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "Identity": {
-            "type": "string"
+            "type": "string",
+            "description": "Name or Amazon Resource Name (ARN) of the SES Identity."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the policy."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "JSON string of the policy. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy)."
         }
     },
     "additionalProperties": false,

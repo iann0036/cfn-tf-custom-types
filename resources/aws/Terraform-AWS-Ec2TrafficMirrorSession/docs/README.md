@@ -1,6 +1,7 @@
 # Terraform::AWS::Ec2TrafficMirrorSession
 
-CloudFormation equivalent of aws_ec2_traffic_mirror_session
+Provides an Traffic mirror session.  
+Read [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring
 
 ## Syntax
 
@@ -44,6 +45,8 @@ Properties:
 
 #### Description
 
+A description of the traffic mirror session.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkInterfaceId
+
+ID of the source network interface. Not all network interfaces are eligible as mirror sources. On EC2 instances only nitro based instances support mirroring.
 
 _Required_: Yes
 
@@ -60,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PacketLength
 
+The number of bytes in each packet to mirror. These are bytes after the VXLAN header. Do not specify this parameter when you want to mirror the entire packet. To mirror a subset of the packet, set this to the length (in bytes) that you want to mirror.
+
 _Required_: No
 
 _Type_: Double
@@ -67,6 +74,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SessionNumber
+
+- The session number determines the order in which sessions are evaluated when an interface is used by multiple sessions. The first session with a matching filter is the one that mirrors the packets.
 
 _Required_: Yes
 
@@ -76,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value mapping of resource tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -83,6 +94,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TrafficMirrorFilterId
+
+ID of the traffic mirror filter to be used.
 
 _Required_: Yes
 
@@ -92,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TrafficMirrorTargetId
 
+ID of the traffic mirror target to be used.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualNetworkId
+
+- The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN protocol, see RFC 7348. If you do not specify a VirtualNetworkId, an account-wide unique id is chosen at random.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SnsTopicPolicy",
-    "description": "CloudFormation equivalent of aws_sns_topic_policy",
+    "description": "Provides an SNS topic policy resource\n\n~> **NOTE:** If a Principal is specified as just an AWS account ID rather than an ARN, AWS silently converts it to the ARN for the root user, causing future terraform plans to differ. To avoid this problem, just specify the full ARN, e.g. `arn:aws:iam::123456789012:root`",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "Arn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the SNS topic."
         },
         "Id": {
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "The fully-formed AWS policy as JSON. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy)."
         }
     },
     "additionalProperties": false,

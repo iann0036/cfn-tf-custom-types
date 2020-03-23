@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SpotFleetRequest",
-    "description": "CloudFormation equivalent of aws_spot_fleet_request",
+    "description": "Provides an EC2 Spot Fleet Request resource. This allows a fleet of Spot\ninstances to be requested on the Spot market.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "LaunchSpecification": {
@@ -200,28 +200,34 @@
             "type": "string"
         },
         "AllocationStrategy": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates how to allocate the target capacity across\nthe Spot pools specified by the Spot fleet request. The default is\n`lowestPrice`."
         },
         "ClientToken": {
             "type": "string"
         },
         "ExcessCapacityTerminationPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates whether running Spot\ninstances should be terminated if the target capacity of the Spot fleet\nrequest is decreased below the current size of the Spot fleet."
         },
         "FleetType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of fleet request. Indicates whether the Spot Fleet only requests the target\ncapacity or also attempts to maintain it. Default is `maintain`."
         },
         "IamFleetRole": {
-            "type": "string"
+            "type": "string",
+            "description": "Grants the Spot fleet permission to terminate\nSpot instances on your behalf when you cancel its Spot fleet request using\nCancelSpotFleetRequests or when the Spot fleet request expires, if you set\nterminateInstancesWithExpiration."
         },
         "Id": {
             "type": "string"
         },
         "InstanceInterruptionBehaviour": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates whether a Spot\ninstance stops or terminates when it is interrupted. Default is\n`terminate`."
         },
         "InstancePoolsToUseCount": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of Spot pools across which to allocate your target Spot capacity.\nValid only when `allocation_strategy` is set to `lowestPrice`. Spot Fleet selects\nthe cheapest Spot pools and evenly allocates your target Spot capacity across\nthe number of Spot pools that you specify."
         },
         "LoadBalancers": {
             "type": "array",
@@ -231,16 +237,19 @@
             }
         },
         "ReplaceUnhealthyInstances": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether Spot fleet should replace unhealthy instances. Default `false`."
         },
         "SpotPrice": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum bid price per unit hour."
         },
         "SpotRequestState": {
             "type": "string"
         },
         "TargetCapacity": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of units to request. You can choose to set the\ntarget capacity in terms of instances or a performance characteristic that is\nimportant to your application workload, such as vCPUs, memory, or I/O."
         },
         "TargetGroupArns": {
             "type": "array",
@@ -250,16 +259,20 @@
             }
         },
         "TerminateInstancesWithExpiration": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether running Spot\ninstances should be terminated when the Spot fleet request expires."
         },
         "ValidFrom": {
-            "type": "string"
+            "type": "string",
+            "description": "The start date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). The default is to start fulfilling the request immediately."
         },
         "ValidUntil": {
-            "type": "string"
+            "type": "string",
+            "description": "The end date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). At this point, no new Spot instance requests are placed or enabled to fulfill the request. Defaults to 24 hours."
         },
         "WaitForFulfillment": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set, Terraform will\nwait for the Spot Request to be fulfilled, and will throw an error if the\ntimeout of 10m is reached."
         },
         "LaunchSpecification": {
             "type": "array",

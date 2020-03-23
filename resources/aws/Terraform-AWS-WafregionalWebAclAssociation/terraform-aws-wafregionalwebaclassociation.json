@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::WafregionalWebAclAssociation",
-    "description": "CloudFormation equivalent of aws_wafregional_web_acl_association",
+    "description": "Manages an association with WAF Regional Web ACL.\n\n-> **Note:** An Application Load Balancer can only be associated with one WAF Regional WebACL.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "ResourceArn": {
-            "type": "string"
+            "type": "string",
+            "description": "ARN of the resource to associate with. For example, an Application Load Balancer or API Gateway Stage."
         },
         "WebAclId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the WAF Regional WebACL to create an association."
         }
     },
     "additionalProperties": false,

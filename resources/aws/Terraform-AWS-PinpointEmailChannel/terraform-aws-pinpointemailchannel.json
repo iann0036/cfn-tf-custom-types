@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::PinpointEmailChannel",
-    "description": "CloudFormation equivalent of aws_pinpoint_email_channel",
+    "description": "Provides a Pinpoint SMS Channel resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,25 +9,30 @@
             "type": "string"
         },
         "ApplicationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The application ID."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the channel is enabled or disabled. Defaults to `true`."
         },
         "FromAddress": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address used to send emails from."
         },
         "Id": {
             "type": "string"
         },
         "Identity": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an identity verified with SES."
         },
         "MessagesPerSecond": {
             "type": "number"
         },
         "RoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service."
         }
     },
     "additionalProperties": false,

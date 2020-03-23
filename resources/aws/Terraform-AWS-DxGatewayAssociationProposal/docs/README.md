@@ -1,6 +1,6 @@
 # Terraform::AWS::DxGatewayAssociationProposal
 
-CloudFormation equivalent of aws_dx_gateway_association_proposal
+Manages a Direct Connect Gateway Association Proposal, typically for enabling cross-account associations. For single account associations, see the [`aws_dx_gateway_association` resource](/docs/providers/aws/r/dx_gateway_association.html).
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### AllowedPrefixes
 
+VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured.
+
 _Required_: No
 
 _Type_: List of String
@@ -45,6 +47,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AssociatedGatewayId
+
+The ID of the VGW or transit gateway with which to associate the Direct Connect gateway.
 
 _Required_: No
 
@@ -54,6 +58,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DxGatewayId
 
+Direct Connect Gateway identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DxGatewayOwnerAccountId
 
+AWS Account identifier of the Direct Connect Gateway's owner.
+
 _Required_: Yes
 
 _Type_: String
@@ -69,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpnGatewayId
+
+*Deprecated:* Use `associated_gateway_id` instead. Virtual Gateway identifier to associate with the Direct Connect Gateway.
 
 _Required_: No
 

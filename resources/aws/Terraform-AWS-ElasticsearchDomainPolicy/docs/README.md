@@ -1,6 +1,6 @@
 # Terraform::AWS::ElasticsearchDomainPolicy
 
-CloudFormation equivalent of aws_elasticsearch_domain_policy
+Allows setting policy to an Elasticsearch domain while referencing domain attributes (e.g. ARN)
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### AccessPolicies
 
+IAM policy document specifying the access policies for the domain.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainName
+
+Name of the domain.
 
 _Required_: Yes
 

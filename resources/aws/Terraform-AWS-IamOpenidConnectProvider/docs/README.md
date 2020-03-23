@@ -1,6 +1,6 @@
 # Terraform::AWS::IamOpenidConnectProvider
 
-CloudFormation equivalent of aws_iam_openid_connect_provider
+Provides an IAM OpenID Connect provider.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### ClientIdList
 
+A list of client IDs (also known as audiences). When a mobile or web app registers with an OpenID Connect provider, they establish a value that identifies the application. (This is the value that's sent as the client_id parameter on OAuth requests.).
+
 _Required_: Yes
 
 _Type_: List of String
@@ -43,6 +45,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ThumbprintList
 
+A list of server certificate thumbprints for the OpenID Connect (OIDC) identity provider's server certificate(s).
+
 _Required_: Yes
 
 _Type_: List of String
@@ -50,6 +54,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Url
+
+The URL of the identity provider. Corresponds to the _iss_ claim.
 
 _Required_: Yes
 

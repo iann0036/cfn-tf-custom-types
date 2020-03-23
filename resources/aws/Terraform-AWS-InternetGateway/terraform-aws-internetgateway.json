@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::InternetGateway",
-    "description": "CloudFormation equivalent of aws_internet_gateway",
+    "description": "Provides a resource to create a VPC Internet Gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -32,10 +32,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID to create in."
         }
     },
     "additionalProperties": false,

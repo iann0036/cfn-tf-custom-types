@@ -1,6 +1,6 @@
 # Terraform::AWS::GuarddutyMember
 
-CloudFormation equivalent of aws_guardduty_member
+Provides a resource to manage a GuardDuty member. To accept invitations in member accounts, see the [`aws_guardduty_invite_accepter` resource](/docs/providers/aws/r/guardduty_invite_accepter.html).
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### AccountId
 
+AWS account ID for member account.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DetectorId
+
+The detector ID of the GuardDuty account where you want to create member accounts.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisableEmailNotification
 
+Boolean whether an email notification is sent to the accounts. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -64,6 +70,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Email
+
+Email address for member account.
 
 _Required_: Yes
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InvitationMessage
 
+Message for invitation.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Invite
+
+Boolean whether to invite the account to GuardDuty as a member. Defaults to `false`. To detect if an invitation needs to be (re-)sent, the Terraform state value is `true` based on a `relationship_status` of `Disabled`, `Enabled`, `Invited`, or `EmailVerificationInProgress`.
 
 _Required_: No
 

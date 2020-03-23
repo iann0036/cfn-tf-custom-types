@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DefaultVpc",
-    "description": "CloudFormation equivalent of aws_default_vpc",
+    "description": "Provides a resource to manage the [default AWS VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html)\nin the current region.\n\nFor AWS accounts created after 2013-12-04, each region comes with a Default VPC.\n**This is an advanced resource**, and has special caveats to be aware of when\nusing it. Please read this document in its entirety before using this resource.\n\nThe `aws_default_vpc` behaves differently from normal resources, in that\nTerraform does not _create_ this resource, but instead \"adopts\" it\ninto management.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -30,16 +30,19 @@
             "type": "string"
         },
         "EnableClassiclink": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable ClassicLink\nfor the VPC. Only valid in regions and accounts that support EC2 Classic.\nSee the [ClassicLink documentation][1] for more information. Defaults false."
         },
         "EnableClassiclinkDnsSupport": {
             "type": "boolean"
         },
         "EnableDnsHostnames": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable DNS hostnames in the VPC. Defaults false."
         },
         "EnableDnsSupport": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean flag to enable/disable DNS support in the VPC. Defaults true."
         },
         "Id": {
             "type": "string"
@@ -77,7 +80,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

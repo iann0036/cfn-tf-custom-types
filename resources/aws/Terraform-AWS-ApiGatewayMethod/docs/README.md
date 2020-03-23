@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayMethod
 
-CloudFormation equivalent of aws_api_gateway_method
+Provides a HTTP Method for an API Gateway Resource.
 
 ## Syntax
 
@@ -52,6 +52,8 @@ Properties:
 
 #### ApiKeyRequired
 
+Specify if the method requires an API key.
+
 _Required_: No
 
 _Type_: Boolean
@@ -59,6 +61,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Authorization
+
+The type of authorization used for the method (`NONE`, `CUSTOM`, `AWS_IAM`, `COGNITO_USER_POOLS`).
 
 _Required_: Yes
 
@@ -68,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AuthorizationScopes
 
+The authorization scopes used when the authorization is `COGNITO_USER_POOLS`.
+
 _Required_: No
 
 _Type_: List of String
@@ -75,6 +81,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AuthorizerId
+
+The authorizer id to be used when the authorization is `CUSTOM` or `COGNITO_USER_POOLS`.
 
 _Required_: No
 
@@ -84,6 +92,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HttpMethod
 
+The HTTP Method (`GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `OPTIONS`, `ANY`).
+
 _Required_: Yes
 
 _Type_: String
@@ -92,6 +102,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestModels
 
+A map of the API models used for the request's content type
+where key is the content type (e.g. `application/json`)
+and value is either `Error`, `Empty` (built-in models) or `aws_api_gateway_model`'s `name`.
+
 _Required_: No
 
 _Type_: List of <a href="requestmodels.md">RequestModels</a>
@@ -99,6 +113,9 @@ _Type_: List of <a href="requestmodels.md">RequestModels</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequestParameters
+
+A map of request parameters (from the path, query string and headers) that should be passed to the integration. The boolean value indicates whether the parameter is required (`true`) or optional (`false`).
+For example: `request_parameters = {"method.request.header.X-Some-Header" = true "method.request.querystring.some-query-param" = true}` would define that the header `X-Some-Header` and the query string `some-query-param` must be provided in the request.
 
 _Required_: No
 
@@ -116,6 +133,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestValidatorId
 
+The ID of a `aws_api_gateway_request_validator`.
+
 _Required_: No
 
 _Type_: String
@@ -124,6 +143,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceId
 
+The API resource ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -131,6 +152,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RestApiId
+
+The ID of the associated REST API.
 
 _Required_: Yes
 

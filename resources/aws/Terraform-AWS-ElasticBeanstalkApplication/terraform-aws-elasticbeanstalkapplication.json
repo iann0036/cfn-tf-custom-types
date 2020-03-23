@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ElasticBeanstalkApplication",
-    "description": "CloudFormation equivalent of aws_elastic_beanstalk_application",
+    "description": "Provides an Elastic Beanstalk Application Resource. Elastic Beanstalk allows\nyou to deploy and manage applications in the AWS cloud without worrying about\nthe infrastructure that runs those applications.\n\nThis resource creates an application that has one configuration template named\n`default`, and no application versions",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AppversionLifecycle": {
@@ -34,13 +34,15 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Short description of the application."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the application, must be unique within your account."
         },
         "Tags": {
             "type": "array",
@@ -60,7 +62,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of tags for the Elastic Beanstalk Application."
         },
         "AppversionLifecycle": {
             "type": "array",

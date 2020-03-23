@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Codepipeline",
-    "description": "CloudFormation equivalent of aws_codepipeline",
+    "description": "Provides a CodePipeline.\n\n~> **NOTE on `aws_codepipeline`:** - the `GITHUB_TOKEN` environment variable must be set if the GitHub provider is specified.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ArtifactStore": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Location": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The location where AWS CodePipeline stores artifacts for a pipeline, such as an S3 bucket."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of the artifact store, such as Amazon S3."
                 },
                 "EncryptionKey": {
                     "type": "array",
@@ -32,7 +34,8 @@
             "additionalProperties": false,
             "properties": {
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the stage."
                 },
                 "Action": {
                     "type": "array",
@@ -52,10 +55,12 @@
             "additionalProperties": false,
             "properties": {
                 "Id": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The KMS key ARN or ID."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of key; currently only `KMS` is supported."
                 }
             },
             "required": [
@@ -68,7 +73,8 @@
             "additionalProperties": false,
             "properties": {
                 "Category": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Possible values are `Approval`, `Build`, `Deploy`, `Invoke`, `Source` and `Test`."
                 },
                 "Configuration": {
                     "type": "array",
@@ -88,39 +94,48 @@
                             "MapKey",
                             "MapValue"
                         ]
-                    }
+                    },
+                    "description": "A Map of the action declaration's configuration. Find out more about configuring action configurations in the [Reference Pipeline Structure documentation](http://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements)."
                 },
                 "InputArtifacts": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of artifact names to be worked on."
                 },
                 "Name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The action declaration's name."
                 },
                 "OutputArtifacts": {
                     "type": "array",
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "A list of artifact names to output. Output artifact names must be unique within a pipeline."
                 },
                 "Owner": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The creator of the action being called. Possible values are `AWS`, `Custom` and `ThirdParty`."
                 },
                 "Provider": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy."
                 },
                 "RoleArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ARN of the IAM service role that will perform the declared action. This is assumed through the roleArn for the pipeline."
                 },
                 "RunOrder": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The order in which actions are run."
                 },
                 "Version": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A string that identifies the action type."
                 }
             },
             "required": [
@@ -144,10 +159,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the pipeline."
         },
         "RoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "A service role Amazon Resource Name (ARN) that grants AWS CodePipeline permission to make calls to AWS services on your behalf."
         },
         "Tags": {
             "type": "array",
@@ -167,7 +184,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "ArtifactStore": {
             "type": "array",

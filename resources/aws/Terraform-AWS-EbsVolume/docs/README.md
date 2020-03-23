@@ -1,6 +1,6 @@
 # Terraform::AWS::EbsVolume
 
-CloudFormation equivalent of aws_ebs_volume
+Manages a single EBS volume.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### AvailabilityZone
 
+The AZ where the EBS volume will exist.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Encrypted
+
+If true, the disk will be encrypted.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Iops
 
+The amount of IOPS to provision for the disk.
+
 _Required_: No
 
 _Type_: Double
@@ -68,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyId
 
+The ARN for the KMS encryption key. When specifying `kms_key_id`, `encrypted` needs to be set to true.
+
 _Required_: No
 
 _Type_: String
@@ -75,6 +83,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Size
+
+The size of the drive in GiBs.
 
 _Required_: No
 
@@ -92,6 +102,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -99,6 +111,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of EBS volume. Can be "standard", "gp2", "io1", "sc1" or "st1" (Default: "gp2").
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::IamPolicy
 
-CloudFormation equivalent of aws_iam_policy
+Provides an IAM policy.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+Description of the IAM policy.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the policy. If omitted, Terraform will assign a random, unique name.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NamePrefix
 
+Creates a unique name beginning with the specified prefix. Conflicts with `name`.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Path
 
+Path in which to create the policy.
+See [IAM Identifiers](https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html) for more information.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Policy
+
+The policy document. This is a JSON formatted string. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
 
 _Required_: Yes
 

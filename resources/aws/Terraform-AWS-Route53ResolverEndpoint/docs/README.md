@@ -1,6 +1,6 @@
 # Terraform::AWS::Route53ResolverEndpoint
 
-CloudFormation equivalent of aws_route53_resolver_endpoint
+Provides a Route 53 Resolver endpoint resource.
 
 ## Syntax
 
@@ -42,6 +42,10 @@ Properties:
 
 #### Direction
 
+The direction of DNS queries to or from the Route 53 Resolver endpoint.
+Valid values are `INBOUND` (resolver forwards DNS queries to the DNS service for a VPC from your network or another VPC)
+or `OUTBOUND` (resolver forwards DNS queries from the DNS service for a VPC to your network or another VPC).
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The friendly name of the Route 53 Resolver endpoint.
 
 _Required_: No
 
@@ -58,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupIds
 
+The ID of one or more security groups that you want to use to control access to this VPC.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -65,6 +73,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

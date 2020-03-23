@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayClientCertificate
 
-CloudFormation equivalent of aws_api_gateway_client_certificate
+Provides an API Gateway Client Certificate.
 
 ## Syntax
 
@@ -32,6 +32,8 @@ Properties:
 
 #### Description
 
+The description of the client certificate.
+
 _Required_: No
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

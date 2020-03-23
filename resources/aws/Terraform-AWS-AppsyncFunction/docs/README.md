@@ -1,6 +1,6 @@
 # Terraform::AWS::AppsyncFunction
 
-CloudFormation equivalent of aws_appsync_function
+Provides an AppSync Function.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### ApiId
 
+The ID of the associated AppSync API.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataSource
+
+The Function DataSource name.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+The Function description.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +70,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FunctionVersion
+
+The version of the request mapping template. Currently the supported value is `2018-05-29`.
 
 _Required_: No
 
@@ -73,6 +81,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The Function name. The function name does not have to be unique.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +91,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestMappingTemplate
 
+The Function request mapping template. Functions support only the 2018-05-29 version of the request mapping template.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +100,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResponseMappingTemplate
+
+The Function response mapping template.
 
 _Required_: Yes
 

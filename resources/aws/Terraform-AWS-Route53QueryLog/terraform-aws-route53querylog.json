@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Route53QueryLog",
-    "description": "CloudFormation equivalent of aws_route53_query_log",
+    "description": "Provides a Route53 query logging configuration resource.\n\n~> **NOTE:** There are restrictions on the configuration of query logging. Notably,\nthe CloudWatch log group must be in the `us-east-1` region,\na permissive CloudWatch log resource policy must be in place, and\nthe Route53 hosted zone must be public.\nSee [Configuring Logging for DNS Queries](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html?console_help=true#query-logs-configuring) for additional details.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "CloudwatchLogGroupArn": {
-            "type": "string"
+            "type": "string",
+            "description": "CloudWatch log group ARN to send query logs."
         },
         "Id": {
             "type": "string"
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "Route53 hosted zone ID to enable query logs."
         }
     },
     "additionalProperties": false,

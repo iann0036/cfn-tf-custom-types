@@ -1,6 +1,6 @@
 # Terraform::AWS::RedshiftParameterGroup
 
-CloudFormation equivalent of aws_redshift_parameter_group
+Provides a Redshift Cluster parameter group resource.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### Description
 
+The description of the Redshift parameter group. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -46,6 +48,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Family
+
+The family of the Redshift parameter group.
 
 _Required_: Yes
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the Redshift parameter.
+
 _Required_: Yes
 
 _Type_: String
@@ -62,6 +68,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

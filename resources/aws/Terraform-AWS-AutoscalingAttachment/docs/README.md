@@ -1,6 +1,13 @@
 # Terraform::AWS::AutoscalingAttachment
 
-CloudFormation equivalent of aws_autoscaling_attachment
+Provides an AutoScaling Attachment resource.
+
+~> **NOTE on AutoScaling Groups and ASG Attachments:** Terraform currently provides
+both a standalone ASG Attachment resource (describing an ASG attached to
+an ELB), and an [AutoScaling Group resource](autoscaling_group.html) with
+`load_balancers` defined in-line. At this time you cannot use an ASG with in-line
+load balancers in conjunction with an ASG Attachment resource. Doing so will cause a
+conflict and will overwrite attachments.
 
 ## Syntax
 
@@ -33,6 +40,8 @@ Properties:
 
 #### AlbTargetGroupArn
 
+The ARN of an ALB Target Group.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AutoscalingGroupName
 
+Name of ASG to associate with the ELB.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Elb
+
+The name of the ELB.
 
 _Required_: No
 

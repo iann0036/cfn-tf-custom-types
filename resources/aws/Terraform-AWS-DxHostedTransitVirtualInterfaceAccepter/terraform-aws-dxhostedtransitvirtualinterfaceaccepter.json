@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DxHostedTransitVirtualInterfaceAccepter",
-    "description": "CloudFormation equivalent of aws_dx_hosted_transit_virtual_interface_accepter",
+    "description": "Provides a resource to manage the accepter's side of a Direct Connect hosted transit virtual interface.\nThis resource accepts ownership of a transit virtual interface created by another AWS account.\n\n-> **NOTE:** AWS allows a Direct Connect hosted transit virtual interface to be deleted from either the allocator's or accepter's side. However, Terraform only allows the Direct Connect hosted transit virtual interface to be deleted from the allocator's side by removing the corresponding `aws_dx_hosted_transit_virtual_interface` resource from your configuration. Removing a `aws_dx_hosted_transit_virtual_interface_accepter` resource from your configuration will remove it from your statefile and management, **but will not delete the Direct Connect virtual interface.**",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "DxGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the [Direct Connect gateway](dx_gateway.html) to which to connect the virtual interface."
         },
         "Id": {
             "type": "string"
@@ -49,10 +50,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VirtualInterfaceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the Direct Connect virtual interface to accept."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

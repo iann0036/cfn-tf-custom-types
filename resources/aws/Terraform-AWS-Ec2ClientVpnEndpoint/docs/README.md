@@ -1,6 +1,7 @@
 # Terraform::AWS::Ec2ClientVpnEndpoint
 
-CloudFormation equivalent of aws_ec2_client_vpn_endpoint
+Provides an AWS Client VPN endpoint for OpenVPN clients. For more information on usage, please see the
+[AWS Client VPN Administrator's Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
 
 ## Syntax
 
@@ -49,6 +50,8 @@ Properties:
 
 #### ClientCidrBlock
 
+The IPv4 address range, in CIDR notation, from which to assign client IP addresses. The address range cannot overlap with the local CIDR of the VPC in which the associated subnet is located, or the routes that you add manually. The address range cannot be changed after the Client VPN endpoint has been created. The CIDR block should be /22 or greater.
+
 _Required_: Yes
 
 _Type_: String
@@ -56,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Name of the repository.
 
 _Required_: No
 
@@ -65,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DnsServers
 
+Information about the DNS servers to be used for DNS resolution. A Client VPN endpoint can have up to two DNS servers. If no DNS server is specified, the DNS address of the VPC that is to be associated with Client VPN endpoint is used as the DNS server.
+
 _Required_: No
 
 _Type_: List of String
@@ -72,6 +79,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerCertificateArn
+
+The ARN of the ACM server certificate.
 
 _Required_: Yes
 
@@ -81,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SplitTunnel
 
+Indicates whether split-tunnel is enabled on VPN endpoint. Default value is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -89,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -96,6 +109,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransportProtocol
+
+The transport protocol to be used by the VPN session. Default value is `udp`.
 
 _Required_: No
 

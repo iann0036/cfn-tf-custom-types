@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::NeptuneCluster",
-    "description": "CloudFormation equivalent of aws_neptune_cluster",
+    "description": "Provides an Neptune Cluster Resource. A Cluster Resource defines attributes that are\napplied to the entire cluster of Neptune Cluster Instances.\n\nChanges to a Neptune Cluster can occur when you manually change a\nparameter, such as `backup_retention_period`, and are reflected in the next maintenance\nwindow. Because of this, Terraform may report a difference in its planning\nphase because a modification has not yet taken place. You can use the\n`apply_immediately` flag to instruct the service to apply the change immediately\n(see documentation below).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -26,7 +26,8 @@
             "type": "string"
         },
         "ApplyImmediately": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. Default is `false`."
         },
         "Arn": {
             "type": "string"
@@ -36,16 +37,20 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of EC2 Availability Zones that instances in the Neptune cluster can be created in."
         },
         "BackupRetentionPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "The days to retain backups for. Default `1`."
         },
         "ClusterIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The cluster identifier. If omitted, Terraform will assign a random, unique identifier."
         },
         "ClusterIdentifierPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique cluster identifier beginning with the specified prefix. Conflicts with `cluster_identifier`."
         },
         "ClusterMembers": {
             "type": "array",
@@ -65,68 +70,84 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of the log types this DB cluster is configured to export to Cloudwatch Logs. Currently only supports `audit`."
         },
         "Endpoint": {
             "type": "string"
         },
         "Engine": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the database engine to be used for this Neptune cluster. Defaults to `neptune`."
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The database engine version."
         },
         "FinalSnapshotIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of your final Neptune snapshot when this Neptune cluster is deleted. If omitted, no final snapshot will be made."
         },
         "HostedZoneId": {
             "type": "string"
         },
         "IamDatabaseAuthenticationEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether or mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled."
         },
         "IamRoles": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A List of ARNs for the IAM roles to associate to the Neptune Cluster."
         },
         "Id": {
             "type": "string"
         },
         "KmsKeyArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN for the KMS encryption key. When specifying `kms_key_arn`, `storage_encrypted` needs to be set to true."
         },
         "NeptuneClusterParameterGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "A cluster parameter group to associate with the cluster."
         },
         "NeptuneSubnetGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "A Neptune subnet group to associate with this Neptune instance."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which the Neptune accepts connections. Default is `8182`."
         },
         "PreferredBackupWindow": {
-            "type": "string"
+            "type": "string",
+            "description": "The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter. Time in UTC. Default: A 30-minute window selected at random from an 8-hour block of time per region. e.g. 04:00-09:00."
         },
         "PreferredMaintenanceWindow": {
-            "type": "string"
+            "type": "string",
+            "description": "The weekly time range during which system maintenance can occur, in (UTC) e.g. wed:04:00-wed:04:30."
         },
         "ReaderEndpoint": {
             "type": "string"
         },
         "ReplicationSourceIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "ARN of a source Neptune cluster or Neptune instance if this Neptune cluster is to be created as a Read Replica."
         },
         "SkipFinalSnapshot": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines whether a final Neptune snapshot is created before the Neptune cluster is deleted. If true is specified, no Neptune snapshot is created. If false is specified, a Neptune snapshot is created before the Neptune cluster is deleted, using the value from `final_snapshot_identifier`. Default is `false`."
         },
         "SnapshotIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies whether or not to create this cluster from a snapshot. You can use either the name or ARN when specifying a Neptune cluster snapshot, or the ARN when specifying a Neptune snapshot."
         },
         "StorageEncrypted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the Neptune cluster is encrypted. The default is `false` if not specified."
         },
         "Tags": {
             "type": "array",
@@ -146,14 +167,16 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the Neptune cluster."
         },
         "VpcSecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of VPC security groups to associate with the Cluster."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

@@ -1,6 +1,6 @@
 # Terraform::AWS::WorkspacesDirectory
 
-CloudFormation equivalent of aws_workspaces_directory
+Provides a directory registration in AWS WorkSpaces Service
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### DirectoryId
 
+The directory identifier for registration in WorkSpaces service.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetIds
+
+The identifiers of the subnets where the directory resides.
 
 _Required_: No
 

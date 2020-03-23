@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LambdaFunction",
-    "description": "CloudFormation equivalent of aws_lambda_function",
+    "description": "Provides a Lambda Function resource. Lambda allows you to trigger execution of code in response to events in AWS, enabling serverless backend solutions. The Lambda Function itself includes source code and runtime configuration.\n\nFor information about Lambda and how to use it, see [What is AWS Lambda?][1]\n\nFor a detailed example of setting up Lambda and API Gateway, see [Serverless Applications with AWS Lambda and API Gateway.][11]\n\n~> **NOTE:** Due to [AWS Lambda improved VPC networking changes that began deploying in September 2019](https://aws.amazon.com/blogs/compute/announcing-improved-vpc-networking-for-aws-lambda-functions/), EC2 subnets and security groups associated with Lambda Functions can take up to 45 minutes to successfully delete. Terraform AWS Provider version 2.31.0 and later automatically handles this increased timeout, however prior versions require setting the customizable deletion timeouts of those Terraform resources to 45 minutes (`delete = \"45m\"`). AWS and HashiCorp are working together to reduce the amount of time required for resource deletion and updates can be tracked in this [GitHub issue](https://github.com/terraform-providers/terraform-provider-aws/issues/10329).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DeadLetterConfig": {
@@ -98,16 +98,20 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of what your Lambda Function does."
         },
         "Filename": {
-            "type": "string"
+            "type": "string",
+            "description": "The path to the function's deployment package within the local filesystem. If defined, The `s3_`-prefixed options cannot be used."
         },
         "FunctionName": {
-            "type": "string"
+            "type": "string",
+            "description": "A unique name for your Lambda Function."
         },
         "Handler": {
-            "type": "string"
+            "type": "string",
+            "description": "The function [entrypoint][3] in your code."
         },
         "Id": {
             "type": "string"
@@ -116,7 +120,8 @@
             "type": "string"
         },
         "KmsKeyArn": {
-            "type": "string"
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key that is used to encrypt environment variables. If this configuration is not provided when environment variables are in use, AWS Lambda uses a default service key. If this configuration is provided when environment variables are not in use, the AWS Lambda API does not save this configuration and Terraform will show a perpetual difference of adding the key. To fix the perpetual difference, remove this configuration."
         },
         "LastModified": {
             "type": "string"
@@ -126,37 +131,47 @@
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Lambda Layer Version ARNs (maximum of 5) to attach to your Lambda Function. See [Lambda Layers][10]."
         },
         "MemorySize": {
-            "type": "number"
+            "type": "number",
+            "description": "Amount of memory in MB your Lambda Function can use at runtime. Defaults to `128`. See [Limits][5]."
         },
         "Publish": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to publish creation/change as new Lambda Function Version. Defaults to `false`."
         },
         "QualifiedArn": {
             "type": "string"
         },
         "ReservedConcurrentExecutions": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of reserved concurrent executions for this lambda function. A value of `0` disables lambda from being triggered and `-1` removes any concurrency limitations. Defaults to Unreserved Concurrency Limits `-1`. See [Managing Concurrency][9]."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "IAM role attached to the Lambda Function. This governs both who / what can invoke your Lambda Function, as well as what resources our Lambda Function has access to. See [Lambda Permission Model][4] for more details."
         },
         "Runtime": {
-            "type": "string"
+            "type": "string",
+            "description": "See [Runtimes][6] for valid values."
         },
         "S3Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The S3 bucket location containing the function's deployment package. Conflicts with `filename`. This bucket must reside in the same AWS region where you are creating the Lambda function."
         },
         "S3Key": {
-            "type": "string"
+            "type": "string",
+            "description": "The S3 key of an object containing the function's deployment package. Conflicts with `filename`."
         },
         "S3ObjectVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The object version containing the function's deployment package. Conflicts with `filename`."
         },
         "SourceCodeHash": {
-            "type": "string"
+            "type": "string",
+            "description": "Used to trigger updates. Must be set to a base64-encoded SHA256 hash of the package file specified with either `filename` or `s3_key`. The usual way to set this is `filebase64sha256(\"file.zip\")` (Terraform 0.11.12 and later) or `base64sha256(file(\"file.zip\"))` (Terraform 0.11.11 and earlier), where \"file.zip\" is the local filename of the lambda function source archive."
         },
         "SourceCodeSize": {
             "type": "number"
@@ -179,10 +194,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the object."
         },
         "Timeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of time your Lambda Function has to run in seconds. Defaults to `3`. See [Limits][5]."
         },
         "Version": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::S3AccessPoint",
-    "description": "CloudFormation equivalent of aws_s3_access_point",
+    "description": "Provides a resource to manage an S3 Access Point.\n\n-> Advanced usage: To use a custom API endpoint for this Terraform resource, use the [`s3control` endpoint provider configuration](/docs/providers/aws/index.html#s3control), not the `s3` endpoint provider configuration.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PublicAccessBlockConfiguration": {
@@ -41,13 +41,15 @@
             "type": "string"
         },
         "AccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS account ID for the owner of the bucket for which you want to create an access point. Defaults to automatically determined account ID of the Terraform AWS provider."
         },
         "Arn": {
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket that you want to associate this access point with."
         },
         "DomainName": {
             "type": "string"
@@ -59,13 +61,15 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name you want to assign to this access point."
         },
         "NetworkOrigin": {
             "type": "string"
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "A valid JSON document that specifies the policy that you want to apply to this access point."
         },
         "PublicAccessBlockConfiguration": {
             "type": "array",

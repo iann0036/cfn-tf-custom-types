@@ -1,6 +1,6 @@
 # Terraform::AWS::NeptuneClusterSnapshot
 
-CloudFormation equivalent of aws_neptune_cluster_snapshot
+Manages a Neptune database cluster snapshot.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### DbClusterIdentifier
 
+The DB Cluster Identifier from which to take the snapshot.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DbClusterSnapshotIdentifier
+
+The Identifier for the snapshot.
 
 _Required_: Yes
 

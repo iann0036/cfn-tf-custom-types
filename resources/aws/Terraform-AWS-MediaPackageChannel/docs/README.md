@@ -1,6 +1,6 @@
 # Terraform::AWS::MediaPackageChannel
 
-CloudFormation equivalent of aws_media_package_channel
+Provides an AWS Elemental MediaPackage Channel.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### ChannelId
 
+A unique identifier describing the channel.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A description of the channel.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

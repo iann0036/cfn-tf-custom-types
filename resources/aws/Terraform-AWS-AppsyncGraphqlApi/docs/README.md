@@ -1,6 +1,6 @@
 # Terraform::AWS::AppsyncGraphqlApi
 
-CloudFormation equivalent of aws_appsync_graphql_api
+Provides an AppSync GraphQL API.
 
 ## Syntax
 
@@ -50,6 +50,8 @@ Properties:
 
 #### AuthenticationType
 
+The authentication type. Valid values: `API_KEY`, `AWS_IAM`, `AMAZON_COGNITO_USER_POOLS`, `OPENID_CONNECT`.
+
 _Required_: Yes
 
 _Type_: String
@@ -57,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A user-supplied name for the GraphqlApi.
 
 _Required_: Yes
 
@@ -66,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Schema
 
+The schema definition, in GraphQL schema language format. Terraform cannot perform drift detection of this configuration.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -81,6 +89,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### XrayEnabled
+
+Whether tracing with X-ray is enabled. Defaults to false.
 
 _Required_: No
 

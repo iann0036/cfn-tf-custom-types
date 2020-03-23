@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudwatchLogStream
 
-CloudFormation equivalent of aws_cloudwatch_log_stream
+Provides a CloudWatch Log Stream resource.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### LogGroupName
 
+The name of the log group under which the log stream is to be created.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the log stream. Must not be longer than 512 characters and must not contain `:`.
 
 _Required_: Yes
 

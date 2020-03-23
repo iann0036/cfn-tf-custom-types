@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudwatchLogResourcePolicy
 
-CloudFormation equivalent of aws_cloudwatch_log_resource_policy
+Provides a resource to manage a CloudWatch log resource policy.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### PolicyDocument
 
+Details of the resource policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. Maximum length of 5120 characters.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PolicyName
+
+Name of the resource policy.
 
 _Required_: Yes
 

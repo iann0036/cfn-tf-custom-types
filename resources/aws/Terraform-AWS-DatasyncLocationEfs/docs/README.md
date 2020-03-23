@@ -1,6 +1,8 @@
 # Terraform::AWS::DatasyncLocationEfs
 
-CloudFormation equivalent of aws_datasync_location_efs
+Manages an AWS DataSync EFS Location.
+
+~> **NOTE:** The EFS File System must have a mounted EFS Mount Target before creating this resource.
 
 ## Syntax
 
@@ -37,6 +39,8 @@ Properties:
 
 #### EfsFileSystemArn
 
+Amazon Resource Name (ARN) of EFS File System.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +49,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Subdirectory
 
+Subdirectory to perform actions as source or destination. Default `/`.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +58,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value pairs of resource tags to assign to the DataSync Location.
 
 _Required_: No
 

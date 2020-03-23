@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DxGatewayAssociationProposal",
-    "description": "CloudFormation equivalent of aws_dx_gateway_association_proposal",
+    "description": "Manages a Direct Connect Gateway Association Proposal, typically for enabling cross-account associations. For single account associations, see the [`aws_dx_gateway_association` resource](/docs/providers/aws/r/dx_gateway_association.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,10 +13,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "VPC prefixes (CIDRs) to advertise to the Direct Connect gateway. Defaults to the CIDR block of the VPC associated with the Virtual Gateway. To enable drift detection, must be configured."
         },
         "AssociatedGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VGW or transit gateway with which to associate the Direct Connect gateway."
         },
         "AssociatedGatewayOwnerAccountId": {
             "type": "string"
@@ -25,16 +27,19 @@
             "type": "string"
         },
         "DxGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "Direct Connect Gateway identifier."
         },
         "DxGatewayOwnerAccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "AWS Account identifier of the Direct Connect Gateway's owner."
         },
         "Id": {
             "type": "string"
         },
         "VpnGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "*Deprecated:* Use `associated_gateway_id` instead. Virtual Gateway identifier to associate with the Direct Connect Gateway."
         }
     },
     "additionalProperties": false,

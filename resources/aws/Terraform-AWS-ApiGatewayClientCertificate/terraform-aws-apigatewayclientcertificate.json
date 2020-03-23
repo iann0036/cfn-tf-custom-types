@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayClientCertificate",
-    "description": "CloudFormation equivalent of aws_api_gateway_client_certificate",
+    "description": "Provides an API Gateway Client Certificate.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,7 +15,8 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the client certificate."
         },
         "ExpirationDate": {
             "type": "string"
@@ -44,7 +45,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         }
     },
     "additionalProperties": false,

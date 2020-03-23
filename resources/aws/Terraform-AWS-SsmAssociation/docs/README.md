@@ -1,6 +1,6 @@
 # Terraform::AWS::SsmAssociation
 
-CloudFormation equivalent of aws_ssm_association
+Associates an SSM Document to an instance or EC2 tag.
 
 ## Syntax
 
@@ -54,6 +54,8 @@ Properties:
 
 #### AssociationName
 
+The descriptive name for the association.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +63,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutomationTargetParameterName
+
+Specify the target for the association. This target is required for associations that use an `Automation` document and target resources by using rate controls.
 
 _Required_: No
 
@@ -70,6 +74,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ComplianceSeverity
 
+The compliance severity for the association. Can be one of the following: `UNSPECIFIED`, `LOW`, `MEDIUM`, `HIGH` or `CRITICAL`.
+
 _Required_: No
 
 _Type_: String
@@ -77,6 +83,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DocumentVersion
+
+The document version you want to associate with the target(s). Can be a specific version or the default version.
 
 _Required_: No
 
@@ -86,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+The instance ID to apply an SSM document to. Use `targets` with key `InstanceIds` for document schema versions 2.0 and above.
+
 _Required_: No
 
 _Type_: String
@@ -93,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaxConcurrency
+
+The maximum number of targets allowed to run the association at the same time. You can specify a number, for example 10, or a percentage of the target set, for example 10%.
 
 _Required_: No
 
@@ -102,6 +114,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxErrors
 
+The number of errors that are allowed before the system stops sending requests to run the association on additional targets. You can specify a number, for example 10, or a percentage of the target set, for example 10%.
+
 _Required_: No
 
 _Type_: String
@@ -109,6 +123,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the SSM document to apply.
 
 _Required_: Yes
 
@@ -118,6 +134,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+A block of arbitrary string parameters to pass to the SSM document.
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -125,6 +143,8 @@ _Type_: List of <a href="parameters.md">Parameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ScheduleExpression
+
+A cron expression when the association will be applied to the target(s).
 
 _Required_: No
 

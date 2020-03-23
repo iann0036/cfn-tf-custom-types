@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SpotDatafeedSubscription",
-    "description": "CloudFormation equivalent of aws_spot_datafeed_subscription",
+    "description": "-> **Note:** There is only a single subscription allowed per account.\n\nTo help you understand the charges for your Spot instances, Amazon EC2 provides a data feed that describes your Spot instance usage and pricing.\nThis data feed is sent to an Amazon S3 bucket that you specify when you subscribe to the data feed.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon S3 bucket in which to store the Spot instance data feed."
         },
         "Id": {
             "type": "string"
         },
         "Prefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Path of folder inside bucket to place spot pricing data."
         }
     },
     "additionalProperties": false,

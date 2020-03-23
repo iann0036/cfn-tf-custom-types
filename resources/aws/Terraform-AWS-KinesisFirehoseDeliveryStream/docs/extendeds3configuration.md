@@ -82,6 +82,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ErrorOutputPrefix
 
+Prefix added to failed records before writing them to S3. This prefix appears immediately following the bucket name.
+
 _Required_: No
 
 _Type_: String
@@ -113,6 +115,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3BackupMode
+
+The Amazon S3 backup mode.  Valid values are `Disabled` and `Enabled`.  Default value is `Disabled`.
 
 _Required_: No
 

@@ -1,6 +1,15 @@
 # Terraform::AWS::CloudhsmV2Cluster
 
-CloudFormation equivalent of aws_cloudhsm_v2_cluster
+Creates an Amazon CloudHSM v2 cluster.
+
+For information about CloudHSM v2, see the
+[AWS CloudHSM User Guide][1] and the [Amazon
+CloudHSM API Reference][2].
+
+~> **NOTE:** CloudHSM can take up to several minutes to be set up.
+Practically no single attribute can be updated except TAGS.
+If you need to delete a cluster, you have to remove its HSM modules first.
+To initialize cluster, you have to add an hsm instance to the cluster then sign CSR and upload it.
 
 ## Syntax
 
@@ -39,6 +48,8 @@ Properties:
 
 #### HsmType
 
+The type of HSM module in the cluster. Currently, only hsm1.medium is supported.
+
 _Required_: Yes
 
 _Type_: String
@@ -46,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceBackupIdentifier
+
+The id of Cloud HSM v2 cluster backup to be restored.
 
 _Required_: No
 
@@ -55,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+The IDs of subnets in which cluster will operate.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -62,6 +77,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

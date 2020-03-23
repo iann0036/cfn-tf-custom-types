@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### OutputSchemaVersion
 
+The schema version of exported analytics data. Allowed values: `V_1`. Default value: `V_1`.
+
 _Required_: No
 
 _Type_: String

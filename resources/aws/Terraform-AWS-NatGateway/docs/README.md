@@ -1,6 +1,6 @@
 # Terraform::AWS::NatGateway
 
-CloudFormation equivalent of aws_nat_gateway
+Provides a resource to create a VPC NAT Gateway.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### AllocationId
 
+The Allocation ID of the Elastic IP address for the gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The Subnet ID of the subnet in which to place the gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

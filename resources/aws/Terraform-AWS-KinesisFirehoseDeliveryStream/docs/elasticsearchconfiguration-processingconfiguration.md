@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Enabled
 
+Enables or disables data processing.
+
 _Required_: No
 
 _Type_: Boolean

@@ -1,6 +1,10 @@
 # Terraform::AWS::IamAccountPasswordPolicy
 
-CloudFormation equivalent of aws_iam_account_password_policy
+-> **Note:** There is only a single policy allowed per AWS account. An existing policy will be lost when using this resource as an effect of this limitation.
+
+Manages Password Policy for the AWS Account.
+See more about [Account Password Policy](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html)
+in the official AWS docs.
 
 ## Syntax
 
@@ -45,6 +49,8 @@ Properties:
 
 #### AllowUsersToChangePassword
 
+Whether to allow users to change their own password.
+
 _Required_: No
 
 _Type_: Boolean
@@ -52,6 +58,9 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### HardExpiry
+
+Whether users are prevented from setting a new password after their password has expired
+(i.e. require administrator reset).
 
 _Required_: No
 
@@ -61,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaxPasswordAge
 
+The number of days that an user password is valid.
+
 _Required_: No
 
 _Type_: Double
@@ -68,6 +79,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MinimumPasswordLength
+
+Minimum length to require for user passwords.
 
 _Required_: No
 
@@ -77,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PasswordReusePrevention
 
+The number of previous passwords that users are prevented from reusing.
+
 _Required_: No
 
 _Type_: Double
@@ -84,6 +99,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequireLowercaseCharacters
+
+Whether to require lowercase characters for user passwords.
 
 _Required_: No
 
@@ -93,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequireNumbers
 
+Whether to require numbers for user passwords.
+
 _Required_: No
 
 _Type_: Boolean
@@ -101,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequireSymbols
 
+Whether to require symbols for user passwords.
+
 _Required_: No
 
 _Type_: Boolean
@@ -108,6 +129,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequireUppercaseCharacters
+
+Whether to require uppercase characters for user passwords.
 
 _Required_: No
 

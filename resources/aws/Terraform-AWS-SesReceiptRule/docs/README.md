@@ -1,6 +1,6 @@
 # Terraform::AWS::SesReceiptRule
 
-CloudFormation equivalent of aws_ses_receipt_rule
+Provides an SES receipt rule resource
 
 ## Syntax
 
@@ -63,6 +63,8 @@ Properties:
 
 #### After
 
+The name of the rule to place this rule after.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +72,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+If true, the rule will be enabled.
 
 _Required_: No
 
@@ -79,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Recipients
+
+A list of email addresses.
 
 _Required_: No
 
@@ -95,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RuleSetName
 
+The name of the rule set.
+
 _Required_: Yes
 
 _Type_: String
@@ -103,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ScanEnabled
 
+If true, incoming emails will be scanned for spam and viruses.
+
 _Required_: No
 
 _Type_: Boolean
@@ -110,6 +122,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TlsPolicy
+
+Require or Optional.
 
 _Required_: No
 

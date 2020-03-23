@@ -1,6 +1,8 @@
 # Terraform::AWS::GlueJob
 
-CloudFormation equivalent of aws_glue_job
+Provides a Glue Job resource.
+
+-> Glue functionality, such as monitoring and logging of jobs, is typically managed with the `default_arguments` argument. See the [Special Parameters Used by AWS Glue](https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html) topic in the Glue developer guide for additional information.
 
 ## Syntax
 
@@ -99,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GlueVersion
 
+The version of glue to use, for example "1.0". For information about available versions, see the [AWS Glue Release Notes](https://docs.aws.amazon.com/glue/latest/dg/release-notes.html).
+
 _Required_: No
 
 _Type_: String
@@ -131,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NumberOfWorkers
 
+The number of workers of a defined workerType that are allocated when a job runs.
+
 _Required_: No
 
 _Type_: Double
@@ -147,6 +153,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityConfiguration
 
+The name of the Security Configuration to be associated with the job.
+
 _Required_: No
 
 _Type_: String
@@ -154,6 +162,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 
@@ -170,6 +180,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WorkerType
+
+The type of predefined worker that is allocated when a job runs. Accepts a value of Standard, G.1X, or G.2X.
 
 _Required_: No
 

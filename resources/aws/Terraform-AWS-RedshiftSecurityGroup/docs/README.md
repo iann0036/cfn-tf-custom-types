@@ -1,6 +1,6 @@
 # Terraform::AWS::RedshiftSecurityGroup
 
-CloudFormation equivalent of aws_redshift_security_group
+Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Description
 
+The description of the Redshift security group. Defaults to "Managed by Terraform".
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the Redshift security group.
 
 _Required_: Yes
 

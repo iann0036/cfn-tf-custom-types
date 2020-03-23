@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpcPeeringConnectionAccepter",
-    "description": "CloudFormation equivalent of aws_vpc_peering_connection_accepter",
+    "description": "Provides a resource to manage the accepter's side of a VPC Peering Connection.\n\nWhen a cross-account (requester's AWS account differs from the accepter's AWS account) or an inter-region\nVPC Peering Connection is created, a VPC Peering Connection resource is automatically created in the\naccepter's account.\nThe requester can use the `aws_vpc_peering_connection` resource to manage its side of the connection\nand the accepter can use the `aws_vpc_peering_connection_accepter` resource to \"adopt\" its side of the\nconnection into management.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Accepter": {
@@ -45,7 +45,8 @@
             "type": "string"
         },
         "AutoAccept": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether or not to accept the peering request. Defaults to `false`."
         },
         "Id": {
             "type": "string"
@@ -77,13 +78,15 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
             "type": "string"
         },
         "VpcPeeringConnectionId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC Peering Connection ID to manage."
         },
         "Accepter": {
             "type": "array",

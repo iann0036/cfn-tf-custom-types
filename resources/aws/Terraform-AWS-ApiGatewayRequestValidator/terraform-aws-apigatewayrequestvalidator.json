@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayRequestValidator",
-    "description": "CloudFormation equivalent of aws_api_gateway_request_validator",
+    "description": "Manages an API Gateway Request Validator.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the request validator."
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated Rest API."
         },
         "ValidateRequestBody": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean whether to validate request body. Defaults to `false`."
         },
         "ValidateRequestParameters": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Boolean whether to validate request parameters. Defaults to `false`."
         }
     },
     "additionalProperties": false,

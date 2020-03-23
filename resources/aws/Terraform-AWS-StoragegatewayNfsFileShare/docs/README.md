@@ -1,6 +1,6 @@
 # Terraform::AWS::StoragegatewayNfsFileShare
 
-CloudFormation equivalent of aws_storagegateway_nfs_file_share
+Manages an AWS Storage Gateway NFS File Share.
 
 ## Syntax
 
@@ -60,6 +60,8 @@ Properties:
 
 #### ClientList
 
+The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses or valid CIDR blocks. Set to `["0.0.0.0/0"]` to not limit access. Minimum 1 item. Maximum 100 items.
+
 _Required_: Yes
 
 _Type_: List of String
@@ -67,6 +69,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultStorageClass
+
+The default storage class for objects put into an Amazon S3 bucket by the file gateway. Defaults to `S3_STANDARD`. Valid values: `S3_STANDARD`, `S3_STANDARD_IA`, `S3_ONEZONE_IA`.
 
 _Required_: No
 
@@ -76,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GatewayArn
 
+Amazon Resource Name (ARN) of the file gateway.
+
 _Required_: Yes
 
 _Type_: String
@@ -83,6 +89,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GuessMimeTypeEnabled
+
+Boolean value that enables guessing of the MIME type for uploaded objects based on file extensions. Defaults to `true`.
 
 _Required_: No
 
@@ -92,6 +100,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsEncrypted
 
+Boolean value if `true` to use Amazon S3 server side encryption with your own AWS KMS key, or `false` to use a key managed by Amazon S3. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -99,6 +109,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsKeyArn
+
+Amazon Resource Name (ARN) for KMS key used for Amazon S3 server side encryption. This value can only be set when `kms_encrypted` is true.
 
 _Required_: No
 
@@ -108,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LocationArn
 
+The ARN of the backed storage used for storing file data.
+
 _Required_: Yes
 
 _Type_: String
@@ -115,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ObjectAcl
+
+Access Control List permission for S3 bucket objects. Defaults to `private`.
 
 _Required_: No
 
@@ -124,6 +140,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReadOnly
 
+Boolean to indicate write status of file share. File share does not accept writes if `true`. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -131,6 +149,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RequesterPays
+
+Boolean who pays the cost of the request and the data download from the Amazon S3 bucket. Set this value to `true` if you want the requester to pay instead of the bucket owner. Defaults to `false`.
 
 _Required_: No
 
@@ -140,6 +160,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RoleArn
 
+The ARN of the AWS Identity and Access Management (IAM) role that a file gateway assumes when it accesses the underlying storage.
+
 _Required_: Yes
 
 _Type_: String
@@ -148,6 +170,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Squash
 
+Maps a user to anonymous user. Defaults to `RootSquash`. Valid values: `RootSquash` (only root is mapped to anonymous user), `NoSquash` (no one is mapped to anonymous user), `AllSquash` (everyone is mapped to anonymous user).
+
 _Required_: No
 
 _Type_: String
@@ -155,6 +179,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

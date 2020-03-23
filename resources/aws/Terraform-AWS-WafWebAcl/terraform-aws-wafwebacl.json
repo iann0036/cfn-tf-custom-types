@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::WafWebAcl",
-    "description": "CloudFormation equivalent of aws_waf_web_acl",
+    "description": "Provides a WAF Web ACL Resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DefaultAction": {
@@ -137,10 +137,12 @@
             "type": "string"
         },
         "MetricName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or description for the Amazon CloudWatch metric of this web ACL."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or description of the web ACL."
         },
         "Tags": {
             "type": "array",
@@ -160,7 +162,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "DefaultAction": {
             "type": "array",

@@ -1,6 +1,10 @@
 # Terraform::AWS::LbListenerCertificate
 
-CloudFormation equivalent of aws_lb_listener_certificate
+Provides a Load Balancer Listener Certificate resource.
+
+This resource is for additional certificates and does not replace the default certificate on the listener.
+
+~> **Note:** `aws_alb_listener_certificate` is known as `aws_lb_listener_certificate`. The functionality is identical.
 
 ## Syntax
 
@@ -31,6 +35,8 @@ Properties:
 
 #### CertificateArn
 
+The ARN of the certificate to attach to the listener.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ListenerArn
+
+The ARN of the listener to which to attach the certificate.
 
 _Required_: Yes
 

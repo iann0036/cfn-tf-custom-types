@@ -1,6 +1,6 @@
 # Terraform::AWS::ServiceDiscoveryService
 
-CloudFormation equivalent of aws_service_discovery_service
+Provides a Service Discovery Service resource.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### Description
 
+The description of the service.
+
 _Required_: No
 
 _Type_: String
@@ -53,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the service.
+
 _Required_: Yes
 
 _Type_: String
@@ -60,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NamespaceId
+
+The ID of the namespace that you want to use to create the service.
 
 _Required_: No
 

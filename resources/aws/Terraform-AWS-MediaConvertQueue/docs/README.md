@@ -1,6 +1,6 @@
 # Terraform::AWS::MediaConvertQueue
 
-CloudFormation equivalent of aws_media_convert_queue
+Provides an AWS Elemental MediaConvert Queue.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### Description
 
+A description of the queue.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +50,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique identifier describing the queue.
 
 _Required_: Yes
 
@@ -57,6 +61,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PricingPlan
 
+Specifies whether the pricing plan for the queue is on-demand or reserved. Valid values are `ON_DEMAND` or `RESERVED`. Default to `ON_DEMAND`.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +71,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+A status of the queue. Valid values are `ACTIVE` or `RESERVED`. Default to `PAUSED`.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +80,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

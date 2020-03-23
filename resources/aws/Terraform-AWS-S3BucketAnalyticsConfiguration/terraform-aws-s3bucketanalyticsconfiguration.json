@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::S3BucketAnalyticsConfiguration",
-    "description": "CloudFormation equivalent of aws_s3_bucket_analytics_configuration",
+    "description": "Provides a S3 bucket [analytics configuration](https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html) resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Filter": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Object prefix for filtering."
                 },
                 "Tags": {
                     "type": "array",
@@ -28,7 +29,8 @@
                             "MapKey",
                             "MapValue"
                         ]
-                    }
+                    },
+                    "description": "Set of object tags for filtering."
                 }
             },
             "required": []
@@ -54,7 +56,8 @@
             "additionalProperties": false,
             "properties": {
                 "OutputSchemaVersion": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The schema version of exported analytics data. Allowed values: `V_1`. Default value: `V_1`."
                 },
                 "Destination": {
                     "type": "array",
@@ -89,16 +92,20 @@
             "additionalProperties": false,
             "properties": {
                 "BucketAccountId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The account ID that owns the destination bucket."
                 },
                 "BucketArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ARN of the destination bucket."
                 },
                 "Format": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The output format of exported analytics data. Allowed values: `CSV`. Default value: `CSV`."
                 },
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The prefix to append to exported analytics data."
                 }
             },
             "required": [
@@ -112,13 +119,15 @@
             "type": "string"
         },
         "Bucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the bucket this analytics configuration is associated with."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Unique identifier of the analytics configuration for the bucket."
         },
         "Filter": {
             "type": "array",

@@ -1,6 +1,7 @@
 # Terraform::AWS::Ec2ClientVpnNetworkAssociation
 
-CloudFormation equivalent of aws_ec2_client_vpn_network_association
+Provides network associations for AWS Client VPN endpoints. For more information on usage, please see the 
+[AWS Client VPN Administrator's Guide](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/what-is.html).
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### ClientVpnEndpointId
 
+The ID of the Client VPN endpoint.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetId
+
+The ID of the subnet to associate with the Client VPN endpoint.
 
 _Required_: Yes
 

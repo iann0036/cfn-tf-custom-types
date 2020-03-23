@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AthenaNamedQuery",
-    "description": "CloudFormation equivalent of aws_athena_named_query",
+    "description": "Provides an Athena Named Query resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "Database": {
-            "type": "string"
+            "type": "string",
+            "description": "The database to which the query belongs."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A brief explanation of the query. Maximum length of 1024."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The plain language name for the query. Maximum length of 128."
         },
         "Query": {
-            "type": "string"
+            "type": "string",
+            "description": "The text of the query itself. In other words, all query statements. Maximum length of 262144."
         },
         "Workgroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The workgroup to which the query belongs. Defaults to `primary`."
         }
     },
     "additionalProperties": false,

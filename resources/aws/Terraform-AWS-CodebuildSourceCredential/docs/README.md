@@ -1,6 +1,6 @@
 # Terraform::AWS::CodebuildSourceCredential
 
-CloudFormation equivalent of aws_codebuild_source_credential
+Provides a CodeBuild Source Credentials Resource.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### AuthType
 
+The type of authentication used to connect to a GitHub, GitHub Enterprise, or Bitbucket repository. An OAUTH connection is not supported by the API.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerType
+
+The source provider used for this project.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Token
 
+For `GitHub` or `GitHub Enterprise`, this is the personal access token. For `Bitbucket`, this is the app password.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserName
+
+The Bitbucket username when the authType is `BASIC_AUTH`. This parameter is not valid for other types of source providers or connections.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Route53ResolverEndpoint",
-    "description": "CloudFormation equivalent of aws_route53_resolver_endpoint",
+    "description": "Provides a Route 53 Resolver endpoint resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "IpAddress": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Ip": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IP address in the subnet that you want to use for DNS queries."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ID of the subnet that contains the IP address."
                 }
             },
             "required": [
@@ -44,7 +46,8 @@
             "type": "string"
         },
         "Direction": {
-            "type": "string"
+            "type": "string",
+            "description": "The direction of DNS queries to or from the Route 53 Resolver endpoint.\nValid values are `INBOUND` (resolver forwards DNS queries to the DNS service for a VPC from your network or another VPC)\nor `OUTBOUND` (resolver forwards DNS queries from the DNS service for a VPC to your network or another VPC)."
         },
         "HostVpcId": {
             "type": "string"
@@ -53,14 +56,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The friendly name of the Route 53 Resolver endpoint."
         },
         "SecurityGroupIds": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The ID of one or more security groups that you want to use to control access to this VPC."
         },
         "Tags": {
             "type": "array",
@@ -80,7 +85,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "IpAddress": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::AWS::WafregionalWebAcl
 
-CloudFormation equivalent of aws_wafregional_web_acl
+Provides a WAF Regional Web ACL Resource for use with Application Load Balancer.
 
 ## Syntax
 
@@ -55,6 +55,8 @@ Properties:
 
 #### MetricName
 
+The name or description for the Amazon CloudWatch metric of this web ACL.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name or description of the web ACL.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

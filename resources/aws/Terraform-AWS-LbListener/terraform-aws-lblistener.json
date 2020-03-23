@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LbListener",
-    "description": "CloudFormation equivalent of aws_lb_listener",
+    "description": "Provides a Load Balancer Listener resource.\n\n~> **Note:** `aws_alb_listener` is known as `aws_lb_listener`. The functionality is identical.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "DefaultAction": {
@@ -11,10 +11,12 @@
                     "type": "number"
                 },
                 "TargetGroupArn": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The ARN of the Target Group to which to route traffic. Required if `type` is `forward`."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of routing action. Valid values are `forward`, `redirect`, `fixed-response`, `authenticate-cognito` and `authenticate-oidc`."
                 },
                 "AuthenticateCognito": {
                     "type": "array",
@@ -184,13 +186,16 @@
             "additionalProperties": false,
             "properties": {
                 "ContentType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The content type. Valid values are `text/plain`, `text/css`, `text/html`, `application/javascript` and `application/json`."
                 },
                 "MessageBody": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The message body."
                 },
                 "StatusCode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The HTTP response code. Valid values are `2XX`, `4XX`, or `5XX`."
                 }
             },
             "required": [
@@ -202,22 +207,28 @@
             "additionalProperties": false,
             "properties": {
                 "Host": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The hostname. This component is not percent-encoded. The hostname can contain `#{host}`. Defaults to `#{host}`."
                 },
                 "Path": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The absolute path, starting with the leading \"/\". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}. Defaults to `/#{path}`."
                 },
                 "Port": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The port. Specify a value from `1` to `65535` or `#{port}`. Defaults to `#{port}`."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol. Valid values are `HTTP`, `HTTPS`, or `#{protocol}`. Defaults to `#{protocol}`."
                 },
                 "Query": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading \"?\". Defaults to `#{query}`."
                 },
                 "StatusCode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The HTTP redirect code. The redirect is either permanent (`HTTP_301`) or temporary (`HTTP_302`)."
                 }
             },
             "required": [
@@ -234,22 +245,27 @@
             "type": "string"
         },
         "CertificateArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the default SSL server certificate. Exactly one certificate is required if the protocol is HTTPS. For adding additional SSL certificates, see the [`aws_lb_listener_certificate` resource](/docs/providers/aws/r/lb_listener_certificate.html)."
         },
         "Id": {
             "type": "string"
         },
         "LoadBalancerArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the load balancer."
         },
         "Port": {
-            "type": "number"
+            "type": "number",
+            "description": "The port on which the load balancer is listening."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol for connections from clients to the load balancer. Valid values are `TCP`, `TLS`, `UDP`, `TCP_UDP`, `HTTP` and `HTTPS`. Defaults to `HTTP`."
         },
         "SslPolicy": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the SSL Policy for the listener. Required if `protocol` is `HTTPS` or `TLS`."
         },
         "DefaultAction": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ConfigAggregateAuthorization",
-    "description": "CloudFormation equivalent of aws_config_aggregate_authorization",
+    "description": "Manages an AWS Config Aggregate Authorization",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AccountId": {
-            "type": "string"
+            "type": "string",
+            "description": "Account ID."
         },
         "Arn": {
             "type": "string"
@@ -18,7 +19,8 @@
             "type": "string"
         },
         "Region": {
-            "type": "string"
+            "type": "string",
+            "description": "Region."
         },
         "Tags": {
             "type": "array",
@@ -38,7 +40,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

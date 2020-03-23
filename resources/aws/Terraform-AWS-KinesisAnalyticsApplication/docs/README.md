@@ -1,6 +1,9 @@
 # Terraform::AWS::KinesisAnalyticsApplication
 
-CloudFormation equivalent of aws_kinesis_analytics_application
+Provides a Kinesis Analytics Application resource. Kinesis Analytics is a managed service that
+allows processing and analyzing streaming data using standard SQL.
+
+For more details, see the [Amazon Kinesis Analytics Documentation][1].
 
 ## Syntax
 
@@ -84,6 +87,8 @@ Properties:
 
 #### Code
 
+SQL Code to transform input data, and generate output.
+
 _Required_: No
 
 _Type_: String
@@ -91,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of the application.
 
 _Required_: No
 
@@ -100,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the Kinesis Analytics Application.
+
 _Required_: Yes
 
 _Type_: String
@@ -107,6 +116,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of tags for the Kinesis Analytics Application.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::NeptuneClusterSnapshot",
-    "description": "CloudFormation equivalent of aws_neptune_cluster_snapshot",
+    "description": "Manages a Neptune database cluster snapshot.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -30,13 +30,15 @@
             }
         },
         "DbClusterIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The DB Cluster Identifier from which to take the snapshot."
         },
         "DbClusterSnapshotArn": {
             "type": "string"
         },
         "DbClusterSnapshotIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The Identifier for the snapshot."
         },
         "Engine": {
             "type": "string"

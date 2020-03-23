@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Owner
 
+The override value for the owner on replicated objects. Currently only `Destination` is supported.
+
 _Required_: Yes
 
 _Type_: String

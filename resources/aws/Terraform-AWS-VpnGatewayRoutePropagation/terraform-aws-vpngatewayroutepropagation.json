@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpnGatewayRoutePropagation",
-    "description": "CloudFormation equivalent of aws_vpn_gateway_route_propagation",
+    "description": "Requests automatic route propagation between a VPN gateway and a route table.\n\n~> **Note:** This resource should not be used with a route table that has\nthe `propagating_vgws` argument set. If that argument is set, any route\npropagation not explicitly listed in its value will be removed.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "RouteTableId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the `aws_route_table` to propagate routes into."
         },
         "VpnGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the `aws_vpn_gateway` to propagate routes from."
         }
     },
     "additionalProperties": false,

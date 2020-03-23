@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Hostname
 
+The DNS host name for your virtual node.
+
 _Required_: Yes
 
 _Type_: String

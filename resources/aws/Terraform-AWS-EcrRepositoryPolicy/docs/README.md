@@ -1,6 +1,8 @@
 # Terraform::AWS::EcrRepositoryPolicy
 
-CloudFormation equivalent of aws_ecr_repository_policy
+Provides an Elastic Container Registry Repository Policy.
+
+Note that currently only one policy may be applied to a repository.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### Policy
 
+The policy document. This is a JSON formatted string. For more information about building IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Repository
+
+Name of the repository to apply the policy.
 
 _Required_: Yes
 

@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Prefix
 
+The prefix that an object must have to be included in the inventory results.
+
 _Required_: No
 
 _Type_: String

@@ -1,6 +1,6 @@
 # Terraform::AWS::AthenaWorkgroup
 
-CloudFormation equivalent of aws_athena_workgroup
+Provides an Athena Workgroup.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### Description
 
+Description of the workgroup.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the workgroup.
 
 _Required_: Yes
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### State
 
+State of the workgroup. Valid values are `DISABLED` or `ENABLED`. Defaults to `ENABLED`.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags for the workgroup.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LbCookieStickinessPolicy",
-    "description": "CloudFormation equivalent of aws_lb_cookie_stickiness_policy",
+    "description": "Provides a load balancer cookie stickiness policy, which allows an ELB to control the sticky session lifetime of the browser.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,23 @@
             "type": "string"
         },
         "CookieExpirationPeriod": {
-            "type": "number"
+            "type": "number",
+            "description": "The time period after which\nthe session cookie should be considered stale, expressed in seconds."
         },
         "Id": {
             "type": "string"
         },
         "LbPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The load balancer port to which the policy\nshould be applied. This must be an active listener on the load\nbalancer."
         },
         "LoadBalancer": {
-            "type": "string"
+            "type": "string",
+            "description": "The load balancer to which the policy\nshould be attached."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the stickiness policy."
         }
     },
     "additionalProperties": false,

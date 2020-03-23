@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LightsailDomain",
-    "description": "CloudFormation equivalent of aws_lightsail_domain",
+    "description": "Creates a domain resource for the specified domain (e.g., example.com).\nYou cannot register a new domain name using Lightsail. You must register\na domain name using Amazon Route 53 or another domain name registrar.\nIf you have already registered your domain, you can enter its name in\nthis parameter to manage the DNS records for that domain.\n\n~> **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see [\"Regions and Availability Zones in Amazon Lightsail\"](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,7 +12,8 @@
             "type": "string"
         },
         "DomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Lightsail domain to manage."
         },
         "Id": {
             "type": "string"

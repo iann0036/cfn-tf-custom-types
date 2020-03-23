@@ -37,6 +37,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Id
 
+Unique identifier for the rule.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Prefix
+
+Object keyname prefix identifying one or more objects to which the rule applies.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Priority
 
+The priority associated with the rule.
+
 _Required_: No
 
 _Type_: Double
@@ -60,6 +66,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Status
+
+The status of the rule. Either `Enabled` or `Disabled`. The rule is ignored if status is not Enabled.
 
 _Required_: Yes
 

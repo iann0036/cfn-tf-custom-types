@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Certificate
 
+The contents of the certificate's domain.crt file.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Chain
 
+Can be used to specify an intermediate certificate authority key or client authentication.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateKey
+
+The private key; the contents of the certificate's domain.key file.
 
 _Required_: Yes
 

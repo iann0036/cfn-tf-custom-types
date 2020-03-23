@@ -43,6 +43,8 @@ Properties:
 
 #### AuditStreamArn
 
+The ARN of the Amazon Kinesis data stream that receives the audit events.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DeviceCaCertificate
+
+The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DisplayName
 
+The name of the fleet.
+
 _Required_: No
 
 _Type_: String
@@ -67,6 +73,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A region-unique name for the AMI.
+
 _Required_: Yes
 
 _Type_: String
@@ -74,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### OptimizeForEndUserLocation
+
+The option to optimize for better performance by routing traffic through the closest AWS Region to users, which may be outside of your home Region. Defaults to `true`.
 
 _Required_: No
 

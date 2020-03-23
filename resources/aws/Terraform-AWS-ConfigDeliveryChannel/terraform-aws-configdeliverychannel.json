@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ConfigDeliveryChannel",
-    "description": "CloudFormation equivalent of aws_config_delivery_channel",
+    "description": "Provides an AWS Config Delivery Channel.\n\n~> **Note:** Delivery Channel requires a [Configuration Recorder](/docs/providers/aws/r/config_configuration_recorder.html) to be present. Use of `depends_on` (as shown below) is recommended to avoid race conditions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SnapshotDeliveryProperties": {
@@ -23,16 +23,20 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the delivery channel. Defaults to `default`. Changing it recreates the resource."
         },
         "S3BucketName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the S3 bucket used to store the configuration history."
         },
         "S3KeyPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "The prefix for the specified S3 bucket."
         },
         "SnsTopicArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the SNS topic that AWS Config delivers notifications to."
         },
         "SnapshotDeliveryProperties": {
             "type": "array",

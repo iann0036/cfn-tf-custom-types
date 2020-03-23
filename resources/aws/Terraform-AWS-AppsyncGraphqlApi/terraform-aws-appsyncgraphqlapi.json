@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppsyncGraphqlApi",
-    "description": "CloudFormation equivalent of aws_appsync_graphql_api",
+    "description": "Provides an AppSync GraphQL API.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AdditionalAuthenticationProvider": {
@@ -96,16 +96,19 @@
             "type": "string"
         },
         "AuthenticationType": {
-            "type": "string"
+            "type": "string",
+            "description": "The authentication type. Valid values: `API_KEY`, `AWS_IAM`, `AMAZON_COGNITO_USER_POOLS`, `OPENID_CONNECT`."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A user-supplied name for the GraphqlApi."
         },
         "Schema": {
-            "type": "string"
+            "type": "string",
+            "description": "The schema definition, in GraphQL schema language format. Terraform cannot perform drift detection of this configuration."
         },
         "Tags": {
             "type": "array",
@@ -125,7 +128,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Uris": {
             "type": "array",
@@ -148,7 +152,8 @@
             }
         },
         "XrayEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether tracing with X-ray is enabled. Defaults to false."
         },
         "AdditionalAuthenticationProvider": {
             "type": "array",

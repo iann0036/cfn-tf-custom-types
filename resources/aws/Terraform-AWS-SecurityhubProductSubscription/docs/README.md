@@ -1,6 +1,6 @@
 # Terraform::AWS::SecurityhubProductSubscription
 
-CloudFormation equivalent of aws_securityhub_product_subscription
+Subscribes to a Security Hub product.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### ProductArn
+
+The ARN of the product that generates findings that you want to import into Security Hub - see below.
 
 _Required_: Yes
 

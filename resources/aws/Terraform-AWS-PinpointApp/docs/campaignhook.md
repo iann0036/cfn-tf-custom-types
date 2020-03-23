@@ -26,6 +26,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### LambdaFunctionName
 
+Lambda function name or ARN to be called for delivery. Conflicts with `web_url`.
+
 _Required_: No
 
 _Type_: String
@@ -34,6 +36,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Mode
 
+What mode Lambda should be invoked in. Valid values for this parameter are `DELIVERY`, `FILTER`.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WebUrl
+
+Web URL to call for hook. If the URL has authentication specified it will be added as authentication to the request. Conflicts with `lambda_function_name`.
 
 _Required_: No
 

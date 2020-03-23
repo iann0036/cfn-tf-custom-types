@@ -1,6 +1,8 @@
 # Terraform::AWS::KmsExternalKey
 
-CloudFormation equivalent of aws_kms_external_key
+Manages a KMS Customer Master Key that uses external key material. To instead manage a KMS Customer Master Key where AWS automatically generates and potentially rotates key material, see the [`aws_kms_key` resource](/docs/providers/aws/r/kms_key.html).
+
+~> **Note:** All arguments including the key material will be stored in the raw state as plain-text. [Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -42,6 +44,8 @@ Properties:
 
 #### DeletionWindowInDays
 
+Duration in days after which the key is deleted after destruction of the resource. Must be between `7` and `30` days. Defaults to `30`.
+
 _Required_: No
 
 _Type_: Double
@@ -49,6 +53,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+Description of the key.
 
 _Required_: No
 
@@ -58,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Enabled
 
+Specifies whether the key is enabled. Keys pending import can only be `false`. Imported keys default to `true` unless expired.
+
 _Required_: No
 
 _Type_: Boolean
@@ -65,6 +73,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KeyMaterialBase64
+
+Base64 encoded 256-bit symmetric encryption key material to import. The CMK is permanently associated with this key material. The same key material can be reimported, but you cannot import different key material.
 
 _Required_: No
 
@@ -74,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Policy
 
+A key policy JSON document. If you do not provide a key policy, AWS KMS attaches a default key policy to the CMK.
+
 _Required_: No
 
 _Type_: String
@@ -82,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A key-value map of tags to assign to the key.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -89,6 +103,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ValidTo
+
+Time at which the imported key material expires. When the key material expires, AWS KMS deletes the key material and the CMK becomes unusable. If not specified, key material does not expire. Valid values: [RFC3339 time string](https://tools.ietf.org/html/rfc3339#section-5.8) (`YYYY-MM-DDTHH:MM:SSZ`).
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::CodedeployApp
 
-CloudFormation equivalent of aws_codedeploy_app
+Provides a CodeDeploy application to be used as a basis for deployments
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### ComputePlatform
 
+The compute platform can either be `ECS`, `Lambda`, or `Server`. Default is `Server`.
+
 _Required_: No
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the application.
 
 _Required_: Yes
 

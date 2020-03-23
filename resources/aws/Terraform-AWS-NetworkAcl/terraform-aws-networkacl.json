@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::NetworkAcl",
-    "description": "CloudFormation equivalent of aws_network_acl",
+    "description": "Provides an network ACL resource. You might set up network ACLs with rules similar\nto your security groups in order to add an additional layer of security to your VPC.\n\n~> **NOTE on Network ACLs and Network ACL Rules:** Terraform currently\nprovides both a standalone [Network ACL Rule](network_acl_rule.html) resource and a Network ACL resource with rules\ndefined in-line. At this time you cannot use a Network ACL with in-line rules\nin conjunction with any Network ACL Rule resources. Doing so will cause\na conflict of rule settings and will overwrite rules.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -43,7 +43,8 @@
                         "type": "number"
                     }
                 }
-            }
+            },
+            "description": "Specifies an egress rule. Parameters defined below.\nThis argument is processed in [attribute-as-blocks mode](/docs/configuration/attr-as-blocks.html)."
         },
         "Id": {
             "type": "string"
@@ -83,7 +84,8 @@
                         "type": "number"
                     }
                 }
-            }
+            },
+            "description": "Specifies an ingress rule. Parameters defined below.\nThis argument is processed in [attribute-as-blocks mode](/docs/configuration/attr-as-blocks.html)."
         },
         "OwnerId": {
             "type": "string"
@@ -96,7 +98,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Subnet IDs to apply the ACL to."
         },
         "Tags": {
             "type": "array",
@@ -116,10 +119,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated VPC."
         }
     },
     "additionalProperties": false,

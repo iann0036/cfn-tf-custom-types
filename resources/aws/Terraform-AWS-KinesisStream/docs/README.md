@@ -1,6 +1,9 @@
 # Terraform::AWS::KinesisStream
 
-CloudFormation equivalent of aws_kinesis_stream
+Provides a Kinesis Stream resource. Amazon Kinesis is a managed service that
+scales elastically for real-time processing of streaming big data.
+
+For more details, see the [Amazon Kinesis Documentation][1].
 
 ## Syntax
 
@@ -57,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EncryptionType
 
+The encryption type to use. The only acceptable values are `NONE` or `KMS`. The default value is `NONE`.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnforceConsumerDeletion
+
+A boolean that indicates all registered consumers should be deregistered from the stream so that the stream can be destroyed without error. The default value is `false`.
 
 _Required_: No
 
@@ -73,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyId
 
+The GUID for the customer-managed KMS key to use for encryption. You can also use a Kinesis-owned master key by specifying the alias `alias/aws/kinesis`.
+
 _Required_: No
 
 _Type_: String
@@ -81,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name to identify the stream. This is unique to the AWS account and region the Stream is created in.
+
 _Required_: Yes
 
 _Type_: String
@@ -88,6 +99,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RetentionPeriod
+
+Length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 168 hours. Minimum value is 24. Default is 24.
 
 _Required_: No
 
@@ -105,6 +118,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ShardLevelMetrics
 
+A list of shard-level CloudWatch metrics which can be enabled for the stream. See [Monitoring with CloudWatch][3] for more. Note that the value ALL should not be used; instead you should provide an explicit list of metrics you wish to enable.
+
 _Required_: No
 
 _Type_: List of String
@@ -112,6 +127,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

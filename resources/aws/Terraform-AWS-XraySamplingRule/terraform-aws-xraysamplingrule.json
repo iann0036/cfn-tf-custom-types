@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::XraySamplingRule",
-    "description": "CloudFormation equivalent of aws_xray_sampling_rule",
+    "description": "Creates and manages an AWS XRay Sampling Rule.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -29,43 +29,55 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Matches attributes derived from the request."
         },
         "FixedRate": {
-            "type": "number"
+            "type": "number",
+            "description": "The percentage of matching requests to instrument, after the reservoir is exhausted."
         },
         "Host": {
-            "type": "string"
+            "type": "string",
+            "description": "Matches the hostname from a request URL."
         },
         "HttpMethod": {
-            "type": "string"
+            "type": "string",
+            "description": "Matches the HTTP method of a request."
         },
         "Id": {
             "type": "string"
         },
         "Priority": {
-            "type": "number"
+            "type": "number",
+            "description": "The priority of the sampling rule."
         },
         "ReservoirSize": {
-            "type": "number"
+            "type": "number",
+            "description": "A fixed number of matching requests to instrument per second, prior to applying the fixed rate. The reservoir is not used directly by services, but applies to all services using the rule collectively."
         },
         "ResourceArn": {
-            "type": "string"
+            "type": "string",
+            "description": "Matches the ARN of the AWS resource on which the service runs."
         },
         "RuleName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the sampling rule."
         },
         "ServiceName": {
-            "type": "string"
+            "type": "string",
+            "description": "Matches the `name` that the service uses to identify itself in segments."
         },
         "ServiceType": {
-            "type": "string"
+            "type": "string",
+            "description": "Matches the `origin` that the service uses to identify its type in segments."
         },
         "UrlPath": {
-            "type": "string"
+            "type": "string",
+            "description": "Matches the path from a request URL."
         },
         "Version": {
-            "type": "number"
+            "type": "number",
+            "description": "The version of the sampling rule format (`1` )."
         }
     },
     "additionalProperties": false,

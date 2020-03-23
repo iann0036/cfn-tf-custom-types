@@ -1,6 +1,6 @@
 # Terraform::AWS::NetworkInterface
 
-CloudFormation equivalent of aws_network_interface
+Provides an Elastic network interface (ENI) resource.
 
 ## Syntax
 
@@ -49,6 +49,8 @@ Properties:
 
 #### Description
 
+A description for the network interface.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PrivateIps
 
+List of private IPs to assign to the ENI.
+
 _Required_: No
 
 _Type_: List of String
@@ -72,6 +76,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PrivateIpsCount
+
+Number of secondary private IPs to assign to the ENI. The total number of private IPs will be 1 + private_ips_count, as a primary private IP will be assiged to an ENI by default.
 
 _Required_: No
 
@@ -81,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+List of security group IDs to assign to the ENI.
+
 _Required_: No
 
 _Type_: List of String
@@ -88,6 +96,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceDestCheck
+
+Whether to enable source destination checking for the ENI. Default true.
 
 _Required_: No
 
@@ -97,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+Subnet ID to create the ENI in.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +116,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

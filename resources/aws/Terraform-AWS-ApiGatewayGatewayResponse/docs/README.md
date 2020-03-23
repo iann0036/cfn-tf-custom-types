@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayGatewayResponse
 
-CloudFormation equivalent of aws_api_gateway_gateway_response
+Provides an API Gateway Gateway Response for a REST API Gateway.
 
 ## Syntax
 
@@ -39,6 +39,8 @@ Properties:
 
 #### ResponseParameters
 
+A map specifying the parameters (paths, query strings and headers) of the Gateway Response.
+
 _Required_: No
 
 _Type_: List of <a href="responseparameters.md">ResponseParameters</a>
@@ -46,6 +48,8 @@ _Type_: List of <a href="responseparameters.md">ResponseParameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResponseTemplates
+
+A map specifying the templates used to transform the response body.
 
 _Required_: No
 
@@ -55,6 +59,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResponseType
 
+The response type of the associated GatewayResponse.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +69,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RestApiId
 
+The string identifier of the associated REST API.
+
 _Required_: Yes
 
 _Type_: String
@@ -70,6 +78,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StatusCode
+
+The HTTP status code of the Gateway Response.
 
 _Required_: No
 

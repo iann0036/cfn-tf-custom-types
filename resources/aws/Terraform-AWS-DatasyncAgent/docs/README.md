@@ -1,6 +1,8 @@
 # Terraform::AWS::DatasyncAgent
 
-CloudFormation equivalent of aws_datasync_agent
+Manages an AWS DataSync Agent deployed on premises.
+
+~> **NOTE:** One of `activation_key` or `ip_address` must be provided for resource creation (agent activation). Neither is required for resource import. If using `ip_address`, Terraform must be able to make an HTTP (port 80) GET request to the specified IP address from where it is running. The agent will turn off that HTTP server after activation.
 
 ## Syntax
 
@@ -38,6 +40,8 @@ Properties:
 
 #### ActivationKey
 
+DataSync Agent activation key during resource creation. Conflicts with `ip_address`. If an `ip_address` is provided instead, Terraform will retrieve the `activation_key` as part of the resource creation.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddress
+
+DataSync Agent IP address to retrieve activation key during resource creation. Conflicts with `activation_key`. DataSync Agent must be accessible on port 80 from where Terraform is running.
 
 _Required_: No
 
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the DataSync Agent.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value pairs of resource tags to assign to the DataSync Agent.
 
 _Required_: No
 

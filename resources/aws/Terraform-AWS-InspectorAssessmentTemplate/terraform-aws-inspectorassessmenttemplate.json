@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::InspectorAssessmentTemplate",
-    "description": "CloudFormation equivalent of aws_inspector_assessment_template",
+    "description": "Provides a Inspector assessment template",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,20 +12,23 @@
             "type": "string"
         },
         "Duration": {
-            "type": "number"
+            "type": "number",
+            "description": "The duration of the inspector run."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the assessment template."
         },
         "RulesPackageArns": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The rules to be used during the run."
         },
         "Tags": {
             "type": "array",
@@ -45,10 +48,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of tags for the Inspector assessment template."
         },
         "TargetArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The assessment target ARN to attach the template to."
         }
     },
     "additionalProperties": false,

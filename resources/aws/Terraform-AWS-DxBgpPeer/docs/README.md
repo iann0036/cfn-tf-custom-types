@@ -1,6 +1,6 @@
 # Terraform::AWS::DxBgpPeer
 
-CloudFormation equivalent of aws_dx_bgp_peer
+Provides a Direct Connect BGP peer resource.
 
 ## Syntax
 
@@ -41,6 +41,8 @@ Properties:
 
 #### AddressFamily
 
+The address family for the BGP peer. `ipv4 ` or `ipv6`.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AmazonAddress
+
+The IPv4 CIDR address to use to send traffic to Amazon.
+Required for IPv4 BGP peers on public virtual interfaces.
 
 _Required_: No
 
@@ -57,6 +62,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BgpAsn
 
+The autonomous system (AS) number for Border Gateway Protocol (BGP) configuration.
+
 _Required_: Yes
 
 _Type_: Double
@@ -64,6 +71,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BgpAuthKey
+
+The authentication key for BGP configuration.
 
 _Required_: No
 
@@ -73,6 +82,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CustomerAddress
 
+The IPv4 CIDR destination address to which Amazon should send traffic.
+Required for IPv4 BGP peers on public virtual interfaces.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualInterfaceId
+
+The ID of the Direct Connect virtual interface on which to create the BGP peer.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::LbSslNegotiationPolicy
 
-CloudFormation equivalent of aws_lb_ssl_negotiation_policy
+Provides a load balancer SSL negotiation policy, which allows an ELB to control the ciphers and protocols that are supported during SSL negotiations between a client and a load balancer.
 
 ## Syntax
 
@@ -36,6 +36,10 @@ Properties:
 
 #### LbPort
 
+The load balancer port to which the policy
+should be applied. This must be an active listener on the load
+balancer.
+
 _Required_: Yes
 
 _Type_: Double
@@ -44,6 +48,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### LoadBalancer
 
+The load balancer to which the policy
+should be attached.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +58,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the attribute
+* `value` - The value of the attribute.
 
 _Required_: Yes
 

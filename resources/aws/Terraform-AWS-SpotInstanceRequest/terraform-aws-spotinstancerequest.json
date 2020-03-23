@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SpotInstanceRequest",
-    "description": "CloudFormation equivalent of aws_spot_instance_request",
+    "description": "Provides an EC2 Spot Instance Request resource. This allows instances to be\nrequested on the spot market.\n\nBy default Terraform creates Spot Instance Requests with a `persistent` type,\nwhich means that for the duration of their lifetime, AWS will launch an\ninstance with the configured details if and when the spot market will accept\nthe requested price.\n\nOn destruction, Terraform will make an attempt to terminate the associated Spot\nInstance if there is one present.\n\nSpot Instances requests with a `one-time` type will close the spot request\nwhen the instance is terminated either by the request being below the current spot\nprice availability or by a user.\n\n~> **NOTE:** Because their behavior depends on the live status of the spot\nmarket, Spot Instance Requests have a unique lifecycle that makes them behave\ndifferently than other Terraform resources. Most importantly: there is __no\nguarantee__ that a Spot Instance exists to fulfill the request at any given\npoint in time. See the [AWS Spot Instance\ndocumentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html)\nfor more information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "CreditSpecification": {
@@ -140,7 +140,8 @@
             "type": "string"
         },
         "BlockDurationMinutes": {
-            "type": "number"
+            "type": "number",
+            "description": "The required duration for the Spot instances, in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).\nThe duration period starts as soon as your Spot instance receives its instance ID. At the end of the duration period, Amazon EC2 marks the Spot instance for termination and provides a Spot instance termination notice, which gives the instance a two-minute warning before it terminates.\nNote that you can't specify an Availability Zone group or a launch group if you specify a duration."
         },
         "CpuCoreCount": {
             "type": "number"
@@ -173,7 +174,8 @@
             "type": "string"
         },
         "InstanceInterruptionBehaviour": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates whether a Spot instance stops or terminates when it is interrupted. Default is `terminate` as this is the current AWS behaviour."
         },
         "InstanceState": {
             "type": "string"
@@ -195,7 +197,8 @@
             "type": "string"
         },
         "LaunchGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "A launch group is a group of spot instances that launch together and terminate together.\nIf left empty instances are launched and terminated individually."
         },
         "Monitoring": {
             "type": "boolean"
@@ -241,13 +244,15 @@
             "type": "string"
         },
         "SpotPrice": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum price to request on the spot market."
         },
         "SpotRequestState": {
             "type": "string"
         },
         "SpotType": {
-            "type": "string"
+            "type": "string",
+            "description": "If set to `one-time`, after\nthe instance is terminated, the spot request will be closed."
         },
         "SubnetId": {
             "type": "string"
@@ -270,7 +275,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Tenancy": {
             "type": "string"
@@ -282,10 +288,12 @@
             "type": "string"
         },
         "ValidFrom": {
-            "type": "string"
+            "type": "string",
+            "description": "The start date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). The default is to start fulfilling the request immediately."
         },
         "ValidUntil": {
-            "type": "string"
+            "type": "string",
+            "description": "The end date and time of the request, in UTC [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.8) format(for example, YYYY-MM-DDTHH:MM:SSZ). At this point, no new Spot instance requests are placed or enabled to fulfill the request. The default end date is 7 days from the current date."
         },
         "VolumeTags": {
             "type": "array",
@@ -315,7 +323,8 @@
             }
         },
         "WaitForFulfillment": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If set, Terraform will\nwait for the Spot Request to be fulfilled, and will throw an error if the\ntimeout of 10m is reached."
         },
         "CreditSpecification": {
             "type": "array",

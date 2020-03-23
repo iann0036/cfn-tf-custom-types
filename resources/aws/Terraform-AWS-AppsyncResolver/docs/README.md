@@ -1,6 +1,6 @@
 # Terraform::AWS::AppsyncResolver
 
-CloudFormation equivalent of aws_appsync_resolver
+Provides an AppSync Resolver.
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### ApiId
 
+The API ID for the GraphQL API.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DataSource
+
+The DataSource name.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Field
 
+The field name from the schema defined in the GraphQL API.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Kind
+
+The resolver type. Valid values are `UNIT` and `PIPELINE`.
 
 _Required_: No
 
@@ -76,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RequestTemplate
 
+The request mapping template for UNIT resolver or 'before mapping template' for PIPELINE resolver.
+
 _Required_: Yes
 
 _Type_: String
@@ -84,6 +94,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResponseTemplate
 
+The response mapping template for UNIT resolver or 'after mapping template' for PIPELINE resolver.
+
 _Required_: Yes
 
 _Type_: String
@@ -91,6 +103,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type name from the schema defined in the GraphQL API.
 
 _Required_: Yes
 

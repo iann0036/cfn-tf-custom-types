@@ -1,6 +1,8 @@
 # Terraform::AWS::RamResourceAssociation
 
-CloudFormation equivalent of aws_ram_resource_association
+Manages a Resource Access Manager (RAM) Resource Association.
+
+~> *NOTE:* Certain AWS resources (e.g. EC2 Subnets) can only be shared in an AWS account that is a member of an AWS Organizations organization with organization-wide Resource Access Manager functionality enabled. See the [Resource Access Manager User Guide](https://docs.aws.amazon.com/ram/latest/userguide/what-is.html) and AWS service specific documentation for additional information.
 
 ## Syntax
 
@@ -31,6 +33,8 @@ Properties:
 
 #### ResourceArn
 
+Amazon Resource Name (ARN) of the resource to associate with the RAM Resource Share.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceShareArn
+
+Amazon Resource Name (ARN) of the RAM Resource Share.
 
 _Required_: Yes
 

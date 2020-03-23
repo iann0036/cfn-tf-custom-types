@@ -1,6 +1,11 @@
 # Terraform::AWS::ElasticBeanstalkEnvironment
 
-CloudFormation equivalent of aws_elastic_beanstalk_environment
+Provides an Elastic Beanstalk Environment Resource. Elastic Beanstalk allows
+you to deploy and manage applications in the AWS cloud without worrying about
+the infrastructure that runs those applications.
+
+Environments are often things such as `development`, `integration`, or
+`production`.
 
 ## Syntax
 
@@ -63,6 +68,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CnamePrefix
 
+Prefix to use for the fully qualified DNS name of
+the Environment.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +79,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Short description of the Environment.
+
 _Required_: No
 
 _Type_: String
@@ -78,6 +88,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+A unique name for this Environment. This name is used
+in the application URL.
 
 _Required_: Yes
 
@@ -127,6 +140,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tier
 
+Elastic Beanstalk Environment tier. Valid values are `Worker`
+or `WebServer`. If tier is left blank `WebServer` will be used.
+
 _Required_: No
 
 _Type_: String
@@ -135,6 +151,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### VersionLabel
 
+The name of the Elastic Beanstalk Application Version
+to use in deployment.
+
 _Required_: No
 
 _Type_: String
@@ -142,6 +161,11 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WaitForReadyTimeout
+
+The maximum
+[duration](https://golang.org/pkg/time/#ParseDuration) that Terraform should
+wait for an Elastic Beanstalk Environment to be in a ready state before timing
+out.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ConfigConfigRule",
-    "description": "CloudFormation equivalent of aws_config_config_rule",
+    "description": "Provides an AWS Config Rule.\n\n~> **Note:** Config Rule requires an existing [Configuration Recorder](/docs/providers/aws/r/config_configuration_recorder.html) to be present. Use of `depends_on` is recommended (as shown below) to avoid race conditions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Scope": {
@@ -76,19 +76,23 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the rule."
         },
         "Id": {
             "type": "string"
         },
         "InputParameters": {
-            "type": "string"
+            "type": "string",
+            "description": "A string in JSON format that is passed to the AWS Config rule Lambda function."
         },
         "MaximumExecutionFrequency": {
-            "type": "string"
+            "type": "string",
+            "description": "The maximum frequency with which AWS Config runs evaluations for a rule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the rule."
         },
         "RuleId": {
             "type": "string"
@@ -111,7 +115,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Scope": {
             "type": "array",

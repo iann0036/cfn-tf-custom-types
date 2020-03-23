@@ -27,6 +27,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Location
 
+The location where AWS CodePipeline stores artifacts for a pipeline, such as an S3 bucket.
+
 _Required_: Yes
 
 _Type_: String
@@ -34,6 +36,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of the artifact store, such as Amazon S3.
 
 _Required_: Yes
 

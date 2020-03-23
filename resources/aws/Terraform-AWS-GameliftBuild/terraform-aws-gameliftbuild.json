@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::GameliftBuild",
-    "description": "CloudFormation equivalent of aws_gamelift_build",
+    "description": "Provides an Gamelift Build resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "StorageLocation": {
@@ -36,10 +36,12 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the build."
         },
         "OperatingSystem": {
-            "type": "string"
+            "type": "string",
+            "description": "Operating system that the game server binaries are built to run on. e.g. `WINDOWS_2012` or `AMAZON_LINUX`."
         },
         "Tags": {
             "type": "array",
@@ -59,10 +61,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "Version that is associated with this build."
         },
         "StorageLocation": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Route53Zone",
-    "description": "CloudFormation equivalent of aws_route53_zone",
+    "description": "Manages a Route53 Hosted Zone.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Vpc": {
@@ -25,19 +25,23 @@
             "type": "string"
         },
         "Comment": {
-            "type": "string"
+            "type": "string",
+            "description": "A comment for the hosted zone. Defaults to 'Managed by Terraform'."
         },
         "DelegationSetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the reusable delegation set whose NS records you want to assign to the hosted zone. Conflicts with `vpc` as delegation sets can only be used for public zones."
         },
         "ForceDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to destroy all records (possibly managed outside of Terraform) in the zone when destroying the zone."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "This is the name of the hosted zone."
         },
         "NameServers": {
             "type": "array",
@@ -64,7 +68,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the zone."
         },
         "VpcId": {
             "type": "string"

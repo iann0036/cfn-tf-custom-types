@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Route53ZoneAssociation",
-    "description": "CloudFormation equivalent of aws_route53_zone_association",
+    "description": "Manages a Route53 Hosted Zone VPC association. VPC associations can only be made on private zones.\n\n~> **NOTE:** Unless explicit association ordering is required (e.g. a separate cross-account association authorization), usage of this resource is not recommended. Use the `vpc` configuration blocks available within the [`aws_route53_zone` resource](/docs/providers/aws/r/route53_zone.html) instead.\n\n~> **NOTE:** Terraform provides both this standalone Zone VPC Association resource and exclusive VPC associations defined in-line in the [`aws_route53_zone` resource](/docs/providers/aws/r/route53_zone.html) via `vpc` configuration blocks. At this time, you cannot use those in-line VPC associations in conjunction with this resource and the same zone ID otherwise it will cause a perpetual difference in plan output. You can optionally use the generic Terraform resource [lifecycle configuration block](/docs/configuration/resources.html#lifecycle) with `ignore_changes` in the `aws_route53_zone` resource to manage additional associations via this resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,16 @@
             "type": "string"
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC to associate with the private hosted zone."
         },
         "VpcRegion": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC's region. Defaults to the region of the AWS provider."
         },
         "ZoneId": {
-            "type": "string"
+            "type": "string",
+            "description": "The private hosted zone to associate."
         }
     },
     "additionalProperties": false,

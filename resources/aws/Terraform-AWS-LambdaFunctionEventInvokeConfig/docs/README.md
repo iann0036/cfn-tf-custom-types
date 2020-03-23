@@ -1,6 +1,6 @@
 # Terraform::AWS::LambdaFunctionEventInvokeConfig
 
-CloudFormation equivalent of aws_lambda_function_event_invoke_config
+Manages an asynchronous invocation configuration for a Lambda Function or Alias. More information about asynchronous invocations and the configurable values can be found in the [Lambda Developer Guide](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html).
 
 ## Syntax
 
@@ -44,6 +44,8 @@ Properties:
 
 #### FunctionName
 
+Name or Amazon Resource Name (ARN) of the Lambda Function, omitting any version or alias qualifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaximumEventAgeInSeconds
+
+Maximum age of a request that Lambda sends to a function for processing in seconds. Valid values between 60 and 21600.
 
 _Required_: No
 
@@ -60,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MaximumRetryAttempts
 
+Maximum number of times to retry when the function returns an error. Valid values between 0 and 2. Defaults to 2.
+
 _Required_: No
 
 _Type_: Double
@@ -67,6 +73,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Qualifier
+
+Lambda Function published version, `$LATEST`, or Lambda Alias name.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::GlueTrigger",
-    "description": "CloudFormation equivalent of aws_glue_trigger",
+    "description": "Manages a Glue Trigger resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Actions": {
@@ -134,13 +134,15 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Type": {
             "type": "string"
         },
         "WorkflowName": {
-            "type": "string"
+            "type": "string",
+            "description": "A workflow to which the trigger should be associated to. Every workflow graph (DAG) needs a starting trigger (`ON_DEMAND` or `SCHEDULED` type) and can contain multiple additional `CONDITIONAL` triggers."
         },
         "Actions": {
             "type": "array",

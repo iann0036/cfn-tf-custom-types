@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CodepipelineWebhook",
-    "description": "CloudFormation equivalent of aws_codepipeline_webhook",
+    "description": "Provides a CodePipeline Webhook.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AuthenticationConfiguration": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "AllowedIpRange": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A valid CIDR block for `IP` filtering. Required for `IP`."
                 },
                 "SecretToken": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The shared secret for the GitHub repository webhook. Set this as `secret` in your `github_repository_webhook`'s `configuration` block. Required for `GITHUB_HMAC`."
                 }
             },
             "required": []
@@ -21,10 +23,12 @@
             "additionalProperties": false,
             "properties": {
                 "JsonPath": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The [JSON path](https://github.com/json-path/JsonPath) to filter on."
                 },
                 "MatchEquals": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The value to match on (e.g. `refs/heads/{Branch}`). See [AWS docs](https://docs.aws.amazon.com/codepipeline/latest/APIReference/API_WebhookFilterRule.html) for details."
                 }
             },
             "required": [
@@ -39,13 +43,15 @@
             "type": "string"
         },
         "Authentication": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of authentication  to use. One of `IP`, `GITHUB_HMAC`, or `UNAUTHENTICATED`."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the webhook."
         },
         "Tags": {
             "type": "array",
@@ -65,13 +71,16 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "TargetAction": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the action in a pipeline you want to connect to the webhook. The action must be from the source (first) stage of the pipeline."
         },
         "TargetPipeline": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the pipeline."
         },
         "Url": {
             "type": "string"

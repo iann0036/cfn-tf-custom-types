@@ -1,6 +1,16 @@
 # Terraform::AWS::ElasticBeanstalkApplicationVersion
 
-CloudFormation equivalent of aws_elastic_beanstalk_application_version
+Provides an Elastic Beanstalk Application Version Resource. Elastic Beanstalk allows
+you to deploy and manage applications in the AWS cloud without worrying about
+the infrastructure that runs those applications.
+
+This resource creates a Beanstalk Application Version that can be deployed to a Beanstalk
+Environment.
+
+~> **NOTE on Application Version Resource:**  When using the Application Version resource with multiple 
+[Elastic Beanstalk Environments](elastic_beanstalk_environment.html) it is possible that an error may be returned
+when attempting to delete an Application Version while it is still in use by a different environment.
+To work around this you can either create each environment in a separate AWS account or create your `aws_elastic_beanstalk_application_version` resources with a unique names in your Elastic Beanstalk Application. For example &lt;revision&gt;-&lt;environment&gt;.
 
 ## Syntax
 
@@ -42,6 +52,8 @@ Properties:
 
 #### Application
 
+Name of the Beanstalk Application the version is associated with.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Bucket
+
+S3 bucket that contains the Application Version source bundle.
 
 _Required_: Yes
 
@@ -58,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+Short description of the Application Version.
+
 _Required_: No
 
 _Type_: String
@@ -65,6 +81,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ForceDelete
+
+On delete, force an Application Version to be deleted when it may be in use
+by multiple Elastic Beanstalk Environments.
 
 _Required_: No
 
@@ -74,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Key
 
+S3 object that is the Application Version source bundle.
+
 _Required_: Yes
 
 _Type_: String
@@ -82,6 +103,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A unique name for the this Application Version.
+
 _Required_: Yes
 
 _Type_: String
@@ -89,6 +112,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of tags for the Elastic Beanstalk Application Version.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::GuarddutyInviteAccepter
 
-CloudFormation equivalent of aws_guardduty_invite_accepter
+Provides a resource to accept a pending GuardDuty invite on creation, ensure the detector has the correct master account on read, and disassociate with the master account upon removal.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### DetectorId
 
+The detector ID of the member GuardDuty account.
+
 _Required_: Yes
 
 _Type_: String
@@ -40,6 +42,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MasterAccountId
+
+AWS account ID for master account.
 
 _Required_: Yes
 

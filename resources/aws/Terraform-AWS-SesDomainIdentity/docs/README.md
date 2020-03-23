@@ -1,6 +1,6 @@
 # Terraform::AWS::SesDomainIdentity
 
-CloudFormation equivalent of aws_ses_domain_identity
+Provides an SES domain identity resource
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### Domain
+
+The domain name to assign to SES.
 
 _Required_: Yes
 

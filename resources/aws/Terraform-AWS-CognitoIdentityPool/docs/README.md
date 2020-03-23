@@ -1,6 +1,6 @@
 # Terraform::AWS::CognitoIdentityPool
 
-CloudFormation equivalent of aws_cognito_identity_pool
+Provides an AWS Cognito Identity Pool.
 
 ## Syntax
 
@@ -95,6 +95,8 @@ _Type_: List of <a href="supportedloginproviders.md">SupportedLoginProviders</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the Identity Pool.
 
 _Required_: No
 

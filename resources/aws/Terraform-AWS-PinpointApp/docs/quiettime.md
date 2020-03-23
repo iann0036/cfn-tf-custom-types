@@ -24,6 +24,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### End
 
+The default end time for quiet time in ISO 8601 format. Required if `start` is set.
+
 _Required_: No
 
 _Type_: String
@@ -31,6 +33,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Start
+
+The default start time for quiet time in ISO 8601 format. Required if `end` is set.
 
 _Required_: No
 

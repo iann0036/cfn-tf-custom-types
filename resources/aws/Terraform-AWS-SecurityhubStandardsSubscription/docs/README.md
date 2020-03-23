@@ -1,6 +1,6 @@
 # Terraform::AWS::SecurityhubStandardsSubscription
 
-CloudFormation equivalent of aws_securityhub_standards_subscription
+Subscribes to a Security Hub standard.
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### StandardsArn
+
+The ARN of a standard - see below.
 
 _Required_: Yes
 

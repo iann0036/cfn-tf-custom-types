@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2TransitGatewayRouteTable",
-    "description": "CloudFormation equivalent of aws_ec2_transit_gateway_route_table",
+    "description": "Manages an EC2 Transit Gateway Route Table.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -35,10 +35,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value tags for the EC2 Transit Gateway Route Table."
         },
         "TransitGatewayId": {
-            "type": "string"
+            "type": "string",
+            "description": "Identifier of EC2 Transit Gateway."
         }
     },
     "additionalProperties": false,

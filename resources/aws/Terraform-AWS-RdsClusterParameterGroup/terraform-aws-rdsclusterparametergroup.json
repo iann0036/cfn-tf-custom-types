@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::RdsClusterParameterGroup",
-    "description": "CloudFormation equivalent of aws_rds_cluster_parameter_group",
+    "description": "Provides an RDS DB cluster parameter group resource. Documentation of the available parameters for various Aurora engines can be found at:\n\n* [Aurora MySQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraMySQL.Reference.html)\n* [Aurora PostgreSQL Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AuroraPostgreSQL.Reference.html)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Parameter": {
@@ -32,19 +32,23 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the DB cluster parameter group. Defaults to \"Managed by Terraform\"."
         },
         "Family": {
-            "type": "string"
+            "type": "string",
+            "description": "The family of the DB cluster parameter group."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DB parameter."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`."
         },
         "Tags": {
             "type": "array",
@@ -64,7 +68,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Parameter": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OpsworksPermission",
-    "description": "CloudFormation equivalent of aws_opsworks_permission",
+    "description": "Provides an OpsWorks permission resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,22 +9,27 @@
             "type": "string"
         },
         "AllowSsh": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the user is allowed to use SSH to communicate with the instance."
         },
         "AllowSudo": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the user is allowed to use sudo to elevate privileges."
         },
         "Id": {
             "type": "string"
         },
         "Level": {
-            "type": "string"
+            "type": "string",
+            "description": "The users permission level. Mus be one of `deny`, `show`, `deploy`, `manage`, `iam_only`."
         },
         "StackId": {
-            "type": "string"
+            "type": "string",
+            "description": "The stack to set the permissions for."
         },
         "UserArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The user's IAM ARN to set permissions for."
         }
     },
     "additionalProperties": false,

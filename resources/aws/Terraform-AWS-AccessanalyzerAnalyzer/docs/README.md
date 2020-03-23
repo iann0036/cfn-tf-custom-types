@@ -1,6 +1,6 @@
 # Terraform::AWS::AccessanalyzerAnalyzer
 
-CloudFormation equivalent of aws_accessanalyzer_analyzer
+Manages an Access Analyzer Analyzer. More information can be found in the [Access Analyzer User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html).
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### AnalyzerName
 
+Name of the Analyzer.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value mapping of resource tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -49,6 +53,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+Type of Analyzer. Valid value is currently only `ACCOUNT`. Defaults to `ACCOUNT`.
 
 _Required_: No
 

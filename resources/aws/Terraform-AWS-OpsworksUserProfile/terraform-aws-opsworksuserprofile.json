@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OpsworksUserProfile",
-    "description": "CloudFormation equivalent of aws_opsworks_user_profile",
+    "description": "Provides an OpsWorks User Profile resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,19 +9,23 @@
             "type": "string"
         },
         "AllowSelfManagement": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether users can specify their own SSH public key through the My Settings page."
         },
         "Id": {
             "type": "string"
         },
         "SshPublicKey": {
-            "type": "string"
+            "type": "string",
+            "description": "The users public key."
         },
         "SshUsername": {
-            "type": "string"
+            "type": "string",
+            "description": "The ssh username, with witch this user wants to log in."
         },
         "UserArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The user's IAM ARN."
         }
     },
     "additionalProperties": false,

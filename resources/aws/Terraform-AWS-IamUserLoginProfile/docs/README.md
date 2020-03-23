@@ -1,6 +1,8 @@
 # Terraform::AWS::IamUserLoginProfile
 
-CloudFormation equivalent of aws_iam_user_login_profile
+Manages an IAM User Login Profile with limited support for password creation during Terraform resource creation. Uses PGP to encrypt the password for safe transport to the user. PGP keys can be obtained from Keybase.
+
+-> To reset an IAM User login password via Terraform, you can use the [`terraform taint` command](https://www.terraform.io/docs/commands/taint.html) or change any of the arguments.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### PasswordLength
 
+The length of the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument.
+
 _Required_: No
 
 _Type_: Double
@@ -42,6 +46,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PasswordResetRequired
+
+Whether the user should be forced to reset the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument.
 
 _Required_: No
 
@@ -51,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PgpKey
 
+Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:username`. Only applies on resource creation. Drift detection is not possible with this argument.
+
 _Required_: Yes
 
 _Type_: String
@@ -58,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+The IAM user's name.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OpsworksApplication",
-    "description": "CloudFormation equivalent of aws_opsworks_application",
+    "description": "Provides an OpsWorks application resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AppSource": {
@@ -8,22 +8,28 @@
             "additionalProperties": false,
             "properties": {
                 "Password": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Password to use when authenticating to the source. Terraform cannot perform drift detection of this configuration."
                 },
                 "Revision": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "For sources that are version-aware, the revision to use."
                 },
                 "SshKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "SSH key to use when authenticating to the source. Terraform cannot perform drift detection of this configuration."
                 },
                 "Type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of source to use. For example, \"archive\"."
                 },
                 "Url": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The URL where the app resource can be found."
                 },
                 "Username": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Username to use when authenticating to the source."
                 }
             },
             "required": [
@@ -35,13 +41,16 @@
             "additionalProperties": false,
             "properties": {
                 "Key": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Variable name."
                 },
                 "Secure": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Set visibility of the variable value to `true` or `false`."
                 },
                 "Value": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Variable value."
                 }
             },
             "required": [
@@ -54,13 +63,16 @@
             "additionalProperties": false,
             "properties": {
                 "Certificate": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The contents of the certificate's domain.crt file."
                 },
                 "Chain": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Can be used to specify an intermediate certificate authority key or client authentication."
                 },
                 "PrivateKey": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The private key; the contents of the certificate's domain.key file."
                 }
             },
             "required": [
@@ -75,53 +87,67 @@
             "type": "string"
         },
         "AutoBundleOnDeploy": {
-            "type": "string"
+            "type": "string",
+            "description": "Run bundle install when deploying for application of type `rails`."
         },
         "AwsFlowRubySettings": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify activity and workflow workers for your app using the aws-flow gem."
         },
         "DataSourceArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The data source's ARN."
         },
         "DataSourceDatabaseName": {
-            "type": "string"
+            "type": "string",
+            "description": "The database name."
         },
         "DataSourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The data source's type one of `AutoSelectOpsworksMysqlInstance`, `OpsworksMysqlInstance`, or `RdsDbInstance`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of the app."
         },
         "DocumentRoot": {
-            "type": "string"
+            "type": "string",
+            "description": "Subfolder for the document root for application of type `rails`."
         },
         "Domains": {
             "type": "array",
             "insertionOrder": false,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of virtual host alias."
         },
         "EnableSsl": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether to enable SSL for the app. This must be set in order to let `ssl_configuration.private_key`, `ssl_configuration.certificate` and `ssl_configuration.chain` take effect."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A human-readable name for the application."
         },
         "RailsEnv": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the Rails environment for application of type `rails`."
         },
         "ShortName": {
-            "type": "string"
+            "type": "string",
+            "description": "A short, machine-readable name for the application. This can only be defined on resource creation and ignored on resource update."
         },
         "StackId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the stack the application will belong to."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Opsworks application type. One of `aws-flow-ruby`, `java`, `rails`, `php`, `nodejs`, `static` or `other`."
         },
         "AppSource": {
             "type": "array",

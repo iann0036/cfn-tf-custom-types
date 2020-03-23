@@ -30,6 +30,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### DisableScaleIn
 
+Indicates whether scale in by the target tracking policy is disabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -37,6 +39,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetValue
+
+The target value for the metric.
 
 _Required_: Yes
 

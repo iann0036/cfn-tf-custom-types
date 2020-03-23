@@ -1,6 +1,6 @@
 # Terraform::AWS::WafSqlInjectionMatchSet
 
-CloudFormation equivalent of aws_waf_sql_injection_match_set
+Provides a WAF SQL Injection Match Set Resource
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the SQL Injection Match Set.
 
 _Required_: Yes
 

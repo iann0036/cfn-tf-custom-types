@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SagemakerEndpoint",
-    "description": "CloudFormation equivalent of aws_sagemaker_endpoint",
+    "description": "Provides a SageMaker Endpoint resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,15 @@
             "type": "string"
         },
         "EndpointConfigName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the endpoint configuration to use."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the endpoint. If omitted, Terraform will assign a random, unique name."
         },
         "Tags": {
             "type": "array",
@@ -38,7 +40,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

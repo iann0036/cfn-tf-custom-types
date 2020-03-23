@@ -1,6 +1,6 @@
 # Terraform::AWS::CustomerGateway
 
-CloudFormation equivalent of aws_customer_gateway
+Provides a customer gateway inside a VPC. These objects can be connected to VPN gateways via VPN connections, and allow you to establish tunnels between your network and the VPC.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### BgpAsn
 
+The gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).
+
 _Required_: Yes
 
 _Type_: Double
@@ -43,6 +45,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IpAddress
+
+The IP address of the gateway's Internet-routable external interface.
 
 _Required_: Yes
 
@@ -52,6 +56,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Tags to apply to the gateway.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -59,6 +65,9 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of customer gateway. The only type AWS
+supports at this time is "ipsec.1".
 
 _Required_: Yes
 

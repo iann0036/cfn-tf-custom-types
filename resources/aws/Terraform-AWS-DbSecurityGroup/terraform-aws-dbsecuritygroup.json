@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DbSecurityGroup",
-    "description": "CloudFormation equivalent of aws_db_security_group",
+    "description": "Provides an RDS security group resource. This is only for DB instances in the\nEC2-Classic Platform. For instances inside a VPC, use the\n[`aws_db_instance.vpc_security_group_ids`](/docs/providers/aws/r/db_instance.html#vpc_security_group_ids)\nattribute instead.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Ingress": {
@@ -32,13 +32,15 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the DB security group. Defaults to \"Managed by Terraform\"."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the DB security group."
         },
         "Tags": {
             "type": "array",
@@ -58,7 +60,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Ingress": {
             "type": "array",

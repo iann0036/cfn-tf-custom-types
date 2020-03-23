@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SesReceiptFilter",
-    "description": "CloudFormation equivalent of aws_ses_receipt_filter",
+    "description": "Provides an SES receipt filter resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "Cidr": {
-            "type": "string"
+            "type": "string",
+            "description": "The IP address or address range to filter, in CIDR notation."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the filter."
         },
         "Policy": {
-            "type": "string"
+            "type": "string",
+            "description": "Block or Allow."
         }
     },
     "additionalProperties": false,

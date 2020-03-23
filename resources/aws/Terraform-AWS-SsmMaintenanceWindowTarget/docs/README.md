@@ -1,6 +1,6 @@
 # Terraform::AWS::SsmMaintenanceWindowTarget
 
-CloudFormation equivalent of aws_ssm_maintenance_window_target
+Provides an SSM Maintenance Window Target resource
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Description
 
+The description of the maintenance window target.
+
 _Required_: No
 
 _Type_: String
@@ -47,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name of the maintenance window target.
 
 _Required_: No
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### OwnerInformation
 
+User-provided value that will be included in any CloudWatch events raised while running tasks for these targets in this Maintenance Window.
+
 _Required_: No
 
 _Type_: String
@@ -64,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceType
 
+The type of target being registered with the Maintenance Window. Possible values `INSTANCE`.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +79,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WindowId
+
+The Id of the maintenance window to register the target with.
 
 _Required_: Yes
 

@@ -1,6 +1,13 @@
 # Terraform::AWS::Ami
 
-CloudFormation equivalent of aws_ami
+The AMI resource allows the creation and management of a completely-custom
+*Amazon Machine Image* (AMI).
+
+If you just want to duplicate an existing AMI, possibly copying it to another
+region, it's better to use `aws_ami_copy` instead.
+
+If you just want to share an existing AMI with another AWS account,
+it's better to use `aws_ami_launch_permission` instead.
 
 ## Syntax
 
@@ -58,6 +65,8 @@ Properties:
 
 #### Architecture
 
+Machine architecture for created instances. Defaults to "x86_64".
+
 _Required_: No
 
 _Type_: String
@@ -66,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Description
 
+A longer, human-readable description for the AMI.
+
 _Required_: No
 
 _Type_: String
@@ -73,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnaSupport
+
+Specifies whether enhanced networking with ENA is enabled. Defaults to `false`.
 
 _Required_: No
 
@@ -98,6 +111,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A region-unique name for the AMI.
+
 _Required_: Yes
 
 _Type_: String
@@ -113,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RootDeviceName
+
+The name of the root device (for example, `/dev/sda1`, or `/dev/xvda`).
 
 _Required_: No
 
@@ -130,6 +147,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -137,6 +156,10 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualizationType
+
+Keyword to choose what virtualization mode created instances
+will use. Can be either "paravirtual" (the default) or "hvm". The choice of virtualization type
+changes the set of further arguments that are required, as described below.
 
 _Required_: No
 

@@ -32,6 +32,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Password
 
+Password to use when authenticating to the source. Terraform cannot perform drift detection of this configuration.
+
 _Required_: No
 
 _Type_: String
@@ -39,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Revision
+
+For sources that are version-aware, the revision to use.
 
 _Required_: No
 
@@ -48,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SshKey
 
+SSH key to use when authenticating to the source. Terraform cannot perform drift detection of this configuration.
+
 _Required_: No
 
 _Type_: String
@@ -55,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of source to use. For example, "archive".
 
 _Required_: Yes
 
@@ -64,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Url
 
+The URL where the cookbooks resource can be found.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +81,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+Username to use when authenticating to the source.
 
 _Required_: No
 

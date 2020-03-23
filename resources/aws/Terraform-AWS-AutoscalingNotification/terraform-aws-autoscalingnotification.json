@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AutoscalingNotification",
-    "description": "CloudFormation equivalent of aws_autoscaling_notification",
+    "description": "Provides an AutoScaling Group with Notification support, via SNS Topics. Each of\nthe `notifications` map to a [Notification Configuration][2] inside Amazon Web\nServices, and are applied to each AutoScaling Group you supply.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -13,7 +13,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of AutoScaling Group Names."
         },
         "Id": {
             "type": "string"
@@ -23,10 +24,12 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Notification Types that trigger\nnotifications. Acceptable values are documented [in the AWS documentation here][1]."
         },
         "TopicArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Topic ARN for notifications to be sent through."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::PinpointGcmChannel",
-    "description": "CloudFormation equivalent of aws_pinpoint_gcm_channel",
+    "description": "Provides a Pinpoint GCM Channel resource.\n\n~> **Note:** Api Key argument will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,16 @@
             "type": "string"
         },
         "ApiKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Platform credential API key from Google."
         },
         "ApplicationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The application ID."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the channel is enabled or disabled. Defaults to `true`."
         },
         "Id": {
             "type": "string"

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Cloudtrail",
-    "description": "CloudFormation equivalent of aws_cloudtrail",
+    "description": "Provides a CloudTrail resource.\n\n~> *NOTE:* For a multi-region trail, this resource must be in the home region of the trail.\n\n~> *NOTE:* For an organization trail, this resource must be in the master account of the organization.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EventSelector": {
@@ -53,16 +53,20 @@
             "type": "string"
         },
         "CloudWatchLogsGroupArn": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies a log group name using an Amazon Resource Name (ARN),\nthat represents the log group to which CloudTrail logs will be delivered."
         },
         "CloudWatchLogsRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the role for the CloudWatch Logs\nendpoint to assume to write to a user\u2019s log group."
         },
         "EnableLogFileValidation": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether log file integrity validation is enabled.\nDefaults to `false`."
         },
         "EnableLogging": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Enables logging for the trail. Defaults to `true`.\nSetting this to `false` will pause logging."
         },
         "HomeRegion": {
             "type": "string"
@@ -71,28 +75,36 @@
             "type": "string"
         },
         "IncludeGlobalServiceEvents": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the trail is publishing events\nfrom global services such as IAM to the log files. Defaults to `true`."
         },
         "IsMultiRegionTrail": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the trail is created in the current\nregion or in all regions. Defaults to `false`."
         },
         "IsOrganizationTrail": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the trail is an AWS Organizations trail. Organization trails log events for the master account and all member accounts. Can only be created in the organization master account. Defaults to `false`."
         },
         "KmsKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the KMS key ARN to use to encrypt the logs delivered by CloudTrail."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the trail."
         },
         "S3BucketName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the S3 bucket designated for publishing log files."
         },
         "S3KeyPrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the S3 key prefix that follows\nthe name of the bucket you have designated for log file delivery."
         },
         "SnsTopicName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the Amazon SNS topic\ndefined for notification of log file delivery."
         },
         "Tags": {
             "type": "array",
@@ -112,7 +124,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the trail."
         },
         "EventSelector": {
             "type": "array",

@@ -1,6 +1,6 @@
 # Terraform::AWS::IamUserSshKey
 
-CloudFormation equivalent of aws_iam_user_ssh_key
+Uploads an SSH public key and associates it with the specified IAM user.
 
 ## Syntax
 
@@ -35,6 +35,8 @@ Properties:
 
 #### Encoding
 
+Specifies the public key encoding format to use in the response. To retrieve the public key in ssh-rsa format, use `SSH`. To retrieve the public key in PEM format, use `PEM`.
+
 _Required_: Yes
 
 _Type_: String
@@ -42,6 +44,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PublicKey
+
+The SSH public key. The public key must be encoded in ssh-rsa format or PEM format.
 
 _Required_: Yes
 
@@ -51,6 +55,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+The status to assign to the SSH public key. Active means the key can be used for authentication with an AWS CodeCommit repository. Inactive means the key cannot be used. Default is `active`.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The name of the IAM user to associate the SSH public key with.
 
 _Required_: Yes
 

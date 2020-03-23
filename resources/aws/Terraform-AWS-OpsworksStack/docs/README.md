@@ -1,6 +1,6 @@
 # Terraform::AWS::OpsworksStack
 
-CloudFormation equivalent of aws_opsworks_stack
+Provides an OpsWorks stack resource.
 
 ## Syntax
 
@@ -73,6 +73,8 @@ Properties:
 
 #### AgentVersion
 
+If set to `"LATEST"`, OpsWorks will automatically install the latest version.
+
 _Required_: No
 
 _Type_: String
@@ -80,6 +82,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### BerkshelfVersion
+
+If `manage_berkshelf` is enabled, the version of Berkshelf to use.
 
 _Required_: No
 
@@ -89,6 +93,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Color
 
+Color to paint next to the stack's resources in the OpsWorks console.
+
 _Required_: No
 
 _Type_: String
@@ -96,6 +102,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ConfigurationManagerName
+
+Name of the configuration manager to use. Defaults to "Chef".
 
 _Required_: No
 
@@ -105,6 +113,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ConfigurationManagerVersion
 
+Version of the configuration manager to use. Defaults to "11.4".
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +122,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomJson
+
+Custom JSON attributes to apply to the entire stack.
 
 _Required_: No
 
@@ -121,6 +133,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultAvailabilityZone
 
+Name of the availability zone where instances will be created
+by default. This is required unless you set `vpc_id`.
+
 _Required_: No
 
 _Type_: String
@@ -128,6 +143,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultInstanceProfileArn
+
+The ARN of an IAM Instance Profile that created instances
+will have by default.
 
 _Required_: Yes
 
@@ -137,6 +155,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultOs
 
+Name of OS that will be installed on instances by default.
+
 _Required_: No
 
 _Type_: String
@@ -144,6 +164,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultRootDeviceType
+
+Name of the type of root device instances will have by default.
 
 _Required_: No
 
@@ -153,6 +175,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultSshKeyName
 
+Name of the SSH keypair that instances will have by default.
+
 _Required_: No
 
 _Type_: String
@@ -160,6 +184,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DefaultSubnetId
+
+Id of the subnet in which instances will be created by default. Mandatory
+if `vpc_id` is set, and forbidden if it isn't.
 
 _Required_: No
 
@@ -169,6 +196,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### HostnameTheme
 
+Keyword representing the naming scheme that will be used for instance hostnames
+within this stack.
+
 _Required_: No
 
 _Type_: String
@@ -176,6 +206,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ManageBerkshelf
+
+Boolean value controlling whether Opsworks will run Berkshelf for this stack.
 
 _Required_: No
 
@@ -185,6 +217,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the stack.
+
 _Required_: Yes
 
 _Type_: String
@@ -192,6 +226,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Region
+
+The name of the region where the stack will exist.
 
 _Required_: Yes
 
@@ -201,6 +237,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceRoleArn
 
+The ARN of an IAM role that the OpsWorks service will act as.
+
 _Required_: Yes
 
 _Type_: String
@@ -208,6 +246,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 
@@ -217,6 +257,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseCustomCookbooks
 
+Boolean value controlling whether the custom cookbook settings are
+enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -225,6 +268,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UseOpsworksSecurityGroups
 
+Boolean value controlling whether the standard OpsWorks
+security groups apply to created instances.
+
 _Required_: No
 
 _Type_: Boolean
@@ -232,6 +278,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The id of the VPC that this stack belongs to.
 
 _Required_: No
 

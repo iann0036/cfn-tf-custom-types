@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::IamUserLoginProfile",
-    "description": "CloudFormation equivalent of aws_iam_user_login_profile",
+    "description": "Manages an IAM User Login Profile with limited support for password creation during Terraform resource creation. Uses PGP to encrypt the password for safe transport to the user. PGP keys can be obtained from Keybase.\n\n-> To reset an IAM User login password via Terraform, you can use the [`terraform taint` command](https://www.terraform.io/docs/commands/taint.html) or change any of the arguments.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -18,16 +18,20 @@
             "type": "string"
         },
         "PasswordLength": {
-            "type": "number"
+            "type": "number",
+            "description": "The length of the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument."
         },
         "PasswordResetRequired": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the user should be forced to reset the generated password on resource creation. Only applies on resource creation. Drift detection is not possible with this argument."
         },
         "PgpKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Either a base-64 encoded PGP public key, or a keybase username in the form `keybase:username`. Only applies on resource creation. Drift detection is not possible with this argument."
         },
         "User": {
-            "type": "string"
+            "type": "string",
+            "description": "The IAM user's name."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ami",
-    "description": "CloudFormation equivalent of aws_ami",
+    "description": "The AMI resource allows the creation and management of a completely-custom\n*Amazon Machine Image* (AMI).\n\nIf you just want to duplicate an existing AMI, possibly copying it to another\nregion, it's better to use `aws_ami_copy` instead.\n\nIf you just want to share an existing AMI with another AWS account,\nit's better to use `aws_ami_launch_permission` instead.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "EbsBlockDevice": {
@@ -8,25 +8,32 @@
             "additionalProperties": false,
             "properties": {
                 "DeleteOnTermination": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Boolean controlling whether the EBS volumes created to\nsupport each created instance will be deleted once that instance is terminated."
                 },
                 "DeviceName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The path at which the device is exposed to created instances."
                 },
                 "Encrypted": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Boolean controlling whether the created EBS volumes will be encrypted. Can't be used with `snapshot_id`."
                 },
                 "Iops": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "Number of I/O operations per second the\ncreated volumes will support."
                 },
                 "SnapshotId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The id of an EBS snapshot that will be used to initialize the created\nEBS volumes. If set, the `volume_size` attribute must be at least as large as the referenced\nsnapshot."
                 },
                 "VolumeSize": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The size of created volumes in GiB.\nIf `snapshot_id` is set and `volume_size` is omitted then the volume will have the same size\nas the selected snapshot."
                 },
                 "VolumeType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The type of EBS volume to create. Can be one of \"standard\" (the\ndefault), \"io1\" or \"gp2\"."
                 }
             },
             "required": [
@@ -38,10 +45,12 @@
             "additionalProperties": false,
             "properties": {
                 "DeviceName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The path at which the device is exposed to created instances."
                 },
                 "VirtualName": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "A name for the ephemeral device, of the form \"ephemeralN\" where\n*N* is a volume number starting from zero."
                 }
             },
             "required": [
@@ -72,13 +81,16 @@
             "type": "string"
         },
         "Architecture": {
-            "type": "string"
+            "type": "string",
+            "description": "Machine architecture for created instances. Defaults to \"x86_64\"."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A longer, human-readable description for the AMI."
         },
         "EnaSupport": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether enhanced networking with ENA is enabled. Defaults to `false`."
         },
         "Id": {
             "type": "string"
@@ -93,13 +105,15 @@
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A region-unique name for the AMI."
         },
         "RamdiskId": {
             "type": "string"
         },
         "RootDeviceName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the root device (for example, `/dev/sda1`, or `/dev/xvda`)."
         },
         "RootSnapshotId": {
             "type": "string"
@@ -125,10 +139,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VirtualizationType": {
-            "type": "string"
+            "type": "string",
+            "description": "Keyword to choose what virtualization mode created instances\nwill use. Can be either \"paravirtual\" (the default) or \"hvm\". The choice of virtualization type\nchanges the set of further arguments that are required, as described below."
         },
         "EbsBlockDevice": {
             "type": "array",

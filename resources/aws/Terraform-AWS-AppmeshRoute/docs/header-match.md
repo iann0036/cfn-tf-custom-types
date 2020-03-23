@@ -31,6 +31,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Exact
 
+The header value sent by the client must match the specified value exactly.
+
 _Required_: No
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Prefix
+
+The header value sent by the client must begin with the specified characters.
 
 _Required_: No
 
@@ -47,6 +51,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Regex
 
+The header value sent by the client must include the specified characters.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +60,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Suffix
+
+The header value sent by the client must end with the specified characters.
 
 _Required_: No
 

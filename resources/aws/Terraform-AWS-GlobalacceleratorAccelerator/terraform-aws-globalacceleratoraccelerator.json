@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::GlobalacceleratorAccelerator",
-    "description": "CloudFormation equivalent of aws_globalaccelerator_accelerator",
+    "description": "Creates a Global Accelerator accelerator.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Attributes": {
@@ -29,7 +29,8 @@
             "type": "string"
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether the accelerator is enabled. The value is true or false. The default value is true."
         },
         "HostedZoneId": {
             "type": "string"
@@ -38,7 +39,8 @@
             "type": "string"
         },
         "IpAddressType": {
-            "type": "string"
+            "type": "string",
+            "description": "The value for the address type must be `IPV4`."
         },
         "IpSets": {
             "type": "array",
@@ -61,7 +63,8 @@
             }
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the accelerator."
         },
         "Tags": {
             "type": "array",
@@ -81,7 +84,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Attributes": {
             "type": "array",

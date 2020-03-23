@@ -1,6 +1,6 @@
 # Terraform::AWS::AppmeshRoute
 
-CloudFormation equivalent of aws_appmesh_route
+Provides an AWS App Mesh route resource.
 
 ## Syntax
 
@@ -60,6 +60,8 @@ Properties:
 
 #### MeshName
 
+The name of the service mesh in which to create the route.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name to use for the route.
 
 _Required_: Yes
 
@@ -76,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -83,6 +89,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VirtualRouterName
+
+The name of the virtual router in which to create the route.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ElastictranscoderPipeline",
-    "description": "CloudFormation equivalent of aws_elastictranscoder_pipeline",
+    "description": "Provides an Elastic Transcoder pipeline resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "ContentConfig": {
@@ -8,10 +8,12 @@
             "additionalProperties": false,
             "properties": {
                 "Bucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Amazon S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists."
                 },
                 "StorageClass": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Amazon S3 storage class, Standard or ReducedRedundancy, that you want Elastic Transcoder to assign to the files and playlists that it stores in your Amazon S3 bucket."
                 }
             },
             "required": []
@@ -25,13 +27,16 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The permission that you want to give to the AWS user that you specified in `content_config_permissions.grantee`."
                 },
                 "Grantee": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The AWS user or group that you want to have access to transcoded files and playlists."
                 },
                 "GranteeType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specify the type of value that appears in the `content_config_permissions.grantee` object. Valid values are `Canonical`, `Email` or `Group`."
                 }
             },
             "required": []
@@ -41,16 +46,20 @@
             "additionalProperties": false,
             "properties": {
                 "Completed": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder has finished processing a job in this pipeline."
                 },
                 "Error": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters an error condition while processing a job in this pipeline."
                 },
                 "Progressing": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The topic ARN for the Amazon Simple Notification Service (Amazon SNS) topic that you want to notify when Elastic Transcoder has started to process a job in this pipeline."
                 },
                 "Warning": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The topic ARN for the Amazon SNS topic that you want to notify when Elastic Transcoder encounters a warning condition while processing a job in this pipeline."
                 }
             },
             "required": []
@@ -60,10 +69,12 @@
             "additionalProperties": false,
             "properties": {
                 "Bucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Amazon S3 bucket in which you want Elastic Transcoder to save thumbnail files."
                 },
                 "StorageClass": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The Amazon S3 storage class, Standard or ReducedRedundancy, that you want Elastic Transcoder to assign to the thumbnails that it stores in your Amazon S3 bucket."
                 }
             },
             "required": []
@@ -77,13 +88,16 @@
                     "insertionOrder": false,
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "The permission that you want to give to the AWS user that you specified in `thumbnail_config_permissions.grantee`."
                 },
                 "Grantee": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The AWS user or group that you want to have access to thumbnail files."
                 },
                 "GranteeType": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Specify the type of value that appears in the `thumbnail_config_permissions.grantee` object."
                 }
             },
             "required": []
@@ -98,22 +112,27 @@
             "type": "string"
         },
         "AwsKmsKeyArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline."
         },
         "Id": {
             "type": "string"
         },
         "InputBucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the pipeline. Maximum 40 characters."
         },
         "OutputBucket": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files."
         },
         "Role": {
-            "type": "string"
+            "type": "string",
+            "description": "The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline."
         },
         "ContentConfig": {
             "type": "array",

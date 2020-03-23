@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::StoragegatewayCache",
-    "description": "CloudFormation equivalent of aws_storagegateway_cache",
+    "description": "Manages an AWS Storage Gateway cache.\n\n~> **NOTE:** The Storage Gateway API provides no method to remove a cache disk. Destroying this Terraform resource does not perform any Storage Gateway actions.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "DiskId": {
-            "type": "string"
+            "type": "string",
+            "description": "Local disk identifier. For example, `pci-0000:03:00.0-scsi-0:0:0:0`."
         },
         "GatewayArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the gateway."
         },
         "Id": {
             "type": "string"

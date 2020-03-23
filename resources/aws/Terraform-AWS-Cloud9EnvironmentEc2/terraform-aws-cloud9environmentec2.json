@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Cloud9EnvironmentEc2",
-    "description": "CloudFormation equivalent of aws_cloud9_environment_ec2",
+    "description": "Provides a Cloud9 EC2 Development Environment.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,25 +12,31 @@
             "type": "string"
         },
         "AutomaticStopTimeMinutes": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of minutes until the running instance is shut down after the environment has last been used."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the environment."
         },
         "Id": {
             "type": "string"
         },
         "InstanceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of instance to connect to the environment, e.g. `t2.micro`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the environment."
         },
         "OwnerArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the environment owner. This can be ARN of any AWS IAM principal. Defaults to the environment's creator."
         },
         "SubnetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance."
         },
         "Tags": {
             "type": "array",
@@ -50,7 +56,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Type": {
             "type": "string"

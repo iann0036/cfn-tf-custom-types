@@ -1,6 +1,7 @@
 # Terraform::AWS::Ec2TrafficMirrorFilterRule
 
-CloudFormation equivalent of aws_ec2_traffic_mirror_filter_rule
+Provides an Traffic mirror filter rule.  
+Read [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring
 
 ## Syntax
 
@@ -49,6 +50,8 @@ Properties:
 
 #### Description
 
+A description of the traffic mirror filter rule.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationCidrBlock
+
+The destination CIDR block to assign to the Traffic Mirror rule.
 
 _Required_: Yes
 
@@ -65,6 +70,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Protocol
 
+The protocol number, for example 17 (UDP), to assign to the Traffic Mirror rule. For information about the protocol value, see [Protocol Numbers](https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml) on the Internet Assigned Numbers Authority (IANA) website.
+
 _Required_: No
 
 _Type_: Double
@@ -72,6 +79,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleAction
+
+The action to take (accept | reject) on the filtered traffic. Valid values are `accept` and `reject`.
 
 _Required_: Yes
 
@@ -81,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RuleNumber
 
+The number of the Traffic Mirror rule. This number must be unique for each Traffic Mirror rule in a given direction. The rules are processed in ascending order by rule number.
+
 _Required_: Yes
 
 _Type_: Double
@@ -88,6 +99,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SourceCidrBlock
+
+The source CIDR block to assign to the Traffic Mirror rule.
 
 _Required_: Yes
 
@@ -97,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TrafficDirection
 
+The direction of traffic to be captured. Valid values are `ingress` and `egress`.
+
 _Required_: Yes
 
 _Type_: String
@@ -104,6 +119,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TrafficMirrorFilterId
+
+ID of the traffic mirror filter to which this rule should be added.
 
 _Required_: Yes
 

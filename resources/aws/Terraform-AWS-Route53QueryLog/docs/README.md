@@ -1,6 +1,12 @@
 # Terraform::AWS::Route53QueryLog
 
-CloudFormation equivalent of aws_route53_query_log
+Provides a Route53 query logging configuration resource.
+
+~> **NOTE:** There are restrictions on the configuration of query logging. Notably,
+the CloudWatch log group must be in the `us-east-1` region,
+a permissive CloudWatch log resource policy must be in place, and
+the Route53 hosted zone must be public.
+See [Configuring Logging for DNS Queries](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html?console_help=true#query-logs-configuring) for additional details.
 
 ## Syntax
 
@@ -31,6 +37,8 @@ Properties:
 
 #### CloudwatchLogGroupArn
 
+CloudWatch log group ARN to send query logs.
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ZoneId
+
+Route53 hosted zone ID to enable query logs.
 
 _Required_: Yes
 

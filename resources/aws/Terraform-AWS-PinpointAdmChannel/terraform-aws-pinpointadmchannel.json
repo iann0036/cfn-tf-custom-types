@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::PinpointAdmChannel",
-    "description": "CloudFormation equivalent of aws_pinpoint_adm_channel",
+    "description": "Provides a Pinpoint ADM (Amazon Device Messaging) Channel resource.\n\n~> **Note:** All arguments including the Client ID and Client Secret will be stored in the raw state as plain-text.\n[Read more about sensitive data in state](/docs/state/sensitive-data.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,20 @@
             "type": "string"
         },
         "ApplicationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The application ID."
         },
         "ClientId": {
-            "type": "string"
+            "type": "string",
+            "description": "Client ID (part of OAuth Credentials) obtained via Amazon Developer Account."
         },
         "ClientSecret": {
-            "type": "string"
+            "type": "string",
+            "description": "Client Secret (part of OAuth Credentials) obtained via Amazon Developer Account."
         },
         "Enabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether to enable the channel. Defaults to `true`."
         },
         "Id": {
             "type": "string"

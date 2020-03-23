@@ -1,6 +1,6 @@
 # Terraform::AWS::PinpointEmailChannel
 
-CloudFormation equivalent of aws_pinpoint_email_channel
+Provides a Pinpoint SMS Channel resource.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### ApplicationId
 
+The application ID.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Enabled
+
+Whether the channel is enabled or disabled. Defaults to `true`.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### FromAddress
 
+The email address used to send emails from.
+
 _Required_: Yes
 
 _Type_: String
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Identity
 
+The ARN of an identity verified with SES.
+
 _Required_: Yes
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleArn
+
+The ARN of an IAM Role used to submit events to Mobile Analytics' event ingestion service.
 
 _Required_: Yes
 

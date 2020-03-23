@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayVpcLink
 
-CloudFormation equivalent of aws_api_gateway_vpc_link
+Provides an API Gateway VPC Link.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### Description
 
+The description of the VPC link.
+
 _Required_: No
 
 _Type_: String
@@ -44,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+The name used to label and identify the VPC link.
 
 _Required_: Yes
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value mapping of resource tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -60,6 +66,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetArns
+
+The list of network load balancer arns in the VPC targeted by the VPC link. Currently AWS only supports 1 target.
 
 _Required_: Yes
 

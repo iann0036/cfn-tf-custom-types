@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AppautoscalingPolicy",
-    "description": "CloudFormation equivalent of aws_appautoscaling_policy",
+    "description": "Provides an Application AutoScaling Policy resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "StepAdjustment": {
@@ -170,19 +170,24 @@
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy."
         },
         "PolicyType": {
-            "type": "string"
+            "type": "string",
+            "description": "For DynamoDB, only `TargetTrackingScaling` is supported. For Amazon ECS, Spot Fleet, and Amazon RDS, both `StepScaling` and `TargetTrackingScaling` are supported. For any other service, only `StepScaling` is supported. Defaults to `StepScaling`."
         },
         "ResourceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The resource type and unique identifier string for the resource associated with the scaling policy. Documentation can be found in the `ResourceId` parameter at: [AWS Application Auto Scaling API Reference](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)."
         },
         "ScalableDimension": {
-            "type": "string"
+            "type": "string",
+            "description": "The scalable dimension of the scalable target. Documentation can be found in the `ScalableDimension` parameter at: [AWS Application Auto Scaling API Reference](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)."
         },
         "ServiceNamespace": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS service namespace of the scalable target. Documentation can be found in the `ServiceNamespace` parameter at: [AWS Application Auto Scaling API Reference](http://docs.aws.amazon.com/ApplicationAutoScaling/latest/APIReference/API_RegisterScalableTarget.html#API_RegisterScalableTarget_RequestParameters)."
         },
         "StepAdjustment": {
             "type": "array",

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SsmPatchGroup",
-    "description": "CloudFormation equivalent of aws_ssm_patch_group",
+    "description": "Provides an SSM Patch Group resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "BaselineId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the patch baseline to register the patch group with."
         },
         "Id": {
             "type": "string"
         },
         "PatchGroup": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the patch group that should be registered with the patch baseline."
         }
     },
     "additionalProperties": false,

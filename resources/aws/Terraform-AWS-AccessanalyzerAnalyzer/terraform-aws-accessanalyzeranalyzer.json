@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AccessanalyzerAnalyzer",
-    "description": "CloudFormation equivalent of aws_accessanalyzer_analyzer",
+    "description": "Manages an Access Analyzer Analyzer. More information can be found in the [Access Analyzer User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AnalyzerName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the Analyzer."
         },
         "Arn": {
             "type": "string"
@@ -35,10 +36,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Type": {
-            "type": "string"
+            "type": "string",
+            "description": "Type of Analyzer. Valid value is currently only `ACCOUNT`. Defaults to `ACCOUNT`."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,11 @@
 # Terraform::AWS::DefaultSubnet
 
-CloudFormation equivalent of aws_default_subnet
+Provides a resource to manage a [default AWS VPC subnet](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html#default-vpc-basics)
+in the current region.
+
+The `aws_default_subnet` behaves differently from normal resources, in that
+Terraform does not _create_ this resource, but instead "adopts" it
+into management.
 
 ## Syntax
 
@@ -44,6 +49,10 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MapPublicIpOnLaunch
 
+Specify true to indicate
+that instances launched into the subnet should be assigned
+a public IP address.
+
 _Required_: No
 
 _Type_: Boolean
@@ -51,6 +60,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

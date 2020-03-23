@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DatasyncLocationS3",
-    "description": "CloudFormation equivalent of aws_datasync_location_s3",
+    "description": "Manages an S3 Location within AWS DataSync.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "S3Config": {
@@ -28,10 +28,12 @@
             "type": "string"
         },
         "S3BucketArn": {
-            "type": "string"
+            "type": "string",
+            "description": "Amazon Resource Name (ARN) of the S3 Bucket."
         },
         "Subdirectory": {
-            "type": "string"
+            "type": "string",
+            "description": "Prefix to perform actions as source or destination."
         },
         "Tags": {
             "type": "array",
@@ -51,7 +53,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value pairs of resource tags to assign to the DataSync Location."
         },
         "Uri": {
             "type": "string"

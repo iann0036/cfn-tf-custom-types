@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SfnStateMachine",
-    "description": "CloudFormation equivalent of aws_sfn_state_machine",
+    "description": "Provides a Step Function State Machine resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,19 @@
             "type": "string"
         },
         "Definition": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon States Language definition of the state machine."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the state machine."
         },
         "RoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the IAM role to use for this state machine."
         },
         "Status": {
             "type": "string"
@@ -44,7 +47,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         }
     },
     "additionalProperties": false,

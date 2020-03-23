@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SwfDomain",
-    "description": "CloudFormation equivalent of aws_swf_domain",
+    "description": "Provides an SWF Domain resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The domain description."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the domain. If omitted, Terraform will assign a random, unique name."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`."
         },
         "Tags": {
             "type": "array",
@@ -41,10 +44,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "WorkflowExecutionRetentionPeriodInDays": {
-            "type": "string"
+            "type": "string",
+            "description": "Length of time that SWF will continue to retain information about the workflow execution after the workflow execution is complete, must be between 0 and 90 days."
         }
     },
     "additionalProperties": false,

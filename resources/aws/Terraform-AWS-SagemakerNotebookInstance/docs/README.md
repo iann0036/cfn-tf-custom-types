@@ -1,6 +1,6 @@
 # Terraform::AWS::SagemakerNotebookInstance
 
-CloudFormation equivalent of aws_sagemaker_notebook_instance
+Provides a Sagemaker Notebook Instance resource.
 
 ## Syntax
 
@@ -47,6 +47,8 @@ Properties:
 
 #### DirectInternetAccess
 
+Set to `Disabled` to disable internet access to notebook. Requires `security_groups` and `subnet_id` to be set. Supported values: `Enabled` (Default) or `Disabled`. If set to `Disabled`, the notebook instance will be able to access resources only in your VPC, and will not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your VPC.
+
 _Required_: No
 
 _Type_: String
@@ -54,6 +56,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceType
+
+The name of ML compute instance type.
 
 _Required_: Yes
 
@@ -63,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyId
 
+The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption.
+
 _Required_: No
 
 _Type_: String
@@ -70,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LifecycleConfigName
+
+The name of a lifecycle configuration to associate with the notebook instance.
 
 _Required_: No
 
@@ -79,6 +87,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the notebook instance (must be unique).
+
 _Required_: Yes
 
 _Type_: String
@@ -86,6 +96,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleArn
+
+The ARN of the IAM role to be used by the notebook instance which allows SageMaker to call other services on your behalf.
 
 _Required_: Yes
 
@@ -95,6 +107,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroups
 
+The associated security groups.
+
 _Required_: No
 
 _Type_: List of String
@@ -103,6 +117,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetId
 
+The VPC subnet ID.
+
 _Required_: No
 
 _Type_: String
@@ -110,6 +126,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

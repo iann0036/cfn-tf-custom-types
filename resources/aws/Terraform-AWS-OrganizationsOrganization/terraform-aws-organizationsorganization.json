@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OrganizationsOrganization",
-    "description": "CloudFormation equivalent of aws_organizations_organization",
+    "description": "Provides a resource to create an organization.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -41,17 +41,20 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of AWS service principal names for which you want to enable integration with your organization. This is typically in the form of a URL, such as service-abbreviation.amazonaws.com. Organization must have `feature_set` set to `ALL`. For additional information, see the [AWS Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html)."
         },
         "EnabledPolicyTypes": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "List of Organizations policy types to enable in the Organization Root. Organization must have `feature_set` set to `ALL`. For additional information about valid policy types (e.g. `SERVICE_CONTROL_POLICY` and `TAG_POLICY`), see the [AWS Organizations API Reference](https://docs.aws.amazon.com/organizations/latest/APIReference/API_EnablePolicyType.html)."
         },
         "FeatureSet": {
-            "type": "string"
+            "type": "string",
+            "description": "Specify \"ALL\" (default) or \"CONSOLIDATED_BILLING\"."
         },
         "Id": {
             "type": "string"

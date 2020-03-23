@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudwatchDashboard
 
-CloudFormation equivalent of aws_cloudwatch_dashboard
+Provides a CloudWatch Dashboard resource.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### DashboardBody
 
+The detailed information about the dashboard, including what widgets are included and their location on the dashboard. You can read more about the body structure in the [documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html).
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DashboardName
+
+The name of the dashboard.
 
 _Required_: Yes
 

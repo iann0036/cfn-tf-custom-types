@@ -1,6 +1,6 @@
 # Terraform::AWS::MskCluster
 
-CloudFormation equivalent of aws_msk_cluster
+Manages AWS Managed Streaming for Kafka cluster
 
 ## Syntax
 
@@ -68,6 +68,8 @@ Properties:
 
 #### ClusterName
 
+Name of the MSK cluster.
+
 _Required_: Yes
 
 _Type_: String
@@ -75,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EnhancedMonitoring
+
+Specify the desired enhanced MSK CloudWatch monitoring level.  See [Monitoring Amazon MSK with Amazon CloudWatch](https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html).
 
 _Required_: No
 
@@ -84,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KafkaVersion
 
+Specify the desired Kafka software version.
+
 _Required_: Yes
 
 _Type_: String
@@ -92,6 +98,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NumberOfBrokerNodes
 
+The desired total number of broker nodes in the kafka cluster.  It must be a multiple of the number of specified client subnets.
+
 _Required_: Yes
 
 _Type_: Double
@@ -99,6 +107,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

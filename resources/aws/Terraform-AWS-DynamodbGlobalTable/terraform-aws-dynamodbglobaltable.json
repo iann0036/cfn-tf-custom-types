@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DynamodbGlobalTable",
-    "description": "CloudFormation equivalent of aws_dynamodb_global_table",
+    "description": "Provides a resource to manage a DynamoDB Global Table. These are layered on top of existing DynamoDB Tables.\n\n~> Note: There are many restrictions before you can properly create DynamoDB Global Tables in multiple regions. See the [AWS DynamoDB Global Table Requirements](http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables_reqs_bestpractices.html) for more information.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Replica": {
@@ -44,7 +44,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the global table. Must match underlying DynamoDB Table names in all regions."
         },
         "Replica": {
             "type": "array",

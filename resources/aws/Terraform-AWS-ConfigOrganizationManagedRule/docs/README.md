@@ -1,6 +1,10 @@
 # Terraform::AWS::ConfigOrganizationManagedRule
 
-CloudFormation equivalent of aws_config_organization_managed_rule
+Manages a Config Organization Managed Rule. More information about these rules can be found in the [Enabling AWS Config Rules Across all Accounts in Your Organization](https://docs.aws.amazon.com/config/latest/developerguide/config-rule-multi-account-deployment.html) and [AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html) documentation. For working with Organization Custom Rules (those invoking a custom Lambda Function), see the [`aws_config_organization_custom_rule` resource](/docs/providers/aws/r/config_organization_custom_rule.html).
+
+~> **NOTE:** This resource must be created in the Organization master account and rules will include the master account unless its ID is added to the `excluded_accounts` argument.
+
+~> **NOTE:** Every Organization account except those configured in the `excluded_accounts` argument must have a Configuration Recorder with proper IAM permissions before the rule will successfully create or update. See also the [`aws_config_configuration_recorder` resource](/docs/providers/aws/r/config_configuration_recorder.html).
 
 ## Syntax
 
@@ -51,6 +55,8 @@ Properties:
 
 #### Description
 
+Description of the rule.
+
 _Required_: No
 
 _Type_: String
@@ -58,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExcludedAccounts
+
+List of AWS account identifiers to exclude from the rule.
 
 _Required_: No
 
@@ -67,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InputParameters
 
+A string in JSON format that is passed to the AWS Config Rule Lambda Function.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### MaximumExecutionFrequency
+
+The maximum frequency with which AWS Config runs evaluations for a rule, if the rule is triggered at a periodic frequency. Defaults to `TwentyFour_Hours` for periodic frequency triggered rules. Valid values: `One_Hour`, `Three_Hours`, `Six_Hours`, `Twelve_Hours`, or `TwentyFour_Hours`.
 
 _Required_: No
 
@@ -83,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the rule.
+
 _Required_: Yes
 
 _Type_: String
@@ -90,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ResourceIdScope
+
+Identifier of the AWS resource to evaluate.
 
 _Required_: No
 
@@ -99,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ResourceTypesScope
 
+List of types of AWS resources to evaluate.
+
 _Required_: No
 
 _Type_: List of String
@@ -106,6 +124,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RuleIdentifier
+
+Identifier of an available AWS Config Managed Rule to call. For available values, see the [List of AWS Config Managed Rules](https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html) documentation.
 
 _Required_: Yes
 
@@ -115,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TagKeyScope
 
+Tag key of AWS resources to evaluate.
+
 _Required_: No
 
 _Type_: String
@@ -122,6 +144,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TagValueScope
+
+Tag value of AWS resources to evaluate.
 
 _Required_: No
 

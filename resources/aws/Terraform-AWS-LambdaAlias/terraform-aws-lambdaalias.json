@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::LambdaAlias",
-    "description": "CloudFormation equivalent of aws_lambda_alias",
+    "description": "Creates a Lambda function alias. Creates an alias that points to the specified Lambda function version.\n\nFor information about Lambda and how to use it, see [What is AWS Lambda?][1]\nFor information about function aliases, see [CreateAlias][2] and [AliasRoutingConfiguration][3] in the API docs.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "RoutingConfig": {
@@ -40,13 +40,16 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the alias."
         },
         "FunctionName": {
-            "type": "string"
+            "type": "string",
+            "description": "The function ARN of the Lambda function for which you want to create an alias."
         },
         "FunctionVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Lambda function version for which you are creating the alias. Pattern: `(\\$LATEST|[0-9]+)`."
         },
         "Id": {
             "type": "string"
@@ -55,7 +58,8 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Name for the alias you are creating. Pattern: `(?!^[0-9]+$)([a-zA-Z0-9-_]+)`."
         },
         "RoutingConfig": {
             "type": "array",

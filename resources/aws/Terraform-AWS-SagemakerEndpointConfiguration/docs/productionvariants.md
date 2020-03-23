@@ -40,6 +40,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InitialInstanceCount
 
+Initial number of instances used for auto-scaling.
+
 _Required_: Yes
 
 _Type_: Double
@@ -64,6 +66,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ModelName
 
+The name of the model to use.
+
 _Required_: Yes
 
 _Type_: String
@@ -71,6 +75,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VariantName
+
+The name of the variant. If omitted, Terraform will assign a random, unique name.
 
 _Required_: No
 

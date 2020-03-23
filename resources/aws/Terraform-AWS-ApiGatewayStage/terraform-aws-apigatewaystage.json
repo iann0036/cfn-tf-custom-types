@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayStage",
-    "description": "CloudFormation equivalent of aws_api_gateway_stage",
+    "description": "Provides an API Gateway Stage.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AccessLogSettings": {
@@ -29,22 +29,28 @@
             "type": "string"
         },
         "CacheClusterEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether a cache cluster is enabled for the stage."
         },
         "CacheClusterSize": {
-            "type": "string"
+            "type": "string",
+            "description": "The size of the cache cluster for the stage, if enabled.\nAllowed values include `0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118` and `237`."
         },
         "ClientCertificateId": {
-            "type": "string"
+            "type": "string",
+            "description": "The identifier of a client certificate for the stage."
         },
         "DeploymentId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the deployment that the stage points to."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the stage."
         },
         "DocumentationVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "The version of the associated API documentation."
         },
         "ExecutionArn": {
             "type": "string"
@@ -56,10 +62,12 @@
             "type": "string"
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated REST API."
         },
         "StageName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the stage."
         },
         "Tags": {
             "type": "array",
@@ -79,7 +87,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Variables": {
             "type": "array",
@@ -99,10 +108,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A map that defines the stage variables."
         },
         "XrayTracingEnabled": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether active tracing with X-ray is enabled. Defaults to `false`."
         },
         "AccessLogSettings": {
             "type": "array",

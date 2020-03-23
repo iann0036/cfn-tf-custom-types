@@ -1,6 +1,11 @@
 # Terraform::AWS::ElasticBeanstalkApplication
 
-CloudFormation equivalent of aws_elastic_beanstalk_application
+Provides an Elastic Beanstalk Application Resource. Elastic Beanstalk allows
+you to deploy and manage applications in the AWS cloud without worrying about
+the infrastructure that runs those applications.
+
+This resource creates an application that has one configuration template named
+`default`, and no application versions
 
 ## Syntax
 
@@ -37,6 +42,8 @@ Properties:
 
 #### Description
 
+Short description of the application.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the application, must be unique within your account.
+
 _Required_: Yes
 
 _Type_: String
@@ -52,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of tags for the Elastic Beanstalk Application.
 
 _Required_: No
 

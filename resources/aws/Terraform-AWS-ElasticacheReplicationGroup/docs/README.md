@@ -1,6 +1,16 @@
 # Terraform::AWS::ElasticacheReplicationGroup
 
-CloudFormation equivalent of aws_elasticache_replication_group
+Provides an ElastiCache Replication Group resource.
+For working with Memcached or single primary Redis instances (Cluster Mode Disabled), see the
+[`aws_elasticache_cluster` resource](/docs/providers/aws/r/elasticache_cluster.html).
+
+~> **Note:** When you change an attribute, such as `engine_version`, by
+default the ElastiCache API applies it in the next maintenance window. Because
+of this, Terraform may report a difference in its planning phase because the
+actual modification has not yet taken place. You can use the
+`apply_immediately` flag to instruct the service to apply the change
+immediately. Using `apply_immediately` can result in a brief downtime as
+servers reboots.
 
 ## Syntax
 
@@ -89,6 +99,8 @@ Properties:
 
 #### ApplyImmediately
 
+Specifies whether any modifications are applied immediately, or during the next maintenance window. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -96,6 +108,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AtRestEncryptionEnabled
+
+Whether to enable encryption at rest.
 
 _Required_: No
 
@@ -105,6 +119,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AuthToken
 
+The password used to access a password protected server. Can be specified only if `transit_encryption_enabled = true`.
+
 _Required_: No
 
 _Type_: String
@@ -112,6 +128,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoMinorVersionUpgrade
+
+Specifies whether a minor engine upgrades will be applied automatically to the underlying Cache Cluster instances during the maintenance window. Defaults to `true`.
 
 _Required_: No
 
@@ -121,6 +139,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AutomaticFailoverEnabled
 
+Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing primary fails. If true, Multi-AZ is enabled for this replication group. If false, Multi-AZ is disabled for this replication group. Must be enabled for Redis (cluster mode enabled) replication groups. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -128,6 +148,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZones
+
+A list of EC2 availability zones in which the replication group's cache clusters will be created. The order of the availability zones in the list is not important.
 
 _Required_: No
 
@@ -137,6 +159,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Engine
 
+The name of the cache engine to be used for the clusters in this replication group. e.g. `redis`.
+
 _Required_: No
 
 _Type_: String
@@ -145,6 +169,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EngineVersion
 
+The version number of the cache engine to be used for the cache clusters in this replication group.
+
 _Required_: No
 
 _Type_: String
@@ -152,6 +178,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsKeyId
+
+The ARN of the key that you wish to use if encrypting at rest. If not supplied, uses service managed encryption. Can be specified only if `at_rest_encryption_enabled = true`.
 
 _Required_: No
 
@@ -169,6 +197,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NodeType
 
+The compute and memory capacity of the nodes in the node group.
+
 _Required_: No
 
 _Type_: String
@@ -185,6 +215,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NumberCacheClusters
 
+The number of cache clusters (primary and replicas) this replication group will have. If Multi-AZ is enabled, the value of this parameter must be at least 2. Updates will occur before other modifications.
+
 _Required_: No
 
 _Type_: Double
@@ -192,6 +224,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ParameterGroupName
+
+The name of the parameter group to associate with this replication group. If this argument is omitted, the default cache parameter group for the specified engine is used.
 
 _Required_: No
 
@@ -225,6 +259,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SecurityGroupIds
 
+One or more Amazon VPC security groups associated with this replication group. Use this parameter only when you are creating a replication group in an Amazon Virtual Private Cloud.
+
 _Required_: No
 
 _Type_: List of String
@@ -232,6 +268,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SecurityGroupNames
+
+A list of cache security group names to associate with this replication group.
 
 _Required_: No
 
@@ -249,6 +287,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotName
 
+The name of a snapshot from which to restore data into the new node group. Changing the `snapshot_name` forces a new resource.
+
 _Required_: No
 
 _Type_: String
@@ -256,6 +296,12 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnapshotRetentionLimit
+
+The number of days for which ElastiCache will
+retain automatic cache cluster snapshots before deleting them. For example, if you set
+SnapshotRetentionLimit to 5, then a snapshot that was taken today will be retained for 5 days
+before being deleted. If the value of SnapshotRetentionLimit is set to zero (0), backups are turned off.
+Please note that setting a `snapshot_retention_limit` is not supported on cache.t1.micro or cache.t2.* cache nodes.
 
 _Required_: No
 
@@ -265,6 +311,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotWindow
 
+The daily time range (in UTC) during which ElastiCache will
+begin taking a daily snapshot of your cache cluster. The minimum snapshot window is a 60 minute period. Example: `05:00-09:00`.
+
 _Required_: No
 
 _Type_: String
@@ -272,6 +321,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SubnetGroupName
+
+The name of the cache subnet group to be used for the replication group.
 
 _Required_: No
 
@@ -281,6 +332,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -288,6 +341,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TransitEncryptionEnabled
+
+Whether to enable encryption in transit.
 
 _Required_: No
 

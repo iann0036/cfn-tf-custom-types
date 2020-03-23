@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CloudwatchLogDestination",
-    "description": "CloudFormation equivalent of aws_cloudwatch_log_destination",
+    "description": "Provides a CloudWatch Logs destination resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,13 +15,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A name for the log destination."
         },
         "RoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an IAM role that grants Amazon CloudWatch Logs permissions to put data into the target."
         },
         "TargetArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the target Amazon Kinesis stream resource for the destination."
         }
     },
     "additionalProperties": false,

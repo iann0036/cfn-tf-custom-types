@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayDocumentationPart
 
-CloudFormation equivalent of aws_api_gateway_documentation_part
+Provides a settings of an API Gateway Documentation Part.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Properties
 
+A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., "{ \"description\": \"The API does ...\" }". Only Swagger-compliant key-value pairs can be exported and, hence, published.
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RestApiId
+
+The ID of the associated Rest API.
 
 _Required_: Yes
 

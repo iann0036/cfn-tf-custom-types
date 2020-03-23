@@ -1,6 +1,6 @@
 # Terraform::AWS::DlmLifecyclePolicy
 
-CloudFormation equivalent of aws_dlm_lifecycle_policy
+Provides a [Data Lifecycle Manager (DLM) lifecycle policy](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html) for managing snapshots.
 
 ## Syntax
 
@@ -48,6 +48,8 @@ Properties:
 
 #### Description
 
+A description for the DLM lifecycle policy.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +57,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExecutionRoleArn
+
+The ARN of an IAM role that is able to be assumed by the DLM service.
 
 _Required_: Yes
 
@@ -64,6 +68,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### State
 
+Whether the lifecycle policy should be enabled or disabled. `ENABLED` or `DISABLED` are valid values. Defaults to `ENABLED`.
+
 _Required_: No
 
 _Type_: String
@@ -71,6 +77,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

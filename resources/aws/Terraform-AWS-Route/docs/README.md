@@ -1,6 +1,12 @@
 # Terraform::AWS::Route
 
-CloudFormation equivalent of aws_route
+Provides a resource to create a routing table entry (a route) in a VPC routing table.
+
+~> **NOTE on Route Tables and Routes:** Terraform currently
+provides both a standalone Route resource and a [Route Table](route_table.html) resource with routes
+defined in-line. At this time you cannot use a Route Table with in-line routes
+in conjunction with any Route resources. Doing so will cause
+a conflict of rule settings and will overwrite rules.
 
 ## Syntax
 
@@ -49,6 +55,8 @@ Properties:
 
 #### DestinationCidrBlock
 
+The destination CIDR block.
+
 _Required_: No
 
 _Type_: String
@@ -56,6 +64,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DestinationIpv6CidrBlock
+
+The destination IPv6 CIDR block.
 
 _Required_: No
 
@@ -65,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EgressOnlyGatewayId
 
+Identifier of a VPC Egress Only Internet Gateway.
+
 _Required_: No
 
 _Type_: String
@@ -72,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### GatewayId
+
+Identifier of a VPC internet gateway or a virtual private gateway.
 
 _Required_: No
 
@@ -81,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstanceId
 
+Identifier of an EC2 instance.
+
 _Required_: No
 
 _Type_: String
@@ -88,6 +104,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NatGatewayId
+
+Identifier of a VPC NAT gateway.
 
 _Required_: No
 
@@ -97,6 +115,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkInterfaceId
 
+Identifier of an EC2 network interface.
+
 _Required_: No
 
 _Type_: String
@@ -104,6 +124,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RouteTableId
+
+The ID of the routing table.
 
 _Required_: Yes
 
@@ -113,6 +135,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### TransitGatewayId
 
+Identifier of an EC2 Transit Gateway.
+
 _Required_: No
 
 _Type_: String
@@ -120,6 +144,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcPeeringConnectionId
+
+Identifier of a VPC peering connection.
 
 _Required_: No
 

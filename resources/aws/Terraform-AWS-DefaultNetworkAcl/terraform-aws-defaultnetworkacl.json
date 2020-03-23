@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DefaultNetworkAcl",
-    "description": "CloudFormation equivalent of aws_default_network_acl",
+    "description": "Provides a resource to manage the default AWS Network ACL. VPC Only.\n\nEach VPC created in AWS comes with a Default Network ACL that can be managed, but not\ndestroyed. **This is an advanced resource**, and has special caveats to be aware\nof when using it. Please read this document in its entirety before using this\nresource.\n\nThe `aws_default_network_acl` behaves differently from normal resources, in that\nTerraform does not _create_ this resource, but instead attempts to \"adopt\" it\ninto management. We can do this because each VPC created has a Default Network\nACL that cannot be destroyed, and is created with a known set of default rules.\n\nWhen Terraform first adopts the Default Network ACL, it **immediately removes all\nrules in the ACL**. It then proceeds to create any rules specified in the\nconfiguration. This step is required so that only the rules specified in the\nconfiguration are created.\n\nThis resource treats its inline rules as absolute; only the rules defined\ninline are created, and any additions/removals external to this resource will\nresult in diffs being shown. For these reasons, this resource is incompatible with the\n`aws_network_acl_rule` resource.\n\nFor more information about Network ACLs, see the AWS Documentation on\n[Network ACLs][aws-network-acls].",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Egress": {
@@ -8,31 +8,40 @@
             "additionalProperties": false,
             "properties": {
                 "Action": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The action to take."
                 },
                 "CidrBlock": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The CIDR block to match. This must be a\nvalid network mask."
                 },
                 "FromPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The from port to match."
                 },
                 "IcmpCode": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The ICMP type code to be used. Default 0."
                 },
                 "IcmpType": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The ICMP type to be used. Default 0."
                 },
                 "Ipv6CidrBlock": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The IPv6 CIDR block."
                 },
                 "Protocol": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The protocol to match. If using the -1 'all'\nprotocol, you must specify a from and to port of 0."
                 },
                 "RuleNo": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The rule number. Used for ordering."
                 },
                 "ToPort": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The to port to match."
                 }
             },
             "required": [
@@ -90,7 +99,8 @@
             "type": "string"
         },
         "DefaultNetworkAclId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Network ACL ID to manage. This\nattribute is exported from `aws_vpc`, or manually found via the AWS Console."
         },
         "Id": {
             "type": "string"
@@ -103,7 +113,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of Subnet IDs to apply the ACL to. See the\nnotes below on managing Subnets in the Default Network ACL."
         },
         "Tags": {
             "type": "array",
@@ -123,7 +134,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
             "type": "string"

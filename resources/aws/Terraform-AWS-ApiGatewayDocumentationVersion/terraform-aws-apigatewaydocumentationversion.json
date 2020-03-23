@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayDocumentationVersion",
-    "description": "CloudFormation equivalent of aws_api_gateway_documentation_version",
+    "description": "Provides a resource to manage an API Gateway Documentation Version.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the API documentation version."
         },
         "Id": {
             "type": "string"
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated Rest API."
         },
         "Version": {
-            "type": "string"
+            "type": "string",
+            "description": "The version identifier of the API documentation snapshot."
         }
     },
     "additionalProperties": false,

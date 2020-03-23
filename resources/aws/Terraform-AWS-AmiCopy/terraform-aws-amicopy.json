@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AmiCopy",
-    "description": "CloudFormation equivalent of aws_ami_copy",
+    "description": "The \"AMI copy\" resource allows duplication of an Amazon Machine Image (AMI),\nincluding cross-region copies.\n\nIf the source AMI has associated EBS snapshots, those will also be duplicated\nalong with the AMI.\n\nThis is useful for taking a single AMI provisioned in one region and making\nit available in another for a multi-region deployment.\n\nCopying an AMI can take several minutes. The creation of this resource will\nblock until the new AMI is available for use on new instances.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -35,7 +35,8 @@
             "type": "boolean"
         },
         "Encrypted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the destination snapshots of the copied image should be encrypted. Defaults to `false`."
         },
         "Id": {
             "type": "string"
@@ -47,13 +48,15 @@
             "type": "string"
         },
         "KmsKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The full ARN of the KMS Key to use when encrypting the snapshots of an image during a copy operation. If not specified, then the default AWS KMS Key will be used."
         },
         "ManageEbsSnapshots": {
             "type": "boolean"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "A region-unique name for the AMI."
         },
         "RamdiskId": {
             "type": "string"
@@ -65,10 +68,12 @@
             "type": "string"
         },
         "SourceAmiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The id of the AMI to copy. This id must be valid in the region\ngiven by `source_ami_region`."
         },
         "SourceAmiRegion": {
-            "type": "string"
+            "type": "string",
+            "description": "The region from which the AMI will be copied. This may be the\nsame as the AWS provider region in order to create a copy within the same region."
         },
         "SriovNetSupport": {
             "type": "string"
@@ -91,7 +96,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VirtualizationType": {
             "type": "string"

@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Type
 
+The type of processor. Valid Values: `Lambda`.
+
 _Required_: Yes
 
 _Type_: String

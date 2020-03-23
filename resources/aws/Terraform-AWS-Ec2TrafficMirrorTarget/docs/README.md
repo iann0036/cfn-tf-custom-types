@@ -1,6 +1,7 @@
 # Terraform::AWS::Ec2TrafficMirrorTarget
 
-CloudFormation equivalent of aws_ec2_traffic_mirror_target
+Provides an Traffic mirror target.  
+Read [limits and considerations](https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-considerations.html) for traffic mirroring
 
 ## Syntax
 
@@ -36,6 +37,8 @@ Properties:
 
 #### Description
 
+A description of the traffic mirror session.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +46,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetworkInterfaceId
+
+The network interface ID that is associated with the target.
 
 _Required_: No
 
@@ -52,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetworkLoadBalancerArn
 
+The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the target.
+
 _Required_: No
 
 _Type_: String
@@ -59,6 +66,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

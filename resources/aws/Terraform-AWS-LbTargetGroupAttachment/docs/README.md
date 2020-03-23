@@ -1,6 +1,8 @@
 # Terraform::AWS::LbTargetGroupAttachment
 
-CloudFormation equivalent of aws_lb_target_group_attachment
+Provides the ability to register instances and containers with an Application Load Balancer (ALB) or Network Load Balancer (NLB) target group. For attaching resources with Elastic Load Balancer (ELB), see the [`aws_elb_attachment` resource](/docs/providers/aws/r/elb_attachment.html).
+
+~> **Note:** `aws_alb_target_group_attachment` is known as `aws_lb_target_group_attachment`. The functionality is identical.
 
 ## Syntax
 
@@ -35,6 +37,8 @@ Properties:
 
 #### AvailabilityZone
 
+The Availability Zone where the IP address of the target is to be registered.
+
 _Required_: No
 
 _Type_: String
@@ -43,6 +47,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port on which targets receive traffic.
+
 _Required_: No
 
 _Type_: Double
@@ -50,6 +56,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetGroupArn
+
+The ARN of the target group with which to register targets.
 
 _Required_: Yes
 

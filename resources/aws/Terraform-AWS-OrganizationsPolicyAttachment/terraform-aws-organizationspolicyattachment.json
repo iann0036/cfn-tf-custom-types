@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::OrganizationsPolicyAttachment",
-    "description": "CloudFormation equivalent of aws_organizations_policy_attachment",
+    "description": "Provides a resource to attach an AWS Organizations policy to an organization account, root, or unit.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "PolicyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier (ID) of the policy that you want to attach to the target."
         },
         "TargetId": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier (ID) of the root, organizational unit, or account number that you want to attach the policy to."
         }
     },
     "additionalProperties": false,

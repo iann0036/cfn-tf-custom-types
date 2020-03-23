@@ -1,6 +1,6 @@
 # Terraform::AWS::SsmResourceDataSync
 
-CloudFormation equivalent of aws_ssm_resource_data_sync
+Provides a SSM resource data sync.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 ## Properties
 
 #### Name
+
+Name for the configuration.
 
 _Required_: Yes
 

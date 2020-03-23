@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Lb",
-    "description": "CloudFormation equivalent of aws_lb",
+    "description": "Provides a Load Balancer resource.\n\n~> **Note:** `aws_alb` is known as `aws_lb`. The functionality is identical.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "AccessLogs": {
@@ -8,13 +8,16 @@
             "additionalProperties": false,
             "properties": {
                 "Bucket": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The S3 bucket name to store the logs in."
                 },
                 "Enabled": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Boolean to enable / disable `access_logs`. Defaults to `false`, even when `bucket` is specified."
                 },
                 "Prefix": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The S3 bucket prefix. Logs are stored in the root if not configured."
                 }
             },
             "required": [
@@ -26,10 +29,12 @@
             "additionalProperties": false,
             "properties": {
                 "AllocationId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The allocation ID of the Elastic IP address."
                 },
                 "SubnetId": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The id of the subnet of which to attach to the load balancer. You can specify only one subnet per Availability Zone."
                 }
             },
             "required": [
@@ -68,51 +73,63 @@
             "type": "string"
         },
         "DropInvalidHeaderFields": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether HTTP headers with header fields that are not valid are removed by the load balancer (true) or routed to targets (false). The default is false. Elastic Load Balancing requires that message header names contain only alphanumeric characters and hyphens. Only valid for Load Balancers of type `application`."
         },
         "EnableCrossZoneLoadBalancing": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, cross-zone load balancing of the load balancer will be enabled.\nThis is a `network` load balancer feature. Defaults to `false`."
         },
         "EnableDeletionProtection": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, deletion of the load balancer will be disabled via\nthe AWS API. This will prevent Terraform from deleting the load balancer. Defaults to `false`."
         },
         "EnableHttp2": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether HTTP/2 is enabled in `application` load balancers. Defaults to `true`."
         },
         "Id": {
             "type": "string"
         },
         "IdleTimeout": {
-            "type": "number"
+            "type": "number",
+            "description": "The time in seconds that the connection is allowed to be idle. Only valid for Load Balancers of type `application`. Default: 60."
         },
         "Internal": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If true, the LB will be internal."
         },
         "IpAddressType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of IP addresses used by the subnets for your load balancer. The possible values are `ipv4` and `dualstack`."
         },
         "LoadBalancerType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of load balancer to create. Possible values are `application` or `network`. The default value is `application`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the LB. This name must be unique within your AWS account, can have a maximum of 32 characters,\nmust contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen. If not specified,\nTerraform will autogenerate a name beginning with `tf-lb`."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`."
         },
         "SecurityGroups": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of security group IDs to assign to the LB. Only valid for Load Balancers of type `application`."
         },
         "Subnets": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of subnet IDs to attach to the LB. Subnets\ncannot be updated for Load Balancers of type `network`. Changing this value\nfor load balancers of type `network` will force a recreation of the resource."
         },
         "Tags": {
             "type": "array",
@@ -132,7 +149,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
             "type": "string"

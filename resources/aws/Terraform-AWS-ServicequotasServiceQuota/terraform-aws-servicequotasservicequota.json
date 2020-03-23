@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ServicequotasServiceQuota",
-    "description": "CloudFormation equivalent of aws_servicequotas_service_quota",
+    "description": "Manages an individual Service Quota.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -21,7 +21,8 @@
             "type": "string"
         },
         "QuotaCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Code of the service quota to track. For example: `L-F678F1CE`. Available values can be found with the [AWS CLI service-quotas list-service-quotas command](https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-service-quotas.html)."
         },
         "QuotaName": {
             "type": "string"
@@ -33,13 +34,15 @@
             "type": "string"
         },
         "ServiceCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Code of the service to track. For example: `vpc`. Available values can be found with the [AWS CLI service-quotas list-services command](https://docs.aws.amazon.com/cli/latest/reference/service-quotas/list-services.html)."
         },
         "ServiceName": {
             "type": "string"
         },
         "Value": {
-            "type": "number"
+            "type": "number",
+            "description": "Float specifying the desired value for the service quota. If the desired value is higher than the current value, a quota increase request is submitted. When a known request is submitted and pending, the value reflects the desired value of the pending request."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 # Terraform::AWS::IamServiceLinkedRole
 
-CloudFormation equivalent of aws_iam_service_linked_role
+Provides an [IAM service-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html).
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### AwsServiceName
 
+The AWS service to which this role is attached. You use a string similar to a URL but without the `http://` in front. For example: `elasticbeanstalk.amazonaws.com`. To find the full list of services that support service-linked roles, check [the docs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html).
+
 _Required_: Yes
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CustomSuffix
 
+Additional string appended to the role name. Not all AWS services support custom suffixes.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the role.
 
 _Required_: No
 

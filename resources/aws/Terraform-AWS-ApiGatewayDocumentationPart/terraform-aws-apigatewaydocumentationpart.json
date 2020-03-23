@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayDocumentationPart",
-    "description": "CloudFormation equivalent of aws_api_gateway_documentation_part",
+    "description": "Provides a settings of an API Gateway Documentation Part.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Location": {
@@ -37,10 +37,12 @@
             "type": "string"
         },
         "Properties": {
-            "type": "string"
+            "type": "string",
+            "description": "A content map of API-specific key-value pairs describing the targeted API entity. The map must be encoded as a JSON string, e.g., \"{ \\\"description\\\": \\\"The API does ...\\\" }\". Only Swagger-compliant key-value pairs can be exported and, hence, published."
         },
         "RestApiId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the associated Rest API."
         },
         "Location": {
             "type": "array",

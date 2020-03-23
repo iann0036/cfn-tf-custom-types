@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Route53DelegationSet",
-    "description": "CloudFormation equivalent of aws_route53_delegation_set",
+    "description": "Provides a [Route53 Delegation Set](https://docs.aws.amazon.com/Route53/latest/APIReference/API-actions-by-function.html#actions-by-function-reusable-delegation-sets) resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -19,7 +19,8 @@
             }
         },
         "ReferenceName": {
-            "type": "string"
+            "type": "string",
+            "description": "This is a reference name used in Caller Reference\n(helpful for identifying single delegation set amongst others)."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::AutoscalingPolicy",
-    "description": "CloudFormation equivalent of aws_autoscaling_policy",
+    "description": "Provides an AutoScaling Scaling Policy resource.\n\n~> **NOTE:** You may want to omit `desired_capacity` attribute from attached `aws_autoscaling_group`\nwhen using autoscaling policies. It's good practice to pick either\n[manual](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-manual-scaling.html)\nor [dynamic](https://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html)\n(policy-based) scaling.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "StepAdjustment": {
@@ -26,10 +26,12 @@
             "additionalProperties": false,
             "properties": {
                 "DisableScaleIn": {
-                    "type": "boolean"
+                    "type": "boolean",
+                    "description": "Indicates whether scale in by the target tracking policy is disabled."
                 },
                 "TargetValue": {
-                    "type": "number"
+                    "type": "number",
+                    "description": "The target value for the metric."
                 },
                 "CustomizedMetricSpecification": {
                     "type": "array",
@@ -120,25 +122,30 @@
             "type": "string"
         },
         "AdjustmentType": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies whether the adjustment is an absolute number or a percentage of the current capacity. Valid values are `ChangeInCapacity`, `ExactCapacity`, and `PercentChangeInCapacity`."
         },
         "Arn": {
             "type": "string"
         },
         "AutoscalingGroupName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the autoscaling group."
         },
         "Cooldown": {
-            "type": "number"
+            "type": "number",
+            "description": "The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start."
         },
         "EstimatedInstanceWarmup": {
-            "type": "number"
+            "type": "number",
+            "description": "The estimated time, in seconds, until a newly launched instance will contribute CloudWatch metrics. Without a value, AWS will default to the group's specified cooldown period."
         },
         "Id": {
             "type": "string"
         },
         "MetricAggregationType": {
-            "type": "string"
+            "type": "string",
+            "description": "The aggregation type for the policy's metrics. Valid values are \"Minimum\", \"Maximum\", and \"Average\". Without a value, AWS will treat the aggregation type as \"Average\"."
         },
         "MinAdjustmentMagnitude": {
             "type": "number"
@@ -147,13 +154,16 @@
             "type": "number"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the policy."
         },
         "PolicyType": {
-            "type": "string"
+            "type": "string",
+            "description": "The policy type, either \"SimpleScaling\", \"StepScaling\" or \"TargetTrackingScaling\". If this value isn't provided, AWS will default to \"SimpleScaling.\"."
         },
         "ScalingAdjustment": {
-            "type": "number"
+            "type": "number",
+            "description": "The number of members by which to\nscale, when the adjustment bounds are breached. A positive value scales\nup. A negative value scales down."
         },
         "StepAdjustment": {
             "type": "array",

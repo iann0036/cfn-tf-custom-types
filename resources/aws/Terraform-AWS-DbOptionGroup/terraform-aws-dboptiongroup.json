@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DbOptionGroup",
-    "description": "CloudFormation equivalent of aws_db_option_group",
+    "description": "Provides an RDS DB option group resource. Documentation of the available options for various RDS engines can be found at:\n\n* [MariaDB Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MariaDB.Options.html)\n* [Microsoft SQL Server Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.SQLServer.Options.html)\n* [MySQL Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MySQL.Options.html)\n* [Oracle Options](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.Oracle.Options.html)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Option": {
@@ -78,22 +78,27 @@
             "type": "string"
         },
         "EngineName": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the name of the engine that this option group should be associated with."
         },
         "Id": {
             "type": "string"
         },
         "MajorEngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the major version of the engine that this option group should be associated with."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The Name of the setting."
         },
         "NamePrefix": {
-            "type": "string"
+            "type": "string",
+            "description": "Creates a unique name beginning with the specified prefix. Conflicts with `name`. Must be lowercase, to match as it is stored in AWS."
         },
         "OptionGroupDescription": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the option group. Defaults to \"Managed by Terraform\"."
         },
         "Tags": {
             "type": "array",
@@ -113,7 +118,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Option": {
             "type": "array",

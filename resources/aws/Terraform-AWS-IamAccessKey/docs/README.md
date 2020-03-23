@@ -1,6 +1,6 @@
 # Terraform::AWS::IamAccessKey
 
-CloudFormation equivalent of aws_iam_access_key
+Provides an IAM access key. This is a set of credentials that allow API requests to be made as an IAM user.
 
 ## Syntax
 
@@ -33,6 +33,10 @@ Properties:
 
 #### PgpKey
 
+Either a base-64 encoded PGP public key, or a
+keybase username in the form `keybase:some_person_that_exists`, for use
+in the `encrypted_secret` output attribute.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +45,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Status
 
+The access key status to apply. Defaults to `Active`.
+Valid values are `Active` and `Inactive`.
+
 _Required_: No
 
 _Type_: String
@@ -48,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### User
+
+The IAM user to associate with this access key.
 
 _Required_: Yes
 

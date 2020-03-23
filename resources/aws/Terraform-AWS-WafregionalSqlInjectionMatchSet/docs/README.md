@@ -1,6 +1,6 @@
 # Terraform::AWS::WafregionalSqlInjectionMatchSet
 
-CloudFormation equivalent of aws_wafregional_sql_injection_match_set
+Provides a WAF Regional SQL Injection Match Set Resource for use with Application Load Balancer.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name or description of the SizeConstraintSet.
 
 _Required_: Yes
 

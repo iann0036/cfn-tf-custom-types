@@ -1,6 +1,8 @@
 # Terraform::AWS::KinesisVideoStream
 
-CloudFormation equivalent of aws_kinesis_video_stream
+Provides a Kinesis Video Stream resource. Amazon Kinesis Video Streams makes it easy to securely stream video from connected devices to AWS for analytics, machine learning (ML), playback, and other processing.
+
+For more details, see the [Amazon Kinesis Documentation][1].
 
 ## Syntax
 
@@ -50,6 +52,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DeviceName
 
+The name of the device that is writing to the stream. **In the current implementation, Kinesis Video Streams does not use this name.**.
+
 _Required_: No
 
 _Type_: String
@@ -57,6 +61,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### KmsKeyId
+
+The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data. If no key ID is specified, the default, Kinesis Video-managed key (`aws/kinesisvideo`) is used.
 
 _Required_: No
 
@@ -66,6 +72,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### MediaType
 
+The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see [Media Types][2]. If you choose to specify the MediaType, see [Naming Requirements][3] for guidelines.
+
 _Required_: No
 
 _Type_: String
@@ -74,6 +82,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name to identify the stream. This is unique to the
+AWS account and region the Stream is created in.
+
 _Required_: Yes
 
 _Type_: String
@@ -81,6 +92,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::WafregionalRuleGroup
 
-CloudFormation equivalent of aws_wafregional_rule_group
+Provides a WAF Regional Rule Group Resource
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### MetricName
 
+A friendly name for the metrics from the rule group.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +50,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A friendly name of the rule group.
+
 _Required_: Yes
 
 _Type_: String
@@ -55,6 +59,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Key-value mapping of resource tags.
 
 _Required_: No
 

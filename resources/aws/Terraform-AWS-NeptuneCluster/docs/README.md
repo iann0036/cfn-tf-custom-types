@@ -1,6 +1,14 @@
 # Terraform::AWS::NeptuneCluster
 
-CloudFormation equivalent of aws_neptune_cluster
+Provides an Neptune Cluster Resource. A Cluster Resource defines attributes that are
+applied to the entire cluster of Neptune Cluster Instances.
+
+Changes to a Neptune Cluster can occur when you manually change a
+parameter, such as `backup_retention_period`, and are reflected in the next maintenance
+window. Because of this, Terraform may report a difference in its planning
+phase because a modification has not yet taken place. You can use the
+`apply_immediately` flag to instruct the service to apply the change immediately
+(see documentation below).
 
 ## Syntax
 
@@ -82,6 +90,8 @@ Properties:
 
 #### ApplyImmediately
 
+Specifies whether any cluster modifications are applied immediately, or during the next maintenance window. Default is `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -89,6 +99,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AvailabilityZones
+
+A list of EC2 Availability Zones that instances in the Neptune cluster can be created in.
 
 _Required_: No
 
@@ -98,6 +110,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### BackupRetentionPeriod
 
+The days to retain backups for. Default `1`.
+
 _Required_: No
 
 _Type_: Double
@@ -106,6 +120,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClusterIdentifier
 
+The cluster identifier. If omitted, Terraform will assign a random, unique identifier.
+
 _Required_: No
 
 _Type_: String
@@ -113,6 +129,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ClusterIdentifierPrefix
+
+Creates a unique cluster identifier beginning with the specified prefix. Conflicts with `cluster_identifier`.
 
 _Required_: No
 
@@ -130,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EnableCloudwatchLogsExports
 
+A list of the log types this DB cluster is configured to export to Cloudwatch Logs. Currently only supports `audit`.
+
 _Required_: No
 
 _Type_: List of String
@@ -137,6 +157,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Engine
+
+The name of the database engine to be used for this Neptune cluster. Defaults to `neptune`.
 
 _Required_: No
 
@@ -146,6 +168,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EngineVersion
 
+The database engine version.
+
 _Required_: No
 
 _Type_: String
@@ -153,6 +177,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### FinalSnapshotIdentifier
+
+The name of your final Neptune snapshot when this Neptune cluster is deleted. If omitted, no final snapshot will be made.
 
 _Required_: No
 
@@ -162,6 +188,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### IamDatabaseAuthenticationEnabled
 
+Specifies whether or mappings of AWS Identity and Access Management (IAM) accounts to database accounts is enabled.
+
 _Required_: No
 
 _Type_: Boolean
@@ -169,6 +197,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### IamRoles
+
+A List of ARNs for the IAM roles to associate to the Neptune Cluster.
 
 _Required_: No
 
@@ -178,6 +208,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyArn
 
+The ARN for the KMS encryption key. When specifying `kms_key_arn`, `storage_encrypted` needs to be set to true.
+
 _Required_: No
 
 _Type_: String
@@ -185,6 +217,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NeptuneClusterParameterGroupName
+
+A cluster parameter group to associate with the cluster.
 
 _Required_: No
 
@@ -194,6 +228,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NeptuneSubnetGroupName
 
+A Neptune subnet group to associate with this Neptune instance.
+
 _Required_: No
 
 _Type_: String
@@ -201,6 +237,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Port
+
+The port on which the Neptune accepts connections. Default is `8182`.
 
 _Required_: No
 
@@ -210,6 +248,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### PreferredBackupWindow
 
+The daily time range during which automated backups are created if automated backups are enabled using the BackupRetentionPeriod parameter. Time in UTC. Default: A 30-minute window selected at random from an 8-hour block of time per region. e.g. 04:00-09:00.
+
 _Required_: No
 
 _Type_: String
@@ -217,6 +257,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PreferredMaintenanceWindow
+
+The weekly time range during which system maintenance can occur, in (UTC) e.g. wed:04:00-wed:04:30.
 
 _Required_: No
 
@@ -226,6 +268,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReplicationSourceIdentifier
 
+ARN of a source Neptune cluster or Neptune instance if this Neptune cluster is to be created as a Read Replica.
+
 _Required_: No
 
 _Type_: String
@@ -233,6 +277,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SkipFinalSnapshot
+
+Determines whether a final Neptune snapshot is created before the Neptune cluster is deleted. If true is specified, no Neptune snapshot is created. If false is specified, a Neptune snapshot is created before the Neptune cluster is deleted, using the value from `final_snapshot_identifier`. Default is `false`.
 
 _Required_: No
 
@@ -242,6 +288,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SnapshotIdentifier
 
+Specifies whether or not to create this cluster from a snapshot. You can use either the name or ARN when specifying a Neptune cluster snapshot, or the ARN when specifying a Neptune snapshot.
+
 _Required_: No
 
 _Type_: String
@@ -249,6 +297,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StorageEncrypted
+
+Specifies whether the Neptune cluster is encrypted. The default is `false` if not specified.
 
 _Required_: No
 
@@ -258,6 +308,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the Neptune cluster.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -265,6 +317,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcSecurityGroupIds
+
+List of VPC security groups to associate with the Cluster.
 
 _Required_: No
 

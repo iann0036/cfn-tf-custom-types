@@ -1,6 +1,8 @@
 # Terraform::AWS::LightsailStaticIp
 
-CloudFormation equivalent of aws_lightsail_static_ip
+Allocates a static IP address.
+
+~> **Note:** Lightsail is currently only supported in a limited number of AWS Regions, please see ["Regions and Availability Zones in Amazon Lightsail"](https://lightsail.aws.amazon.com/ls/docs/overview/article/understanding-regions-and-availability-zones-in-amazon-lightsail) for more details
 
 ## Syntax
 
@@ -28,6 +30,8 @@ Properties:
 ## Properties
 
 #### Name
+
+The name for the allocated static IP.
 
 _Required_: Yes
 

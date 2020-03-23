@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::WafregionalRegexPatternSet",
-    "description": "CloudFormation equivalent of aws_wafregional_regex_pattern_set",
+    "description": "Provides a WAF Regional Regex Pattern Set Resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,14 +12,16 @@
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or description of the Regex Pattern Set."
         },
         "RegexPatternStrings": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "A list of regular expression (regex) patterns that you want AWS WAF to search for, such as `B[a@]dB[o0]t`."
         }
     },
     "additionalProperties": false,

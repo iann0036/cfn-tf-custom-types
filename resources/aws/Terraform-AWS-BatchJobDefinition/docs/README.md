@@ -1,6 +1,6 @@
 # Terraform::AWS::BatchJobDefinition
 
-CloudFormation equivalent of aws_batch_job_definition
+Provides a Batch Job Definition resource.
 
 ## Syntax
 
@@ -42,6 +42,9 @@ Properties:
 
 #### ContainerProperties
 
+A valid [container properties](http://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html)
+provided as a single valid JSON document. This parameter is required if the `type` parameter is `container`.
+
 _Required_: No
 
 _Type_: String
@@ -49,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Specifies the name of the job definition.
 
 _Required_: Yes
 
@@ -58,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Parameters
 
+Specifies the parameter substitution placeholders to set in the job definition.
+
 _Required_: No
 
 _Type_: List of <a href="parameters.md">Parameters</a>
@@ -65,6 +72,8 @@ _Type_: List of <a href="parameters.md">Parameters</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Type
+
+The type of job definition.  Must be `container`.
 
 _Required_: Yes
 

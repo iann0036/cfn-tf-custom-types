@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::WafregionalRateBasedRule",
-    "description": "CloudFormation equivalent of aws_wafregional_rate_based_rule",
+    "description": "Provides a WAF Rate Based Rule Resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Predicate": {
@@ -36,16 +36,20 @@
             "type": "string"
         },
         "MetricName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or description for the Amazon CloudWatch metric of this rule."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or description of the rule."
         },
         "RateKey": {
-            "type": "string"
+            "type": "string",
+            "description": "Valid value is IP."
         },
         "RateLimit": {
-            "type": "number"
+            "type": "number",
+            "description": "The maximum number of requests, which have an identical value in the field specified by the RateKey, allowed in a five-minute period. Minimum value is 100."
         },
         "Tags": {
             "type": "array",
@@ -65,7 +69,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Predicate": {
             "type": "array",

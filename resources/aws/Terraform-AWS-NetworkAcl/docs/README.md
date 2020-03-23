@@ -1,6 +1,13 @@
 # Terraform::AWS::NetworkAcl
 
-CloudFormation equivalent of aws_network_acl
+Provides an network ACL resource. You might set up network ACLs with rules similar
+to your security groups in order to add an additional layer of security to your VPC.
+
+~> **NOTE on Network ACLs and Network ACL Rules:** Terraform currently
+provides both a standalone [Network ACL Rule](network_acl_rule.html) resource and a Network ACL resource with rules
+defined in-line. At this time you cannot use a Network ACL with in-line rules
+in conjunction with any Network ACL Rule resources. Doing so will cause
+a conflict of rule settings and will overwrite rules.
 
 ## Syntax
 
@@ -43,6 +50,9 @@ Properties:
 
 #### Egress
 
+Specifies an egress rule. Parameters defined below.
+This argument is processed in [attribute-as-blocks mode](/docs/configuration/attr-as-blocks.html).
+
 _Required_: No
 
 _Type_: List of <a href="egress.md">Egress</a>
@@ -50,6 +60,9 @@ _Type_: List of <a href="egress.md">Egress</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Ingress
+
+Specifies an ingress rule. Parameters defined below.
+This argument is processed in [attribute-as-blocks mode](/docs/configuration/attr-as-blocks.html).
 
 _Required_: No
 
@@ -67,6 +80,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SubnetIds
 
+A list of Subnet IDs to apply the ACL to.
+
 _Required_: No
 
 _Type_: List of String
@@ -75,6 +90,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -82,6 +99,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcId
+
+The ID of the associated VPC.
 
 _Required_: Yes
 

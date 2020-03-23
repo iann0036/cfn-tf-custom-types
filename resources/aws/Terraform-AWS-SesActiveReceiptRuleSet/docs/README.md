@@ -1,6 +1,6 @@
 # Terraform::AWS::SesActiveReceiptRuleSet
 
-CloudFormation equivalent of aws_ses_active_receipt_rule_set
+Provides a resource to designate the active SES receipt rule set
 
 ## Syntax
 
@@ -28,6 +28,8 @@ Properties:
 ## Properties
 
 #### RuleSetName
+
+The name of the rule set.
 
 _Required_: Yes
 

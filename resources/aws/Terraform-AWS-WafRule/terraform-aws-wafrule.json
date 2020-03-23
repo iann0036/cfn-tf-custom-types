@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::WafRule",
-    "description": "CloudFormation equivalent of aws_waf_rule",
+    "description": "Provides a WAF Rule Resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Predicates": {
@@ -36,10 +36,12 @@
             "type": "string"
         },
         "MetricName": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or description for the Amazon CloudWatch metric of this rule. The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name or description of the rule."
         },
         "Tags": {
             "type": "array",
@@ -59,7 +61,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "Predicates": {
             "type": "array",

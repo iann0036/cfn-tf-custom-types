@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### PartitionKeyPath
 
+The JSON path to be extracted from the event and used as the partition key.
+
 _Required_: No
 
 _Type_: String

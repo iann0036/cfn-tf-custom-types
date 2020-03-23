@@ -1,6 +1,6 @@
 # Terraform::AWS::IotThing
 
-CloudFormation equivalent of aws_iot_thing
+Creates and manages an AWS IoT Thing.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### Attributes
 
+Map of attributes of the thing.
+
 _Required_: No
 
 _Type_: List of <a href="attributes.md">Attributes</a>
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the thing.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ThingTypeName
+
+The thing type name.
 
 _Required_: No
 

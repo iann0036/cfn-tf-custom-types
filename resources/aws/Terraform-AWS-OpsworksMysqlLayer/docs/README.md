@@ -1,6 +1,9 @@
 # Terraform::AWS::OpsworksMysqlLayer
 
-CloudFormation equivalent of aws_opsworks_mysql_layer
+Provides an OpsWorks MySQL layer resource.
+
+~> **Note:** All arguments including the root password will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -82,6 +85,8 @@ Properties:
 
 #### AutoAssignElasticIps
 
+Whether to automatically assign an elastic IP address to the layer's instances.
+
 _Required_: No
 
 _Type_: Boolean
@@ -90,6 +95,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AutoAssignPublicIps
 
+For stacks belonging to a VPC, whether to automatically assign a public IP address to each of the layer's instances.
+
 _Required_: No
 
 _Type_: Boolean
@@ -97,6 +104,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AutoHealing
+
+Whether to enable auto-healing for the layer.
 
 _Required_: No
 
@@ -122,6 +131,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CustomInstanceProfileArn
 
+The ARN of an IAM profile that will be used for the layer's instances.
+
 _Required_: No
 
 _Type_: String
@@ -130,6 +141,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### CustomJson
 
+Custom JSON attributes to apply to the layer.
+
 _Required_: No
 
 _Type_: String
@@ -137,6 +150,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CustomSecurityGroupIds
+
+Ids for a set of security groups to apply to the layer's instances.
 
 _Required_: No
 
@@ -170,6 +185,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DrainElbOnShutdown
 
+Whether to enable Elastic Load Balancing connection draining.
+
 _Required_: No
 
 _Type_: Boolean
@@ -177,6 +194,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ElasticLoadBalancer
+
+Name of an Elastic Load Balancer to attach to this layer.
 
 _Required_: No
 
@@ -186,6 +205,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InstallUpdatesOnBoot
 
+Whether to install OS and package updates on each instance when it boots.
+
 _Required_: No
 
 _Type_: Boolean
@@ -193,6 +214,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### InstanceShutdownTimeout
+
+The time, in seconds, that OpsWorks will wait for Chef to complete after triggering the Shutdown event.
 
 _Required_: No
 
@@ -202,6 +225,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A human-readable name for the layer.
+
 _Required_: No
 
 _Type_: String
@@ -209,6 +234,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RootPassword
+
+Root password to use for MySQL.
 
 _Required_: No
 
@@ -218,6 +245,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RootPasswordOnAllInstances
 
+Whether to set the root user password to all instances in the stack so they can access the instances in this layer.
+
 _Required_: No
 
 _Type_: Boolean
@@ -225,6 +254,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### StackId
+
+The id of the stack the layer will belong to.
 
 _Required_: Yes
 
@@ -234,6 +265,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SystemPackages
 
+Names of a set of system packages to install on the layer's instances.
+
 _Required_: No
 
 _Type_: List of String
@@ -242,6 +275,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -249,6 +284,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UseEbsOptimizedInstances
+
+Whether to use EBS-optimized instances.
 
 _Required_: No
 

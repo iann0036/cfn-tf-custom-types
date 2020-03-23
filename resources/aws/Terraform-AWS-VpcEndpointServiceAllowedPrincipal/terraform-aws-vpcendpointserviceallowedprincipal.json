@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::VpcEndpointServiceAllowedPrincipal",
-    "description": "CloudFormation equivalent of aws_vpc_endpoint_service_allowed_principal",
+    "description": "Provides a resource to allow a principal to discover a VPC endpoint service.\n\n~> **NOTE on VPC Endpoint Services and VPC Endpoint Service Allowed Principals:** Terraform provides\nboth a standalone [VPC Endpoint Service Allowed Principal](vpc_endpoint_service_allowed_principal.html) resource\nand a VPC Endpoint Service resource with an `allowed_principals` attribute. Do not use the same principal ARN in both\na VPC Endpoint Service resource and a VPC Endpoint Service Allowed Principal resource. Doing so will cause a conflict\nand will overwrite the association.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "PrincipalArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of the principal to allow permissions."
         },
         "VpcEndpointServiceId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the VPC endpoint service to allow permission."
         }
     },
     "additionalProperties": false,

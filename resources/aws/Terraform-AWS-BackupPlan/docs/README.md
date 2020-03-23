@@ -1,6 +1,6 @@
 # Terraform::AWS::BackupPlan
 
-CloudFormation equivalent of aws_backup_plan
+Provides an AWS Backup plan resource.
 
 ## Syntax
 
@@ -38,6 +38,8 @@ Properties:
 
 #### Name
 
+The display name of a backup plan.
+
 _Required_: Yes
 
 _Type_: String
@@ -45,6 +47,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Metadata that you can assign to help organize the plans you create.
 
 _Required_: No
 

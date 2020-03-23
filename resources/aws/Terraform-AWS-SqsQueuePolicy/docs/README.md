@@ -1,6 +1,7 @@
 # Terraform::AWS::SqsQueuePolicy
 
-CloudFormation equivalent of aws_sqs_queue_policy
+Allows you to set a policy of an SQS Queue
+while referencing ARN of the queue within the policy.
 
 ## Syntax
 
@@ -31,6 +32,8 @@ Properties:
 
 #### Policy
 
+The JSON policy for the SQS queue. For more information about building AWS IAM policy documents with Terraform, see the [AWS IAM Policy Document Guide](https://learn.hashicorp.com/terraform/aws/iam-policy).
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +41,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### QueueUrl
+
+The URL of the SQS Queue to which to attach the policy.
 
 _Required_: Yes
 

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::Ec2TransitGateway",
-    "description": "CloudFormation equivalent of aws_ec2_transit_gateway",
+    "description": "Manages an EC2 Transit Gateway.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "AmazonSideAsn": {
-            "type": "number"
+            "type": "number",
+            "description": "Private Autonomous System Number (ASN) for the Amazon side of a BGP session. The range is `64512` to `65534` for 16-bit ASNs and `4200000000` to `4294967294` for 32-bit ASNs. Default value: `64512`."
         },
         "Arn": {
             "type": "string"
@@ -18,19 +19,24 @@
             "type": "string"
         },
         "AutoAcceptSharedAttachments": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether resource attachment requests are automatically accepted. Valid values: `disable`, `enable`. Default value: `disable`."
         },
         "DefaultRouteTableAssociation": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether resource attachments are automatically associated with the default association route table. Valid values: `disable`, `enable`. Default value: `enable`."
         },
         "DefaultRouteTablePropagation": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether resource attachments automatically propagate routes to the default propagation route table. Valid values: `disable`, `enable`. Default value: `enable`."
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Description of the EC2 Transit Gateway."
         },
         "DnsSupport": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether DNS support is enabled. Valid values: `disable`, `enable`. Default value: `enable`."
         },
         "Id": {
             "type": "string"
@@ -59,10 +65,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value tags for the EC2 Transit Gateway."
         },
         "VpnEcmpSupport": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether VPN Equal Cost Multipath Protocol support is enabled. Valid values: `disable`, `enable`. Default value: `enable`."
         }
     },
     "additionalProperties": false,

@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::NetworkAclRule",
-    "description": "CloudFormation equivalent of aws_network_acl_rule",
+    "description": "Creates an entry (a rule) in a network ACL with the specified rule number.\n\n~> **NOTE on Network ACLs and Network ACL Rules:** Terraform currently\nprovides both a standalone Network ACL Rule resource and a [Network ACL](network_acl.html) resource with rules\ndefined in-line. At this time you cannot use a Network ACL with in-line rules\nin conjunction with any Network ACL Rule resources. Doing so will cause\na conflict of rule settings and will overwrite rules.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,40 +9,51 @@
             "type": "string"
         },
         "CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The network range to allow or deny, in CIDR notation (for example 172.16.0.0/24 )."
         },
         "Egress": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether this is an egress rule (rule is applied to traffic leaving the subnet). Default `false`."
         },
         "FromPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The from port to match."
         },
         "IcmpCode": {
-            "type": "string"
+            "type": "string",
+            "description": "ICMP protocol: The ICMP code. Required if specifying ICMP for the protocol. e.g. -1."
         },
         "IcmpType": {
-            "type": "string"
+            "type": "string",
+            "description": "ICMP protocol: The ICMP type. Required if specifying ICMP for the protocol. e.g. -1."
         },
         "Id": {
             "type": "string"
         },
         "Ipv6CidrBlock": {
-            "type": "string"
+            "type": "string",
+            "description": "The IPv6 CIDR block to allow or deny."
         },
         "NetworkAclId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ID of the network ACL."
         },
         "Protocol": {
-            "type": "string"
+            "type": "string",
+            "description": "The protocol. A value of -1 means all protocols."
         },
         "RuleAction": {
-            "type": "string"
+            "type": "string",
+            "description": "Indicates whether to allow or deny the traffic that matches the rule. Accepted values: `allow` | `deny`."
         },
         "RuleNumber": {
-            "type": "number"
+            "type": "number",
+            "description": "The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number."
         },
         "ToPort": {
-            "type": "number"
+            "type": "number",
+            "description": "The to port to match."
         }
     },
     "additionalProperties": false,

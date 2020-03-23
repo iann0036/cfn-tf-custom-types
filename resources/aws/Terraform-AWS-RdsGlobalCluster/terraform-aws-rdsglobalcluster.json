@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::RdsGlobalCluster",
-    "description": "CloudFormation equivalent of aws_rds_global_cluster",
+    "description": "Manages a RDS Global Cluster, which is an Aurora global database spread across multiple regions. The global database contains a single primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.\n\nMore information about Aurora global databases can be found in the [Aurora User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database-creating).",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,19 +12,24 @@
             "type": "string"
         },
         "DatabaseName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name for an automatically created database on cluster creation."
         },
         "DeletionProtection": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "If the Global Cluster should have deletion protection enabled. The database can't be deleted when this value is set to `true`. The default is `false`."
         },
         "Engine": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the database engine to be used for this DB cluster. Valid values: `aurora`, `aurora-mysql`. Defaults to `aurora`."
         },
         "EngineVersion": {
-            "type": "string"
+            "type": "string",
+            "description": "Engine version of the Aurora global database.\n* **NOTE:** When the engine is set to `aurora-mysql`, an engine version compatible with global database is required. The earliest available version is `5.7.mysql_aurora.2.06.0`."
         },
         "GlobalClusterIdentifier": {
-            "type": "string"
+            "type": "string",
+            "description": "The global cluster identifier."
         },
         "GlobalClusterResourceId": {
             "type": "string"
@@ -33,7 +38,8 @@
             "type": "string"
         },
         "StorageEncrypted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Specifies whether the DB cluster is encrypted. The default is `false`."
         }
     },
     "additionalProperties": false,

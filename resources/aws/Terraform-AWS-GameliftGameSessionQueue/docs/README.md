@@ -1,6 +1,6 @@
 # Terraform::AWS::GameliftGameSessionQueue
 
-CloudFormation equivalent of aws_gamelift_game_session_queue
+Provides an Gamelift Game Session Queue resource.
 
 ## Syntax
 
@@ -40,6 +40,8 @@ Properties:
 
 #### Destinations
 
+List of fleet/alias ARNs used by session queue for placing game sessions.
+
 _Required_: No
 
 _Type_: List of String
@@ -47,6 +49,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Name
+
+Name of the session queue.
 
 _Required_: Yes
 
@@ -56,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+Key-value mapping of resource tags.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -63,6 +69,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TimeoutInSeconds
+
+Maximum time a game session request can remain in the queue.
 
 _Required_: No
 

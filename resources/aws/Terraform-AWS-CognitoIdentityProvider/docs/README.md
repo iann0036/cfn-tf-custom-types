@@ -1,6 +1,6 @@
 # Terraform::AWS::CognitoIdentityProvider
 
-CloudFormation equivalent of aws_cognito_identity_provider
+Provides a Cognito User Identity Provider resource.
 
 ## Syntax
 

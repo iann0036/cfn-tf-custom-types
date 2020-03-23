@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SsmMaintenanceWindowTarget",
-    "description": "CloudFormation equivalent of aws_ssm_maintenance_window_target",
+    "description": "Provides an SSM Maintenance Window Target resource",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Targets": {
@@ -30,22 +30,27 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the maintenance window target."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the maintenance window target."
         },
         "OwnerInformation": {
-            "type": "string"
+            "type": "string",
+            "description": "User-provided value that will be included in any CloudWatch events raised while running tasks for these targets in this Maintenance Window."
         },
         "ResourceType": {
-            "type": "string"
+            "type": "string",
+            "description": "The type of target being registered with the Maintenance Window. Possible values `INSTANCE`."
         },
         "WindowId": {
-            "type": "string"
+            "type": "string",
+            "description": "The Id of the maintenance window to register the target with."
         },
         "Targets": {
             "type": "array",

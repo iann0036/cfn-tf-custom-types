@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DefaultSecurityGroup",
-    "description": "CloudFormation equivalent of aws_default_security_group",
+    "description": "Provides a resource to manage the default AWS Security Group.\n\nFor EC2 Classic accounts, each region comes with a Default Security Group.\nAdditionally, each VPC created in AWS comes with a Default Security Group that can be managed, but not\ndestroyed. **This is an advanced resource**, and has special caveats to be aware\nof when using it. Please read this document in its entirety before using this\nresource.\n\nThe `aws_default_security_group` behaves differently from normal resources, in that\nTerraform does not _create_ this resource, but instead \"adopts\" it\ninto management. We can do this because these default security groups cannot be\ndestroyed, and are created with a known set of default ingress/egress rules.\n\nWhen Terraform first adopts the Default Security Group, it **immediately removes all\ningress and egress rules in the Security Group**. It then proceeds to create any rules specified in the\nconfiguration. This step is required so that only the rules specified in the\nconfiguration are created.\n\nThis resource treats its inline rules as absolute; only the rules defined\ninline are created, and any additions/removals external to this resource will\nresult in diff shown. For these reasons, this resource is incompatible with the\n`aws_security_group_rule` resource.\n\nFor more information about Default Security Groups, see the AWS Documentation on\n[Default Security Groups][aws-default-security-groups].",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Timeouts": {
@@ -79,7 +79,8 @@
                         "type": "number"
                     }
                 }
-            }
+            },
+            "description": "Can be specified multiple times for each\negress rule. Each egress block supports fields documented below."
         },
         "Id": {
             "type": "string"
@@ -135,7 +136,8 @@
                         "type": "number"
                     }
                 }
-            }
+            },
+            "description": "Can be specified multiple times for each\ningress rule. Each ingress block supports fields documented below."
         },
         "Name": {
             "type": "string"
@@ -164,10 +166,12 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "VpcId": {
-            "type": "string"
+            "type": "string",
+            "description": "The VPC ID. **Note that changing\nthe `vpc_id` will _not_ restore any default security group rules that were\nmodified, added, or removed.** It will be left in its current state."
         },
         "Timeouts": {
             "$ref": "#/definitions/Timeouts"

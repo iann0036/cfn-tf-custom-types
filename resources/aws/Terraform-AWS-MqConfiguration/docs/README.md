@@ -1,6 +1,8 @@
 # Terraform::AWS::MqConfiguration
 
-CloudFormation equivalent of aws_mq_configuration
+Provides an MQ Configuration Resource. 
+
+For more information on Amazon MQ, see [Amazon MQ documentation](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html).
 
 ## Syntax
 
@@ -40,6 +42,10 @@ Properties:
 
 #### Data
 
+The broker configuration in XML format.
+See [official docs](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-broker-configuration-parameters.html)
+for supported parameters and format of the XML.
+
 _Required_: Yes
 
 _Type_: String
@@ -47,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Description
+
+The description of the configuration.
 
 _Required_: No
 
@@ -56,6 +64,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EngineType
 
+The type of broker engine.
+
 _Required_: Yes
 
 _Type_: String
@@ -63,6 +73,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EngineVersion
+
+The version of the broker engine.
 
 _Required_: Yes
 
@@ -72,6 +84,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the configuration.
+
 _Required_: Yes
 
 _Type_: String
@@ -79,6 +93,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

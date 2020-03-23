@@ -1,6 +1,6 @@
 # Terraform::AWS::GlobalacceleratorListener
 
-CloudFormation equivalent of aws_globalaccelerator_listener
+Provides a Global Accelerator listener.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### AcceleratorArn
 
+The Amazon Resource Name (ARN) of your accelerator.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ClientAffinity
 
+Direct all requests from a user to the same endpoint. Valid values are `NONE`, `SOURCE_IP`. Default: `NONE`. If `NONE`, Global Accelerator uses the "five-tuple" properties of source IP address, source port, destination IP address, destination port, and protocol to select the hash value. If `SOURCE_IP`, Global Accelerator uses the "two-tuple" properties of source (client) IP address and destination IP address to select the hash value.
+
 _Required_: No
 
 _Type_: String
@@ -51,6 +55,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Protocol
+
+The protocol for the connections from clients to the accelerator. Valid values are `TCP`, `UDP`.
 
 _Required_: Yes
 

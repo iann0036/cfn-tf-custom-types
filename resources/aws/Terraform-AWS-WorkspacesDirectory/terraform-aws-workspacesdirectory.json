@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::WorkspacesDirectory",
-    "description": "CloudFormation equivalent of aws_workspaces_directory",
+    "description": "Provides a directory registration in AWS WorkSpaces Service",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "SelfServicePermissions": {
@@ -32,7 +32,8 @@
             "type": "string"
         },
         "DirectoryId": {
-            "type": "string"
+            "type": "string",
+            "description": "The directory identifier for registration in WorkSpaces service."
         },
         "Id": {
             "type": "string"
@@ -42,7 +43,8 @@
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The identifiers of the subnets where the directory resides."
         },
         "Tags": {
             "type": "array",

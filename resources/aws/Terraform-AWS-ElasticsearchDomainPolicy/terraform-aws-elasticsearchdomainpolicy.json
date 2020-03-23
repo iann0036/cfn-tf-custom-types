@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ElasticsearchDomainPolicy",
-    "description": "CloudFormation equivalent of aws_elasticsearch_domain_policy",
+    "description": "Allows setting policy to an Elasticsearch domain while referencing domain attributes (e.g. ARN)",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,10 +9,12 @@
             "type": "string"
         },
         "AccessPolicies": {
-            "type": "string"
+            "type": "string",
+            "description": "IAM policy document specifying the access policies for the domain."
         },
         "DomainName": {
-            "type": "string"
+            "type": "string",
+            "description": "Name of the domain."
         },
         "Id": {
             "type": "string"

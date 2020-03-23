@@ -1,6 +1,6 @@
 # Terraform::AWS::VpcDhcpOptions
 
-CloudFormation equivalent of aws_vpc_dhcp_options
+Provides a VPC DHCP Options resource.
 
 ## Syntax
 
@@ -43,6 +43,8 @@ Properties:
 
 #### DomainName
 
+the suffix domain name to use by default when resolving non Fully Qualified Domain Names. In other words, this is what ends up being the `search` value in the `/etc/resolv.conf` file.
+
 _Required_: No
 
 _Type_: String
@@ -50,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DomainNameServers
+
+List of name servers to configure in `/etc/resolv.conf`. If you want to use the default AWS nameservers you should set this to `AmazonProvidedDNS`.
 
 _Required_: No
 
@@ -59,6 +63,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NetbiosNameServers
 
+List of NETBIOS name servers.
+
 _Required_: No
 
 _Type_: List of String
@@ -66,6 +72,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### NetbiosNodeType
+
+The NetBIOS node type (1, 2, 4, or 8). AWS recommends to specify 2 since broadcast and multicast are not supported in their network. For more information about these node types, see [RFC 2132](http://www.ietf.org/rfc/rfc2132.txt).
 
 _Required_: No
 
@@ -75,6 +83,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### NtpServers
 
+List of NTP servers to configure.
+
 _Required_: No
 
 _Type_: List of String
@@ -82,6 +92,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the resource.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::IamGroup
 
-CloudFormation equivalent of aws_iam_group
+Provides an IAM group.
 
 ## Syntax
 
@@ -31,6 +31,8 @@ Properties:
 
 #### Name
 
+The group's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: `=,.@-_.`. Group names are not distinguished by case. For example, you cannot create groups named both "ADMINS" and "admins".
+
 _Required_: Yes
 
 _Type_: String
@@ -38,6 +40,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Path
+
+Path in which to create the group.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::Route53Zone
 
-CloudFormation equivalent of aws_route53_zone
+Manages a Route53 Hosted Zone.
 
 ## Syntax
 
@@ -45,6 +45,8 @@ Properties:
 
 #### Comment
 
+A comment for the hosted zone. Defaults to 'Managed by Terraform'.
+
 _Required_: No
 
 _Type_: String
@@ -52,6 +54,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DelegationSetId
+
+The ID of the reusable delegation set whose NS records you want to assign to the hosted zone. Conflicts with `vpc` as delegation sets can only be used for public zones.
 
 _Required_: No
 
@@ -61,6 +65,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ForceDestroy
 
+Whether to destroy all records (possibly managed outside of Terraform) in the zone when destroying the zone.
+
 _Required_: No
 
 _Type_: Boolean
@@ -69,6 +75,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+This is the name of the hosted zone.
+
 _Required_: Yes
 
 _Type_: String
@@ -76,6 +84,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+A mapping of tags to assign to the zone.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::OpsworksPermission
 
-CloudFormation equivalent of aws_opsworks_permission
+Provides an OpsWorks permission resource.
 
 ## Syntax
 
@@ -37,6 +37,8 @@ Properties:
 
 #### AllowSsh
 
+Whether the user is allowed to use SSH to communicate with the instance.
+
 _Required_: No
 
 _Type_: Boolean
@@ -44,6 +46,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowSudo
+
+Whether the user is allowed to use sudo to elevate privileges.
 
 _Required_: No
 
@@ -53,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Level
 
+The users permission level. Mus be one of `deny`, `show`, `deploy`, `manage`, `iam_only`.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +67,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### StackId
 
+The stack to set the permissions for.
+
 _Required_: No
 
 _Type_: String
@@ -68,6 +76,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### UserArn
+
+The user's IAM ARN to set permissions for.
 
 _Required_: Yes
 

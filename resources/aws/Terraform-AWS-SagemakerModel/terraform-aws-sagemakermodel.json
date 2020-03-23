@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::SagemakerModel",
-    "description": "CloudFormation equivalent of aws_sagemaker_model",
+    "description": "Provides a SageMaker model resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "Container": {
@@ -8,7 +8,8 @@
             "additionalProperties": false,
             "properties": {
                 "ContainerHostname": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The DNS host name for the container."
                 },
                 "Environment": {
                     "type": "array",
@@ -28,13 +29,16 @@
                             "MapKey",
                             "MapValue"
                         ]
-                    }
+                    },
+                    "description": "Environment variables for the Docker container.\nA list of key value pairs."
                 },
                 "Image": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The registry path where the inference code image is stored in Amazon ECR."
                 },
                 "ModelDataUrl": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The URL for the S3 location where model artifacts are stored."
                 }
             },
             "required": [
@@ -116,13 +120,15 @@
             "type": "boolean"
         },
         "ExecutionRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "A role that SageMaker can assume to access model artifacts and docker images for deployment."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the model (must be unique). If omitted, Terraform will assign a random, unique name."
         },
         "Tags": {
             "type": "array",
@@ -142,7 +148,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         },
         "Container": {
             "type": "array",

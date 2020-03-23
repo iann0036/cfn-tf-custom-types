@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayVpcLink",
-    "description": "CloudFormation equivalent of aws_api_gateway_vpc_link",
+    "description": "Provides an API Gateway VPC Link.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,13 +12,15 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "The description of the VPC link."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name used to label and identify the VPC link."
         },
         "Tags": {
             "type": "array",
@@ -38,14 +40,16 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "TargetArns": {
             "type": "array",
             "insertionOrder": true,
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "The list of network load balancer arns in the VPC targeted by the VPC link. Currently AWS only supports 1 target."
         }
     },
     "additionalProperties": false,

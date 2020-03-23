@@ -1,6 +1,9 @@
 # Terraform::AWS::DmsEndpoint
 
-CloudFormation equivalent of aws_dms_endpoint
+Provides a DMS (Data Migration Service) endpoint resource. DMS endpoints can be created, updated, deleted, and imported.
+
+~> **Note:** All arguments including the password will be stored in the raw state as plain-text.
+[Read more about sensitive data in state](/docs/state/sensitive-data.html).
 
 ## Syntax
 
@@ -62,6 +65,8 @@ Properties:
 
 #### CertificateArn
 
+The Amazon Resource Name (ARN) for the certificate.
+
 _Required_: No
 
 _Type_: String
@@ -69,6 +74,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### DatabaseName
+
+The name of the endpoint database.
 
 _Required_: No
 
@@ -78,6 +85,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EndpointId
 
+The database endpoint identifier.
+
 _Required_: Yes
 
 _Type_: String
@@ -85,6 +94,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### EndpointType
+
+The type of endpoint. Can be one of `source | target`.
 
 _Required_: Yes
 
@@ -94,6 +105,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### EngineName
 
+The type of engine for the endpoint. Can be one of `aurora | azuredb | db2 | docdb | dynamodb | mariadb | mongodb | mysql | oracle | postgres | redshift | s3 | sqlserver | sybase`.
+
 _Required_: Yes
 
 _Type_: String
@@ -101,6 +114,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExtraConnectionAttributes
+
+Additional attributes associated with the connection. For available attributes see [Using Extra Connection Attributes with AWS Database Migration Service](http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Introduction.ConnectionAttributes.html).
 
 _Required_: No
 
@@ -110,6 +125,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### KmsKeyArn
 
+The Amazon Resource Name (ARN) for the KMS key that will be used to encrypt the connection parameters. If you do not specify a value for `kms_key_arn`, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+
 _Required_: No
 
 _Type_: String
@@ -117,6 +134,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Password
+
+The password to be used to login to the endpoint database.
 
 _Required_: No
 
@@ -126,6 +145,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Port
 
+The port used by the endpoint database.
+
 _Required_: No
 
 _Type_: Double
@@ -133,6 +154,8 @@ _Type_: Double
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ServerName
+
+The host name of the server.
 
 _Required_: No
 
@@ -142,6 +165,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ServiceAccessRole
 
+The Amazon Resource Name (ARN) used by the service access IAM role for dynamodb endpoints.
+
 _Required_: No
 
 _Type_: String
@@ -149,6 +174,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SslMode
+
+The SSL mode to use for the connection. Can be one of `none | require | verify-ca | verify-full`.
 
 _Required_: No
 
@@ -158,6 +185,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -165,6 +194,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Username
+
+The user name to be used to login to the endpoint database.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::CognitoUserPoolClient
 
-CloudFormation equivalent of aws_cognito_user_pool_client
+Provides a Cognito User Pool Client resource.
 
 ## Syntax
 
@@ -68,6 +68,8 @@ Properties:
 
 #### AllowedOauthFlows
 
+List of allowed OAuth flows (code, implicit, client_credentials).
+
 _Required_: No
 
 _Type_: List of String
@@ -75,6 +77,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### AllowedOauthFlowsUserPoolClient
+
+Whether the client is allowed to follow the OAuth protocol when interacting with Cognito user pools.
 
 _Required_: No
 
@@ -84,6 +88,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### AllowedOauthScopes
 
+List of allowed OAuth scopes (phone, email, openid, profile, and aws.cognito.signin.user.admin).
+
 _Required_: No
 
 _Type_: List of String
@@ -91,6 +97,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### CallbackUrls
+
+List of allowed callback URLs for the identity providers.
 
 _Required_: No
 
@@ -100,6 +108,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### DefaultRedirectUri
 
+The default redirect URI. Must be in the list of callback URLs.
+
 _Required_: No
 
 _Type_: String
@@ -107,6 +117,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### ExplicitAuthFlows
+
+List of authentication flows (ADMIN_NO_SRP_AUTH, CUSTOM_AUTH_FLOW_ONLY,  USER_PASSWORD_AUTH, ALLOW_ADMIN_USER_PASSWORD_AUTH, ALLOW_CUSTOM_AUTH, ALLOW_USER_PASSWORD_AUTH, ALLOW_USER_SRP_AUTH, ALLOW_REFRESH_TOKEN_AUTH).
 
 _Required_: No
 
@@ -116,6 +128,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### GenerateSecret
 
+Should an application secret be generated.
+
 _Required_: No
 
 _Type_: Boolean
@@ -123,6 +137,8 @@ _Type_: Boolean
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### LogoutUrls
+
+List of allowed logout URLs for the identity providers.
 
 _Required_: No
 
@@ -132,6 +148,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+The name of the application client.
+
 _Required_: Yes
 
 _Type_: String
@@ -139,6 +157,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### PreventUserExistenceErrors
+
+Choose which errors and responses are returned by Cognito APIs during authentication, account confirmation, and password recovery when the user does not exist in the user pool. When set to `ENABLED` and the user does not exist, authentication returns an error indicating either the username or password was incorrect, and account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to `LEGACY`, those APIs will return a `UserNotFoundException` exception if the user does not exist in the user pool.
 
 _Required_: No
 
@@ -148,6 +168,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### ReadAttributes
 
+List of user pool attributes the application client can read from.
+
 _Required_: No
 
 _Type_: List of String
@@ -155,6 +177,8 @@ _Type_: List of String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RefreshTokenValidity
+
+The time limit in days refresh tokens are valid for.
 
 _Required_: No
 
@@ -164,6 +188,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### SupportedIdentityProviders
 
+List of provider names for the identity providers that are supported on this client.
+
 _Required_: No
 
 _Type_: List of String
@@ -172,6 +198,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### UserPoolId
 
+The user pool the client belongs to.
+
 _Required_: Yes
 
 _Type_: String
@@ -179,6 +207,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### WriteAttributes
+
+List of user pool attributes the application client can write to.
 
 _Required_: No
 

@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudwatchEventTarget
 
-CloudFormation equivalent of aws_cloudwatch_event_target
+Provides a CloudWatch Event Target resource.
 
 ## Syntax
 
@@ -60,6 +60,8 @@ Properties:
 
 #### Arn
 
+The Amazon Resource Name (ARN) associated of the target.
+
 _Required_: Yes
 
 _Type_: String
@@ -67,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Input
+
+Valid JSON text passed to the target.
 
 _Required_: No
 
@@ -76,6 +80,9 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### InputPath
 
+The value of the [JSONPath](http://goessner.net/articles/JsonPath/)
+that is used for extracting part of the matched event when passing it to the target.
+
 _Required_: No
 
 _Type_: String
@@ -83,6 +90,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### RoleArn
+
+The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. Required if `ecs_target` is used.
 
 _Required_: No
 
@@ -92,6 +101,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Rule
 
+The name of the rule you want to add targets to.
+
 _Required_: Yes
 
 _Type_: String
@@ -99,6 +110,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### TargetId
+
+The unique target assignment ID.  If missing, will generate a random, unique id.
 
 _Required_: No
 

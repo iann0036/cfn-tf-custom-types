@@ -1,6 +1,8 @@
 # Terraform::AWS::ConfigDeliveryChannel
 
-CloudFormation equivalent of aws_config_delivery_channel
+Provides an AWS Config Delivery Channel.
+
+~> **Note:** Delivery Channel requires a [Configuration Recorder](/docs/providers/aws/r/config_configuration_recorder.html) to be present. Use of `depends_on` (as shown below) is recommended to avoid race conditions.
 
 ## Syntax
 
@@ -38,6 +40,8 @@ Properties:
 
 #### Name
 
+The name of the delivery channel. Defaults to `default`. Changing it recreates the resource.
+
 _Required_: No
 
 _Type_: String
@@ -45,6 +49,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### S3BucketName
+
+The name of the S3 bucket used to store the configuration history.
 
 _Required_: Yes
 
@@ -54,6 +60,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### S3KeyPrefix
 
+The prefix for the specified S3 bucket.
+
 _Required_: No
 
 _Type_: String
@@ -61,6 +69,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### SnsTopicArn
+
+The ARN of the SNS topic that AWS Config delivers notifications to.
 
 _Required_: No
 

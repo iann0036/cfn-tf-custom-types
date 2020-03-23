@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::CodedeployApp",
-    "description": "CloudFormation equivalent of aws_codedeploy_app",
+    "description": "Provides a CodeDeploy application to be used as a basis for deployments",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,13 +9,15 @@
             "type": "string"
         },
         "ComputePlatform": {
-            "type": "string"
+            "type": "string",
+            "description": "The compute platform can either be `ECS`, `Lambda`, or `Server`. Default is `Server`."
         },
         "Id": {
             "type": "string"
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the application."
         },
         "UniqueId": {
             "type": "string"

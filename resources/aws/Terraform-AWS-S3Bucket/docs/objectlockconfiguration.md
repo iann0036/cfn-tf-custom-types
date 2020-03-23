@@ -25,6 +25,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### ObjectLockEnabled
 
+Indicates whether this bucket has an Object Lock configuration enabled. Valid value is `Enabled`.
+
 _Required_: Yes
 
 _Type_: String

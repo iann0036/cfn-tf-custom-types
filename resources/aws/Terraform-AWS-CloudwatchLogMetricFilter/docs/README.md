@@ -1,6 +1,6 @@
 # Terraform::AWS::CloudwatchLogMetricFilter
 
-CloudFormation equivalent of aws_cloudwatch_log_metric_filter
+Provides a CloudWatch Log Metric Filter resource.
 
 ## Syntax
 
@@ -36,6 +36,8 @@ Properties:
 
 #### LogGroupName
 
+The name of the log group to associate the metric filter with.
+
 _Required_: Yes
 
 _Type_: String
@@ -44,6 +46,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+A name for the metric filter.
+
 _Required_: Yes
 
 _Type_: String
@@ -51,6 +55,9 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Pattern
+
+A valid [CloudWatch Logs filter pattern](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/FilterAndPatternSyntax.html)
+for extracting metric data out of ingested log events.
 
 _Required_: Yes
 

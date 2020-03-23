@@ -1,6 +1,6 @@
 # Terraform::AWS::BackupVault
 
-CloudFormation equivalent of aws_backup_vault
+Provides an AWS Backup vault resource.
 
 ## Syntax
 
@@ -34,6 +34,8 @@ Properties:
 
 #### KmsKeyArn
 
+The server-side encryption key that is used to protect your backups.
+
 _Required_: No
 
 _Type_: String
@@ -42,6 +44,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Name
 
+Name of the backup vault to create.
+
 _Required_: Yes
 
 _Type_: String
@@ -49,6 +53,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Tags
+
+Metadata that you can assign to help organize the resources that you create.
 
 _Required_: No
 

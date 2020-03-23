@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### Frequency
 
+Specifies how frequently inventory results are produced. Valid values: `Daily`, `Weekly`.
+
 _Required_: Yes
 
 _Type_: String

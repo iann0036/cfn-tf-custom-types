@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::PinpointEventStream",
-    "description": "CloudFormation equivalent of aws_pinpoint_event_stream",
+    "description": "Provides a Pinpoint Event Stream resource.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,16 +9,19 @@
             "type": "string"
         },
         "ApplicationId": {
-            "type": "string"
+            "type": "string",
+            "description": "The application ID."
         },
         "DestinationStreamArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery stream to which you want to publish events."
         },
         "Id": {
             "type": "string"
         },
         "RoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The IAM role that authorizes Amazon Pinpoint to publish events to the stream in your account."
         }
     },
     "additionalProperties": false,

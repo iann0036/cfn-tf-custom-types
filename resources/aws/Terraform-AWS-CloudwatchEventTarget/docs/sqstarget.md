@@ -22,6 +22,8 @@ To declare this entity in your AWS CloudFormation template, use the following sy
 
 #### MessageGroupId
 
+The FIFO message group ID to use as the target.
+
 _Required_: No
 
 _Type_: String

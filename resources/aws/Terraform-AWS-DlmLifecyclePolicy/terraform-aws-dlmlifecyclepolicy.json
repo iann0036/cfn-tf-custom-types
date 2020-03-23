@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DlmLifecyclePolicy",
-    "description": "CloudFormation equivalent of aws_dlm_lifecycle_policy",
+    "description": "Provides a [Data Lifecycle Manager (DLM) lifecycle policy](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html) for managing snapshots.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {
         "PolicyDetails": {
@@ -145,16 +145,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description for the DLM lifecycle policy."
         },
         "ExecutionRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an IAM role that is able to be assumed by the DLM service."
         },
         "Id": {
             "type": "string"
         },
         "State": {
-            "type": "string"
+            "type": "string",
+            "description": "Whether the lifecycle policy should be enabled or disabled. `ENABLED` or `DISABLED` are valid values. Defaults to `ENABLED`."
         },
         "Tags": {
             "type": "array",
@@ -174,7 +177,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "Key-value mapping of resource tags."
         },
         "PolicyDetails": {
             "type": "array",

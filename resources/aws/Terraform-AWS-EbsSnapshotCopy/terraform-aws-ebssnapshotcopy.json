@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::EbsSnapshotCopy",
-    "description": "CloudFormation equivalent of aws_ebs_snapshot_copy",
+    "description": "Creates a Snapshot of a snapshot.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,16 +12,19 @@
             "type": "string"
         },
         "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "A description of what the snapshot is."
         },
         "Encrypted": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Whether the snapshot is encrypted."
         },
         "Id": {
             "type": "string"
         },
         "KmsKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN for the KMS encryption key."
         },
         "OwnerAlias": {
             "type": "string"
@@ -53,7 +56,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags for the snapshot."
         },
         "VolumeId": {
             "type": "string"

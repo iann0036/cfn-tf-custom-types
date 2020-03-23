@@ -1,6 +1,6 @@
 # Terraform::AWS::ApiGatewayDocumentationVersion
 
-CloudFormation equivalent of aws_api_gateway_documentation_version
+Provides a resource to manage an API Gateway Documentation Version.
 
 ## Syntax
 
@@ -33,6 +33,8 @@ Properties:
 
 #### Description
 
+The description of the API documentation version.
+
 _Required_: No
 
 _Type_: String
@@ -41,6 +43,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### RestApiId
 
+The ID of the associated Rest API.
+
 _Required_: Yes
 
 _Type_: String
@@ -48,6 +52,8 @@ _Type_: String
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### Version
+
+The version identifier of the API documentation snapshot.
 
 _Required_: Yes
 

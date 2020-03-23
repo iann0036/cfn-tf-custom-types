@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::ApiGatewayAccount",
-    "description": "CloudFormation equivalent of aws_api_gateway_account",
+    "description": "Provides a settings of an API Gateway Account. Settings is applied region-wide per `provider` block.\n\n-> **Note:** As there is no API method for deleting account settings or resetting it to defaults, destroying this resource will keep your account settings intact",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -9,7 +9,8 @@
             "type": "string"
         },
         "CloudwatchRoleArn": {
-            "type": "string"
+            "type": "string",
+            "description": "The ARN of an IAM role for CloudWatch (to allow logging & monitoring).\nSee more [in AWS Docs](https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-stage-settings.html#how-to-stage-settings-console).\nLogging & monitoring can be enabled/disabled and otherwise tuned on the API Gateway Stage level."
         },
         "Id": {
             "type": "string"

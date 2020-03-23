@@ -1,6 +1,13 @@
 # Terraform::AWS::VpcPeeringConnectionAccepter
 
-CloudFormation equivalent of aws_vpc_peering_connection_accepter
+Provides a resource to manage the accepter's side of a VPC Peering Connection.
+
+When a cross-account (requester's AWS account differs from the accepter's AWS account) or an inter-region
+VPC Peering Connection is created, a VPC Peering Connection resource is automatically created in the
+accepter's account.
+The requester can use the `aws_vpc_peering_connection` resource to manage its side of the connection
+and the accepter can use the `aws_vpc_peering_connection_accepter` resource to "adopt" its side of the
+connection into management.
 
 ## Syntax
 
@@ -40,6 +47,8 @@ Properties:
 
 #### AutoAccept
 
+Whether or not to accept the peering request. Defaults to `false`.
+
 _Required_: No
 
 _Type_: Boolean
@@ -48,6 +57,8 @@ _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormati
 
 #### Tags
 
+A mapping of tags to assign to the resource.
+
 _Required_: No
 
 _Type_: List of <a href="tags.md">Tags</a>
@@ -55,6 +66,8 @@ _Type_: List of <a href="tags.md">Tags</a>
 _Update requires_: [No interruption](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-update-behaviors.html#update-no-interrupt)
 
 #### VpcPeeringConnectionId
+
+The VPC Peering Connection ID to manage.
 
 _Required_: Yes
 

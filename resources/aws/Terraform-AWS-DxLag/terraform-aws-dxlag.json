@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::DxLag",
-    "description": "CloudFormation equivalent of aws_dx_lag",
+    "description": "Provides a Direct Connect LAG. Connections can be added to the LAG via the [`aws_dx_connection`](/docs/providers/aws/r/dx_connection.html) and [`aws_dx_connection_association`](/docs/providers/aws/r/dx_connection_association.html) resources.\n\n~> *NOTE:* When creating a LAG, Direct Connect requires creating a Connection. Terraform will remove this unmanaged connection during resource creation.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -12,10 +12,12 @@
             "type": "string"
         },
         "ConnectionsBandwidth": {
-            "type": "string"
+            "type": "string",
+            "description": "The bandwidth of the individual physical connections bundled by the LAG. Available values: 1Gbps, 10Gbps. Case sensitive."
         },
         "ForceDestroy": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "A boolean that indicates all connections associated with the LAG should be deleted so that the LAG can be destroyed without error. These objects are *not* recoverable."
         },
         "HasLogicalRedundancy": {
             "type": "string"
@@ -27,10 +29,12 @@
             "type": "boolean"
         },
         "Location": {
-            "type": "string"
+            "type": "string",
+            "description": "The AWS Direct Connect location in which the LAG should be allocated. See [DescribeLocations](https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DescribeLocations.html) for the list of AWS Direct Connect locations. Use `locationCode`."
         },
         "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "The name of the LAG."
         },
         "NumberOfConnections": {
             "type": "number"
@@ -53,7 +57,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,

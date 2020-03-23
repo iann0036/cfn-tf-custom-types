@@ -1,6 +1,6 @@
 {
     "typeName": "Terraform::AWS::RedshiftSnapshotCopyGrant",
-    "description": "CloudFormation equivalent of aws_redshift_snapshot_copy_grant",
+    "description": "Creates a snapshot copy grant that allows AWS Redshift to encrypt copied snapshots with a customer master key from AWS KMS in a destination region.\n\nNote that the grant must exist in the destination region, and not in the region of the cluster.",
     "sourceUrl": "https://github.com/iann0036/cfn-tf-custom-types.git",
     "definitions": {},
     "properties": {
@@ -15,10 +15,12 @@
             "type": "string"
         },
         "KmsKeyId": {
-            "type": "string"
+            "type": "string",
+            "description": "The unique identifier for the customer master key (CMK) that the grant applies to. Specify the key ID or the Amazon Resource Name (ARN) of the CMK. To specify a CMK in a different AWS account, you must use the key ARN. If not specified, the default key is used."
         },
         "SnapshotCopyGrantName": {
-            "type": "string"
+            "type": "string",
+            "description": "A friendly name for identifying the grant."
         },
         "Tags": {
             "type": "array",
@@ -38,7 +40,8 @@
                     "MapKey",
                     "MapValue"
                 ]
-            }
+            },
+            "description": "A mapping of tags to assign to the resource."
         }
     },
     "additionalProperties": false,
