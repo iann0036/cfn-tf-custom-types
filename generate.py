@@ -480,9 +480,6 @@ def process_resource_docs(provider_name, file_contents, provider_readme_items):
     argument_lines = []
     attributes = {}
 
-    print("#---------#")
-    print(file_contents)
-
     lines = file_contents.split("\n")
     for line in lines:
         if line.startswith("# " + provider_name):
